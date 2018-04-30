@@ -1,0 +1,79 @@
+/*
+linker command file:
+syntax depends on linker
+*/
+/* link os_exception_table to certain addresse:
+PowerPC/ARM: 0x0 
+*/
+MEMORY 
+{
+  rom : ORIGIN = 0, LENGTH = 1M
+  ram : org = 0x40000000, l = 192K
+} 
+
+SECTIONS{
+   .text ALIGN(0x08000000):
+   {
+      os_exception_table.o
+   } > rom
+   .text ALIGN(0x08000200):
+   {
+      _data_start = .;
+      os_const.o
+      _data_end = .;
+      PROVIDE(data_start = .);
+      PROVIDE(data_end = .);   
+   } > rom
+   .text ALIGN(0x08001000):
+   {       
+      os_acl.o
+      os_common.o
+      os_driver_hook.o
+      os_exception.o
+      os_exception_isr_handler.o
+       os_exception_table.o
+      os_init_task_system.o
+      os_main.o
+      os_memory_mmu_setup.o
+      os_memory_virtualisation.o
+      os_rte_common.o
+      os_rte_icc.o
+      os_shutdown.o
+      os_start_ext_prg.o
+      os_start_init_hw.o
+      os_start_init_mc.o
+      os_start_init_sw.o
+      os_start_os.o
+      os_task_common.o
+      os_task_queue.o
+      os_task_scheduler.o   
+      os_stack.o
+      os_heap.o 
+      os_diagnostic_main.o
+      hal_driver_adc.o
+      hal_driver_can.o
+      hal_driver_fs_fat.o
+      hal_driver_gpio.o
+      hal_driver_sci.o
+      hal_driver_xyz.o
+      lld_can.o
+      lld_global.o  
+      lld_interrupt.o
+      lld_mmu.o
+      lld_ram.o
+      lld_timer.o
+      lld_watchdog.o
+      lld_power.o      
+      
+      led.o
+   } > rom
+   .data ALIGN(0x40000000):
+   {      
+      _ram_start = .;
+      os_ram.o
+      os_shared_ram.o      
+      _ram_end = .;
+      PROVIDE(ram_start = .);
+      PROVIDE(ram_end = .);
+   } > ram
+}

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="os" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/os" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DCFG_PROCESSOR=3" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/os" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="src/os_base/os_acl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_acl.h" />
+		<Unit filename="src/os_base/os_base_types.h" />
+		<Unit filename="src/os_base/os_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_common.h" />
+		<Unit filename="src/os_base/os_const.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_diagnostic_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_diagnostic_main.h" />
+		<Unit filename="src/os_base/os_driver_hook.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_driver_hook.h" />
+		<Unit filename="src/os_base/os_exception.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_exception_isr_handler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_exception_isr_handler.h" />
+		<Unit filename="src/os_base/os_exception_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_firstinc.h" />
+		<Unit filename="src/os_base/os_heap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_heap.h" />
+		<Unit filename="src/os_base/os_init_task_system.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_init_task_system.h" />
+		<Unit filename="src/os_base/os_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_main.h" />
+		<Unit filename="src/os_base/os_memory_mmu_setup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_memory_mmu_setup.h" />
+		<Unit filename="src/os_base/os_memory_virtualisation.h" />
+		<Unit filename="src/os_base/os_ram.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_rte_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_rte_common.h" />
+		<Unit filename="src/os_base/os_rte_icc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_rte_icc.h" />
+		<Unit filename="src/os_base/os_shared_ram.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_shutdown.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_shutdown.h" />
+		<Unit filename="src/os_base/os_stack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_stack.h" />
+		<Unit filename="src/os_base/os_start_ext_prg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_start_init_hw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_start_init_hw.h" />
+		<Unit filename="src/os_base/os_start_init_mc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_start_init_mc.h" />
+		<Unit filename="src/os_base/os_start_init_sw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_start_init_sw.h" />
+		<Unit filename="src/os_base/os_start_os.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_start_os.h" />
+		<Unit filename="src/os_base/os_task_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_task_common.h" />
+		<Unit filename="src/os_base/os_task_config.h" />
+		<Unit filename="src/os_base/os_task_queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_task_queue.h" />
+		<Unit filename="src/os_base/os_task_scheduler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_base/os_task_scheduler.h" />
+		<Unit filename="src/os_sim/hal_driver_adc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/hal_driver_adc.h" />
+		<Unit filename="src/os_sim/hal_driver_block_device.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/hal_driver_block_device.h" />
+		<Unit filename="src/os_sim/hal_driver_can.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/hal_driver_fs_fat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/hal_driver_fs_fat.h" />
+		<Unit filename="src/os_sim/hal_driver_gpio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/hal_driver_sci.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/hal_driver_sci.h" />
+		<Unit filename="src/os_sim/hal_driver_xyz.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/hal_driver_xyz.h" />
+		<Unit filename="src/os_sim/lld_adc.h" />
+		<Unit filename="src/os_sim/lld_can.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/lld_can.h" />
+		<Unit filename="src/os_sim/lld_core.h" />
+		<Unit filename="src/os_sim/lld_global.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/lld_global.h" />
+		<Unit filename="src/os_sim/lld_gpio.h" />
+		<Unit filename="src/os_sim/lld_interrupt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/lld_interrupt.h" />
+		<Unit filename="src/os_sim/lld_mmu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/lld_mmu.h" />
+		<Unit filename="src/os_sim/lld_power.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/lld_power.h" />
+		<Unit filename="src/os_sim/lld_ram.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/lld_ram.h" />
+		<Unit filename="src/os_sim/lld_timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/lld_timer.h" />
+		<Unit filename="src/os_sim/lld_watchdog.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_sim/lld_watchdog.h" />
+		<Unit filename="src/os_sim/mcu_config.h" />
+		<Unit filename="src/os_sim/os_sim_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_user_code/led.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_user_code/led.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
