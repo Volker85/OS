@@ -1,3 +1,138 @@
-arm-none-eabi-gcc: error: E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: No such file or directory
-arm-none-eabi-gcc: fatal error: no input files
-compilation terminated.
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"os_common.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.bss
+  19              		.align	2
+  20              	sw_bug:
+  21 0000 00000000 		.space	15
+  21      00000000 
+  21      00000000 
+  21      000000
+  22 000f 00       		.text
+  23              		.align	2
+  24              		.global	OS_SET_SW_BUG
+  25              		.thumb
+  26              		.thumb_func
+  28              	OS_SET_SW_BUG:
+  29              	.LFB0:
+  30              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
+   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** #include "os_firstinc.h"
+   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** #include "os_task_common.h"
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** #include "..\os_drivers\lld_global.h"
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** Local os_sw_bugs_t sw_bug[15] = {os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+  31              		.loc 1 7 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 8
+  34              		@ frame_needed = 1, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36 0000 80B4     		push	{r7}
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 7, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              		.cfi_def_cfa_offset 16
+  41 0004 00AF     		add	r7, sp, #0
+  42              		.cfi_def_cfa_register 7
+  43 0006 0346     		mov	r3, r0
+  44 0008 0A46     		mov	r2, r1
+  45 000a FB71     		strb	r3, [r7, #7]
+  46 000c 1346     		mov	r3, r2
+  47 000e BB71     		strb	r3, [r7, #6]
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    sw_bug[task_func_nr] = bug_nr;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s 			page 2
+
+
+  48              		.loc 1 8 0
+  49 0010 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  50 0012 0449     		ldr	r1, .L2
+  51 0014 FA79     		ldrb	r2, [r7, #7]
+  52 0016 CA54     		strb	r2, [r1, r3]
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+  53              		.loc 1 9 0
+  54 0018 0C37     		adds	r7, r7, #12
+  55              		.cfi_def_cfa_offset 4
+  56 001a BD46     		mov	sp, r7
+  57              		.cfi_def_cfa_register 13
+  58              		@ sp needed
+  59 001c 5DF8047B 		ldr	r7, [sp], #4
+  60              		.cfi_restore 7
+  61              		.cfi_def_cfa_offset 0
+  62 0020 7047     		bx	lr
+  63              	.L3:
+  64 0022 00BF     		.align	2
+  65              	.L2:
+  66 0024 00000000 		.word	sw_bug
+  67              		.cfi_endproc
+  68              	.LFE0:
+  70              		.align	2
+  71              		.global	Get_current_time
+  72              		.thumb
+  73              		.thumb_func
+  75              	Get_current_time:
+  76              	.LFB1:
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** unsigned_int32_t Get_current_time(void)/* return us */
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+  77              		.loc 1 11 0
+  78              		.cfi_startproc
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 1, uses_anonymous_args = 0
+  81 0028 80B5     		push	{r7, lr}
+  82              		.cfi_def_cfa_offset 8
+  83              		.cfi_offset 7, -8
+  84              		.cfi_offset 14, -4
+  85 002a 00AF     		add	r7, sp, #0
+  86              		.cfi_def_cfa_register 7
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return (LLF_UP_CNT_TIMER_32());
+  87              		.loc 1 12 0
+  88 002c FFF7FEFF 		bl	LLF_UP_CNT_TIMER_32
+  89 0030 0346     		mov	r3, r0
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }...
+  90              		.loc 1 13 0
+  91 0032 1846     		mov	r0, r3
+  92 0034 80BD     		pop	{r7, pc}
+  93              		.cfi_endproc
+  94              	.LFE1:
+  96              	.Letext0:
+  97              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  98              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_common.c
+C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s:19     .bss:00000000 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s:20     .bss:00000000 sw_bug
+C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s:23     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s:28     .text:00000000 OS_SET_SW_BUG
+C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s:66     .text:00000024 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s:70     .text:00000028 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccCY3CrS.s:75     .text:00000028 Get_current_time
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.9521b3e5c1199f549394d32eec33a9c8
+                           .group:00000000 wm4.lld_interrupt.h.2.b1b940a31d6b49628a13b8fe5e920a88
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
+
+UNDEFINED SYMBOLS
+LLF_UP_CNT_TIMER_32

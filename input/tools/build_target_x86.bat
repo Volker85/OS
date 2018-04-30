@@ -7,7 +7,7 @@ SET WRK_DIR=D:\Programm\MinGW\bin
 cd /D %WRK_DIR%
 REM
 set PATH=%PATH%;D:\Programm\MinGW\bin
-SET BASE_DIR=E:\NeuOrga\Programmieren\c_cpp\github_os\input
+SET BASE_DIR=E:\NeuOrga\Programmieren\c_cpp\github_os
 SET INPUT_DIR=%BASE_DIR%\input
 SET OUTPUT_DIR=%BASE_DIR%\output
 SET SRC_DIR=%INPUT_DIR%\src
@@ -45,7 +45,6 @@ echo "Target_x86" > %OUTPUT_DIR%\VERSION_X86\Build_x86.log
 echo %DATE% %TIME% >> %OUTPUT_DIR%\VERSION_X86\Build_x86.log
 REM
 echo "preprocess it" >> %OUTPUT_DIR%\VERSION_X86\Build_X86.log
-mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_acl.c				     -o %OUTPUT_DIR%\os_base\ppc_x86\os_acl.ppc                     >>%OUTPUT_DIR%\VERSION_X86\Build_X86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_common.c			     -o %OUTPUT_DIR%\os_base\ppc_x86\os_common.ppc	                >>%OUTPUT_DIR%\VERSION_X86\Build_X86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_driver_hook.c		     -o %OUTPUT_DIR%\os_base\ppc_x86\os_driver_hook.ppc	            >>%OUTPUT_DIR%\VERSION_X86\Build_X86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception.c			     -o %OUTPUT_DIR%\os_base\ppc_x86\os_exception.ppc	            >>%OUTPUT_DIR%\VERSION_X86\Build_X86.log 2>&1
@@ -90,7 +89,6 @@ mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_s
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			     -o %OUTPUT_DIR%\os_user_code\ppc_x86\led.ppc                  >>%OUTPUT_DIR%\VERSION_X86\Build_X86.log 2>&1
 REM
 echo "create assembly listings" >> %OUTPUT_DIR%\VERSION_X86\Build_X86.log
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_acl.c				     >> %OUTPUT_DIR%\os_base\ppc_x86\os_acl.lst                     2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_common.c			     >> %OUTPUT_DIR%\os_base\ppc_x86\os_common.lst	                2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_driver_hook.c		     >> %OUTPUT_DIR%\os_base\ppc_x86\os_driver_hook.lst	            2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception.c			     >> %OUTPUT_DIR%\os_base\ppc_x86\os_exception.lst	            2>&1
@@ -135,7 +133,6 @@ mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			     >> %OUTPUT_DIR%\os_user_code\ppc_x86\led.lst                  2>&1
 REM
 echo "compile it" >> %OUTPUT_DIR%\VERSION_X86\Build_X86.log
-mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_acl.c 					-o %OUTPUT_DIR%\os_base\obj_x86\os_acl.o	>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_common.c 					-o %OUTPUT_DIR%\os_base\obj_x86\os_common.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_driver_hook.c 			-o %OUTPUT_DIR%\os_base\obj_x86\os_driver_hook.o		>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception.c 				-o %OUTPUT_DIR%\os_base\obj_x86\os_exception.o	>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
@@ -180,7 +177,6 @@ mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			-o %OUTPUT_DIR%\os_user_code\obj_x86\led.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 REM
 echo "assemble it" >> %OUTPUT_DIR%\VERSION_X86\Build_X86.log
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_acl.c 					-o %OUTPUT_DIR%\os_base\obj_x86\os_acl.s	>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_common.c 					-o %OUTPUT_DIR%\os_base\obj_x86\os_common.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_driver_hook.c 			-o %OUTPUT_DIR%\os_base\obj_x86\os_driver_hook.s		>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception.c 				-o %OUTPUT_DIR%\os_base\obj_x86\os_exception.s	>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
@@ -224,5 +220,5 @@ mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -peda
 
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			-o %OUTPUT_DIR%\os_user_code\obj_x86\led.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 echo "link it" >> %OUTPUT_DIR%\VERSION_X86\Build_X86.log
-mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\operating_system_exe.map -O0  %OUTPUT_DIR%\os_base\obj_x86\os_acl.o %OUTPUT_DIR%\os_base\obj_x86\os_common.o %OUTPUT_DIR%\os_base\obj_x86\os_driver_hook.o %OUTPUT_DIR%\os_base\obj_x86\os_exception.o %OUTPUT_DIR%\os_base\obj_x86\os_exception_isr_handler.o %OUTPUT_DIR%\os_base\obj_x86\os_exception_table.o %OUTPUT_DIR%\os_base\obj_x86\os_init_task_system.o %OUTPUT_DIR%\os_base\obj_x86\os_main.o %OUTPUT_DIR%\os_base\obj_x86\os_memory_mmu_setup.o %OUTPUT_DIR%\os_base\obj_x86\os_rte_common.o %OUTPUT_DIR%\os_base\obj_x86\os_rte_icc.o %OUTPUT_DIR%\os_base\obj_x86\os_shutdown.o %OUTPUT_DIR%\os_base\obj_x86\os_start_ext_prg.o %OUTPUT_DIR%\os_base\obj_x86\os_start_init_hw.o %OUTPUT_DIR%\os_base\obj_x86\os_start_init_mc.o %OUTPUT_DIR%\os_base\obj_x86\os_start_init_sw.o %OUTPUT_DIR%\os_base\obj_x86\os_start_os.o %OUTPUT_DIR%\os_base\obj_x86\os_task_common.o %OUTPUT_DIR%\os_base\obj_x86\os_task_queue.o %OUTPUT_DIR%\os_base\obj_x86\os_task_scheduler.o %OUTPUT_DIR%\os_sim\obj_x86\os_sim_main.o %OUTPUT_DIR%\os_base\obj_x86\os_ram.o %OUTPUT_DIR%\os_base\obj_x86\os_shared_ram.o %OUTPUT_DIR%\os_sim\obj_x86\os_stack.o %OUTPUT_DIR%\os_sim\obj_x86\os_heap.o %OUTPUT_DIR%\os_sim\obj_x86\os_diagnostic_main.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_adc.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_can.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_fs_fat.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_gpio.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_sci.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_xyz.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_can.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_global.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_interrupt.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_mmu.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_ram.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_timer.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_watchdog.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_power.o %OUTPUT_DIR%\os_user_code\obj_x86\led.o -o %OUTPUT_DIR%\VERSION_X86\operating_system.exe  >> %OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1	
+mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\operating_system_exe.map -O0  %OUTPUT_DIR%\os_base\obj_x86\os_common.o %OUTPUT_DIR%\os_base\obj_x86\os_driver_hook.o %OUTPUT_DIR%\os_base\obj_x86\os_exception.o %OUTPUT_DIR%\os_base\obj_x86\os_exception_isr_handler.o %OUTPUT_DIR%\os_base\obj_x86\os_exception_table.o %OUTPUT_DIR%\os_base\obj_x86\os_init_task_system.o %OUTPUT_DIR%\os_base\obj_x86\os_main.o %OUTPUT_DIR%\os_base\obj_x86\os_memory_mmu_setup.o %OUTPUT_DIR%\os_base\obj_x86\os_rte_common.o %OUTPUT_DIR%\os_base\obj_x86\os_rte_icc.o %OUTPUT_DIR%\os_base\obj_x86\os_shutdown.o %OUTPUT_DIR%\os_base\obj_x86\os_start_ext_prg.o %OUTPUT_DIR%\os_base\obj_x86\os_start_init_hw.o %OUTPUT_DIR%\os_base\obj_x86\os_start_init_mc.o %OUTPUT_DIR%\os_base\obj_x86\os_start_init_sw.o %OUTPUT_DIR%\os_base\obj_x86\os_start_os.o %OUTPUT_DIR%\os_base\obj_x86\os_task_common.o %OUTPUT_DIR%\os_base\obj_x86\os_task_queue.o %OUTPUT_DIR%\os_base\obj_x86\os_task_scheduler.o %OUTPUT_DIR%\os_sim\obj_x86\os_sim_main.o %OUTPUT_DIR%\os_base\obj_x86\os_ram.o %OUTPUT_DIR%\os_base\obj_x86\os_shared_ram.o %OUTPUT_DIR%\os_sim\obj_x86\os_stack.o %OUTPUT_DIR%\os_sim\obj_x86\os_heap.o %OUTPUT_DIR%\os_sim\obj_x86\os_diagnostic_main.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_adc.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_can.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_fs_fat.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_gpio.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_sci.o %OUTPUT_DIR%\os_drivers\obj_x86\hal_driver_xyz.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_can.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_global.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_interrupt.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_mmu.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_ram.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_timer.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_watchdog.o %OUTPUT_DIR%\os_drivers\obj_x86\lld_power.o %OUTPUT_DIR%\os_user_code\obj_x86\led.o -o %OUTPUT_DIR%\VERSION_X86\operating_system.exe  >> %OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1	
 @ENDLOCAL

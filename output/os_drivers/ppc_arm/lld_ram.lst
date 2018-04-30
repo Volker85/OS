@@ -1,3 +1,108 @@
-arm-none-eabi-gcc: error: E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c: No such file or directory
-arm-none-eabi-gcc: fatal error: no input files
-compilation terminated.
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c:2:15: warning: conflicting types for 'LLF_CLEAR_ALL_RAM'
+ Global_inline LLF_CLEAR_ALL_RAM(void)
+               ^
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:12:0,
+                 from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:9,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.h:4:13: note: previous declaration of 'LLF_CLEAR_ALL_RAM' was here
+ extern void LLF_CLEAR_ALL_RAM(void);
+             ^
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccp6mFMc.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"lld_ram.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.align	2
+  19              		.global	LLF_CLEAR_ALL_RAM
+  20              		.thumb
+  21              		.thumb_func
+  23              	LLF_CLEAR_ALL_RAM:
+  24              	.LFB0:
+  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_ram.c"
+   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c **** #include "..\os_base\os_firstinc.h"
+   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c **** Global_inline LLF_CLEAR_ALL_RAM(void)
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c **** {
+  26              		.loc 1 3 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 1, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
+  31 0000 80B4     		push	{r7}
+  32              		.cfi_def_cfa_offset 4
+  33              		.cfi_offset 7, -4
+  34 0002 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****       /* Zero fill the bss segment.  This is done with inline assembly since this
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****       will clear the value of pulDest if it is not kept in a register. */
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****    __asm("  ldr     r0, =_ram_start\n"
+  36              		.loc 1 6 0
+  37              	@ 6 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c" 1
+  38 0004 0648     		  ldr     r0, =_ram_start
+  39 0006 0749     	  ldr     r1, =_ram_end
+  40 0008 4FF00002 	  mov     r2, #0
+  41              	  .thumb_func
+  42              	zero_loop:
+  43 000c 8842     	    cmp     r0, r1
+  44 000e B8BF     	    it      lt
+  45 0010 40F8042B 	    strlt   r2, [r0], #4
+  46 0014 FADB     	    blt     zero_loop
+  47              	@ 0 "" 2
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****          "  ldr     r1, =_ram_end\n"
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****          "  mov     r2, #0\n"
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****          "  .thumb_func\n"
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****          "zero_loop:\n"
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****          "    cmp     r0, r1\n"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccp6mFMc.s 			page 2
+
+
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****          "    it      lt\n"
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****          "    strlt   r2, [r0], #4\n"
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c ****          "    blt     zero_loop");
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_ram.c **** }...
+  48              		.loc 1 15 0
+  49              		.thumb
+  50 0016 BD46     		mov	sp, r7
+  51              		.cfi_def_cfa_register 13
+  52              		@ sp needed
+  53 0018 5DF8047B 		ldr	r7, [sp], #4
+  54              		.cfi_restore 7
+  55              		.cfi_def_cfa_offset 0
+  56 001c 7047     		bx	lr
+  57              		.cfi_endproc
+  58              	.LFE0:
+  60              	.Letext0:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccp6mFMc.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lld_ram.c
+C:\Users\PRESID~1\AppData\Local\Temp\ccp6mFMc.s:18     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccp6mFMc.s:23     .text:00000000 LLF_CLEAR_ALL_RAM
+C:\Users\PRESID~1\AppData\Local\Temp\ccp6mFMc.s:42     .text:0000000c zero_loop
+C:\Users\PRESID~1\AppData\Local\Temp\ccp6mFMc.s:61     .text:0000001e $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.9521b3e5c1199f549394d32eec33a9c8
+                           .group:00000000 wm4.lld_interrupt.h.2.b1b940a31d6b49628a13b8fe5e920a88
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
+
+UNDEFINED SYMBOLS
+_ram_start
+_ram_end

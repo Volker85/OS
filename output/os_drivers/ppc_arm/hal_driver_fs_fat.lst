@@ -1,3 +1,772 @@
-arm-none-eabi-gcc: error: E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: No such file or directory
-arm-none-eabi-gcc: fatal error: no input files
-compilation terminated.
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"hal_driver_fs_fat.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.comm	FILE_HANDLER_POOL,20,4
+  19              		.bss
+  20              		.align	2
+  21              	FILE_HANDLER_POOL_USED:
+  22 0000 00000000 		.space	20
+  22      00000000 
+  22      00000000 
+  22      00000000 
+  22      00000000 
+  23              		.text
+  24              		.align	2
+  25              		.global	fopen
+  26              		.thumb
+  27              		.thumb_func
+  29              	fopen:
+  30              	.LFB0:
+  31              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\hal_driver_fs_fat.c
+   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** #include "..\os_base\os_firstinc.h"
+   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** #include "..\os_drivers\hal_driver_fs_fat.h"
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** 
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** #define NR_OF_FILE_HANDLERS 5
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** 
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** FILE* FILE_HANDLER_POOL[NR_OF_FILE_HANDLERS];
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** static unsigned FILE_HANDLER_POOL_USED[NR_OF_FILE_HANDLERS];
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** 
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** FILE* fopen(const char *filename, const char *mode)
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** {
+  32              		.loc 1 10 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 24
+  35              		@ frame_needed = 1, uses_anonymous_args = 0
+  36              		@ link register save eliminated.
+  37 0000 80B4     		push	{r7}
+  38              		.cfi_def_cfa_offset 4
+  39              		.cfi_offset 7, -4
+  40 0002 87B0     		sub	sp, sp, #28
+  41              		.cfi_def_cfa_offset 32
+  42 0004 00AF     		add	r7, sp, #0
+  43              		.cfi_def_cfa_register 7
+  44 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 2
+
+
+  45 0008 3960     		str	r1, [r7]
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    uint32 i;
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    FILE* file_ptr = 0;
+  46              		.loc 1 12 0
+  47 000a 0023     		movs	r3, #0
+  48 000c 3B61     		str	r3, [r7, #16]
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    uint32 current_file_obj_number = 0;
+  49              		.loc 1 13 0
+  50 000e 0023     		movs	r3, #0
+  51 0010 FB60     		str	r3, [r7, #12]
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** 
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    for(i = 0; i < NR_OF_FILE_HANDLERS; i++)
+  52              		.loc 1 15 0
+  53 0012 0023     		movs	r3, #0
+  54 0014 7B61     		str	r3, [r7, #20]
+  55 0016 7DE0     		b	.L2
+  56              	.L21:
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    {
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****       if(FILE_HANDLER_POOL_USED[i] == False)
+  57              		.loc 1 17 0
+  58 0018 444A     		ldr	r2, .L24
+  59 001a 7B69     		ldr	r3, [r7, #20]
+  60 001c 52F82330 		ldr	r3, [r2, r3, lsl #2]
+  61 0020 002B     		cmp	r3, #0
+  62 0022 74D1     		bne	.L3
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****       {
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          /* get the next free object number */
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          FILE_HANDLER_POOL_USED[i] = True;
+  63              		.loc 1 20 0
+  64 0024 414A     		ldr	r2, .L24
+  65 0026 7B69     		ldr	r3, [r7, #20]
+  66 0028 0121     		movs	r1, #1
+  67 002a 42F82310 		str	r1, [r2, r3, lsl #2]
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          current_file_obj_number   = i;
+  68              		.loc 1 21 0
+  69 002e 7B69     		ldr	r3, [r7, #20]
+  70 0030 FB60     		str	r3, [r7, #12]
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** 
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          /* get the next free object (via ptr)*/
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          file_ptr = FILE_HANDLER_POOL[current_file_obj_number];
+  71              		.loc 1 24 0
+  72 0032 3F4A     		ldr	r2, .L24+4
+  73 0034 FB68     		ldr	r3, [r7, #12]
+  74 0036 52F82330 		ldr	r3, [r2, r3, lsl #2]
+  75 003a 3B61     		str	r3, [r7, #16]
+  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** 
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          /* set the mode:
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          "r"	Textdatei zum lesen und eröffnen
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          "w"	Textdatei zum Schreiben erzeugen; gegebenenfalls alten Inhalt wegwerfen
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          "a"	anfügen; Textdatei zum Schreiben am Dateiende eröffnen oder erzeugen
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          "r+"	Textdatei zum Ändern eröffnen (Lesen und Schreiben)
+  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          "w+"	Textdatei zum Ändern erzeugen; gegebenenfalls alten Inhalt wegwerfen
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          "a+"	anfügen; Textdatei zum Ändern eröffnen oder erzeugen, Schreiben am Ende*/
+  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          switch(*mode)
+  76              		.loc 1 33 0
+  77 003c 3B68     		ldr	r3, [r7]
+  78 003e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 3
+
+
+  79 0040 722B     		cmp	r3, #114
+  80 0042 04D0     		beq	.L5
+  81 0044 772B     		cmp	r3, #119
+  82 0046 13D0     		beq	.L6
+  83 0048 612B     		cmp	r3, #97
+  84 004a 22D0     		beq	.L7
+  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          {
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          case 'r':
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             if(*(mode+1) == '+')
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****                file_ptr->mode_rplus = True;
+  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             else
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****                file_ptr->mode_r = True;
+  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             break;
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          case 'w':
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             if(*(mode+1) == '+')
+  47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****                file_ptr->mode_wplus = True;
+  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             else
+  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****                file_ptr->mode_w = True;
+  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             break;
+  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          case 'a':
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             if(*(mode+1) == '+')
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****                file_ptr->mode_aplus = True;
+  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             else
+  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****                file_ptr->mode_a = True;
+  63:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             break;
+  65:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          default:
+  66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             break;
+  85              		.loc 1 66 0
+  86 004c 32E0     		b	.L10
+  87              	.L5:
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+  88              		.loc 1 36 0
+  89 004e 3B68     		ldr	r3, [r7]
+  90 0050 0133     		adds	r3, r3, #1
+  91 0052 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  92 0054 2B2B     		cmp	r3, #43
+  93 0056 05D1     		bne	.L8
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+  94              		.loc 1 38 0
+  95 0058 3A69     		ldr	r2, [r7, #16]
+  96 005a 1378     		ldrb	r3, [r2]
+  97 005c 43F00803 		orr	r3, r3, #8
+  98 0060 1370     		strb	r3, [r2]
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          case 'w':
+  99              		.loc 1 44 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 4
+
+
+ 100 0062 27E0     		b	.L10
+ 101              	.L8:
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+ 102              		.loc 1 42 0
+ 103 0064 3A69     		ldr	r2, [r7, #16]
+ 104 0066 1378     		ldrb	r3, [r2]
+ 105 0068 43F00103 		orr	r3, r3, #1
+ 106 006c 1370     		strb	r3, [r2]
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          case 'w':
+ 107              		.loc 1 44 0
+ 108 006e 21E0     		b	.L10
+ 109              	.L6:
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+ 110              		.loc 1 46 0
+ 111 0070 3B68     		ldr	r3, [r7]
+ 112 0072 0133     		adds	r3, r3, #1
+ 113 0074 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 114 0076 2B2B     		cmp	r3, #43
+ 115 0078 05D1     		bne	.L11
+  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+ 116              		.loc 1 48 0
+ 117 007a 3A69     		ldr	r2, [r7, #16]
+ 118 007c 1378     		ldrb	r3, [r2]
+ 119 007e 43F01003 		orr	r3, r3, #16
+ 120 0082 1370     		strb	r3, [r2]
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          case 'a':
+ 121              		.loc 1 54 0
+ 122 0084 16E0     		b	.L10
+ 123              	.L11:
+  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+ 124              		.loc 1 52 0
+ 125 0086 3A69     		ldr	r2, [r7, #16]
+ 126 0088 1378     		ldrb	r3, [r2]
+ 127 008a 43F00203 		orr	r3, r3, #2
+ 128 008e 1370     		strb	r3, [r2]
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          case 'a':
+ 129              		.loc 1 54 0
+ 130 0090 10E0     		b	.L10
+ 131              	.L7:
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+ 132              		.loc 1 56 0
+ 133 0092 3B68     		ldr	r3, [r7]
+ 134 0094 0133     		adds	r3, r3, #1
+ 135 0096 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 136 0098 2B2B     		cmp	r3, #43
+ 137 009a 05D1     		bne	.L13
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+ 138              		.loc 1 58 0
+ 139 009c 3A69     		ldr	r2, [r7, #16]
+ 140 009e 1378     		ldrb	r3, [r2]
+ 141 00a0 43F02003 		orr	r3, r3, #32
+ 142 00a4 1370     		strb	r3, [r2]
+  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          default:
+ 143              		.loc 1 64 0
+ 144 00a6 04E0     		b	.L23
+ 145              	.L13:
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 5
+
+
+ 146              		.loc 1 62 0
+ 147 00a8 3A69     		ldr	r2, [r7, #16]
+ 148 00aa 1378     		ldrb	r3, [r2]
+ 149 00ac 43F00403 		orr	r3, r3, #4
+ 150 00b0 1370     		strb	r3, [r2]
+ 151              	.L23:
+  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          default:
+ 152              		.loc 1 64 0
+ 153 00b2 00BF     		nop
+ 154              	.L10:
+  67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          }
+  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          /* copy the file name */
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          for(i = 0; (i < file_ptr->max_file_name_size); i++ )
+ 155              		.loc 1 69 0
+ 156 00b4 0023     		movs	r3, #0
+ 157 00b6 7B61     		str	r3, [r7, #20]
+ 158 00b8 0DE0     		b	.L15
+ 159              	.L18:
+  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          {
+  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             if( *(filename+i)=='\0' )
+ 160              		.loc 1 71 0
+ 161 00ba 7A68     		ldr	r2, [r7, #4]
+ 162 00bc 7B69     		ldr	r3, [r7, #20]
+ 163 00be 1344     		add	r3, r3, r2
+ 164 00c0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 165 00c2 002B     		cmp	r3, #0
+ 166 00c4 04D1     		bne	.L16
+  72:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             {
+  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****                file_ptr->used_file_name_size = i+1;
+ 167              		.loc 1 73 0
+ 168 00c6 7B69     		ldr	r3, [r7, #20]
+ 169 00c8 5A1C     		adds	r2, r3, #1
+ 170 00ca 3B69     		ldr	r3, [r7, #16]
+ 171 00cc 9A60     		str	r2, [r3, #8]
+  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****                break;
+ 172              		.loc 1 74 0
+ 173 00ce 07E0     		b	.L17
+ 174              	.L16:
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          {
+ 175              		.loc 1 69 0 discriminator 2
+ 176 00d0 7B69     		ldr	r3, [r7, #20]
+ 177 00d2 0133     		adds	r3, r3, #1
+ 178 00d4 7B61     		str	r3, [r7, #20]
+ 179              	.L15:
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          {
+ 180              		.loc 1 69 0 is_stmt 0 discriminator 1
+ 181 00d6 3B69     		ldr	r3, [r7, #16]
+ 182 00d8 5A68     		ldr	r2, [r3, #4]
+ 183 00da 7B69     		ldr	r3, [r7, #20]
+ 184 00dc 9A42     		cmp	r2, r3
+ 185 00de ECD8     		bhi	.L18
+ 186              	.L17:
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             }
+  76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          }
+  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          for(i = 0; (i < file_ptr->used_file_name_size); i++ )
+ 187              		.loc 1 77 0 is_stmt 1
+ 188 00e0 0023     		movs	r3, #0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 6
+
+
+ 189 00e2 7B61     		str	r3, [r7, #20]
+ 190 00e4 0CE0     		b	.L19
+ 191              	.L20:
+  78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          {
+  79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             *(file_ptr->name+i) = *(filename+i);
+ 192              		.loc 1 79 0 discriminator 3
+ 193 00e6 7A68     		ldr	r2, [r7, #4]
+ 194 00e8 7B69     		ldr	r3, [r7, #20]
+ 195 00ea 1344     		add	r3, r3, r2
+ 196 00ec 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 197 00ee 3A69     		ldr	r2, [r7, #16]
+ 198 00f0 7B69     		ldr	r3, [r7, #20]
+ 199 00f2 1344     		add	r3, r3, r2
+ 200 00f4 0833     		adds	r3, r3, #8
+ 201 00f6 0A46     		mov	r2, r1
+ 202 00f8 1A71     		strb	r2, [r3, #4]
+  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          {
+ 203              		.loc 1 77 0 discriminator 3
+ 204 00fa 7B69     		ldr	r3, [r7, #20]
+ 205 00fc 0133     		adds	r3, r3, #1
+ 206 00fe 7B61     		str	r3, [r7, #20]
+ 207              	.L19:
+  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          {
+ 208              		.loc 1 77 0 is_stmt 0 discriminator 1
+ 209 0100 3B69     		ldr	r3, [r7, #16]
+ 210 0102 9A68     		ldr	r2, [r3, #8]
+ 211 0104 7B69     		ldr	r3, [r7, #20]
+ 212 0106 9A42     		cmp	r2, r3
+ 213 0108 EDD8     		bhi	.L20
+  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          }
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          if(1/*FS_FILE_EXISTS(file_ptr) == False*/)
+  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          {
+  83:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****             file_ptr = 0;
+ 214              		.loc 1 83 0 is_stmt 1
+ 215 010a 0023     		movs	r3, #0
+ 216 010c 3B61     		str	r3, [r7, #16]
+ 217              	.L3:
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    {
+ 218              		.loc 1 15 0 discriminator 2
+ 219 010e 7B69     		ldr	r3, [r7, #20]
+ 220 0110 0133     		adds	r3, r3, #1
+ 221 0112 7B61     		str	r3, [r7, #20]
+ 222              	.L2:
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    {
+ 223              		.loc 1 15 0 is_stmt 0 discriminator 1
+ 224 0114 7B69     		ldr	r3, [r7, #20]
+ 225 0116 042B     		cmp	r3, #4
+ 226 0118 7FF67EAF 		bls	.L21
+  84:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****          }
+  85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****       }
+  86:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    }
+  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    return file_ptr;
+ 227              		.loc 1 87 0 is_stmt 1
+ 228 011c 3B69     		ldr	r3, [r7, #16]
+  88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** }
+ 229              		.loc 1 88 0
+ 230 011e 1846     		mov	r0, r3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 7
+
+
+ 231 0120 1C37     		adds	r7, r7, #28
+ 232              		.cfi_def_cfa_offset 4
+ 233 0122 BD46     		mov	sp, r7
+ 234              		.cfi_def_cfa_register 13
+ 235              		@ sp needed
+ 236 0124 5DF8047B 		ldr	r7, [sp], #4
+ 237              		.cfi_restore 7
+ 238              		.cfi_def_cfa_offset 0
+ 239 0128 7047     		bx	lr
+ 240              	.L25:
+ 241 012a 00BF     		.align	2
+ 242              	.L24:
+ 243 012c 00000000 		.word	FILE_HANDLER_POOL_USED
+ 244 0130 00000000 		.word	FILE_HANDLER_POOL
+ 245              		.cfi_endproc
+ 246              	.LFE0:
+ 248              		.align	2
+ 249              		.global	freopen
+ 250              		.thumb
+ 251              		.thumb_func
+ 253              	freopen:
+ 254              	.LFB1:
+  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** FILE* freopen(const char *filename, const char *mode, FILE *stream)
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** {
+ 255              		.loc 1 90 0
+ 256              		.cfi_startproc
+ 257              		@ args = 0, pretend = 0, frame = 16
+ 258              		@ frame_needed = 1, uses_anonymous_args = 0
+ 259 0134 80B5     		push	{r7, lr}
+ 260              		.cfi_def_cfa_offset 8
+ 261              		.cfi_offset 7, -8
+ 262              		.cfi_offset 14, -4
+ 263 0136 84B0     		sub	sp, sp, #16
+ 264              		.cfi_def_cfa_offset 24
+ 265 0138 00AF     		add	r7, sp, #0
+ 266              		.cfi_def_cfa_register 7
+ 267 013a F860     		str	r0, [r7, #12]
+ 268 013c B960     		str	r1, [r7, #8]
+ 269 013e 7A60     		str	r2, [r7, #4]
+  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    fclose(stream);
+ 270              		.loc 1 91 0
+ 271 0140 7868     		ldr	r0, [r7, #4]
+ 272 0142 FFF7FEFF 		bl	fclose
+  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    return fopen(filename, mode);
+ 273              		.loc 1 92 0
+ 274 0146 F868     		ldr	r0, [r7, #12]
+ 275 0148 B968     		ldr	r1, [r7, #8]
+ 276 014a FFF7FEFF 		bl	fopen
+ 277 014e 0346     		mov	r3, r0
+  93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** }
+ 278              		.loc 1 93 0
+ 279 0150 1846     		mov	r0, r3
+ 280 0152 1037     		adds	r7, r7, #16
+ 281              		.cfi_def_cfa_offset 8
+ 282 0154 BD46     		mov	sp, r7
+ 283              		.cfi_def_cfa_register 13
+ 284              		@ sp needed
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 8
+
+
+ 285 0156 80BD     		pop	{r7, pc}
+ 286              		.cfi_endproc
+ 287              	.LFE1:
+ 289              		.align	2
+ 290              		.global	fflush
+ 291              		.thumb
+ 292              		.thumb_func
+ 294              	fflush:
+ 295              	.LFB2:
+  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** int fflush(FILE* stream)
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** {
+ 296              		.loc 1 95 0
+ 297              		.cfi_startproc
+ 298              		@ args = 0, pretend = 0, frame = 8
+ 299              		@ frame_needed = 1, uses_anonymous_args = 0
+ 300              		@ link register save eliminated.
+ 301 0158 80B4     		push	{r7}
+ 302              		.cfi_def_cfa_offset 4
+ 303              		.cfi_offset 7, -4
+ 304 015a 83B0     		sub	sp, sp, #12
+ 305              		.cfi_def_cfa_offset 16
+ 306 015c 00AF     		add	r7, sp, #0
+ 307              		.cfi_def_cfa_register 7
+ 308 015e 7860     		str	r0, [r7, #4]
+  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    /* no buffering implemented -> no need for flush */
+  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** }
+ 309              		.loc 1 97 0
+ 310 0160 1846     		mov	r0, r3
+ 311 0162 0C37     		adds	r7, r7, #12
+ 312              		.cfi_def_cfa_offset 4
+ 313 0164 BD46     		mov	sp, r7
+ 314              		.cfi_def_cfa_register 13
+ 315              		@ sp needed
+ 316 0166 5DF8047B 		ldr	r7, [sp], #4
+ 317              		.cfi_restore 7
+ 318              		.cfi_def_cfa_offset 0
+ 319 016a 7047     		bx	lr
+ 320              		.cfi_endproc
+ 321              	.LFE2:
+ 323              		.align	2
+ 324              		.global	fclose
+ 325              		.thumb
+ 326              		.thumb_func
+ 328              	fclose:
+ 329              	.LFB3:
+  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** int fclose(FILE* file_ptr)
+  99:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** {
+ 330              		.loc 1 99 0
+ 331              		.cfi_startproc
+ 332              		@ args = 0, pretend = 0, frame = 16
+ 333              		@ frame_needed = 1, uses_anonymous_args = 0
+ 334              		@ link register save eliminated.
+ 335 016c 80B4     		push	{r7}
+ 336              		.cfi_def_cfa_offset 4
+ 337              		.cfi_offset 7, -4
+ 338 016e 85B0     		sub	sp, sp, #20
+ 339              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 9
+
+
+ 340 0170 00AF     		add	r7, sp, #0
+ 341              		.cfi_def_cfa_register 7
+ 342 0172 7860     		str	r0, [r7, #4]
+ 100:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    uint8 i = 0;
+ 343              		.loc 1 100 0
+ 344 0174 0023     		movs	r3, #0
+ 345 0176 FB73     		strb	r3, [r7, #15]
+ 101:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** 
+ 102:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    file_ptr->mode_r = False;
+ 346              		.loc 1 102 0
+ 347 0178 7A68     		ldr	r2, [r7, #4]
+ 348 017a 1378     		ldrb	r3, [r2]
+ 349 017c 6FF30003 		bfc	r3, #0, #1
+ 350 0180 1370     		strb	r3, [r2]
+ 103:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    file_ptr->mode_w = False;
+ 351              		.loc 1 103 0
+ 352 0182 7A68     		ldr	r2, [r7, #4]
+ 353 0184 1378     		ldrb	r3, [r2]
+ 354 0186 6FF34103 		bfc	r3, #1, #1
+ 355 018a 1370     		strb	r3, [r2]
+ 104:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    file_ptr->mode_a = False;
+ 356              		.loc 1 104 0
+ 357 018c 7A68     		ldr	r2, [r7, #4]
+ 358 018e 1378     		ldrb	r3, [r2]
+ 359 0190 6FF38203 		bfc	r3, #2, #1
+ 360 0194 1370     		strb	r3, [r2]
+ 105:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    file_ptr->mode_rplus = False;
+ 361              		.loc 1 105 0
+ 362 0196 7A68     		ldr	r2, [r7, #4]
+ 363 0198 1378     		ldrb	r3, [r2]
+ 364 019a 6FF3C303 		bfc	r3, #3, #1
+ 365 019e 1370     		strb	r3, [r2]
+ 106:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    file_ptr->mode_wplus = False;
+ 366              		.loc 1 106 0
+ 367 01a0 7A68     		ldr	r2, [r7, #4]
+ 368 01a2 1378     		ldrb	r3, [r2]
+ 369 01a4 6FF30413 		bfc	r3, #4, #1
+ 370 01a8 1370     		strb	r3, [r2]
+ 107:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    file_ptr->mode_aplus = False;
+ 371              		.loc 1 107 0
+ 372 01aa 7A68     		ldr	r2, [r7, #4]
+ 373 01ac 1378     		ldrb	r3, [r2]
+ 374 01ae 6FF34513 		bfc	r3, #5, #1
+ 375 01b2 1370     		strb	r3, [r2]
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    for(i = 0; (i < file_ptr->max_file_name_size); i++ )
+ 376              		.loc 1 108 0
+ 377 01b4 0023     		movs	r3, #0
+ 378 01b6 FB73     		strb	r3, [r7, #15]
+ 379 01b8 07E0     		b	.L30
+ 380              	.L31:
+ 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    {
+ 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****       *(file_ptr->name+i) = 0x00;
+ 381              		.loc 1 110 0 discriminator 3
+ 382 01ba FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 383 01bc 7A68     		ldr	r2, [r7, #4]
+ 384 01be 1344     		add	r3, r3, r2
+ 385 01c0 0022     		movs	r2, #0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 10
+
+
+ 386 01c2 1A73     		strb	r2, [r3, #12]
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    for(i = 0; (i < file_ptr->max_file_name_size); i++ )
+ 387              		.loc 1 108 0 discriminator 3
+ 388 01c4 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 389 01c6 0133     		adds	r3, r3, #1
+ 390 01c8 FB73     		strb	r3, [r7, #15]
+ 391              	.L30:
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    for(i = 0; (i < file_ptr->max_file_name_size); i++ )
+ 392              		.loc 1 108 0 is_stmt 0 discriminator 1
+ 393 01ca FA7B     		ldrb	r2, [r7, #15]	@ zero_extendqisi2
+ 394 01cc 7B68     		ldr	r3, [r7, #4]
+ 395 01ce 5B68     		ldr	r3, [r3, #4]
+ 396 01d0 9A42     		cmp	r2, r3
+ 397 01d2 F2D3     		bcc	.L31
+ 111:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    }
+ 112:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    file_ptr->used_file_name_size = 0;
+ 398              		.loc 1 112 0 is_stmt 1
+ 399 01d4 7B68     		ldr	r3, [r7, #4]
+ 400 01d6 0022     		movs	r2, #0
+ 401 01d8 9A60     		str	r2, [r3, #8]
+ 113:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    file_ptr = 0;
+ 402              		.loc 1 113 0
+ 403 01da 0023     		movs	r3, #0
+ 404 01dc 7B60     		str	r3, [r7, #4]
+ 114:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** }
+ 405              		.loc 1 114 0
+ 406 01de 1846     		mov	r0, r3
+ 407 01e0 1437     		adds	r7, r7, #20
+ 408              		.cfi_def_cfa_offset 4
+ 409 01e2 BD46     		mov	sp, r7
+ 410              		.cfi_def_cfa_register 13
+ 411              		@ sp needed
+ 412 01e4 5DF8047B 		ldr	r7, [sp], #4
+ 413              		.cfi_restore 7
+ 414              		.cfi_def_cfa_offset 0
+ 415 01e8 7047     		bx	lr
+ 416              		.cfi_endproc
+ 417              	.LFE3:
+ 419 01ea 00BF     		.align	2
+ 420              		.global	remove
+ 421              		.thumb
+ 422              		.thumb_func
+ 424              	remove:
+ 425              	.LFB4:
+ 115:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** int remove(const char *filename)
+ 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** {
+ 426              		.loc 1 116 0
+ 427              		.cfi_startproc
+ 428              		@ args = 0, pretend = 0, frame = 8
+ 429              		@ frame_needed = 1, uses_anonymous_args = 0
+ 430              		@ link register save eliminated.
+ 431 01ec 80B4     		push	{r7}
+ 432              		.cfi_def_cfa_offset 4
+ 433              		.cfi_offset 7, -4
+ 434 01ee 83B0     		sub	sp, sp, #12
+ 435              		.cfi_def_cfa_offset 16
+ 436 01f0 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 11
+
+
+ 437              		.cfi_def_cfa_register 7
+ 438 01f2 7860     		str	r0, [r7, #4]
+ 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    /*#warn "fopen"*/
+ 118:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** }
+ 439              		.loc 1 118 0
+ 440 01f4 1846     		mov	r0, r3
+ 441 01f6 0C37     		adds	r7, r7, #12
+ 442              		.cfi_def_cfa_offset 4
+ 443 01f8 BD46     		mov	sp, r7
+ 444              		.cfi_def_cfa_register 13
+ 445              		@ sp needed
+ 446 01fa 5DF8047B 		ldr	r7, [sp], #4
+ 447              		.cfi_restore 7
+ 448              		.cfi_def_cfa_offset 0
+ 449 01fe 7047     		bx	lr
+ 450              		.cfi_endproc
+ 451              	.LFE4:
+ 453              		.align	2
+ 454              		.global	rename
+ 455              		.thumb
+ 456              		.thumb_func
+ 458              	rename:
+ 459              	.LFB5:
+ 119:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** int rename(const char *oldname, const char *newname)
+ 120:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** {
+ 460              		.loc 1 120 0
+ 461              		.cfi_startproc
+ 462              		@ args = 0, pretend = 0, frame = 8
+ 463              		@ frame_needed = 1, uses_anonymous_args = 0
+ 464              		@ link register save eliminated.
+ 465 0200 80B4     		push	{r7}
+ 466              		.cfi_def_cfa_offset 4
+ 467              		.cfi_offset 7, -4
+ 468 0202 83B0     		sub	sp, sp, #12
+ 469              		.cfi_def_cfa_offset 16
+ 470 0204 00AF     		add	r7, sp, #0
+ 471              		.cfi_def_cfa_register 7
+ 472 0206 7860     		str	r0, [r7, #4]
+ 473 0208 3960     		str	r1, [r7]
+ 121:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    /*#warn "fopen"*/
+ 122:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** }
+ 474              		.loc 1 122 0
+ 475 020a 1846     		mov	r0, r3
+ 476 020c 0C37     		adds	r7, r7, #12
+ 477              		.cfi_def_cfa_offset 4
+ 478 020e BD46     		mov	sp, r7
+ 479              		.cfi_def_cfa_register 13
+ 480              		@ sp needed
+ 481 0210 5DF8047B 		ldr	r7, [sp], #4
+ 482              		.cfi_restore 7
+ 483              		.cfi_def_cfa_offset 0
+ 484 0214 7047     		bx	lr
+ 485              		.cfi_endproc
+ 486              	.LFE5:
+ 488 0216 00BF     		.align	2
+ 489              		.global	fread
+ 490              		.thumb
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 12
+
+
+ 491              		.thumb_func
+ 493              	fread:
+ 494              	.LFB6:
+ 123:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
+ 124:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** {
+ 495              		.loc 1 124 0
+ 496              		.cfi_startproc
+ 497              		@ args = 0, pretend = 0, frame = 16
+ 498              		@ frame_needed = 1, uses_anonymous_args = 0
+ 499              		@ link register save eliminated.
+ 500 0218 80B4     		push	{r7}
+ 501              		.cfi_def_cfa_offset 4
+ 502              		.cfi_offset 7, -4
+ 503 021a 85B0     		sub	sp, sp, #20
+ 504              		.cfi_def_cfa_offset 24
+ 505 021c 00AF     		add	r7, sp, #0
+ 506              		.cfi_def_cfa_register 7
+ 507 021e F860     		str	r0, [r7, #12]
+ 508 0220 B960     		str	r1, [r7, #8]
+ 509 0222 7A60     		str	r2, [r7, #4]
+ 510 0224 3B60     		str	r3, [r7]
+ 125:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    /*#warn "fopen"*/
+ 126:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** }
+ 511              		.loc 1 126 0
+ 512 0226 1846     		mov	r0, r3
+ 513 0228 1437     		adds	r7, r7, #20
+ 514              		.cfi_def_cfa_offset 4
+ 515 022a BD46     		mov	sp, r7
+ 516              		.cfi_def_cfa_register 13
+ 517              		@ sp needed
+ 518 022c 5DF8047B 		ldr	r7, [sp], #4
+ 519              		.cfi_restore 7
+ 520              		.cfi_def_cfa_offset 0
+ 521 0230 7047     		bx	lr
+ 522              		.cfi_endproc
+ 523              	.LFE6:
+ 525 0232 00BF     		.align	2
+ 526              		.global	fwrite
+ 527              		.thumb
+ 528              		.thumb_func
+ 530              	fwrite:
+ 531              	.LFB7:
+ 127:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
+ 128:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** {
+ 532              		.loc 1 128 0
+ 533              		.cfi_startproc
+ 534              		@ args = 0, pretend = 0, frame = 16
+ 535              		@ frame_needed = 1, uses_anonymous_args = 0
+ 536              		@ link register save eliminated.
+ 537 0234 80B4     		push	{r7}
+ 538              		.cfi_def_cfa_offset 4
+ 539              		.cfi_offset 7, -4
+ 540 0236 85B0     		sub	sp, sp, #20
+ 541              		.cfi_def_cfa_offset 24
+ 542 0238 00AF     		add	r7, sp, #0
+ 543              		.cfi_def_cfa_register 7
+ 544 023a F860     		str	r0, [r7, #12]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 13
+
+
+ 545 023c B960     		str	r1, [r7, #8]
+ 546 023e 7A60     		str	r2, [r7, #4]
+ 547 0240 3B60     		str	r3, [r7]
+ 129:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c ****    /*#warn "fopen"*/
+ 130:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c **** }
+ 548              		.loc 1 130 0
+ 549 0242 1846     		mov	r0, r3
+ 550 0244 1437     		adds	r7, r7, #20
+ 551              		.cfi_def_cfa_offset 4
+ 552 0246 BD46     		mov	sp, r7
+ 553              		.cfi_def_cfa_register 13
+ 554              		@ sp needed
+ 555 0248 5DF8047B 		ldr	r7, [sp], #4
+ 556              		.cfi_restore 7
+ 557              		.cfi_def_cfa_offset 0
+ 558 024c 7047     		bx	lr
+ 559              		.cfi_endproc
+ 560              	.LFE7:
+ 562              	.Letext0:
+ 563              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 564              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\hal_driver_fs_fat.h
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hal_driver_fs_fat.c
+                            *COM*:00000014 FILE_HANDLER_POOL
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:20     .bss:00000000 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:21     .bss:00000000 FILE_HANDLER_POOL_USED
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:24     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:29     .text:00000000 fopen
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:243    .text:0000012c $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:248    .text:00000134 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:253    .text:00000134 freopen
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:328    .text:0000016c fclose
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:294    .text:00000158 fflush
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:424    .text:000001ec remove
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:458    .text:00000200 rename
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:493    .text:00000218 fread
+C:\Users\PRESID~1\AppData\Local\Temp\ccmT3xbN.s:530    .text:00000234 fwrite
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.9521b3e5c1199f549394d32eec33a9c8
+                           .group:00000000 wm4.lld_interrupt.h.2.b1b940a31d6b49628a13b8fe5e920a88
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
+
+NO UNDEFINED SYMBOLS

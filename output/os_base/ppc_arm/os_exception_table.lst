@@ -1,3 +1,59 @@
-arm-none-eabi-gcc: error: E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c: No such file or directory
-arm-none-eabi-gcc: fatal error: no input files
-compilation terminated.
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccYLK7eb.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"os_exception_table.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	isr_vec_table
+  19              		.data
+  20              		.align	2
+  23              	isr_vec_table:
+  24 0000 00000000 		.word	OS_Exception_RESET
+  25 0004 00000000 		.word	OS_Exception_UNDEFINST
+  26 0008 00000000 		.word	OS_Exception_SWI
+  27 000c 00000000 		.word	OS_Exception_ABORT_PREFETCH
+  28 0010 00000000 		.word	OS_Exception_ABORT_DATA
+  29 0014 00000000 		.word	0
+  30 0018 00000000 		.word	OS_Exception_IRQ
+  31 001c 00000000 		.word	OS_Exception_FIQ
+  32              		.text
+  33              	.Letext0:
+  34              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+  35              		.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccYLK7eb.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_exception_table.c
+C:\Users\PRESID~1\AppData\Local\Temp\ccYLK7eb.s:23     .data:00000000 isr_vec_table
+C:\Users\PRESID~1\AppData\Local\Temp\ccYLK7eb.s:20     .data:00000000 $d
+                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.9521b3e5c1199f549394d32eec33a9c8
+                           .group:00000000 wm4.lld_interrupt.h.2.b1b940a31d6b49628a13b8fe5e920a88
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
+                           .group:00000000 wm4.os_exception_isr_handler.h.2.19ab7c9017e871de2a8a91d100f54831
+
+UNDEFINED SYMBOLS
+OS_Exception_RESET
+OS_Exception_UNDEFINST
+OS_Exception_SWI
+OS_Exception_ABORT_PREFETCH
+OS_Exception_ABORT_DATA
+OS_Exception_IRQ
+OS_Exception_FIQ

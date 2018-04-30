@@ -1,3 +1,632 @@
-arm-none-eabi-gcc: error: E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c: No such file or directory
-arm-none-eabi-gcc: fatal error: no input files
-compilation terminated.
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"os_task_common.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.comm	TASK_PTR,20,4
+  19              		.align	2
+  20              		.global	OS_TASK_SAVETASK_ENVIRONMENT
+  21              		.thumb
+  22              		.thumb_func
+  24              	OS_TASK_SAVETASK_ENVIRONMENT:
+  25              	.LFB0:
+  26              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c"
+   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #include "os_firstinc.h"
+   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #include "os_task_common.h"
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #include "os_task_scheduler.h"
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #include "..\os_drivers\mcu_config.h"
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #include "os_heap.h"
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** /* Create and delete the task environment is not supported, 
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    because we do not allow dynamic RAM allocation for task environment.
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** */
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_TASK_SAVETASK_ENVIRONMENT(task_t* task)
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
+  27              		.loc 1 16 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31 0000 80B5     		push	{r7, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 7, -8
+  34              		.cfi_offset 14, -4
+  35 0002 82B0     		sub	sp, sp, #8
+  36              		.cfi_def_cfa_offset 16
+  37 0004 00AF     		add	r7, sp, #0
+  38              		.cfi_def_cfa_register 7
+  39 0006 7860     		str	r0, [r7, #4]
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task != 0)
+  40              		.loc 1 17 0
+  41 0008 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 2
+
+
+  42 000a 002B     		cmp	r3, #0
+  43 000c 08D0     		beq	.L2
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /*
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html#s2
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       x86: mov ... esp
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       */
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_SAVE_TASK_STACK(task->pStackPointer);
+  44              		.loc 1 23 0
+  45 000e 7B68     		ldr	r3, [r7, #4]
+  46 0010 DB6E     		ldr	r3, [r3, #108]
+  47 0012 1846     		mov	r0, r3
+  48 0014 FFF7FEFF 		bl	LLF_SAVE_TASK_STACK
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_SAVE_REGISTERS(task);
+  49              		.loc 1 24 0
+  50 0018 7868     		ldr	r0, [r7, #4]
+  51 001a FFF7FEFF 		bl	LLF_SAVE_REGISTERS
+  52 001e 03E0     		b	.L3
+  53              	.L2:
+  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    else
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(os_bug_null_pointer,Func_SaveTaskEnvironment);
+  54              		.loc 1 28 0
+  55 0020 0220     		movs	r0, #2
+  56 0022 0121     		movs	r1, #1
+  57 0024 FFF7FEFF 		bl	OS_SET_SW_BUG
+  58              	.L3:
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    return;
+  59              		.loc 1 30 0
+  60 0028 00BF     		nop
+  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
+  61              		.loc 1 31 0
+  62 002a 0837     		adds	r7, r7, #8
+  63              		.cfi_def_cfa_offset 8
+  64 002c BD46     		mov	sp, r7
+  65              		.cfi_def_cfa_register 13
+  66              		@ sp needed
+  67 002e 80BD     		pop	{r7, pc}
+  68              		.cfi_endproc
+  69              	.LFE0:
+  71              		.align	2
+  72              		.global	OS_TASK_RESTORETASK_ENVIRONMENT
+  73              		.thumb
+  74              		.thumb_func
+  76              	OS_TASK_RESTORETASK_ENVIRONMENT:
+  77              	.LFB1:
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
+  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task)
+  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
+  78              		.loc 1 34 0
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 8
+  81              		@ frame_needed = 1, uses_anonymous_args = 0
+  82 0030 80B5     		push	{r7, lr}
+  83              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 3
+
+
+  84              		.cfi_offset 7, -8
+  85              		.cfi_offset 14, -4
+  86 0032 82B0     		sub	sp, sp, #8
+  87              		.cfi_def_cfa_offset 16
+  88 0034 00AF     		add	r7, sp, #0
+  89              		.cfi_def_cfa_register 7
+  90 0036 7860     		str	r0, [r7, #4]
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task!=0)
+  91              		.loc 1 35 0
+  92 0038 7B68     		ldr	r3, [r7, #4]
+  93 003a 002B     		cmp	r3, #0
+  94 003c 08D0     		beq	.L6
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_RESTORE_TASK_STACK(task->pStackPointer);
+  95              		.loc 1 37 0
+  96 003e 7B68     		ldr	r3, [r7, #4]
+  97 0040 DB6E     		ldr	r3, [r3, #108]
+  98 0042 1846     		mov	r0, r3
+  99 0044 FFF7FEFF 		bl	LLF_RESTORE_TASK_STACK
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_RESTORE_REGISTERS(task);
+ 100              		.loc 1 38 0
+ 101 0048 7868     		ldr	r0, [r7, #4]
+ 102 004a FFF7FEFF 		bl	LLF_RESTORE_REGISTERS
+ 103 004e 03E0     		b	.L5
+ 104              	.L6:
+  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
+  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    else
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(os_bug_null_pointer,Func_RestoreTaskEnvironment);
+ 105              		.loc 1 42 0
+ 106 0050 0220     		movs	r0, #2
+ 107 0052 0221     		movs	r1, #2
+ 108 0054 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 109              	.L5:
+  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
+ 110              		.loc 1 44 0
+ 111 0058 0837     		adds	r7, r7, #8
+ 112              		.cfi_def_cfa_offset 8
+ 113 005a BD46     		mov	sp, r7
+ 114              		.cfi_def_cfa_register 13
+ 115              		@ sp needed
+ 116 005c 80BD     		pop	{r7, pc}
+ 117              		.cfi_endproc
+ 118              	.LFE1:
+ 120 005e 00BF     		.align	2
+ 121              		.global	OS_TASK_RESTORE_SYSTEM_STACK
+ 122              		.thumb
+ 123              		.thumb_func
+ 125              	OS_TASK_RESTORE_SYSTEM_STACK:
+ 126              	.LFB2:
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
+ 127              		.loc 1 46 0
+ 128              		.cfi_startproc
+ 129              		@ args = 0, pretend = 0, frame = 8
+ 130              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 4
+
+
+ 131 0060 80B5     		push	{r7, lr}
+ 132              		.cfi_def_cfa_offset 8
+ 133              		.cfi_offset 7, -8
+ 134              		.cfi_offset 14, -4
+ 135 0062 82B0     		sub	sp, sp, #8
+ 136              		.cfi_def_cfa_offset 16
+ 137 0064 00AF     		add	r7, sp, #0
+ 138              		.cfi_def_cfa_register 7
+ 139 0066 7860     		str	r0, [r7, #4]
+  47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    LLF_RESTORE_SYSTEM_STACK(system_stack_ptr);
+ 140              		.loc 1 47 0
+ 141 0068 7868     		ldr	r0, [r7, #4]
+ 142 006a FFF7FEFF 		bl	LLF_RESTORE_SYSTEM_STACK
+  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
+ 143              		.loc 1 48 0
+ 144 006e 0837     		adds	r7, r7, #8
+ 145              		.cfi_def_cfa_offset 8
+ 146 0070 BD46     		mov	sp, r7
+ 147              		.cfi_def_cfa_register 13
+ 148              		@ sp needed
+ 149 0072 80BD     		pop	{r7, pc}
+ 150              		.cfi_endproc
+ 151              	.LFE2:
+ 153              		.align	2
+ 154              		.global	OS_TASK_SAVE_SYSTEM_STACK
+ 155              		.thumb
+ 156              		.thumb_func
+ 158              	OS_TASK_SAVE_SYSTEM_STACK:
+ 159              	.LFB3:
+  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
+ 160              		.loc 1 50 0
+ 161              		.cfi_startproc
+ 162              		@ args = 0, pretend = 0, frame = 8
+ 163              		@ frame_needed = 1, uses_anonymous_args = 0
+ 164 0074 80B5     		push	{r7, lr}
+ 165              		.cfi_def_cfa_offset 8
+ 166              		.cfi_offset 7, -8
+ 167              		.cfi_offset 14, -4
+ 168 0076 82B0     		sub	sp, sp, #8
+ 169              		.cfi_def_cfa_offset 16
+ 170 0078 00AF     		add	r7, sp, #0
+ 171              		.cfi_def_cfa_register 7
+ 172 007a 7860     		str	r0, [r7, #4]
+  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    LLF_SAVE_SYSTEM_STACK(system_stack_ptr);
+ 173              		.loc 1 51 0
+ 174 007c 7868     		ldr	r0, [r7, #4]
+ 175 007e FFF7FEFF 		bl	LLF_SAVE_SYSTEM_STACK
+  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
+ 176              		.loc 1 52 0
+ 177 0082 0837     		adds	r7, r7, #8
+ 178              		.cfi_def_cfa_offset 8
+ 179 0084 BD46     		mov	sp, r7
+ 180              		.cfi_def_cfa_register 13
+ 181              		@ sp needed
+ 182 0086 80BD     		pop	{r7, pc}
+ 183              		.cfi_endproc
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 5
+
+
+ 184              	.LFE3:
+ 186              		.align	2
+ 187              		.global	OS_Task_InitTaskEnvironment
+ 188              		.thumb
+ 189              		.thumb_func
+ 191              	OS_Task_InitTaskEnvironment:
+ 192              	.LFB4:
+  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_Task_InitTaskEnvironment(task_t* task)
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
+ 193              		.loc 1 54 0
+ 194              		.cfi_startproc
+ 195              		@ args = 0, pretend = 0, frame = 8
+ 196              		@ frame_needed = 1, uses_anonymous_args = 0
+ 197 0088 80B5     		push	{r7, lr}
+ 198              		.cfi_def_cfa_offset 8
+ 199              		.cfi_offset 7, -8
+ 200              		.cfi_offset 14, -4
+ 201 008a 82B0     		sub	sp, sp, #8
+ 202              		.cfi_def_cfa_offset 16
+ 203 008c 00AF     		add	r7, sp, #0
+ 204              		.cfi_def_cfa_register 7
+ 205 008e 7860     		str	r0, [r7, #4]
+  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task != 0)
+ 206              		.loc 1 55 0
+ 207 0090 7B68     		ldr	r3, [r7, #4]
+ 208 0092 002B     		cmp	r3, #0
+ 209 0094 60D0     		beq	.L11
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /* general*/
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->active                = False;
+ 210              		.loc 1 58 0
+ 211 0096 7A68     		ldr	r2, [r7, #4]
+ 212 0098 1378     		ldrb	r3, [r2]
+ 213 009a 6FF30003 		bfc	r3, #0, #1
+ 214 009e 1370     		strb	r3, [r2]
+  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /* general purpose registers */
+  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    #if(CFG_PROCESSOR == cMCU_X86)
+  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->EAX                             = (unsigned_int32_t)       0;
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->EBX                             = (unsigned_int32_t)       0;
+  63:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->ECX                             = (unsigned_int32_t)       0;
+  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->EDX                             = (unsigned_int32_t)       0;
+  65:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    #else
+  66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r0                             = (unsigned_int32_t)       0;
+ 215              		.loc 1 66 0
+ 216 00a0 7B68     		ldr	r3, [r7, #4]
+ 217 00a2 0022     		movs	r2, #0
+ 218 00a4 9A63     		str	r2, [r3, #56]
+  67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r1                             = (unsigned_int32_t)       0;
+ 219              		.loc 1 67 0
+ 220 00a6 7B68     		ldr	r3, [r7, #4]
+ 221 00a8 0022     		movs	r2, #0
+ 222 00aa DA63     		str	r2, [r3, #60]
+  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r2                             = (unsigned_int32_t)       0;
+ 223              		.loc 1 68 0
+ 224 00ac 7B68     		ldr	r3, [r7, #4]
+ 225 00ae 0022     		movs	r2, #0
+ 226 00b0 1A64     		str	r2, [r3, #64]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 6
+
+
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r3                             = (unsigned_int32_t)       0;
+ 227              		.loc 1 69 0
+ 228 00b2 7B68     		ldr	r3, [r7, #4]
+ 229 00b4 0022     		movs	r2, #0
+ 230 00b6 5A64     		str	r2, [r3, #68]
+  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r4                             = (unsigned_int32_t)       0;
+ 231              		.loc 1 70 0
+ 232 00b8 7B68     		ldr	r3, [r7, #4]
+ 233 00ba 0022     		movs	r2, #0
+ 234 00bc 9A64     		str	r2, [r3, #72]
+  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r5                             = (unsigned_int32_t)       0;
+ 235              		.loc 1 71 0
+ 236 00be 7B68     		ldr	r3, [r7, #4]
+ 237 00c0 0022     		movs	r2, #0
+ 238 00c2 DA64     		str	r2, [r3, #76]
+  72:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r6                             = (unsigned_int32_t)       0;   
+ 239              		.loc 1 72 0
+ 240 00c4 7B68     		ldr	r3, [r7, #4]
+ 241 00c6 0022     		movs	r2, #0
+ 242 00c8 1A65     		str	r2, [r3, #80]
+  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r7                             = (unsigned_int32_t)       0;
+ 243              		.loc 1 73 0
+ 244 00ca 7B68     		ldr	r3, [r7, #4]
+ 245 00cc 0022     		movs	r2, #0
+ 246 00ce 5A65     		str	r2, [r3, #84]
+  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r8                             = (unsigned_int32_t)       0;
+ 247              		.loc 1 74 0
+ 248 00d0 7B68     		ldr	r3, [r7, #4]
+ 249 00d2 0022     		movs	r2, #0
+ 250 00d4 9A65     		str	r2, [r3, #88]
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r9                             = (unsigned_int32_t)       0;
+ 251              		.loc 1 75 0
+ 252 00d6 7B68     		ldr	r3, [r7, #4]
+ 253 00d8 0022     		movs	r2, #0
+ 254 00da DA65     		str	r2, [r3, #92]
+  76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r10                             = (unsigned_int32_t)       0;
+ 255              		.loc 1 76 0
+ 256 00dc 7B68     		ldr	r3, [r7, #4]
+ 257 00de 0022     		movs	r2, #0
+ 258 00e0 1A66     		str	r2, [r3, #96]
+  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r11                             = (unsigned_int32_t)       0;
+ 259              		.loc 1 77 0
+ 260 00e2 7B68     		ldr	r3, [r7, #4]
+ 261 00e4 0022     		movs	r2, #0
+ 262 00e6 5A66     		str	r2, [r3, #100]
+  78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r12                             = (unsigned_int32_t)       0;  
+ 263              		.loc 1 78 0
+ 264 00e8 7B68     		ldr	r3, [r7, #4]
+ 265 00ea 0022     		movs	r2, #0
+ 266 00ec 9A66     		str	r2, [r3, #104]
+  79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    #endif
+  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /* task scheduling */
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->WaitActUntil                     = (unsigned_char_t)         0;
+ 267              		.loc 1 81 0
+ 268 00ee 7B68     		ldr	r3, [r7, #4]
+ 269 00f0 0022     		movs	r2, #0
+ 270 00f2 9A60     		str	r2, [r3, #8]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 7
+
+
+  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->wait_time                        = (unsigned_int32_t)        0;
+ 271              		.loc 1 82 0
+ 272 00f4 7B68     		ldr	r3, [r7, #4]
+ 273 00f6 0022     		movs	r2, #0
+ 274 00f8 DA60     		str	r2, [r3, #12]
+  83:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->TimeToPrioInc                    = (unsigned_int32_t)        0;
+ 275              		.loc 1 83 0
+ 276 00fa 7B68     		ldr	r3, [r7, #4]
+ 277 00fc 0022     		movs	r2, #0
+ 278 00fe 1A61     		str	r2, [r3, #16]
+  84:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->overwaittime_per_prio_inc_step   = (unsigned_int32_t)        1;/* has to be >=1 */
+ 279              		.loc 1 84 0
+ 280 0100 7B68     		ldr	r3, [r7, #4]
+ 281 0102 0122     		movs	r2, #1
+ 282 0104 5A61     		str	r2, [r3, #20]
+  85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->max_allowed_wait_time            = (unsigned_int32_t)        100000;
+ 283              		.loc 1 85 0
+ 284 0106 7B68     		ldr	r3, [r7, #4]
+ 285 0108 174A     		ldr	r2, .L13
+ 286 010a 9A61     		str	r2, [r3, #24]
+  86:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->exe_time                         = (unsigned_int32_t)        0;
+ 287              		.loc 1 86 0
+ 288 010c 7B68     		ldr	r3, [r7, #4]
+ 289 010e 0022     		movs	r2, #0
+ 290 0110 DA61     		str	r2, [r3, #28]
+  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->current_prio                     = (unsigned_char_t)         0;
+ 291              		.loc 1 87 0
+ 292 0112 7B68     		ldr	r3, [r7, #4]
+ 293 0114 0022     		movs	r2, #0
+ 294 0116 83F82020 		strb	r2, [r3, #32]
+  88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->default_prio                     = (unsigned_char_t)         0;
+ 295              		.loc 1 88 0
+ 296 011a 7B68     		ldr	r3, [r7, #4]
+ 297 011c 0022     		movs	r2, #0
+ 298 011e 83F82120 		strb	r2, [r3, #33]
+  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /* task management */
+  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->state_request                    =                           0;
+ 299              		.loc 1 91 0
+ 300 0122 7B68     		ldr	r3, [r7, #4]
+ 301 0124 0022     		movs	r2, #0
+ 302 0126 DA62     		str	r2, [r3, #44]
+  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->task_state                       =                           Task_unspecified;
+ 303              		.loc 1 92 0
+ 304 0128 7B68     		ldr	r3, [r7, #4]
+ 305 012a 0022     		movs	r2, #0
+ 306 012c 83F83020 		strb	r2, [r3, #48]
+  93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->task_queued                      =                           False;
+ 307              		.loc 1 93 0
+ 308 0130 7A68     		ldr	r2, [r7, #4]
+ 309 0132 1378     		ldrb	r3, [r2]
+ 310 0134 6FF34103 		bfc	r3, #1, #1
+ 311 0138 1370     		strb	r3, [r2]
+  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->FREE                             =                           0;
+ 312              		.loc 1 94 0
+ 313 013a 7A68     		ldr	r2, [r7, #4]
+ 314 013c 1368     		ldr	r3, [r2]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 8
+
+
+ 315 013e 6FF3DF03 		bfc	r3, #3, #29
+ 316 0142 1360     		str	r3, [r2]
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->NrOfInsAllowed                   = (unsigned_char_t)         0;
+ 317              		.loc 1 95 0
+ 318 0144 7B68     		ldr	r3, [r7, #4]
+ 319 0146 0022     		movs	r2, #0
+ 320 0148 1A71     		strb	r2, [r3, #4]
+  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->NrOfInsActivated                 = (unsigned_char_t)         0;
+ 321              		.loc 1 96 0
+ 322 014a 7B68     		ldr	r3, [r7, #4]
+ 323 014c 0022     		movs	r2, #0
+ 324 014e 5A71     		strb	r2, [r3, #5]
+  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->fp                               = (func_p_t)                0;
+ 325              		.loc 1 97 0
+ 326 0150 7B68     		ldr	r3, [r7, #4]
+ 327 0152 0022     		movs	r2, #0
+ 328 0154 9A62     		str	r2, [r3, #40]
+ 329 0156 03E0     		b	.L10
+ 330              	.L11:
+  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
+  99:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
+ 100:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    else
+ 101:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
+ 102:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(os_bug_null_pointer,Func_CreateTaskEnvironment);
+ 331              		.loc 1 102 0
+ 332 0158 0220     		movs	r0, #2
+ 333 015a 0321     		movs	r1, #3
+ 334 015c FFF7FEFF 		bl	OS_SET_SW_BUG
+ 335              	.L10:
+ 103:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
+ 104:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
+ 336              		.loc 1 104 0
+ 337 0160 0837     		adds	r7, r7, #8
+ 338              		.cfi_def_cfa_offset 8
+ 339 0162 BD46     		mov	sp, r7
+ 340              		.cfi_def_cfa_register 13
+ 341              		@ sp needed
+ 342 0164 80BD     		pop	{r7, pc}
+ 343              	.L14:
+ 344 0166 00BF     		.align	2
+ 345              	.L13:
+ 346 0168 A0860100 		.word	100000
+ 347              		.cfi_endproc
+ 348              	.LFE4:
+ 350              		.align	2
+ 351              		.global	OS_Task_DeleteTaskEnvironment
+ 352              		.thumb
+ 353              		.thumb_func
+ 355              	OS_Task_DeleteTaskEnvironment:
+ 356              	.LFB5:
+ 105:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #if(USE_STATIC_CREATED_TASKS != False)
+ 106:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_Task_DeleteTaskEnvironment(task_t* task)
+ 107:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
+ 357              		.loc 1 107 0
+ 358              		.cfi_startproc
+ 359              		@ args = 0, pretend = 0, frame = 8
+ 360              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 9
+
+
+ 361 016c 80B5     		push	{r7, lr}
+ 362              		.cfi_def_cfa_offset 8
+ 363              		.cfi_offset 7, -8
+ 364              		.cfi_offset 14, -4
+ 365 016e 82B0     		sub	sp, sp, #8
+ 366              		.cfi_def_cfa_offset 16
+ 367 0170 00AF     		add	r7, sp, #0
+ 368              		.cfi_def_cfa_register 7
+ 369 0172 7860     		str	r0, [r7, #4]
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task!=0 && task->pStackPointerByMalloc!=0)
+ 370              		.loc 1 108 0
+ 371 0174 7B68     		ldr	r3, [r7, #4]
+ 372 0176 002B     		cmp	r3, #0
+ 373 0178 09D0     		beq	.L16
+ 374              		.loc 1 108 0 is_stmt 0 discriminator 1
+ 375 017a 7B68     		ldr	r3, [r7, #4]
+ 376 017c 1B6F     		ldr	r3, [r3, #112]
+ 377 017e 002B     		cmp	r3, #0
+ 378 0180 05D0     		beq	.L16
+ 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
+ 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       os_free(task->pStackPointerByMalloc);/* only possible in case of heap used */
+ 379              		.loc 1 110 0 is_stmt 1
+ 380 0182 7B68     		ldr	r3, [r7, #4]
+ 381 0184 1B6F     		ldr	r3, [r3, #112]
+ 382 0186 1846     		mov	r0, r3
+ 383 0188 FFF7FEFF 		bl	os_free
+ 384 018c 03E0     		b	.L15
+ 385              	.L16:
+ 111:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
+ 112:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    else
+ 113:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
+ 114:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(os_bug_null_pointer,Func_DeleteTaskEnvironment);
+ 386              		.loc 1 114 0
+ 387 018e 0220     		movs	r0, #2
+ 388 0190 0421     		movs	r1, #4
+ 389 0192 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 390              	.L15:
+ 115:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
+ 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
+ 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
+ 391              		.loc 1 117 0
+ 392 0196 0837     		adds	r7, r7, #8
+ 393              		.cfi_def_cfa_offset 8
+ 394 0198 BD46     		mov	sp, r7
+ 395              		.cfi_def_cfa_register 13
+ 396              		@ sp needed
+ 397 019a 80BD     		pop	{r7, pc}
+ 398              		.cfi_endproc
+ 399              	.LFE5:
+ 401              		.align	2
+ 402              		.global	OS_Task_CreateTaskEnvironment
+ 403              		.thumb
+ 404              		.thumb_func
+ 406              	OS_Task_CreateTaskEnvironment:
+ 407              	.LFB6:
+ 118:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** task_t* OS_Task_CreateTaskEnvironment(void)
+ 119:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 10
+
+
+ 408              		.loc 1 119 0
+ 409              		.cfi_startproc
+ 410              		@ args = 0, pretend = 0, frame = 8
+ 411              		@ frame_needed = 1, uses_anonymous_args = 0
+ 412 019c 80B5     		push	{r7, lr}
+ 413              		.cfi_def_cfa_offset 8
+ 414              		.cfi_offset 7, -8
+ 415              		.cfi_offset 14, -4
+ 416 019e 82B0     		sub	sp, sp, #8
+ 417              		.cfi_def_cfa_offset 16
+ 418 01a0 00AF     		add	r7, sp, #0
+ 419              		.cfi_def_cfa_register 7
+ 120:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    task_t* task = 0; 
+ 420              		.loc 1 120 0
+ 421 01a2 0023     		movs	r3, #0
+ 422 01a4 7B60     		str	r3, [r7, #4]
+ 121:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    task = (task_t*) os_malloc(sizeof(task_t));/* only possible in case of heap used */
+ 423              		.loc 1 121 0
+ 424 01a6 8420     		movs	r0, #132
+ 425 01a8 FFF7FEFF 		bl	os_malloc
+ 426 01ac 7860     		str	r0, [r7, #4]
+ 122:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task == 0)
+ 427              		.loc 1 122 0
+ 428 01ae 7B68     		ldr	r3, [r7, #4]
+ 429 01b0 002B     		cmp	r3, #0
+ 430 01b2 03D1     		bne	.L19
+ 123:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {  
+ 124:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(os_bug_null_pointer,Func_CreateTaskEnvironment);
+ 431              		.loc 1 124 0
+ 432 01b4 0220     		movs	r0, #2
+ 433 01b6 0321     		movs	r1, #3
+ 434 01b8 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 435              	.L19:
+ 125:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
+ 126:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    return task;
+ 436              		.loc 1 126 0
+ 437 01bc 7B68     		ldr	r3, [r7, #4]
+ 127:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
+ 438              		.loc 1 127 0
+ 439 01be 1846     		mov	r0, r3
+ 440 01c0 0837     		adds	r7, r7, #8
+ 441              		.cfi_def_cfa_offset 8
+ 442 01c2 BD46     		mov	sp, r7
+ 443              		.cfi_def_cfa_register 13
+ 444              		@ sp needed
+ 445 01c4 80BD     		pop	{r7, pc}
+ 446              		.cfi_endproc
+ 447              	.LFE6:
+ 449              	.Letext0:
+ 450              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 451              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ 452              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_task_common.c
+                            *COM*:00000014 TASK_PTR
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:19     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:24     .text:00000000 OS_TASK_SAVETASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:76     .text:00000030 OS_TASK_RESTORETASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:125    .text:00000060 OS_TASK_RESTORE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:158    .text:00000074 OS_TASK_SAVE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:191    .text:00000088 OS_Task_InitTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:346    .text:00000168 $d
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:350    .text:0000016c $t
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:355    .text:0000016c OS_Task_DeleteTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\cclVKHA1.s:406    .text:0000019c OS_Task_CreateTaskEnvironment
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.9521b3e5c1199f549394d32eec33a9c8
+                           .group:00000000 wm4.lld_interrupt.h.2.b1b940a31d6b49628a13b8fe5e920a88
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
+                           .group:00000000 wm4.os_task_scheduler.h.2.125feba674fa85672711aed1ca8ea199
+                           .group:00000000 wm4.mcu_config.h.2.148057a40fa6c37dac99a6ae85c483fd
+                           .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
+
+UNDEFINED SYMBOLS
+LLF_SAVE_TASK_STACK
+LLF_SAVE_REGISTERS
+OS_SET_SW_BUG
+LLF_RESTORE_TASK_STACK
+LLF_RESTORE_REGISTERS
+LLF_RESTORE_SYSTEM_STACK
+LLF_SAVE_SYSTEM_STACK
+os_free
+os_malloc
