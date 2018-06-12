@@ -8,7 +8,7 @@
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/os" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
+				<Option object_output="E:/NeuOrga/Programmieren/c_cpp/github_os/output/os_codeblocks" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -32,9 +32,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="src/os_base/os_acl.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/os_base/os_acl.h" />
 		<Unit filename="src/os_base/os_base_types.h" />
 		<Unit filename="src/os_base/os_common.c">
