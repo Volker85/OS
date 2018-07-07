@@ -385,13 +385,10 @@ extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
 
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 1
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_mmu.h" 2
-extern void LLF_SMPU_DISABLE(void);
-extern void LLF_CMPU_DISABLE(void);
-extern void LLF_SMPU_ENABLE(void);
-extern void LLF_CMPU_ENABLE(void);
-extern void LLF_SMPU_SWITCH_OFF_ALL_REGIONS(void);
-extern void LLF_CMPU_SWITCH_OFF_ALL_REGIONS(void);
-extern void LLF_MMU_SET_REGION(CoreID_t core_id, void* startAddr, void* endAddr);
+extern void LLF_MPU_DISABLE(void);
+extern void LLF_MPU_ENABLE(void);
+extern void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void);
+extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 # 10 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_timer.h" 1
 
@@ -535,6 +532,10 @@ extern void LLF_RESTORE_REGISTERS(task_t* task);
 extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
+
+extern void LLF_CLEAR_ALL_GP_REGISTERS(void);
+
+extern void LLF_PERFORM_RAM_CHECK(void);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\lld_watchdog.c" 2
 void LLF_SWITCH_OFF_WATCHDOG(void)

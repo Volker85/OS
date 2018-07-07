@@ -73,31 +73,23 @@ LLF_MPU_ENABLE:
 .LFE1:
 	.size	LLF_MPU_ENABLE, .-LLF_MPU_ENABLE
 	.align	2
-	.global	LLF_MPU_SET_REGION
+	.global	LLF_MPU_SWITCH_OFF_ALL_REGIONS
 	.thumb
 	.thumb_func
-	.type	LLF_MPU_SET_REGION, %function
-LLF_MPU_SET_REGION:
+	.type	LLF_MPU_SWITCH_OFF_ALL_REGIONS, %function
+LLF_MPU_SWITCH_OFF_ALL_REGIONS:
 .LFB2:
 	.loc 1 15 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 16
+	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
 	@ link register save eliminated.
 	push	{r7}
 	.cfi_def_cfa_offset 4
 	.cfi_offset 7, -4
-	sub	sp, sp, #20
-	.cfi_def_cfa_offset 24
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	mov	r3, r0
-	str	r1, [r7, #8]
-	str	r2, [r7, #4]
-	strb	r3, [r7, #15]
-	.loc 1 20 0
-	adds	r7, r7, #20
-	.cfi_def_cfa_offset 4
+	.loc 1 17 0
 	mov	sp, r7
 	.cfi_def_cfa_register 13
 	@ sp needed
@@ -107,40 +99,6 @@ LLF_MPU_SET_REGION:
 	bx	lr
 	.cfi_endproc
 .LFE2:
-	.size	LLF_MPU_SET_REGION, .-LLF_MPU_SET_REGION
-	.align	2
-	.global	LLF_MPU_SWITCH_OFF_ALL_REGIONS
-	.thumb
-	.thumb_func
-	.type	LLF_MPU_SWITCH_OFF_ALL_REGIONS, %function
-LLF_MPU_SWITCH_OFF_ALL_REGIONS:
-.LFB3:
-	.loc 1 23 0
-	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
-	@ frame_needed = 1, uses_anonymous_args = 0
-	@ link register save eliminated.
-	push	{r7}
-	.cfi_def_cfa_offset 4
-	.cfi_offset 7, -4
-	sub	sp, sp, #12
-	.cfi_def_cfa_offset 16
-	add	r7, sp, #0
-	.cfi_def_cfa_register 7
-	mov	r3, r0
-	strb	r3, [r7, #7]
-	.loc 1 25 0
-	adds	r7, r7, #12
-	.cfi_def_cfa_offset 4
-	mov	sp, r7
-	.cfi_def_cfa_register 13
-	@ sp needed
-	ldr	r7, [sp], #4
-	.cfi_restore 7
-	.cfi_def_cfa_offset 0
-	bx	lr
-	.cfi_endproc
-.LFE3:
 	.size	LLF_MPU_SWITCH_OFF_ALL_REGIONS, .-LLF_MPU_SWITCH_OFF_ALL_REGIONS
 	.align	2
 	.global	LLF_GET_MPU_PRESENT
@@ -148,8 +106,8 @@ LLF_MPU_SWITCH_OFF_ALL_REGIONS:
 	.thumb_func
 	.type	LLF_GET_MPU_PRESENT, %function
 LLF_GET_MPU_PRESENT:
-.LFB4:
-	.loc 1 28 0
+.LFB3:
+	.loc 1 20 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -161,23 +119,23 @@ LLF_GET_MPU_PRESENT:
 	.cfi_def_cfa_offset 16
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 34 0
-	ldr	r3, .L9
+	.loc 1 26 0
+	ldr	r3, .L8
 	ldrb	r3, [r3]	@ zero_extendqisi2
 	cmp	r3, #0
-	beq	.L6
-	.loc 1 36 0
+	beq	.L5
+	.loc 1 28 0
 	movs	r3, #1
 	strb	r3, [r7, #7]
-	b	.L7
-.L6:
-	.loc 1 40 0
+	b	.L6
+.L5:
+	.loc 1 32 0
 	movs	r3, #0
 	strb	r3, [r7, #7]
-.L7:
-	.loc 1 43 0
+.L6:
+	.loc 1 35 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
-	.loc 1 44 0
+	.loc 1 36 0
 	mov	r0, r3
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -188,32 +146,31 @@ LLF_GET_MPU_PRESENT:
 	.cfi_restore 7
 	.cfi_def_cfa_offset 0
 	bx	lr
-.L10:
-	.align	2
 .L9:
+	.align	2
+.L8:
 	.word	-536810096
 	.cfi_endproc
-.LFE4:
+.LFE3:
 	.size	LLF_GET_MPU_PRESENT, .-LLF_GET_MPU_PRESENT
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x125
+	.4byte	0xa0
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF443
+	.4byte	.LASF432
 	.byte	0x1
-	.4byte	.LASF444
+	.4byte	.LASF433
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macro0
 	.uleb128 0x2
-	.4byte	.LASF432
+	.4byte	.LASF434
 	.byte	0x2
 	.byte	0x1d
 	.4byte	0x30
@@ -229,117 +186,47 @@ LLF_GET_MPU_PRESENT:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.LASF427
-	.uleb128 0x4
-	.4byte	.LASF445
-	.byte	0x1
-	.byte	0x3
-	.byte	0x4
-	.4byte	0x6a
-	.uleb128 0x5
-	.4byte	.LASF428
-	.sleb128 0
-	.uleb128 0x5
-	.4byte	.LASF429
-	.sleb128 1
-	.uleb128 0x5
-	.4byte	.LASF430
-	.sleb128 2
-	.uleb128 0x5
-	.4byte	.LASF431
-	.sleb128 3
-	.byte	0
-	.uleb128 0x2
-	.4byte	.LASF433
-	.byte	0x3
-	.byte	0xb
-	.4byte	0x45
-	.uleb128 0x6
-	.byte	0x4
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF434
-	.uleb128 0x7
-	.4byte	.LASF435
+	.4byte	.LASF428
+	.uleb128 0x4
+	.4byte	.LASF429
 	.byte	0x1
 	.byte	0x4
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x7
-	.4byte	.LASF436
+	.uleb128 0x4
+	.4byte	.LASF430
 	.byte	0x1
 	.byte	0x9
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
-	.4byte	.LASF440
+	.uleb128 0x4
+	.4byte	.LASF431
 	.byte	0x1
 	.byte	0xe
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xe0
-	.uleb128 0x9
-	.4byte	.LASF437
+	.uleb128 0x5
+	.4byte	.LASF435
 	.byte	0x1
-	.byte	0xe
-	.4byte	0x6a
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -9
-	.uleb128 0x9
-	.4byte	.LASF438
-	.byte	0x1
-	.byte	0xe
-	.4byte	0x75
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -16
-	.uleb128 0x9
-	.4byte	.LASF439
-	.byte	0x1
-	.byte	0xe
-	.4byte	0x75
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -20
-	.byte	0
-	.uleb128 0x8
-	.4byte	.LASF441
-	.byte	0x1
-	.byte	0x16
+	.byte	0x13
+	.4byte	0x25
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x104
-	.uleb128 0x9
-	.4byte	.LASF437
+	.uleb128 0x6
+	.4byte	.LASF436
 	.byte	0x1
-	.byte	0x16
-	.4byte	0x6a
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -9
-	.byte	0
-	.uleb128 0xa
-	.4byte	.LASF442
-	.byte	0x1
-	.byte	0x1b
-	.4byte	0x25
-	.4byte	.LFB4
-	.4byte	.LFE4-.LFB4
-	.uleb128 0x1
-	.byte	0x9c
-	.uleb128 0xb
-	.4byte	.LASF446
-	.byte	0x1
-	.byte	0x1d
+	.byte	0x15
 	.4byte	0x25
 	.uleb128 0x2
 	.byte	0x91
@@ -392,37 +279,6 @@ LLF_GET_MPU_PRESENT:
 	.byte	0
 	.byte	0
 	.uleb128 0x4
-	.uleb128 0x4
-	.byte	0x1
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x5
-	.uleb128 0x28
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x1c
-	.uleb128 0xd
-	.byte	0
-	.byte	0
-	.uleb128 0x6
-	.uleb128 0xf
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x7
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -445,47 +301,7 @@ LLF_GET_MPU_PRESENT:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x8
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x9
 	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0xa
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -510,7 +326,7 @@ LLF_GET_MPU_PRESENT:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0xb
+	.uleb128 0x6
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -548,10 +364,10 @@ LLF_GET_MPU_PRESENT:
 	.byte	0x3
 	.uleb128 0
 	.uleb128 0x1
-	.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
+	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x1
-	.uleb128 0x4
+	.uleb128 0x3
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF360
@@ -561,29 +377,30 @@ LLF_GET_MPU_PRESENT:
 	.byte	0x7
 	.4byte	.Ldebug_macro2
 	.byte	0x4
-	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+	.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x5
+	.uleb128 0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro3
 	.byte	0x4
-	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
+	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
 	.byte	0x3
 	.uleb128 0x9
-	.uleb128 0x6
+	.uleb128 0x5
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF393
+	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x3
+	.uleb128 0x6
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF394
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0x4
+	.uleb128 0x3
 	.byte	0x4
 	.byte	0x4
 	.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_adc.h"
@@ -626,7 +443,7 @@ LLF_GET_MPU_PRESENT:
 	.4byte	.LASF404
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x6
+	.uleb128 0x5
 	.byte	0x4
 	.byte	0x4
 	.file 12 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_timer.h"
@@ -689,7 +506,7 @@ LLF_GET_MPU_PRESENT:
 	.byte	0x4
 	.byte	0x4
 	.byte	0x5
-	.uleb128 0x21
+	.uleb128 0x19
 	.4byte	.LASF424
 	.byte	0x4
 	.byte	0
@@ -1975,8 +1792,8 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
 .LASF405:
 	.ascii	"_lld_timer_h_ \000"
-.LASF255:
-	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
+.LASF92:
+	.ascii	"__INT_LEAST8_MAX__ 127\000"
 .LASF395:
 	.ascii	"_lld_adc_h_ \000"
 .LASF84:
@@ -1999,7 +1816,7 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__INT_LEAST64_MAX__ 9223372036854775807LL\000"
 .LASF336:
 	.ascii	"__ARM_SIZEOF_WCHAR_T 4\000"
-.LASF436:
+.LASF430:
 	.ascii	"LLF_MPU_ENABLE\000"
 .LASF325:
 	.ascii	"__SIZEOF_WINT_T__ 4\000"
@@ -2011,7 +1828,7 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__ARM_32BIT_STATE 1\000"
 .LASF421:
 	.ascii	"_os_init_task_system_h_ \000"
-.LASF434:
+.LASF428:
 	.ascii	"unsigned int\000"
 .LASF103:
 	.ascii	"__UINT16_C(c) c\000"
@@ -2019,10 +1836,10 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
 .LASF35:
 	.ascii	"__CHAR16_TYPE__ short unsigned int\000"
-.LASF437:
-	.ascii	"core_id\000"
 .LASF19:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
+.LASF264:
+	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF2:
 	.ascii	"__GNUC__ 4\000"
 .LASF24:
@@ -2092,8 +1909,8 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
 .LASF248:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
-.LASF264:
-	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
+.LASF369:
+	.ascii	"CPP_VERSION_2007 3\000"
 .LASF253:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
 .LASF344:
@@ -2114,10 +1931,6 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF378:
 	.ascii	"Local static\000"
-.LASF439:
-	.ascii	"endAddr\000"
-.LASF424:
-	.ascii	"MPU_TYPE ((unsigned_char_t*)0xE000ED90)\000"
 .LASF63:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
 .LASF383:
@@ -2131,8 +1944,8 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__SA_IBIT__ 16\000"
 .LASF219:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
-.LASF440:
-	.ascii	"LLF_MPU_SET_REGION\000"
+.LASF337:
+	.ascii	"__ARM_ARCH_PROFILE 77\000"
 .LASF124:
 	.ascii	"__FLT_DIG__ 6\000"
 .LASF146:
@@ -2189,8 +2002,8 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
 .LASF226:
 	.ascii	"__SACCUM_FBIT__ 7\000"
-.LASF337:
-	.ascii	"__ARM_ARCH_PROFILE 77\000"
+.LASF145:
+	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
 .LASF176:
 	.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
 .LASF198:
@@ -2221,8 +2034,8 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__LLFRACT_IBIT__ 0\000"
 .LASF179:
 	.ascii	"__DEC128_MANT_DIG__ 34\000"
-.LASF150:
-	.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
+.LASF330:
+	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
 .LASF17:
 	.ascii	"__SIZEOF_FLOAT__ 4\000"
 .LASF105:
@@ -2245,8 +2058,6 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__INT_LEAST16_MAX__ 32767\000"
 .LASF194:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
-.LASF145:
-	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
 .LASF258:
 	.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
 .LASF66:
@@ -2261,8 +2072,8 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\000"
 .LASF55:
 	.ascii	"__INT_FAST16_TYPE__ int\000"
-.LASF359:
-	.ascii	"STM32F407VG 1\000"
+.LASF43:
+	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF3:
 	.ascii	"__GNUC_MINOR__ 9\000"
 .LASF312:
@@ -2298,6 +2109,8 @@ LLF_GET_MPU_PRESENT:
 .LASF5:
 	.ascii	"__VERSION__ \"4.9.3 20150303 (release) [ARM/embedde"
 	.ascii	"d-4_9-branch revision 221220]\"\000"
+.LASF150:
+	.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
 .LASF242:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF121:
@@ -2322,8 +2135,8 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
 .LASF236:
 	.ascii	"__ACCUM_FBIT__ 15\000"
-.LASF173:
-	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
+.LASF315:
+	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
 .LASF252:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
 .LASF216:
@@ -2396,10 +2209,10 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__UINT_LEAST32_MAX__ 4294967295UL\000"
 .LASF356:
 	.ascii	"__ELF__ 1\000"
-.LASF435:
+.LASF429:
 	.ascii	"LLF_MPU_DISABLE\000"
-.LASF330:
-	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
+.LASF375:
+	.ascii	"True 1\000"
 .LASF320:
 	.ascii	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\000"
 .LASF322:
@@ -2408,25 +2221,17 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF171:
 	.ascii	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\000"
-.LASF441:
-	.ascii	"LLF_MPU_SWITCH_OFF_ALL_REGIONS\000"
+.LASF361:
+	.ascii	"_BASE_TYPES_H_ \000"
 .LASF135:
 	.ascii	"__FLT_HAS_INFINITY__ 1\000"
 .LASF392:
 	.ascii	"HaltMcu() ;\000"
-.LASF428:
-	.ascii	"Core0\000"
-.LASF429:
-	.ascii	"Core1\000"
-.LASF430:
-	.ascii	"Core2\000"
-.LASF431:
-	.ascii	"Core3\000"
 .LASF0:
 	.ascii	"__STDC__ 1\000"
 .LASF14:
 	.ascii	"__SIZEOF_LONG__ 4\000"
-.LASF444:
+.LASF433:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_drivers\\lld_mmu.c\000"
 .LASF141:
@@ -2445,7 +2250,7 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__ULFRACT_FBIT__ 32\000"
 .LASF31:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
-.LASF432:
+.LASF434:
 	.ascii	"unsigned_char_t\000"
 .LASF18:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
@@ -2487,8 +2292,8 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF165:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF369:
-	.ascii	"CPP_VERSION_2007 3\000"
+.LASF173:
+	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF83:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF220:
@@ -2501,8 +2306,6 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__SFRACT_FBIT__ 7\000"
 .LASF36:
 	.ascii	"__CHAR32_TYPE__ long unsigned int\000"
-.LASF43:
-	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF410:
 	.ascii	"_os_task_config_h_ \000"
 .LASF384:
@@ -2523,16 +2326,18 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__USACCUM_MAX__ 0XFFFFP-8UHK\000"
 .LASF332:
 	.ascii	"__ARM_FEATURE_LDREX 7\000"
+.LASF255:
+	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF88:
 	.ascii	"__UINT8_MAX__ 255\000"
-.LASF315:
-	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
+.LASF249:
+	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF25:
 	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
 .LASF271:
 	.ascii	"__SQ_IBIT__ 0\000"
-.LASF361:
-	.ascii	"_BASE_TYPES_H_ \000"
+.LASF424:
+	.ascii	"MPU_TYPE ((unsigned_char_t*)0xE000ED90)\000"
 .LASF129:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF394:
@@ -2551,8 +2356,6 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\000"
 .LASF114:
 	.ascii	"__UINT_FAST32_MAX__ 4294967295U\000"
-.LASF438:
-	.ascii	"startAddr\000"
 .LASF244:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
 .LASF174:
@@ -2563,8 +2366,8 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__INT32_TYPE__ long int\000"
 .LASF60:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
-.LASF375:
-	.ascii	"True 1\000"
+.LASF359:
+	.ascii	"STM32F407VG 1\000"
 .LASF389:
 	.ascii	"Privilige_level_save_current() ;\000"
 .LASF155:
@@ -2583,16 +2386,12 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
 .LASF341:
 	.ascii	"__thumb__ 1\000"
-.LASF249:
-	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF164:
 	.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
 .LASF38:
 	.ascii	"__INT8_TYPE__ signed char\000"
 .LASF303:
 	.ascii	"__USER_LABEL_PREFIX__ \000"
-.LASF92:
-	.ascii	"__INT_LEAST8_MAX__ 127\000"
 .LASF274:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF195:
@@ -2695,7 +2494,7 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__SOFTFP__ 1\000"
 .LASF111:
 	.ascii	"__INT_FAST64_MAX__ 9223372036854775807LL\000"
-.LASF446:
+.LASF436:
 	.ascii	"ret_val\000"
 .LASF319:
 	.ascii	"__GCC_ATOMIC_LLONG_LOCK_FREE 1\000"
@@ -2795,10 +2594,12 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__QQ_FBIT__ 7\000"
 .LASF51:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
-.LASF442:
+.LASF435:
 	.ascii	"LLF_GET_MPU_PRESENT\000"
 .LASF125:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
+.LASF431:
+	.ascii	"LLF_MPU_SWITCH_OFF_ALL_REGIONS\000"
 .LASF388:
 	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
 .LASF183:
@@ -2818,8 +2619,6 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__DBL_HAS_DENORM__ 1\000"
 .LASF402:
 	.ascii	"os_interrupt_swi_4 asm(\"swi 4\")\000"
-.LASF445:
-	.ascii	"CoreID_e\000"
 .LASF415:
 	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF301:
@@ -2834,12 +2633,10 @@ LLF_GET_MPU_PRESENT:
 	.ascii	"__UDA_FBIT__ 32\000"
 .LASF390:
 	.ascii	"Privilige_level_enter_kernel_mode() ;\000"
-.LASF443:
+.LASF432:
 	.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
 	.ascii	"anch revision 221220] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
-.LASF433:
-	.ascii	"CoreID_t\000"
 .LASF293:
 	.ascii	"__TA_IBIT__ 64\000"
 .LASF175:

@@ -38,9 +38,9 @@ LFB1:
 	ret
 	.cfi_endproc
 LFE1:
-	.globl	_LLF_MPU_SET_REGION
-	.def	_LLF_MPU_SET_REGION;	.scl	2;	.type	32;	.endef
-_LLF_MPU_SET_REGION:
+	.globl	_LLF_MPU_SWITCH_OFF_ALL_REGIONS
+	.def	_LLF_MPU_SWITCH_OFF_ALL_REGIONS;	.scl	2;	.type	32;	.endef
+_LLF_MPU_SWITCH_OFF_ALL_REGIONS:
 LFB2:
 	.loc 1 14 0
 	.cfi_startproc
@@ -49,57 +49,38 @@ LFB2:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 19 0
+	.loc 1 16 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE2:
-	.globl	_LLF_MPU_SWITCH_OFF_ALL_REGIONS
-	.def	_LLF_MPU_SWITCH_OFF_ALL_REGIONS;	.scl	2;	.type	32;	.endef
-_LLF_MPU_SWITCH_OFF_ALL_REGIONS:
+	.globl	_LLF_GET_MPU_PRESENT
+	.def	_LLF_GET_MPU_PRESENT;	.scl	2;	.type	32;	.endef
+_LLF_GET_MPU_PRESENT:
 LFB3:
-	.loc 1 22 0
+	.loc 1 18 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 25 0
+	.loc 1 20 0
+	movb	$0, %al
+	.loc 1 21 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE3:
-	.globl	_LLF_GET_MPU_PRESENT
-	.def	_LLF_GET_MPU_PRESENT;	.scl	2;	.type	32;	.endef
-_LLF_GET_MPU_PRESENT:
-LFB4:
-	.loc 1 27 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	.loc 1 29 0
-	movb	$0, %al
-	.loc 1 30 0
-	popl	%ebp
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE4:
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_base/os_base_types.h"
-	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_core.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x22c
+	.long	0x174
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -128,37 +109,11 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
-	.uleb128 0x4
-	.ascii "CoreID_e\0"
-	.byte	0x4
-	.byte	0x3
-	.byte	0x4
-	.long	0x10f
-	.uleb128 0x5
-	.ascii "Core0\0"
-	.sleb128 0
-	.uleb128 0x5
-	.ascii "Core1\0"
-	.sleb128 1
-	.uleb128 0x5
-	.ascii "Core2\0"
-	.sleb128 2
-	.uleb128 0x5
-	.ascii "Core3\0"
-	.sleb128 3
-	.byte	0
-	.uleb128 0x2
-	.ascii "CoreID_t\0"
-	.byte	0x3
-	.byte	0xb
-	.long	0xdd
-	.uleb128 0x6
-	.byte	0x4
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
 	.ascii "unsigned int\0"
-	.uleb128 0x7
+	.uleb128 0x4
 	.ascii "LLF_MPU_DISABLE\0"
 	.byte	0x1
 	.byte	0x3
@@ -166,7 +121,7 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x7
+	.uleb128 0x4
 	.ascii "LLF_MPU_ENABLE\0"
 	.byte	0x1
 	.byte	0x8
@@ -174,65 +129,21 @@ Ldebug_info0:
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
-	.ascii "LLF_MPU_SET_REGION\0"
+	.uleb128 0x4
+	.ascii "LLF_MPU_SWITCH_OFF_ALL_REGIONS\0"
 	.byte	0x1
 	.byte	0xd
 	.long	LFB2
 	.long	LFE2-LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1c7
-	.uleb128 0x9
-	.ascii "core_id\0"
-	.byte	0x1
-	.byte	0xd
-	.long	0x10f
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 0
-	.uleb128 0x9
-	.ascii "startAddr\0"
-	.byte	0x1
-	.byte	0xd
-	.long	0x11f
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 4
-	.uleb128 0x9
-	.ascii "endAddr\0"
-	.byte	0x1
-	.byte	0xd
-	.long	0x11f
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 8
-	.byte	0
-	.uleb128 0x8
-	.ascii "LLF_MPU_SWITCH_OFF_ALL_REGIONS\0"
-	.byte	0x1
-	.byte	0x15
-	.long	LFB3
-	.long	LFE3-LFB3
-	.uleb128 0x1
-	.byte	0x9c
-	.long	0x20a
-	.uleb128 0x9
-	.ascii "core_id\0"
-	.byte	0x1
-	.byte	0x15
-	.long	0x10f
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 0
-	.byte	0
-	.uleb128 0xa
+	.uleb128 0x5
 	.ascii "LLF_GET_MPU_PRESENT\0"
 	.byte	0x1
-	.byte	0x1a
+	.byte	0x11
 	.long	0x8a
-	.long	LFB4
-	.long	LFE4-LFB4
+	.long	LFB3
+	.long	LFE3-LFB3
 	.uleb128 0x1
 	.byte	0x9c
 	.byte	0
@@ -282,37 +193,6 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x4
-	.uleb128 0x4
-	.byte	0x1
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x5
-	.uleb128 0x28
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x1c
-	.uleb128 0xd
-	.byte	0
-	.byte	0
-	.uleb128 0x6
-	.uleb128 0xf
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x7
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -335,47 +215,7 @@ Ldebug_abbrev0:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x8
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x9
 	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0xa
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -1114,10 +954,10 @@ Ldebug_macro0:
 	.byte	0x3
 	.uleb128 0
 	.uleb128 0x1
-	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_firstinc.h"
+	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x1
-	.uleb128 0x4
+	.uleb128 0x3
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_firstinc_h_ \0"
@@ -1161,10 +1001,10 @@ Ldebug_macro0:
 	.uleb128 0x10
 	.ascii "INTEGER_MODEL INTEGER_LLP64_IL32P64\0"
 	.byte	0x4
-	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_base/os_common.h"
+	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_base/os_common.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x5
+	.uleb128 0x4
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_common_h_ \0"
@@ -1226,16 +1066,17 @@ Ldebug_macro0:
 	.uleb128 0x28
 	.ascii "HaltMcu() \0"
 	.byte	0x4
-	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_global.h"
+	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_global.h"
 	.byte	0x3
 	.uleb128 0x7
-	.uleb128 0x6
+	.uleb128 0x5
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_lld_global_h_ \0"
+	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_core.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x3
+	.uleb128 0x6
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_lld_core_h_ \0"
@@ -1301,7 +1142,7 @@ Ldebug_macro0:
 	.ascii "_lld_mmu_h_ \0"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x6
+	.uleb128 0x5
 	.byte	0x4
 	.byte	0x4
 	.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_timer.h"

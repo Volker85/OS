@@ -88,13 +88,13 @@ OS_StartExtPrg:
 .L4:
 	.loc 1 28 0
 	bl	LLF_MPU_DISABLE
-	.loc 1 29 0
+	.loc 1 30 0
 	bl	LLF_MPU_SWITCH_OFF_ALL_REGIONS
-	.loc 1 38 0
+	.loc 1 39 0
 	ldr	r3, [r7, #12]
 	blx	r3
 .L3:
-	.loc 1 39 0
+	.loc 1 40 0
 	adds	r7, r7, #16
 	.cfi_def_cfa_offset 8
 	mov	sp, r7
@@ -109,7 +109,7 @@ OS_StartExtPrg:
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x10f
+	.4byte	0xe6
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -199,7 +199,6 @@ OS_StartExtPrg:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x10b
 	.uleb128 0x7
 	.4byte	.LASF431
 	.byte	0x1
@@ -224,26 +223,7 @@ OS_StartExtPrg:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x9
-	.4byte	.LASF438
-	.byte	0x1
-	.byte	0x1c
-	.4byte	0x10b
-	.4byte	0xfd
-	.uleb128 0xa
 	.byte	0
-	.uleb128 0xb
-	.4byte	.LASF439
-	.byte	0x1
-	.byte	0x1d
-	.4byte	0x10b
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.uleb128 0xc
-	.byte	0x4
-	.byte	0x5
-	.ascii	"int\000"
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -367,60 +347,6 @@ OS_StartExtPrg:
 	.uleb128 0x18
 	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x9
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xa
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0xc
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0x8
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2159,8 +2085,8 @@ OS_StartExtPrg:
 	.ascii	"MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\000"
 .LASF55:
 	.ascii	"__INT_FAST16_TYPE__ int\000"
-.LASF359:
-	.ascii	"STM32F407VG 1\000"
+.LASF43:
+	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF3:
 	.ascii	"__GNUC_MINOR__ 9\000"
 .LASF312:
@@ -2223,8 +2149,8 @@ OS_StartExtPrg:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
 .LASF236:
 	.ascii	"__ACCUM_FBIT__ 15\000"
-.LASF173:
-	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
+.LASF315:
+	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
 .LASF252:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
 .LASF216:
@@ -2297,8 +2223,6 @@ OS_StartExtPrg:
 	.ascii	"__UINT_LEAST32_MAX__ 4294967295UL\000"
 .LASF356:
 	.ascii	"__ELF__ 1\000"
-.LASF438:
-	.ascii	"LLF_MPU_DISABLE\000"
 .LASF330:
 	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
 .LASF320:
@@ -2379,8 +2303,8 @@ OS_StartExtPrg:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF165:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF369:
-	.ascii	"CPP_VERSION_2007 3\000"
+.LASF173:
+	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF83:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF220:
@@ -2395,8 +2319,6 @@ OS_StartExtPrg:
 	.ascii	"__SFRACT_FBIT__ 7\000"
 .LASF36:
 	.ascii	"__CHAR32_TYPE__ long unsigned int\000"
-.LASF43:
-	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF410:
 	.ascii	"_os_task_config_h_ \000"
 .LASF384:
@@ -2419,8 +2341,8 @@ OS_StartExtPrg:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF88:
 	.ascii	"__UINT8_MAX__ 255\000"
-.LASF315:
-	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
+.LASF249:
+	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF25:
 	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
 .LASF271:
@@ -2453,6 +2375,8 @@ OS_StartExtPrg:
 	.ascii	"__INT32_TYPE__ long int\000"
 .LASF60:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
+.LASF359:
+	.ascii	"STM32F407VG 1\000"
 .LASF375:
 	.ascii	"True 1\000"
 .LASF155:
@@ -2471,8 +2395,6 @@ OS_StartExtPrg:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
 .LASF341:
 	.ascii	"__thumb__ 1\000"
-.LASF249:
-	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF164:
 	.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
 .LASF38:
@@ -2487,6 +2409,8 @@ OS_StartExtPrg:
 	.ascii	"__UINT_FAST64_MAX__ 18446744073709551615ULL\000"
 .LASF349:
 	.ascii	"__ARM_NEON_FP 4\000"
+.LASF369:
+	.ascii	"CPP_VERSION_2007 3\000"
 .LASF262:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
 .LASF87:
@@ -2681,8 +2605,6 @@ OS_StartExtPrg:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF125:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
-.LASF439:
-	.ascii	"LLF_MPU_SWITCH_OFF_ALL_REGIONS\000"
 .LASF388:
 	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
 .LASF183:

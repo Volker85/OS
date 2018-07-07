@@ -1,119 +1,49 @@
 "Target_x86" 
-30.04.2018 20:58:25,24 
+07.07.2018 21:24:35,78 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c: In function 'OS_SHUTDOWN':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:10:4: warning: implicit declaration of function 'LLF_MPU_DISABLE' [-Wimplicit-function-declaration]
-    LLF_MPU_DISABLE();
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c: In function 'OS_StartExtPrg':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c:28:4: warning: implicit declaration of function 'LLF_MPU_DISABLE' [-Wimplicit-function-declaration]
-    LLF_MPU_DISABLE();
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c:29:4: warning: implicit declaration of function 'LLF_MPU_SWITCH_OFF_ALL_REGIONS' [-Wimplicit-function-declaration]
-    LLF_MPU_SWITCH_OFF_ALL_REGIONS();
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c: In function 'OS_INIT_MC':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:14:4: warning: implicit declaration of function 'LLF_CLEAR_ALL_GP_REGISTERS' [-Wimplicit-function-declaration]
-    LLF_CLEAR_ALL_GP_REGISTERS();
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:20:4: warning: implicit declaration of function 'LLF_PERFORM_RAM_CHECK' [-Wimplicit-function-declaration]
-    LLF_PERFORM_RAM_CHECK();
-    ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fflush':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:96:18: warning: unused parameter 'stream' [-Wunused-parameter]
  int fflush(FILE* stream)
                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fclose':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:116:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'remove':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:117:24: warning: unused parameter 'filename' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:119:24: warning: unused parameter 'filename' [-Wunused-parameter]
  int remove(const char *filename)
                         ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'rename':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:121:24: warning: unused parameter 'oldname' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:24: warning: unused parameter 'oldname' [-Wunused-parameter]
  int rename(const char *oldname, const char *newname)
                         ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:121:45: warning: unused parameter 'newname' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:45: warning: unused parameter 'newname' [-Wunused-parameter]
  int rename(const char *oldname, const char *newname)
                                              ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fread':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:125:20: warning: unused parameter 'ptr' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:20: warning: unused parameter 'ptr' [-Wunused-parameter]
  uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:125:32: warning: unused parameter 'size' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:32: warning: unused parameter 'size' [-Wunused-parameter]
  uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:125:45: warning: unused parameter 'nobj' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:45: warning: unused parameter 'nobj' [-Wunused-parameter]
  uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                              ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:125:57: warning: unused parameter 'stream' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:57: warning: unused parameter 'stream' [-Wunused-parameter]
  uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                                          ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fwrite':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:27: warning: unused parameter 'ptr' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:27: warning: unused parameter 'ptr' [-Wunused-parameter]
  uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
                            ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:39: warning: unused parameter 'size' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:39: warning: unused parameter 'size' [-Wunused-parameter]
  uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:52: warning: unused parameter 'nobj' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:52: warning: unused parameter 'nobj' [-Wunused-parameter]
  uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:64: warning: unused parameter 'stream' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:64: warning: unused parameter 'stream' [-Wunused-parameter]
  uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fflush':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:99:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'remove':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:120:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'rename':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fread':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:128:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fwrite':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_TASK_STACK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:23:43: warning: unused parameter 'StackPointer' [-Wunused-parameter]
- void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer)
-                                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_REGISTERS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:31:33: warning: unused parameter 'task' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(task_t* task)
-                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_RESTORE_TASK_STACK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:35:36: warning: unused parameter 'StackPointer' [-Wunused-parameter]
- void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
-                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_RESTORE_REGISTERS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:39:36: warning: unused parameter 'task' [-Wunused-parameter]
- void LLF_RESTORE_REGISTERS(task_t* task)
-                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_RESTORE_SYSTEM_STACK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:43:38: warning: unused parameter 'system_stack_ptr' [-Wunused-parameter]
- void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
-                                      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_SYSTEM_STACK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:47:35: warning: unused parameter 'system_stack_ptr' [-Wunused-parameter]
- void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
-                                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_CLEAR_ALL_GP_REGISTERS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:51:40: warning: unused parameter 'system_stack_ptr' [-Wunused-parameter]
- void LLF_CLEAR_ALL_GP_REGISTERS(uint8* system_stack_ptr)
-                                        ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_INIT':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:5:26: warning: unused parameter 'Led' [-Wunused-parameter]
  void USER_LED_INIT(led_t Led)
@@ -131,117 +61,47 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:20:28: war
  void USER_LED_TOGGLE(led_t Led)
                             ^
 "assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c: In function 'OS_SHUTDOWN':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:10:4: warning: implicit declaration of function 'LLF_MPU_DISABLE' [-Wimplicit-function-declaration]
-    LLF_MPU_DISABLE();
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c: In function 'OS_StartExtPrg':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c:28:4: warning: implicit declaration of function 'LLF_MPU_DISABLE' [-Wimplicit-function-declaration]
-    LLF_MPU_DISABLE();
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c:29:4: warning: implicit declaration of function 'LLF_MPU_SWITCH_OFF_ALL_REGIONS' [-Wimplicit-function-declaration]
-    LLF_MPU_SWITCH_OFF_ALL_REGIONS();
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c: In function 'OS_INIT_MC':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:14:4: warning: implicit declaration of function 'LLF_CLEAR_ALL_GP_REGISTERS' [-Wimplicit-function-declaration]
-    LLF_CLEAR_ALL_GP_REGISTERS();
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:20:4: warning: implicit declaration of function 'LLF_PERFORM_RAM_CHECK' [-Wimplicit-function-declaration]
-    LLF_PERFORM_RAM_CHECK();
-    ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fflush':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:96:18: warning: unused parameter 'stream' [-Wunused-parameter]
  int fflush(FILE* stream)
                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fclose':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:116:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'remove':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:117:24: warning: unused parameter 'filename' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:119:24: warning: unused parameter 'filename' [-Wunused-parameter]
  int remove(const char *filename)
                         ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'rename':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:121:24: warning: unused parameter 'oldname' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:24: warning: unused parameter 'oldname' [-Wunused-parameter]
  int rename(const char *oldname, const char *newname)
                         ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:121:45: warning: unused parameter 'newname' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:45: warning: unused parameter 'newname' [-Wunused-parameter]
  int rename(const char *oldname, const char *newname)
                                              ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fread':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:125:20: warning: unused parameter 'ptr' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:20: warning: unused parameter 'ptr' [-Wunused-parameter]
  uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:125:32: warning: unused parameter 'size' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:32: warning: unused parameter 'size' [-Wunused-parameter]
  uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:125:45: warning: unused parameter 'nobj' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:45: warning: unused parameter 'nobj' [-Wunused-parameter]
  uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                              ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:125:57: warning: unused parameter 'stream' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:57: warning: unused parameter 'stream' [-Wunused-parameter]
  uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                                          ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fwrite':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:27: warning: unused parameter 'ptr' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:27: warning: unused parameter 'ptr' [-Wunused-parameter]
  uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
                            ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:39: warning: unused parameter 'size' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:39: warning: unused parameter 'size' [-Wunused-parameter]
  uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:52: warning: unused parameter 'nobj' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:52: warning: unused parameter 'nobj' [-Wunused-parameter]
  uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:64: warning: unused parameter 'stream' [-Wunused-parameter]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:64: warning: unused parameter 'stream' [-Wunused-parameter]
  uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
                                                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fflush':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:99:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'remove':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:120:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'rename':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fread':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:128:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fwrite':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_TASK_STACK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:23:43: warning: unused parameter 'StackPointer' [-Wunused-parameter]
- void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer)
-                                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_REGISTERS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:31:33: warning: unused parameter 'task' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(task_t* task)
-                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_RESTORE_TASK_STACK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:35:36: warning: unused parameter 'StackPointer' [-Wunused-parameter]
- void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
-                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_RESTORE_REGISTERS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:39:36: warning: unused parameter 'task' [-Wunused-parameter]
- void LLF_RESTORE_REGISTERS(task_t* task)
-                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_RESTORE_SYSTEM_STACK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:43:38: warning: unused parameter 'system_stack_ptr' [-Wunused-parameter]
- void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
-                                      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_SYSTEM_STACK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:47:35: warning: unused parameter 'system_stack_ptr' [-Wunused-parameter]
- void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
-                                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_CLEAR_ALL_GP_REGISTERS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:51:40: warning: unused parameter 'system_stack_ptr' [-Wunused-parameter]
- void LLF_CLEAR_ALL_GP_REGISTERS(uint8* system_stack_ptr)
-                                        ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_INIT':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:5:26: warning: unused parameter 'Led' [-Wunused-parameter]
  void USER_LED_INIT(led_t Led)

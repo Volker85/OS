@@ -646,12 +646,12 @@ LFB11:
 	.loc 1 388 0
 	call	_OS_INIT_TASK_QUEUE
 	.loc 1 391 0
-	movl	$_task_0.1324, -12(%ebp)
+	movl	$_task_0.1321, -12(%ebp)
 	.loc 1 392 0
 	movl	$1, 28(%esp)
 	movl	$200, 24(%esp)
 	movl	$_TASK_STACK, 20(%esp)
-	movl	$_TASK_GROUP_1.1328, 16(%esp)
+	movl	$_TASK_GROUP_1.1325, 16(%esp)
 	movl	$1, 12(%esp)
 	movl	$1, 8(%esp)
 	movl	$_TASK_0, 4(%esp)
@@ -663,12 +663,12 @@ LFB11:
 	movl	%eax, (%esp)
 	call	_SET_RUNNING_TASK
 	.loc 1 407 0
-	movl	$_task_1.1325, -12(%ebp)
+	movl	$_task_1.1322, -12(%ebp)
 	.loc 1 408 0
 	movl	$0, 28(%esp)
 	movl	$200, 24(%esp)
 	movl	$_TASK_STACK+200, 20(%esp)
-	movl	$_TASK_GROUP_1.1328, 16(%esp)
+	movl	$_TASK_GROUP_1.1325, 16(%esp)
 	movl	$0, 12(%esp)
 	movl	$1, 8(%esp)
 	movl	$_TASK_1, 4(%esp)
@@ -676,12 +676,12 @@ LFB11:
 	movl	%eax, (%esp)
 	call	_OS_INIT_TASK
 	.loc 1 420 0
-	movl	$_task_2.1326, -12(%ebp)
+	movl	$_task_2.1323, -12(%ebp)
 	.loc 1 421 0
 	movl	$0, 28(%esp)
 	movl	$200, 24(%esp)
 	movl	$_TASK_STACK+400, 20(%esp)
-	movl	$_TASK_GROUP_2.1329, 16(%esp)
+	movl	$_TASK_GROUP_2.1326, 16(%esp)
 	movl	$0, 12(%esp)
 	movl	$1, 8(%esp)
 	movl	$_TASK_2, 4(%esp)
@@ -689,12 +689,12 @@ LFB11:
 	movl	%eax, (%esp)
 	call	_OS_INIT_TASK
 	.loc 1 433 0
-	movl	$_task_3.1327, -12(%ebp)
+	movl	$_task_3.1324, -12(%ebp)
 	.loc 1 434 0
 	movl	$1, 28(%esp)
 	movl	$200, 24(%esp)
 	movl	$_TASK_STACK+600, 20(%esp)
-	movl	$_TASK_GROUP_3.1330, 16(%esp)
+	movl	$_TASK_GROUP_3.1327, 16(%esp)
 	movl	$0, 12(%esp)
 	movl	$1, 8(%esp)
 	movl	$_TASK_3, 4(%esp)
@@ -741,52 +741,52 @@ L63:
 	movzbl	-13(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_GetFromLinkList
-	movl	%eax, _link_list_member.1340
+	movl	%eax, _link_list_member.1337
 	.loc 1 475 0
-	movl	_link_list_member.1340, %eax
+	movl	_link_list_member.1337, %eax
 	movl	%eax, (%esp)
 	call	_GetFromTaskQueue
-	movl	%eax, _task.1337
+	movl	%eax, _task.1334
 	.loc 1 477 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	testl	%eax, %eax
 	je	L56
 	.loc 1 477 0 is_stmt 0 discriminator 1
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movb	(%eax), %al
 	andl	$2, %eax
 	testb	%al, %al
 	je	L56
 	.loc 1 479 0 is_stmt 1
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	12(%eax), %edx
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	16(%eax), %eax
 	cmpl	%eax, %edx
 	jb	L57
 	.loc 1 481 0
-	movl	_task.1337, %eax
-	movl	_task.1337, %edx
+	movl	_task.1334, %eax
+	movl	_task.1334, %edx
 	movb	32(%edx), %cl
-	movl	_task.1337, %edx
+	movl	_task.1334, %edx
 	movl	20(%edx), %edx
 	addl	%ecx, %edx
 	movb	%dl, 32(%eax)
 L57:
 	.loc 1 484 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	8(%eax), %ebx
 	call	_Get_current_time
 	cmpl	%eax, %ebx
 	jbe	L58
 	.loc 1 486 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movb	$0, 32(%eax)
 L58:
 	.loc 1 488 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	12(%eax), %edx
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	24(%eax), %eax
 	cmpl	%eax, %edx
 	jbe	L59
@@ -796,21 +796,21 @@ L58:
 	call	_OS_SET_SW_BUG
 L59:
 	.loc 1 494 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	52(%eax), %eax
 	testl	%eax, %eax
 	je	L60
 	.loc 1 497 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	52(%eax), %eax
 	movl	(%eax), %edx
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	52(%eax), %eax
 	movl	4(%eax), %eax
 	cmpl	%eax, %edx
 	jbe	L56
 	.loc 1 499 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	28(%eax), %eax
 	movl	%eax, -32(%ebp)
 	movl	$0, -28(%ebp)
@@ -824,7 +824,7 @@ L59:
 	jmp	L56
 L71:
 	.loc 1 501 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movb	$0, 32(%eax)
 	jmp	L56
 L60:
@@ -849,42 +849,42 @@ L67:
 	movzbl	-13(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_GetFromLinkList
-	movl	%eax, _link_list_member.1340
+	movl	%eax, _link_list_member.1337
 	.loc 1 521 0
-	movl	_link_list_member.1340, %eax
+	movl	_link_list_member.1337, %eax
 	movl	%eax, (%esp)
 	call	_GetFromTaskQueue
-	movl	%eax, _task.1337
+	movl	%eax, _task.1334
 	.loc 1 522 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	testl	%eax, %eax
 	je	L65
 	.loc 1 525 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movb	(%eax), %al
 	andl	$4, %eax
 	testb	%al, %al
 	jne	L66
 	.loc 1 527 0
-	movl	_task.1337, %eax
-	movl	_task.1337, %edx
+	movl	_task.1334, %eax
+	movl	_task.1334, %edx
 	movl	12(%edx), %ecx
 	movl	-20(%ebp), %edx
 	addl	%ecx, %edx
 	movl	%edx, 12(%eax)
 L66:
 	.loc 1 530 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movb	32(%eax), %dl
-	movb	_Winner_prio.1338, %al
+	movb	_Winner_prio.1335, %al
 	cmpb	%al, %dl
 	jbe	L65
 	.loc 1 532 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movb	32(%eax), %al
-	movb	%al, _Winner_prio.1338
+	movb	%al, _Winner_prio.1335
 	.loc 1 533 0
-	movl	_task.1337, %eax
+	movl	_task.1334, %eax
 	movl	%eax, -12(%ebp)
 L65:
 	.loc 1 518 0 discriminator 2
@@ -1015,18 +1015,18 @@ LFB16:
 	ret
 	.cfi_endproc
 LFE16:
-.lcomm _TASK_GROUP_1.1328,8,4
-.lcomm _TASK_GROUP_2.1329,8,4
-.lcomm _TASK_GROUP_3.1330,8,4
-.lcomm _TASK_GROUP_4.1331,8,4
-.lcomm _TASK_GROUP_5.1332,8,4
-.lcomm _task_0.1324,96,32
-.lcomm _task_1.1325,96,32
-.lcomm _task_2.1326,96,32
-.lcomm _task_3.1327,96,32
-.lcomm _link_list_member.1340,4,4
-.lcomm _task.1337,4,4
-.lcomm _Winner_prio.1338,1,1
+.lcomm _TASK_GROUP_1.1325,8,4
+.lcomm _TASK_GROUP_2.1326,8,4
+.lcomm _TASK_GROUP_3.1327,8,4
+.lcomm _TASK_GROUP_4.1328,8,4
+.lcomm _TASK_GROUP_5.1329,8,4
+.lcomm _task_0.1321,96,32
+.lcomm _task_1.1322,96,32
+.lcomm _task_2.1323,96,32
+.lcomm _task_3.1324,96,32
+.lcomm _link_list_member.1337,4,4
+.lcomm _task.1334,4,4
+.lcomm _Winner_prio.1335,1,1
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -1697,7 +1697,7 @@ Ldebug_info0:
 	.long	0x6cf
 	.uleb128 0x5
 	.byte	0x3
-	.long	_task_0.1324
+	.long	_task_0.1321
 	.uleb128 0x1c
 	.ascii "task_1\0"
 	.byte	0x1
@@ -1705,7 +1705,7 @@ Ldebug_info0:
 	.long	0x6cf
 	.uleb128 0x5
 	.byte	0x3
-	.long	_task_1.1325
+	.long	_task_1.1322
 	.uleb128 0x1c
 	.ascii "task_2\0"
 	.byte	0x1
@@ -1713,7 +1713,7 @@ Ldebug_info0:
 	.long	0x6cf
 	.uleb128 0x5
 	.byte	0x3
-	.long	_task_2.1326
+	.long	_task_2.1323
 	.uleb128 0x1c
 	.ascii "task_3\0"
 	.byte	0x1
@@ -1721,7 +1721,7 @@ Ldebug_info0:
 	.long	0x6cf
 	.uleb128 0x5
 	.byte	0x3
-	.long	_task_3.1327
+	.long	_task_3.1324
 	.uleb128 0x1c
 	.ascii "TASK_GROUP_1\0"
 	.byte	0x1
@@ -1729,7 +1729,7 @@ Ldebug_info0:
 	.long	0x43c
 	.uleb128 0x5
 	.byte	0x3
-	.long	_TASK_GROUP_1.1328
+	.long	_TASK_GROUP_1.1325
 	.uleb128 0x1c
 	.ascii "TASK_GROUP_2\0"
 	.byte	0x1
@@ -1737,7 +1737,7 @@ Ldebug_info0:
 	.long	0x43c
 	.uleb128 0x5
 	.byte	0x3
-	.long	_TASK_GROUP_2.1329
+	.long	_TASK_GROUP_2.1326
 	.uleb128 0x1c
 	.ascii "TASK_GROUP_3\0"
 	.byte	0x1
@@ -1745,7 +1745,7 @@ Ldebug_info0:
 	.long	0x43c
 	.uleb128 0x5
 	.byte	0x3
-	.long	_TASK_GROUP_3.1330
+	.long	_TASK_GROUP_3.1327
 	.uleb128 0x1c
 	.ascii "TASK_GROUP_4\0"
 	.byte	0x1
@@ -1753,7 +1753,7 @@ Ldebug_info0:
 	.long	0x43c
 	.uleb128 0x5
 	.byte	0x3
-	.long	_TASK_GROUP_4.1331
+	.long	_TASK_GROUP_4.1328
 	.uleb128 0x1c
 	.ascii "TASK_GROUP_5\0"
 	.byte	0x1
@@ -1761,7 +1761,7 @@ Ldebug_info0:
 	.long	0x43c
 	.uleb128 0x5
 	.byte	0x3
-	.long	_TASK_GROUP_5.1332
+	.long	_TASK_GROUP_5.1329
 	.uleb128 0x19
 	.secrel32	LASF2
 	.byte	0x1
@@ -1788,7 +1788,7 @@ Ldebug_info0:
 	.long	0x77f
 	.uleb128 0x5
 	.byte	0x3
-	.long	_task.1337
+	.long	_task.1334
 	.uleb128 0x1c
 	.ascii "Winner_prio\0"
 	.byte	0x1
@@ -1796,7 +1796,7 @@ Ldebug_info0:
 	.long	0x95
 	.uleb128 0x5
 	.byte	0x3
-	.long	_Winner_prio.1338
+	.long	_Winner_prio.1335
 	.uleb128 0x1c
 	.ascii "Winner_task\0"
 	.byte	0x1
@@ -1812,7 +1812,7 @@ Ldebug_info0:
 	.long	0xb41
 	.uleb128 0x5
 	.byte	0x3
-	.long	_link_list_member.1340
+	.long	_link_list_member.1337
 	.uleb128 0x1c
 	.ascii "element_nr\0"
 	.byte	0x1

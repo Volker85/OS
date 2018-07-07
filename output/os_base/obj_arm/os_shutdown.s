@@ -41,22 +41,22 @@ OS_SHUTDOWN:
 	bl	LLF_DISABLE_INTERRUPTS_ALL_CORES
 	.loc 1 10 0
 	bl	LLF_MPU_DISABLE
-	.loc 1 13 0
+	.loc 1 12 0
 	bl	LLF_SWITCH_OFF_WATCHDOG
-	.loc 1 16 0
+	.loc 1 15 0
 	bl	LLF_CLEAR_ALL_RAM
-	.loc 1 21 0
+	.loc 1 20 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	cmp	r3, #1
 	bne	.L2
-	.loc 1 23 0
+	.loc 1 22 0
 	bl	LLF_MCU_SWITCH_OFF_POWER
 	b	.L1
 .L2:
-	.loc 1 27 0
+	.loc 1 26 0
 	bl	LLF_MCU_RESET_POWER
 .L1:
-	.loc 1 29 0
+	.loc 1 28 0
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
 	mov	sp, r7
@@ -70,7 +70,7 @@ OS_SHUTDOWN:
 	.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x9a
+	.4byte	0x82
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -124,7 +124,6 @@ OS_SHUTDOWN:
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x96
 	.uleb128 0x7
 	.4byte	.LASF436
 	.byte	0x1
@@ -133,18 +132,7 @@ OS_SHUTDOWN:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x8
-	.4byte	.LASF437
-	.byte	0x1
-	.byte	0xa
-	.4byte	0x96
-	.uleb128 0x9
 	.byte	0
-	.byte	0
-	.uleb128 0xa
-	.byte	0x4
-	.byte	0x5
-	.ascii	"int\000"
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -236,8 +224,6 @@ OS_SHUTDOWN:
 	.uleb128 0x18
 	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x7
@@ -253,39 +239,6 @@ OS_SHUTDOWN:
 	.uleb128 0x13
 	.uleb128 0x2
 	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x8
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x9
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0xa
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0x8
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1793,6 +1746,8 @@ OS_SHUTDOWN:
 	.ascii	"__CHAR16_TYPE__ short unsigned int\000"
 .LASF19:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
+.LASF264:
+	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF2:
 	.ascii	"__GNUC__ 4\000"
 .LASF24:
@@ -1864,8 +1819,8 @@ OS_SHUTDOWN:
 	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
 .LASF248:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
-.LASF264:
-	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
+.LASF369:
+	.ascii	"CPP_VERSION_2007 3\000"
 .LASF253:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
 .LASF436:
@@ -1959,8 +1914,8 @@ OS_SHUTDOWN:
 	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
 .LASF226:
 	.ascii	"__SACCUM_FBIT__ 7\000"
-.LASF337:
-	.ascii	"__ARM_ARCH_PROFILE 77\000"
+.LASF145:
+	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
 .LASF176:
 	.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
 .LASF198:
@@ -2017,8 +1972,6 @@ OS_SHUTDOWN:
 	.ascii	"__INT_LEAST16_MAX__ 32767\000"
 .LASF194:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
-.LASF145:
-	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
 .LASF258:
 	.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
 .LASF66:
@@ -2168,8 +2121,6 @@ OS_SHUTDOWN:
 	.ascii	"__UINT_LEAST32_MAX__ 4294967295UL\000"
 .LASF356:
 	.ascii	"__ELF__ 1\000"
-.LASF437:
-	.ascii	"LLF_MPU_DISABLE\000"
 .LASF330:
 	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
 .LASF320:
@@ -2356,8 +2307,6 @@ OS_SHUTDOWN:
 	.ascii	"__UINT_FAST64_MAX__ 18446744073709551615ULL\000"
 .LASF349:
 	.ascii	"__ARM_NEON_FP 4\000"
-.LASF369:
-	.ascii	"CPP_VERSION_2007 3\000"
 .LASF262:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
 .LASF87:
@@ -2553,6 +2502,8 @@ OS_SHUTDOWN:
 	.ascii	"__QQ_FBIT__ 7\000"
 .LASF51:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
+.LASF337:
+	.ascii	"__ARM_ARCH_PROFILE 77\000"
 .LASF125:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
 .LASF388:

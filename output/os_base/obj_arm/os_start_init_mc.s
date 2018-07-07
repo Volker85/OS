@@ -49,7 +49,7 @@ OS_INIT_MC:
 .Letext0:
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x79
+	.4byte	0x4f
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -85,27 +85,6 @@ OS_INIT_MC:
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x75
-	.uleb128 0x4
-	.4byte	.LASF431
-	.byte	0x1
-	.byte	0xe
-	.4byte	0x75
-	.4byte	0x67
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x6
-	.4byte	.LASF432
-	.byte	0x1
-	.byte	0x14
-	.4byte	0x75
-	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0x7
-	.byte	0x4
-	.byte	0x5
-	.ascii	"int\000"
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -141,7 +120,7 @@ OS_INIT_MC:
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x2e
-	.byte	0x1
+	.byte	0
 	.uleb128 0x3f
 	.uleb128 0x19
 	.uleb128 0x3
@@ -160,60 +139,6 @@ OS_INIT_MC:
 	.uleb128 0x18
 	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x4
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x5
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x6
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x7
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0x8
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1812,8 +1737,6 @@ OS_INIT_MC:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF378:
 	.ascii	"Local static\000"
-.LASF432:
-	.ascii	"LLF_PERFORM_RAM_CHECK\000"
 .LASF63:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
 .LASF383:
@@ -1881,8 +1804,8 @@ OS_INIT_MC:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
 .LASF54:
 	.ascii	"__INT_FAST8_TYPE__ int\000"
-.LASF59:
-	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
+.LASF373:
+	.ascii	"_os_common_h_ \000"
 .LASF226:
 	.ascii	"__SACCUM_FBIT__ 7\000"
 .LASF145:
@@ -1998,6 +1921,8 @@ OS_INIT_MC:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF121:
 	.ascii	"__DEC_EVAL_METHOD__ 2\000"
+.LASF59:
+	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
 .LASF140:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
 .LASF232:
@@ -2462,8 +2387,6 @@ OS_INIT_MC:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF337:
 	.ascii	"__ARM_ARCH_PROFILE 77\000"
-.LASF431:
-	.ascii	"LLF_CLEAR_ALL_GP_REGISTERS\000"
 .LASF125:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
 .LASF388:
@@ -2471,8 +2394,6 @@ OS_INIT_MC:
 .LASF183:
 	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
 	.ascii	"6144DL\000"
-.LASF373:
-	.ascii	"_os_common_h_ \000"
 .LASF157:
 	.ascii	"__DECIMAL_DIG__ 17\000"
 .LASF97:

@@ -32,7 +32,7 @@ LFE0:
 Letext0:
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x148
+	.long	0xf5
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -68,27 +68,6 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x144
-	.uleb128 0x4
-	.ascii "LLF_CLEAR_ALL_GP_REGISTERS\0"
-	.byte	0x1
-	.byte	0xe
-	.long	0x144
-	.long	0x124
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x6
-	.ascii "LLF_PERFORM_RAM_CHECK\0"
-	.byte	0x1
-	.byte	0x14
-	.long	0x144
-	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -124,7 +103,7 @@ Ldebug_abbrev0:
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x2e
-	.byte	0x1
+	.byte	0
 	.uleb128 0x3f
 	.uleb128 0x19
 	.uleb128 0x3
@@ -142,49 +121,6 @@ Ldebug_abbrev0:
 	.uleb128 0x40
 	.uleb128 0x18
 	.uleb128 0x2116
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x4
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x5
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x6
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
 	.uleb128 0x19
 	.byte	0
 	.byte	0

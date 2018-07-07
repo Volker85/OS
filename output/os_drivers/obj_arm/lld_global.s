@@ -74,7 +74,12 @@ LLF_SAVE_TASK_STACK:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 30 0
+	.loc 1 29 0
+	ldr	r3, [r7, #4]
+	ldrb	r2, [r3]	@ zero_extendqisi2
+	ldr	r3, [r7, #4]
+	strb	r2, [r3]
+	.loc 1 31 0
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
 	mov	sp, r7
@@ -94,7 +99,7 @@ LLF_SAVE_TASK_STACK:
 	.type	LLF_SAVE_REGISTERS, %function
 LLF_SAVE_REGISTERS:
 .LFB2:
-	.loc 1 32 0
+	.loc 1 33 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -107,7 +112,7 @@ LLF_SAVE_REGISTERS:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 34 0
+	.loc 1 35 0
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
 	mov	sp, r7
@@ -127,7 +132,7 @@ LLF_SAVE_REGISTERS:
 	.type	LLF_RESTORE_TASK_STACK, %function
 LLF_RESTORE_TASK_STACK:
 .LFB3:
-	.loc 1 36 0
+	.loc 1 37 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -140,6 +145,11 @@ LLF_RESTORE_TASK_STACK:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
+	.loc 1 38 0
+	ldr	r3, [r7, #4]
+	ldrb	r2, [r3]	@ zero_extendqisi2
+	ldr	r3, [r7, #4]
+	strb	r2, [r3]
 	.loc 1 39 0
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -173,7 +183,7 @@ LLF_RESTORE_REGISTERS:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 43 0
+	.loc 1 44 0
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
 	mov	sp, r7
@@ -193,7 +203,7 @@ LLF_RESTORE_REGISTERS:
 	.type	LLF_RESTORE_SYSTEM_STACK, %function
 LLF_RESTORE_SYSTEM_STACK:
 .LFB5:
-	.loc 1 45 0
+	.loc 1 46 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -207,6 +217,11 @@ LLF_RESTORE_SYSTEM_STACK:
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
 	.loc 1 47 0
+	ldr	r3, [r7, #4]
+	ldrb	r2, [r3]	@ zero_extendqisi2
+	ldr	r3, [r7, #4]
+	strb	r2, [r3]
+	.loc 1 49 0
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
 	mov	sp, r7
@@ -226,7 +241,7 @@ LLF_RESTORE_SYSTEM_STACK:
 	.type	LLF_SAVE_SYSTEM_STACK, %function
 LLF_SAVE_SYSTEM_STACK:
 .LFB6:
-	.loc 1 49 0
+	.loc 1 51 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -239,7 +254,12 @@ LLF_SAVE_SYSTEM_STACK:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 51 0
+	.loc 1 52 0
+	ldr	r3, [r7, #4]
+	ldrb	r2, [r3]	@ zero_extendqisi2
+	ldr	r3, [r7, #4]
+	strb	r2, [r3]
+	.loc 1 54 0
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
 	mov	sp, r7
@@ -259,22 +279,17 @@ LLF_SAVE_SYSTEM_STACK:
 	.type	LLF_CLEAR_ALL_GP_REGISTERS, %function
 LLF_CLEAR_ALL_GP_REGISTERS:
 .LFB7:
-	.loc 1 53 0
+	.loc 1 56 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
+	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
 	@ link register save eliminated.
 	push	{r7}
 	.cfi_def_cfa_offset 4
 	.cfi_offset 7, -4
-	sub	sp, sp, #12
-	.cfi_def_cfa_offset 16
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	str	r0, [r7, #4]
-	.loc 1 55 0
-	adds	r7, r7, #12
-	.cfi_def_cfa_offset 4
+	.loc 1 58 0
 	mov	sp, r7
 	.cfi_def_cfa_register 13
 	@ sp needed
@@ -292,7 +307,7 @@ LLF_CLEAR_ALL_GP_REGISTERS:
 	.type	LLF_PERFORM_RAM_CHECK, %function
 LLF_PERFORM_RAM_CHECK:
 .LFB8:
-	.loc 1 57 0
+	.loc 1 60 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -302,7 +317,7 @@ LLF_PERFORM_RAM_CHECK:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 59 0
+	.loc 1 62 0
 	mov	sp, r7
 	.cfi_def_cfa_register 13
 	@ sp needed
@@ -319,14 +334,14 @@ LLF_PERFORM_RAM_CHECK:
 	.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x460
+	.4byte	0x44d
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF484
-	.byte	0x1
 	.4byte	.LASF485
+	.byte	0x1
+	.4byte	.LASF486
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -724,7 +739,7 @@ LLF_PERFORM_RAM_CHECK:
 	.byte	0x4d
 	.4byte	0x12e
 	.uleb128 0xf
-	.4byte	.LASF486
+	.4byte	.LASF487
 	.byte	0x1
 	.byte	0x2
 	.4byte	0x80
@@ -734,7 +749,7 @@ LLF_PERFORM_RAM_CHECK:
 	.byte	0x9c
 	.4byte	0x34a
 	.uleb128 0x10
-	.4byte	.LASF487
+	.4byte	.LASF488
 	.byte	0x1
 	.byte	0x14
 	.4byte	0x80
@@ -763,7 +778,7 @@ LLF_PERFORM_RAM_CHECK:
 	.uleb128 0x11
 	.4byte	.LASF475
 	.byte	0x1
-	.byte	0x1f
+	.byte	0x20
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
@@ -772,7 +787,7 @@ LLF_PERFORM_RAM_CHECK:
 	.uleb128 0x12
 	.4byte	.LASF477
 	.byte	0x1
-	.byte	0x1f
+	.byte	0x20
 	.4byte	0x392
 	.uleb128 0x2
 	.byte	0x91
@@ -784,7 +799,7 @@ LLF_PERFORM_RAM_CHECK:
 	.uleb128 0x11
 	.4byte	.LASF478
 	.byte	0x1
-	.byte	0x23
+	.byte	0x24
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
@@ -793,7 +808,7 @@ LLF_PERFORM_RAM_CHECK:
 	.uleb128 0x12
 	.4byte	.LASF476
 	.byte	0x1
-	.byte	0x23
+	.byte	0x24
 	.4byte	0x3bc
 	.uleb128 0x2
 	.byte	0x91
@@ -823,7 +838,7 @@ LLF_PERFORM_RAM_CHECK:
 	.uleb128 0x11
 	.4byte	.LASF480
 	.byte	0x1
-	.byte	0x2c
+	.byte	0x2d
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
@@ -832,7 +847,7 @@ LLF_PERFORM_RAM_CHECK:
 	.uleb128 0x12
 	.4byte	.LASF481
 	.byte	0x1
-	.byte	0x2c
+	.byte	0x2d
 	.4byte	0x3bc
 	.uleb128 0x2
 	.byte	0x91
@@ -841,7 +856,7 @@ LLF_PERFORM_RAM_CHECK:
 	.uleb128 0x11
 	.4byte	.LASF482
 	.byte	0x1
-	.byte	0x30
+	.byte	0x32
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
@@ -850,34 +865,24 @@ LLF_PERFORM_RAM_CHECK:
 	.uleb128 0x12
 	.4byte	.LASF481
 	.byte	0x1
-	.byte	0x30
-	.4byte	0x3bc
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -12
-	.byte	0
-	.uleb128 0x11
-	.4byte	.LASF483
-	.byte	0x1
-	.byte	0x34
-	.4byte	.LFB7
-	.4byte	.LFE7-.LFB7
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x452
-	.uleb128 0x12
-	.4byte	.LASF481
-	.byte	0x1
-	.byte	0x34
+	.byte	0x32
 	.4byte	0x3bc
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF488
+	.4byte	.LASF483
 	.byte	0x1
-	.byte	0x38
+	.byte	0x37
+	.4byte	.LFB7
+	.4byte	.LFE7-.LFB7
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0x13
+	.4byte	.LASF484
+	.byte	0x1
+	.byte	0x3b
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
@@ -2769,7 +2774,7 @@ LLF_PERFORM_RAM_CHECK:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF378:
 	.ascii	"Local static\000"
-.LASF488:
+.LASF484:
 	.ascii	"LLF_PERFORM_RAM_CHECK\000"
 .LASF63:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
@@ -3225,7 +3230,7 @@ LLF_PERFORM_RAM_CHECK:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF88:
 	.ascii	"__UINT8_MAX__ 255\000"
-.LASF485:
+.LASF486:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_drivers\\lld_global.c\000"
 .LASF249:
@@ -3405,7 +3410,7 @@ LLF_PERFORM_RAM_CHECK:
 	.ascii	"__INT_FAST64_MAX__ 9223372036854775807LL\000"
 .LASF482:
 	.ascii	"LLF_SAVE_SYSTEM_STACK\000"
-.LASF487:
+.LASF488:
 	.ascii	"ret_val\000"
 .LASF319:
 	.ascii	"__GCC_ATOMIC_LLONG_LOCK_FREE 1\000"
@@ -3468,7 +3473,7 @@ LLF_PERFORM_RAM_CHECK:
 	.ascii	"SchedulerFrequency (1.0e3)\000"
 .LASF444:
 	.ascii	"exe_time\000"
-.LASF486:
+.LASF487:
 	.ascii	"Get_core_id\000"
 .LASF316:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
@@ -3551,7 +3556,7 @@ LLF_PERFORM_RAM_CHECK:
 	.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
 .LASF259:
 	.ascii	"__LLACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LLK\000"
-.LASF484:
+.LASF485:
 	.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
 	.ascii	"anch revision 221220] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"

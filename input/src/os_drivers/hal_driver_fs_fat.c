@@ -93,7 +93,9 @@ FILE* freopen(const char *filename, const char *mode, FILE *stream)
 }
 int fflush(FILE* stream)
 {
+   ReferenceUnusedParameter(*stream);
    /* no buffering implemented -> no need for flush */
+   return 0;
 }
 int fclose(FILE* file_ptr)
 {
@@ -111,20 +113,31 @@ int fclose(FILE* file_ptr)
    }
    file_ptr->used_file_name_size = 0;
    file_ptr = 0;
+   return 0;
 }
 int remove(const char *filename)
 {
    /*#warn "fopen"*/
+   return 0;
 }
 int rename(const char *oldname, const char *newname)
 {
    /*#warn "fopen"*/
+   return 0;
 }
 uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
 {
+    ReferenceUnusedParameter(size);
+   ReferenceUnusedParameter(nobj);
+   ReferenceUnusedParameter(*stream);
    /*#warn "fopen"*/
+   return 0;
 }
 uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
 {
+   ReferenceUnusedParameter(size);
+   ReferenceUnusedParameter(nobj);
+   ReferenceUnusedParameter(*stream);
    /*#warn "fopen"*/
+   return 0;
 }

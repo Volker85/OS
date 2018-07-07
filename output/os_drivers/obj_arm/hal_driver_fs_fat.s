@@ -306,7 +306,9 @@ fflush:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 97 0
+	.loc 1 98 0
+	movs	r3, #0
+	.loc 1 99 0
 	mov	r0, r3
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -327,7 +329,7 @@ fflush:
 	.type	fclose, %function
 fclose:
 .LFB3:
-	.loc 1 99 0
+	.loc 1 101 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -340,69 +342,71 @@ fclose:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 100 0
+	.loc 1 102 0
 	movs	r3, #0
 	strb	r3, [r7, #15]
-	.loc 1 102 0
+	.loc 1 104 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #0, #1
 	strb	r3, [r2]
-	.loc 1 103 0
+	.loc 1 105 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #1, #1
 	strb	r3, [r2]
-	.loc 1 104 0
+	.loc 1 106 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #2, #1
 	strb	r3, [r2]
-	.loc 1 105 0
+	.loc 1 107 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #3, #1
 	strb	r3, [r2]
-	.loc 1 106 0
+	.loc 1 108 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #4, #1
 	strb	r3, [r2]
-	.loc 1 107 0
+	.loc 1 109 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #5, #1
 	strb	r3, [r2]
-	.loc 1 108 0
+	.loc 1 110 0
 	movs	r3, #0
 	strb	r3, [r7, #15]
-	b	.L30
-.L31:
-	.loc 1 110 0 discriminator 3
+	b	.L31
+.L32:
+	.loc 1 112 0 discriminator 3
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	ldr	r2, [r7, #4]
 	add	r3, r3, r2
 	movs	r2, #0
 	strb	r2, [r3, #12]
-	.loc 1 108 0 discriminator 3
+	.loc 1 110 0 discriminator 3
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	adds	r3, r3, #1
 	strb	r3, [r7, #15]
-.L30:
-	.loc 1 108 0 is_stmt 0 discriminator 1
+.L31:
+	.loc 1 110 0 is_stmt 0 discriminator 1
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #4]
 	cmp	r2, r3
-	bcc	.L31
-	.loc 1 112 0 is_stmt 1
+	bcc	.L32
+	.loc 1 114 0 is_stmt 1
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #8]
-	.loc 1 113 0
+	.loc 1 115 0
 	movs	r3, #0
 	str	r3, [r7, #4]
-	.loc 1 114 0
+	.loc 1 116 0
+	movs	r3, #0
+	.loc 1 117 0
 	mov	r0, r3
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -423,7 +427,7 @@ fclose:
 	.type	remove, %function
 remove:
 .LFB4:
-	.loc 1 116 0
+	.loc 1 119 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -436,7 +440,9 @@ remove:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 118 0
+	.loc 1 121 0
+	movs	r3, #0
+	.loc 1 122 0
 	mov	r0, r3
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -457,7 +463,7 @@ remove:
 	.type	rename, %function
 rename:
 .LFB5:
-	.loc 1 120 0
+	.loc 1 124 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -471,7 +477,9 @@ rename:
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
 	str	r1, [r7]
-	.loc 1 122 0
+	.loc 1 126 0
+	movs	r3, #0
+	.loc 1 127 0
 	mov	r0, r3
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -492,7 +500,7 @@ rename:
 	.type	fread, %function
 fread:
 .LFB6:
-	.loc 1 124 0
+	.loc 1 129 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -508,7 +516,9 @@ fread:
 	str	r1, [r7, #8]
 	str	r2, [r7, #4]
 	str	r3, [r7]
-	.loc 1 126 0
+	.loc 1 134 0
+	movs	r3, #0
+	.loc 1 135 0
 	mov	r0, r3
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -529,7 +539,7 @@ fread:
 	.type	fwrite, %function
 fwrite:
 .LFB7:
-	.loc 1 128 0
+	.loc 1 137 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -545,7 +555,9 @@ fwrite:
 	str	r1, [r7, #8]
 	str	r2, [r7, #4]
 	str	r3, [r7]
-	.loc 1 130 0
+	.loc 1 142 0
+	movs	r3, #0
+	.loc 1 143 0
 	mov	r0, r3
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -853,7 +865,7 @@ fwrite:
 	.uleb128 0xc
 	.4byte	.LASF455
 	.byte	0x1
-	.byte	0x62
+	.byte	0x64
 	.4byte	0x1fb
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
@@ -863,7 +875,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF448
 	.byte	0x1
-	.byte	0x62
+	.byte	0x64
 	.4byte	0x192
 	.uleb128 0x2
 	.byte	0x91
@@ -871,7 +883,7 @@ fwrite:
 	.uleb128 0xe
 	.ascii	"i\000"
 	.byte	0x1
-	.byte	0x64
+	.byte	0x66
 	.4byte	0x37
 	.uleb128 0x2
 	.byte	0x91
@@ -880,7 +892,7 @@ fwrite:
 	.uleb128 0xc
 	.4byte	.LASF456
 	.byte	0x1
-	.byte	0x73
+	.byte	0x76
 	.4byte	0x1fb
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
@@ -890,7 +902,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF446
 	.byte	0x1
-	.byte	0x73
+	.byte	0x76
 	.4byte	0x198
 	.uleb128 0x2
 	.byte	0x91
@@ -899,7 +911,7 @@ fwrite:
 	.uleb128 0xc
 	.4byte	.LASF457
 	.byte	0x1
-	.byte	0x77
+	.byte	0x7b
 	.4byte	0x1fb
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
@@ -909,7 +921,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF458
 	.byte	0x1
-	.byte	0x77
+	.byte	0x7b
 	.4byte	0x198
 	.uleb128 0x2
 	.byte	0x91
@@ -917,7 +929,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF459
 	.byte	0x1
-	.byte	0x77
+	.byte	0x7b
 	.4byte	0x198
 	.uleb128 0x2
 	.byte	0x91
@@ -926,7 +938,7 @@ fwrite:
 	.uleb128 0xc
 	.4byte	.LASF460
 	.byte	0x1
-	.byte	0x7b
+	.byte	0x80
 	.4byte	0x50
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
@@ -936,7 +948,7 @@ fwrite:
 	.uleb128 0x15
 	.ascii	"ptr\000"
 	.byte	0x1
-	.byte	0x7b
+	.byte	0x80
 	.4byte	0x5b
 	.uleb128 0x2
 	.byte	0x91
@@ -944,7 +956,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF461
 	.byte	0x1
-	.byte	0x7b
+	.byte	0x80
 	.4byte	0x50
 	.uleb128 0x2
 	.byte	0x91
@@ -952,7 +964,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF462
 	.byte	0x1
-	.byte	0x7b
+	.byte	0x80
 	.4byte	0x50
 	.uleb128 0x2
 	.byte	0x91
@@ -960,7 +972,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF453
 	.byte	0x1
-	.byte	0x7b
+	.byte	0x80
 	.4byte	0x192
 	.uleb128 0x2
 	.byte	0x91
@@ -969,7 +981,7 @@ fwrite:
 	.uleb128 0xc
 	.4byte	.LASF463
 	.byte	0x1
-	.byte	0x7f
+	.byte	0x88
 	.4byte	0x50
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
@@ -979,7 +991,7 @@ fwrite:
 	.uleb128 0x15
 	.ascii	"ptr\000"
 	.byte	0x1
-	.byte	0x7f
+	.byte	0x88
 	.4byte	0x360
 	.uleb128 0x2
 	.byte	0x91
@@ -987,7 +999,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF461
 	.byte	0x1
-	.byte	0x7f
+	.byte	0x88
 	.4byte	0x50
 	.uleb128 0x2
 	.byte	0x91
@@ -995,7 +1007,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF462
 	.byte	0x1
-	.byte	0x7f
+	.byte	0x88
 	.4byte	0x50
 	.uleb128 0x2
 	.byte	0x91
@@ -1003,7 +1015,7 @@ fwrite:
 	.uleb128 0xd
 	.4byte	.LASF453
 	.byte	0x1
-	.byte	0x7f
+	.byte	0x88
 	.4byte	0x192
 	.uleb128 0x2
 	.byte	0x91

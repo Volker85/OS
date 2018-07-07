@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 1
   19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    /* Cortex M7 seems to be always single core */
   20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    CoreID_t ret_val = 0;
   38              		.loc 1 20 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s 			page 2
 
 
   39 0006 0023     		movs	r3, #0
@@ -105,295 +105,313 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 1
   26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****       2. save it the correct task context
   27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****       3. invalidate the register (==0)
   28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    */
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** /*TODO*/
-  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
-  77              		.loc 1 30 0
-  78 0020 0C37     		adds	r7, r7, #12
-  79              		.cfi_def_cfa_offset 4
-  80 0022 BD46     		mov	sp, r7
-  81              		.cfi_def_cfa_register 13
-  82              		@ sp needed
-  83 0024 5DF8047B 		ldr	r7, [sp], #4
-  84              		.cfi_restore 7
-  85              		.cfi_def_cfa_offset 0
-  86 0028 7047     		bx	lr
-  87              		.cfi_endproc
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 3
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    ReferenceUnusedParameter(*StackPointer);
+  77              		.loc 1 29 0
+  78 0020 7B68     		ldr	r3, [r7, #4]
+  79 0022 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  80 0024 7B68     		ldr	r3, [r7, #4]
+  81 0026 1A70     		strb	r2, [r3]
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** /*TODO*/
+  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
+  82              		.loc 1 31 0
+  83 0028 0C37     		adds	r7, r7, #12
+  84              		.cfi_def_cfa_offset 4
+  85 002a BD46     		mov	sp, r7
+  86              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s 			page 3
 
 
-  88              	.LFE1:
-  90 002a 00BF     		.align	2
-  91              		.global	LLF_SAVE_REGISTERS
-  92              		.thumb
-  93              		.thumb_func
-  95              	LLF_SAVE_REGISTERS:
-  96              	.LFB2:
-  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_SAVE_REGISTERS(task_t* task)
-  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
-  97              		.loc 1 32 0
-  98              		.cfi_startproc
-  99              		@ args = 0, pretend = 0, frame = 8
- 100              		@ frame_needed = 1, uses_anonymous_args = 0
- 101              		@ link register save eliminated.
- 102 002c 80B4     		push	{r7}
- 103              		.cfi_def_cfa_offset 4
- 104              		.cfi_offset 7, -4
- 105 002e 83B0     		sub	sp, sp, #12
- 106              		.cfi_def_cfa_offset 16
- 107 0030 00AF     		add	r7, sp, #0
- 108              		.cfi_def_cfa_register 7
- 109 0032 7860     		str	r0, [r7, #4]
-  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** /*TODO*/
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
- 110              		.loc 1 34 0
- 111 0034 0C37     		adds	r7, r7, #12
- 112              		.cfi_def_cfa_offset 4
- 113 0036 BD46     		mov	sp, r7
- 114              		.cfi_def_cfa_register 13
- 115              		@ sp needed
- 116 0038 5DF8047B 		ldr	r7, [sp], #4
- 117              		.cfi_restore 7
- 118              		.cfi_def_cfa_offset 0
- 119 003c 7047     		bx	lr
- 120              		.cfi_endproc
- 121              	.LFE2:
- 123 003e 00BF     		.align	2
- 124              		.global	LLF_RESTORE_TASK_STACK
- 125              		.thumb
- 126              		.thumb_func
- 128              	LLF_RESTORE_TASK_STACK:
- 129              	.LFB3:
-  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
-  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
- 130              		.loc 1 36 0
- 131              		.cfi_startproc
- 132              		@ args = 0, pretend = 0, frame = 8
- 133              		@ frame_needed = 1, uses_anonymous_args = 0
- 134              		@ link register save eliminated.
- 135 0040 80B4     		push	{r7}
- 136              		.cfi_def_cfa_offset 4
- 137              		.cfi_offset 7, -4
- 138 0042 83B0     		sub	sp, sp, #12
- 139              		.cfi_def_cfa_offset 16
- 140 0044 00AF     		add	r7, sp, #0
- 141              		.cfi_def_cfa_register 7
- 142 0046 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 4
+  87              		@ sp needed
+  88 002c 5DF8047B 		ldr	r7, [sp], #4
+  89              		.cfi_restore 7
+  90              		.cfi_def_cfa_offset 0
+  91 0030 7047     		bx	lr
+  92              		.cfi_endproc
+  93              	.LFE1:
+  95 0032 00BF     		.align	2
+  96              		.global	LLF_SAVE_REGISTERS
+  97              		.thumb
+  98              		.thumb_func
+ 100              	LLF_SAVE_REGISTERS:
+ 101              	.LFB2:
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_SAVE_REGISTERS(task_t* task)
+  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
+ 102              		.loc 1 33 0
+ 103              		.cfi_startproc
+ 104              		@ args = 0, pretend = 0, frame = 8
+ 105              		@ frame_needed = 1, uses_anonymous_args = 0
+ 106              		@ link register save eliminated.
+ 107 0034 80B4     		push	{r7}
+ 108              		.cfi_def_cfa_offset 4
+ 109              		.cfi_offset 7, -4
+ 110 0036 83B0     		sub	sp, sp, #12
+ 111              		.cfi_def_cfa_offset 16
+ 112 0038 00AF     		add	r7, sp, #0
+ 113              		.cfi_def_cfa_register 7
+ 114 003a 7860     		str	r0, [r7, #4]
+  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    ReferenceUnusedParameter(*task);
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
+ 115              		.loc 1 35 0
+ 116 003c 0C37     		adds	r7, r7, #12
+ 117              		.cfi_def_cfa_offset 4
+ 118 003e BD46     		mov	sp, r7
+ 119              		.cfi_def_cfa_register 13
+ 120              		@ sp needed
+ 121 0040 5DF8047B 		ldr	r7, [sp], #4
+ 122              		.cfi_restore 7
+ 123              		.cfi_def_cfa_offset 0
+ 124 0044 7047     		bx	lr
+ 125              		.cfi_endproc
+ 126              	.LFE2:
+ 128 0046 00BF     		.align	2
+ 129              		.global	LLF_RESTORE_TASK_STACK
+ 130              		.thumb
+ 131              		.thumb_func
+ 133              	LLF_RESTORE_TASK_STACK:
+ 134              	.LFB3:
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
+ 135              		.loc 1 37 0
+ 136              		.cfi_startproc
+ 137              		@ args = 0, pretend = 0, frame = 8
+ 138              		@ frame_needed = 1, uses_anonymous_args = 0
+ 139              		@ link register save eliminated.
+ 140 0048 80B4     		push	{r7}
+ 141              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s 			page 4
 
 
-  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** /*TODO*/  
-  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** 
+ 142              		.cfi_offset 7, -4
+ 143 004a 83B0     		sub	sp, sp, #12
+ 144              		.cfi_def_cfa_offset 16
+ 145 004c 00AF     		add	r7, sp, #0
+ 146              		.cfi_def_cfa_register 7
+ 147 004e 7860     		str	r0, [r7, #4]
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    ReferenceUnusedParameter(*StackPointer);
+ 148              		.loc 1 38 0
+ 149 0050 7B68     		ldr	r3, [r7, #4]
+ 150 0052 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 151 0054 7B68     		ldr	r3, [r7, #4]
+ 152 0056 1A70     		strb	r2, [r3]
   39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
- 143              		.loc 1 39 0
- 144 0048 0C37     		adds	r7, r7, #12
- 145              		.cfi_def_cfa_offset 4
- 146 004a BD46     		mov	sp, r7
- 147              		.cfi_def_cfa_register 13
- 148              		@ sp needed
- 149 004c 5DF8047B 		ldr	r7, [sp], #4
- 150              		.cfi_restore 7
- 151              		.cfi_def_cfa_offset 0
- 152 0050 7047     		bx	lr
- 153              		.cfi_endproc
- 154              	.LFE3:
- 156 0052 00BF     		.align	2
- 157              		.global	LLF_RESTORE_REGISTERS
- 158              		.thumb
- 159              		.thumb_func
- 161              	LLF_RESTORE_REGISTERS:
- 162              	.LFB4:
+ 153              		.loc 1 39 0
+ 154 0058 0C37     		adds	r7, r7, #12
+ 155              		.cfi_def_cfa_offset 4
+ 156 005a BD46     		mov	sp, r7
+ 157              		.cfi_def_cfa_register 13
+ 158              		@ sp needed
+ 159 005c 5DF8047B 		ldr	r7, [sp], #4
+ 160              		.cfi_restore 7
+ 161              		.cfi_def_cfa_offset 0
+ 162 0060 7047     		bx	lr
+ 163              		.cfi_endproc
+ 164              	.LFE3:
+ 166 0062 00BF     		.align	2
+ 167              		.global	LLF_RESTORE_REGISTERS
+ 168              		.thumb
+ 169              		.thumb_func
+ 171              	LLF_RESTORE_REGISTERS:
+ 172              	.LFB4:
   40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_RESTORE_REGISTERS(task_t* task)
   41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
- 163              		.loc 1 41 0
- 164              		.cfi_startproc
- 165              		@ args = 0, pretend = 0, frame = 8
- 166              		@ frame_needed = 1, uses_anonymous_args = 0
- 167              		@ link register save eliminated.
- 168 0054 80B4     		push	{r7}
- 169              		.cfi_def_cfa_offset 4
- 170              		.cfi_offset 7, -4
- 171 0056 83B0     		sub	sp, sp, #12
- 172              		.cfi_def_cfa_offset 16
- 173 0058 00AF     		add	r7, sp, #0
- 174              		.cfi_def_cfa_register 7
- 175 005a 7860     		str	r0, [r7, #4]
-  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** /*TODO*/
-  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
- 176              		.loc 1 43 0
- 177 005c 0C37     		adds	r7, r7, #12
- 178              		.cfi_def_cfa_offset 4
- 179 005e BD46     		mov	sp, r7
- 180              		.cfi_def_cfa_register 13
- 181              		@ sp needed
- 182 0060 5DF8047B 		ldr	r7, [sp], #4
- 183              		.cfi_restore 7
- 184              		.cfi_def_cfa_offset 0
- 185 0064 7047     		bx	lr
- 186              		.cfi_endproc
- 187              	.LFE4:
- 189 0066 00BF     		.align	2
- 190              		.global	LLF_RESTORE_SYSTEM_STACK
- 191              		.thumb
- 192              		.thumb_func
- 194              	LLF_RESTORE_SYSTEM_STACK:
- 195              	.LFB5:
-  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 5
+ 173              		.loc 1 41 0
+ 174              		.cfi_startproc
+ 175              		@ args = 0, pretend = 0, frame = 8
+ 176              		@ frame_needed = 1, uses_anonymous_args = 0
+ 177              		@ link register save eliminated.
+ 178 0064 80B4     		push	{r7}
+ 179              		.cfi_def_cfa_offset 4
+ 180              		.cfi_offset 7, -4
+ 181 0066 83B0     		sub	sp, sp, #12
+ 182              		.cfi_def_cfa_offset 16
+ 183 0068 00AF     		add	r7, sp, #0
+ 184              		.cfi_def_cfa_register 7
+ 185 006a 7860     		str	r0, [r7, #4]
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    ReferenceUnusedParameter(*task);
+  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    /*TODO*/
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
+ 186              		.loc 1 44 0
+ 187 006c 0C37     		adds	r7, r7, #12
+ 188              		.cfi_def_cfa_offset 4
+ 189 006e BD46     		mov	sp, r7
+ 190              		.cfi_def_cfa_register 13
+ 191              		@ sp needed
+ 192 0070 5DF8047B 		ldr	r7, [sp], #4
+ 193              		.cfi_restore 7
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s 			page 5
 
 
-  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
- 196              		.loc 1 45 0
- 197              		.cfi_startproc
- 198              		@ args = 0, pretend = 0, frame = 8
- 199              		@ frame_needed = 1, uses_anonymous_args = 0
- 200              		@ link register save eliminated.
- 201 0068 80B4     		push	{r7}
- 202              		.cfi_def_cfa_offset 4
- 203              		.cfi_offset 7, -4
- 204 006a 83B0     		sub	sp, sp, #12
- 205              		.cfi_def_cfa_offset 16
- 206 006c 00AF     		add	r7, sp, #0
- 207              		.cfi_def_cfa_register 7
- 208 006e 7860     		str	r0, [r7, #4]
-  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** /*TODO*/  
-  47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
- 209              		.loc 1 47 0
- 210 0070 0C37     		adds	r7, r7, #12
- 211              		.cfi_def_cfa_offset 4
- 212 0072 BD46     		mov	sp, r7
- 213              		.cfi_def_cfa_register 13
- 214              		@ sp needed
- 215 0074 5DF8047B 		ldr	r7, [sp], #4
- 216              		.cfi_restore 7
- 217              		.cfi_def_cfa_offset 0
- 218 0078 7047     		bx	lr
- 219              		.cfi_endproc
- 220              	.LFE5:
- 222 007a 00BF     		.align	2
- 223              		.global	LLF_SAVE_SYSTEM_STACK
- 224              		.thumb
- 225              		.thumb_func
- 227              	LLF_SAVE_SYSTEM_STACK:
- 228              	.LFB6:
-  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
-  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** { 
- 229              		.loc 1 49 0
- 230              		.cfi_startproc
- 231              		@ args = 0, pretend = 0, frame = 8
- 232              		@ frame_needed = 1, uses_anonymous_args = 0
- 233              		@ link register save eliminated.
- 234 007c 80B4     		push	{r7}
- 235              		.cfi_def_cfa_offset 4
- 236              		.cfi_offset 7, -4
- 237 007e 83B0     		sub	sp, sp, #12
- 238              		.cfi_def_cfa_offset 16
- 239 0080 00AF     		add	r7, sp, #0
- 240              		.cfi_def_cfa_register 7
- 241 0082 7860     		str	r0, [r7, #4]
-  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** /*TODO*/
-  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
- 242              		.loc 1 51 0
- 243 0084 0C37     		adds	r7, r7, #12
- 244              		.cfi_def_cfa_offset 4
- 245 0086 BD46     		mov	sp, r7
- 246              		.cfi_def_cfa_register 13
- 247              		@ sp needed
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 6
+ 194              		.cfi_def_cfa_offset 0
+ 195 0074 7047     		bx	lr
+ 196              		.cfi_endproc
+ 197              	.LFE4:
+ 199 0076 00BF     		.align	2
+ 200              		.global	LLF_RESTORE_SYSTEM_STACK
+ 201              		.thumb
+ 202              		.thumb_func
+ 204              	LLF_RESTORE_SYSTEM_STACK:
+ 205              	.LFB5:
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
+ 206              		.loc 1 46 0
+ 207              		.cfi_startproc
+ 208              		@ args = 0, pretend = 0, frame = 8
+ 209              		@ frame_needed = 1, uses_anonymous_args = 0
+ 210              		@ link register save eliminated.
+ 211 0078 80B4     		push	{r7}
+ 212              		.cfi_def_cfa_offset 4
+ 213              		.cfi_offset 7, -4
+ 214 007a 83B0     		sub	sp, sp, #12
+ 215              		.cfi_def_cfa_offset 16
+ 216 007c 00AF     		add	r7, sp, #0
+ 217              		.cfi_def_cfa_register 7
+ 218 007e 7860     		str	r0, [r7, #4]
+  47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    ReferenceUnusedParameter(*system_stack_ptr);
+ 219              		.loc 1 47 0
+ 220 0080 7B68     		ldr	r3, [r7, #4]
+ 221 0082 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 222 0084 7B68     		ldr	r3, [r7, #4]
+ 223 0086 1A70     		strb	r2, [r3]
+  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    /*TODO*/
+  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
+ 224              		.loc 1 49 0
+ 225 0088 0C37     		adds	r7, r7, #12
+ 226              		.cfi_def_cfa_offset 4
+ 227 008a BD46     		mov	sp, r7
+ 228              		.cfi_def_cfa_register 13
+ 229              		@ sp needed
+ 230 008c 5DF8047B 		ldr	r7, [sp], #4
+ 231              		.cfi_restore 7
+ 232              		.cfi_def_cfa_offset 0
+ 233 0090 7047     		bx	lr
+ 234              		.cfi_endproc
+ 235              	.LFE5:
+ 237 0092 00BF     		.align	2
+ 238              		.global	LLF_SAVE_SYSTEM_STACK
+ 239              		.thumb
+ 240              		.thumb_func
+ 242              	LLF_SAVE_SYSTEM_STACK:
+ 243              	.LFB6:
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
+  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
+ 244              		.loc 1 51 0
+ 245              		.cfi_startproc
+ 246              		@ args = 0, pretend = 0, frame = 8
+ 247              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s 			page 6
 
 
- 248 0088 5DF8047B 		ldr	r7, [sp], #4
- 249              		.cfi_restore 7
- 250              		.cfi_def_cfa_offset 0
- 251 008c 7047     		bx	lr
- 252              		.cfi_endproc
- 253              	.LFE6:
- 255 008e 00BF     		.align	2
- 256              		.global	LLF_CLEAR_ALL_GP_REGISTERS
- 257              		.thumb
- 258              		.thumb_func
- 260              	LLF_CLEAR_ALL_GP_REGISTERS:
- 261              	.LFB7:
-  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_CLEAR_ALL_GP_REGISTERS(uint8* system_stack_ptr)
-  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** { 
- 262              		.loc 1 53 0
- 263              		.cfi_startproc
- 264              		@ args = 0, pretend = 0, frame = 8
- 265              		@ frame_needed = 1, uses_anonymous_args = 0
- 266              		@ link register save eliminated.
- 267 0090 80B4     		push	{r7}
- 268              		.cfi_def_cfa_offset 4
- 269              		.cfi_offset 7, -4
- 270 0092 83B0     		sub	sp, sp, #12
- 271              		.cfi_def_cfa_offset 16
- 272 0094 00AF     		add	r7, sp, #0
- 273              		.cfi_def_cfa_register 7
- 274 0096 7860     		str	r0, [r7, #4]
-  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** /*TODO*/
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
- 275              		.loc 1 55 0
- 276 0098 0C37     		adds	r7, r7, #12
- 277              		.cfi_def_cfa_offset 4
- 278 009a BD46     		mov	sp, r7
- 279              		.cfi_def_cfa_register 13
- 280              		@ sp needed
- 281 009c 5DF8047B 		ldr	r7, [sp], #4
- 282              		.cfi_restore 7
- 283              		.cfi_def_cfa_offset 0
- 284 00a0 7047     		bx	lr
- 285              		.cfi_endproc
- 286              	.LFE7:
- 288 00a2 00BF     		.align	2
- 289              		.global	LLF_PERFORM_RAM_CHECK
- 290              		.thumb
- 291              		.thumb_func
- 293              	LLF_PERFORM_RAM_CHECK:
- 294              	.LFB8:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_PERFORM_RAM_CHECK(void)
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
- 295              		.loc 1 57 0
- 296              		.cfi_startproc
- 297              		@ args = 0, pretend = 0, frame = 0
- 298              		@ frame_needed = 1, uses_anonymous_args = 0
- 299              		@ link register save eliminated.
- 300 00a4 80B4     		push	{r7}
- 301              		.cfi_def_cfa_offset 4
- 302              		.cfi_offset 7, -4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 7
+ 248              		@ link register save eliminated.
+ 249 0094 80B4     		push	{r7}
+ 250              		.cfi_def_cfa_offset 4
+ 251              		.cfi_offset 7, -4
+ 252 0096 83B0     		sub	sp, sp, #12
+ 253              		.cfi_def_cfa_offset 16
+ 254 0098 00AF     		add	r7, sp, #0
+ 255              		.cfi_def_cfa_register 7
+ 256 009a 7860     		str	r0, [r7, #4]
+  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    ReferenceUnusedParameter(*system_stack_ptr);
+ 257              		.loc 1 52 0
+ 258 009c 7B68     		ldr	r3, [r7, #4]
+ 259 009e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 260 00a0 7B68     		ldr	r3, [r7, #4]
+ 261 00a2 1A70     		strb	r2, [r3]
+  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    /*TODO*/
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
+ 262              		.loc 1 54 0
+ 263 00a4 0C37     		adds	r7, r7, #12
+ 264              		.cfi_def_cfa_offset 4
+ 265 00a6 BD46     		mov	sp, r7
+ 266              		.cfi_def_cfa_register 13
+ 267              		@ sp needed
+ 268 00a8 5DF8047B 		ldr	r7, [sp], #4
+ 269              		.cfi_restore 7
+ 270              		.cfi_def_cfa_offset 0
+ 271 00ac 7047     		bx	lr
+ 272              		.cfi_endproc
+ 273              	.LFE6:
+ 275 00ae 00BF     		.align	2
+ 276              		.global	LLF_CLEAR_ALL_GP_REGISTERS
+ 277              		.thumb
+ 278              		.thumb_func
+ 280              	LLF_CLEAR_ALL_GP_REGISTERS:
+ 281              	.LFB7:
+  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_CLEAR_ALL_GP_REGISTERS(void)
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** { 
+ 282              		.loc 1 56 0
+ 283              		.cfi_startproc
+ 284              		@ args = 0, pretend = 0, frame = 0
+ 285              		@ frame_needed = 1, uses_anonymous_args = 0
+ 286              		@ link register save eliminated.
+ 287 00b0 80B4     		push	{r7}
+ 288              		.cfi_def_cfa_offset 4
+ 289              		.cfi_offset 7, -4
+ 290 00b2 00AF     		add	r7, sp, #0
+ 291              		.cfi_def_cfa_register 7
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** /*TODO*/
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }
+ 292              		.loc 1 58 0
+ 293 00b4 BD46     		mov	sp, r7
+ 294              		.cfi_def_cfa_register 13
+ 295              		@ sp needed
+ 296 00b6 5DF8047B 		ldr	r7, [sp], #4
+ 297              		.cfi_restore 7
+ 298              		.cfi_def_cfa_offset 0
+ 299 00ba 7047     		bx	lr
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s 			page 7
 
 
- 303 00a6 00AF     		add	r7, sp, #0
- 304              		.cfi_def_cfa_register 7
-  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    /*TODO*/
-  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }...
- 305              		.loc 1 59 0
- 306 00a8 BD46     		mov	sp, r7
- 307              		.cfi_def_cfa_register 13
- 308              		@ sp needed
- 309 00aa 5DF8047B 		ldr	r7, [sp], #4
- 310              		.cfi_restore 7
- 311              		.cfi_def_cfa_offset 0
- 312 00ae 7047     		bx	lr
- 313              		.cfi_endproc
- 314              	.LFE8:
- 316              	.Letext0:
- 317              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
- 318              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
- 319              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s 			page 8
+ 300              		.cfi_endproc
+ 301              	.LFE7:
+ 303              		.align	2
+ 304              		.global	LLF_PERFORM_RAM_CHECK
+ 305              		.thumb
+ 306              		.thumb_func
+ 308              	LLF_PERFORM_RAM_CHECK:
+ 309              	.LFB8:
+  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** void LLF_PERFORM_RAM_CHECK(void)
+  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** {
+ 310              		.loc 1 60 0
+ 311              		.cfi_startproc
+ 312              		@ args = 0, pretend = 0, frame = 0
+ 313              		@ frame_needed = 1, uses_anonymous_args = 0
+ 314              		@ link register save eliminated.
+ 315 00bc 80B4     		push	{r7}
+ 316              		.cfi_def_cfa_offset 4
+ 317              		.cfi_offset 7, -4
+ 318 00be 00AF     		add	r7, sp, #0
+ 319              		.cfi_def_cfa_register 7
+  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c ****    /*TODO*/
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.c **** }...
+ 320              		.loc 1 62 0
+ 321 00c0 BD46     		mov	sp, r7
+ 322              		.cfi_def_cfa_register 13
+ 323              		@ sp needed
+ 324 00c2 5DF8047B 		ldr	r7, [sp], #4
+ 325              		.cfi_restore 7
+ 326              		.cfi_def_cfa_offset 0
+ 327 00c6 7047     		bx	lr
+ 328              		.cfi_endproc
+ 329              	.LFE8:
+ 331              	.Letext0:
+ 332              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 333              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+ 334              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lld_global.c
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:23     .text:00000000 Get_core_id
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:62     .text:00000018 LLF_SAVE_TASK_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:95     .text:0000002c LLF_SAVE_REGISTERS
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:128    .text:00000040 LLF_RESTORE_TASK_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:161    .text:00000054 LLF_RESTORE_REGISTERS
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:194    .text:00000068 LLF_RESTORE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:227    .text:0000007c LLF_SAVE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:260    .text:00000090 LLF_CLEAR_ALL_GP_REGISTERS
-C:\Users\PRESID~1\AppData\Local\Temp\cc2azFHa.s:293    .text:000000a4 LLF_PERFORM_RAM_CHECK
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:18     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:23     .text:00000000 Get_core_id
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:62     .text:00000018 LLF_SAVE_TASK_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:100    .text:00000034 LLF_SAVE_REGISTERS
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:133    .text:00000048 LLF_RESTORE_TASK_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:171    .text:00000064 LLF_RESTORE_REGISTERS
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:204    .text:00000078 LLF_RESTORE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:242    .text:00000094 LLF_SAVE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:280    .text:000000b0 LLF_CLEAR_ALL_GP_REGISTERS
+C:\Users\PRESID~1\AppData\Local\Temp\ccqbxaDp.s:308    .text:000000bc LLF_PERFORM_RAM_CHECK
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02

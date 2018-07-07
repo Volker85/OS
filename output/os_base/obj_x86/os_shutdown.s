@@ -18,21 +18,21 @@ LFB0:
 	call	_LLF_DISABLE_INTERRUPTS_ALL_CORES
 	.loc 1 10 0
 	call	_LLF_MPU_DISABLE
-	.loc 1 13 0
+	.loc 1 12 0
 	call	_LLF_SWITCH_OFF_WATCHDOG
-	.loc 1 16 0
+	.loc 1 15 0
 	call	_LLF_CLEAR_ALL_RAM
-	.loc 1 21 0
+	.loc 1 20 0
 	cmpl	$1, 8(%ebp)
 	jne	L2
-	.loc 1 23 0
+	.loc 1 22 0
 	call	_LLF_MCU_SWITCH_OFF_POWER
 	jmp	L1
 L2:
-	.loc 1 27 0
+	.loc 1 26 0
 	call	_LLF_MCU_RESET_POWER
 L1:
-	.loc 1 29 0
+	.loc 1 28 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -43,7 +43,7 @@ Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x184
+	.long	0x160
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -97,7 +97,6 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x180
 	.uleb128 0x7
 	.ascii "reset_typ\0"
 	.byte	0x1
@@ -106,18 +105,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x8
-	.ascii "LLF_MPU_DISABLE\0"
-	.byte	0x1
-	.byte	0xa
-	.long	0x180
-	.uleb128 0x9
 	.byte	0
-	.byte	0
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -209,8 +197,6 @@ Ldebug_abbrev0:
 	.uleb128 0x18
 	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x7
@@ -226,28 +212,6 @@ Ldebug_abbrev0:
 	.uleb128 0x13
 	.uleb128 0x2
 	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x8
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x9
-	.uleb128 0x18
-	.byte	0
 	.byte	0
 	.byte	0
 	.byte	0

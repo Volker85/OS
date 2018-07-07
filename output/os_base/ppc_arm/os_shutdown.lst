@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccB5DJFy.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccIlvePN.s 			page 1
 
 
    1              		.syntax unified
@@ -53,44 +53,43 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccB5DJFy.s 			page 1
   10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    LLF_MPU_DISABLE();
   42              		.loc 1 10 0
   43 000e FFF7FEFF 		bl	LLF_MPU_DISABLE
-  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* switch off WATCHDOG */
-  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    LLF_SWITCH_OFF_WATCHDOG();
-  44              		.loc 1 13 0
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* switch off WATCHDOG */
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    LLF_SWITCH_OFF_WATCHDOG();
+  44              		.loc 1 12 0
   45 0012 FFF7FEFF 		bl	LLF_SWITCH_OFF_WATCHDOG
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccB5DJFy.s 			page 2
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccIlvePN.s 			page 2
 
 
-  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
-  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* clear all RAM */
-  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    LLF_CLEAR_ALL_RAM();
-  46              		.loc 1 16 0
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* clear all RAM */
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    LLF_CLEAR_ALL_RAM();
+  46              		.loc 1 15 0
   47 0016 FFF7FEFF 		bl	LLF_CLEAR_ALL_RAM
-  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
-  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* save some registers to restore after reset */
-  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
-  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* power done/reset system */
-  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    if(reset_typ == os_reset_powerdown)
-  48              		.loc 1 21 0
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* save some registers to restore after reset */
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* power done/reset system */
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    if(reset_typ == os_reset_powerdown)
+  48              		.loc 1 20 0
   49 001a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
   50 001c 012B     		cmp	r3, #1
   51 001e 02D1     		bne	.L2
-  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
-  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       LLF_MCU_SWITCH_OFF_POWER();
-  52              		.loc 1 23 0
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       LLF_MCU_SWITCH_OFF_POWER();
+  52              		.loc 1 22 0
   53 0020 FFF7FEFF 		bl	LLF_MCU_SWITCH_OFF_POWER
   54 0024 01E0     		b	.L1
   55              	.L2:
-  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }
-  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    else /* os_reset_hardreset */
-  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
-  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       LLF_MCU_RESET_POWER();
-  56              		.loc 1 27 0
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    else /* os_reset_hardreset */
+  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       LLF_MCU_RESET_POWER();
+  56              		.loc 1 26 0
   57 0026 FFF7FEFF 		bl	LLF_MCU_RESET_POWER
   58              	.L1:
-  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** }
-  59              		.loc 1 29 0
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** }
+  59              		.loc 1 28 0
   60 002a 0837     		adds	r7, r7, #8
   61              		.cfi_def_cfa_offset 8
   62 002c BD46     		mov	sp, r7
@@ -101,13 +100,13 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccB5DJFy.s 			page 1
   67              	.LFE0:
   69              	.Letext0:
   70              		.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccB5DJFy.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccIlvePN.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_shutdown.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccB5DJFy.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccB5DJFy.s:23     .text:00000000 OS_SHUTDOWN
+C:\Users\PRESID~1\AppData\Local\Temp\ccIlvePN.s:18     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccIlvePN.s:23     .text:00000000 OS_SHUTDOWN
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02

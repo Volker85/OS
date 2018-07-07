@@ -48,13 +48,13 @@ LFB1:
 L4:
 	.loc 1 28 0
 	call	_LLF_MPU_DISABLE
-	.loc 1 29 0
+	.loc 1 30 0
 	call	_LLF_MPU_SWITCH_OFF_ALL_REGIONS
-	.loc 1 38 0
+	.loc 1 39 0
 	movl	8(%ebp), %eax
 	call	*%eax
 L3:
-	.loc 1 39 0
+	.loc 1 40 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -66,7 +66,7 @@ Letext0:
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x20c
+	.long	0x1bc
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -156,7 +156,6 @@ Ldebug_info0:
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x208
 	.uleb128 0x7
 	.secrel32	LASF0
 	.byte	0x1
@@ -181,26 +180,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
-	.uleb128 0xa
-	.ascii "LLF_MPU_DISABLE\0"
-	.byte	0x1
-	.byte	0x1c
-	.long	0x208
-	.long	0x1df
-	.uleb128 0xb
 	.byte	0
-	.uleb128 0xc
-	.ascii "LLF_MPU_SWITCH_OFF_ALL_REGIONS\0"
-	.byte	0x1
-	.byte	0x1d
-	.long	0x208
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x3
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -338,49 +318,6 @@ Ldebug_abbrev0:
 	.uleb128 0x40
 	.uleb128 0x18
 	.uleb128 0x2116
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xa
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0xc
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
 	.uleb128 0x19
 	.byte	0
 	.byte	0

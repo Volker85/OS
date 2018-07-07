@@ -102,15 +102,15 @@ OS_STATE_HANDLER:
 .L12:
 	.align	2
 .L11:
-	.word	OS_STATE.3936
-	.word	sys_req_reset_state.3937
+	.word	OS_STATE.3933
+	.word	sys_req_reset_state.3934
 	.cfi_endproc
 .LFE0:
 	.size	OS_STATE_HANDLER, .-OS_STATE_HANDLER
 	.bss
-OS_STATE.3936:
+OS_STATE.3933:
 	.space	1
-sys_req_reset_state.3937:
+sys_req_reset_state.3934:
 	.space	1
 	.text
 .Letext0:
@@ -212,7 +212,7 @@ sys_req_reset_state.3937:
 	.4byte	0x79
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	OS_STATE.3936
+	.4byte	OS_STATE.3933
 	.uleb128 0x7
 	.4byte	.LASF451
 	.byte	0x1
@@ -220,7 +220,7 @@ sys_req_reset_state.3937:
 	.4byte	0x9d
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	sys_req_reset_state.3937
+	.4byte	sys_req_reset_state.3934
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",%progbits

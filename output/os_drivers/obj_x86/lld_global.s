@@ -36,7 +36,12 @@ LFB1:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 30 0
+	.loc 1 29 0
+	movl	8(%ebp), %eax
+	movb	(%eax), %dl
+	movl	8(%ebp), %eax
+	movb	%dl, (%eax)
+	.loc 1 31 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -47,14 +52,14 @@ LFE1:
 	.def	_LLF_SAVE_REGISTERS;	.scl	2;	.type	32;	.endef
 _LLF_SAVE_REGISTERS:
 LFB2:
-	.loc 1 32 0
+	.loc 1 33 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 34 0
+	.loc 1 35 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -65,7 +70,7 @@ LFE2:
 	.def	_LLF_RESTORE_TASK_STACK;	.scl	2;	.type	32;	.endef
 _LLF_RESTORE_TASK_STACK:
 LFB3:
-	.loc 1 36 0
+	.loc 1 37 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -73,6 +78,11 @@ LFB3:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	.loc 1 38 0
+	movl	8(%ebp), %eax
+	movb	(%eax), %dl
+	movl	8(%ebp), %eax
+	movb	%dl, (%eax)
+	.loc 1 39 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -83,14 +93,14 @@ LFE3:
 	.def	_LLF_RESTORE_REGISTERS;	.scl	2;	.type	32;	.endef
 _LLF_RESTORE_REGISTERS:
 LFB4:
-	.loc 1 40 0
+	.loc 1 41 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 42 0
+	.loc 1 44 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -101,14 +111,19 @@ LFE4:
 	.def	_LLF_RESTORE_SYSTEM_STACK;	.scl	2;	.type	32;	.endef
 _LLF_RESTORE_SYSTEM_STACK:
 LFB5:
-	.loc 1 44 0
+	.loc 1 46 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 46 0
+	.loc 1 47 0
+	movl	8(%ebp), %eax
+	movb	(%eax), %dl
+	movl	8(%ebp), %eax
+	movb	%dl, (%eax)
+	.loc 1 49 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -119,14 +134,19 @@ LFE5:
 	.def	_LLF_SAVE_SYSTEM_STACK;	.scl	2;	.type	32;	.endef
 _LLF_SAVE_SYSTEM_STACK:
 LFB6:
-	.loc 1 48 0
+	.loc 1 51 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 50 0
+	.loc 1 52 0
+	movl	8(%ebp), %eax
+	movb	(%eax), %dl
+	movl	8(%ebp), %eax
+	movb	%dl, (%eax)
+	.loc 1 54 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -137,24 +157,6 @@ LFE6:
 	.def	_LLF_CLEAR_ALL_GP_REGISTERS;	.scl	2;	.type	32;	.endef
 _LLF_CLEAR_ALL_GP_REGISTERS:
 LFB7:
-	.loc 1 52 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	.loc 1 54 0
-	popl	%ebp
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE7:
-	.globl	_LLF_PERFORM_RAM_CHECK
-	.def	_LLF_PERFORM_RAM_CHECK;	.scl	2;	.type	32;	.endef
-_LLF_PERFORM_RAM_CHECK:
-LFB8:
 	.loc 1 56 0
 	.cfi_startproc
 	pushl	%ebp
@@ -168,6 +170,24 @@ LFB8:
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
+LFE7:
+	.globl	_LLF_PERFORM_RAM_CHECK
+	.def	_LLF_PERFORM_RAM_CHECK;	.scl	2;	.type	32;	.endef
+_LLF_PERFORM_RAM_CHECK:
+LFB8:
+	.loc 1 60 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	.loc 1 62 0
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
 LFE8:
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_base/os_base_types.h"
@@ -175,7 +195,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/../os_base/os_task_common.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x6c4
+	.long	0x6b1
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -565,7 +585,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.ascii "LLF_SAVE_REGISTERS\0"
 	.byte	0x1
-	.byte	0x1f
+	.byte	0x20
 	.long	LFB2
 	.long	LFE2-LFB2
 	.uleb128 0x1
@@ -574,7 +594,7 @@ Ldebug_info0:
 	.uleb128 0x13
 	.ascii "task\0"
 	.byte	0x1
-	.byte	0x1f
+	.byte	0x20
 	.long	0x580
 	.uleb128 0x2
 	.byte	0x91
@@ -586,7 +606,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.ascii "LLF_RESTORE_TASK_STACK\0"
 	.byte	0x1
-	.byte	0x23
+	.byte	0x24
 	.long	LFB3
 	.long	LFE3-LFB3
 	.uleb128 0x1
@@ -595,7 +615,7 @@ Ldebug_info0:
 	.uleb128 0x12
 	.secrel32	LASF1
 	.byte	0x1
-	.byte	0x23
+	.byte	0x24
 	.long	0x5bd
 	.uleb128 0x2
 	.byte	0x91
@@ -607,7 +627,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.ascii "LLF_RESTORE_REGISTERS\0"
 	.byte	0x1
-	.byte	0x27
+	.byte	0x28
 	.long	LFB4
 	.long	LFE4-LFB4
 	.uleb128 0x1
@@ -616,7 +636,7 @@ Ldebug_info0:
 	.uleb128 0x13
 	.ascii "task\0"
 	.byte	0x1
-	.byte	0x27
+	.byte	0x28
 	.long	0x580
 	.uleb128 0x2
 	.byte	0x91
@@ -625,7 +645,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.ascii "LLF_RESTORE_SYSTEM_STACK\0"
 	.byte	0x1
-	.byte	0x2b
+	.byte	0x2d
 	.long	LFB5
 	.long	LFE5-LFB5
 	.uleb128 0x1
@@ -634,7 +654,7 @@ Ldebug_info0:
 	.uleb128 0x12
 	.secrel32	LASF2
 	.byte	0x1
-	.byte	0x2b
+	.byte	0x2d
 	.long	0x5bd
 	.uleb128 0x2
 	.byte	0x91
@@ -643,7 +663,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.ascii "LLF_SAVE_SYSTEM_STACK\0"
 	.byte	0x1
-	.byte	0x2f
+	.byte	0x32
 	.long	LFB6
 	.long	LFE6-LFB6
 	.uleb128 0x1
@@ -652,34 +672,24 @@ Ldebug_info0:
 	.uleb128 0x12
 	.secrel32	LASF2
 	.byte	0x1
-	.byte	0x2f
-	.long	0x5bd
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 0
-	.byte	0
-	.uleb128 0x11
-	.ascii "LLF_CLEAR_ALL_GP_REGISTERS\0"
-	.byte	0x1
-	.byte	0x33
-	.long	LFB7
-	.long	LFE7-LFB7
-	.uleb128 0x1
-	.byte	0x9c
-	.long	0x6a4
-	.uleb128 0x12
-	.secrel32	LASF2
-	.byte	0x1
-	.byte	0x33
+	.byte	0x32
 	.long	0x5bd
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.byte	0
 	.uleb128 0x14
-	.ascii "LLF_PERFORM_RAM_CHECK\0"
+	.ascii "LLF_CLEAR_ALL_GP_REGISTERS\0"
 	.byte	0x1
 	.byte	0x37
+	.long	LFB7
+	.long	LFE7-LFB7
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0x14
+	.ascii "LLF_PERFORM_RAM_CHECK\0"
+	.byte	0x1
+	.byte	0x3b
 	.long	LFB8
 	.long	LFE8-LFB8
 	.uleb128 0x1

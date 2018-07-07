@@ -26,30 +26,33 @@ void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer)
       2. save it the correct task context
       3. invalidate the register (==0)
    */
+   ReferenceUnusedParameter(*StackPointer);
 /*TODO*/
 }
 void LLF_SAVE_REGISTERS(task_t* task)
 {
-/*TODO*/
+   ReferenceUnusedParameter(*task);
 }
 void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
 {
-/*TODO*/  
-
+   ReferenceUnusedParameter(*StackPointer);
 }
 void LLF_RESTORE_REGISTERS(task_t* task)
 {
-/*TODO*/
+   ReferenceUnusedParameter(*task);
+   /*TODO*/
 }
 void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
 {
-/*TODO*/  
+   ReferenceUnusedParameter(*system_stack_ptr);
+   /*TODO*/
 }
 void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
-{ 
-/*TODO*/
+{
+   ReferenceUnusedParameter(*system_stack_ptr);
+   /*TODO*/
 }
-void LLF_CLEAR_ALL_GP_REGISTERS(uint8* system_stack_ptr)
+void LLF_CLEAR_ALL_GP_REGISTERS(void)
 { 
 /*TODO*/
 }

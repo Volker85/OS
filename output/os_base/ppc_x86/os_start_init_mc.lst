@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 1
 
 
    1              		.file	"os_start_init_mc.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 1
   31:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_start_init_mc.c ****    
   32:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_start_init_mc.c ****    /* 4. set the new PLL clock freq */
   33:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_start_init_mc.c ****    /*TODO*/
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 2
 
 
   34:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_start_init_mc.c **** 
@@ -81,7 +81,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 1
   32              	Letext0:
   33              		.section	.debug_info,"dr"
   34              	Ldebug_info0:
-  35 0000 48010000 		.long	0x148
+  35 0000 F5000000 		.long	0xf5
   36 0004 0400     		.word	0x4
   37 0006 00000000 		.secrel32	Ldebug_abbrev0
   38 000a 04       		.byte	0x4
@@ -118,7 +118,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 1
   54      6E7400
   55 00bb 02       		.uleb128 0x2
   56 00bc 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 3
 
 
   57 00bd 07       		.byte	0x7
@@ -144,2379 +144,2304 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 1
   68 00f2 1C000000 		.long	LFE0-LFB0
   69 00f6 01       		.uleb128 0x1
   70 00f7 9C       		.byte	0x9c
-  71 00f8 44010000 		.long	0x144
-  72 00fc 04       		.uleb128 0x4
-  73 00fd 4C4C465F 		.ascii "LLF_CLEAR_ALL_GP_REGISTERS\0"
-  73      434C4541 
-  73      525F414C 
-  73      4C5F4750 
-  73      5F524547 
-  74 0118 01       		.byte	0x1
-  75 0119 0E       		.byte	0xe
-  76 011a 44010000 		.long	0x144
-  77 011e 24010000 		.long	0x124
-  78 0122 05       		.uleb128 0x5
-  79 0123 00       		.byte	0
-  80 0124 06       		.uleb128 0x6
-  81 0125 4C4C465F 		.ascii "LLF_PERFORM_RAM_CHECK\0"
-  81      50455246 
-  81      4F524D5F 
-  81      52414D5F 
-  81      43484543 
-  82 013b 01       		.byte	0x1
-  83 013c 14       		.byte	0x14
-  84 013d 44010000 		.long	0x144
-  85 0141 05       		.uleb128 0x5
-  86 0142 00       		.byte	0
-  87 0143 00       		.byte	0
-  88 0144 02       		.uleb128 0x2
-  89 0145 04       		.byte	0x4
-  90 0146 05       		.byte	0x5
-  91 0147 696E7400 		.ascii "int\0"
-  92 014b 00       		.byte	0
-  93              		.section	.debug_abbrev,"dr"
-  94              	Ldebug_abbrev0:
-  95 0000 01       		.uleb128 0x1
-  96 0001 11       		.uleb128 0x11
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 4
-
-
-  97 0002 01       		.byte	0x1
-  98 0003 25       		.uleb128 0x25
-  99 0004 08       		.uleb128 0x8
- 100 0005 13       		.uleb128 0x13
- 101 0006 0B       		.uleb128 0xb
- 102 0007 03       		.uleb128 0x3
- 103 0008 08       		.uleb128 0x8
- 104 0009 11       		.uleb128 0x11
- 105 000a 01       		.uleb128 0x1
- 106 000b 12       		.uleb128 0x12
- 107 000c 06       		.uleb128 0x6
- 108 000d 10       		.uleb128 0x10
- 109 000e 17       		.uleb128 0x17
- 110 000f 9942     		.uleb128 0x2119
- 111 0011 17       		.uleb128 0x17
- 112 0012 00       		.byte	0
- 113 0013 00       		.byte	0
- 114 0014 02       		.uleb128 0x2
- 115 0015 24       		.uleb128 0x24
- 116 0016 00       		.byte	0
- 117 0017 0B       		.uleb128 0xb
- 118 0018 0B       		.uleb128 0xb
- 119 0019 3E       		.uleb128 0x3e
- 120 001a 0B       		.uleb128 0xb
- 121 001b 03       		.uleb128 0x3
- 122 001c 08       		.uleb128 0x8
- 123 001d 00       		.byte	0
- 124 001e 00       		.byte	0
- 125 001f 03       		.uleb128 0x3
- 126 0020 2E       		.uleb128 0x2e
- 127 0021 01       		.byte	0x1
- 128 0022 3F       		.uleb128 0x3f
- 129 0023 19       		.uleb128 0x19
- 130 0024 03       		.uleb128 0x3
- 131 0025 08       		.uleb128 0x8
- 132 0026 3A       		.uleb128 0x3a
- 133 0027 0B       		.uleb128 0xb
- 134 0028 3B       		.uleb128 0x3b
- 135 0029 0B       		.uleb128 0xb
- 136 002a 27       		.uleb128 0x27
- 137 002b 19       		.uleb128 0x19
- 138 002c 11       		.uleb128 0x11
- 139 002d 01       		.uleb128 0x1
- 140 002e 12       		.uleb128 0x12
- 141 002f 06       		.uleb128 0x6
- 142 0030 40       		.uleb128 0x40
- 143 0031 18       		.uleb128 0x18
- 144 0032 9642     		.uleb128 0x2116
- 145 0034 19       		.uleb128 0x19
- 146 0035 01       		.uleb128 0x1
- 147 0036 13       		.uleb128 0x13
- 148 0037 00       		.byte	0
- 149 0038 00       		.byte	0
- 150 0039 04       		.uleb128 0x4
- 151 003a 2E       		.uleb128 0x2e
- 152 003b 01       		.byte	0x1
- 153 003c 3F       		.uleb128 0x3f
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 5
-
-
- 154 003d 19       		.uleb128 0x19
- 155 003e 03       		.uleb128 0x3
- 156 003f 08       		.uleb128 0x8
- 157 0040 3A       		.uleb128 0x3a
- 158 0041 0B       		.uleb128 0xb
- 159 0042 3B       		.uleb128 0x3b
- 160 0043 0B       		.uleb128 0xb
- 161 0044 49       		.uleb128 0x49
- 162 0045 13       		.uleb128 0x13
- 163 0046 3C       		.uleb128 0x3c
- 164 0047 19       		.uleb128 0x19
- 165 0048 01       		.uleb128 0x1
- 166 0049 13       		.uleb128 0x13
- 167 004a 00       		.byte	0
- 168 004b 00       		.byte	0
- 169 004c 05       		.uleb128 0x5
- 170 004d 18       		.uleb128 0x18
- 171 004e 00       		.byte	0
- 172 004f 00       		.byte	0
- 173 0050 00       		.byte	0
- 174 0051 06       		.uleb128 0x6
- 175 0052 2E       		.uleb128 0x2e
- 176 0053 01       		.byte	0x1
- 177 0054 3F       		.uleb128 0x3f
- 178 0055 19       		.uleb128 0x19
- 179 0056 03       		.uleb128 0x3
- 180 0057 08       		.uleb128 0x8
- 181 0058 3A       		.uleb128 0x3a
- 182 0059 0B       		.uleb128 0xb
- 183 005a 3B       		.uleb128 0x3b
- 184 005b 0B       		.uleb128 0xb
- 185 005c 49       		.uleb128 0x49
- 186 005d 13       		.uleb128 0x13
- 187 005e 3C       		.uleb128 0x3c
- 188 005f 19       		.uleb128 0x19
- 189 0060 00       		.byte	0
- 190 0061 00       		.byte	0
- 191 0062 00       		.byte	0
- 192              		.section	.debug_aranges,"dr"
- 193 0000 1C000000 		.long	0x1c
- 194 0004 0200     		.word	0x2
- 195 0006 00000000 		.secrel32	Ldebug_info0
- 196 000a 04       		.byte	0x4
- 197 000b 00       		.byte	0
- 198 000c 0000     		.word	0
- 199 000e 0000     		.word	0
- 200 0010 00000000 		.long	Ltext0
- 201 0014 1C000000 		.long	Letext0-Ltext0
- 202 0018 00000000 		.long	0
- 203 001c 00000000 		.long	0
- 204              		.section	.debug_macro,"dr"
- 205              	Ldebug_macro0:
- 206 0000 0400     		.word	0x4
- 207 0002 02       		.byte	0x2
- 208 0003 00000000 		.secrel32	Ldebug_line0
- 209 0007 01       		.byte	0x1
- 210 0008 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 6
-
-
- 211 0009 5F5F5354 		.ascii "__STDC__ 1\0"
- 211      44435F5F 
- 211      203100
- 212 0014 01       		.byte	0x1
- 213 0015 00       		.uleb128 0
- 214 0016 5F5F5354 		.ascii "__STDC_HOSTED__ 1\0"
- 214      44435F48 
- 214      4F535445 
- 214      445F5F20 
- 214      3100
- 215 0028 01       		.byte	0x1
- 216 0029 00       		.uleb128 0
- 217 002a 5F5F474E 		.ascii "__GNUC__ 4\0"
- 217      55435F5F 
- 217      203400
- 218 0035 01       		.byte	0x1
- 219 0036 00       		.uleb128 0
- 220 0037 5F5F474E 		.ascii "__GNUC_MINOR__ 9\0"
- 220      55435F4D 
- 220      494E4F52 
- 220      5F5F2039 
- 220      00
- 221 0048 01       		.byte	0x1
- 222 0049 00       		.uleb128 0
- 223 004a 5F5F474E 		.ascii "__GNUC_PATCHLEVEL__ 3\0"
- 223      55435F50 
- 223      41544348 
- 223      4C455645 
- 223      4C5F5F20 
- 224 0060 01       		.byte	0x1
- 225 0061 00       		.uleb128 0
- 226 0062 5F5F5645 		.ascii "__VERSION__ \"4.9.3\"\0"
- 226      5253494F 
- 226      4E5F5F20 
- 226      22342E39 
- 226      2E332200 
- 227 0076 01       		.byte	0x1
- 228 0077 00       		.uleb128 0
- 229 0078 5F5F4154 		.ascii "__ATOMIC_RELAXED 0\0"
- 229      4F4D4943 
- 229      5F52454C 
- 229      41584544 
- 229      203000
- 230 008b 01       		.byte	0x1
- 231 008c 00       		.uleb128 0
- 232 008d 5F5F4154 		.ascii "__ATOMIC_SEQ_CST 5\0"
- 232      4F4D4943 
- 232      5F534551 
- 232      5F435354 
- 232      203500
- 233 00a0 01       		.byte	0x1
- 234 00a1 00       		.uleb128 0
- 235 00a2 5F5F4154 		.ascii "__ATOMIC_ACQUIRE 2\0"
- 235      4F4D4943 
- 235      5F414351 
- 235      55495245 
- 235      203200
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 7
-
-
- 236 00b5 01       		.byte	0x1
- 237 00b6 00       		.uleb128 0
- 238 00b7 5F5F4154 		.ascii "__ATOMIC_RELEASE 3\0"
- 238      4F4D4943 
- 238      5F52454C 
- 238      45415345 
- 238      203300
- 239 00ca 01       		.byte	0x1
- 240 00cb 00       		.uleb128 0
- 241 00cc 5F5F4154 		.ascii "__ATOMIC_ACQ_REL 4\0"
- 241      4F4D4943 
- 241      5F414351 
- 241      5F52454C 
- 241      203400
- 242 00df 01       		.byte	0x1
- 243 00e0 00       		.uleb128 0
- 244 00e1 5F5F4154 		.ascii "__ATOMIC_CONSUME 1\0"
- 244      4F4D4943 
- 244      5F434F4E 
- 244      53554D45 
- 244      203100
- 245 00f4 01       		.byte	0x1
- 246 00f5 00       		.uleb128 0
- 247 00f6 5F5F4649 		.ascii "__FINITE_MATH_ONLY__ 0\0"
- 247      4E495445 
- 247      5F4D4154 
- 247      485F4F4E 
- 247      4C595F5F 
- 248 010d 01       		.byte	0x1
- 249 010e 00       		.uleb128 0
- 250 010f 5F5F5349 		.ascii "__SIZEOF_INT__ 4\0"
- 250      5A454F46 
- 250      5F494E54 
- 250      5F5F2034 
- 250      00
- 251 0120 01       		.byte	0x1
- 252 0121 00       		.uleb128 0
- 253 0122 5F5F5349 		.ascii "__SIZEOF_LONG__ 4\0"
- 253      5A454F46 
- 253      5F4C4F4E 
- 253      475F5F20 
- 253      3400
- 254 0134 01       		.byte	0x1
- 255 0135 00       		.uleb128 0
- 256 0136 5F5F5349 		.ascii "__SIZEOF_LONG_LONG__ 8\0"
- 256      5A454F46 
- 256      5F4C4F4E 
- 256      475F4C4F 
- 256      4E475F5F 
- 257 014d 01       		.byte	0x1
- 258 014e 00       		.uleb128 0
- 259 014f 5F5F5349 		.ascii "__SIZEOF_SHORT__ 2\0"
- 259      5A454F46 
- 259      5F53484F 
- 259      52545F5F 
- 259      203200
- 260 0162 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 8
-
-
- 261 0163 00       		.uleb128 0
- 262 0164 5F5F5349 		.ascii "__SIZEOF_FLOAT__ 4\0"
- 262      5A454F46 
- 262      5F464C4F 
- 262      41545F5F 
- 262      203400
- 263 0177 01       		.byte	0x1
- 264 0178 00       		.uleb128 0
- 265 0179 5F5F5349 		.ascii "__SIZEOF_DOUBLE__ 8\0"
- 265      5A454F46 
- 265      5F444F55 
- 265      424C455F 
- 265      5F203800 
- 266 018d 01       		.byte	0x1
- 267 018e 00       		.uleb128 0
- 268 018f 5F5F5349 		.ascii "__SIZEOF_LONG_DOUBLE__ 12\0"
- 268      5A454F46 
- 268      5F4C4F4E 
- 268      475F444F 
- 268      55424C45 
- 269 01a9 01       		.byte	0x1
- 270 01aa 00       		.uleb128 0
- 271 01ab 5F5F5349 		.ascii "__SIZEOF_SIZE_T__ 4\0"
- 271      5A454F46 
- 271      5F53495A 
- 271      455F545F 
- 271      5F203400 
- 272 01bf 01       		.byte	0x1
- 273 01c0 00       		.uleb128 0
- 274 01c1 5F5F4348 		.ascii "__CHAR_BIT__ 8\0"
- 274      41525F42 
- 274      49545F5F 
- 274      203800
- 275 01d0 01       		.byte	0x1
- 276 01d1 00       		.uleb128 0
- 277 01d2 5F5F4249 		.ascii "__BIGGEST_ALIGNMENT__ 16\0"
- 277      47474553 
- 277      545F414C 
- 277      49474E4D 
- 277      454E545F 
- 278 01eb 01       		.byte	0x1
- 279 01ec 00       		.uleb128 0
- 280 01ed 5F5F4F52 		.ascii "__ORDER_LITTLE_ENDIAN__ 1234\0"
- 280      4445525F 
- 280      4C495454 
- 280      4C455F45 
- 280      4E444941 
- 281 020a 01       		.byte	0x1
- 282 020b 00       		.uleb128 0
- 283 020c 5F5F4F52 		.ascii "__ORDER_BIG_ENDIAN__ 4321\0"
- 283      4445525F 
- 283      4249475F 
- 283      454E4449 
- 283      414E5F5F 
- 284 0226 01       		.byte	0x1
- 285 0227 00       		.uleb128 0
- 286 0228 5F5F4F52 		.ascii "__ORDER_PDP_ENDIAN__ 3412\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 9
-
-
- 286      4445525F 
- 286      5044505F 
- 286      454E4449 
- 286      414E5F5F 
- 287 0242 01       		.byte	0x1
- 288 0243 00       		.uleb128 0
- 289 0244 5F5F4259 		.ascii "__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
- 289      54455F4F 
- 289      52444552 
- 289      5F5F205F 
- 289      5F4F5244 
- 290 026b 01       		.byte	0x1
- 291 026c 00       		.uleb128 0
- 292 026d 5F5F464C 		.ascii "__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
- 292      4F41545F 
- 292      574F5244 
- 292      5F4F5244 
- 292      45525F5F 
- 293 029a 01       		.byte	0x1
- 294 029b 00       		.uleb128 0
- 295 029c 5F5F5349 		.ascii "__SIZEOF_POINTER__ 4\0"
- 295      5A454F46 
- 295      5F504F49 
- 295      4E544552 
- 295      5F5F2034 
- 296 02b1 01       		.byte	0x1
- 297 02b2 00       		.uleb128 0
- 298 02b3 5F5F5349 		.ascii "__SIZE_TYPE__ unsigned int\0"
- 298      5A455F54 
- 298      5950455F 
- 298      5F20756E 
- 298      7369676E 
- 299 02ce 01       		.byte	0x1
- 300 02cf 00       		.uleb128 0
- 301 02d0 5F5F5054 		.ascii "__PTRDIFF_TYPE__ int\0"
- 301      52444946 
- 301      465F5459 
- 301      50455F5F 
- 301      20696E74 
- 302 02e5 01       		.byte	0x1
- 303 02e6 00       		.uleb128 0
- 304 02e7 5F5F5743 		.ascii "__WCHAR_TYPE__ short unsigned int\0"
- 304      4841525F 
- 304      54595045 
- 304      5F5F2073 
- 304      686F7274 
- 305 0309 01       		.byte	0x1
- 306 030a 00       		.uleb128 0
- 307 030b 5F5F5749 		.ascii "__WINT_TYPE__ short unsigned int\0"
- 307      4E545F54 
- 307      5950455F 
- 307      5F207368 
- 307      6F727420 
- 308 032c 01       		.byte	0x1
- 309 032d 00       		.uleb128 0
- 310 032e 5F5F494E 		.ascii "__INTMAX_TYPE__ long long int\0"
- 310      544D4158 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 10
-
-
- 310      5F545950 
- 310      455F5F20 
- 310      6C6F6E67 
- 311 034c 01       		.byte	0x1
- 312 034d 00       		.uleb128 0
- 313 034e 5F5F5549 		.ascii "__UINTMAX_TYPE__ long long unsigned int\0"
- 313      4E544D41 
- 313      585F5459 
- 313      50455F5F 
- 313      206C6F6E 
- 314 0376 01       		.byte	0x1
- 315 0377 00       		.uleb128 0
- 316 0378 5F5F4348 		.ascii "__CHAR16_TYPE__ short unsigned int\0"
- 316      41523136 
- 316      5F545950 
- 316      455F5F20 
- 316      73686F72 
- 317 039b 01       		.byte	0x1
- 318 039c 00       		.uleb128 0
- 319 039d 5F5F4348 		.ascii "__CHAR32_TYPE__ unsigned int\0"
- 319      41523332 
- 319      5F545950 
- 319      455F5F20 
- 319      756E7369 
- 320 03ba 01       		.byte	0x1
- 321 03bb 00       		.uleb128 0
- 322 03bc 5F5F5349 		.ascii "__SIG_ATOMIC_TYPE__ int\0"
- 322      475F4154 
- 322      4F4D4943 
- 322      5F545950 
- 322      455F5F20 
- 323 03d4 01       		.byte	0x1
- 324 03d5 00       		.uleb128 0
- 325 03d6 5F5F494E 		.ascii "__INT8_TYPE__ signed char\0"
- 325      54385F54 
- 325      5950455F 
- 325      5F207369 
- 325      676E6564 
- 326 03f0 01       		.byte	0x1
- 327 03f1 00       		.uleb128 0
- 328 03f2 5F5F494E 		.ascii "__INT16_TYPE__ short int\0"
- 328      5431365F 
- 328      54595045 
- 328      5F5F2073 
- 328      686F7274 
- 329 040b 01       		.byte	0x1
- 330 040c 00       		.uleb128 0
- 331 040d 5F5F494E 		.ascii "__INT32_TYPE__ int\0"
- 331      5433325F 
- 331      54595045 
- 331      5F5F2069 
- 331      6E7400
- 332 0420 01       		.byte	0x1
- 333 0421 00       		.uleb128 0
- 334 0422 5F5F494E 		.ascii "__INT64_TYPE__ long long int\0"
- 334      5436345F 
- 334      54595045 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 11
-
-
- 334      5F5F206C 
- 334      6F6E6720 
- 335 043f 01       		.byte	0x1
- 336 0440 00       		.uleb128 0
- 337 0441 5F5F5549 		.ascii "__UINT8_TYPE__ unsigned char\0"
- 337      4E54385F 
- 337      54595045 
- 337      5F5F2075 
- 337      6E736967 
- 338 045e 01       		.byte	0x1
- 339 045f 00       		.uleb128 0
- 340 0460 5F5F5549 		.ascii "__UINT16_TYPE__ short unsigned int\0"
- 340      4E543136 
- 340      5F545950 
- 340      455F5F20 
- 340      73686F72 
- 341 0483 01       		.byte	0x1
- 342 0484 00       		.uleb128 0
- 343 0485 5F5F5549 		.ascii "__UINT32_TYPE__ unsigned int\0"
- 343      4E543332 
- 343      5F545950 
- 343      455F5F20 
- 343      756E7369 
- 344 04a2 01       		.byte	0x1
- 345 04a3 00       		.uleb128 0
- 346 04a4 5F5F5549 		.ascii "__UINT64_TYPE__ long long unsigned int\0"
- 346      4E543634 
- 346      5F545950 
- 346      455F5F20 
- 346      6C6F6E67 
- 347 04cb 01       		.byte	0x1
- 348 04cc 00       		.uleb128 0
- 349 04cd 5F5F494E 		.ascii "__INT_LEAST8_TYPE__ signed char\0"
- 349      545F4C45 
- 349      41535438 
- 349      5F545950 
- 349      455F5F20 
- 350 04ed 01       		.byte	0x1
- 351 04ee 00       		.uleb128 0
- 352 04ef 5F5F494E 		.ascii "__INT_LEAST16_TYPE__ short int\0"
- 352      545F4C45 
- 352      41535431 
- 352      365F5459 
- 352      50455F5F 
- 353 050e 01       		.byte	0x1
- 354 050f 00       		.uleb128 0
- 355 0510 5F5F494E 		.ascii "__INT_LEAST32_TYPE__ int\0"
- 355      545F4C45 
- 355      41535433 
- 355      325F5459 
- 355      50455F5F 
- 356 0529 01       		.byte	0x1
- 357 052a 00       		.uleb128 0
- 358 052b 5F5F494E 		.ascii "__INT_LEAST64_TYPE__ long long int\0"
- 358      545F4C45 
- 358      41535436 
- 358      345F5459 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 12
-
-
- 358      50455F5F 
- 359 054e 01       		.byte	0x1
- 360 054f 00       		.uleb128 0
- 361 0550 5F5F5549 		.ascii "__UINT_LEAST8_TYPE__ unsigned char\0"
- 361      4E545F4C 
- 361      45415354 
- 361      385F5459 
- 361      50455F5F 
- 362 0573 01       		.byte	0x1
- 363 0574 00       		.uleb128 0
- 364 0575 5F5F5549 		.ascii "__UINT_LEAST16_TYPE__ short unsigned int\0"
- 364      4E545F4C 
- 364      45415354 
- 364      31365F54 
- 364      5950455F 
- 365 059e 01       		.byte	0x1
- 366 059f 00       		.uleb128 0
- 367 05a0 5F5F5549 		.ascii "__UINT_LEAST32_TYPE__ unsigned int\0"
- 367      4E545F4C 
- 367      45415354 
- 367      33325F54 
- 367      5950455F 
- 368 05c3 01       		.byte	0x1
- 369 05c4 00       		.uleb128 0
- 370 05c5 5F5F5549 		.ascii "__UINT_LEAST64_TYPE__ long long unsigned int\0"
- 370      4E545F4C 
- 370      45415354 
- 370      36345F54 
- 370      5950455F 
- 371 05f2 01       		.byte	0x1
- 372 05f3 00       		.uleb128 0
- 373 05f4 5F5F494E 		.ascii "__INT_FAST8_TYPE__ signed char\0"
- 373      545F4641 
- 373      5354385F 
- 373      54595045 
- 373      5F5F2073 
- 374 0613 01       		.byte	0x1
- 375 0614 00       		.uleb128 0
- 376 0615 5F5F494E 		.ascii "__INT_FAST16_TYPE__ short int\0"
- 376      545F4641 
- 376      53543136 
- 376      5F545950 
- 376      455F5F20 
- 377 0633 01       		.byte	0x1
- 378 0634 00       		.uleb128 0
- 379 0635 5F5F494E 		.ascii "__INT_FAST32_TYPE__ int\0"
- 379      545F4641 
- 379      53543332 
- 379      5F545950 
- 379      455F5F20 
- 380 064d 01       		.byte	0x1
- 381 064e 00       		.uleb128 0
- 382 064f 5F5F494E 		.ascii "__INT_FAST64_TYPE__ long long int\0"
- 382      545F4641 
- 382      53543634 
- 382      5F545950 
- 382      455F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 13
-
-
- 383 0671 01       		.byte	0x1
- 384 0672 00       		.uleb128 0
- 385 0673 5F5F5549 		.ascii "__UINT_FAST8_TYPE__ unsigned char\0"
- 385      4E545F46 
- 385      41535438 
- 385      5F545950 
- 385      455F5F20 
- 386 0695 01       		.byte	0x1
- 387 0696 00       		.uleb128 0
- 388 0697 5F5F5549 		.ascii "__UINT_FAST16_TYPE__ short unsigned int\0"
- 388      4E545F46 
- 388      41535431 
- 388      365F5459 
- 388      50455F5F 
- 389 06bf 01       		.byte	0x1
- 390 06c0 00       		.uleb128 0
- 391 06c1 5F5F5549 		.ascii "__UINT_FAST32_TYPE__ unsigned int\0"
- 391      4E545F46 
- 391      41535433 
- 391      325F5459 
- 391      50455F5F 
- 392 06e3 01       		.byte	0x1
- 393 06e4 00       		.uleb128 0
- 394 06e5 5F5F5549 		.ascii "__UINT_FAST64_TYPE__ long long unsigned int\0"
- 394      4E545F46 
- 394      41535436 
- 394      345F5459 
- 394      50455F5F 
- 395 0711 01       		.byte	0x1
- 396 0712 00       		.uleb128 0
- 397 0713 5F5F494E 		.ascii "__INTPTR_TYPE__ int\0"
- 397      54505452 
- 397      5F545950 
- 397      455F5F20 
- 397      696E7400 
- 398 0727 01       		.byte	0x1
- 399 0728 00       		.uleb128 0
- 400 0729 5F5F5549 		.ascii "__UINTPTR_TYPE__ unsigned int\0"
- 400      4E545054 
- 400      525F5459 
- 400      50455F5F 
- 400      20756E73 
- 401 0747 01       		.byte	0x1
- 402 0748 00       		.uleb128 0
- 403 0749 5F5F6861 		.ascii "__has_include(STR) __has_include__(STR)\0"
- 403      735F696E 
- 403      636C7564 
- 403      65285354 
- 403      5229205F 
- 404 0771 01       		.byte	0x1
- 405 0772 00       		.uleb128 0
- 406 0773 5F5F6861 		.ascii "__has_include_next(STR) __has_include_next__(STR)\0"
- 406      735F696E 
- 406      636C7564 
- 406      655F6E65 
- 406      78742853 
- 407 07a5 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 14
-
-
- 408 07a6 00       		.uleb128 0
- 409 07a7 5F5F4758 		.ascii "__GXX_ABI_VERSION 1002\0"
- 409      585F4142 
- 409      495F5645 
- 409      5253494F 
- 409      4E203130 
- 410 07be 01       		.byte	0x1
- 411 07bf 00       		.uleb128 0
- 412 07c0 5F5F5343 		.ascii "__SCHAR_MAX__ 127\0"
- 412      4841525F 
- 412      4D41585F 
- 412      5F203132 
- 412      3700
- 413 07d2 01       		.byte	0x1
- 414 07d3 00       		.uleb128 0
- 415 07d4 5F5F5348 		.ascii "__SHRT_MAX__ 32767\0"
- 415      52545F4D 
- 415      41585F5F 
- 415      20333237 
- 415      363700
- 416 07e7 01       		.byte	0x1
- 417 07e8 00       		.uleb128 0
- 418 07e9 5F5F494E 		.ascii "__INT_MAX__ 2147483647\0"
- 418      545F4D41 
- 418      585F5F20 
- 418      32313437 
- 418      34383336 
- 419 0800 01       		.byte	0x1
- 420 0801 00       		.uleb128 0
- 421 0802 5F5F4C4F 		.ascii "__LONG_MAX__ 2147483647L\0"
- 421      4E475F4D 
- 421      41585F5F 
- 421      20323134 
- 421      37343833 
- 422 081b 01       		.byte	0x1
- 423 081c 00       		.uleb128 0
- 424 081d 5F5F4C4F 		.ascii "__LONG_LONG_MAX__ 9223372036854775807LL\0"
- 424      4E475F4C 
- 424      4F4E475F 
- 424      4D41585F 
- 424      5F203932 
- 425 0845 01       		.byte	0x1
- 426 0846 00       		.uleb128 0
- 427 0847 5F5F5743 		.ascii "__WCHAR_MAX__ 65535\0"
- 427      4841525F 
- 427      4D41585F 
- 427      5F203635 
- 427      35333500 
- 428 085b 01       		.byte	0x1
- 429 085c 00       		.uleb128 0
- 430 085d 5F5F5743 		.ascii "__WCHAR_MIN__ 0\0"
- 430      4841525F 
- 430      4D494E5F 
- 430      5F203000 
- 431 086d 01       		.byte	0x1
- 432 086e 00       		.uleb128 0
- 433 086f 5F5F5749 		.ascii "__WINT_MAX__ 65535\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 15
-
-
- 433      4E545F4D 
- 433      41585F5F 
- 433      20363535 
- 433      333500
- 434 0882 01       		.byte	0x1
- 435 0883 00       		.uleb128 0
- 436 0884 5F5F5749 		.ascii "__WINT_MIN__ 0\0"
- 436      4E545F4D 
- 436      494E5F5F 
- 436      203000
- 437 0893 01       		.byte	0x1
- 438 0894 00       		.uleb128 0
- 439 0895 5F5F5054 		.ascii "__PTRDIFF_MAX__ 2147483647\0"
- 439      52444946 
- 439      465F4D41 
- 439      585F5F20 
- 439      32313437 
- 440 08b0 01       		.byte	0x1
- 441 08b1 00       		.uleb128 0
- 442 08b2 5F5F5349 		.ascii "__SIZE_MAX__ 4294967295U\0"
- 442      5A455F4D 
- 442      41585F5F 
- 442      20343239 
- 442      34393637 
- 443 08cb 01       		.byte	0x1
- 444 08cc 00       		.uleb128 0
- 445 08cd 5F5F494E 		.ascii "__INTMAX_MAX__ 9223372036854775807LL\0"
- 445      544D4158 
- 445      5F4D4158 
- 445      5F5F2039 
- 445      32323333 
- 446 08f2 01       		.byte	0x1
- 447 08f3 00       		.uleb128 0
- 448 08f4 5F5F494E 		.ascii "__INTMAX_C(c) c ## LL\0"
- 448      544D4158 
- 448      5F432863 
- 448      29206320 
- 448      2323204C 
- 449 090a 01       		.byte	0x1
- 450 090b 00       		.uleb128 0
- 451 090c 5F5F5549 		.ascii "__UINTMAX_MAX__ 18446744073709551615ULL\0"
- 451      4E544D41 
- 451      585F4D41 
- 451      585F5F20 
- 451      31383434 
- 452 0934 01       		.byte	0x1
- 453 0935 00       		.uleb128 0
- 454 0936 5F5F5549 		.ascii "__UINTMAX_C(c) c ## ULL\0"
- 454      4E544D41 
- 454      585F4328 
- 454      63292063 
- 454      20232320 
- 455 094e 01       		.byte	0x1
- 456 094f 00       		.uleb128 0
- 457 0950 5F5F5349 		.ascii "__SIG_ATOMIC_MAX__ 2147483647\0"
- 457      475F4154 
- 457      4F4D4943 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 16
-
-
- 457      5F4D4158 
- 457      5F5F2032 
- 458 096e 01       		.byte	0x1
- 459 096f 00       		.uleb128 0
- 460 0970 5F5F5349 		.ascii "__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\0"
- 460      475F4154 
- 460      4F4D4943 
- 460      5F4D494E 
- 460      5F5F2028 
- 461 099d 01       		.byte	0x1
- 462 099e 00       		.uleb128 0
- 463 099f 5F5F494E 		.ascii "__INT8_MAX__ 127\0"
- 463      54385F4D 
- 463      41585F5F 
- 463      20313237 
- 463      00
- 464 09b0 01       		.byte	0x1
- 465 09b1 00       		.uleb128 0
- 466 09b2 5F5F494E 		.ascii "__INT16_MAX__ 32767\0"
- 466      5431365F 
- 466      4D41585F 
- 466      5F203332 
- 466      37363700 
- 467 09c6 01       		.byte	0x1
- 468 09c7 00       		.uleb128 0
- 469 09c8 5F5F494E 		.ascii "__INT32_MAX__ 2147483647\0"
- 469      5433325F 
- 469      4D41585F 
- 469      5F203231 
- 469      34373438 
- 470 09e1 01       		.byte	0x1
- 471 09e2 00       		.uleb128 0
- 472 09e3 5F5F494E 		.ascii "__INT64_MAX__ 9223372036854775807LL\0"
- 472      5436345F 
- 472      4D41585F 
- 472      5F203932 
- 472      32333337 
- 473 0a07 01       		.byte	0x1
- 474 0a08 00       		.uleb128 0
- 475 0a09 5F5F5549 		.ascii "__UINT8_MAX__ 255\0"
- 475      4E54385F 
- 475      4D41585F 
- 475      5F203235 
- 475      3500
- 476 0a1b 01       		.byte	0x1
- 477 0a1c 00       		.uleb128 0
- 478 0a1d 5F5F5549 		.ascii "__UINT16_MAX__ 65535\0"
- 478      4E543136 
- 478      5F4D4158 
- 478      5F5F2036 
- 478      35353335 
- 479 0a32 01       		.byte	0x1
- 480 0a33 00       		.uleb128 0
- 481 0a34 5F5F5549 		.ascii "__UINT32_MAX__ 4294967295U\0"
- 481      4E543332 
- 481      5F4D4158 
- 481      5F5F2034 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 17
-
-
- 481      32393439 
- 482 0a4f 01       		.byte	0x1
- 483 0a50 00       		.uleb128 0
- 484 0a51 5F5F5549 		.ascii "__UINT64_MAX__ 18446744073709551615ULL\0"
- 484      4E543634 
- 484      5F4D4158 
- 484      5F5F2031 
- 484      38343436 
- 485 0a78 01       		.byte	0x1
- 486 0a79 00       		.uleb128 0
- 487 0a7a 5F5F494E 		.ascii "__INT_LEAST8_MAX__ 127\0"
- 487      545F4C45 
- 487      41535438 
- 487      5F4D4158 
- 487      5F5F2031 
- 488 0a91 01       		.byte	0x1
- 489 0a92 00       		.uleb128 0
- 490 0a93 5F5F494E 		.ascii "__INT8_C(c) c\0"
- 490      54385F43 
- 490      28632920 
- 490      6300
- 491 0aa1 01       		.byte	0x1
- 492 0aa2 00       		.uleb128 0
- 493 0aa3 5F5F494E 		.ascii "__INT_LEAST16_MAX__ 32767\0"
- 493      545F4C45 
- 493      41535431 
- 493      365F4D41 
- 493      585F5F20 
- 494 0abd 01       		.byte	0x1
- 495 0abe 00       		.uleb128 0
- 496 0abf 5F5F494E 		.ascii "__INT16_C(c) c\0"
- 496      5431365F 
- 496      43286329 
- 496      206300
- 497 0ace 01       		.byte	0x1
- 498 0acf 00       		.uleb128 0
- 499 0ad0 5F5F494E 		.ascii "__INT_LEAST32_MAX__ 2147483647\0"
- 499      545F4C45 
- 499      41535433 
- 499      325F4D41 
- 499      585F5F20 
- 500 0aef 01       		.byte	0x1
- 501 0af0 00       		.uleb128 0
- 502 0af1 5F5F494E 		.ascii "__INT32_C(c) c\0"
- 502      5433325F 
- 502      43286329 
- 502      206300
- 503 0b00 01       		.byte	0x1
- 504 0b01 00       		.uleb128 0
- 505 0b02 5F5F494E 		.ascii "__INT_LEAST64_MAX__ 9223372036854775807LL\0"
- 505      545F4C45 
- 505      41535436 
- 505      345F4D41 
- 505      585F5F20 
- 506 0b2c 01       		.byte	0x1
- 507 0b2d 00       		.uleb128 0
- 508 0b2e 5F5F494E 		.ascii "__INT64_C(c) c ## LL\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 18
-
-
- 508      5436345F 
- 508      43286329 
- 508      20632023 
- 508      23204C4C 
- 509 0b43 01       		.byte	0x1
- 510 0b44 00       		.uleb128 0
- 511 0b45 5F5F5549 		.ascii "__UINT_LEAST8_MAX__ 255\0"
- 511      4E545F4C 
- 511      45415354 
- 511      385F4D41 
- 511      585F5F20 
- 512 0b5d 01       		.byte	0x1
- 513 0b5e 00       		.uleb128 0
- 514 0b5f 5F5F5549 		.ascii "__UINT8_C(c) c\0"
- 514      4E54385F 
- 514      43286329 
- 514      206300
- 515 0b6e 01       		.byte	0x1
- 516 0b6f 00       		.uleb128 0
- 517 0b70 5F5F5549 		.ascii "__UINT_LEAST16_MAX__ 65535\0"
- 517      4E545F4C 
- 517      45415354 
- 517      31365F4D 
- 517      41585F5F 
- 518 0b8b 01       		.byte	0x1
- 519 0b8c 00       		.uleb128 0
- 520 0b8d 5F5F5549 		.ascii "__UINT16_C(c) c\0"
- 520      4E543136 
- 520      5F432863 
- 520      29206300 
- 521 0b9d 01       		.byte	0x1
- 522 0b9e 00       		.uleb128 0
- 523 0b9f 5F5F5549 		.ascii "__UINT_LEAST32_MAX__ 4294967295U\0"
- 523      4E545F4C 
- 523      45415354 
- 523      33325F4D 
- 523      41585F5F 
- 524 0bc0 01       		.byte	0x1
- 525 0bc1 00       		.uleb128 0
- 526 0bc2 5F5F5549 		.ascii "__UINT32_C(c) c ## U\0"
- 526      4E543332 
- 526      5F432863 
- 526      29206320 
- 526      23232055 
- 527 0bd7 01       		.byte	0x1
- 528 0bd8 00       		.uleb128 0
- 529 0bd9 5F5F5549 		.ascii "__UINT_LEAST64_MAX__ 18446744073709551615ULL\0"
- 529      4E545F4C 
- 529      45415354 
- 529      36345F4D 
- 529      41585F5F 
- 530 0c06 01       		.byte	0x1
- 531 0c07 00       		.uleb128 0
- 532 0c08 5F5F5549 		.ascii "__UINT64_C(c) c ## ULL\0"
- 532      4E543634 
- 532      5F432863 
- 532      29206320 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 19
-
-
- 532      23232055 
- 533 0c1f 01       		.byte	0x1
- 534 0c20 00       		.uleb128 0
- 535 0c21 5F5F494E 		.ascii "__INT_FAST8_MAX__ 127\0"
- 535      545F4641 
- 535      5354385F 
- 535      4D41585F 
- 535      5F203132 
- 536 0c37 01       		.byte	0x1
- 537 0c38 00       		.uleb128 0
- 538 0c39 5F5F494E 		.ascii "__INT_FAST16_MAX__ 32767\0"
- 538      545F4641 
- 538      53543136 
- 538      5F4D4158 
- 538      5F5F2033 
- 539 0c52 01       		.byte	0x1
- 540 0c53 00       		.uleb128 0
- 541 0c54 5F5F494E 		.ascii "__INT_FAST32_MAX__ 2147483647\0"
- 541      545F4641 
- 541      53543332 
- 541      5F4D4158 
- 541      5F5F2032 
- 542 0c72 01       		.byte	0x1
- 543 0c73 00       		.uleb128 0
- 544 0c74 5F5F494E 		.ascii "__INT_FAST64_MAX__ 9223372036854775807LL\0"
- 544      545F4641 
- 544      53543634 
- 544      5F4D4158 
- 544      5F5F2039 
- 545 0c9d 01       		.byte	0x1
- 546 0c9e 00       		.uleb128 0
- 547 0c9f 5F5F5549 		.ascii "__UINT_FAST8_MAX__ 255\0"
- 547      4E545F46 
- 547      41535438 
- 547      5F4D4158 
- 547      5F5F2032 
- 548 0cb6 01       		.byte	0x1
- 549 0cb7 00       		.uleb128 0
- 550 0cb8 5F5F5549 		.ascii "__UINT_FAST16_MAX__ 65535\0"
- 550      4E545F46 
- 550      41535431 
- 550      365F4D41 
- 550      585F5F20 
- 551 0cd2 01       		.byte	0x1
- 552 0cd3 00       		.uleb128 0
- 553 0cd4 5F5F5549 		.ascii "__UINT_FAST32_MAX__ 4294967295U\0"
- 553      4E545F46 
- 553      41535433 
- 553      325F4D41 
- 553      585F5F20 
- 554 0cf4 01       		.byte	0x1
- 555 0cf5 00       		.uleb128 0
- 556 0cf6 5F5F5549 		.ascii "__UINT_FAST64_MAX__ 18446744073709551615ULL\0"
- 556      4E545F46 
- 556      41535436 
- 556      345F4D41 
- 556      585F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 20
-
-
- 557 0d22 01       		.byte	0x1
- 558 0d23 00       		.uleb128 0
- 559 0d24 5F5F494E 		.ascii "__INTPTR_MAX__ 2147483647\0"
- 559      54505452 
- 559      5F4D4158 
- 559      5F5F2032 
- 559      31343734 
- 560 0d3e 01       		.byte	0x1
- 561 0d3f 00       		.uleb128 0
- 562 0d40 5F5F5549 		.ascii "__UINTPTR_MAX__ 4294967295U\0"
- 562      4E545054 
- 562      525F4D41 
- 562      585F5F20 
- 562      34323934 
- 563 0d5c 01       		.byte	0x1
- 564 0d5d 00       		.uleb128 0
- 565 0d5e 5F5F4743 		.ascii "__GCC_IEC_559 2\0"
- 565      435F4945 
- 565      435F3535 
- 565      39203200 
- 566 0d6e 01       		.byte	0x1
- 567 0d6f 00       		.uleb128 0
- 568 0d70 5F5F4743 		.ascii "__GCC_IEC_559_COMPLEX 2\0"
- 568      435F4945 
- 568      435F3535 
- 568      395F434F 
- 568      4D504C45 
- 569 0d88 01       		.byte	0x1
- 570 0d89 00       		.uleb128 0
- 571 0d8a 5F5F464C 		.ascii "__FLT_EVAL_METHOD__ 2\0"
- 571      545F4556 
- 571      414C5F4D 
- 571      4554484F 
- 571      445F5F20 
- 572 0da0 01       		.byte	0x1
- 573 0da1 00       		.uleb128 0
- 574 0da2 5F5F4445 		.ascii "__DEC_EVAL_METHOD__ 2\0"
- 574      435F4556 
- 574      414C5F4D 
- 574      4554484F 
- 574      445F5F20 
- 575 0db8 01       		.byte	0x1
- 576 0db9 00       		.uleb128 0
- 577 0dba 5F5F464C 		.ascii "__FLT_RADIX__ 2\0"
- 577      545F5241 
- 577      4449585F 
- 577      5F203200 
- 578 0dca 01       		.byte	0x1
- 579 0dcb 00       		.uleb128 0
- 580 0dcc 5F5F464C 		.ascii "__FLT_MANT_DIG__ 24\0"
- 580      545F4D41 
- 580      4E545F44 
- 580      49475F5F 
- 580      20323400 
- 581 0de0 01       		.byte	0x1
- 582 0de1 00       		.uleb128 0
- 583 0de2 5F5F464C 		.ascii "__FLT_DIG__ 6\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 21
-
-
- 583      545F4449 
- 583      475F5F20 
- 583      3600
- 584 0df0 01       		.byte	0x1
- 585 0df1 00       		.uleb128 0
- 586 0df2 5F5F464C 		.ascii "__FLT_MIN_EXP__ (-125)\0"
- 586      545F4D49 
- 586      4E5F4558 
- 586      505F5F20 
- 586      282D3132 
- 587 0e09 01       		.byte	0x1
- 588 0e0a 00       		.uleb128 0
- 589 0e0b 5F5F464C 		.ascii "__FLT_MIN_10_EXP__ (-37)\0"
- 589      545F4D49 
- 589      4E5F3130 
- 589      5F455850 
- 589      5F5F2028 
- 590 0e24 01       		.byte	0x1
- 591 0e25 00       		.uleb128 0
- 592 0e26 5F5F464C 		.ascii "__FLT_MAX_EXP__ 128\0"
- 592      545F4D41 
- 592      585F4558 
- 592      505F5F20 
- 592      31323800 
- 593 0e3a 01       		.byte	0x1
- 594 0e3b 00       		.uleb128 0
- 595 0e3c 5F5F464C 		.ascii "__FLT_MAX_10_EXP__ 38\0"
- 595      545F4D41 
- 595      585F3130 
- 595      5F455850 
- 595      5F5F2033 
- 596 0e52 01       		.byte	0x1
- 597 0e53 00       		.uleb128 0
- 598 0e54 5F5F464C 		.ascii "__FLT_DECIMAL_DIG__ 9\0"
- 598      545F4445 
- 598      43494D41 
- 598      4C5F4449 
- 598      475F5F20 
- 599 0e6a 01       		.byte	0x1
- 600 0e6b 00       		.uleb128 0
- 601 0e6c 5F5F464C 		.ascii "__FLT_MAX__ 3.40282346638528859812e+38F\0"
- 601      545F4D41 
- 601      585F5F20 
- 601      332E3430 
- 601      32383233 
- 602 0e94 01       		.byte	0x1
- 603 0e95 00       		.uleb128 0
- 604 0e96 5F5F464C 		.ascii "__FLT_MIN__ 1.17549435082228750797e-38F\0"
- 604      545F4D49 
- 604      4E5F5F20 
- 604      312E3137 
- 604      35343934 
- 605 0ebe 01       		.byte	0x1
- 606 0ebf 00       		.uleb128 0
- 607 0ec0 5F5F464C 		.ascii "__FLT_EPSILON__ 1.19209289550781250000e-7F\0"
- 607      545F4550 
- 607      53494C4F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 22
-
-
- 607      4E5F5F20 
- 607      312E3139 
- 608 0eeb 01       		.byte	0x1
- 609 0eec 00       		.uleb128 0
- 610 0eed 5F5F464C 		.ascii "__FLT_DENORM_MIN__ 1.40129846432481707092e-45F\0"
- 610      545F4445 
- 610      4E4F524D 
- 610      5F4D494E 
- 610      5F5F2031 
- 611 0f1c 01       		.byte	0x1
- 612 0f1d 00       		.uleb128 0
- 613 0f1e 5F5F464C 		.ascii "__FLT_HAS_DENORM__ 1\0"
- 613      545F4841 
- 613      535F4445 
- 613      4E4F524D 
- 613      5F5F2031 
- 614 0f33 01       		.byte	0x1
- 615 0f34 00       		.uleb128 0
- 616 0f35 5F5F464C 		.ascii "__FLT_HAS_INFINITY__ 1\0"
- 616      545F4841 
- 616      535F494E 
- 616      46494E49 
- 616      54595F5F 
- 617 0f4c 01       		.byte	0x1
- 618 0f4d 00       		.uleb128 0
- 619 0f4e 5F5F464C 		.ascii "__FLT_HAS_QUIET_NAN__ 1\0"
- 619      545F4841 
- 619      535F5155 
- 619      4945545F 
- 619      4E414E5F 
- 620 0f66 01       		.byte	0x1
- 621 0f67 00       		.uleb128 0
- 622 0f68 5F5F4442 		.ascii "__DBL_MANT_DIG__ 53\0"
- 622      4C5F4D41 
- 622      4E545F44 
- 622      49475F5F 
- 622      20353300 
- 623 0f7c 01       		.byte	0x1
- 624 0f7d 00       		.uleb128 0
- 625 0f7e 5F5F4442 		.ascii "__DBL_DIG__ 15\0"
- 625      4C5F4449 
- 625      475F5F20 
- 625      313500
- 626 0f8d 01       		.byte	0x1
- 627 0f8e 00       		.uleb128 0
- 628 0f8f 5F5F4442 		.ascii "__DBL_MIN_EXP__ (-1021)\0"
- 628      4C5F4D49 
- 628      4E5F4558 
- 628      505F5F20 
- 628      282D3130 
- 629 0fa7 01       		.byte	0x1
- 630 0fa8 00       		.uleb128 0
- 631 0fa9 5F5F4442 		.ascii "__DBL_MIN_10_EXP__ (-307)\0"
- 631      4C5F4D49 
- 631      4E5F3130 
- 631      5F455850 
- 631      5F5F2028 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 23
-
-
- 632 0fc3 01       		.byte	0x1
- 633 0fc4 00       		.uleb128 0
- 634 0fc5 5F5F4442 		.ascii "__DBL_MAX_EXP__ 1024\0"
- 634      4C5F4D41 
- 634      585F4558 
- 634      505F5F20 
- 634      31303234 
- 635 0fda 01       		.byte	0x1
- 636 0fdb 00       		.uleb128 0
- 637 0fdc 5F5F4442 		.ascii "__DBL_MAX_10_EXP__ 308\0"
- 637      4C5F4D41 
- 637      585F3130 
- 637      5F455850 
- 637      5F5F2033 
- 638 0ff3 01       		.byte	0x1
- 639 0ff4 00       		.uleb128 0
- 640 0ff5 5F5F4442 		.ascii "__DBL_DECIMAL_DIG__ 17\0"
- 640      4C5F4445 
- 640      43494D41 
- 640      4C5F4449 
- 640      475F5F20 
- 641 100c 01       		.byte	0x1
- 642 100d 00       		.uleb128 0
- 643 100e 5F5F4442 		.ascii "__DBL_MAX__ ((double)1.79769313486231570815e+308L)\0"
- 643      4C5F4D41 
- 643      585F5F20 
- 643      2828646F 
- 643      75626C65 
- 644 1041 01       		.byte	0x1
- 645 1042 00       		.uleb128 0
- 646 1043 5F5F4442 		.ascii "__DBL_MIN__ ((double)2.22507385850720138309e-308L)\0"
- 646      4C5F4D49 
- 646      4E5F5F20 
- 646      2828646F 
- 646      75626C65 
- 647 1076 01       		.byte	0x1
- 648 1077 00       		.uleb128 0
- 649 1078 5F5F4442 		.ascii "__DBL_EPSILON__ ((double)2.22044604925031308085e-16L)\0"
- 649      4C5F4550 
- 649      53494C4F 
- 649      4E5F5F20 
- 649      2828646F 
- 650 10ae 01       		.byte	0x1
- 651 10af 00       		.uleb128 0
- 652 10b0 5F5F4442 		.ascii "__DBL_DENORM_MIN__ ((double)4.94065645841246544177e-324L)\0"
- 652      4C5F4445 
- 652      4E4F524D 
- 652      5F4D494E 
- 652      5F5F2028 
- 653 10ea 01       		.byte	0x1
- 654 10eb 00       		.uleb128 0
- 655 10ec 5F5F4442 		.ascii "__DBL_HAS_DENORM__ 1\0"
- 655      4C5F4841 
- 655      535F4445 
- 655      4E4F524D 
- 655      5F5F2031 
- 656 1101 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 24
-
-
- 657 1102 00       		.uleb128 0
- 658 1103 5F5F4442 		.ascii "__DBL_HAS_INFINITY__ 1\0"
- 658      4C5F4841 
- 658      535F494E 
- 658      46494E49 
- 658      54595F5F 
- 659 111a 01       		.byte	0x1
- 660 111b 00       		.uleb128 0
- 661 111c 5F5F4442 		.ascii "__DBL_HAS_QUIET_NAN__ 1\0"
- 661      4C5F4841 
- 661      535F5155 
- 661      4945545F 
- 661      4E414E5F 
- 662 1134 01       		.byte	0x1
- 663 1135 00       		.uleb128 0
- 664 1136 5F5F4C44 		.ascii "__LDBL_MANT_DIG__ 64\0"
- 664      424C5F4D 
- 664      414E545F 
- 664      4449475F 
- 664      5F203634 
- 665 114b 01       		.byte	0x1
- 666 114c 00       		.uleb128 0
- 667 114d 5F5F4C44 		.ascii "__LDBL_DIG__ 18\0"
- 667      424C5F44 
- 667      49475F5F 
- 667      20313800 
- 668 115d 01       		.byte	0x1
- 669 115e 00       		.uleb128 0
- 670 115f 5F5F4C44 		.ascii "__LDBL_MIN_EXP__ (-16381)\0"
- 670      424C5F4D 
- 670      494E5F45 
- 670      58505F5F 
- 670      20282D31 
- 671 1179 01       		.byte	0x1
- 672 117a 00       		.uleb128 0
- 673 117b 5F5F4C44 		.ascii "__LDBL_MIN_10_EXP__ (-4931)\0"
- 673      424C5F4D 
- 673      494E5F31 
- 673      305F4558 
- 673      505F5F20 
- 674 1197 01       		.byte	0x1
- 675 1198 00       		.uleb128 0
- 676 1199 5F5F4C44 		.ascii "__LDBL_MAX_EXP__ 16384\0"
- 676      424C5F4D 
- 676      41585F45 
- 676      58505F5F 
- 676      20313633 
- 677 11b0 01       		.byte	0x1
- 678 11b1 00       		.uleb128 0
- 679 11b2 5F5F4C44 		.ascii "__LDBL_MAX_10_EXP__ 4932\0"
- 679      424C5F4D 
- 679      41585F31 
- 679      305F4558 
- 679      505F5F20 
- 680 11cb 01       		.byte	0x1
- 681 11cc 00       		.uleb128 0
- 682 11cd 5F5F4445 		.ascii "__DECIMAL_DIG__ 21\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 25
-
-
- 682      43494D41 
- 682      4C5F4449 
- 682      475F5F20 
- 682      323100
- 683 11e0 01       		.byte	0x1
- 684 11e1 00       		.uleb128 0
- 685 11e2 5F5F4C44 		.ascii "__LDBL_MAX__ 1.18973149535723176502e+4932L\0"
- 685      424C5F4D 
- 685      41585F5F 
- 685      20312E31 
- 685      38393733 
- 686 120d 01       		.byte	0x1
- 687 120e 00       		.uleb128 0
- 688 120f 5F5F4C44 		.ascii "__LDBL_MIN__ 3.36210314311209350626e-4932L\0"
- 688      424C5F4D 
- 688      494E5F5F 
- 688      20332E33 
- 688      36323130 
- 689 123a 01       		.byte	0x1
- 690 123b 00       		.uleb128 0
- 691 123c 5F5F4C44 		.ascii "__LDBL_EPSILON__ 1.08420217248550443401e-19L\0"
- 691      424C5F45 
- 691      5053494C 
- 691      4F4E5F5F 
- 691      20312E30 
- 692 1269 01       		.byte	0x1
- 693 126a 00       		.uleb128 0
- 694 126b 5F5F4C44 		.ascii "__LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L\0"
- 694      424C5F44 
- 694      454E4F52 
- 694      4D5F4D49 
- 694      4E5F5F20 
- 695 129d 01       		.byte	0x1
- 696 129e 00       		.uleb128 0
- 697 129f 5F5F4C44 		.ascii "__LDBL_HAS_DENORM__ 1\0"
- 697      424C5F48 
- 697      41535F44 
- 697      454E4F52 
- 697      4D5F5F20 
- 698 12b5 01       		.byte	0x1
- 699 12b6 00       		.uleb128 0
- 700 12b7 5F5F4C44 		.ascii "__LDBL_HAS_INFINITY__ 1\0"
- 700      424C5F48 
- 700      41535F49 
- 700      4E46494E 
- 700      4954595F 
- 701 12cf 01       		.byte	0x1
- 702 12d0 00       		.uleb128 0
- 703 12d1 5F5F4C44 		.ascii "__LDBL_HAS_QUIET_NAN__ 1\0"
- 703      424C5F48 
- 703      41535F51 
- 703      55494554 
- 703      5F4E414E 
- 704 12ea 01       		.byte	0x1
- 705 12eb 00       		.uleb128 0
- 706 12ec 5F5F4445 		.ascii "__DEC32_MANT_DIG__ 7\0"
- 706      4333325F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 26
-
-
- 706      4D414E54 
- 706      5F444947 
- 706      5F5F2037 
- 707 1301 01       		.byte	0x1
- 708 1302 00       		.uleb128 0
- 709 1303 5F5F4445 		.ascii "__DEC32_MIN_EXP__ (-94)\0"
- 709      4333325F 
- 709      4D494E5F 
- 709      4558505F 
- 709      5F20282D 
- 710 131b 01       		.byte	0x1
- 711 131c 00       		.uleb128 0
- 712 131d 5F5F4445 		.ascii "__DEC32_MAX_EXP__ 97\0"
- 712      4333325F 
- 712      4D41585F 
- 712      4558505F 
- 712      5F203937 
- 713 1332 01       		.byte	0x1
- 714 1333 00       		.uleb128 0
- 715 1334 5F5F4445 		.ascii "__DEC32_MIN__ 1E-95DF\0"
- 715      4333325F 
- 715      4D494E5F 
- 715      5F203145 
- 715      2D393544 
- 716 134a 01       		.byte	0x1
- 717 134b 00       		.uleb128 0
- 718 134c 5F5F4445 		.ascii "__DEC32_MAX__ 9.999999E96DF\0"
- 718      4333325F 
- 718      4D41585F 
- 718      5F20392E 
- 718      39393939 
- 719 1368 01       		.byte	0x1
- 720 1369 00       		.uleb128 0
- 721 136a 5F5F4445 		.ascii "__DEC32_EPSILON__ 1E-6DF\0"
- 721      4333325F 
- 721      45505349 
- 721      4C4F4E5F 
- 721      5F203145 
- 722 1383 01       		.byte	0x1
- 723 1384 00       		.uleb128 0
- 724 1385 5F5F4445 		.ascii "__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\0"
- 724      4333325F 
- 724      5355424E 
- 724      4F524D41 
- 724      4C5F4D49 
- 725 13ac 01       		.byte	0x1
- 726 13ad 00       		.uleb128 0
- 727 13ae 5F5F4445 		.ascii "__DEC64_MANT_DIG__ 16\0"
- 727      4336345F 
- 727      4D414E54 
- 727      5F444947 
- 727      5F5F2031 
- 728 13c4 01       		.byte	0x1
- 729 13c5 00       		.uleb128 0
- 730 13c6 5F5F4445 		.ascii "__DEC64_MIN_EXP__ (-382)\0"
- 730      4336345F 
- 730      4D494E5F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 27
-
-
- 730      4558505F 
- 730      5F20282D 
- 731 13df 01       		.byte	0x1
- 732 13e0 00       		.uleb128 0
- 733 13e1 5F5F4445 		.ascii "__DEC64_MAX_EXP__ 385\0"
- 733      4336345F 
- 733      4D41585F 
- 733      4558505F 
- 733      5F203338 
- 734 13f7 01       		.byte	0x1
- 735 13f8 00       		.uleb128 0
- 736 13f9 5F5F4445 		.ascii "__DEC64_MIN__ 1E-383DD\0"
- 736      4336345F 
- 736      4D494E5F 
- 736      5F203145 
- 736      2D333833 
- 737 1410 01       		.byte	0x1
- 738 1411 00       		.uleb128 0
- 739 1412 5F5F4445 		.ascii "__DEC64_MAX__ 9.999999999999999E384DD\0"
- 739      4336345F 
- 739      4D41585F 
- 739      5F20392E 
- 739      39393939 
- 740 1438 01       		.byte	0x1
- 741 1439 00       		.uleb128 0
- 742 143a 5F5F4445 		.ascii "__DEC64_EPSILON__ 1E-15DD\0"
- 742      4336345F 
- 742      45505349 
- 742      4C4F4E5F 
- 742      5F203145 
- 743 1454 01       		.byte	0x1
- 744 1455 00       		.uleb128 0
- 745 1456 5F5F4445 		.ascii "__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\0"
- 745      4336345F 
- 745      5355424E 
- 745      4F524D41 
- 745      4C5F4D49 
- 746 1487 01       		.byte	0x1
- 747 1488 00       		.uleb128 0
- 748 1489 5F5F4445 		.ascii "__DEC128_MANT_DIG__ 34\0"
- 748      43313238 
- 748      5F4D414E 
- 748      545F4449 
- 748      475F5F20 
- 749 14a0 01       		.byte	0x1
- 750 14a1 00       		.uleb128 0
- 751 14a2 5F5F4445 		.ascii "__DEC128_MIN_EXP__ (-6142)\0"
- 751      43313238 
- 751      5F4D494E 
- 751      5F455850 
- 751      5F5F2028 
- 752 14bd 01       		.byte	0x1
- 753 14be 00       		.uleb128 0
- 754 14bf 5F5F4445 		.ascii "__DEC128_MAX_EXP__ 6145\0"
- 754      43313238 
- 754      5F4D4158 
- 754      5F455850 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 28
-
-
- 754      5F5F2036 
- 755 14d7 01       		.byte	0x1
- 756 14d8 00       		.uleb128 0
- 757 14d9 5F5F4445 		.ascii "__DEC128_MIN__ 1E-6143DL\0"
- 757      43313238 
- 757      5F4D494E 
- 757      5F5F2031 
- 757      452D3631 
- 758 14f2 01       		.byte	0x1
- 759 14f3 00       		.uleb128 0
- 760 14f4 5F5F4445 		.ascii "__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL\0"
- 760      43313238 
- 760      5F4D4158 
- 760      5F5F2039 
- 760      2E393939 
- 761 152e 01       		.byte	0x1
- 762 152f 00       		.uleb128 0
- 763 1530 5F5F4445 		.ascii "__DEC128_EPSILON__ 1E-33DL\0"
- 763      43313238 
- 763      5F455053 
- 763      494C4F4E 
- 763      5F5F2031 
- 764 154b 01       		.byte	0x1
- 765 154c 00       		.uleb128 0
- 766 154d 5F5F4445 		.ascii "__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL\0"
- 766      43313238 
- 766      5F535542 
- 766      4E4F524D 
- 766      414C5F4D 
- 767 1592 01       		.byte	0x1
- 768 1593 00       		.uleb128 0
- 769 1594 5F5F5245 		.ascii "__REGISTER_PREFIX__ \0"
- 769      47495354 
- 769      45525F50 
- 769      52454649 
- 769      585F5F20 
- 770 15a9 01       		.byte	0x1
- 771 15aa 00       		.uleb128 0
- 772 15ab 5F5F5553 		.ascii "__USER_LABEL_PREFIX__ _\0"
- 772      45525F4C 
- 772      4142454C 
- 772      5F505245 
- 772      4649585F 
- 773 15c3 01       		.byte	0x1
- 774 15c4 00       		.uleb128 0
- 775 15c5 5F5F474E 		.ascii "__GNUC_GNU_INLINE__ 1\0"
- 775      55435F47 
- 775      4E555F49 
- 775      4E4C494E 
- 775      455F5F20 
- 776 15db 01       		.byte	0x1
- 777 15dc 00       		.uleb128 0
- 778 15dd 5F5F4E4F 		.ascii "__NO_INLINE__ 1\0"
- 778      5F494E4C 
- 778      494E455F 
- 778      5F203100 
- 779 15ed 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 29
-
-
- 780 15ee 00       		.uleb128 0
- 781 15ef 5F5F5354 		.ascii "__STRICT_ANSI__ 1\0"
- 781      52494354 
- 781      5F414E53 
- 781      495F5F20 
- 781      3100
- 782 1601 01       		.byte	0x1
- 783 1602 00       		.uleb128 0
- 784 1603 5F5F4743 		.ascii "__GCC_ATOMIC_BOOL_LOCK_FREE 1\0"
- 784      435F4154 
- 784      4F4D4943 
- 784      5F424F4F 
- 784      4C5F4C4F 
- 785 1621 01       		.byte	0x1
- 786 1622 00       		.uleb128 0
- 787 1623 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR_LOCK_FREE 1\0"
- 787      435F4154 
- 787      4F4D4943 
- 787      5F434841 
- 787      525F4C4F 
- 788 1641 01       		.byte	0x1
- 789 1642 00       		.uleb128 0
- 790 1643 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR16_T_LOCK_FREE 1\0"
- 790      435F4154 
- 790      4F4D4943 
- 790      5F434841 
- 790      5231365F 
- 791 1665 01       		.byte	0x1
- 792 1666 00       		.uleb128 0
- 793 1667 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR32_T_LOCK_FREE 1\0"
- 793      435F4154 
- 793      4F4D4943 
- 793      5F434841 
- 793      5233325F 
- 794 1689 01       		.byte	0x1
- 795 168a 00       		.uleb128 0
- 796 168b 5F5F4743 		.ascii "__GCC_ATOMIC_WCHAR_T_LOCK_FREE 1\0"
- 796      435F4154 
- 796      4F4D4943 
- 796      5F574348 
- 796      41525F54 
- 797 16ac 01       		.byte	0x1
- 798 16ad 00       		.uleb128 0
- 799 16ae 5F5F4743 		.ascii "__GCC_ATOMIC_SHORT_LOCK_FREE 1\0"
- 799      435F4154 
- 799      4F4D4943 
- 799      5F53484F 
- 799      52545F4C 
- 800 16cd 01       		.byte	0x1
- 801 16ce 00       		.uleb128 0
- 802 16cf 5F5F4743 		.ascii "__GCC_ATOMIC_INT_LOCK_FREE 1\0"
- 802      435F4154 
- 802      4F4D4943 
- 802      5F494E54 
- 802      5F4C4F43 
- 803 16ec 01       		.byte	0x1
- 804 16ed 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 30
-
-
- 805 16ee 5F5F4743 		.ascii "__GCC_ATOMIC_LONG_LOCK_FREE 1\0"
- 805      435F4154 
- 805      4F4D4943 
- 805      5F4C4F4E 
- 805      475F4C4F 
- 806 170c 01       		.byte	0x1
- 807 170d 00       		.uleb128 0
- 808 170e 5F5F4743 		.ascii "__GCC_ATOMIC_LLONG_LOCK_FREE 1\0"
- 808      435F4154 
- 808      4F4D4943 
- 808      5F4C4C4F 
- 808      4E475F4C 
- 809 172d 01       		.byte	0x1
- 810 172e 00       		.uleb128 0
- 811 172f 5F5F4743 		.ascii "__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\0"
- 811      435F4154 
- 811      4F4D4943 
- 811      5F544553 
- 811      545F414E 
- 812 1753 01       		.byte	0x1
- 813 1754 00       		.uleb128 0
- 814 1755 5F5F4743 		.ascii "__GCC_ATOMIC_POINTER_LOCK_FREE 1\0"
- 814      435F4154 
- 814      4F4D4943 
- 814      5F504F49 
- 814      4E544552 
- 815 1776 01       		.byte	0x1
- 816 1777 00       		.uleb128 0
- 817 1778 5F5F4743 		.ascii "__GCC_HAVE_DWARF2_CFI_ASM 1\0"
- 817      435F4841 
- 817      56455F44 
- 817      57415246 
- 817      325F4346 
- 818 1794 01       		.byte	0x1
- 819 1795 00       		.uleb128 0
- 820 1796 5F5F5052 		.ascii "__PRAGMA_REDEFINE_EXTNAME 1\0"
- 820      41474D41 
- 820      5F524544 
- 820      4546494E 
- 820      455F4558 
- 821 17b2 01       		.byte	0x1
- 822 17b3 00       		.uleb128 0
- 823 17b4 5F5F5349 		.ascii "__SIZEOF_WCHAR_T__ 2\0"
- 823      5A454F46 
- 823      5F574348 
- 823      41525F54 
- 823      5F5F2032 
- 824 17c9 01       		.byte	0x1
- 825 17ca 00       		.uleb128 0
- 826 17cb 5F5F5349 		.ascii "__SIZEOF_WINT_T__ 2\0"
- 826      5A454F46 
- 826      5F57494E 
- 826      545F545F 
- 826      5F203200 
- 827 17df 01       		.byte	0x1
- 828 17e0 00       		.uleb128 0
- 829 17e1 5F5F5349 		.ascii "__SIZEOF_PTRDIFF_T__ 4\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 31
-
-
- 829      5A454F46 
- 829      5F505452 
- 829      44494646 
- 829      5F545F5F 
- 830 17f8 01       		.byte	0x1
- 831 17f9 00       		.uleb128 0
- 832 17fa 5F5F6933 		.ascii "__i386 1\0"
- 832      38362031 
- 832      00
- 833 1803 01       		.byte	0x1
- 834 1804 00       		.uleb128 0
- 835 1805 5F5F6933 		.ascii "__i386__ 1\0"
- 835      38365F5F 
- 835      203100
- 836 1810 01       		.byte	0x1
- 837 1811 00       		.uleb128 0
- 838 1812 5F5F4154 		.ascii "__ATOMIC_HLE_ACQUIRE 65536\0"
- 838      4F4D4943 
- 838      5F484C45 
- 838      5F414351 
- 838      55495245 
- 839 182d 01       		.byte	0x1
- 840 182e 00       		.uleb128 0
- 841 182f 5F5F4154 		.ascii "__ATOMIC_HLE_RELEASE 131072\0"
- 841      4F4D4943 
- 841      5F484C45 
- 841      5F52454C 
- 841      45415345 
- 842 184b 01       		.byte	0x1
- 843 184c 00       		.uleb128 0
- 844 184d 5F5F7475 		.ascii "__tune_i386__ 1\0"
- 844      6E655F69 
- 844      3338365F 
- 844      5F203100 
- 845 185d 01       		.byte	0x1
- 846 185e 00       		.uleb128 0
- 847 185f 5F5F636F 		.ascii "__code_model_32__ 1\0"
- 847      64655F6D 
- 847      6F64656C 
- 847      5F33325F 
- 847      5F203100 
- 848 1873 01       		.byte	0x1
- 849 1874 00       		.uleb128 0
- 850 1875 5F583836 		.ascii "_X86_ 1\0"
- 850      5F203100 
- 851 187d 01       		.byte	0x1
- 852 187e 00       		.uleb128 0
- 853 187f 5F5F7374 		.ascii "__stdcall __attribute__((__stdcall__))\0"
- 853      6463616C 
- 853      6C205F5F 
- 853      61747472 
- 853      69627574 
- 854 18a6 01       		.byte	0x1
- 855 18a7 00       		.uleb128 0
- 856 18a8 5F5F6661 		.ascii "__fastcall __attribute__((__fastcall__))\0"
- 856      73746361 
- 856      6C6C205F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 32
-
-
- 856      5F617474 
- 856      72696275 
- 857 18d1 01       		.byte	0x1
- 858 18d2 00       		.uleb128 0
- 859 18d3 5F5F7468 		.ascii "__thiscall __attribute__((__thiscall__))\0"
- 859      69736361 
- 859      6C6C205F 
- 859      5F617474 
- 859      72696275 
- 860 18fc 01       		.byte	0x1
- 861 18fd 00       		.uleb128 0
- 862 18fe 5F5F6364 		.ascii "__cdecl __attribute__((__cdecl__))\0"
- 862      65636C20 
- 862      5F5F6174 
- 862      74726962 
- 862      7574655F 
- 863 1921 01       		.byte	0x1
- 864 1922 00       		.uleb128 0
- 865 1923 5F5F4758 		.ascii "__GXX_MERGED_TYPEINFO_NAMES 0\0"
- 865      585F4D45 
- 865      52474544 
- 865      5F545950 
- 865      45494E46 
- 866 1941 01       		.byte	0x1
- 867 1942 00       		.uleb128 0
- 868 1943 5F5F4758 		.ascii "__GXX_TYPEINFO_EQUALITY_INLINE 0\0"
- 868      585F5459 
- 868      5045494E 
- 868      464F5F45 
- 868      5155414C 
- 869 1964 01       		.byte	0x1
- 870 1965 00       		.uleb128 0
- 871 1966 5F5F4D53 		.ascii "__MSVCRT__ 1\0"
- 871      56435254 
- 871      5F5F2031 
- 871      00
- 872 1973 01       		.byte	0x1
- 873 1974 00       		.uleb128 0
- 874 1975 5F5F4D49 		.ascii "__MINGW32__ 1\0"
- 874      4E475733 
- 874      325F5F20 
- 874      3100
- 875 1983 01       		.byte	0x1
- 876 1984 00       		.uleb128 0
- 877 1985 5F57494E 		.ascii "_WIN32 1\0"
- 877      33322031 
- 877      00
- 878 198e 01       		.byte	0x1
- 879 198f 00       		.uleb128 0
- 880 1990 5F5F5749 		.ascii "__WIN32 1\0"
- 880      4E333220 
- 880      3100
- 881 199a 01       		.byte	0x1
- 882 199b 00       		.uleb128 0
- 883 199c 5F5F5749 		.ascii "__WIN32__ 1\0"
- 883      4E33325F 
- 883      5F203100 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 33
-
-
- 884 19a8 01       		.byte	0x1
- 885 19a9 00       		.uleb128 0
- 886 19aa 5F5F5749 		.ascii "__WINNT 1\0"
- 886      4E4E5420 
- 886      3100
- 887 19b4 01       		.byte	0x1
- 888 19b5 00       		.uleb128 0
- 889 19b6 5F5F5749 		.ascii "__WINNT__ 1\0"
- 889      4E4E545F 
- 889      5F203100 
- 890 19c2 01       		.byte	0x1
- 891 19c3 00       		.uleb128 0
- 892 19c4 5F494E54 		.ascii "_INTEGRAL_MAX_BITS 64\0"
- 892      45475241 
- 892      4C5F4D41 
- 892      585F4249 
- 892      54532036 
- 893 19da 01       		.byte	0x1
- 894 19db 00       		.uleb128 0
- 895 19dc 5F5F6465 		.ascii "__declspec(x) __attribute__((x))\0"
- 895      636C7370 
- 895      65632878 
- 895      29205F5F 
- 895      61747472 
- 896 19fd 01       		.byte	0x1
- 897 19fe 00       		.uleb128 0
- 898 19ff 5F5F4445 		.ascii "__DECIMAL_BID_FORMAT__ 1\0"
- 898      43494D41 
- 898      4C5F4249 
- 898      445F464F 
- 898      524D4154 
- 899 1a18 01       		.byte	0x1
- 900 1a19 00       		.uleb128 0
- 901 1a1a 4346475F 		.ascii "CFG_PROCESSOR 3\0"
- 901      50524F43 
- 901      4553534F 
- 901      52203300 
- 902 1a2a 03       		.byte	0x3
- 903 1a2b 00       		.uleb128 0
- 904 1a2c 01       		.uleb128 0x1
- 905              		.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
- 906 1a2d 03       		.byte	0x3
- 907 1a2e 01       		.uleb128 0x1
- 908 1a2f 02       		.uleb128 0x2
- 909 1a30 01       		.byte	0x1
- 910 1a31 02       		.uleb128 0x2
- 911 1a32 5F6F735F 		.ascii "_os_firstinc_h_ \0"
- 911      66697273 
- 911      74696E63 
- 911      5F685F20 
- 911      00
- 912              		.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
- 913 1a43 03       		.byte	0x3
- 914 1a44 04       		.uleb128 0x4
- 915 1a45 03       		.uleb128 0x3
- 916 1a46 01       		.byte	0x1
- 917 1a47 02       		.uleb128 0x2
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 34
-
-
- 918 1a48 5F424153 		.ascii "_BASE_TYPES_H_ \0"
- 918      455F5459 
- 918      5045535F 
- 918      485F2000 
- 919 1a58 01       		.byte	0x1
- 920 1a59 04       		.uleb128 0x4
- 921 1a5a 494E5445 		.ascii "INTEGER_LLP64_IL32P64 1\0"
- 921      4745525F 
- 921      4C4C5036 
- 921      345F494C 
- 921      33325036 
- 922 1a72 01       		.byte	0x1
- 923 1a73 05       		.uleb128 0x5
- 924 1a74 494E5445 		.ascii "INTEGER_LP64_I32LP64 2\0"
- 924      4745525F 
- 924      4C503634 
- 924      5F493332 
- 924      4C503634 
- 925 1a8b 01       		.byte	0x1
- 926 1a8c 06       		.uleb128 0x6
- 927 1a8d 494E5445 		.ascii "INTEGER_ILP64 3\0"
- 927      4745525F 
- 927      494C5036 
- 927      34203300 
- 928 1a9d 01       		.byte	0x1
- 929 1a9e 07       		.uleb128 0x7
- 930 1a9f 494E5445 		.ascii "INTEGER_SILP64 4\0"
- 930      4745525F 
- 930      53494C50 
- 930      36342034 
- 930      00
- 931 1ab0 01       		.byte	0x1
- 932 1ab1 09       		.uleb128 0x9
- 933 1ab2 4350505F 		.ascii "CPP_VERSION_NONE 0\0"
- 933      56455253 
- 933      494F4E5F 
- 933      4E4F4E45 
- 933      203000
- 934 1ac5 01       		.byte	0x1
- 935 1ac6 0A       		.uleb128 0xa
- 936 1ac7 4350505F 		.ascii "CPP_VERSION_1998 1\0"
- 936      56455253 
- 936      494F4E5F 
- 936      31393938 
- 936      203100
- 937 1ada 01       		.byte	0x1
- 938 1adb 0B       		.uleb128 0xb
- 939 1adc 4350505F 		.ascii "CPP_VERSION_2003 2\0"
- 939      56455253 
- 939      494F4E5F 
- 939      32303033 
- 939      203200
- 940 1aef 01       		.byte	0x1
- 941 1af0 0C       		.uleb128 0xc
- 942 1af1 4350505F 		.ascii "CPP_VERSION_2007 3\0"
- 942      56455253 
- 942      494F4E5F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 35
-
-
- 942      32303037 
- 942      203300
- 943 1b04 01       		.byte	0x1
- 944 1b05 0D       		.uleb128 0xd
- 945 1b06 4350505F 		.ascii "CPP_VERSION_2011 4\0"
- 945      56455253 
- 945      494F4E5F 
- 945      32303131 
- 945      203400
- 946 1b19 01       		.byte	0x1
- 947 1b1a 0E       		.uleb128 0xe
- 948 1b1b 49534F5F 		.ascii "ISO_CPP_VERSION CPP_VERSION_1998\0"
- 948      4350505F 
- 948      56455253 
- 948      494F4E20 
- 948      4350505F 
- 949 1b3c 01       		.byte	0x1
- 950 1b3d 10       		.uleb128 0x10
- 951 1b3e 494E5445 		.ascii "INTEGER_MODEL INTEGER_LLP64_IL32P64\0"
- 951      4745525F 
- 951      4D4F4445 
- 951      4C20494E 
- 951      54454745 
- 952 1b62 04       		.byte	0x4
- 953              		.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
- 954 1b63 03       		.byte	0x3
- 955 1b64 05       		.uleb128 0x5
- 956 1b65 04       		.uleb128 0x4
- 957 1b66 01       		.byte	0x1
- 958 1b67 02       		.uleb128 0x2
- 959 1b68 5F6F735F 		.ascii "_os_common_h_ \0"
- 959      636F6D6D 
- 959      6F6E5F68 
- 959      5F2000
- 960 1b77 01       		.byte	0x1
- 961 1b78 06       		.uleb128 0x6
- 962 1b79 46616C73 		.ascii "False 0\0"
- 962      65203000 
- 963 1b81 01       		.byte	0x1
- 964 1b82 07       		.uleb128 0x7
- 965 1b83 54727565 		.ascii "True 1\0"
- 965      203100
- 966 1b8a 01       		.byte	0x1
- 967 1b8b 08       		.uleb128 0x8
- 968 1b8c 41636365 		.ascii "Accepted 1\0"
- 968      70746564 
- 968      203100
- 969 1b97 01       		.byte	0x1
- 970 1b98 09       		.uleb128 0x9
- 971 1b99 52656A65 		.ascii "Rejected 0\0"
- 971      63746564 
- 971      203000
- 972 1ba4 01       		.byte	0x1
- 973 1ba5 0A       		.uleb128 0xa
- 974 1ba6 4C6F6361 		.ascii "Local static\0"
- 974      6C207374 
- 974      61746963 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 36
-
-
- 974      00
- 975 1bb3 01       		.byte	0x1
- 976 1bb4 0B       		.uleb128 0xb
- 977 1bb5 4C6F6361 		.ascii "Local_inline static __inline__\0"
- 977      6C5F696E 
- 977      6C696E65 
- 977      20737461 
- 977      74696320 
- 978 1bd4 01       		.byte	0x1
- 979 1bd5 0C       		.uleb128 0xc
- 980 1bd6 476C6F62 		.ascii "Global_inline __inline__\0"
- 980      616C5F69 
- 980      6E6C696E 
- 980      65205F5F 
- 980      696E6C69 
- 981 1bef 01       		.byte	0x1
- 982 1bf0 0D       		.uleb128 0xd
- 983 1bf1 52656665 		.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
- 983      72656E63 
- 983      65556E75 
- 983      73656450 
- 983      6172616D 
- 984 1c19 01       		.byte	0x1
- 985 1c1a 10       		.uleb128 0x10
- 986 1c1b 634D4355 		.ascii "cMCU_SIMULATION 1\0"
- 986      5F53494D 
- 986      554C4154 
- 986      494F4E20 
- 986      3100
- 987 1c2d 01       		.byte	0x1
- 988 1c2e 11       		.uleb128 0x11
- 989 1c2f 634D4355 		.ascii "cMCU_POWERPC 2\0"
- 989      5F504F57 
- 989      45525043 
- 989      203200
- 990 1c3e 01       		.byte	0x1
- 991 1c3f 12       		.uleb128 0x12
- 992 1c40 634D4355 		.ascii "cMCU_X86 3\0"
- 992      5F583836 
- 992      203300
- 993 1c4b 01       		.byte	0x1
- 994 1c4c 13       		.uleb128 0x13
- 995 1c4d 634D4355 		.ascii "cMCU_CORTEX_M4 4\0"
- 995      5F434F52 
- 995      5445585F 
- 995      4D342034 
- 995      00
- 996 1c5e 01       		.byte	0x1
- 997 1c5f 16       		.uleb128 0x16
- 998 1c60 4E525F4F 		.ascii "NR_OF_CORES 1\0"
- 998      465F434F 
- 998      52455320 
- 998      3100
- 999 1c6e 01       		.byte	0x1
- 1000 1c6f 23       		.uleb128 0x23
- 1001 1c70 44697361 		.ascii "DisableInterrupts() \0"
- 1001      626C6549 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 37
-
-
- 1001      6E746572 
- 1001      72757074 
- 1001      73282920 
- 1002 1c85 01       		.byte	0x1
- 1003 1c86 24       		.uleb128 0x24
- 1004 1c87 456E6162 		.ascii "EnableInterrupts() \0"
- 1004      6C65496E 
- 1004      74657272 
- 1004      75707473 
- 1004      28292000 
- 1005 1c9b 01       		.byte	0x1
- 1006 1c9c 25       		.uleb128 0x25
- 1007 1c9d 50726976 		.ascii "Privilige_level_save_current() \0"
- 1007      696C6967 
- 1007      655F6C65 
- 1007      76656C5F 
- 1007      73617665 
- 1008 1cbd 01       		.byte	0x1
- 1009 1cbe 26       		.uleb128 0x26
- 1010 1cbf 50726976 		.ascii "Privilige_level_enter_kernel_mode() \0"
- 1010      696C6967 
- 1010      655F6C65 
- 1010      76656C5F 
- 1010      656E7465 
- 1011 1ce4 01       		.byte	0x1
- 1012 1ce5 27       		.uleb128 0x27
- 1013 1ce6 50726976 		.ascii "Privilige_level_restore_saved() \0"
- 1013      696C6967 
- 1013      655F6C65 
- 1013      76656C5F 
- 1013      72657374 
- 1014 1d07 01       		.byte	0x1
- 1015 1d08 28       		.uleb128 0x28
- 1016 1d09 48616C74 		.ascii "HaltMcu() \0"
- 1016      4D637528 
- 1016      292000
- 1017 1d14 04       		.byte	0x4
- 1018              		.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
- 1019 1d15 03       		.byte	0x3
- 1020 1d16 07       		.uleb128 0x7
- 1021 1d17 05       		.uleb128 0x5
- 1022 1d18 01       		.byte	0x1
- 1023 1d19 02       		.uleb128 0x2
- 1024 1d1a 5F6C6C64 		.ascii "_lld_global_h_ \0"
- 1024      5F676C6F 
- 1024      62616C5F 
- 1024      685F2000 
- 1025              		.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
- 1026 1d2a 03       		.byte	0x3
- 1027 1d2b 04       		.uleb128 0x4
- 1028 1d2c 06       		.uleb128 0x6
- 1029 1d2d 01       		.byte	0x1
- 1030 1d2e 02       		.uleb128 0x2
- 1031 1d2f 5F6C6C64 		.ascii "_lld_core_h_ \0"
- 1031      5F636F72 
- 1031      655F685F 
- 1031      2000
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 38
-
-
- 1032              		.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_firsti
- 1033 1d3d 03       		.byte	0x3
- 1034 1d3e 03       		.uleb128 0x3
- 1035 1d3f 07       		.uleb128 0x7
- 1036 1d40 04       		.byte	0x4
- 1037 1d41 04       		.byte	0x4
- 1038              		.file 8 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_adc.h"
- 1039 1d42 03       		.byte	0x3
- 1040 1d43 05       		.uleb128 0x5
- 1041 1d44 08       		.uleb128 0x8
- 1042 1d45 01       		.byte	0x1
- 1043 1d46 02       		.uleb128 0x2
- 1044 1d47 5F6C6C64 		.ascii "_lld_adc_h_ \0"
- 1044      5F616463 
- 1044      5F685F20 
- 1044      00
- 1045 1d54 04       		.byte	0x4
- 1046              		.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_can.h"
- 1047 1d55 03       		.byte	0x3
- 1048 1d56 06       		.uleb128 0x6
- 1049 1d57 09       		.uleb128 0x9
- 1050 1d58 01       		.byte	0x1
- 1051 1d59 02       		.uleb128 0x2
- 1052 1d5a 5F6C6C64 		.ascii "_lld_can_h_ \0"
- 1052      5F63616E 
- 1052      5F685F20 
- 1052      00
- 1053 1d67 04       		.byte	0x4
- 1054              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_gpio.h"
- 1055 1d68 03       		.byte	0x3
- 1056 1d69 07       		.uleb128 0x7
- 1057 1d6a 0A       		.uleb128 0xa
- 1058 1d6b 01       		.byte	0x1
- 1059 1d6c 02       		.uleb128 0x2
- 1060 1d6d 5F6C6C64 		.ascii "_lld_gpio_h_ \0"
- 1060      5F677069 
- 1060      6F5F685F 
- 1060      2000
- 1061 1d7b 04       		.byte	0x4
- 1062              		.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
- 1063 1d7c 03       		.byte	0x3
- 1064 1d7d 08       		.uleb128 0x8
- 1065 1d7e 0B       		.uleb128 0xb
- 1066 1d7f 01       		.byte	0x1
- 1067 1d80 02       		.uleb128 0x2
- 1068 1d81 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
- 1068      5F696E74 
- 1068      65727275 
- 1068      70745F68 
- 1068      5F2000
- 1069 1d94 01       		.byte	0x1
- 1070 1d95 05       		.uleb128 0x5
- 1071 1d96 6F735F69 		.ascii "os_interrupt_swi_1 asm(\"swi 1\")\0"
- 1071      6E746572 
- 1071      72757074 
- 1071      5F737769 
- 1071      5F312061 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 39
-
-
- 1072 1db6 01       		.byte	0x1
- 1073 1db7 06       		.uleb128 0x6
- 1074 1db8 6F735F69 		.ascii "os_interrupt_swi_2 asm(\"swi 2\")\0"
- 1074      6E746572 
- 1074      72757074 
- 1074      5F737769 
- 1074      5F322061 
- 1075 1dd8 01       		.byte	0x1
- 1076 1dd9 07       		.uleb128 0x7
- 1077 1dda 6F735F69 		.ascii "os_interrupt_swi_3 asm(\"swi 3\")\0"
- 1077      6E746572 
- 1077      72757074 
- 1077      5F737769 
- 1077      5F332061 
- 1078 1dfa 01       		.byte	0x1
- 1079 1dfb 08       		.uleb128 0x8
- 1080 1dfc 6F735F69 		.ascii "os_interrupt_swi_4 asm(\"swi 4\")\0"
- 1080      6E746572 
- 1080      72757074 
- 1080      5F737769 
- 1080      5F342061 
- 1081 1e1c 01       		.byte	0x1
- 1082 1e1d 09       		.uleb128 0x9
- 1083 1e1e 6F735F69 		.ascii "os_interrupt_swi_5 asm(\"swi 5\")\0"
- 1083      6E746572 
- 1083      72757074 
- 1083      5F737769 
- 1083      5F352061 
- 1084 1e3e 04       		.byte	0x4
- 1085              		.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
- 1086 1e3f 03       		.byte	0x3
- 1087 1e40 09       		.uleb128 0x9
- 1088 1e41 0C       		.uleb128 0xc
- 1089 1e42 01       		.byte	0x1
- 1090 1e43 02       		.uleb128 0x2
- 1091 1e44 5F6C6C64 		.ascii "_lld_mmu_h_ \0"
- 1091      5F6D6D75 
- 1091      5F685F20 
- 1091      00
- 1092 1e51 03       		.byte	0x3
- 1093 1e52 04       		.uleb128 0x4
- 1094 1e53 05       		.uleb128 0x5
- 1095 1e54 04       		.byte	0x4
- 1096 1e55 04       		.byte	0x4
- 1097              		.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
- 1098 1e56 03       		.byte	0x3
- 1099 1e57 0A       		.uleb128 0xa
- 1100 1e58 0D       		.uleb128 0xd
- 1101 1e59 01       		.byte	0x1
- 1102 1e5a 02       		.uleb128 0x2
- 1103 1e5b 5F6C6C64 		.ascii "_lld_timer_h_ \0"
- 1103      5F74696D 
- 1103      65725F68 
- 1103      5F2000
- 1104 1e6a 04       		.byte	0x4
- 1105              		.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
- 1106 1e6b 03       		.byte	0x3
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 40
-
-
- 1107 1e6c 0B       		.uleb128 0xb
- 1108 1e6d 0E       		.uleb128 0xe
- 1109 1e6e 01       		.byte	0x1
- 1110 1e6f 02       		.uleb128 0x2
- 1111 1e70 5F6C6C64 		.ascii "_lld_power_h_ \0"
- 1111      5F706F77 
- 1111      65725F68 
- 1111      5F2000
- 1112 1e7f 04       		.byte	0x4
- 1113              		.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
- 1114 1e80 03       		.byte	0x3
- 1115 1e81 0C       		.uleb128 0xc
- 1116 1e82 0F       		.uleb128 0xf
- 1117 1e83 01       		.byte	0x1
- 1118 1e84 02       		.uleb128 0x2
- 1119 1e85 5F6C6C64 		.ascii "_lld_ram_h_ \0"
- 1119      5F72616D 
- 1119      5F685F20 
- 1119      00
- 1120 1e92 04       		.byte	0x4
- 1121              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_watchdog.h"
- 1122 1e93 03       		.byte	0x3
- 1123 1e94 0D       		.uleb128 0xd
- 1124 1e95 10       		.uleb128 0x10
- 1125 1e96 01       		.byte	0x1
- 1126 1e97 02       		.uleb128 0x2
- 1127 1e98 5F6C6C64 		.ascii "_lld_watchdog_h_ \0"
- 1127      5F776174 
- 1127      6368646F 
- 1127      675F685F 
- 1127      2000
- 1128 1eaa 04       		.byte	0x4
- 1129              		.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
- 1130 1eab 03       		.byte	0x3
- 1131 1eac 0E       		.uleb128 0xe
- 1132 1ead 11       		.uleb128 0x11
- 1133 1eae 01       		.byte	0x1
- 1134 1eaf 02       		.uleb128 0x2
- 1135 1eb0 5F6F735F 		.ascii "_os_task_common_h_ \0"
- 1135      7461736B 
- 1135      5F636F6D 
- 1135      6D6F6E5F 
- 1135      685F2000 
- 1136              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
- 1137 1ec4 03       		.byte	0x3
- 1138 1ec5 04       		.uleb128 0x4
- 1139 1ec6 12       		.uleb128 0x12
- 1140 1ec7 01       		.byte	0x1
- 1141 1ec8 02       		.uleb128 0x2
- 1142 1ec9 5F6F735F 		.ascii "_os_task_config_h_ \0"
- 1142      7461736B 
- 1142      5F636F6E 
- 1142      6669675F 
- 1142      685F2000 
- 1143 1edd 01       		.byte	0x1
- 1144 1ede 05       		.uleb128 0x5
- 1145 1edf 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 41
-
-
- 1145      64756C65 
- 1145      72467265 
- 1145      7175656E 
- 1145      63792028 
- 1146 1efa 01       		.byte	0x1
- 1147 1efb 06       		.uleb128 0x6
- 1148 1efc 4D696E54 		.ascii "MinTimeSlice_s (1.0/SchedulerFrequency)\0"
- 1148      696D6553 
- 1148      6C696365 
- 1148      5F732028 
- 1148      312E302F 
- 1149 1f24 01       		.byte	0x1
- 1150 1f25 07       		.uleb128 0x7
- 1151 1f26 4D696E54 		.ascii "MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\0"
- 1151      696D6553 
- 1151      6C696365 
- 1151      5F757320 
- 1151      2828312E 
- 1152 1f55 01       		.byte	0x1
- 1153 1f56 08       		.uleb128 0x8
- 1154 1f57 5461736B 		.ascii "Task_min_time (1e0)\0"
- 1154      5F6D696E 
- 1154      5F74696D 
- 1154      65202831 
- 1154      65302900 
- 1155 1f6b 01       		.byte	0x1
- 1156 1f6c 09       		.uleb128 0x9
- 1157 1f6d 4E554D42 		.ascii "NUMBER_OF_TASKS 5\0"
- 1157      45525F4F 
- 1157      465F5441 
- 1157      534B5320 
- 1157      3500
- 1158 1f7f 01       		.byte	0x1
- 1159 1f80 0A       		.uleb128 0xa
- 1160 1f81 4D41585F 		.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
- 1160      52554E5F 
- 1160      51554555 
- 1160      455F5349 
- 1160      5A452028 
- 1161 1fa6 01       		.byte	0x1
- 1162 1fa7 0B       		.uleb128 0xb
- 1163 1fa8 4D41585F 		.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
- 1163      52554E5F 
- 1163      50515545 
- 1163      55455F53 
- 1163      495A4520 
- 1164 1fcf 01       		.byte	0x1
- 1165 1fd0 0D       		.uleb128 0xd
- 1166 1fd1 5441534B 		.ascii "TASK_STACK_SIZE 200\0"
- 1166      5F535441 
- 1166      434B5F53 
- 1166      495A4520 
- 1166      32303000 
- 1167 1fe5 01       		.byte	0x1
- 1168 1fe6 10       		.uleb128 0x10
- 1169 1fe7 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
- 1169      45525F53 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 42
-
-
- 1169      45432028 
- 1169      31303030 
- 1169      2900
- 1170 1ff9 01       		.byte	0x1
- 1171 1ffa 11       		.uleb128 0x11
- 1172 1ffb 5553455F 		.ascii "USE_STATIC_CREATED_TASKS True\0"
- 1172      53544154 
- 1172      49435F43 
- 1172      52454154 
- 1172      45445F54 
- 1173 2019 04       		.byte	0x4
- 1174              		.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_
- 1175 201a 03       		.byte	0x3
- 1176 201b 05       		.uleb128 0x5
- 1177 201c 13       		.uleb128 0x13
- 1178 201d 01       		.byte	0x1
- 1179 201e 02       		.uleb128 0x2
- 1180 201f 5F6F735F 		.ascii "_os_init_task_system_h_ \0"
- 1180      696E6974 
- 1180      5F746173 
- 1180      6B5F7379 
- 1180      7374656D 
- 1181 2038 04       		.byte	0x4
- 1182 2039 01       		.byte	0x1
- 1183 203a 5C       		.uleb128 0x5c
- 1184 203b 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
- 1184      61766554 
- 1184      61736B50 
- 1184      74722874 
- 1184      61736B5F 
- 1185 2083 01       		.byte	0x1
- 1186 2084 5D       		.uleb128 0x5d
- 1187 2085 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
- 1187      65745461 
- 1187      736B5074 
- 1187      72287461 
- 1187      736B5F6E 
- 1188 20c0 04       		.byte	0x4
- 1189 20c1 04       		.byte	0x4
- 1190 20c2 04       		.byte	0x4
- 1191 20c3 04       		.byte	0x4
- 1192 20c4 00       		.byte	0
- 1193              		.section	.debug_line,"dr"
- 1194              	Ldebug_line0:
- 1195 0000 83020000 		.section	.debug_str,"dr"
- 1195      02006702 
- 1195      00000101 
- 1195      FB0E0D00 
- 1195      01010101 
- 1196              		.ident	"GCC: (GNU) 4.9.3"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s 			page 43
+  71 00f8 00       		.byte	0
+  72              		.section	.debug_abbrev,"dr"
+  73              	Ldebug_abbrev0:
+  74 0000 01       		.uleb128 0x1
+  75 0001 11       		.uleb128 0x11
+  76 0002 01       		.byte	0x1
+  77 0003 25       		.uleb128 0x25
+  78 0004 08       		.uleb128 0x8
+  79 0005 13       		.uleb128 0x13
+  80 0006 0B       		.uleb128 0xb
+  81 0007 03       		.uleb128 0x3
+  82 0008 08       		.uleb128 0x8
+  83 0009 11       		.uleb128 0x11
+  84 000a 01       		.uleb128 0x1
+  85 000b 12       		.uleb128 0x12
+  86 000c 06       		.uleb128 0x6
+  87 000d 10       		.uleb128 0x10
+  88 000e 17       		.uleb128 0x17
+  89 000f 9942     		.uleb128 0x2119
+  90 0011 17       		.uleb128 0x17
+  91 0012 00       		.byte	0
+  92 0013 00       		.byte	0
+  93 0014 02       		.uleb128 0x2
+  94 0015 24       		.uleb128 0x24
+  95 0016 00       		.byte	0
+  96 0017 0B       		.uleb128 0xb
+  97 0018 0B       		.uleb128 0xb
+  98 0019 3E       		.uleb128 0x3e
+  99 001a 0B       		.uleb128 0xb
+ 100 001b 03       		.uleb128 0x3
+ 101 001c 08       		.uleb128 0x8
+ 102 001d 00       		.byte	0
+ 103 001e 00       		.byte	0
+ 104 001f 03       		.uleb128 0x3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 4
+
+
+ 105 0020 2E       		.uleb128 0x2e
+ 106 0021 00       		.byte	0
+ 107 0022 3F       		.uleb128 0x3f
+ 108 0023 19       		.uleb128 0x19
+ 109 0024 03       		.uleb128 0x3
+ 110 0025 08       		.uleb128 0x8
+ 111 0026 3A       		.uleb128 0x3a
+ 112 0027 0B       		.uleb128 0xb
+ 113 0028 3B       		.uleb128 0x3b
+ 114 0029 0B       		.uleb128 0xb
+ 115 002a 27       		.uleb128 0x27
+ 116 002b 19       		.uleb128 0x19
+ 117 002c 11       		.uleb128 0x11
+ 118 002d 01       		.uleb128 0x1
+ 119 002e 12       		.uleb128 0x12
+ 120 002f 06       		.uleb128 0x6
+ 121 0030 40       		.uleb128 0x40
+ 122 0031 18       		.uleb128 0x18
+ 123 0032 9642     		.uleb128 0x2116
+ 124 0034 19       		.uleb128 0x19
+ 125 0035 00       		.byte	0
+ 126 0036 00       		.byte	0
+ 127 0037 00       		.byte	0
+ 128              		.section	.debug_aranges,"dr"
+ 129 0000 1C000000 		.long	0x1c
+ 130 0004 0200     		.word	0x2
+ 131 0006 00000000 		.secrel32	Ldebug_info0
+ 132 000a 04       		.byte	0x4
+ 133 000b 00       		.byte	0
+ 134 000c 0000     		.word	0
+ 135 000e 0000     		.word	0
+ 136 0010 00000000 		.long	Ltext0
+ 137 0014 1C000000 		.long	Letext0-Ltext0
+ 138 0018 00000000 		.long	0
+ 139 001c 00000000 		.long	0
+ 140              		.section	.debug_macro,"dr"
+ 141              	Ldebug_macro0:
+ 142 0000 0400     		.word	0x4
+ 143 0002 02       		.byte	0x2
+ 144 0003 00000000 		.secrel32	Ldebug_line0
+ 145 0007 01       		.byte	0x1
+ 146 0008 00       		.uleb128 0
+ 147 0009 5F5F5354 		.ascii "__STDC__ 1\0"
+ 147      44435F5F 
+ 147      203100
+ 148 0014 01       		.byte	0x1
+ 149 0015 00       		.uleb128 0
+ 150 0016 5F5F5354 		.ascii "__STDC_HOSTED__ 1\0"
+ 150      44435F48 
+ 150      4F535445 
+ 150      445F5F20 
+ 150      3100
+ 151 0028 01       		.byte	0x1
+ 152 0029 00       		.uleb128 0
+ 153 002a 5F5F474E 		.ascii "__GNUC__ 4\0"
+ 153      55435F5F 
+ 153      203400
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 5
+
+
+ 154 0035 01       		.byte	0x1
+ 155 0036 00       		.uleb128 0
+ 156 0037 5F5F474E 		.ascii "__GNUC_MINOR__ 9\0"
+ 156      55435F4D 
+ 156      494E4F52 
+ 156      5F5F2039 
+ 156      00
+ 157 0048 01       		.byte	0x1
+ 158 0049 00       		.uleb128 0
+ 159 004a 5F5F474E 		.ascii "__GNUC_PATCHLEVEL__ 3\0"
+ 159      55435F50 
+ 159      41544348 
+ 159      4C455645 
+ 159      4C5F5F20 
+ 160 0060 01       		.byte	0x1
+ 161 0061 00       		.uleb128 0
+ 162 0062 5F5F5645 		.ascii "__VERSION__ \"4.9.3\"\0"
+ 162      5253494F 
+ 162      4E5F5F20 
+ 162      22342E39 
+ 162      2E332200 
+ 163 0076 01       		.byte	0x1
+ 164 0077 00       		.uleb128 0
+ 165 0078 5F5F4154 		.ascii "__ATOMIC_RELAXED 0\0"
+ 165      4F4D4943 
+ 165      5F52454C 
+ 165      41584544 
+ 165      203000
+ 166 008b 01       		.byte	0x1
+ 167 008c 00       		.uleb128 0
+ 168 008d 5F5F4154 		.ascii "__ATOMIC_SEQ_CST 5\0"
+ 168      4F4D4943 
+ 168      5F534551 
+ 168      5F435354 
+ 168      203500
+ 169 00a0 01       		.byte	0x1
+ 170 00a1 00       		.uleb128 0
+ 171 00a2 5F5F4154 		.ascii "__ATOMIC_ACQUIRE 2\0"
+ 171      4F4D4943 
+ 171      5F414351 
+ 171      55495245 
+ 171      203200
+ 172 00b5 01       		.byte	0x1
+ 173 00b6 00       		.uleb128 0
+ 174 00b7 5F5F4154 		.ascii "__ATOMIC_RELEASE 3\0"
+ 174      4F4D4943 
+ 174      5F52454C 
+ 174      45415345 
+ 174      203300
+ 175 00ca 01       		.byte	0x1
+ 176 00cb 00       		.uleb128 0
+ 177 00cc 5F5F4154 		.ascii "__ATOMIC_ACQ_REL 4\0"
+ 177      4F4D4943 
+ 177      5F414351 
+ 177      5F52454C 
+ 177      203400
+ 178 00df 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 6
+
+
+ 179 00e0 00       		.uleb128 0
+ 180 00e1 5F5F4154 		.ascii "__ATOMIC_CONSUME 1\0"
+ 180      4F4D4943 
+ 180      5F434F4E 
+ 180      53554D45 
+ 180      203100
+ 181 00f4 01       		.byte	0x1
+ 182 00f5 00       		.uleb128 0
+ 183 00f6 5F5F4649 		.ascii "__FINITE_MATH_ONLY__ 0\0"
+ 183      4E495445 
+ 183      5F4D4154 
+ 183      485F4F4E 
+ 183      4C595F5F 
+ 184 010d 01       		.byte	0x1
+ 185 010e 00       		.uleb128 0
+ 186 010f 5F5F5349 		.ascii "__SIZEOF_INT__ 4\0"
+ 186      5A454F46 
+ 186      5F494E54 
+ 186      5F5F2034 
+ 186      00
+ 187 0120 01       		.byte	0x1
+ 188 0121 00       		.uleb128 0
+ 189 0122 5F5F5349 		.ascii "__SIZEOF_LONG__ 4\0"
+ 189      5A454F46 
+ 189      5F4C4F4E 
+ 189      475F5F20 
+ 189      3400
+ 190 0134 01       		.byte	0x1
+ 191 0135 00       		.uleb128 0
+ 192 0136 5F5F5349 		.ascii "__SIZEOF_LONG_LONG__ 8\0"
+ 192      5A454F46 
+ 192      5F4C4F4E 
+ 192      475F4C4F 
+ 192      4E475F5F 
+ 193 014d 01       		.byte	0x1
+ 194 014e 00       		.uleb128 0
+ 195 014f 5F5F5349 		.ascii "__SIZEOF_SHORT__ 2\0"
+ 195      5A454F46 
+ 195      5F53484F 
+ 195      52545F5F 
+ 195      203200
+ 196 0162 01       		.byte	0x1
+ 197 0163 00       		.uleb128 0
+ 198 0164 5F5F5349 		.ascii "__SIZEOF_FLOAT__ 4\0"
+ 198      5A454F46 
+ 198      5F464C4F 
+ 198      41545F5F 
+ 198      203400
+ 199 0177 01       		.byte	0x1
+ 200 0178 00       		.uleb128 0
+ 201 0179 5F5F5349 		.ascii "__SIZEOF_DOUBLE__ 8\0"
+ 201      5A454F46 
+ 201      5F444F55 
+ 201      424C455F 
+ 201      5F203800 
+ 202 018d 01       		.byte	0x1
+ 203 018e 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 7
+
+
+ 204 018f 5F5F5349 		.ascii "__SIZEOF_LONG_DOUBLE__ 12\0"
+ 204      5A454F46 
+ 204      5F4C4F4E 
+ 204      475F444F 
+ 204      55424C45 
+ 205 01a9 01       		.byte	0x1
+ 206 01aa 00       		.uleb128 0
+ 207 01ab 5F5F5349 		.ascii "__SIZEOF_SIZE_T__ 4\0"
+ 207      5A454F46 
+ 207      5F53495A 
+ 207      455F545F 
+ 207      5F203400 
+ 208 01bf 01       		.byte	0x1
+ 209 01c0 00       		.uleb128 0
+ 210 01c1 5F5F4348 		.ascii "__CHAR_BIT__ 8\0"
+ 210      41525F42 
+ 210      49545F5F 
+ 210      203800
+ 211 01d0 01       		.byte	0x1
+ 212 01d1 00       		.uleb128 0
+ 213 01d2 5F5F4249 		.ascii "__BIGGEST_ALIGNMENT__ 16\0"
+ 213      47474553 
+ 213      545F414C 
+ 213      49474E4D 
+ 213      454E545F 
+ 214 01eb 01       		.byte	0x1
+ 215 01ec 00       		.uleb128 0
+ 216 01ed 5F5F4F52 		.ascii "__ORDER_LITTLE_ENDIAN__ 1234\0"
+ 216      4445525F 
+ 216      4C495454 
+ 216      4C455F45 
+ 216      4E444941 
+ 217 020a 01       		.byte	0x1
+ 218 020b 00       		.uleb128 0
+ 219 020c 5F5F4F52 		.ascii "__ORDER_BIG_ENDIAN__ 4321\0"
+ 219      4445525F 
+ 219      4249475F 
+ 219      454E4449 
+ 219      414E5F5F 
+ 220 0226 01       		.byte	0x1
+ 221 0227 00       		.uleb128 0
+ 222 0228 5F5F4F52 		.ascii "__ORDER_PDP_ENDIAN__ 3412\0"
+ 222      4445525F 
+ 222      5044505F 
+ 222      454E4449 
+ 222      414E5F5F 
+ 223 0242 01       		.byte	0x1
+ 224 0243 00       		.uleb128 0
+ 225 0244 5F5F4259 		.ascii "__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
+ 225      54455F4F 
+ 225      52444552 
+ 225      5F5F205F 
+ 225      5F4F5244 
+ 226 026b 01       		.byte	0x1
+ 227 026c 00       		.uleb128 0
+ 228 026d 5F5F464C 		.ascii "__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
+ 228      4F41545F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 8
+
+
+ 228      574F5244 
+ 228      5F4F5244 
+ 228      45525F5F 
+ 229 029a 01       		.byte	0x1
+ 230 029b 00       		.uleb128 0
+ 231 029c 5F5F5349 		.ascii "__SIZEOF_POINTER__ 4\0"
+ 231      5A454F46 
+ 231      5F504F49 
+ 231      4E544552 
+ 231      5F5F2034 
+ 232 02b1 01       		.byte	0x1
+ 233 02b2 00       		.uleb128 0
+ 234 02b3 5F5F5349 		.ascii "__SIZE_TYPE__ unsigned int\0"
+ 234      5A455F54 
+ 234      5950455F 
+ 234      5F20756E 
+ 234      7369676E 
+ 235 02ce 01       		.byte	0x1
+ 236 02cf 00       		.uleb128 0
+ 237 02d0 5F5F5054 		.ascii "__PTRDIFF_TYPE__ int\0"
+ 237      52444946 
+ 237      465F5459 
+ 237      50455F5F 
+ 237      20696E74 
+ 238 02e5 01       		.byte	0x1
+ 239 02e6 00       		.uleb128 0
+ 240 02e7 5F5F5743 		.ascii "__WCHAR_TYPE__ short unsigned int\0"
+ 240      4841525F 
+ 240      54595045 
+ 240      5F5F2073 
+ 240      686F7274 
+ 241 0309 01       		.byte	0x1
+ 242 030a 00       		.uleb128 0
+ 243 030b 5F5F5749 		.ascii "__WINT_TYPE__ short unsigned int\0"
+ 243      4E545F54 
+ 243      5950455F 
+ 243      5F207368 
+ 243      6F727420 
+ 244 032c 01       		.byte	0x1
+ 245 032d 00       		.uleb128 0
+ 246 032e 5F5F494E 		.ascii "__INTMAX_TYPE__ long long int\0"
+ 246      544D4158 
+ 246      5F545950 
+ 246      455F5F20 
+ 246      6C6F6E67 
+ 247 034c 01       		.byte	0x1
+ 248 034d 00       		.uleb128 0
+ 249 034e 5F5F5549 		.ascii "__UINTMAX_TYPE__ long long unsigned int\0"
+ 249      4E544D41 
+ 249      585F5459 
+ 249      50455F5F 
+ 249      206C6F6E 
+ 250 0376 01       		.byte	0x1
+ 251 0377 00       		.uleb128 0
+ 252 0378 5F5F4348 		.ascii "__CHAR16_TYPE__ short unsigned int\0"
+ 252      41523136 
+ 252      5F545950 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 9
+
+
+ 252      455F5F20 
+ 252      73686F72 
+ 253 039b 01       		.byte	0x1
+ 254 039c 00       		.uleb128 0
+ 255 039d 5F5F4348 		.ascii "__CHAR32_TYPE__ unsigned int\0"
+ 255      41523332 
+ 255      5F545950 
+ 255      455F5F20 
+ 255      756E7369 
+ 256 03ba 01       		.byte	0x1
+ 257 03bb 00       		.uleb128 0
+ 258 03bc 5F5F5349 		.ascii "__SIG_ATOMIC_TYPE__ int\0"
+ 258      475F4154 
+ 258      4F4D4943 
+ 258      5F545950 
+ 258      455F5F20 
+ 259 03d4 01       		.byte	0x1
+ 260 03d5 00       		.uleb128 0
+ 261 03d6 5F5F494E 		.ascii "__INT8_TYPE__ signed char\0"
+ 261      54385F54 
+ 261      5950455F 
+ 261      5F207369 
+ 261      676E6564 
+ 262 03f0 01       		.byte	0x1
+ 263 03f1 00       		.uleb128 0
+ 264 03f2 5F5F494E 		.ascii "__INT16_TYPE__ short int\0"
+ 264      5431365F 
+ 264      54595045 
+ 264      5F5F2073 
+ 264      686F7274 
+ 265 040b 01       		.byte	0x1
+ 266 040c 00       		.uleb128 0
+ 267 040d 5F5F494E 		.ascii "__INT32_TYPE__ int\0"
+ 267      5433325F 
+ 267      54595045 
+ 267      5F5F2069 
+ 267      6E7400
+ 268 0420 01       		.byte	0x1
+ 269 0421 00       		.uleb128 0
+ 270 0422 5F5F494E 		.ascii "__INT64_TYPE__ long long int\0"
+ 270      5436345F 
+ 270      54595045 
+ 270      5F5F206C 
+ 270      6F6E6720 
+ 271 043f 01       		.byte	0x1
+ 272 0440 00       		.uleb128 0
+ 273 0441 5F5F5549 		.ascii "__UINT8_TYPE__ unsigned char\0"
+ 273      4E54385F 
+ 273      54595045 
+ 273      5F5F2075 
+ 273      6E736967 
+ 274 045e 01       		.byte	0x1
+ 275 045f 00       		.uleb128 0
+ 276 0460 5F5F5549 		.ascii "__UINT16_TYPE__ short unsigned int\0"
+ 276      4E543136 
+ 276      5F545950 
+ 276      455F5F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 10
+
+
+ 276      73686F72 
+ 277 0483 01       		.byte	0x1
+ 278 0484 00       		.uleb128 0
+ 279 0485 5F5F5549 		.ascii "__UINT32_TYPE__ unsigned int\0"
+ 279      4E543332 
+ 279      5F545950 
+ 279      455F5F20 
+ 279      756E7369 
+ 280 04a2 01       		.byte	0x1
+ 281 04a3 00       		.uleb128 0
+ 282 04a4 5F5F5549 		.ascii "__UINT64_TYPE__ long long unsigned int\0"
+ 282      4E543634 
+ 282      5F545950 
+ 282      455F5F20 
+ 282      6C6F6E67 
+ 283 04cb 01       		.byte	0x1
+ 284 04cc 00       		.uleb128 0
+ 285 04cd 5F5F494E 		.ascii "__INT_LEAST8_TYPE__ signed char\0"
+ 285      545F4C45 
+ 285      41535438 
+ 285      5F545950 
+ 285      455F5F20 
+ 286 04ed 01       		.byte	0x1
+ 287 04ee 00       		.uleb128 0
+ 288 04ef 5F5F494E 		.ascii "__INT_LEAST16_TYPE__ short int\0"
+ 288      545F4C45 
+ 288      41535431 
+ 288      365F5459 
+ 288      50455F5F 
+ 289 050e 01       		.byte	0x1
+ 290 050f 00       		.uleb128 0
+ 291 0510 5F5F494E 		.ascii "__INT_LEAST32_TYPE__ int\0"
+ 291      545F4C45 
+ 291      41535433 
+ 291      325F5459 
+ 291      50455F5F 
+ 292 0529 01       		.byte	0x1
+ 293 052a 00       		.uleb128 0
+ 294 052b 5F5F494E 		.ascii "__INT_LEAST64_TYPE__ long long int\0"
+ 294      545F4C45 
+ 294      41535436 
+ 294      345F5459 
+ 294      50455F5F 
+ 295 054e 01       		.byte	0x1
+ 296 054f 00       		.uleb128 0
+ 297 0550 5F5F5549 		.ascii "__UINT_LEAST8_TYPE__ unsigned char\0"
+ 297      4E545F4C 
+ 297      45415354 
+ 297      385F5459 
+ 297      50455F5F 
+ 298 0573 01       		.byte	0x1
+ 299 0574 00       		.uleb128 0
+ 300 0575 5F5F5549 		.ascii "__UINT_LEAST16_TYPE__ short unsigned int\0"
+ 300      4E545F4C 
+ 300      45415354 
+ 300      31365F54 
+ 300      5950455F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 11
+
+
+ 301 059e 01       		.byte	0x1
+ 302 059f 00       		.uleb128 0
+ 303 05a0 5F5F5549 		.ascii "__UINT_LEAST32_TYPE__ unsigned int\0"
+ 303      4E545F4C 
+ 303      45415354 
+ 303      33325F54 
+ 303      5950455F 
+ 304 05c3 01       		.byte	0x1
+ 305 05c4 00       		.uleb128 0
+ 306 05c5 5F5F5549 		.ascii "__UINT_LEAST64_TYPE__ long long unsigned int\0"
+ 306      4E545F4C 
+ 306      45415354 
+ 306      36345F54 
+ 306      5950455F 
+ 307 05f2 01       		.byte	0x1
+ 308 05f3 00       		.uleb128 0
+ 309 05f4 5F5F494E 		.ascii "__INT_FAST8_TYPE__ signed char\0"
+ 309      545F4641 
+ 309      5354385F 
+ 309      54595045 
+ 309      5F5F2073 
+ 310 0613 01       		.byte	0x1
+ 311 0614 00       		.uleb128 0
+ 312 0615 5F5F494E 		.ascii "__INT_FAST16_TYPE__ short int\0"
+ 312      545F4641 
+ 312      53543136 
+ 312      5F545950 
+ 312      455F5F20 
+ 313 0633 01       		.byte	0x1
+ 314 0634 00       		.uleb128 0
+ 315 0635 5F5F494E 		.ascii "__INT_FAST32_TYPE__ int\0"
+ 315      545F4641 
+ 315      53543332 
+ 315      5F545950 
+ 315      455F5F20 
+ 316 064d 01       		.byte	0x1
+ 317 064e 00       		.uleb128 0
+ 318 064f 5F5F494E 		.ascii "__INT_FAST64_TYPE__ long long int\0"
+ 318      545F4641 
+ 318      53543634 
+ 318      5F545950 
+ 318      455F5F20 
+ 319 0671 01       		.byte	0x1
+ 320 0672 00       		.uleb128 0
+ 321 0673 5F5F5549 		.ascii "__UINT_FAST8_TYPE__ unsigned char\0"
+ 321      4E545F46 
+ 321      41535438 
+ 321      5F545950 
+ 321      455F5F20 
+ 322 0695 01       		.byte	0x1
+ 323 0696 00       		.uleb128 0
+ 324 0697 5F5F5549 		.ascii "__UINT_FAST16_TYPE__ short unsigned int\0"
+ 324      4E545F46 
+ 324      41535431 
+ 324      365F5459 
+ 324      50455F5F 
+ 325 06bf 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 12
+
+
+ 326 06c0 00       		.uleb128 0
+ 327 06c1 5F5F5549 		.ascii "__UINT_FAST32_TYPE__ unsigned int\0"
+ 327      4E545F46 
+ 327      41535433 
+ 327      325F5459 
+ 327      50455F5F 
+ 328 06e3 01       		.byte	0x1
+ 329 06e4 00       		.uleb128 0
+ 330 06e5 5F5F5549 		.ascii "__UINT_FAST64_TYPE__ long long unsigned int\0"
+ 330      4E545F46 
+ 330      41535436 
+ 330      345F5459 
+ 330      50455F5F 
+ 331 0711 01       		.byte	0x1
+ 332 0712 00       		.uleb128 0
+ 333 0713 5F5F494E 		.ascii "__INTPTR_TYPE__ int\0"
+ 333      54505452 
+ 333      5F545950 
+ 333      455F5F20 
+ 333      696E7400 
+ 334 0727 01       		.byte	0x1
+ 335 0728 00       		.uleb128 0
+ 336 0729 5F5F5549 		.ascii "__UINTPTR_TYPE__ unsigned int\0"
+ 336      4E545054 
+ 336      525F5459 
+ 336      50455F5F 
+ 336      20756E73 
+ 337 0747 01       		.byte	0x1
+ 338 0748 00       		.uleb128 0
+ 339 0749 5F5F6861 		.ascii "__has_include(STR) __has_include__(STR)\0"
+ 339      735F696E 
+ 339      636C7564 
+ 339      65285354 
+ 339      5229205F 
+ 340 0771 01       		.byte	0x1
+ 341 0772 00       		.uleb128 0
+ 342 0773 5F5F6861 		.ascii "__has_include_next(STR) __has_include_next__(STR)\0"
+ 342      735F696E 
+ 342      636C7564 
+ 342      655F6E65 
+ 342      78742853 
+ 343 07a5 01       		.byte	0x1
+ 344 07a6 00       		.uleb128 0
+ 345 07a7 5F5F4758 		.ascii "__GXX_ABI_VERSION 1002\0"
+ 345      585F4142 
+ 345      495F5645 
+ 345      5253494F 
+ 345      4E203130 
+ 346 07be 01       		.byte	0x1
+ 347 07bf 00       		.uleb128 0
+ 348 07c0 5F5F5343 		.ascii "__SCHAR_MAX__ 127\0"
+ 348      4841525F 
+ 348      4D41585F 
+ 348      5F203132 
+ 348      3700
+ 349 07d2 01       		.byte	0x1
+ 350 07d3 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 13
+
+
+ 351 07d4 5F5F5348 		.ascii "__SHRT_MAX__ 32767\0"
+ 351      52545F4D 
+ 351      41585F5F 
+ 351      20333237 
+ 351      363700
+ 352 07e7 01       		.byte	0x1
+ 353 07e8 00       		.uleb128 0
+ 354 07e9 5F5F494E 		.ascii "__INT_MAX__ 2147483647\0"
+ 354      545F4D41 
+ 354      585F5F20 
+ 354      32313437 
+ 354      34383336 
+ 355 0800 01       		.byte	0x1
+ 356 0801 00       		.uleb128 0
+ 357 0802 5F5F4C4F 		.ascii "__LONG_MAX__ 2147483647L\0"
+ 357      4E475F4D 
+ 357      41585F5F 
+ 357      20323134 
+ 357      37343833 
+ 358 081b 01       		.byte	0x1
+ 359 081c 00       		.uleb128 0
+ 360 081d 5F5F4C4F 		.ascii "__LONG_LONG_MAX__ 9223372036854775807LL\0"
+ 360      4E475F4C 
+ 360      4F4E475F 
+ 360      4D41585F 
+ 360      5F203932 
+ 361 0845 01       		.byte	0x1
+ 362 0846 00       		.uleb128 0
+ 363 0847 5F5F5743 		.ascii "__WCHAR_MAX__ 65535\0"
+ 363      4841525F 
+ 363      4D41585F 
+ 363      5F203635 
+ 363      35333500 
+ 364 085b 01       		.byte	0x1
+ 365 085c 00       		.uleb128 0
+ 366 085d 5F5F5743 		.ascii "__WCHAR_MIN__ 0\0"
+ 366      4841525F 
+ 366      4D494E5F 
+ 366      5F203000 
+ 367 086d 01       		.byte	0x1
+ 368 086e 00       		.uleb128 0
+ 369 086f 5F5F5749 		.ascii "__WINT_MAX__ 65535\0"
+ 369      4E545F4D 
+ 369      41585F5F 
+ 369      20363535 
+ 369      333500
+ 370 0882 01       		.byte	0x1
+ 371 0883 00       		.uleb128 0
+ 372 0884 5F5F5749 		.ascii "__WINT_MIN__ 0\0"
+ 372      4E545F4D 
+ 372      494E5F5F 
+ 372      203000
+ 373 0893 01       		.byte	0x1
+ 374 0894 00       		.uleb128 0
+ 375 0895 5F5F5054 		.ascii "__PTRDIFF_MAX__ 2147483647\0"
+ 375      52444946 
+ 375      465F4D41 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 14
+
+
+ 375      585F5F20 
+ 375      32313437 
+ 376 08b0 01       		.byte	0x1
+ 377 08b1 00       		.uleb128 0
+ 378 08b2 5F5F5349 		.ascii "__SIZE_MAX__ 4294967295U\0"
+ 378      5A455F4D 
+ 378      41585F5F 
+ 378      20343239 
+ 378      34393637 
+ 379 08cb 01       		.byte	0x1
+ 380 08cc 00       		.uleb128 0
+ 381 08cd 5F5F494E 		.ascii "__INTMAX_MAX__ 9223372036854775807LL\0"
+ 381      544D4158 
+ 381      5F4D4158 
+ 381      5F5F2039 
+ 381      32323333 
+ 382 08f2 01       		.byte	0x1
+ 383 08f3 00       		.uleb128 0
+ 384 08f4 5F5F494E 		.ascii "__INTMAX_C(c) c ## LL\0"
+ 384      544D4158 
+ 384      5F432863 
+ 384      29206320 
+ 384      2323204C 
+ 385 090a 01       		.byte	0x1
+ 386 090b 00       		.uleb128 0
+ 387 090c 5F5F5549 		.ascii "__UINTMAX_MAX__ 18446744073709551615ULL\0"
+ 387      4E544D41 
+ 387      585F4D41 
+ 387      585F5F20 
+ 387      31383434 
+ 388 0934 01       		.byte	0x1
+ 389 0935 00       		.uleb128 0
+ 390 0936 5F5F5549 		.ascii "__UINTMAX_C(c) c ## ULL\0"
+ 390      4E544D41 
+ 390      585F4328 
+ 390      63292063 
+ 390      20232320 
+ 391 094e 01       		.byte	0x1
+ 392 094f 00       		.uleb128 0
+ 393 0950 5F5F5349 		.ascii "__SIG_ATOMIC_MAX__ 2147483647\0"
+ 393      475F4154 
+ 393      4F4D4943 
+ 393      5F4D4158 
+ 393      5F5F2032 
+ 394 096e 01       		.byte	0x1
+ 395 096f 00       		.uleb128 0
+ 396 0970 5F5F5349 		.ascii "__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\0"
+ 396      475F4154 
+ 396      4F4D4943 
+ 396      5F4D494E 
+ 396      5F5F2028 
+ 397 099d 01       		.byte	0x1
+ 398 099e 00       		.uleb128 0
+ 399 099f 5F5F494E 		.ascii "__INT8_MAX__ 127\0"
+ 399      54385F4D 
+ 399      41585F5F 
+ 399      20313237 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 15
+
+
+ 399      00
+ 400 09b0 01       		.byte	0x1
+ 401 09b1 00       		.uleb128 0
+ 402 09b2 5F5F494E 		.ascii "__INT16_MAX__ 32767\0"
+ 402      5431365F 
+ 402      4D41585F 
+ 402      5F203332 
+ 402      37363700 
+ 403 09c6 01       		.byte	0x1
+ 404 09c7 00       		.uleb128 0
+ 405 09c8 5F5F494E 		.ascii "__INT32_MAX__ 2147483647\0"
+ 405      5433325F 
+ 405      4D41585F 
+ 405      5F203231 
+ 405      34373438 
+ 406 09e1 01       		.byte	0x1
+ 407 09e2 00       		.uleb128 0
+ 408 09e3 5F5F494E 		.ascii "__INT64_MAX__ 9223372036854775807LL\0"
+ 408      5436345F 
+ 408      4D41585F 
+ 408      5F203932 
+ 408      32333337 
+ 409 0a07 01       		.byte	0x1
+ 410 0a08 00       		.uleb128 0
+ 411 0a09 5F5F5549 		.ascii "__UINT8_MAX__ 255\0"
+ 411      4E54385F 
+ 411      4D41585F 
+ 411      5F203235 
+ 411      3500
+ 412 0a1b 01       		.byte	0x1
+ 413 0a1c 00       		.uleb128 0
+ 414 0a1d 5F5F5549 		.ascii "__UINT16_MAX__ 65535\0"
+ 414      4E543136 
+ 414      5F4D4158 
+ 414      5F5F2036 
+ 414      35353335 
+ 415 0a32 01       		.byte	0x1
+ 416 0a33 00       		.uleb128 0
+ 417 0a34 5F5F5549 		.ascii "__UINT32_MAX__ 4294967295U\0"
+ 417      4E543332 
+ 417      5F4D4158 
+ 417      5F5F2034 
+ 417      32393439 
+ 418 0a4f 01       		.byte	0x1
+ 419 0a50 00       		.uleb128 0
+ 420 0a51 5F5F5549 		.ascii "__UINT64_MAX__ 18446744073709551615ULL\0"
+ 420      4E543634 
+ 420      5F4D4158 
+ 420      5F5F2031 
+ 420      38343436 
+ 421 0a78 01       		.byte	0x1
+ 422 0a79 00       		.uleb128 0
+ 423 0a7a 5F5F494E 		.ascii "__INT_LEAST8_MAX__ 127\0"
+ 423      545F4C45 
+ 423      41535438 
+ 423      5F4D4158 
+ 423      5F5F2031 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 16
+
+
+ 424 0a91 01       		.byte	0x1
+ 425 0a92 00       		.uleb128 0
+ 426 0a93 5F5F494E 		.ascii "__INT8_C(c) c\0"
+ 426      54385F43 
+ 426      28632920 
+ 426      6300
+ 427 0aa1 01       		.byte	0x1
+ 428 0aa2 00       		.uleb128 0
+ 429 0aa3 5F5F494E 		.ascii "__INT_LEAST16_MAX__ 32767\0"
+ 429      545F4C45 
+ 429      41535431 
+ 429      365F4D41 
+ 429      585F5F20 
+ 430 0abd 01       		.byte	0x1
+ 431 0abe 00       		.uleb128 0
+ 432 0abf 5F5F494E 		.ascii "__INT16_C(c) c\0"
+ 432      5431365F 
+ 432      43286329 
+ 432      206300
+ 433 0ace 01       		.byte	0x1
+ 434 0acf 00       		.uleb128 0
+ 435 0ad0 5F5F494E 		.ascii "__INT_LEAST32_MAX__ 2147483647\0"
+ 435      545F4C45 
+ 435      41535433 
+ 435      325F4D41 
+ 435      585F5F20 
+ 436 0aef 01       		.byte	0x1
+ 437 0af0 00       		.uleb128 0
+ 438 0af1 5F5F494E 		.ascii "__INT32_C(c) c\0"
+ 438      5433325F 
+ 438      43286329 
+ 438      206300
+ 439 0b00 01       		.byte	0x1
+ 440 0b01 00       		.uleb128 0
+ 441 0b02 5F5F494E 		.ascii "__INT_LEAST64_MAX__ 9223372036854775807LL\0"
+ 441      545F4C45 
+ 441      41535436 
+ 441      345F4D41 
+ 441      585F5F20 
+ 442 0b2c 01       		.byte	0x1
+ 443 0b2d 00       		.uleb128 0
+ 444 0b2e 5F5F494E 		.ascii "__INT64_C(c) c ## LL\0"
+ 444      5436345F 
+ 444      43286329 
+ 444      20632023 
+ 444      23204C4C 
+ 445 0b43 01       		.byte	0x1
+ 446 0b44 00       		.uleb128 0
+ 447 0b45 5F5F5549 		.ascii "__UINT_LEAST8_MAX__ 255\0"
+ 447      4E545F4C 
+ 447      45415354 
+ 447      385F4D41 
+ 447      585F5F20 
+ 448 0b5d 01       		.byte	0x1
+ 449 0b5e 00       		.uleb128 0
+ 450 0b5f 5F5F5549 		.ascii "__UINT8_C(c) c\0"
+ 450      4E54385F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 17
+
+
+ 450      43286329 
+ 450      206300
+ 451 0b6e 01       		.byte	0x1
+ 452 0b6f 00       		.uleb128 0
+ 453 0b70 5F5F5549 		.ascii "__UINT_LEAST16_MAX__ 65535\0"
+ 453      4E545F4C 
+ 453      45415354 
+ 453      31365F4D 
+ 453      41585F5F 
+ 454 0b8b 01       		.byte	0x1
+ 455 0b8c 00       		.uleb128 0
+ 456 0b8d 5F5F5549 		.ascii "__UINT16_C(c) c\0"
+ 456      4E543136 
+ 456      5F432863 
+ 456      29206300 
+ 457 0b9d 01       		.byte	0x1
+ 458 0b9e 00       		.uleb128 0
+ 459 0b9f 5F5F5549 		.ascii "__UINT_LEAST32_MAX__ 4294967295U\0"
+ 459      4E545F4C 
+ 459      45415354 
+ 459      33325F4D 
+ 459      41585F5F 
+ 460 0bc0 01       		.byte	0x1
+ 461 0bc1 00       		.uleb128 0
+ 462 0bc2 5F5F5549 		.ascii "__UINT32_C(c) c ## U\0"
+ 462      4E543332 
+ 462      5F432863 
+ 462      29206320 
+ 462      23232055 
+ 463 0bd7 01       		.byte	0x1
+ 464 0bd8 00       		.uleb128 0
+ 465 0bd9 5F5F5549 		.ascii "__UINT_LEAST64_MAX__ 18446744073709551615ULL\0"
+ 465      4E545F4C 
+ 465      45415354 
+ 465      36345F4D 
+ 465      41585F5F 
+ 466 0c06 01       		.byte	0x1
+ 467 0c07 00       		.uleb128 0
+ 468 0c08 5F5F5549 		.ascii "__UINT64_C(c) c ## ULL\0"
+ 468      4E543634 
+ 468      5F432863 
+ 468      29206320 
+ 468      23232055 
+ 469 0c1f 01       		.byte	0x1
+ 470 0c20 00       		.uleb128 0
+ 471 0c21 5F5F494E 		.ascii "__INT_FAST8_MAX__ 127\0"
+ 471      545F4641 
+ 471      5354385F 
+ 471      4D41585F 
+ 471      5F203132 
+ 472 0c37 01       		.byte	0x1
+ 473 0c38 00       		.uleb128 0
+ 474 0c39 5F5F494E 		.ascii "__INT_FAST16_MAX__ 32767\0"
+ 474      545F4641 
+ 474      53543136 
+ 474      5F4D4158 
+ 474      5F5F2033 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 18
+
+
+ 475 0c52 01       		.byte	0x1
+ 476 0c53 00       		.uleb128 0
+ 477 0c54 5F5F494E 		.ascii "__INT_FAST32_MAX__ 2147483647\0"
+ 477      545F4641 
+ 477      53543332 
+ 477      5F4D4158 
+ 477      5F5F2032 
+ 478 0c72 01       		.byte	0x1
+ 479 0c73 00       		.uleb128 0
+ 480 0c74 5F5F494E 		.ascii "__INT_FAST64_MAX__ 9223372036854775807LL\0"
+ 480      545F4641 
+ 480      53543634 
+ 480      5F4D4158 
+ 480      5F5F2039 
+ 481 0c9d 01       		.byte	0x1
+ 482 0c9e 00       		.uleb128 0
+ 483 0c9f 5F5F5549 		.ascii "__UINT_FAST8_MAX__ 255\0"
+ 483      4E545F46 
+ 483      41535438 
+ 483      5F4D4158 
+ 483      5F5F2032 
+ 484 0cb6 01       		.byte	0x1
+ 485 0cb7 00       		.uleb128 0
+ 486 0cb8 5F5F5549 		.ascii "__UINT_FAST16_MAX__ 65535\0"
+ 486      4E545F46 
+ 486      41535431 
+ 486      365F4D41 
+ 486      585F5F20 
+ 487 0cd2 01       		.byte	0x1
+ 488 0cd3 00       		.uleb128 0
+ 489 0cd4 5F5F5549 		.ascii "__UINT_FAST32_MAX__ 4294967295U\0"
+ 489      4E545F46 
+ 489      41535433 
+ 489      325F4D41 
+ 489      585F5F20 
+ 490 0cf4 01       		.byte	0x1
+ 491 0cf5 00       		.uleb128 0
+ 492 0cf6 5F5F5549 		.ascii "__UINT_FAST64_MAX__ 18446744073709551615ULL\0"
+ 492      4E545F46 
+ 492      41535436 
+ 492      345F4D41 
+ 492      585F5F20 
+ 493 0d22 01       		.byte	0x1
+ 494 0d23 00       		.uleb128 0
+ 495 0d24 5F5F494E 		.ascii "__INTPTR_MAX__ 2147483647\0"
+ 495      54505452 
+ 495      5F4D4158 
+ 495      5F5F2032 
+ 495      31343734 
+ 496 0d3e 01       		.byte	0x1
+ 497 0d3f 00       		.uleb128 0
+ 498 0d40 5F5F5549 		.ascii "__UINTPTR_MAX__ 4294967295U\0"
+ 498      4E545054 
+ 498      525F4D41 
+ 498      585F5F20 
+ 498      34323934 
+ 499 0d5c 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 19
+
+
+ 500 0d5d 00       		.uleb128 0
+ 501 0d5e 5F5F4743 		.ascii "__GCC_IEC_559 2\0"
+ 501      435F4945 
+ 501      435F3535 
+ 501      39203200 
+ 502 0d6e 01       		.byte	0x1
+ 503 0d6f 00       		.uleb128 0
+ 504 0d70 5F5F4743 		.ascii "__GCC_IEC_559_COMPLEX 2\0"
+ 504      435F4945 
+ 504      435F3535 
+ 504      395F434F 
+ 504      4D504C45 
+ 505 0d88 01       		.byte	0x1
+ 506 0d89 00       		.uleb128 0
+ 507 0d8a 5F5F464C 		.ascii "__FLT_EVAL_METHOD__ 2\0"
+ 507      545F4556 
+ 507      414C5F4D 
+ 507      4554484F 
+ 507      445F5F20 
+ 508 0da0 01       		.byte	0x1
+ 509 0da1 00       		.uleb128 0
+ 510 0da2 5F5F4445 		.ascii "__DEC_EVAL_METHOD__ 2\0"
+ 510      435F4556 
+ 510      414C5F4D 
+ 510      4554484F 
+ 510      445F5F20 
+ 511 0db8 01       		.byte	0x1
+ 512 0db9 00       		.uleb128 0
+ 513 0dba 5F5F464C 		.ascii "__FLT_RADIX__ 2\0"
+ 513      545F5241 
+ 513      4449585F 
+ 513      5F203200 
+ 514 0dca 01       		.byte	0x1
+ 515 0dcb 00       		.uleb128 0
+ 516 0dcc 5F5F464C 		.ascii "__FLT_MANT_DIG__ 24\0"
+ 516      545F4D41 
+ 516      4E545F44 
+ 516      49475F5F 
+ 516      20323400 
+ 517 0de0 01       		.byte	0x1
+ 518 0de1 00       		.uleb128 0
+ 519 0de2 5F5F464C 		.ascii "__FLT_DIG__ 6\0"
+ 519      545F4449 
+ 519      475F5F20 
+ 519      3600
+ 520 0df0 01       		.byte	0x1
+ 521 0df1 00       		.uleb128 0
+ 522 0df2 5F5F464C 		.ascii "__FLT_MIN_EXP__ (-125)\0"
+ 522      545F4D49 
+ 522      4E5F4558 
+ 522      505F5F20 
+ 522      282D3132 
+ 523 0e09 01       		.byte	0x1
+ 524 0e0a 00       		.uleb128 0
+ 525 0e0b 5F5F464C 		.ascii "__FLT_MIN_10_EXP__ (-37)\0"
+ 525      545F4D49 
+ 525      4E5F3130 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 20
+
+
+ 525      5F455850 
+ 525      5F5F2028 
+ 526 0e24 01       		.byte	0x1
+ 527 0e25 00       		.uleb128 0
+ 528 0e26 5F5F464C 		.ascii "__FLT_MAX_EXP__ 128\0"
+ 528      545F4D41 
+ 528      585F4558 
+ 528      505F5F20 
+ 528      31323800 
+ 529 0e3a 01       		.byte	0x1
+ 530 0e3b 00       		.uleb128 0
+ 531 0e3c 5F5F464C 		.ascii "__FLT_MAX_10_EXP__ 38\0"
+ 531      545F4D41 
+ 531      585F3130 
+ 531      5F455850 
+ 531      5F5F2033 
+ 532 0e52 01       		.byte	0x1
+ 533 0e53 00       		.uleb128 0
+ 534 0e54 5F5F464C 		.ascii "__FLT_DECIMAL_DIG__ 9\0"
+ 534      545F4445 
+ 534      43494D41 
+ 534      4C5F4449 
+ 534      475F5F20 
+ 535 0e6a 01       		.byte	0x1
+ 536 0e6b 00       		.uleb128 0
+ 537 0e6c 5F5F464C 		.ascii "__FLT_MAX__ 3.40282346638528859812e+38F\0"
+ 537      545F4D41 
+ 537      585F5F20 
+ 537      332E3430 
+ 537      32383233 
+ 538 0e94 01       		.byte	0x1
+ 539 0e95 00       		.uleb128 0
+ 540 0e96 5F5F464C 		.ascii "__FLT_MIN__ 1.17549435082228750797e-38F\0"
+ 540      545F4D49 
+ 540      4E5F5F20 
+ 540      312E3137 
+ 540      35343934 
+ 541 0ebe 01       		.byte	0x1
+ 542 0ebf 00       		.uleb128 0
+ 543 0ec0 5F5F464C 		.ascii "__FLT_EPSILON__ 1.19209289550781250000e-7F\0"
+ 543      545F4550 
+ 543      53494C4F 
+ 543      4E5F5F20 
+ 543      312E3139 
+ 544 0eeb 01       		.byte	0x1
+ 545 0eec 00       		.uleb128 0
+ 546 0eed 5F5F464C 		.ascii "__FLT_DENORM_MIN__ 1.40129846432481707092e-45F\0"
+ 546      545F4445 
+ 546      4E4F524D 
+ 546      5F4D494E 
+ 546      5F5F2031 
+ 547 0f1c 01       		.byte	0x1
+ 548 0f1d 00       		.uleb128 0
+ 549 0f1e 5F5F464C 		.ascii "__FLT_HAS_DENORM__ 1\0"
+ 549      545F4841 
+ 549      535F4445 
+ 549      4E4F524D 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 21
+
+
+ 549      5F5F2031 
+ 550 0f33 01       		.byte	0x1
+ 551 0f34 00       		.uleb128 0
+ 552 0f35 5F5F464C 		.ascii "__FLT_HAS_INFINITY__ 1\0"
+ 552      545F4841 
+ 552      535F494E 
+ 552      46494E49 
+ 552      54595F5F 
+ 553 0f4c 01       		.byte	0x1
+ 554 0f4d 00       		.uleb128 0
+ 555 0f4e 5F5F464C 		.ascii "__FLT_HAS_QUIET_NAN__ 1\0"
+ 555      545F4841 
+ 555      535F5155 
+ 555      4945545F 
+ 555      4E414E5F 
+ 556 0f66 01       		.byte	0x1
+ 557 0f67 00       		.uleb128 0
+ 558 0f68 5F5F4442 		.ascii "__DBL_MANT_DIG__ 53\0"
+ 558      4C5F4D41 
+ 558      4E545F44 
+ 558      49475F5F 
+ 558      20353300 
+ 559 0f7c 01       		.byte	0x1
+ 560 0f7d 00       		.uleb128 0
+ 561 0f7e 5F5F4442 		.ascii "__DBL_DIG__ 15\0"
+ 561      4C5F4449 
+ 561      475F5F20 
+ 561      313500
+ 562 0f8d 01       		.byte	0x1
+ 563 0f8e 00       		.uleb128 0
+ 564 0f8f 5F5F4442 		.ascii "__DBL_MIN_EXP__ (-1021)\0"
+ 564      4C5F4D49 
+ 564      4E5F4558 
+ 564      505F5F20 
+ 564      282D3130 
+ 565 0fa7 01       		.byte	0x1
+ 566 0fa8 00       		.uleb128 0
+ 567 0fa9 5F5F4442 		.ascii "__DBL_MIN_10_EXP__ (-307)\0"
+ 567      4C5F4D49 
+ 567      4E5F3130 
+ 567      5F455850 
+ 567      5F5F2028 
+ 568 0fc3 01       		.byte	0x1
+ 569 0fc4 00       		.uleb128 0
+ 570 0fc5 5F5F4442 		.ascii "__DBL_MAX_EXP__ 1024\0"
+ 570      4C5F4D41 
+ 570      585F4558 
+ 570      505F5F20 
+ 570      31303234 
+ 571 0fda 01       		.byte	0x1
+ 572 0fdb 00       		.uleb128 0
+ 573 0fdc 5F5F4442 		.ascii "__DBL_MAX_10_EXP__ 308\0"
+ 573      4C5F4D41 
+ 573      585F3130 
+ 573      5F455850 
+ 573      5F5F2033 
+ 574 0ff3 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 22
+
+
+ 575 0ff4 00       		.uleb128 0
+ 576 0ff5 5F5F4442 		.ascii "__DBL_DECIMAL_DIG__ 17\0"
+ 576      4C5F4445 
+ 576      43494D41 
+ 576      4C5F4449 
+ 576      475F5F20 
+ 577 100c 01       		.byte	0x1
+ 578 100d 00       		.uleb128 0
+ 579 100e 5F5F4442 		.ascii "__DBL_MAX__ ((double)1.79769313486231570815e+308L)\0"
+ 579      4C5F4D41 
+ 579      585F5F20 
+ 579      2828646F 
+ 579      75626C65 
+ 580 1041 01       		.byte	0x1
+ 581 1042 00       		.uleb128 0
+ 582 1043 5F5F4442 		.ascii "__DBL_MIN__ ((double)2.22507385850720138309e-308L)\0"
+ 582      4C5F4D49 
+ 582      4E5F5F20 
+ 582      2828646F 
+ 582      75626C65 
+ 583 1076 01       		.byte	0x1
+ 584 1077 00       		.uleb128 0
+ 585 1078 5F5F4442 		.ascii "__DBL_EPSILON__ ((double)2.22044604925031308085e-16L)\0"
+ 585      4C5F4550 
+ 585      53494C4F 
+ 585      4E5F5F20 
+ 585      2828646F 
+ 586 10ae 01       		.byte	0x1
+ 587 10af 00       		.uleb128 0
+ 588 10b0 5F5F4442 		.ascii "__DBL_DENORM_MIN__ ((double)4.94065645841246544177e-324L)\0"
+ 588      4C5F4445 
+ 588      4E4F524D 
+ 588      5F4D494E 
+ 588      5F5F2028 
+ 589 10ea 01       		.byte	0x1
+ 590 10eb 00       		.uleb128 0
+ 591 10ec 5F5F4442 		.ascii "__DBL_HAS_DENORM__ 1\0"
+ 591      4C5F4841 
+ 591      535F4445 
+ 591      4E4F524D 
+ 591      5F5F2031 
+ 592 1101 01       		.byte	0x1
+ 593 1102 00       		.uleb128 0
+ 594 1103 5F5F4442 		.ascii "__DBL_HAS_INFINITY__ 1\0"
+ 594      4C5F4841 
+ 594      535F494E 
+ 594      46494E49 
+ 594      54595F5F 
+ 595 111a 01       		.byte	0x1
+ 596 111b 00       		.uleb128 0
+ 597 111c 5F5F4442 		.ascii "__DBL_HAS_QUIET_NAN__ 1\0"
+ 597      4C5F4841 
+ 597      535F5155 
+ 597      4945545F 
+ 597      4E414E5F 
+ 598 1134 01       		.byte	0x1
+ 599 1135 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 23
+
+
+ 600 1136 5F5F4C44 		.ascii "__LDBL_MANT_DIG__ 64\0"
+ 600      424C5F4D 
+ 600      414E545F 
+ 600      4449475F 
+ 600      5F203634 
+ 601 114b 01       		.byte	0x1
+ 602 114c 00       		.uleb128 0
+ 603 114d 5F5F4C44 		.ascii "__LDBL_DIG__ 18\0"
+ 603      424C5F44 
+ 603      49475F5F 
+ 603      20313800 
+ 604 115d 01       		.byte	0x1
+ 605 115e 00       		.uleb128 0
+ 606 115f 5F5F4C44 		.ascii "__LDBL_MIN_EXP__ (-16381)\0"
+ 606      424C5F4D 
+ 606      494E5F45 
+ 606      58505F5F 
+ 606      20282D31 
+ 607 1179 01       		.byte	0x1
+ 608 117a 00       		.uleb128 0
+ 609 117b 5F5F4C44 		.ascii "__LDBL_MIN_10_EXP__ (-4931)\0"
+ 609      424C5F4D 
+ 609      494E5F31 
+ 609      305F4558 
+ 609      505F5F20 
+ 610 1197 01       		.byte	0x1
+ 611 1198 00       		.uleb128 0
+ 612 1199 5F5F4C44 		.ascii "__LDBL_MAX_EXP__ 16384\0"
+ 612      424C5F4D 
+ 612      41585F45 
+ 612      58505F5F 
+ 612      20313633 
+ 613 11b0 01       		.byte	0x1
+ 614 11b1 00       		.uleb128 0
+ 615 11b2 5F5F4C44 		.ascii "__LDBL_MAX_10_EXP__ 4932\0"
+ 615      424C5F4D 
+ 615      41585F31 
+ 615      305F4558 
+ 615      505F5F20 
+ 616 11cb 01       		.byte	0x1
+ 617 11cc 00       		.uleb128 0
+ 618 11cd 5F5F4445 		.ascii "__DECIMAL_DIG__ 21\0"
+ 618      43494D41 
+ 618      4C5F4449 
+ 618      475F5F20 
+ 618      323100
+ 619 11e0 01       		.byte	0x1
+ 620 11e1 00       		.uleb128 0
+ 621 11e2 5F5F4C44 		.ascii "__LDBL_MAX__ 1.18973149535723176502e+4932L\0"
+ 621      424C5F4D 
+ 621      41585F5F 
+ 621      20312E31 
+ 621      38393733 
+ 622 120d 01       		.byte	0x1
+ 623 120e 00       		.uleb128 0
+ 624 120f 5F5F4C44 		.ascii "__LDBL_MIN__ 3.36210314311209350626e-4932L\0"
+ 624      424C5F4D 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 24
+
+
+ 624      494E5F5F 
+ 624      20332E33 
+ 624      36323130 
+ 625 123a 01       		.byte	0x1
+ 626 123b 00       		.uleb128 0
+ 627 123c 5F5F4C44 		.ascii "__LDBL_EPSILON__ 1.08420217248550443401e-19L\0"
+ 627      424C5F45 
+ 627      5053494C 
+ 627      4F4E5F5F 
+ 627      20312E30 
+ 628 1269 01       		.byte	0x1
+ 629 126a 00       		.uleb128 0
+ 630 126b 5F5F4C44 		.ascii "__LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L\0"
+ 630      424C5F44 
+ 630      454E4F52 
+ 630      4D5F4D49 
+ 630      4E5F5F20 
+ 631 129d 01       		.byte	0x1
+ 632 129e 00       		.uleb128 0
+ 633 129f 5F5F4C44 		.ascii "__LDBL_HAS_DENORM__ 1\0"
+ 633      424C5F48 
+ 633      41535F44 
+ 633      454E4F52 
+ 633      4D5F5F20 
+ 634 12b5 01       		.byte	0x1
+ 635 12b6 00       		.uleb128 0
+ 636 12b7 5F5F4C44 		.ascii "__LDBL_HAS_INFINITY__ 1\0"
+ 636      424C5F48 
+ 636      41535F49 
+ 636      4E46494E 
+ 636      4954595F 
+ 637 12cf 01       		.byte	0x1
+ 638 12d0 00       		.uleb128 0
+ 639 12d1 5F5F4C44 		.ascii "__LDBL_HAS_QUIET_NAN__ 1\0"
+ 639      424C5F48 
+ 639      41535F51 
+ 639      55494554 
+ 639      5F4E414E 
+ 640 12ea 01       		.byte	0x1
+ 641 12eb 00       		.uleb128 0
+ 642 12ec 5F5F4445 		.ascii "__DEC32_MANT_DIG__ 7\0"
+ 642      4333325F 
+ 642      4D414E54 
+ 642      5F444947 
+ 642      5F5F2037 
+ 643 1301 01       		.byte	0x1
+ 644 1302 00       		.uleb128 0
+ 645 1303 5F5F4445 		.ascii "__DEC32_MIN_EXP__ (-94)\0"
+ 645      4333325F 
+ 645      4D494E5F 
+ 645      4558505F 
+ 645      5F20282D 
+ 646 131b 01       		.byte	0x1
+ 647 131c 00       		.uleb128 0
+ 648 131d 5F5F4445 		.ascii "__DEC32_MAX_EXP__ 97\0"
+ 648      4333325F 
+ 648      4D41585F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 25
+
+
+ 648      4558505F 
+ 648      5F203937 
+ 649 1332 01       		.byte	0x1
+ 650 1333 00       		.uleb128 0
+ 651 1334 5F5F4445 		.ascii "__DEC32_MIN__ 1E-95DF\0"
+ 651      4333325F 
+ 651      4D494E5F 
+ 651      5F203145 
+ 651      2D393544 
+ 652 134a 01       		.byte	0x1
+ 653 134b 00       		.uleb128 0
+ 654 134c 5F5F4445 		.ascii "__DEC32_MAX__ 9.999999E96DF\0"
+ 654      4333325F 
+ 654      4D41585F 
+ 654      5F20392E 
+ 654      39393939 
+ 655 1368 01       		.byte	0x1
+ 656 1369 00       		.uleb128 0
+ 657 136a 5F5F4445 		.ascii "__DEC32_EPSILON__ 1E-6DF\0"
+ 657      4333325F 
+ 657      45505349 
+ 657      4C4F4E5F 
+ 657      5F203145 
+ 658 1383 01       		.byte	0x1
+ 659 1384 00       		.uleb128 0
+ 660 1385 5F5F4445 		.ascii "__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\0"
+ 660      4333325F 
+ 660      5355424E 
+ 660      4F524D41 
+ 660      4C5F4D49 
+ 661 13ac 01       		.byte	0x1
+ 662 13ad 00       		.uleb128 0
+ 663 13ae 5F5F4445 		.ascii "__DEC64_MANT_DIG__ 16\0"
+ 663      4336345F 
+ 663      4D414E54 
+ 663      5F444947 
+ 663      5F5F2031 
+ 664 13c4 01       		.byte	0x1
+ 665 13c5 00       		.uleb128 0
+ 666 13c6 5F5F4445 		.ascii "__DEC64_MIN_EXP__ (-382)\0"
+ 666      4336345F 
+ 666      4D494E5F 
+ 666      4558505F 
+ 666      5F20282D 
+ 667 13df 01       		.byte	0x1
+ 668 13e0 00       		.uleb128 0
+ 669 13e1 5F5F4445 		.ascii "__DEC64_MAX_EXP__ 385\0"
+ 669      4336345F 
+ 669      4D41585F 
+ 669      4558505F 
+ 669      5F203338 
+ 670 13f7 01       		.byte	0x1
+ 671 13f8 00       		.uleb128 0
+ 672 13f9 5F5F4445 		.ascii "__DEC64_MIN__ 1E-383DD\0"
+ 672      4336345F 
+ 672      4D494E5F 
+ 672      5F203145 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 26
+
+
+ 672      2D333833 
+ 673 1410 01       		.byte	0x1
+ 674 1411 00       		.uleb128 0
+ 675 1412 5F5F4445 		.ascii "__DEC64_MAX__ 9.999999999999999E384DD\0"
+ 675      4336345F 
+ 675      4D41585F 
+ 675      5F20392E 
+ 675      39393939 
+ 676 1438 01       		.byte	0x1
+ 677 1439 00       		.uleb128 0
+ 678 143a 5F5F4445 		.ascii "__DEC64_EPSILON__ 1E-15DD\0"
+ 678      4336345F 
+ 678      45505349 
+ 678      4C4F4E5F 
+ 678      5F203145 
+ 679 1454 01       		.byte	0x1
+ 680 1455 00       		.uleb128 0
+ 681 1456 5F5F4445 		.ascii "__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\0"
+ 681      4336345F 
+ 681      5355424E 
+ 681      4F524D41 
+ 681      4C5F4D49 
+ 682 1487 01       		.byte	0x1
+ 683 1488 00       		.uleb128 0
+ 684 1489 5F5F4445 		.ascii "__DEC128_MANT_DIG__ 34\0"
+ 684      43313238 
+ 684      5F4D414E 
+ 684      545F4449 
+ 684      475F5F20 
+ 685 14a0 01       		.byte	0x1
+ 686 14a1 00       		.uleb128 0
+ 687 14a2 5F5F4445 		.ascii "__DEC128_MIN_EXP__ (-6142)\0"
+ 687      43313238 
+ 687      5F4D494E 
+ 687      5F455850 
+ 687      5F5F2028 
+ 688 14bd 01       		.byte	0x1
+ 689 14be 00       		.uleb128 0
+ 690 14bf 5F5F4445 		.ascii "__DEC128_MAX_EXP__ 6145\0"
+ 690      43313238 
+ 690      5F4D4158 
+ 690      5F455850 
+ 690      5F5F2036 
+ 691 14d7 01       		.byte	0x1
+ 692 14d8 00       		.uleb128 0
+ 693 14d9 5F5F4445 		.ascii "__DEC128_MIN__ 1E-6143DL\0"
+ 693      43313238 
+ 693      5F4D494E 
+ 693      5F5F2031 
+ 693      452D3631 
+ 694 14f2 01       		.byte	0x1
+ 695 14f3 00       		.uleb128 0
+ 696 14f4 5F5F4445 		.ascii "__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL\0"
+ 696      43313238 
+ 696      5F4D4158 
+ 696      5F5F2039 
+ 696      2E393939 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 27
+
+
+ 697 152e 01       		.byte	0x1
+ 698 152f 00       		.uleb128 0
+ 699 1530 5F5F4445 		.ascii "__DEC128_EPSILON__ 1E-33DL\0"
+ 699      43313238 
+ 699      5F455053 
+ 699      494C4F4E 
+ 699      5F5F2031 
+ 700 154b 01       		.byte	0x1
+ 701 154c 00       		.uleb128 0
+ 702 154d 5F5F4445 		.ascii "__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL\0"
+ 702      43313238 
+ 702      5F535542 
+ 702      4E4F524D 
+ 702      414C5F4D 
+ 703 1592 01       		.byte	0x1
+ 704 1593 00       		.uleb128 0
+ 705 1594 5F5F5245 		.ascii "__REGISTER_PREFIX__ \0"
+ 705      47495354 
+ 705      45525F50 
+ 705      52454649 
+ 705      585F5F20 
+ 706 15a9 01       		.byte	0x1
+ 707 15aa 00       		.uleb128 0
+ 708 15ab 5F5F5553 		.ascii "__USER_LABEL_PREFIX__ _\0"
+ 708      45525F4C 
+ 708      4142454C 
+ 708      5F505245 
+ 708      4649585F 
+ 709 15c3 01       		.byte	0x1
+ 710 15c4 00       		.uleb128 0
+ 711 15c5 5F5F474E 		.ascii "__GNUC_GNU_INLINE__ 1\0"
+ 711      55435F47 
+ 711      4E555F49 
+ 711      4E4C494E 
+ 711      455F5F20 
+ 712 15db 01       		.byte	0x1
+ 713 15dc 00       		.uleb128 0
+ 714 15dd 5F5F4E4F 		.ascii "__NO_INLINE__ 1\0"
+ 714      5F494E4C 
+ 714      494E455F 
+ 714      5F203100 
+ 715 15ed 01       		.byte	0x1
+ 716 15ee 00       		.uleb128 0
+ 717 15ef 5F5F5354 		.ascii "__STRICT_ANSI__ 1\0"
+ 717      52494354 
+ 717      5F414E53 
+ 717      495F5F20 
+ 717      3100
+ 718 1601 01       		.byte	0x1
+ 719 1602 00       		.uleb128 0
+ 720 1603 5F5F4743 		.ascii "__GCC_ATOMIC_BOOL_LOCK_FREE 1\0"
+ 720      435F4154 
+ 720      4F4D4943 
+ 720      5F424F4F 
+ 720      4C5F4C4F 
+ 721 1621 01       		.byte	0x1
+ 722 1622 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 28
+
+
+ 723 1623 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR_LOCK_FREE 1\0"
+ 723      435F4154 
+ 723      4F4D4943 
+ 723      5F434841 
+ 723      525F4C4F 
+ 724 1641 01       		.byte	0x1
+ 725 1642 00       		.uleb128 0
+ 726 1643 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR16_T_LOCK_FREE 1\0"
+ 726      435F4154 
+ 726      4F4D4943 
+ 726      5F434841 
+ 726      5231365F 
+ 727 1665 01       		.byte	0x1
+ 728 1666 00       		.uleb128 0
+ 729 1667 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR32_T_LOCK_FREE 1\0"
+ 729      435F4154 
+ 729      4F4D4943 
+ 729      5F434841 
+ 729      5233325F 
+ 730 1689 01       		.byte	0x1
+ 731 168a 00       		.uleb128 0
+ 732 168b 5F5F4743 		.ascii "__GCC_ATOMIC_WCHAR_T_LOCK_FREE 1\0"
+ 732      435F4154 
+ 732      4F4D4943 
+ 732      5F574348 
+ 732      41525F54 
+ 733 16ac 01       		.byte	0x1
+ 734 16ad 00       		.uleb128 0
+ 735 16ae 5F5F4743 		.ascii "__GCC_ATOMIC_SHORT_LOCK_FREE 1\0"
+ 735      435F4154 
+ 735      4F4D4943 
+ 735      5F53484F 
+ 735      52545F4C 
+ 736 16cd 01       		.byte	0x1
+ 737 16ce 00       		.uleb128 0
+ 738 16cf 5F5F4743 		.ascii "__GCC_ATOMIC_INT_LOCK_FREE 1\0"
+ 738      435F4154 
+ 738      4F4D4943 
+ 738      5F494E54 
+ 738      5F4C4F43 
+ 739 16ec 01       		.byte	0x1
+ 740 16ed 00       		.uleb128 0
+ 741 16ee 5F5F4743 		.ascii "__GCC_ATOMIC_LONG_LOCK_FREE 1\0"
+ 741      435F4154 
+ 741      4F4D4943 
+ 741      5F4C4F4E 
+ 741      475F4C4F 
+ 742 170c 01       		.byte	0x1
+ 743 170d 00       		.uleb128 0
+ 744 170e 5F5F4743 		.ascii "__GCC_ATOMIC_LLONG_LOCK_FREE 1\0"
+ 744      435F4154 
+ 744      4F4D4943 
+ 744      5F4C4C4F 
+ 744      4E475F4C 
+ 745 172d 01       		.byte	0x1
+ 746 172e 00       		.uleb128 0
+ 747 172f 5F5F4743 		.ascii "__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 29
+
+
+ 747      435F4154 
+ 747      4F4D4943 
+ 747      5F544553 
+ 747      545F414E 
+ 748 1753 01       		.byte	0x1
+ 749 1754 00       		.uleb128 0
+ 750 1755 5F5F4743 		.ascii "__GCC_ATOMIC_POINTER_LOCK_FREE 1\0"
+ 750      435F4154 
+ 750      4F4D4943 
+ 750      5F504F49 
+ 750      4E544552 
+ 751 1776 01       		.byte	0x1
+ 752 1777 00       		.uleb128 0
+ 753 1778 5F5F4743 		.ascii "__GCC_HAVE_DWARF2_CFI_ASM 1\0"
+ 753      435F4841 
+ 753      56455F44 
+ 753      57415246 
+ 753      325F4346 
+ 754 1794 01       		.byte	0x1
+ 755 1795 00       		.uleb128 0
+ 756 1796 5F5F5052 		.ascii "__PRAGMA_REDEFINE_EXTNAME 1\0"
+ 756      41474D41 
+ 756      5F524544 
+ 756      4546494E 
+ 756      455F4558 
+ 757 17b2 01       		.byte	0x1
+ 758 17b3 00       		.uleb128 0
+ 759 17b4 5F5F5349 		.ascii "__SIZEOF_WCHAR_T__ 2\0"
+ 759      5A454F46 
+ 759      5F574348 
+ 759      41525F54 
+ 759      5F5F2032 
+ 760 17c9 01       		.byte	0x1
+ 761 17ca 00       		.uleb128 0
+ 762 17cb 5F5F5349 		.ascii "__SIZEOF_WINT_T__ 2\0"
+ 762      5A454F46 
+ 762      5F57494E 
+ 762      545F545F 
+ 762      5F203200 
+ 763 17df 01       		.byte	0x1
+ 764 17e0 00       		.uleb128 0
+ 765 17e1 5F5F5349 		.ascii "__SIZEOF_PTRDIFF_T__ 4\0"
+ 765      5A454F46 
+ 765      5F505452 
+ 765      44494646 
+ 765      5F545F5F 
+ 766 17f8 01       		.byte	0x1
+ 767 17f9 00       		.uleb128 0
+ 768 17fa 5F5F6933 		.ascii "__i386 1\0"
+ 768      38362031 
+ 768      00
+ 769 1803 01       		.byte	0x1
+ 770 1804 00       		.uleb128 0
+ 771 1805 5F5F6933 		.ascii "__i386__ 1\0"
+ 771      38365F5F 
+ 771      203100
+ 772 1810 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 30
+
+
+ 773 1811 00       		.uleb128 0
+ 774 1812 5F5F4154 		.ascii "__ATOMIC_HLE_ACQUIRE 65536\0"
+ 774      4F4D4943 
+ 774      5F484C45 
+ 774      5F414351 
+ 774      55495245 
+ 775 182d 01       		.byte	0x1
+ 776 182e 00       		.uleb128 0
+ 777 182f 5F5F4154 		.ascii "__ATOMIC_HLE_RELEASE 131072\0"
+ 777      4F4D4943 
+ 777      5F484C45 
+ 777      5F52454C 
+ 777      45415345 
+ 778 184b 01       		.byte	0x1
+ 779 184c 00       		.uleb128 0
+ 780 184d 5F5F7475 		.ascii "__tune_i386__ 1\0"
+ 780      6E655F69 
+ 780      3338365F 
+ 780      5F203100 
+ 781 185d 01       		.byte	0x1
+ 782 185e 00       		.uleb128 0
+ 783 185f 5F5F636F 		.ascii "__code_model_32__ 1\0"
+ 783      64655F6D 
+ 783      6F64656C 
+ 783      5F33325F 
+ 783      5F203100 
+ 784 1873 01       		.byte	0x1
+ 785 1874 00       		.uleb128 0
+ 786 1875 5F583836 		.ascii "_X86_ 1\0"
+ 786      5F203100 
+ 787 187d 01       		.byte	0x1
+ 788 187e 00       		.uleb128 0
+ 789 187f 5F5F7374 		.ascii "__stdcall __attribute__((__stdcall__))\0"
+ 789      6463616C 
+ 789      6C205F5F 
+ 789      61747472 
+ 789      69627574 
+ 790 18a6 01       		.byte	0x1
+ 791 18a7 00       		.uleb128 0
+ 792 18a8 5F5F6661 		.ascii "__fastcall __attribute__((__fastcall__))\0"
+ 792      73746361 
+ 792      6C6C205F 
+ 792      5F617474 
+ 792      72696275 
+ 793 18d1 01       		.byte	0x1
+ 794 18d2 00       		.uleb128 0
+ 795 18d3 5F5F7468 		.ascii "__thiscall __attribute__((__thiscall__))\0"
+ 795      69736361 
+ 795      6C6C205F 
+ 795      5F617474 
+ 795      72696275 
+ 796 18fc 01       		.byte	0x1
+ 797 18fd 00       		.uleb128 0
+ 798 18fe 5F5F6364 		.ascii "__cdecl __attribute__((__cdecl__))\0"
+ 798      65636C20 
+ 798      5F5F6174 
+ 798      74726962 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 31
+
+
+ 798      7574655F 
+ 799 1921 01       		.byte	0x1
+ 800 1922 00       		.uleb128 0
+ 801 1923 5F5F4758 		.ascii "__GXX_MERGED_TYPEINFO_NAMES 0\0"
+ 801      585F4D45 
+ 801      52474544 
+ 801      5F545950 
+ 801      45494E46 
+ 802 1941 01       		.byte	0x1
+ 803 1942 00       		.uleb128 0
+ 804 1943 5F5F4758 		.ascii "__GXX_TYPEINFO_EQUALITY_INLINE 0\0"
+ 804      585F5459 
+ 804      5045494E 
+ 804      464F5F45 
+ 804      5155414C 
+ 805 1964 01       		.byte	0x1
+ 806 1965 00       		.uleb128 0
+ 807 1966 5F5F4D53 		.ascii "__MSVCRT__ 1\0"
+ 807      56435254 
+ 807      5F5F2031 
+ 807      00
+ 808 1973 01       		.byte	0x1
+ 809 1974 00       		.uleb128 0
+ 810 1975 5F5F4D49 		.ascii "__MINGW32__ 1\0"
+ 810      4E475733 
+ 810      325F5F20 
+ 810      3100
+ 811 1983 01       		.byte	0x1
+ 812 1984 00       		.uleb128 0
+ 813 1985 5F57494E 		.ascii "_WIN32 1\0"
+ 813      33322031 
+ 813      00
+ 814 198e 01       		.byte	0x1
+ 815 198f 00       		.uleb128 0
+ 816 1990 5F5F5749 		.ascii "__WIN32 1\0"
+ 816      4E333220 
+ 816      3100
+ 817 199a 01       		.byte	0x1
+ 818 199b 00       		.uleb128 0
+ 819 199c 5F5F5749 		.ascii "__WIN32__ 1\0"
+ 819      4E33325F 
+ 819      5F203100 
+ 820 19a8 01       		.byte	0x1
+ 821 19a9 00       		.uleb128 0
+ 822 19aa 5F5F5749 		.ascii "__WINNT 1\0"
+ 822      4E4E5420 
+ 822      3100
+ 823 19b4 01       		.byte	0x1
+ 824 19b5 00       		.uleb128 0
+ 825 19b6 5F5F5749 		.ascii "__WINNT__ 1\0"
+ 825      4E4E545F 
+ 825      5F203100 
+ 826 19c2 01       		.byte	0x1
+ 827 19c3 00       		.uleb128 0
+ 828 19c4 5F494E54 		.ascii "_INTEGRAL_MAX_BITS 64\0"
+ 828      45475241 
+ 828      4C5F4D41 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 32
+
+
+ 828      585F4249 
+ 828      54532036 
+ 829 19da 01       		.byte	0x1
+ 830 19db 00       		.uleb128 0
+ 831 19dc 5F5F6465 		.ascii "__declspec(x) __attribute__((x))\0"
+ 831      636C7370 
+ 831      65632878 
+ 831      29205F5F 
+ 831      61747472 
+ 832 19fd 01       		.byte	0x1
+ 833 19fe 00       		.uleb128 0
+ 834 19ff 5F5F4445 		.ascii "__DECIMAL_BID_FORMAT__ 1\0"
+ 834      43494D41 
+ 834      4C5F4249 
+ 834      445F464F 
+ 834      524D4154 
+ 835 1a18 01       		.byte	0x1
+ 836 1a19 00       		.uleb128 0
+ 837 1a1a 4346475F 		.ascii "CFG_PROCESSOR 3\0"
+ 837      50524F43 
+ 837      4553534F 
+ 837      52203300 
+ 838 1a2a 03       		.byte	0x3
+ 839 1a2b 00       		.uleb128 0
+ 840 1a2c 01       		.uleb128 0x1
+ 841              		.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
+ 842 1a2d 03       		.byte	0x3
+ 843 1a2e 01       		.uleb128 0x1
+ 844 1a2f 02       		.uleb128 0x2
+ 845 1a30 01       		.byte	0x1
+ 846 1a31 02       		.uleb128 0x2
+ 847 1a32 5F6F735F 		.ascii "_os_firstinc_h_ \0"
+ 847      66697273 
+ 847      74696E63 
+ 847      5F685F20 
+ 847      00
+ 848              		.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
+ 849 1a43 03       		.byte	0x3
+ 850 1a44 04       		.uleb128 0x4
+ 851 1a45 03       		.uleb128 0x3
+ 852 1a46 01       		.byte	0x1
+ 853 1a47 02       		.uleb128 0x2
+ 854 1a48 5F424153 		.ascii "_BASE_TYPES_H_ \0"
+ 854      455F5459 
+ 854      5045535F 
+ 854      485F2000 
+ 855 1a58 01       		.byte	0x1
+ 856 1a59 04       		.uleb128 0x4
+ 857 1a5a 494E5445 		.ascii "INTEGER_LLP64_IL32P64 1\0"
+ 857      4745525F 
+ 857      4C4C5036 
+ 857      345F494C 
+ 857      33325036 
+ 858 1a72 01       		.byte	0x1
+ 859 1a73 05       		.uleb128 0x5
+ 860 1a74 494E5445 		.ascii "INTEGER_LP64_I32LP64 2\0"
+ 860      4745525F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 33
+
+
+ 860      4C503634 
+ 860      5F493332 
+ 860      4C503634 
+ 861 1a8b 01       		.byte	0x1
+ 862 1a8c 06       		.uleb128 0x6
+ 863 1a8d 494E5445 		.ascii "INTEGER_ILP64 3\0"
+ 863      4745525F 
+ 863      494C5036 
+ 863      34203300 
+ 864 1a9d 01       		.byte	0x1
+ 865 1a9e 07       		.uleb128 0x7
+ 866 1a9f 494E5445 		.ascii "INTEGER_SILP64 4\0"
+ 866      4745525F 
+ 866      53494C50 
+ 866      36342034 
+ 866      00
+ 867 1ab0 01       		.byte	0x1
+ 868 1ab1 09       		.uleb128 0x9
+ 869 1ab2 4350505F 		.ascii "CPP_VERSION_NONE 0\0"
+ 869      56455253 
+ 869      494F4E5F 
+ 869      4E4F4E45 
+ 869      203000
+ 870 1ac5 01       		.byte	0x1
+ 871 1ac6 0A       		.uleb128 0xa
+ 872 1ac7 4350505F 		.ascii "CPP_VERSION_1998 1\0"
+ 872      56455253 
+ 872      494F4E5F 
+ 872      31393938 
+ 872      203100
+ 873 1ada 01       		.byte	0x1
+ 874 1adb 0B       		.uleb128 0xb
+ 875 1adc 4350505F 		.ascii "CPP_VERSION_2003 2\0"
+ 875      56455253 
+ 875      494F4E5F 
+ 875      32303033 
+ 875      203200
+ 876 1aef 01       		.byte	0x1
+ 877 1af0 0C       		.uleb128 0xc
+ 878 1af1 4350505F 		.ascii "CPP_VERSION_2007 3\0"
+ 878      56455253 
+ 878      494F4E5F 
+ 878      32303037 
+ 878      203300
+ 879 1b04 01       		.byte	0x1
+ 880 1b05 0D       		.uleb128 0xd
+ 881 1b06 4350505F 		.ascii "CPP_VERSION_2011 4\0"
+ 881      56455253 
+ 881      494F4E5F 
+ 881      32303131 
+ 881      203400
+ 882 1b19 01       		.byte	0x1
+ 883 1b1a 0E       		.uleb128 0xe
+ 884 1b1b 49534F5F 		.ascii "ISO_CPP_VERSION CPP_VERSION_1998\0"
+ 884      4350505F 
+ 884      56455253 
+ 884      494F4E20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 34
+
+
+ 884      4350505F 
+ 885 1b3c 01       		.byte	0x1
+ 886 1b3d 10       		.uleb128 0x10
+ 887 1b3e 494E5445 		.ascii "INTEGER_MODEL INTEGER_LLP64_IL32P64\0"
+ 887      4745525F 
+ 887      4D4F4445 
+ 887      4C20494E 
+ 887      54454745 
+ 888 1b62 04       		.byte	0x4
+ 889              		.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
+ 890 1b63 03       		.byte	0x3
+ 891 1b64 05       		.uleb128 0x5
+ 892 1b65 04       		.uleb128 0x4
+ 893 1b66 01       		.byte	0x1
+ 894 1b67 02       		.uleb128 0x2
+ 895 1b68 5F6F735F 		.ascii "_os_common_h_ \0"
+ 895      636F6D6D 
+ 895      6F6E5F68 
+ 895      5F2000
+ 896 1b77 01       		.byte	0x1
+ 897 1b78 06       		.uleb128 0x6
+ 898 1b79 46616C73 		.ascii "False 0\0"
+ 898      65203000 
+ 899 1b81 01       		.byte	0x1
+ 900 1b82 07       		.uleb128 0x7
+ 901 1b83 54727565 		.ascii "True 1\0"
+ 901      203100
+ 902 1b8a 01       		.byte	0x1
+ 903 1b8b 08       		.uleb128 0x8
+ 904 1b8c 41636365 		.ascii "Accepted 1\0"
+ 904      70746564 
+ 904      203100
+ 905 1b97 01       		.byte	0x1
+ 906 1b98 09       		.uleb128 0x9
+ 907 1b99 52656A65 		.ascii "Rejected 0\0"
+ 907      63746564 
+ 907      203000
+ 908 1ba4 01       		.byte	0x1
+ 909 1ba5 0A       		.uleb128 0xa
+ 910 1ba6 4C6F6361 		.ascii "Local static\0"
+ 910      6C207374 
+ 910      61746963 
+ 910      00
+ 911 1bb3 01       		.byte	0x1
+ 912 1bb4 0B       		.uleb128 0xb
+ 913 1bb5 4C6F6361 		.ascii "Local_inline static __inline__\0"
+ 913      6C5F696E 
+ 913      6C696E65 
+ 913      20737461 
+ 913      74696320 
+ 914 1bd4 01       		.byte	0x1
+ 915 1bd5 0C       		.uleb128 0xc
+ 916 1bd6 476C6F62 		.ascii "Global_inline __inline__\0"
+ 916      616C5F69 
+ 916      6E6C696E 
+ 916      65205F5F 
+ 916      696E6C69 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 35
+
+
+ 917 1bef 01       		.byte	0x1
+ 918 1bf0 0D       		.uleb128 0xd
+ 919 1bf1 52656665 		.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
+ 919      72656E63 
+ 919      65556E75 
+ 919      73656450 
+ 919      6172616D 
+ 920 1c19 01       		.byte	0x1
+ 921 1c1a 10       		.uleb128 0x10
+ 922 1c1b 634D4355 		.ascii "cMCU_SIMULATION 1\0"
+ 922      5F53494D 
+ 922      554C4154 
+ 922      494F4E20 
+ 922      3100
+ 923 1c2d 01       		.byte	0x1
+ 924 1c2e 11       		.uleb128 0x11
+ 925 1c2f 634D4355 		.ascii "cMCU_POWERPC 2\0"
+ 925      5F504F57 
+ 925      45525043 
+ 925      203200
+ 926 1c3e 01       		.byte	0x1
+ 927 1c3f 12       		.uleb128 0x12
+ 928 1c40 634D4355 		.ascii "cMCU_X86 3\0"
+ 928      5F583836 
+ 928      203300
+ 929 1c4b 01       		.byte	0x1
+ 930 1c4c 13       		.uleb128 0x13
+ 931 1c4d 634D4355 		.ascii "cMCU_CORTEX_M4 4\0"
+ 931      5F434F52 
+ 931      5445585F 
+ 931      4D342034 
+ 931      00
+ 932 1c5e 01       		.byte	0x1
+ 933 1c5f 16       		.uleb128 0x16
+ 934 1c60 4E525F4F 		.ascii "NR_OF_CORES 1\0"
+ 934      465F434F 
+ 934      52455320 
+ 934      3100
+ 935 1c6e 01       		.byte	0x1
+ 936 1c6f 23       		.uleb128 0x23
+ 937 1c70 44697361 		.ascii "DisableInterrupts() \0"
+ 937      626C6549 
+ 937      6E746572 
+ 937      72757074 
+ 937      73282920 
+ 938 1c85 01       		.byte	0x1
+ 939 1c86 24       		.uleb128 0x24
+ 940 1c87 456E6162 		.ascii "EnableInterrupts() \0"
+ 940      6C65496E 
+ 940      74657272 
+ 940      75707473 
+ 940      28292000 
+ 941 1c9b 01       		.byte	0x1
+ 942 1c9c 25       		.uleb128 0x25
+ 943 1c9d 50726976 		.ascii "Privilige_level_save_current() \0"
+ 943      696C6967 
+ 943      655F6C65 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 36
+
+
+ 943      76656C5F 
+ 943      73617665 
+ 944 1cbd 01       		.byte	0x1
+ 945 1cbe 26       		.uleb128 0x26
+ 946 1cbf 50726976 		.ascii "Privilige_level_enter_kernel_mode() \0"
+ 946      696C6967 
+ 946      655F6C65 
+ 946      76656C5F 
+ 946      656E7465 
+ 947 1ce4 01       		.byte	0x1
+ 948 1ce5 27       		.uleb128 0x27
+ 949 1ce6 50726976 		.ascii "Privilige_level_restore_saved() \0"
+ 949      696C6967 
+ 949      655F6C65 
+ 949      76656C5F 
+ 949      72657374 
+ 950 1d07 01       		.byte	0x1
+ 951 1d08 28       		.uleb128 0x28
+ 952 1d09 48616C74 		.ascii "HaltMcu() \0"
+ 952      4D637528 
+ 952      292000
+ 953 1d14 04       		.byte	0x4
+ 954              		.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
+ 955 1d15 03       		.byte	0x3
+ 956 1d16 07       		.uleb128 0x7
+ 957 1d17 05       		.uleb128 0x5
+ 958 1d18 01       		.byte	0x1
+ 959 1d19 02       		.uleb128 0x2
+ 960 1d1a 5F6C6C64 		.ascii "_lld_global_h_ \0"
+ 960      5F676C6F 
+ 960      62616C5F 
+ 960      685F2000 
+ 961              		.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
+ 962 1d2a 03       		.byte	0x3
+ 963 1d2b 04       		.uleb128 0x4
+ 964 1d2c 06       		.uleb128 0x6
+ 965 1d2d 01       		.byte	0x1
+ 966 1d2e 02       		.uleb128 0x2
+ 967 1d2f 5F6C6C64 		.ascii "_lld_core_h_ \0"
+ 967      5F636F72 
+ 967      655F685F 
+ 967      2000
+ 968              		.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_firsti
+ 969 1d3d 03       		.byte	0x3
+ 970 1d3e 03       		.uleb128 0x3
+ 971 1d3f 07       		.uleb128 0x7
+ 972 1d40 04       		.byte	0x4
+ 973 1d41 04       		.byte	0x4
+ 974              		.file 8 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_adc.h"
+ 975 1d42 03       		.byte	0x3
+ 976 1d43 05       		.uleb128 0x5
+ 977 1d44 08       		.uleb128 0x8
+ 978 1d45 01       		.byte	0x1
+ 979 1d46 02       		.uleb128 0x2
+ 980 1d47 5F6C6C64 		.ascii "_lld_adc_h_ \0"
+ 980      5F616463 
+ 980      5F685F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 37
+
+
+ 980      00
+ 981 1d54 04       		.byte	0x4
+ 982              		.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_can.h"
+ 983 1d55 03       		.byte	0x3
+ 984 1d56 06       		.uleb128 0x6
+ 985 1d57 09       		.uleb128 0x9
+ 986 1d58 01       		.byte	0x1
+ 987 1d59 02       		.uleb128 0x2
+ 988 1d5a 5F6C6C64 		.ascii "_lld_can_h_ \0"
+ 988      5F63616E 
+ 988      5F685F20 
+ 988      00
+ 989 1d67 04       		.byte	0x4
+ 990              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_gpio.h"
+ 991 1d68 03       		.byte	0x3
+ 992 1d69 07       		.uleb128 0x7
+ 993 1d6a 0A       		.uleb128 0xa
+ 994 1d6b 01       		.byte	0x1
+ 995 1d6c 02       		.uleb128 0x2
+ 996 1d6d 5F6C6C64 		.ascii "_lld_gpio_h_ \0"
+ 996      5F677069 
+ 996      6F5F685F 
+ 996      2000
+ 997 1d7b 04       		.byte	0x4
+ 998              		.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
+ 999 1d7c 03       		.byte	0x3
+ 1000 1d7d 08       		.uleb128 0x8
+ 1001 1d7e 0B       		.uleb128 0xb
+ 1002 1d7f 01       		.byte	0x1
+ 1003 1d80 02       		.uleb128 0x2
+ 1004 1d81 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
+ 1004      5F696E74 
+ 1004      65727275 
+ 1004      70745F68 
+ 1004      5F2000
+ 1005 1d94 01       		.byte	0x1
+ 1006 1d95 05       		.uleb128 0x5
+ 1007 1d96 6F735F69 		.ascii "os_interrupt_swi_1 asm(\"swi 1\")\0"
+ 1007      6E746572 
+ 1007      72757074 
+ 1007      5F737769 
+ 1007      5F312061 
+ 1008 1db6 01       		.byte	0x1
+ 1009 1db7 06       		.uleb128 0x6
+ 1010 1db8 6F735F69 		.ascii "os_interrupt_swi_2 asm(\"swi 2\")\0"
+ 1010      6E746572 
+ 1010      72757074 
+ 1010      5F737769 
+ 1010      5F322061 
+ 1011 1dd8 01       		.byte	0x1
+ 1012 1dd9 07       		.uleb128 0x7
+ 1013 1dda 6F735F69 		.ascii "os_interrupt_swi_3 asm(\"swi 3\")\0"
+ 1013      6E746572 
+ 1013      72757074 
+ 1013      5F737769 
+ 1013      5F332061 
+ 1014 1dfa 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 38
+
+
+ 1015 1dfb 08       		.uleb128 0x8
+ 1016 1dfc 6F735F69 		.ascii "os_interrupt_swi_4 asm(\"swi 4\")\0"
+ 1016      6E746572 
+ 1016      72757074 
+ 1016      5F737769 
+ 1016      5F342061 
+ 1017 1e1c 01       		.byte	0x1
+ 1018 1e1d 09       		.uleb128 0x9
+ 1019 1e1e 6F735F69 		.ascii "os_interrupt_swi_5 asm(\"swi 5\")\0"
+ 1019      6E746572 
+ 1019      72757074 
+ 1019      5F737769 
+ 1019      5F352061 
+ 1020 1e3e 04       		.byte	0x4
+ 1021              		.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
+ 1022 1e3f 03       		.byte	0x3
+ 1023 1e40 09       		.uleb128 0x9
+ 1024 1e41 0C       		.uleb128 0xc
+ 1025 1e42 01       		.byte	0x1
+ 1026 1e43 02       		.uleb128 0x2
+ 1027 1e44 5F6C6C64 		.ascii "_lld_mmu_h_ \0"
+ 1027      5F6D6D75 
+ 1027      5F685F20 
+ 1027      00
+ 1028 1e51 03       		.byte	0x3
+ 1029 1e52 04       		.uleb128 0x4
+ 1030 1e53 05       		.uleb128 0x5
+ 1031 1e54 04       		.byte	0x4
+ 1032 1e55 04       		.byte	0x4
+ 1033              		.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
+ 1034 1e56 03       		.byte	0x3
+ 1035 1e57 0A       		.uleb128 0xa
+ 1036 1e58 0D       		.uleb128 0xd
+ 1037 1e59 01       		.byte	0x1
+ 1038 1e5a 02       		.uleb128 0x2
+ 1039 1e5b 5F6C6C64 		.ascii "_lld_timer_h_ \0"
+ 1039      5F74696D 
+ 1039      65725F68 
+ 1039      5F2000
+ 1040 1e6a 04       		.byte	0x4
+ 1041              		.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
+ 1042 1e6b 03       		.byte	0x3
+ 1043 1e6c 0B       		.uleb128 0xb
+ 1044 1e6d 0E       		.uleb128 0xe
+ 1045 1e6e 01       		.byte	0x1
+ 1046 1e6f 02       		.uleb128 0x2
+ 1047 1e70 5F6C6C64 		.ascii "_lld_power_h_ \0"
+ 1047      5F706F77 
+ 1047      65725F68 
+ 1047      5F2000
+ 1048 1e7f 04       		.byte	0x4
+ 1049              		.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
+ 1050 1e80 03       		.byte	0x3
+ 1051 1e81 0C       		.uleb128 0xc
+ 1052 1e82 0F       		.uleb128 0xf
+ 1053 1e83 01       		.byte	0x1
+ 1054 1e84 02       		.uleb128 0x2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 39
+
+
+ 1055 1e85 5F6C6C64 		.ascii "_lld_ram_h_ \0"
+ 1055      5F72616D 
+ 1055      5F685F20 
+ 1055      00
+ 1056 1e92 04       		.byte	0x4
+ 1057              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_watchdog.h"
+ 1058 1e93 03       		.byte	0x3
+ 1059 1e94 0D       		.uleb128 0xd
+ 1060 1e95 10       		.uleb128 0x10
+ 1061 1e96 01       		.byte	0x1
+ 1062 1e97 02       		.uleb128 0x2
+ 1063 1e98 5F6C6C64 		.ascii "_lld_watchdog_h_ \0"
+ 1063      5F776174 
+ 1063      6368646F 
+ 1063      675F685F 
+ 1063      2000
+ 1064 1eaa 04       		.byte	0x4
+ 1065              		.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
+ 1066 1eab 03       		.byte	0x3
+ 1067 1eac 0E       		.uleb128 0xe
+ 1068 1ead 11       		.uleb128 0x11
+ 1069 1eae 01       		.byte	0x1
+ 1070 1eaf 02       		.uleb128 0x2
+ 1071 1eb0 5F6F735F 		.ascii "_os_task_common_h_ \0"
+ 1071      7461736B 
+ 1071      5F636F6D 
+ 1071      6D6F6E5F 
+ 1071      685F2000 
+ 1072              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
+ 1073 1ec4 03       		.byte	0x3
+ 1074 1ec5 04       		.uleb128 0x4
+ 1075 1ec6 12       		.uleb128 0x12
+ 1076 1ec7 01       		.byte	0x1
+ 1077 1ec8 02       		.uleb128 0x2
+ 1078 1ec9 5F6F735F 		.ascii "_os_task_config_h_ \0"
+ 1078      7461736B 
+ 1078      5F636F6E 
+ 1078      6669675F 
+ 1078      685F2000 
+ 1079 1edd 01       		.byte	0x1
+ 1080 1ede 05       		.uleb128 0x5
+ 1081 1edf 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
+ 1081      64756C65 
+ 1081      72467265 
+ 1081      7175656E 
+ 1081      63792028 
+ 1082 1efa 01       		.byte	0x1
+ 1083 1efb 06       		.uleb128 0x6
+ 1084 1efc 4D696E54 		.ascii "MinTimeSlice_s (1.0/SchedulerFrequency)\0"
+ 1084      696D6553 
+ 1084      6C696365 
+ 1084      5F732028 
+ 1084      312E302F 
+ 1085 1f24 01       		.byte	0x1
+ 1086 1f25 07       		.uleb128 0x7
+ 1087 1f26 4D696E54 		.ascii "MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\0"
+ 1087      696D6553 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 40
+
+
+ 1087      6C696365 
+ 1087      5F757320 
+ 1087      2828312E 
+ 1088 1f55 01       		.byte	0x1
+ 1089 1f56 08       		.uleb128 0x8
+ 1090 1f57 5461736B 		.ascii "Task_min_time (1e0)\0"
+ 1090      5F6D696E 
+ 1090      5F74696D 
+ 1090      65202831 
+ 1090      65302900 
+ 1091 1f6b 01       		.byte	0x1
+ 1092 1f6c 09       		.uleb128 0x9
+ 1093 1f6d 4E554D42 		.ascii "NUMBER_OF_TASKS 5\0"
+ 1093      45525F4F 
+ 1093      465F5441 
+ 1093      534B5320 
+ 1093      3500
+ 1094 1f7f 01       		.byte	0x1
+ 1095 1f80 0A       		.uleb128 0xa
+ 1096 1f81 4D41585F 		.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
+ 1096      52554E5F 
+ 1096      51554555 
+ 1096      455F5349 
+ 1096      5A452028 
+ 1097 1fa6 01       		.byte	0x1
+ 1098 1fa7 0B       		.uleb128 0xb
+ 1099 1fa8 4D41585F 		.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
+ 1099      52554E5F 
+ 1099      50515545 
+ 1099      55455F53 
+ 1099      495A4520 
+ 1100 1fcf 01       		.byte	0x1
+ 1101 1fd0 0D       		.uleb128 0xd
+ 1102 1fd1 5441534B 		.ascii "TASK_STACK_SIZE 200\0"
+ 1102      5F535441 
+ 1102      434B5F53 
+ 1102      495A4520 
+ 1102      32303000 
+ 1103 1fe5 01       		.byte	0x1
+ 1104 1fe6 10       		.uleb128 0x10
+ 1105 1fe7 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
+ 1105      45525F53 
+ 1105      45432028 
+ 1105      31303030 
+ 1105      2900
+ 1106 1ff9 01       		.byte	0x1
+ 1107 1ffa 11       		.uleb128 0x11
+ 1108 1ffb 5553455F 		.ascii "USE_STATIC_CREATED_TASKS True\0"
+ 1108      53544154 
+ 1108      49435F43 
+ 1108      52454154 
+ 1108      45445F54 
+ 1109 2019 04       		.byte	0x4
+ 1110              		.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_
+ 1111 201a 03       		.byte	0x3
+ 1112 201b 05       		.uleb128 0x5
+ 1113 201c 13       		.uleb128 0x13
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 41
+
+
+ 1114 201d 01       		.byte	0x1
+ 1115 201e 02       		.uleb128 0x2
+ 1116 201f 5F6F735F 		.ascii "_os_init_task_system_h_ \0"
+ 1116      696E6974 
+ 1116      5F746173 
+ 1116      6B5F7379 
+ 1116      7374656D 
+ 1117 2038 04       		.byte	0x4
+ 1118 2039 01       		.byte	0x1
+ 1119 203a 5C       		.uleb128 0x5c
+ 1120 203b 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
+ 1120      61766554 
+ 1120      61736B50 
+ 1120      74722874 
+ 1120      61736B5F 
+ 1121 2083 01       		.byte	0x1
+ 1122 2084 5D       		.uleb128 0x5d
+ 1123 2085 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
+ 1123      65745461 
+ 1123      736B5074 
+ 1123      72287461 
+ 1123      736B5F6E 
+ 1124 20c0 04       		.byte	0x4
+ 1125 20c1 04       		.byte	0x4
+ 1126 20c2 04       		.byte	0x4
+ 1127 20c3 04       		.byte	0x4
+ 1128 20c4 00       		.byte	0
+ 1129              		.section	.debug_line,"dr"
+ 1130              	Ldebug_line0:
+ 1131 0000 83020000 		.section	.debug_str,"dr"
+ 1131      02006702 
+ 1131      00000101 
+ 1131      FB0E0D00 
+ 1131      01010101 
+ 1132              		.ident	"GCC: (GNU) 4.9.3"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s 			page 42
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_init_mc.c
-C:\Users\PRESID~1\AppData\Local\Temp\cctB3rIf.s:6      .text:00000000 _OS_INIT_MC
+C:\Users\PRESID~1\AppData\Local\Temp\cc5DcxOj.s:6      .text:00000000 _OS_INIT_MC
 
 UNDEFINED SYMBOLS
 _LLF_CLEAR_ALL_GP_REGISTERS

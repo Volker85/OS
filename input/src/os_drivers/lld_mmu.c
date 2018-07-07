@@ -11,17 +11,9 @@ void LLF_MPU_ENABLE(void)
    /*#warn "LLF_MPU_ENABLE not yet implemented"*/
 }
 
-void LLF_MPU_SET_REGION(CoreID_t core_id, void* startAddr, void* endAddr)
+void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void)
 {
-   ReferenceUnusedParameter(core_id);
-   ReferenceUnusedParameter(startAddr);
-   ReferenceUnusedParameter(endAddr);
-   /*#warn "LLF_MMU_SET_REGION not yet implemented"*/
-}
-
-void LLF_MPU_SWITCH_OFF_ALL_REGIONS(CoreID_t core_id)
-{
-   ReferenceUnusedParameter(core_id);   
+  
 }
 
 unsigned_char_t LLF_GET_MPU_PRESENT(void)

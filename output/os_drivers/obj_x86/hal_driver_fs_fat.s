@@ -227,6 +227,8 @@ LFB2:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	.loc 1 99 0
+	movl	$0, %eax
+	.loc 1 100 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -236,7 +238,7 @@ LFE2:
 	.def	_fclose;	.scl	3;	.type	32;	.endef
 _fclose:
 LFB3:
-	.loc 1 101 0
+	.loc 1 102 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -244,63 +246,65 @@ LFB3:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$16, %esp
-	.loc 1 102 0
+	.loc 1 103 0
 	movb	$0, -1(%ebp)
-	.loc 1 104 0
+	.loc 1 105 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-2, %edx
 	movb	%dl, (%eax)
-	.loc 1 105 0
+	.loc 1 106 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-3, %edx
 	movb	%dl, (%eax)
-	.loc 1 106 0
+	.loc 1 107 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-5, %edx
 	movb	%dl, (%eax)
-	.loc 1 107 0
+	.loc 1 108 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-9, %edx
 	movb	%dl, (%eax)
-	.loc 1 108 0
+	.loc 1 109 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-17, %edx
 	movb	%dl, (%eax)
-	.loc 1 109 0
+	.loc 1 110 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-33, %edx
 	movb	%dl, (%eax)
-	.loc 1 110 0
+	.loc 1 111 0
 	movb	$0, -1(%ebp)
-	jmp	L28
-L29:
-	.loc 1 112 0 discriminator 3
+	jmp	L29
+L30:
+	.loc 1 113 0 discriminator 3
 	movzbl	-1(%ebp), %eax
 	movl	8(%ebp), %edx
 	movb	$0, 12(%edx,%eax)
-	.loc 1 110 0 discriminator 3
+	.loc 1 111 0 discriminator 3
 	movb	-1(%ebp), %al
 	incl	%eax
 	movb	%al, -1(%ebp)
-L28:
-	.loc 1 110 0 is_stmt 0 discriminator 1
+L29:
+	.loc 1 111 0 is_stmt 0 discriminator 1
 	movzbl	-1(%ebp), %edx
 	movl	8(%ebp), %eax
 	movl	4(%eax), %eax
 	cmpl	%eax, %edx
-	jb	L29
-	.loc 1 114 0 is_stmt 1
+	jb	L30
+	.loc 1 115 0 is_stmt 1
 	movl	8(%ebp), %eax
 	movl	$0, 8(%eax)
-	.loc 1 115 0
-	movl	$0, 8(%ebp)
 	.loc 1 116 0
+	movl	$0, 8(%ebp)
+	.loc 1 117 0
+	movl	$0, %eax
+	.loc 1 118 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -311,14 +315,16 @@ LFE3:
 	.def	_remove;	.scl	2;	.type	32;	.endef
 _remove:
 LFB4:
-	.loc 1 118 0
+	.loc 1 120 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 120 0
+	.loc 1 122 0
+	movl	$0, %eax
+	.loc 1 123 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -329,14 +335,16 @@ LFE4:
 	.def	_rename;	.scl	2;	.type	32;	.endef
 _rename:
 LFB5:
-	.loc 1 122 0
+	.loc 1 125 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 124 0
+	.loc 1 127 0
+	movl	$0, %eax
+	.loc 1 128 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -347,14 +355,16 @@ LFE5:
 	.def	_fread;	.scl	2;	.type	32;	.endef
 _fread:
 LFB6:
-	.loc 1 126 0
+	.loc 1 130 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 128 0
+	.loc 1 132 0
+	movl	$0, %eax
+	.loc 1 133 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -365,14 +375,16 @@ LFE6:
 	.def	_fwrite;	.scl	2;	.type	32;	.endef
 _fwrite:
 LFB7:
-	.loc 1 130 0
+	.loc 1 135 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 132 0
+	.loc 1 137 0
+	movl	$0, %eax
+	.loc 1 138 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -666,7 +678,7 @@ Ldebug_info0:
 	.uleb128 0xc
 	.ascii "fclose\0"
 	.byte	0x1
-	.byte	0x64
+	.byte	0x65
 	.long	0x337
 	.long	LFB3
 	.long	LFE3-LFB3
@@ -676,7 +688,7 @@ Ldebug_info0:
 	.uleb128 0xd
 	.secrel32	LASF1
 	.byte	0x1
-	.byte	0x64
+	.byte	0x65
 	.long	0x2aa
 	.uleb128 0x2
 	.byte	0x91
@@ -684,7 +696,7 @@ Ldebug_info0:
 	.uleb128 0xf
 	.ascii "i\0"
 	.byte	0x1
-	.byte	0x66
+	.byte	0x67
 	.long	0xbc
 	.uleb128 0x2
 	.byte	0x91
@@ -693,7 +705,7 @@ Ldebug_info0:
 	.uleb128 0x13
 	.ascii "remove\0"
 	.byte	0x1
-	.byte	0x75
+	.byte	0x77
 	.long	0x337
 	.long	LFB4
 	.long	LFE4-LFB4
@@ -703,7 +715,7 @@ Ldebug_info0:
 	.uleb128 0xd
 	.secrel32	LASF0
 	.byte	0x1
-	.byte	0x75
+	.byte	0x77
 	.long	0x2b0
 	.uleb128 0x2
 	.byte	0x91
@@ -712,7 +724,7 @@ Ldebug_info0:
 	.uleb128 0x13
 	.ascii "rename\0"
 	.byte	0x1
-	.byte	0x79
+	.byte	0x7c
 	.long	0x337
 	.long	LFB5
 	.long	LFE5-LFB5
@@ -722,7 +734,7 @@ Ldebug_info0:
 	.uleb128 0xe
 	.ascii "oldname\0"
 	.byte	0x1
-	.byte	0x79
+	.byte	0x7c
 	.long	0x2b0
 	.uleb128 0x2
 	.byte	0x91
@@ -730,7 +742,7 @@ Ldebug_info0:
 	.uleb128 0xe
 	.ascii "newname\0"
 	.byte	0x1
-	.byte	0x79
+	.byte	0x7c
 	.long	0x2b0
 	.uleb128 0x2
 	.byte	0x91
@@ -739,7 +751,7 @@ Ldebug_info0:
 	.uleb128 0x13
 	.ascii "fread\0"
 	.byte	0x1
-	.byte	0x7d
+	.byte	0x81
 	.long	0xf4
 	.long	LFB6
 	.long	LFE6-LFB6
@@ -749,7 +761,7 @@ Ldebug_info0:
 	.uleb128 0xe
 	.ascii "ptr\0"
 	.byte	0x1
-	.byte	0x7d
+	.byte	0x81
 	.long	0x102
 	.uleb128 0x2
 	.byte	0x91
@@ -757,7 +769,7 @@ Ldebug_info0:
 	.uleb128 0xe
 	.ascii "size\0"
 	.byte	0x1
-	.byte	0x7d
+	.byte	0x81
 	.long	0xf4
 	.uleb128 0x2
 	.byte	0x91
@@ -765,7 +777,7 @@ Ldebug_info0:
 	.uleb128 0xe
 	.ascii "nobj\0"
 	.byte	0x1
-	.byte	0x7d
+	.byte	0x81
 	.long	0xf4
 	.uleb128 0x2
 	.byte	0x91
@@ -773,7 +785,7 @@ Ldebug_info0:
 	.uleb128 0xd
 	.secrel32	LASF2
 	.byte	0x1
-	.byte	0x7d
+	.byte	0x81
 	.long	0x2aa
 	.uleb128 0x2
 	.byte	0x91
@@ -782,7 +794,7 @@ Ldebug_info0:
 	.uleb128 0x13
 	.ascii "fwrite\0"
 	.byte	0x1
-	.byte	0x81
+	.byte	0x86
 	.long	0xf4
 	.long	LFB7
 	.long	LFE7-LFB7
@@ -792,7 +804,7 @@ Ldebug_info0:
 	.uleb128 0xe
 	.ascii "ptr\0"
 	.byte	0x1
-	.byte	0x81
+	.byte	0x86
 	.long	0x48e
 	.uleb128 0x2
 	.byte	0x91
@@ -800,7 +812,7 @@ Ldebug_info0:
 	.uleb128 0xe
 	.ascii "size\0"
 	.byte	0x1
-	.byte	0x81
+	.byte	0x86
 	.long	0xf4
 	.uleb128 0x2
 	.byte	0x91
@@ -808,7 +820,7 @@ Ldebug_info0:
 	.uleb128 0xe
 	.ascii "nobj\0"
 	.byte	0x1
-	.byte	0x81
+	.byte	0x86
 	.long	0xf4
 	.uleb128 0x2
 	.byte	0x91
@@ -816,7 +828,7 @@ Ldebug_info0:
 	.uleb128 0xd
 	.secrel32	LASF2
 	.byte	0x1
-	.byte	0x81
+	.byte	0x86
 	.long	0x2aa
 	.uleb128 0x2
 	.byte	0x91

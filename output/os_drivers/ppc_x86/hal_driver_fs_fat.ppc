@@ -385,13 +385,10 @@ extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
 
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 1
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_mmu.h" 2
-extern void LLF_SMPU_DISABLE(void);
-extern void LLF_CMPU_DISABLE(void);
-extern void LLF_SMPU_ENABLE(void);
-extern void LLF_CMPU_ENABLE(void);
-extern void LLF_SMPU_SWITCH_OFF_ALL_REGIONS(void);
-extern void LLF_CMPU_SWITCH_OFF_ALL_REGIONS(void);
-extern void LLF_MMU_SET_REGION(CoreID_t core_id, void* startAddr, void* endAddr);
+extern void LLF_MPU_DISABLE(void);
+extern void LLF_MPU_ENABLE(void);
+extern void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void);
+extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 # 10 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_timer.h" 1
 
@@ -535,6 +532,10 @@ extern void LLF_RESTORE_REGISTERS(task_t* task);
 extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
+
+extern void LLF_CLEAR_ALL_GP_REGISTERS(void);
+
+extern void LLF_PERFORM_RAM_CHECK(void);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\hal_driver_fs_fat.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_drivers\\hal_driver_fs_fat.h" 1
@@ -647,6 +648,7 @@ FILE* freopen(const char *filename, const char *mode, FILE *stream)
 int fflush(FILE* stream)
 {
 
+   return 0;
 }
 int fclose(FILE* file_ptr)
 {
@@ -664,20 +666,25 @@ int fclose(FILE* file_ptr)
    }
    file_ptr->used_file_name_size = 0;
    file_ptr = 0;
+   return 0;
 }
 int remove(const char *filename)
 {
 
+   return 0;
 }
 int rename(const char *oldname, const char *newname)
 {
 
+   return 0;
 }
 uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
 {
 
+   return 0;
 }
 uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
 {
 
+   return 0;
 }
