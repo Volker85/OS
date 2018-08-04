@@ -14,15 +14,9 @@ LFB0:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 14 0
-	call	_LLF_CLEAR_ALL_GP_REGISTERS
 	.loc 1 17 0
-	call	_LLF_CLEAR_ALL_RAM
-	.loc 1 20 0
-	call	_LLF_PERFORM_RAM_CHECK
-	.loc 1 39 0
 	call	_LLF_INT_ENABLE
-	.loc 1 40 0
+	.loc 1 18 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -1130,7 +1124,4 @@ Ldebug_macro0:
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
-	.def	_LLF_CLEAR_ALL_GP_REGISTERS;	.scl	2;	.type	32;	.endef
-	.def	_LLF_CLEAR_ALL_RAM;	.scl	2;	.type	32;	.endef
-	.def	_LLF_PERFORM_RAM_CHECK;	.scl	2;	.type	32;	.endef
 	.def	_LLF_INT_ENABLE;	.scl	2;	.type	32;	.endef

@@ -33,15 +33,9 @@ OS_INIT_MC:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 14 0
-	bl	LLF_CLEAR_ALL_GP_REGISTERS
 	.loc 1 17 0
-	bl	LLF_CLEAR_ALL_RAM
-	.loc 1 20 0
-	bl	LLF_PERFORM_RAM_CHECK
-	.loc 1 39 0
 	bl	LLF_INT_ENABLE
-	.loc 1 40 0
+	.loc 1 18 0
 	pop	{r7, pc}
 	.cfi_endproc
 .LFE0:

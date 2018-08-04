@@ -26,6 +26,7 @@ SECTIONS{
    } > rom
    .text ALIGN(0x08001000):
    {       
+      os_exception_reset.o
       os_common.o
       os_driver_hook.o
       os_exception.o

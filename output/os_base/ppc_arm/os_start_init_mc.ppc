@@ -686,14 +686,6 @@ extern void LLF_PERFORM_RAM_CHECK(void);
 
 void OS_INIT_MC(void)
 {
-# 14 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c"
-   LLF_CLEAR_ALL_GP_REGISTERS();
-
-
-   LLF_CLEAR_ALL_RAM();
-
-
-   LLF_PERFORM_RAM_CHECK();
-# 39 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c"
+# 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c"
    LLF_INT_ENABLE();
 }

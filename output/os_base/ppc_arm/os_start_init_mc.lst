@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccYPAF3Z.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccQLMiyX.s 			page 1
 
 
    1              		.syntax unified
@@ -40,64 +40,36 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccYPAF3Z.s 			page 1
   34 0002 00AF     		add	r7, sp, #0
   35              		.cfi_def_cfa_register 7
    5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* the basic MCU init needs to be done at the very start before C-Code is called...-> moved out 
-   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 1. all basic internal MCU parts */
-   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* exception handler */  
-   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* -> this is done via linking the exception_table.o to the correct place in FLASH */
-   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    
-  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* disable cache */
-  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* -> cache of instruction or data not available in STM32F407VGT6 */
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
-  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* reset all general purpose registers: r0..r31,... */
-  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    LLF_CLEAR_ALL_GP_REGISTERS();
-  36              		.loc 1 14 0
-  37 0004 FFF7FEFF 		bl	LLF_CLEAR_ALL_GP_REGISTERS
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 2. all MCU IO*/
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* configure  SPI, GPIO, UART, CAN,  etc */
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /*TODO*/
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* test SPI, I2C,  GPIO, etc */
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /*TODO*/
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
   15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
-  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* reset all RAM */
-  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    LLF_CLEAR_ALL_RAM();
-  38              		.loc 1 17 0
-  39 0008 FFF7FEFF 		bl	LLF_CLEAR_ALL_RAM
-  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
-  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* perform initial RAM check */
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccYPAF3Z.s 			page 2
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 6. enable interrupts */
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    LLF_INT_ENABLE();
+  36              		.loc 1 17 0
+  37 0004 FFF7FEFF 		bl	LLF_INT_ENABLE
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** }
+  38              		.loc 1 18 0
+  39 0008 80BD     		pop	{r7, pc}
+  40              		.cfi_endproc
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccQLMiyX.s 			page 2
 
 
-  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    LLF_PERFORM_RAM_CHECK();
-  40              		.loc 1 20 0
-  41 000c FFF7FEFF 		bl	LLF_PERFORM_RAM_CHECK
-  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
-  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 2. all MCU IO*/
-  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* configure  SPI, GPIO, UART, CAN,  etc */
-  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /*TODO*/
-  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****       
-  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* test SPI, I2C,  GPIO, etc */
-  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /*TODO*/
-  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 3. setup mpu */
-  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /*TODO*/
-  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    
-  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 4. set the new PLL clock freq */
-  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /*TODO*/
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
-  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 5. enable the cache */
-  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* -> cache of instruction or data not available in STM32F407VGT6 */
-  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    
-  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 6. enable interrupts */
-  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    LLF_INT_ENABLE();
-  42              		.loc 1 39 0
-  43 0010 FFF7FEFF 		bl	LLF_INT_ENABLE
-  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** }
-  44              		.loc 1 40 0
-  45 0014 80BD     		pop	{r7, pc}
-  46              		.cfi_endproc
-  47              	.LFE0:
-  49              	.Letext0:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccYPAF3Z.s 			page 3
+  41              	.LFE0:
+  43              	.Letext0:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccQLMiyX.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_init_mc.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccYPAF3Z.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccYPAF3Z.s:23     .text:00000000 OS_INIT_MC
+C:\Users\PRESID~1\AppData\Local\Temp\ccQLMiyX.s:18     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccQLMiyX.s:23     .text:00000000 OS_INIT_MC
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
@@ -107,7 +79,4 @@ C:\Users\PRESID~1\AppData\Local\Temp\ccYPAF3Z.s:23     .text:00000000 OS_INIT_MC
                            .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
 
 UNDEFINED SYMBOLS
-LLF_CLEAR_ALL_GP_REGISTERS
-LLF_CLEAR_ALL_RAM
-LLF_PERFORM_RAM_CHECK
 LLF_INT_ENABLE

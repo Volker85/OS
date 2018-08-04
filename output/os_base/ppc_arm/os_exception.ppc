@@ -307,7 +307,6 @@
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_GNU_INLINE__ 1
 #define __NO_INLINE__ 1
-#define __STRICT_ANSI__ 1
 #define __CHAR_UNSIGNED__ 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1
@@ -724,25 +723,57 @@ extern void OS_SHUTDOWN(os_reset_type_t reset_typ);
 #define _os_start_os_h_ 
 extern void OS_START_OS(void);
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 1
+
+#define _OS_RAM_H_ 
+
+
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.h" 1
+
+#define _os_stack_h_ 
+
+#define OS_STACK_SIZE 0x100
+
+extern unsigned_char_t OS_STACK[1][0x100];
+# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
+
+#define _os_heap_h_ 
+
+
+#define HEAP_SIZE 10000
+#define MIN_BLOCK_SIZE_HEAP 8
+
+
+#define HEAP_OFFSET_FOR_SIZE 0
+#define HEAP_OFFSET_FOR_USED_SIZE 4
+#define HEAP_OFFSET_FOR_CHUNK 8
+
+extern uint8 HEAP[10000];
+
+extern void* os_calloc(uint32 num, uint32 size);
+extern void* os_realloc(void* ptr_old, uint32 size_new);
+extern void* os_malloc(uint32 size);
+extern void os_free(void* ptr);
+# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
+
+
+extern unsigned_char_t HEAP[10000];
+
+
+extern unsigned_char_t OS_STACK[1][0x100];
+# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\hal_driver_sci.h" 1
 
 #define _hal_driver_sci_h_ 
 
 
 extern void OS_ISRISOK(void);
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
+# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
 
 
 
 
-void OS_Exception_RESET()
-{
-# 56 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-   LLF_CLEAR_ALL_RAM();
-# 66 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-   OS_START_OS();
-
-}
 void OS_Exception_UNDEFINST()
 {
    OS_SET_SW_BUG(os_bug_exception_UndefInstruction, Func_os_exception);
