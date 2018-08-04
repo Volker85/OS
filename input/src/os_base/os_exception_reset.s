@@ -48,7 +48,7 @@ LLF_SAVE_TASK_STACK:
         # r0 holds address of task stack pointer of the OS
         # r13  is the stack pointer of the MCU
         # step1+2: write the r13 to [r0] 
-        MOV [r0],r13
+        STR r13, [r0]
         # 3. invalidate the register (==0) 
         MOV r13,#0
         MOV R15, R14
@@ -57,7 +57,7 @@ LLF_RESTORE_TASK_STACK:
         # r0 holds address of system stack pointer of the OS
         # r13  is the stack pointer of the MCU
         # step1: write the [r0] to r13 
-        MOV r13, [r0]
+        STR r13, [r0]
         MOV R15, R14     
         
 GET_CORE_ID:
@@ -103,7 +103,7 @@ LLF_RESTORE_SYSTEM_STACK:
         # r0 holds address of system stack pointer of the OS
         # r13  is the stack pointer of the MCU
         # step1: write the [r0] to r13 
-        MOV r13, [r0]
+        STR r13, [r0]
         MOV R15, R14
 
 # input: task_t* task         
@@ -111,7 +111,7 @@ LLF_SAVE_SYSTEM_STACK:
         # r0 holds address of system stack pointer of the OS
         # r13  is the stack pointer of the MCU
         # step1: write the r13 to [r0] 
-        MOV [r0],r13
+        STR [r0],r13
         # invalidate the Stack pointer of the MCU 
         MOV r13,#0
         MOV R15, R14
