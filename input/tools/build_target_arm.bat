@@ -136,7 +136,6 @@ arm-none-eabi-as                     -mcpu=cortex-m4 -mthumb                    
 arm-none-eabi-as                     -mcpu=cortex-m4 -mthumb                                           -c               %SRC_DIR%\os_drivers\lld_power.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\lld_power.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-as                     -mcpu=cortex-m4 -mthumb                                           -c               %SRC_DIR%\os_drivers\lld_ram.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\lld_ram.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-as                     -mcpu=cortex-m4 -mthumb                                           -c               %SRC_DIR%\os_drivers\lld_timer.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\lld_timer.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-as                     -mcpu=cortex-m4 -mthumb                                           -c               %SRC_DIR%\os_drivers\lld_watchdog.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\lld_watchdog.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_user_code\led.c					-o %OUTPUT_DIR%\os_user_code\obj_arm\led.o			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 
 REM

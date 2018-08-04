@@ -8,8 +8,6 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
 
    /* clear mmu config */
    LLF_MPU_DISABLE();
-   /* switch off WATCHDOG */
-   LLF_SWITCH_OFF_WATCHDOG();
 
    /* clear all RAM */
    LLF_CLEAR_ALL_RAM();

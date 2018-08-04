@@ -20,9 +20,7 @@ extern void LLF_RESTORE_REGISTERS(task_t* task);
 extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_TCMP1_CONFIG(void);
 extern void LLF_ADD_2_TCMP(unsigned_int32_t value_us);
-extern void LLF_SWITCH_OFF_WATCHDOG(void);
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
-extern void LLF_SWITCH_OFF_WATCHDOG(void);
 extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 #endif /* _lld_global_h_ */
