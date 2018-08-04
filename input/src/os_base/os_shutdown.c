@@ -1,6 +1,6 @@
 #include "os_firstinc.h"
 #include "os_shutdown.h"
-#include "..\os_drivers\lld_global.h"
+
 void OS_SHUTDOWN(os_reset_type_t reset_typ)
 {
    /* disable interrupts for all cores -> prevents task activation, etc*/

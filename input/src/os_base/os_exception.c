@@ -3,7 +3,6 @@
 #include "os_shutdown.h"
 #include "os_start_os.h"
 #include "os_ram.h"
-#include "..\os_drivers\hal_driver_sci.h"
 
 /* the Interrupt table is set via the code linked to 0x00 and following ...   */
 /* interrupts are disabled during RESET exception and will be enabled by task system */
@@ -56,11 +55,3 @@ ISR TCMP4(void)
    OS_ISRHANDLERC3();
 }
 
-ISR ISOK_RECV(void)
-{
-   OS_ISRISOK();
-}
-ISR ISOK_TRANS(void)
-{
-   OS_ISRISOK();
-}

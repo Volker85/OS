@@ -2,7 +2,6 @@
 #include "os_task_common.h"
 #include "os_task_scheduler.h"
 #include "os_shutdown.h"
-#include "..\os_drivers\lld_interrupt.h"
 #include "os_start_init_mc.h"
 #include "os_start_init_hw.h"
 #include "os_start_init_sw.h"

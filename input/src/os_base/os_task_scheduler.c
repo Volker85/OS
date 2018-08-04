@@ -4,7 +4,7 @@
 #include "os_task_scheduler.h"
 #include "os_task_queue.h"
 #include "os_stack.h"
-#include "..\os_drivers\lld_global.h"
+
 /*
 1. running     --(terminate)--> suspend
 2. running     --(preempt  )--> ready
