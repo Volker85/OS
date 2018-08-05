@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
   43 000e 02FB03F3 		mul	r3, r2, r3
   44 0012 1846     		mov	r0, r3
   45 0014 FFF7FEFF 		bl	os_malloc
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 2
 
 
   46 0018 B860     		str	r0, [r7, #8]
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
   24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c **** --------------------------------------------------------------------
   25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c **** Changes the size of the memory block pointed to by ptr.
   26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c **** The function may move the memory block to a new location
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 3
 
 
   27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c ****  (whose address is returned by the function). The content of the memory
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
   45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c ****       if(ptr_new != 0u)/* memory to store the data ok? */
  126              		.loc 1 45 0
  127 0074 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 4
 
 
  128 0076 002B     		cmp	r3, #0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
  166              		.loc 1 59 0
  167 00ac 0023     		movs	r3, #0
  168 00ae 3B61     		str	r3, [r7, #16]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 5
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 5
 
 
  169              	.L7:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
   73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c ****    e.g. for memory layout
   74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c **** 
   75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c ****    UINT32 for size of chunk
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 6
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 6
 
 
   76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c ****    0x00000008,
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
  234              		.loc 1 107 0
  235 00ee 3B69     		ldr	r3, [r7, #16]
  236 00f0 0833     		adds	r3, r3, #8
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 7
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 7
 
 
  237 00f2 7B61     		str	r3, [r7, #20]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
  284              		.loc 1 112 0
  285              		.cfi_startproc
  286              		@ args = 0, pretend = 0, frame = 24
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 8
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 8
 
 
  287              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
  130:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c ****          SET_4UINT8_TO_UINT32((uint8*)heap_ptr + (uint32)HEAP_OFFSET_FOR_USED_SIZE, 0);/* set the u
  324              		.loc 1 130 0
  325 0154 7B69     		ldr	r3, [r7, #20]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 9
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 9
 
 
  326 0156 0433     		adds	r3, r3, #4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
  374 0186 85B0     		sub	sp, sp, #20
  375              		.cfi_def_cfa_offset 24
  376 0188 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 10
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 10
 
 
  377              		.cfi_def_cfa_register 7
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
  145:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c **** 
  146:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c ****    return ret_val;
  422              		.loc 1 146 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 11
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 11
 
 
  423 01d2 FB68     		ldr	r3, [r7, #12]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
  473 0202 1A70     		strb	r2, [r3]
  153:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c ****    ptr++;
  474              		.loc 1 153 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 12
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 12
 
 
  475 0204 7B68     		ldr	r3, [r7, #4]
@@ -698,27 +698,26 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 1
  506              	.Letext0:
  507              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
  508              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s 			page 13
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_heap.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:23     .text:00000000 os_calloc
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:188    .text:000000bc os_malloc
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:88     .text:00000048 os_realloc
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:282    .text:00000124 os_free
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:364    .text:00000184 GET_UINT32_OF_4UINT8
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:272    .text:0000011c $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:277    .text:00000124 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:442    .text:000001e0 SET_4UINT8_TO_UINT32
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:355    .text:0000017c $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccxROZtI.s:360    .text:00000184 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:18     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:23     .text:00000000 os_calloc
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:188    .text:000000bc os_malloc
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:88     .text:00000048 os_realloc
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:282    .text:00000124 os_free
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:364    .text:00000184 GET_UINT32_OF_4UINT8
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:272    .text:0000011c $d
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:277    .text:00000124 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:442    .text:000001e0 SET_4UINT8_TO_UINT32
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:355    .text:0000017c $d
+C:\Users\PRESID~1\AppData\Local\Temp\cc5l0oCb.s:360    .text:00000184 $t
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.9521b3e5c1199f549394d32eec33a9c8
-                           .group:00000000 wm4.lld_interrupt.h.2.b1b940a31d6b49628a13b8fe5e920a88
                            .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
                            .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
                            .group:00000000 wm4.os_heap.h.5.6a5b4fcd6ba27e52a647459afa7f11f4

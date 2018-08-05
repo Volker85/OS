@@ -10,6 +10,8 @@ From the AAPCS, §5.1.1:
     r12-r15 are special registers
 
 */        
+        .thumb
+        .syntax unified
         .text
         //.global Test
         //.extern OS_START_OS

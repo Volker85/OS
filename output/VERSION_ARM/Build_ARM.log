@@ -1,85 +1,22 @@
 "Target_ARM" 
-04.08.2018 12:24:34,49 
+05.08.2018 18:16:37,09 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'freopen':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:91:4: warning: implicit declaration of function 'fclose' [-Wimplicit-function-declaration]
-    fclose(stream);
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'remove':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:118:24: warning: unused parameter 'filename' [-Wunused-parameter]
- int remove(const char *filename)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'rename':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:123:24: warning: unused parameter 'oldname' [-Wunused-parameter]
- int rename(const char *oldname, const char *newname)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:123:45: warning: unused parameter 'newname' [-Wunused-parameter]
- int rename(const char *oldname, const char *newname)
-                                             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'fread':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:128:20: warning: unused parameter 'ptr' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'fwrite':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:136:27: warning: unused parameter 'ptr' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_INIT':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:5:26: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_INIT(led_t Led)
-                          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_ON':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:10:24: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_ON(led_t Led)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_OFF':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:15:25: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_OFF(led_t Led)
-                         ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_TOGGLE':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:20:28: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_TOGGLE(led_t Led)
-                            ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s: Assembler messages:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:55: Error: r13 not allowed here -- `mov r13,#0'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:89: Error: cannot use register index with PC-relative addressing -- `str r0,REGISTER_R0'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:90: Error: cannot use register index with PC-relative addressing -- `str r1,REGISTER_R1'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:91: Error: cannot use register index with PC-relative addressing -- `str r2,REGISTER_R2'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:92: Error: cannot use register index with PC-relative addressing -- `str r3,REGISTER_R3'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:116: Error: ARM register expected -- `str [r0],r13'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:118: Error: r13 not allowed here -- `mov r13,#0'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_power.s: Assembler messages:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_power.s:31: Error: ARM register expected -- `orr [r0],#0x00000002'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_power.s:30: Error: invalid constant (e000ed0c) after fixup
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_timer.s: Assembler messages:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_timer.s:26: Error: cannot use register index with PC-relative addressing -- `str R0,#0'
 "assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'freopen':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:91:4: warning: implicit declaration of function 'fclose' [-Wimplicit-function-declaration]
-    fclose(stream);
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'remove':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:118:24: warning: unused parameter 'filename' [-Wunused-parameter]
- int remove(const char *filename)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'rename':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:123:24: warning: unused parameter 'oldname' [-Wunused-parameter]
- int rename(const char *oldname, const char *newname)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:123:45: warning: unused parameter 'newname' [-Wunused-parameter]
- int rename(const char *oldname, const char *newname)
-                                             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'fread':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:128:20: warning: unused parameter 'ptr' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c: In function 'fwrite':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\hal_driver_fs_fat.c:136:27: warning: unused parameter 'ptr' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_INIT':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:5:26: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_INIT(led_t Led)
-                          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_ON':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:10:24: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_ON(led_t Led)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_OFF':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:15:25: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_OFF(led_t Led)
-                         ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_TOGGLE':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:20:28: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_TOGGLE(led_t Led)
-                            ^
 "link it" 
+d:/programm/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/bin/ld.exe: cannot find os_exception_reset.o
+collect2.exe: error: ld returned 1 exit status

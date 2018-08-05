@@ -467,87 +467,6 @@ typedef void (*func_ptr_t)(void);
 
 #define _lld_global_h_ 
 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 1
-
-#define _lld_core_h_ 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
-# 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 2
-enum CoreID_e
-{
-   Core0 = 0,
-   Core1,
-   Core2,
-   Core3
-};
-typedef enum CoreID_e CoreID_t;
-
-extern CoreID_t Get_core_id(void);
-# 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_adc.h" 1
-
-#define _lld_adc_h_ 
-# 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_can.h" 1
-
-#define _lld_can_h_ 
-# 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_gpio.h" 1
-
-#define _lld_gpio_h_ 
-# 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_interrupt.h" 1
-
-#define _lld_interrupt_h_ 
-
-
-#define os_interrupt_swi_1 asm("swi 1")
-#define os_interrupt_swi_2 asm("swi 2")
-#define os_interrupt_swi_3 asm("swi 3")
-#define os_interrupt_swi_4 asm("swi 4")
-#define os_interrupt_swi_5 asm("swi 5")
-
-extern void LLF_INT_DISABLE(void);
-extern void LLF_INT_ENABLE(void);
-extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
-# 9 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_mmu.h" 1
-
-#define _lld_mmu_h_ 
-
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 1
-# 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_mmu.h" 2
-extern void LLF_MPU_DISABLE(void);
-extern void LLF_MPU_ENABLE(void);
-extern void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void);
-extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
-# 10 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_timer.h" 1
-
-#define _lld_timer_h_ 
-
-extern uint32 LLF_UP_CNT_TIMER_32(void);
-extern void LLF_TCMP1_CONFIG(void);
-extern void LLF_ADD_2_TCMP(unsigned_int32_t value_us);
-# 11 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_power.h" 1
-
-#define _lld_power_h_ 
-
-extern void LLF_MCU_SWITCH_OFF_POWER(void);
-extern void LLF_MCU_RESET_POWER(void);
-# 12 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_ram.h" 1
-
-#define _lld_ram_h_ 
-
-extern void LLF_CLEAR_ALL_RAM(void);
-# 13 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_watchdog.h" 1
-
-#define _lld_watchdog_h_ 
-
-extern void LLF_SWITCH_OFF_WATCHDOG(void);
-# 14 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
 
 #define _os_task_common_h_ 
@@ -664,24 +583,62 @@ typedef unsigned scheduler_time_t;
 
 #define os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))
 #define os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])
-# 15 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
+# 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
+# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 1
 
-extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
+#define _lld_core_h_ 
+# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
+# 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 2
+enum CoreID_e
+{
+   Core0 = 0,
+   Core1,
+   Core2,
+   Core3
+};
+typedef enum CoreID_e CoreID_t;
 
-extern void LLF_SAVE_REGISTERS(task_t* task);
-
+extern CoreID_t Get_core_id(void);
+# 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
+extern uint32 LLF_UP_CNT_TIMER_32(void);
+extern void LLF_INT_ENABLE(void);
+extern void LLF_INT_DISABLE(void);
+extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
+extern void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void);
+extern void LLF_MCU_RESET_POWER(void);
+extern unsigned_char_t LLF_GET_MPU_PRESENT(void);
+extern void LLF_CLEAR_ALL_RAM(void);
+extern void LLF_CLEAR_RAM(void);
+extern void LLF_MCU_SWITCH_OFF_POWER(void);
+extern void LLF_MPU_DISABLE(void);
+extern void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3);
 extern void LLF_RESTORE_TASK_STACK(unsigned_char_t* StackPointer);
-
 extern void LLF_RESTORE_REGISTERS(task_t* task);
-
 extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
-
+extern void LLF_TCMP1_CONFIG(void);
+extern void LLF_ADD_2_TCMP(unsigned_int32_t value_us);
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
-
-extern void LLF_CLEAR_ALL_GP_REGISTERS(void);
-
-extern void LLF_PERFORM_RAM_CHECK(void);
+extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
+extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 # 10 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+
+# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h" 1
+
+#define _LED_H_ 
+# 40 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h"
+typedef enum
+{
+  LED1 = 0,
+  LED2 = 1,
+  LED3 = 2,
+  LED4 = 3
+} led_t;
+
+extern void USER_LED_INIT(led_t Led);
+extern void USER_LED_ON(led_t Led);
+extern void USER_LED_OFF(led_t Led);
+extern void USER_LED_TOGGLE(led_t Led);
+# 12 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c" 2
@@ -724,12 +681,6 @@ extern void ISR_TASK_DISPATCH_C2(void);
 extern void ISR_TASK_DISPATCH_C3(void);
 extern void OS_ACTIVATE_DISPATCHER(void);
 # 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\mcu_config.h" 1
-
-#define _mcu_config_h_ 
-
-#define SILICON_STM_CORTEX_M4 True
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 
 #define _os_heap_h_ 
@@ -749,14 +700,17 @@ extern void* os_calloc(uint32 num, uint32 size);
 extern void* os_realloc(void* ptr_old, uint32 size_new);
 extern void* os_malloc(uint32 size);
 extern void os_free(void* ptr);
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c" 2
+# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c" 2
 
 
 
 
 
 
-
+void* REGISTER_R0;
+void* REGISTER_R1;
+void* REGISTER_R2;
+void* REGISTER_R3;
 task_t* TASK_PTR[(5)];
 
 void OS_TASK_SAVETASK_ENVIRONMENT(task_t* task)
@@ -768,7 +722,11 @@ void OS_TASK_SAVETASK_ENVIRONMENT(task_t* task)
 
 
       LLF_SAVE_TASK_STACK(task->pStackPointer);
-      LLF_SAVE_REGISTERS(task);
+
+
+
+      LLF_SAVE_REGISTERS(task->r0,task->r1,task->r2,task->r3);
+
    }
    else
    {

@@ -1,43 +1,62 @@
 	.file	"os_task_common.c"
 	.text
 Ltext0:
+	.comm	_REGISTER_R0, 4, 2
+	.comm	_REGISTER_R1, 4, 2
+	.comm	_REGISTER_R2, 4, 2
+	.comm	_REGISTER_R3, 4, 2
 	.comm	_TASK_PTR, 20, 2
 	.globl	_OS_TASK_SAVETASK_ENVIRONMENT
 	.def	_OS_TASK_SAVETASK_ENVIRONMENT;	.scl	2;	.type	32;	.endef
 _OS_TASK_SAVETASK_ENVIRONMENT:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.c"
-	.loc 1 16 0
+	.loc 1 18 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	subl	$24, %esp
-	.loc 1 17 0
+	pushl	%ebx
+	subl	$20, %esp
+	.cfi_offset 3, -12
+	.loc 1 19 0
 	cmpl	$0, 8(%ebp)
 	je	L2
-	.loc 1 23 0
+	.loc 1 25 0
 	movl	8(%ebp), %eax
 	movl	72(%eax), %eax
 	movl	%eax, (%esp)
 	call	_LLF_SAVE_TASK_STACK
-	.loc 1 24 0
+	.loc 1 27 0
 	movl	8(%ebp), %eax
+	movl	68(%eax), %ebx
+	movl	8(%ebp), %eax
+	movl	64(%eax), %ecx
+	movl	8(%ebp), %eax
+	movl	60(%eax), %edx
+	movl	8(%ebp), %eax
+	movl	56(%eax), %eax
+	movl	%ebx, 12(%esp)
+	movl	%ecx, 8(%esp)
+	movl	%edx, 4(%esp)
 	movl	%eax, (%esp)
 	call	_LLF_SAVE_REGISTERS
 	jmp	L3
 L2:
-	.loc 1 28 0
+	.loc 1 34 0
 	movl	$1, 4(%esp)
 	movl	$2, (%esp)
 	call	_OS_SET_SW_BUG
 L3:
-	.loc 1 30 0
+	.loc 1 36 0
 	nop
-	.loc 1 31 0
-	leave
+	.loc 1 37 0
+	addl	$20, %esp
+	popl	%ebx
+	.cfi_restore 3
+	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
@@ -47,7 +66,7 @@ LFE0:
 	.def	_OS_TASK_RESTORETASK_ENVIRONMENT;	.scl	2;	.type	32;	.endef
 _OS_TASK_RESTORETASK_ENVIRONMENT:
 LFB1:
-	.loc 1 34 0
+	.loc 1 40 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -55,26 +74,26 @@ LFB1:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 35 0
+	.loc 1 41 0
 	cmpl	$0, 8(%ebp)
 	je	L6
-	.loc 1 37 0
+	.loc 1 43 0
 	movl	8(%ebp), %eax
 	movl	72(%eax), %eax
 	movl	%eax, (%esp)
 	call	_LLF_RESTORE_TASK_STACK
-	.loc 1 38 0
+	.loc 1 44 0
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_LLF_RESTORE_REGISTERS
 	jmp	L5
 L6:
-	.loc 1 42 0
+	.loc 1 48 0
 	movl	$2, 4(%esp)
 	movl	$2, (%esp)
 	call	_OS_SET_SW_BUG
 L5:
-	.loc 1 44 0
+	.loc 1 50 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -85,7 +104,7 @@ LFE1:
 	.def	_OS_TASK_RESTORE_SYSTEM_STACK;	.scl	2;	.type	32;	.endef
 _OS_TASK_RESTORE_SYSTEM_STACK:
 LFB2:
-	.loc 1 46 0
+	.loc 1 52 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -93,11 +112,11 @@ LFB2:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 47 0
+	.loc 1 53 0
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_LLF_RESTORE_SYSTEM_STACK
-	.loc 1 48 0
+	.loc 1 54 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -108,7 +127,7 @@ LFE2:
 	.def	_OS_TASK_SAVE_SYSTEM_STACK;	.scl	2;	.type	32;	.endef
 _OS_TASK_SAVE_SYSTEM_STACK:
 LFB3:
-	.loc 1 50 0
+	.loc 1 56 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -116,11 +135,11 @@ LFB3:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 51 0
+	.loc 1 57 0
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_LLF_SAVE_SYSTEM_STACK
-	.loc 1 52 0
+	.loc 1 58 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -131,7 +150,7 @@ LFE3:
 	.def	_OS_Task_InitTaskEnvironment;	.scl	2;	.type	32;	.endef
 _OS_Task_InitTaskEnvironment:
 LFB4:
-	.loc 1 54 0
+	.loc 1 60 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -139,83 +158,83 @@ LFB4:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 55 0
+	.loc 1 61 0
 	cmpl	$0, 8(%ebp)
 	je	L11
-	.loc 1 58 0
+	.loc 1 64 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-2, %edx
 	movb	%dl, (%eax)
-	.loc 1 61 0
+	.loc 1 67 0
 	movl	8(%ebp), %eax
 	movl	$0, 56(%eax)
-	.loc 1 62 0
+	.loc 1 68 0
 	movl	8(%ebp), %eax
 	movl	$0, 60(%eax)
-	.loc 1 63 0
+	.loc 1 69 0
 	movl	8(%ebp), %eax
 	movl	$0, 64(%eax)
-	.loc 1 64 0
+	.loc 1 70 0
 	movl	8(%ebp), %eax
 	movl	$0, 68(%eax)
-	.loc 1 81 0
-	movl	8(%ebp), %eax
-	movl	$0, 8(%eax)
-	.loc 1 82 0
-	movl	8(%ebp), %eax
-	movl	$0, 12(%eax)
-	.loc 1 83 0
-	movl	8(%ebp), %eax
-	movl	$0, 16(%eax)
-	.loc 1 84 0
-	movl	8(%ebp), %eax
-	movl	$1, 20(%eax)
-	.loc 1 85 0
-	movl	8(%ebp), %eax
-	movl	$100000, 24(%eax)
-	.loc 1 86 0
-	movl	8(%ebp), %eax
-	movl	$0, 28(%eax)
 	.loc 1 87 0
 	movl	8(%ebp), %eax
-	movb	$0, 32(%eax)
+	movl	$0, 8(%eax)
 	.loc 1 88 0
 	movl	8(%ebp), %eax
-	movb	$0, 33(%eax)
+	movl	$0, 12(%eax)
+	.loc 1 89 0
+	movl	8(%ebp), %eax
+	movl	$0, 16(%eax)
+	.loc 1 90 0
+	movl	8(%ebp), %eax
+	movl	$1, 20(%eax)
 	.loc 1 91 0
 	movl	8(%ebp), %eax
-	movl	$0, 44(%eax)
+	movl	$100000, 24(%eax)
 	.loc 1 92 0
 	movl	8(%ebp), %eax
-	movl	$0, 48(%eax)
+	movl	$0, 28(%eax)
 	.loc 1 93 0
+	movl	8(%ebp), %eax
+	movb	$0, 32(%eax)
+	.loc 1 94 0
+	movl	8(%ebp), %eax
+	movb	$0, 33(%eax)
+	.loc 1 97 0
+	movl	8(%ebp), %eax
+	movl	$0, 44(%eax)
+	.loc 1 98 0
+	movl	8(%ebp), %eax
+	movl	$0, 48(%eax)
+	.loc 1 99 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-3, %edx
 	movb	%dl, (%eax)
-	.loc 1 94 0
+	.loc 1 100 0
 	movl	8(%ebp), %eax
 	movl	(%eax), %edx
 	andl	$7, %edx
 	movl	%edx, (%eax)
-	.loc 1 95 0
+	.loc 1 101 0
 	movl	8(%ebp), %eax
 	movb	$0, 4(%eax)
-	.loc 1 96 0
+	.loc 1 102 0
 	movl	8(%ebp), %eax
 	movb	$0, 5(%eax)
-	.loc 1 97 0
+	.loc 1 103 0
 	movl	8(%ebp), %eax
 	movl	$0, 40(%eax)
 	jmp	L10
 L11:
-	.loc 1 102 0
+	.loc 1 108 0
 	movl	$3, 4(%esp)
 	movl	$2, (%esp)
 	call	_OS_SET_SW_BUG
 L10:
-	.loc 1 104 0
+	.loc 1 110 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -226,7 +245,7 @@ LFE4:
 	.def	_OS_Task_DeleteTaskEnvironment;	.scl	2;	.type	32;	.endef
 _OS_Task_DeleteTaskEnvironment:
 LFB5:
-	.loc 1 107 0
+	.loc 1 113 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -234,27 +253,27 @@ LFB5:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 108 0
+	.loc 1 114 0
 	cmpl	$0, 8(%ebp)
 	je	L14
-	.loc 1 108 0 is_stmt 0 discriminator 1
+	.loc 1 114 0 is_stmt 0 discriminator 1
 	movl	8(%ebp), %eax
 	movl	76(%eax), %eax
 	testl	%eax, %eax
 	je	L14
-	.loc 1 110 0 is_stmt 1
+	.loc 1 116 0 is_stmt 1
 	movl	8(%ebp), %eax
 	movl	76(%eax), %eax
 	movl	%eax, (%esp)
 	call	_os_free
 	jmp	L13
 L14:
-	.loc 1 114 0
+	.loc 1 120 0
 	movl	$4, 4(%esp)
 	movl	$2, (%esp)
 	call	_OS_SET_SW_BUG
 L13:
-	.loc 1 117 0
+	.loc 1 123 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -265,7 +284,7 @@ LFE5:
 	.def	_OS_Task_CreateTaskEnvironment;	.scl	2;	.type	32;	.endef
 _OS_Task_CreateTaskEnvironment:
 LFB6:
-	.loc 1 119 0
+	.loc 1 125 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -273,23 +292,23 @@ LFB6:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$40, %esp
-	.loc 1 120 0
+	.loc 1 126 0
 	movl	$0, -12(%ebp)
-	.loc 1 121 0
+	.loc 1 127 0
 	movl	$96, (%esp)
 	call	_os_malloc
 	movl	%eax, -12(%ebp)
-	.loc 1 122 0
+	.loc 1 128 0
 	cmpl	$0, -12(%ebp)
 	jne	L17
-	.loc 1 124 0
+	.loc 1 130 0
 	movl	$3, 4(%esp)
 	movl	$2, (%esp)
 	call	_OS_SET_SW_BUG
 L17:
-	.loc 1 126 0
+	.loc 1 132 0
 	movl	-12(%ebp), %eax
-	.loc 1 127 0
+	.loc 1 133 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -302,7 +321,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_common.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x8d7
+	.long	0x93b
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -708,7 +727,7 @@ Ldebug_info0:
 	.uleb128 0xf
 	.ascii "OS_TASK_SAVETASK_ENVIRONMENT\0"
 	.byte	0x1
-	.byte	0xf
+	.byte	0x11
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
@@ -717,7 +736,7 @@ Ldebug_info0:
 	.uleb128 0x10
 	.ascii "task\0"
 	.byte	0x1
-	.byte	0xf
+	.byte	0x11
 	.long	0x725
 	.uleb128 0x2
 	.byte	0x91
@@ -729,7 +748,7 @@ Ldebug_info0:
 	.uleb128 0xf
 	.ascii "OS_TASK_RESTORETASK_ENVIRONMENT\0"
 	.byte	0x1
-	.byte	0x21
+	.byte	0x27
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
@@ -738,7 +757,7 @@ Ldebug_info0:
 	.uleb128 0x10
 	.ascii "task\0"
 	.byte	0x1
-	.byte	0x21
+	.byte	0x27
 	.long	0x725
 	.uleb128 0x2
 	.byte	0x91
@@ -747,7 +766,7 @@ Ldebug_info0:
 	.uleb128 0xf
 	.ascii "OS_TASK_RESTORE_SYSTEM_STACK\0"
 	.byte	0x1
-	.byte	0x2d
+	.byte	0x33
 	.long	LFB2
 	.long	LFE2-LFB2
 	.uleb128 0x1
@@ -756,7 +775,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.secrel32	LASF1
 	.byte	0x1
-	.byte	0x2d
+	.byte	0x33
 	.long	0x7a9
 	.uleb128 0x2
 	.byte	0x91
@@ -768,7 +787,7 @@ Ldebug_info0:
 	.uleb128 0xf
 	.ascii "OS_TASK_SAVE_SYSTEM_STACK\0"
 	.byte	0x1
-	.byte	0x31
+	.byte	0x37
 	.long	LFB3
 	.long	LFE3-LFB3
 	.uleb128 0x1
@@ -777,7 +796,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.secrel32	LASF1
 	.byte	0x1
-	.byte	0x31
+	.byte	0x37
 	.long	0x7a9
 	.uleb128 0x2
 	.byte	0x91
@@ -786,7 +805,7 @@ Ldebug_info0:
 	.uleb128 0xf
 	.ascii "OS_Task_InitTaskEnvironment\0"
 	.byte	0x1
-	.byte	0x35
+	.byte	0x3b
 	.long	LFB4
 	.long	LFE4-LFB4
 	.uleb128 0x1
@@ -795,7 +814,7 @@ Ldebug_info0:
 	.uleb128 0x10
 	.ascii "task\0"
 	.byte	0x1
-	.byte	0x35
+	.byte	0x3b
 	.long	0x725
 	.uleb128 0x2
 	.byte	0x91
@@ -804,7 +823,7 @@ Ldebug_info0:
 	.uleb128 0xf
 	.ascii "OS_Task_DeleteTaskEnvironment\0"
 	.byte	0x1
-	.byte	0x6a
+	.byte	0x70
 	.long	LFB5
 	.long	LFE5-LFB5
 	.uleb128 0x1
@@ -813,7 +832,7 @@ Ldebug_info0:
 	.uleb128 0x10
 	.ascii "task\0"
 	.byte	0x1
-	.byte	0x6a
+	.byte	0x70
 	.long	0x725
 	.uleb128 0x2
 	.byte	0x91
@@ -822,7 +841,7 @@ Ldebug_info0:
 	.uleb128 0x12
 	.ascii "OS_Task_CreateTaskEnvironment\0"
 	.byte	0x1
-	.byte	0x76
+	.byte	0x7c
 	.long	0x725
 	.long	LFB6
 	.long	LFE6-LFB6
@@ -832,7 +851,7 @@ Ldebug_info0:
 	.uleb128 0x13
 	.ascii "task\0"
 	.byte	0x1
-	.byte	0x78
+	.byte	0x7e
 	.long	0x725
 	.uleb128 0x2
 	.byte	0x91
@@ -852,11 +871,43 @@ Ldebug_info0:
 	.uleb128 0x16
 	.ascii "TASK_PTR\0"
 	.byte	0x1
-	.byte	0xd
+	.byte	0xf
 	.long	0x8a8
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_PTR
+	.uleb128 0x16
+	.ascii "REGISTER_R0\0"
+	.byte	0x1
+	.byte	0xb
+	.long	0x3d5
+	.uleb128 0x5
+	.byte	0x3
+	.long	_REGISTER_R0
+	.uleb128 0x16
+	.ascii "REGISTER_R1\0"
+	.byte	0x1
+	.byte	0xc
+	.long	0x3d5
+	.uleb128 0x5
+	.byte	0x3
+	.long	_REGISTER_R1
+	.uleb128 0x16
+	.ascii "REGISTER_R2\0"
+	.byte	0x1
+	.byte	0xd
+	.long	0x3d5
+	.uleb128 0x5
+	.byte	0x3
+	.long	_REGISTER_R2
+	.uleb128 0x16
+	.ascii "REGISTER_R3\0"
+	.byte	0x1
+	.byte	0xe
+	.long	0x3d5
+	.uleb128 0x5
+	.byte	0x3
+	.long	_REGISTER_R3
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -2013,34 +2064,10 @@ Ldebug_macro0:
 	.uleb128 0x8
 	.byte	0x4
 	.byte	0x4
-	.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_adc.h"
+	.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
 	.byte	0x3
 	.uleb128 0x5
 	.uleb128 0x9
-	.byte	0x1
-	.uleb128 0x2
-	.ascii "_lld_adc_h_ \0"
-	.byte	0x4
-	.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_can.h"
-	.byte	0x3
-	.uleb128 0x6
-	.uleb128 0xa
-	.byte	0x1
-	.uleb128 0x2
-	.ascii "_lld_can_h_ \0"
-	.byte	0x4
-	.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_gpio.h"
-	.byte	0x3
-	.uleb128 0x7
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x2
-	.ascii "_lld_gpio_h_ \0"
-	.byte	0x4
-	.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
-	.byte	0x3
-	.uleb128 0x8
-	.uleb128 0xc
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_lld_interrupt_h_ \0"
@@ -2060,60 +2087,48 @@ Ldebug_macro0:
 	.uleb128 0x9
 	.ascii "os_interrupt_swi_5 asm(\"swi 5\")\0"
 	.byte	0x4
-	.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
+	.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
+	.byte	0x3
+	.uleb128 0x6
+	.uleb128 0xa
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_lld_mmu_h_ \0"
+	.byte	0x4
+	.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
+	.byte	0x3
+	.uleb128 0x7
+	.uleb128 0xb
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_lld_timer_h_ \0"
+	.byte	0x4
+	.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
+	.byte	0x3
+	.uleb128 0x8
+	.uleb128 0xc
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_lld_power_h_ \0"
+	.byte	0x4
+	.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
 	.byte	0x3
 	.uleb128 0x9
 	.uleb128 0xd
 	.byte	0x1
 	.uleb128 0x2
-	.ascii "_lld_mmu_h_ \0"
-	.byte	0x3
-	.uleb128 0x4
-	.uleb128 0x6
-	.byte	0x4
-	.byte	0x4
-	.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
-	.byte	0x3
-	.uleb128 0xa
-	.uleb128 0xe
-	.byte	0x1
-	.uleb128 0x2
-	.ascii "_lld_timer_h_ \0"
-	.byte	0x4
-	.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
-	.byte	0x3
-	.uleb128 0xb
-	.uleb128 0xf
-	.byte	0x1
-	.uleb128 0x2
-	.ascii "_lld_power_h_ \0"
-	.byte	0x4
-	.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
-	.byte	0x3
-	.uleb128 0xc
-	.uleb128 0x10
-	.byte	0x1
-	.uleb128 0x2
 	.ascii "_lld_ram_h_ \0"
 	.byte	0x4
-	.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_watchdog.h"
 	.byte	0x3
-	.uleb128 0xd
-	.uleb128 0x11
-	.byte	0x1
-	.uleb128 0x2
-	.ascii "_lld_watchdog_h_ \0"
-	.byte	0x4
-	.byte	0x3
-	.uleb128 0xe
+	.uleb128 0xa
 	.uleb128 0x4
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_task_common_h_ \0"
-	.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_config.h"
+	.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_config.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x12
+	.uleb128 0xe
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_task_config_h_ \0"
@@ -2148,10 +2163,10 @@ Ldebug_macro0:
 	.uleb128 0x11
 	.ascii "USE_STATIC_CREATED_TASKS True\0"
 	.byte	0x4
-	.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_task_system.h"
+	.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_task_system.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x13
+	.uleb128 0xf
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_init_task_system_h_ \0"
@@ -2164,16 +2179,24 @@ Ldebug_macro0:
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4
+	.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_user_code/led.h"
+	.byte	0x3
+	.uleb128 0xb
+	.uleb128 0x10
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_LED_H_ \0"
 	.byte	0x4
-	.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
+	.byte	0x4
+	.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x14
+	.uleb128 0x11
 	.byte	0x4
-	.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_scheduler.h"
+	.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_scheduler.h"
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0x15
+	.uleb128 0x12
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_task_scheduler_h_ \0"
@@ -2193,26 +2216,10 @@ Ldebug_macro0:
 	.uleb128 0xc
 	.ascii "OS_SaveTaskPtr(task_ptr,Task_n_ptr) \0"
 	.byte	0x4
-	.file 22 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_drivers/mcu_config.h"
+	.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_heap.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x16
-	.byte	0x1
-	.uleb128 0x2
-	.ascii "_mcu_config_h_ \0"
-	.file 23 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_drivers/../os_base/os_firstinc.h"
-	.byte	0x3
-	.uleb128 0x3
-	.uleb128 0x17
-	.byte	0x4
-	.byte	0x1
-	.uleb128 0x4
-	.ascii "SILICON_STM_CORTEX_M4 True\0"
-	.byte	0x4
-	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_heap.h"
-	.byte	0x3
-	.uleb128 0x5
-	.uleb128 0x18
+	.uleb128 0x13
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_heap_h_ \0"

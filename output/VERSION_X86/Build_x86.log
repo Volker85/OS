@@ -1,121 +1,33 @@
 "Target_x86" 
-04.08.2018 12:24:19,98 
+05.08.2018  8:04:08,80 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fflush':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:96:18: warning: unused parameter 'stream' [-Wunused-parameter]
- int fflush(FILE* stream)
-                  ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'remove':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:119:24: warning: unused parameter 'filename' [-Wunused-parameter]
- int remove(const char *filename)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'rename':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:24: warning: unused parameter 'oldname' [-Wunused-parameter]
- int rename(const char *oldname, const char *newname)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:45: warning: unused parameter 'newname' [-Wunused-parameter]
- int rename(const char *oldname, const char *newname)
-                                             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fread':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:20: warning: unused parameter 'ptr' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:32: warning: unused parameter 'size' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_REGISTERS':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:32: warning: unused parameter 'r0' [-Wunused-parameter]
+ void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:45: warning: unused parameter 'nobj' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:57: warning: unused parameter 'stream' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                                         ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fwrite':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:27: warning: unused parameter 'ptr' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:39: warning: unused parameter 'size' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                       ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:52: warning: unused parameter 'nobj' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:64: warning: unused parameter 'stream' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                                                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_INIT':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:5:26: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_INIT(led_t Led)
-                          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_ON':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:10:24: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_ON(led_t Led)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_OFF':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:15:25: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_OFF(led_t Led)
-                         ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_TOGGLE':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:20:28: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_TOGGLE(led_t Led)
-                            ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:43: warning: unused parameter 'r1' [-Wunused-parameter]
+ void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
+                                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:54: warning: unused parameter 'r2' [-Wunused-parameter]
+ void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
+                                                      ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:65: warning: unused parameter 'r3' [-Wunused-parameter]
+ void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
+                                                                 ^
 "assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fflush':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:96:18: warning: unused parameter 'stream' [-Wunused-parameter]
- int fflush(FILE* stream)
-                  ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'remove':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:119:24: warning: unused parameter 'filename' [-Wunused-parameter]
- int remove(const char *filename)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'rename':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:24: warning: unused parameter 'oldname' [-Wunused-parameter]
- int rename(const char *oldname, const char *newname)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:124:45: warning: unused parameter 'newname' [-Wunused-parameter]
- int rename(const char *oldname, const char *newname)
-                                             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fread':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:20: warning: unused parameter 'ptr' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:32: warning: unused parameter 'size' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_REGISTERS':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:32: warning: unused parameter 'r0' [-Wunused-parameter]
+ void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:45: warning: unused parameter 'nobj' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:129:57: warning: unused parameter 'stream' [-Wunused-parameter]
- uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                                         ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c: In function 'fwrite':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:27: warning: unused parameter 'ptr' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:39: warning: unused parameter 'size' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                       ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:52: warning: unused parameter 'nobj' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\hal_driver_fs_fat.c:134:64: warning: unused parameter 'stream' [-Wunused-parameter]
- uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
-                                                                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_INIT':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:5:26: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_INIT(led_t Led)
-                          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_ON':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:10:24: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_ON(led_t Led)
-                        ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_OFF':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:15:25: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_OFF(led_t Led)
-                         ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c: In function 'USER_LED_TOGGLE':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:20:28: warning: unused parameter 'Led' [-Wunused-parameter]
- void USER_LED_TOGGLE(led_t Led)
-                            ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:43: warning: unused parameter 'r1' [-Wunused-parameter]
+ void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
+                                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:54: warning: unused parameter 'r2' [-Wunused-parameter]
+ void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
+                                                      ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:65: warning: unused parameter 'r3' [-Wunused-parameter]
+ void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
+                                                                 ^
 "link it" 

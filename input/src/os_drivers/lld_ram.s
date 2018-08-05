@@ -10,6 +10,8 @@ From the AAPCS, ยง5.1.1:
     r12-r15 are special registers
 
 */        
+        .thumb
+        .syntax unified
         .text
         .global LLF_CLEAR_ALL_RAM
         .global LLF_CLEAR_RAM
