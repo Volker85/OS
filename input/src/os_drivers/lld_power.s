@@ -27,9 +27,14 @@ LLF_MCU_RESET_POWER:
         System Control Block (SCB): AIPCR register: 0xE000ED0C, Sys Reset: 0x00000002
         */
         #AIRCR = AIRCR | APP_SYS_RESET_REQ; 
-        MOV r0, #0xE000ED0C
-        ORR [r0], #0x00000002        
-        MOV R15, R14
+        # Step 1: Read content of AIRCR to R0       
+        MOV R0, #0xE000ED0C
+        # Step 2: Read content of "Sys Reset" mask to R1
+        LDR R1, #0x00000002
+        # Step 3: Perform the ORR on register level
+        ORR R0,R1
+        # step 4: write back the result to the AIPCR register
+        STR R0, #0xE000ED0C
 
 LLF_DISABLE_INTERRUPTS_ALL_CORES:
         B LLF_INT_DISABLE

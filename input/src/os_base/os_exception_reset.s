@@ -17,7 +17,6 @@ From the AAPCS, §5.1.1:
         .global OS_Exception_RESET 
         .global LLF_CLEAR_RAM
         .extern OS_START_OS
-        
       
 OS_Exception_RESET:
         MOV r0, #0/*Step 1:  init general purpose registers: r0...r12: general purpose */
@@ -27,16 +26,18 @@ OS_Exception_RESET:
         MOV r4, #0
         MOV r5, #0
         MOV r6, #0
-        #MOV r7, #0 /* frame pointer for GCC */
+        /*
+        #MOV r7, #0 # frame pointer for GCC
         #MOV r8, #0
         #MOV r9, #0
         #MOV r10, #0
         #MOV r11, #0
         #MOV r12, #0
-        #MOV r13, OS_STACK[0][0] #/* step 2: init system stack */
-        #r13        Stack pointer*/
-        #r14        Link register*/
-        #/*r15        program counter*/
+        #MOV r13, OS_STACK[0][0] #step 2: init system stack
+        #r13        Stack pointer
+        #r14        Link register
+        #r15        program counter
+        */
         B LLF_CLEAR_RAM
         B START_OS
               
@@ -50,12 +51,11 @@ LLF_SAVE_TASK_STACK:
         # r0 holds address of task stack pointer of the OS
         # r13  is the stack pointer of the MCU
         # step1+2: write the r13 to [r0] 
-        STR r13, [r0]
-        # 3. invalidate the register (==0) 
-        MOV r13,#0
-        MOV R15, R14
+
         
 LLF_RESTORE_TASK_STACK:
+
+
         # r0 holds address of system stack pointer of the OS
         # r13  is the stack pointer of the MCU
         # step1: write the [r0] to r13 
@@ -82,41 +82,39 @@ GET_CORE_ID:
         #
         #r0 is assumed to be used by the calling convention as the first MOV R15, R14urn value
         MOV r0, #0
-        MOV R15, R14
         
+#                                DONE      
 LLF_SAVE_REGISTERS:
         # in r0 the address of task_t* task should be  
         STR r0, REGISTER_R0
         STR r1, REGISTER_R1
         STR r2, REGISTER_R2
         STR r3, REGISTER_R3
-        MOV R15, R14
         
-LLF_RESTORE_REGISTERS:
+#                                DONE        
+LLF_RESTORE_REGISTERS:        
         # in r0 the address of task_t* task should be 
-        LDR r0, REGISTER_R0
-        LDR r1, REGISTER_R1
-        LDR r2, REGISTER_R2
-        LDR r3, REGISTER_R3
-        MOV R15, R14
+        # load the value located inside REGISTER_R0 into R0,...
+        LDR R0, REGISTER_R0
+        LDR R1, REGISTER_R1
+        LDR R2, REGISTER_R2
+        LDR R3, REGISTER_R3
         
-# input: system_stack_ptr         
+# input: system_stack_ptr         DONE
 LLF_RESTORE_SYSTEM_STACK:    
-        # r0 holds address of system stack pointer of the OS
-        # r13  is the stack pointer of the MCU
         # step1: write the [r0] to r13 
-        STR r13, [r0]
-        MOV R15, R14
+        # r0 holds address of system stack pointer of the OS
+        # r13  is the stack pointer of the MCU 
+        # step1: write the r13 to address located at r0         
+        LDR R13, [R0]
 
-# input: task_t* task         
+# input: task_t* task            DONE
 LLF_SAVE_SYSTEM_STACK:        
         # r0 holds address of system stack pointer of the OS
-        # r13  is the stack pointer of the MCU
-        # step1: write the r13 to [r0] 
-        STR [r0],r13
-        # invalidate the Stack pointer of the MCU 
-        MOV r13,#0
-        MOV R15, R14
+        # r13  is the stack pointer of the MCU 
+        # step1: write the r13 to address located at r0 
+        STR R13,[r0]
+
         
 LLF_PERFORM_RAM_CHECK:
         #TODO: prio2
