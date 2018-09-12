@@ -15,7 +15,7 @@ From the AAPCS, §5.1.1:
         .text
         
         .global OS_Exception_RESET 
-        .global LLF_CLEAR_RAM
+        .extern LLF_CLEAR_RAM
         .extern OS_START_OS
       
 OS_Exception_RESET:
@@ -86,19 +86,23 @@ GET_CORE_ID:
 #                                DONE      
 LLF_SAVE_REGISTERS:
         # in r0 the address of task_t* task should be  
-        STR r0, REGISTER_R0
-        STR r1, REGISTER_R1
-        STR r2, REGISTER_R2
-        STR r3, REGISTER_R3
+        LDR r4, =REGISTER_R0 
+        STR r0, [r4]
+        LDR r4, =REGISTER_R1
+        STR r1, [r4]
+        LDR r4, =REGISTER_R2 
+        STR r2, [r4]
+        LDR r4, =REGISTER_R3 
+        STR r3, [r4]
         
 #                                DONE        
 LLF_RESTORE_REGISTERS:        
         # in r0 the address of task_t* task should be 
         # load the value located inside REGISTER_R0 into R0,...
-        LDR R0, REGISTER_R0
-        LDR R1, REGISTER_R1
-        LDR R2, REGISTER_R2
-        LDR R3, REGISTER_R3
+        LDR R0, =REGISTER_R0
+        LDR R1, =REGISTER_R1
+        LDR R2, =REGISTER_R2
+        LDR R3, =REGISTER_R3
         
 # input: system_stack_ptr         DONE
 LLF_RESTORE_SYSTEM_STACK:    

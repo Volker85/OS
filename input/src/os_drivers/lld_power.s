@@ -15,7 +15,6 @@ From the AAPCS, ยง5.1.1:
         .text
         .global LLF_MCU_SWITCH_OFF_POWER
         .global LLF_MCU_RESET_POWER
-        //.extern OS_START_OS
         
       
 LLF_MCU_SWITCH_OFF_POWER:

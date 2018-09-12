@@ -23,7 +23,7 @@ From the AAPCS, §5.1.1:
       
 LLF_UP_CNT_TIMER_32:
         #warn "LLF_UP_CNT_TIMER_32 not implemented yet"
-        STR R0, #0 
+        LDR R0, #0 
         MOV R15, R14
 
 LLF_ADD_2_TCMP:
