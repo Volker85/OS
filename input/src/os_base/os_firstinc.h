@@ -8,5 +8,6 @@
 #else
 #include "..\os_drivers\lld_global.h"
 #endif
+#include "..\os_user_code\led.h"
 
 #endif /* _os_firstinc_h_ */

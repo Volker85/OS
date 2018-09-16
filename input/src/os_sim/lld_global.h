@@ -2,20 +2,16 @@
 #define _lld_global_h_
 
 #include "lld_core.h"
-#include "lld_adc.h"
-#include "lld_can.h"
-#include "lld_gpio.h"
 #include "lld_interrupt.h"
 #include "lld_mmu.h"
 #include "lld_timer.h"
 #include "lld_power.h"
 #include "lld_ram.h"
-#include "lld_watchdog.h"
 #include "..\os_base\os_task_common.h"
 
 extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
 
-extern void LLF_SAVE_REGISTERS(task_t* task);
+extern void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3);
 
 extern void LLF_RESTORE_TASK_STACK(unsigned_char_t* StackPointer);
 

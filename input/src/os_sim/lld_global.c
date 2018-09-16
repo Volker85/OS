@@ -29,9 +29,9 @@ void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer)
    ReferenceUnusedParameter(*StackPointer);
 /*TODO*/
 }
-void LLF_SAVE_REGISTERS(task_t* task)
+void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
 {
-   ReferenceUnusedParameter(*task);
+
 }
 void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
 {

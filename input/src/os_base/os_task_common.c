@@ -1,7 +1,6 @@
 #include "os_firstinc.h"
 #include "os_task_common.h"
 #include "os_task_scheduler.h"
-#include "..\os_drivers\mcu_config.h"
 #include "os_heap.h"
 
 /* Create and delete the task environment is not supported, 
@@ -9,7 +8,10 @@
    
    
 */
-
+void* REGISTER_R0;
+void* REGISTER_R1;
+void* REGISTER_R2;
+void* REGISTER_R3;
 task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
 
 void OS_TASK_SAVETASK_ENVIRONMENT(task_t* task)
@@ -21,7 +23,11 @@ void OS_TASK_SAVETASK_ENVIRONMENT(task_t* task)
       x86: mov ... esp
       */
       LLF_SAVE_TASK_STACK(task->pStackPointer);
-      LLF_SAVE_REGISTERS(task);
+   #if(CFG_PROCESSOR == cMCU_X86)
+      LLF_SAVE_REGISTERS(task->EAX,task->EBX,task->ECX,task->EDX);
+   #else
+      LLF_SAVE_REGISTERS(task->r0,task->r1,task->r2,task->r3);
+   #endif
    }
    else
    {
