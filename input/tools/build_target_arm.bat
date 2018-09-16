@@ -129,7 +129,7 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_stack.c					    -o %OUTPUT_DIR%\os_base\obj_arm\os_stack.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_heap.c					    -o %OUTPUT_DIR%\os_base\obj_arm\os_heap.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_diagnostic_main.c			-o %OUTPUT_DIR%\os_base\obj_arm\os_diagnostic_main.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-as                                             -c               %SRC_DIR%\os_base\os_exception_reset.s			-o %OUTPUT_DIR%\os_base\obj_arm\os_exception_reset.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
+arm-none-eabi-as                                             -c               %SRC_DIR%\os_drivers\os_exception_reset.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\os_exception_reset.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-as                                             -c               %SRC_DIR%\os_drivers\lld_global.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\lld_global.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-as                                             -c               %SRC_DIR%\os_drivers\lld_interrupt.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\lld_interrupt.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-as                                             -c               %SRC_DIR%\os_drivers\lld_mmu.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\lld_mmu.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
@@ -169,7 +169,7 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_user_code\led.c			-o %OUTPUT_DIR%\os_user_code\obj_arm\led.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 REM
 echo "link it" >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -nostartfiles -g3 -Wl,-Map=%OUTPUT_DIR%\VERSION_ARM\operating_system_elf.map -O0 -Wl,--no-gc-sections  -Wl,-T %TOOLS_DIR%\link_arm.lnk -L%OUTPUT_DIR%\os_base\obj_arm -L%OUTPUT_DIR%\os_drivers\obj_arm -L%OUTPUT_DIR%\os_cmd\obj_arm -L%OUTPUT_DIR%\os_user_code\obj_arm -o %OUTPUT_DIR%\VERSION_ARM\operating_system.elf  >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1	
+arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -nostartfiles -g3 -Wl,-Map=%OUTPUT_DIR%\VERSION_ARM\operating_system_elf.map -O0 -Wl,--no-gc-sections  -Wl,-T %TOOLS_DIR%\link_arm.lnk -L%OUTPUT_DIR%\os_base\obj_arm -L%OUTPUT_DIR%\os_drivers\obj_arm -L%OUTPUT_DIR%\os_user_code\obj_arm -o %OUTPUT_DIR%\VERSION_ARM\operating_system.elf  >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1	
 IF EXIST %OUTPUT_DIR%\VERSION_ARM\operating_system.elf (
    arm-none-eabi-objcopy.exe -O binary --only-section=.text %OUTPUT_DIR%\VERSION_ARM\operating_system.elf %OUTPUT_DIR%\VERSION_ARM\operating_system.bin
 )

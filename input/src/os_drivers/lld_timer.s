@@ -9,7 +9,8 @@ From the AAPCS, §5.1.1:
     r10-r11 are callee-save registers
     r12-r15 are special registers
 
-*/        
+*/ 
+#define NULL_VALUE 0x00       
         .thumb
         .syntax unified
         .text
@@ -18,12 +19,11 @@ From the AAPCS, §5.1.1:
         .global LLF_DISABLE_INTERRUPTS_ALL_CORES
         .global LLF_MPU_SWITCH_OFF_ALL_REGIONS
         .global LLF_GET_MPU_PRESENT
-        //.extern OS_START_OS
-        
+       
       
 LLF_UP_CNT_TIMER_32:
         #warn "LLF_UP_CNT_TIMER_32 not implemented yet"
-        LDR R0, #0 
+        LDR R0, =NULL_VALUE 
         MOV R15, R14
 
 LLF_ADD_2_TCMP:

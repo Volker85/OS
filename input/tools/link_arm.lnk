@@ -26,6 +26,12 @@ SECTIONS{
    } > rom
    .text ALIGN(0x08001000):
    {       
+      lld_global.o  
+      lld_interrupt.o
+      lld_mmu.o
+      lld_ram.o
+      lld_timer.o
+      lld_power.o        
       os_exception_reset.o
       os_common.o
       os_driver_hook.o
@@ -49,14 +55,7 @@ SECTIONS{
       os_task_scheduler.o   
       os_stack.o
       os_heap.o 
-      os_diagnostic_main.o
-      lld_global.o  
-      lld_interrupt.o
-      lld_mmu.o
-      lld_ram.o
-      lld_timer.o
-      lld_power.o      
-      
+      os_diagnostic_main.o     
       led.o
    } > rom
    .data ALIGN(0x40000000):
