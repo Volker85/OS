@@ -1,22 +1,7 @@
 "Target_ARM" 
-05.08.2018 18:16:37,09 
+17.09.2018 21:09:26,41 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s: Assembler messages:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:55: Error: r13 not allowed here -- `mov r13,#0'
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:89: Error: cannot use register index with PC-relative addressing -- `str r0,REGISTER_R0'
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:90: Error: cannot use register index with PC-relative addressing -- `str r1,REGISTER_R1'
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:91: Error: cannot use register index with PC-relative addressing -- `str r2,REGISTER_R2'
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:92: Error: cannot use register index with PC-relative addressing -- `str r3,REGISTER_R3'
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:116: Error: ARM register expected -- `str [r0],r13'
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:118: Error: r13 not allowed here -- `mov r13,#0'
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_power.s: Assembler messages:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_power.s:31: Error: ARM register expected -- `orr [r0],#0x00000002'
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_power.s:30: Error: invalid constant (e000ed0c) after fixup
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_timer.s: Assembler messages:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_timer.s:26: Error: cannot use register index with PC-relative addressing -- `str R0,#0'
 "assemble it" 
 "link it" 
-d:/programm/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/bin/ld.exe: cannot find os_exception_reset.o
-collect2.exe: error: ld returned 1 exit status

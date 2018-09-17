@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de"><head>
+  <title>
+      STM32F4 mit Code::Blocks - Mikrocontroller.net
+  </title>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<link rel="stylesheet" media="all" href="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/screen-cb871bd1e592afd4ca0d5abd42e15380e94abd38e34ccfdc03826.css">
+	<link rel="stylesheet" media="print" href="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/print-80f24115f86985d1d30d60a2b339bf75dbcaa308b178ae1f8f564d.css">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.mikrocontroller.net/favicon.ico">
+  <link rel="canonical" href="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/265600.htm">
+
+	<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="9JeGRooESz/R/xhUaYQ7CPpzzAWKZ/PML7sDtbeboxSylNJ7xc8yh9fzv5F69b+++IZNRQThzbV7oViaOEZDDg==">
+
+
+<style type="text/css">
+
+
+.flattr-link {display: none;}
+
+</style>
+
+<script src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/osd.js"></script><script src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/pubads_impl_rendering_246.js"></script><script async="" src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/analytics.js"></script><script async="" type="text/javascript" src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/gpt.js"></script><script type="text/javascript">
+  var user = eval("({\"name\":null,\"role\":null,\"posts_per_page\":500})");
+
+  var topic_read_times = {};
+  var post_votes = {};
+	var post_scores = {};
+</script>
+
+
+	<script type="text/x-mathjax-config;executed=true">
+	MathJax.Hub.Config({
+		config: ["MMLorHTML.js"],
+		jax: ["input/TeX","output/HTML-CSS"],
+    showProcessingMessages: false,
+    messageStyle: "none",
+		extensions: ["Safe.js"],
+		TeX: {
+			extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+		},
+	  Safe: {
+	    allow: {
+	      URLs: "none",
+	      classes: "none",
+	      cssIDs: "none",
+	      styles: "none",
+	      fontsize: "none",
+	      require: "none"
+	    }
+	  }
+	});
+	</script> 
+	<script type="text/javascript" async="" src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/MathJax.js">
+	</script>
+
+  <link rel="alternate" type="application/atom+xml" title="Mikrocontroller.net Newsfeed" href="https://www.mikrocontroller.net/newsfeed">
+
+  <!-- Forum Feeds -->
+  <link rel="alternate" type="application/atom+xml" title="Neue Beiträge in allen Foren" href="https://www.mikrocontroller.net/feed/global">
+   <link rel="alternate" type="application/atom+xml" title="Neue Beiträge im Forum &quot;Mikrocontroller und Digitale Elektronik&quot;" href="https://www.mikrocontroller.net/feed/forum/1"> 
+   <link rel="alternate" type="application/atom+xml" title="Neue Beiträge im Thread &quot;STM32F4 mit Code::Blocks&quot;" href="https://www.mikrocontroller.net/feed/topic/265600"> 
+  
+  <!-- / Forum Feeds -->
+
+    <meta name="robots" content="NOODP">
+
+  <link rel="search" type="application/opensearchdescription+xml" title="Mikrocontroller.net" href="https://www.mikrocontroller.net/searchplugin.xml">
+
+<!--[if IE 7]><style>
+.gainlayout { zoom: 1;}
+</style><![endif]-->
+
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> -->
+<script src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/jquery.js"></script>
+
+<script src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/application-437665fced489cca361a44b6c988d5256f514f1a98be7612f.js"></script>
+
+  <script type="text/javascript">
+$( document ).ready(function() {
+  setTimeout(function() {
+    if ($('#sdfj391').is(':visible') && !$('#adliste').is(':visible')) {
+      if (parseInt(localStorage.getItem('adblock-notice-counter') || 0) > 5 && parseInt(localStorage.getItem('adblock-notice-counter') || 0) <= 14) {
+        $('#content').before('<div class="box">Lieber AdBlock-Nutzer, wir mögen störende, blinkende Flash-Anzeigen genauso wenig wie du. Deshalb zeigt Mikrocontroller.net ausschließlich nicht animierte Text- und Bildanzeigen an. Vielleicht möchtest du AdBlock für diese Seite deaktivieren? (Diese Meldung verschwindet automatisch nach ein paar Seitenaufrufen.)</div>');
+      }
+      if (typeof localStorage != 'undefined') {
+        localStorage.setItem('adblock-notice-counter', 1 + parseInt(localStorage.getItem('adblock-notice-counter') || 0));
+      }
+    }
+  }, 100);
+});
+  </script>
+
+<!--
+-->
+
+
+
+
+<!-- PUT THIS TAG IN THE head SECTION -->
+<script type="text/javascript">
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+<!-- END OF TAG FOR head SECTION -->
+
+<script type="text/javascript">googletag.cmd.push(function() {//googletag.pubads().enableSingleRequest();
+googletag.pubads().setTargeting('site_id', '1');
+googletag.pubads().setTargeting('forum_id', '1');
+googletag.pubads().setTargeting('section', 'forum-1');
+googletag.pubads().setTargeting('pagetype', 'topic');
+googletag.pubads().setTargeting('category', ['embedded', 'digital-ics']);
+googletag.pubads().setTargeting('ssl', '1');
+});</script>
+
+<script>
+  if (location.hostname=='embdev.net') {
+    ga_subid = 7;
+  } else {
+    ga_subid = 1;
+  }
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80574-' + ga_subid, 'auto');
+
+  ga('set', 'dimension1', '1');
+  ga('set', 'dimension2', 'Guest');
+  ga('set', 'anonymizeIp', true);
+
+  ga('send', 'pageview');
+
+</script>
+
+<!--
+<script type="text/javascript">
+var _paq = _paq || [];
+(function(){ var u="//www.mikrocontroller.net/piwik/";
+_paq.push(['setSiteId', 1]);
+_paq.push(['setTrackerUrl', u+'piwik.php']);
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
+s.parentNode.insertBefore(g,s); })();
+ </script>
+-->
+<meta name="google-translate-customization" content="5ced0b84f202ea5b-ae0c3756d2b00e02-g6a9f31b5bb528ccf-17">
+<link rel="preload" href="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/integrator.js" as="script"><script type="text/javascript" src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/integrator.js"></script><link rel="preload" href="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/integrator_002.js" as="script"><script type="text/javascript" src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/integrator_002.js"></script><script src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/pubads_impl_246.js" async=""></script><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+<div id="outer-container">
+    <div id="top"><h1><a href="https://www.mikrocontroller.net/"><object data="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/logo.svg" type="image/svg+xml">mikrocontroller.net</object></a></h1>
+<div id="hamburger">
+	<div></div>
+  <div></div>
+  <div></div>
+</div>
+
+</div>
+
+
+  <table id="twocolumns">
+  <tbody><tr><td id="sidebar-left" class="sidebar">
+  
+    <!-- begin nav -->
+<div class="nav-container">
+  <ul class="nav-first">
+    <li><b><a href="https://www.mikrocontroller.net/">Home</a></b></li>
+    <li>
+      <b><a href="https://www.mikrocontroller.net/articles/AVR">AVR</a></b>
+    </li>
+    <li>
+      <b><a href="https://www.mikrocontroller.net/articles/ARM">ARM</a></b>
+    </li>
+    <li>
+      <b><a href="https://www.mikrocontroller.net/articles/MSP430">MSP430</a></b>
+    </li>
+    <li>
+      <b><a href="https://www.mikrocontroller.net/articles/PIC">PIC</a></b>
+    </li>
+    <li>
+      <b><a href="https://www.mikrocontroller.net/articles/Programmierbare_Logik">FPGA, CPLD &amp; Co.</a></b>
+    </li>
+    <li>
+      <b><a href="https://www.mikrocontroller.net/articles/Digitale_Signalverarbeitung">DSP</a></b>
+    </li>
+
+    <li>
+      <b><a href="https://www.mikrocontroller.net/articles/Elektronik_Allgemein">Elektronik allgemein</a></b>
+    </li>
+
+    <li>
+      <b><a href="https://www.mikrocontroller.net/forum/all">Forum</a></b>
+      <ul>
+        <li><a href="https://www.mikrocontroller.net/forum/mikrocontroller-elektronik">µC &amp; Elektronik</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/analogtechnik">Analogtechnik</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/fpga-vhdl-cpld">FPGA, VHDL &amp; Co.</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/dsp">DSP</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/gcc">Compiler &amp; IDEs</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/codesammlung">Projekte &amp; Code</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/markt">Markt</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/platinen">Platinen</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/mechanik">Mechanik &amp; Werkzeug</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/hf">HF, Funk &amp; Felder</a></li>
+        <li>Neu: <a href="https://www.mikrocontroller.net/forum/fahrzeugelektronik"><b>Fahrzeugelektronik</b></a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/hausbus">Haus &amp; Smart Home</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/pc-programmierung">PC-Programmierung</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/pc-hardware-software">PC Hard- &amp; Software</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/ausbildung-studium-beruf">Ausbildung &amp; Beruf</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/offtopic">Offtopic</a></li>
+        <li><a href="https://www.mikrocontroller.net/forum/website">Webseite</a></li>
+       </ul>
+    </li>
+<!--    <li><b><a href="/buecher/">Buchtipps</a></b></li>-->
+<!--    <li><b><a href="http://shop.mikrocontroller.net/">Shop</a></b></li>-->
+<!--    <li><b><a href="/articles/Linksammlung">Linksammlung</a></b></li>-->
+    <li><b><a href="https://www.mikrocontroller.net/articles/Hauptseite">Artikelübersicht</a></b></li>
+    <li><b><a href="https://www.mikrocontroller.net/articles/Spezial:Recentchanges">Letzte Änderungen</a></b></li>
+  </ul>
+</div>
+<!-- end nav -->
+
+
+<div id="adliste" class="adtxt adunit bannerad"></div>
+<div id="sdfj391"></div>
+
+<hr>
+<div id="first-adframe" class="adframe sticky" style="padding: 0;margin:0; text-align: center; width:160px;">
+  <!-- <div style="font-size: 0.65em;">- Anzeige -</div> -->
+  <!-- bannerstart -->
+    <script>
+//<![CDATA[
+
+        document.write("<div style=\"padding: 0; text-align: center; width:160px;\">");
+        document.write(decodeURIComponent('%3Cdiv%20class=%22ad%22%20style=%22min-width:%201px;%22id=%22div-gpt-ad-hcdjyize%22%3E%3C/div%3E'));googletag.cmd.push(function() {if ($("#div-gpt-ad-hcdjyize").is(":hidden")) return;slot = googletag.defineSlot('/62616433/Mikrocontroller_Left_Sidebar_1', [160, 600], 'div-gpt-ad-hcdjyize');slot.addService(googletag.pubads());slot.set('adsense_channel_ids', '4674252417+7311337829,3539755804+1675723313');
+slot.set('adsense_border_color', '0066cc');
+slot.set('adsense_background_color', 'c3d9ff');
+slot.set('adsense_link_color', '0000ff');
+slot.set('adsense_url_color', '0000ff');
+slot.set('adsense_text_color', '000000');
+googletag.enableServices();googletag.display('div-gpt-ad-hcdjyize');
+});
+        document.write("<\/div>");
+
+//]]>
+</script><div style="padding: 0; text-align: center; width:160px;"><div class="ad" style="min-width: 1px;" id="div-gpt-ad-hcdjyize" data-google-query-id="CP2K7OPhwt0CFQqM7QodDh8Msw"><div id="google_ads_iframe_/62616433/Mikrocontroller_Left_Sidebar_1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/62616433/Mikrocontroller_Left_Sidebar_1_0" title="3rd party ad content" name="google_ads_iframe_/62616433/Mikrocontroller_Left_Sidebar_1_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="160" height="600" frameborder="0"></iframe></div></div></div>  <!-- bannerend -->
+  </div>
+  <div style="padding-top: 10px;"></div>
+
+
+  </td>
+  <td id="main">
+
+<div id="container">
+    <!-- contentDetection start --> 
+    <!-- google_ad_section_start -->
+			<h1 id="pageName" style="float: left;"><small><a href="https://www.mikrocontroller.net/forum/1">Forum: Mikrocontroller und Digitale Elektronik</a></small> STM32F4 mit Code::Blocks</h1>
+
+
+  <br style="clear: both;">
+  
+
+  <div id="nav-top"><div class="navbar">
+  <span class="left">
+    <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/forum">Forenliste</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/forum/mikrocontroller-elektronik">Threadliste</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/topic/new?forum_id=1">Neuer Beitrag</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/search">Suchen</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/register">Anmelden</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/list">Benutzerliste</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/attachment/gallery">Bildergalerie</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/help">Hilfe</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/login">Login</a></span>
+  </span>
+  
+
+  <br class="clear">
+</div>
+</div>
+  <div id="content">
+    <div class="forum">
+  <div class="topic " id="topic" data-id="265600" data-user-id="41182">
+
+    
+    <script type="text/javascript">
+    have_newpost_anchor = false;
+    topic_last_read_at = getLastReadAt(265600);
+    </script>
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1342909253000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2764646" class="post box gainlayout  post-userid-41182 post-id-2764646" data-attributionline="André W. schrieb im Beitrag #2764646:" data-created-at="1342909253000" data-updated-at="1342909253000" data-user-id="41182" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="2764646" href="#2764646">STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        André W.
+        (<a href="https://www.mikrocontroller.net/user/show/andre-w">andre-w</a>)
+        
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-22T00:20:53+02:00">22.07.2012 00:20</time></span>
+    </div>
+</td></tr></tbody></table>
+
+      <div class="attachments">
+      Angehängte Dateien:<br>
+
+      <ul class="attachments-files">
+        <li>
+          <a href="https://www.mikrocontroller.net/attachment/150084/Beispiel-Projekt.zip">Beispiel-Projekt.zip</a> (15,9 KB, 590 Downloads)
+        </li>
+        </ul>
+
+        <ul class="attachments-images">
+          <li>
+            <a class="highslide" onclick="return hs.expand(this,{src:'/attachment/150081/Compiler-Settings_1.PNG'})" href="https://www.mikrocontroller.net/attachment/150081/Compiler-Settings_1.PNG" style="border: none;"><img src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/150081.jpg" alt="preview image for Compiler-Settings_1.PNG" width="124" height="90"></a>
+            <br>
+            <a href="https://www.mikrocontroller.net/attachment/150081/Compiler-Settings_1.PNG">Compiler-Settings_1.PNG</a>
+            <br>
+            73,7 KB, 2662 Downloads
+          </li>
+          <li>
+            <a class="highslide" onclick="return hs.expand(this,{src:'/attachment/150082/Compiler-Settings_2.PNG'})" href="https://www.mikrocontroller.net/attachment/150082/Compiler-Settings_2.PNG" style="border: none;"><img src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/150082.jpg" alt="preview image for Compiler-Settings_2.PNG" width="125" height="90"></a>
+            <br>
+            <a href="https://www.mikrocontroller.net/attachment/150082/Compiler-Settings_2.PNG">Compiler-Settings_2.PNG</a>
+            <br>
+            67,9 KB, 2593 Downloads
+          </li>
+          <li>
+            <a class="highslide" onclick="return hs.expand(this,{src:'/attachment/150083/Debugger-Settings.PNG'})" href="https://www.mikrocontroller.net/attachment/150083/Debugger-Settings.PNG" style="border: none;"><img src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/150083.jpg" alt="preview image for Debugger-Settings.PNG" width="102" height="90"></a>
+            <br>
+            <a href="https://www.mikrocontroller.net/attachment/150083/Debugger-Settings.PNG">Debugger-Settings.PNG</a>
+            <br>
+            38,4 KB, 2228 Downloads
+          </li>
+        </ul>
+    </div>
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764646&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764646&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Für all diejenigen, denen die ganzen eclipse-basierten IDE-Lösungen für 
+den Cortex-Mx und dem GCC nicht wirklich zusagen möchte ich hier eine 
+Alternative vorstellen (in diesem Fall speziell für das 
+STM32F4-Discovery-Board unter Windows - sollte aber auch ohne größere 
+Probleme auch unter Linux und für andere Cortex-M Prozessoren zum laufen 
+gebracht werden können):
+
+Dazu braucht ihr:
+1) Code::Blocks:
+Ich verwende eine relativ aktuelle Version aus dem *SVN (#8086)* - mit 
+der derzeit letzten Stable-Version wird es nicht funktionieren, da dort 
+u.a. einige Funktionen im Debugger noch nicht zur Verfügung stehen.
+Hier ein Link zur Detaillierten beschreibung der "Nightly-Builds": 
+<a class="postedlink" href="http://forums.codeblocks.org/index.php/topic,16560.0.html" rel="nofollow">http://forums.codeblocks.org/index.php/topic,16560.0.html</a>
+
+Kurz zusammengefasst:
+einfach den Inhalt dieser 3 Archive z.B. in C:\Programme\CodeBlocks\ 
+entpacken:
+<a class="postedlink" href="http://prdownload.berlios.de/codeblocks/wxmsw28u_gcc_cb_wx2812_gcc452-TDM.7z" rel="nofollow">http://prdownload.berlios.de/codeblocks/wxmsw28u_g...</a>
+<a class="postedlink" href="http://prdownload.berlios.de/codeblocks/mingwm10_gcc452-TDM.7z" rel="nofollow">http://prdownload.berlios.de/codeblocks/mingwm10_g...</a>
+<a class="postedlink" href="http://prdownload.berlios.de/codeblocks/CB_20120707_rev8086_win32.7z" rel="nofollow">http://prdownload.berlios.de/codeblocks/CB_2012070...</a>
+CodeBlocks kann danach einfach über eine Verknüpfung zur CodeBlocks.exe 
+gestartet werden.
+
+2) GNU Tools for <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/ARM">ARM</a> Embedded Processors:
+Ich verwende die aktuellste Version (*4.6-2012-q2-update*) - die älteren 
+Versionen haben noch einen Bug im GDB, der mit den absoluten Dateipfaden 
+im Windows-Stil Probleme hat (der ":" bei C:\ wird falsch 
+interpretiert), wodurch das Debugging mit CodeBlocks nicht funktioniert, 
+also auf jedenfall die aktuellste Version des Compilers verwenden!
+Direkter Download-Link - einfach installieren:
+<a class="postedlink" href="https://launchpad.net/gcc-arm-embedded/4.6/4.6-2012-q2-update/+download/gcc-arm-none-eabi-4_6-2012q2-20120614.exe" rel="nofollow">https://launchpad.net/gcc-arm-embedded/4.6/4.6-201...</a>
+
+3) GDB-Server aus dem Atollic-Truestudio:
+Nach der installation der kostenlosen Version liegt der GDB-Server in:
+C:\Program Files\Atollic\ST-LINK_gdbserver\
+Dieser ganze Ordner kann bei bedarf einfach kopiert werden und Atollic 
+wieder deinstalliert werden.
+Zur Verwendung muss nur die .bat-Datei ausgeführt werden, bevor der 
+Debugger in CodeBlocks gestartet wird
+Sollte der GDB-Server nicht richtig starten (als letzte Zeile der 
+Ausgabe sollte stehen: "Waiting for client connect on port 61234") muss 
+der ST-Link_V2_USBdriver.exe, der im gleichen Server wie der GDB-Server 
+liegt, noch installiert werden.
+
+4) Einstellungen in CodeBlocks:
+Hauptsächlich muss nur der Pfad zum Compiler und Debugger eingestellt 
+werden, der Rest wird durch das Projekt-File erledigt.
+Dazu unter Settings-&gt;Compiler bzw. Settings-&gt;Debugger die Einstellungen 
+entsprechend den angehängten Bildern vornehmen.
+Am besten mit den Debugger-Einstellungen beginnen, da man sonst in den 
+Compiler Einstellungen nicht gleich den richtigen Debugger auswählen 
+kann.
+Der executable-Path beim Debugger muss auf den arm-none-eabi-gdb.exe 
+gesetzt werden (wird im Bild nicht ganz deutlich)
+Die "Number of processes for parallel builds" sollte auf die Anzahl der 
+CPU-Cores+1 gesetzt werden - also bei einem Dual-Core auf 3 - den Wert 
+auf 1 zu lassen schadet bei der größe der meisten Projekte aber auch 
+nicht..
+
+5) Das Beispielprojekt aus dem Anhang:
+Einfach irgendwo hin entpacken *(der Pfad darf KEINE Leerzeichen 
+enthalten!)* - das Projekt aber noch nicht öffnen!
+
+6) STM32F4 DSP StdPeriphLib V1.0.1:
+<a class="postedlink" href="http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/stm32f4_dsp_stdperiph_lib.zip" rel="nofollow">http://www.st.com/internet/com/SOFTWARE_RESOURCES/...</a>
+Direkt in das Beispiel-Projektverzeichnis Entpacken.
+Nach dem Entpacken sollte die Verzeichnisstrucktur so aussehen: 
+STM32F4-Test\STM32F4xx_DSP_StdPeriph_Lib_V1.0.1\...
+
+7) Projekt über das *.cbp-File aus CodeBlocks heraus öffnen
+
+8) Unter Project-&gt;Build Options und Project-&gt;Properties können die 
+genauen Einstellungen zum compilieren festgelegt werden. In den 
+Properties-&gt;Build Targets kann dann auch eingestellt werden, welche 
+Dateien aus der StdPeriphLib mit compiliert werden - im 
+Beispiel-Projekt, das einfach die 4 <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/LED">LED</a>s des Discovery-Board 
+nacheinander einschaltet werden nur die 'rcc' und 'gpio' benötigt - mehr 
+ist derzeit deshalb auch nicht aktiviert..
+
+9) Wenn die Debug-Konfiguration compiliert wurde und der GDB-Server von 
+Atollic gestartet ist kann das Programm einfach in den Flash geschrieben 
+werden, indem man Debug-&gt;Start/Continue anwählt (oder F8 drückt)
+Wenn in den Debugger-Optionen, wie im Angehängten Bild zu sehen, die 
+Option "Do <b>NOT</b> run the Debugee" aktiv ist wird nach dem Flashen der 
+Prozessor angehalten - das Programm läuft erts bei einem zweiten Klick 
+auf Debug/Continue los!
+
+10) Wird die Release-Configuration compiliert befindet sich nach dem 
+Compilieren in  bin/Release/ ein *.bin-File, das mit dem ST-Link utility 
+in den Prozessor geflasht werden kann.
+
+Wenn alle Schritte so befolgt werden sollte man direkt zu einer 
+funktionsfähigen Firmware kommen.
+
+Das Beispielprojekt ist mit Sicherheit nicht perfekt, aber ein guter 
+Ansatz für erste Versuche mit CodeBlocks.
+Woran ich zum Beispiel bis jetzt gescheitert bin ist, die Firmware beim 
+Debuggen im Ram des Prozessors laufen zu lassen, um nicht bei jedem 
+Versuch den Flash beschreiben zu müssen.
+Vorschläge zur Verbesserung der Projekt-Einstellungen - vor allem der 
+Compiler-Parameter - werden gerne entgegen genommen ;)
+Vielleicht hat auch jemand noch einen Tipp, wie man einfacher an den 
+GDB-Server von Atollic kommen kann, ohne dass man die ganze Software 
+vorher installieren muss.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2764646" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2764646#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-move"><a class="nav" rel="nofollow" href="https://www.mikrocontroller.net/topic/move/265600">Thread verschieben</a></span> <span class="menuitem postmenuitem-lock"><a class="nav" rel="nofollow" href="https://www.mikrocontroller.net/topic/lock/265600?token=8RkCLkG5ez0JfP5LBjLScbi5AeNAaGnLZ48cvm289pa3GlYTDnIChQ9wWY4VQ1bHukyAo87uV7IzlUeR4mEWjA%3D%3D">Thread sperren</a></span> <span class="menuitem postmenuitem-lock_for_guests"><a class="nav" rel="nofollow" href="https://www.mikrocontroller.net/topic/lock_for_guests/265600?token=8RkCLkG5ez0JfP5LBjLScbi5AeNAaGnLZ48cvm289pa3GlYTDnIChQ9wWY4VQ1bHukyAo87uV7IzlUeR4mEWjA%3D%3D">Anmeldepflicht aktivieren</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2764646?token=8RkCLkG5ez0JfP5LBjLScbi5AeNAaGnLZ48cvm289pa3GlYTDnIChQ9wWY4VQ1bHukyAo87uV7IzlUeR4mEWjA%3D%3D">Thread löschen</a></span> <span class="menuitem postmenuitem-merge"><a class="nav" rel="nofollow" href="https://www.mikrocontroller.net/topic/merge?source=265600&amp;token=8RkCLkG5ez0JfP5LBjLScbi5AeNAaGnLZ48cvm289pa3GlYTDnIChQ9wWY4VQ1bHukyAo87uV7IzlUeR4mEWjA%3D%3D">Thread mit anderem zusammenführen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764646#postform" onclick="return !forumInsertQuoting(2764646)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764646#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1342945979000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2764783" class="post box gainlayout  post-userid- post-id-2764783" data-attributionline="erhardd schrieb im Beitrag #2764783:" data-created-at="1342945979000" data-updated-at="1342945979000" data-user-id="" data-guest-name="erhardd" data-score="0">
+
+  <div class="subject">
+    <a name="2764783" href="#2764783">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        erhardd (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-22T10:32:59+02:00">22.07.2012 10:32</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764783&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764783&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>...sehr gute Arbeit!
+Ich fürchte nur, wer den Eclipse-Moloch schon am Laufen hat, wird vor 
+einer neuen IDE zurückschrecken.
+
+Wenn ich mich recht erinnere, ist CODE::BLOCKS bei weitem nicht so 
+umfangreich!
+Ich habe CB schon lange laufen, allerdings nur als Hilfseditor für z.B. 
+RIDE, der von Haus aus keine .h - files anzeigt(ist aber kein Nachteil, 
+den so ist es übersichtlicher, wenn die Programme grösser sind);
+Das stm32_st-link-utility kann als .zip von ST heruntergeladen werden...
+
+Wie stellst Du beim Projekt erstellen das Device ein? (Und das passende 
+Linker-file?);
+Du merkst sicherlich, ich habs selbst nochnicht ausprobiert...</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2764783" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2764783#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2764783?token=7l1KsijYmgCrgvKpJ5wA%2BRRcdjqCGAUFYOngYWO2X6yoXh6PZxPjuK2OVWw07YRPFqn3egyeO3w087tO7Gu%2Ftg%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764783#postform" onclick="return !forumInsertQuoting(2764783)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764783#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1342947230000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2764807" class="post box gainlayout  post-userid-41182 post-id-2764807" data-attributionline="André W. schrieb im Beitrag #2764807:" data-created-at="1342947230000" data-updated-at="1342947230000" data-user-id="41182" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="2764807" href="#2764807">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        André W.
+        (<a href="https://www.mikrocontroller.net/user/show/andre-w">andre-w</a>)
+        
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-22T10:53:50+02:00">22.07.2012 10:53</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764807&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764807&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Das Device wird in den Build Options unter "Compiler Settings" und 
+"Linker Settings" eingestellt, direkt über die Parameter, mit denen der 
+Compiler gestartet wird. Also z.B. -mcpu=cortex-m4.
+Das Linker-File ebenso über den entsprechenden Parameter. z.B. 
+-T"${PROJECT_DIR}stm32_flash.ld"
+Dabei muss man aber aufpassen, das in der Auswahl auf der linken Seite 
+das ganze Projekt ausgewählt hat und nicht das Debug bzw. Release 
+Target.
+
+Man könnte das ganze aber auch noch etwas übersichtlicher gestalten, in 
+dem man sich im Tab Custom-Variables eigene Variablen anlegt, die dann 
+an den entsprechenden Stellen eingesetzt werden. (so hätte man eine 
+Zentrale Anlaufstelle für die meisten Compiler-Optionen..)</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2764807" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2764807#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2764807?token=YY%2BTMuh0wsbYEZHLvk9gPIqqZaltbTjCjdpo%2BN5KitsnjMcPp7%2B7ft4dNg6tPuSKiF%2Fk6ePrBrvZwDPXUZdqwQ%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764807#postform" onclick="return !forumInsertQuoting(2764807)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764807#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1342947605000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2764813" class="post box gainlayout  post-userid- post-id-2764813" data-attributionline="erhardd schrieb im Beitrag #2764813:" data-created-at="1342947605000" data-updated-at="1342947605000" data-user-id="" data-guest-name="erhardd" data-score="0">
+
+  <div class="subject">
+    <a name="2764813" href="#2764813">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        erhardd (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-22T11:00:05+02:00">22.07.2012 11:00</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764813&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764813&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>...die Idee ist gut!
+Ich probiers aus, wenn ich die Zeit finde.
+(Ätze grad ein neues Aufsteckboard WLAN/LAN für STM32F417)
+Danke...</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2764813" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2764813#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2764813?token=f20%2F3HN10dLg0UxjFnhamCK%2B9xpsPVByJU5hEm0YN1Y5bmvhPL6oaubd66YFCd4uIEt2WuK7bgtxVDo94sXXTA%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764813#postform" onclick="return !forumInsertQuoting(2764813)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764813#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1342947723000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2764816" class="post box gainlayout  post-userid-9906 post-id-2764816" data-attributionline="Markus M. schrieb im Beitrag #2764816:" data-created-at="1342947723000" data-updated-at="1342947723000" data-user-id="9906" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="2764816" href="#2764816">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        Markus M.
+        (<a href="https://www.mikrocontroller.net/user/show/mmvisual">mmvisual</a>)
+        
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-22T11:02:03+02:00">22.07.2012 11:02</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764816&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2764816&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Ich habe den Thread mal reingenommen in den Artikel <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/STM32">STM32</a> unter 
+"Programmierung".</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2764816" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2764816#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2764816?token=1BmfCTbQS7iyMf8FmytXXBJg4sWIvuZULWzqOa4XoJqSGss0eRsyALQ9WMCIWtPqEJVjhQY42C15drEWIcpAgA%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764816#postform" onclick="return !forumInsertQuoting(2764816)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2764816#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343122568000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2767344" class="post box gainlayout  post-userid- post-id-2767344" data-attributionline="EMIDE schrieb im Beitrag #2767344:" data-created-at="1343122568000" data-updated-at="1343122568000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2767344" href="#2767344">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-24T11:36:08+02:00">24.07.2012 11:36</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767344&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767344&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre><a class="postedlink" href="http://www.emide.org/" rel="nofollow">http://www.emide.org/</a>
+
+* für <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/ARM">ARM</a>
+* basiert auf Code::Blocks
+* Plugin für J-Link gdbserver</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2767344" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2767344#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2767344?token=SScYcnz3zfgpe%2FjXvdy6TlNl6jSvt0CXDSXziqZ0S98PJExPMzy0QC93XxKurT74UZBrdCExfu5ZP6ilKamrxQ%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767344#postform" onclick="return !forumInsertQuoting(2767344)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767344#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343136582000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2767657" class="post box gainlayout  post-userid-21865 post-id-2767657" data-attributionline="Alexander B. schrieb im Beitrag #2767657:" data-created-at="1343136582000" data-updated-at="1343136582000" data-user-id="21865" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="2767657" href="#2767657">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        Alexander B.
+        (<a href="https://www.mikrocontroller.net/user/show/tecnologic">tecnologic</a>)
+        
+      
+      <a class="user-wikipage-link" href="https://www.mikrocontroller.net/articles/Benutzer:tecnologic"><img src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/page_white_text.png" title="Benutzerseite" alt="Benutzerseite"></a>
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-24T15:29:42+02:00">24.07.2012 15:29</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767657&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767657&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Moin,
+
+Hab die emIDE gerade mal ausprobiert.
+Wenn ich ein neues Projekt erstellen will zeigt er mir keinen Wizard an 
+ich komme da also nicht weiter. Viel weiter habe ich dann garnicht 
+getestet, weil mein Eclipse läuft. Aber interessant finde ichs schon.
+
+Wie ist das mit Cpp bei Code::Blocks?
+
+MfG
+
+Tec</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2767657" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2767657#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2767657?token=t3j%2BFBOsKoT0UsqbWQ3B5aW74gmsQ14D%2FfkWMkeR6lTxe6opXGdTPPJebV5KfEVTp05jSSLFYHqp400dyEwKTg%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767657#postform" onclick="return !forumInsertQuoting(2767657)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767657#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343141999000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2767781" class="post box gainlayout  post-userid-41182 post-id-2767781" data-attributionline="André W. schrieb im Beitrag #2767781:" data-created-at="1343141999000" data-updated-at="1343141999000" data-user-id="41182" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="2767781" href="#2767781">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        André W.
+        (<a href="https://www.mikrocontroller.net/user/show/andre-w">andre-w</a>)
+        
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-24T16:59:59+02:00">24.07.2012 16:59</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767781&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767781&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre><span class="attribution-line"><a class="attribution-line" title="Ich habe den Thread mal reingenommen in den Artikel [[STM32]] unter &quot;Programmierung&quot;." onmouseover="if (document.getElementById('2764816')) {this.setAttribute('href', '#2764816');} else if (user &amp;&amp; user.posts_per_page) {this.setAttribute('href', '/topic/goto_post/2764816');}" href="https://www.mikrocontroller.net/topic/265600#2764816">Markus Müller schrieb:</a></span>
+<span class="quoting-level-1">&gt; Ich habe den Thread mal reingenommen in den Artikel <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/STM32">STM32</a> unter</span>
+<span class="quoting-level-1">&gt; "Programmierung".</span>
+
+Danke, wollte ich bei Gelegenheit auch machen..
+
+
+<span class="attribution-line"><a class="attribution-line" title="http://www.emide.org/ &lt;b&gt; für ARM &lt;/b&gt; basiert auf Code::Blocks * Plugin für J-Link gdbserver" onmouseover="if (document.getElementById('2767344')) {this.setAttribute('href', '#2767344');} else if (user &amp;&amp; user.posts_per_page) {this.setAttribute('href', '/topic/goto_post/2767344');}" href="https://www.mikrocontroller.net/topic/265600#2767344">EMMIDE schrieb:</a></span>
+<span class="quoting-level-1">&gt; <a class="postedlink" href="http://www.emide.org/" rel="nofollow">http://www.emide.org/</a></span>
+<span class="quoting-level-1">&gt;</span>
+<span class="quoting-level-1">&gt; * für <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/ARM">ARM</a></span>
+<span class="quoting-level-1">&gt; * basiert auf Code::Blocks</span>
+<span class="quoting-level-1">&gt; * Plugin für J-Link gdbserver</span>
+
+Ich habe mir das ganze gerade einmal kurz angeschaut, leider wäre das 
+für mich keine Alternative, da offensichtlich wirklich nur der J-Link 
+unterstützt wird und keine anderen Debugger, wie z.B. der ST-Link auf 
+den Discovery-Boards. Somit ist wieder an spezielle Hardware gebunden.
+Soweit ich das erkennen kann fehlt jetzt sogar die Möglichkeit einen 
+beliebigen GDB-Server zu verwenden.
+(Ich gehe einmal davon aus, dass Du der Verantwortliche von emIDE bist, 
+da es ja anscheinend noch nicht so weit verbreitet ist..)
+Mir ist aufgefallen, dass es keinen Quellcode mit den Änderungen zum 
+ursprünglichen CodeBlocks Source-Code gibt. Ich bin zwar nicht wirklich 
+Experte auf dem Gebiet, aber soweit mir bekannt ist lässt sich das so 
+mit der GPL nicht vereinbaren..
+Vor allem, da in emIDE einige interessante Bugfixes existieren, die bei 
+CodeBlocks noch nicht verfügbar sind:
+
+<span class="quoting-level-1">&gt; "Double execution of forst additional GDB command, handle lines starting with # </span>
+in additional GDB commands as comment"
+Ich hatte schon einmal vermutet, dass CodeBlocks den "load"-Command, der 
+in meinem Beispiel-Projekt als erster Command im GDB ausgeführt wird, 
+zwei mal an den GDB sendet..
+
+<span class="quoting-level-1">&gt; "Added 'Reset target' to the debugger."</span>
+Den 'Reset Target'-Button gibt es in CodeBlocks nicht - ist allerdings 
+auch kein großes Problem, da man ein "monitor reset" über das 
+Debugger-Window auch direkt an den GDB absetzen kann. Es würde aber 
+etwas Zeit sparen, wenn man nur einen Button anklicken müsste.
+
+Was emIDE aber auch noch fehlt, ist eine Trennung zwischen Debugger 
+starten und Programmspeicher beschreiben - ich habe zumindest öfter den 
+Fall, dass ich zwar noch einmal Debuggen will, sich aber an dem 
+Programmcode nichts geändert hat. Somit wäre ein neues beschreiben des 
+Flash zum einen unnötige Zeit und zum anderen werden Write-Cycles des 
+Flash verschwendet.
+
+------------------------------------------------------------
+Noch ein paar Tips zum Beispiel Projekt aus dem ersten Post:
+Man könnte unter "Project-&gt;Properties-&gt;Debugger-&gt;Debug-&gt;Additional GDB 
+Commands" den "load"-Befehl einfach herausnehmen, dann wird der Flash 
+beim starten des Debuggers nicht neu beschrieben.
+Das Flashen könnte dann bei aktivem Debugger durch einen manuell 
+abgesetzten Load-Command gestartet werden.
+Oder man legt sich alternativ unter "Build Targets" weitere Targets an - 
+wie z.B. "Debug" und "Flash+Debug", die dann entsprechend den load 
+ausführen oder nicht.
+Auch interessant wäre hier ein Target "Debug in RAM", bei dem der 
+komplette Code in den Ram geladen wird. Allerdings habe ich mich damit 
+noch nicht genug beschäftigt und mir fehlen hier noch ein paar Infos, 
+was man dazu noch alles braucht.
+Vermutlich müsste dazu das Linker-File geändert werden und in den Flash 
+an den Reset- und Interrupt-Vektoren ein Sprung zu den entsprechenden 
+Stellen im RAM gesetzt werden.
+Wenn jemand Infos dazu hat - gerne her damit ;)
+
+<span class="attribution-line"><a class="attribution-line" title="Moin, Hab die emIDE gerade mal ausprobiert. Wenn ich ein neues Projekt erstellen will zeigt er mir keinen Wizard an ich komme da also nicht weiter. Viel weiter habe ich dann garnicht getestet, weil mein Eclipse läuft. Aber interessant finde ichs" onmouseover="if (document.getElementById('2767657')) {this.setAttribute('href', '#2767657');} else if (user &amp;&amp; user.posts_per_page) {this.setAttribute('href', '/topic/goto_post/2767657');}" href="https://www.mikrocontroller.net/topic/265600#2767657">Tec Nologic schrieb:</a></span>
+<span class="quoting-level-1">&gt; Moin,</span>
+<span class="quoting-level-1">&gt;</span>
+<span class="quoting-level-1">&gt; Hab die emIDE gerade mal ausprobiert.</span>
+<span class="quoting-level-1">&gt; Wenn ich ein neues Projekt erstellen will zeigt er mir keinen Wizard an</span>
+<span class="quoting-level-1">&gt; ich komme da also nicht weiter. Viel weiter habe ich dann garnicht</span>
+<span class="quoting-level-1">&gt; getestet, weil mein Eclipse läuft. Aber interessant finde ichs schon.</span>
+<span class="quoting-level-1">&gt;</span>
+<span class="quoting-level-1">&gt; Wie ist das mit Cpp bei Code::Blocks?</span>
+<span class="quoting-level-1">&gt;</span>
+<span class="quoting-level-1">&gt; MfG</span>
+<span class="quoting-level-1">&gt;</span>
+<span class="quoting-level-1">&gt; Tec</span>
+
+Das mit dem Wizard ist mir auch direkt nach dem Starten aufgefallen. Ein 
+neues Projekt anzulegen scheint unmöglich zu sein.
+Cpp ist bei CodeBlocks kein Problem.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2767781" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2767781#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2767781?token=ys%2BAyelUyNDXY0Y1mb81%2BhHSKquzzOaSigjsDyM%2BhxKMzNT0pp%2BxaNFv4fCKzrFMEyer6z1K2OveErcgrONnCA%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767781#postform" onclick="return !forumInsertQuoting(2767781)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767781#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343150489000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2767946" class="post box gainlayout  post-userid- post-id-2767946" data-attributionline="EMIDE schrieb im Beitrag #2767946:" data-created-at="1343150489000" data-updated-at="1343150489000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2767946" href="#2767946">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-24T19:21:29+02:00">24.07.2012 19:21</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767946&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767946&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Hallo!
+
+Ich bin nicht der Entwickler der IDE. :-)
+
+Bin nur durch Zufall drüber gestolpert:
+<a class="postedlink" href="http://www.segger.com/jlink-ide-integration.html" rel="nofollow">http://www.segger.com/jlink-ide-integration.html</a>
+
+Da ich beruflich mit IAR und dem J-Link arbeite, bin ich ein großer Fan 
+von diesem Duo. Die Qualität der Software rund um den J-Link finde ich 
+prima hinsichtlich Stabilität.
+
+Daher würde ich den gerne auch privat einsetzen (J-Link EDU für ca. 
+50EUR).
+Nur leider ist mir die EWB von IAR zu teuer, um sie privat kaufen. Die 
+Kickstart-Version reicht leider nicht mehr aus.
+
+Daher suche ich jetzt nach einer freien Alternative, die den J-Link 
+benutzen kann. Generell bin ich auch nicht so der Eclipse-Fan.
+Da kam emIDE gerade gelegen.
+
+Leider habe ich auch noch nicht herausgefunden, wie man ein Projekt 
+anlegt.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2767946" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2767946#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2767946?token=90rJWotdtOizDeC%2B2sYB3VHWUMPi%2Fi%2F31oJCOerdLruxSZ1nxJbNULUBR3vJt4VrUyPRg2x4EY6CmBkWZQDOoQ%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767946#postform" onclick="return !forumInsertQuoting(2767946)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767946#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343150952000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2767952" class="post box gainlayout  post-userid-41182 post-id-2767952" data-attributionline="André W. schrieb im Beitrag #2767952:" data-created-at="1343150952000" data-updated-at="1343150952000" data-user-id="41182" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="2767952" href="#2767952">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        André W.
+        (<a href="https://www.mikrocontroller.net/user/show/andre-w">andre-w</a>)
+        
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-24T19:29:12+02:00">24.07.2012 19:29</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767952&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2767952&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Dann probiere doch erst einaml CodeBlocks ohne die Modifikationen von 
+emIDE - da es ja soweit ich gesehen habe einen GDB-Server für den J-Link 
+gibt sollte es kein großartiges Problem sein das Beispiel-Projekt auf 
+den J-Link GDB-Server einzustellen.
+Im Prinzip müsste man nur unter Project/Debugger den Port anpassen und 
+ggf. noch bei den additional commands kleine Anpassungen machen - der 
+Rest sollte gleich bleiben können. Und man müsste halt im gegensatz zu 
+emIDE den GDB-Server von Hand starten..
+Für andere Prozessoren braucht man ggf. noch entsprechende Linker und 
+Starter-Files - die sollten sich aber auch finden lassen.
+
+Ich bin gerade dabei mir ein neues Projekt Template zu bauen, mit den 
+Erkenntnissen der letzten Tage.. mal sehen was dabei raus kommt.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2767952" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2767952#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2767952?token=OFql5TK689iSjjVz8aX98KZrX%2BXhGrIPFv%2FbYGQLV99%2BWfHYfXGKYJSCkrbi1HlGpJ7epW%2BcjHZC5YBP69a3xQ%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767952#postform" onclick="return !forumInsertQuoting(2767952)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2767952#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343163799000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2768278" class="post box gainlayout  post-userid-41182 post-id-2768278" data-attributionline="André W. schrieb im Beitrag #2768278:" data-created-at="1343163799000" data-updated-at="1343163799000" data-user-id="41182" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="2768278" href="#2768278">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        André W.
+        (<a href="https://www.mikrocontroller.net/user/show/andre-w">andre-w</a>)
+        
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-24T23:03:19+02:00">24.07.2012 23:03</time></span>
+    </div>
+</td></tr></tbody></table>
+
+      <div class="attachments">
+      Angehängte Dateien:<br>
+
+      <ul class="attachments-files">
+        <li>
+          <a href="https://www.mikrocontroller.net/attachment/150364/Template-Projekt_V2.zip">Template-Projekt_V2.zip</a> (4,56 KB, 358 Downloads)
+        </li>
+        </ul>
+
+    </div>
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2768278&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2768278&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Im Anhang gibt es jetzt das Ergebnis des neuen Templates! (Anweisungen 
+zur Verwendung in der README.txt)
+
+jetzt sind unter Custom Variables die wichtigsten Einstellungen für den 
+Prozessor zusammengefasst und es gibt 3 Targts:
+Flash+Debug:
+Dieses Target startet den Debugger und beschreibt sofort den Flash mit 
+dem aktuell compilierten File.
+
+Debug:
+Wenn man den Debugger mit diesem Target startet wird nur der GDB 
+gestartet - der Flash aber nicht beschrieben.
+
+Release:
+erzeugt ein ${PROJECT_NAME}.bin-File, dass mit dem ST-Link Utility auf 
+den Prozessor geladen werden kann.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2768278" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2768278#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2768278?token=9U1a0bo3JkmoalhXu%2Fh3mhHGZ%2BLpd7ccLhb9XO2BNImzTg7s9fxf8a5m%2F5KoifMsEzPmomfxiWV6DKZzYlzUkw%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2768278#postform" onclick="return !forumInsertQuoting(2768278)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2768278#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343226620000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769131" class="post box gainlayout  post-userid- post-id-2769131" data-attributionline="EMIDE schrieb im Beitrag #2769131:" data-created-at="1343226620000" data-updated-at="1343226620000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2769131" href="#2769131">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-25T16:30:20+02:00">25.07.2012 16:30</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769131&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769131&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Hi!
+
+Ich habe das mit CB und einem J-Link EDU jetzt soweit laufen.
+
+Kannst Du mir erklären, was das Ändern des Linker-Skripts bewirkt?
+Stichwort: " _exit = .;"
+
+Ich kann meinen Startup-Code nämlich ohne Probleme debuggen.
+Allerdings lande ich immer im Hard Fault Handler sobald ich auf "BL 
+__libc_init_array" komme.
+
+Ich muss dazu sagen, dass ich einen STM32L152VB benutze. Ich hatte mir 
+ein Projekt von Atollic Truestudio Lite generieren lassen und das 
+Linker-Skript benutzt.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769131" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769131#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769131?token=3xyNg5MPx14O02cnjenIzaYhRNYL2LOTOCerwVYf6UeZH9m%2B3MS%2B5gjfwOKemEx7pNTFloVejepsPfDu2cIJXQ%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769131#postform" onclick="return !forumInsertQuoting(2769131)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769131#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343227407000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769155" class="post box gainlayout  post-userid- post-id-2769155" data-attributionline="EMIDE schrieb im Beitrag #2769155:" data-created-at="1343227407000" data-updated-at="1343227407000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2769155" href="#2769155">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-25T16:43:27+02:00">25.07.2012 16:43</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769155&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769155&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Ok. Das Problem mit __libc_init_array() hat sich erledigt.
+Es ist bei Dir ja auch aus kommentiert.
+
+Da kein C++ mit statischen Konstruktoren vorhanden ist, wird das wohl 
+nicht benötigt. Siehe dazu Punkt 22:
+<a class="postedlink" href="http://eetimes.com/design/embedded/4026075/Building-Bare-Metal-ARM-Systems-with-GNU-Part-2" rel="nofollow">http://eetimes.com/design/embedded/4026075/Buildin...</a>
+
+Könntest Du das mit dem Linker-Skript trotzdem noch erläutern? Danke!</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769155" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769155#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769155?token=MHfkkelsHM5eU3i9c03ge3EnmD3clYJXrIBctuBCn1t2dLCspqdldlhf33hgPGTNc9IZfVITvC74mgeZb59%2FQQ%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769155#postform" onclick="return !forumInsertQuoting(2769155)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769155#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343227686000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769163" class="post box gainlayout  post-userid- post-id-2769163" data-attributionline="Tobi schrieb im Beitrag #2769163:" data-created-at="1343227686000" data-updated-at="1343227686000" data-user-id="" data-guest-name="Tobi" data-score="0">
+
+  <div class="subject">
+    <a name="2769163" href="#2769163">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        Tobi (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-25T16:48:06+02:00">25.07.2012 16:48</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769163&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769163&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre><span class="attribution-line"><a class="attribution-line" title="...die Idee ist gut! Ich probiers aus, wenn ich die Zeit finde. (Ätze grad ein neues Aufsteckboard WLAN/LAN für STM32F417) Danke..." onmouseover="if (document.getElementById('2764813')) {this.setAttribute('href', '#2764813');} else if (user &amp;&amp; user.posts_per_page) {this.setAttribute('href', '/topic/goto_post/2764813');}" href="https://www.mikrocontroller.net/topic/265600#2764813">erhardd schrieb:</a></span>
+<span class="quoting-level-1">&gt; ...die Idee ist gut!</span>
+<span class="quoting-level-1">&gt; Ich probiers aus, wenn ich die Zeit finde.</span>
+<span class="quoting-level-1">&gt; (Ätze grad ein neues Aufsteckboard WLAN/LAN für STM32F417)</span>
+<span class="quoting-level-1">&gt; Danke...</span>
+
+Was für ein WLAN-Modul verwendest du denn?</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769163" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769163#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769163?token=1nTk%2BohhS5JeN3rmkqaT0uUBmd%2Fs1x55otDer8Iv7OWQd7DHx6oyKlg73SOB1xdk5%2FQYn2JRIAD2yoWATfIM%2Fw%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769163#postform" onclick="return !forumInsertQuoting(2769163)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769163#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343231996000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769265" class="post box gainlayout  post-userid- post-id-2769265" data-attributionline="erhardd schrieb im Beitrag #2769265:" data-created-at="1343231996000" data-updated-at="1343231996000" data-user-id="" data-guest-name="erhardd" data-score="0">
+
+  <div class="subject">
+    <a name="2769265" href="#2769265">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        erhardd (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-25T17:59:56+02:00">25.07.2012 17:59</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769265&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769265&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre><a title="http://www.reichelt.de/ NETGEAR WNCE2001 ... für 26,95€ wohl eine der günstigsten Methoden, -nicht nur mit meinem http://www.mikrocontroller.net/topic/256323#2650589 stm32- Baseboard, fast drahtlos in's Net zu kommen;" onmouseover="if (document.getElementById('2677074')) {this.setAttribute('href', '#2677074');} else if (user &amp;&amp; user.posts_per_page) {this.setAttribute('href', '/topic/goto_post/2677074');}" href="https://www.mikrocontroller.net/topic/258831#2677074">Beitrag "stm32f4 Bord im LAN"</a>
+@Tobi (Gast)
+...dieses wird nur mit einem DP83848 PHY gekoppelt...</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769265" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769265#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769265?token=o15hWEiRhGFogfvirb8HtPuvw%2BsGk9wl7b%2BPUaPtZTrlXTVlB1r92W6NXCe%2BzoMC%2BVpCq4gV4ly5pdR%2BLDCFIA%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769265#postform" onclick="return !forumInsertQuoting(2769265)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769265#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343234099000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769326" class="post box gainlayout  post-userid-41182 post-id-2769326" data-attributionline="André W. schrieb im Beitrag #2769326:" data-created-at="1343234099000" data-updated-at="1343234099000" data-user-id="41182" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="2769326" href="#2769326">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        André W.
+        (<a href="https://www.mikrocontroller.net/user/show/andre-w">andre-w</a>)
+        
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-25T18:34:59+02:00">25.07.2012 18:34</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769326&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769326&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre><span class="attribution-line"><a class="attribution-line" title="Hi! Ich habe das mit CB und einem J-Link EDU jetzt soweit laufen. Kannst Du mir erklären, was das Ändern des Linker-Skripts bewirkt? Stichwort: &quot; _exit = .;&quot; Ich kann meinen Startup-Code nämlich ohne Probleme debuggen. Allerdings lande ich" onmouseover="if (document.getElementById('2769131')) {this.setAttribute('href', '#2769131');} else if (user &amp;&amp; user.posts_per_page) {this.setAttribute('href', '/topic/goto_post/2769131');}" href="https://www.mikrocontroller.net/topic/265600#2769131">EMIDE schrieb:</a></span>
+<span class="quoting-level-1">&gt; Hi!</span>
+<span class="quoting-level-1">&gt;</span>
+<span class="quoting-level-1">&gt; Ich habe das mit CB und einem J-Link EDU jetzt soweit laufen.</span>
+<span class="quoting-level-1">&gt;</span>
+<span class="quoting-level-1">&gt; Kannst Du mir erklären, was das Ändern des Linker-Skripts bewirkt?</span>
+<span class="quoting-level-1">&gt; Stichwort: " _exit = .;"</span>
+<span class="quoting-level-1">&gt;</span>
+<span class="quoting-level-1">&gt; Ich kann meinen Startup-Code nämlich ohne Probleme debuggen.</span>
+<span class="quoting-level-1">&gt; Allerdings lande ich immer im Hard Fault Handler sobald ich auf "BL</span>
+<span class="quoting-level-1">&gt; __libc_init_array" komme.</span>
+<span class="quoting-level-1">&gt;</span>
+<span class="quoting-level-1">&gt; Ich muss dazu sagen, dass ich einen STM32L152VB benutze. Ich hatte mir</span>
+<span class="quoting-level-1">&gt; ein Projekt von Atollic Truestudio Lite generieren lassen und das</span>
+<span class="quoting-level-1">&gt; Linker-Skript benutzt.</span>
+
+Hi,
+
+mit dem Linker-Script bin ich auch noch nicht so richtig Fit - aber hier 
+mal ein Versuch zur Erklärung (ohne Garantie auf Richtigkeit!):
+
+wenn der Eintrag im Linkserscript fehlt bekomme ich beim linken folgende 
+Fehlermeldung:</pre><div class="CodeRay"><div class="code notranslate"><table><tbody><tr><td><div><pre>arm-none-eabi-g++.exe
+    -o bin\Debug\TRIP_STM32_Graph.elf
+    obj\Debug\STM32F4xx_DSP_StdPeriph_Lib_V1.0.1\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c.o
+    obj\Debug\STM32F4xx_DSP_StdPeriph_Lib_V1.0.1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c.o
+    obj\Debug\STM32F4xx_DSP_StdPeriph_Lib_V1.0.1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c.o
+    obj\Debug\TRIP_STM32_Graph\main.c.o
+    obj\Debug\STM32F4xx_DSP_StdPeriph_Lib_V1.0.1\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\TrueSTUDIO\startup_stm32f4xx.s.o
+    -mthumb
+    -Wall
+    -mlittle-endian
+    -T"C:\Software\TRIP_STM32_Graph\..\STM32F4xx_DSP_StdPeriph_Lib_V1.0.1\Project\STM32F4xx_StdPeriph_Templates\TrueSTUDIO\STM324xG_EVAL\stm32_flash.ld"
+    -mcpu=cortex-m4
+    -mfloat-abi=hard
+    -mfpu=fpv4-sp-d16
+    -g
+
+c:/program files (x86)/gnu tools arm embedded/4.6 2012q2/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-exit.o): In function `exit':
+exit.c:(.text.exit+0x16): undefined reference to `_exit'</pre></div></td></tr></tbody></table></div></div><pre>
+Was vermutlich daran liegt, dass der Linker nicht weis an welche Stelle 
+er diese Section schreiben soll.
+Die Zeile im Linker-Script teilt ihm das dann mit, das die Funktion an 
+das Ende des Flash kommt. (Die Problemlösung hatte ich durch googlen 
+gefunden - aber den Link nicht mehr parat..)
+
+Wozu er überhaupt die exit funktion mit linken will ist mir allerdings 
+ein Rätsel, da auf einem µC die Main in eine Endlos-Schleife läuft und 
+nie ein Exit benötigt wird.
+
+Vermutlich wurde deswegen die Exit-Funktion in der Atollic-Toolchain 
+(von der ja eigentlich das Linkerscript stammt) weg optimiert und auch 
+kein Eintrag im Linkerscript dazu erstellt,
+während sie in den GNU Tools for <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/ARM">ARM</a> Embedded Processors noch mit 
+vorhanden ist..
+
+Gruß,
+André</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769326" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769326#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769326?token=UUHdmokW4rKj4uYw4KHq%2FGuDFw%2BoKqh%2Bb6oIsW21sd8XQomnxt2bCqXuQfXz0G5KaXaWTyaslgc7sFOe4mhRxQ%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769326#postform" onclick="return !forumInsertQuoting(2769326)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769326#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343238797000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769436" class="post box gainlayout  post-userid- post-id-2769436" data-attributionline="EMIDE schrieb im Beitrag #2769436:" data-created-at="1343238797000" data-updated-at="1343238797000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2769436" href="#2769436">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-25T19:53:17+02:00">25.07.2012 19:53</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769436&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769436&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>@andre-w
+
+Strange. Ich habe das Linker-Skript so gelassen, wie es dem Atollic 
+herauskommt. Bei mir läuft der Compiler durch.
+
+Wie genau läuft das hier jetzt eigentlich mit der libc?
+Ich möchte natürlich auch ein paar Ausgaben mit printf() erzeugen.
+
+Beim Atollic kann man dazu ja die Funktion _write() schreiben, die dann 
+angeblich vom eingebauten printf() benutzt werden kann.
+
+Zum Beispiel so:</pre><div class="CodeRay"><div class="code notranslate"><table><tbody><tr><td><div><pre>int _write(int file, char *ptr, int len)
+{
+  /* Implement your write code here, this is used by puts and printf for example */
+  int i=0;
+  for(i=0 ; i&lt;len ; i++)
+    ITM_SendChar((*ptr++));
+  return len;
+}
+</pre></div></td></tr></tbody></table></div></div><pre>
+Gibt es so einen Mechanismus auch bei den <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/ARM">ARM</a> GNU Tools?
+Wenn ich stdio.h einbinde und printf() aufrufe, dann gibt es sofort 
+einen Hard Fault.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769436" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769436#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769436?token=v5JkIlPcpO4dUzu81ae%2BWDZMP4ZOEv0SHKEBKtvBlon5kTAfHBfdVhtfnHnG1jruNLm%2BxsCUw2tIu1oFVBx2kw%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769436#postform" onclick="return !forumInsertQuoting(2769436)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769436#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343248221000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769713" class="post box gainlayout  post-userid- post-id-2769713" data-attributionline="EMIDE schrieb im Beitrag #2769713:" data-created-at="1343248221000" data-updated-at="1343248221000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2769713" href="#2769713">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-25T22:30:21+02:00">25.07.2012 22:30</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769713&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769713&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Also irgendetwas scheint da noch faul zu sein.
+Die Kombination aus Startup-Code und Linker-Skript scheint nicht so ganz 
+zu passen. Zumindestens nicht, wenn man die libc (newlibc) der GNU <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/ARM">ARM</a> 
+Toolchain benutzen möchte, die ja dabei ist.
+
+Muss die libc nicht erst im Startup-Code initialisiert werden? Einsprung 
+_start zum Beispiel?
+In der README.TXT der Toolchain steht sowas zumindestens im 
+Startup-Code.
+Wenn ich das aber einbaue, dann lande ich wieder im Hard Fault Handler.
+
+Ist die Atollic Toolchain denn SO anders? Die benutzen doch auch die 
+newlibc.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769713" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769713#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769713?token=r89Ot9icZdRezBf3IwRWB1s5ierKnoaQ%2FQi0Ui701P3pzBqKl1ccbFjAsDIwddKxWcwIqkQYuOmpEu99oSk05w%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769713#postform" onclick="return !forumInsertQuoting(2769713)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769713#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343248369000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769714" class="post box gainlayout  post-userid- post-id-2769714" data-attributionline="EMIDE schrieb im Beitrag #2769714:" data-created-at="1343248369000" data-updated-at="1343248369000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2769714" href="#2769714">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-25T22:32:49+02:00">25.07.2012 22:32</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769714&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769714&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Skript passend zum STM32L152VB:
+</pre><div class="CodeRay"><div class="code notranslate"><table><tbody><tr><td><div><pre>/* Entry Point */
+ENTRY(Reset_Handler)
+
+/* Highest address of the user mode stack */
+_estack = 0x20004000;    /* end of 16K RAM */
+
+/* Generate a link error if heap and stack don't fit into RAM */
+_Min_Heap_Size = 0;      /* required amount of heap  */
+_Min_Stack_Size = 0x80; /* required amount of stack */
+
+/* Specify the memory areas */
+MEMORY
+{
+  FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 128K
+  RAM (xrw)       : ORIGIN = 0x20000000, LENGTH = 16K
+  MEMORY_B1 (rx)  : ORIGIN = 0x60000000, LENGTH = 0K
+}
+
+/* Define output sections */
+SECTIONS
+{
+  /* The startup code goes first into FLASH */
+  .isr_vector :
+  {
+    . = ALIGN(4);
+    KEEP(*(.isr_vector)) /* Startup code */
+    . = ALIGN(4);
+  } &gt;FLASH
+
+  /* The program code and other data goes into FLASH */
+  .text :
+  {
+    . = ALIGN(4);
+    *(.text)           /* .text sections (code) */
+    *(.text*)          /* .text* sections (code) */
+    *(.rodata)         /* .rodata sections (constants, strings, etc.) */
+    *(.rodata*)        /* .rodata* sections (constants, strings, etc.) */
+    *(.glue_7)         /* glue arm to thumb code */
+    *(.glue_7t)        /* glue thumb to arm code */
+    *(.eh_frame)
+
+    KEEP (*(.init))
+    KEEP (*(.fini))
+
+    . = ALIGN(4);
+    _etext = .;        /* define a global symbols at end of code */
+  } &gt;FLASH
+
+
+   .ARM.extab   : { *(.ARM.extab* .gnu.linkonce.armextab.*) } &gt;FLASH
+    .ARM : {
+    __exidx_start = .;
+      *(.ARM.exidx*)
+      __exidx_end = .;
+    } &gt;FLASH
+
+  .preinit_array     :
+  {
+    PROVIDE_HIDDEN (__preinit_array_start = .);
+    KEEP (*(.preinit_array*))
+    PROVIDE_HIDDEN (__preinit_array_end = .);
+  } &gt;FLASH
+  .init_array :
+  {
+    PROVIDE_HIDDEN (__init_array_start = .);
+    KEEP (*(SORT(.init_array.*)))
+    KEEP (*(.init_array*))
+    PROVIDE_HIDDEN (__init_array_end = .);
+  } &gt;FLASH
+  .fini_array :
+  {
+    PROVIDE_HIDDEN (__fini_array_start = .);
+    KEEP (*(SORT(.fini_array.*)))
+    KEEP (*(.fini_array*))
+    PROVIDE_HIDDEN (__fini_array_end = .);
+  } &gt;FLASH
+
+  /* used by the startup to initialize data */
+  _sidata = LOADADDR(.data);
+
+  /* Initialized data sections goes into RAM, load LMA copy after code */
+  .data :
+  {
+    . = ALIGN(4);
+    _sdata = .;        /* create a global symbol at data start */
+    *(.data)           /* .data sections */
+    *(.data*)          /* .data* sections */
+
+    . = ALIGN(4);
+    _edata = .;        /* define a global symbol at data end */
+  } &gt;RAM AT&gt; FLASH
+
+  /* Uninitialized data section */
+  . = ALIGN(4);
+  .bss :
+  {
+    /* This is used by the startup in order to initialize the .bss secion */
+    _sbss = .;         /* define a global symbol at bss start */
+    __bss_start__ = _sbss;
+    *(.bss)
+    *(.bss*)
+    *(COMMON)
+
+    . = ALIGN(4);
+    _ebss = .;         /* define a global symbol at bss end */
+    __bss_end__ = _ebss;
+  } &gt;RAM
+
+  /* User_heap_stack section, used to check that there is enough RAM left */
+  ._user_heap_stack :
+  {
+    . = ALIGN(4);
+    PROVIDE ( end = . );
+    PROVIDE ( _end = . );
+    . = . + _Min_Heap_Size;
+    . = . + _Min_Stack_Size;
+    . = ALIGN(4);
+  } &gt;RAM
+
+  /* MEMORY_bank1 section, code must be located here explicitly            */
+  /* Example: extern int foo(void) __attribute__ ((section (".mb1text"))); */
+  .memory_b1_text :
+  {
+    *(.mb1text)        /* .mb1text sections (code) */
+    *(.mb1text*)       /* .mb1text* sections (code)  */
+    *(.mb1rodata)      /* read-only data (constants) */
+    *(.mb1rodata*)
+  } &gt;MEMORY_B1
+
+  /* Remove information from the standard libraries */
+  /DISCARD/ :
+  {
+    libc.a ( * )
+    libm.a ( * )
+    libgcc.a ( * )
+  }
+
+  .ARM.attributes 0 : { *(.ARM.attributes) }
+}
+</pre></div></td></tr></tbody></table></div></div>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769714" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769714#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769714?token=rfTY7Irro8H1rIMw1BOVyQ2QCKs2YYxSkxTZ685NXj3r94zRxSDaefOgJPXHYhF%2FD2WJ67jnsivHDoLEQZC%2BJw%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769714#postform" onclick="return !forumInsertQuoting(2769714)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769714#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343287174000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769929" class="post box gainlayout  post-userid- post-id-2769929" data-attributionline="EMIDE schrieb im Beitrag #2769929:" data-created-at="1343287174000" data-updated-at="1343287174000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2769929" href="#2769929">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-26T09:19:34+02:00">26.07.2012 09:19</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769929&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769929&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Ich denke, dass mein Problem evtl. hier zu suchen ist:
+<a title="Hi, ich entwickle gerade ein Programm für einen STM32F407VG unter Verwendung von C++. Hierfür nutze ich eine selbst kompilierte GCC Toolchain mit der newlib. So weit funktioniert alles. Das Problem was ich habe kam, als ich festgestellt habe" onmouseover="if (user &amp;&amp; user.posts_per_page) {this.setAttribute('href', '/topic/259766?goto=new#new');}" href="https://www.mikrocontroller.net/topic/259766#new">Beitrag "STM32F4 C++ springt bei __libc_init_array in den HardFault"</a></pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769929" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769929#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769929?token=1OrmMuwficatVAua%2B2zmoGdqhlUar2ApBRrbevejcU6S6bIPo9TwfqtYrF%2FoHWIWZZ8HFZQpXlBRAIBVeH6RVA%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769929#postform" onclick="return !forumInsertQuoting(2769929)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769929#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343289147000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2769956" class="post box gainlayout  post-userid- post-id-2769956" data-attributionline="EMIDE schrieb im Beitrag #2769956:" data-created-at="1343289147000" data-updated-at="1343289147000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2769956" href="#2769956">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-26T09:52:27+02:00">26.07.2012 09:52</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769956&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2769956&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Wieder etwas gelernt.
+
+Die newlibc benutzt verschiedene Implementierungen, die für die 
+jeweilige Architektur optimiert sind. Stichwort: multilibs
+
+Welche lib nun ausgewäht wird, kann man so überprüfen:
+arm-none-eabi-gcc.exe -print-multi-directory -mcpu=cortex-m3 -mthumb
+armv7-m
+
+Hier wird also "armv7-m" ausgespuckt. Dort befindet sich nun auch die 
+richtige libc, die nur aus dem Thumb-Befehlssatz besteht. Der Cortex-M3 
+unterstützt ja nur diesen.
+
+Man muss also in CB noch unter den Linker Settings folgende Schalter 
+einfügen: -mcpu=cortex-m3 -mthumb
+Dann benutzt der Linker auch die richtige libc und es gibt keinen Hard 
+Fault mehr, weil die CPU in den <a title="Link zu Wiki-Artikel" class="wiki" href="https://www.mikrocontroller.net/articles/ARM">ARM</a> Modus springen sollte.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2769956" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2769956#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2769956?token=3hNAAGJjxzT9A5swsGgmsV%2BENpJGP4QwxIso%2F6UVZOKYEBQ9Lai%2BjPsPPPWjGaIHXXG30si5ukmQkXPQKsiE%2BA%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769956#postform" onclick="return !forumInsertQuoting(2769956)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2769956#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1343313821000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="2770620" class="post box gainlayout  post-userid- post-id-2770620" data-attributionline="EMIDE schrieb im Beitrag #2770620:" data-created-at="1343313821000" data-updated-at="1343313821000" data-user-id="" data-guest-name="EMIDE" data-score="0">
+
+  <div class="subject">
+    <a name="2770620" href="#2770620">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        EMIDE (Gast)
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2012-07-26T16:43:41+02:00">26.07.2012 16:43</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2770620&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=2770620&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Gibt es für CB evtl. ein Plugin mit dem eine bessere Disassembly-Ansicht 
+bekommt? Das was da aktuell geboten wird, ist ja recht spatanisch.
+Derzeit bekommt man nur ein wenig Assembler der aktuellen C-Source Zeile 
+angezeigt. Scrollen ist nicht möglich.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/2770620" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=2770620#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/2770620?token=8l1ZJYb7lw7IraptuCvaRZVt4MJx9dw8emb2c3pOG%2F60Xg0YyTDuts6hDairWl7zl5hhgv9z4kUufK1c9ZP75A%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2770620#postform" onclick="return !forumInsertQuoting(2770620)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=2770620#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1367582350000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="3151005" class="post box gainlayout  post-userid-33100 post-id-3151005" data-attributionline="Johann H. schrieb im Beitrag #3151005:" data-created-at="1367582350000" data-updated-at="1367582350000" data-user-id="33100" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="3151005" href="#3151005">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        Johann H.
+        (<a href="https://www.mikrocontroller.net/user/show/joe-c">joe-c</a>)
+        
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2013-05-03T13:59:10+02:00">03.05.2013 13:59</time></span>
+    </div>
+</td></tr></tbody></table>
+
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=3151005&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=3151005&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>Hallo,
+
+ich versuche schon seit einiger Zeit C::B als IDE für den STM32F4 
+einzustellen, aber es klappt irgendwie nicht richtig.
+
+Aktuell habe ich eine Portable Variante von CodeBblocks 12.11 und den 
+GNU (Link aus dem ersten Beitrag) in Verwendung.
+Der oben mitgelieferte Projektodner (STM32F4-Template2.zip) ist eine 
+abgewandelte Variante von André W. (Beitrag #2768278)
+
+Bulid/Rebuild laufen in Debug und Release ohne Warnungen und Fehler 
+durch. Die *.bin wird auch erstellt und lässt sich mit dem ST-Link 
+Untility öffnen.
+Das Problem ist allerdings, die Sartadresse ist immer 0x00000000, 
+weshalb ich auch folgende Fehlermeldung bekomme:
+</pre><div class="CodeRay"><div class="code notranslate"><table><tbody><tr><td><div><pre>STM32 ST-LINK CLI v1.4.0
+STM32 ST-LINK Command Line Interface
+Connected via SWD.
+Device ID:0x411
+Device flash Size : 1024 Kbytes
+Device family :STM32F4xx
+Flash Programming:
+File : output\Release\exe\Blinky_STM3240G.bin
+Address : 0x00000000
+[0x00000000]:Invalid address!
+MCU Reset.
+Application started.</pre></div></td></tr></tbody></table></div></div><pre>
+Zusätzlich hab ich die <a class="postedlink" href="http://www.emide.org/" rel="nofollow">http://www.emide.org/</a> ausprobiert. Dort hab ich 
+ein Testprojekt erstellt und bei postbuild folgende Erweiterung 
+eingegeben:
+</pre><div class="CodeRay"><div class="code notranslate"><table><tbody><tr><td><div><pre>arm-none-eabi-objcopy -O binary ${PROJEKT_DIR}output\Release\exe\${PROJECT_NAME}.elf ${PROJEKT_DIR}output\Release\exe\${PROJECT_NAME}.bin
+arm-none-eabi-size --format=berkeley ${PROJEKT_DIR}output\Release\exe\${PROJECT_NAME}.elf
+C:\Users\Talentfrei\Desktop\CodeBlocks-12P_big\tool\ST-LINK_gdbserver\ST-LINK_CLI.exe -c SWD -P "${PROJEKT_DIR}output\Release\exe\${PROJECT_NAME}.bin" -Rst -Run</pre></div></td></tr></tbody></table></div></div><pre>
+Interessanterweise ist die Wirkung fast dieselbe. Build ohne Fehler und 
+Warnungen und am Ende ist eine BIN Datei da. Aber auch hier ist die 
+Startadresse wieder 0x00000000.
+
+Ich weiss nicht was ich falsch mache. Hab einen Fehler im Linkerscript 
+vermutet und versucht hier eine Lösung zu finden 
+<a class="postedlink" href="http://www.bravegnu.org/gnu-eprog/c-startup.html" rel="nofollow">http://www.bravegnu.org/gnu-eprog/c-startup.html</a>
+wurde aber nicht fündig.
+
+Kann mir jemand sagen, was ich falsch mache und wie es richtig wäre?
+
+MFG</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/3151005" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=3151005#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/3151005?token=7c4DmEN9M%2FIx7KGfE93OAdaJWNoVnn61b4N01iOCH32rzVelDLZKSjfgBloArEq31HzZmpsYQMw7mS%2F5rF%2F%2FZw%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=3151005#postform" onclick="return !forumInsertQuoting(3151005)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=3151005#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+      <script type="text/javascript">
+      if (!have_newpost_anchor && (!topic_last_read_at || topic_last_read_at < 1367609837000)) {
+        document.write('<a name="new" id="new"></a>');
+        have_newpost_anchor = true;
+      }
+      </script>
+
+      
+<div id="3151569" class="post box gainlayout  post-userid-33100 post-id-3151569" data-attributionline="Johann H. schrieb im Beitrag #3151569:" data-created-at="1367609837000" data-updated-at="1367609837000" data-user-id="33100" data-guest-name="" data-score="0">
+
+  <div class="subject">
+    <a name="3151569" href="#3151569">Re: STM32F4 mit Code::Blocks</a>
+  </div>
+
+  <div class="info">
+	<table><tbody><tr><td>
+	</td>
+	<td>
+    <div class="author">
+      Autor:
+      <span class="name">
+        Johann H.
+        (<a href="https://www.mikrocontroller.net/user/show/joe-c">joe-c</a>)
+        
+      
+      
+
+
+      </span>
+    </div>
+
+    <div class="date">
+      <span class="created">Datum: <time class="datetime" datetime="2013-05-03T21:37:17+02:00">03.05.2013 21:37</time></span>
+    </div>
+</td></tr></tbody></table>
+
+      <div class="attachments">
+      Angehängte Dateien:<br>
+
+      <ul class="attachments-files">
+        <li>
+          <a href="https://www.mikrocontroller.net/attachment/177986/STM32F4-Template2.zip">STM32F4-Template2.zip</a> (195 KB, 207 Downloads)
+        </li>
+        <li>
+          <a href="https://www.mikrocontroller.net/attachment/177987/em_projekt.zip">em_projekt.zip</a> (96,2 KB, 191 Downloads)
+        </li>
+        </ul>
+
+    </div>
+  
+  </div>
+
+  <hr style="clear: both;">
+
+  <div class="post-vote-links noprint" style="float:right; font-size: 10px;">
+  Bewertung
+  <table><tbody><tr>
+  <td><span class="score">0</span></td>
+  <td>
+  <a class="up" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=3151569&amp;rating=1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▲</span> lesenswert</a>
+  <br>
+  <a class="down" rel="nofollow" data-remote="true" href="https://www.mikrocontroller.net/topic/vote_post?id=3151569&amp;rating=-1"><span style="font-size: 150%;font-weight: bold;font-family:Arial;">▼</span> nicht lesenswert</a>
+  </td>
+  </tr></tbody></table>
+  </div>
+
+  <div class="text gainlayout">
+      <pre>...irgendwie sind die Anhänge abhanden gekommen... neuer Versuch.</pre>
+  </div>
+
+  <br style="clear: both;">
+
+
+
+  <div class="foot gainlayout unselectable">
+    <span class="menuitem postmenuitem-report"><a href="https://www.mikrocontroller.net/topic/report_post/3151569" data-remote="true" class="nav" data-confirm="Möchten Sie den Beitrag zur Überprüfung melden?" rel="nofollow">Beitrag melden</a></span> <span class="menuitem postmenuitem-edit"><a href="https://www.mikrocontroller.net/topic/265600?edit=3151569#postform" class="nav" rel="nofollow">Bearbeiten</a></span> <span class="menuitem postmenuitem-delete"><a class="nav" data-prompt="{&quot;message&quot;:&quot;Begründung für die Löschung (oder abbrechen um nicht zu löschen):&quot;,&quot;param&quot;:&quot;reason&quot;,&quot;default&quot;:&quot; &quot;}" data-remote="true" rel="nofollow" href="https://www.mikrocontroller.net/topic/delete_post/3151569?token=OehO5z9e4mkBebjwUSkA8QaJaUDJPrsT9N1vBSBiWU9%2F6xracJWb0Qd1HzVCWIRHBHzoAEe4hWqgxzQqr7%2B5VQ%3D%3D">Löschen</a></span> <span class="menuitem"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=3151569#postform" onclick="return !forumInsertQuoting(3151569)" rel="nofollow">Markierten Text zitieren</a></span> <span class="menuitem"><a href="#postform" rel="nofollow" class="nav">Antwort</a></span> <span class="menuitem postmenuitem-replyto"><a href="https://www.mikrocontroller.net/topic/265600?reply_to=3151569#postform" class="nav" rel="nofollow">Antwort mit Zitat</a></span>
+  </div>
+
+</div>
+
+
+
+
+    <div id="nav-middle"><div class="navbar">
+  <span class="left">
+    <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/forum">Forenliste</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/forum/mikrocontroller-elektronik">Threadliste</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/topic/new?forum_id=1">Neuer Beitrag</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/search">Suchen</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/register">Anmelden</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/list">Benutzerliste</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/attachment/gallery">Bildergalerie</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/help">Hilfe</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/login">Login</a></span>
+  </span>
+  
+
+  <br class="clear">
+</div>
+</div>
+
+    <div class="topic-subscription noprint">
+      <a href="https://www.mikrocontroller.net/topic/subscribe/265600"><img src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/email_add.png" alt=""> Thread beobachten</a>
+
+      |
+        <a href="https://www.mikrocontroller.net/user/disable_post_pagination"><img src="STM32F4%20mit%20Code%20Blocks%20-%20Mikrocontroller.net-Dateien/page_white_stack.png" alt=""> Seitenaufteilung abschalten</a>
+
+    </div>
+        <a name="postform"></a>
+
+
+<div class="noprint">
+<div class="postform box" style="float:left;">
+  
+  <h3>Antwort schreiben</h3>
+  
+  <div class="postform-info">
+    Die Angabe einer E-Mail-Adresse ist freiwillig. Wenn Sie automatisch
+ per E-Mail über Antworten auf Ihren Beitrag informiert werden möchten, <a href="https://www.mikrocontroller.net/user/login">melden Sie sich bitte an</a>.
+  </div>
+  <!-- <hr /> -->
+ 
+<div class="postform-rules">
+<h3>Wichtige Regeln - erst lesen, dann posten!</h3>
+<ul>
+<li>Groß- und Kleinschreibung verwenden</li>
+<li>Längeren Sourcecode nicht im Text einfügen, sondern als Dateianhang</li>
+</ul>
+<h3>Formatierung <a href="https://www.mikrocontroller.net/articles/Formatierung_im_Forum" style="font-size: small; font-weight: normal;" target="_blank">(mehr Informationen...)</a></h3>
+<ul>
+<li>[c]C-Code[/c]</li>
+<li>[avrasm]AVR-Assembler-Code[/avrasm]</li>
+<li>[code]Code in anderen Sprachen, ASCII-Zeichnungen[/code]</li>
+<li>[math]Formel in LaTeX-Syntax[/math]</li>
+<li>[[Titel]] - Link zu <a href="https://www.mikrocontroller.net/articles/Spezial:Allpages" target="_blank">Artikel</a></li>
+<li>Verweis auf anderen Beitrag einfügen: Rechtsklick auf Beitragstitel,<br>"Adresse kopieren", und in den Text einfügen</li>
+</ul>
+
+</div>
+
+
+  <form id="postform" enctype="multipart/form-data" action="/topic/265600#postform" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="9JeGRooESz/R/xhUaYQ7CPpzzAWKZ/PML7sDtbeboxSylNJ7xc8yh9fzv5F69b+++IZNRQThzbV7oViaOEZDDg==" type="hidden">
+
+    <input name="dummy" value="ie-workaround" type="hidden">
+    <input name="title" style="display: none" type="text">
+      <input name="page" value="1" type="hidden">
+
+    <input name="post[id]" id="post_id" type="hidden">
+    <input value="2764646" name="post[parent_id]" id="post_parent_id" type="hidden">
+    <input value="265600" name="post[topic_id]" id="post_topic_id" type="hidden">
+
+    <table>
+
+
+                <tbody><tr class="two_columns">
+          <td class="prompt"><label for="form_post_guest_name"><b>Name</b>:</label></td>
+          <td class="value"><input size="30" maxlength="50" class="two_columns" required="required" id="form_post_guest_name" name="post[guest_name]" type="text"><br></td>
+        </tr>
+
+                <tr class="two_columns">
+          <td class="prompt"><label for="form_post_guest_email">E-Mail (wird nicht angezeigt):</label></td>
+          <td class="value"><input size="30" maxlength="50" class="two_columns" id="form_post_guest_email" name="post[guest_email]" type="email"><br></td>
+        </tr>
+
+
+
+              <tr class="two_columns">
+          <td class="prompt"><label for="form_post_subject"><b>Betreff</b>:</label></td>
+          <td class="value"><input size="50" minlength="12" maxlength="100" class="two_columns" required="required" id="form_post_subject" value="Re: STM32F4 mit Code::Blocks" name="post[subject]" type="text"><br></td>
+        </tr>
+
+
+      <tr><td colspan="2">
+      <div id="similar_topics" class="box" style="display: none;">
+        Ähnliche Beiträge werden gesucht...
+        <div style="text-align: right;">
+        <a href="#" onclick="$('similar_topics').hide(); return false;">[ausblenden]</a>
+        </div>
+      </div>
+      </td></tr>
+
+              <tr class="two_columns">
+          <td class="prompt"><label for="form_post_new_attachment">Dateianhang:</label></td>
+          <td class="value"><input class="two_columns" onclick="javascript:alert('Bitte beachten, sonst wird der Beitrag gelöscht: 1. JPG-Dateien NUR für Fotos und Scans verwenden, Schaltpläne und Zeichnungen nur als PNG oder GIF. 2. sinnvolle Bildgröße wählen.');" id="form_post_new_attachment" name="post[new_attachment]" type="file"><br></td>
+        </tr>
+
+      <tr>
+        <td></td>
+        <td style="display:none;"><input id="form_post_resize_new_attachment" name="post[resize_new_attachment]" checked="checked" value="1" type="checkbox"> Bild automatisch verkleinern, falls nötig</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input name="preview" value="Weitere Datei anhängen" type="submit"></td>
+      </tr>
+      
+      <tr>
+        <td></td><td>
+          Bitte das JPG-Format nur für Fotos und Scans verwenden!<br>
+          Zeichnungen und Screenshots im PNG- oder<br>GIF-Format hochladen.
+          Siehe <a href="https://www.mikrocontroller.net/articles/Bildformate" target="_new">Bildformate</a>.
+        </td>
+      </tr>
+
+
+      <tr><td colspan="2">
+          <div style="color: red; font-weight: bold;">Hinweis: der ursprüngliche Beitrag ist mehr als 6 Monate alt.<br>Bitte hier nur auf die ursprüngliche Frage antworten,<br> für neue Fragen einen <a href="https://www.mikrocontroller.net/topic/new?forum_id=1">neuen Beitrag</a> erstellen.</div>
+      </td></tr>
+
+              <tr><td class="prompt" colspan="2"><label for="form_post_text"><b>Text</b>:</label></td></tr>
+        <tr><td class="value" colspan="2"><textarea cols="75" rows="24" minlength="2" required="required" id="form_post_text" name="post[text]" wrap="soft"></textarea><br></td></tr>
+
+
+
+      
+
+
+
+
+      <tr><td colspan="2">
+         
+        <div style="font-weight: bold;">Mit dem Abschicken bestätigst du, die <a href="https://www.mikrocontroller.net/user/conditions">Nutzungsbedingungen</a> anzuerkennen.</div>
+      </td></tr>
+      <tr><td colspan="2">
+        <input name="preview" value="Vorschau" type="submit">
+
+          <input name="save" value="Beitrag veröffentlichen" type="submit">
+      </td></tr>
+
+
+    </tbody></table>
+</form>
+</div>
+
+<div style="float: left; margin-left: 30px;">
+<script type="text/javascript">document.write(decodeURIComponent('%3Cdiv%20class=%22ad%22%20style=%22min-width:%201px;%22id=%22div-gpt-ad-cyxtralz%22%3E%3C/div%3E'));googletag.cmd.push(function() {if ($("#div-gpt-ad-cyxtralz").is(":hidden")) return;slot = googletag.defineSlot('/62616433/Mikrocontroller_Beside_Form', [160, 600], 'div-gpt-ad-cyxtralz');slot.addService(googletag.pubads());slot.set('adsense_channel_ids', '4674252417+3856911612+1675723313');
+slot.set('adsense_border_color', '0066cc');
+slot.set('adsense_background_color', 'c3d9ff');
+slot.set('adsense_link_color', '0000ff');
+slot.set('adsense_url_color', '0000ff');
+slot.set('adsense_text_color', '000000');
+googletag.enableServices();googletag.display('div-gpt-ad-cyxtralz');
+});</script><div class="ad" style="min-width: 1px;" id="div-gpt-ad-cyxtralz" data-google-query-id="CL3Q7OPhwt0CFXiK7QodNR8Bmg"><div id="google_ads_iframe_/62616433/Mikrocontroller_Beside_Form_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/62616433/Mikrocontroller_Beside_Form_0" title="3rd party ad content" name="google_ads_iframe_/62616433/Mikrocontroller_Beside_Form_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" data-load-complete="true" width="160" height="600" frameborder="0"></iframe></div></div>
+</div>
+
+<br style="clear: both">
+</div>
+
+
+
+
+  </div>
+</div>
+
+  </div>
+  <div id="nav-bottom"><div class="navbar">
+  <span class="left">
+    <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/forum">Forenliste</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/forum/mikrocontroller-elektronik">Threadliste</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/topic/new?forum_id=1">Neuer Beitrag</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/search">Suchen</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/register">Anmelden</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/list">Benutzerliste</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/attachment/gallery">Bildergalerie</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/help">Hilfe</a></span> <span class="menuitem "><a class="nav" href="https://www.mikrocontroller.net/user/login">Login</a></span>
+  </span>
+  
+
+  <br class="clear">
+</div>
+</div>
+    <!-- google_ad_section_end -->
+    <!-- contentDetection end --> 
+
+
+</div>
+
+  </td>
+<style type="text/css">
+@media screen and (min-width: 1250px) {
+  #sidebar-right {
+    display: table-cell;
+  }
+	#outer-container {
+		max-width: 1250px;
+	}
+}
+
+@media screen and (min-width: 1500px) {
+  #sidebar-right {
+    display: table-cell;
+		width: 312px;
+	}
+  #outer-container {
+    max-width: 1390px;
+  }
+}
+</style>
+
+<td id="sidebar-right" class="sidebar">
+<div class="nav-container">
+ <ul class="nav-first">
+<li class=""><a href="https://www.mikrocontroller.net/forum">Forenliste</a></li> <li class=""><a href="https://www.mikrocontroller.net/forum/mikrocontroller-elektronik">Threadliste</a></li> <li class=""><a href="https://www.mikrocontroller.net/topic/new?forum_id=1">Neuer Beitrag</a></li> <li class=""><a href="https://www.mikrocontroller.net/search">Suchen</a></li> <li class=""><a href="https://www.mikrocontroller.net/user/list">Benutzerliste</a></li> <li class=""><a href="https://www.mikrocontroller.net/attachment/gallery">Bildergalerie</a></li> <li class=""><a href="https://www.mikrocontroller.net/user/help">Hilfe</a></li> <li class=""><a href="https://www.mikrocontroller.net/user/register">Anmelden</a></li>
+  <li>
+  <ul>
+  <li class=""><a href="https://www.mikrocontroller.net/user/login">Login</a></li>
+  </ul>
+  </li>
+</ul>
+</div>
+
+<hr>
+<div style="padding: 0; text-align: center; width: 160px;" class="sticky">
+<script type="text/javascript">document.write(decodeURIComponent('%3Cdiv%20class=%22ad%22%20style=%22min-width:%201px;%22id=%22div-gpt-ad-sgntxlwv%22%3E%3C/div%3E'));googletag.cmd.push(function() {if ($("#div-gpt-ad-sgntxlwv").is(":hidden")) return;slot = googletag.defineSlot('/62616433/Mikrocontroller_Right_Sidebar_1', [160, 600], 'div-gpt-ad-sgntxlwv');dfpRightSidebarSizeMapping = googletag.sizeMapping().
+  addSize([1500, 500], [300, 250]).
+  addSize([0, 0], [160, 600]). // default: wide skyscraper
+  build();slot.defineSizeMapping(dfpRightSidebarSizeMapping);slot.addService(googletag.pubads());slot.set('adsense_channel_ids', '4674252417+4944964942,5705809182+6234123075');
+slot.set('adsense_border_color', 'ffa500');
+slot.set('adsense_background_color', 'ffffff');
+slot.set('adsense_link_color', '0000ff');
+slot.set('adsense_url_color', '0000ff');
+slot.set('adsense_text_color', '333333');
+googletag.enableServices();googletag.display('div-gpt-ad-sgntxlwv');
+});</script><div class="ad" style="min-width: 1px;" id="div-gpt-ad-sgntxlwv"></div>
+</div>
+</td>
+  </tr>
+  </tbody></table>
+
+    <div id="bottom">
+  <div id="impress">
+    <a href="https://www.mikrocontroller.net/contact">Kontakt/Impressum</a> – <a href="https://www.mikrocontroller.net/articles/Datenschutzerkl%C3%A4rung">Datenschutzerklärung</a> – <a href="https://www.mikrocontroller.net/user/conditions">Nutzungsbedingungen</a> – <a href="mailto:info@eetech.com?subject=Advertising%20on%20Mikrocontroller.net">Werbung auf Mikrocontroller.net</a>
+  </div>
+  <div id="powered">
+<!--    powered by Ruby on Rails -->
+  </div>
+ <a href="https://www.mikrocontroller.net/util/rb"><!-- nothing --></a>
+</div>
+
+</div> <!-- outer-container -->
+<script type="text/javascript">document.write(decodeURIComponent('%3Cdiv%20class=%22ad%22%20style=%22min-width:%201px;%22id=%22div-gpt-ad-etpursgy%22%3E%3C/div%3E'));googletag.cmd.push(function() {if ($("#div-gpt-ad-etpursgy").is(":hidden")) return;slot = googletag.defineSlot('/62616433/Mikrocontroller_Pixel', [1, 1], 'div-gpt-ad-etpursgy');slot.addService(googletag.pubads());slot.set('adsense_channel_ids', '4674252417+1675723313');
+slot.set('adsense_border_color', '0066cc');
+slot.set('adsense_background_color', 'c3d9ff');
+slot.set('adsense_link_color', '0000ff');
+slot.set('adsense_url_color', '0000ff');
+slot.set('adsense_text_color', '000000');
+googletag.enableServices();googletag.display('div-gpt-ad-etpursgy');
+});</script><div class="ad" style="min-width: 1px;" id="div-gpt-ad-etpursgy" data-google-query-id="CLfk7ePhwt0CFUWt7QodQ3wMcQ"><div id="google_ads_iframe_/62616433/Mikrocontroller_Pixel_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/62616433/Mikrocontroller_Pixel_0" title="3rd party ad content" name="google_ads_iframe_/62616433/Mikrocontroller_Pixel_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="1" height="1" frameborder="0"></iframe></div></div>
+
+
+<iframe id="google_osd_static_frame_9042845642623" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><div class="highslide-container" style="padding: 0px; border: medium none; margin: 0px; position: absolute; left: 0px; top: 0px; width: 100%; z-index: 1001; direction: ltr;"><a class="highslide-loading" title="Klick zum Abbrechen" href="javascript:;" style="position: absolute; top: -9999px; opacity: 0.75; z-index: 1;">Lade...</a><div style="display: none;"></div><table style="padding: 0px; border: medium none; margin: 0px; visibility: hidden; position: absolute; border-collapse: collapse; width: 0px;" cellspacing="0"><tbody style="padding: 0px; border: medium none; margin: 0px;"><tr style="padding: 0px; border: medium none; margin: 0px; height: auto;"><td style="padding: 0px; border: medium none; margin: 0px; line-height: 0; font-size: 0px; background: rgba(0, 0, 0, 0) url(&quot;https://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png&quot;) repeat scroll 0px 0px; height: 20px; width: 20px;"></td><td style="padding: 0px; border: medium none; margin: 0px; line-height: 0; font-size: 0px; background: rgba(0, 0, 0, 0) url(&quot;https://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png&quot;) repeat scroll 0px -40px; height: 20px; width: 20px;"></td><td style="padding: 0px; border: medium none; margin: 0px; line-height: 0; font-size: 0px; background: rgba(0, 0, 0, 0) url(&quot;https://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png&quot;) repeat scroll -20px 0px; height: 20px; width: 20px;"></td></tr><tr style="padding: 0px; border: medium none; margin: 0px; height: auto;"><td style="padding: 0px; border: medium none; margin: 0px; line-height: 0; font-size: 0px; background: rgba(0, 0, 0, 0) url(&quot;https://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png&quot;) repeat scroll 0px -80px; height: 20px; width: 20px;"></td><td style="padding: 0px; border: medium none; margin: 0px; position: relative;" class="drop-shadow highslide-outline"></td><td style="padding: 0px; border: medium none; margin: 0px; line-height: 0; font-size: 0px; background: rgba(0, 0, 0, 0) url(&quot;https://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png&quot;) repeat scroll -20px -80px; height: 20px; width: 20px;"></td></tr><tr style="padding: 0px; border: medium none; margin: 0px; height: auto;"><td style="padding: 0px; border: medium none; margin: 0px; line-height: 0; font-size: 0px; background: rgba(0, 0, 0, 0) url(&quot;https://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png&quot;) repeat scroll 0px -20px; height: 20px; width: 20px;"></td><td style="padding: 0px; border: medium none; margin: 0px; line-height: 0; font-size: 0px; background: rgba(0, 0, 0, 0) url(&quot;https://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png&quot;) repeat scroll 0px -60px; height: 20px; width: 20px;"></td><td style="padding: 0px; border: medium none; margin: 0px; line-height: 0; font-size: 0px; background: rgba(0, 0, 0, 0) url(&quot;https://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png&quot;) repeat scroll -20px -20px; height: 20px; width: 20px;"></td></tr></tbody></table></div></body></html>
