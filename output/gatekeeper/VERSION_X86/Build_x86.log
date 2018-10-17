@@ -1,0 +1,30 @@
+"Target_x86" 
+09.10.2018 18:39:58,18 
+"preprocess it" 
+cc1plus.exe: fatal error: opening output file E:\NeuOrga\Programmieren\c_cpp\github_os\output\gatekeeper\VERSION_X86\os_base\ppc_x86\gatekeeper.ppc: No such file or directory
+compilation terminated.
+"create assembly listings" 
+"compile it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\tools\gatekeeper\gatekeeper.cpp: In function 'int main(int, char**)':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\tools\gatekeeper\gatekeeper.cpp:27:4: error: expected ';' before 'build'
+    build.Call_build_targets_bat();
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\tools\gatekeeper\gatekeeper.cpp:70:13: error: 'class build_t' has no member named 'failed_target_arm'
+    if(build.failed_target_arm != false)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\tools\gatekeeper\gatekeeper.cpp:74:13: error: 'class build_t' has no member named 'failed_target_x86'
+    if(build.failed_target_x86 != false)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\tools\gatekeeper\gatekeeper.cpp:78:13: error: 'class build_t' has no member named 'failed_target_cunit'
+    if(build.failed_target_cunit != false)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\tools\gatekeeper\gatekeeper.cpp:82:13: error: 'class build_t' has no member named 'failed_target_targettests'
+    if(build.failed_target_targettests != false)
+             ^
+"assemble it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\tools\gatekeeper\gatekeeper.cpp:1:0: fatal error: can't open E:\NeuOrga\Programmieren\c_cpp\github_os\output\gatekeeper\VERSION_X86\os_base\obj_x86\gatekeeper.s for writing: No such file or directory
+ #include "gatekeeper.hpp"
+ ^
+compilation terminated.
+"link it" 
+mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\gatekeeper\VERSION_X86\gatekeeper.o: No such file or directory

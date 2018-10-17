@@ -5,6 +5,8 @@
 /* common HAL defines */
 #define False 0
 #define True  1
+#define FALSE False
+#define TRUE True
 #define Accepted 1
 #define Rejected 0
 #define Local static
