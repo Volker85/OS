@@ -1,5 +1,5 @@
 REM download file
-SET WORK_DIR=E:\NeuOrga\Programmieren\c_cpp\github_os\input
+SET WORK_DIR=E:\NeuOrga\Programmieren\c_cpp\github_os
 SET DOWNLOAD_DIR=D:\Programm\CoIDE\bin
 SET EXE_DIR=%WORK_DIR%\output\VERSION_ARM
 SET EXE_NAME=operating_system.elf
