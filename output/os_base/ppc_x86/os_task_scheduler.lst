@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 1
 
 
    1              		.file	"os_task_scheduler.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
   20 0006 E8000000 		call	_LLF_TCMP1_CONFIG
   20      00
   37:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 2
 
 
   38:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    /* activate now the interrupts */
@@ -118,7 +118,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
   63              		.cfi_def_cfa_offset 8
   64              		.cfi_offset 5, -8
   65 002d 89E5     		movl	%esp, %ebp
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 3
 
 
   66              		.cfi_def_cfa_register 5
@@ -178,7 +178,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
   86:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       }
   87:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       case Task_running: /* 3. terminate task */
   88:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       {
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 4
 
 
   89:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          task->task_state = Task_suspended;
@@ -238,7 +238,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  143:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    }
  144:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    default:
  145:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    {
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 5
 
 
  146:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       break;
@@ -298,7 +298,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  121              		.loc 1 84 0
  122 009d C645F701 		movb	$1, -9(%ebp)
   85:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       }
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 6
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 6
 
 
  123              		.loc 1 85 0
@@ -358,7 +358,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  163              		.loc 1 139 0
  164 00e2 EB1F     		jmp	L23
  165              	L21:
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 7
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 7
 
 
  126:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          RequestState   = Accepted;
@@ -418,7 +418,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  200              		.cfi_endproc
  201              	LFE2:
  202              		.globl	_OS_ActivateTask
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 8
 
 
  204              	_OS_ActivateTask:
@@ -478,7 +478,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  172:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          {
  173:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             if( (task->active == False)
  239              		.loc 1 173 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 9
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 9
 
 
  240 0165 8B4508   		movl	8(%ebp), %eax
@@ -538,7 +538,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  185:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             {
  186:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****                /* multiple activation bug occured */
  187:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             }
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 10
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 10
 
 
  188:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          }
@@ -598,7 +598,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  204:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    - Disable interrupts
  205:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    - restore Environment
  206:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    - enable interrupts
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 11
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 11
 
 
  207:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** 
@@ -658,7 +658,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  348 0243 8B4508   		movl	8(%ebp), %eax
  349 0246 C7400C00 		movl	$0, 12(%eax)
  349      000000
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 12
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 12
 
 
  220:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             task->current_prio = task->default_prio;
@@ -718,7 +718,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  379 029a 8B4508   		movl	8(%ebp), %eax
  380 029d 890424   		movl	%eax, (%esp)
  381 02a0 E8000000 		call	_OS_TASK_SAVETASK_ENVIRONMENT
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 13
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 13
 
 
  381      00
@@ -778,7 +778,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  421              	L38:
  245:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             EnableInterrupts();
  246:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             /* RUNNING_TASK->task_state sollte an dieser stelle (bei beendigung des Tasks durch Ter
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 14
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 14
 
 
  247:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          }
@@ -838,7 +838,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  450 0340 83EC18   		subl	$24, %esp
  268:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    /* Preempt task
  269:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    - Disable Interrupts
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 15
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 15
 
 
  270:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    - os_TASK_SAVETASK_ENVIRONMENT
@@ -898,7 +898,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  284:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** 
  285:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             task->active = False;
  485              		.loc 1 285 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 16
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 16
 
 
  486 039d 8B4508   		movl	8(%ebp), %eax
@@ -958,7 +958,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  513              	L40:
  304:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    }
  305:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** }
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 17
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 17
 
 
  514              		.loc 1 305 0
@@ -1018,7 +1018,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  327:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** 
  328:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    OS_STARTTASK(task);
  544              		.loc 1 328 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 18
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 18
 
 
  545 041f 8B45F4   		movl	-12(%ebp), %eax
@@ -1078,7 +1078,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  585 043f 8B4508   		movl	8(%ebp), %eax
  586 0442 890424   		movl	%eax, (%esp)
  587 0445 E8C8FBFF 		call	_OS_SLEEPTASK
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 19
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 19
 
 
  587      FF
@@ -1138,7 +1138,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  364:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    /* end */
  365:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** }
  622              		.loc 1 365 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 20
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 20
 
 
  623 0454 5D       		popl	%ebp
@@ -1196,9 +1196,9 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  390:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    /* setup idle task */
  391:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    task_ptr = &task_0;
  648              		.loc 1 391 0
- 649 0472 C745F420 		movl	$_task_0.1336, -12(%ebp)
+ 649 0472 C745F420 		movl	$_task_0.1350, -12(%ebp)
  649      040000
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 21
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 21
 
 
  392:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    OS_INIT_TASK(task_ptr,                          /* task */
@@ -1209,7 +1209,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  652      C8000000 
  653 0489 C7442414 		movl	$_TASK_STACK, 20(%esp)
  653      00000000 
- 654 0491 C7442410 		movl	$_TASK_GROUP_1.1340, 16(%esp)
+ 654 0491 C7442410 		movl	$_TASK_GROUP_1.1354, 16(%esp)
  654      EC030000 
  655 0499 C744240C 		movl	$1, 12(%esp)
  655      01000000 
@@ -1242,7 +1242,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  406:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    /* setup worker task */
  407:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    task_ptr = &task_1;
  665              		.loc 1 407 0
- 666 04c7 C745F480 		movl	$_task_1.1337, -12(%ebp)
+ 666 04c7 C745F480 		movl	$_task_1.1351, -12(%ebp)
  666      040000
  408:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    OS_INIT_TASK(task_ptr,      /* task */
  667              		.loc 1 408 0
@@ -1252,13 +1252,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  669      C8000000 
  670 04de C7442414 		movl	$_TASK_STACK+200, 20(%esp)
  670      C8000000 
- 671 04e6 C7442410 		movl	$_TASK_GROUP_1.1340, 16(%esp)
+ 671 04e6 C7442410 		movl	$_TASK_GROUP_1.1354, 16(%esp)
  671      EC030000 
  672 04ee C744240C 		movl	$0, 12(%esp)
  672      00000000 
  673 04f6 C7442408 		movl	$1, 8(%esp)
  673      01000000 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 22
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 22
 
 
  674 04fe C7442404 		movl	$_TASK_1, 4(%esp)
@@ -1280,7 +1280,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  419:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    /* setup worker task */
  420:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    task_ptr = &task_2;
  678              		.loc 1 420 0
- 679 0511 C745F4E0 		movl	$_task_2.1338, -12(%ebp)
+ 679 0511 C745F4E0 		movl	$_task_2.1352, -12(%ebp)
  679      040000
  421:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    OS_INIT_TASK(task_ptr,      /* task */
  680              		.loc 1 421 0
@@ -1290,7 +1290,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  682      C8000000 
  683 0528 C7442414 		movl	$_TASK_STACK+400, 20(%esp)
  683      90010000 
- 684 0530 C7442410 		movl	$_TASK_GROUP_2.1341, 16(%esp)
+ 684 0530 C7442410 		movl	$_TASK_GROUP_2.1355, 16(%esp)
  684      F4030000 
  685 0538 C744240C 		movl	$0, 12(%esp)
  685      00000000 
@@ -1315,10 +1315,10 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  432:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    /* setup worker task */
  433:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    task_ptr = &task_3;
  691              		.loc 1 433 0
- 692 055b C745F440 		movl	$_task_3.1339, -12(%ebp)
+ 692 055b C745F440 		movl	$_task_3.1353, -12(%ebp)
  692      050000
  434:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    OS_INIT_TASK(task_ptr,      /* task */
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 23
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 23
 
 
  693              		.loc 1 434 0
@@ -1328,7 +1328,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  695      C8000000 
  696 0572 C7442414 		movl	$_TASK_STACK+600, 20(%esp)
  696      58020000 
- 697 057a C7442410 		movl	$_TASK_GROUP_3.1342, 16(%esp)
+ 697 057a C7442410 		movl	$_TASK_GROUP_3.1356, 16(%esp)
  697      FC030000 
  698 0582 C744240C 		movl	$0, 12(%esp)
  698      00000000 
@@ -1378,7 +1378,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  451:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    task_t*         Winner_task = 0;
  724              		.loc 1 451 0
  725 05ae C745F400 		movl	$0, -12(%ebp)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 24
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 24
 
 
  725      000000
@@ -1428,31 +1428,31 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  742 05df 890424   		movl	%eax, (%esp)
  743 05e2 E8000000 		call	_GetFromLinkList
  743      00
- 744 05e7 A3A00500 		movl	%eax, _link_list_member.1352
+ 744 05e7 A3A00500 		movl	%eax, _link_list_member.1366
  744      00
  474:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       /*task will have a pointer on the task_obj, and might be equal to "(task_t*) 0" */
  475:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       task             = GetFromTaskQueue(link_list_member);
  745              		.loc 1 475 0
- 746 05ec A1A00500 		movl	_link_list_member.1352, %eax
+ 746 05ec A1A00500 		movl	_link_list_member.1366, %eax
  746      00
  747 05f1 890424   		movl	%eax, (%esp)
  748 05f4 E8000000 		call	_GetFromTaskQueue
  748      00
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 25
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 25
 
 
- 749 05f9 A3A40500 		movl	%eax, _task.1349
+ 749 05f9 A3A40500 		movl	%eax, _task.1363
  749      00
  476:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       /* increase prio: high numbers->high prio */
  477:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       if((task != 0)&&(task->task_queued != False))
  750              		.loc 1 477 0
- 751 05fe A1A40500 		movl	_task.1349, %eax
+ 751 05fe A1A40500 		movl	_task.1363, %eax
  751      00
  752 0603 85C0     		testl	%eax, %eax
  753 0605 0F84EC00 		je	L56
  753      0000
  754              		.loc 1 477 0 is_stmt 0 discriminator 1
- 755 060b A1A40500 		movl	_task.1349, %eax
+ 755 060b A1A40500 		movl	_task.1363, %eax
  755      00
  756 0610 8A00     		movb	(%eax), %al
  757 0612 83E002   		andl	$2, %eax
@@ -1462,10 +1462,10 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  478:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       {
  479:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          if(task->wait_time >= task->TimeToPrioInc)
  760              		.loc 1 479 0 is_stmt 1
- 761 061d A1A40500 		movl	_task.1349, %eax
+ 761 061d A1A40500 		movl	_task.1363, %eax
  761      00
  762 0622 8B500C   		movl	12(%eax), %edx
- 763 0625 A1A40500 		movl	_task.1349, %eax
+ 763 0625 A1A40500 		movl	_task.1363, %eax
  763      00
  764 062a 8B4010   		movl	16(%eax), %eax
  765 062d 39C2     		cmpl	%eax, %edx
@@ -1473,12 +1473,12 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  480:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          {
  481:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             task->current_prio = task->current_prio + task->overwaittime_per_prio_inc_step;
  767              		.loc 1 481 0
- 768 0631 A1A40500 		movl	_task.1349, %eax
+ 768 0631 A1A40500 		movl	_task.1363, %eax
  768      00
- 769 0636 8B15A405 		movl	_task.1349, %edx
+ 769 0636 8B15A405 		movl	_task.1363, %edx
  769      0000
  770 063c 8A4A20   		movb	32(%edx), %cl
- 771 063f 8B15A405 		movl	_task.1349, %edx
+ 771 063f 8B15A405 		movl	_task.1363, %edx
  771      0000
  772 0645 8B5214   		movl	20(%edx), %edx
  773 0648 01CA     		addl	%ecx, %edx
@@ -1488,7 +1488,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  483:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          /* in case wait condition not yet fulfilled, set prio to 0 */
  484:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          if(task->WaitActUntil > Get_current_time())
  776              		.loc 1 484 0
- 777 064d A1A40500 		movl	_task.1349, %eax
+ 777 064d A1A40500 		movl	_task.1363, %eax
  777      00
  778 0652 8B5808   		movl	8(%eax), %ebx
  779 0655 E8000000 		call	_Get_current_time
@@ -1498,20 +1498,20 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  485:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          {
  486:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             task->current_prio = 0;
  782              		.loc 1 486 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 26
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 26
 
 
- 783 065e A1A40500 		movl	_task.1349, %eax
+ 783 065e A1A40500 		movl	_task.1363, %eax
  783      00
  784 0663 C6402000 		movb	$0, 32(%eax)
  785              	L58:
  487:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          }
  488:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          if(task->wait_time > task->max_allowed_wait_time)
  786              		.loc 1 488 0
- 787 0667 A1A40500 		movl	_task.1349, %eax
+ 787 0667 A1A40500 		movl	_task.1363, %eax
  787      00
  788 066c 8B500C   		movl	12(%eax), %edx
- 789 066f A1A40500 		movl	_task.1349, %eax
+ 789 066f A1A40500 		movl	_task.1363, %eax
  789      00
  790 0674 8B4018   		movl	24(%eax), %eax
  791 0677 39C2     		cmpl	%eax, %edx
@@ -1531,7 +1531,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  493:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          /* not active TASK_RUN_QUEUE elements have no valid task_group!!*/
  494:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          if(task->task_group!=0)
  798              		.loc 1 494 0
- 799 068f A1A40500 		movl	_task.1349, %eax
+ 799 068f A1A40500 		movl	_task.1363, %eax
  799      00
  800 0694 8B4034   		movl	52(%eax), %eax
  801 0697 85C0     		testl	%eax, %eax
@@ -1540,11 +1540,11 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  496:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             /* usage the exe time for scheduling strategy */
  497:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             if(task->task_group->exe_time > task->task_group->fair_exe_time)
  803              		.loc 1 497 0
- 804 069b A1A40500 		movl	_task.1349, %eax
+ 804 069b A1A40500 		movl	_task.1363, %eax
  804      00
  805 06a0 8B4034   		movl	52(%eax), %eax
  806 06a3 8B10     		movl	(%eax), %edx
- 807 06a5 A1A40500 		movl	_task.1349, %eax
+ 807 06a5 A1A40500 		movl	_task.1363, %eax
  807      00
  808 06aa 8B4034   		movl	52(%eax), %eax
  809 06ad 8B4004   		movl	4(%eax), %eax
@@ -1553,12 +1553,12 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  498:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             {
  499:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****                if(task->exe_time > Task_min_time)/* guarantee min time */
  812              		.loc 1 499 0
- 813 06b4 A1A40500 		movl	_task.1349, %eax
+ 813 06b4 A1A40500 		movl	_task.1363, %eax
  813      00
  814 06b9 8B401C   		movl	28(%eax), %eax
  815 06bc 8945E0   		movl	%eax, -32(%ebp)
  816 06bf C745E400 		movl	$0, -28(%ebp)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 27
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 27
 
 
  816      000000
@@ -1574,7 +1574,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  500:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****                {
  501:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****                   task->current_prio = 0;
  826              		.loc 1 501 0
- 827 06d8 A1A40500 		movl	_task.1349, %eax
+ 827 06d8 A1A40500 		movl	_task.1363, %eax
  827      00
  828 06dd C6402000 		movb	$0, 32(%eax)
  829 06e1 EB14     		jmp	L56
@@ -1618,7 +1618,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  844              		.loc 1 518 0 is_stmt 1
  845 0708 C645F300 		movb	$0, -13(%ebp)
  846 070c EB7D     		jmp	L64
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 28
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 28
 
 
  847              	L67:
@@ -1629,20 +1629,20 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  850 0712 890424   		movl	%eax, (%esp)
  851 0715 E8000000 		call	_GetFromLinkList
  851      00
- 852 071a A3A00500 		movl	%eax, _link_list_member.1352
+ 852 071a A3A00500 		movl	%eax, _link_list_member.1366
  852      00
  521:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       task             = GetFromTaskQueue(link_list_member);
  853              		.loc 1 521 0
- 854 071f A1A00500 		movl	_link_list_member.1352, %eax
+ 854 071f A1A00500 		movl	_link_list_member.1366, %eax
  854      00
  855 0724 890424   		movl	%eax, (%esp)
  856 0727 E8000000 		call	_GetFromTaskQueue
  856      00
- 857 072c A3A40500 		movl	%eax, _task.1349
+ 857 072c A3A40500 		movl	%eax, _task.1363
  857      00
  522:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****       if(task != 0)
  858              		.loc 1 522 0
- 859 0731 A1A40500 		movl	_task.1349, %eax
+ 859 0731 A1A40500 		movl	_task.1363, %eax
  859      00
  860 0736 85C0     		testl	%eax, %eax
  861 0738 744A     		je	L65
@@ -1650,7 +1650,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  524:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          /*update wait time */
  525:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          if(task->IdleTask != True)
  862              		.loc 1 525 0
- 863 073a A1A40500 		movl	_task.1349, %eax
+ 863 073a A1A40500 		movl	_task.1363, %eax
  863      00
  864 073f 8A00     		movb	(%eax), %al
  865 0741 83E004   		andl	$4, %eax
@@ -1659,9 +1659,9 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  526:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          {
  527:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             task->wait_time += delta_time;
  868              		.loc 1 527 0
- 869 0748 A1A40500 		movl	_task.1349, %eax
+ 869 0748 A1A40500 		movl	_task.1363, %eax
  869      00
- 870 074d 8B15A405 		movl	_task.1349, %edx
+ 870 074d 8B15A405 		movl	_task.1363, %edx
  870      0000
  871 0753 8B4A0C   		movl	12(%edx), %ecx
  872 0756 8B55EC   		movl	-20(%ebp), %edx
@@ -1672,27 +1672,27 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  529:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          /* search for task with highest prio and assign it to Winner_task */
  530:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          if(task->current_prio > Winner_prio)
  876              		.loc 1 530 0
- 877 075e A1A40500 		movl	_task.1349, %eax
+ 877 075e A1A40500 		movl	_task.1363, %eax
  877      00
  878 0763 8A5020   		movb	32(%eax), %dl
- 879 0766 A0A80500 		movb	_Winner_prio.1350, %al
+ 879 0766 A0A80500 		movb	_Winner_prio.1364, %al
  879      00
  880 076b 38C2     		cmpb	%al, %dl
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 29
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 29
 
 
  881 076d 7615     		jbe	L65
  531:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****          {
  532:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             Winner_prio = task->current_prio;
  882              		.loc 1 532 0
- 883 076f A1A40500 		movl	_task.1349, %eax
+ 883 076f A1A40500 		movl	_task.1363, %eax
  883      00
  884 0774 8A4020   		movb	32(%eax), %al
- 885 0777 A2A80500 		movb	%al, _Winner_prio.1350
+ 885 0777 A2A80500 		movb	%al, _Winner_prio.1364
  885      00
  533:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****             Winner_task = task;
  886              		.loc 1 533 0
- 887 077c A1A40500 		movl	_task.1349, %eax
+ 887 077c A1A40500 		movl	_task.1363, %eax
  887      00
  888 0781 8945F4   		movl	%eax, -12(%ebp)
  889              	L65:
@@ -1738,7 +1738,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  907      00
  908 07a9 8945F4   		movl	%eax, -12(%ebp)
  909              	L69:
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 30
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 30
 
 
  552:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c ****    }
@@ -1798,7 +1798,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  565:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** 
  566:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** void ISR_TASK_DISPATCH_C1(void)
  567:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** {
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 31
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 31
 
 
  950              		.loc 1 567 0
@@ -1858,7 +1858,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  985              		.loc 1 582 0
  986 07f9 E8F9FBFF 		call	_OS_TASK_DISPATCHER
  986      FF
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 32
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 32
 
 
  583:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_scheduler.c **** 
@@ -1905,20 +1905,20 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1015 0818 C3       		ret
  1016              		.cfi_endproc
  1017              	LFE16:
- 1018              	.lcomm _TASK_GROUP_1.1340,8,4
- 1019              	.lcomm _TASK_GROUP_2.1341,8,4
- 1020              	.lcomm _TASK_GROUP_3.1342,8,4
- 1021              	.lcomm _TASK_GROUP_4.1343,8,4
- 1022              	.lcomm _TASK_GROUP_5.1344,8,4
- 1023              	.lcomm _task_0.1336,96,32
- 1024              	.lcomm _task_1.1337,96,32
- 1025              	.lcomm _task_2.1338,96,32
- 1026              	.lcomm _task_3.1339,96,32
- 1027              	.lcomm _link_list_member.1352,4,4
- 1028              	.lcomm _task.1349,4,4
- 1029              	.lcomm _Winner_prio.1350,1,1
+ 1018              	.lcomm _TASK_GROUP_1.1354,8,4
+ 1019              	.lcomm _TASK_GROUP_2.1355,8,4
+ 1020              	.lcomm _TASK_GROUP_3.1356,8,4
+ 1021              	.lcomm _TASK_GROUP_4.1357,8,4
+ 1022              	.lcomm _TASK_GROUP_5.1358,8,4
+ 1023              	.lcomm _task_0.1350,96,32
+ 1024              	.lcomm _task_1.1351,96,32
+ 1025              	.lcomm _task_2.1352,96,32
+ 1026              	.lcomm _task_3.1353,96,32
+ 1027              	.lcomm _link_list_member.1366,4,4
+ 1028              	.lcomm _task.1363,4,4
+ 1029              	.lcomm _Winner_prio.1364,1,1
  1030              	Letext0:
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 33
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 33
 
 
  1031              		.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
@@ -1926,7 +1926,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1033              		.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_c
  1034              		.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_scheduler.h"
  1035              		.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_queue.h"
- 1036              		.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_stack.h"
+ 1036              		.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
  1037 0819 909090   		.section	.debug_info,"dr"
  1038              	Ldebug_info0:
  1039 0000 4F0C0000 		.long	0xc4f
@@ -1978,7 +1978,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1065      5F696E74 
  1065      33325F74 
  1065      00
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 34
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 34
 
 
  1066 00e5 02       		.byte	0x2
@@ -1999,7 +1999,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1074      00
  1075 010e 04       		.byte	0x4
  1076 010f 03       		.byte	0x3
- 1077 0110 31       		.byte	0x31
+ 1077 0110 33       		.byte	0x33
  1078 0111 FE010000 		.long	0x1fe
  1079 0115 05       		.uleb128 0x5
  1080 0116 6F735F62 		.ascii "os_bug_no_bug\0"
@@ -2038,7 +2038,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1094 019b 05       		.uleb128 0x5
  1095 019c 6F735F62 		.ascii "os_bug_exception_UndefInstruction\0"
  1095      75675F65 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 35
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 35
 
 
  1095      78636570 
@@ -2068,7 +2068,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1105      696F6E5F 
  1106 0215 04       		.byte	0x4
  1107 0216 03       		.byte	0x3
- 1108 0217 3D       		.byte	0x3d
+ 1108 0217 3F       		.byte	0x3f
  1109 0218 40030000 		.long	0x340
  1110 021c 05       		.uleb128 0x5
  1111 021d 46756E63 		.ascii "Func_NoFunction\0"
@@ -2098,7 +2098,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1120      6E766972 
  1121 0283 03       		.sleb128 3
  1122 0284 05       		.uleb128 0x5
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 36
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 36
 
 
  1123 0285 46756E63 		.ascii "Func_DeleteTaskEnvironment\0"
@@ -2158,7 +2158,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1147 032c 46756E63 		.ascii "Func_os_exception\0"
  1147      5F6F735F 
  1147      65786365 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 37
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 37
 
 
  1147      7074696F 
@@ -2218,7 +2218,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1180 03bb 04       		.byte	0x4
  1181 03bc C0030000 		.long	0x3c0
  1182 03c0 07       		.uleb128 0x7
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 38
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 38
 
 
  1183 03c1 CB030000 		.long	0x3cb
@@ -2278,7 +2278,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1225      75705F74 
  1225      00
  1226 044a 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 39
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 39
 
 
  1227 044b 1B       		.byte	0x1b
@@ -2338,7 +2338,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1272      6C6C6F77 
  1272      656400
  1273 04bc 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 40
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 40
 
 
  1274 04bd 23       		.byte	0x23
@@ -2398,7 +2398,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1308      5F74696D 
  1309 0557 04       		.byte	0x4
  1310 0558 29       		.byte	0x29
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 41
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 41
 
 
  1311 0559 D3000000 		.long	0xd3
@@ -2458,7 +2458,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1352 05d6 30       		.byte	0x30
  1353 05d7 96030000 		.long	0x396
  1354 05db 30       		.byte	0x30
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 42
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 42
 
 
  1355 05dc 0D       		.uleb128 0xd
@@ -2518,7 +2518,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1398      696E7465 
  1398      72537461 
  1398      727400
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 43
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 43
 
 
  1399 0667 04       		.byte	0x4
@@ -2578,7 +2578,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1438      64756C65 
  1438      725F7469 
  1438      6D655F74 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 44
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 44
 
 
  1438      00
@@ -2638,7 +2638,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1479 0775 01       		.byte	0x1
  1480 0776 2B       		.byte	0x2b
  1481 0777 F5060000 		.long	0x6f5
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 45
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 45
 
 
  1482 077b 02       		.uleb128 0x2
@@ -2698,7 +2698,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1524 07f3 00000000 		.secrel32	LASF1
  1525 07f7 01       		.byte	0x1
  1526 07f8 34       		.byte	0x34
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 46
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 46
 
 
  1527 07f9 7F070000 		.long	0x77f
@@ -2758,7 +2758,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1573 0870 91       		.byte	0x91
  1574 0871 6C       		.sleb128 -20
  1575 0872 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 47
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 47
 
 
  1576 0873 17       		.uleb128 0x17
@@ -2818,7 +2818,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1621 08f5 18       		.uleb128 0x18
  1622 08f6 05000000 		.secrel32	LASF2
  1623 08fa 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 48
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 48
 
 
  1624 08fb 4A01     		.word	0x14a
@@ -2878,7 +2878,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1675 0970 18       		.uleb128 0x18
  1676 0971 05000000 		.secrel32	LASF2
  1677 0975 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 49
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 49
 
 
  1678 0976 6401     		.word	0x164
@@ -2907,7 +2907,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1697 09ab CF060000 		.long	0x6cf
  1698 09af 05       		.uleb128 0x5
  1699 09b0 03       		.byte	0x3
- 1700 09b1 20040000 		.long	_task_0.1336
+ 1700 09b1 20040000 		.long	_task_0.1350
  1701 09b5 1C       		.uleb128 0x1c
  1702 09b6 7461736B 		.ascii "task_1\0"
  1702      5F3100
@@ -2916,7 +2916,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1705 09c0 CF060000 		.long	0x6cf
  1706 09c4 05       		.uleb128 0x5
  1707 09c5 03       		.byte	0x3
- 1708 09c6 80040000 		.long	_task_1.1337
+ 1708 09c6 80040000 		.long	_task_1.1351
  1709 09ca 1C       		.uleb128 0x1c
  1710 09cb 7461736B 		.ascii "task_2\0"
  1710      5F3200
@@ -2925,7 +2925,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1713 09d5 CF060000 		.long	0x6cf
  1714 09d9 05       		.uleb128 0x5
  1715 09da 03       		.byte	0x3
- 1716 09db E0040000 		.long	_task_2.1338
+ 1716 09db E0040000 		.long	_task_2.1352
  1717 09df 1C       		.uleb128 0x1c
  1718 09e0 7461736B 		.ascii "task_3\0"
  1718      5F3300
@@ -2934,11 +2934,11 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1721 09ea CF060000 		.long	0x6cf
  1722 09ee 05       		.uleb128 0x5
  1723 09ef 03       		.byte	0x3
- 1724 09f0 40050000 		.long	_task_3.1339
+ 1724 09f0 40050000 		.long	_task_3.1353
  1725 09f4 1C       		.uleb128 0x1c
  1726 09f5 5441534B 		.ascii "TASK_GROUP_1\0"
  1726      5F47524F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 50
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 50
 
 
  1726      55505F31 
@@ -2948,7 +2948,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1729 0a05 3C040000 		.long	0x43c
  1730 0a09 05       		.uleb128 0x5
  1731 0a0a 03       		.byte	0x3
- 1732 0a0b EC030000 		.long	_TASK_GROUP_1.1340
+ 1732 0a0b EC030000 		.long	_TASK_GROUP_1.1354
  1733 0a0f 1C       		.uleb128 0x1c
  1734 0a10 5441534B 		.ascii "TASK_GROUP_2\0"
  1734      5F47524F 
@@ -2959,7 +2959,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1737 0a20 3C040000 		.long	0x43c
  1738 0a24 05       		.uleb128 0x5
  1739 0a25 03       		.byte	0x3
- 1740 0a26 F4030000 		.long	_TASK_GROUP_2.1341
+ 1740 0a26 F4030000 		.long	_TASK_GROUP_2.1355
  1741 0a2a 1C       		.uleb128 0x1c
  1742 0a2b 5441534B 		.ascii "TASK_GROUP_3\0"
  1742      5F47524F 
@@ -2970,7 +2970,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1745 0a3b 3C040000 		.long	0x43c
  1746 0a3f 05       		.uleb128 0x5
  1747 0a40 03       		.byte	0x3
- 1748 0a41 FC030000 		.long	_TASK_GROUP_3.1342
+ 1748 0a41 FC030000 		.long	_TASK_GROUP_3.1356
  1749 0a45 1C       		.uleb128 0x1c
  1750 0a46 5441534B 		.ascii "TASK_GROUP_4\0"
  1750      5F47524F 
@@ -2981,7 +2981,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1753 0a56 3C040000 		.long	0x43c
  1754 0a5a 05       		.uleb128 0x5
  1755 0a5b 03       		.byte	0x3
- 1756 0a5c 04040000 		.long	_TASK_GROUP_4.1343
+ 1756 0a5c 04040000 		.long	_TASK_GROUP_4.1357
  1757 0a60 1C       		.uleb128 0x1c
  1758 0a61 5441534B 		.ascii "TASK_GROUP_5\0"
  1758      5F47524F 
@@ -2992,13 +2992,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1761 0a71 3C040000 		.long	0x43c
  1762 0a75 05       		.uleb128 0x5
  1763 0a76 03       		.byte	0x3
- 1764 0a77 0C040000 		.long	_TASK_GROUP_5.1344
+ 1764 0a77 0C040000 		.long	_TASK_GROUP_5.1358
  1765 0a7b 19       		.uleb128 0x19
  1766 0a7c 05000000 		.secrel32	LASF2
  1767 0a80 01       		.byte	0x1
  1768 0a81 7601     		.word	0x176
  1769 0a83 7F070000 		.long	0x77f
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 51
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 51
 
 
  1770 0a87 02       		.uleb128 0x2
@@ -3026,7 +3026,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1788 0aba 7F070000 		.long	0x77f
  1789 0abe 05       		.uleb128 0x5
  1790 0abf 03       		.byte	0x3
- 1791 0ac0 A4050000 		.long	_task.1349
+ 1791 0ac0 A4050000 		.long	_task.1363
  1792 0ac4 1C       		.uleb128 0x1c
  1793 0ac5 57696E6E 		.ascii "Winner_prio\0"
  1793      65725F70 
@@ -3036,7 +3036,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1796 0ad4 95000000 		.long	0x95
  1797 0ad8 05       		.uleb128 0x5
  1798 0ad9 03       		.byte	0x3
- 1799 0ada A8050000 		.long	_Winner_prio.1350
+ 1799 0ada A8050000 		.long	_Winner_prio.1364
  1800 0ade 1C       		.uleb128 0x1c
  1801 0adf 57696E6E 		.ascii "Winner_task\0"
  1801      65725F74 
@@ -3058,10 +3058,10 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1812 0b0a 410B0000 		.long	0xb41
  1813 0b0e 05       		.uleb128 0x5
  1814 0b0f 03       		.byte	0x3
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 52
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 52
 
 
- 1815 0b10 A0050000 		.long	_link_list_member.1352
+ 1815 0b10 A0050000 		.long	_link_list_member.1366
  1816 0b14 1C       		.uleb128 0x1c
  1817 0b15 656C656D 		.ascii "element_nr\0"
  1817      656E745F 
@@ -3118,7 +3118,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1853      485F4332 
  1854 0ba3 01       		.byte	0x1
  1855 0ba4 4002     		.word	0x240
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 53
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 53
 
 
  1856 0ba6 E7070000 		.long	LFB15
@@ -3178,7 +3178,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1898 0c2c 1F       		.uleb128 0x1f
  1899 0c2d 95000000 		.long	0x95
  1900 0c31 420C0000 		.long	0xc42
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 54
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 54
 
 
  1901 0c35 20       		.uleb128 0x20
@@ -3193,7 +3193,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1909      5441434B 
  1909      00
  1910 0c4c 07       		.byte	0x7
- 1911 0c4d 06       		.byte	0x6
+ 1911 0c4d 0C       		.byte	0xc
  1912 0c4e 2C0C0000 		.long	0xc2c
  1913 0c52 00       		.byte	0
  1914              		.section	.debug_abbrev,"dr"
@@ -3238,7 +3238,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  1953 0026 3E       		.uleb128 0x3e
  1954 0027 0B       		.uleb128 0xb
  1955 0028 03       		.uleb128 0x3
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 55
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 55
 
 
  1956 0029 08       		.uleb128 0x8
@@ -3298,7 +3298,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2010 005f 00       		.byte	0
  2011 0060 0B       		.uleb128 0xb
  2012 0061 0B       		.uleb128 0xb
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 56
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 56
 
 
  2013 0062 00       		.byte	0
@@ -3358,7 +3358,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2067 0098 38       		.uleb128 0x38
  2068 0099 0B       		.uleb128 0xb
  2069 009a 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 57
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 57
 
 
  2070 009b 00       		.byte	0
@@ -3418,7 +3418,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2124 00d2 3B       		.uleb128 0x3b
  2125 00d3 0B       		.uleb128 0xb
  2126 00d4 27       		.uleb128 0x27
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 58
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 58
 
 
  2127 00d5 19       		.uleb128 0x19
@@ -3478,7 +3478,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2181 010c 27       		.uleb128 0x27
  2182 010d 19       		.uleb128 0x19
  2183 010e 49       		.uleb128 0x49
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 59
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 59
 
 
  2184 010f 13       		.uleb128 0x13
@@ -3538,7 +3538,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2238 0146 11       		.uleb128 0x11
  2239 0147 01       		.uleb128 0x1
  2240 0148 12       		.uleb128 0x12
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 60
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 60
 
 
  2241 0149 06       		.uleb128 0x6
@@ -3598,7 +3598,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2295 0181 3B       		.uleb128 0x3b
  2296 0182 05       		.uleb128 0x5
  2297 0183 49       		.uleb128 0x49
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 61
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 61
 
 
  2298 0184 13       		.uleb128 0x13
@@ -3658,7 +3658,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2352 01bc 34       		.uleb128 0x34
  2353 01bd 00       		.byte	0
  2354 01be 03       		.uleb128 0x3
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 62
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 62
 
 
  2355 01bf 08       		.uleb128 0x8
@@ -3718,7 +3718,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2409 01f6 18       		.uleb128 0x18
  2410 01f7 9642     		.uleb128 0x2116
  2411 01f9 19       		.uleb128 0x19
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 63
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 63
 
 
  2412 01fa 00       		.byte	0
@@ -3778,7 +3778,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2466 0003 00000000 		.secrel32	Ldebug_line0
  2467 0007 01       		.byte	0x1
  2468 0008 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 64
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 64
 
 
  2469 0009 5F5F5354 		.ascii "__STDC__ 1\0"
@@ -3838,7 +3838,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2493      5F414351 
  2493      55495245 
  2493      203200
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 65
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 65
 
 
  2494 00b5 01       		.byte	0x1
@@ -3898,7 +3898,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2517      52545F5F 
  2517      203200
  2518 0162 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 66
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 66
 
 
  2519 0163 00       		.uleb128 0
@@ -3958,7 +3958,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2542 0226 01       		.byte	0x1
  2543 0227 00       		.uleb128 0
  2544 0228 5F5F4F52 		.ascii "__ORDER_PDP_ENDIAN__ 3412\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 67
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 67
 
 
  2544      4445525F 
@@ -4018,7 +4018,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2567 032d 00       		.uleb128 0
  2568 032e 5F5F494E 		.ascii "__INTMAX_TYPE__ long long int\0"
  2568      544D4158 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 68
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 68
 
 
  2568      5F545950 
@@ -4078,7 +4078,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2592 0422 5F5F494E 		.ascii "__INT64_TYPE__ long long int\0"
  2592      5436345F 
  2592      54595045 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 69
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 69
 
 
  2592      5F5F206C 
@@ -4138,7 +4138,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2616      545F4C45 
  2616      41535436 
  2616      345F5459 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 70
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 70
 
 
  2616      50455F5F 
@@ -4198,7 +4198,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2640      53543634 
  2640      5F545950 
  2640      455F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 71
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 71
 
 
  2641 0671 01       		.byte	0x1
@@ -4258,7 +4258,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2664      655F6E65 
  2664      78742853 
  2665 07a5 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 72
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 72
 
 
  2666 07a6 00       		.uleb128 0
@@ -4318,7 +4318,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2689 086d 01       		.byte	0x1
  2690 086e 00       		.uleb128 0
  2691 086f 5F5F5749 		.ascii "__WINT_MAX__ 65535\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 73
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 73
 
 
  2691      4E545F4D 
@@ -4378,7 +4378,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2715 0950 5F5F5349 		.ascii "__SIG_ATOMIC_MAX__ 2147483647\0"
  2715      475F4154 
  2715      4F4D4943 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 74
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 74
 
 
  2715      5F4D4158 
@@ -4438,7 +4438,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2739      4E543332 
  2739      5F4D4158 
  2739      5F5F2034 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 75
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 75
 
 
  2739      32393439 
@@ -4498,7 +4498,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2764 0b2c 01       		.byte	0x1
  2765 0b2d 00       		.uleb128 0
  2766 0b2e 5F5F494E 		.ascii "__INT64_C(c) c ## LL\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 76
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 76
 
 
  2766      5436345F 
@@ -4558,7 +4558,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2790      4E543634 
  2790      5F432863 
  2790      29206320 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 77
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 77
 
 
  2790      23232055 
@@ -4618,7 +4618,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2814      41535436 
  2814      345F4D41 
  2814      585F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 78
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 78
 
 
  2815 0d22 01       		.byte	0x1
@@ -4678,7 +4678,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2839 0de0 01       		.byte	0x1
  2840 0de1 00       		.uleb128 0
  2841 0de2 5F5F464C 		.ascii "__FLT_DIG__ 6\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 79
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 79
 
 
  2841      545F4449 
@@ -4738,7 +4738,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2865 0ec0 5F5F464C 		.ascii "__FLT_EPSILON__ 1.19209289550781250000e-7F\0"
  2865      545F4550 
  2865      53494C4F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 80
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 80
 
 
  2865      4E5F5F20 
@@ -4798,7 +4798,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2889      4E5F3130 
  2889      5F455850 
  2889      5F5F2028 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 81
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 81
 
 
  2890 0fc3 01       		.byte	0x1
@@ -4858,7 +4858,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2913      4E4F524D 
  2913      5F5F2031 
  2914 1101 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 82
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 82
 
 
  2915 1102 00       		.uleb128 0
@@ -4918,7 +4918,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2938 11cb 01       		.byte	0x1
  2939 11cc 00       		.uleb128 0
  2940 11cd 5F5F4445 		.ascii "__DECIMAL_DIG__ 21\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 83
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 83
 
 
  2940      43494D41 
@@ -4978,7 +4978,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2963 12eb 00       		.uleb128 0
  2964 12ec 5F5F4445 		.ascii "__DEC32_MANT_DIG__ 7\0"
  2964      4333325F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 84
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 84
 
 
  2964      4D414E54 
@@ -5038,7 +5038,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  2988 13c6 5F5F4445 		.ascii "__DEC64_MIN_EXP__ (-382)\0"
  2988      4336345F 
  2988      4D494E5F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 85
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 85
 
 
  2988      4558505F 
@@ -5098,7 +5098,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  3012      43313238 
  3012      5F4D4158 
  3012      5F455850 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 86
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 86
 
 
  3012      5F5F2036 
@@ -5158,7 +5158,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  3036      494E455F 
  3036      5F203100 
  3037 15ed 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 87
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 87
 
 
  3038 15ee 00       		.uleb128 0
@@ -5218,7 +5218,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  3060      5F4C4F43 
  3061 16ec 01       		.byte	0x1
  3062 16ed 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 88
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 88
 
 
  3063 16ee 5F5F4743 		.ascii "__GCC_ATOMIC_LONG_LOCK_FREE 1\0"
@@ -5278,7 +5278,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  3085 17df 01       		.byte	0x1
  3086 17e0 00       		.uleb128 0
  3087 17e1 5F5F5349 		.ascii "__SIZEOF_PTRDIFF_T__ 4\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 89
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 89
 
 
  3087      5A454F46 
@@ -5338,7 +5338,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  3114 18a8 5F5F6661 		.ascii "__fastcall __attribute__((__fastcall__))\0"
  3114      73746361 
  3114      6C6C205F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 90
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 90
 
 
  3114      5F617474 
@@ -5398,7 +5398,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  3141 199c 5F5F5749 		.ascii "__WIN32__ 1\0"
  3141      4E33325F 
  3141      5F203100 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 91
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 91
 
 
  3142 19a8 01       		.byte	0x1
@@ -5458,7 +5458,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  3173 1a46 01       		.byte	0x1
  3174 1a47 02       		.uleb128 0x2
  3175 1a48 5F424153 		.ascii "_BASE_TYPES_H_ \0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 92
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 92
 
 
  3175      455F5459 
@@ -5518,7 +5518,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  3199      56455253 
  3199      494F4E5F 
  3199      32303037 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 93
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 93
 
 
  3199      203300
@@ -5563,545 +5563,623 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 1
  3221      203100
  3222 1b8a 01       		.byte	0x1
  3223 1b8b 08       		.uleb128 0x8
- 3224 1b8c 41636365 		.ascii "Accepted 1\0"
- 3224      70746564 
- 3224      203100
- 3225 1b97 01       		.byte	0x1
- 3226 1b98 09       		.uleb128 0x9
- 3227 1b99 52656A65 		.ascii "Rejected 0\0"
- 3227      63746564 
- 3227      203000
+ 3224 1b8c 46414C53 		.ascii "FALSE False\0"
+ 3224      45204661 
+ 3224      6C736500 
+ 3225 1b98 01       		.byte	0x1
+ 3226 1b99 09       		.uleb128 0x9
+ 3227 1b9a 54525545 		.ascii "TRUE True\0"
+ 3227      20547275 
+ 3227      6500
  3228 1ba4 01       		.byte	0x1
  3229 1ba5 0A       		.uleb128 0xa
- 3230 1ba6 4C6F6361 		.ascii "Local static\0"
- 3230      6C207374 
- 3230      61746963 
- 3230      00
- 3231 1bb3 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 94
+ 3230 1ba6 41636365 		.ascii "Accepted 1\0"
+ 3230      70746564 
+ 3230      203100
+ 3231 1bb1 01       		.byte	0x1
+ 3232 1bb2 0B       		.uleb128 0xb
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 94
 
 
- 3232 1bb4 0B       		.uleb128 0xb
- 3233 1bb5 4C6F6361 		.ascii "Local_inline static __inline__\0"
- 3233      6C5F696E 
- 3233      6C696E65 
- 3233      20737461 
- 3233      74696320 
- 3234 1bd4 01       		.byte	0x1
- 3235 1bd5 0C       		.uleb128 0xc
- 3236 1bd6 476C6F62 		.ascii "Global_inline __inline__\0"
- 3236      616C5F69 
- 3236      6E6C696E 
- 3236      65205F5F 
- 3236      696E6C69 
- 3237 1bef 01       		.byte	0x1
- 3238 1bf0 0D       		.uleb128 0xd
- 3239 1bf1 52656665 		.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
- 3239      72656E63 
- 3239      65556E75 
- 3239      73656450 
- 3239      6172616D 
- 3240 1c19 01       		.byte	0x1
- 3241 1c1a 10       		.uleb128 0x10
- 3242 1c1b 634D4355 		.ascii "cMCU_SIMULATION 1\0"
- 3242      5F53494D 
- 3242      554C4154 
- 3242      494F4E20 
- 3242      3100
- 3243 1c2d 01       		.byte	0x1
- 3244 1c2e 11       		.uleb128 0x11
- 3245 1c2f 634D4355 		.ascii "cMCU_POWERPC 2\0"
- 3245      5F504F57 
- 3245      45525043 
- 3245      203200
- 3246 1c3e 01       		.byte	0x1
- 3247 1c3f 12       		.uleb128 0x12
- 3248 1c40 634D4355 		.ascii "cMCU_X86 3\0"
- 3248      5F583836 
- 3248      203300
- 3249 1c4b 01       		.byte	0x1
- 3250 1c4c 13       		.uleb128 0x13
- 3251 1c4d 634D4355 		.ascii "cMCU_CORTEX_M4 4\0"
- 3251      5F434F52 
- 3251      5445585F 
- 3251      4D342034 
- 3251      00
- 3252 1c5e 01       		.byte	0x1
- 3253 1c5f 16       		.uleb128 0x16
- 3254 1c60 4E525F4F 		.ascii "NR_OF_CORES 1\0"
- 3254      465F434F 
- 3254      52455320 
- 3254      3100
- 3255 1c6e 01       		.byte	0x1
- 3256 1c6f 23       		.uleb128 0x23
- 3257 1c70 44697361 		.ascii "DisableInterrupts() \0"
- 3257      626C6549 
- 3257      6E746572 
- 3257      72757074 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 95
+ 3233 1bb3 52656A65 		.ascii "Rejected 0\0"
+ 3233      63746564 
+ 3233      203000
+ 3234 1bbe 01       		.byte	0x1
+ 3235 1bbf 0C       		.uleb128 0xc
+ 3236 1bc0 4C6F6361 		.ascii "Local static\0"
+ 3236      6C207374 
+ 3236      61746963 
+ 3236      00
+ 3237 1bcd 01       		.byte	0x1
+ 3238 1bce 0D       		.uleb128 0xd
+ 3239 1bcf 4C6F6361 		.ascii "Local_inline static __inline__\0"
+ 3239      6C5F696E 
+ 3239      6C696E65 
+ 3239      20737461 
+ 3239      74696320 
+ 3240 1bee 01       		.byte	0x1
+ 3241 1bef 0E       		.uleb128 0xe
+ 3242 1bf0 476C6F62 		.ascii "Global_inline __inline__\0"
+ 3242      616C5F69 
+ 3242      6E6C696E 
+ 3242      65205F5F 
+ 3242      696E6C69 
+ 3243 1c09 01       		.byte	0x1
+ 3244 1c0a 0F       		.uleb128 0xf
+ 3245 1c0b 52656665 		.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
+ 3245      72656E63 
+ 3245      65556E75 
+ 3245      73656450 
+ 3245      6172616D 
+ 3246 1c33 01       		.byte	0x1
+ 3247 1c34 12       		.uleb128 0x12
+ 3248 1c35 634D4355 		.ascii "cMCU_SIMULATION 1\0"
+ 3248      5F53494D 
+ 3248      554C4154 
+ 3248      494F4E20 
+ 3248      3100
+ 3249 1c47 01       		.byte	0x1
+ 3250 1c48 13       		.uleb128 0x13
+ 3251 1c49 634D4355 		.ascii "cMCU_POWERPC 2\0"
+ 3251      5F504F57 
+ 3251      45525043 
+ 3251      203200
+ 3252 1c58 01       		.byte	0x1
+ 3253 1c59 14       		.uleb128 0x14
+ 3254 1c5a 634D4355 		.ascii "cMCU_X86 3\0"
+ 3254      5F583836 
+ 3254      203300
+ 3255 1c65 01       		.byte	0x1
+ 3256 1c66 15       		.uleb128 0x15
+ 3257 1c67 634D4355 		.ascii "cMCU_CORTEX_M4 4\0"
+ 3257      5F434F52 
+ 3257      5445585F 
+ 3257      4D342034 
+ 3257      00
+ 3258 1c78 01       		.byte	0x1
+ 3259 1c79 18       		.uleb128 0x18
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 95
 
 
- 3257      73282920 
- 3258 1c85 01       		.byte	0x1
- 3259 1c86 24       		.uleb128 0x24
- 3260 1c87 456E6162 		.ascii "EnableInterrupts() \0"
- 3260      6C65496E 
- 3260      74657272 
- 3260      75707473 
- 3260      28292000 
- 3261 1c9b 01       		.byte	0x1
- 3262 1c9c 25       		.uleb128 0x25
- 3263 1c9d 50726976 		.ascii "Privilige_level_save_current() \0"
- 3263      696C6967 
- 3263      655F6C65 
- 3263      76656C5F 
- 3263      73617665 
- 3264 1cbd 01       		.byte	0x1
- 3265 1cbe 26       		.uleb128 0x26
- 3266 1cbf 50726976 		.ascii "Privilige_level_enter_kernel_mode() \0"
- 3266      696C6967 
- 3266      655F6C65 
- 3266      76656C5F 
- 3266      656E7465 
- 3267 1ce4 01       		.byte	0x1
- 3268 1ce5 27       		.uleb128 0x27
- 3269 1ce6 50726976 		.ascii "Privilige_level_restore_saved() \0"
+ 3260 1c7a 4E525F4F 		.ascii "NR_OF_CORES 1\0"
+ 3260      465F434F 
+ 3260      52455320 
+ 3260      3100
+ 3261 1c88 01       		.byte	0x1
+ 3262 1c89 25       		.uleb128 0x25
+ 3263 1c8a 44697361 		.ascii "DisableInterrupts() \0"
+ 3263      626C6549 
+ 3263      6E746572 
+ 3263      72757074 
+ 3263      73282920 
+ 3264 1c9f 01       		.byte	0x1
+ 3265 1ca0 26       		.uleb128 0x26
+ 3266 1ca1 456E6162 		.ascii "EnableInterrupts() \0"
+ 3266      6C65496E 
+ 3266      74657272 
+ 3266      75707473 
+ 3266      28292000 
+ 3267 1cb5 01       		.byte	0x1
+ 3268 1cb6 27       		.uleb128 0x27
+ 3269 1cb7 50726976 		.ascii "Privilige_level_save_current() \0"
  3269      696C6967 
  3269      655F6C65 
  3269      76656C5F 
- 3269      72657374 
- 3270 1d07 01       		.byte	0x1
- 3271 1d08 28       		.uleb128 0x28
- 3272 1d09 48616C74 		.ascii "HaltMcu() \0"
- 3272      4D637528 
- 3272      292000
- 3273 1d14 04       		.byte	0x4
- 3274              		.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
- 3275 1d15 03       		.byte	0x3
- 3276 1d16 07       		.uleb128 0x7
- 3277 1d17 09       		.uleb128 0x9
- 3278 1d18 01       		.byte	0x1
- 3279 1d19 02       		.uleb128 0x2
- 3280 1d1a 5F6C6C64 		.ascii "_lld_global_h_ \0"
- 3280      5F676C6F 
- 3280      62616C5F 
- 3280      685F2000 
- 3281              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
- 3282 1d2a 03       		.byte	0x3
- 3283 1d2b 04       		.uleb128 0x4
- 3284 1d2c 0A       		.uleb128 0xa
- 3285 1d2d 01       		.byte	0x1
- 3286 1d2e 02       		.uleb128 0x2
- 3287 1d2f 5F6C6C64 		.ascii "_lld_core_h_ \0"
- 3287      5F636F72 
- 3287      655F685F 
- 3287      2000
- 3288              		.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_first
- 3289 1d3d 03       		.byte	0x3
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 96
+ 3269      73617665 
+ 3270 1cd7 01       		.byte	0x1
+ 3271 1cd8 28       		.uleb128 0x28
+ 3272 1cd9 50726976 		.ascii "Privilige_level_enter_kernel_mode() \0"
+ 3272      696C6967 
+ 3272      655F6C65 
+ 3272      76656C5F 
+ 3272      656E7465 
+ 3273 1cfe 01       		.byte	0x1
+ 3274 1cff 29       		.uleb128 0x29
+ 3275 1d00 50726976 		.ascii "Privilige_level_restore_saved() \0"
+ 3275      696C6967 
+ 3275      655F6C65 
+ 3275      76656C5F 
+ 3275      72657374 
+ 3276 1d21 01       		.byte	0x1
+ 3277 1d22 2A       		.uleb128 0x2a
+ 3278 1d23 48616C74 		.ascii "HaltMcu() \0"
+ 3278      4D637528 
+ 3278      292000
+ 3279 1d2e 04       		.byte	0x4
+ 3280 1d2f 03       		.byte	0x3
+ 3281 1d30 07       		.uleb128 0x7
+ 3282 1d31 07       		.uleb128 0x7
+ 3283 1d32 01       		.byte	0x1
+ 3284 1d33 02       		.uleb128 0x2
+ 3285 1d34 5F4F535F 		.ascii "_OS_RAM_H_ \0"
+ 3285      52414D5F 
+ 3285      485F2000 
+ 3286              		.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_firstinc.h"
+ 3287 1d40 03       		.byte	0x3
+ 3288 1d41 04       		.uleb128 0x4
+ 3289 1d42 09       		.uleb128 0x9
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 96
 
 
- 3290 1d3e 03       		.uleb128 0x3
- 3291 1d3f 0B       		.uleb128 0xb
- 3292 1d40 04       		.byte	0x4
- 3293 1d41 04       		.byte	0x4
- 3294              		.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
- 3295 1d42 03       		.byte	0x3
- 3296 1d43 05       		.uleb128 0x5
- 3297 1d44 0C       		.uleb128 0xc
- 3298 1d45 01       		.byte	0x1
- 3299 1d46 02       		.uleb128 0x2
- 3300 1d47 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
- 3300      5F696E74 
- 3300      65727275 
- 3300      70745F68 
- 3300      5F2000
- 3301 1d5a 01       		.byte	0x1
- 3302 1d5b 05       		.uleb128 0x5
- 3303 1d5c 6F735F69 		.ascii "os_interrupt_swi_1 asm(\"swi 1\")\0"
- 3303      6E746572 
- 3303      72757074 
- 3303      5F737769 
- 3303      5F312061 
- 3304 1d7c 01       		.byte	0x1
- 3305 1d7d 06       		.uleb128 0x6
- 3306 1d7e 6F735F69 		.ascii "os_interrupt_swi_2 asm(\"swi 2\")\0"
- 3306      6E746572 
- 3306      72757074 
- 3306      5F737769 
- 3306      5F322061 
- 3307 1d9e 01       		.byte	0x1
- 3308 1d9f 07       		.uleb128 0x7
- 3309 1da0 6F735F69 		.ascii "os_interrupt_swi_3 asm(\"swi 3\")\0"
- 3309      6E746572 
- 3309      72757074 
- 3309      5F737769 
- 3309      5F332061 
- 3310 1dc0 01       		.byte	0x1
- 3311 1dc1 08       		.uleb128 0x8
- 3312 1dc2 6F735F69 		.ascii "os_interrupt_swi_4 asm(\"swi 4\")\0"
- 3312      6E746572 
- 3312      72757074 
- 3312      5F737769 
- 3312      5F342061 
- 3313 1de2 01       		.byte	0x1
- 3314 1de3 09       		.uleb128 0x9
- 3315 1de4 6F735F69 		.ascii "os_interrupt_swi_5 asm(\"swi 5\")\0"
- 3315      6E746572 
- 3315      72757074 
- 3315      5F737769 
- 3315      5F352061 
- 3316 1e04 04       		.byte	0x4
- 3317              		.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
- 3318 1e05 03       		.byte	0x3
- 3319 1e06 06       		.uleb128 0x6
- 3320 1e07 0D       		.uleb128 0xd
- 3321 1e08 01       		.byte	0x1
- 3322 1e09 02       		.uleb128 0x2
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 97
+ 3290 1d43 04       		.byte	0x4
+ 3291              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_stack.h"
+ 3292 1d44 03       		.byte	0x3
+ 3293 1d45 05       		.uleb128 0x5
+ 3294 1d46 0A       		.uleb128 0xa
+ 3295 1d47 01       		.byte	0x1
+ 3296 1d48 02       		.uleb128 0x2
+ 3297 1d49 5F6F735F 		.ascii "_os_stack_h_ \0"
+ 3297      73746163 
+ 3297      6B5F685F 
+ 3297      2000
+ 3298 1d57 01       		.byte	0x1
+ 3299 1d58 04       		.uleb128 0x4
+ 3300 1d59 4F535F53 		.ascii "OS_STACK_SIZE 0x100\0"
+ 3300      5441434B 
+ 3300      5F53495A 
+ 3300      45203078 
+ 3300      31303000 
+ 3301 1d6d 04       		.byte	0x4
+ 3302              		.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
+ 3303 1d6e 03       		.byte	0x3
+ 3304 1d6f 06       		.uleb128 0x6
+ 3305 1d70 0B       		.uleb128 0xb
+ 3306 1d71 01       		.byte	0x1
+ 3307 1d72 02       		.uleb128 0x2
+ 3308 1d73 5F6F735F 		.ascii "_os_heap_h_ \0"
+ 3308      68656170 
+ 3308      5F685F20 
+ 3308      00
+ 3309 1d80 01       		.byte	0x1
+ 3310 1d81 05       		.uleb128 0x5
+ 3311 1d82 48454150 		.ascii "HEAP_SIZE 10000\0"
+ 3311      5F53495A 
+ 3311      45203130 
+ 3311      30303000 
+ 3312 1d92 01       		.byte	0x1
+ 3313 1d93 06       		.uleb128 0x6
+ 3314 1d94 4D494E5F 		.ascii "MIN_BLOCK_SIZE_HEAP 8\0"
+ 3314      424C4F43 
+ 3314      4B5F5349 
+ 3314      5A455F48 
+ 3314      45415020 
+ 3315 1daa 01       		.byte	0x1
+ 3316 1dab 09       		.uleb128 0x9
+ 3317 1dac 48454150 		.ascii "HEAP_OFFSET_FOR_SIZE 0\0"
+ 3317      5F4F4646 
+ 3317      5345545F 
+ 3317      464F525F 
+ 3317      53495A45 
+ 3318 1dc3 01       		.byte	0x1
+ 3319 1dc4 0A       		.uleb128 0xa
+ 3320 1dc5 48454150 		.ascii "HEAP_OFFSET_FOR_USED_SIZE 4\0"
+ 3320      5F4F4646 
+ 3320      5345545F 
+ 3320      464F525F 
+ 3320      55534544 
+ 3321 1de1 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 97
 
 
- 3323 1e0a 5F6C6C64 		.ascii "_lld_mmu_h_ \0"
- 3323      5F6D6D75 
- 3323      5F685F20 
- 3323      00
- 3324 1e17 04       		.byte	0x4
- 3325              		.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
- 3326 1e18 03       		.byte	0x3
- 3327 1e19 07       		.uleb128 0x7
- 3328 1e1a 0E       		.uleb128 0xe
- 3329 1e1b 01       		.byte	0x1
- 3330 1e1c 02       		.uleb128 0x2
- 3331 1e1d 5F6C6C64 		.ascii "_lld_timer_h_ \0"
- 3331      5F74696D 
- 3331      65725F68 
- 3331      5F2000
- 3332 1e2c 04       		.byte	0x4
- 3333              		.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
- 3334 1e2d 03       		.byte	0x3
- 3335 1e2e 08       		.uleb128 0x8
- 3336 1e2f 0F       		.uleb128 0xf
- 3337 1e30 01       		.byte	0x1
- 3338 1e31 02       		.uleb128 0x2
- 3339 1e32 5F6C6C64 		.ascii "_lld_power_h_ \0"
- 3339      5F706F77 
- 3339      65725F68 
- 3339      5F2000
- 3340 1e41 04       		.byte	0x4
- 3341              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
- 3342 1e42 03       		.byte	0x3
- 3343 1e43 09       		.uleb128 0x9
- 3344 1e44 10       		.uleb128 0x10
- 3345 1e45 01       		.byte	0x1
- 3346 1e46 02       		.uleb128 0x2
- 3347 1e47 5F6C6C64 		.ascii "_lld_ram_h_ \0"
- 3347      5F72616D 
- 3347      5F685F20 
- 3347      00
- 3348 1e54 04       		.byte	0x4
- 3349 1e55 03       		.byte	0x3
- 3350 1e56 0A       		.uleb128 0xa
- 3351 1e57 04       		.uleb128 0x4
- 3352 1e58 01       		.byte	0x1
- 3353 1e59 02       		.uleb128 0x2
- 3354 1e5a 5F6F735F 		.ascii "_os_task_common_h_ \0"
- 3354      7461736B 
- 3354      5F636F6D 
- 3354      6D6F6E5F 
- 3354      685F2000 
- 3355              		.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
- 3356 1e6e 03       		.byte	0x3
- 3357 1e6f 04       		.uleb128 0x4
- 3358 1e70 11       		.uleb128 0x11
- 3359 1e71 01       		.byte	0x1
- 3360 1e72 02       		.uleb128 0x2
- 3361 1e73 5F6F735F 		.ascii "_os_task_config_h_ \0"
- 3361      7461736B 
- 3361      5F636F6E 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 98
+ 3322 1de2 0B       		.uleb128 0xb
+ 3323 1de3 48454150 		.ascii "HEAP_OFFSET_FOR_CHUNK 8\0"
+ 3323      5F4F4646 
+ 3323      5345545F 
+ 3323      464F525F 
+ 3323      4348554E 
+ 3324 1dfb 04       		.byte	0x4
+ 3325 1dfc 04       		.byte	0x4
+ 3326              		.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
+ 3327 1dfd 03       		.byte	0x3
+ 3328 1dfe 0A       		.uleb128 0xa
+ 3329 1dff 0C       		.uleb128 0xc
+ 3330 1e00 01       		.byte	0x1
+ 3331 1e01 02       		.uleb128 0x2
+ 3332 1e02 5F6C6C64 		.ascii "_lld_global_h_ \0"
+ 3332      5F676C6F 
+ 3332      62616C5F 
+ 3332      685F2000 
+ 3333              		.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
+ 3334 1e12 03       		.byte	0x3
+ 3335 1e13 04       		.uleb128 0x4
+ 3336 1e14 0D       		.uleb128 0xd
+ 3337 1e15 01       		.byte	0x1
+ 3338 1e16 02       		.uleb128 0x2
+ 3339 1e17 5F6C6C64 		.ascii "_lld_core_h_ \0"
+ 3339      5F636F72 
+ 3339      655F685F 
+ 3339      2000
+ 3340              		.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_first
+ 3341 1e25 03       		.byte	0x3
+ 3342 1e26 03       		.uleb128 0x3
+ 3343 1e27 0E       		.uleb128 0xe
+ 3344 1e28 04       		.byte	0x4
+ 3345 1e29 04       		.byte	0x4
+ 3346              		.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
+ 3347 1e2a 03       		.byte	0x3
+ 3348 1e2b 05       		.uleb128 0x5
+ 3349 1e2c 0F       		.uleb128 0xf
+ 3350 1e2d 01       		.byte	0x1
+ 3351 1e2e 02       		.uleb128 0x2
+ 3352 1e2f 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
+ 3352      5F696E74 
+ 3352      65727275 
+ 3352      70745F68 
+ 3352      5F2000
+ 3353 1e42 01       		.byte	0x1
+ 3354 1e43 05       		.uleb128 0x5
+ 3355 1e44 6F735F69 		.ascii "os_interrupt_swi_1 asm(\"swi 1\")\0"
+ 3355      6E746572 
+ 3355      72757074 
+ 3355      5F737769 
+ 3355      5F312061 
+ 3356 1e64 01       		.byte	0x1
+ 3357 1e65 06       		.uleb128 0x6
+ 3358 1e66 6F735F69 		.ascii "os_interrupt_swi_2 asm(\"swi 2\")\0"
+ 3358      6E746572 
+ 3358      72757074 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 98
 
 
- 3361      6669675F 
- 3361      685F2000 
- 3362 1e87 01       		.byte	0x1
- 3363 1e88 05       		.uleb128 0x5
- 3364 1e89 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
- 3364      64756C65 
- 3364      72467265 
- 3364      7175656E 
- 3364      63792028 
- 3365 1ea4 01       		.byte	0x1
- 3366 1ea5 06       		.uleb128 0x6
- 3367 1ea6 4D696E54 		.ascii "MinTimeSlice_s (1.0/SchedulerFrequency)\0"
- 3367      696D6553 
- 3367      6C696365 
- 3367      5F732028 
- 3367      312E302F 
- 3368 1ece 01       		.byte	0x1
- 3369 1ecf 07       		.uleb128 0x7
- 3370 1ed0 4D696E54 		.ascii "MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\0"
- 3370      696D6553 
- 3370      6C696365 
- 3370      5F757320 
- 3370      2828312E 
- 3371 1eff 01       		.byte	0x1
- 3372 1f00 08       		.uleb128 0x8
- 3373 1f01 5461736B 		.ascii "Task_min_time (1e0)\0"
- 3373      5F6D696E 
- 3373      5F74696D 
- 3373      65202831 
- 3373      65302900 
- 3374 1f15 01       		.byte	0x1
- 3375 1f16 09       		.uleb128 0x9
- 3376 1f17 4E554D42 		.ascii "NUMBER_OF_TASKS 5\0"
- 3376      45525F4F 
- 3376      465F5441 
- 3376      534B5320 
- 3376      3500
- 3377 1f29 01       		.byte	0x1
- 3378 1f2a 0A       		.uleb128 0xa
- 3379 1f2b 4D41585F 		.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
- 3379      52554E5F 
- 3379      51554555 
- 3379      455F5349 
- 3379      5A452028 
- 3380 1f50 01       		.byte	0x1
- 3381 1f51 0B       		.uleb128 0xb
- 3382 1f52 4D41585F 		.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
- 3382      52554E5F 
- 3382      50515545 
- 3382      55455F53 
- 3382      495A4520 
- 3383 1f79 01       		.byte	0x1
- 3384 1f7a 0D       		.uleb128 0xd
- 3385 1f7b 5441534B 		.ascii "TASK_STACK_SIZE 200\0"
- 3385      5F535441 
- 3385      434B5F53 
- 3385      495A4520 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 99
+ 3358      5F737769 
+ 3358      5F322061 
+ 3359 1e86 01       		.byte	0x1
+ 3360 1e87 07       		.uleb128 0x7
+ 3361 1e88 6F735F69 		.ascii "os_interrupt_swi_3 asm(\"swi 3\")\0"
+ 3361      6E746572 
+ 3361      72757074 
+ 3361      5F737769 
+ 3361      5F332061 
+ 3362 1ea8 01       		.byte	0x1
+ 3363 1ea9 08       		.uleb128 0x8
+ 3364 1eaa 6F735F69 		.ascii "os_interrupt_swi_4 asm(\"swi 4\")\0"
+ 3364      6E746572 
+ 3364      72757074 
+ 3364      5F737769 
+ 3364      5F342061 
+ 3365 1eca 01       		.byte	0x1
+ 3366 1ecb 09       		.uleb128 0x9
+ 3367 1ecc 6F735F69 		.ascii "os_interrupt_swi_5 asm(\"swi 5\")\0"
+ 3367      6E746572 
+ 3367      72757074 
+ 3367      5F737769 
+ 3367      5F352061 
+ 3368 1eec 04       		.byte	0x4
+ 3369              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
+ 3370 1eed 03       		.byte	0x3
+ 3371 1eee 06       		.uleb128 0x6
+ 3372 1eef 10       		.uleb128 0x10
+ 3373 1ef0 01       		.byte	0x1
+ 3374 1ef1 02       		.uleb128 0x2
+ 3375 1ef2 5F6C6C64 		.ascii "_lld_mmu_h_ \0"
+ 3375      5F6D6D75 
+ 3375      5F685F20 
+ 3375      00
+ 3376 1eff 04       		.byte	0x4
+ 3377              		.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
+ 3378 1f00 03       		.byte	0x3
+ 3379 1f01 07       		.uleb128 0x7
+ 3380 1f02 11       		.uleb128 0x11
+ 3381 1f03 01       		.byte	0x1
+ 3382 1f04 02       		.uleb128 0x2
+ 3383 1f05 5F6C6C64 		.ascii "_lld_timer_h_ \0"
+ 3383      5F74696D 
+ 3383      65725F68 
+ 3383      5F2000
+ 3384 1f14 04       		.byte	0x4
+ 3385              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
+ 3386 1f15 03       		.byte	0x3
+ 3387 1f16 08       		.uleb128 0x8
+ 3388 1f17 12       		.uleb128 0x12
+ 3389 1f18 01       		.byte	0x1
+ 3390 1f19 02       		.uleb128 0x2
+ 3391 1f1a 5F6C6C64 		.ascii "_lld_power_h_ \0"
+ 3391      5F706F77 
+ 3391      65725F68 
+ 3391      5F2000
+ 3392 1f29 04       		.byte	0x4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 99
 
 
- 3385      32303000 
- 3386 1f8f 01       		.byte	0x1
- 3387 1f90 10       		.uleb128 0x10
- 3388 1f91 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
- 3388      45525F53 
- 3388      45432028 
- 3388      31303030 
- 3388      2900
- 3389 1fa3 01       		.byte	0x1
- 3390 1fa4 11       		.uleb128 0x11
- 3391 1fa5 5553455F 		.ascii "USE_STATIC_CREATED_TASKS True\0"
- 3391      53544154 
- 3391      49435F43 
- 3391      52454154 
- 3391      45445F54 
- 3392 1fc3 04       		.byte	0x4
- 3393              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_
- 3394 1fc4 03       		.byte	0x3
- 3395 1fc5 05       		.uleb128 0x5
- 3396 1fc6 12       		.uleb128 0x12
- 3397 1fc7 01       		.byte	0x1
- 3398 1fc8 02       		.uleb128 0x2
- 3399 1fc9 5F6F735F 		.ascii "_os_init_task_system_h_ \0"
- 3399      696E6974 
- 3399      5F746173 
- 3399      6B5F7379 
- 3399      7374656D 
- 3400 1fe2 04       		.byte	0x4
- 3401 1fe3 01       		.byte	0x1
- 3402 1fe4 5C       		.uleb128 0x5c
- 3403 1fe5 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
- 3403      61766554 
- 3403      61736B50 
- 3403      74722874 
- 3403      61736B5F 
- 3404 202d 01       		.byte	0x1
- 3405 202e 5D       		.uleb128 0x5d
- 3406 202f 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
- 3406      65745461 
- 3406      736B5074 
- 3406      72287461 
- 3406      736B5F6E 
- 3407 206a 04       		.byte	0x4
- 3408 206b 04       		.byte	0x4
- 3409              		.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_user_code/led.h"
- 3410 206c 03       		.byte	0x3
- 3411 206d 0B       		.uleb128 0xb
- 3412 206e 13       		.uleb128 0x13
- 3413 206f 01       		.byte	0x1
- 3414 2070 02       		.uleb128 0x2
- 3415 2071 5F4C4544 		.ascii "_LED_H_ \0"
- 3415      5F485F20 
- 3415      00
- 3416 207a 04       		.byte	0x4
- 3417 207b 04       		.byte	0x4
- 3418              		.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_common.h"
- 3419 207c 03       		.byte	0x3
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 100
+ 3393              		.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
+ 3394 1f2a 03       		.byte	0x3
+ 3395 1f2b 09       		.uleb128 0x9
+ 3396 1f2c 13       		.uleb128 0x13
+ 3397 1f2d 01       		.byte	0x1
+ 3398 1f2e 02       		.uleb128 0x2
+ 3399 1f2f 5F6C6C64 		.ascii "_lld_ram_h_ \0"
+ 3399      5F72616D 
+ 3399      5F685F20 
+ 3399      00
+ 3400 1f3c 04       		.byte	0x4
+ 3401 1f3d 03       		.byte	0x3
+ 3402 1f3e 0A       		.uleb128 0xa
+ 3403 1f3f 04       		.uleb128 0x4
+ 3404 1f40 01       		.byte	0x1
+ 3405 1f41 02       		.uleb128 0x2
+ 3406 1f42 5F6F735F 		.ascii "_os_task_common_h_ \0"
+ 3406      7461736B 
+ 3406      5F636F6D 
+ 3406      6D6F6E5F 
+ 3406      685F2000 
+ 3407              		.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
+ 3408 1f56 03       		.byte	0x3
+ 3409 1f57 04       		.uleb128 0x4
+ 3410 1f58 14       		.uleb128 0x14
+ 3411 1f59 01       		.byte	0x1
+ 3412 1f5a 02       		.uleb128 0x2
+ 3413 1f5b 5F6F735F 		.ascii "_os_task_config_h_ \0"
+ 3413      7461736B 
+ 3413      5F636F6E 
+ 3413      6669675F 
+ 3413      685F2000 
+ 3414 1f6f 01       		.byte	0x1
+ 3415 1f70 05       		.uleb128 0x5
+ 3416 1f71 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
+ 3416      64756C65 
+ 3416      72467265 
+ 3416      7175656E 
+ 3416      63792028 
+ 3417 1f8c 01       		.byte	0x1
+ 3418 1f8d 06       		.uleb128 0x6
+ 3419 1f8e 4D696E54 		.ascii "MinTimeSlice_s (1.0/SchedulerFrequency)\0"
+ 3419      696D6553 
+ 3419      6C696365 
+ 3419      5F732028 
+ 3419      312E302F 
+ 3420 1fb6 01       		.byte	0x1
+ 3421 1fb7 07       		.uleb128 0x7
+ 3422 1fb8 4D696E54 		.ascii "MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\0"
+ 3422      696D6553 
+ 3422      6C696365 
+ 3422      5F757320 
+ 3422      2828312E 
+ 3423 1fe7 01       		.byte	0x1
+ 3424 1fe8 08       		.uleb128 0x8
+ 3425 1fe9 5461736B 		.ascii "Task_min_time (1e0)\0"
+ 3425      5F6D696E 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 100
 
 
- 3420 207d 02       		.uleb128 0x2
- 3421 207e 14       		.uleb128 0x14
- 3422 207f 04       		.byte	0x4
- 3423              		.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
- 3424 2080 03       		.byte	0x3
- 3425 2081 03       		.uleb128 0x3
- 3426 2082 15       		.uleb128 0x15
- 3427 2083 04       		.byte	0x4
- 3428 2084 03       		.byte	0x3
- 3429 2085 04       		.uleb128 0x4
- 3430 2086 05       		.uleb128 0x5
- 3431 2087 01       		.byte	0x1
- 3432 2088 02       		.uleb128 0x2
- 3433 2089 5F6F735F 		.ascii "_os_task_scheduler_h_ \0"
- 3433      7461736B 
- 3433      5F736368 
- 3433      6564756C 
- 3433      65725F68 
- 3434 20a0 01       		.byte	0x1
- 3435 20a1 07       		.uleb128 0x7
- 3436 20a2 5461736B 		.ascii "Task_0_ptr 0\0"
- 3436      5F305F70 
- 3436      74722030 
- 3436      00
- 3437 20af 01       		.byte	0x1
- 3438 20b0 08       		.uleb128 0x8
- 3439 20b1 5461736B 		.ascii "Task_1_ptr 1\0"
- 3439      5F315F70 
- 3439      74722031 
- 3439      00
- 3440 20be 01       		.byte	0x1
- 3441 20bf 09       		.uleb128 0x9
- 3442 20c0 5461736B 		.ascii "Task_2_ptr 2\0"
- 3442      5F325F70 
- 3442      74722032 
- 3442      00
- 3443 20cd 01       		.byte	0x1
- 3444 20ce 0A       		.uleb128 0xa
- 3445 20cf 5461736B 		.ascii "Task_3_ptr 3\0"
- 3445      5F335F70 
- 3445      74722033 
- 3445      00
- 3446 20dc 01       		.byte	0x1
- 3447 20dd 0C       		.uleb128 0xc
- 3448 20de 4F535F53 		.ascii "OS_SaveTaskPtr(task_ptr,Task_n_ptr) \0"
- 3448      61766554 
- 3448      61736B50 
- 3448      74722874 
- 3448      61736B5F 
- 3449 2103 04       		.byte	0x4
- 3450 2104 03       		.byte	0x3
- 3451 2105 05       		.uleb128 0x5
- 3452 2106 06       		.uleb128 0x6
- 3453 2107 01       		.byte	0x1
- 3454 2108 02       		.uleb128 0x2
- 3455 2109 5F6F735F 		.ascii "_os_task_queue_h_ \0"
- 3455      7461736B 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 101
+ 3425      5F74696D 
+ 3425      65202831 
+ 3425      65302900 
+ 3426 1ffd 01       		.byte	0x1
+ 3427 1ffe 09       		.uleb128 0x9
+ 3428 1fff 4E554D42 		.ascii "NUMBER_OF_TASKS 5\0"
+ 3428      45525F4F 
+ 3428      465F5441 
+ 3428      534B5320 
+ 3428      3500
+ 3429 2011 01       		.byte	0x1
+ 3430 2012 0A       		.uleb128 0xa
+ 3431 2013 4D41585F 		.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
+ 3431      52554E5F 
+ 3431      51554555 
+ 3431      455F5349 
+ 3431      5A452028 
+ 3432 2038 01       		.byte	0x1
+ 3433 2039 0B       		.uleb128 0xb
+ 3434 203a 4D41585F 		.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
+ 3434      52554E5F 
+ 3434      50515545 
+ 3434      55455F53 
+ 3434      495A4520 
+ 3435 2061 01       		.byte	0x1
+ 3436 2062 0D       		.uleb128 0xd
+ 3437 2063 5441534B 		.ascii "TASK_STACK_SIZE 200\0"
+ 3437      5F535441 
+ 3437      434B5F53 
+ 3437      495A4520 
+ 3437      32303000 
+ 3438 2077 01       		.byte	0x1
+ 3439 2078 10       		.uleb128 0x10
+ 3440 2079 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
+ 3440      45525F53 
+ 3440      45432028 
+ 3440      31303030 
+ 3440      2900
+ 3441 208b 01       		.byte	0x1
+ 3442 208c 11       		.uleb128 0x11
+ 3443 208d 5553455F 		.ascii "USE_STATIC_CREATED_TASKS True\0"
+ 3443      53544154 
+ 3443      49435F43 
+ 3443      52454154 
+ 3443      45445F54 
+ 3444 20ab 04       		.byte	0x4
+ 3445              		.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_
+ 3446 20ac 03       		.byte	0x3
+ 3447 20ad 05       		.uleb128 0x5
+ 3448 20ae 15       		.uleb128 0x15
+ 3449 20af 01       		.byte	0x1
+ 3450 20b0 02       		.uleb128 0x2
+ 3451 20b1 5F6F735F 		.ascii "_os_init_task_system_h_ \0"
+ 3451      696E6974 
+ 3451      5F746173 
+ 3451      6B5F7379 
+ 3451      7374656D 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 101
 
 
- 3455      5F717565 
- 3455      75655F68 
- 3455      5F2000
- 3456 211c 01       		.byte	0x1
- 3457 211d 06       		.uleb128 0x6
- 3458 211e 46697273 		.ascii "First_task (0)\0"
- 3458      745F7461 
- 3458      736B2028 
- 3458      302900
- 3459 212d 01       		.byte	0x1
- 3460 212e 07       		.uleb128 0x7
- 3461 212f 4C617374 		.ascii "Last_task (MAX_RUN_QUEUE_SIZE-1)\0"
- 3461      5F746173 
- 3461      6B20284D 
- 3461      41585F52 
- 3461      554E5F51 
- 3462 2150 01       		.byte	0x1
- 3463 2151 09       		.uleb128 0x9
- 3464 2152 466F725F 		.ascii "For_all_tasks_in_queue(var) for((var) = First_task; (var) <= Last_task; (var)++)\0"
- 3464      616C6C5F 
- 3464      7461736B 
- 3464      735F696E 
- 3464      5F717565 
- 3465 21a3 04       		.byte	0x4
- 3466 21a4 03       		.byte	0x3
- 3467 21a5 06       		.uleb128 0x6
- 3468 21a6 07       		.uleb128 0x7
- 3469 21a7 01       		.byte	0x1
- 3470 21a8 02       		.uleb128 0x2
- 3471 21a9 5F6F735F 		.ascii "_os_stack_h_ \0"
- 3471      73746163 
- 3471      6B5F685F 
- 3471      2000
- 3472 21b7 01       		.byte	0x1
- 3473 21b8 04       		.uleb128 0x4
- 3474 21b9 4F535F53 		.ascii "OS_STACK_SIZE 0x100\0"
- 3474      5441434B 
- 3474      5F53495A 
- 3474      45203078 
- 3474      31303000 
- 3475 21cd 04       		.byte	0x4
- 3476 21ce 04       		.byte	0x4
- 3477 21cf 00       		.byte	0
- 3478              		.section	.debug_line,"dr"
- 3479              	Ldebug_line0:
- 3480 0000 54040000 		.section	.debug_str,"dr"
- 3480      0200DD02 
- 3480      00000101 
- 3480      FB0E0D00 
- 3480      01010101 
- 3481              	LASF1:
- 3482 0000 7461736B 		.ascii "task\0"
- 3482      00
- 3483              	LASF2:
- 3484 0005 7461736B 		.ascii "task_ptr\0"
- 3484      5F707472 
- 3484      00
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 102
+ 3452 20ca 04       		.byte	0x4
+ 3453 20cb 01       		.byte	0x1
+ 3454 20cc 5C       		.uleb128 0x5c
+ 3455 20cd 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
+ 3455      61766554 
+ 3455      61736B50 
+ 3455      74722874 
+ 3455      61736B5F 
+ 3456 2115 01       		.byte	0x1
+ 3457 2116 5D       		.uleb128 0x5d
+ 3458 2117 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
+ 3458      65745461 
+ 3458      736B5074 
+ 3458      72287461 
+ 3458      736B5F6E 
+ 3459 2152 04       		.byte	0x4
+ 3460 2153 04       		.byte	0x4
+ 3461              		.file 22 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_user_code/led.h"
+ 3462 2154 03       		.byte	0x3
+ 3463 2155 0E       		.uleb128 0xe
+ 3464 2156 16       		.uleb128 0x16
+ 3465 2157 01       		.byte	0x1
+ 3466 2158 02       		.uleb128 0x2
+ 3467 2159 5F4C4544 		.ascii "_LED_H_ \0"
+ 3467      5F485F20 
+ 3467      00
+ 3468 2162 04       		.byte	0x4
+ 3469 2163 04       		.byte	0x4
+ 3470              		.file 23 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_common.h"
+ 3471 2164 03       		.byte	0x3
+ 3472 2165 02       		.uleb128 0x2
+ 3473 2166 17       		.uleb128 0x17
+ 3474 2167 04       		.byte	0x4
+ 3475              		.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
+ 3476 2168 03       		.byte	0x3
+ 3477 2169 03       		.uleb128 0x3
+ 3478 216a 18       		.uleb128 0x18
+ 3479 216b 04       		.byte	0x4
+ 3480 216c 03       		.byte	0x3
+ 3481 216d 04       		.uleb128 0x4
+ 3482 216e 05       		.uleb128 0x5
+ 3483 216f 01       		.byte	0x1
+ 3484 2170 02       		.uleb128 0x2
+ 3485 2171 5F6F735F 		.ascii "_os_task_scheduler_h_ \0"
+ 3485      7461736B 
+ 3485      5F736368 
+ 3485      6564756C 
+ 3485      65725F68 
+ 3486 2188 01       		.byte	0x1
+ 3487 2189 07       		.uleb128 0x7
+ 3488 218a 5461736B 		.ascii "Task_0_ptr 0\0"
+ 3488      5F305F70 
+ 3488      74722030 
+ 3488      00
+ 3489 2197 01       		.byte	0x1
+ 3490 2198 08       		.uleb128 0x8
+ 3491 2199 5461736B 		.ascii "Task_1_ptr 1\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 102
 
 
- 3485              	LASF0:
- 3486 000e 6578655F 		.ascii "exe_time\0"
- 3486      74696D65 
- 3486      00
- 3487              		.ident	"GCC: (GNU) 4.9.3"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 103
+ 3491      5F315F70 
+ 3491      74722031 
+ 3491      00
+ 3492 21a6 01       		.byte	0x1
+ 3493 21a7 09       		.uleb128 0x9
+ 3494 21a8 5461736B 		.ascii "Task_2_ptr 2\0"
+ 3494      5F325F70 
+ 3494      74722032 
+ 3494      00
+ 3495 21b5 01       		.byte	0x1
+ 3496 21b6 0A       		.uleb128 0xa
+ 3497 21b7 5461736B 		.ascii "Task_3_ptr 3\0"
+ 3497      5F335F70 
+ 3497      74722033 
+ 3497      00
+ 3498 21c4 01       		.byte	0x1
+ 3499 21c5 0C       		.uleb128 0xc
+ 3500 21c6 4F535F53 		.ascii "OS_SaveTaskPtr(task_ptr,Task_n_ptr) \0"
+ 3500      61766554 
+ 3500      61736B50 
+ 3500      74722874 
+ 3500      61736B5F 
+ 3501 21eb 04       		.byte	0x4
+ 3502 21ec 03       		.byte	0x3
+ 3503 21ed 05       		.uleb128 0x5
+ 3504 21ee 06       		.uleb128 0x6
+ 3505 21ef 01       		.byte	0x1
+ 3506 21f0 02       		.uleb128 0x2
+ 3507 21f1 5F6F735F 		.ascii "_os_task_queue_h_ \0"
+ 3507      7461736B 
+ 3507      5F717565 
+ 3507      75655F68 
+ 3507      5F2000
+ 3508 2204 01       		.byte	0x1
+ 3509 2205 06       		.uleb128 0x6
+ 3510 2206 46697273 		.ascii "First_task (0)\0"
+ 3510      745F7461 
+ 3510      736B2028 
+ 3510      302900
+ 3511 2215 01       		.byte	0x1
+ 3512 2216 07       		.uleb128 0x7
+ 3513 2217 4C617374 		.ascii "Last_task (MAX_RUN_QUEUE_SIZE-1)\0"
+ 3513      5F746173 
+ 3513      6B20284D 
+ 3513      41585F52 
+ 3513      554E5F51 
+ 3514 2238 01       		.byte	0x1
+ 3515 2239 09       		.uleb128 0x9
+ 3516 223a 466F725F 		.ascii "For_all_tasks_in_queue(var) for((var) = First_task; (var) <= Last_task; (var)++)\0"
+ 3516      616C6C5F 
+ 3516      7461736B 
+ 3516      735F696E 
+ 3516      5F717565 
+ 3517 228b 04       		.byte	0x4
+ 3518              		.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_stack.h"
+ 3519 228c 03       		.byte	0x3
+ 3520 228d 06       		.uleb128 0x6
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 103
+
+
+ 3521 228e 19       		.uleb128 0x19
+ 3522 228f 04       		.byte	0x4
+ 3523 2290 04       		.byte	0x4
+ 3524 2291 00       		.byte	0
+ 3525              		.section	.debug_line,"dr"
+ 3526              	Ldebug_line0:
+ 3527 0000 8C040000 		.section	.debug_str,"dr"
+ 3527      02001503 
+ 3527      00000101 
+ 3527      FB0E0D00 
+ 3527      01010101 
+ 3528              	LASF1:
+ 3529 0000 7461736B 		.ascii "task\0"
+ 3529      00
+ 3530              	LASF2:
+ 3531 0005 7461736B 		.ascii "task_ptr\0"
+ 3531      5F707472 
+ 3531      00
+ 3532              	LASF0:
+ 3533 000e 6578655F 		.ascii "exe_time\0"
+ 3533      74696D65 
+ 3533      00
+ 3534              		.ident	"GCC: (GNU) 4.9.3"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 104
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_task_scheduler.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:4      .bss:00000000 _TASK_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:5      .bss:000003e8 _LAST_CURRENT_TIME
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:8      .text:00000000 _OS_ACTIVATE_DISPATCHER
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:32     .text:00000012 _OS_SLEEPTASK
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:58     .text:0000002c _task_state_request
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:204    .text:00000123 _OS_ActivateTask
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:302    .text:000001e1 _OS_STARTTASK
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:441    .text:0000033d _OS_TERMINATE_TASK
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:522    .text:000003f7 _OS_TASK_DISPATCHER
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:556    .text:0000042c _TASK_0
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:573    .text:00000431 _TASK_1
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:596    .text:0000044c _TASK_2
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:613    .text:00000451 _TASK_3
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:631    .text:00000456 _OS_INIT_TASKS
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1023   .bss:00000420 _task_0.1336
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1018   .bss:000003ec _TASK_GROUP_1.1340
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1024   .bss:00000480 _task_1.1337
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1025   .bss:000004e0 _task_2.1338
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1019   .bss:000003f4 _TASK_GROUP_2.1341
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1026   .bss:00000540 _task_3.1339
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1020   .bss:000003fc _TASK_GROUP_3.1342
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:712    .text:000005a7 _OS_TaskScheduler
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1027   .bss:000005a0 _link_list_member.1352
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1028   .bss:000005a4 _task.1349
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1028   .bss:000005a8 _Winner_prio.1350
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:924    .text:000007b5 _ISR_TASK_DISPATCH_C0
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:948    .text:000007ce _ISR_TASK_DISPATCH_C1
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:972    .text:000007e7 _ISR_TASK_DISPATCH_C2
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:996    .text:00000800 _ISR_TASK_DISPATCH_C3
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1021   .bss:00000404 _TASK_GROUP_4.1343
-C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s:1022   .bss:0000040c _TASK_GROUP_5.1344
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:4      .bss:00000000 _TASK_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:5      .bss:000003e8 _LAST_CURRENT_TIME
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:8      .text:00000000 _OS_ACTIVATE_DISPATCHER
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:32     .text:00000012 _OS_SLEEPTASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:58     .text:0000002c _task_state_request
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:204    .text:00000123 _OS_ActivateTask
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:302    .text:000001e1 _OS_STARTTASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:441    .text:0000033d _OS_TERMINATE_TASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:522    .text:000003f7 _OS_TASK_DISPATCHER
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:556    .text:0000042c _TASK_0
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:573    .text:00000431 _TASK_1
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:596    .text:0000044c _TASK_2
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:613    .text:00000451 _TASK_3
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:631    .text:00000456 _OS_INIT_TASKS
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1023   .bss:00000420 _task_0.1350
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1018   .bss:000003ec _TASK_GROUP_1.1354
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1024   .bss:00000480 _task_1.1351
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1025   .bss:000004e0 _task_2.1352
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1019   .bss:000003f4 _TASK_GROUP_2.1355
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1026   .bss:00000540 _task_3.1353
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1020   .bss:000003fc _TASK_GROUP_3.1356
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:712    .text:000005a7 _OS_TaskScheduler
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1027   .bss:000005a0 _link_list_member.1366
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1028   .bss:000005a4 _task.1363
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1028   .bss:000005a8 _Winner_prio.1364
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:924    .text:000007b5 _ISR_TASK_DISPATCH_C0
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:948    .text:000007ce _ISR_TASK_DISPATCH_C1
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:972    .text:000007e7 _ISR_TASK_DISPATCH_C2
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:996    .text:00000800 _ISR_TASK_DISPATCH_C3
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1021   .bss:00000404 _TASK_GROUP_4.1357
+C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s:1022   .bss:0000040c _TASK_GROUP_5.1358
 
 UNDEFINED SYMBOLS
 _OS_STACK
@@ -6126,6 +6204,6 @@ _GetFromLinkList
 _GetFromTaskQueue
 _GetIdleTask
 _LLF_ADD_2_TCMP
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccayRe6h.s 			page 104
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYINs5Z.s 			page 105
 
 
