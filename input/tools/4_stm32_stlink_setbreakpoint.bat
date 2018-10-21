@@ -1,0 +1,1 @@
+cmd.exe  /c ST-LINK_CLI.exe -c -SetBP 0x0800645F

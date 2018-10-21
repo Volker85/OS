@@ -1,1 +1,0 @@
-try{window.localStorage.setItem('google_pub_config','{"sraConfigs":{"2":{"sraEnabled":true,"sraTimeout":60000,"whitelist":{"16lqe3y,5":1,"10ko7uo,3":1,"onv0cw,2":1,"16lqe3y,2":1,"16lqe3y,3":1}},"4":{"sraTimeout":60000}}}');}catch(e){}
