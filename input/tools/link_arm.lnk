@@ -7,25 +7,30 @@ PowerPC/ARM: 0x0
 */
 MEMORY 
 {
-  rom : ORIGIN = 0, LENGTH = 1M
-  ram : org = 0x40000000, l = 192K
+  rom : ORIGIN = 0x08000000, LENGTH = 1024K
+  ram : ORIGIN = 0x20000000, LENGTH = 192K
 } 
 
 SECTIONS{
-   .text ALIGN(0x08000000):
+   .text :
    {
+      _ivec_start = .;
       os_exception_table.o
+      _ivec_end = .;
+      PROVIDE(ivec_start = .);
+      PROVIDE(ivec_end = .); 
    } > rom
-   .text ALIGN(0x08000200):
+   .text :
    {
-      _data_start = .;
+      _const_start = .;
       os_const.o
-      _data_end = .;
-      PROVIDE(data_start = .);
-      PROVIDE(data_end = .);   
+      _const_end = .;
+      PROVIDE(const_start = .);
+      PROVIDE(const_end = .);   
    } > rom
-   .text ALIGN(0x08001000):
+   .text :
    {       
+      _code_start = .;   
       lld_global.o  
       lld_interrupt.o
       lld_mmu.o
@@ -37,7 +42,7 @@ SECTIONS{
       os_driver_hook.o
       os_exception.o
       os_exception_isr_handler.o
-       os_exception_table.o
+      os_exception_table.o
       os_init_task_system.o
       os_main.o
       os_memory_mmu_setup.o
@@ -57,8 +62,11 @@ SECTIONS{
       os_heap.o 
       os_diagnostic_main.o     
       led.o
+      _code_end = .;
+      PROVIDE(code_start = .);
+      PROVIDE(code_end = .);       
    } > rom
-   .data ALIGN(0x40000000):
+   .data :
    {      
       _ram_start = .;
       os_ram.o

@@ -272,6 +272,8 @@ typedef unsigned long uint32;
 
 #define False 0
 #define True 1
+#define FALSE False
+#define TRUE True
 #define Accepted 1
 #define Rejected 0
 #define Local static
@@ -287,14 +289,14 @@ typedef unsigned long uint32;
 
 
 #define NR_OF_CORES 1
-# 35 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_common.h"
+# 37 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_common.h"
 #define DisableInterrupts() 
 #define EnableInterrupts() 
 #define Privilige_level_save_current() 
 #define Privilige_level_enter_kernel_mode() 
 #define Privilige_level_restore_saved() 
 #define HaltMcu() 
-# 49 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_common.h"
+# 51 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_common.h"
 enum os_sw_bugs_e
 {
    os_bug_no_bug = 0,
@@ -331,6 +333,50 @@ extern void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_n
 
 typedef void (*func_ptr_t)(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
+
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 1
+
+#define _OS_RAM_H_ 
+
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_firstinc.h" 1
+# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_stack.h" 1
+
+#define _os_stack_h_ 
+
+#define OS_STACK_SIZE 0x100
+
+extern unsigned_char_t OS_STACK[1][0x100];
+# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_heap.h" 1
+
+#define _os_heap_h_ 
+
+
+#define HEAP_SIZE 10000
+#define MIN_BLOCK_SIZE_HEAP 8
+
+
+#define HEAP_OFFSET_FOR_SIZE 0
+#define HEAP_OFFSET_FOR_USED_SIZE 4
+#define HEAP_OFFSET_FOR_CHUNK 8
+
+extern uint8 HEAP[10000];
+
+extern void* os_calloc(uint32 num, uint32 size);
+extern void* os_realloc(void* ptr_old, uint32 size_new);
+extern void* os_malloc(uint32 size);
+extern void os_free(void* ptr);
+# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+
+
+extern unsigned_char_t HEAP[10000];
+
+
+extern unsigned_char_t OS_STACK[1][0x100];
+extern unsigned_char_t OS_MAIN_STACK[0x100];
+# 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
+
 
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 1
 
@@ -517,7 +563,7 @@ extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_CLEAR_ALL_GP_REGISTERS(void);
 
 extern void LLF_PERFORM_RAM_CHECK(void);
-# 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
+# 11 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
 
 
 
@@ -537,7 +583,7 @@ extern void USER_LED_INIT(led_t Led);
 extern void USER_LED_ON(led_t Led);
 extern void USER_LED_OFF(led_t Led);
 extern void USER_LED_TOGGLE(led_t Led);
-# 12 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
+# 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\lld_mmu.c" 2
 
 void LLF_MPU_DISABLE(void)

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 1
   31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** - OS_Shutdown mit Reset
   32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** 
   33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** OS_State: OS_Shutdown (nur erlaubt im Supervisor Mode)
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s 			page 2
 
 
   34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** - Interrupts deaktivieren
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 1
   69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       /* initialisation of SW, HW will be done in the tasks, after starting the task system.... */
   70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       OS_INIT_HW();
   71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       OS_INIT_SW();
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s 			page 3
 
 
   72:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       OS_INIT_TASK_SYSTEM();
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 1
   57 0026 FFF7FEFF 		bl	OS_ACTIVATE_DISPATCHER
   78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       /* activate the interrupts, tasks will be executed from now on ... */
   58              		.loc 1 78 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s 			page 4
 
 
   59 002a 0E4B     		ldr	r3, .L11
@@ -238,40 +238,42 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 1
  110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
  111:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** }
  100              		.loc 1 111 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 5
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s 			page 5
 
 
  101 0060 80BD     		pop	{r7, pc}
  102              	.L12:
  103 0062 00BF     		.align	2
  104              	.L11:
- 105 0064 00000000 		.word	OS_STATE.3943
- 106 0068 01000000 		.word	sys_req_reset_state.3944
+ 105 0064 00000000 		.word	OS_STATE.3958
+ 106 0068 01000000 		.word	sys_req_reset_state.3959
  107              		.cfi_endproc
  108              	.LFE0:
  110              		.bss
- 111              	OS_STATE.3943:
+ 111              	OS_STATE.3958:
  112 0000 00       		.space	1
- 113              	sys_req_reset_state.3944:
+ 113              	sys_req_reset_state.3959:
  114 0001 00       		.space	1
  115              		.text
  116              	.Letext0:
  117              		.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s 			page 6
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_main.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s:23     .text:00000000 OS_STATE_HANDLER
-C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s:105    .text:00000064 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s:111    .bss:00000000 OS_STATE.3943
-C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s:113    .bss:00000001 sys_req_reset_state.3944
-C:\Users\PRESID~1\AppData\Local\Temp\ccnDtO1T.s:112    .bss:00000000 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s:18     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s:23     .text:00000000 OS_STATE_HANDLER
+C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s:105    .text:00000064 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s:111    .bss:00000000 OS_STATE.3958
+C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s:113    .bss:00000001 sys_req_reset_state.3959
+C:\Users\PRESID~1\AppData\Local\Temp\ccmbJ232.s:112    .bss:00000000 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
-                           .group:00000000 wm4.os_common.h.2.9521b3e5c1199f549394d32eec33a9c8
+                           .group:00000000 wm4.os_common.h.2.d75289bcbcba9f0e2c2ffeda9394ea88
+                           .group:00000000 wm4.os_stack.h.2.56b9abf83b767549c9959a09e2fe6833
+                           .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
                            .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
                            .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
                            .group:00000000 wm4.os_task_scheduler.h.2.125feba674fa85672711aed1ca8ea199

@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="head"><title>
+	Serial Wire Viewer
+</title><meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="content-style-type" content="text/css"> 
+<meta http-equiv="content-script-type" content="text/javascript"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="http://controlsoft.mandela.ac.za/App_Themes/global/public/favicon.ico">
+<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="Serial%20Wire%20Viewer-Dateien/bootstrap.css">
+    <link rel="stylesheet" href="Serial%20Wire%20Viewer-Dateien/bootstrap-cols.css">
+	<link rel="stylesheet" href="Serial%20Wire%20Viewer-Dateien/sm-core-css.css" type="text/css">
+    <link rel="stylesheet" href="Serial%20Wire%20Viewer-Dateien/sm-hamburger.css">
+	<link rel="stylesheet" href="Serial%20Wire%20Viewer-Dateien/jquery.css">
+    <link rel="stylesheet" href="Serial%20Wire%20Viewer-Dateien/royalslider.css">
+    <link rel="stylesheet" href="Serial%20Wire%20Viewer-Dateien/rs-default-new.css">
+	<link rel="stylesheet" href="Serial%20Wire%20Viewer-Dateien/nmmu.css">
+
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+<style>
+
+  @media (min-width: 767px) {
+    body {
+      background: url(/controlsoft/background.jpg) no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      background-size: cover;
+    }
+  }  
+
+</style> 
+<link href="http://controlsoft.mandela.ac.za/favicon.ico" type="image/x-icon" rel="shortcut icon"> 
+<link href="http://controlsoft.mandela.ac.za/favicon.ico" type="image/x-icon" rel="icon"> 
+</head>
+<body class="LTR Gecko Gecko62 ENGB ContentBody">
+    <form method="post" action="/ARMmbed/STM32F4-Discovery-Examples/Serial-Wire-Viewer.aspx" id="form">
+<div class="aspNetHidden">
+<input name="manScript_HiddenField" id="manScript_HiddenField" value="" type="hidden">
+<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" type="hidden">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form'];
+if (!theForm) {
+    theForm = document.form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="Serial%20Wire%20Viewer-Dateien/WebResource.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+	//<![CDATA[
+
+                function onSilverlightError(sender, args) 
+                {
+                    var appSource = '';
+                    if (sender != null && sender != 0) 
+                    {
+                        appSource = sender.getHost().Source;
+                    }
+                    var errorType = args.ErrorType;
+                    var iErrorCode = args.ErrorCode;
+
+                    if (errorType == 'ImageError' || errorType == 'MediaError') 
+                    {
+                        return;
+                    }
+
+                    var errMsg = 'Unhandled Error in Silverlight Application ' + appSource + '\n';
+                    errMsg += 'Code: ' + iErrorCode + '    \n';
+                    errMsg += 'Category: ' + errorType + '       \n';
+                    errMsg += 'Message: ' + args.ErrorMessage + '     \n';
+
+                    if (errorType == 'ParserError') 
+                    {
+                        errMsg += 'File: ' + args.xamlFile + '     \n';
+                        errMsg += 'Line: ' + args.lineNumber + '     \n';
+                        errMsg += 'Position: ' + args.charPosition + '     \n';
+                    }
+                    else if (errorType == 'RuntimeError') 
+                    {
+                        if (args.lineNumber != 0) 
+                        {
+                            errMsg += 'Line: ' + args.lineNumber + '     \n';
+                            errMsg += 'Position: ' + args.charPosition + '     \n';
+                        }
+                        errMsg += 'MethodName: ' + args.methodName + '     \n';
+                    }
+                    throw new Error(errMsg);
+                }
+//]]>
+</script><input name="lng" id="lng" value="en-GB" type="hidden">
+<script type="text/javascript">
+	//<![CDATA[
+
+function PM_Postback(param) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); }__doPostBack('m',param); }
+function PM_Callback(param, callback, ctx) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); }WebForm_DoCallback('m',param,callback,ctx,null,true); }
+//]]>
+</script>
+<script src="Serial%20Wire%20Viewer-Dateien/ScriptResource.js" type="text/javascript"></script>
+<script src="Serial%20Wire%20Viewer-Dateien/ScriptResource_002.js" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A5343185" type="hidden">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('manScript', 'form', ['tctxM',''], [], [], 90, '');
+//]]>
+</script>
+<div id="CMSHeaderDiv">
+	<!-- -->
+</div>
+    <div id="ctxM">
+
+</div>
+    
+        <div class="container-fluid navbar-blue-gradient navbar-fixed-top tbsZindex">
+			<div class="container" style="padding-left:0px; height:45px">
+					<div id="navbarDefault" class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<!-- SEARCH AND ICONS -->
+							<div role="search" class="navbar-form navbar-right hidden-xs" style="float: left; padding-left: 10px;">
+								<div class="inner-addon right-addon">
+									<!-- <ic class="fa fa-lg fa-search TextWhite"></ic> -->
+                                    <i class="glyphicon glyphicon-search TextWhite"></i>
+                                    <div id="p_lt_zoneSearchBox_SearchBox_pnlSearch" class="searchBox" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'p_lt_zoneSearchBox_SearchBox_btnSearch')">
+	
+    <label for="p_lt_zoneSearchBox_SearchBox_txtWord" id="p_lt_zoneSearchBox_SearchBox_lblSearch" style="display:none;">Search for:</label>
+    <input name="p$lt$zoneSearchBox$SearchBox$txtWord" maxlength="1000" id="p_lt_zoneSearchBox_SearchBox_txtWord" class="form-control" placeholder="Search" type="text">
+    <input name="p$lt$zoneSearchBox$SearchBox$btnSearch" value="." id="p_lt_zoneSearchBox_SearchBox_btnSearch" class="btnSearch" type="submit">
+    
+
+</div>
+
+									
+								</div>
+							</div>
+								
+							<ul class="SocialIcons nav navbar-nav navbar-right hidden-xs hidden-sm hidden-md sm" data-smartmenus-id="15399382178456956">
+                                <li><a class="navbar-icon" href="http://www.facebook.com/mandelauni"><img alt="facebook" src="Serial%20Wire%20Viewer-Dateien/facebook.png"></a></li>
+                                <li><a class="navbar-icon" href="http://www.twitter.com/mandelauni"><img alt="twitter" src="Serial%20Wire%20Viewer-Dateien/twitterwhite.png"></a></li>
+                                <li><a class="navbar-icon" href="https://plus.google.com/113939268207479606258?prsrc=3"><img alt="googleplus" src="Serial%20Wire%20Viewer-Dateien/googleplus.png"></a></li>
+                                <li><a class="navbar-icon" href="https://www.youtube.com/user/NMMUonTube"><img alt="youtube" src="Serial%20Wire%20Viewer-Dateien/youtube.png"></a></li>
+                                <li><a class="navbar-icon" href="https://instagram.com/mandelauniversity"><img alt="Instagram" src="Serial%20Wire%20Viewer-Dateien/instagramwhite.png"></a></li>
+							</ul>
+						</div>
+							
+                      <div class="home-icon"><a href="http://www.mandela.ac.za/"><img src="Serial%20Wire%20Viewer-Dateien/home.png" alt="Home icon" style="float:left;"></a></div><div class="navbar-default"><ul id="main-menu" class="nav navbar-nav MegaDropDown sm" data-smartmenus-id="15399382179220806"><li><a href="http://www.mandela.ac.za/Academic" class="has-submenu">Academic<span class="sub-arrow">...</span></a>
+                        <ul class="mega-menu hidden-xs" style="position:fixed !important;">
+                            <li>
+                                <!-- The mega drop down contents -->
+                                <div class="MenuContents container"><div class="row"><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/Academic/Courses-on-offer">Courses on offer</a><a class="Level3" href="http://www.mandela.ac.za/Academic/Courses-on-offer/APS-Calculator">APS Calculator</a><a class="Level3" href="http://www.mandela.ac.za/Academic/Courses-on-offer/Module-Browser">Module Browser</a><a class="Level2" href="http://www.mandela.ac.za/Academic/Short-courses">Short courses</a><a class="Level2" href="http://www.mandela.ac.za/Academic/Special-programmes">Special programmes</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/Academic/Postgraduate-mature-students">Postgraduate &amp; mature students</a><a class="Level2" href="http://www.mandela.ac.za/Academic/Study-abroad">Study abroad</a><a class="Level2" href="http://www.mandela.ac.za/Academic/Teaching-Learning">Teaching &amp; Learning</a><a class="Level2" href="http://www.mandela.ac.za/Academic/Research">Research</a><a class="Level2" href="http://www.mandela.ac.za/Academic/Innovation">Innovation</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/Academic/Engagement">Engagement</a><a class="Level2" href="http://www.mandela.ac.za/Academic/Faculties,-schools-departments">Faculties, schools &amp; departments</a><a class="Level2" href="http://www.mandela.ac.za/Academic/General-information">General information</a> </div></div>
+                            </div></li>
+                        </ul>
+                    </li><li><a href="http://www.mandela.ac.za/Apply" class="has-submenu">Apply<span class="sub-arrow">...</span></a>
+                        <ul class="mega-menu hidden-xs" style="position:fixed !important;">
+                            <li>
+                                <!-- The mega drop down contents -->
+                                <div class="MenuContents container"><div class="row"><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/Apply/Admission">Admission</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Admission/How-do-I-apply">How do I apply?</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Admission/Our-courses-per-faculty">Our courses per faculty</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Admission/Entry-requirements">Entry requirements</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Admission/National-Certificate-Vocational-(NCV)">National Certificate Vocational (NCV)</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Admission/Check-your-admission-status">Check your admission status</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Admission/Closing-dates">Closing dates</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Admission/Access-Assessment-Testing-(CAAR)">Access Assessment Testing (CAAR)</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level3" href="http://www.mandela.ac.za/Apply/Admission/Need-some-assistance">Need some assistance?</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Admission/Important-info-for-new-students">Important info for new students</a><a class="Level2" href="http://www.mandela.ac.za/Apply/Funding-your-studies">Funding your studies</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Funding-your-studies/General-Financial-information">General Financial information</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Funding-your-studies/Fees-per-qualification">Fees per qualification</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Funding-your-studies/Financial-Aid-bursaries">Financial Aid &amp; bursaries</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Funding-your-studies/Postgraduate-bursaries">Postgraduate bursaries</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Funding-your-studies/Vice-Chancellor%E2%80%99s-Scholarship-Programme">Vice-Chancellor’s Scholarship Programme</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/Apply/Apply-for-accommodation">Apply for accommodation</a><a class="Level2" href="http://www.mandela.ac.za/Apply/International-students">International students</a><a class="Level2" href="http://www.mandela.ac.za/Apply/Frequently-asked-questions">Frequently asked questions</a><a class="Level2" href="http://www.mandela.ac.za/Apply/Information-for-parents">Information for parents</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Information-for-parents/Info-for-Grade-9-s">Info for Grade 9's</a><a class="Level3" href="http://www.mandela.ac.za/Apply/Information-for-parents/Info-for-Grade-11-s">Info for Grade 11's</a><a class="Level2" href="http://www.mandela.ac.za/Apply/Quick-documentation">Quick documentation</a><a class="Level2" href="http://www.mandela.ac.za/Apply/Contact-us">Contact us</a> </div></div>
+                            </div></li>
+                        </ul>
+                    </li><li><a href="http://www.mandela.ac.za/On-campus" class="has-submenu">On campus<span class="sub-arrow">...</span></a>
+                        <ul class="mega-menu hidden-xs" style="position:fixed !important;">
+                            <li>
+                                <!-- The mega drop down contents -->
+                                <div class="MenuContents container"><div class="row"><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/On-campus/Campuses">Campuses</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Campuses/Campus-maps">Campus maps</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Campuses/Bird-Street-Campus">Bird Street Campus</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Campuses/George-Campus">George Campus</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Campuses/Missionvale-Campus">Missionvale Campus</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Campuses/North-Campus">North Campus</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Campuses/Second-Avenue-Campus">Second Avenue Campus</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Campuses/South-Campus">South Campus</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Campuses/Ocean-Sciences-Campus">Ocean Sciences Campus</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/On-campus/Visit">Visit</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Visit/Virtual-tours">Virtual tours</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Visit/Drone-flybys">Drone flybys</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Visit/Open-days">Open days</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Visit/Nelson-Mandela-University-Nature-Reserve">Nelson Mandela University Nature Reserve</a><a class="Level2" href="http://www.mandela.ac.za/On-campus/Events">Events</a><a class="Level2" href="http://www.mandela.ac.za/On-campus/Library-and-Information-Services">Library and Information Services</a><a class="Level2" href="http://www.mandela.ac.za/On-campus/Madibaz-Sport">Madibaz Sport</a><a class="Level2" href="http://www.mandela.ac.za/On-campus/Societies-student-life">Societies &amp; student life</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/On-campus/Support-departments">Support departments</a><a class="Level2" href="http://www.mandela.ac.za/On-campus/Facilities-services">Facilities &amp; services</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Facilities-services/Conference-event-facilities">Conference &amp; event facilities</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Facilities-services/Galleries-exhibition-centres">Galleries &amp; exhibition centres</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Facilities-services/Food-courts">Food courts</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Facilities-services/University-Shop">University Shop</a><a class="Level3" href="http://www.mandela.ac.za/On-campus/Facilities-services/Building-names-and-numbers">Building names and numbers</a> </div></div>
+                            </div></li>
+                        </ul>
+                    </li><li><a href="http://www.mandela.ac.za/About-us" class="has-submenu">About us<span class="sub-arrow">...</span></a>
+                        <ul class="mega-menu hidden-xs" style="position:fixed !important;">
+                            <li>
+                                <!-- The mega drop down contents -->
+                                <div class="MenuContents container"><div class="row"><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/About-us/Our-impact">Our impact</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-impact/Mission,-Vision-Values">Mission, Vision &amp; Values</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-impact/History">History</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-impact/Our-identity">Our identity</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-impact/Conferences">Conferences</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-impact/Public-and-Inaugural-Lectures">Public and Inaugural Lectures</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/About-us/Our-people">Our people</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-people/Leadership">Leadership</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-people/Chancellor">Chancellor</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-people/Deans">Deans</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-people/Members-of-the-University-Council">Members of the University Council</a><a class="Level3" href="http://www.mandela.ac.za/About-us/Our-people/Staff-Search">Staff Search</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/About-us/Fast-Facts">Fast Facts</a><a class="Level2" href="http://www.mandela.ac.za/About-us/The-University-Trust">The University Trust</a><a class="Level2" href="http://www.mandela.ac.za/About-us/Almanac">Almanac</a><a class="Level2" href="http://www.mandela.ac.za/About-us/Academic-Calendar-2018">Academic Calendar 2018</a><a class="Level2" href="http://www.mandela.ac.za/About-us/Academic-Calendar-2019">Academic Calendar - 2019</a> </div></div>
+                            </div></li>
+                        </ul>
+                    </li><li><a href="http://www.mandela.ac.za/Students" class="has-submenu">Students<span class="sub-arrow">...</span></a>
+                        <ul class="mega-menu hidden-xs" style="position:fixed !important;">
+                            <li>
+                                <!-- The mega drop down contents -->
+                                <div class="MenuContents container"><div class="row"><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level2" href="http://www.mandela.ac.za/Students/Registration">Registration</a><a class="Level2" href="http://www.mandela.ac.za/Students/Orientation-for-new-students">Orientation for new students</a><a class="Level2" href="http://www.mandela.ac.za/Students/Student-support-departments">Student support departments</a><a class="Level2" href="http://www.mandela.ac.za/Students/Graduation">Graduation</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level3" href="http://www.mandela.ac.za/Students/Graduation/Check-your-graduation-details">Check your graduation details</a><a class="Level3" href="http://www.mandela.ac.za/Students/Graduation/Graduation-Ceremonies">Graduation Ceremonies</a><a class="Level3" href="http://www.mandela.ac.za/Students/Graduation/Graduation-Videos-Programmes">Graduation Videos &amp; Programmes</a><a class="Level3" href="http://www.mandela.ac.za/Students/Graduation/Graduation-speeches">Graduation speeches</a></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a class="Level3" href="http://www.mandela.ac.za/Students/Graduation/Honorary-Doctorate-acceptance-speech-videos">Honorary Doctorate acceptance speech videos</a><a class="Level2" href="http://www.mandela.ac.za/Students/Contact-us">Contact us</a><a class="Level2" href="http://www.mandela.ac.za/Students/Useful-links">Useful links</a> </div></div>
+                            </div></li>
+                        </ul>
+                    </li></ul></div>
+
+
+
+
+
+
+ 
+                    
+					</div>
+			</div>
+			
+			<!-- <div id="topMenuMegaTop"></div> -->
+		</div>
+		
+		
+		
+		<!--=========================================================================================-->
+		<!-- LOGO & TRANSPARENT BACKGROUND -->
+		<!--=========================================================================================-->
+		<div id="LogoBar" class="container-fluid transparentBackgroundDarkBlue navbar-fixed-top" style="height: 95px;">
+				<div class="container">
+					<div class="row">
+
+						<div class="MegaDropDownDiv">
+	                         <div id="divLogo" class="col-xs-2 col-sm-3 tbsHnopad">
+	                              <a href="http://controlsoft.mandela.ac.za/" id="aLogo" style="display: none;">
+	                                <img id="imgLogo" class="img-responsive imgLogo" src="Serial%20Wire%20Viewer-Dateien/MandelaUniversity_logo_B.png" alt="Logo">
+	                                <img id="imgLogoS" class="img-responsive imgLogoS" src="Serial%20Wire%20Viewer-Dateien/MandelaUniversity_logo_s_B.png" alt="Logo">
+	                              </a>
+	                         </div>
+                          	<div id="divText" class="col-xs-10 col-sm-9">
+								<div class="row">
+									<div id="divStrapLine" class="col-xs-12 tbsHnopad">
+										<p id="StrapLine" class="StrapLine" style="display: none;">Change the world</p>
+									</div>
+									<div id="DepartmentEntity" class="col-xs-12 tbsHnopad" style="padding-left: 0px; margin-top: -13px;">
+										<p class="EntityHeader">
+	Control Software</p>
+
+									</div>
+									
+		                        </div>
+							</div>
+						</div>
+
+
+						<div id="divSearchOnMobile" class="col-xs-4 hidden-md hidden-lg" style="display: none;">
+							
+						</div>
+					</div>
+				</div>
+			<!-- <span id="positioner"></span>  -->
+		</div>
+
+<main id="main" style="padding-top: 156px;">
+  
+
+  
+<div class="container MainContent">
+             
+  <div class="row"><div class="col-sm-12 tbsHnopad">
+
+<style>
+    #menu-button {
+        display: none;
+        /* style it as you like... */
+        display: inline-block;
+    }
+
+        #menu-button:before {
+            content: 'Menu -';
+        }
+
+        #menu-button.collapsed:before {
+            content: 'Menu +';
+        }
+
+    /* hide the menu when it has the "collapsed" class set by the script */
+    #MailDropDown.collapsed {
+        display: none;
+    }
+
+</style>
+
+<script type="text/javascript">
+    
+</script>
+    
+<ul id="MenuOnBody" class="sm sm-hamburger" data-smartmenus-id="15399382178810398"> <li><a href="#" class="has-submenu"><span class="sub-arrow">+</span>Menu</a><ul><li><a href="http://controlsoft.mandela.ac.za/Home">Home</a></li><li><a href="http://controlsoft.mandela.ac.za/Contact-Us">Contact Us</a></li> <li><a href="http://controlsoft.mandela.ac.za/ARMmbed" class="has-submenu"><span class="sub-arrow">+</span>ARMmbed</a><ul><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/Introduction">Introduction</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/Getting-Started">Getting Started</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/Requirements">Requirements</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/Using-the-Online-IDE">Using the Online IDE</a></li> <li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples" class="has-submenu"><span class="sub-arrow">+</span>STM32F4-Discovery Examples</a><ul><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Introduction">Introduction</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Basic-Input-Output">Basic Input/Output</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Serial-Wire-Viewer">Serial Wire Viewer</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Analog-Input">Analog Input</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/PWM-Output">PWM Output</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Servo-Output">Servo Output</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/External-Interrupt">External Interrupt</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Timers">Timers</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Text-LCD">Text LCD</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/LM6029ACW-LCD">LM6029ACW LCD</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Random-Number-Generator">Random Number Generator</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/MCP23008_Keypad">MCP23008_Keypad</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Keypad">Keypad</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/HC-06-Bluetooth">HC-06 Bluetooth</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/SIM808-GSM">SIM808 GSM</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples/Sensors-Modules">Sensors/Modules</a></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F429ZI-Discovery-Examples" class="has-submenu"><span class="sub-arrow">+</span>STM32F429ZI-Discovery Examples</a><ul><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F429ZI-Discovery-Examples/Introduction">Introduction</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F429ZI-Discovery-Examples/QVGA-TFT-LCD">QVGA TFT LCD</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F429ZI-Discovery-Examples/Touchscreen">Touchscreen</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F429ZI-Discovery-Examples/Touchscreen-Keypad">Touchscreen Keypad</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F429ZI-Discovery-Examples/L3GD20-Gyroscope">L3GD20 Gyroscope</a></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/ARMmbed/NUCLEO-F446RE-Examples" class="has-submenu"><span class="sub-arrow">+</span>NUCLEO-F446RE Examples</a><ul><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/NUCLEO-F446RE-Examples/Introduction">Introduction</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/NUCLEO-F446RE-Examples/Console-Output">Console Output</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/NUCLEO-F446RE-Examples/RDM6300-RFID-Reader">RDM6300 RFID Reader</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/NUCLEO-F446RE-Examples/SD-Card">SD Card</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/NUCLEO-F446RE-Examples/SIM808-GSM">SIM808 GSM</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/NUCLEO-F446RE-Examples/MLX90614-IR-Thermometer">MLX90614 IR Thermometer</a></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/ARMmbed/DISCO-F469NI" class="has-submenu"><span class="sub-arrow">+</span>DISCO-F469NI</a><ul><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/DISCO-F469NI/Introduction-(1)">Introduction</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/DISCO-F469NI/TFT-LCD">TFT LCD</a></li><li><a href="http://controlsoft.mandela.ac.za/ARMmbed/DISCO-F469NI/Touchscreen">Touchscreen</a></li></ul></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/STM32-F4-Trainer" class="has-submenu"><span class="sub-arrow">+</span>STM32-F4 Trainer</a><ul><li><a href="http://controlsoft.mandela.ac.za/STM32-F4-Trainer/Introduction">Introduction</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32-F4-Trainer/Pin-Connections">Pin Connections</a></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/STM32F0-Discovery-Board" class="has-submenu"><span class="sub-arrow">+</span>STM32F0-Discovery Board</a><ul> <li><a href="http://controlsoft.mandela.ac.za/STM32F0-Discovery-Board/Example-programs" class="has-submenu"><span class="sub-arrow">+</span>Example programs</a><ul><li><a href="http://controlsoft.mandela.ac.za/STM32F0-Discovery-Board/Example-programs/Basic-Input-Output">Basic Input/Output</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F0-Discovery-Board/Example-programs/LM6029ACW-LCD">LM6029ACW LCD</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F0-Discovery-Board/Example-programs/Analog">Analog</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F0-Discovery-Board/Example-programs/Servo">Servo</a></li></ul></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board" class="has-submenu"><span class="sub-arrow">+</span>STM32F3-Discovery Board</a><ul> <li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs" class="has-submenu"><span class="sub-arrow">+</span>Example programs</a><ul><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/Basic-Input-Output">Basic Input/Output</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/LM6029ACW-LCD">LM6029ACW LCD</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/HD44780-LCD-(16x2-LCD)">HD44780 LCD (16x2 LCD)</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/UART">UART</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/Serial-Wire-Viewer-(SWV)">Serial Wire Viewer (SWV)</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/Virtual-COM-Port-(VCP)">Virtual COM Port (VCP)</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/Analog">Analog</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/Servo">Servo</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/PWM">PWM</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/Keypad">Keypad</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/Sensors">Sensors</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/HC-06-Bluetooth">HC-06 Bluetooth</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F3-Discovery-Board/Example-programs/Stepper">Stepper</a></li></ul></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board" class="has-submenu"><span class="sub-arrow">+</span>STM32F4-Discovery Board</a><ul> <li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs" class="has-submenu"><span class="sub-arrow">+</span>Example programs</a><ul><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/Basic-Input-Output">Basic Input/Output</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/Serial-Wire-Viewer-(SWV)">Serial Wire Viewer (SWV)</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/Analog">Analog</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/DAC">DAC</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/Servo">Servo</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/PWM">PWM</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/Keypad">Keypad</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/HC-06-Bluetooth">HC-06 Bluetooth</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/TG12864H3-LCD">TG12864H3 LCD</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/HD44780-LCD-(16x2-LCD)">HD44780 LCD (16x2 LCD)</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/Stepper-Motor">Stepper Motor</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/Sensors">Sensors</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/LED-Matrix">LED Matrix</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F4-Discovery-Board/Example-programs/RGB-64x32-LED-Matrix">RGB 64x32 LED Matrix</a></li></ul></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/STM32F429I-Discovery-Board" class="has-submenu"><span class="sub-arrow">+</span>STM32F429I-Discovery Board</a><ul> <li><a href="http://controlsoft.mandela.ac.za/STM32F429I-Discovery-Board/Example-Programs" class="has-submenu"><span class="sub-arrow">+</span>Example Programs</a><ul><li><a href="http://controlsoft.mandela.ac.za/STM32F429I-Discovery-Board/Example-Programs/Basic-Input-Output">Basic Input/Output</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F429I-Discovery-Board/Example-Programs/Onboard-TFT-LCD">Onboard TFT LCD</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F429I-Discovery-Board/Example-Programs/Touch-Panel">Touch Panel</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F429I-Discovery-Board/Example-Programs/LCD-Keypad">LCD Keypad</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F429I-Discovery-Board/Example-Programs/Sensors">Sensors</a></li><li><a href="http://controlsoft.mandela.ac.za/STM32F429I-Discovery-Board/Example-Programs/HC-06-Bluetooth">HC-06 Bluetooth</a></li></ul></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/Design-Project-III-(EDP3011-2)" class="has-submenu"><span class="sub-arrow">+</span>Design Project III (EDP3011/2)</a><ul><li><a href="http://controlsoft.mandela.ac.za/Design-Project-III-(EDP3011-2)/Sem1-2013">Sem1 2013</a></li></ul></li> <li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board" class="has-submenu"><span class="sub-arrow">+</span>MultiPIC Development Board</a><ul><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/What-do-you-need">What do you need?</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Building-the-board">Building the board</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/ICD1-Programmer">ICD1 Programmer</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/LCD-connection">LCD connection</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Keypad-connection">Keypad connection</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Microchip-C18-tutorial">Microchip C18 tutorial</a></li> <li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs" class="has-submenu"><span class="sub-arrow">+</span>Example programs</a><ul><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/Documentation">Documentation</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/Libraries">Libraries</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/Basic-Input-Output">Basic Input/Output</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/LCD">LCD</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/Keypad">Keypad</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/Analog">Analog</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/PWM">PWM</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/Servo">Servo</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/UART">UART</a></li><li><a href="http://controlsoft.mandela.ac.za/MultiPIC-Development-Board/Example-programs/Sonar-Distance-Sensor">Sonar Distance Sensor</a></li></ul></li></ul></li><li><a href="http://controlsoft.mandela.ac.za/RS232IO-Controller">RS232IO Controller</a></li></ul></li></ul><div class="BreadCrumbs BoxWhite hidden-xs "><a href="http://controlsoft.mandela.ac.za/">Home</a> &gt;&nbsp;
+<a href="http://controlsoft.mandela.ac.za/ARMmbed" class="CMSBreadCrumbsLink">ARMmbed</a> &gt; <a href="http://controlsoft.mandela.ac.za/ARMmbed/STM32F4-Discovery-Examples" class="CMSBreadCrumbsLink">STM32F4-Discovery Examples</a> &gt; <span class="CMSBreadCrumbsCurrentItem">Serial Wire Viewer</span>
+</div>
+</div>
+
+<div class="col-xs-4 hidden-sm hidden-md hidden-lg hidden-print mobileSearchForm">
+    <div role="search" class="navbar-form navbar-right">
+        <div class="inner-addon right-addon">
+            <i class="glyphicon glyphicon-search"></i>
+            
+<div id="p_lt_zoneContent_MobileSearchBox_pnlSearch" class="searchBox" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'p_lt_zoneContent_MobileSearchBox_btnSearch')">
+	
+    <label for="p_lt_zoneContent_MobileSearchBox_txtWord" id="p_lt_zoneContent_MobileSearchBox_lblSearch" style="display:none;">Search for:</label>
+    <input name="p$lt$zoneContent$MobileSearchBox$txtWord" maxlength="1000" id="p_lt_zoneContent_MobileSearchBox_txtWord" type="text">
+    <input name="p$lt$zoneContent$MobileSearchBox$btnSearch" value="." id="p_lt_zoneContent_MobileSearchBox_btnSearch" class="btnSearch" type="submit">
+    
+
+</div>
+        </div>
+    </div>
+</div>
+</div><div class="PageHeader"><h1>Serial Wire Viewer</h1></div><div class="row">  <!--opening div bootstrap --><!-- placeholder start -->
+
+ <div class="GenericWide col-sm-12 tbsVpad BoxWhite">
+   <p style="text-align: justify;">
+	<span style="font-size:medium;">Being able to display value of counter,
+ sensors and other debugging information is an important part of 
+embedded software development. &nbsp;Writing software for PCs is much 
+easier in this regard as there is already a monitor to print values to. 
+&nbsp;For embedded systems the obvious solution is to use a LCD 
+connected to the microcontroller's port pins and with the use of the 
+proper LCD library one can then print values to it. &nbsp;This does 
+however increase the development cost if your hardware platform does not
+ already contain a LCD and usually also requires additional interfacing 
+circuitry.</span></p>
+<p style="text-align: justify;">
+	<span style="font-size: medium; background-color: transparent;">The ST-LINK/V2 in-circuit programmer on the&nbsp;</span><span style="font-size: medium; background-color: transparent;">STM32F4-Discovery board provides a solution. &nbsp;I</span><span style="font-size: medium; background-color: transparent;">t can receive a stream of characters from&nbsp;</span><span style="font-size: medium; background-color: transparent;">the STM32F407VGT6 processor's&nbsp;</span><span style="font-size: medium; background-color: transparent;"><strong>SWO</strong> pin (RB3) and transmit this to the&nbsp;</span><span style="font-size: medium; background-color: transparent;">ST-LINK Utility's&nbsp;</span><span style="font-size: medium; background-color: transparent;"><strong>Serial Wire Viewer (SWV)</strong>. &nbsp;In short: by using the proper library and <strong>printf </strong>statements in your ARMmbed code you can print data to a PC and view it with the <strong>Serial Wire Viewer (SWV)</strong>.</span></p>
+<p style="text-align: justify;">
+	&nbsp;</p>
+<p style="text-align: justify;">
+	<u><strong><span style="font-size: medium; background-color: transparent;">STM32F4-Discovery Board requirements:</span></strong></u></p>
+<ul>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;">If you have the <strong>MB997A</strong>
+ version of the board, it means that the SWO pin (PB3) of the 
+STM32F407VGT6 processor is NOT hardware linked to the ST-LINK/V2. 
+&nbsp;You then need to connect a wire link between PB3 and pin6 of the 
+SWD connector (CN2).</span></li>
+</ul>
+<p style="text-align: justify;">
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img alt="" src="Serial%20Wire%20Viewer-Dateien/Serial-Wire-Viewer1.jpg" style="width: 250px; height: 392px;"></p>
+<ul>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;">If you have the <strong>MB997C </strong>version, the hardware link is already done on the PCB and you don't have to do anything else.</span></li>
+</ul>
+<p style="text-align: justify;">
+	&nbsp;</p>
+<p style="text-align: justify;">
+	<span style="font-size:medium;"><u><strong>ARMmbed program requirements:</strong></u></span></p>
+<ol>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;">Import the SWO library (Author: Wim Huiskamp) as explained in the <strong>Importing libraries</strong>&nbsp;section on the <a href="http://controlsoft.mandela.ac.za/ARMmbed/Using-the-Online-IDE" target="_blank">Using the Online IDE</a> page.</span></li>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;">Use <span style="color:#4bb4e5;">#include "SWO.h"</span> to include the library in your program.</span></li>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;">Create a SWO_Channel object, e.g. <span style="color:#4bb4e5;">SWO_Channel SWO<span style="color:black;">.</span></span></span></li>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;"><span style="color:#4bb4e5;"><span style="color:black;">Use the SWO_Channel object's </span>printf <span style="color:black;">method to send characters/strings to the Serial Wire Viewer on the PC.</span></span></span></li>
+</ol>
+<p style="text-align: justify;">
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img alt="" src="Serial%20Wire%20Viewer-Dateien/Serial-Wire-Viewer2.JPG"></p>
+<p style="text-align: justify;">
+	&nbsp;</p>
+<p style="text-align: justify;">
+	<u><strong><span style="font-size:medium;">Using the Serial Wire Viewer (SWV):</span></strong></u></p>
+<ol>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;">With STM32 ST-LINK Utility open, select <em><strong>ST-LINK -&gt; Printf via SWO viewer</strong></em>.</span></li>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;">Set <em><strong>System clock (HZ)</strong></em> to 168000000 (which is the clock speed of the STM32F4-Discovery).</span></li>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;">Set the <em><strong>Stimulus port</strong></em> to 0.</span></li>
+	<li style="text-align: justify;">
+		<span style="font-size:medium;">Click <em><strong>Start</strong></em>. &nbsp;The Start button now changes to <em><strong>Stop</strong></em>.</span></li>
+</ol>
+<p style="text-align: justify;">
+	<span style="font-size:medium;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img alt="" src="Serial%20Wire%20Viewer-Dateien/Serial-Wire-Viewer3.jpg" style="width: 600px; height: 437px;"></span></p>
+<p style="text-align: justify;">
+	<font size="3">The <em><strong>Start </strong></em>button starts 
+communication between the SWV and the ST-LINK/V2 programmer and 
+essentially "resets" the STM32F4-Discovery board the first time it is 
+clicked, thereafter you can use the physical <strong>Reset </strong>button on the board.</font></p>
+<p style="text-align: justify;">
+	<span style="font-size: medium; background-color: transparent;">The SWV
+ does not automatically restart itself when new code is downloaded and 
+will seize displaying messages from printf statements. &nbsp;To prevent 
+this, c</span><font size="3">lick on <em><strong>Stop </strong></em>and then again on <em><strong>Start </strong></em>every time new code is programmed to the board. &nbsp;</font></p>
+<p style="text-align: justify;">
+	&nbsp;</p>
+<hr>
+<p style="text-align: justify;">
+	<span style="font-size: medium; background-color: transparent;">The class library that will be used in this section and that needs to be imported is:</span></p>
+<ul>
+	<li>
+		<span style="font-size: medium;"><a href="https://developer.mbed.org/users/wim/code/SWO/docs/e5af2e131b95/classSWO__Channel.html" target="_blank"><span style="color:#4bb4e5;">SWO_Channel</span></a>&nbsp; (Author: Wim Huiskamp, Dec 2014, search: "serial wire viewer") - Serial Wire Output (SWO) viewer for tracing purposes.</span></li>
+</ul>
+<hr>
+<p>
+	<span style="font-size: medium; background-color: transparent;">The following example programs will demonstrate the principles of using the <strong>Serial Wire Viewer</strong></span><span style="font-size: medium; background-color: transparent;">: &nbsp;</span></p>
+<ul>
+	<li>
+		<span style="font-size:medium;"><a href="http://controlsoft.mandela.ac.za/controlsoft/media/Store/documents/mbed/STM32F4-Discovery/Examples%20-%20Serial%20Wire%20Viewer/ex1_SWV_HelloWorld.txt" target="_blank">ex1_SWV_HelloWorld</a></span></li>
+</ul>
+
+
+
+
+
+                	
+ </div><!-- placeholder finish--><div class="col-sm-3 tbsColLast"> <!-- zone right -->
+	<div class="col-sm-12" style="min-height:0px;">
+	</div> 
+</div></div><!-- closing of BSRow  -->
+
+	
+</div> <!--container-->
+			
+</main>		
+
+  <div id="footer" class="TextFooter">
+        <div id="upper-footer" class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <p class="visible-xs"><a href="http://libray.mandela.ac.za/">Libraries</a></p>
+                    <p class="visible-xs"><a href="http://www.mandela.ac.za/Work-here">Work@Mandela</a></p>
+                    <p class="visible-xs"><a href="http://findit.mandela.ac.za/">FindIt@Mandela</a></p>
+                    <p class="visible-xs"><a href="http://supportservices.mandela.ac.za/commercial-services">Commercial Services@Mandela</a></p>
+                    <p class="visible-xs">&nbsp;</p>
+                    <p class="FooterAddress">Tel: +27 (0) 41 504 1111</p>
+                    <p class="FooterAddress">Fax: +27 (0) 41 504 2574 / 2731</p>
+                    <p class="FooterAddress">Email: <a href="mailto:info@mandela.ac.za">info@mandela.ac.za</a></p>
+                    <p class="FooterAddress">PO Box 77000, Nelson Mandela University</p>
+                    <p class="FooterAddress">Port Elizabeth, 6031, South Africa</p>
+               
+                </div>
+                <div class="col-sm-3 hidden-xs">
+                    <p><a href="http://library.mandela.ac.za/">Libraries</a></p>
+                    <p><a href="http://www.mandela.ac.za/Academic/Faculties,-schools-departments">Faculties</a></p>
+                    <p><a href="http://www.mandela.ac.za/Academic/Courses-on-offer">Courses</a></p>
+                    <p><a href="http://www.mandela.ac.za/Apply/Admission/How-to-apply">Admissions</a></p>
+                    <p><a href="http://research.mandela.ac.za/">Research</a></p>
+                </div>
+                <div class="col-sm-4 hidden-xs">
+                    <p><a href="http://www.mandela.ac.za/Work-here">Work@Mandela</a></p>
+                    <p><a href="http://findit.mandela.ac.za/">FindIt@Mandela</a></p>
+                    <p><a href="http://connect.mandela.ac.za/">Connect@Mandela</a></p>
+                    <p><a href="http://supportservices.mandela.ac.za/commercial-services">Commercial Services@Mandela</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="lower-footer" class="container-fluid">
+            <div id="LowerFooterDetail" class="container">
+                <div class="row">
+                    <div class="col-sm-5 tbsHnopad">
+                      <div class="clearfixNopad">
+                        <ul class="nav navbar-nav visible-xs visible-sm visible-md tbsVpad sm" data-smartmenus-id="15399382178560107">
+                            <li><a class="navbar-icon" href="http://www.facebook.com/mandelauni"><img alt="facebook" src="Serial%20Wire%20Viewer-Dateien/facebook.png"></a></li>
+                            <li><a class="navbar-icon" href="http://www.twitter.com/mandelauni"><img alt="twitter" src="Serial%20Wire%20Viewer-Dateien/twitterwhite.png"></a></li>
+                            <li><a class="navbar-icon" href="https://plus.google.com/113939268207479606258?prsrc=3"><img alt="googleplus" src="Serial%20Wire%20Viewer-Dateien/googleplus.png"></a></li>
+                            <li><a class="navbar-icon" href="http://www.youtube.com/mandelauni"><img alt="youtube" src="Serial%20Wire%20Viewer-Dateien/youtube.png"></a></li>
+                            <li><a class="navbar-icon" href="https://instagram.com/mandelauniversity"><img alt="Instagram" src="Serial%20Wire%20Viewer-Dateien/instagramwhite.png"></a></li>
+                            <li class="visible-xs"><a href="http://www.mandela.ac.za/Site-map" style="padding:5px;font-size:12px !important">Sitemap</a></li>
+                            <li class="visible-xs"><a href="http://www.mandela.ac.za/A-Z-Index" style="padding:5px;font-size:12px !important">A - Z Index</a></li>
+                            <li class="visible-xs"><a href="http://www.mandela.ac.za/privacy-statement" style="padding:5px;font-size:12px !important">Privacy statement</a></li>
+                        </ul>
+                       </div>
+                        <div class="LowerFooterText">© 2018 Nelson Mandela University</div>
+                    </div>
+
+                    <div class="col-sm-7">
+                        <p class="LowerFooterText LowerFooterTextRight hidden-xs"><a href="http://www.mandela.ac.za/privacy-statement">Privacy statement</a> &nbsp;&nbsp;  <a href="http://www.mandela.ac.za/Utility-menu/Mail-portals">Mail &amp; Portals</a> &nbsp;&nbsp;  <a href="http://tme.mandela.ac.za/Policies---Other-Important-Documents">BEE &amp; Tax Certificate</a> &nbsp;&nbsp;  <a href="http://www.mandela.ac.za/Promotion-of-Access-to-Information-Act">PAIA</a> &nbsp;&nbsp;  <a href="http://www.mandela.ac.za/ispa">ISPA</a>  &nbsp;&nbsp; <a href="http://www.mandela.ac.za/Apply/Frequently-asked-questions">FAQ</a> &nbsp;&nbsp;  <a href="http://www.mandela.ac.za/Site-map">Sitemap</a> &nbsp;&nbsp;  <a href="http://controlsoft.mandela.ac.za/A-Z-Index">A - Z Index</a> &nbsp;&nbsp;  <a href="http://controlsoft.mandela.ac.za/cmsdesk">WCMS</a></p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+  </div>
+			
+		
+	<!-- Latest compiled and minified JavaScript -->    
+    
+	<script type="text/javascript" src="Serial%20Wire%20Viewer-Dateien/jquery-1.js"></script>
+	<script type="text/javascript" src="Serial%20Wire%20Viewer-Dateien/bootstrap.js"></script>
+	<script type="text/javascript" src="Serial%20Wire%20Viewer-Dateien/jquery_004.js"></script>
+    <script type="text/javascript" src="Serial%20Wire%20Viewer-Dateien/jquery_002.js"></script>
+    <script type="text/javascript" src="Serial%20Wire%20Viewer-Dateien/matchMedia.js"></script>
+    <script type="text/javascript" src="Serial%20Wire%20Viewer-Dateien/jquery_005.js"></script>
+    <script type="text/javascript" src="Serial%20Wire%20Viewer-Dateien/jquery.js"></script>
+    <script type="text/javascript" src="Serial%20Wire%20Viewer-Dateien/jquery_003.js"></script>
+    <script type="text/javascript" src="Serial%20Wire%20Viewer-Dateien/mandela.js"></script>
+
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("manScript_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();//]]>
+</script>
+
+<script type="text/javascript">
+	//<![CDATA[
+window.MFUResourceKeys = [];
+window.MFUResources = {};
+window.MFUResourceKeys.push('sl.mfu.upload');
+window.MFUResources['sl.mfu.upload'] = 'Upload';
+window.MFUResourceKeys.push('sl.mfu.cancel');
+window.MFUResources['sl.mfu.cancel'] = 'Cancel';
+window.MFUResourceKeys.push('sl.mfu.name');
+window.MFUResources['sl.mfu.name'] = 'Name';
+window.MFUResourceKeys.push('sl.mfu.size');
+window.MFUResources['sl.mfu.size'] = 'Size';
+window.MFUResourceKeys.push('sl.mfu.progress');
+window.MFUResources['sl.mfu.progress'] = 'Progress';
+window.MFUResourceKeys.push('sl.mfu.totalfiles');
+window.MFUResources['sl.mfu.totalfiles'] = 'Total: {0}';
+window.MFUResourceKeys.push('sl.mfu.totalsize');
+window.MFUResources['sl.mfu.totalsize'] = '{0} of {1}';
+window.MFUResourceKeys.push('sl.mfu.selectfiles');
+window.MFUResources['sl.mfu.selectfiles'] = 'Select files';
+window.MFUResourceKeys.push('sl.mfu.clear');
+window.MFUResources['sl.mfu.clear'] = 'Clear';
+window.MFUResourceKeys.push('sl.mfu.error.noaliaspath');
+window.MFUResources['sl.mfu.error.noaliaspath'] = 'No alias path selected.';
+window.MFUResourceKeys.push('sl.mfu.error.maxnumbertoupload');
+window.MFUResources['sl.mfu.error.maxnumbertoupload'] = 'You have exceeded the total allowable number of files to upload.';
+window.MFUResourceKeys.push('sl.mfu.error.maxuploadamount');
+window.MFUResources['sl.mfu.error.maxuploadamount'] = 'You have exceeded the total allowable upload amount.\\nThe total allowable upload amount is {0}';
+window.MFUResourceKeys.push('sl.mfu.error.maxuploadsize');
+window.MFUResources['sl.mfu.error.maxuploadsize'] = 'The file \'{0}\' exceeds the maximum upload size.\\nThe maximum upload size for a single file is {1}';
+window.MFUResourceKeys.push('sl.mfu.error.fileexists');
+window.MFUResources['sl.mfu.error.fileexists'] = 'File \'{0}\' already exists, overwrite?';
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+WebForm_InitCallback();//]]>
+</script>
+  <input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODc3OTc4NjAwZGT6SHXP2FlrVMiNeBU/PdIcuJGM54aEr6P58GZSaxKiQw==" type="hidden">
+    <script type="text/javascript"> 
+      //<![CDATA[
+      if (window.WebForm_InitCallback) { 
+        __theFormPostData = '';
+        __theFormPostCollection = new Array();
+        window.WebForm_InitCallback(); 
+      }
+      //]]>
+    </script>
+  </form>
+
+
+</body></html>
