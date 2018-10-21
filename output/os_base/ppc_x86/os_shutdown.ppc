@@ -605,7 +605,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    LLF_MPU_DISABLE();
 
 
-   LLF_CLEAR_ALL_RAM();
+
 
 
 
@@ -617,5 +617,9 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    else
    {
       LLF_MCU_RESET_POWER();
+   }
+   while(1)
+   {
+
    }
 }

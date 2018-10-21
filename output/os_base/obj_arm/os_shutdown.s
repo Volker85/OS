@@ -41,26 +41,19 @@ OS_SHUTDOWN:
 	bl	LLF_DISABLE_INTERRUPTS_ALL_CORES
 	.loc 1 10 0
 	bl	LLF_MPU_DISABLE
-	.loc 1 13 0
-	bl	LLF_CLEAR_ALL_RAM
 	.loc 1 18 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	cmp	r3, #1
 	bne	.L2
 	.loc 1 20 0
 	bl	LLF_MCU_SWITCH_OFF_POWER
-	b	.L1
+	b	.L3
 .L2:
 	.loc 1 24 0
 	bl	LLF_MCU_RESET_POWER
-.L1:
-	.loc 1 26 0
-	adds	r7, r7, #8
-	.cfi_def_cfa_offset 8
-	mov	sp, r7
-	.cfi_def_cfa_register 13
-	@ sp needed
-	pop	{r7, pc}
+.L3:
+	.loc 1 29 0 discriminator 1
+	b	.L3
 	.cfi_endproc
 .LFE0:
 	.size	OS_SHUTDOWN, .-OS_SHUTDOWN

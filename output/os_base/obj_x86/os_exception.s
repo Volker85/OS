@@ -1,36 +1,26 @@
 	.file	"os_exception.c"
 	.text
 Ltext0:
-	.globl	_OS_Exception_UNDEFINST
-	.def	_OS_Exception_UNDEFINST;	.scl	2;	.type	32;	.endef
-_OS_Exception_UNDEFINST:
+	.globl	_OS_Exception_HARDFAULT
+	.def	_OS_Exception_HARDFAULT;	.scl	2;	.type	32;	.endef
+_OS_Exception_HARDFAULT:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_exception.c"
-	.loc 1 11 0
+	.loc 1 10 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	subl	$24, %esp
-	.loc 1 12 0
-	movl	$12, 4(%esp)
-	movl	$5, (%esp)
-	call	_OS_SET_SW_BUG
-	.loc 1 13 0
-	movl	$0, (%esp)
-	call	_OS_SHUTDOWN
-	.loc 1 14 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
+L2:
+	.loc 1 11 0 discriminator 1
+	jmp	L2
 	.cfi_endproc
 LFE0:
-	.globl	_OS_Exception_SWI
-	.def	_OS_Exception_SWI;	.scl	2;	.type	32;	.endef
-_OS_Exception_SWI:
+	.globl	_OS_Exception_UNDEFINST
+	.def	_OS_Exception_UNDEFINST;	.scl	2;	.type	32;	.endef
+_OS_Exception_UNDEFINST:
 LFB1:
 	.loc 1 16 0
 	.cfi_startproc
@@ -39,19 +29,14 @@ LFB1:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 19 0
-	call	_OS_ISRHANDLERC0
-	.loc 1 20 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
+L4:
+	.loc 1 17 0 discriminator 1
+	jmp	L4
 	.cfi_endproc
 LFE1:
-	.globl	_OS_Exception_ABORT_PREFETCH
-	.def	_OS_Exception_ABORT_PREFETCH;	.scl	2;	.type	32;	.endef
-_OS_Exception_ABORT_PREFETCH:
+	.globl	_OS_Exception_SWI
+	.def	_OS_Exception_SWI;	.scl	2;	.type	32;	.endef
+_OS_Exception_SWI:
 LFB2:
 	.loc 1 22 0
 	.cfi_startproc
@@ -60,73 +45,53 @@ LFB2:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	subl	$24, %esp
-	.loc 1 23 0
-	movl	$12, 4(%esp)
-	movl	$6, (%esp)
-	call	_OS_SET_SW_BUG
-	.loc 1 24 0
-	movl	$0, (%esp)
-	call	_OS_SHUTDOWN
+	subl	$8, %esp
 	.loc 1 25 0
+	call	_OS_ISRHANDLERC0
+	.loc 1 26 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE2:
+	.globl	_OS_Exception_ABORT_PREFETCH
+	.def	_OS_Exception_ABORT_PREFETCH;	.scl	2;	.type	32;	.endef
+_OS_Exception_ABORT_PREFETCH:
+LFB3:
+	.loc 1 28 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+L7:
+	.loc 1 29 0 discriminator 1
+	jmp	L7
+	.cfi_endproc
+LFE3:
 	.globl	_OS_Exception_ABORT_DATA
 	.def	_OS_Exception_ABORT_DATA;	.scl	2;	.type	32;	.endef
 _OS_Exception_ABORT_DATA:
-LFB3:
-	.loc 1 27 0
+LFB4:
+	.loc 1 34 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	subl	$24, %esp
-	.loc 1 28 0
-	movl	$12, 4(%esp)
-	movl	$7, (%esp)
-	call	_OS_SET_SW_BUG
-	.loc 1 29 0
-	movl	$0, (%esp)
-	call	_OS_SHUTDOWN
-	.loc 1 30 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
+L9:
+	.loc 1 35 0 discriminator 1
+	jmp	L9
 	.cfi_endproc
-LFE3:
+LFE4:
 	.globl	_OS_Exception_IRQ
 	.def	_OS_Exception_IRQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_IRQ:
-LFB4:
-	.loc 1 32 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 33 0
-	call	_OS_ISRHANDLERC0
-	.loc 1 34 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE4:
-	.globl	_OS_Exception_FIQ
-	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
-_OS_Exception_FIQ:
 LFB5:
-	.loc 1 36 0
+	.loc 1 40 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -134,20 +99,20 @@ LFB5:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 37 0
+	.loc 1 41 0
 	call	_OS_ISRHANDLERC0
-	.loc 1 38 0
+	.loc 1 42 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE5:
-	.globl	_TCMP1
-	.def	_TCMP1;	.scl	2;	.type	32;	.endef
-_TCMP1:
+	.globl	_OS_Exception_FIQ
+	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
+_OS_Exception_FIQ:
 LFB6:
-	.loc 1 42 0
+	.loc 1 44 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -155,40 +120,19 @@ LFB6:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 43 0
+	.loc 1 45 0
 	call	_OS_ISRHANDLERC0
-	.loc 1 44 0
+	.loc 1 46 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE6:
-	.globl	_TCMP2
-	.def	_TCMP2;	.scl	2;	.type	32;	.endef
-_TCMP2:
+	.globl	_TCMP1
+	.def	_TCMP1;	.scl	2;	.type	32;	.endef
+_TCMP1:
 LFB7:
-	.loc 1 46 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 47 0
-	call	_OS_ISRHANDLERC1
-	.loc 1 48 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE7:
-	.globl	_TCMP3
-	.def	_TCMP3;	.scl	2;	.type	32;	.endef
-_TCMP3:
-LFB8:
 	.loc 1 50 0
 	.cfi_startproc
 	pushl	%ebp
@@ -198,18 +142,18 @@ LFB8:
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
 	.loc 1 51 0
-	call	_OS_ISRHANDLERC2
+	call	_OS_ISRHANDLERC0
 	.loc 1 52 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
-LFE8:
-	.globl	_TCMP4
-	.def	_TCMP4;	.scl	2;	.type	32;	.endef
-_TCMP4:
-LFB9:
+LFE7:
+	.globl	_TCMP2
+	.def	_TCMP2;	.scl	2;	.type	32;	.endef
+_TCMP2:
+LFB8:
 	.loc 1 54 0
 	.cfi_startproc
 	pushl	%ebp
@@ -219,20 +163,62 @@ LFB9:
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
 	.loc 1 55 0
-	call	_OS_ISRHANDLERC3
+	call	_OS_ISRHANDLERC1
 	.loc 1 56 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
+LFE8:
+	.globl	_TCMP3
+	.def	_TCMP3;	.scl	2;	.type	32;	.endef
+_TCMP3:
+LFB9:
+	.loc 1 58 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	subl	$8, %esp
+	.loc 1 59 0
+	call	_OS_ISRHANDLERC2
+	.loc 1 60 0
+	leave
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
 LFE9:
+	.globl	_TCMP4
+	.def	_TCMP4;	.scl	2;	.type	32;	.endef
+_TCMP4:
+LFB10:
+	.loc 1 62 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	subl	$8, %esp
+	.loc 1 63 0
+	call	_OS_ISRHANDLERC3
+	.loc 1 64 0
+	leave
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE10:
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x474
+	.long	0x498
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -351,23 +337,23 @@ Ldebug_info0:
 	.sleb128 1
 	.byte	0
 	.uleb128 0x5
-	.ascii "OS_Exception_UNDEFINST\0"
+	.ascii "OS_Exception_HARDFAULT\0"
 	.byte	0x1
-	.byte	0xa
+	.byte	0x9
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x5
-	.ascii "OS_Exception_SWI\0"
+	.ascii "OS_Exception_UNDEFINST\0"
 	.byte	0x1
 	.byte	0xf
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x5
-	.ascii "OS_Exception_ABORT_PREFETCH\0"
+	.uleb128 0x6
+	.ascii "OS_Exception_SWI\0"
 	.byte	0x1
 	.byte	0x15
 	.long	LFB2
@@ -375,59 +361,67 @@ Ldebug_info0:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x5
-	.ascii "OS_Exception_ABORT_DATA\0"
+	.ascii "OS_Exception_ABORT_PREFETCH\0"
 	.byte	0x1
-	.byte	0x1a
+	.byte	0x1b
 	.long	LFB3
 	.long	LFE3-LFB3
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x5
-	.ascii "OS_Exception_IRQ\0"
+	.ascii "OS_Exception_ABORT_DATA\0"
 	.byte	0x1
-	.byte	0x1f
+	.byte	0x21
 	.long	LFB4
 	.long	LFE4-LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x5
-	.ascii "OS_Exception_FIQ\0"
+	.uleb128 0x6
+	.ascii "OS_Exception_IRQ\0"
 	.byte	0x1
-	.byte	0x23
+	.byte	0x27
 	.long	LFB5
 	.long	LFE5-LFB5
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x6
-	.ascii "TCMP1\0"
+	.ascii "OS_Exception_FIQ\0"
 	.byte	0x1
-	.byte	0x29
+	.byte	0x2b
 	.long	LFB6
 	.long	LFE6-LFB6
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x6
-	.ascii "TCMP2\0"
+	.ascii "TCMP1\0"
 	.byte	0x1
-	.byte	0x2d
+	.byte	0x31
 	.long	LFB7
 	.long	LFE7-LFB7
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x6
-	.ascii "TCMP3\0"
+	.ascii "TCMP2\0"
 	.byte	0x1
-	.byte	0x31
+	.byte	0x35
 	.long	LFB8
 	.long	LFE8-LFB8
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x6
-	.ascii "TCMP4\0"
+	.ascii "TCMP3\0"
 	.byte	0x1
-	.byte	0x35
+	.byte	0x39
 	.long	LFB9
 	.long	LFE9-LFB9
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0x6
+	.ascii "TCMP4\0"
+	.byte	0x1
+	.byte	0x3d
+	.long	LFB10
+	.long	LFE10-LFB10
 	.uleb128 0x1
 	.byte	0x9c
 	.byte	0
@@ -498,13 +492,15 @@ Ldebug_abbrev0:
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2116
+	.uleb128 0x2117
 	.uleb128 0x19
 	.byte	0
 	.byte	0
@@ -1592,8 +1588,6 @@ Ldebug_macro0:
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
-	.def	_OS_SET_SW_BUG;	.scl	2;	.type	32;	.endef
-	.def	_OS_SHUTDOWN;	.scl	2;	.type	32;	.endef
 	.def	_OS_ISRHANDLERC0;	.scl	2;	.type	32;	.endef
 	.def	_OS_ISRHANDLERC1;	.scl	2;	.type	32;	.endef
 	.def	_OS_ISRHANDLERC2;	.scl	2;	.type	32;	.endef

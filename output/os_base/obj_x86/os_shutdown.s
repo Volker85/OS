@@ -18,23 +18,18 @@ LFB0:
 	call	_LLF_DISABLE_INTERRUPTS_ALL_CORES
 	.loc 1 10 0
 	call	_LLF_MPU_DISABLE
-	.loc 1 13 0
-	call	_LLF_CLEAR_ALL_RAM
 	.loc 1 18 0
 	cmpl	$1, 8(%ebp)
 	jne	L2
 	.loc 1 20 0
 	call	_LLF_MCU_SWITCH_OFF_POWER
-	jmp	L1
+	jmp	L3
 L2:
 	.loc 1 24 0
 	call	_LLF_MCU_RESET_POWER
-L1:
-	.loc 1 26 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
+L3:
+	.loc 1 29 0 discriminator 1
+	jmp	L3
 	.cfi_endproc
 LFE0:
 Letext0:
@@ -1252,6 +1247,5 @@ Ldebug_line0:
 	.ident	"GCC: (GNU) 4.9.3"
 	.def	_LLF_DISABLE_INTERRUPTS_ALL_CORES;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MPU_DISABLE;	.scl	2;	.type	32;	.endef
-	.def	_LLF_CLEAR_ALL_RAM;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MCU_SWITCH_OFF_POWER;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MCU_RESET_POWER;	.scl	2;	.type	32;	.endef

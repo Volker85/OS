@@ -10,7 +10,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    LLF_MPU_DISABLE();
 
    /* clear all RAM */
-   LLF_CLEAR_ALL_RAM();
+   /*LLF_CLEAR_ALL_RAM();*/
 
    /* save some registers to restore after reset */
 
@@ -22,5 +22,9 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    else /* os_reset_hardreset */
    {
       LLF_MCU_RESET_POWER();
+   }
+   while(1)
+   {
+      /* if you enter here, the reset has failed to be executed.... */
    }
 }

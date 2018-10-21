@@ -10,7 +10,7 @@ func_ptr_t isr_vec_table[] =
    (func_ptr_t)&OS_MAIN_STACK,   /* 0x0000 initial StackPointer value */
    &OS_Exception_RESET,			   /* 0x0004 Reset                      */
    &OS_Exception_UNDEFINST,		/* 0x0008 Non Maskable Interrupt     */
-   0,                            /* 0x000C Hardfault                  */ 
+   &OS_Exception_HARDFAULT,                            /* 0x000C Hardfault                  */ 
    &OS_Exception_ABORT_DATA,		/* 0x0010 Memory management fault    */
    &OS_Exception_ABORT_PREFETCH,	/* 0x0014 Bus fault                  */
    0,                            /* 0x0018 usage fault                */ 

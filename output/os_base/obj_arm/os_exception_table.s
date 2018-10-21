@@ -24,7 +24,7 @@ isr_vec_table:
 	.word	OS_MAIN_STACK
 	.word	OS_Exception_RESET
 	.word	OS_Exception_UNDEFINST
-	.word	0
+	.word	OS_Exception_HARDFAULT
 	.word	OS_Exception_ABORT_DATA
 	.word	OS_Exception_ABORT_PREFETCH
 	.word	0
