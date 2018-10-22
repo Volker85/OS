@@ -1,13 +1,21 @@
 "Target_ARM" 
-21.10.2018 13:41:45,48 
+22.10.2018 21:37:11,32 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:10:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
-    (func_ptr_t)&OS_MAIN_STACK,   /* 0x0000 initial StackPointer value */
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_HARDFAULT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20: warning: variable 'ERROR_HARDFAULT' set but not used [-Wunused-but-set-variable]
+    volatile uint32 ERROR_HARDFAULT = 0;
+                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:24:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+    (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE-1),   /* 0x0000 initial StackPointer value */
     ^
 "assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:10:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
-    (func_ptr_t)&OS_MAIN_STACK,   /* 0x0000 initial StackPointer value */
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_HARDFAULT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20: warning: variable 'ERROR_HARDFAULT' set but not used [-Wunused-but-set-variable]
+    volatile uint32 ERROR_HARDFAULT = 0;
+                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:24:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+    (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE-1),   /* 0x0000 initial StackPointer value */
     ^
 "link it" 

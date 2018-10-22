@@ -21,12 +21,12 @@
 	.type	isr_vec_table, %object
 	.size	isr_vec_table, 64
 isr_vec_table:
-	.word	OS_MAIN_STACK
+	.word	OS_MAIN_STACK+65280
 	.word	OS_Exception_RESET
-	.word	OS_Exception_UNDEFINST
+	.word	OS_Exception_NMI
 	.word	OS_Exception_HARDFAULT
-	.word	OS_Exception_ABORT_DATA
-	.word	OS_Exception_ABORT_PREFETCH
+	.word	OS_Exception_MEM_MANAG_FAULT
+	.word	OS_Exception_BUS_FAULT
 	.word	0
 	.word	0
 	.word	0
@@ -111,7 +111,7 @@ isr_vec_table:
 	.uleb128 0x9
 	.4byte	.LASF432
 	.byte	0x4
-	.byte	0x8
+	.byte	0x16
 	.4byte	0x78
 	.uleb128 0x5
 	.byte	0x3

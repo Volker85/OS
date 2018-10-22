@@ -693,11 +693,11 @@ extern void USER_LED_TOGGLE(led_t Led);
 extern void OS_ExceptionSetup(void);
 
 extern void OS_Exception_RESET();
-extern void OS_Exception_UNDEFINST();
+extern void OS_Exception_NMI();
 extern void OS_Exception_HARDFAULT();
 extern void OS_Exception_SWI();
-extern void OS_Exception_ABORT_PREFETCH();
-extern void OS_Exception_ABORT_DATA();
+extern void OS_Exception_BUS_FAULT();
+extern void OS_Exception_MEM_MANAG_FAULT();
 extern void OS_Exception_IRQ();
 extern void OS_Exception_FIQ();
 extern void OS_ExceptionHandler(void);
@@ -712,19 +712,15 @@ extern void OS_ISRHANDLERC1(void);
 extern void OS_ISRHANDLERC2(void);
 extern void OS_ISRHANDLERC3(void);
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c" 2
-
-
-
-
-
+# 22 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
 func_ptr_t isr_vec_table[] =
 {
-   (func_ptr_t)&OS_MAIN_STACK,
+   (func_ptr_t)(&OS_MAIN_STACK+0x100 -1),
    &OS_Exception_RESET,
-   &OS_Exception_UNDEFINST,
+   &OS_Exception_NMI,
    &OS_Exception_HARDFAULT,
-   &OS_Exception_ABORT_DATA,
-   &OS_Exception_ABORT_PREFETCH,
+   &OS_Exception_MEM_MANAG_FAULT,
+   &OS_Exception_BUS_FAULT,
    0,
    0,
    0,

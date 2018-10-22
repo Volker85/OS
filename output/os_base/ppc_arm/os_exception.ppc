@@ -692,11 +692,11 @@ extern void USER_LED_TOGGLE(led_t Led);
 extern void OS_ExceptionSetup(void);
 
 extern void OS_Exception_RESET();
-extern void OS_Exception_UNDEFINST();
+extern void OS_Exception_NMI();
 extern void OS_Exception_HARDFAULT();
 extern void OS_Exception_SWI();
-extern void OS_Exception_ABORT_PREFETCH();
-extern void OS_Exception_ABORT_DATA();
+extern void OS_Exception_BUS_FAULT();
+extern void OS_Exception_MEM_MANAG_FAULT();
 extern void OS_Exception_IRQ();
 extern void OS_Exception_FIQ();
 extern void OS_ExceptionHandler(void);
@@ -733,14 +733,15 @@ extern void OS_START_OS(void);
 
 void OS_Exception_HARDFAULT(void)
 {
+   volatile uint32 ERROR_HARDFAULT = 0;
+   ERROR_HARDFAULT = *((uint32*)0xE000ED2Cu);
    while(1){}
 }
 
 
-void OS_Exception_UNDEFINST(void)
+void OS_Exception_NMI(void)
 {
    while(1){}
-   OS_SET_SW_BUG(os_bug_exception_UndefInstruction, Func_os_exception);
    OS_SHUTDOWN(os_reset_hardreset);
 }
 void OS_Exception_SWI(void)
@@ -749,16 +750,14 @@ void OS_Exception_SWI(void)
 
    OS_ISRHANDLERC0();
 }
-void OS_Exception_ABORT_PREFETCH(void)
+void OS_Exception_BUS_FAULT(void)
 {
    while(1){}
-   OS_SET_SW_BUG(os_bug_exception_AbortPrefetch,Func_os_exception);
    OS_SHUTDOWN(os_reset_hardreset);
 }
-void OS_Exception_ABORT_DATA(void)
+void OS_Exception_MEM_MANAG_FAULT(void)
 {
    while(1){}
-   OS_SET_SW_BUG(os_bug_exception_AbortData,Func_os_exception);
    OS_SHUTDOWN(os_reset_hardreset);
 }
 void OS_Exception_IRQ(void)

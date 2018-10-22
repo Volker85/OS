@@ -8,14 +8,16 @@
 /* interrupts are disabled during RESET exception and will be enabled by task system */
 void OS_Exception_HARDFAULT(void)
 {
+   volatile uint32 ERROR_HARDFAULT = 0;
+   ERROR_HARDFAULT = *((uint32*)0xE000ED2Cu);
+   //#error "Hardfault generate, use the hardfault exception status register for reason"
    while(1){}
 }
 
 
-void OS_Exception_UNDEFINST(void)
+void OS_Exception_NMI(void)
 {
    while(1){}
-   OS_SET_SW_BUG(os_bug_exception_UndefInstruction, Func_os_exception);
    OS_SHUTDOWN(os_reset_hardreset);
 }
 void OS_Exception_SWI(void)
@@ -24,16 +26,14 @@ void OS_Exception_SWI(void)
      Exception SWI is entered, in case a user mode program executed the assembler code "SWI" (SoftWare Interrupt)    */
    OS_ISRHANDLERC0();
 }
-void OS_Exception_ABORT_PREFETCH(void)
+void OS_Exception_BUS_FAULT(void)
 {
    while(1){}
-   OS_SET_SW_BUG(os_bug_exception_AbortPrefetch,Func_os_exception);
    OS_SHUTDOWN(os_reset_hardreset);
 }
-void OS_Exception_ABORT_DATA(void)
+void OS_Exception_MEM_MANAG_FAULT(void)
 {
    while(1){}
-   OS_SET_SW_BUG(os_bug_exception_AbortData,Func_os_exception);
    OS_SHUTDOWN(os_reset_hardreset);
 }
 void OS_Exception_IRQ(void)

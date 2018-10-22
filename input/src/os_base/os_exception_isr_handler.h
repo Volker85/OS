@@ -5,11 +5,11 @@
 extern void OS_ExceptionSetup(void);
 
 extern void OS_Exception_RESET();
-extern void OS_Exception_UNDEFINST();
+extern void OS_Exception_NMI();
 extern void OS_Exception_HARDFAULT();
 extern void OS_Exception_SWI();
-extern void OS_Exception_ABORT_PREFETCH();
-extern void OS_Exception_ABORT_DATA();
+extern void OS_Exception_BUS_FAULT();
+extern void OS_Exception_MEM_MANAG_FAULT();
 extern void OS_Exception_IRQ();
 extern void OS_Exception_FIQ();
 extern void OS_ExceptionHandler(void);
