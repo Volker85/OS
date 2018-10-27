@@ -21,7 +21,7 @@ The processor uses a full descending stack.
 */
 func_ptr_t isr_vec_table[] =
 {
-   (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE-1),   /* 0x0000 initial StackPointer value */
+   (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
    &OS_Exception_RESET,			   /* 0x0004 Reset                      */
    &OS_Exception_NMI,		      /* 0x0008 Non Maskable Interrupt     */
    &OS_Exception_HARDFAULT,      /* 0x000C Hardfault                  */ 

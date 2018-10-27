@@ -10,7 +10,7 @@ void OS_Exception_HARDFAULT(void)
 {
    volatile uint32 ERROR_HARDFAULT = 0;
    ERROR_HARDFAULT = *((uint32*)0xE000ED2Cu);
-   //#error "Hardfault generate, use the hardfault exception status register for reason"
+   /*#error "Hardfault generate, use the hardfault exception status register for reason"*/
    while(1){}
 }
 
