@@ -1,5 +1,5 @@
 "Target_ARM" 
-22.10.2018 21:37:11,32 
+30.10.2018  8:19:57,10 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
@@ -8,7 +8,7 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20:
     volatile uint32 ERROR_HARDFAULT = 0;
                     ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:24:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
-    (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE-1),   /* 0x0000 initial StackPointer value */
+    (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^
 "assemble it" 
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_HARDFAULT':
@@ -16,6 +16,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20:
     volatile uint32 ERROR_HARDFAULT = 0;
                     ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:24:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
-    (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE-1),   /* 0x0000 initial StackPointer value */
+    (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^
 "link it" 

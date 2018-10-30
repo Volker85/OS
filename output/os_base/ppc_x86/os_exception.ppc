@@ -346,6 +346,8 @@ typedef void (*func_ptr_t)(void);
 
 #define OS_STACK_SIZE 0x100
 
+#define OS_STACK_SIZE_END 0x01u
+
 extern unsigned_char_t OS_STACK[1][0x100];
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_heap.h" 1
@@ -636,6 +638,7 @@ void OS_Exception_HARDFAULT(void)
 {
    volatile uint32 ERROR_HARDFAULT = 0;
    ERROR_HARDFAULT = *((uint32*)0xE000ED2Cu);
+
    while(1){}
 }
 

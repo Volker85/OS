@@ -475,6 +475,8 @@ typedef void (*func_ptr_t)(void);
 
 #define OS_STACK_SIZE 0x100
 
+#define OS_STACK_SIZE_END 0x01u
+
 extern unsigned_char_t OS_STACK[1][0x100];
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
@@ -715,7 +717,7 @@ extern void OS_ISRHANDLERC3(void);
 # 22 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
 func_ptr_t isr_vec_table[] =
 {
-   (func_ptr_t)(&OS_MAIN_STACK+0x100 -1),
+   (func_ptr_t)(&OS_MAIN_STACK+0x01u),
    &OS_Exception_RESET,
    &OS_Exception_NMI,
    &OS_Exception_HARDFAULT,

@@ -15,7 +15,7 @@ From the AAPCS, §5.1.1:
         .text
         
         .global OS_Exception_RESET 
-        .extern LLF_CLEAR_RAM
+        .extern LLF_CLEAR_ALL_RAM
         .extern OS_START_OS
       
 OS_Exception_RESET:
@@ -38,7 +38,7 @@ OS_Exception_RESET:
         #r14        Link register
         #r15        program counter
         */
-        B LLF_CLEAR_RAM
+        B LLF_CLEAR_ALL_RAM
         B START_OS
               
 LLF_SAVE_TASK_STACK:
