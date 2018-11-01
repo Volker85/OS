@@ -1,0 +1,7 @@
+1. Laden der Symbole
+%WRK_DIR%\arm-none-eabi-gdb.exe %SRC_DIR%\operating_system.elf
+
+2. Breakpoint setzen
+<gdb> b OS_STATE_HANDLER
+
+3. Run
