@@ -1,0 +1,147 @@
+<!-- MHonArc v2.6.3 -->
+<!--X-Subject: Re: Help with cross&#45;compiling GDB -->
+<!--X-From-R13: Brqeb Oyirf <cnyirfNerqung.pbz> -->
+<!--X-Date: 9 Oct 2012 19:30:50 &#45;0000 -->
+<!--X-Message-Id: 50747B5B.8000605@redhat.com -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 1349726484.10588.12.camel@homebase -->
+<!--X-Head-End-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Pedro Alves - Re: Help with cross-compiling GDB</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--htdig_noindex-->
+<p>This is the mail archive of the 
+<tt>gdb@sourceware.org</tt>
+mailing list for the <a href="https://sourceware.org/gdb/">GDB project</a>.
+
+
+<!--/htdig_noindex-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<!--htdig_noindex-->
+</p><hr>
+<table border="0">
+  <tbody><tr><th align="left">Index Nav:</th>
+      <td colspan="2">
+        [<a href="https://sourceware.org/ml/gdb/2012-10/index.html#00047">Date&nbsp;Index</a>] [<a href="https://sourceware.org/ml/gdb/2012-10/subjects.html#00047">Subject&nbsp;Index</a>] [<a href="https://sourceware.org/ml/gdb/2012-10/authors.html#00047">Author&nbsp;Index</a>] [<a href="https://sourceware.org/ml/gdb/2012-10/threads.html#00047">Thread&nbsp;Index</a>]
+      </td>
+  </tr>
+  <tr><th align="left">Message Nav:</th>
+      <td>[<a href="https://sourceware.org/ml/gdb/2012-10/msg00046.html">Date&nbsp;Prev</a>]&nbsp;[<a href="https://sourceware.org/ml/gdb/2012-10/msg00048.html">Date&nbsp;Next</a>]</td>
+      <td>[<a href="https://sourceware.org/ml/gdb/2012-10/msg00046.html">Thread&nbsp;Prev</a>]&nbsp;[<a href="https://sourceware.org/ml/gdb/2012-10/msg00048.html">Thread&nbsp;Next</a>]</td>
+  </tr>
+  <tr><th align="left">Other format:</th>
+  <td>[<a href="https://sourceware.org/cgi-bin/get-raw-msg?listname=gdb&amp;date=2012-10&amp;msgid=50747B5B.8000605%40redhat.com">Raw text</a>]</td>
+  </tr>
+</tbody></table>
+<!--/htdig_noindex-->
+
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>Re: Help with cross-compiling GDB</h1>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>From</em>: Pedro Alves &lt;palves at redhat dot com&gt;</li>
+<li><em>To</em>: psmith at gnu dot org</li>
+<li><em>Cc</em>: "gdb at sourceware dot org" &lt;gdb at sourceware dot org&gt;</li>
+<li><em>Date</em>: Tue, 09 Oct 2012 20:30:35 +0100</li>
+<li><em>Subject</em>: Re: Help with cross-compiling GDB</li>
+<li><em>References</em>: &lt;<a href="https://sourceware.org/ml/gdb/2012-10/msg00043.html">1349726484.10588.12.camel@homebase</a>&gt;</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On 10/08/2012 09:01 PM, Paul Smith wrote:
+&gt; Hi all.  I'm trying to create a complete toolchain including GCC,
+&gt; binutils, plus tools like make, fakeroot, bison, flex, m4, and of course
+&gt; GDB.
+&gt; 
+&gt; What I need to do is have the tools compiled to be able to run on much
+&gt; older GNU/Linux distributions, even though my build system is very
+&gt; recent.  So I have a cross-compiler built that uses a sysroot from an
+&gt; older distribution and I'm using that to compile GDB.  I need to be able
+&gt; to compile and debug both 32bit and 64bit programs.  Originally I wanted
+&gt; to have a 32bit version of GDB which could debug both, but that doesn't
+&gt; appear to be possible.  That's OK, I'm willing to have GDB be a 64bit
+&gt; application, or else I'll build GDB twice.  For now I'm just trying to
+&gt; get the 64bit GDB working.
+&gt; 
+&gt; So, I configure GDB with something like this:
+&gt; 
+&gt;   ./configure --disable-nls --disable-werror --prefix=/tmp/invalid/generic \
+&gt;     --host=x86_64-olddist-linux-gnu --target=x86_64-generic-linux-gnu \
+
+with --host != --target, you're configuring a cross debugger.  IOW, the
+native debug support isn't included (gdb_native in configure.ac).
+
+&gt; (gdb) run
+&gt; Starting program: foo 
+&gt; Don't know how to run.  Try "help target".
+
+And this means exactly that -- gdb doesn't know how to "run" with the
+current target (none or just the executable), and there's no native target
+support to default to.  The suggestion kind of hints at connecting with
+"target remote" first, for example.
+
+&gt; This is a 32bit app but I get identical errors (although different show
+&gt; arch of course) when I try to debug a 64bit app.  I can set breakpoints,
+&gt; etc. but any attempt to run gives the "don't know how to run" error.
+&gt; 
+&gt; I'm not sure exactly what that means in this context.  It appears to
+&gt; have the right architecture and that architecture appears to be
+&gt; supported.  So what does GDB need from me?
+
+IIUC, you want to use --build to point at x86_64-olddist-linux-gnu,
+not --host.
+
+-- 
+Pedro Alves
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00048" href="https://sourceware.org/ml/gdb/2012-10/msg00048.html">Re: Help with cross-compiling GDB</a></strong>
+<ul><li><em>From:</em> Paul Smith</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00043" href="https://sourceware.org/ml/gdb/2012-10/msg00043.html">Help with cross-compiling GDB</a></strong>
+<ul><li><em>From:</em> Paul Smith</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<!--htdig_noindex-->
+<table border="0">
+  <tbody><tr><th align="left">Index Nav:</th>
+      <td colspan="2">
+        [<a href="https://sourceware.org/ml/gdb/2012-10/index.html#00047">Date&nbsp;Index</a>] [<a href="https://sourceware.org/ml/gdb/2012-10/subjects.html#00047">Subject&nbsp;Index</a>] [<a href="https://sourceware.org/ml/gdb/2012-10/authors.html#00047">Author&nbsp;Index</a>] [<a href="https://sourceware.org/ml/gdb/2012-10/threads.html#00047">Thread&nbsp;Index</a>]
+      </td>
+  </tr>
+  <tr><th align="left">Message Nav:</th>
+      <td>[<a href="https://sourceware.org/ml/gdb/2012-10/msg00046.html">Date&nbsp;Prev</a>]&nbsp;[<a href="https://sourceware.org/ml/gdb/2012-10/msg00048.html">Date&nbsp;Next</a>]</td>
+      <td>[<a href="https://sourceware.org/ml/gdb/2012-10/msg00046.html">Thread&nbsp;Prev</a>]&nbsp;[<a href="https://sourceware.org/ml/gdb/2012-10/msg00048.html">Thread&nbsp;Next</a>]</td>
+  </tr>
+</tbody></table>
+<!--/htdig_noindex-->
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+
+
+</body></html>
