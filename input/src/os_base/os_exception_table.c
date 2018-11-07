@@ -19,6 +19,8 @@ The processor uses a full descending stack.
  with a pointer for each held in independent registers,
  see Stack Pointer.
 */
+#warn "hardfault occurs when debugger is attached, because of likely "0x0030 reserved for debug" not configured"
+
 func_ptr_t isr_vec_table[] =
 {
    (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
@@ -33,8 +35,10 @@ func_ptr_t isr_vec_table[] =
    0,                            /* 0x0024 reservered                 */   
    0,                            /* 0x0028 reservered                 */   
    &OS_Exception_SWI,				/* 0x002C Supervisor Call            */
-   0,                            /* 0x0030 reserved for debug         */
+   &OS_Exception_DEBUG,          /* 0x0030 reserved for debug         */
    0,                            /* 0x0034 reserved                   */
    0,                            /* 0x0038 PendSV                     */
-   0                             /* 0x003C Systick                    */
+   0,                            /* 0x003C Systick                    */
+   0,                            /* 0x0040 IRQ0                       */
+   0                             /* 0x0044 IRQ1 (....n possible)      */
 };

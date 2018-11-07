@@ -31,6 +31,13 @@ void OS_Exception_BUS_FAULT(void)
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
+
+void OS_Exception_DEBUG(void)
+{
+   while(1){}
+   OS_SHUTDOWN(os_reset_hardreset);
+}
+
 void OS_Exception_MEM_MANAG_FAULT(void)
 {
    while(1){}

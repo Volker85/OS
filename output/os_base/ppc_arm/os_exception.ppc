@@ -702,6 +702,7 @@ extern void OS_Exception_MEM_MANAG_FAULT();
 extern void OS_Exception_IRQ();
 extern void OS_Exception_FIQ();
 extern void OS_ExceptionHandler(void);
+extern void OS_Exception_DEBUG(void);
 extern void TCMP1(void);
 extern void TCMP2(void);
 extern void TCMP3(void);
@@ -758,6 +759,13 @@ void OS_Exception_BUS_FAULT(void)
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
+
+void OS_Exception_DEBUG(void)
+{
+   while(1){}
+   OS_SHUTDOWN(os_reset_hardreset);
+}
+
 void OS_Exception_MEM_MANAG_FAULT(void)
 {
    while(1){}

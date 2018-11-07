@@ -1,13 +1,19 @@
 "Target_ARM" 
-05.11.2018 16:59:21,52 
+07.11.2018 21:35:37,36 
 "preprocess it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:22:2: error: invalid preprocessing directive #warn
+ #warn "hardfault occurs when debugger is attached, because of likely "0x0030 reserved for debug" not configured"
+  ^
 "create assembly listings" 
 "compile it" 
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_HARDFAULT':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20: warning: variable 'ERROR_HARDFAULT' set but not used [-Wunused-but-set-variable]
     volatile uint32 ERROR_HARDFAULT = 0;
                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:24:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:22:2: error: invalid preprocessing directive #warn
+ #warn "hardfault occurs when debugger is attached, because of likely "0x0030 reserved for debug" not configured"
+  ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
     (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^
 "assemble it" 
@@ -15,7 +21,10 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In fu
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20: warning: variable 'ERROR_HARDFAULT' set but not used [-Wunused-but-set-variable]
     volatile uint32 ERROR_HARDFAULT = 0;
                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:24:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:22:2: error: invalid preprocessing directive #warn
+ #warn "hardfault occurs when debugger is attached, because of likely "0x0030 reserved for debug" not configured"
+  ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
     (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^
    1              		.syntax unified

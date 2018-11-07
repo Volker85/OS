@@ -13,6 +13,7 @@ extern void OS_Exception_MEM_MANAG_FAULT();
 extern void OS_Exception_IRQ();
 extern void OS_Exception_FIQ();
 extern void OS_ExceptionHandler(void);
+extern void OS_Exception_DEBUG(void);
 extern ISR TCMP1(void);
 extern ISR TCMP2(void);
 extern ISR TCMP3(void);
