@@ -1,11 +1,11 @@
-1. Laden der Symbole
-%WRK_DIR%\arm-none-eabi-gdb.exe %SRC_DIR%\operating_system.elf
+1. Start von Openocd:
+1_0_debug_arm_start_openocd.bat
 
-2. Breakpoint setzen
+2. Start von gdb 
+1_1_debug_arm_gdb.bat
+
+3. Breakpoint setzen
+<gdb> target remote localhost:3333
 <gdb> b OS_STATE_HANDLER
-
-3. Run
-
-
-Fragen: es fehlt noch ein "target remote localhost:2331" oder ähnliches
--> gdb (auf host) und gdbserver (auf target) müssen verbunden werden..
+<gdb> load E:/NeuOrga/Programmieren/c_cpp/github_os/output/VERSION_ARM/operating_system.elf
+<gdb> continue
