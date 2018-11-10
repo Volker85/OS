@@ -1,32 +1,65 @@
 "Target_ARM" 
-08.11.2018  9:50:20,12 
+10.11.2018 21:19:25,80 
 "preprocess it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:22:2: error: invalid preprocessing directive #warn
- #warn "hardfault occurs when debugger is attached, because of likely "0x0030 reserved for debug" not configured"
-  ^
 "create assembly listings" 
 "compile it" 
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_HARDFAULT':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20: warning: variable 'ERROR_HARDFAULT' set but not used [-Wunused-but-set-variable]
     volatile uint32 ERROR_HARDFAULT = 0;
                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:22:2: error: invalid preprocessing directive #warn
- #warn "hardfault occurs when debugger is attached, because of likely "0x0030 reserved for debug" not configured"
-  ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:25:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
     (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:23: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_RESET+1u,      /* 0x0004 Reset                      */
+                       ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:27:21: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_NMI+1u,        /* 0x0008 Non Maskable Interrupt     */
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:28:27: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_HARDFAULT+1u,      /* 0x000C Hardfault                  */ 
+                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:29:33: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_MEM_MANAG_FAULT+1u,/* 0x0010 Memory management fault    */
+                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:30:27: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_BUS_FAULT+1u, /* 0x0014 Bus fault                  */
+                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:36:21: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_SWI+1u,    /* 0x002C Supervisor Call            */
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:37:23: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_DEBUG+1u,          /* 0x0030 reserved for debug         */
+                       ^
 "assemble it" 
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_HARDFAULT':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20: warning: variable 'ERROR_HARDFAULT' set but not used [-Wunused-but-set-variable]
     volatile uint32 ERROR_HARDFAULT = 0;
                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:22:2: error: invalid preprocessing directive #warn
- #warn "hardfault occurs when debugger is attached, because of likely "0x0030 reserved for debug" not configured"
-  ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:25:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
     (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:23: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_RESET+1u,      /* 0x0004 Reset                      */
+                       ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:27:21: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_NMI+1u,        /* 0x0008 Non Maskable Interrupt     */
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:28:27: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_HARDFAULT+1u,      /* 0x000C Hardfault                  */ 
+                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:29:33: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_MEM_MANAG_FAULT+1u,/* 0x0010 Memory management fault    */
+                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:30:27: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_BUS_FAULT+1u, /* 0x0014 Bus fault                  */
+                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:36:21: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_SWI+1u,    /* 0x002C Supervisor Call            */
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:37:23: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+    &OS_Exception_DEBUG+1u,          /* 0x0030 reserved for debug         */
+                       ^
    1              		.syntax unified
    2              		.cpu cortex-m4
    3              		.fpu softvfp

@@ -1,3 +1,73 @@
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:22:2: error: invalid preprocessing directive #warn
- #warn "hardfault occurs when debugger is attached, because of likely "0x0030 reserved for debug" not configured"
-  ^
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"os_exception_table.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	isr_vec_table
+  19              		.data
+  20              		.align	2
+  23              	isr_vec_table:
+  24 0000 00010000 		.word	OS_MAIN_STACK+256
+  25 0004 01000000 		.word	OS_Exception_RESET+1
+  26 0008 01000000 		.word	OS_Exception_NMI+1
+  27 000c 01000000 		.word	OS_Exception_HARDFAULT+1
+  28 0010 01000000 		.word	OS_Exception_MEM_MANAG_FAULT+1
+  29 0014 01000000 		.word	OS_Exception_BUS_FAULT+1
+  30 0018 00000000 		.word	0
+  31 001c 00000000 		.word	0
+  32 0020 00000000 		.word	0
+  33 0024 00000000 		.word	0
+  34 0028 00000000 		.word	0
+  35 002c 01000000 		.word	OS_Exception_SWI+1
+  36 0030 01000000 		.word	OS_Exception_DEBUG+1
+  37 0034 00000000 		.word	0
+  38 0038 00000000 		.word	0
+  39 003c 00000000 		.word	0
+  40 0040 00000000 		.word	0
+  41 0044 00000000 		.word	0
+  42              		.text
+  43              	.Letext0:
+  44              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  45              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+  46              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  47              		.file 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_exception_table.c
+C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s:23     .data:00000000 isr_vec_table
+C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s:20     .data:00000000 $d
+                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.d75289bcbcba9f0e2c2ffeda9394ea88
+                           .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986
+                           .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
+                           .group:00000000 wm4.os_exception_isr_handler.h.2.19ab7c9017e871de2a8a91d100f54831
+
+UNDEFINED SYMBOLS
+OS_MAIN_STACK
+OS_Exception_RESET
+OS_Exception_NMI
+OS_Exception_HARDFAULT
+OS_Exception_MEM_MANAG_FAULT
+OS_Exception_BUS_FAULT
+OS_Exception_SWI
+OS_Exception_DEBUG
