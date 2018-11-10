@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Why does my Cortex-M processor Lock Up with a Hard Fault a few cycles after reset?</title>
+<meta name="description" content="Why does my Cortex-M processor Lock Up with a Hard Fault a few cycles after reset?">
+<meta http-equiv="description" content="Why does my Cortex-M processor Lock Up with a Hard Fault a few cycles after reset?">
+<meta name="keywords" content="FAQ, Frequently asked questions, cortex-m, hard, fault, lockup, reset, vector, table, literal, manual, manually, constant, usage, s_lockup">
+<link rel="stylesheet" href="ka12545_data/armEclipse.css" type="text/css">
+<link rel="stylesheet" href="ka12545_data/kacore.css" type="text/css">
+<link rel="start" href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/index.html" title="ARM Technical Support Knowledge Articles">
+<link rel="up" href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/index.html" title="ARM Technical Support Knowledge Articles">
+<link rel="chapter" href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/index.html" title="ARM Technical Support Knowledge Articles">
+<meta name="titlemarkup" content="Why does my Cortex-M processor Lock Up with a Hard Fault a few cycles after reset?">
+<meta name="copyright" content="Copyright © 2011 ARM Limited. All rights reserved.">
+<meta name="date" content="2012-07-26">
+<script language="JavaScript" type="text/JavaScript" src="ka12545_data/armNavRollovers.js"></script>
+<script language="JaveScript" type="text/JavaScript" src="ka12545_data/kacore_002.js"></script>
+<script language="javascript" type="text/javascript" src="ka12545_data/kacore.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+var armloggedin = top.document.getElementById('armloggedin');
+if (armloggedin && (armloggedin.style.display != 'none')) {
+	top.location.href = 'http://infocenter.arm.com/help/topic/com.arm.doc.faqs/ka12545.html';
+}
+var loginanchor = top.document.getElementById('loginanchor');
+if (loginanchor) {
+	loginanchor.onclick = function() {return top.showModal('https://login.arm.com/login.php?cams_original_url=http%3A%2F%2Finfocenter.arm.com%2Fhelp%2Ftopic%2Fcom.arm.doc.faqs%2Fka12545.html&mode=modal');};
+	loginanchor.href = 'https://login.arm.com/login.php?cams_original_url=http%3A%2F%2Finfocenter.arm.com%2Fhelp%2Ftopic%2Fcom.arm.doc.faqs%2Fka12545.html';
+}
+var languageLinks = top.document.getElementById('languagelinks');
+if (languageLinks) {
+	var anchors = languageLinks.getElementsByTagName('a');
+	for (var i = 0; i < anchors.length; i++) {
+		var anchorId = anchors[i].id;
+		if (anchorId && anchorId.match('^lang_[a-z]+$')) {
+			var language = anchorId.substring(5);
+			anchors[i].href = 'https://login.arm.com/language.php' +
+					'?language=' + language +
+					'&action=overridelanguage' +
+					'&url=http%3A%2F%2Finfocenter.arm.com%2Fhelp%2Ftopic%2Fcom.arm.doc.faqs%2Fka12545.html';
+		}
+	}
+}
+</script>
+
+<script language="JavaScript" type="text/javascript">
+if (parent.ContentToolbarFrame) {
+if (parent.ContentToolbarFrame.setButtonLocation) {
+parent.ContentToolbarFrame.setButtonLocation("previous", "../topic/com.arm.doc.faqs/ka4079.html");
+parent.ContentToolbarFrame.setButtonLocation("next", "../topic/com.arm.doc.faqs/ka12758.html");
+}
+if (parent.ContentToolbarFrame.setTitle) {
+parent.ContentToolbarFrame.setTitle("ARM Technical Support Knowledge Articles");
+}
+}
+</script>
+<script language="JavaScript" type="text/javascript">if((self == top) || (parent.window.frames[window.name].name == 'modalContentFrame')){ window.location.replace( "../../?topic=/com.arm.doc.faqs/ka12545.html");}</script>
+</head>
+<body>
+<div class="headers">
+<table class="titletable" summary="Nested table" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr class="titlebar">
+<td class="titlecell" colspan="2" valign="baseline" align="left">ARM Technical Support Knowledge Articles</td>
+</tr>
+<tr>
+<td colspan="2" id="armkb_cell" style="whitespace: nowrap" height="15" align="left"><ul class="armkb_celldu"><li class="armkb_celld" onmouseover="armkb_docmerge()" onmouseout="armkb_closemenu()" id="armkb_merge_count"><img src="ka12545_data/kacore.png" alt=""> Document Merge (0)<br><ul id="armkb_docmerge_menu" class="armkb_menu_hidden"><li><a href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/kamerge.html" class="armkb_menulink">Generate Merged Doc</a></li><li id="armkb_menu_merge_rem" style="display: none;"><a href="#" class="armkb_menulink" onclick="armkb_docmerge_remove()">Remove this document from merge list</a></li><li id="armkb_menu_merge_add" style="display: block;"><a href="#" class="armkb_menulink" onclick="armkb_docmerge_add()">Add this document to merge list</a></li><li><a href="#" class="armkb_menulink" onclick="armkb_docmerge_clear()">Clear document merge list</a></li></ul></li><li class="armkb_celld" onmouseover="armkb_docfav()" onmouseout="armkb_closemenu()" id="armkb_fav_count"><img src="ka12545_data/kacore.png" alt=""> Favorite Articles (0)<br><ul id="armkb_docfav_menu" class="armkb_menu_hidden"><li><a href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/kafav.html" class="armkb_menulink">My Favorite Articles</a></li><li id="armkb_menu_fav_rem" style="display: none;"><a href="#" class="armkb_menulink" onclick="armkb_docfav_remove()">Remove this document from favorites</a></li><li id="armkb_menu_fav_add" style="display: block;"><a href="#" class="armkb_menulink" onclick="armkb_docfav_add()">Add this document to favorites</a></li><li><a href="#" class="armkb_menulink" onclick="armkb_docfav_clear()">Clear favorite document list</a></li></ul></li></ul></td></tr>
+</tbody>
+</table>
+</div>
+<div class="book" lang="en">
+<div class="titlepage">
+<!--content.start-->
+<h1>Why does my Cortex-M processor Lock Up with a Hard Fault a few cycles after reset?</h1>
+<p><b>Applies to:</b> <a href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/kiI1aJmmUpjwUi.html">Cortex-M0</a>, <a href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/kiA99ws0gmGFrc.html">Cortex-M0Plus</a>, <a href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/kiAssRRSMfmLwf.html">Cortex-M1</a>, <a href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/kiIo1qSbPBCkG7.html">Cortex-M3</a>, <a href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/kiB3kKpyFRFKxw.html">Cortex-M4</a></p>
+<h2>Scenario</h2><p>My Cortex-M processor halts all activity and asserts
+ its LOCKUP&nbsp;signal on-chip and sets bit S_LOCKUP in the Debug 
+Halting Control and Status Register.</p>
+<h2>Answer</h2><p>Various ARM architectures support interworking, which 
+is the ability to switch between the ARM and Thumb instruction sets 
+using certain kinds of branch instructions. This allows code routines 
+implemented in alternate instruction sets to inter-operate, by informing
+ the processor of the change of instruction set at the branch.</p>
+<p>The mechanism for switching makes use of the fact that all 
+instructions must be (at least) halfword-aligned, which means that 
+bit[0] of the branch target address is redundant. Therefore this bit can
+ be re-used to indicate the target instruction set at that address. 
+Bit[0] cleared to 0 means ARM and bit[0] set to  1 means Thumb.</p>
+<p>For example, consider the instruction:</p>
+<p><code class="aainlinemono"> &nbsp;&nbsp; &nbsp; BX lr</code></p>
+<p>If the value in <code class="aainlinemono">lr</code> is <code class="aainlinemono">0x02000000</code> then the processor will branch to the instruction at <code class="aainlinemono">0x02000000</code> and interpret it as an ARM 32-bit instruction.</p>
+<p>If the value in <code class="aainlinemono">lr</code> is <code class="aainlinemono">0x02000001</code> then the processor will branch to address <code class="aainlinemono">0x02000000</code> but interpret the instruction found there as a Thumb opcode.</p>
+<p>The ARM Compiler (<code class="aainlinemono">armcc</code>) ensures 
+that all branch target label addresses have bit[0] set correctly to 
+represent the type of opcode found at that address. However, if the 
+programmer creates an address manually, they must take care of ensuring 
+that bit[0] is correctly set to represent the opcode type of that branch
+ target.</p>
+<p>ARMv6-M and ARMv7-M processors (Cortex-M processors) support only the
+ Thumb instruction set. Therefore all branch targets should be indicated
+ as odd numbers, having bit[0] set for interworking, indicating that the
+ target contains a Thumb opcode.</p>
+<p>The vector table in Cortex-M processors (unlike other ARM processors)
+ is a list of addresses (vectors). These vectors are defined as 
+interworking-capable, therefore all populated entries in the vector 
+table must similarly have bit[0] set.</p>
+<p>For ARMv7-M processors, if the Reset vector is an even number, the 
+processor will immediately call a UsageFault of type INVSTATE due to the
+ attempt to invoke the ARM instruction set for the Reset handler. 
+Because the UsageFault is not enabled at Reset, the fault will escalate 
+to HardFault. The HardFault vector itself will cause another UsageFault 
+due to its bit[0] being clear. The occurrence of a fault inside the 
+HardFault handler will result in the processor discontinuing execution, 
+and asserting its LOCKUP output signal. For ARMv6-M processors, all 
+faults are taken as HardFault, but the behavior is similar.</p>
+<p>Vector table entries which are code entry point labels will be taken 
+care of by the compilation toolset. For vector table entries which are 
+written as literal constants in the code, the programmer must ensure 
+that bit[0] is set to 1.</p>
+
+
+
+
+    <div class="feedbackbox" width="300" style="width: 300px;" onmousemove="resetslider(event)">
+     <center><h2 id="feedbackslidertitle">Rate this article</h2>
+     <div id="feedbackvalue" style="overflow: hidden; height: 32px; width: 211px; margin-left: 20px;">Current article rating: 8/10</div>
+       <div class="feedbackslider" id="feedbackslider" style="width: 243px; height: 16px; white-span: nowrap;" onmousemove="moveslider(event);" onclick="holdslider(event)"><img src="ka12545_data/fb_cross.png" alt="[Bad]"><div id="fbsliderleftside" style="display: inline; background: rgb(102, 255, 0) none repeat scroll 0% 0%; width: 168px;"><img src="ka12545_data/slend.png" alt="|" border="0"><img src="ka12545_data/slend2.png" alt="" border="0"><img id="fbsliderleftimg" src="ka12545_data/slmid.png" alt="" style="width: 160px; height: 16px;" border="0"><img src="ka12545_data/markert.png" alt="" id="fbslidermarker" border="0"></div><div id="fbsliderrightside" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; display: inline; width: 43px;"><img id="fbsliderrightimg" src="ka12545_data/slmid.png" alt="" style="width: 40px; height: 16px;" border="0"><img src="ka12545_data/slend3.png" alt="" border="0"><img src="ka12545_data/slend.png" alt="|" border="0"></div><img src="ka12545_data/fb_tick.png" alt="[Good]"></div></center>
+     <div id="feedbackinstr"><b>Disagree? Move your mouse over the bar and click</b></div>
+     <div id="feedbackcontr" class="armkb_hidden">
+      <p><b>Did you find this article helpful?</b> <input type="radio" name="helpful" id="fb_helpy" value="y"> Yes <input type="radio" id="fb_helpn" name="helpful" value="n"> No</p>
+      <p><b>How can we improve this article?</b></p>
+      <textarea style="margin-left: 20px;" name="improve" id="fb_improve" cols="30" rows="5" wrap="virtual"></textarea>
+      <button onclick="submitfeedback()">Submit Rating and Feedback</button>
+     </div>
+    <script language="javascript" type="text/javascript"><!--
+var fbid = 12545;
+var slidervalue = 160;
+var slideroriginal = 160;
+var fbslock = 0;
+redrawslider(160);
+//--></script>
+
+    </div>
+
+<!--content.end-->
+<div style="margin-top: 12px;"><span><a href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/ka12545.html">Link to this article</a></span></div>
+</div>
+</div>
+<div class="footers">
+<table class="legalfooter" summary="Legal information footer" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr class="copyrightdocnumbar">
+<td class="copyrightcell" valign="top" align="left">Copyright © 2011 ARM Limited. All rights reserved.</td>
+<td class="docnumcell" valign="top" align="right">External (Open), Non-Confidential</td>
+</tr>
+</tbody>
+</table>
+<table class="navfooter" summary="Navigation footer" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr class="breadcrumbbar">
+<td class="breadcrumbcell" colspan="2"><a href="http://infocenter.arm.com/help/topic/com.arm.doc.faqs/index.html" accesskey="h">Home</a></td>
+</tr>
+<tr class="navbar">
+<td class="prevcell" valign="middle" align="left"><img src="ka12545_data/blank_separator.gif" alt="" border="0"></td>
+<td class="nextcell" valign="middle" align="right"><img src="ka12545_data/blank_separator.gif" alt="" border="0"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script type="text/javascript">
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="../../ga.js" type="text/javascript"></script>
+<script type="text/javascript" src="ka12545_data/googlestats.js"></script>
+
+
+</body></html>
