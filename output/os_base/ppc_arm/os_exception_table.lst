@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFxe7jc.s 			page 1
 
 
    1              		.syntax unified
@@ -28,7 +28,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s 			page 1
   27 000c 01000000 		.word	OS_Exception_HARDFAULT+1
   28 0010 01000000 		.word	OS_Exception_MEM_MANAG_FAULT+1
   29 0014 01000000 		.word	OS_Exception_BUS_FAULT+1
-  30 0018 00000000 		.word	0
+  30 0018 01000000 		.word	OS_Exception_USAGE_FAULT+1
   31 001c 00000000 		.word	0
   32 0020 00000000 		.word	0
   33 0024 00000000 		.word	0
@@ -36,23 +36,273 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s 			page 1
   35 002c 01000000 		.word	OS_Exception_SWI+1
   36 0030 01000000 		.word	OS_Exception_DEBUG+1
   37 0034 00000000 		.word	0
-  38 0038 00000000 		.word	0
-  39 003c 00000000 		.word	0
-  40 0040 00000000 		.word	0
-  41 0044 00000000 		.word	0
-  42              		.text
-  43              	.Letext0:
-  44              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  45              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-  46              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  47              		.file 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s 			page 2
+  38 0038 01000000 		.word	OS_Exception_PendSV+1
+  39 003c 01000000 		.word	OS_Exception_Systick+1
+  40 0040 01000000 		.word	OS_Exception_IRQ+1
+  41 0044 01000000 		.word	OS_Exception_IRQ+1
+  42 0048 01000000 		.word	OS_Exception_IRQ+1
+  43 004c 01000000 		.word	OS_Exception_IRQ+1
+  44 0050 01000000 		.word	OS_Exception_IRQ+1
+  45 0054 01000000 		.word	OS_Exception_IRQ+1
+  46 0058 01000000 		.word	OS_Exception_IRQ+1
+  47 005c 01000000 		.word	OS_Exception_IRQ+1
+  48 0060 01000000 		.word	OS_Exception_IRQ+1
+  49 0064 01000000 		.word	OS_Exception_IRQ+1
+  50 0068 01000000 		.word	OS_Exception_IRQ+1
+  51 006c 01000000 		.word	OS_Exception_IRQ+1
+  52 0070 01000000 		.word	OS_Exception_IRQ+1
+  53 0074 01000000 		.word	OS_Exception_IRQ+1
+  54 0078 01000000 		.word	OS_Exception_IRQ+1
+  55 007c 01000000 		.word	OS_Exception_IRQ+1
+  56 0080 01000000 		.word	OS_Exception_IRQ+1
+  57 0084 01000000 		.word	OS_Exception_IRQ+1
+  58 0088 01000000 		.word	OS_Exception_IRQ+1
+  59 008c 01000000 		.word	OS_Exception_IRQ+1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFxe7jc.s 			page 2
+
+
+  60 0090 01000000 		.word	OS_Exception_IRQ+1
+  61 0094 01000000 		.word	OS_Exception_IRQ+1
+  62 0098 01000000 		.word	OS_Exception_IRQ+1
+  63 009c 01000000 		.word	OS_Exception_IRQ+1
+  64 00a0 01000000 		.word	OS_Exception_IRQ+1
+  65 00a4 01000000 		.word	OS_Exception_IRQ+1
+  66 00a8 01000000 		.word	OS_Exception_IRQ+1
+  67 00ac 01000000 		.word	OS_Exception_IRQ+1
+  68 00b0 01000000 		.word	OS_Exception_IRQ+1
+  69 00b4 01000000 		.word	OS_Exception_IRQ+1
+  70 00b8 01000000 		.word	OS_Exception_IRQ+1
+  71 00bc 01000000 		.word	OS_Exception_IRQ+1
+  72 00c0 01000000 		.word	OS_Exception_IRQ+1
+  73 00c4 01000000 		.word	OS_Exception_IRQ+1
+  74 00c8 01000000 		.word	OS_Exception_IRQ+1
+  75 00cc 01000000 		.word	OS_Exception_IRQ+1
+  76 00d0 01000000 		.word	OS_Exception_IRQ+1
+  77 00d4 01000000 		.word	OS_Exception_IRQ+1
+  78 00d8 01000000 		.word	OS_Exception_IRQ+1
+  79 00dc 01000000 		.word	OS_Exception_IRQ+1
+  80 00e0 01000000 		.word	OS_Exception_IRQ+1
+  81 00e4 01000000 		.word	OS_Exception_IRQ+1
+  82 00e8 01000000 		.word	OS_Exception_IRQ+1
+  83 00ec 01000000 		.word	OS_Exception_IRQ+1
+  84 00f0 01000000 		.word	OS_Exception_IRQ+1
+  85 00f4 01000000 		.word	OS_Exception_IRQ+1
+  86 00f8 01000000 		.word	OS_Exception_IRQ+1
+  87 00fc 01000000 		.word	OS_Exception_IRQ+1
+  88 0100 01000000 		.word	OS_Exception_IRQ+1
+  89 0104 01000000 		.word	OS_Exception_IRQ+1
+  90 0108 01000000 		.word	OS_Exception_IRQ+1
+  91 010c 01000000 		.word	OS_Exception_IRQ+1
+  92 0110 01000000 		.word	OS_Exception_IRQ+1
+  93 0114 01000000 		.word	OS_Exception_IRQ+1
+  94 0118 01000000 		.word	OS_Exception_IRQ+1
+  95 011c 01000000 		.word	OS_Exception_IRQ+1
+  96 0120 01000000 		.word	OS_Exception_IRQ+1
+  97 0124 01000000 		.word	OS_Exception_IRQ+1
+  98 0128 01000000 		.word	OS_Exception_IRQ+1
+  99 012c 01000000 		.word	OS_Exception_IRQ+1
+ 100 0130 01000000 		.word	OS_Exception_IRQ+1
+ 101 0134 01000000 		.word	OS_Exception_IRQ+1
+ 102 0138 01000000 		.word	OS_Exception_IRQ+1
+ 103 013c 01000000 		.word	OS_Exception_IRQ+1
+ 104 0140 01000000 		.word	OS_Exception_IRQ+1
+ 105 0144 01000000 		.word	OS_Exception_IRQ+1
+ 106 0148 01000000 		.word	OS_Exception_IRQ+1
+ 107 014c 01000000 		.word	OS_Exception_IRQ+1
+ 108 0150 01000000 		.word	OS_Exception_IRQ+1
+ 109 0154 01000000 		.word	OS_Exception_IRQ+1
+ 110 0158 01000000 		.word	OS_Exception_IRQ+1
+ 111 015c 01000000 		.word	OS_Exception_IRQ+1
+ 112 0160 01000000 		.word	OS_Exception_IRQ+1
+ 113 0164 01000000 		.word	OS_Exception_IRQ+1
+ 114 0168 01000000 		.word	OS_Exception_IRQ+1
+ 115 016c 01000000 		.word	OS_Exception_IRQ+1
+ 116 0170 01000000 		.word	OS_Exception_IRQ+1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFxe7jc.s 			page 3
+
+
+ 117 0174 01000000 		.word	OS_Exception_IRQ+1
+ 118 0178 01000000 		.word	OS_Exception_IRQ+1
+ 119 017c 01000000 		.word	OS_Exception_IRQ+1
+ 120 0180 01000000 		.word	OS_Exception_IRQ+1
+ 121 0184 01000000 		.word	OS_Exception_IRQ+1
+ 122 0188 01000000 		.word	OS_Exception_IRQ+1
+ 123 018c 01000000 		.word	OS_Exception_IRQ+1
+ 124 0190 01000000 		.word	OS_Exception_IRQ+1
+ 125 0194 01000000 		.word	OS_Exception_IRQ+1
+ 126 0198 01000000 		.word	OS_Exception_IRQ+1
+ 127 019c 01000000 		.word	OS_Exception_IRQ+1
+ 128 01a0 01000000 		.word	OS_Exception_IRQ+1
+ 129 01a4 01000000 		.word	OS_Exception_IRQ+1
+ 130 01a8 01000000 		.word	OS_Exception_IRQ+1
+ 131 01ac 01000000 		.word	OS_Exception_IRQ+1
+ 132 01b0 01000000 		.word	OS_Exception_IRQ+1
+ 133 01b4 01000000 		.word	OS_Exception_IRQ+1
+ 134 01b8 01000000 		.word	OS_Exception_IRQ+1
+ 135 01bc 01000000 		.word	OS_Exception_IRQ+1
+ 136 01c0 01000000 		.word	OS_Exception_IRQ+1
+ 137 01c4 01000000 		.word	OS_Exception_IRQ+1
+ 138 01c8 01000000 		.word	OS_Exception_IRQ+1
+ 139 01cc 01000000 		.word	OS_Exception_IRQ+1
+ 140 01d0 01000000 		.word	OS_Exception_IRQ+1
+ 141 01d4 01000000 		.word	OS_Exception_IRQ+1
+ 142 01d8 01000000 		.word	OS_Exception_IRQ+1
+ 143 01dc 01000000 		.word	OS_Exception_IRQ+1
+ 144 01e0 01000000 		.word	OS_Exception_IRQ+1
+ 145 01e4 01000000 		.word	OS_Exception_IRQ+1
+ 146 01e8 01000000 		.word	OS_Exception_IRQ+1
+ 147 01ec 01000000 		.word	OS_Exception_IRQ+1
+ 148 01f0 01000000 		.word	OS_Exception_IRQ+1
+ 149 01f4 01000000 		.word	OS_Exception_IRQ+1
+ 150 01f8 01000000 		.word	OS_Exception_IRQ+1
+ 151 01fc 01000000 		.word	OS_Exception_IRQ+1
+ 152 0200 01000000 		.word	OS_Exception_IRQ+1
+ 153 0204 01000000 		.word	OS_Exception_IRQ+1
+ 154 0208 01000000 		.word	OS_Exception_IRQ+1
+ 155 020c 01000000 		.word	OS_Exception_IRQ+1
+ 156 0210 01000000 		.word	OS_Exception_IRQ+1
+ 157 0214 01000000 		.word	OS_Exception_IRQ+1
+ 158 0218 01000000 		.word	OS_Exception_IRQ+1
+ 159 021c 01000000 		.word	OS_Exception_IRQ+1
+ 160 0220 01000000 		.word	OS_Exception_IRQ+1
+ 161 0224 01000000 		.word	OS_Exception_IRQ+1
+ 162 0228 01000000 		.word	OS_Exception_IRQ+1
+ 163 022c 01000000 		.word	OS_Exception_IRQ+1
+ 164 0230 01000000 		.word	OS_Exception_IRQ+1
+ 165 0234 01000000 		.word	OS_Exception_IRQ+1
+ 166 0238 01000000 		.word	OS_Exception_IRQ+1
+ 167 023c 01000000 		.word	OS_Exception_IRQ+1
+ 168 0240 01000000 		.word	OS_Exception_IRQ+1
+ 169 0244 01000000 		.word	OS_Exception_IRQ+1
+ 170 0248 01000000 		.word	OS_Exception_IRQ+1
+ 171 024c 01000000 		.word	OS_Exception_IRQ+1
+ 172 0250 01000000 		.word	OS_Exception_IRQ+1
+ 173 0254 01000000 		.word	OS_Exception_IRQ+1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFxe7jc.s 			page 4
+
+
+ 174 0258 01000000 		.word	OS_Exception_IRQ+1
+ 175 025c 01000000 		.word	OS_Exception_IRQ+1
+ 176 0260 01000000 		.word	OS_Exception_IRQ+1
+ 177 0264 01000000 		.word	OS_Exception_IRQ+1
+ 178 0268 01000000 		.word	OS_Exception_IRQ+1
+ 179 026c 01000000 		.word	OS_Exception_IRQ+1
+ 180 0270 01000000 		.word	OS_Exception_IRQ+1
+ 181 0274 01000000 		.word	OS_Exception_IRQ+1
+ 182 0278 01000000 		.word	OS_Exception_IRQ+1
+ 183 027c 01000000 		.word	OS_Exception_IRQ+1
+ 184 0280 01000000 		.word	OS_Exception_IRQ+1
+ 185 0284 01000000 		.word	OS_Exception_IRQ+1
+ 186 0288 01000000 		.word	OS_Exception_IRQ+1
+ 187 028c 01000000 		.word	OS_Exception_IRQ+1
+ 188 0290 01000000 		.word	OS_Exception_IRQ+1
+ 189 0294 01000000 		.word	OS_Exception_IRQ+1
+ 190 0298 01000000 		.word	OS_Exception_IRQ+1
+ 191 029c 01000000 		.word	OS_Exception_IRQ+1
+ 192 02a0 01000000 		.word	OS_Exception_IRQ+1
+ 193 02a4 01000000 		.word	OS_Exception_IRQ+1
+ 194 02a8 01000000 		.word	OS_Exception_IRQ+1
+ 195 02ac 01000000 		.word	OS_Exception_IRQ+1
+ 196 02b0 01000000 		.word	OS_Exception_IRQ+1
+ 197 02b4 01000000 		.word	OS_Exception_IRQ+1
+ 198 02b8 01000000 		.word	OS_Exception_IRQ+1
+ 199 02bc 01000000 		.word	OS_Exception_IRQ+1
+ 200 02c0 01000000 		.word	OS_Exception_IRQ+1
+ 201 02c4 01000000 		.word	OS_Exception_IRQ+1
+ 202 02c8 01000000 		.word	OS_Exception_IRQ+1
+ 203 02cc 01000000 		.word	OS_Exception_IRQ+1
+ 204 02d0 01000000 		.word	OS_Exception_IRQ+1
+ 205 02d4 01000000 		.word	OS_Exception_IRQ+1
+ 206 02d8 01000000 		.word	OS_Exception_IRQ+1
+ 207 02dc 01000000 		.word	OS_Exception_IRQ+1
+ 208 02e0 01000000 		.word	OS_Exception_IRQ+1
+ 209 02e4 01000000 		.word	OS_Exception_IRQ+1
+ 210 02e8 01000000 		.word	OS_Exception_IRQ+1
+ 211 02ec 01000000 		.word	OS_Exception_IRQ+1
+ 212 02f0 01000000 		.word	OS_Exception_IRQ+1
+ 213 02f4 01000000 		.word	OS_Exception_IRQ+1
+ 214 02f8 01000000 		.word	OS_Exception_IRQ+1
+ 215 02fc 01000000 		.word	OS_Exception_IRQ+1
+ 216 0300 01000000 		.word	OS_Exception_IRQ+1
+ 217 0304 01000000 		.word	OS_Exception_IRQ+1
+ 218 0308 01000000 		.word	OS_Exception_IRQ+1
+ 219 030c 01000000 		.word	OS_Exception_IRQ+1
+ 220 0310 01000000 		.word	OS_Exception_IRQ+1
+ 221 0314 01000000 		.word	OS_Exception_IRQ+1
+ 222 0318 01000000 		.word	OS_Exception_IRQ+1
+ 223 031c 01000000 		.word	OS_Exception_IRQ+1
+ 224 0320 01000000 		.word	OS_Exception_IRQ+1
+ 225 0324 01000000 		.word	OS_Exception_IRQ+1
+ 226 0328 01000000 		.word	OS_Exception_IRQ+1
+ 227 032c 01000000 		.word	OS_Exception_IRQ+1
+ 228 0330 01000000 		.word	OS_Exception_IRQ+1
+ 229 0334 01000000 		.word	OS_Exception_IRQ+1
+ 230 0338 01000000 		.word	OS_Exception_IRQ+1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFxe7jc.s 			page 5
+
+
+ 231 033c 01000000 		.word	OS_Exception_IRQ+1
+ 232 0340 01000000 		.word	OS_Exception_IRQ+1
+ 233 0344 01000000 		.word	OS_Exception_IRQ+1
+ 234 0348 01000000 		.word	OS_Exception_IRQ+1
+ 235 034c 01000000 		.word	OS_Exception_IRQ+1
+ 236 0350 01000000 		.word	OS_Exception_IRQ+1
+ 237 0354 01000000 		.word	OS_Exception_IRQ+1
+ 238 0358 01000000 		.word	OS_Exception_IRQ+1
+ 239 035c 01000000 		.word	OS_Exception_IRQ+1
+ 240 0360 01000000 		.word	OS_Exception_IRQ+1
+ 241 0364 01000000 		.word	OS_Exception_IRQ+1
+ 242 0368 01000000 		.word	OS_Exception_IRQ+1
+ 243 036c 01000000 		.word	OS_Exception_IRQ+1
+ 244 0370 01000000 		.word	OS_Exception_IRQ+1
+ 245 0374 01000000 		.word	OS_Exception_IRQ+1
+ 246 0378 01000000 		.word	OS_Exception_IRQ+1
+ 247 037c 01000000 		.word	OS_Exception_IRQ+1
+ 248 0380 01000000 		.word	OS_Exception_IRQ+1
+ 249 0384 01000000 		.word	OS_Exception_IRQ+1
+ 250 0388 01000000 		.word	OS_Exception_IRQ+1
+ 251 038c 01000000 		.word	OS_Exception_IRQ+1
+ 252 0390 01000000 		.word	OS_Exception_IRQ+1
+ 253 0394 01000000 		.word	OS_Exception_IRQ+1
+ 254 0398 01000000 		.word	OS_Exception_IRQ+1
+ 255 039c 01000000 		.word	OS_Exception_IRQ+1
+ 256 03a0 01000000 		.word	OS_Exception_IRQ+1
+ 257 03a4 01000000 		.word	OS_Exception_IRQ+1
+ 258 03a8 01000000 		.word	OS_Exception_IRQ+1
+ 259 03ac 01000000 		.word	OS_Exception_IRQ+1
+ 260 03b0 01000000 		.word	OS_Exception_IRQ+1
+ 261 03b4 01000000 		.word	OS_Exception_IRQ+1
+ 262 03b8 01000000 		.word	OS_Exception_IRQ+1
+ 263 03bc 01000000 		.word	OS_Exception_IRQ+1
+ 264 03c0 01000000 		.word	OS_Exception_IRQ+1
+ 265 03c4 01000000 		.word	OS_Exception_IRQ+1
+ 266 03c8 01000000 		.word	OS_Exception_IRQ+1
+ 267 03cc 01000000 		.word	OS_Exception_IRQ+1
+ 268 03d0 01000000 		.word	OS_Exception_IRQ+1
+ 269 03d4 01000000 		.word	OS_Exception_IRQ+1
+ 270 03d8 01000000 		.word	OS_Exception_IRQ+1
+ 271 03dc 01000000 		.word	OS_Exception_IRQ+1
+ 272 03e0 01000000 		.word	OS_Exception_IRQ+1
+ 273 03e4 01000000 		.word	OS_Exception_IRQ+1
+ 274 03e8 01000000 		.word	OS_Exception_IRQ+1
+ 275 03ec 01000000 		.word	OS_Exception_IRQ+1
+ 276 03f0 01000000 		.word	OS_Exception_IRQ+1
+ 277 03f4 01000000 		.word	OS_Exception_IRQ+1
+ 278 03f8 01000000 		.word	OS_Exception_IRQ+1
+ 279 03fc 01000000 		.word	OS_Exception_IRQ+1
+ 280              		.text
+ 281              	.Letext0:
+ 282              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 283              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ 284              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 285              		.file 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFxe7jc.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_exception_table.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s:23     .data:00000000 isr_vec_table
-C:\Users\PRESID~1\AppData\Local\Temp\ccluHiOr.s:20     .data:00000000 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccFxe7jc.s:23     .data:00000000 isr_vec_table
+C:\Users\PRESID~1\AppData\Local\Temp\ccFxe7jc.s:20     .data:00000000 $d
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.d75289bcbcba9f0e2c2ffeda9394ea88
@@ -69,5 +319,9 @@ OS_Exception_NMI
 OS_Exception_HARDFAULT
 OS_Exception_MEM_MANAG_FAULT
 OS_Exception_BUS_FAULT
+OS_Exception_USAGE_FAULT
 OS_Exception_SWI
 OS_Exception_DEBUG
+OS_Exception_PendSV
+OS_Exception_Systick
+OS_Exception_IRQ

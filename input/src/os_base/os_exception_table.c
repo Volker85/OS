@@ -20,7 +20,7 @@ The processor uses a full descending stack.
  see Stack Pointer.
 */
 /* the amount of IRQn entries is implementation specific for STM32F4 = 240 */
-#warn "add handler functions for 'usage fault', 'PendSV','Systick','IRQ0...239'"
+
 func_ptr_t isr_vec_table[] =
 {
    (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
@@ -37,7 +37,7 @@ func_ptr_t isr_vec_table[] =
    &OS_Exception_SWI+1u,          /* 0x002C Supervisor Call            */
    &OS_Exception_DEBUG+1u,        /* 0x0030 reserved for debug         */
    0u,                            /* 0x0034 reserved                   */
-   &OS_Exception_PendS+1u,        /* 0x0038 PendSV                     */
+   &OS_Exception_PendSV+1u,        /* 0x0038 PendSV                     */
    &OS_Exception_Systick+1u,      /* 0x003C Systick                    */
    &OS_Exception_IRQ+1u,          /* 0x0040 IRQ0                       */
    &OS_Exception_IRQ+1u,          /*        IRQ1                       */

@@ -43,6 +43,25 @@ void OS_Exception_MEM_MANAG_FAULT(void)
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
+
+void OS_Exception_USAGE_FAULT(void)
+{
+   while(1){}
+   OS_SHUTDOWN(os_reset_hardreset);
+}
+
+void OS_Exception_PendSV(void)
+{
+   while(1){}
+   OS_SHUTDOWN(os_reset_hardreset);
+}
+
+void OS_Exception_Systick(void)
+{
+   while(1){}
+   OS_SHUTDOWN(os_reset_hardreset);
+}
+
 void OS_Exception_IRQ(void)
 {
    OS_ISRHANDLERC0();

@@ -19,7 +19,7 @@
 	.data
 	.align	2
 	.type	isr_vec_table, %object
-	.size	isr_vec_table, 72
+	.size	isr_vec_table, 1024
 isr_vec_table:
 	.word	OS_MAIN_STACK+256
 	.word	OS_Exception_RESET+1
@@ -27,7 +27,7 @@ isr_vec_table:
 	.word	OS_Exception_HARDFAULT+1
 	.word	OS_Exception_MEM_MANAG_FAULT+1
 	.word	OS_Exception_BUS_FAULT+1
-	.word	0
+	.word	OS_Exception_USAGE_FAULT+1
 	.word	0
 	.word	0
 	.word	0
@@ -35,10 +35,248 @@ isr_vec_table:
 	.word	OS_Exception_SWI+1
 	.word	OS_Exception_DEBUG+1
 	.word	0
-	.word	0
-	.word	0
-	.word	0
-	.word	0
+	.word	OS_Exception_PendSV+1
+	.word	OS_Exception_Systick+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
+	.word	OS_Exception_IRQ+1
 	.text
 .Letext0:
 	.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
@@ -108,12 +346,12 @@ isr_vec_table:
 	.4byte	0x88
 	.uleb128 0x7
 	.4byte	0x66
-	.byte	0x11
+	.byte	0xff
 	.byte	0
 	.uleb128 0x9
 	.4byte	.LASF433
 	.byte	0x4
-	.byte	0x17
+	.byte	0x18
 	.4byte	0x78
 	.uleb128 0x5
 	.byte	0x3

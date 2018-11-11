@@ -110,74 +110,59 @@ L11:
 	jmp	L11
 	.cfi_endproc
 LFE5:
+	.globl	_OS_Exception_USAGE_FAULT
+	.def	_OS_Exception_USAGE_FAULT;	.scl	2;	.type	32;	.endef
+_OS_Exception_USAGE_FAULT:
+LFB6:
+	.loc 1 48 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+L13:
+	.loc 1 49 0 discriminator 1
+	jmp	L13
+	.cfi_endproc
+LFE6:
+	.globl	_OS_Exception_PendSV
+	.def	_OS_Exception_PendSV;	.scl	2;	.type	32;	.endef
+_OS_Exception_PendSV:
+LFB7:
+	.loc 1 54 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+L15:
+	.loc 1 55 0 discriminator 1
+	jmp	L15
+	.cfi_endproc
+LFE7:
+	.globl	_OS_Exception_Systick
+	.def	_OS_Exception_Systick;	.scl	2;	.type	32;	.endef
+_OS_Exception_Systick:
+LFB8:
+	.loc 1 60 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+L17:
+	.loc 1 61 0 discriminator 1
+	jmp	L17
+	.cfi_endproc
+LFE8:
 	.globl	_OS_Exception_IRQ
 	.def	_OS_Exception_IRQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_IRQ:
-LFB6:
-	.loc 1 47 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 48 0
-	call	_OS_ISRHANDLERC0
-	.loc 1 49 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE6:
-	.globl	_OS_Exception_FIQ
-	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
-_OS_Exception_FIQ:
-LFB7:
-	.loc 1 51 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 52 0
-	call	_OS_ISRHANDLERC0
-	.loc 1 53 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE7:
-	.globl	_TCMP1
-	.def	_TCMP1;	.scl	2;	.type	32;	.endef
-_TCMP1:
-LFB8:
-	.loc 1 57 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 58 0
-	call	_OS_ISRHANDLERC0
-	.loc 1 59 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE8:
-	.globl	_TCMP2
-	.def	_TCMP2;	.scl	2;	.type	32;	.endef
-_TCMP2:
 LFB9:
-	.loc 1 61 0
+	.loc 1 66 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -185,20 +170,20 @@ LFB9:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 62 0
-	call	_OS_ISRHANDLERC1
-	.loc 1 63 0
+	.loc 1 67 0
+	call	_OS_ISRHANDLERC0
+	.loc 1 68 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE9:
-	.globl	_TCMP3
-	.def	_TCMP3;	.scl	2;	.type	32;	.endef
-_TCMP3:
+	.globl	_OS_Exception_FIQ
+	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
+_OS_Exception_FIQ:
 LFB10:
-	.loc 1 65 0
+	.loc 1 70 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -206,20 +191,20 @@ LFB10:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 66 0
-	call	_OS_ISRHANDLERC2
-	.loc 1 67 0
+	.loc 1 71 0
+	call	_OS_ISRHANDLERC0
+	.loc 1 72 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE10:
-	.globl	_TCMP4
-	.def	_TCMP4;	.scl	2;	.type	32;	.endef
-_TCMP4:
+	.globl	_TCMP1
+	.def	_TCMP1;	.scl	2;	.type	32;	.endef
+_TCMP1:
 LFB11:
-	.loc 1 69 0
+	.loc 1 76 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -227,21 +212,84 @@ LFB11:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 70 0
-	call	_OS_ISRHANDLERC3
-	.loc 1 71 0
+	.loc 1 77 0
+	call	_OS_ISRHANDLERC0
+	.loc 1 78 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE11:
+	.globl	_TCMP2
+	.def	_TCMP2;	.scl	2;	.type	32;	.endef
+_TCMP2:
+LFB12:
+	.loc 1 80 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	subl	$8, %esp
+	.loc 1 81 0
+	call	_OS_ISRHANDLERC1
+	.loc 1 82 0
+	leave
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE12:
+	.globl	_TCMP3
+	.def	_TCMP3;	.scl	2;	.type	32;	.endef
+_TCMP3:
+LFB13:
+	.loc 1 84 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	subl	$8, %esp
+	.loc 1 85 0
+	call	_OS_ISRHANDLERC2
+	.loc 1 86 0
+	leave
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE13:
+	.globl	_TCMP4
+	.def	_TCMP4;	.scl	2;	.type	32;	.endef
+_TCMP4:
+LFB14:
+	.loc 1 88 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	subl	$8, %esp
+	.loc 1 89 0
+	call	_OS_ISRHANDLERC3
+	.loc 1 90 0
+	leave
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE14:
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x2a4
+	.long	0x30d
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -347,52 +395,76 @@ Ldebug_info0:
 	.long	LFE5-LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0xa
-	.ascii "OS_Exception_IRQ\0"
+	.uleb128 0x9
+	.ascii "OS_Exception_USAGE_FAULT\0"
 	.byte	0x1
-	.byte	0x2e
+	.byte	0x2f
 	.long	LFB6
 	.long	LFE6-LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0xa
-	.ascii "OS_Exception_FIQ\0"
+	.uleb128 0x9
+	.ascii "OS_Exception_PendSV\0"
 	.byte	0x1
-	.byte	0x32
+	.byte	0x35
 	.long	LFB7
 	.long	LFE7-LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0xa
-	.ascii "TCMP1\0"
+	.uleb128 0x9
+	.ascii "OS_Exception_Systick\0"
 	.byte	0x1
-	.byte	0x38
+	.byte	0x3b
 	.long	LFB8
 	.long	LFE8-LFB8
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0xa
-	.ascii "TCMP2\0"
+	.ascii "OS_Exception_IRQ\0"
 	.byte	0x1
-	.byte	0x3c
+	.byte	0x41
 	.long	LFB9
 	.long	LFE9-LFB9
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0xa
-	.ascii "TCMP3\0"
+	.ascii "OS_Exception_FIQ\0"
 	.byte	0x1
-	.byte	0x40
+	.byte	0x45
 	.long	LFB10
 	.long	LFE10-LFB10
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0xa
-	.ascii "TCMP4\0"
+	.ascii "TCMP1\0"
 	.byte	0x1
-	.byte	0x44
+	.byte	0x4b
 	.long	LFB11
 	.long	LFE11-LFB11
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0xa
+	.ascii "TCMP2\0"
+	.byte	0x1
+	.byte	0x4f
+	.long	LFB12
+	.long	LFE12-LFB12
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0xa
+	.ascii "TCMP3\0"
+	.byte	0x1
+	.byte	0x53
+	.long	LFB13
+	.long	LFE13-LFB13
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0xa
+	.ascii "TCMP4\0"
+	.byte	0x1
+	.byte	0x57
+	.long	LFB14
+	.long	LFE14-LFB14
 	.uleb128 0x1
 	.byte	0x9c
 	.byte	0
