@@ -6,7 +6,7 @@
 
 /* the Interrupt table is set via the code linked to 0x00 and following ...   */
 /* interrupts are disabled during RESET exception and will be enabled by task system */
-Local OS_Exception_Read_Status_Registers(void)
+Local void OS_Exception_Read_Status_Registers(void)
 {
    #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
    #define FAULT_STATUS_REG     ((volatile uint32*)0xE000ED28u)
