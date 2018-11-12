@@ -8,11 +8,11 @@
 /* interrupts are disabled during RESET exception and will be enabled by task system */
 Local OS_Exception_Read_Status_Registers(void)
 {
-   #define HARDFAULT_STATUS_REG ((uint32*)0xE000ED2Cu)
-   #define FAULT_STATUS_REG     ((uint32*)0xE000ED28u)
-   #define MEM_FAULT_ADDR_REG   ((uint32*)0xE000ED34u) 
-   #define BUS_FAULT_ADDR_REG   ((uint32*)0xE000ED38u)
-   #define AUX_FAULT_STATUS_REG ((uint32*)0xE000ED3Cu)
+   #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
+   #define FAULT_STATUS_REG     ((volatile uint32*)0xE000ED28u)
+   #define MEM_FAULT_ADDR_REG   ((volatile uint32*)0xE000ED34u) 
+   #define BUS_FAULT_ADDR_REG   ((volatile uint32*)0xE000ED38u)
+   #define AUX_FAULT_STATUS_REG ((volatile uint32*)0xE000ED3Cu)
    VAR_HARDFAULT_STATUS_REG = *HARDFAULT_STATUS_REG;
    VAR_FAULT_STATUS_REG     = *FAULT_STATUS_REG;
    VAR_MEM_FAULT_ADDR_REG   = *MEM_FAULT_ADDR_REG;

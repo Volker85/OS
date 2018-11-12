@@ -2395,6 +2395,8 @@ TCMP4:
 	.ascii	"__SIZE_MAX__ 4294967295U\000"
 .LASF307:
 	.ascii	"__CHAR_UNSIGNED__ 1\000"
+.LASF428:
+	.ascii	"FAULT_STATUS_REG ((volatile uint32*)0xE000ED28u)\000"
 .LASF39:
 	.ascii	"__INT16_TYPE__ short int\000"
 .LASF170:
@@ -2480,6 +2482,8 @@ TCMP4:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF380:
 	.ascii	"Local static\000"
+.LASF429:
+	.ascii	"MEM_FAULT_ADDR_REG ((volatile uint32*)0xE000ED34u)\000"
 .LASF63:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
 .LASF385:
@@ -2505,6 +2509,9 @@ TCMP4:
 	.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
 .LASF357:
 	.ascii	"__USES_INITFINI__ 1\000"
+.LASF427:
+	.ascii	"HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu"
+	.ascii	")\000"
 .LASF168:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
 .LASF235:
@@ -2722,6 +2729,8 @@ TCMP4:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF313:
 	.ascii	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2\000"
+.LASF430:
+	.ascii	"BUS_FAULT_ADDR_REG ((volatile uint32*)0xE000ED38u)\000"
 .LASF98:
 	.ascii	"__INT_LEAST64_MAX__ 9223372036854775807LL\000"
 .LASF246:
@@ -2736,8 +2745,6 @@ TCMP4:
 	.ascii	"__UINT_LEAST16_MAX__ 65535\000"
 .LASF282:
 	.ascii	"__UDQ_FBIT__ 64\000"
-.LASF430:
-	.ascii	"BUS_FAULT_ADDR_REG ((uint32*)0xE000ED38u)\000"
 .LASF343:
 	.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
 .LASF284:
@@ -2790,8 +2797,6 @@ TCMP4:
 	.ascii	"_BASE_TYPES_H_ \000"
 .LASF135:
 	.ascii	"__FLT_HAS_INFINITY__ 1\000"
-.LASF431:
-	.ascii	"AUX_FAULT_STATUS_REG ((uint32*)0xE000ED3Cu)\000"
 .LASF426:
 	.ascii	"_os_start_os_h_ \000"
 .LASF0:
@@ -2820,8 +2825,6 @@ TCMP4:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
 .LASF18:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
-.LASF427:
-	.ascii	"HARDFAULT_STATUS_REG ((uint32*)0xE000ED2Cu)\000"
 .LASF460:
 	.ascii	"uint32\000"
 .LASF4:
@@ -2948,8 +2951,6 @@ TCMP4:
 	.ascii	"__GNUC_GNU_INLINE__ 1\000"
 .LASF181:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
-.LASF429:
-	.ascii	"MEM_FAULT_ADDR_REG ((uint32*)0xE000ED34u)\000"
 .LASF341:
 	.ascii	"__thumb__ 1\000"
 .LASF164:
@@ -2984,6 +2985,9 @@ TCMP4:
 	.ascii	"__ARM_FEATURE_SIMD32 1\000"
 .LASF187:
 	.ascii	"__SFRACT_IBIT__ 0\000"
+.LASF431:
+	.ascii	"AUX_FAULT_STATUS_REG ((volatile uint32*)0xE000ED3Cu"
+	.ascii	")\000"
 .LASF15:
 	.ascii	"__SIZEOF_LONG_LONG__ 8\000"
 .LASF42:
@@ -3187,8 +3191,6 @@ TCMP4:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
 .LASF148:
 	.ascii	"__DBL_HAS_DENORM__ 1\000"
-.LASF428:
-	.ascii	"FAULT_STATUS_REG ((uint32*)0xE000ED28u)\000"
 .LASF412:
 	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF301:

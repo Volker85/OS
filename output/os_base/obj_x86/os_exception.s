@@ -1760,19 +1760,19 @@ Ldebug_macro0:
 	.byte	0x4
 	.byte	0x1
 	.uleb128 0xb
-	.ascii "HARDFAULT_STATUS_REG ((uint32*)0xE000ED2Cu)\0"
+	.ascii "HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)\0"
 	.byte	0x1
 	.uleb128 0xc
-	.ascii "FAULT_STATUS_REG ((uint32*)0xE000ED28u)\0"
+	.ascii "FAULT_STATUS_REG ((volatile uint32*)0xE000ED28u)\0"
 	.byte	0x1
 	.uleb128 0xd
-	.ascii "MEM_FAULT_ADDR_REG ((uint32*)0xE000ED34u)\0"
+	.ascii "MEM_FAULT_ADDR_REG ((volatile uint32*)0xE000ED34u)\0"
 	.byte	0x1
 	.uleb128 0xe
-	.ascii "BUS_FAULT_ADDR_REG ((uint32*)0xE000ED38u)\0"
+	.ascii "BUS_FAULT_ADDR_REG ((volatile uint32*)0xE000ED38u)\0"
 	.byte	0x1
 	.uleb128 0xf
-	.ascii "AUX_FAULT_STATUS_REG ((uint32*)0xE000ED3Cu)\0"
+	.ascii "AUX_FAULT_STATUS_REG ((volatile uint32*)0xE000ED3Cu)\0"
 	.byte	0x4
 	.byte	0
 	.section	.debug_line,"dr"
