@@ -6,17 +6,32 @@
 
 /* the Interrupt table is set via the code linked to 0x00 and following ...   */
 /* interrupts are disabled during RESET exception and will be enabled by task system */
+Local OS_Exception_Read_Status_Registers(void)
+{
+   #define HARDFAULT_STATUS_REG ((uint32*)0xE000ED2Cu)
+   #define FAULT_STATUS_REG     ((uint32*)0xE000ED28u)
+   #define MEM_FAULT_ADDR_REG   ((uint32*)0xE000ED34u) 
+   #define BUS_FAULT_ADDR_REG   ((uint32*)0xE000ED38u)
+   #define AUX_FAULT_STATUS_REG ((uint32*)0xE000ED3Cu)
+   VAR_HARDFAULT_STATUS_REG = *HARDFAULT_STATUS_REG;
+   VAR_FAULT_STATUS_REG     = *FAULT_STATUS_REG;
+   VAR_MEM_FAULT_ADDR_REG   = *MEM_FAULT_ADDR_REG;
+   VAR_BUS_FAULT_ADDR_REG   = *BUS_FAULT_ADDR_REG;
+   VAR_AUX_FAULT_STATUS_REG = *AUX_FAULT_STATUS_REG; 
+}
+
+
 void OS_Exception_HARDFAULT(void)
 {
-   volatile uint32 ERROR_HARDFAULT = 0;
-   ERROR_HARDFAULT = *((uint32*)0xE000ED2Cu);
-   /*#error "Hardfault generate, use the hardfault exception status register for reason"*/
+   OS_Exception_Read_Status_Registers();
    while(1){}
+   OS_SHUTDOWN(os_reset_hardreset);
 }
 
 
 void OS_Exception_NMI(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
@@ -28,24 +43,28 @@ void OS_Exception_SWI(void)
 }
 void OS_Exception_BUS_FAULT(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
 
 void OS_Exception_DEBUG(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
 
 void OS_Exception_MEM_MANAG_FAULT(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
 
 void OS_Exception_USAGE_FAULT(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }

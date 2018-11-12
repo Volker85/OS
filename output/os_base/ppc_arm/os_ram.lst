@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM8WzI4.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccXYDCSv.s 			page 1
 
 
    1              		.syntax unified
@@ -21,10 +21,15 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM8WzI4.s 			page 1
   18              		.comm	HEAP,10000,4
   19              		.comm	OS_STACK,256,4
   20              		.comm	OS_MAIN_STACK,256,4
-  21              	.Letext0:
-  22              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-  23              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM8WzI4.s 			page 2
+  21              		.comm	VAR_HARDFAULT_STATUS_REG,4,4
+  22              		.comm	VAR_FAULT_STATUS_REG,4,4
+  23              		.comm	VAR_MEM_FAULT_ADDR_REG,4,4
+  24              		.comm	VAR_BUS_FAULT_ADDR_REG,4,4
+  25              		.comm	VAR_AUX_FAULT_STATUS_REG,4,4
+  26              	.Letext0:
+  27              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  28              		.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccXYDCSv.s 			page 2
 
 
 DEFINED SYMBOLS
@@ -32,6 +37,11 @@ DEFINED SYMBOLS
                             *COM*:00002710 HEAP
                             *COM*:00000100 OS_STACK
                             *COM*:00000100 OS_MAIN_STACK
+                            *COM*:00000004 VAR_HARDFAULT_STATUS_REG
+                            *COM*:00000004 VAR_FAULT_STATUS_REG
+                            *COM*:00000004 VAR_MEM_FAULT_ADDR_REG
+                            *COM*:00000004 VAR_BUS_FAULT_ADDR_REG
+                            *COM*:00000004 VAR_AUX_FAULT_STATUS_REG
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.d75289bcbcba9f0e2c2ffeda9394ea88

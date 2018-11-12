@@ -15,7 +15,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 62 0
-	movl	_OS_STATE.1270, %eax
+	movl	_OS_STATE.1275, %eax
 	cmpl	$1, %eax
 	je	L3
 	cmpl	$1, %eax
@@ -36,7 +36,7 @@ L4:
 	.loc 1 76 0
 	call	_OS_ACTIVATE_DISPATCHER
 	.loc 1 78 0
-	movl	$1, _OS_STATE.1270
+	movl	$1, _OS_STATE.1275
 	.loc 1 80 0
 	call	_LLF_INT_ENABLE
 	.loc 1 81 0
@@ -50,7 +50,7 @@ L5:
 	.loc 1 90 0
 	call	_LLF_INT_DISABLE
 	.loc 1 91 0
-	movl	_sys_req_reset_state.1271, %eax
+	movl	_sys_req_reset_state.1276, %eax
 	testl	%eax, %eax
 	je	L8
 	cmpl	$1, %eax
@@ -81,8 +81,8 @@ L1:
 	ret
 	.cfi_endproc
 LFE0:
-.lcomm _OS_STATE.1270,4,4
-.lcomm _sys_req_reset_state.1271,4,4
+.lcomm _OS_STATE.1275,4,4
+.lcomm _sys_req_reset_state.1276,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.section	.debug_info,"dr"
@@ -182,7 +182,7 @@ Ldebug_info0:
 	.long	0x153
 	.uleb128 0x5
 	.byte	0x3
-	.long	_OS_STATE.1270
+	.long	_OS_STATE.1275
 	.uleb128 0x7
 	.ascii "sys_req_reset_state\0"
 	.byte	0x1
@@ -190,7 +190,7 @@ Ldebug_info0:
 	.long	0x1a5
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1271
+	.long	_sys_req_reset_state.1276
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"dr"

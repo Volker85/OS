@@ -377,6 +377,11 @@ extern unsigned_char_t HEAP[10000];
 
 extern unsigned_char_t OS_STACK[1][0x100];
 extern unsigned_char_t OS_MAIN_STACK[0x100];
+extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
+extern volatile uint32 VAR_FAULT_STATUS_REG ;
+extern volatile uint32 VAR_MEM_FAULT_ADDR_REG ;
+extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
+extern volatile uint32 VAR_AUX_FAULT_STATUS_REG;
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 
@@ -638,17 +643,32 @@ extern void OS_START_OS(void);
 
 
 
+static OS_Exception_Read_Status_Registers(void)
+{
+#define HARDFAULT_STATUS_REG ((uint32*)0xE000ED2Cu)
+#define FAULT_STATUS_REG ((uint32*)0xE000ED28u)
+#define MEM_FAULT_ADDR_REG ((uint32*)0xE000ED34u)
+#define BUS_FAULT_ADDR_REG ((uint32*)0xE000ED38u)
+#define AUX_FAULT_STATUS_REG ((uint32*)0xE000ED3Cu)
+   VAR_HARDFAULT_STATUS_REG = *((uint32*)0xE000ED2Cu);
+   VAR_FAULT_STATUS_REG = *((uint32*)0xE000ED28u);
+   VAR_MEM_FAULT_ADDR_REG = *((uint32*)0xE000ED34u);
+   VAR_BUS_FAULT_ADDR_REG = *((uint32*)0xE000ED38u);
+   VAR_AUX_FAULT_STATUS_REG = *((uint32*)0xE000ED3Cu);
+}
+
+
 void OS_Exception_HARDFAULT(void)
 {
-   volatile uint32 ERROR_HARDFAULT = 0;
-   ERROR_HARDFAULT = *((uint32*)0xE000ED2Cu);
-
+   OS_Exception_Read_Status_Registers();
    while(1){}
+   OS_SHUTDOWN(os_reset_hardreset);
 }
 
 
 void OS_Exception_NMI(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
@@ -660,24 +680,28 @@ void OS_Exception_SWI(void)
 }
 void OS_Exception_BUS_FAULT(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
 
 void OS_Exception_DEBUG(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
 
 void OS_Exception_MEM_MANAG_FAULT(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }
 
 void OS_Exception_USAGE_FAULT(void)
 {
+   OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }

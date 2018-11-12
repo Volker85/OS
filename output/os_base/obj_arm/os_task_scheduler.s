@@ -937,19 +937,19 @@ OS_INIT_TASKS:
 	.align	2
 .L62:
 	.word	LAST_CURRENT_TIME
-	.word	task_0.4038
-	.word	TASK_GROUP_1.4042
+	.word	task_0.4043
+	.word	TASK_GROUP_1.4047
 	.word	TASK_STACK
 	.word	TASK_0
-	.word	task_1.4039
+	.word	task_1.4044
 	.word	TASK_STACK+200
 	.word	TASK_1
-	.word	task_2.4040
-	.word	TASK_GROUP_2.4043
+	.word	task_2.4045
+	.word	TASK_GROUP_2.4048
 	.word	TASK_STACK+400
 	.word	TASK_2
-	.word	task_3.4041
-	.word	TASK_GROUP_3.4044
+	.word	task_3.4046
+	.word	TASK_GROUP_3.4049
 	.word	TASK_STACK+600
 	.word	TASK_3
 	.cfi_endproc
@@ -1230,10 +1230,10 @@ OS_TaskScheduler:
 	.align	2
 .L82:
 	.word	LAST_CURRENT_TIME
-	.word	link_list_member.4054
-	.word	task.4051
+	.word	link_list_member.4059
+	.word	task.4056
 	.word	1072693248
-	.word	Winner_prio.4052
+	.word	Winner_prio.4057
 	.cfi_endproc
 .LFE12:
 	.size	OS_TaskScheduler, .-OS_TaskScheduler
@@ -1347,39 +1347,39 @@ ISR_TASK_DISPATCH_C3:
 	.size	ISR_TASK_DISPATCH_C3, .-ISR_TASK_DISPATCH_C3
 	.bss
 	.align	2
-TASK_GROUP_1.4042:
+TASK_GROUP_1.4047:
 	.space	8
 	.align	2
-TASK_GROUP_2.4043:
+TASK_GROUP_2.4048:
 	.space	8
 	.align	2
-TASK_GROUP_3.4044:
+TASK_GROUP_3.4049:
 	.space	8
 	.align	2
-TASK_GROUP_4.4045:
+TASK_GROUP_4.4050:
 	.space	8
 	.align	2
-TASK_GROUP_5.4046:
+TASK_GROUP_5.4051:
 	.space	8
 	.align	2
-task_0.4038:
+task_0.4043:
 	.space	132
 	.align	2
-task_1.4039:
+task_1.4044:
 	.space	132
 	.align	2
-task_2.4040:
+task_2.4045:
 	.space	132
 	.align	2
-task_3.4041:
+task_3.4046:
 	.space	132
 	.align	2
-link_list_member.4054:
+link_list_member.4059:
 	.space	4
 	.align	2
-task.4051:
+task.4056:
 	.space	4
-Winner_prio.4052:
+Winner_prio.4057:
 	.space	1
 	.text
 .Letext0:
@@ -2106,7 +2106,7 @@ Winner_prio.4052:
 	.4byte	0x374
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	task_0.4038
+	.4byte	task_0.4043
 	.uleb128 0x17
 	.4byte	.LASF520
 	.byte	0x1
@@ -2114,7 +2114,7 @@ Winner_prio.4052:
 	.4byte	0x374
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	task_1.4039
+	.4byte	task_1.4044
 	.uleb128 0x17
 	.4byte	.LASF521
 	.byte	0x1
@@ -2122,7 +2122,7 @@ Winner_prio.4052:
 	.4byte	0x374
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	task_2.4040
+	.4byte	task_2.4045
 	.uleb128 0x17
 	.4byte	.LASF522
 	.byte	0x1
@@ -2130,7 +2130,7 @@ Winner_prio.4052:
 	.4byte	0x374
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	task_3.4041
+	.4byte	task_3.4046
 	.uleb128 0x17
 	.4byte	.LASF523
 	.byte	0x1
@@ -2138,7 +2138,7 @@ Winner_prio.4052:
 	.4byte	0x180
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	TASK_GROUP_1.4042
+	.4byte	TASK_GROUP_1.4047
 	.uleb128 0x17
 	.4byte	.LASF524
 	.byte	0x1
@@ -2146,7 +2146,7 @@ Winner_prio.4052:
 	.4byte	0x180
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	TASK_GROUP_2.4043
+	.4byte	TASK_GROUP_2.4048
 	.uleb128 0x17
 	.4byte	.LASF525
 	.byte	0x1
@@ -2154,7 +2154,7 @@ Winner_prio.4052:
 	.4byte	0x180
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	TASK_GROUP_3.4044
+	.4byte	TASK_GROUP_3.4049
 	.uleb128 0x17
 	.4byte	.LASF526
 	.byte	0x1
@@ -2162,7 +2162,7 @@ Winner_prio.4052:
 	.4byte	0x180
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	TASK_GROUP_4.4045
+	.4byte	TASK_GROUP_4.4050
 	.uleb128 0x17
 	.4byte	.LASF527
 	.byte	0x1
@@ -2170,7 +2170,7 @@ Winner_prio.4052:
 	.4byte	0x180
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	TASK_GROUP_5.4046
+	.4byte	TASK_GROUP_5.4051
 	.uleb128 0x17
 	.4byte	.LASF514
 	.byte	0x1
@@ -2197,7 +2197,7 @@ Winner_prio.4052:
 	.4byte	0x3e3
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	task.4051
+	.4byte	task.4056
 	.uleb128 0x17
 	.4byte	.LASF528
 	.byte	0x1
@@ -2205,7 +2205,7 @@ Winner_prio.4052:
 	.4byte	0x25
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	Winner_prio.4052
+	.4byte	Winner_prio.4057
 	.uleb128 0x17
 	.4byte	.LASF529
 	.byte	0x1
@@ -2221,7 +2221,7 @@ Winner_prio.4052:
 	.4byte	0x6bb
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	link_list_member.4054
+	.4byte	link_list_member.4059
 	.uleb128 0x17
 	.4byte	.LASF531
 	.byte	0x1

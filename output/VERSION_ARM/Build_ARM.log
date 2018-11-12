@@ -1,12 +1,15 @@
 "Target_ARM" 
-11.11.2018 13:01:53,12 
+12.11.2018 19:46:47,07 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_HARDFAULT':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20: warning: variable 'ERROR_HARDFAULT' set but not used [-Wunused-but-set-variable]
-    volatile uint32 ERROR_HARDFAULT = 0;
-                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:9:7: warning: return type defaults to 'int' [-Wreturn-type]
+ Local OS_Exception_Read_Status_Registers(void)
+       ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Read_Status_Registers':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
     (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^
@@ -761,10 +764,13 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:
     &OS_Exception_IRQ+1u           /*        IRQ239                       */    
                      ^
 "assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_HARDFAULT':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:11:20: warning: variable 'ERROR_HARDFAULT' set but not used [-Wunused-but-set-variable]
-    volatile uint32 ERROR_HARDFAULT = 0;
-                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:9:7: warning: return type defaults to 'int' [-Wreturn-type]
+ Local OS_Exception_Read_Status_Registers(void)
+       ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Read_Status_Registers':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
     (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^

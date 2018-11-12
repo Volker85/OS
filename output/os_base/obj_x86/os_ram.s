@@ -4,12 +4,17 @@ Ltext0:
 	.comm	_HEAP, 10000, 5
 	.comm	_OS_STACK, 256, 5
 	.comm	_OS_MAIN_STACK, 256, 5
+	.comm	_VAR_HARDFAULT_STATUS_REG, 4, 2
+	.comm	_VAR_FAULT_STATUS_REG, 4, 2
+	.comm	_VAR_MEM_FAULT_ADDR_REG, 4, 2
+	.comm	_VAR_BUS_FAULT_ADDR_REG, 4, 2
+	.comm	_VAR_AUX_FAULT_STATUS_REG, 4, 2
 Letext0:
-	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_ram.c"
-	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
+	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
+	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_ram.c"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x168
+	.long	0x231
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -21,7 +26,7 @@ Ldebug_info0:
 	.secrel32	Ldebug_macro0
 	.uleb128 0x2
 	.ascii "unsigned_char_t\0"
-	.byte	0x2
+	.byte	0x1
 	.byte	0x1d
 	.long	0x99
 	.uleb128 0x3
@@ -36,18 +41,23 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
+	.uleb128 0x2
+	.ascii "uint32\0"
+	.byte	0x1
+	.byte	0x23
+	.long	0xc0
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
 	.ascii "unsigned int\0"
 	.uleb128 0x4
 	.long	0x82
-	.long	0xfb
+	.long	0x109
 	.uleb128 0x5
-	.long	0xfb
+	.long	0x109
 	.byte	0
 	.uleb128 0x5
-	.long	0xfb
+	.long	0x109
 	.byte	0xff
 	.byte	0
 	.uleb128 0x3
@@ -56,42 +66,84 @@ Ldebug_info0:
 	.ascii "sizetype\0"
 	.uleb128 0x6
 	.ascii "OS_STACK\0"
-	.byte	0x1
+	.byte	0x2
 	.byte	0x9
-	.long	0xe5
+	.long	0xf3
 	.uleb128 0x5
 	.byte	0x3
 	.long	_OS_STACK
 	.uleb128 0x4
 	.long	0x82
-	.long	0x12e
+	.long	0x13c
 	.uleb128 0x7
-	.long	0xfb
+	.long	0x109
 	.word	0x270f
 	.byte	0
 	.uleb128 0x6
 	.ascii "HEAP\0"
-	.byte	0x1
+	.byte	0x2
 	.byte	0x6
-	.long	0x11d
+	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
 	.long	_HEAP
 	.uleb128 0x4
 	.long	0x82
-	.long	0x150
+	.long	0x15e
 	.uleb128 0x5
-	.long	0xfb
+	.long	0x109
 	.byte	0xff
 	.byte	0
 	.uleb128 0x6
 	.ascii "OS_MAIN_STACK\0"
-	.byte	0x1
+	.byte	0x2
 	.byte	0xa
-	.long	0x140
+	.long	0x14e
 	.uleb128 0x5
 	.byte	0x3
 	.long	_OS_MAIN_STACK
+	.uleb128 0x6
+	.ascii "VAR_HARDFAULT_STATUS_REG\0"
+	.byte	0x2
+	.byte	0xb
+	.long	0x19f
+	.uleb128 0x5
+	.byte	0x3
+	.long	_VAR_HARDFAULT_STATUS_REG
+	.uleb128 0x8
+	.long	0xd5
+	.uleb128 0x6
+	.ascii "VAR_FAULT_STATUS_REG\0"
+	.byte	0x2
+	.byte	0xc
+	.long	0x19f
+	.uleb128 0x5
+	.byte	0x3
+	.long	_VAR_FAULT_STATUS_REG
+	.uleb128 0x6
+	.ascii "VAR_MEM_FAULT_ADDR_REG\0"
+	.byte	0x2
+	.byte	0xd
+	.long	0x19f
+	.uleb128 0x5
+	.byte	0x3
+	.long	_VAR_MEM_FAULT_ADDR_REG
+	.uleb128 0x6
+	.ascii "VAR_BUS_FAULT_ADDR_REG\0"
+	.byte	0x2
+	.byte	0xe
+	.long	0x19f
+	.uleb128 0x5
+	.byte	0x3
+	.long	_VAR_BUS_FAULT_ADDR_REG
+	.uleb128 0x6
+	.ascii "VAR_AUX_FAULT_STATUS_REG\0"
+	.byte	0x2
+	.byte	0xf
+	.long	0x19f
+	.uleb128 0x5
+	.byte	0x3
+	.long	_VAR_AUX_FAULT_STATUS_REG
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -176,6 +228,13 @@ Ldebug_abbrev0:
 	.uleb128 0x13
 	.uleb128 0x2f
 	.uleb128 0x5
+	.byte	0
+	.byte	0
+	.uleb128 0x8
+	.uleb128 0x35
+	.byte	0
+	.uleb128 0x49
+	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.byte	0
@@ -889,7 +948,7 @@ Ldebug_macro0:
 	.ascii "CFG_PROCESSOR 3\0"
 	.byte	0x3
 	.uleb128 0
-	.uleb128 0x1
+	.uleb128 0x2
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x1
@@ -899,7 +958,7 @@ Ldebug_macro0:
 	.ascii "_os_firstinc_h_ \0"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x2
+	.uleb128 0x1
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_BASE_TYPES_H_ \0"
