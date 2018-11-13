@@ -332,7 +332,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x3c1
+	.long	0x3b6
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -382,15 +382,10 @@ Ldebug_info0:
 	.ascii "OS_Exception_Read_Status_Registers\0"
 	.byte	0x1
 	.byte	0x9
-	.long	0x161
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
 	.uleb128 0x7
 	.ascii "OS_Exception_HARDFAULT\0"
 	.byte	0x1
@@ -515,29 +510,29 @@ Ldebug_info0:
 	.ascii "VAR_HARDFAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0xe
-	.long	0x347
+	.long	0x33c
 	.uleb128 0xa
 	.long	0xcc
 	.uleb128 0x9
 	.ascii "VAR_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0xf
-	.long	0x347
+	.long	0x33c
 	.uleb128 0x9
 	.ascii "VAR_MEM_FAULT_ADDR_REG\0"
 	.byte	0x2
 	.byte	0x10
-	.long	0x347
+	.long	0x33c
 	.uleb128 0x9
 	.ascii "VAR_BUS_FAULT_ADDR_REG\0"
 	.byte	0x2
 	.byte	0x11
-	.long	0x347
+	.long	0x33c
 	.uleb128 0x9
 	.ascii "VAR_AUX_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x12
-	.long	0x347
+	.long	0x33c
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -619,8 +614,6 @@ Ldebug_abbrev0:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12

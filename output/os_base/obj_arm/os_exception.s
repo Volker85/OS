@@ -58,7 +58,6 @@ OS_Exception_Read_Status_Registers:
 	ldr	r2, .L2+36
 	str	r3, [r2]
 	.loc 1 21 0
-	mov	r0, r3
 	mov	sp, r7
 	.cfi_def_cfa_register 13
 	@ sp needed
@@ -452,7 +451,7 @@ TCMP4:
 	.file 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x1b9
+	.4byte	0x1ae
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -502,16 +501,11 @@ TCMP4:
 	.4byte	.LASF462
 	.byte	0x1
 	.byte	0x9
-	.4byte	0x7a
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x7
-	.byte	0x4
-	.byte	0x5
-	.ascii	"int\000"
-	.uleb128 0x8
 	.4byte	.LASF438
 	.byte	0x1
 	.byte	0x18
@@ -519,7 +513,7 @@ TCMP4:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF439
 	.byte	0x1
 	.byte	0x20
@@ -527,7 +521,7 @@ TCMP4:
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF440
 	.byte	0x1
 	.byte	0x26
@@ -535,7 +529,7 @@ TCMP4:
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF441
 	.byte	0x1
 	.byte	0x2c
@@ -543,7 +537,7 @@ TCMP4:
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF442
 	.byte	0x1
 	.byte	0x33
@@ -551,7 +545,7 @@ TCMP4:
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF443
 	.byte	0x1
 	.byte	0x3a
@@ -559,7 +553,7 @@ TCMP4:
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF444
 	.byte	0x1
 	.byte	0x41
@@ -567,7 +561,7 @@ TCMP4:
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x9
+	.uleb128 0x8
 	.4byte	.LASF445
 	.byte	0x1
 	.byte	0x48
@@ -575,7 +569,7 @@ TCMP4:
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x9
+	.uleb128 0x8
 	.4byte	.LASF446
 	.byte	0x1
 	.byte	0x4e
@@ -583,7 +577,7 @@ TCMP4:
 	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF447
 	.byte	0x1
 	.byte	0x54
@@ -591,7 +585,7 @@ TCMP4:
 	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF448
 	.byte	0x1
 	.byte	0x58
@@ -599,7 +593,7 @@ TCMP4:
 	.4byte	.LFE11-.LFB11
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF449
 	.byte	0x1
 	.byte	0x5e
@@ -607,7 +601,7 @@ TCMP4:
 	.4byte	.LFE12-.LFB12
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF450
 	.byte	0x1
 	.byte	0x62
@@ -615,7 +609,7 @@ TCMP4:
 	.4byte	.LFE13-.LFB13
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF451
 	.byte	0x1
 	.byte	0x66
@@ -623,7 +617,7 @@ TCMP4:
 	.4byte	.LFE14-.LFB14
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x8
+	.uleb128 0x7
 	.4byte	.LASF452
 	.byte	0x1
 	.byte	0x6a
@@ -631,33 +625,33 @@ TCMP4:
 	.4byte	.LFE15-.LFB15
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0xa
+	.uleb128 0x9
 	.4byte	.LASF453
 	.byte	0x2
 	.byte	0xe
-	.4byte	0x18b
-	.uleb128 0xb
-	.4byte	0x3a
+	.4byte	0x180
 	.uleb128 0xa
+	.4byte	0x3a
+	.uleb128 0x9
 	.4byte	.LASF454
 	.byte	0x2
 	.byte	0xf
-	.4byte	0x18b
-	.uleb128 0xa
+	.4byte	0x180
+	.uleb128 0x9
 	.4byte	.LASF455
 	.byte	0x2
 	.byte	0x10
-	.4byte	0x18b
-	.uleb128 0xa
+	.4byte	0x180
+	.uleb128 0x9
 	.4byte	.LASF456
 	.byte	0x2
 	.byte	0x11
-	.4byte	0x18b
-	.uleb128 0xa
+	.4byte	0x180
+	.uleb128 0x9
 	.4byte	.LASF457
 	.byte	0x2
 	.byte	0x12
-	.4byte	0x18b
+	.4byte	0x180
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -739,8 +733,6 @@ TCMP4:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -752,17 +744,6 @@ TCMP4:
 	.byte	0
 	.byte	0
 	.uleb128 0x7
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0x8
-	.byte	0
-	.byte	0
-	.uleb128 0x8
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -785,7 +766,7 @@ TCMP4:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x9
+	.uleb128 0x8
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -808,7 +789,7 @@ TCMP4:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0xa
+	.uleb128 0x9
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -825,7 +806,7 @@ TCMP4:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0xb
+	.uleb128 0xa
 	.uleb128 0x35
 	.byte	0
 	.uleb128 0x49
