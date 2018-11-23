@@ -476,8 +476,6 @@ typedef void (*func_ptr_t)(void);
 #define OS_STACK_SIZE 0x100
 
 #define OS_STACK_SIZE_END 0x01u
-
-extern unsigned_char_t OS_STACK[1][0x100];
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 
@@ -492,7 +490,7 @@ extern unsigned_char_t OS_STACK[1][0x100];
 #define HEAP_OFFSET_FOR_USED_SIZE 4
 #define HEAP_OFFSET_FOR_CHUNK 8
 
-extern uint8 HEAP[10000];
+
 
 extern void* os_calloc(uint32 num, uint32 size);
 extern void* os_realloc(void* ptr_old, uint32 size_new);
@@ -513,6 +511,7 @@ extern volatile uint32 VAR_FAULT_STATUS_REG ;
 extern volatile uint32 VAR_MEM_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_AUX_FAULT_STATUS_REG;
+extern volatile uint32 VAR_BUS_FAULT_STATUS_REG;
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 
@@ -725,7 +724,9 @@ extern void OS_ISRHANDLERC1(void);
 extern void OS_ISRHANDLERC2(void);
 extern void OS_ISRHANDLERC3(void);
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c" 2
-# 24 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
+#pragma GCC diagnostic ignored "-Wpedantic"
+#pragma GCC diagnostic ignored "-Wpointer-arith"
+# 26 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
 func_ptr_t isr_vec_table[] =
 {
    (func_ptr_t)(&OS_MAIN_STACK+0x01u),

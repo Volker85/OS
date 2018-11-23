@@ -1,5 +1,628 @@
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Read_Status_Registers':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:20:4: error: 'VAR_BUS_FAULT_STATUS_REG' undeclared (first use in this function)
-    VAR_BUS_FAULT_STATUS_REG   = *BUS_FAULT_STATUS_REG;
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:20:4: note: each undeclared identifier is reported only once for each function it appears in
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"os_exception.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.align	2
+  19              		.thumb
+  20              		.thumb_func
+  22              	OS_Exception_Read_Status_Registers:
+  23              	.LFB0:
+  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** #include "os_firstinc.h"
+   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** #include "os_exception_isr_handler.h"
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** #include "os_shutdown.h"
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** #include "os_start_os.h"
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** #include "os_ram.h"
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** /* the Interrupt table is set via the code linked to 0x00 and following ...   */
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** /* interrupts are disabled during RESET exception and will be enabled by task system */
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** Local void OS_Exception_Read_Status_Registers(void)
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+  25              		.loc 1 10 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 0
+  28              		@ frame_needed = 1, uses_anonymous_args = 0
+  29              		@ link register save eliminated.
+  30 0000 80B4     		push	{r7}
+  31              		.cfi_def_cfa_offset 4
+  32              		.cfi_offset 7, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              		.cfi_def_cfa_register 7
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    #define MEM_MANAG_FAULT_STATUS_REG     ((volatile uint8*)0xE000ED28u)
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    #define BUS_FAULT_STATUS_REG     ((volatile uint8*)0xE000ED29u)
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    #define USAGE_FAULT_STATUS_REG     ((volatile uint16*)0xE000ED2Au)
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    #define MEM_FAULT_ADDR_REG   ((volatile uint32*)0xE000ED34u) 
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    #define BUS_FAULT_ADDR_REG   ((volatile uint32*)0xE000ED38u)
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    #define AUX_FAULT_STATUS_REG ((volatile uint32*)0xE000ED3Cu)
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    VAR_HARDFAULT_STATUS_REG = *HARDFAULT_STATUS_REG;
+  35              		.loc 1 18 0
+  36 0004 124B     		ldr	r3, .L2
+  37 0006 1B68     		ldr	r3, [r3]
+  38 0008 124A     		ldr	r2, .L2+4
+  39 000a 1360     		str	r3, [r2]
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    VAR_MEM_MANAG_FAULT_STATUS_REG     = *MEM_MANAG_FAULT_STATUS_REG;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 2
+
+
+  40              		.loc 1 19 0
+  41 000c 124B     		ldr	r3, .L2+8
+  42 000e 1B78     		ldrb	r3, [r3]
+  43 0010 DBB2     		uxtb	r3, r3
+  44 0012 1A46     		mov	r2, r3
+  45 0014 114B     		ldr	r3, .L2+12
+  46 0016 1A60     		str	r2, [r3]
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    VAR_BUS_FAULT_STATUS_REG   = *BUS_FAULT_STATUS_REG;
+  47              		.loc 1 20 0
+  48 0018 114B     		ldr	r3, .L2+16
+  49 001a 1B78     		ldrb	r3, [r3]
+  50 001c DBB2     		uxtb	r3, r3
+  51 001e 1A46     		mov	r2, r3
+  52 0020 104B     		ldr	r3, .L2+20
+  53 0022 1A60     		str	r2, [r3]
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    VAR_USAGE_FAULT_STATUS_REG = *USAGE_FAULT_STATUS_REG;
+  54              		.loc 1 21 0
+  55 0024 104B     		ldr	r3, .L2+24
+  56 0026 1B88     		ldrh	r3, [r3]	@ movhi
+  57 0028 9BB2     		uxth	r3, r3
+  58 002a 1A46     		mov	r2, r3
+  59 002c 0F4B     		ldr	r3, .L2+28
+  60 002e 1A60     		str	r2, [r3]
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    VAR_MEM_FAULT_ADDR_REG   = *MEM_FAULT_ADDR_REG;
+  61              		.loc 1 22 0
+  62 0030 0F4B     		ldr	r3, .L2+32
+  63 0032 1B68     		ldr	r3, [r3]
+  64 0034 0F4A     		ldr	r2, .L2+36
+  65 0036 1360     		str	r3, [r2]
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    VAR_BUS_FAULT_ADDR_REG   = *BUS_FAULT_ADDR_REG;
+  66              		.loc 1 23 0
+  67 0038 0F4B     		ldr	r3, .L2+40
+  68 003a 1B68     		ldr	r3, [r3]
+  69 003c 0F4A     		ldr	r2, .L2+44
+  70 003e 1360     		str	r3, [r2]
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    VAR_AUX_FAULT_STATUS_REG = *AUX_FAULT_STATUS_REG; 
+  71              		.loc 1 24 0
+  72 0040 0F4B     		ldr	r3, .L2+48
+  73 0042 1B68     		ldr	r3, [r3]
+  74 0044 0F4A     		ldr	r2, .L2+52
+  75 0046 1360     		str	r3, [r2]
+  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+  76              		.loc 1 25 0
+  77 0048 BD46     		mov	sp, r7
+  78              		.cfi_def_cfa_register 13
+  79              		@ sp needed
+  80 004a 5DF8047B 		ldr	r7, [sp], #4
+  81              		.cfi_restore 7
+  82              		.cfi_def_cfa_offset 0
+  83 004e 7047     		bx	lr
+  84              	.L3:
+  85              		.align	2
+  86              	.L2:
+  87 0050 2CED00E0 		.word	-536810196
+  88 0054 00000000 		.word	VAR_HARDFAULT_STATUS_REG
+  89 0058 28ED00E0 		.word	-536810200
+  90 005c 00000000 		.word	VAR_MEM_MANAG_FAULT_STATUS_REG
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 3
+
+
+  91 0060 29ED00E0 		.word	-536810199
+  92 0064 00000000 		.word	VAR_BUS_FAULT_STATUS_REG
+  93 0068 2AED00E0 		.word	-536810198
+  94 006c 00000000 		.word	VAR_USAGE_FAULT_STATUS_REG
+  95 0070 34ED00E0 		.word	-536810188
+  96 0074 00000000 		.word	VAR_MEM_FAULT_ADDR_REG
+  97 0078 38ED00E0 		.word	-536810184
+  98 007c 00000000 		.word	VAR_BUS_FAULT_ADDR_REG
+  99 0080 3CED00E0 		.word	-536810180
+ 100 0084 00000000 		.word	VAR_AUX_FAULT_STATUS_REG
+ 101              		.cfi_endproc
+ 102              	.LFE0:
+ 104              		.align	2
+ 105              		.global	OS_Exception_HARDFAULT
+ 106              		.thumb
+ 107              		.thumb_func
+ 109              	OS_Exception_HARDFAULT:
+ 110              	.LFB1:
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_HARDFAULT(void)
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 111              		.loc 1 29 0
+ 112              		.cfi_startproc
+ 113              		@ args = 0, pretend = 0, frame = 0
+ 114              		@ frame_needed = 1, uses_anonymous_args = 0
+ 115 0088 80B5     		push	{r7, lr}
+ 116              		.cfi_def_cfa_offset 8
+ 117              		.cfi_offset 7, -8
+ 118              		.cfi_offset 14, -4
+ 119 008a 00AF     		add	r7, sp, #0
+ 120              		.cfi_def_cfa_register 7
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+ 121              		.loc 1 30 0
+ 122 008c FFF7B8FF 		bl	OS_Exception_Read_Status_Registers
+ 123              	.L5:
+  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    while(1){}
+ 124              		.loc 1 31 0 discriminator 1
+ 125 0090 FEE7     		b	.L5
+ 126              		.cfi_endproc
+ 127              	.LFE1:
+ 129 0092 00BF     		.align	2
+ 130              		.global	OS_Exception_NMI
+ 131              		.thumb
+ 132              		.thumb_func
+ 134              	OS_Exception_NMI:
+ 135              	.LFB2:
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_NMI(void)
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 136              		.loc 1 37 0
+ 137              		.cfi_startproc
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 4
+
+
+ 140 0094 80B5     		push	{r7, lr}
+ 141              		.cfi_def_cfa_offset 8
+ 142              		.cfi_offset 7, -8
+ 143              		.cfi_offset 14, -4
+ 144 0096 00AF     		add	r7, sp, #0
+ 145              		.cfi_def_cfa_register 7
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+ 146              		.loc 1 38 0
+ 147 0098 FFF7B2FF 		bl	OS_Exception_Read_Status_Registers
+ 148              	.L7:
+  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    while(1){}
+ 149              		.loc 1 39 0 discriminator 1
+ 150 009c FEE7     		b	.L7
+ 151              		.cfi_endproc
+ 152              	.LFE2:
+ 154 009e 00BF     		.align	2
+ 155              		.global	OS_Exception_SWI
+ 156              		.thumb
+ 157              		.thumb_func
+ 159              	OS_Exception_SWI:
+ 160              	.LFB3:
+  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_SWI(void)
+  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 161              		.loc 1 43 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 165 00a0 80B5     		push	{r7, lr}
+ 166              		.cfi_def_cfa_offset 8
+ 167              		.cfi_offset 7, -8
+ 168              		.cfi_offset 14, -4
+ 169 00a2 00AF     		add	r7, sp, #0
+ 170              		.cfi_def_cfa_register 7
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    /* Mode: Supervisor:
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****      Exception SWI is entered, in case a user mode program executed the assembler code "SWI" (SoftW
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_ISRHANDLERC0();
+ 171              		.loc 1 46 0
+ 172 00a4 FFF7FEFF 		bl	OS_ISRHANDLERC0
+  47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+ 173              		.loc 1 47 0
+ 174 00a8 80BD     		pop	{r7, pc}
+ 175              		.cfi_endproc
+ 176              	.LFE3:
+ 178 00aa 00BF     		.align	2
+ 179              		.global	OS_Exception_BUS_FAULT
+ 180              		.thumb
+ 181              		.thumb_func
+ 183              	OS_Exception_BUS_FAULT:
+ 184              	.LFB4:
+  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_BUS_FAULT(void)
+  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 185              		.loc 1 49 0
+ 186              		.cfi_startproc
+ 187              		@ args = 0, pretend = 0, frame = 0
+ 188              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 5
+
+
+ 189 00ac 80B5     		push	{r7, lr}
+ 190              		.cfi_def_cfa_offset 8
+ 191              		.cfi_offset 7, -8
+ 192              		.cfi_offset 14, -4
+ 193 00ae 00AF     		add	r7, sp, #0
+ 194              		.cfi_def_cfa_register 7
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+ 195              		.loc 1 50 0
+ 196 00b0 FFF7A6FF 		bl	OS_Exception_Read_Status_Registers
+ 197              	.L10:
+  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    while(1){}
+ 198              		.loc 1 51 0 discriminator 1
+ 199 00b4 FEE7     		b	.L10
+ 200              		.cfi_endproc
+ 201              	.LFE4:
+ 203 00b6 00BF     		.align	2
+ 204              		.global	OS_Exception_DEBUG
+ 205              		.thumb
+ 206              		.thumb_func
+ 208              	OS_Exception_DEBUG:
+ 209              	.LFB5:
+  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_DEBUG(void)
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 210              		.loc 1 56 0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 1, uses_anonymous_args = 0
+ 214 00b8 80B5     		push	{r7, lr}
+ 215              		.cfi_def_cfa_offset 8
+ 216              		.cfi_offset 7, -8
+ 217              		.cfi_offset 14, -4
+ 218 00ba 00AF     		add	r7, sp, #0
+ 219              		.cfi_def_cfa_register 7
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+ 220              		.loc 1 57 0
+ 221 00bc FFF7A0FF 		bl	OS_Exception_Read_Status_Registers
+ 222              	.L12:
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    while(1){}
+ 223              		.loc 1 58 0 discriminator 1
+ 224 00c0 FEE7     		b	.L12
+ 225              		.cfi_endproc
+ 226              	.LFE5:
+ 228 00c2 00BF     		.align	2
+ 229              		.global	OS_Exception_MEM_MANAG_FAULT
+ 230              		.thumb
+ 231              		.thumb_func
+ 233              	OS_Exception_MEM_MANAG_FAULT:
+ 234              	.LFB6:
+  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_MEM_MANAG_FAULT(void)
+  63:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 235              		.loc 1 63 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 6
+
+
+ 236              		.cfi_startproc
+ 237              		@ args = 0, pretend = 0, frame = 0
+ 238              		@ frame_needed = 1, uses_anonymous_args = 0
+ 239 00c4 80B5     		push	{r7, lr}
+ 240              		.cfi_def_cfa_offset 8
+ 241              		.cfi_offset 7, -8
+ 242              		.cfi_offset 14, -4
+ 243 00c6 00AF     		add	r7, sp, #0
+ 244              		.cfi_def_cfa_register 7
+  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+ 245              		.loc 1 64 0
+ 246 00c8 FFF79AFF 		bl	OS_Exception_Read_Status_Registers
+ 247              	.L14:
+  65:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    while(1){}
+ 248              		.loc 1 65 0 discriminator 1
+ 249 00cc FEE7     		b	.L14
+ 250              		.cfi_endproc
+ 251              	.LFE6:
+ 253 00ce 00BF     		.align	2
+ 254              		.global	OS_Exception_USAGE_FAULT
+ 255              		.thumb
+ 256              		.thumb_func
+ 258              	OS_Exception_USAGE_FAULT:
+ 259              	.LFB7:
+  66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_USAGE_FAULT(void)
+  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 260              		.loc 1 70 0
+ 261              		.cfi_startproc
+ 262              		@ args = 0, pretend = 0, frame = 0
+ 263              		@ frame_needed = 1, uses_anonymous_args = 0
+ 264 00d0 80B5     		push	{r7, lr}
+ 265              		.cfi_def_cfa_offset 8
+ 266              		.cfi_offset 7, -8
+ 267              		.cfi_offset 14, -4
+ 268 00d2 00AF     		add	r7, sp, #0
+ 269              		.cfi_def_cfa_register 7
+  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+ 270              		.loc 1 71 0
+ 271 00d4 FFF794FF 		bl	OS_Exception_Read_Status_Registers
+ 272              	.L16:
+  72:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    while(1){}
+ 273              		.loc 1 72 0 discriminator 1
+ 274 00d8 FEE7     		b	.L16
+ 275              		.cfi_endproc
+ 276              	.LFE7:
+ 278 00da 00BF     		.align	2
+ 279              		.global	OS_Exception_PendSV
+ 280              		.thumb
+ 281              		.thumb_func
+ 283              	OS_Exception_PendSV:
+ 284              	.LFB8:
+  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 7
+
+
+  76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_PendSV(void)
+  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 285              		.loc 1 77 0
+ 286              		.cfi_startproc
+ 287              		@ args = 0, pretend = 0, frame = 0
+ 288              		@ frame_needed = 1, uses_anonymous_args = 0
+ 289              		@ link register save eliminated.
+ 290 00dc 80B4     		push	{r7}
+ 291              		.cfi_def_cfa_offset 4
+ 292              		.cfi_offset 7, -4
+ 293 00de 00AF     		add	r7, sp, #0
+ 294              		.cfi_def_cfa_register 7
+ 295              	.L18:
+  78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    while(1){}
+ 296              		.loc 1 78 0 discriminator 1
+ 297 00e0 FEE7     		b	.L18
+ 298              		.cfi_endproc
+ 299              	.LFE8:
+ 301 00e2 00BF     		.align	2
+ 302              		.global	OS_Exception_Systick
+ 303              		.thumb
+ 304              		.thumb_func
+ 306              	OS_Exception_Systick:
+ 307              	.LFB9:
+  79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_Systick(void)
+  83:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 308              		.loc 1 83 0
+ 309              		.cfi_startproc
+ 310              		@ args = 0, pretend = 0, frame = 0
+ 311              		@ frame_needed = 1, uses_anonymous_args = 0
+ 312              		@ link register save eliminated.
+ 313 00e4 80B4     		push	{r7}
+ 314              		.cfi_def_cfa_offset 4
+ 315              		.cfi_offset 7, -4
+ 316 00e6 00AF     		add	r7, sp, #0
+ 317              		.cfi_def_cfa_register 7
+ 318              	.L20:
+  84:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    while(1){}
+ 319              		.loc 1 84 0 discriminator 1
+ 320 00e8 FEE7     		b	.L20
+ 321              		.cfi_endproc
+ 322              	.LFE9:
+ 324 00ea 00BF     		.align	2
+ 325              		.global	OS_Exception_IRQ
+ 326              		.thumb
+ 327              		.thumb_func
+ 329              	OS_Exception_IRQ:
+ 330              	.LFB10:
+  85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  86:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_IRQ(void)
+  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 331              		.loc 1 89 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 8
+
+
+ 332              		.cfi_startproc
+ 333              		@ args = 0, pretend = 0, frame = 0
+ 334              		@ frame_needed = 1, uses_anonymous_args = 0
+ 335 00ec 80B5     		push	{r7, lr}
+ 336              		.cfi_def_cfa_offset 8
+ 337              		.cfi_offset 7, -8
+ 338              		.cfi_offset 14, -4
+ 339 00ee 00AF     		add	r7, sp, #0
+ 340              		.cfi_def_cfa_register 7
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_ISRHANDLERC0();
+ 341              		.loc 1 90 0
+ 342 00f0 FFF7FEFF 		bl	OS_ISRHANDLERC0
+  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+ 343              		.loc 1 91 0
+ 344 00f4 80BD     		pop	{r7, pc}
+ 345              		.cfi_endproc
+ 346              	.LFE10:
+ 348 00f6 00BF     		.align	2
+ 349              		.global	OS_Exception_FIQ
+ 350              		.thumb
+ 351              		.thumb_func
+ 353              	OS_Exception_FIQ:
+ 354              	.LFB11:
+  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** void OS_Exception_FIQ(void)
+  93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 355              		.loc 1 93 0
+ 356              		.cfi_startproc
+ 357              		@ args = 0, pretend = 0, frame = 0
+ 358              		@ frame_needed = 1, uses_anonymous_args = 0
+ 359 00f8 80B5     		push	{r7, lr}
+ 360              		.cfi_def_cfa_offset 8
+ 361              		.cfi_offset 7, -8
+ 362              		.cfi_offset 14, -4
+ 363 00fa 00AF     		add	r7, sp, #0
+ 364              		.cfi_def_cfa_register 7
+  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_ISRHANDLERC0();
+ 365              		.loc 1 94 0
+ 366 00fc FFF7FEFF 		bl	OS_ISRHANDLERC0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+ 367              		.loc 1 95 0
+ 368 0100 80BD     		pop	{r7, pc}
+ 369              		.cfi_endproc
+ 370              	.LFE11:
+ 372 0102 00BF     		.align	2
+ 373              		.global	TCMP1
+ 374              		.thumb
+ 375              		.thumb_func
+ 377              	TCMP1:
+ 378              	.LFB12:
+  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
+  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** ISR TCMP1(void)
+  99:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 379              		.loc 1 99 0
+ 380              		.cfi_startproc
+ 381              		@ args = 0, pretend = 0, frame = 0
+ 382              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 9
+
+
+ 383 0104 80B5     		push	{r7, lr}
+ 384              		.cfi_def_cfa_offset 8
+ 385              		.cfi_offset 7, -8
+ 386              		.cfi_offset 14, -4
+ 387 0106 00AF     		add	r7, sp, #0
+ 388              		.cfi_def_cfa_register 7
+ 100:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_ISRHANDLERC0();
+ 389              		.loc 1 100 0
+ 390 0108 FFF7FEFF 		bl	OS_ISRHANDLERC0
+ 101:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+ 391              		.loc 1 101 0
+ 392 010c 80BD     		pop	{r7, pc}
+ 393              		.cfi_endproc
+ 394              	.LFE12:
+ 396 010e 00BF     		.align	2
+ 397              		.global	TCMP2
+ 398              		.thumb
+ 399              		.thumb_func
+ 401              	TCMP2:
+ 402              	.LFB13:
+ 102:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** ISR TCMP2(void)
+ 103:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 403              		.loc 1 103 0
+ 404              		.cfi_startproc
+ 405              		@ args = 0, pretend = 0, frame = 0
+ 406              		@ frame_needed = 1, uses_anonymous_args = 0
+ 407 0110 80B5     		push	{r7, lr}
+ 408              		.cfi_def_cfa_offset 8
+ 409              		.cfi_offset 7, -8
+ 410              		.cfi_offset 14, -4
+ 411 0112 00AF     		add	r7, sp, #0
+ 412              		.cfi_def_cfa_register 7
+ 104:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_ISRHANDLERC1();
+ 413              		.loc 1 104 0
+ 414 0114 FFF7FEFF 		bl	OS_ISRHANDLERC1
+ 105:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+ 415              		.loc 1 105 0
+ 416 0118 80BD     		pop	{r7, pc}
+ 417              		.cfi_endproc
+ 418              	.LFE13:
+ 420 011a 00BF     		.align	2
+ 421              		.global	TCMP3
+ 422              		.thumb
+ 423              		.thumb_func
+ 425              	TCMP3:
+ 426              	.LFB14:
+ 106:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** ISR TCMP3(void)
+ 107:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 427              		.loc 1 107 0
+ 428              		.cfi_startproc
+ 429              		@ args = 0, pretend = 0, frame = 0
+ 430              		@ frame_needed = 1, uses_anonymous_args = 0
+ 431 011c 80B5     		push	{r7, lr}
+ 432              		.cfi_def_cfa_offset 8
+ 433              		.cfi_offset 7, -8
+ 434              		.cfi_offset 14, -4
+ 435 011e 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 10
+
+
+ 436              		.cfi_def_cfa_register 7
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_ISRHANDLERC2();
+ 437              		.loc 1 108 0
+ 438 0120 FFF7FEFF 		bl	OS_ISRHANDLERC2
+ 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+ 439              		.loc 1 109 0
+ 440 0124 80BD     		pop	{r7, pc}
+ 441              		.cfi_endproc
+ 442              	.LFE14:
+ 444 0126 00BF     		.align	2
+ 445              		.global	TCMP4
+ 446              		.thumb
+ 447              		.thumb_func
+ 449              	TCMP4:
+ 450              	.LFB15:
+ 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** ISR TCMP4(void)
+ 111:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
+ 451              		.loc 1 111 0
+ 452              		.cfi_startproc
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 1, uses_anonymous_args = 0
+ 455 0128 80B5     		push	{r7, lr}
+ 456              		.cfi_def_cfa_offset 8
+ 457              		.cfi_offset 7, -8
+ 458              		.cfi_offset 14, -4
+ 459 012a 00AF     		add	r7, sp, #0
+ 460              		.cfi_def_cfa_register 7
+ 112:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    OS_ISRHANDLERC3();
+ 461              		.loc 1 112 0
+ 462 012c FFF7FEFF 		bl	OS_ISRHANDLERC3
+ 113:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
+ 463              		.loc 1 113 0
+ 464 0130 80BD     		pop	{r7, pc}
+ 465              		.cfi_endproc
+ 466              	.LFE15:
+ 468              	.Letext0:
+ 469              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 470              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 471              		.file 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_exception.c
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:18     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:22     .text:00000000 OS_Exception_Read_Status_Registers
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:87     .text:00000050 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:104    .text:00000088 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:109    .text:00000088 OS_Exception_HARDFAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:134    .text:00000094 OS_Exception_NMI
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:159    .text:000000a0 OS_Exception_SWI
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:183    .text:000000ac OS_Exception_BUS_FAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:208    .text:000000b8 OS_Exception_DEBUG
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:233    .text:000000c4 OS_Exception_MEM_MANAG_FAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:258    .text:000000d0 OS_Exception_USAGE_FAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:283    .text:000000dc OS_Exception_PendSV
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:306    .text:000000e4 OS_Exception_Systick
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:329    .text:000000ec OS_Exception_IRQ
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:353    .text:000000f8 OS_Exception_FIQ
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:377    .text:00000104 TCMP1
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:401    .text:00000110 TCMP2
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:425    .text:0000011c TCMP3
+C:\Users\PRESID~1\AppData\Local\Temp\ccM3rdVG.s:449    .text:00000128 TCMP4
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.0.235f4ede03ac0010553e0a50454c6591
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.d75289bcbcba9f0e2c2ffeda9394ea88
+                           .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986
+                           .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
+                           .group:00000000 wm4.os_exception_isr_handler.h.2.19ab7c9017e871de2a8a91d100f54831
+
+UNDEFINED SYMBOLS
+VAR_HARDFAULT_STATUS_REG
+VAR_MEM_MANAG_FAULT_STATUS_REG
+VAR_BUS_FAULT_STATUS_REG
+VAR_USAGE_FAULT_STATUS_REG
+VAR_MEM_FAULT_ADDR_REG
+VAR_BUS_FAULT_ADDR_REG
+VAR_AUX_FAULT_STATUS_REG
+OS_ISRHANDLERC0
+OS_ISRHANDLERC1
+OS_ISRHANDLERC2
+OS_ISRHANDLERC3

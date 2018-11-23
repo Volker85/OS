@@ -351,7 +351,7 @@ isr_vec_table:
 	.uleb128 0x9
 	.4byte	.LASF433
 	.byte	0x4
-	.byte	0x18
+	.byte	0x1a
 	.4byte	0x78
 	.uleb128 0x5
 	.byte	0x3
