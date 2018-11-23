@@ -55,10 +55,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/os_base/os_exception_isr_handler.h" />
-		<Unit filename="src/os_base/os_exception_reset.s" />
-		<Unit filename="src/os_base/os_exception_table.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/os_base/os_firstinc.h" />
 		<Unit filename="src/os_base/os_heap.c">
 			<Option compilerVar="CC" />
@@ -132,19 +128,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/os_base/os_task_scheduler.h" />
-		<Unit filename="src/os_drivers/hal_driver_fs_fat.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/os_drivers/hal_driver_fs_fat.h" />
-		<Unit filename="src/os_drivers/lld_core.h" />
-		<Unit filename="src/os_drivers/lld_global.h" />
-		<Unit filename="src/os_drivers/lld_global.s" />
-		<Unit filename="src/os_drivers/lld_interrupt.s" />
-		<Unit filename="src/os_drivers/lld_mmu.s" />
-		<Unit filename="src/os_drivers/lld_power.s" />
-		<Unit filename="src/os_drivers/lld_ram.s" />
-		<Unit filename="src/os_drivers/lld_timer.s" />
-		<Unit filename="src/os_drivers/lld_watchdog.s" />
 		<Unit filename="src/os_sim/hal_driver_fs_fat.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -176,9 +159,6 @@
 		<Unit filename="src/os_sim/lld_timer.h" />
 		<Unit filename="src/os_sim/mcu_config.h" />
 		<Unit filename="src/os_sim/os_sim_main.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/os_test/example.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/os_test/sput.h" />

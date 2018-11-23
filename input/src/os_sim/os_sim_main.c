@@ -3,6 +3,7 @@
 #include "..\os_base\os_task_scheduler.h"
 #include "..\os_base\os_exception_isr_handler.h"
 #include "..\os_base\os_start_os.h"
+#include "..\os_base\os_exception_isr_handler.h"
 #include "stdio.h"
 #include "time.h"
 
@@ -16,7 +17,6 @@ int main(int argc, char* argv[])
    while(i < 1e9)
    {
       /* emulate the interrupts */
-      OS_STATE_HANDLER();
       OS_ISRHANDLERC0();
       OS_ISRHANDLERC1();
       OS_ISRHANDLERC2();
