@@ -10,7 +10,7 @@
 #define HEAP_OFFSET_FOR_USED_SIZE  4
 #define HEAP_OFFSET_FOR_CHUNK      8
 
-extern uint8 HEAP[HEAP_SIZE];
+
 
 extern void* os_calloc(uint32 num, uint32 size);
 extern void* os_realloc(void* ptr_old, uint32 size_new);

@@ -17,27 +17,73 @@
 
         
 LLF_CLEAR_ALL_RAM:
-        MOV  r0, #0x0000 /* load RAM start into r0 - LSBytes */
-        MOV  r1, #0x0004/* load RAM start into r0 - MSBytes */
-        MOV  r2, #16
-        MOV  r3, #12
-        LSL  r0, r0,r2
-        LSL  r1, r1,r3
-        ADD  r0, r1
-        #/* r0 - used as address counter, r1 holds the 0*/
-        STRB r1,[r0]           
-        ADD r0,#1              /* select the next byte*/
-        MOV  r0, #0x00EE /* load RAM start into r0 - LSBytes */
-        MOV  r1, #0x0004/* load RAM start into r0 - MSBytes */
-        MOV  r2, #8
-        MOV  r3, #12
-        LSL  r0, r0,r2
-        LSL  r1, r1,r3
-        ADD  r0, r1  
-        #/* is the next byte still RAM?*/        
-        CMP r0, r2   
-        #/* continue loop until all RAM clear*/
-        BNE LLF_CLEAR_ALL_RAM  
-        MOV R15, R14
+			#;		read the start address 0x20000000
+			MOV		r4, #0x20
+			MOV		r5, #0x00
+			MOV		r6, #0x00
+			MOV		r7, #0x00
+			MOV		r8,  #0x18
+			MOV		r9,  #0x10
+			MOV		r10, #0x08
+			LSL		r4,r4,r8
+			LSL		r5,r5,r9
+			LSL		r6,r6,r10
+			#
+			#;		ram start
+			MOV		r11, #0x00
+			#;		ram end
+			MOV		r12, #0x00
+			#;		build ram start variable
+			ADD		r11,r11,r4
+			ADD		r11,r11,r5
+			ADD		r11,r11,r6
+			ADD		r11,r11,r7
+			#;		read the end address 0x2002EDFF
+			MOV		r4, #0x20
+			MOV		r5, #0x02
+			MOV		r6, #0xED
+			MOV		r7, #0xFF
+			MOV		r8,  #0x18
+			MOV		r9,  #0x10
+			MOV		r10, #0x08
+			LSL		r4,r4,r8
+			LSL		r5,r5,r9
+			LSL		r6,r6,r10
+			#;		build ram end variable
+			ADD		r12,r12,r4
+			ADD		r12,r12,r5
+			ADD		r12,r12,r6
+			ADD		r12,r12,r7
+			#;		loop from ram start to ram end and clear (0x00) the RAM
+			#;for(addr	= ram_start, addr < ram_end, addr++)
+			#;{
+			#;		*addr = 0x00;
+			#;}
+			#;		if the ram end reached
+			#;		input: ram_start: r11, ram_end: r12,
+			#;		addr: r0
+			#;		value: r1
+			#;		addr = ram_start;
+			MOV		r0,r11
+			#; r12 points to last element -> due to BEQ usage the r12 shall point to first not included element
+			ADD		r12,r12,#1
+Loop_start:
+			CMP		r0,r12
+			#;		addr < ram_end
+			BEQ		Loop_end
+			#
+			#;loop	body-start...
+			#;		*addr=0x00
+			MOV		r1,#1
+			#;		*addr=0x00
+			STRB		r1,[r0]
+			#;loop	body-end
+			#
+			#;		addr++
+			ADD		r0,r0,#1
+			#
+			B		Loop_start
+Loop_end:
+         MOV R15, R14
         
         

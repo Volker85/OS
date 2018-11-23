@@ -23,7 +23,7 @@
 OS_START_OS:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_os.c"
-	.loc 1 5 0
+	.loc 1 11 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -33,24 +33,35 @@ OS_START_OS:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 7 0
+	.loc 1 13 0
+	ldr	r2, .L2
+	ldr	r3, .L2
+	ldr	r3, [r3]
+	orr	r3, r3, #458752
+	str	r3, [r2]
+	.loc 1 16 0
 	bl	OS_STATE_HANDLER
-	.loc 1 8 0
+	.loc 1 17 0
 	pop	{r7, pc}
+.L3:
+	.align	2
+.L2:
+	.word	-536810204
 	.cfi_endproc
 .LFE0:
 	.size	OS_START_OS, .-OS_START_OS
 .Letext0:
+	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x4f
+	.4byte	0x5a
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF428
+	.4byte	.LASF433
 	.byte	0x1
-	.4byte	.LASF429
+	.4byte	.LASF434
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -58,23 +69,28 @@ OS_START_OS:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF424
+	.4byte	.LASF429
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF425
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x7
-	.4byte	.LASF426
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x7
-	.4byte	.LASF427
-	.uleb128 0x3
 	.4byte	.LASF430
-	.byte	0x1
+	.uleb128 0x2
 	.byte	0x4
+	.byte	0x7
+	.4byte	.LASF431
+	.uleb128 0x3
+	.4byte	.LASF435
+	.byte	0x2
+	.byte	0x23
+	.4byte	0x33
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x7
+	.4byte	.LASF432
+	.uleb128 0x4
+	.4byte	.LASF436
+	.byte	0x1
+	.byte	0xa
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
@@ -113,6 +129,19 @@ OS_START_OS:
 	.byte	0
 	.byte	0
 	.uleb128 0x3
+	.uleb128 0x16
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x4
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -158,17 +187,16 @@ OS_START_OS:
 	.byte	0x3
 	.uleb128 0
 	.uleb128 0x1
-	.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
+	.file 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x1
-	.uleb128 0x2
+	.uleb128 0x3
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF360
-	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x3
+	.uleb128 0x2
 	.byte	0x7
 	.4byte	.Ldebug_macro2
 	.byte	0x4
@@ -268,6 +296,21 @@ OS_START_OS:
 	.uleb128 0x2
 	.4byte	.LASF423
 	.byte	0x4
+	.byte	0x5
+	.uleb128 0x4
+	.4byte	.LASF424
+	.byte	0x5
+	.uleb128 0x5
+	.4byte	.LASF425
+	.byte	0x5
+	.uleb128 0x6
+	.4byte	.LASF426
+	.byte	0x5
+	.uleb128 0x7
+	.4byte	.LASF427
+	.byte	0x5
+	.uleb128 0x8
+	.4byte	.LASF428
 	.byte	0x4
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.0.cc6c77955922ed8e0569eb6fefadb4dd,comdat
@@ -1556,6 +1599,9 @@ OS_START_OS:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
+.LASF427:
+	.ascii	"SYS_HANDLER_CTRL_STATE_BIT_MASK_MEMFAULTENA ((uint3"
+	.ascii	"2)0x00010000)\000"
 .LASF76:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
 .LASF71:
@@ -1600,13 +1646,16 @@ OS_START_OS:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
 .LASF193:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
+.LASF425:
+	.ascii	"SYS_HANDLER_CTRL_STATE_BIT_MASK_USGFAULTENA ((uint3"
+	.ascii	"2)0x00040000)\000"
 .LASF422:
 	.ascii	"_LED_H_ \000"
 .LASF331:
 	.ascii	"__ARM_32BIT_STATE 1\000"
 .LASF418:
 	.ascii	"_os_init_task_system_h_ \000"
-.LASF427:
+.LASF432:
 	.ascii	"unsigned int\000"
 .LASF376:
 	.ascii	"FALSE False\000"
@@ -1798,7 +1847,7 @@ OS_START_OS:
 	.ascii	"Global_inline __inline__\000"
 .LASF245:
 	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
-.LASF430:
+.LASF436:
 	.ascii	"OS_START_OS\000"
 .LASF237:
 	.ascii	"__ACCUM_IBIT__ 16\000"
@@ -1913,6 +1962,12 @@ OS_START_OS:
 	.ascii	"__FLT_HAS_DENORM__ 1\000"
 .LASF350:
 	.ascii	"__THUMB_INTERWORK__ 1\000"
+.LASF428:
+	.ascii	"SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP (*SYS_HANDLER_"
+	.ascii	"CTRL_STATE_REG = *SYS_HANDLER_CTRL_STATE_REG | SYS_"
+	.ascii	"HANDLER_CTRL_STATE_BIT_MASK_USGFAULTENA | SYS_HANDL"
+	.ascii	"ER_CTRL_STATE_BIT_MASK_BUSFAULTENA | SYS_HANDLER_CT"
+	.ascii	"RL_STATE_BIT_MASK_MEMFAULTENA)\000"
 .LASF196:
 	.ascii	"__FRACT_FBIT__ 15\000"
 .LASF120:
@@ -2041,6 +2096,8 @@ OS_START_OS:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
 .LASF18:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
+.LASF435:
+	.ascii	"uint32\000"
 .LASF4:
 	.ascii	"__GNUC_PATCHLEVEL__ 3\000"
 .LASF355:
@@ -2183,6 +2240,9 @@ OS_START_OS:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
 .LASF87:
 	.ascii	"__INT64_MAX__ 9223372036854775807LL\000"
+.LASF426:
+	.ascii	"SYS_HANDLER_CTRL_STATE_BIT_MASK_BUSFAULTENA ((uint3"
+	.ascii	"2)0x00020000)\000"
 .LASF191:
 	.ascii	"__USFRACT_FBIT__ 8\000"
 .LASF282:
@@ -2231,6 +2291,8 @@ OS_START_OS:
 	.ascii	"__SACCUM_MIN__ (-0X1P7HK-0X1P7HK)\000"
 .LASF82:
 	.ascii	"__SIG_ATOMIC_MAX__ 2147483647\000"
+.LASF424:
+	.ascii	"SYS_HANDLER_CTRL_STATE_REG ((uint32*)0xE000ED24)\000"
 .LASF321:
 	.ascii	"__GCC_ATOMIC_POINTER_LOCK_FREE 2\000"
 .LASF107:
@@ -2245,7 +2307,7 @@ OS_START_OS:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF287:
 	.ascii	"__HA_IBIT__ 8\000"
-.LASF426:
+.LASF431:
 	.ascii	"long unsigned int\000"
 .LASF353:
 	.ascii	"__ARM_EABI__ 1\000"
@@ -2285,7 +2347,7 @@ OS_START_OS:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
 .LASF416:
 	.ascii	"MS_PER_SEC (1000)\000"
-.LASF424:
+.LASF429:
 	.ascii	"unsigned char\000"
 .LASF166:
 	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
@@ -2353,7 +2415,7 @@ OS_START_OS:
 	.ascii	"__UINT64_TYPE__ long long unsigned int\000"
 .LASF142:
 	.ascii	"__DBL_MAX_10_EXP__ 308\000"
-.LASF425:
+.LASF430:
 	.ascii	"short unsigned int\000"
 .LASF363:
 	.ascii	"INTEGER_LP64_I32LP64 2\000"
@@ -2396,7 +2458,7 @@ OS_START_OS:
 	.ascii	"__UDA_FBIT__ 32\000"
 .LASF392:
 	.ascii	"Privilige_level_enter_kernel_mode() ;\000"
-.LASF428:
+.LASF433:
 	.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
 	.ascii	"anch revision 221220] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -2404,7 +2466,7 @@ OS_START_OS:
 	.ascii	"__TA_IBIT__ 64\000"
 .LASF175:
 	.ascii	"__DEC64_MIN__ 1E-383DD\000"
-.LASF429:
+.LASF434:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_start_os.c\000"
 .LASF69:

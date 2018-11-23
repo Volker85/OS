@@ -9,15 +9,25 @@ From the AAPCS, §5.1.1:
     r10-r11 are callee-save registers
     r12-r15 are special registers
 
-*/        
+*/
         .thumb
         .syntax unified
         .text
-        
-        .global OS_Exception_RESET 
+
+        .global OS_Exception_RESET
+        .global LLF_SAVE_TASK_STACK
+        .global LLF_RESTORE_TASK_STACK
+        .global GET_CORE_ID
         .extern LLF_CLEAR_ALL_RAM
         .extern OS_START_OS
-      
+        .global LLF_SAVE_REGISTERS
+        .global LLF_RESTORE_REGISTERS
+        .global LLF_RESTORE_SYSTEM_STACK
+        .global LLF_SAVE_SYSTEM_STACK
+        .global LLF_PERFORM_RAM_CHECK
+        .global LLF_CLEAR_ALL_GP_REGISTERS
+        .global START_OS
+
 OS_Exception_RESET:
         MOV r0, #0/*Step 1:  init general purpose registers: r0...r12: general purpose */
         MOV r1, #0
@@ -38,35 +48,35 @@ OS_Exception_RESET:
         #r14        Link register
         #r15        program counter
         */
-        B LLF_CLEAR_ALL_RAM
+        #B LLF_CLEAR_ALL_RAM
         B START_OS
-              
+
 LLF_SAVE_TASK_STACK:
         # 1. read the stack pointer register
         #   2. save it the correct task context
         #   3. invalidate the register (==0)
         #   input: unsigned_char_t* StackPointer
-        #   
-        
+        #
+
         # r0 holds address of task stack pointer of the OS
         # r13  is the stack pointer of the MCU
-        # step1+2: write the r13 to [r0] 
+        # step1+2: write the r13 to [r0]
 
-        
+
 LLF_RESTORE_TASK_STACK:
 
 
         # r0 holds address of system stack pointer of the OS
         # r13  is the stack pointer of the MCU
-        # step1: write the [r0] to r13 
+        # step1: write the [r0] to r13
         STR r13, [r0]
-        MOV R15, R14     
-        
+        MOV R15, R14
+
 GET_CORE_ID:
-        # the CoMOV R15, R14ex M4 process has just one core-> use static assignement of core id 
-        # 
+        # the Cortex M4 process has just one core-> use static assignement of core id
+        #
         # 14.1.1. Determining which core the code is running on
-        # 
+        #
         # Some software operations are dependent on which core the code is running on. For example, global initialization is typically performed by code running on a single core, followed by local initialization on all cores.
         #
         # The Multi-Processor Affinity Register (MPIDR_EL1) enables software to determine on which core it is executing, both within a cluster and in a system with multiple clusters, where it determines on which core and in which cluster it is executing.
@@ -78,53 +88,53 @@ GET_CORE_ID:
         #
         # MIPDR_EL3 contains the unchangeable ID of each physical core. No two cores share the same MPIDR_EL3 value.
         #
-        # Cortex M7 seems to be always single core 
+        # Cortex M7 seems to be always single core
         #
         #r0 is assumed to be used by the calling convention as the first MOV R15, R14urn value
         MOV r0, #0
-        
-#                                DONE      
+
+#                                DONE
 LLF_SAVE_REGISTERS:
-        # in r0 the address of task_t* task should be  
-        LDR r4, =REGISTER_R0 
+        # in r0 the address of task_t* task should be
+        LDR r4, =REGISTER_R0
         STR r0, [r4]
         LDR r4, =REGISTER_R1
         STR r1, [r4]
-        LDR r4, =REGISTER_R2 
+        LDR r4, =REGISTER_R2
         STR r2, [r4]
-        LDR r4, =REGISTER_R3 
+        LDR r4, =REGISTER_R3
         STR r3, [r4]
-        
-#                                DONE        
-LLF_RESTORE_REGISTERS:        
-        # in r0 the address of task_t* task should be 
+
+#                                DONE
+LLF_RESTORE_REGISTERS:
+        # in r0 the address of task_t* task should be
         # load the value located inside REGISTER_R0 into R0,...
         LDR R0, =REGISTER_R0
         LDR R1, =REGISTER_R1
         LDR R2, =REGISTER_R2
         LDR R3, =REGISTER_R3
-        
+
 # input: system_stack_ptr         DONE
-LLF_RESTORE_SYSTEM_STACK:    
-        # step1: write the [r0] to r13 
+LLF_RESTORE_SYSTEM_STACK:
+        # step1: write the [r0] to r13
         # r0 holds address of system stack pointer of the OS
-        # r13  is the stack pointer of the MCU 
-        # step1: write the r13 to address located at r0         
+        # r13  is the stack pointer of the MCU
+        # step1: write the r13 to address located at r0
         LDR R13, [R0]
 
 # input: task_t* task            DONE
-LLF_SAVE_SYSTEM_STACK:        
+LLF_SAVE_SYSTEM_STACK:
         # r0 holds address of system stack pointer of the OS
-        # r13  is the stack pointer of the MCU 
-        # step1: write the r13 to address located at r0 
+        # r13  is the stack pointer of the MCU
+        # step1: write the r13 to address located at r0
         STR R13,[r0]
 
-        
+
 LLF_PERFORM_RAM_CHECK:
         #TODO: prio2
-        #; Move R14 (LR) into R15 (PC)       
-        MOV R15, R14 
-        
+        #; Move R14 (LR) into R15 (PC)
+        MOV R15, R14
+
 LLF_CLEAR_ALL_GP_REGISTERS:
         MOV r0,#0
         MOV r1,#0
@@ -133,10 +143,10 @@ LLF_CLEAR_ALL_GP_REGISTERS:
         MOV r4,#0
         MOV r5,#0
         MOV r6,#0
-        MOV R15, R14       
-                
-        
-START_OS:        
+        MOV R15, R14
+
+
+START_OS:
         #/* 3a -> page tables                         */
         #/* not existing in STM32F407VGT6             */
         #/* 3b -> enable caches                       */
@@ -148,5 +158,4 @@ START_OS:
         #
         #/* 4 -> executing main program */
         # OS_START_OS(void)
-        BL OS_START_OS 
-        
+        B OS_START_OS

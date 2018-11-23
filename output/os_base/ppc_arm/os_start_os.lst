@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cchQqCaF.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccZ02T95.s 			page 1
 
 
    1              		.syntax unified
@@ -28,9 +28,15 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cchQqCaF.s 			page 1
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** #include "os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** #include "os_main.h"
    3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** 
-   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** void OS_START_OS(void)
-   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** {
-  26              		.loc 1 5 0
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** #define SYS_HANDLER_CTRL_STATE_REG ((uint32*)0xE000ED24)
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** #define SYS_HANDLER_CTRL_STATE_BIT_MASK_USGFAULTENA ((uint32)0x00040000)
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** #define SYS_HANDLER_CTRL_STATE_BIT_MASK_BUSFAULTENA ((uint32)0x00020000)
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** #define SYS_HANDLER_CTRL_STATE_BIT_MASK_MEMFAULTENA ((uint32)0x00010000)
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** #define SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP (*SYS_HANDLER_CTRL_STATE_REG = *SYS_HANDLER_CTRL_STATE
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** 
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** void OS_START_OS(void)
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** {
+  26              		.loc 1 11 0
   27              		.cfi_startproc
   28              		@ args = 0, pretend = 0, frame = 0
   29              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -40,23 +46,41 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cchQqCaF.s 			page 1
   33              		.cfi_offset 14, -4
   34 0002 00AF     		add	r7, sp, #0
   35              		.cfi_def_cfa_register 7
-   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    /* triggers hw & sw init (OS parts), interrupt system init (including MMU) */
-   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    OS_STATE_HANDLER();
-  36              		.loc 1 7 0
-  37 0004 FFF7FEFF 		bl	OS_STATE_HANDLER
-   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** }...
-  38              		.loc 1 8 0
-  39 0008 80BD     		pop	{r7, pc}
-  40              		.cfi_endproc
-  41              	.LFE0:
-  43              	.Letext0:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cchQqCaF.s 			page 2
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    /* activate all exception to improve the debug capabilities */
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP; 
+  36              		.loc 1 13 0
+  37 0004 044A     		ldr	r2, .L2
+  38 0006 044B     		ldr	r3, .L2
+  39 0008 1B68     		ldr	r3, [r3]
+  40 000a 43F4E023 		orr	r3, r3, #458752
+  41 000e 1360     		str	r3, [r2]
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** 
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    /* triggers hw & sw init (OS parts), interrupt system init (including MMU) */
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    OS_STATE_HANDLER();
+  42              		.loc 1 16 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccZ02T95.s 			page 2
+
+
+  43 0010 FFF7FEFF 		bl	OS_STATE_HANDLER
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** }...
+  44              		.loc 1 17 0
+  45 0014 80BD     		pop	{r7, pc}
+  46              	.L3:
+  47 0016 00BF     		.align	2
+  48              	.L2:
+  49 0018 24ED00E0 		.word	-536810204
+  50              		.cfi_endproc
+  51              	.LFE0:
+  53              	.Letext0:
+  54              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccZ02T95.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_os.c
-C:\Users\PRESID~1\AppData\Local\Temp\cchQqCaF.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\cchQqCaF.s:23     .text:00000000 OS_START_OS
+C:\Users\PRESID~1\AppData\Local\Temp\ccZ02T95.s:18     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccZ02T95.s:23     .text:00000000 OS_START_OS
+C:\Users\PRESID~1\AppData\Local\Temp\ccZ02T95.s:49     .text:00000018 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02

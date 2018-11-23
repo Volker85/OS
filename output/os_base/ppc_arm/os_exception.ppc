@@ -506,6 +506,8 @@ extern unsigned_char_t HEAP[10000];
 extern unsigned_char_t OS_STACK[1][0x100];
 extern unsigned_char_t OS_MAIN_STACK[0x100];
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
+extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG ;
+extern volatile uint32 VAR_USAGE_FAULT_STATUS_REG ;
 extern volatile uint32 VAR_FAULT_STATUS_REG ;
 extern volatile uint32 VAR_MEM_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
@@ -650,7 +652,7 @@ enum CoreID_e
 };
 typedef enum CoreID_e CoreID_t;
 
-extern CoreID_t Get_core_id(void);
+extern CoreID_t GET_CORE_ID(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);
@@ -745,12 +747,16 @@ extern void OS_START_OS(void);
 static void OS_Exception_Read_Status_Registers(void)
 {
 #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
-#define FAULT_STATUS_REG ((volatile uint32*)0xE000ED28u)
+#define MEM_MANAG_FAULT_STATUS_REG ((volatile uint8*)0xE000ED28u)
+#define BUS_FAULT_STATUS_REG ((volatile uint8*)0xE000ED29u)
+#define USAGE_FAULT_STATUS_REG ((volatile uint16*)0xE000ED2Au)
 #define MEM_FAULT_ADDR_REG ((volatile uint32*)0xE000ED34u)
 #define BUS_FAULT_ADDR_REG ((volatile uint32*)0xE000ED38u)
 #define AUX_FAULT_STATUS_REG ((volatile uint32*)0xE000ED3Cu)
    VAR_HARDFAULT_STATUS_REG = *((volatile uint32*)0xE000ED2Cu);
-   VAR_FAULT_STATUS_REG = *((volatile uint32*)0xE000ED28u);
+   VAR_MEM_MANAG_FAULT_STATUS_REG = *((volatile uint8*)0xE000ED28u);
+   VAR_BUS_FAULT_STATUS_REG = *((volatile uint8*)0xE000ED29u);
+   VAR_USAGE_FAULT_STATUS_REG = *((volatile uint16*)0xE000ED2Au);
    VAR_MEM_FAULT_ADDR_REG = *((volatile uint32*)0xE000ED34u);
    VAR_BUS_FAULT_ADDR_REG = *((volatile uint32*)0xE000ED38u);
    VAR_AUX_FAULT_STATUS_REG = *((volatile uint32*)0xE000ED3Cu);

@@ -7,6 +7,7 @@
 3. Breakpoint setzen
 <gdb> target remote localhost:3333
 <gdb> b OS_STATE_HANDLER
+<gdb> b *0x12345678
 <gdb> load E:/NeuOrga/Programmieren/c_cpp/github_os/output/VERSION_ARM/operating_system.elf
 <gdb> continue
 
@@ -22,3 +23,15 @@ Dump array:
 -------------------
 Dump 256 ('256') bytes ('b') in hex ('x') starting from 0x20003038 ('0x20003038')
 x /256xb 0x20003038
+
+Set Program Counter (e.g. to 0):
+-------------------
+set $pc=0
+
+Halt target for debugging 
+-------------------------
+monitor reset halt
+
+single step
+-------------------------
+si

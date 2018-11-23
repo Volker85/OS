@@ -1,5 +1,7 @@
 #include "os_firstinc.h"
 #include "os_exception_isr_handler.h"
+#pragma GCC diagnostic ignored "-Wpedantic"
+#pragma GCC diagnostic ignored "-Wpointer-arith"
 /*
 isr_vec_table concept seems to be usable for ARM and PowerPC MCUs
 (perhaps different tables needed)
@@ -9,13 +11,13 @@ needs to be linked by default to adresse 0x0 -> linker command file needed
 2.1.2. Stacks
 
 The processor uses a full descending stack.
- This means the stack pointer holds the address 
- of the last stacked item in memory. 
+ This means the stack pointer holds the address
+ of the last stacked item in memory.
  When the processor pushes a new item onto the stack,
  it decrements the stack pointer and then writes the
- item to the new memory location. 
- The processor implements two stacks, 
- the main stack and the process stack, 
+ item to the new memory location.
+ The processor implements two stacks,
+ the main stack and the process stack,
  with a pointer for each held in independent registers,
  see Stack Pointer.
 */
@@ -35,7 +37,7 @@ func_ptr_t isr_vec_table[] =
    0u,                            /* 0x0024 reservered                 */
    0u,                            /* 0x0028 reservered                 */
    &OS_Exception_SWI+1u,          /* 0x002C Supervisor Call            */
-   &OS_Exception_DEBUG+1u,        /* 0x0030 reserved for debug         *//* not used in STM32F4 according to spec en.DM00046982.pdf page 37*///TODO: immediate crash after reset in case debugger attached, else the SW is running -> debug exception escalated to hard fault???
+   &OS_Exception_DEBUG+1u,        /* 0x0030 reserved for debug         *//* not used in STM32F4 according to spec en.DM00046982.pdf page 37*//*TODO: immediate crash after reset in case debugger attached, else the SW is running -> debug exception escalated to hard fault???*/
    0u,                            /* 0x0034 reserved                   */
    &OS_Exception_PendSV+1u,        /* 0x0038 PendSV                     */
    &OS_Exception_Systick+1u,      /* 0x003C Systick                    */
@@ -271,12 +273,12 @@ func_ptr_t isr_vec_table[] =
    &OS_Exception_IRQ+1u,          /*        IRQ229                       */
    &OS_Exception_IRQ+1u,          /*        IRQ230                       */
    &OS_Exception_IRQ+1u,          /*        IRQ231                       */
-   &OS_Exception_IRQ+1u,          /*        IRQ232                       */ 
-   &OS_Exception_IRQ+1u,          /*        IRQ233                       */ 
-   &OS_Exception_IRQ+1u,          /*        IRQ234                       */ 
-   &OS_Exception_IRQ+1u,          /*        IRQ235                       */ 
-   &OS_Exception_IRQ+1u,          /*        IRQ236                       */ 
-   &OS_Exception_IRQ+1u,          /*        IRQ237                       */ 
-   &OS_Exception_IRQ+1u,          /*        IRQ238                       */ 
-   &OS_Exception_IRQ+1u           /*        IRQ239                       */    
+   &OS_Exception_IRQ+1u,          /*        IRQ232                       */
+   &OS_Exception_IRQ+1u,          /*        IRQ233                       */
+   &OS_Exception_IRQ+1u,          /*        IRQ234                       */
+   &OS_Exception_IRQ+1u,          /*        IRQ235                       */
+   &OS_Exception_IRQ+1u,          /*        IRQ236                       */
+   &OS_Exception_IRQ+1u,          /*        IRQ237                       */
+   &OS_Exception_IRQ+1u,          /*        IRQ238                       */
+   &OS_Exception_IRQ+1u           /*        IRQ239                       */
 };

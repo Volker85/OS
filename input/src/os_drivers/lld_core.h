@@ -10,5 +10,5 @@ enum CoreID_e
 };
 typedef  enum CoreID_e CoreID_t;
 
-extern CoreID_t Get_core_id(void);
+extern CoreID_t GET_CORE_ID(void);
 #endif /* _lld_core_h_ */

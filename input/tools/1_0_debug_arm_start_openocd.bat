@@ -10,5 +10,5 @@ SET SRC_DIR="E:\NeuOrga\Programmieren\c_cpp\github_os\output\VERSION_ARM"
 
 cd /D %OPENOCD_DIR%
 %OPENOCD_DIR%\bin-x64\openocd.exe -f %OPENOCD_DIR%/scripts/board/stm32f4discovery.cfg -c gdb_port 3333 -c telnet_port 3334 -c init -c reset init
-netstat -an
+REM netstat -an
 pause

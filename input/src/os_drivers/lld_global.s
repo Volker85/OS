@@ -13,10 +13,10 @@ From the AAPCS, §5.1.1:
         .thumb
         .syntax unified
         .text
-        //.global Test
+        .global Test
         //.extern OS_START_OS
         
       
 Test:
-
+     MOV R15, R14
         

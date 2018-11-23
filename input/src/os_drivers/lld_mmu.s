@@ -13,11 +13,9 @@ From the AAPCS, §5.1.1:
         .thumb
         .syntax unified
         .text
-        .global LLF_INT_DISABLE
-        .global LLF_INT_ENABLE
-        .global LLF_DISABLE_INTERRUPTS_ALL_CORES
         .global LLF_MPU_SWITCH_OFF_ALL_REGIONS
         .global LLF_GET_MPU_PRESENT
+        .global LLF_MPU_DISABLE
         //.extern OS_START_OS
         
       
@@ -29,15 +27,7 @@ LLF_MPU_ENABLE:
         #"LLF_MPU_ENABLE not yet implemented"
         MOV R15, R14
 
-        
-LLF_INT_ENABLE:
-        CPSIE i
-        MOV R15, R14
-
-LLF_DISABLE_INTERRUPTS_ALL_CORES:
-        B LLF_INT_DISABLE
-        MOV R15, R14
-
+      
 LLF_MPU_SWITCH_OFF_ALL_REGIONS:
         #"LLF_MPU_SWITCH_OFF_ALL_REGIONS not yet implemented"
         MOV R15, R14

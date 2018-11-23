@@ -31,7 +31,7 @@ LLF_MCU_RESET_POWER:
         # Step 1: Read content of AIRCR to R0       
         LDR R0, =0xE000ED0C
         # Step 2: Read content of "Sys Reset" mask to R1
-        LDR R1, =SYS_RESET_MASK
+        LDR R1, =0x00000002
         # Step 3: Perform the ORR on register level 
         # R0 = R0|R1
         ORR R0,R1

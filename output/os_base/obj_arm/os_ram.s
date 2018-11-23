@@ -19,6 +19,8 @@
 	.comm	OS_STACK,256,4
 	.comm	OS_MAIN_STACK,256,4
 	.comm	VAR_HARDFAULT_STATUS_REG,4,4
+	.comm	VAR_MEM_MANAG_FAULT_STATUS_REG,4,4
+	.comm	VAR_USAGE_FAULT_STATUS_REG,4,4
 	.comm	VAR_FAULT_STATUS_REG,4,4
 	.comm	VAR_MEM_FAULT_ADDR_REG,4,4
 	.comm	VAR_BUS_FAULT_ADDR_REG,4,4
@@ -28,14 +30,14 @@
 	.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x117
+	.4byte	0x139
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF438
+	.4byte	.LASF440
 	.byte	0x1
-	.4byte	.LASF439
+	.4byte	.LASF441
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macro0
 	.uleb128 0x2
@@ -133,7 +135,7 @@
 	.4byte	0xd1
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	VAR_FAULT_STATUS_REG
+	.4byte	VAR_MEM_MANAG_FAULT_STATUS_REG
 	.uleb128 0x6
 	.4byte	.LASF435
 	.byte	0x2
@@ -141,7 +143,7 @@
 	.4byte	0xd1
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	VAR_MEM_FAULT_ADDR_REG
+	.4byte	VAR_USAGE_FAULT_STATUS_REG
 	.uleb128 0x6
 	.4byte	.LASF436
 	.byte	0x2
@@ -149,11 +151,27 @@
 	.4byte	0xd1
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	VAR_BUS_FAULT_ADDR_REG
+	.4byte	VAR_FAULT_STATUS_REG
 	.uleb128 0x6
 	.4byte	.LASF437
 	.byte	0x2
 	.byte	0xf
+	.4byte	0xd1
+	.uleb128 0x5
+	.byte	0x3
+	.4byte	VAR_MEM_FAULT_ADDR_REG
+	.uleb128 0x6
+	.4byte	.LASF438
+	.byte	0x2
+	.byte	0x10
+	.4byte	0xd1
+	.uleb128 0x5
+	.byte	0x3
+	.4byte	VAR_BUS_FAULT_ADDR_REG
+	.uleb128 0x6
+	.4byte	.LASF439
+	.byte	0x2
+	.byte	0x11
 	.4byte	0xd1
 	.uleb128 0x5
 	.byte	0x3
@@ -1673,6 +1691,8 @@
 	.section	.debug_str,"MS",%progbits,1
 .LASF76:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
+.LASF103:
+	.ascii	"__UINT16_C(c) c\000"
 .LASF71:
 	.ascii	"__LONG_LONG_MAX__ 9223372036854775807LL\000"
 .LASF178:
@@ -1731,8 +1751,8 @@
 	.ascii	"FALSE False\000"
 .LASF397:
 	.ascii	"OS_STACK_SIZE 0x100\000"
-.LASF103:
-	.ascii	"__UINT16_C(c) c\000"
+.LASF434:
+	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
 .LASF20:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
 .LASF35:
@@ -1791,7 +1811,7 @@
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF100:
 	.ascii	"__UINT_LEAST8_MAX__ 255\000"
-.LASF437:
+.LASF439:
 	.ascii	"VAR_AUX_FAULT_STATUS_REG\000"
 .LASF207:
 	.ascii	"__LFRACT_IBIT__ 0\000"
@@ -1949,7 +1969,7 @@
 	.ascii	"__UINT32_C(c) c ## UL\000"
 .LASF298:
 	.ascii	"__UDA_FBIT__ 32\000"
-.LASF436:
+.LASF438:
 	.ascii	"VAR_BUS_FAULT_ADDR_REG\000"
 .LASF381:
 	.ascii	"Local_inline static __inline__\000"
@@ -2022,7 +2042,7 @@
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF121:
 	.ascii	"__DEC_EVAL_METHOD__ 2\000"
-.LASF434:
+.LASF436:
 	.ascii	"VAR_FAULT_STATUS_REG\000"
 .LASF232:
 	.ascii	"__USACCUM_IBIT__ 8\000"
@@ -2148,7 +2168,7 @@
 	.ascii	"__DBL_MAX_EXP__ 1024\000"
 .LASF11:
 	.ascii	"__ATOMIC_CONSUME 1\000"
-.LASF439:
+.LASF441:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_ram.c\000"
 .LASF389:
@@ -2351,7 +2371,7 @@
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
 .LASF286:
 	.ascii	"__HA_FBIT__ 7\000"
-.LASF435:
+.LASF437:
 	.ascii	"VAR_MEM_FAULT_ADDR_REG\000"
 .LASF358:
 	.ascii	"CFG_PROCESSOR 4\000"
@@ -2528,9 +2548,11 @@
 	.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
 .LASF10:
 	.ascii	"__ATOMIC_ACQ_REL 4\000"
+.LASF435:
+	.ascii	"VAR_USAGE_FAULT_STATUS_REG\000"
 .LASF351:
 	.ascii	"__ARM_ARCH_7EM__ 1\000"
-.LASF438:
+.LASF440:
 	.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
 	.ascii	"anch revision 221220] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"

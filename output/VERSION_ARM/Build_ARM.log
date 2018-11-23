@@ -1,8 +1,13 @@
 "Target_ARM" 
-13.11.2018 21:53:10,07 
+22.11.2018 19:24:01,85 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Read_Status_Registers':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:20:4: error: 'VAR_BUS_FAULT_STATUS_REG' undeclared (first use in this function)
+    VAR_BUS_FAULT_STATUS_REG   = *BUS_FAULT_STATUS_REG;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:20:4: note: each undeclared identifier is reported only once for each function it appears in
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
     (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^
@@ -28,7 +33,7 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:
     &OS_Exception_SWI+1u,          /* 0x002C Supervisor Call            */
                      ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:38:23: warning: pointer to a function used in arithmetic [-Wpointer-arith]
-    &OS_Exception_DEBUG+1u,        /* 0x0030 reserved for debug         *//* not used in STM32F4 according to spec en.DM00046982.pdf page 37*/
+    &OS_Exception_DEBUG+1u,        /* 0x0030 reserved for debug         *//* not used in STM32F4 according to spec en.DM00046982.pdf page 37*//*TODO: immediate crash after reset in case debugger attached, else the SW is running -> debug exception escalated to hard fault???*/
                        ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:40:24: warning: pointer to a function used in arithmetic [-Wpointer-arith]
     &OS_Exception_PendSV+1u,        /* 0x0038 PendSV                     */
@@ -757,6 +762,11 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:
     &OS_Exception_IRQ+1u           /*        IRQ239                       */    
                      ^
 "assemble it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Read_Status_Registers':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:20:4: error: 'VAR_BUS_FAULT_STATUS_REG' undeclared (first use in this function)
+    VAR_BUS_FAULT_STATUS_REG   = *BUS_FAULT_STATUS_REG;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:20:4: note: each undeclared identifier is reported only once for each function it appears in
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:26:4: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
     (func_ptr_t)(&OS_MAIN_STACK+OS_STACK_SIZE_END),   /* 0x0000 initial StackPointer value */
     ^
@@ -782,7 +792,7 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:
     &OS_Exception_SWI+1u,          /* 0x002C Supervisor Call            */
                      ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:38:23: warning: pointer to a function used in arithmetic [-Wpointer-arith]
-    &OS_Exception_DEBUG+1u,        /* 0x0030 reserved for debug         *//* not used in STM32F4 according to spec en.DM00046982.pdf page 37*/
+    &OS_Exception_DEBUG+1u,        /* 0x0030 reserved for debug         *//* not used in STM32F4 according to spec en.DM00046982.pdf page 37*//*TODO: immediate crash after reset in case debugger attached, else the SW is running -> debug exception escalated to hard fault???*/
                        ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:40:24: warning: pointer to a function used in arithmetic [-Wpointer-arith]
     &OS_Exception_PendSV+1u,        /* 0x0038 PendSV                     */

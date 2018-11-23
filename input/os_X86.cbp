@@ -32,7 +32,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="src/os_base/os_acl.h" />
 		<Unit filename="src/os_base/os_base_types.h" />
 		<Unit filename="src/os_base/os_common.c">
 			<Option compilerVar="CC" />
@@ -56,6 +55,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/os_base/os_exception_isr_handler.h" />
+		<Unit filename="src/os_base/os_exception_reset.s" />
 		<Unit filename="src/os_base/os_exception_table.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -80,6 +80,7 @@
 		<Unit filename="src/os_base/os_ram.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/os_base/os_ram.h" />
 		<Unit filename="src/os_base/os_rte_common.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -131,43 +132,28 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/os_base/os_task_scheduler.h" />
-		<Unit filename="src/os_sim/hal_driver_adc.c">
+		<Unit filename="src/os_drivers/hal_driver_fs_fat.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/os_sim/hal_driver_adc.h" />
-		<Unit filename="src/os_sim/hal_driver_block_device.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/os_sim/hal_driver_block_device.h" />
-		<Unit filename="src/os_sim/hal_driver_can.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="src/os_drivers/hal_driver_fs_fat.h" />
+		<Unit filename="src/os_drivers/lld_core.h" />
+		<Unit filename="src/os_drivers/lld_global.h" />
+		<Unit filename="src/os_drivers/lld_global.s" />
+		<Unit filename="src/os_drivers/lld_interrupt.s" />
+		<Unit filename="src/os_drivers/lld_mmu.s" />
+		<Unit filename="src/os_drivers/lld_power.s" />
+		<Unit filename="src/os_drivers/lld_ram.s" />
+		<Unit filename="src/os_drivers/lld_timer.s" />
+		<Unit filename="src/os_drivers/lld_watchdog.s" />
 		<Unit filename="src/os_sim/hal_driver_fs_fat.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/os_sim/hal_driver_fs_fat.h" />
-		<Unit filename="src/os_sim/hal_driver_gpio.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/os_sim/hal_driver_sci.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/os_sim/hal_driver_sci.h" />
-		<Unit filename="src/os_sim/hal_driver_xyz.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/os_sim/hal_driver_xyz.h" />
-		<Unit filename="src/os_sim/lld_adc.h" />
-		<Unit filename="src/os_sim/lld_can.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/os_sim/lld_can.h" />
 		<Unit filename="src/os_sim/lld_core.h" />
 		<Unit filename="src/os_sim/lld_global.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/os_sim/lld_global.h" />
-		<Unit filename="src/os_sim/lld_gpio.h" />
 		<Unit filename="src/os_sim/lld_interrupt.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -188,14 +174,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/os_sim/lld_timer.h" />
-		<Unit filename="src/os_sim/lld_watchdog.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/os_sim/lld_watchdog.h" />
 		<Unit filename="src/os_sim/mcu_config.h" />
 		<Unit filename="src/os_sim/os_sim_main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/os_test/example.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/os_test/sput.h" />
 		<Unit filename="src/os_user_code/led.c">
 			<Option compilerVar="CC" />
 		</Unit>

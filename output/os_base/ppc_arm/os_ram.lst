@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccTn4050.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccs9A63j.s 			page 1
 
 
    1              		.syntax unified
@@ -22,14 +22,16 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccTn4050.s 			page 1
   19              		.comm	OS_STACK,256,4
   20              		.comm	OS_MAIN_STACK,256,4
   21              		.comm	VAR_HARDFAULT_STATUS_REG,4,4
-  22              		.comm	VAR_FAULT_STATUS_REG,4,4
-  23              		.comm	VAR_MEM_FAULT_ADDR_REG,4,4
-  24              		.comm	VAR_BUS_FAULT_ADDR_REG,4,4
-  25              		.comm	VAR_AUX_FAULT_STATUS_REG,4,4
-  26              	.Letext0:
-  27              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  28              		.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccTn4050.s 			page 2
+  22              		.comm	VAR_MEM_MANAG_FAULT_STATUS_REG,4,4
+  23              		.comm	VAR_USAGE_FAULT_STATUS_REG,4,4
+  24              		.comm	VAR_FAULT_STATUS_REG,4,4
+  25              		.comm	VAR_MEM_FAULT_ADDR_REG,4,4
+  26              		.comm	VAR_BUS_FAULT_ADDR_REG,4,4
+  27              		.comm	VAR_AUX_FAULT_STATUS_REG,4,4
+  28              	.Letext0:
+  29              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  30              		.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccs9A63j.s 			page 2
 
 
 DEFINED SYMBOLS
@@ -38,6 +40,8 @@ DEFINED SYMBOLS
                             *COM*:00000100 OS_STACK
                             *COM*:00000100 OS_MAIN_STACK
                             *COM*:00000004 VAR_HARDFAULT_STATUS_REG
+                            *COM*:00000004 VAR_MEM_MANAG_FAULT_STATUS_REG
+                            *COM*:00000004 VAR_USAGE_FAULT_STATUS_REG
                             *COM*:00000004 VAR_FAULT_STATUS_REG
                             *COM*:00000004 VAR_MEM_FAULT_ADDR_REG
                             *COM*:00000004 VAR_BUS_FAULT_ADDR_REG

@@ -507,6 +507,8 @@ extern unsigned_char_t HEAP[10000];
 extern unsigned_char_t OS_STACK[1][0x100];
 extern unsigned_char_t OS_MAIN_STACK[0x100];
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
+extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG ;
+extern volatile uint32 VAR_USAGE_FAULT_STATUS_REG ;
 extern volatile uint32 VAR_FAULT_STATUS_REG ;
 extern volatile uint32 VAR_MEM_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
@@ -651,7 +653,7 @@ enum CoreID_e
 };
 typedef enum CoreID_e CoreID_t;
 
-extern CoreID_t Get_core_id(void);
+extern CoreID_t GET_CORE_ID(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);

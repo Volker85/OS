@@ -218,7 +218,7 @@ Local void OS_STARTTASK(task_t* task)
             task->active =  True;
             task->wait_time = 0;
             task->current_prio = task->default_prio;
-            OS_TASK_SAVE_SYSTEM_STACK(&OS_STACK[Get_core_id()][0]);
+            OS_TASK_SAVE_SYSTEM_STACK(&OS_STACK[GET_CORE_ID()][0]);
             OS_TASK_RESTORETASK_ENVIRONMENT(task);
             start_time = Get_current_time();
             EnableInterrupts();
@@ -236,7 +236,7 @@ Local void OS_STARTTASK(task_t* task)
 
             DisableInterrupts();
             OS_TASK_SAVETASK_ENVIRONMENT(task);
-            OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[Get_core_id()][0]);
+            OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[GET_CORE_ID()][0]);
             task->active = False;
             task->exe_time += (Get_current_time() - start_time);
             task->task_group->exe_time += (Get_current_time() - start_time);
@@ -280,7 +280,7 @@ Local void OS_TERMINATE_TASK(task_t* task)
          {
             DisableInterrupts();
             OS_TASK_SAVETASK_ENVIRONMENT(task);
-            OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[Get_core_id()][0]);
+            OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[GET_CORE_ID()][0]);
 
             task->active = False;
             /* reset the prio increase for waiting */
