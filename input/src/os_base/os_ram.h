@@ -19,4 +19,5 @@ extern volatile uint32 VAR_MEM_FAULT_ADDR_REG  ;
 extern volatile uint32 VAR_BUS_FAULT_ADDR_REG  ;
 extern volatile uint32 VAR_AUX_FAULT_STATUS_REG;
 extern volatile uint32 VAR_BUS_FAULT_STATUS_REG;
+extern volatile uint32 LINK_REGISTER_HANDLER;
 #endif

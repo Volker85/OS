@@ -10,8 +10,9 @@
 void OS_START_OS(void)
 {
    /* activate all exception to improve the debug capabilities */
-   SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP; 
-
+#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP;
+#endif
    /* triggers hw & sw init (OS parts), interrupt system init (including MMU) */
    OS_STATE_HANDLER();
 }

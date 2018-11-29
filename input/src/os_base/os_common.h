@@ -23,6 +23,8 @@
 /*#warn "make the OS multi core capable"*/
 #define NR_OF_CORES 1
 
+#define MCU_CLOCK_IN_HZ ((uint32)168000000u)
+
 
 #if(CFG_PROCESSOR == cMCU_SIMULATION)
 #define DisableInterrupts()

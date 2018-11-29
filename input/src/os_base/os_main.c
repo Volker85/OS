@@ -78,6 +78,10 @@ void OS_STATE_HANDLER(void)
       OS_STATE = os_running;
       /* activate the interrupts, tasks will be executed from now on ... */
       LLF_INT_ENABLE();
+      while(1)/*wait until time task*/
+      {
+         
+      }
       break;
    }
    case os_running:

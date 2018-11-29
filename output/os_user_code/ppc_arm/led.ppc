@@ -417,7 +417,9 @@ typedef unsigned long uint32;
 
 
 #define NR_OF_CORES 1
-# 44 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+
+#define MCU_CLOCK_IN_HZ ((uint32)168000000u)
+# 46 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 #define DisableInterrupts() LLF_INT_DISABLE()
 #define EnableInterrupts() LLF_INT_ENABLE()
 #define Privilige_level_save_current() ;
@@ -511,6 +513,7 @@ extern volatile uint32 VAR_MEM_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_AUX_FAULT_STATUS_REG;
 extern volatile uint32 VAR_BUS_FAULT_STATUS_REG;
+extern volatile uint32 LINK_REGISTER_HANDLER;
 # 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 

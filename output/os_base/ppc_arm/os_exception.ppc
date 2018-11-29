@@ -417,7 +417,9 @@ typedef unsigned long uint32;
 
 
 #define NR_OF_CORES 1
-# 44 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+
+#define MCU_CLOCK_IN_HZ ((uint32)168000000u)
+# 46 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 #define DisableInterrupts() LLF_INT_DISABLE()
 #define EnableInterrupts() LLF_INT_ENABLE()
 #define Privilige_level_save_current() ;
@@ -511,6 +513,7 @@ extern volatile uint32 VAR_MEM_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_AUX_FAULT_STATUS_REG;
 extern volatile uint32 VAR_BUS_FAULT_STATUS_REG;
+extern volatile uint32 LINK_REGISTER_HANDLER;
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 
@@ -764,6 +767,12 @@ static void OS_Exception_Read_Status_Registers(void)
 
 void OS_Exception_HARDFAULT(void)
 {
+   __asm__ __volatile__ ("LDR r0,%0;                          STR r14,[r0];"
+
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
@@ -818,6 +827,7 @@ void OS_Exception_PendSV(void)
 
 void OS_Exception_Systick(void)
 {
+# 128 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
 }

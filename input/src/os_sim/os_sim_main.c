@@ -12,17 +12,19 @@ int main(int argc, char* argv[])
 #if(CFG_PROCESSOR == cMCU_X86)
    unsigned int i = 0;
    time_t t = time(0);
-   OS_START_OS();
 
-   while(i < 1e9)
+   OS_START_OS();
+   while(i < 1e6)
    {
       /* emulate the interrupts */
       OS_ISRHANDLERC0();
       OS_ISRHANDLERC1();
       OS_ISRHANDLERC2();
       OS_ISRHANDLERC3();
+
       i++;
    }
+
    t = time(0) - t;
    printf("Zeit: %d",t);
    getchar();

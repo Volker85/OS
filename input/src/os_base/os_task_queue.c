@@ -68,14 +68,14 @@ void SET_RUNNING_TASK(task_t* task)
       (&RUNNING_TASK[0])->r3                             = task->r3;
       (&RUNNING_TASK[0])->r4                             = task->r4;
       (&RUNNING_TASK[0])->r5                             = task->r5;
-      (&RUNNING_TASK[0])->r6                             = task->r6;   
+      (&RUNNING_TASK[0])->r6                             = task->r6;
       (&RUNNING_TASK[0])->r7                             = task->r7;
       (&RUNNING_TASK[0])->r8                             = task->r8;
       (&RUNNING_TASK[0])->r9                             = task->r9;
       (&RUNNING_TASK[0])->r10                            = task->r10;
       (&RUNNING_TASK[0])->r11                            = task->r11;
-      (&RUNNING_TASK[0])->r12                            = task->r12;  
-   #endif      
+      (&RUNNING_TASK[0])->r12                            = task->r12;
+   #endif
 
       (&RUNNING_TASK[0])->pStackPointer                   = task->pStackPointer;
       (&RUNNING_TASK[0])->pStackPointerByMalloc           = task->pStackPointerByMalloc;
@@ -144,14 +144,14 @@ void* AddToTaskQueue(task_t* task)
       (&TASK_RUN_QUEUE[element_nr])->r3                             = task->r3;
       (&TASK_RUN_QUEUE[element_nr])->r4                             = task->r4;
       (&TASK_RUN_QUEUE[element_nr])->r5                             = task->r5;
-      (&TASK_RUN_QUEUE[element_nr])->r6                             = task->r6;   
+      (&TASK_RUN_QUEUE[element_nr])->r6                             = task->r6;
       (&TASK_RUN_QUEUE[element_nr])->r7                             = task->r7;
       (&TASK_RUN_QUEUE[element_nr])->r8                             = task->r8;
       (&TASK_RUN_QUEUE[element_nr])->r9                             = task->r9;
       (&TASK_RUN_QUEUE[element_nr])->r10                            = task->r10;
       (&TASK_RUN_QUEUE[element_nr])->r11                            = task->r11;
-      (&TASK_RUN_QUEUE[element_nr])->r12                            = task->r12;  
-   #endif       
+      (&TASK_RUN_QUEUE[element_nr])->r12                            = task->r12;
+   #endif
       (&TASK_RUN_QUEUE[element_nr])->pStackPointer                   = task->pStackPointer;
       (&TASK_RUN_QUEUE[element_nr])->pStackPointerByMalloc           = task->pStackPointerByMalloc;
       (&TASK_RUN_QUEUE[element_nr])->pStackPointerStart              = task->pStackPointerStart;
@@ -189,16 +189,16 @@ void DeleteFromTaskQueue(task_t* task)
       task->r0                                   =   0              ;
       task->r1                                   =   0              ;
       task->r2                                   =   0              ;
-      task->r3                                   =   0              ;     
-      task->r4                                   =   0              ;     
-      task->r5                                   =   0              ;     
-      task->r6                                   =   0              ;     
-      task->r7                                   =   0              ;     
-      task->r8                                   =   0              ;     
-      task->r9                                   =   0              ;     
-      task->r10                                  =   0             ;     
-      task->r11                                  =   0             ;     
-      task->r12                                  =   0             ;     
+      task->r3                                   =   0              ;
+      task->r4                                   =   0              ;
+      task->r5                                   =   0              ;
+      task->r6                                   =   0              ;
+      task->r7                                   =   0              ;
+      task->r8                                   =   0              ;
+      task->r9                                   =   0              ;
+      task->r10                                  =   0             ;
+      task->r11                                  =   0             ;
+      task->r12                                  =   0             ;
       #else
       #error "os_task_queue.c"
       #endif
@@ -310,16 +310,16 @@ void AddToIdleTaskQueue(task_t* task)
       (&TASK_IDLE_QUEUE[0])->r0                                   =   task->r0              ;
       (&TASK_IDLE_QUEUE[0])->r1                                   =   task->r1              ;
       (&TASK_IDLE_QUEUE[0])->r2                                   =   task->r2              ;
-      (&TASK_IDLE_QUEUE[0])->r3                                   =   task->r3              ;     
-      (&TASK_IDLE_QUEUE[0])->r4                                   =   task->r4              ;     
-      (&TASK_IDLE_QUEUE[0])->r5                                   =   task->r5              ;     
-      (&TASK_IDLE_QUEUE[0])->r6                                   =   task->r6              ;     
-      (&TASK_IDLE_QUEUE[0])->r7                                   =   task->r7              ;     
-      (&TASK_IDLE_QUEUE[0])->r8                                   =   task->r8              ;     
-      (&TASK_IDLE_QUEUE[0])->r9                                   =   task->r9              ;     
-      (&TASK_IDLE_QUEUE[0])->r10                                  =   task->r10             ;     
-      (&TASK_IDLE_QUEUE[0])->r11                                  =   task->r11             ;     
-      (&TASK_IDLE_QUEUE[0])->r12                                  =   task->r12             ;     
+      (&TASK_IDLE_QUEUE[0])->r3                                   =   task->r3              ;
+      (&TASK_IDLE_QUEUE[0])->r4                                   =   task->r4              ;
+      (&TASK_IDLE_QUEUE[0])->r5                                   =   task->r5              ;
+      (&TASK_IDLE_QUEUE[0])->r6                                   =   task->r6              ;
+      (&TASK_IDLE_QUEUE[0])->r7                                   =   task->r7              ;
+      (&TASK_IDLE_QUEUE[0])->r8                                   =   task->r8              ;
+      (&TASK_IDLE_QUEUE[0])->r9                                   =   task->r9              ;
+      (&TASK_IDLE_QUEUE[0])->r10                                  =   task->r10             ;
+      (&TASK_IDLE_QUEUE[0])->r11                                  =   task->r11             ;
+      (&TASK_IDLE_QUEUE[0])->r12                                  =   task->r12             ;
       #else
       #error "os_task_queue.c"
       #endif
@@ -369,8 +369,11 @@ void OS_INIT_TASK(
       }
       else
       {
+         /*#warn "following lines (included in #if(0)) cause usage fault...."*/
+         #if(1)
          task->state_request(task, Task_unspecified);
          task->state_request(task, Task_suspended);
+         #endif
       }
       if(uStackSize > TASK_STACK_SIZE)
       {
