@@ -514,6 +514,7 @@ extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_AUX_FAULT_STATUS_REG;
 extern volatile uint32 VAR_BUS_FAULT_STATUS_REG;
 extern volatile uint32 LINK_REGISTER_HANDLER;
+extern volatile uint32 BACKUP_SYSTICK_CURRENT_VAL_REG;
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 
@@ -748,6 +749,7 @@ extern void OS_START_OS(void);
 
 static void OS_Exception_Read_Status_Registers(void)
 {
+
 #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
 #define MEM_MANAG_FAULT_STATUS_REG ((volatile uint8*)0xE000ED28u)
 #define BUS_FAULT_STATUS_REG ((volatile uint8*)0xE000ED29u)
@@ -762,11 +764,13 @@ static void OS_Exception_Read_Status_Registers(void)
    VAR_MEM_FAULT_ADDR_REG = *((volatile uint32*)0xE000ED34u);
    VAR_BUS_FAULT_ADDR_REG = *((volatile uint32*)0xE000ED38u);
    VAR_AUX_FAULT_STATUS_REG = *((volatile uint32*)0xE000ED3Cu);
+
 }
 
 
 void OS_Exception_HARDFAULT(void)
 {
+
    __asm__ __volatile__ ("LDR r0,%0;                          STR r14,[r0];"
 
                         :"=m"(LINK_REGISTER_HANDLER)
@@ -776,85 +780,148 @@ void OS_Exception_HARDFAULT(void)
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
+
 }
 
 
 void OS_Exception_NMI(void)
 {
+
+   __asm__ __volatile__ ("LDR r0,%0;                          STR r14,[r0];"
+
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
+
 }
 void OS_Exception_SWI(void)
 {
 
+   __asm__ __volatile__ ("LDR r0,%0;                          STR r14,[r0];"
+
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );
+
 
    OS_ISRHANDLERC0();
+
 }
 void OS_Exception_BUS_FAULT(void)
 {
+
+   __asm__ __volatile__ ("LDR r0,%0;                          STR r14,[r0];"
+
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
+
 }
 
 void OS_Exception_DEBUG(void)
 {
+
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
+
 }
 
 void OS_Exception_MEM_MANAG_FAULT(void)
 {
+
+   __asm__ __volatile__ ("LDR r0,%0;                          STR r14,[r0];"
+
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
+
 }
 
 void OS_Exception_USAGE_FAULT(void)
 {
+
+   __asm__ __volatile__ ("LDR r0,%0;                          STR r14,[r0];"
+
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
+
 }
 
 void OS_Exception_PendSV(void)
 {
+
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
+
 }
 
 void OS_Exception_Systick(void)
 {
-# 128 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-   while(1){}
+# 178 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+   OS_STATE_HANDLER();
+   while(1)
+   {
+#define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
+      BACKUP_SYSTICK_CURRENT_VAL_REG = *((uint32*)0xE000E018);
+   }
    OS_SHUTDOWN(os_reset_hardreset);
+
 }
 
 void OS_Exception_IRQ(void)
 {
+
    OS_ISRHANDLERC0();
+
 }
 void OS_Exception_FIQ(void)
 {
+
    OS_ISRHANDLERC0();
+
 }
 
 
 void TCMP1(void)
 {
+
    OS_ISRHANDLERC0();
+
 }
 void TCMP2(void)
 {
+
    OS_ISRHANDLERC1();
+
 }
 void TCMP3(void)
 {
+
    OS_ISRHANDLERC2();
+
 }
 void TCMP4(void)
 {
+
    OS_ISRHANDLERC3();
+
 }

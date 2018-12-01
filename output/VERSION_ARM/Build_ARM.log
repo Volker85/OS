@@ -1,20 +1,17 @@
 "Target_ARM" 
-28.11.2018 21:24:51,67 
+01.12.2018 22:08:50,13 
 "preprocess it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:372:11: error: invalid preprocessing directive #warn
-          #warn "following lines (included in #if(0)) cause usage fault...." 
-           ^
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:372:11: error: invalid preprocessing directive #warn
-          #warn "following lines (included in #if(0)) cause usage fault...." 
-           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Systick':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:178:4: warning: implicit declaration of function 'OS_STATE_HANDLER' [-Wimplicit-function-declaration]
+    OS_STATE_HANDLER();
+    ^
 "assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:372:11: error: invalid preprocessing directive #warn
-          #warn "following lines (included in #if(0)) cause usage fault...." 
-           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Systick':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:178:4: warning: implicit declaration of function 'OS_STATE_HANDLER' [-Wimplicit-function-declaration]
+    OS_STATE_HANDLER();
+    ^
    1              		.syntax unified
    2              		.cpu cortex-m4
    3              		.fpu softvfp

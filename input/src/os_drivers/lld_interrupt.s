@@ -21,10 +21,12 @@ From the AAPCS, §5.1.1:
       
 LLF_INT_DISABLE:
         CPSID i
+        CPSID f
         MOV R15, R14
 
 LLF_INT_ENABLE:
         CPSIE i
+        CPSIE f
         MOV R15, R14
 
 LLF_DISABLE_INTERRUPTS_ALL_CORES:

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3NtuJ8.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccTG1cqA.s 			page 1
 
 
    1              		.syntax unified
@@ -30,10 +30,11 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3NtuJ8.s 			page 1
   27              		.comm	VAR_AUX_FAULT_STATUS_REG,4,4
   28              		.comm	VAR_BUS_FAULT_STATUS_REG,4,4
   29              		.comm	LINK_REGISTER_HANDLER,4,4
-  30              	.Letext0:
-  31              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  32              		.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3NtuJ8.s 			page 2
+  30              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
+  31              	.Letext0:
+  32              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  33              		.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccTG1cqA.s 			page 2
 
 
 DEFINED SYMBOLS
@@ -50,6 +51,7 @@ DEFINED SYMBOLS
                             *COM*:00000004 VAR_AUX_FAULT_STATUS_REG
                             *COM*:00000004 VAR_BUS_FAULT_STATUS_REG
                             *COM*:00000004 LINK_REGISTER_HANDLER
+                            *COM*:00000004 BACKUP_SYSTICK_CURRENT_VAL_REG
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.17fb4bbab233edcbaca9a4c22556f36d

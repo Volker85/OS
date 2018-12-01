@@ -48,8 +48,6 @@ void OS_ACTIVATE_DISPATCHER(void)
    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_ENABLE;
    #endif
-   /* activate now the interrupts */
-   LLF_INT_ENABLE();
 }
 
 
@@ -453,7 +451,7 @@ void OS_INIT_TASKS(void)
                 200,           /* Stack Size */
                 True                                /* Kernel Mode */
                );
-   OS_SaveTaskPtr(task_ptr, Task_3_ptr);
+   OS_SaveTaskPtr(task_ptr, Task_3_ptr);   
 }
 
 

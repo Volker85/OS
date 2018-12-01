@@ -369,11 +369,8 @@ void OS_INIT_TASK(
       }
       else
       {
-         /*#warn "following lines (included in #if(0)) cause usage fault...."*/
-         #if(1)
-         task->state_request(task, Task_unspecified);
-         task->state_request(task, Task_suspended);
-         #endif
+         task_state_request(task, Task_unspecified);
+         task_state_request(task, Task_suspended);
       }
       if(uStackSize > TASK_STACK_SIZE)
       {

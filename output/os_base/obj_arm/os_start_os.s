@@ -33,35 +33,86 @@ OS_START_OS:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 13 0
-	ldr	r2, .L2
+	.loc 1 12 0
 	ldr	r3, .L2
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 13 0
+	ldr	r3, .L2+4
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 14 0
+	ldr	r3, .L2+8
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 15 0
+	ldr	r3, .L2+12
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 16 0
+	ldr	r3, .L2+16
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 17 0
+	ldr	r3, .L2+20
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 18 0
+	ldr	r3, .L2+24
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 19 0
+	ldr	r3, .L2+28
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 20 0
+	ldr	r3, .L2+32
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 21 0
+	ldr	r3, .L2+36
+	movs	r2, #0
+	str	r2, [r3]
+	.loc 1 24 0
+	ldr	r2, .L2+40
+	ldr	r3, .L2+40
 	ldr	r3, [r3]
 	orr	r3, r3, #458752
 	str	r3, [r2]
-	.loc 1 16 0
+	.loc 1 27 0
 	bl	OS_STATE_HANDLER
-	.loc 1 17 0
+	.loc 1 28 0
 	pop	{r7, pc}
 .L3:
 	.align	2
 .L2:
+	.word	VAR_HARDFAULT_STATUS_REG
+	.word	VAR_MEM_MANAG_FAULT_STATUS_REG
+	.word	VAR_USAGE_FAULT_STATUS_REG
+	.word	VAR_FAULT_STATUS_REG
+	.word	VAR_MEM_FAULT_ADDR_REG
+	.word	VAR_BUS_FAULT_ADDR_REG
+	.word	VAR_AUX_FAULT_STATUS_REG
+	.word	VAR_BUS_FAULT_STATUS_REG
+	.word	LINK_REGISTER_HANDLER
+	.word	BACKUP_SYSTICK_CURRENT_VAL_REG
 	.word	-536810204
 	.cfi_endproc
 .LFE0:
 	.size	OS_START_OS, .-OS_START_OS
 .Letext0:
-	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x5a
+	.4byte	0xcd
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF434
+	.4byte	.LASF444
 	.byte	0x1
-	.4byte	.LASF435
+	.4byte	.LASF445
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -79,8 +130,8 @@ OS_START_OS:
 	.byte	0x7
 	.4byte	.LASF432
 	.uleb128 0x3
-	.4byte	.LASF436
-	.byte	0x2
+	.4byte	.LASF446
+	.byte	0x3
 	.byte	0x23
 	.4byte	0x33
 	.uleb128 0x2
@@ -88,13 +139,65 @@ OS_START_OS:
 	.byte	0x7
 	.4byte	.LASF433
 	.uleb128 0x4
-	.4byte	.LASF437
+	.4byte	.LASF447
 	.byte	0x1
 	.byte	0xa
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
+	.uleb128 0x5
+	.4byte	.LASF434
+	.byte	0x2
+	.byte	0xe
+	.4byte	0x68
+	.uleb128 0x6
+	.4byte	0x3a
+	.uleb128 0x5
+	.4byte	.LASF435
+	.byte	0x2
+	.byte	0xf
+	.4byte	0x68
+	.uleb128 0x5
+	.4byte	.LASF436
+	.byte	0x2
+	.byte	0x10
+	.4byte	0x68
+	.uleb128 0x5
+	.4byte	.LASF437
+	.byte	0x2
+	.byte	0x11
+	.4byte	0x68
+	.uleb128 0x5
+	.4byte	.LASF438
+	.byte	0x2
+	.byte	0x12
+	.4byte	0x68
+	.uleb128 0x5
+	.4byte	.LASF439
+	.byte	0x2
+	.byte	0x13
+	.4byte	0x68
+	.uleb128 0x5
+	.4byte	.LASF440
+	.byte	0x2
+	.byte	0x14
+	.4byte	0x68
+	.uleb128 0x5
+	.4byte	.LASF441
+	.byte	0x2
+	.byte	0x15
+	.4byte	0x68
+	.uleb128 0x5
+	.4byte	.LASF442
+	.byte	0x2
+	.byte	0x16
+	.4byte	0x68
+	.uleb128 0x5
+	.4byte	.LASF443
+	.byte	0x2
+	.byte	0x17
+	.4byte	0x68
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -164,6 +267,30 @@ OS_START_OS:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
+	.uleb128 0x5
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3c
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x6
+	.uleb128 0x35
+	.byte	0
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
 	.byte	0
 	.section	.debug_aranges,"",%progbits
 	.4byte	0x1c
@@ -187,30 +314,29 @@ OS_START_OS:
 	.byte	0x3
 	.uleb128 0
 	.uleb128 0x1
-	.file 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
+	.file 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x1
-	.uleb128 0x3
+	.uleb128 0x4
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF360
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x2
+	.uleb128 0x3
 	.byte	0x7
 	.4byte	.Ldebug_macro2
 	.byte	0x4
-	.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x4
+	.uleb128 0x5
 	.byte	0x7
 	.4byte	.Ldebug_macro3
 	.byte	0x4
-	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.byte	0x3
 	.uleb128 0x7
-	.uleb128 0x5
+	.uleb128 0x2
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF396
@@ -1607,6 +1733,8 @@ OS_START_OS:
 	.ascii	"2)0x00010000)\000"
 .LASF76:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
+.LASF103:
+	.ascii	"__UINT16_C(c) c\000"
 .LASF71:
 	.ascii	"__LONG_LONG_MAX__ 9223372036854775807LL\000"
 .LASF178:
@@ -1615,12 +1743,16 @@ OS_START_OS:
 	.ascii	"__WCHAR_MAX__ 4294967295U\000"
 .LASF143:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
+.LASF126:
+	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF368:
 	.ascii	"CPP_VERSION_2003 2\000"
 .LASF177:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
 .LASF92:
 	.ascii	"__INT_LEAST8_MAX__ 127\000"
+.LASF34:
+	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
 .LASF84:
 	.ascii	"__INT8_MAX__ 127\000"
 .LASF101:
@@ -1637,8 +1769,12 @@ OS_START_OS:
 	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
 .LASF139:
 	.ascii	"__DBL_MIN_EXP__ (-1021)\000"
-.LASF98:
-	.ascii	"__INT_LEAST64_MAX__ 9223372036854775807LL\000"
+.LASF423:
+	.ascii	"_LED_H_ \000"
+.LASF65:
+	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
+.LASF208:
+	.ascii	"__LFRACT_MIN__ (-0.5LR-0.5LR)\000"
 .LASF336:
 	.ascii	"__ARM_SIZEOF_WCHAR_T 4\000"
 .LASF395:
@@ -1652,8 +1788,8 @@ OS_START_OS:
 .LASF426:
 	.ascii	"SYS_HANDLER_CTRL_STATE_BIT_MASK_USGFAULTENA ((uint3"
 	.ascii	"2)0x00040000)\000"
-.LASF423:
-	.ascii	"_LED_H_ \000"
+.LASF393:
+	.ascii	"Privilige_level_enter_kernel_mode() ;\000"
 .LASF331:
 	.ascii	"__ARM_32BIT_STATE 1\000"
 .LASF419:
@@ -1664,16 +1800,14 @@ OS_START_OS:
 	.ascii	"FALSE False\000"
 .LASF398:
 	.ascii	"OS_STACK_SIZE 0x100\000"
-.LASF103:
-	.ascii	"__UINT16_C(c) c\000"
+.LASF435:
+	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
 .LASF20:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
 .LASF35:
 	.ascii	"__CHAR16_TYPE__ short unsigned int\000"
 .LASF19:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
-.LASF264:
-	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF2:
 	.ascii	"__GNUC__ 4\000"
 .LASF24:
@@ -1724,6 +1858,8 @@ OS_START_OS:
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF100:
 	.ascii	"__UINT_LEAST8_MAX__ 255\000"
+.LASF440:
+	.ascii	"VAR_AUX_FAULT_STATUS_REG\000"
 .LASF207:
 	.ascii	"__LFRACT_IBIT__ 0\000"
 .LASF339:
@@ -1739,12 +1875,10 @@ OS_START_OS:
 	.ascii	"__ULLFRACT_IBIT__ 0\000"
 .LASF6:
 	.ascii	"__ATOMIC_RELAXED 0\000"
-.LASF65:
-	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
 .LASF248:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
-.LASF369:
-	.ascii	"CPP_VERSION_2007 3\000"
+.LASF264:
+	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF253:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
 .LASF344:
@@ -1761,6 +1895,8 @@ OS_START_OS:
 	.ascii	"__INT8_C(c) c\000"
 .LASF342:
 	.ascii	"__thumb2__ 1\000"
+.LASF434:
+	.ascii	"VAR_HARDFAULT_STATUS_REG\000"
 .LASF263:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF380:
@@ -1782,8 +1918,8 @@ OS_START_OS:
 	.ascii	"_lld_global_h_ \000"
 .LASF124:
 	.ascii	"__FLT_DIG__ 6\000"
-.LASF146:
-	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
+.LASF442:
+	.ascii	"LINK_REGISTER_HANDLER\000"
 .LASF309:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1\000"
 .LASF290:
@@ -1832,14 +1968,14 @@ OS_START_OS:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
 .LASF54:
 	.ascii	"__INT_FAST8_TYPE__ int\000"
-.LASF373:
-	.ascii	"_os_common_h_ \000"
+.LASF59:
+	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
 .LASF226:
 	.ascii	"__SACCUM_FBIT__ 7\000"
 .LASF396:
 	.ascii	"_OS_RAM_H_ \000"
-.LASF145:
-	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
+.LASF337:
+	.ascii	"__ARM_ARCH_PROFILE 77\000"
 .LASF176:
 	.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
 .LASF198:
@@ -1850,14 +1986,12 @@ OS_START_OS:
 	.ascii	"Global_inline __inline__\000"
 .LASF245:
 	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
-.LASF437:
+.LASF447:
 	.ascii	"OS_START_OS\000"
 .LASF237:
 	.ascii	"__ACCUM_IBIT__ 16\000"
 .LASF161:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
-.LASF231:
-	.ascii	"__USACCUM_FBIT__ 8\000"
 .LASF227:
 	.ascii	"__SACCUM_IBIT__ 8\000"
 .LASF326:
@@ -1878,8 +2012,10 @@ OS_START_OS:
 	.ascii	"__SIZEOF_FLOAT__ 4\000"
 .LASF105:
 	.ascii	"__UINT32_C(c) c ## UL\000"
-.LASF167:
-	.ascii	"__DEC32_MAX_EXP__ 97\000"
+.LASF298:
+	.ascii	"__UDA_FBIT__ 32\000"
+.LASF439:
+	.ascii	"VAR_BUS_FAULT_ADDR_REG\000"
 .LASF381:
 	.ascii	"Local_inline static __inline__\000"
 .LASF345:
@@ -1910,8 +2046,8 @@ OS_START_OS:
 	.ascii	"MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\000"
 .LASF55:
 	.ascii	"__INT_FAST16_TYPE__ int\000"
-.LASF43:
-	.ascii	"__UINT16_TYPE__ short unsigned int\000"
+.LASF359:
+	.ascii	"STM32F407VG 1\000"
 .LASF3:
 	.ascii	"__GNUC_MINOR__ 9\000"
 .LASF312:
@@ -1953,10 +2089,8 @@ OS_START_OS:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF121:
 	.ascii	"__DEC_EVAL_METHOD__ 2\000"
-.LASF59:
-	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
-.LASF140:
-	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
+.LASF437:
+	.ascii	"VAR_FAULT_STATUS_REG\000"
 .LASF232:
 	.ascii	"__USACCUM_IBIT__ 8\000"
 .LASF90:
@@ -1981,8 +2115,8 @@ OS_START_OS:
 	.ascii	"TRUE True\000"
 .LASF236:
 	.ascii	"__ACCUM_FBIT__ 15\000"
-.LASF315:
-	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
+.LASF173:
+	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF252:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
 .LASF216:
@@ -2009,6 +2143,8 @@ OS_START_OS:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF313:
 	.ascii	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2\000"
+.LASF98:
+	.ascii	"__INT_LEAST64_MAX__ 9223372036854775807LL\000"
 .LASF246:
 	.ascii	"__LACCUM_FBIT__ 31\000"
 .LASF205:
@@ -2019,8 +2155,8 @@ OS_START_OS:
 	.ascii	"__GCC_ATOMIC_LONG_LOCK_FREE 2\000"
 .LASF240:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
-.LASF403:
-	.ascii	"HEAP_OFFSET_FOR_SIZE 0\000"
+.LASF282:
+	.ascii	"__UDQ_FBIT__ 64\000"
 .LASF343:
 	.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
 .LASF284:
@@ -2059,6 +2195,8 @@ OS_START_OS:
 	.ascii	"__UINT_LEAST32_MAX__ 4294967295UL\000"
 .LASF356:
 	.ascii	"__ELF__ 1\000"
+.LASF441:
+	.ascii	"VAR_BUS_FAULT_STATUS_REG\000"
 .LASF375:
 	.ascii	"True 1\000"
 .LASF320:
@@ -2099,7 +2237,7 @@ OS_START_OS:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
 .LASF18:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
-.LASF436:
+.LASF446:
 	.ascii	"uint32\000"
 .LASF4:
 	.ascii	"__GNUC_PATCHLEVEL__ 3\000"
@@ -2139,8 +2277,8 @@ OS_START_OS:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF165:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF173:
-	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
+.LASF369:
+	.ascii	"CPP_VERSION_2007 3\000"
 .LASF83:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF220:
@@ -2153,6 +2291,8 @@ OS_START_OS:
 	.ascii	"__SFRACT_FBIT__ 7\000"
 .LASF36:
 	.ascii	"__CHAR32_TYPE__ long unsigned int\000"
+.LASF43:
+	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF408:
 	.ascii	"_os_task_config_h_ \000"
 .LASF386:
@@ -2161,8 +2301,6 @@ OS_START_OS:
 	.ascii	"__ARM_PCS 1\000"
 .LASF49:
 	.ascii	"__INT_LEAST64_TYPE__ long long int\000"
-.LASF362:
-	.ascii	"INTEGER_LLP64_IL32P64 1\000"
 .LASF52:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
 .LASF272:
@@ -2175,8 +2313,8 @@ OS_START_OS:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF88:
 	.ascii	"__UINT8_MAX__ 255\000"
-.LASF249:
-	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
+.LASF315:
+	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
 .LASF25:
 	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
 .LASF271:
@@ -2209,8 +2347,6 @@ OS_START_OS:
 	.ascii	"__INT32_TYPE__ long int\000"
 .LASF60:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
-.LASF359:
-	.ascii	"STM32F407VG 1\000"
 .LASF155:
 	.ascii	"__LDBL_MAX_EXP__ 1024\000"
 .LASF270:
@@ -2219,14 +2355,16 @@ OS_START_OS:
 	.ascii	"CPP_VERSION_NONE 0\000"
 .LASF256:
 	.ascii	"__LLACCUM_FBIT__ 31\000"
-.LASF208:
-	.ascii	"__LFRACT_MIN__ (-0.5LR-0.5LR)\000"
+.LASF231:
+	.ascii	"__USACCUM_FBIT__ 8\000"
 .LASF304:
 	.ascii	"__GNUC_GNU_INLINE__ 1\000"
 .LASF181:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
 .LASF341:
 	.ascii	"__thumb__ 1\000"
+.LASF249:
+	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF164:
 	.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
 .LASF38:
@@ -2250,8 +2388,8 @@ OS_START_OS:
 	.ascii	"2)0x00020000)\000"
 .LASF191:
 	.ascii	"__USFRACT_FBIT__ 8\000"
-.LASF282:
-	.ascii	"__UDQ_FBIT__ 64\000"
+.LASF99:
+	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF268:
 	.ascii	"__HQ_FBIT__ 15\000"
 .LASF113:
@@ -2268,8 +2406,6 @@ OS_START_OS:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
 .LASF64:
 	.ascii	"__has_include(STR) __has_include__(STR)\000"
-.LASF99:
-	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF132:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
 .LASF102:
@@ -2290,6 +2426,8 @@ OS_START_OS:
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
 .LASF286:
 	.ascii	"__HA_FBIT__ 7\000"
+.LASF438:
+	.ascii	"VAR_MEM_FAULT_ADDR_REG\000"
 .LASF358:
 	.ascii	"CFG_PROCESSOR 4\000"
 .LASF228:
@@ -2344,8 +2482,8 @@ OS_START_OS:
 	.ascii	"__GCC_ATOMIC_LLONG_LOCK_FREE 1\000"
 .LASF310:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\000"
-.LASF127:
-	.ascii	"__FLT_MAX_EXP__ 128\000"
+.LASF443:
+	.ascii	"BACKUP_SYSTICK_CURRENT_VAL_REG\000"
 .LASF109:
 	.ascii	"__INT_FAST16_MAX__ 2147483647\000"
 .LASF61:
@@ -2356,8 +2494,8 @@ OS_START_OS:
 	.ascii	"unsigned char\000"
 .LASF166:
 	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
-.LASF34:
-	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
+.LASF167:
+	.ascii	"__DEC32_MAX_EXP__ 97\000"
 .LASF367:
 	.ascii	"CPP_VERSION_1998 1\000"
 .LASF371:
@@ -2375,6 +2513,8 @@ OS_START_OS:
 .LASF421:
 	.ascii	"os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_"
 	.ascii	"name)])\000"
+.LASF403:
+	.ascii	"HEAP_OFFSET_FOR_SIZE 0\000"
 .LASF273:
 	.ascii	"__DQ_IBIT__ 0\000"
 .LASF122:
@@ -2393,10 +2533,12 @@ OS_START_OS:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
 .LASF409:
 	.ascii	"SchedulerFrequency (1.0e3)\000"
+.LASF145:
+	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
 .LASF316:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
-.LASF126:
-	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
+.LASF127:
+	.ascii	"__FLT_MAX_EXP__ 128\000"
 .LASF73:
 	.ascii	"__WCHAR_MIN__ 0U\000"
 .LASF149:
@@ -2409,6 +2551,8 @@ OS_START_OS:
 	.ascii	"__SIZEOF_INT__ 4\000"
 .LASF33:
 	.ascii	"__INTMAX_TYPE__ long long int\000"
+.LASF146:
+	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
 .LASF79:
 	.ascii	"__INTMAX_C(c) c ## LL\000"
 .LASF340:
@@ -2424,14 +2568,12 @@ OS_START_OS:
 	.ascii	"short unsigned int\000"
 .LASF363:
 	.ascii	"INTEGER_LP64_I32LP64 2\000"
-.LASF351:
-	.ascii	"__ARM_ARCH_7EM__ 1\000"
+.LASF362:
+	.ascii	"INTEGER_LLP64_IL32P64 1\000"
 .LASF266:
 	.ascii	"__QQ_FBIT__ 7\000"
 .LASF51:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
-.LASF337:
-	.ascii	"__ARM_ARCH_PROFILE 77\000"
 .LASF125:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
 .LASF391:
@@ -2439,6 +2581,8 @@ OS_START_OS:
 .LASF183:
 	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
 	.ascii	"6144DL\000"
+.LASF373:
+	.ascii	"_os_common_h_ \000"
 .LASF157:
 	.ascii	"__DECIMAL_DIG__ 17\000"
 .LASF97:
@@ -2459,11 +2603,11 @@ OS_START_OS:
 	.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
 .LASF10:
 	.ascii	"__ATOMIC_ACQ_REL 4\000"
-.LASF298:
-	.ascii	"__UDA_FBIT__ 32\000"
-.LASF393:
-	.ascii	"Privilige_level_enter_kernel_mode() ;\000"
-.LASF434:
+.LASF436:
+	.ascii	"VAR_USAGE_FAULT_STATUS_REG\000"
+.LASF351:
+	.ascii	"__ARM_ARCH_7EM__ 1\000"
+.LASF444:
 	.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
 	.ascii	"anch revision 221220] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -2471,7 +2615,7 @@ OS_START_OS:
 	.ascii	"__TA_IBIT__ 64\000"
 .LASF175:
 	.ascii	"__DEC64_MIN__ 1E-383DD\000"
-.LASF435:
+.LASF445:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_start_os.c\000"
 .LASF69:
@@ -2480,6 +2624,8 @@ OS_START_OS:
 	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
 .LASF328:
 	.ascii	"__ARM_FEATURE_QBIT 1\000"
+.LASF140:
+	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
 .LASF225:
 	.ascii	"__ULLFRACT_EPSILON__ 0x1P-64ULLR\000"
 .LASF162:

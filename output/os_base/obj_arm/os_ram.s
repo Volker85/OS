@@ -27,19 +27,20 @@
 	.comm	VAR_AUX_FAULT_STATUS_REG,4,4
 	.comm	VAR_BUS_FAULT_STATUS_REG,4,4
 	.comm	LINK_REGISTER_HANDLER,4,4
+	.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
 .Letext0:
 	.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x15b
+	.4byte	0x16c
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF443
-	.byte	0x1
 	.4byte	.LASF444
+	.byte	0x1
+	.4byte	.LASF445
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macro0
 	.uleb128 0x2
@@ -194,6 +195,14 @@
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	LINK_REGISTER_HANDLER
+	.uleb128 0x6
+	.4byte	.LASF443
+	.byte	0x2
+	.byte	0x14
+	.4byte	0xd1
+	.uleb128 0x5
+	.byte	0x3
+	.4byte	BACKUP_SYSTICK_CURRENT_VAL_REG
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -1722,6 +1731,8 @@
 	.ascii	"__WCHAR_MAX__ 4294967295U\000"
 .LASF143:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
+.LASF126:
+	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF368:
 	.ascii	"CPP_VERSION_2003 2\000"
 .LASF177:
@@ -2191,7 +2202,7 @@
 	.ascii	"__DBL_MAX_EXP__ 1024\000"
 .LASF11:
 	.ascii	"__ATOMIC_CONSUME 1\000"
-.LASF444:
+.LASF445:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_ram.c\000"
 .LASF390:
@@ -2452,8 +2463,8 @@
 	.ascii	"__GCC_ATOMIC_LLONG_LOCK_FREE 1\000"
 .LASF310:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\000"
-.LASF127:
-	.ascii	"__FLT_MAX_EXP__ 128\000"
+.LASF443:
+	.ascii	"BACKUP_SYSTICK_CURRENT_VAL_REG\000"
 .LASF109:
 	.ascii	"__INT_FAST16_MAX__ 2147483647\000"
 .LASF61:
@@ -2505,8 +2516,8 @@
 	.ascii	"SchedulerFrequency (1.0e3)\000"
 .LASF316:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
-.LASF126:
-	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
+.LASF127:
+	.ascii	"__FLT_MAX_EXP__ 128\000"
 .LASF73:
 	.ascii	"__WCHAR_MIN__ 0U\000"
 .LASF149:
@@ -2579,7 +2590,7 @@
 	.ascii	"VAR_USAGE_FAULT_STATUS_REG\000"
 .LASF351:
 	.ascii	"__ARM_ARCH_7EM__ 1\000"
-.LASF443:
+.LASF444:
 	.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
 	.ascii	"anch revision 221220] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"

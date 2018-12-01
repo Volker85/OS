@@ -46,6 +46,12 @@ void OS_Exception_HARDFAULT(void)
 void OS_Exception_NMI(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   __asm__ __volatile__ ("LDR r0,%0;\
+                          STR r14,[r0];"
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );   
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
@@ -54,6 +60,12 @@ void OS_Exception_NMI(void)
 void OS_Exception_SWI(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   __asm__ __volatile__ ("LDR r0,%0;\
+                          STR r14,[r0];"
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );   
    /* Mode: Supervisor:
      Exception SWI is entered, in case a user mode program executed the assembler code "SWI" (SoftWare Interrupt)    */
    OS_ISRHANDLERC0();
@@ -62,6 +74,12 @@ void OS_Exception_SWI(void)
 void OS_Exception_BUS_FAULT(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   __asm__ __volatile__ ("LDR r0,%0;\
+                          STR r14,[r0];"
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );   
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
@@ -80,6 +98,12 @@ void OS_Exception_DEBUG(void)
 void OS_Exception_MEM_MANAG_FAULT(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   __asm__ __volatile__ ("LDR r0,%0;\
+                          STR r14,[r0];"
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );   
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
@@ -89,6 +113,12 @@ void OS_Exception_MEM_MANAG_FAULT(void)
 void OS_Exception_USAGE_FAULT(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   __asm__ __volatile__ ("LDR r0,%0;\
+                          STR r14,[r0];"
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );   
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
@@ -144,8 +174,8 @@ Enables the counter:
 
 When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR register and then counts down. On reaching 0, it sets the COUNTFLAG to 1 and optionally asserts the SysTick depending on the value of TICKINT. It then loads the RELOAD value again, and begins counting.
    */
-   while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+
+   OS_STATE_HANDLER();
 #endif
 }
 

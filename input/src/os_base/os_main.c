@@ -78,9 +78,13 @@ void OS_STATE_HANDLER(void)
       OS_STATE = os_running;
       /* activate the interrupts, tasks will be executed from now on ... */
       LLF_INT_ENABLE();
-      while(1)/*wait until time task*/
+
+      #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)   
+      BACKUP_SYSTICK_CURRENT_VAL_REG = *SYSTICK_CURRENT_VAL_REG;
+
+      while(1)/*wait until timer task*/
       {
-         
+
       }
       break;
    }

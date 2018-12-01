@@ -515,6 +515,7 @@ extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
 extern volatile uint32 VAR_AUX_FAULT_STATUS_REG;
 extern volatile uint32 VAR_BUS_FAULT_STATUS_REG;
 extern volatile uint32 LINK_REGISTER_HANDLER;
+extern volatile uint32 BACKUP_SYSTICK_CURRENT_VAL_REG;
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 
@@ -803,8 +804,6 @@ void OS_ACTIVATE_DISPATCHER(void)
    *((uint32*)0xE000E018) = ((uint32)0x00000000);
    *((uint32*)0xE000E010) = *((uint32*)0xE000E010) | ((uint32)0x00000002) | ((uint32)0x00000001);
 
-
-   LLF_INT_ENABLE();
 }
 
 
@@ -922,7 +921,7 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
 }
 void OS_ActivateTask(task_t* task)
 {
-# 178 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 176 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    if(task != 0)
    {
       if((task->IdleTask != 0)||(task->state_request(task, Task_ready)==1))
@@ -1066,7 +1065,7 @@ static void OS_TERMINATE_TASK(task_t* task)
 }
 void OS_TASK_DISPATCHER(void)
 {
-# 331 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 329 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    task_t* task = 0;
 
    task = GetRunningTask();
@@ -1206,7 +1205,7 @@ static task_t* OS_TaskScheduler(void)
 
    scheduler_time_t delta_time = Get_current_time() - LAST_CURRENT_TIME;
    LAST_CURRENT_TIME = Get_current_time();
-# 484 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 482 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    for((element_nr) = (0); (element_nr) <= ((5)-1); (element_nr)++)
    {
       link_list_member = GetFromLinkList(element_nr);
