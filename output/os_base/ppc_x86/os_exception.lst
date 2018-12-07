@@ -1,0 +1,3272 @@
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 1
+
+
+   1              		.file	"os_exception.c"
+   2              		.text
+   3              	Ltext0:
+   5              	_OS_Exception_Read_Status_Registers:
+   6              	LFB0:
+   7              		.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_exception.c"
+   1:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #include "os_firstinc.h"
+   2:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #include "os_exception_isr_handler.h"
+   3:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #include "os_shutdown.h"
+   4:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #include "os_start_os.h"
+   5:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #include "os_ram.h"
+   6:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+   7:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** /* the Interrupt table is set via the code linked to 0x00 and following ...   */
+   8:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** /* interrupts are disabled during RESET exception and will be enabled by task system */
+   9:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** Local void OS_Exception_Read_Status_Registers(void)
+  10:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+   8              		.loc 1 10 0
+   9              		.cfi_startproc
+  10 0000 55       		pushl	%ebp
+  11              		.cfi_def_cfa_offset 8
+  12              		.cfi_offset 5, -8
+  13 0001 89E5     		movl	%esp, %ebp
+  14              		.cfi_def_cfa_register 5
+  11:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+  12:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
+  13:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define MEM_MANAG_FAULT_STATUS_REG     ((volatile uint8*)0xE000ED28u)
+  14:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define BUS_FAULT_STATUS_REG     ((volatile uint8*)0xE000ED29u)
+  15:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define USAGE_FAULT_STATUS_REG     ((volatile uint16*)0xE000ED2Au)
+  16:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define MEM_FAULT_ADDR_REG   ((volatile uint32*)0xE000ED34u)
+  17:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define BUS_FAULT_ADDR_REG   ((volatile uint32*)0xE000ED38u)
+  18:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define AUX_FAULT_STATUS_REG ((volatile uint32*)0xE000ED3Cu)
+  19:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    VAR_HARDFAULT_STATUS_REG = *HARDFAULT_STATUS_REG;
+  20:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    VAR_MEM_MANAG_FAULT_STATUS_REG     = *MEM_MANAG_FAULT_STATUS_REG;
+  21:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    VAR_BUS_FAULT_STATUS_REG   = *BUS_FAULT_STATUS_REG;
+  22:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    VAR_USAGE_FAULT_STATUS_REG = *USAGE_FAULT_STATUS_REG;
+  23:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    VAR_MEM_FAULT_ADDR_REG   = *MEM_FAULT_ADDR_REG;
+  24:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    VAR_BUS_FAULT_ADDR_REG   = *BUS_FAULT_ADDR_REG;
+  25:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    VAR_AUX_FAULT_STATUS_REG = *AUX_FAULT_STATUS_REG;
+  26:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+  27:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+  15              		.loc 1 27 0
+  16 0003 5D       		popl	%ebp
+  17              		.cfi_restore 5
+  18              		.cfi_def_cfa 4, 4
+  19 0004 C3       		ret
+  20              		.cfi_endproc
+  21              	LFE0:
+  22              		.globl	_OS_Exception_HARDFAULT
+  24              	_OS_Exception_HARDFAULT:
+  25              	LFB1:
+  28:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+  29:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+  30:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_HARDFAULT(void)
+  31:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+  26              		.loc 1 31 0
+  27              		.cfi_startproc
+  28 0005 55       		pushl	%ebp
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 2
+
+
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 5, -8
+  31 0006 89E5     		movl	%esp, %ebp
+  32              		.cfi_def_cfa_register 5
+  32:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+  33:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    __asm__ __volatile__ ("LDR r0,%0;\
+  34:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                           STR r14,[r0];"
+  35:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"=m"(LINK_REGISTER_HANDLER)
+  36:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :
+  37:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"r0"
+  38:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         );
+  39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+  40:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    while(1){}
+  41:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  42:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+  43:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+  33              		.loc 1 43 0
+  34 0008 5D       		popl	%ebp
+  35              		.cfi_restore 5
+  36              		.cfi_def_cfa 4, 4
+  37 0009 C3       		ret
+  38              		.cfi_endproc
+  39              	LFE1:
+  40              		.globl	_OS_Exception_NMI
+  42              	_OS_Exception_NMI:
+  43              	LFB2:
+  44:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+  45:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+  46:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_NMI(void)
+  47:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+  44              		.loc 1 47 0
+  45              		.cfi_startproc
+  46 000a 55       		pushl	%ebp
+  47              		.cfi_def_cfa_offset 8
+  48              		.cfi_offset 5, -8
+  49 000b 89E5     		movl	%esp, %ebp
+  50              		.cfi_def_cfa_register 5
+  48:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+  49:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    __asm__ __volatile__ ("LDR r0,%0;\
+  50:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                           STR r14,[r0];"
+  51:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"=m"(LINK_REGISTER_HANDLER)
+  52:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :
+  53:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"r0"
+  54:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         );   
+  55:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+  56:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    while(1){}
+  57:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  58:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+  59:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+  51              		.loc 1 59 0
+  52 000d 5D       		popl	%ebp
+  53              		.cfi_restore 5
+  54              		.cfi_def_cfa 4, 4
+  55 000e C3       		ret
+  56              		.cfi_endproc
+  57              	LFE2:
+  58              		.globl	_OS_Exception_SWI
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 3
+
+
+  60              	_OS_Exception_SWI:
+  61              	LFB3:
+  60:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_SWI(void)
+  61:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+  62              		.loc 1 61 0
+  63              		.cfi_startproc
+  64 000f 55       		pushl	%ebp
+  65              		.cfi_def_cfa_offset 8
+  66              		.cfi_offset 5, -8
+  67 0010 89E5     		movl	%esp, %ebp
+  68              		.cfi_def_cfa_register 5
+  62:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+  63:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    __asm__ __volatile__ ("LDR r0,%0;\
+  64:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                           STR r14,[r0];"
+  65:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"=m"(LINK_REGISTER_HANDLER)
+  66:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :
+  67:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"r0"
+  68:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         );   
+  69:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    /* Mode: Supervisor:
+  70:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****      Exception SWI is entered, in case a user mode program executed the assembler code "SWI" (SoftW
+  71:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_ISRHANDLERC0();
+  72:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+  73:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+  69              		.loc 1 73 0
+  70 0012 5D       		popl	%ebp
+  71              		.cfi_restore 5
+  72              		.cfi_def_cfa 4, 4
+  73 0013 C3       		ret
+  74              		.cfi_endproc
+  75              	LFE3:
+  76              		.globl	_OS_Exception_BUS_FAULT
+  78              	_OS_Exception_BUS_FAULT:
+  79              	LFB4:
+  74:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_BUS_FAULT(void)
+  75:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+  80              		.loc 1 75 0
+  81              		.cfi_startproc
+  82 0014 55       		pushl	%ebp
+  83              		.cfi_def_cfa_offset 8
+  84              		.cfi_offset 5, -8
+  85 0015 89E5     		movl	%esp, %ebp
+  86              		.cfi_def_cfa_register 5
+  76:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+  77:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    __asm__ __volatile__ ("LDR r0,%0;\
+  78:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                           STR r14,[r0];"
+  79:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"=m"(LINK_REGISTER_HANDLER)
+  80:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :
+  81:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"r0"
+  82:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         );   
+  83:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+  84:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    while(1){}
+  85:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  86:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+  87:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+  87              		.loc 1 87 0
+  88 0017 5D       		popl	%ebp
+  89              		.cfi_restore 5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 4
+
+
+  90              		.cfi_def_cfa 4, 4
+  91 0018 C3       		ret
+  92              		.cfi_endproc
+  93              	LFE4:
+  94              		.globl	_OS_Exception_DEBUG
+  96              	_OS_Exception_DEBUG:
+  97              	LFB5:
+  88:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+  89:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_DEBUG(void)
+  90:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+  98              		.loc 1 90 0
+  99              		.cfi_startproc
+ 100 0019 55       		pushl	%ebp
+ 101              		.cfi_def_cfa_offset 8
+ 102              		.cfi_offset 5, -8
+ 103 001a 89E5     		movl	%esp, %ebp
+ 104              		.cfi_def_cfa_register 5
+  91:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+  92:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+  93:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    while(1){}
+  94:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+  95:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+  96:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 105              		.loc 1 96 0
+ 106 001c 5D       		popl	%ebp
+ 107              		.cfi_restore 5
+ 108              		.cfi_def_cfa 4, 4
+ 109 001d C3       		ret
+ 110              		.cfi_endproc
+ 111              	LFE5:
+ 112              		.globl	_OS_Exception_MEM_MANAG_FAULT
+ 114              	_OS_Exception_MEM_MANAG_FAULT:
+ 115              	LFB6:
+  97:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+  98:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_MEM_MANAG_FAULT(void)
+  99:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 116              		.loc 1 99 0
+ 117              		.cfi_startproc
+ 118 001e 55       		pushl	%ebp
+ 119              		.cfi_def_cfa_offset 8
+ 120              		.cfi_offset 5, -8
+ 121 001f 89E5     		movl	%esp, %ebp
+ 122              		.cfi_def_cfa_register 5
+ 100:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 101:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    __asm__ __volatile__ ("LDR r0,%0;\
+ 102:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                           STR r14,[r0];"
+ 103:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"=m"(LINK_REGISTER_HANDLER)
+ 104:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :
+ 105:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"r0"
+ 106:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         );   
+ 107:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+ 108:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    while(1){}
+ 109:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+ 110:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 111:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 123              		.loc 1 111 0
+ 124 0021 5D       		popl	%ebp
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 5
+
+
+ 125              		.cfi_restore 5
+ 126              		.cfi_def_cfa 4, 4
+ 127 0022 C3       		ret
+ 128              		.cfi_endproc
+ 129              	LFE6:
+ 130              		.globl	_OS_Exception_USAGE_FAULT
+ 132              	_OS_Exception_USAGE_FAULT:
+ 133              	LFB7:
+ 112:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 113:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_USAGE_FAULT(void)
+ 114:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 134              		.loc 1 114 0
+ 135              		.cfi_startproc
+ 136 0023 55       		pushl	%ebp
+ 137              		.cfi_def_cfa_offset 8
+ 138              		.cfi_offset 5, -8
+ 139 0024 89E5     		movl	%esp, %ebp
+ 140              		.cfi_def_cfa_register 5
+ 115:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 116:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    __asm__ __volatile__ ("LDR r0,%0;\
+ 117:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                           STR r14,[r0];"
+ 118:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"=m"(LINK_REGISTER_HANDLER)
+ 119:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :
+ 120:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         :"r0"
+ 121:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****                         );   
+ 122:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_Exception_Read_Status_Registers();
+ 123:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    while(1){}
+ 124:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+ 125:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 126:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 141              		.loc 1 126 0
+ 142 0026 5D       		popl	%ebp
+ 143              		.cfi_restore 5
+ 144              		.cfi_def_cfa 4, 4
+ 145 0027 C3       		ret
+ 146              		.cfi_endproc
+ 147              	LFE7:
+ 148              		.globl	_OS_Exception_PendSV
+ 150              	_OS_Exception_PendSV:
+ 151              	LFB8:
+ 127:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 128:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_PendSV(void)
+ 129:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 152              		.loc 1 129 0
+ 153              		.cfi_startproc
+ 154 0028 55       		pushl	%ebp
+ 155              		.cfi_def_cfa_offset 8
+ 156              		.cfi_offset 5, -8
+ 157 0029 89E5     		movl	%esp, %ebp
+ 158              		.cfi_def_cfa_register 5
+ 130:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 131:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    while(1){}
+ 132:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_SHUTDOWN(os_reset_hardreset);
+ 133:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 134:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 159              		.loc 1 134 0
+ 160 002b 5D       		popl	%ebp
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 6
+
+
+ 161              		.cfi_restore 5
+ 162              		.cfi_def_cfa 4, 4
+ 163 002c C3       		ret
+ 164              		.cfi_endproc
+ 165              	LFE8:
+ 166              		.globl	_OS_Exception_Systick
+ 168              	_OS_Exception_Systick:
+ 169              	LFB9:
+ 135:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 136:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_Systick(void)
+ 137:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 170              		.loc 1 137 0
+ 171              		.cfi_startproc
+ 172 002d 55       		pushl	%ebp
+ 173              		.cfi_def_cfa_offset 8
+ 174              		.cfi_offset 5, -8
+ 175 002e 89E5     		movl	%esp, %ebp
+ 176              		.cfi_def_cfa_register 5
+ 138:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 139:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    /* configure the TCMP */
+ 140:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    /*
+ 141:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    Dispatcher function for Core 0:
+ 142:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****     -> ISR_TASK_DISPATCH_C0
+ 143:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    Write Adresse into the config register (interrupts are requested by SWI/SVC???)
+ 144:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    */
+ 145:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define SYSTICK_CTRL_STAT_REG ((uint32*)0xE000E010)
+ 146:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define SYSTICK_RLD_VAL_REG   ((uint32*)0xE000E014)
+ 147:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
+ 148:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define SYSTICK_STAT_REG_TICKINT ((uint32)0x00000002)
+ 149:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define SYSTICK_STAT_REG_ENABLE  ((uint32)0x00000001)
+ 150:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #define LOOPTIME_IN_USEC ((uint32)10000u)
+ 151:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    /*
+ 152:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    CLOCK = HCLK / 8
+ 153:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz
+ 154:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    */
+ 155:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 156:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    *SYSTICK_RLD_VAL_REG = *SYSTICK_RLD_VAL_REG | (((uint32)MCU_CLOCK_IN_HZ * LOOPTIME_IN_USEC) / ((
+ 157:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
+ 158:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_EN
+ 159:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    #endif   
+ 160:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    /*
+ 161:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    4.4.1. SysTick Control and Status Register
+ 162:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 163:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** The SysTick SYST_CSR register enables the SysTick features. The register resets to 0x00000000, or t
+ 164:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 165:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** Table 4.33. SysTick SYST_CSR register bit assignments
+ 166:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** Bits	Name	Function
+ 167:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** [31:17]	-	Reserved.
+ 168:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** [16]	COUNTFLAG
+ 169:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 170:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** Returns 1 if timer counted to 0 since last time this was read.
+ 171:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** [15:3]	-	Reserved.
+ 172:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** [2]	CLKSOURCE
+ 173:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 174:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** Indicates the clock source:
+ 175:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 176:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 0 = external clock
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 7
+
+
+ 177:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 178:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 1 = processor clock.
+ 179:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** [1]	TICKINT
+ 180:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 181:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** Enables SysTick exception request:
+ 182:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 183:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 0 = counting down to zero does not assert the SysTick exception request
+ 184:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 185:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 1 = counting down to zero asserts the SysTick exception request.
+ 186:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 187:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** Software can use COUNTFLAG to determine if SysTick has ever counted to zero.
+ 188:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** [0]	ENABLE
+ 189:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 190:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** Enables the counter:
+ 191:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 192:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 0 = counter disabled
+ 193:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 194:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 1 = counter enabled.
+ 195:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 196:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR register and then cou
+ 197:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    */
+ 198:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 199:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_STATE_HANDLER();
+ 200:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 201:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 177              		.loc 1 201 0
+ 178 0030 5D       		popl	%ebp
+ 179              		.cfi_restore 5
+ 180              		.cfi_def_cfa 4, 4
+ 181 0031 C3       		ret
+ 182              		.cfi_endproc
+ 183              	LFE9:
+ 184              		.globl	_OS_Exception_IRQ
+ 186              	_OS_Exception_IRQ:
+ 187              	LFB10:
+ 202:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 203:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_IRQ(void)
+ 204:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 188              		.loc 1 204 0
+ 189              		.cfi_startproc
+ 190 0032 55       		pushl	%ebp
+ 191              		.cfi_def_cfa_offset 8
+ 192              		.cfi_offset 5, -8
+ 193 0033 89E5     		movl	%esp, %ebp
+ 194              		.cfi_def_cfa_register 5
+ 205:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 206:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_ISRHANDLERC0();
+ 207:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 208:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 195              		.loc 1 208 0
+ 196 0035 5D       		popl	%ebp
+ 197              		.cfi_restore 5
+ 198              		.cfi_def_cfa 4, 4
+ 199 0036 C3       		ret
+ 200              		.cfi_endproc
+ 201              	LFE10:
+ 202              		.globl	_OS_Exception_FIQ
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 8
+
+
+ 204              	_OS_Exception_FIQ:
+ 205              	LFB11:
+ 209:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** void OS_Exception_FIQ(void)
+ 210:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 206              		.loc 1 210 0
+ 207              		.cfi_startproc
+ 208 0037 55       		pushl	%ebp
+ 209              		.cfi_def_cfa_offset 8
+ 210              		.cfi_offset 5, -8
+ 211 0038 89E5     		movl	%esp, %ebp
+ 212              		.cfi_def_cfa_register 5
+ 211:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 212:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_ISRHANDLERC0();
+ 213:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 214:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 213              		.loc 1 214 0
+ 214 003a 5D       		popl	%ebp
+ 215              		.cfi_restore 5
+ 216              		.cfi_def_cfa 4, 4
+ 217 003b C3       		ret
+ 218              		.cfi_endproc
+ 219              	LFE11:
+ 220              		.globl	_TCMP1
+ 222              	_TCMP1:
+ 223              	LFB12:
+ 215:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 216:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** 
+ 217:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** ISR TCMP1(void)
+ 218:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 224              		.loc 1 218 0
+ 225              		.cfi_startproc
+ 226 003c 55       		pushl	%ebp
+ 227              		.cfi_def_cfa_offset 8
+ 228              		.cfi_offset 5, -8
+ 229 003d 89E5     		movl	%esp, %ebp
+ 230              		.cfi_def_cfa_register 5
+ 219:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 220:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_ISRHANDLERC0();
+ 221:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 222:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 231              		.loc 1 222 0
+ 232 003f 5D       		popl	%ebp
+ 233              		.cfi_restore 5
+ 234              		.cfi_def_cfa 4, 4
+ 235 0040 C3       		ret
+ 236              		.cfi_endproc
+ 237              	LFE12:
+ 238              		.globl	_TCMP2
+ 240              	_TCMP2:
+ 241              	LFB13:
+ 223:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** ISR TCMP2(void)
+ 224:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 242              		.loc 1 224 0
+ 243              		.cfi_startproc
+ 244 0041 55       		pushl	%ebp
+ 245              		.cfi_def_cfa_offset 8
+ 246              		.cfi_offset 5, -8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 9
+
+
+ 247 0042 89E5     		movl	%esp, %ebp
+ 248              		.cfi_def_cfa_register 5
+ 225:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 226:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_ISRHANDLERC1();
+ 227:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 228:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 249              		.loc 1 228 0
+ 250 0044 5D       		popl	%ebp
+ 251              		.cfi_restore 5
+ 252              		.cfi_def_cfa 4, 4
+ 253 0045 C3       		ret
+ 254              		.cfi_endproc
+ 255              	LFE13:
+ 256              		.globl	_TCMP3
+ 258              	_TCMP3:
+ 259              	LFB14:
+ 229:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** ISR TCMP3(void)
+ 230:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 260              		.loc 1 230 0
+ 261              		.cfi_startproc
+ 262 0046 55       		pushl	%ebp
+ 263              		.cfi_def_cfa_offset 8
+ 264              		.cfi_offset 5, -8
+ 265 0047 89E5     		movl	%esp, %ebp
+ 266              		.cfi_def_cfa_register 5
+ 231:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 232:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_ISRHANDLERC2();
+ 233:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 234:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 267              		.loc 1 234 0
+ 268 0049 5D       		popl	%ebp
+ 269              		.cfi_restore 5
+ 270              		.cfi_def_cfa 4, 4
+ 271 004a C3       		ret
+ 272              		.cfi_endproc
+ 273              	LFE14:
+ 274              		.globl	_TCMP4
+ 276              	_TCMP4:
+ 277              	LFB15:
+ 235:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** ISR TCMP4(void)
+ 236:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** {
+ 278              		.loc 1 236 0
+ 279              		.cfi_startproc
+ 280 004b 55       		pushl	%ebp
+ 281              		.cfi_def_cfa_offset 8
+ 282              		.cfi_offset 5, -8
+ 283 004c 89E5     		movl	%esp, %ebp
+ 284              		.cfi_def_cfa_register 5
+ 237:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+ 238:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c ****    OS_ISRHANDLERC3();
+ 239:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** #endif
+ 240:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_exception.c **** }
+ 285              		.loc 1 240 0
+ 286 004e 5D       		popl	%ebp
+ 287              		.cfi_restore 5
+ 288              		.cfi_def_cfa 4, 4
+ 289 004f C3       		ret
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 10
+
+
+ 290              		.cfi_endproc
+ 291              	LFE15:
+ 292              	Letext0:
+ 293              		.section	.debug_info,"dr"
+ 294              	Ldebug_info0:
+ 295 0000 C8020000 		.long	0x2c8
+ 296 0004 0400     		.word	0x4
+ 297 0006 00000000 		.secrel32	Ldebug_abbrev0
+ 298 000a 04       		.byte	0x4
+ 299 000b 01       		.uleb128 0x1
+ 300 000c 474E5520 		.ascii "GNU C 4.9.3 -march=i386 -g3 -O0 -std=c90\0"
+ 300      4320342E 
+ 300      392E3320 
+ 300      2D6D6172 
+ 300      63683D69 
+ 301 0035 01       		.byte	0x1
+ 302 0036 453A5C4E 		.ascii "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c\0"
+ 302      65754F72 
+ 302      67615C50 
+ 302      726F6772 
+ 302      616D6D69 
+ 303 0080 00000000 		.long	Ltext0
+ 304 0084 50000000 		.long	Letext0-Ltext0
+ 305 0088 00000000 		.secrel32	Ldebug_line0
+ 306 008c 00000000 		.secrel32	Ldebug_macro0
+ 307 0090 02       		.uleb128 0x2
+ 308 0091 01       		.byte	0x1
+ 309 0092 08       		.byte	0x8
+ 310 0093 756E7369 		.ascii "unsigned char\0"
+ 310      676E6564 
+ 310      20636861 
+ 310      7200
+ 311 00a1 02       		.uleb128 0x2
+ 312 00a2 02       		.byte	0x2
+ 313 00a3 07       		.byte	0x7
+ 314 00a4 73686F72 		.ascii "short unsigned int\0"
+ 314      7420756E 
+ 314      7369676E 
+ 314      65642069 
+ 314      6E7400
+ 315 00b7 02       		.uleb128 0x2
+ 316 00b8 04       		.byte	0x4
+ 317 00b9 07       		.byte	0x7
+ 318 00ba 6C6F6E67 		.ascii "long unsigned int\0"
+ 318      20756E73 
+ 318      69676E65 
+ 318      6420696E 
+ 318      7400
+ 319 00cc 02       		.uleb128 0x2
+ 320 00cd 04       		.byte	0x4
+ 321 00ce 07       		.byte	0x7
+ 322 00cf 756E7369 		.ascii "unsigned int\0"
+ 322      676E6564 
+ 322      20696E74 
+ 322      00
+ 323 00dc 03       		.uleb128 0x3
+ 324 00dd 4F535F45 		.ascii "OS_Exception_Read_Status_Registers\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 11
+
+
+ 324      78636570 
+ 324      74696F6E 
+ 324      5F526561 
+ 324      645F5374 
+ 325 0100 01       		.byte	0x1
+ 326 0101 09       		.byte	0x9
+ 327 0102 00000000 		.long	LFB0
+ 328 0106 05000000 		.long	LFE0-LFB0
+ 329 010a 01       		.uleb128 0x1
+ 330 010b 9C       		.byte	0x9c
+ 331 010c 04       		.uleb128 0x4
+ 332 010d 4F535F45 		.ascii "OS_Exception_HARDFAULT\0"
+ 332      78636570 
+ 332      74696F6E 
+ 332      5F484152 
+ 332      44464155 
+ 333 0124 01       		.byte	0x1
+ 334 0125 1E       		.byte	0x1e
+ 335 0126 05000000 		.long	LFB1
+ 336 012a 05000000 		.long	LFE1-LFB1
+ 337 012e 01       		.uleb128 0x1
+ 338 012f 9C       		.byte	0x9c
+ 339 0130 04       		.uleb128 0x4
+ 340 0131 4F535F45 		.ascii "OS_Exception_NMI\0"
+ 340      78636570 
+ 340      74696F6E 
+ 340      5F4E4D49 
+ 340      00
+ 341 0142 01       		.byte	0x1
+ 342 0143 2E       		.byte	0x2e
+ 343 0144 0A000000 		.long	LFB2
+ 344 0148 05000000 		.long	LFE2-LFB2
+ 345 014c 01       		.uleb128 0x1
+ 346 014d 9C       		.byte	0x9c
+ 347 014e 04       		.uleb128 0x4
+ 348 014f 4F535F45 		.ascii "OS_Exception_SWI\0"
+ 348      78636570 
+ 348      74696F6E 
+ 348      5F535749 
+ 348      00
+ 349 0160 01       		.byte	0x1
+ 350 0161 3C       		.byte	0x3c
+ 351 0162 0F000000 		.long	LFB3
+ 352 0166 05000000 		.long	LFE3-LFB3
+ 353 016a 01       		.uleb128 0x1
+ 354 016b 9C       		.byte	0x9c
+ 355 016c 04       		.uleb128 0x4
+ 356 016d 4F535F45 		.ascii "OS_Exception_BUS_FAULT\0"
+ 356      78636570 
+ 356      74696F6E 
+ 356      5F425553 
+ 356      5F464155 
+ 357 0184 01       		.byte	0x1
+ 358 0185 4A       		.byte	0x4a
+ 359 0186 14000000 		.long	LFB4
+ 360 018a 05000000 		.long	LFE4-LFB4
+ 361 018e 01       		.uleb128 0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 12
+
+
+ 362 018f 9C       		.byte	0x9c
+ 363 0190 04       		.uleb128 0x4
+ 364 0191 4F535F45 		.ascii "OS_Exception_DEBUG\0"
+ 364      78636570 
+ 364      74696F6E 
+ 364      5F444542 
+ 364      554700
+ 365 01a4 01       		.byte	0x1
+ 366 01a5 59       		.byte	0x59
+ 367 01a6 19000000 		.long	LFB5
+ 368 01aa 05000000 		.long	LFE5-LFB5
+ 369 01ae 01       		.uleb128 0x1
+ 370 01af 9C       		.byte	0x9c
+ 371 01b0 04       		.uleb128 0x4
+ 372 01b1 4F535F45 		.ascii "OS_Exception_MEM_MANAG_FAULT\0"
+ 372      78636570 
+ 372      74696F6E 
+ 372      5F4D454D 
+ 372      5F4D414E 
+ 373 01ce 01       		.byte	0x1
+ 374 01cf 62       		.byte	0x62
+ 375 01d0 1E000000 		.long	LFB6
+ 376 01d4 05000000 		.long	LFE6-LFB6
+ 377 01d8 01       		.uleb128 0x1
+ 378 01d9 9C       		.byte	0x9c
+ 379 01da 04       		.uleb128 0x4
+ 380 01db 4F535F45 		.ascii "OS_Exception_USAGE_FAULT\0"
+ 380      78636570 
+ 380      74696F6E 
+ 380      5F555341 
+ 380      47455F46 
+ 381 01f4 01       		.byte	0x1
+ 382 01f5 71       		.byte	0x71
+ 383 01f6 23000000 		.long	LFB7
+ 384 01fa 05000000 		.long	LFE7-LFB7
+ 385 01fe 01       		.uleb128 0x1
+ 386 01ff 9C       		.byte	0x9c
+ 387 0200 04       		.uleb128 0x4
+ 388 0201 4F535F45 		.ascii "OS_Exception_PendSV\0"
+ 388      78636570 
+ 388      74696F6E 
+ 388      5F50656E 
+ 388      64535600 
+ 389 0215 01       		.byte	0x1
+ 390 0216 80       		.byte	0x80
+ 391 0217 28000000 		.long	LFB8
+ 392 021b 05000000 		.long	LFE8-LFB8
+ 393 021f 01       		.uleb128 0x1
+ 394 0220 9C       		.byte	0x9c
+ 395 0221 04       		.uleb128 0x4
+ 396 0222 4F535F45 		.ascii "OS_Exception_Systick\0"
+ 396      78636570 
+ 396      74696F6E 
+ 396      5F537973 
+ 396      7469636B 
+ 397 0237 01       		.byte	0x1
+ 398 0238 88       		.byte	0x88
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 13
+
+
+ 399 0239 2D000000 		.long	LFB9
+ 400 023d 05000000 		.long	LFE9-LFB9
+ 401 0241 01       		.uleb128 0x1
+ 402 0242 9C       		.byte	0x9c
+ 403 0243 04       		.uleb128 0x4
+ 404 0244 4F535F45 		.ascii "OS_Exception_IRQ\0"
+ 404      78636570 
+ 404      74696F6E 
+ 404      5F495251 
+ 404      00
+ 405 0255 01       		.byte	0x1
+ 406 0256 CB       		.byte	0xcb
+ 407 0257 32000000 		.long	LFB10
+ 408 025b 05000000 		.long	LFE10-LFB10
+ 409 025f 01       		.uleb128 0x1
+ 410 0260 9C       		.byte	0x9c
+ 411 0261 04       		.uleb128 0x4
+ 412 0262 4F535F45 		.ascii "OS_Exception_FIQ\0"
+ 412      78636570 
+ 412      74696F6E 
+ 412      5F464951 
+ 412      00
+ 413 0273 01       		.byte	0x1
+ 414 0274 D1       		.byte	0xd1
+ 415 0275 37000000 		.long	LFB11
+ 416 0279 05000000 		.long	LFE11-LFB11
+ 417 027d 01       		.uleb128 0x1
+ 418 027e 9C       		.byte	0x9c
+ 419 027f 04       		.uleb128 0x4
+ 420 0280 54434D50 		.ascii "TCMP1\0"
+ 420      3100
+ 421 0286 01       		.byte	0x1
+ 422 0287 D9       		.byte	0xd9
+ 423 0288 3C000000 		.long	LFB12
+ 424 028c 05000000 		.long	LFE12-LFB12
+ 425 0290 01       		.uleb128 0x1
+ 426 0291 9C       		.byte	0x9c
+ 427 0292 04       		.uleb128 0x4
+ 428 0293 54434D50 		.ascii "TCMP2\0"
+ 428      3200
+ 429 0299 01       		.byte	0x1
+ 430 029a DF       		.byte	0xdf
+ 431 029b 41000000 		.long	LFB13
+ 432 029f 05000000 		.long	LFE13-LFB13
+ 433 02a3 01       		.uleb128 0x1
+ 434 02a4 9C       		.byte	0x9c
+ 435 02a5 04       		.uleb128 0x4
+ 436 02a6 54434D50 		.ascii "TCMP3\0"
+ 436      3300
+ 437 02ac 01       		.byte	0x1
+ 438 02ad E5       		.byte	0xe5
+ 439 02ae 46000000 		.long	LFB14
+ 440 02b2 05000000 		.long	LFE14-LFB14
+ 441 02b6 01       		.uleb128 0x1
+ 442 02b7 9C       		.byte	0x9c
+ 443 02b8 04       		.uleb128 0x4
+ 444 02b9 54434D50 		.ascii "TCMP4\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 14
+
+
+ 444      3400
+ 445 02bf 01       		.byte	0x1
+ 446 02c0 EB       		.byte	0xeb
+ 447 02c1 4B000000 		.long	LFB15
+ 448 02c5 05000000 		.long	LFE15-LFB15
+ 449 02c9 01       		.uleb128 0x1
+ 450 02ca 9C       		.byte	0x9c
+ 451 02cb 00       		.byte	0
+ 452              		.section	.debug_abbrev,"dr"
+ 453              	Ldebug_abbrev0:
+ 454 0000 01       		.uleb128 0x1
+ 455 0001 11       		.uleb128 0x11
+ 456 0002 01       		.byte	0x1
+ 457 0003 25       		.uleb128 0x25
+ 458 0004 08       		.uleb128 0x8
+ 459 0005 13       		.uleb128 0x13
+ 460 0006 0B       		.uleb128 0xb
+ 461 0007 03       		.uleb128 0x3
+ 462 0008 08       		.uleb128 0x8
+ 463 0009 11       		.uleb128 0x11
+ 464 000a 01       		.uleb128 0x1
+ 465 000b 12       		.uleb128 0x12
+ 466 000c 06       		.uleb128 0x6
+ 467 000d 10       		.uleb128 0x10
+ 468 000e 17       		.uleb128 0x17
+ 469 000f 9942     		.uleb128 0x2119
+ 470 0011 17       		.uleb128 0x17
+ 471 0012 00       		.byte	0
+ 472 0013 00       		.byte	0
+ 473 0014 02       		.uleb128 0x2
+ 474 0015 24       		.uleb128 0x24
+ 475 0016 00       		.byte	0
+ 476 0017 0B       		.uleb128 0xb
+ 477 0018 0B       		.uleb128 0xb
+ 478 0019 3E       		.uleb128 0x3e
+ 479 001a 0B       		.uleb128 0xb
+ 480 001b 03       		.uleb128 0x3
+ 481 001c 08       		.uleb128 0x8
+ 482 001d 00       		.byte	0
+ 483 001e 00       		.byte	0
+ 484 001f 03       		.uleb128 0x3
+ 485 0020 2E       		.uleb128 0x2e
+ 486 0021 00       		.byte	0
+ 487 0022 03       		.uleb128 0x3
+ 488 0023 08       		.uleb128 0x8
+ 489 0024 3A       		.uleb128 0x3a
+ 490 0025 0B       		.uleb128 0xb
+ 491 0026 3B       		.uleb128 0x3b
+ 492 0027 0B       		.uleb128 0xb
+ 493 0028 27       		.uleb128 0x27
+ 494 0029 19       		.uleb128 0x19
+ 495 002a 11       		.uleb128 0x11
+ 496 002b 01       		.uleb128 0x1
+ 497 002c 12       		.uleb128 0x12
+ 498 002d 06       		.uleb128 0x6
+ 499 002e 40       		.uleb128 0x40
+ 500 002f 18       		.uleb128 0x18
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 15
+
+
+ 501 0030 9742     		.uleb128 0x2117
+ 502 0032 19       		.uleb128 0x19
+ 503 0033 00       		.byte	0
+ 504 0034 00       		.byte	0
+ 505 0035 04       		.uleb128 0x4
+ 506 0036 2E       		.uleb128 0x2e
+ 507 0037 00       		.byte	0
+ 508 0038 3F       		.uleb128 0x3f
+ 509 0039 19       		.uleb128 0x19
+ 510 003a 03       		.uleb128 0x3
+ 511 003b 08       		.uleb128 0x8
+ 512 003c 3A       		.uleb128 0x3a
+ 513 003d 0B       		.uleb128 0xb
+ 514 003e 3B       		.uleb128 0x3b
+ 515 003f 0B       		.uleb128 0xb
+ 516 0040 27       		.uleb128 0x27
+ 517 0041 19       		.uleb128 0x19
+ 518 0042 11       		.uleb128 0x11
+ 519 0043 01       		.uleb128 0x1
+ 520 0044 12       		.uleb128 0x12
+ 521 0045 06       		.uleb128 0x6
+ 522 0046 40       		.uleb128 0x40
+ 523 0047 18       		.uleb128 0x18
+ 524 0048 9742     		.uleb128 0x2117
+ 525 004a 19       		.uleb128 0x19
+ 526 004b 00       		.byte	0
+ 527 004c 00       		.byte	0
+ 528 004d 00       		.byte	0
+ 529              		.section	.debug_aranges,"dr"
+ 530 0000 1C000000 		.long	0x1c
+ 531 0004 0200     		.word	0x2
+ 532 0006 00000000 		.secrel32	Ldebug_info0
+ 533 000a 04       		.byte	0x4
+ 534 000b 00       		.byte	0
+ 535 000c 0000     		.word	0
+ 536 000e 0000     		.word	0
+ 537 0010 00000000 		.long	Ltext0
+ 538 0014 50000000 		.long	Letext0-Ltext0
+ 539 0018 00000000 		.long	0
+ 540 001c 00000000 		.long	0
+ 541              		.section	.debug_macro,"dr"
+ 542              	Ldebug_macro0:
+ 543 0000 0400     		.word	0x4
+ 544 0002 02       		.byte	0x2
+ 545 0003 00000000 		.secrel32	Ldebug_line0
+ 546 0007 01       		.byte	0x1
+ 547 0008 00       		.uleb128 0
+ 548 0009 5F5F5354 		.ascii "__STDC__ 1\0"
+ 548      44435F5F 
+ 548      203100
+ 549 0014 01       		.byte	0x1
+ 550 0015 00       		.uleb128 0
+ 551 0016 5F5F5354 		.ascii "__STDC_HOSTED__ 1\0"
+ 551      44435F48 
+ 551      4F535445 
+ 551      445F5F20 
+ 551      3100
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 16
+
+
+ 552 0028 01       		.byte	0x1
+ 553 0029 00       		.uleb128 0
+ 554 002a 5F5F474E 		.ascii "__GNUC__ 4\0"
+ 554      55435F5F 
+ 554      203400
+ 555 0035 01       		.byte	0x1
+ 556 0036 00       		.uleb128 0
+ 557 0037 5F5F474E 		.ascii "__GNUC_MINOR__ 9\0"
+ 557      55435F4D 
+ 557      494E4F52 
+ 557      5F5F2039 
+ 557      00
+ 558 0048 01       		.byte	0x1
+ 559 0049 00       		.uleb128 0
+ 560 004a 5F5F474E 		.ascii "__GNUC_PATCHLEVEL__ 3\0"
+ 560      55435F50 
+ 560      41544348 
+ 560      4C455645 
+ 560      4C5F5F20 
+ 561 0060 01       		.byte	0x1
+ 562 0061 00       		.uleb128 0
+ 563 0062 5F5F5645 		.ascii "__VERSION__ \"4.9.3\"\0"
+ 563      5253494F 
+ 563      4E5F5F20 
+ 563      22342E39 
+ 563      2E332200 
+ 564 0076 01       		.byte	0x1
+ 565 0077 00       		.uleb128 0
+ 566 0078 5F5F4154 		.ascii "__ATOMIC_RELAXED 0\0"
+ 566      4F4D4943 
+ 566      5F52454C 
+ 566      41584544 
+ 566      203000
+ 567 008b 01       		.byte	0x1
+ 568 008c 00       		.uleb128 0
+ 569 008d 5F5F4154 		.ascii "__ATOMIC_SEQ_CST 5\0"
+ 569      4F4D4943 
+ 569      5F534551 
+ 569      5F435354 
+ 569      203500
+ 570 00a0 01       		.byte	0x1
+ 571 00a1 00       		.uleb128 0
+ 572 00a2 5F5F4154 		.ascii "__ATOMIC_ACQUIRE 2\0"
+ 572      4F4D4943 
+ 572      5F414351 
+ 572      55495245 
+ 572      203200
+ 573 00b5 01       		.byte	0x1
+ 574 00b6 00       		.uleb128 0
+ 575 00b7 5F5F4154 		.ascii "__ATOMIC_RELEASE 3\0"
+ 575      4F4D4943 
+ 575      5F52454C 
+ 575      45415345 
+ 575      203300
+ 576 00ca 01       		.byte	0x1
+ 577 00cb 00       		.uleb128 0
+ 578 00cc 5F5F4154 		.ascii "__ATOMIC_ACQ_REL 4\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 17
+
+
+ 578      4F4D4943 
+ 578      5F414351 
+ 578      5F52454C 
+ 578      203400
+ 579 00df 01       		.byte	0x1
+ 580 00e0 00       		.uleb128 0
+ 581 00e1 5F5F4154 		.ascii "__ATOMIC_CONSUME 1\0"
+ 581      4F4D4943 
+ 581      5F434F4E 
+ 581      53554D45 
+ 581      203100
+ 582 00f4 01       		.byte	0x1
+ 583 00f5 00       		.uleb128 0
+ 584 00f6 5F5F4649 		.ascii "__FINITE_MATH_ONLY__ 0\0"
+ 584      4E495445 
+ 584      5F4D4154 
+ 584      485F4F4E 
+ 584      4C595F5F 
+ 585 010d 01       		.byte	0x1
+ 586 010e 00       		.uleb128 0
+ 587 010f 5F5F5349 		.ascii "__SIZEOF_INT__ 4\0"
+ 587      5A454F46 
+ 587      5F494E54 
+ 587      5F5F2034 
+ 587      00
+ 588 0120 01       		.byte	0x1
+ 589 0121 00       		.uleb128 0
+ 590 0122 5F5F5349 		.ascii "__SIZEOF_LONG__ 4\0"
+ 590      5A454F46 
+ 590      5F4C4F4E 
+ 590      475F5F20 
+ 590      3400
+ 591 0134 01       		.byte	0x1
+ 592 0135 00       		.uleb128 0
+ 593 0136 5F5F5349 		.ascii "__SIZEOF_LONG_LONG__ 8\0"
+ 593      5A454F46 
+ 593      5F4C4F4E 
+ 593      475F4C4F 
+ 593      4E475F5F 
+ 594 014d 01       		.byte	0x1
+ 595 014e 00       		.uleb128 0
+ 596 014f 5F5F5349 		.ascii "__SIZEOF_SHORT__ 2\0"
+ 596      5A454F46 
+ 596      5F53484F 
+ 596      52545F5F 
+ 596      203200
+ 597 0162 01       		.byte	0x1
+ 598 0163 00       		.uleb128 0
+ 599 0164 5F5F5349 		.ascii "__SIZEOF_FLOAT__ 4\0"
+ 599      5A454F46 
+ 599      5F464C4F 
+ 599      41545F5F 
+ 599      203400
+ 600 0177 01       		.byte	0x1
+ 601 0178 00       		.uleb128 0
+ 602 0179 5F5F5349 		.ascii "__SIZEOF_DOUBLE__ 8\0"
+ 602      5A454F46 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 18
+
+
+ 602      5F444F55 
+ 602      424C455F 
+ 602      5F203800 
+ 603 018d 01       		.byte	0x1
+ 604 018e 00       		.uleb128 0
+ 605 018f 5F5F5349 		.ascii "__SIZEOF_LONG_DOUBLE__ 12\0"
+ 605      5A454F46 
+ 605      5F4C4F4E 
+ 605      475F444F 
+ 605      55424C45 
+ 606 01a9 01       		.byte	0x1
+ 607 01aa 00       		.uleb128 0
+ 608 01ab 5F5F5349 		.ascii "__SIZEOF_SIZE_T__ 4\0"
+ 608      5A454F46 
+ 608      5F53495A 
+ 608      455F545F 
+ 608      5F203400 
+ 609 01bf 01       		.byte	0x1
+ 610 01c0 00       		.uleb128 0
+ 611 01c1 5F5F4348 		.ascii "__CHAR_BIT__ 8\0"
+ 611      41525F42 
+ 611      49545F5F 
+ 611      203800
+ 612 01d0 01       		.byte	0x1
+ 613 01d1 00       		.uleb128 0
+ 614 01d2 5F5F4249 		.ascii "__BIGGEST_ALIGNMENT__ 16\0"
+ 614      47474553 
+ 614      545F414C 
+ 614      49474E4D 
+ 614      454E545F 
+ 615 01eb 01       		.byte	0x1
+ 616 01ec 00       		.uleb128 0
+ 617 01ed 5F5F4F52 		.ascii "__ORDER_LITTLE_ENDIAN__ 1234\0"
+ 617      4445525F 
+ 617      4C495454 
+ 617      4C455F45 
+ 617      4E444941 
+ 618 020a 01       		.byte	0x1
+ 619 020b 00       		.uleb128 0
+ 620 020c 5F5F4F52 		.ascii "__ORDER_BIG_ENDIAN__ 4321\0"
+ 620      4445525F 
+ 620      4249475F 
+ 620      454E4449 
+ 620      414E5F5F 
+ 621 0226 01       		.byte	0x1
+ 622 0227 00       		.uleb128 0
+ 623 0228 5F5F4F52 		.ascii "__ORDER_PDP_ENDIAN__ 3412\0"
+ 623      4445525F 
+ 623      5044505F 
+ 623      454E4449 
+ 623      414E5F5F 
+ 624 0242 01       		.byte	0x1
+ 625 0243 00       		.uleb128 0
+ 626 0244 5F5F4259 		.ascii "__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
+ 626      54455F4F 
+ 626      52444552 
+ 626      5F5F205F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 19
+
+
+ 626      5F4F5244 
+ 627 026b 01       		.byte	0x1
+ 628 026c 00       		.uleb128 0
+ 629 026d 5F5F464C 		.ascii "__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
+ 629      4F41545F 
+ 629      574F5244 
+ 629      5F4F5244 
+ 629      45525F5F 
+ 630 029a 01       		.byte	0x1
+ 631 029b 00       		.uleb128 0
+ 632 029c 5F5F5349 		.ascii "__SIZEOF_POINTER__ 4\0"
+ 632      5A454F46 
+ 632      5F504F49 
+ 632      4E544552 
+ 632      5F5F2034 
+ 633 02b1 01       		.byte	0x1
+ 634 02b2 00       		.uleb128 0
+ 635 02b3 5F5F5349 		.ascii "__SIZE_TYPE__ unsigned int\0"
+ 635      5A455F54 
+ 635      5950455F 
+ 635      5F20756E 
+ 635      7369676E 
+ 636 02ce 01       		.byte	0x1
+ 637 02cf 00       		.uleb128 0
+ 638 02d0 5F5F5054 		.ascii "__PTRDIFF_TYPE__ int\0"
+ 638      52444946 
+ 638      465F5459 
+ 638      50455F5F 
+ 638      20696E74 
+ 639 02e5 01       		.byte	0x1
+ 640 02e6 00       		.uleb128 0
+ 641 02e7 5F5F5743 		.ascii "__WCHAR_TYPE__ short unsigned int\0"
+ 641      4841525F 
+ 641      54595045 
+ 641      5F5F2073 
+ 641      686F7274 
+ 642 0309 01       		.byte	0x1
+ 643 030a 00       		.uleb128 0
+ 644 030b 5F5F5749 		.ascii "__WINT_TYPE__ short unsigned int\0"
+ 644      4E545F54 
+ 644      5950455F 
+ 644      5F207368 
+ 644      6F727420 
+ 645 032c 01       		.byte	0x1
+ 646 032d 00       		.uleb128 0
+ 647 032e 5F5F494E 		.ascii "__INTMAX_TYPE__ long long int\0"
+ 647      544D4158 
+ 647      5F545950 
+ 647      455F5F20 
+ 647      6C6F6E67 
+ 648 034c 01       		.byte	0x1
+ 649 034d 00       		.uleb128 0
+ 650 034e 5F5F5549 		.ascii "__UINTMAX_TYPE__ long long unsigned int\0"
+ 650      4E544D41 
+ 650      585F5459 
+ 650      50455F5F 
+ 650      206C6F6E 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 20
+
+
+ 651 0376 01       		.byte	0x1
+ 652 0377 00       		.uleb128 0
+ 653 0378 5F5F4348 		.ascii "__CHAR16_TYPE__ short unsigned int\0"
+ 653      41523136 
+ 653      5F545950 
+ 653      455F5F20 
+ 653      73686F72 
+ 654 039b 01       		.byte	0x1
+ 655 039c 00       		.uleb128 0
+ 656 039d 5F5F4348 		.ascii "__CHAR32_TYPE__ unsigned int\0"
+ 656      41523332 
+ 656      5F545950 
+ 656      455F5F20 
+ 656      756E7369 
+ 657 03ba 01       		.byte	0x1
+ 658 03bb 00       		.uleb128 0
+ 659 03bc 5F5F5349 		.ascii "__SIG_ATOMIC_TYPE__ int\0"
+ 659      475F4154 
+ 659      4F4D4943 
+ 659      5F545950 
+ 659      455F5F20 
+ 660 03d4 01       		.byte	0x1
+ 661 03d5 00       		.uleb128 0
+ 662 03d6 5F5F494E 		.ascii "__INT8_TYPE__ signed char\0"
+ 662      54385F54 
+ 662      5950455F 
+ 662      5F207369 
+ 662      676E6564 
+ 663 03f0 01       		.byte	0x1
+ 664 03f1 00       		.uleb128 0
+ 665 03f2 5F5F494E 		.ascii "__INT16_TYPE__ short int\0"
+ 665      5431365F 
+ 665      54595045 
+ 665      5F5F2073 
+ 665      686F7274 
+ 666 040b 01       		.byte	0x1
+ 667 040c 00       		.uleb128 0
+ 668 040d 5F5F494E 		.ascii "__INT32_TYPE__ int\0"
+ 668      5433325F 
+ 668      54595045 
+ 668      5F5F2069 
+ 668      6E7400
+ 669 0420 01       		.byte	0x1
+ 670 0421 00       		.uleb128 0
+ 671 0422 5F5F494E 		.ascii "__INT64_TYPE__ long long int\0"
+ 671      5436345F 
+ 671      54595045 
+ 671      5F5F206C 
+ 671      6F6E6720 
+ 672 043f 01       		.byte	0x1
+ 673 0440 00       		.uleb128 0
+ 674 0441 5F5F5549 		.ascii "__UINT8_TYPE__ unsigned char\0"
+ 674      4E54385F 
+ 674      54595045 
+ 674      5F5F2075 
+ 674      6E736967 
+ 675 045e 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 21
+
+
+ 676 045f 00       		.uleb128 0
+ 677 0460 5F5F5549 		.ascii "__UINT16_TYPE__ short unsigned int\0"
+ 677      4E543136 
+ 677      5F545950 
+ 677      455F5F20 
+ 677      73686F72 
+ 678 0483 01       		.byte	0x1
+ 679 0484 00       		.uleb128 0
+ 680 0485 5F5F5549 		.ascii "__UINT32_TYPE__ unsigned int\0"
+ 680      4E543332 
+ 680      5F545950 
+ 680      455F5F20 
+ 680      756E7369 
+ 681 04a2 01       		.byte	0x1
+ 682 04a3 00       		.uleb128 0
+ 683 04a4 5F5F5549 		.ascii "__UINT64_TYPE__ long long unsigned int\0"
+ 683      4E543634 
+ 683      5F545950 
+ 683      455F5F20 
+ 683      6C6F6E67 
+ 684 04cb 01       		.byte	0x1
+ 685 04cc 00       		.uleb128 0
+ 686 04cd 5F5F494E 		.ascii "__INT_LEAST8_TYPE__ signed char\0"
+ 686      545F4C45 
+ 686      41535438 
+ 686      5F545950 
+ 686      455F5F20 
+ 687 04ed 01       		.byte	0x1
+ 688 04ee 00       		.uleb128 0
+ 689 04ef 5F5F494E 		.ascii "__INT_LEAST16_TYPE__ short int\0"
+ 689      545F4C45 
+ 689      41535431 
+ 689      365F5459 
+ 689      50455F5F 
+ 690 050e 01       		.byte	0x1
+ 691 050f 00       		.uleb128 0
+ 692 0510 5F5F494E 		.ascii "__INT_LEAST32_TYPE__ int\0"
+ 692      545F4C45 
+ 692      41535433 
+ 692      325F5459 
+ 692      50455F5F 
+ 693 0529 01       		.byte	0x1
+ 694 052a 00       		.uleb128 0
+ 695 052b 5F5F494E 		.ascii "__INT_LEAST64_TYPE__ long long int\0"
+ 695      545F4C45 
+ 695      41535436 
+ 695      345F5459 
+ 695      50455F5F 
+ 696 054e 01       		.byte	0x1
+ 697 054f 00       		.uleb128 0
+ 698 0550 5F5F5549 		.ascii "__UINT_LEAST8_TYPE__ unsigned char\0"
+ 698      4E545F4C 
+ 698      45415354 
+ 698      385F5459 
+ 698      50455F5F 
+ 699 0573 01       		.byte	0x1
+ 700 0574 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 22
+
+
+ 701 0575 5F5F5549 		.ascii "__UINT_LEAST16_TYPE__ short unsigned int\0"
+ 701      4E545F4C 
+ 701      45415354 
+ 701      31365F54 
+ 701      5950455F 
+ 702 059e 01       		.byte	0x1
+ 703 059f 00       		.uleb128 0
+ 704 05a0 5F5F5549 		.ascii "__UINT_LEAST32_TYPE__ unsigned int\0"
+ 704      4E545F4C 
+ 704      45415354 
+ 704      33325F54 
+ 704      5950455F 
+ 705 05c3 01       		.byte	0x1
+ 706 05c4 00       		.uleb128 0
+ 707 05c5 5F5F5549 		.ascii "__UINT_LEAST64_TYPE__ long long unsigned int\0"
+ 707      4E545F4C 
+ 707      45415354 
+ 707      36345F54 
+ 707      5950455F 
+ 708 05f2 01       		.byte	0x1
+ 709 05f3 00       		.uleb128 0
+ 710 05f4 5F5F494E 		.ascii "__INT_FAST8_TYPE__ signed char\0"
+ 710      545F4641 
+ 710      5354385F 
+ 710      54595045 
+ 710      5F5F2073 
+ 711 0613 01       		.byte	0x1
+ 712 0614 00       		.uleb128 0
+ 713 0615 5F5F494E 		.ascii "__INT_FAST16_TYPE__ short int\0"
+ 713      545F4641 
+ 713      53543136 
+ 713      5F545950 
+ 713      455F5F20 
+ 714 0633 01       		.byte	0x1
+ 715 0634 00       		.uleb128 0
+ 716 0635 5F5F494E 		.ascii "__INT_FAST32_TYPE__ int\0"
+ 716      545F4641 
+ 716      53543332 
+ 716      5F545950 
+ 716      455F5F20 
+ 717 064d 01       		.byte	0x1
+ 718 064e 00       		.uleb128 0
+ 719 064f 5F5F494E 		.ascii "__INT_FAST64_TYPE__ long long int\0"
+ 719      545F4641 
+ 719      53543634 
+ 719      5F545950 
+ 719      455F5F20 
+ 720 0671 01       		.byte	0x1
+ 721 0672 00       		.uleb128 0
+ 722 0673 5F5F5549 		.ascii "__UINT_FAST8_TYPE__ unsigned char\0"
+ 722      4E545F46 
+ 722      41535438 
+ 722      5F545950 
+ 722      455F5F20 
+ 723 0695 01       		.byte	0x1
+ 724 0696 00       		.uleb128 0
+ 725 0697 5F5F5549 		.ascii "__UINT_FAST16_TYPE__ short unsigned int\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 23
+
+
+ 725      4E545F46 
+ 725      41535431 
+ 725      365F5459 
+ 725      50455F5F 
+ 726 06bf 01       		.byte	0x1
+ 727 06c0 00       		.uleb128 0
+ 728 06c1 5F5F5549 		.ascii "__UINT_FAST32_TYPE__ unsigned int\0"
+ 728      4E545F46 
+ 728      41535433 
+ 728      325F5459 
+ 728      50455F5F 
+ 729 06e3 01       		.byte	0x1
+ 730 06e4 00       		.uleb128 0
+ 731 06e5 5F5F5549 		.ascii "__UINT_FAST64_TYPE__ long long unsigned int\0"
+ 731      4E545F46 
+ 731      41535436 
+ 731      345F5459 
+ 731      50455F5F 
+ 732 0711 01       		.byte	0x1
+ 733 0712 00       		.uleb128 0
+ 734 0713 5F5F494E 		.ascii "__INTPTR_TYPE__ int\0"
+ 734      54505452 
+ 734      5F545950 
+ 734      455F5F20 
+ 734      696E7400 
+ 735 0727 01       		.byte	0x1
+ 736 0728 00       		.uleb128 0
+ 737 0729 5F5F5549 		.ascii "__UINTPTR_TYPE__ unsigned int\0"
+ 737      4E545054 
+ 737      525F5459 
+ 737      50455F5F 
+ 737      20756E73 
+ 738 0747 01       		.byte	0x1
+ 739 0748 00       		.uleb128 0
+ 740 0749 5F5F6861 		.ascii "__has_include(STR) __has_include__(STR)\0"
+ 740      735F696E 
+ 740      636C7564 
+ 740      65285354 
+ 740      5229205F 
+ 741 0771 01       		.byte	0x1
+ 742 0772 00       		.uleb128 0
+ 743 0773 5F5F6861 		.ascii "__has_include_next(STR) __has_include_next__(STR)\0"
+ 743      735F696E 
+ 743      636C7564 
+ 743      655F6E65 
+ 743      78742853 
+ 744 07a5 01       		.byte	0x1
+ 745 07a6 00       		.uleb128 0
+ 746 07a7 5F5F4758 		.ascii "__GXX_ABI_VERSION 1002\0"
+ 746      585F4142 
+ 746      495F5645 
+ 746      5253494F 
+ 746      4E203130 
+ 747 07be 01       		.byte	0x1
+ 748 07bf 00       		.uleb128 0
+ 749 07c0 5F5F5343 		.ascii "__SCHAR_MAX__ 127\0"
+ 749      4841525F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 24
+
+
+ 749      4D41585F 
+ 749      5F203132 
+ 749      3700
+ 750 07d2 01       		.byte	0x1
+ 751 07d3 00       		.uleb128 0
+ 752 07d4 5F5F5348 		.ascii "__SHRT_MAX__ 32767\0"
+ 752      52545F4D 
+ 752      41585F5F 
+ 752      20333237 
+ 752      363700
+ 753 07e7 01       		.byte	0x1
+ 754 07e8 00       		.uleb128 0
+ 755 07e9 5F5F494E 		.ascii "__INT_MAX__ 2147483647\0"
+ 755      545F4D41 
+ 755      585F5F20 
+ 755      32313437 
+ 755      34383336 
+ 756 0800 01       		.byte	0x1
+ 757 0801 00       		.uleb128 0
+ 758 0802 5F5F4C4F 		.ascii "__LONG_MAX__ 2147483647L\0"
+ 758      4E475F4D 
+ 758      41585F5F 
+ 758      20323134 
+ 758      37343833 
+ 759 081b 01       		.byte	0x1
+ 760 081c 00       		.uleb128 0
+ 761 081d 5F5F4C4F 		.ascii "__LONG_LONG_MAX__ 9223372036854775807LL\0"
+ 761      4E475F4C 
+ 761      4F4E475F 
+ 761      4D41585F 
+ 761      5F203932 
+ 762 0845 01       		.byte	0x1
+ 763 0846 00       		.uleb128 0
+ 764 0847 5F5F5743 		.ascii "__WCHAR_MAX__ 65535\0"
+ 764      4841525F 
+ 764      4D41585F 
+ 764      5F203635 
+ 764      35333500 
+ 765 085b 01       		.byte	0x1
+ 766 085c 00       		.uleb128 0
+ 767 085d 5F5F5743 		.ascii "__WCHAR_MIN__ 0\0"
+ 767      4841525F 
+ 767      4D494E5F 
+ 767      5F203000 
+ 768 086d 01       		.byte	0x1
+ 769 086e 00       		.uleb128 0
+ 770 086f 5F5F5749 		.ascii "__WINT_MAX__ 65535\0"
+ 770      4E545F4D 
+ 770      41585F5F 
+ 770      20363535 
+ 770      333500
+ 771 0882 01       		.byte	0x1
+ 772 0883 00       		.uleb128 0
+ 773 0884 5F5F5749 		.ascii "__WINT_MIN__ 0\0"
+ 773      4E545F4D 
+ 773      494E5F5F 
+ 773      203000
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 25
+
+
+ 774 0893 01       		.byte	0x1
+ 775 0894 00       		.uleb128 0
+ 776 0895 5F5F5054 		.ascii "__PTRDIFF_MAX__ 2147483647\0"
+ 776      52444946 
+ 776      465F4D41 
+ 776      585F5F20 
+ 776      32313437 
+ 777 08b0 01       		.byte	0x1
+ 778 08b1 00       		.uleb128 0
+ 779 08b2 5F5F5349 		.ascii "__SIZE_MAX__ 4294967295U\0"
+ 779      5A455F4D 
+ 779      41585F5F 
+ 779      20343239 
+ 779      34393637 
+ 780 08cb 01       		.byte	0x1
+ 781 08cc 00       		.uleb128 0
+ 782 08cd 5F5F494E 		.ascii "__INTMAX_MAX__ 9223372036854775807LL\0"
+ 782      544D4158 
+ 782      5F4D4158 
+ 782      5F5F2039 
+ 782      32323333 
+ 783 08f2 01       		.byte	0x1
+ 784 08f3 00       		.uleb128 0
+ 785 08f4 5F5F494E 		.ascii "__INTMAX_C(c) c ## LL\0"
+ 785      544D4158 
+ 785      5F432863 
+ 785      29206320 
+ 785      2323204C 
+ 786 090a 01       		.byte	0x1
+ 787 090b 00       		.uleb128 0
+ 788 090c 5F5F5549 		.ascii "__UINTMAX_MAX__ 18446744073709551615ULL\0"
+ 788      4E544D41 
+ 788      585F4D41 
+ 788      585F5F20 
+ 788      31383434 
+ 789 0934 01       		.byte	0x1
+ 790 0935 00       		.uleb128 0
+ 791 0936 5F5F5549 		.ascii "__UINTMAX_C(c) c ## ULL\0"
+ 791      4E544D41 
+ 791      585F4328 
+ 791      63292063 
+ 791      20232320 
+ 792 094e 01       		.byte	0x1
+ 793 094f 00       		.uleb128 0
+ 794 0950 5F5F5349 		.ascii "__SIG_ATOMIC_MAX__ 2147483647\0"
+ 794      475F4154 
+ 794      4F4D4943 
+ 794      5F4D4158 
+ 794      5F5F2032 
+ 795 096e 01       		.byte	0x1
+ 796 096f 00       		.uleb128 0
+ 797 0970 5F5F5349 		.ascii "__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\0"
+ 797      475F4154 
+ 797      4F4D4943 
+ 797      5F4D494E 
+ 797      5F5F2028 
+ 798 099d 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 26
+
+
+ 799 099e 00       		.uleb128 0
+ 800 099f 5F5F494E 		.ascii "__INT8_MAX__ 127\0"
+ 800      54385F4D 
+ 800      41585F5F 
+ 800      20313237 
+ 800      00
+ 801 09b0 01       		.byte	0x1
+ 802 09b1 00       		.uleb128 0
+ 803 09b2 5F5F494E 		.ascii "__INT16_MAX__ 32767\0"
+ 803      5431365F 
+ 803      4D41585F 
+ 803      5F203332 
+ 803      37363700 
+ 804 09c6 01       		.byte	0x1
+ 805 09c7 00       		.uleb128 0
+ 806 09c8 5F5F494E 		.ascii "__INT32_MAX__ 2147483647\0"
+ 806      5433325F 
+ 806      4D41585F 
+ 806      5F203231 
+ 806      34373438 
+ 807 09e1 01       		.byte	0x1
+ 808 09e2 00       		.uleb128 0
+ 809 09e3 5F5F494E 		.ascii "__INT64_MAX__ 9223372036854775807LL\0"
+ 809      5436345F 
+ 809      4D41585F 
+ 809      5F203932 
+ 809      32333337 
+ 810 0a07 01       		.byte	0x1
+ 811 0a08 00       		.uleb128 0
+ 812 0a09 5F5F5549 		.ascii "__UINT8_MAX__ 255\0"
+ 812      4E54385F 
+ 812      4D41585F 
+ 812      5F203235 
+ 812      3500
+ 813 0a1b 01       		.byte	0x1
+ 814 0a1c 00       		.uleb128 0
+ 815 0a1d 5F5F5549 		.ascii "__UINT16_MAX__ 65535\0"
+ 815      4E543136 
+ 815      5F4D4158 
+ 815      5F5F2036 
+ 815      35353335 
+ 816 0a32 01       		.byte	0x1
+ 817 0a33 00       		.uleb128 0
+ 818 0a34 5F5F5549 		.ascii "__UINT32_MAX__ 4294967295U\0"
+ 818      4E543332 
+ 818      5F4D4158 
+ 818      5F5F2034 
+ 818      32393439 
+ 819 0a4f 01       		.byte	0x1
+ 820 0a50 00       		.uleb128 0
+ 821 0a51 5F5F5549 		.ascii "__UINT64_MAX__ 18446744073709551615ULL\0"
+ 821      4E543634 
+ 821      5F4D4158 
+ 821      5F5F2031 
+ 821      38343436 
+ 822 0a78 01       		.byte	0x1
+ 823 0a79 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 27
+
+
+ 824 0a7a 5F5F494E 		.ascii "__INT_LEAST8_MAX__ 127\0"
+ 824      545F4C45 
+ 824      41535438 
+ 824      5F4D4158 
+ 824      5F5F2031 
+ 825 0a91 01       		.byte	0x1
+ 826 0a92 00       		.uleb128 0
+ 827 0a93 5F5F494E 		.ascii "__INT8_C(c) c\0"
+ 827      54385F43 
+ 827      28632920 
+ 827      6300
+ 828 0aa1 01       		.byte	0x1
+ 829 0aa2 00       		.uleb128 0
+ 830 0aa3 5F5F494E 		.ascii "__INT_LEAST16_MAX__ 32767\0"
+ 830      545F4C45 
+ 830      41535431 
+ 830      365F4D41 
+ 830      585F5F20 
+ 831 0abd 01       		.byte	0x1
+ 832 0abe 00       		.uleb128 0
+ 833 0abf 5F5F494E 		.ascii "__INT16_C(c) c\0"
+ 833      5431365F 
+ 833      43286329 
+ 833      206300
+ 834 0ace 01       		.byte	0x1
+ 835 0acf 00       		.uleb128 0
+ 836 0ad0 5F5F494E 		.ascii "__INT_LEAST32_MAX__ 2147483647\0"
+ 836      545F4C45 
+ 836      41535433 
+ 836      325F4D41 
+ 836      585F5F20 
+ 837 0aef 01       		.byte	0x1
+ 838 0af0 00       		.uleb128 0
+ 839 0af1 5F5F494E 		.ascii "__INT32_C(c) c\0"
+ 839      5433325F 
+ 839      43286329 
+ 839      206300
+ 840 0b00 01       		.byte	0x1
+ 841 0b01 00       		.uleb128 0
+ 842 0b02 5F5F494E 		.ascii "__INT_LEAST64_MAX__ 9223372036854775807LL\0"
+ 842      545F4C45 
+ 842      41535436 
+ 842      345F4D41 
+ 842      585F5F20 
+ 843 0b2c 01       		.byte	0x1
+ 844 0b2d 00       		.uleb128 0
+ 845 0b2e 5F5F494E 		.ascii "__INT64_C(c) c ## LL\0"
+ 845      5436345F 
+ 845      43286329 
+ 845      20632023 
+ 845      23204C4C 
+ 846 0b43 01       		.byte	0x1
+ 847 0b44 00       		.uleb128 0
+ 848 0b45 5F5F5549 		.ascii "__UINT_LEAST8_MAX__ 255\0"
+ 848      4E545F4C 
+ 848      45415354 
+ 848      385F4D41 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 28
+
+
+ 848      585F5F20 
+ 849 0b5d 01       		.byte	0x1
+ 850 0b5e 00       		.uleb128 0
+ 851 0b5f 5F5F5549 		.ascii "__UINT8_C(c) c\0"
+ 851      4E54385F 
+ 851      43286329 
+ 851      206300
+ 852 0b6e 01       		.byte	0x1
+ 853 0b6f 00       		.uleb128 0
+ 854 0b70 5F5F5549 		.ascii "__UINT_LEAST16_MAX__ 65535\0"
+ 854      4E545F4C 
+ 854      45415354 
+ 854      31365F4D 
+ 854      41585F5F 
+ 855 0b8b 01       		.byte	0x1
+ 856 0b8c 00       		.uleb128 0
+ 857 0b8d 5F5F5549 		.ascii "__UINT16_C(c) c\0"
+ 857      4E543136 
+ 857      5F432863 
+ 857      29206300 
+ 858 0b9d 01       		.byte	0x1
+ 859 0b9e 00       		.uleb128 0
+ 860 0b9f 5F5F5549 		.ascii "__UINT_LEAST32_MAX__ 4294967295U\0"
+ 860      4E545F4C 
+ 860      45415354 
+ 860      33325F4D 
+ 860      41585F5F 
+ 861 0bc0 01       		.byte	0x1
+ 862 0bc1 00       		.uleb128 0
+ 863 0bc2 5F5F5549 		.ascii "__UINT32_C(c) c ## U\0"
+ 863      4E543332 
+ 863      5F432863 
+ 863      29206320 
+ 863      23232055 
+ 864 0bd7 01       		.byte	0x1
+ 865 0bd8 00       		.uleb128 0
+ 866 0bd9 5F5F5549 		.ascii "__UINT_LEAST64_MAX__ 18446744073709551615ULL\0"
+ 866      4E545F4C 
+ 866      45415354 
+ 866      36345F4D 
+ 866      41585F5F 
+ 867 0c06 01       		.byte	0x1
+ 868 0c07 00       		.uleb128 0
+ 869 0c08 5F5F5549 		.ascii "__UINT64_C(c) c ## ULL\0"
+ 869      4E543634 
+ 869      5F432863 
+ 869      29206320 
+ 869      23232055 
+ 870 0c1f 01       		.byte	0x1
+ 871 0c20 00       		.uleb128 0
+ 872 0c21 5F5F494E 		.ascii "__INT_FAST8_MAX__ 127\0"
+ 872      545F4641 
+ 872      5354385F 
+ 872      4D41585F 
+ 872      5F203132 
+ 873 0c37 01       		.byte	0x1
+ 874 0c38 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 29
+
+
+ 875 0c39 5F5F494E 		.ascii "__INT_FAST16_MAX__ 32767\0"
+ 875      545F4641 
+ 875      53543136 
+ 875      5F4D4158 
+ 875      5F5F2033 
+ 876 0c52 01       		.byte	0x1
+ 877 0c53 00       		.uleb128 0
+ 878 0c54 5F5F494E 		.ascii "__INT_FAST32_MAX__ 2147483647\0"
+ 878      545F4641 
+ 878      53543332 
+ 878      5F4D4158 
+ 878      5F5F2032 
+ 879 0c72 01       		.byte	0x1
+ 880 0c73 00       		.uleb128 0
+ 881 0c74 5F5F494E 		.ascii "__INT_FAST64_MAX__ 9223372036854775807LL\0"
+ 881      545F4641 
+ 881      53543634 
+ 881      5F4D4158 
+ 881      5F5F2039 
+ 882 0c9d 01       		.byte	0x1
+ 883 0c9e 00       		.uleb128 0
+ 884 0c9f 5F5F5549 		.ascii "__UINT_FAST8_MAX__ 255\0"
+ 884      4E545F46 
+ 884      41535438 
+ 884      5F4D4158 
+ 884      5F5F2032 
+ 885 0cb6 01       		.byte	0x1
+ 886 0cb7 00       		.uleb128 0
+ 887 0cb8 5F5F5549 		.ascii "__UINT_FAST16_MAX__ 65535\0"
+ 887      4E545F46 
+ 887      41535431 
+ 887      365F4D41 
+ 887      585F5F20 
+ 888 0cd2 01       		.byte	0x1
+ 889 0cd3 00       		.uleb128 0
+ 890 0cd4 5F5F5549 		.ascii "__UINT_FAST32_MAX__ 4294967295U\0"
+ 890      4E545F46 
+ 890      41535433 
+ 890      325F4D41 
+ 890      585F5F20 
+ 891 0cf4 01       		.byte	0x1
+ 892 0cf5 00       		.uleb128 0
+ 893 0cf6 5F5F5549 		.ascii "__UINT_FAST64_MAX__ 18446744073709551615ULL\0"
+ 893      4E545F46 
+ 893      41535436 
+ 893      345F4D41 
+ 893      585F5F20 
+ 894 0d22 01       		.byte	0x1
+ 895 0d23 00       		.uleb128 0
+ 896 0d24 5F5F494E 		.ascii "__INTPTR_MAX__ 2147483647\0"
+ 896      54505452 
+ 896      5F4D4158 
+ 896      5F5F2032 
+ 896      31343734 
+ 897 0d3e 01       		.byte	0x1
+ 898 0d3f 00       		.uleb128 0
+ 899 0d40 5F5F5549 		.ascii "__UINTPTR_MAX__ 4294967295U\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 30
+
+
+ 899      4E545054 
+ 899      525F4D41 
+ 899      585F5F20 
+ 899      34323934 
+ 900 0d5c 01       		.byte	0x1
+ 901 0d5d 00       		.uleb128 0
+ 902 0d5e 5F5F4743 		.ascii "__GCC_IEC_559 2\0"
+ 902      435F4945 
+ 902      435F3535 
+ 902      39203200 
+ 903 0d6e 01       		.byte	0x1
+ 904 0d6f 00       		.uleb128 0
+ 905 0d70 5F5F4743 		.ascii "__GCC_IEC_559_COMPLEX 2\0"
+ 905      435F4945 
+ 905      435F3535 
+ 905      395F434F 
+ 905      4D504C45 
+ 906 0d88 01       		.byte	0x1
+ 907 0d89 00       		.uleb128 0
+ 908 0d8a 5F5F464C 		.ascii "__FLT_EVAL_METHOD__ 2\0"
+ 908      545F4556 
+ 908      414C5F4D 
+ 908      4554484F 
+ 908      445F5F20 
+ 909 0da0 01       		.byte	0x1
+ 910 0da1 00       		.uleb128 0
+ 911 0da2 5F5F4445 		.ascii "__DEC_EVAL_METHOD__ 2\0"
+ 911      435F4556 
+ 911      414C5F4D 
+ 911      4554484F 
+ 911      445F5F20 
+ 912 0db8 01       		.byte	0x1
+ 913 0db9 00       		.uleb128 0
+ 914 0dba 5F5F464C 		.ascii "__FLT_RADIX__ 2\0"
+ 914      545F5241 
+ 914      4449585F 
+ 914      5F203200 
+ 915 0dca 01       		.byte	0x1
+ 916 0dcb 00       		.uleb128 0
+ 917 0dcc 5F5F464C 		.ascii "__FLT_MANT_DIG__ 24\0"
+ 917      545F4D41 
+ 917      4E545F44 
+ 917      49475F5F 
+ 917      20323400 
+ 918 0de0 01       		.byte	0x1
+ 919 0de1 00       		.uleb128 0
+ 920 0de2 5F5F464C 		.ascii "__FLT_DIG__ 6\0"
+ 920      545F4449 
+ 920      475F5F20 
+ 920      3600
+ 921 0df0 01       		.byte	0x1
+ 922 0df1 00       		.uleb128 0
+ 923 0df2 5F5F464C 		.ascii "__FLT_MIN_EXP__ (-125)\0"
+ 923      545F4D49 
+ 923      4E5F4558 
+ 923      505F5F20 
+ 923      282D3132 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 31
+
+
+ 924 0e09 01       		.byte	0x1
+ 925 0e0a 00       		.uleb128 0
+ 926 0e0b 5F5F464C 		.ascii "__FLT_MIN_10_EXP__ (-37)\0"
+ 926      545F4D49 
+ 926      4E5F3130 
+ 926      5F455850 
+ 926      5F5F2028 
+ 927 0e24 01       		.byte	0x1
+ 928 0e25 00       		.uleb128 0
+ 929 0e26 5F5F464C 		.ascii "__FLT_MAX_EXP__ 128\0"
+ 929      545F4D41 
+ 929      585F4558 
+ 929      505F5F20 
+ 929      31323800 
+ 930 0e3a 01       		.byte	0x1
+ 931 0e3b 00       		.uleb128 0
+ 932 0e3c 5F5F464C 		.ascii "__FLT_MAX_10_EXP__ 38\0"
+ 932      545F4D41 
+ 932      585F3130 
+ 932      5F455850 
+ 932      5F5F2033 
+ 933 0e52 01       		.byte	0x1
+ 934 0e53 00       		.uleb128 0
+ 935 0e54 5F5F464C 		.ascii "__FLT_DECIMAL_DIG__ 9\0"
+ 935      545F4445 
+ 935      43494D41 
+ 935      4C5F4449 
+ 935      475F5F20 
+ 936 0e6a 01       		.byte	0x1
+ 937 0e6b 00       		.uleb128 0
+ 938 0e6c 5F5F464C 		.ascii "__FLT_MAX__ 3.40282346638528859812e+38F\0"
+ 938      545F4D41 
+ 938      585F5F20 
+ 938      332E3430 
+ 938      32383233 
+ 939 0e94 01       		.byte	0x1
+ 940 0e95 00       		.uleb128 0
+ 941 0e96 5F5F464C 		.ascii "__FLT_MIN__ 1.17549435082228750797e-38F\0"
+ 941      545F4D49 
+ 941      4E5F5F20 
+ 941      312E3137 
+ 941      35343934 
+ 942 0ebe 01       		.byte	0x1
+ 943 0ebf 00       		.uleb128 0
+ 944 0ec0 5F5F464C 		.ascii "__FLT_EPSILON__ 1.19209289550781250000e-7F\0"
+ 944      545F4550 
+ 944      53494C4F 
+ 944      4E5F5F20 
+ 944      312E3139 
+ 945 0eeb 01       		.byte	0x1
+ 946 0eec 00       		.uleb128 0
+ 947 0eed 5F5F464C 		.ascii "__FLT_DENORM_MIN__ 1.40129846432481707092e-45F\0"
+ 947      545F4445 
+ 947      4E4F524D 
+ 947      5F4D494E 
+ 947      5F5F2031 
+ 948 0f1c 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 32
+
+
+ 949 0f1d 00       		.uleb128 0
+ 950 0f1e 5F5F464C 		.ascii "__FLT_HAS_DENORM__ 1\0"
+ 950      545F4841 
+ 950      535F4445 
+ 950      4E4F524D 
+ 950      5F5F2031 
+ 951 0f33 01       		.byte	0x1
+ 952 0f34 00       		.uleb128 0
+ 953 0f35 5F5F464C 		.ascii "__FLT_HAS_INFINITY__ 1\0"
+ 953      545F4841 
+ 953      535F494E 
+ 953      46494E49 
+ 953      54595F5F 
+ 954 0f4c 01       		.byte	0x1
+ 955 0f4d 00       		.uleb128 0
+ 956 0f4e 5F5F464C 		.ascii "__FLT_HAS_QUIET_NAN__ 1\0"
+ 956      545F4841 
+ 956      535F5155 
+ 956      4945545F 
+ 956      4E414E5F 
+ 957 0f66 01       		.byte	0x1
+ 958 0f67 00       		.uleb128 0
+ 959 0f68 5F5F4442 		.ascii "__DBL_MANT_DIG__ 53\0"
+ 959      4C5F4D41 
+ 959      4E545F44 
+ 959      49475F5F 
+ 959      20353300 
+ 960 0f7c 01       		.byte	0x1
+ 961 0f7d 00       		.uleb128 0
+ 962 0f7e 5F5F4442 		.ascii "__DBL_DIG__ 15\0"
+ 962      4C5F4449 
+ 962      475F5F20 
+ 962      313500
+ 963 0f8d 01       		.byte	0x1
+ 964 0f8e 00       		.uleb128 0
+ 965 0f8f 5F5F4442 		.ascii "__DBL_MIN_EXP__ (-1021)\0"
+ 965      4C5F4D49 
+ 965      4E5F4558 
+ 965      505F5F20 
+ 965      282D3130 
+ 966 0fa7 01       		.byte	0x1
+ 967 0fa8 00       		.uleb128 0
+ 968 0fa9 5F5F4442 		.ascii "__DBL_MIN_10_EXP__ (-307)\0"
+ 968      4C5F4D49 
+ 968      4E5F3130 
+ 968      5F455850 
+ 968      5F5F2028 
+ 969 0fc3 01       		.byte	0x1
+ 970 0fc4 00       		.uleb128 0
+ 971 0fc5 5F5F4442 		.ascii "__DBL_MAX_EXP__ 1024\0"
+ 971      4C5F4D41 
+ 971      585F4558 
+ 971      505F5F20 
+ 971      31303234 
+ 972 0fda 01       		.byte	0x1
+ 973 0fdb 00       		.uleb128 0
+ 974 0fdc 5F5F4442 		.ascii "__DBL_MAX_10_EXP__ 308\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 33
+
+
+ 974      4C5F4D41 
+ 974      585F3130 
+ 974      5F455850 
+ 974      5F5F2033 
+ 975 0ff3 01       		.byte	0x1
+ 976 0ff4 00       		.uleb128 0
+ 977 0ff5 5F5F4442 		.ascii "__DBL_DECIMAL_DIG__ 17\0"
+ 977      4C5F4445 
+ 977      43494D41 
+ 977      4C5F4449 
+ 977      475F5F20 
+ 978 100c 01       		.byte	0x1
+ 979 100d 00       		.uleb128 0
+ 980 100e 5F5F4442 		.ascii "__DBL_MAX__ ((double)1.79769313486231570815e+308L)\0"
+ 980      4C5F4D41 
+ 980      585F5F20 
+ 980      2828646F 
+ 980      75626C65 
+ 981 1041 01       		.byte	0x1
+ 982 1042 00       		.uleb128 0
+ 983 1043 5F5F4442 		.ascii "__DBL_MIN__ ((double)2.22507385850720138309e-308L)\0"
+ 983      4C5F4D49 
+ 983      4E5F5F20 
+ 983      2828646F 
+ 983      75626C65 
+ 984 1076 01       		.byte	0x1
+ 985 1077 00       		.uleb128 0
+ 986 1078 5F5F4442 		.ascii "__DBL_EPSILON__ ((double)2.22044604925031308085e-16L)\0"
+ 986      4C5F4550 
+ 986      53494C4F 
+ 986      4E5F5F20 
+ 986      2828646F 
+ 987 10ae 01       		.byte	0x1
+ 988 10af 00       		.uleb128 0
+ 989 10b0 5F5F4442 		.ascii "__DBL_DENORM_MIN__ ((double)4.94065645841246544177e-324L)\0"
+ 989      4C5F4445 
+ 989      4E4F524D 
+ 989      5F4D494E 
+ 989      5F5F2028 
+ 990 10ea 01       		.byte	0x1
+ 991 10eb 00       		.uleb128 0
+ 992 10ec 5F5F4442 		.ascii "__DBL_HAS_DENORM__ 1\0"
+ 992      4C5F4841 
+ 992      535F4445 
+ 992      4E4F524D 
+ 992      5F5F2031 
+ 993 1101 01       		.byte	0x1
+ 994 1102 00       		.uleb128 0
+ 995 1103 5F5F4442 		.ascii "__DBL_HAS_INFINITY__ 1\0"
+ 995      4C5F4841 
+ 995      535F494E 
+ 995      46494E49 
+ 995      54595F5F 
+ 996 111a 01       		.byte	0x1
+ 997 111b 00       		.uleb128 0
+ 998 111c 5F5F4442 		.ascii "__DBL_HAS_QUIET_NAN__ 1\0"
+ 998      4C5F4841 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 34
+
+
+ 998      535F5155 
+ 998      4945545F 
+ 998      4E414E5F 
+ 999 1134 01       		.byte	0x1
+ 1000 1135 00       		.uleb128 0
+ 1001 1136 5F5F4C44 		.ascii "__LDBL_MANT_DIG__ 64\0"
+ 1001      424C5F4D 
+ 1001      414E545F 
+ 1001      4449475F 
+ 1001      5F203634 
+ 1002 114b 01       		.byte	0x1
+ 1003 114c 00       		.uleb128 0
+ 1004 114d 5F5F4C44 		.ascii "__LDBL_DIG__ 18\0"
+ 1004      424C5F44 
+ 1004      49475F5F 
+ 1004      20313800 
+ 1005 115d 01       		.byte	0x1
+ 1006 115e 00       		.uleb128 0
+ 1007 115f 5F5F4C44 		.ascii "__LDBL_MIN_EXP__ (-16381)\0"
+ 1007      424C5F4D 
+ 1007      494E5F45 
+ 1007      58505F5F 
+ 1007      20282D31 
+ 1008 1179 01       		.byte	0x1
+ 1009 117a 00       		.uleb128 0
+ 1010 117b 5F5F4C44 		.ascii "__LDBL_MIN_10_EXP__ (-4931)\0"
+ 1010      424C5F4D 
+ 1010      494E5F31 
+ 1010      305F4558 
+ 1010      505F5F20 
+ 1011 1197 01       		.byte	0x1
+ 1012 1198 00       		.uleb128 0
+ 1013 1199 5F5F4C44 		.ascii "__LDBL_MAX_EXP__ 16384\0"
+ 1013      424C5F4D 
+ 1013      41585F45 
+ 1013      58505F5F 
+ 1013      20313633 
+ 1014 11b0 01       		.byte	0x1
+ 1015 11b1 00       		.uleb128 0
+ 1016 11b2 5F5F4C44 		.ascii "__LDBL_MAX_10_EXP__ 4932\0"
+ 1016      424C5F4D 
+ 1016      41585F31 
+ 1016      305F4558 
+ 1016      505F5F20 
+ 1017 11cb 01       		.byte	0x1
+ 1018 11cc 00       		.uleb128 0
+ 1019 11cd 5F5F4445 		.ascii "__DECIMAL_DIG__ 21\0"
+ 1019      43494D41 
+ 1019      4C5F4449 
+ 1019      475F5F20 
+ 1019      323100
+ 1020 11e0 01       		.byte	0x1
+ 1021 11e1 00       		.uleb128 0
+ 1022 11e2 5F5F4C44 		.ascii "__LDBL_MAX__ 1.18973149535723176502e+4932L\0"
+ 1022      424C5F4D 
+ 1022      41585F5F 
+ 1022      20312E31 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 35
+
+
+ 1022      38393733 
+ 1023 120d 01       		.byte	0x1
+ 1024 120e 00       		.uleb128 0
+ 1025 120f 5F5F4C44 		.ascii "__LDBL_MIN__ 3.36210314311209350626e-4932L\0"
+ 1025      424C5F4D 
+ 1025      494E5F5F 
+ 1025      20332E33 
+ 1025      36323130 
+ 1026 123a 01       		.byte	0x1
+ 1027 123b 00       		.uleb128 0
+ 1028 123c 5F5F4C44 		.ascii "__LDBL_EPSILON__ 1.08420217248550443401e-19L\0"
+ 1028      424C5F45 
+ 1028      5053494C 
+ 1028      4F4E5F5F 
+ 1028      20312E30 
+ 1029 1269 01       		.byte	0x1
+ 1030 126a 00       		.uleb128 0
+ 1031 126b 5F5F4C44 		.ascii "__LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L\0"
+ 1031      424C5F44 
+ 1031      454E4F52 
+ 1031      4D5F4D49 
+ 1031      4E5F5F20 
+ 1032 129d 01       		.byte	0x1
+ 1033 129e 00       		.uleb128 0
+ 1034 129f 5F5F4C44 		.ascii "__LDBL_HAS_DENORM__ 1\0"
+ 1034      424C5F48 
+ 1034      41535F44 
+ 1034      454E4F52 
+ 1034      4D5F5F20 
+ 1035 12b5 01       		.byte	0x1
+ 1036 12b6 00       		.uleb128 0
+ 1037 12b7 5F5F4C44 		.ascii "__LDBL_HAS_INFINITY__ 1\0"
+ 1037      424C5F48 
+ 1037      41535F49 
+ 1037      4E46494E 
+ 1037      4954595F 
+ 1038 12cf 01       		.byte	0x1
+ 1039 12d0 00       		.uleb128 0
+ 1040 12d1 5F5F4C44 		.ascii "__LDBL_HAS_QUIET_NAN__ 1\0"
+ 1040      424C5F48 
+ 1040      41535F51 
+ 1040      55494554 
+ 1040      5F4E414E 
+ 1041 12ea 01       		.byte	0x1
+ 1042 12eb 00       		.uleb128 0
+ 1043 12ec 5F5F4445 		.ascii "__DEC32_MANT_DIG__ 7\0"
+ 1043      4333325F 
+ 1043      4D414E54 
+ 1043      5F444947 
+ 1043      5F5F2037 
+ 1044 1301 01       		.byte	0x1
+ 1045 1302 00       		.uleb128 0
+ 1046 1303 5F5F4445 		.ascii "__DEC32_MIN_EXP__ (-94)\0"
+ 1046      4333325F 
+ 1046      4D494E5F 
+ 1046      4558505F 
+ 1046      5F20282D 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 36
+
+
+ 1047 131b 01       		.byte	0x1
+ 1048 131c 00       		.uleb128 0
+ 1049 131d 5F5F4445 		.ascii "__DEC32_MAX_EXP__ 97\0"
+ 1049      4333325F 
+ 1049      4D41585F 
+ 1049      4558505F 
+ 1049      5F203937 
+ 1050 1332 01       		.byte	0x1
+ 1051 1333 00       		.uleb128 0
+ 1052 1334 5F5F4445 		.ascii "__DEC32_MIN__ 1E-95DF\0"
+ 1052      4333325F 
+ 1052      4D494E5F 
+ 1052      5F203145 
+ 1052      2D393544 
+ 1053 134a 01       		.byte	0x1
+ 1054 134b 00       		.uleb128 0
+ 1055 134c 5F5F4445 		.ascii "__DEC32_MAX__ 9.999999E96DF\0"
+ 1055      4333325F 
+ 1055      4D41585F 
+ 1055      5F20392E 
+ 1055      39393939 
+ 1056 1368 01       		.byte	0x1
+ 1057 1369 00       		.uleb128 0
+ 1058 136a 5F5F4445 		.ascii "__DEC32_EPSILON__ 1E-6DF\0"
+ 1058      4333325F 
+ 1058      45505349 
+ 1058      4C4F4E5F 
+ 1058      5F203145 
+ 1059 1383 01       		.byte	0x1
+ 1060 1384 00       		.uleb128 0
+ 1061 1385 5F5F4445 		.ascii "__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\0"
+ 1061      4333325F 
+ 1061      5355424E 
+ 1061      4F524D41 
+ 1061      4C5F4D49 
+ 1062 13ac 01       		.byte	0x1
+ 1063 13ad 00       		.uleb128 0
+ 1064 13ae 5F5F4445 		.ascii "__DEC64_MANT_DIG__ 16\0"
+ 1064      4336345F 
+ 1064      4D414E54 
+ 1064      5F444947 
+ 1064      5F5F2031 
+ 1065 13c4 01       		.byte	0x1
+ 1066 13c5 00       		.uleb128 0
+ 1067 13c6 5F5F4445 		.ascii "__DEC64_MIN_EXP__ (-382)\0"
+ 1067      4336345F 
+ 1067      4D494E5F 
+ 1067      4558505F 
+ 1067      5F20282D 
+ 1068 13df 01       		.byte	0x1
+ 1069 13e0 00       		.uleb128 0
+ 1070 13e1 5F5F4445 		.ascii "__DEC64_MAX_EXP__ 385\0"
+ 1070      4336345F 
+ 1070      4D41585F 
+ 1070      4558505F 
+ 1070      5F203338 
+ 1071 13f7 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 37
+
+
+ 1072 13f8 00       		.uleb128 0
+ 1073 13f9 5F5F4445 		.ascii "__DEC64_MIN__ 1E-383DD\0"
+ 1073      4336345F 
+ 1073      4D494E5F 
+ 1073      5F203145 
+ 1073      2D333833 
+ 1074 1410 01       		.byte	0x1
+ 1075 1411 00       		.uleb128 0
+ 1076 1412 5F5F4445 		.ascii "__DEC64_MAX__ 9.999999999999999E384DD\0"
+ 1076      4336345F 
+ 1076      4D41585F 
+ 1076      5F20392E 
+ 1076      39393939 
+ 1077 1438 01       		.byte	0x1
+ 1078 1439 00       		.uleb128 0
+ 1079 143a 5F5F4445 		.ascii "__DEC64_EPSILON__ 1E-15DD\0"
+ 1079      4336345F 
+ 1079      45505349 
+ 1079      4C4F4E5F 
+ 1079      5F203145 
+ 1080 1454 01       		.byte	0x1
+ 1081 1455 00       		.uleb128 0
+ 1082 1456 5F5F4445 		.ascii "__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\0"
+ 1082      4336345F 
+ 1082      5355424E 
+ 1082      4F524D41 
+ 1082      4C5F4D49 
+ 1083 1487 01       		.byte	0x1
+ 1084 1488 00       		.uleb128 0
+ 1085 1489 5F5F4445 		.ascii "__DEC128_MANT_DIG__ 34\0"
+ 1085      43313238 
+ 1085      5F4D414E 
+ 1085      545F4449 
+ 1085      475F5F20 
+ 1086 14a0 01       		.byte	0x1
+ 1087 14a1 00       		.uleb128 0
+ 1088 14a2 5F5F4445 		.ascii "__DEC128_MIN_EXP__ (-6142)\0"
+ 1088      43313238 
+ 1088      5F4D494E 
+ 1088      5F455850 
+ 1088      5F5F2028 
+ 1089 14bd 01       		.byte	0x1
+ 1090 14be 00       		.uleb128 0
+ 1091 14bf 5F5F4445 		.ascii "__DEC128_MAX_EXP__ 6145\0"
+ 1091      43313238 
+ 1091      5F4D4158 
+ 1091      5F455850 
+ 1091      5F5F2036 
+ 1092 14d7 01       		.byte	0x1
+ 1093 14d8 00       		.uleb128 0
+ 1094 14d9 5F5F4445 		.ascii "__DEC128_MIN__ 1E-6143DL\0"
+ 1094      43313238 
+ 1094      5F4D494E 
+ 1094      5F5F2031 
+ 1094      452D3631 
+ 1095 14f2 01       		.byte	0x1
+ 1096 14f3 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 38
+
+
+ 1097 14f4 5F5F4445 		.ascii "__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL\0"
+ 1097      43313238 
+ 1097      5F4D4158 
+ 1097      5F5F2039 
+ 1097      2E393939 
+ 1098 152e 01       		.byte	0x1
+ 1099 152f 00       		.uleb128 0
+ 1100 1530 5F5F4445 		.ascii "__DEC128_EPSILON__ 1E-33DL\0"
+ 1100      43313238 
+ 1100      5F455053 
+ 1100      494C4F4E 
+ 1100      5F5F2031 
+ 1101 154b 01       		.byte	0x1
+ 1102 154c 00       		.uleb128 0
+ 1103 154d 5F5F4445 		.ascii "__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL\0"
+ 1103      43313238 
+ 1103      5F535542 
+ 1103      4E4F524D 
+ 1103      414C5F4D 
+ 1104 1592 01       		.byte	0x1
+ 1105 1593 00       		.uleb128 0
+ 1106 1594 5F5F5245 		.ascii "__REGISTER_PREFIX__ \0"
+ 1106      47495354 
+ 1106      45525F50 
+ 1106      52454649 
+ 1106      585F5F20 
+ 1107 15a9 01       		.byte	0x1
+ 1108 15aa 00       		.uleb128 0
+ 1109 15ab 5F5F5553 		.ascii "__USER_LABEL_PREFIX__ _\0"
+ 1109      45525F4C 
+ 1109      4142454C 
+ 1109      5F505245 
+ 1109      4649585F 
+ 1110 15c3 01       		.byte	0x1
+ 1111 15c4 00       		.uleb128 0
+ 1112 15c5 5F5F474E 		.ascii "__GNUC_GNU_INLINE__ 1\0"
+ 1112      55435F47 
+ 1112      4E555F49 
+ 1112      4E4C494E 
+ 1112      455F5F20 
+ 1113 15db 01       		.byte	0x1
+ 1114 15dc 00       		.uleb128 0
+ 1115 15dd 5F5F4E4F 		.ascii "__NO_INLINE__ 1\0"
+ 1115      5F494E4C 
+ 1115      494E455F 
+ 1115      5F203100 
+ 1116 15ed 01       		.byte	0x1
+ 1117 15ee 00       		.uleb128 0
+ 1118 15ef 5F5F5354 		.ascii "__STRICT_ANSI__ 1\0"
+ 1118      52494354 
+ 1118      5F414E53 
+ 1118      495F5F20 
+ 1118      3100
+ 1119 1601 01       		.byte	0x1
+ 1120 1602 00       		.uleb128 0
+ 1121 1603 5F5F4743 		.ascii "__GCC_ATOMIC_BOOL_LOCK_FREE 1\0"
+ 1121      435F4154 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 39
+
+
+ 1121      4F4D4943 
+ 1121      5F424F4F 
+ 1121      4C5F4C4F 
+ 1122 1621 01       		.byte	0x1
+ 1123 1622 00       		.uleb128 0
+ 1124 1623 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR_LOCK_FREE 1\0"
+ 1124      435F4154 
+ 1124      4F4D4943 
+ 1124      5F434841 
+ 1124      525F4C4F 
+ 1125 1641 01       		.byte	0x1
+ 1126 1642 00       		.uleb128 0
+ 1127 1643 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR16_T_LOCK_FREE 1\0"
+ 1127      435F4154 
+ 1127      4F4D4943 
+ 1127      5F434841 
+ 1127      5231365F 
+ 1128 1665 01       		.byte	0x1
+ 1129 1666 00       		.uleb128 0
+ 1130 1667 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR32_T_LOCK_FREE 1\0"
+ 1130      435F4154 
+ 1130      4F4D4943 
+ 1130      5F434841 
+ 1130      5233325F 
+ 1131 1689 01       		.byte	0x1
+ 1132 168a 00       		.uleb128 0
+ 1133 168b 5F5F4743 		.ascii "__GCC_ATOMIC_WCHAR_T_LOCK_FREE 1\0"
+ 1133      435F4154 
+ 1133      4F4D4943 
+ 1133      5F574348 
+ 1133      41525F54 
+ 1134 16ac 01       		.byte	0x1
+ 1135 16ad 00       		.uleb128 0
+ 1136 16ae 5F5F4743 		.ascii "__GCC_ATOMIC_SHORT_LOCK_FREE 1\0"
+ 1136      435F4154 
+ 1136      4F4D4943 
+ 1136      5F53484F 
+ 1136      52545F4C 
+ 1137 16cd 01       		.byte	0x1
+ 1138 16ce 00       		.uleb128 0
+ 1139 16cf 5F5F4743 		.ascii "__GCC_ATOMIC_INT_LOCK_FREE 1\0"
+ 1139      435F4154 
+ 1139      4F4D4943 
+ 1139      5F494E54 
+ 1139      5F4C4F43 
+ 1140 16ec 01       		.byte	0x1
+ 1141 16ed 00       		.uleb128 0
+ 1142 16ee 5F5F4743 		.ascii "__GCC_ATOMIC_LONG_LOCK_FREE 1\0"
+ 1142      435F4154 
+ 1142      4F4D4943 
+ 1142      5F4C4F4E 
+ 1142      475F4C4F 
+ 1143 170c 01       		.byte	0x1
+ 1144 170d 00       		.uleb128 0
+ 1145 170e 5F5F4743 		.ascii "__GCC_ATOMIC_LLONG_LOCK_FREE 1\0"
+ 1145      435F4154 
+ 1145      4F4D4943 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 40
+
+
+ 1145      5F4C4C4F 
+ 1145      4E475F4C 
+ 1146 172d 01       		.byte	0x1
+ 1147 172e 00       		.uleb128 0
+ 1148 172f 5F5F4743 		.ascii "__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\0"
+ 1148      435F4154 
+ 1148      4F4D4943 
+ 1148      5F544553 
+ 1148      545F414E 
+ 1149 1753 01       		.byte	0x1
+ 1150 1754 00       		.uleb128 0
+ 1151 1755 5F5F4743 		.ascii "__GCC_ATOMIC_POINTER_LOCK_FREE 1\0"
+ 1151      435F4154 
+ 1151      4F4D4943 
+ 1151      5F504F49 
+ 1151      4E544552 
+ 1152 1776 01       		.byte	0x1
+ 1153 1777 00       		.uleb128 0
+ 1154 1778 5F5F4743 		.ascii "__GCC_HAVE_DWARF2_CFI_ASM 1\0"
+ 1154      435F4841 
+ 1154      56455F44 
+ 1154      57415246 
+ 1154      325F4346 
+ 1155 1794 01       		.byte	0x1
+ 1156 1795 00       		.uleb128 0
+ 1157 1796 5F5F5052 		.ascii "__PRAGMA_REDEFINE_EXTNAME 1\0"
+ 1157      41474D41 
+ 1157      5F524544 
+ 1157      4546494E 
+ 1157      455F4558 
+ 1158 17b2 01       		.byte	0x1
+ 1159 17b3 00       		.uleb128 0
+ 1160 17b4 5F5F5349 		.ascii "__SIZEOF_WCHAR_T__ 2\0"
+ 1160      5A454F46 
+ 1160      5F574348 
+ 1160      41525F54 
+ 1160      5F5F2032 
+ 1161 17c9 01       		.byte	0x1
+ 1162 17ca 00       		.uleb128 0
+ 1163 17cb 5F5F5349 		.ascii "__SIZEOF_WINT_T__ 2\0"
+ 1163      5A454F46 
+ 1163      5F57494E 
+ 1163      545F545F 
+ 1163      5F203200 
+ 1164 17df 01       		.byte	0x1
+ 1165 17e0 00       		.uleb128 0
+ 1166 17e1 5F5F5349 		.ascii "__SIZEOF_PTRDIFF_T__ 4\0"
+ 1166      5A454F46 
+ 1166      5F505452 
+ 1166      44494646 
+ 1166      5F545F5F 
+ 1167 17f8 01       		.byte	0x1
+ 1168 17f9 00       		.uleb128 0
+ 1169 17fa 5F5F6933 		.ascii "__i386 1\0"
+ 1169      38362031 
+ 1169      00
+ 1170 1803 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 41
+
+
+ 1171 1804 00       		.uleb128 0
+ 1172 1805 5F5F6933 		.ascii "__i386__ 1\0"
+ 1172      38365F5F 
+ 1172      203100
+ 1173 1810 01       		.byte	0x1
+ 1174 1811 00       		.uleb128 0
+ 1175 1812 5F5F4154 		.ascii "__ATOMIC_HLE_ACQUIRE 65536\0"
+ 1175      4F4D4943 
+ 1175      5F484C45 
+ 1175      5F414351 
+ 1175      55495245 
+ 1176 182d 01       		.byte	0x1
+ 1177 182e 00       		.uleb128 0
+ 1178 182f 5F5F4154 		.ascii "__ATOMIC_HLE_RELEASE 131072\0"
+ 1178      4F4D4943 
+ 1178      5F484C45 
+ 1178      5F52454C 
+ 1178      45415345 
+ 1179 184b 01       		.byte	0x1
+ 1180 184c 00       		.uleb128 0
+ 1181 184d 5F5F7475 		.ascii "__tune_i386__ 1\0"
+ 1181      6E655F69 
+ 1181      3338365F 
+ 1181      5F203100 
+ 1182 185d 01       		.byte	0x1
+ 1183 185e 00       		.uleb128 0
+ 1184 185f 5F5F636F 		.ascii "__code_model_32__ 1\0"
+ 1184      64655F6D 
+ 1184      6F64656C 
+ 1184      5F33325F 
+ 1184      5F203100 
+ 1185 1873 01       		.byte	0x1
+ 1186 1874 00       		.uleb128 0
+ 1187 1875 5F583836 		.ascii "_X86_ 1\0"
+ 1187      5F203100 
+ 1188 187d 01       		.byte	0x1
+ 1189 187e 00       		.uleb128 0
+ 1190 187f 5F5F7374 		.ascii "__stdcall __attribute__((__stdcall__))\0"
+ 1190      6463616C 
+ 1190      6C205F5F 
+ 1190      61747472 
+ 1190      69627574 
+ 1191 18a6 01       		.byte	0x1
+ 1192 18a7 00       		.uleb128 0
+ 1193 18a8 5F5F6661 		.ascii "__fastcall __attribute__((__fastcall__))\0"
+ 1193      73746361 
+ 1193      6C6C205F 
+ 1193      5F617474 
+ 1193      72696275 
+ 1194 18d1 01       		.byte	0x1
+ 1195 18d2 00       		.uleb128 0
+ 1196 18d3 5F5F7468 		.ascii "__thiscall __attribute__((__thiscall__))\0"
+ 1196      69736361 
+ 1196      6C6C205F 
+ 1196      5F617474 
+ 1196      72696275 
+ 1197 18fc 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 42
+
+
+ 1198 18fd 00       		.uleb128 0
+ 1199 18fe 5F5F6364 		.ascii "__cdecl __attribute__((__cdecl__))\0"
+ 1199      65636C20 
+ 1199      5F5F6174 
+ 1199      74726962 
+ 1199      7574655F 
+ 1200 1921 01       		.byte	0x1
+ 1201 1922 00       		.uleb128 0
+ 1202 1923 5F5F4758 		.ascii "__GXX_MERGED_TYPEINFO_NAMES 0\0"
+ 1202      585F4D45 
+ 1202      52474544 
+ 1202      5F545950 
+ 1202      45494E46 
+ 1203 1941 01       		.byte	0x1
+ 1204 1942 00       		.uleb128 0
+ 1205 1943 5F5F4758 		.ascii "__GXX_TYPEINFO_EQUALITY_INLINE 0\0"
+ 1205      585F5459 
+ 1205      5045494E 
+ 1205      464F5F45 
+ 1205      5155414C 
+ 1206 1964 01       		.byte	0x1
+ 1207 1965 00       		.uleb128 0
+ 1208 1966 5F5F4D53 		.ascii "__MSVCRT__ 1\0"
+ 1208      56435254 
+ 1208      5F5F2031 
+ 1208      00
+ 1209 1973 01       		.byte	0x1
+ 1210 1974 00       		.uleb128 0
+ 1211 1975 5F5F4D49 		.ascii "__MINGW32__ 1\0"
+ 1211      4E475733 
+ 1211      325F5F20 
+ 1211      3100
+ 1212 1983 01       		.byte	0x1
+ 1213 1984 00       		.uleb128 0
+ 1214 1985 5F57494E 		.ascii "_WIN32 1\0"
+ 1214      33322031 
+ 1214      00
+ 1215 198e 01       		.byte	0x1
+ 1216 198f 00       		.uleb128 0
+ 1217 1990 5F5F5749 		.ascii "__WIN32 1\0"
+ 1217      4E333220 
+ 1217      3100
+ 1218 199a 01       		.byte	0x1
+ 1219 199b 00       		.uleb128 0
+ 1220 199c 5F5F5749 		.ascii "__WIN32__ 1\0"
+ 1220      4E33325F 
+ 1220      5F203100 
+ 1221 19a8 01       		.byte	0x1
+ 1222 19a9 00       		.uleb128 0
+ 1223 19aa 5F5F5749 		.ascii "__WINNT 1\0"
+ 1223      4E4E5420 
+ 1223      3100
+ 1224 19b4 01       		.byte	0x1
+ 1225 19b5 00       		.uleb128 0
+ 1226 19b6 5F5F5749 		.ascii "__WINNT__ 1\0"
+ 1226      4E4E545F 
+ 1226      5F203100 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 43
+
+
+ 1227 19c2 01       		.byte	0x1
+ 1228 19c3 00       		.uleb128 0
+ 1229 19c4 5F494E54 		.ascii "_INTEGRAL_MAX_BITS 64\0"
+ 1229      45475241 
+ 1229      4C5F4D41 
+ 1229      585F4249 
+ 1229      54532036 
+ 1230 19da 01       		.byte	0x1
+ 1231 19db 00       		.uleb128 0
+ 1232 19dc 5F5F6465 		.ascii "__declspec(x) __attribute__((x))\0"
+ 1232      636C7370 
+ 1232      65632878 
+ 1232      29205F5F 
+ 1232      61747472 
+ 1233 19fd 01       		.byte	0x1
+ 1234 19fe 00       		.uleb128 0
+ 1235 19ff 5F5F4445 		.ascii "__DECIMAL_BID_FORMAT__ 1\0"
+ 1235      43494D41 
+ 1235      4C5F4249 
+ 1235      445F464F 
+ 1235      524D4154 
+ 1236 1a18 01       		.byte	0x1
+ 1237 1a19 00       		.uleb128 0
+ 1238 1a1a 4346475F 		.ascii "CFG_PROCESSOR 3\0"
+ 1238      50524F43 
+ 1238      4553534F 
+ 1238      52203300 
+ 1239 1a2a 03       		.byte	0x3
+ 1240 1a2b 00       		.uleb128 0
+ 1241 1a2c 01       		.uleb128 0x1
+ 1242              		.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
+ 1243 1a2d 03       		.byte	0x3
+ 1244 1a2e 01       		.uleb128 0x1
+ 1245 1a2f 02       		.uleb128 0x2
+ 1246 1a30 01       		.byte	0x1
+ 1247 1a31 02       		.uleb128 0x2
+ 1248 1a32 5F6F735F 		.ascii "_os_firstinc_h_ \0"
+ 1248      66697273 
+ 1248      74696E63 
+ 1248      5F685F20 
+ 1248      00
+ 1249              		.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
+ 1250 1a43 03       		.byte	0x3
+ 1251 1a44 04       		.uleb128 0x4
+ 1252 1a45 03       		.uleb128 0x3
+ 1253 1a46 01       		.byte	0x1
+ 1254 1a47 02       		.uleb128 0x2
+ 1255 1a48 5F424153 		.ascii "_BASE_TYPES_H_ \0"
+ 1255      455F5459 
+ 1255      5045535F 
+ 1255      485F2000 
+ 1256 1a58 01       		.byte	0x1
+ 1257 1a59 04       		.uleb128 0x4
+ 1258 1a5a 494E5445 		.ascii "INTEGER_LLP64_IL32P64 1\0"
+ 1258      4745525F 
+ 1258      4C4C5036 
+ 1258      345F494C 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 44
+
+
+ 1258      33325036 
+ 1259 1a72 01       		.byte	0x1
+ 1260 1a73 05       		.uleb128 0x5
+ 1261 1a74 494E5445 		.ascii "INTEGER_LP64_I32LP64 2\0"
+ 1261      4745525F 
+ 1261      4C503634 
+ 1261      5F493332 
+ 1261      4C503634 
+ 1262 1a8b 01       		.byte	0x1
+ 1263 1a8c 06       		.uleb128 0x6
+ 1264 1a8d 494E5445 		.ascii "INTEGER_ILP64 3\0"
+ 1264      4745525F 
+ 1264      494C5036 
+ 1264      34203300 
+ 1265 1a9d 01       		.byte	0x1
+ 1266 1a9e 07       		.uleb128 0x7
+ 1267 1a9f 494E5445 		.ascii "INTEGER_SILP64 4\0"
+ 1267      4745525F 
+ 1267      53494C50 
+ 1267      36342034 
+ 1267      00
+ 1268 1ab0 01       		.byte	0x1
+ 1269 1ab1 09       		.uleb128 0x9
+ 1270 1ab2 4350505F 		.ascii "CPP_VERSION_NONE 0\0"
+ 1270      56455253 
+ 1270      494F4E5F 
+ 1270      4E4F4E45 
+ 1270      203000
+ 1271 1ac5 01       		.byte	0x1
+ 1272 1ac6 0A       		.uleb128 0xa
+ 1273 1ac7 4350505F 		.ascii "CPP_VERSION_1998 1\0"
+ 1273      56455253 
+ 1273      494F4E5F 
+ 1273      31393938 
+ 1273      203100
+ 1274 1ada 01       		.byte	0x1
+ 1275 1adb 0B       		.uleb128 0xb
+ 1276 1adc 4350505F 		.ascii "CPP_VERSION_2003 2\0"
+ 1276      56455253 
+ 1276      494F4E5F 
+ 1276      32303033 
+ 1276      203200
+ 1277 1aef 01       		.byte	0x1
+ 1278 1af0 0C       		.uleb128 0xc
+ 1279 1af1 4350505F 		.ascii "CPP_VERSION_2007 3\0"
+ 1279      56455253 
+ 1279      494F4E5F 
+ 1279      32303037 
+ 1279      203300
+ 1280 1b04 01       		.byte	0x1
+ 1281 1b05 0D       		.uleb128 0xd
+ 1282 1b06 4350505F 		.ascii "CPP_VERSION_2011 4\0"
+ 1282      56455253 
+ 1282      494F4E5F 
+ 1282      32303131 
+ 1282      203400
+ 1283 1b19 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 45
+
+
+ 1284 1b1a 0E       		.uleb128 0xe
+ 1285 1b1b 49534F5F 		.ascii "ISO_CPP_VERSION CPP_VERSION_1998\0"
+ 1285      4350505F 
+ 1285      56455253 
+ 1285      494F4E20 
+ 1285      4350505F 
+ 1286 1b3c 01       		.byte	0x1
+ 1287 1b3d 10       		.uleb128 0x10
+ 1288 1b3e 494E5445 		.ascii "INTEGER_MODEL INTEGER_LLP64_IL32P64\0"
+ 1288      4745525F 
+ 1288      4D4F4445 
+ 1288      4C20494E 
+ 1288      54454745 
+ 1289 1b62 04       		.byte	0x4
+ 1290              		.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
+ 1291 1b63 03       		.byte	0x3
+ 1292 1b64 05       		.uleb128 0x5
+ 1293 1b65 04       		.uleb128 0x4
+ 1294 1b66 01       		.byte	0x1
+ 1295 1b67 02       		.uleb128 0x2
+ 1296 1b68 5F6F735F 		.ascii "_os_common_h_ \0"
+ 1296      636F6D6D 
+ 1296      6F6E5F68 
+ 1296      5F2000
+ 1297 1b77 01       		.byte	0x1
+ 1298 1b78 06       		.uleb128 0x6
+ 1299 1b79 46616C73 		.ascii "False 0\0"
+ 1299      65203000 
+ 1300 1b81 01       		.byte	0x1
+ 1301 1b82 07       		.uleb128 0x7
+ 1302 1b83 54727565 		.ascii "True 1\0"
+ 1302      203100
+ 1303 1b8a 01       		.byte	0x1
+ 1304 1b8b 08       		.uleb128 0x8
+ 1305 1b8c 46414C53 		.ascii "FALSE False\0"
+ 1305      45204661 
+ 1305      6C736500 
+ 1306 1b98 01       		.byte	0x1
+ 1307 1b99 09       		.uleb128 0x9
+ 1308 1b9a 54525545 		.ascii "TRUE True\0"
+ 1308      20547275 
+ 1308      6500
+ 1309 1ba4 01       		.byte	0x1
+ 1310 1ba5 0A       		.uleb128 0xa
+ 1311 1ba6 41636365 		.ascii "Accepted 1\0"
+ 1311      70746564 
+ 1311      203100
+ 1312 1bb1 01       		.byte	0x1
+ 1313 1bb2 0B       		.uleb128 0xb
+ 1314 1bb3 52656A65 		.ascii "Rejected 0\0"
+ 1314      63746564 
+ 1314      203000
+ 1315 1bbe 01       		.byte	0x1
+ 1316 1bbf 0C       		.uleb128 0xc
+ 1317 1bc0 4C6F6361 		.ascii "Local static\0"
+ 1317      6C207374 
+ 1317      61746963 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 46
+
+
+ 1317      00
+ 1318 1bcd 01       		.byte	0x1
+ 1319 1bce 0D       		.uleb128 0xd
+ 1320 1bcf 4C6F6361 		.ascii "Local_inline static __inline__\0"
+ 1320      6C5F696E 
+ 1320      6C696E65 
+ 1320      20737461 
+ 1320      74696320 
+ 1321 1bee 01       		.byte	0x1
+ 1322 1bef 0E       		.uleb128 0xe
+ 1323 1bf0 476C6F62 		.ascii "Global_inline __inline__\0"
+ 1323      616C5F69 
+ 1323      6E6C696E 
+ 1323      65205F5F 
+ 1323      696E6C69 
+ 1324 1c09 01       		.byte	0x1
+ 1325 1c0a 0F       		.uleb128 0xf
+ 1326 1c0b 52656665 		.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
+ 1326      72656E63 
+ 1326      65556E75 
+ 1326      73656450 
+ 1326      6172616D 
+ 1327 1c33 01       		.byte	0x1
+ 1328 1c34 12       		.uleb128 0x12
+ 1329 1c35 634D4355 		.ascii "cMCU_SIMULATION 1\0"
+ 1329      5F53494D 
+ 1329      554C4154 
+ 1329      494F4E20 
+ 1329      3100
+ 1330 1c47 01       		.byte	0x1
+ 1331 1c48 13       		.uleb128 0x13
+ 1332 1c49 634D4355 		.ascii "cMCU_POWERPC 2\0"
+ 1332      5F504F57 
+ 1332      45525043 
+ 1332      203200
+ 1333 1c58 01       		.byte	0x1
+ 1334 1c59 14       		.uleb128 0x14
+ 1335 1c5a 634D4355 		.ascii "cMCU_X86 3\0"
+ 1335      5F583836 
+ 1335      203300
+ 1336 1c65 01       		.byte	0x1
+ 1337 1c66 15       		.uleb128 0x15
+ 1338 1c67 634D4355 		.ascii "cMCU_CORTEX_M4 4\0"
+ 1338      5F434F52 
+ 1338      5445585F 
+ 1338      4D342034 
+ 1338      00
+ 1339 1c78 01       		.byte	0x1
+ 1340 1c79 18       		.uleb128 0x18
+ 1341 1c7a 4E525F4F 		.ascii "NR_OF_CORES 1\0"
+ 1341      465F434F 
+ 1341      52455320 
+ 1341      3100
+ 1342 1c88 01       		.byte	0x1
+ 1343 1c89 1A       		.uleb128 0x1a
+ 1344 1c8a 4D43555F 		.ascii "MCU_CLOCK_IN_HZ ((uint32)168000000u)\0"
+ 1344      434C4F43 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 47
+
+
+ 1344      4B5F494E 
+ 1344      5F485A20 
+ 1344      28287569 
+ 1345 1caf 01       		.byte	0x1
+ 1346 1cb0 27       		.uleb128 0x27
+ 1347 1cb1 44697361 		.ascii "DisableInterrupts() \0"
+ 1347      626C6549 
+ 1347      6E746572 
+ 1347      72757074 
+ 1347      73282920 
+ 1348 1cc6 01       		.byte	0x1
+ 1349 1cc7 28       		.uleb128 0x28
+ 1350 1cc8 456E6162 		.ascii "EnableInterrupts() \0"
+ 1350      6C65496E 
+ 1350      74657272 
+ 1350      75707473 
+ 1350      28292000 
+ 1351 1cdc 01       		.byte	0x1
+ 1352 1cdd 29       		.uleb128 0x29
+ 1353 1cde 50726976 		.ascii "Privilige_level_save_current() \0"
+ 1353      696C6967 
+ 1353      655F6C65 
+ 1353      76656C5F 
+ 1353      73617665 
+ 1354 1cfe 01       		.byte	0x1
+ 1355 1cff 2A       		.uleb128 0x2a
+ 1356 1d00 50726976 		.ascii "Privilige_level_enter_kernel_mode() \0"
+ 1356      696C6967 
+ 1356      655F6C65 
+ 1356      76656C5F 
+ 1356      656E7465 
+ 1357 1d25 01       		.byte	0x1
+ 1358 1d26 2B       		.uleb128 0x2b
+ 1359 1d27 50726976 		.ascii "Privilige_level_restore_saved() \0"
+ 1359      696C6967 
+ 1359      655F6C65 
+ 1359      76656C5F 
+ 1359      72657374 
+ 1360 1d48 01       		.byte	0x1
+ 1361 1d49 2C       		.uleb128 0x2c
+ 1362 1d4a 48616C74 		.ascii "HaltMcu() \0"
+ 1362      4D637528 
+ 1362      292000
+ 1363 1d55 04       		.byte	0x4
+ 1364              		.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
+ 1365 1d56 03       		.byte	0x3
+ 1366 1d57 07       		.uleb128 0x7
+ 1367 1d58 05       		.uleb128 0x5
+ 1368 1d59 01       		.byte	0x1
+ 1369 1d5a 02       		.uleb128 0x2
+ 1370 1d5b 5F4F535F 		.ascii "_OS_RAM_H_ \0"
+ 1370      52414D5F 
+ 1370      485F2000 
+ 1371              		.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_firstinc.h"
+ 1372 1d67 03       		.byte	0x3
+ 1373 1d68 04       		.uleb128 0x4
+ 1374 1d69 06       		.uleb128 0x6
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 48
+
+
+ 1375 1d6a 04       		.byte	0x4
+ 1376              		.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_stack.h"
+ 1377 1d6b 03       		.byte	0x3
+ 1378 1d6c 05       		.uleb128 0x5
+ 1379 1d6d 07       		.uleb128 0x7
+ 1380 1d6e 01       		.byte	0x1
+ 1381 1d6f 02       		.uleb128 0x2
+ 1382 1d70 5F6F735F 		.ascii "_os_stack_h_ \0"
+ 1382      73746163 
+ 1382      6B5F685F 
+ 1382      2000
+ 1383 1d7e 01       		.byte	0x1
+ 1384 1d7f 04       		.uleb128 0x4
+ 1385 1d80 4F535F53 		.ascii "OS_STACK_SIZE 0x100\0"
+ 1385      5441434B 
+ 1385      5F53495A 
+ 1385      45203078 
+ 1385      31303000 
+ 1386 1d94 01       		.byte	0x1
+ 1387 1d95 06       		.uleb128 0x6
+ 1388 1d96 4F535F53 		.ascii "OS_STACK_SIZE_END 0x01u\0"
+ 1388      5441434B 
+ 1388      5F53495A 
+ 1388      455F454E 
+ 1388      44203078 
+ 1389 1dae 04       		.byte	0x4
+ 1390              		.file 8 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
+ 1391 1daf 03       		.byte	0x3
+ 1392 1db0 06       		.uleb128 0x6
+ 1393 1db1 08       		.uleb128 0x8
+ 1394 1db2 01       		.byte	0x1
+ 1395 1db3 02       		.uleb128 0x2
+ 1396 1db4 5F6F735F 		.ascii "_os_heap_h_ \0"
+ 1396      68656170 
+ 1396      5F685F20 
+ 1396      00
+ 1397 1dc1 01       		.byte	0x1
+ 1398 1dc2 05       		.uleb128 0x5
+ 1399 1dc3 48454150 		.ascii "HEAP_SIZE 10000\0"
+ 1399      5F53495A 
+ 1399      45203130 
+ 1399      30303000 
+ 1400 1dd3 01       		.byte	0x1
+ 1401 1dd4 06       		.uleb128 0x6
+ 1402 1dd5 4D494E5F 		.ascii "MIN_BLOCK_SIZE_HEAP 8\0"
+ 1402      424C4F43 
+ 1402      4B5F5349 
+ 1402      5A455F48 
+ 1402      45415020 
+ 1403 1deb 01       		.byte	0x1
+ 1404 1dec 09       		.uleb128 0x9
+ 1405 1ded 48454150 		.ascii "HEAP_OFFSET_FOR_SIZE 0\0"
+ 1405      5F4F4646 
+ 1405      5345545F 
+ 1405      464F525F 
+ 1405      53495A45 
+ 1406 1e04 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 49
+
+
+ 1407 1e05 0A       		.uleb128 0xa
+ 1408 1e06 48454150 		.ascii "HEAP_OFFSET_FOR_USED_SIZE 4\0"
+ 1408      5F4F4646 
+ 1408      5345545F 
+ 1408      464F525F 
+ 1408      55534544 
+ 1409 1e22 01       		.byte	0x1
+ 1410 1e23 0B       		.uleb128 0xb
+ 1411 1e24 48454150 		.ascii "HEAP_OFFSET_FOR_CHUNK 8\0"
+ 1411      5F4F4646 
+ 1411      5345545F 
+ 1411      464F525F 
+ 1411      4348554E 
+ 1412 1e3c 04       		.byte	0x4
+ 1413              		.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_main.h"
+ 1414 1e3d 03       		.byte	0x3
+ 1415 1e3e 07       		.uleb128 0x7
+ 1416 1e3f 09       		.uleb128 0x9
+ 1417 1e40 01       		.byte	0x1
+ 1418 1e41 02       		.uleb128 0x2
+ 1419 1e42 5F6F735F 		.ascii "_os_main_h_ \0"
+ 1419      6D61696E 
+ 1419      5F685F20 
+ 1419      00
+ 1420 1e4f 01       		.byte	0x1
+ 1421 1e50 03       		.uleb128 0x3
+ 1422 1e51 6F735F69 		.ascii "os_init 0\0"
+ 1422      6E697420 
+ 1422      3000
+ 1423 1e5b 01       		.byte	0x1
+ 1424 1e5c 04       		.uleb128 0x4
+ 1425 1e5d 6F735F72 		.ascii "os_running 1\0"
+ 1425      756E6E69 
+ 1425      6E672031 
+ 1425      00
+ 1426 1e6a 01       		.byte	0x1
+ 1427 1e6b 05       		.uleb128 0x5
+ 1428 1e6c 6F735F73 		.ascii "os_shutdown 2\0"
+ 1428      68757464 
+ 1428      6F776E20 
+ 1428      3200
+ 1429 1e7a 04       		.byte	0x4
+ 1430 1e7b 04       		.byte	0x4
+ 1431              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
+ 1432 1e7c 03       		.byte	0x3
+ 1433 1e7d 0A       		.uleb128 0xa
+ 1434 1e7e 0A       		.uleb128 0xa
+ 1435 1e7f 01       		.byte	0x1
+ 1436 1e80 02       		.uleb128 0x2
+ 1437 1e81 5F6C6C64 		.ascii "_lld_global_h_ \0"
+ 1437      5F676C6F 
+ 1437      62616C5F 
+ 1437      685F2000 
+ 1438              		.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
+ 1439 1e91 03       		.byte	0x3
+ 1440 1e92 04       		.uleb128 0x4
+ 1441 1e93 0B       		.uleb128 0xb
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 50
+
+
+ 1442 1e94 01       		.byte	0x1
+ 1443 1e95 02       		.uleb128 0x2
+ 1444 1e96 5F6C6C64 		.ascii "_lld_core_h_ \0"
+ 1444      5F636F72 
+ 1444      655F685F 
+ 1444      2000
+ 1445              		.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_first
+ 1446 1ea4 03       		.byte	0x3
+ 1447 1ea5 03       		.uleb128 0x3
+ 1448 1ea6 0C       		.uleb128 0xc
+ 1449 1ea7 04       		.byte	0x4
+ 1450 1ea8 04       		.byte	0x4
+ 1451              		.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
+ 1452 1ea9 03       		.byte	0x3
+ 1453 1eaa 05       		.uleb128 0x5
+ 1454 1eab 0D       		.uleb128 0xd
+ 1455 1eac 01       		.byte	0x1
+ 1456 1ead 02       		.uleb128 0x2
+ 1457 1eae 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
+ 1457      5F696E74 
+ 1457      65727275 
+ 1457      70745F68 
+ 1457      5F2000
+ 1458 1ec1 01       		.byte	0x1
+ 1459 1ec2 05       		.uleb128 0x5
+ 1460 1ec3 6F735F69 		.ascii "os_interrupt_swi_1 asm(\"swi 1\")\0"
+ 1460      6E746572 
+ 1460      72757074 
+ 1460      5F737769 
+ 1460      5F312061 
+ 1461 1ee3 01       		.byte	0x1
+ 1462 1ee4 06       		.uleb128 0x6
+ 1463 1ee5 6F735F69 		.ascii "os_interrupt_swi_2 asm(\"swi 2\")\0"
+ 1463      6E746572 
+ 1463      72757074 
+ 1463      5F737769 
+ 1463      5F322061 
+ 1464 1f05 01       		.byte	0x1
+ 1465 1f06 07       		.uleb128 0x7
+ 1466 1f07 6F735F69 		.ascii "os_interrupt_swi_3 asm(\"swi 3\")\0"
+ 1466      6E746572 
+ 1466      72757074 
+ 1466      5F737769 
+ 1466      5F332061 
+ 1467 1f27 01       		.byte	0x1
+ 1468 1f28 08       		.uleb128 0x8
+ 1469 1f29 6F735F69 		.ascii "os_interrupt_swi_4 asm(\"swi 4\")\0"
+ 1469      6E746572 
+ 1469      72757074 
+ 1469      5F737769 
+ 1469      5F342061 
+ 1470 1f49 01       		.byte	0x1
+ 1471 1f4a 09       		.uleb128 0x9
+ 1472 1f4b 6F735F69 		.ascii "os_interrupt_swi_5 asm(\"swi 5\")\0"
+ 1472      6E746572 
+ 1472      72757074 
+ 1472      5F737769 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 51
+
+
+ 1472      5F352061 
+ 1473 1f6b 04       		.byte	0x4
+ 1474              		.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
+ 1475 1f6c 03       		.byte	0x3
+ 1476 1f6d 06       		.uleb128 0x6
+ 1477 1f6e 0E       		.uleb128 0xe
+ 1478 1f6f 01       		.byte	0x1
+ 1479 1f70 02       		.uleb128 0x2
+ 1480 1f71 5F6C6C64 		.ascii "_lld_mmu_h_ \0"
+ 1480      5F6D6D75 
+ 1480      5F685F20 
+ 1480      00
+ 1481 1f7e 04       		.byte	0x4
+ 1482              		.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
+ 1483 1f7f 03       		.byte	0x3
+ 1484 1f80 07       		.uleb128 0x7
+ 1485 1f81 0F       		.uleb128 0xf
+ 1486 1f82 01       		.byte	0x1
+ 1487 1f83 02       		.uleb128 0x2
+ 1488 1f84 5F6C6C64 		.ascii "_lld_timer_h_ \0"
+ 1488      5F74696D 
+ 1488      65725F68 
+ 1488      5F2000
+ 1489 1f93 04       		.byte	0x4
+ 1490              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
+ 1491 1f94 03       		.byte	0x3
+ 1492 1f95 08       		.uleb128 0x8
+ 1493 1f96 10       		.uleb128 0x10
+ 1494 1f97 01       		.byte	0x1
+ 1495 1f98 02       		.uleb128 0x2
+ 1496 1f99 5F6C6C64 		.ascii "_lld_power_h_ \0"
+ 1496      5F706F77 
+ 1496      65725F68 
+ 1496      5F2000
+ 1497 1fa8 04       		.byte	0x4
+ 1498              		.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
+ 1499 1fa9 03       		.byte	0x3
+ 1500 1faa 09       		.uleb128 0x9
+ 1501 1fab 11       		.uleb128 0x11
+ 1502 1fac 01       		.byte	0x1
+ 1503 1fad 02       		.uleb128 0x2
+ 1504 1fae 5F6C6C64 		.ascii "_lld_ram_h_ \0"
+ 1504      5F72616D 
+ 1504      5F685F20 
+ 1504      00
+ 1505 1fbb 04       		.byte	0x4
+ 1506              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
+ 1507 1fbc 03       		.byte	0x3
+ 1508 1fbd 0A       		.uleb128 0xa
+ 1509 1fbe 12       		.uleb128 0x12
+ 1510 1fbf 01       		.byte	0x1
+ 1511 1fc0 02       		.uleb128 0x2
+ 1512 1fc1 5F6F735F 		.ascii "_os_task_common_h_ \0"
+ 1512      7461736B 
+ 1512      5F636F6D 
+ 1512      6D6F6E5F 
+ 1512      685F2000 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 52
+
+
+ 1513              		.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
+ 1514 1fd5 03       		.byte	0x3
+ 1515 1fd6 04       		.uleb128 0x4
+ 1516 1fd7 13       		.uleb128 0x13
+ 1517 1fd8 01       		.byte	0x1
+ 1518 1fd9 02       		.uleb128 0x2
+ 1519 1fda 5F6F735F 		.ascii "_os_task_config_h_ \0"
+ 1519      7461736B 
+ 1519      5F636F6E 
+ 1519      6669675F 
+ 1519      685F2000 
+ 1520 1fee 01       		.byte	0x1
+ 1521 1fef 05       		.uleb128 0x5
+ 1522 1ff0 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
+ 1522      64756C65 
+ 1522      72467265 
+ 1522      7175656E 
+ 1522      63792028 
+ 1523 200b 01       		.byte	0x1
+ 1524 200c 06       		.uleb128 0x6
+ 1525 200d 4D696E54 		.ascii "MinTimeSlice_s (1.0/SchedulerFrequency)\0"
+ 1525      696D6553 
+ 1525      6C696365 
+ 1525      5F732028 
+ 1525      312E302F 
+ 1526 2035 01       		.byte	0x1
+ 1527 2036 07       		.uleb128 0x7
+ 1528 2037 4D696E54 		.ascii "MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\0"
+ 1528      696D6553 
+ 1528      6C696365 
+ 1528      5F757320 
+ 1528      2828312E 
+ 1529 2066 01       		.byte	0x1
+ 1530 2067 08       		.uleb128 0x8
+ 1531 2068 5461736B 		.ascii "Task_min_time (1e0)\0"
+ 1531      5F6D696E 
+ 1531      5F74696D 
+ 1531      65202831 
+ 1531      65302900 
+ 1532 207c 01       		.byte	0x1
+ 1533 207d 09       		.uleb128 0x9
+ 1534 207e 4E554D42 		.ascii "NUMBER_OF_TASKS 5\0"
+ 1534      45525F4F 
+ 1534      465F5441 
+ 1534      534B5320 
+ 1534      3500
+ 1535 2090 01       		.byte	0x1
+ 1536 2091 0A       		.uleb128 0xa
+ 1537 2092 4D41585F 		.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
+ 1537      52554E5F 
+ 1537      51554555 
+ 1537      455F5349 
+ 1537      5A452028 
+ 1538 20b7 01       		.byte	0x1
+ 1539 20b8 0B       		.uleb128 0xb
+ 1540 20b9 4D41585F 		.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
+ 1540      52554E5F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 53
+
+
+ 1540      50515545 
+ 1540      55455F53 
+ 1540      495A4520 
+ 1541 20e0 01       		.byte	0x1
+ 1542 20e1 0D       		.uleb128 0xd
+ 1543 20e2 5441534B 		.ascii "TASK_STACK_SIZE 200\0"
+ 1543      5F535441 
+ 1543      434B5F53 
+ 1543      495A4520 
+ 1543      32303000 
+ 1544 20f6 01       		.byte	0x1
+ 1545 20f7 10       		.uleb128 0x10
+ 1546 20f8 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
+ 1546      45525F53 
+ 1546      45432028 
+ 1546      31303030 
+ 1546      2900
+ 1547 210a 01       		.byte	0x1
+ 1548 210b 11       		.uleb128 0x11
+ 1549 210c 5553455F 		.ascii "USE_STATIC_CREATED_TASKS True\0"
+ 1549      53544154 
+ 1549      49435F43 
+ 1549      52454154 
+ 1549      45445F54 
+ 1550 212a 04       		.byte	0x4
+ 1551              		.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_
+ 1552 212b 03       		.byte	0x3
+ 1553 212c 05       		.uleb128 0x5
+ 1554 212d 14       		.uleb128 0x14
+ 1555 212e 01       		.byte	0x1
+ 1556 212f 02       		.uleb128 0x2
+ 1557 2130 5F6F735F 		.ascii "_os_init_task_system_h_ \0"
+ 1557      696E6974 
+ 1557      5F746173 
+ 1557      6B5F7379 
+ 1557      7374656D 
+ 1558 2149 04       		.byte	0x4
+ 1559 214a 01       		.byte	0x1
+ 1560 214b 5C       		.uleb128 0x5c
+ 1561 214c 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
+ 1561      61766554 
+ 1561      61736B50 
+ 1561      74722874 
+ 1561      61736B5F 
+ 1562 2194 01       		.byte	0x1
+ 1563 2195 5D       		.uleb128 0x5d
+ 1564 2196 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
+ 1564      65745461 
+ 1564      736B5074 
+ 1564      72287461 
+ 1564      736B5F6E 
+ 1565 21d1 04       		.byte	0x4
+ 1566 21d2 04       		.byte	0x4
+ 1567              		.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_user_code/led.h"
+ 1568 21d3 03       		.byte	0x3
+ 1569 21d4 0E       		.uleb128 0xe
+ 1570 21d5 15       		.uleb128 0x15
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 54
+
+
+ 1571 21d6 01       		.byte	0x1
+ 1572 21d7 02       		.uleb128 0x2
+ 1573 21d8 5F4C4544 		.ascii "_LED_H_ \0"
+ 1573      5F485F20 
+ 1573      00
+ 1574 21e1 04       		.byte	0x4
+ 1575 21e2 04       		.byte	0x4
+ 1576              		.file 22 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_exception_isr_handler.h"
+ 1577 21e3 03       		.byte	0x3
+ 1578 21e4 02       		.uleb128 0x2
+ 1579 21e5 16       		.uleb128 0x16
+ 1580 21e6 01       		.byte	0x1
+ 1581 21e7 02       		.uleb128 0x2
+ 1582 21e8 5F6F735F 		.ascii "_os_exception_isr_handler_h_ \0"
+ 1582      65786365 
+ 1582      7074696F 
+ 1582      6E5F6973 
+ 1582      725F6861 
+ 1583 2206 01       		.byte	0x1
+ 1584 2207 04       		.uleb128 0x4
+ 1585 2208 49535220 		.ascii "ISR void\0"
+ 1585      766F6964 
+ 1585      00
+ 1586 2211 04       		.byte	0x4
+ 1587              		.file 23 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
+ 1588 2212 03       		.byte	0x3
+ 1589 2213 03       		.uleb128 0x3
+ 1590 2214 17       		.uleb128 0x17
+ 1591 2215 01       		.byte	0x1
+ 1592 2216 02       		.uleb128 0x2
+ 1593 2217 5F6F735F 		.ascii "_os_shutdown_h_ \0"
+ 1593      73687574 
+ 1593      646F776E 
+ 1593      5F685F20 
+ 1593      00
+ 1594 2228 04       		.byte	0x4
+ 1595              		.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_os.h"
+ 1596 2229 03       		.byte	0x3
+ 1597 222a 04       		.uleb128 0x4
+ 1598 222b 18       		.uleb128 0x18
+ 1599 222c 01       		.byte	0x1
+ 1600 222d 02       		.uleb128 0x2
+ 1601 222e 5F6F735F 		.ascii "_os_start_os_h_ \0"
+ 1601      73746172 
+ 1601      745F6F73 
+ 1601      5F685F20 
+ 1601      00
+ 1602 223f 04       		.byte	0x4
+ 1603              		.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_ram.h"
+ 1604 2240 03       		.byte	0x3
+ 1605 2241 05       		.uleb128 0x5
+ 1606 2242 19       		.uleb128 0x19
+ 1607 2243 04       		.byte	0x4
+ 1608 2244 04       		.byte	0x4
+ 1609 2245 00       		.byte	0
+ 1610              		.section	.debug_line,"dr"
+ 1611              	Ldebug_line0:
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 55
+
+
+ 1612 0000 53030000 		.section	.debug_str,"dr"
+ 1612      02000E03 
+ 1612      00000101 
+ 1612      FB0E0D00 
+ 1612      01010101 
+ 1613              		.ident	"GCC: (GNU) 4.9.3"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s 			page 56
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_exception.c
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:5      .text:00000000 _OS_Exception_Read_Status_Registers
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:24     .text:00000005 _OS_Exception_HARDFAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:42     .text:0000000a _OS_Exception_NMI
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:60     .text:0000000f _OS_Exception_SWI
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:78     .text:00000014 _OS_Exception_BUS_FAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:96     .text:00000019 _OS_Exception_DEBUG
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:114    .text:0000001e _OS_Exception_MEM_MANAG_FAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:132    .text:00000023 _OS_Exception_USAGE_FAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:150    .text:00000028 _OS_Exception_PendSV
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:168    .text:0000002d _OS_Exception_Systick
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:186    .text:00000032 _OS_Exception_IRQ
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:204    .text:00000037 _OS_Exception_FIQ
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:222    .text:0000003c _TCMP1
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:240    .text:00000041 _TCMP2
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:258    .text:00000046 _TCMP3
+C:\Users\PRESID~1\AppData\Local\Temp\ccfrAsOo.s:276    .text:0000004b _TCMP4
+
+NO UNDEFINED SYMBOLS

@@ -19,10 +19,18 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    {
       LLF_MCU_SWITCH_OFF_POWER();
    }
-   else /* os_reset_hardreset */
+   else if(reset_typ == os_reset_hardreset) /* os_reset_hardreset */
    {
       LLF_MCU_RESET_POWER();
    }
+   else if (reset_typ == os_reset_exit)
+   {
+      ;/* TODO */
+   }   
+   else
+   {
+      ;
+   }   
    while(1)
    {
       /* if you enter here, the reset has failed to be executed.... */

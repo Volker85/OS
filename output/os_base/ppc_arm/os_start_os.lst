@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyG4c6f.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc07pLlp.s 			page 1
 
 
    1              		.syntax unified
@@ -48,110 +48,117 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyG4c6f.s 			page 1
   35              		.cfi_def_cfa_register 7
   12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    VAR_HARDFAULT_STATUS_REG       = 0u;
   36              		.loc 1 12 0
-  37 0004 134B     		ldr	r3, .L2
+  37 0004 144B     		ldr	r3, .L2
   38 0006 0022     		movs	r2, #0
   39 0008 1A60     		str	r2, [r3]
   13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    VAR_MEM_MANAG_FAULT_STATUS_REG = 0u;
   40              		.loc 1 13 0
-  41 000a 134B     		ldr	r3, .L2+4
+  41 000a 144B     		ldr	r3, .L2+4
   42 000c 0022     		movs	r2, #0
   43 000e 1A60     		str	r2, [r3]
   14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    VAR_USAGE_FAULT_STATUS_REG     = 0u;
   44              		.loc 1 14 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyG4c6f.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc07pLlp.s 			page 2
 
 
-  45 0010 124B     		ldr	r3, .L2+8
+  45 0010 134B     		ldr	r3, .L2+8
   46 0012 0022     		movs	r2, #0
   47 0014 1A60     		str	r2, [r3]
   15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    VAR_FAULT_STATUS_REG           = 0u;
   48              		.loc 1 15 0
-  49 0016 124B     		ldr	r3, .L2+12
+  49 0016 134B     		ldr	r3, .L2+12
   50 0018 0022     		movs	r2, #0
   51 001a 1A60     		str	r2, [r3]
   16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    VAR_MEM_FAULT_ADDR_REG         = 0u;
   52              		.loc 1 16 0
-  53 001c 114B     		ldr	r3, .L2+16
+  53 001c 124B     		ldr	r3, .L2+16
   54 001e 0022     		movs	r2, #0
   55 0020 1A60     		str	r2, [r3]
   17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    VAR_BUS_FAULT_ADDR_REG         = 0u;
   56              		.loc 1 17 0
-  57 0022 114B     		ldr	r3, .L2+20
+  57 0022 124B     		ldr	r3, .L2+20
   58 0024 0022     		movs	r2, #0
   59 0026 1A60     		str	r2, [r3]
   18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    VAR_AUX_FAULT_STATUS_REG       = 0u;
   60              		.loc 1 18 0
-  61 0028 104B     		ldr	r3, .L2+24
+  61 0028 114B     		ldr	r3, .L2+24
   62 002a 0022     		movs	r2, #0
   63 002c 1A60     		str	r2, [r3]
   19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    VAR_BUS_FAULT_STATUS_REG       = 0u;
   64              		.loc 1 19 0
-  65 002e 104B     		ldr	r3, .L2+28
+  65 002e 114B     		ldr	r3, .L2+28
   66 0030 0022     		movs	r2, #0
   67 0032 1A60     		str	r2, [r3]
   20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    LINK_REGISTER_HANDLER          = 0u;
   68              		.loc 1 20 0
-  69 0034 0F4B     		ldr	r3, .L2+32
+  69 0034 104B     		ldr	r3, .L2+32
   70 0036 0022     		movs	r2, #0
   71 0038 1A60     		str	r2, [r3]
   21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    BACKUP_SYSTICK_CURRENT_VAL_REG = 0u;
   72              		.loc 1 21 0
-  73 003a 0F4B     		ldr	r3, .L2+36
+  73 003a 104B     		ldr	r3, .L2+36
   74 003c 0022     		movs	r2, #0
   75 003e 1A60     		str	r2, [r3]
   22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    /* activate all exception to improve the debug capabilities */
   23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
   24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP;
   76              		.loc 1 24 0
-  77 0040 0E4A     		ldr	r2, .L2+40
-  78 0042 0E4B     		ldr	r3, .L2+40
+  77 0040 0F4A     		ldr	r2, .L2+40
+  78 0042 0F4B     		ldr	r3, .L2+40
   79 0044 1B68     		ldr	r3, [r3]
   80 0046 43F4E023 		orr	r3, r3, #458752
   81 004a 1360     		str	r3, [r2]
   25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** #endif
   26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    /* triggers hw & sw init (OS parts), interrupt system init (including MMU) */
-  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    OS_STATE_HANDLER();
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    OS_STATE = os_init;
   82              		.loc 1 27 0
-  83 004c FFF7FEFF 		bl	OS_STATE_HANDLER
-  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** }
-  84              		.loc 1 28 0
-  85 0050 80BD     		pop	{r7, pc}
-  86              	.L3:
-  87 0052 00BF     		.align	2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyG4c6f.s 			page 3
+  83 004c 0D4B     		ldr	r3, .L2+44
+  84 004e 0022     		movs	r2, #0
+  85 0050 1A60     		str	r2, [r3]
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c ****    OS_STATE_HANDLER();
+  86              		.loc 1 28 0
+  87 0052 FFF7FEFF 		bl	OS_STATE_HANDLER
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc07pLlp.s 			page 3
 
 
-  88              	.L2:
-  89 0054 00000000 		.word	VAR_HARDFAULT_STATUS_REG
-  90 0058 00000000 		.word	VAR_MEM_MANAG_FAULT_STATUS_REG
-  91 005c 00000000 		.word	VAR_USAGE_FAULT_STATUS_REG
-  92 0060 00000000 		.word	VAR_FAULT_STATUS_REG
-  93 0064 00000000 		.word	VAR_MEM_FAULT_ADDR_REG
-  94 0068 00000000 		.word	VAR_BUS_FAULT_ADDR_REG
-  95 006c 00000000 		.word	VAR_AUX_FAULT_STATUS_REG
-  96 0070 00000000 		.word	VAR_BUS_FAULT_STATUS_REG
-  97 0074 00000000 		.word	LINK_REGISTER_HANDLER
-  98 0078 00000000 		.word	BACKUP_SYSTICK_CURRENT_VAL_REG
-  99 007c 24ED00E0 		.word	-536810204
- 100              		.cfi_endproc
- 101              	.LFE0:
- 103              	.Letext0:
- 104              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
- 105              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyG4c6f.s 			page 4
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c **** }
+  88              		.loc 1 29 0
+  89 0056 80BD     		pop	{r7, pc}
+  90              	.L3:
+  91              		.align	2
+  92              	.L2:
+  93 0058 00000000 		.word	VAR_HARDFAULT_STATUS_REG
+  94 005c 00000000 		.word	VAR_MEM_MANAG_FAULT_STATUS_REG
+  95 0060 00000000 		.word	VAR_USAGE_FAULT_STATUS_REG
+  96 0064 00000000 		.word	VAR_FAULT_STATUS_REG
+  97 0068 00000000 		.word	VAR_MEM_FAULT_ADDR_REG
+  98 006c 00000000 		.word	VAR_BUS_FAULT_ADDR_REG
+  99 0070 00000000 		.word	VAR_AUX_FAULT_STATUS_REG
+ 100 0074 00000000 		.word	VAR_BUS_FAULT_STATUS_REG
+ 101 0078 00000000 		.word	LINK_REGISTER_HANDLER
+ 102 007c 00000000 		.word	BACKUP_SYSTICK_CURRENT_VAL_REG
+ 103 0080 24ED00E0 		.word	-536810204
+ 104 0084 00000000 		.word	OS_STATE
+ 105              		.cfi_endproc
+ 106              	.LFE0:
+ 108              	.Letext0:
+ 109              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 110              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc07pLlp.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_os.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccyG4c6f.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccyG4c6f.s:23     .text:00000000 OS_START_OS
-C:\Users\PRESID~1\AppData\Local\Temp\ccyG4c6f.s:89     .text:00000054 $d
+C:\Users\PRESID~1\AppData\Local\Temp\cc07pLlp.s:18     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cc07pLlp.s:23     .text:00000000 OS_START_OS
+C:\Users\PRESID~1\AppData\Local\Temp\cc07pLlp.s:93     .text:00000058 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.17fb4bbab233edcbaca9a4c22556f36d
                            .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986
                            .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
+                           .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
                            .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
                            .group:00000000 wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37
 
@@ -167,3 +174,4 @@ VAR_AUX_FAULT_STATUS_REG
 VAR_BUS_FAULT_STATUS_REG
 LINK_REGISTER_HANDLER
 BACKUP_SYSTICK_CURRENT_VAL_REG
+OS_STATE

@@ -498,6 +498,14 @@ extern void* os_realloc(void* ptr_old, uint32 size_new);
 extern void* os_malloc(uint32 size);
 extern void os_free(void* ptr);
 # 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
+# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h" 1
+
+#define _os_main_h_ 
+#define os_init 0
+#define os_running 1
+#define os_shutdown 2
+extern void OS_STATE_HANDLER(void);
+# 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 
 
 extern unsigned_char_t HEAP[10000];
@@ -505,6 +513,7 @@ extern unsigned_char_t HEAP[10000];
 
 extern unsigned_char_t OS_STACK[1][0x100];
 extern unsigned_char_t OS_MAIN_STACK[0x100];
+extern volatile uint32 OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
 extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG ;
 extern volatile uint32 VAR_USAGE_FAULT_STATUS_REG ;
@@ -733,7 +742,8 @@ extern void OS_ISRHANDLERC3(void);
 typedef enum os_reset_type_s
 {
    os_reset_hardreset = 0,
-   os_reset_powerdown = 1
+   os_reset_powerdown = 1,
+   os_reset_exit
 } os_reset_type_t;
 extern void OS_SHUTDOWN(os_reset_type_t reset_typ);
 # 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
@@ -876,14 +886,29 @@ void OS_Exception_PendSV(void)
 
 void OS_Exception_Systick(void)
 {
-# 178 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-   OS_STATE_HANDLER();
-   while(1)
-   {
+
+
+
+
+
+
+
+#define SYSTICK_CTRL_STAT_REG ((uint32*)0xE000E010)
+#define SYSTICK_RLD_VAL_REG ((uint32*)0xE000E014)
 #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
-      BACKUP_SYSTICK_CURRENT_VAL_REG = *((uint32*)0xE000E018);
-   }
-   OS_SHUTDOWN(os_reset_hardreset);
+#define SYSTICK_STAT_REG_TICKINT ((uint32)0x00000002)
+#define SYSTICK_STAT_REG_ENABLE ((uint32)0x00000001)
+#define LOOPTIME_IN_USEC ((uint32)10000u)
+
+
+
+
+
+   *((uint32*)0xE000E014) = *((uint32*)0xE000E014) | (((uint32)((uint32)168000000u) * ((uint32)10000u)) / ((uint32)1000000));
+   *((uint32*)0xE000E018) = ((uint32)0x00000000);
+   *((uint32*)0xE000E010) = *((uint32*)0xE000E010) | ((uint32)0x00000002) | ((uint32)0x00000001);
+# 199 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+   OS_STATE_HANDLER();
 
 }
 

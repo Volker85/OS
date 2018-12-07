@@ -39,26 +39,19 @@ OS_State: OS_Shutdown (nur erlaubt im Supervisor Mode)
 - HW Reset auslösen (optional)
 
 */
-/*#warn "above list implemented??"*/
-typedef enum os_state_e
-{
-   os_init = 0,
-   os_running,
-   os_shutdown
-} os_state_t;
 
 typedef enum os_reset_req_state_e
 {
    Reset_powerdown = 0,
-   Reset_restart
+   Reset_restart,
+   Reset_exit
 } os_reset_req_state_t;
 
 void OS_STATE_HANDLER(void)
 {
    /* running in supervisor mode */
-   Local os_state_t OS_STATE = os_init;
    Local os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
-
+   
    switch(OS_STATE)
    {
    case os_init:
@@ -79,9 +72,10 @@ void OS_STATE_HANDLER(void)
       /* activate the interrupts, tasks will be executed from now on ... */
       LLF_INT_ENABLE();
 
-      #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)   
+      #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+      #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
       BACKUP_SYSTICK_CURRENT_VAL_REG = *SYSTICK_CURRENT_VAL_REG;
-
+      #endif
       while(1)/*wait until timer task*/
       {
 
@@ -107,6 +101,10 @@ void OS_STATE_HANDLER(void)
       {
          OS_SHUTDOWN(os_reset_hardreset);
          break;
+      }
+      case Reset_exit:
+      {
+         OS_SHUTDOWN(os_reset_exit);
       }
       }
       break;

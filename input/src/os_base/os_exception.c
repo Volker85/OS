@@ -136,6 +136,27 @@ void OS_Exception_PendSV(void)
 void OS_Exception_Systick(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   /* configure the TCMP */
+   /*
+   Dispatcher function for Core 0:
+    -> ISR_TASK_DISPATCH_C0
+   Write Adresse into the config register (interrupts are requested by SWI/SVC???)
+   */
+   #define SYSTICK_CTRL_STAT_REG ((uint32*)0xE000E010)
+   #define SYSTICK_RLD_VAL_REG   ((uint32*)0xE000E014)
+   #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
+   #define SYSTICK_STAT_REG_TICKINT ((uint32)0x00000002)
+   #define SYSTICK_STAT_REG_ENABLE  ((uint32)0x00000001)
+   #define LOOPTIME_IN_USEC ((uint32)10000u)
+   /*
+   CLOCK = HCLK / 8
+   vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz
+   */
+   #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   *SYSTICK_RLD_VAL_REG = *SYSTICK_RLD_VAL_REG | (((uint32)MCU_CLOCK_IN_HZ * LOOPTIME_IN_USEC) / ((uint32)1000000));
+   *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
+   *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_ENABLE;
+   #endif   
    /*
    4.4.1. SysTick Control and Status Register
 
