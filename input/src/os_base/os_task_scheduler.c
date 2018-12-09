@@ -567,9 +567,6 @@ Local task_t* OS_TaskScheduler(void)
 
 void ISR_TASK_DISPATCH_C0(void)
 {
-   /* after time MinTimeSlice_us is elapsed, the OS_TASK_DISPATCHER will be called again, interrupting the currently running task  */
-   LLF_ADD_2_TCMP(MinTimeSlice_us);
-
    /*#warn "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."*/
    OS_TASK_DISPATCHER();
 
@@ -577,9 +574,6 @@ void ISR_TASK_DISPATCH_C0(void)
 
 void ISR_TASK_DISPATCH_C1(void)
 {
-   /* after time MinTimeSlice_us is elapsed, the OS_TASK_DISPATCHER will be called again, interrupting the currently running task  */
-   LLF_ADD_2_TCMP(MinTimeSlice_us);
-
    /*#warn "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."*/
    OS_TASK_DISPATCHER();
 
@@ -587,18 +581,12 @@ void ISR_TASK_DISPATCH_C1(void)
 
 void ISR_TASK_DISPATCH_C2(void)
 {
-   /* after time MinTimeSlice_us is elapsed, the OS_TASK_DISPATCHER will be called again, interrupting the currently running task  */
-   LLF_ADD_2_TCMP(MinTimeSlice_us);
-
    /*#warn "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."*/
    OS_TASK_DISPATCHER();
 
 }
 void ISR_TASK_DISPATCH_C3(void)
 {
-   /* after time MinTimeSlice_us is elapsed, the OS_TASK_DISPATCHER will be called again, interrupting the currently running task  */
-   LLF_ADD_2_TCMP(MinTimeSlice_us);
-
    /*#warn "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."*/
    OS_TASK_DISPATCHER();
 
