@@ -84,6 +84,8 @@ void OS_STATE_HANDLER(void)
    }
    case os_running:
    {
+      #warn "why call the dispatcher, it should be called by interrupt only...."
+      #warn "instead check for conditions for OS_STATE to be changed.... to shutdown/restart/..."
       ISR_TASK_DISPATCH_C0();
       break;
    }

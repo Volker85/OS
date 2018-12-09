@@ -4,6 +4,7 @@
 
 void OS_ISRHANDLERC0(void)
 {
+   #warn "why always dispatch a new task, the OS_ISRHANDLERC0 might also be called by other functions not wanting a dispatch of task..."
    ISR_TASK_DISPATCH_C0();
 }
 void OS_ISRHANDLERC1(void)
