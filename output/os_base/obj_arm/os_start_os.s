@@ -1745,15 +1745,15 @@ OS_START_OS:
 	.uleb128 0x11
 	.4byte	.LASF422
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033,comdat
 .Ldebug_macro8:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x5c
+	.uleb128 0x5d
 	.4byte	.LASF424
 	.byte	0x5
-	.uleb128 0x5d
+	.uleb128 0x5e
 	.4byte	.LASF425
 	.byte	0
 	.section	.debug_line,"",%progbits

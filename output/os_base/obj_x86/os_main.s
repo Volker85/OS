@@ -22,7 +22,7 @@ LFB0:
 	jb	L4
 	cmpl	$2, %eax
 	je	L5
-	.loc 1 114 0
+	.loc 1 122 0
 	jmp	L1
 L4:
 	.loc 1 60 0
@@ -39,57 +39,59 @@ L4:
 	movl	$1, _OS_STATE
 	.loc 1 73 0
 	call	_LLF_INT_ENABLE
+	.loc 1 74 0
+	call	_LLF_CHANGE_TO_USER_MODE
 L6:
-	.loc 1 82 0 discriminator 1
+	.loc 1 83 0 discriminator 1
 	jmp	L6
 L3:
-	.loc 1 87 0
-	call	_ISR_TASK_DISPATCH_C0
-	.loc 1 88 0
+	.loc 1 89 0
+	call	_OS_TASK_DISPATCHER
+	.loc 1 96 0
 	jmp	L1
 L5:
-	.loc 1 92 0
+	.loc 1 100 0
 	call	_LLF_INT_DISABLE
-	.loc 1 93 0
-	movl	_sys_req_reset_state.1278, %eax
+	.loc 1 101 0
+	movl	_sys_req_reset_state.1285, %eax
 	cmpl	$1, %eax
 	je	L9
 	cmpl	$1, %eax
 	jb	L10
 	cmpl	$2, %eax
 	je	L11
-	.loc 1 110 0
+	.loc 1 118 0
 	jmp	L12
 L10:
-	.loc 1 97 0
+	.loc 1 105 0
 	movl	$1, (%esp)
 	call	_OS_SHUTDOWN
-	.loc 1 98 0
+	.loc 1 106 0
 	jmp	L8
 L9:
-	.loc 1 102 0
+	.loc 1 110 0
 	movl	$0, (%esp)
 	call	_OS_SHUTDOWN
-	.loc 1 103 0
+	.loc 1 111 0
 	jmp	L8
 L11:
-	.loc 1 107 0
+	.loc 1 115 0
 	movl	$2, (%esp)
 	call	_OS_SHUTDOWN
-	.loc 1 110 0
+	.loc 1 118 0
 	jmp	L12
 L8:
 L12:
 	nop
 L1:
-	.loc 1 117 0
+	.loc 1 125 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE0:
-.lcomm _sys_req_reset_state.1278,4,4
+.lcomm _sys_req_reset_state.1285,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
@@ -182,7 +184,7 @@ Ldebug_info0:
 	.long	0x185
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1278
+	.long	_sys_req_reset_state.1285
 	.byte	0
 	.uleb128 0x8
 	.ascii "OS_STATE\0"
@@ -1355,10 +1357,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x5c
+	.uleb128 0x5d
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x5d
+	.uleb128 0x5e
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4
@@ -1442,6 +1444,7 @@ Ldebug_line0:
 	.def	_OS_INIT_TASK_SYSTEM;	.scl	2;	.type	32;	.endef
 	.def	_OS_ACTIVATE_DISPATCHER;	.scl	2;	.type	32;	.endef
 	.def	_LLF_INT_ENABLE;	.scl	2;	.type	32;	.endef
-	.def	_ISR_TASK_DISPATCH_C0;	.scl	2;	.type	32;	.endef
+	.def	_LLF_CHANGE_TO_USER_MODE;	.scl	2;	.type	32;	.endef
+	.def	_OS_TASK_DISPATCHER;	.scl	2;	.type	32;	.endef
 	.def	_LLF_INT_DISABLE;	.scl	2;	.type	32;	.endef
 	.def	_OS_SHUTDOWN;	.scl	2;	.type	32;	.endef

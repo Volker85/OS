@@ -42,7 +42,7 @@ OS_STATE_HANDLER:
 	bcc	.L4
 	cmp	r3, #2
 	beq	.L5
-	.loc 1 114 0
+	.loc 1 122 0
 	b	.L1
 .L4:
 	.loc 1 60 0
@@ -61,23 +61,25 @@ OS_STATE_HANDLER:
 	str	r2, [r3]
 	.loc 1 73 0
 	bl	LLF_INT_ENABLE
-	.loc 1 77 0
+	.loc 1 74 0
+	bl	LLF_CHANGE_TO_USER_MODE
+	.loc 1 78 0
 	ldr	r3, .L13+4
 	ldr	r3, [r3]
 	ldr	r2, .L13+8
 	str	r3, [r2]
 .L6:
-	.loc 1 82 0 discriminator 1
+	.loc 1 83 0 discriminator 1
 	b	.L6
 .L3:
-	.loc 1 87 0
-	bl	ISR_TASK_DISPATCH_C0
-	.loc 1 88 0
+	.loc 1 89 0
+	bl	OS_TASK_DISPATCHER
+	.loc 1 96 0
 	b	.L1
 .L5:
-	.loc 1 92 0
+	.loc 1 100 0
 	bl	LLF_INT_DISABLE
-	.loc 1 93 0
+	.loc 1 101 0
 	ldr	r3, .L13+12
 	ldrb	r3, [r3]	@ zero_extendqisi2
 	cmp	r3, #1
@@ -86,31 +88,31 @@ OS_STATE_HANDLER:
 	beq	.L10
 	cmp	r3, #0
 	beq	.L11
-	.loc 1 110 0
+	.loc 1 118 0
 	b	.L12
 .L11:
-	.loc 1 97 0
+	.loc 1 105 0
 	movs	r0, #1
 	bl	OS_SHUTDOWN
-	.loc 1 98 0
+	.loc 1 106 0
 	b	.L8
 .L9:
-	.loc 1 102 0
+	.loc 1 110 0
 	movs	r0, #0
 	bl	OS_SHUTDOWN
-	.loc 1 103 0
+	.loc 1 111 0
 	b	.L8
 .L10:
-	.loc 1 107 0
+	.loc 1 115 0
 	movs	r0, #2
 	bl	OS_SHUTDOWN
-	.loc 1 110 0
+	.loc 1 118 0
 	b	.L12
 .L8:
 .L12:
 	nop
 .L1:
-	.loc 1 117 0
+	.loc 1 125 0
 	pop	{r7, pc}
 .L14:
 	.align	2
@@ -118,12 +120,12 @@ OS_STATE_HANDLER:
 	.word	OS_STATE
 	.word	-536813544
 	.word	BACKUP_SYSTICK_CURRENT_VAL_REG
-	.word	sys_req_reset_state.3966
+	.word	sys_req_reset_state.3973
 	.cfi_endproc
 .LFE0:
 	.size	OS_STATE_HANDLER, .-OS_STATE_HANDLER
 	.bss
-sys_req_reset_state.3966:
+sys_req_reset_state.3973:
 	.space	1
 	.text
 .Letext0:
@@ -218,7 +220,7 @@ sys_req_reset_state.3966:
 	.4byte	0x8a
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	sys_req_reset_state.3966
+	.4byte	sys_req_reset_state.3973
 	.byte	0
 	.uleb128 0x8
 	.4byte	.LASF453
@@ -540,7 +542,7 @@ sys_req_reset_state.3966:
 	.4byte	.LASF437
 	.byte	0x4
 	.byte	0x5
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	.LASF438
 	.byte	0x4
 	.byte	0
@@ -1836,15 +1838,15 @@ sys_req_reset_state.3966:
 	.uleb128 0x11
 	.4byte	.LASF422
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033,comdat
 .Ldebug_macro8:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x5c
+	.uleb128 0x5d
 	.4byte	.LASF424
 	.byte	0x5
-	.uleb128 0x5d
+	.uleb128 0x5e
 	.4byte	.LASF425
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_task_scheduler.h.2.125feba674fa85672711aed1ca8ea199,comdat

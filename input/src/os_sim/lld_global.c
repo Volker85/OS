@@ -60,3 +60,7 @@ void LLF_PERFORM_RAM_CHECK(void)
 {
    /*TODO*/
 }
+void LLF_CHANGE_TO_USER_MODE(void)
+{
+   /*TODO*/
+}

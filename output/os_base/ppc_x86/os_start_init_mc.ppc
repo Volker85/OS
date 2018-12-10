@@ -418,6 +418,7 @@ enum CoreID_e
 typedef enum CoreID_e CoreID_t;
 
 extern CoreID_t GET_CORE_ID(void);
+extern void LLF_CHANGE_TO_USER_MODE(void);
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_interrupt.h" 1
 
@@ -530,6 +531,7 @@ struct task_s
    unsigned_int32_t overwaittime_per_prio_inc_step;
    unsigned_int32_t max_allowed_wait_time;
    unsigned_int32_t exe_time;
+   unsigned_int32_t start_time;
    unsigned_char_t current_prio;
    unsigned_char_t default_prio;
    unsigned_int32_t task_number;
@@ -542,7 +544,7 @@ struct task_s
    unsigned_int32_t EBX;
    unsigned_int32_t ECX;
    unsigned_int32_t EDX;
-# 70 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h"
+# 71 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h"
    unsigned_char_t* pStackPointer;
    unsigned_char_t* pStackPointerByMalloc;
    unsigned_char_t* pStackPointerStart;
@@ -610,5 +612,4 @@ extern void USER_LED_TOGGLE(led_t Led);
 void OS_INIT_MC(void)
 {
 # 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c"
-   LLF_INT_ENABLE();
 }

@@ -40,6 +40,7 @@ struct task_s
    unsigned_int32_t overwaittime_per_prio_inc_step;
    unsigned_int32_t max_allowed_wait_time;
    unsigned_int32_t exe_time;
+   unsigned_int32_t start_time;
    unsigned_char_t current_prio;
    unsigned_char_t default_prio;
    unsigned_int32_t task_number;

@@ -50,6 +50,7 @@ void SET_RUNNING_TASK(task_t* task)
       (&RUNNING_TASK[0])->overwaittime_per_prio_inc_step  = task->overwaittime_per_prio_inc_step;
       (&RUNNING_TASK[0])->max_allowed_wait_time           = task->max_allowed_wait_time;
       (&RUNNING_TASK[0])->exe_time                        = task->exe_time;
+      (&RUNNING_TASK[0])->start_time                      = task->start_time;
       (&RUNNING_TASK[0])->current_prio                    = task->current_prio;
       (&RUNNING_TASK[0])->default_prio                    = task->default_prio;
       (&RUNNING_TASK[0])->fp                              = task->fp;
@@ -126,6 +127,7 @@ void* AddToTaskQueue(task_t* task)
       (&TASK_RUN_QUEUE[element_nr])->overwaittime_per_prio_inc_step  = task->overwaittime_per_prio_inc_step;
       (&TASK_RUN_QUEUE[element_nr])->max_allowed_wait_time           = task->max_allowed_wait_time;
       (&TASK_RUN_QUEUE[element_nr])->exe_time                        = task->exe_time;
+      (&TASK_RUN_QUEUE[element_nr])->start_time                      = task->start_time;
       (&TASK_RUN_QUEUE[element_nr])->current_prio                    = task->current_prio;
       (&TASK_RUN_QUEUE[element_nr])->default_prio                    = task->default_prio;
       (&TASK_RUN_QUEUE[element_nr])->fp                              = task->fp;
@@ -174,6 +176,7 @@ void DeleteFromTaskQueue(task_t* task)
    task->overwaittime_per_prio_inc_step        =   0       ;
    task->max_allowed_wait_time                 =   0       ;
    task->exe_time                              =   0       ;
+   task->start_time                            =   0       ;
    task->current_prio                          =   0       ;
    task->default_prio                          =   0       ;
    task->fp                                    =   0       ;

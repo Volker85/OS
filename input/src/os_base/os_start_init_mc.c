@@ -7,12 +7,11 @@ void OS_INIT_MC(void)
 
    /* 2. all MCU IO*/
    /* configure  SPI, GPIO, UART, CAN,  etc */
-   /*TODO*/
+   /*#warn "TODO low prio" */
 
    /* test SPI, I2C,  GPIO, etc */
-   /*TODO*/
+   /*#warn "TODO low prio" */
 
 
-   /* 6. enable interrupts */
-   LLF_INT_ENABLE();
+
 }

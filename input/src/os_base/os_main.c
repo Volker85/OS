@@ -9,22 +9,22 @@
 
 /*
 OS_State: OS_INIT (Start im Supervisor Mode)
-- Exception Handler aufsetzen
-- HW Internal Peripherie, RAM, etc
-- Tasks konfigurieren
---> Stack, MMU_REGION,CoreId, Task-Function, TaskPrio, Interruptable, MultipleActChk, Privilige Level (User Mode, System Mode, Abort, Undefined, FiQ, IRQ)
-- TCMP Interrupts für Tasks konfigurieren, Starten vom Dispatcher
-- MMU konfigurieren
-- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler)(User/Supervisor Mode??)
-- SW mit erhöhtem Rechtebedarf wird mittels Interrupt gestartet (Dispatcher, WD, FMON, Shutdown)(User/Supervisor Mode??)
-- FMON / Watchdog aktivieren
-- Interrupts aktivieren
-- Zu UserMode wechseln
+- Exception Handler aufsetzen  -> Done 
+- HW Internal Peripherie, RAM, etc -> TODO
+- Tasks konfigurieren -> TODO
+--> Stack, MMU_REGION,CoreId, Task-Function, TaskPrio, Interruptable, MultipleActChk, Privilige Level (User Mode, System Mode, Abort, Undefined, FiQ, IRQ) -> TODO
+- TCMP Interrupts für Tasks konfigurieren, Starten vom Dispatcher -> Done
+- MMU konfigurieren -> NA
+- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler)(User/Supervisor Mode??) -> NA
+- SW mit erhöhtem Rechtebedarf wird mittels Interrupt gestartet (Dispatcher, WD, FMON, Shutdown)(User/Supervisor Mode??) -> Done
+- FMON / Watchdog aktivieren -> NA
+- Interrupts aktivieren -> Done
+- Zu UserMode wechseln -> Done
 
 OS_State: OS_Running (User Mode)
-- Starten / Beenden der einzelnen Tasks auf den jeweiligen Cores(User/Supervisor Mode??)
-- Timer Compare Interrupts
-- Interrupt Prioritäten von Cat2.(SW) Interrupts und Cat1.(HW) Interrupts
+- Starten / Beenden der einzelnen Tasks auf den jeweiligen Cores(User/Supervisor Mode??) -> Done
+- Timer Compare Interrupts -> not needed
+- Interrupt Prioritäten von Cat2.(SW) Interrupts und Cat1.(HW) Interrupts -> NA
 
 (OS_State: OS_Exception (Supervisor Mode))
 - Link-Register Adresse im Eeprom abspeichern, an der die Exceptioin erzeugt wurde
@@ -49,7 +49,7 @@ typedef enum os_reset_req_state_e
 
 void OS_STATE_HANDLER(void)
 {
-   /* running in supervisor mode */
+   /* the following code runs in priviliged mode!! */
    Local os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
    
    switch(OS_STATE)
@@ -71,6 +71,7 @@ void OS_STATE_HANDLER(void)
       OS_STATE = os_running;
       /* activate the interrupts, tasks will be executed from now on ... */
       LLF_INT_ENABLE();
+      LLF_CHANGE_TO_USER_MODE();
 
       #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
       #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
@@ -84,11 +85,14 @@ void OS_STATE_HANDLER(void)
    }
    case os_running:
    {
+      /* run the task function */
+      OS_TASK_DISPATCHER();      
       if(0) /*TODO: check for shutdown/reset/exit conditions */
       {
          OS_STATE = os_shutdown;
          sys_req_reset_state = Reset_restart;         
-      }   
+      }
+      
       break;
    }
    case os_shutdown:

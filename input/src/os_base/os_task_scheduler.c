@@ -14,11 +14,9 @@
 */
 
 Local void OS_STARTTASK(task_t* task);
-Local void OS_TERMINATE_TASK(task_t* task);
 Local void TASK_0(void* task_ptr);
 Local void TASK_1(void* task_ptr);
 Local void TASK_2(void* task_ptr);
-Local void OS_TASK_DISPATCHER(void);
 Local task_t* OS_TaskScheduler();
 
 Local unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
@@ -219,7 +217,6 @@ Local void OS_STARTTASK(task_t* task)
 
    - Start Task
     */
-   scheduler_time_t start_time;
    if(task != 0 && ((task->task_queued != False)||(task->IdleTask != False)))
    {
       if(task->state_request !=0)
@@ -232,30 +229,19 @@ Local void OS_STARTTASK(task_t* task)
             task->current_prio = task->default_prio;
             OS_TASK_SAVE_SYSTEM_STACK(&OS_STACK[GET_CORE_ID()][0]);
             OS_TASK_RESTORETASK_ENVIRONMENT(task);
-            start_time = Get_current_time();
+            task->start_time = Get_current_time();
             EnableInterrupts();
 
             /* task execution shall not happen with disabled interrupts */
             SET_RUNNING_TASK(task);
-            /* save and enter privilige levels...*/
-            Privilige_level_save_current();
-            if(task->task_kernel_mode == True)
+            /* change to user mode... */
+            if(task->task_kernel_mode == False)
             {
-               Privilige_level_enter_kernel_mode();
-            }
+               LLF_CHANGE_TO_USER_MODE();
+            }            
+  
+            /* call the task entry function */  
             task->fp(task);
-            Privilige_level_restore_saved();
-
-            DisableInterrupts();
-            OS_TASK_SAVETASK_ENVIRONMENT(task);
-            OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[GET_CORE_ID()][0]);
-            task->active = False;
-            task->exe_time += (Get_current_time() - start_time);
-            task->task_group->exe_time += (Get_current_time() - start_time);
-            SET_RUNNING_TASK(0);
-            OS_TERMINATE_TASK(task);
-            EnableInterrupts();
-            /* RUNNING_TASK->task_state sollte an dieser stelle (bei beendigung des Tasks durch Terminate) == Task_suspended sein, wieso stimmt das aber nicht*/
          }
          else
          {
@@ -275,7 +261,7 @@ Local void OS_STARTTASK(task_t* task)
    }
    */
 }
-Local void OS_TERMINATE_TASK(task_t* task)
+void OS_TERMINATE_TASK(task_t* task)
 {
    /* Preempt task
    - Disable Interrupts
@@ -332,7 +318,11 @@ void OS_TASK_DISPATCHER(void)
    task = GetRunningTask(); /* bug: at first call of TaskSheduler*//* might reply tasks in state ready->wrong*/
 
    /* Preempt Task */
-   OS_TERMINATE_TASK(task);
+   if(task!=0)
+   {
+      OS_TERMINATE_TASK(task);   
+   }   
+   
 
    /* ask for the next task to be activated... */
    task = OS_TaskScheduler();

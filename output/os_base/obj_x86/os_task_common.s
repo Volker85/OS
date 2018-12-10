@@ -26,18 +26,18 @@ LFB0:
 	je	L2
 	.loc 1 25 0
 	movl	8(%ebp), %eax
-	movl	72(%eax), %eax
+	movl	76(%eax), %eax
 	movl	%eax, (%esp)
 	call	_LLF_SAVE_TASK_STACK
 	.loc 1 27 0
 	movl	8(%ebp), %eax
-	movl	68(%eax), %ebx
+	movl	72(%eax), %ebx
 	movl	8(%ebp), %eax
-	movl	64(%eax), %ecx
+	movl	68(%eax), %ecx
 	movl	8(%ebp), %eax
-	movl	60(%eax), %edx
+	movl	64(%eax), %edx
 	movl	8(%ebp), %eax
-	movl	56(%eax), %eax
+	movl	60(%eax), %eax
 	movl	%ebx, 12(%esp)
 	movl	%ecx, 8(%esp)
 	movl	%edx, 4(%esp)
@@ -79,7 +79,7 @@ LFB1:
 	je	L6
 	.loc 1 43 0
 	movl	8(%ebp), %eax
-	movl	72(%eax), %eax
+	movl	76(%eax), %eax
 	movl	%eax, (%esp)
 	call	_LLF_RESTORE_TASK_STACK
 	.loc 1 44 0
@@ -168,16 +168,16 @@ LFB4:
 	movb	%dl, (%eax)
 	.loc 1 67 0
 	movl	8(%ebp), %eax
-	movl	$0, 56(%eax)
+	movl	$0, 60(%eax)
 	.loc 1 68 0
 	movl	8(%ebp), %eax
-	movl	$0, 60(%eax)
+	movl	$0, 64(%eax)
 	.loc 1 69 0
 	movl	8(%ebp), %eax
-	movl	$0, 64(%eax)
+	movl	$0, 68(%eax)
 	.loc 1 70 0
 	movl	8(%ebp), %eax
-	movl	$0, 68(%eax)
+	movl	$0, 72(%eax)
 	.loc 1 87 0
 	movl	8(%ebp), %eax
 	movl	$0, 8(%eax)
@@ -198,16 +198,16 @@ LFB4:
 	movl	$0, 28(%eax)
 	.loc 1 93 0
 	movl	8(%ebp), %eax
-	movb	$0, 32(%eax)
+	movb	$0, 36(%eax)
 	.loc 1 94 0
 	movl	8(%ebp), %eax
-	movb	$0, 33(%eax)
+	movb	$0, 37(%eax)
 	.loc 1 97 0
 	movl	8(%ebp), %eax
-	movl	$0, 44(%eax)
+	movl	$0, 48(%eax)
 	.loc 1 98 0
 	movl	8(%ebp), %eax
-	movl	$0, 48(%eax)
+	movl	$0, 52(%eax)
 	.loc 1 99 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
@@ -226,7 +226,7 @@ LFB4:
 	movb	$0, 5(%eax)
 	.loc 1 103 0
 	movl	8(%ebp), %eax
-	movl	$0, 40(%eax)
+	movl	$0, 44(%eax)
 	jmp	L10
 L11:
 	.loc 1 108 0
@@ -258,12 +258,12 @@ LFB5:
 	je	L14
 	.loc 1 114 0 is_stmt 0 discriminator 1
 	movl	8(%ebp), %eax
-	movl	76(%eax), %eax
+	movl	80(%eax), %eax
 	testl	%eax, %eax
 	je	L14
 	.loc 1 116 0 is_stmt 1
 	movl	8(%ebp), %eax
-	movl	76(%eax), %eax
+	movl	80(%eax), %eax
 	movl	%eax, (%esp)
 	call	_os_free
 	jmp	L13
@@ -295,7 +295,7 @@ LFB6:
 	.loc 1 126 0
 	movl	$0, -12(%ebp)
 	.loc 1 127 0
-	movl	$96, (%esp)
+	movl	$100, (%esp)
 	call	_os_malloc
 	movl	%eax, -12(%ebp)
 	.loc 1 128 0
@@ -321,7 +321,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_common.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x93b
+	.long	0x94e
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -518,15 +518,15 @@ Ldebug_info0:
 	.long	0x40e
 	.uleb128 0xb
 	.ascii "task_s\0"
-	.byte	0x60
+	.byte	0x64
 	.byte	0x4
 	.byte	0x1d
-	.long	0x6bd
+	.long	0x6d0
 	.uleb128 0xe
 	.ascii "active\0"
 	.byte	0x4
 	.byte	0x1f
-	.long	0x6bd
+	.long	0x6d0
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -535,7 +535,7 @@ Ldebug_info0:
 	.ascii "task_queued\0"
 	.byte	0x4
 	.byte	0x20
-	.long	0x6bd
+	.long	0x6d0
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -544,7 +544,7 @@ Ldebug_info0:
 	.ascii "IdleTask\0"
 	.byte	0x4
 	.byte	0x21
-	.long	0x6bd
+	.long	0x6d0
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -553,7 +553,7 @@ Ldebug_info0:
 	.ascii "FREE\0"
 	.byte	0x4
 	.byte	0x22
-	.long	0x6bd
+	.long	0x6d0
 	.byte	0x4
 	.byte	0x1d
 	.byte	0
@@ -607,107 +607,113 @@ Ldebug_info0:
 	.long	0xdd
 	.byte	0x1c
 	.uleb128 0xd
-	.ascii "current_prio\0"
+	.ascii "start_time\0"
 	.byte	0x4
 	.byte	0x2b
-	.long	0x92
+	.long	0xdd
 	.byte	0x20
+	.uleb128 0xd
+	.ascii "current_prio\0"
+	.byte	0x4
+	.byte	0x2c
+	.long	0x92
+	.byte	0x24
 	.uleb128 0xd
 	.ascii "default_prio\0"
 	.byte	0x4
-	.byte	0x2c
+	.byte	0x2d
 	.long	0x92
-	.byte	0x21
+	.byte	0x25
 	.uleb128 0xd
 	.ascii "task_number\0"
 	.byte	0x4
-	.byte	0x2d
+	.byte	0x2e
 	.long	0xdd
-	.byte	0x24
+	.byte	0x28
 	.uleb128 0xd
 	.ascii "fp\0"
 	.byte	0x4
-	.byte	0x2e
+	.byte	0x2f
 	.long	0x3b4
-	.byte	0x28
+	.byte	0x2c
 	.uleb128 0xd
 	.ascii "state_request\0"
 	.byte	0x4
-	.byte	0x2f
+	.byte	0x30
 	.long	0x3d7
-	.byte	0x2c
+	.byte	0x30
 	.uleb128 0xd
 	.ascii "task_state\0"
 	.byte	0x4
-	.byte	0x30
+	.byte	0x31
 	.long	0x3a0
-	.byte	0x30
+	.byte	0x34
 	.uleb128 0xd
 	.ascii "task_group\0"
 	.byte	0x4
-	.byte	0x31
-	.long	0x6cd
-	.byte	0x34
-	.uleb128 0xd
-	.ascii "EAX\0"
-	.byte	0x4
-	.byte	0x33
-	.long	0xdd
+	.byte	0x32
+	.long	0x6e0
 	.byte	0x38
 	.uleb128 0xd
-	.ascii "EBX\0"
+	.ascii "EAX\0"
 	.byte	0x4
 	.byte	0x34
 	.long	0xdd
 	.byte	0x3c
 	.uleb128 0xd
-	.ascii "ECX\0"
+	.ascii "EBX\0"
 	.byte	0x4
 	.byte	0x35
 	.long	0xdd
 	.byte	0x40
 	.uleb128 0xd
-	.ascii "EDX\0"
+	.ascii "ECX\0"
 	.byte	0x4
 	.byte	0x36
 	.long	0xdd
 	.byte	0x44
 	.uleb128 0xd
+	.ascii "EDX\0"
+	.byte	0x4
+	.byte	0x37
+	.long	0xdd
+	.byte	0x48
+	.uleb128 0xd
 	.ascii "pStackPointer\0"
 	.byte	0x4
-	.byte	0x46
-	.long	0x6d3
-	.byte	0x48
+	.byte	0x47
+	.long	0x6e6
+	.byte	0x4c
 	.uleb128 0xd
 	.ascii "pStackPointerByMalloc\0"
 	.byte	0x4
-	.byte	0x47
-	.long	0x6d3
-	.byte	0x4c
+	.byte	0x48
+	.long	0x6e6
+	.byte	0x50
 	.uleb128 0xd
 	.ascii "pStackPointerStart\0"
 	.byte	0x4
-	.byte	0x48
-	.long	0x6d3
-	.byte	0x50
+	.byte	0x49
+	.long	0x6e6
+	.byte	0x54
 	.uleb128 0xd
 	.ascii "StackSize\0"
 	.byte	0x4
-	.byte	0x49
+	.byte	0x4a
 	.long	0xdd
-	.byte	0x54
+	.byte	0x58
 	.uleb128 0xd
 	.ascii "pStackPointerEnd\0"
 	.byte	0x4
-	.byte	0x4a
-	.long	0x6d3
-	.byte	0x58
+	.byte	0x4b
+	.long	0x6e6
+	.byte	0x5c
 	.uleb128 0xd
 	.ascii "task_kernel_mode\0"
 	.byte	0x4
-	.byte	0x4b
+	.byte	0x4c
 	.long	0x92
-	.byte	0x5c
+	.byte	0x60
 	.byte	0
 	.uleb128 0x3
 	.byte	0x4
@@ -722,7 +728,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.ascii "task_t\0"
 	.byte	0x4
-	.byte	0x4d
+	.byte	0x4e
 	.long	0x45a
 	.uleb128 0xf
 	.ascii "OS_TASK_SAVETASK_ENVIRONMENT\0"
@@ -732,19 +738,19 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x725
+	.long	0x738
 	.uleb128 0x10
 	.ascii "task\0"
 	.byte	0x1
 	.byte	0x11
-	.long	0x725
+	.long	0x738
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.byte	0
 	.uleb128 0x6
 	.byte	0x4
-	.long	0x6d9
+	.long	0x6ec
 	.uleb128 0xf
 	.ascii "OS_TASK_RESTORETASK_ENVIRONMENT\0"
 	.byte	0x1
@@ -753,12 +759,12 @@ Ldebug_info0:
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x76c
+	.long	0x77f
 	.uleb128 0x10
 	.ascii "task\0"
 	.byte	0x1
 	.byte	0x27
-	.long	0x725
+	.long	0x738
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -771,12 +777,12 @@ Ldebug_info0:
 	.long	LFE2-LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x7a9
+	.long	0x7bc
 	.uleb128 0x11
 	.secrel32	LASF1
 	.byte	0x1
 	.byte	0x33
-	.long	0x7a9
+	.long	0x7bc
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -792,12 +798,12 @@ Ldebug_info0:
 	.long	LFE3-LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x7e9
+	.long	0x7fc
 	.uleb128 0x11
 	.secrel32	LASF1
 	.byte	0x1
 	.byte	0x37
-	.long	0x7a9
+	.long	0x7bc
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -810,12 +816,12 @@ Ldebug_info0:
 	.long	LFE4-LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x826
+	.long	0x839
 	.uleb128 0x10
 	.ascii "task\0"
 	.byte	0x1
 	.byte	0x3b
-	.long	0x725
+	.long	0x738
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -828,12 +834,12 @@ Ldebug_info0:
 	.long	LFE5-LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x865
+	.long	0x878
 	.uleb128 0x10
 	.ascii "task\0"
 	.byte	0x1
 	.byte	0x70
-	.long	0x725
+	.long	0x738
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -842,26 +848,26 @@ Ldebug_info0:
 	.ascii "OS_Task_CreateTaskEnvironment\0"
 	.byte	0x1
 	.byte	0x7c
-	.long	0x725
+	.long	0x738
 	.long	LFB6
 	.long	LFE6-LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x8a8
+	.long	0x8bb
 	.uleb128 0x13
 	.ascii "task\0"
 	.byte	0x1
 	.byte	0x7e
-	.long	0x725
+	.long	0x738
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
 	.byte	0
 	.uleb128 0x14
-	.long	0x725
-	.long	0x8b8
+	.long	0x738
+	.long	0x8cb
 	.uleb128 0x15
-	.long	0x8b8
+	.long	0x8cb
 	.byte	0x4
 	.byte	0
 	.uleb128 0x3
@@ -872,7 +878,7 @@ Ldebug_info0:
 	.ascii "TASK_PTR\0"
 	.byte	0x1
 	.byte	0xf
-	.long	0x8a8
+	.long	0x8bb
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_PTR
@@ -2248,10 +2254,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x5c
+	.uleb128 0x5d
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x5d
+	.uleb128 0x5e
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4

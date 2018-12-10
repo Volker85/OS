@@ -3,7 +3,8 @@
 #include "os_shutdown.h"
 #include "os_start_os.h"
 #include "os_ram.h"
-
+#include "..\os_base\os_task_queue.h"
+#include "..\os_base\os_task_scheduler.h"
 /* the Interrupt table is set via the code linked to 0x00 and following ...   */
 /* interrupts are disabled during RESET exception and will be enabled by task system */
 Local void OS_Exception_Read_Status_Registers(void)
@@ -136,6 +137,7 @@ void OS_Exception_PendSV(void)
 void OS_Exception_Systick(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   task_t* task = 0u;
    /* configure the TCMP */
    /*
    Dispatcher function for Core 0:
@@ -195,7 +197,18 @@ Enables the counter:
 
 When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR register and then counts down. On reaching 0, it sets the COUNTFLAG to 1 and optionally asserts the SysTick depending on the value of TICKINT. It then loads the RELOAD value again, and begins counting.
    */
-
+   /* disable running task */
+   task = GetRunningTask();
+   if(task != 0u)
+   {
+      OS_TASK_SAVETASK_ENVIRONMENT(task);
+      OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[GET_CORE_ID()][0]);
+      task->active = False;
+      task->exe_time += (Get_current_time() - task->start_time);
+      task->task_group->exe_time += (Get_current_time() - task->start_time);
+      SET_RUNNING_TASK(0);
+      OS_TERMINATE_TASK(task);
+   }
    OS_STATE_HANDLER();
 #endif
 }

@@ -598,6 +598,7 @@ struct task_s
    unsigned_int32_t overwaittime_per_prio_inc_step;
    unsigned_int32_t max_allowed_wait_time;
    unsigned_int32_t exe_time;
+   unsigned_int32_t start_time;
    unsigned_char_t current_prio;
    unsigned_char_t default_prio;
    unsigned_int32_t task_number;
@@ -665,6 +666,7 @@ enum CoreID_e
 typedef enum CoreID_e CoreID_t;
 
 extern CoreID_t GET_CORE_ID(void);
+extern void LLF_CHANGE_TO_USER_MODE(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);

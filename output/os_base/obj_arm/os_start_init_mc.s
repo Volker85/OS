@@ -27,16 +27,20 @@ OS_INIT_MC:
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
+	@ link register save eliminated.
+	push	{r7}
+	.cfi_def_cfa_offset 4
+	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	.loc 1 17 0
-	bl	LLF_INT_ENABLE
-	.loc 1 18 0
-	pop	{r7, pc}
+	mov	sp, r7
+	.cfi_def_cfa_register 13
+	@ sp needed
+	ldr	r7, [sp], #4
+	.cfi_restore 7
+	.cfi_def_cfa_offset 0
+	bx	lr
 	.cfi_endproc
 .LFE0:
 	.size	OS_INIT_MC, .-OS_INIT_MC
@@ -131,7 +135,7 @@ OS_INIT_MC:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2116
+	.uleb128 0x2117
 	.uleb128 0x19
 	.byte	0
 	.byte	0
@@ -1561,15 +1565,15 @@ OS_INIT_MC:
 	.uleb128 0x11
 	.4byte	.LASF422
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.92.310ae0de7be5874c80e3c1d4bf919b37,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033,comdat
 .Ldebug_macro8:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x5c
+	.uleb128 0x5d
 	.4byte	.LASF424
 	.byte	0x5
-	.uleb128 0x5d
+	.uleb128 0x5e
 	.4byte	.LASF425
 	.byte	0
 	.section	.debug_line,"",%progbits

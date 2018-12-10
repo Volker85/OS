@@ -13,10 +13,14 @@ From the AAPCS, §5.1.1:
         .thumb
         .syntax unified
         .text
-        .global Test
+        .global LLF_CHANGE_TO_USER_MODE
         //.extern OS_START_OS
         
       
-Test:
-     MOV R15, R14
-        
+LLF_CHANGE_TO_USER_MODE:
+   MRS r0,CONTROL
+   MOV r1,#0x01
+   ORR r0,r0,r1
+   MSR CONTROL,r0
+   MOV R15, R14
+   
