@@ -11,4 +11,5 @@
 extern void LLF_INT_DISABLE(void);
 extern void LLF_INT_ENABLE(void);
 extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
+extern void LLF_WAIT_FOR_INTERRUPT(void);
 #endif /* _lld_interrupt_h_ */

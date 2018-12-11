@@ -411,22 +411,19 @@ typedef unsigned long uint32;
 #define ReferenceUnusedParameter(x) ((x) = (x))
 
 
-#define cMCU_SIMULATION 1
-#define cMCU_POWERPC 2
 #define cMCU_X86 3
 #define cMCU_CORTEX_M4 4
-
 
 #define NR_OF_CORES 1
 
 #define MCU_CLOCK_IN_HZ ((uint32)168000000u)
-# 46 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+# 34 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 #define DisableInterrupts() LLF_INT_DISABLE()
 #define EnableInterrupts() LLF_INT_ENABLE()
 #define Privilige_level_save_current() ;
 #define Privilige_level_enter_kernel_mode() ;
 #define Privilige_level_restore_saved() ;
-#define HaltMcu() ;
+#define HaltMcu() LLF_WAIT_FOR_INTERRUPT()
 
 enum os_sw_bugs_e
 {
@@ -673,6 +670,7 @@ extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);
 extern void LLF_INT_DISABLE(void);
 extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
+extern void LLF_WAIT_FOR_INTERRUPT(void);
 extern void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void);
 extern void LLF_MCU_RESET_POWER(void);
 extern unsigned_char_t LLF_GET_MPU_PRESENT(void);

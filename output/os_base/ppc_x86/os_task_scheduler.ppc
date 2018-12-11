@@ -282,23 +282,22 @@ typedef unsigned long uint32;
 #define ReferenceUnusedParameter(x) ((x) = (x))
 
 
-#define cMCU_SIMULATION 1
-#define cMCU_POWERPC 2
 #define cMCU_X86 3
 #define cMCU_CORTEX_M4 4
-
 
 #define NR_OF_CORES 1
 
 #define MCU_CLOCK_IN_HZ ((uint32)168000000u)
-# 39 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_common.h"
+
+
+
 #define DisableInterrupts() 
 #define EnableInterrupts() 
 #define Privilige_level_save_current() 
 #define Privilige_level_enter_kernel_mode() 
 #define Privilige_level_restore_saved() 
 #define HaltMcu() 
-# 53 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_common.h"
+# 41 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_common.h"
 enum os_sw_bugs_e
 {
    os_bug_no_bug = 0,
@@ -434,6 +433,7 @@ extern void LLF_CHANGE_TO_USER_MODE(void);
 extern void LLF_INT_DISABLE(void);
 extern void LLF_INT_ENABLE(void);
 extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
+extern void LLF_WAIT_FOR_INTERRUPT(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_mmu.h" 1
 
@@ -646,9 +646,6 @@ extern void ISR_TASK_DISPATCH(void);
 extern void OS_INIT_TASKS(void);
 extern unsigned_char_t task_state_request(void* task, task_state_t requested_state);
 extern void ISR_TASK_DISPATCH_C0(void);
-extern void ISR_TASK_DISPATCH_C1(void);
-extern void ISR_TASK_DISPATCH_C2(void);
-extern void ISR_TASK_DISPATCH_C3(void);
 extern void OS_ACTIVATE_DISPATCHER(void);
 extern void OS_TERMINATE_TASK(task_t* task);
 extern void OS_TASK_DISPATCHER(void);
@@ -889,7 +886,11 @@ static void OS_STARTTASK(task_t* task)
 
             SET_RUNNING_TASK(task);
 
-            LLF_CHANGE_TO_USER_MODE();
+            if(task->task_kernel_mode == 0)
+            {
+               LLF_CHANGE_TO_USER_MODE();
+            }
+
 
             task->fp(task);
          }
@@ -953,7 +954,7 @@ void OS_TERMINATE_TASK(task_t* task)
 }
 void OS_TASK_DISPATCHER(void)
 {
-# 312 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 316 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    task_t* task = 0;
 
    task = GetRunningTask();
@@ -1022,8 +1023,6 @@ void OS_INIT_TASKS(void)
    ((TASK_GROUP_3) = (TASK_GROUP_3));
    ((TASK_GROUP_4) = (TASK_GROUP_4));
    ((TASK_GROUP_5) = (TASK_GROUP_5));
-
-
 
 
 
@@ -1097,7 +1096,7 @@ static task_t* OS_TaskScheduler(void)
 
    scheduler_time_t delta_time = Get_current_time() - LAST_CURRENT_TIME;
    LAST_CURRENT_TIME = Get_current_time();
-# 469 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 471 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    for((element_nr) = (0); (element_nr) <= ((5)-1); (element_nr)++)
    {
       link_list_member = GetFromLinkList(element_nr);
@@ -1184,26 +1183,6 @@ static task_t* OS_TaskScheduler(void)
 }
 
 void ISR_TASK_DISPATCH_C0(void)
-{
-
-   OS_TASK_DISPATCHER();
-
-}
-
-void ISR_TASK_DISPATCH_C1(void)
-{
-
-   OS_TASK_DISPATCHER();
-
-}
-
-void ISR_TASK_DISPATCH_C2(void)
-{
-
-   OS_TASK_DISPATCHER();
-
-}
-void ISR_TASK_DISPATCH_C3(void)
 {
 
    OS_TASK_DISPATCHER();

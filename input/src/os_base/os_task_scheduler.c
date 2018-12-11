@@ -382,9 +382,7 @@ void OS_INIT_TASKS(void)
    ReferenceUnusedParameter (TASK_GROUP_4);
    ReferenceUnusedParameter (TASK_GROUP_5);
 
-
-   /*#warn "CoreId, Privilige Level (User Mode, System Mode, Abort, Undefined, FiQ, IRQ), MEMORY Region"*/
-   /*
+    /*
    set task_state for all tasks to Task_unspecified
     */
    OS_INIT_TASK_QUEUE();
@@ -562,23 +560,4 @@ void ISR_TASK_DISPATCH_C0(void)
 
 }
 
-void ISR_TASK_DISPATCH_C1(void)
-{
-   /*#warn "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."*/
-   OS_TASK_DISPATCHER();
-
-}
-
-void ISR_TASK_DISPATCH_C2(void)
-{
-   /*#warn "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."*/
-   OS_TASK_DISPATCHER();
-
-}
-void ISR_TASK_DISPATCH_C3(void)
-{
-   /*#warn "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."*/
-   OS_TASK_DISPATCHER();
-
-}
 

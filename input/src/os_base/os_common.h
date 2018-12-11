@@ -15,27 +15,15 @@
 #define ReferenceUnusedParameter(x) ((x) = (x))
 
 /* MCU abstraction */
-#define cMCU_SIMULATION 1
-#define cMCU_POWERPC    2
 #define cMCU_X86        3
 #define cMCU_CORTEX_M4  4
 
-/*#warn "make the OS multi core capable"*/
 #define NR_OF_CORES 1
 
 #define MCU_CLOCK_IN_HZ ((uint32)168000000u)
 
 
-#if(CFG_PROCESSOR == cMCU_SIMULATION)
-#define DisableInterrupts()
-#define EnableInterrupts()
-#define Privilige_level_save_current()
-#define Privilige_level_enter_kernel_mode()
-#define Privilige_level_restore_saved()
-#define HaltMcu()
-#elif (CFG_PROCESSOR == cMCU_POWERPC)
-/*#warn "not yet supported"*/
-#elif (CFG_PROCESSOR == cMCU_X86)
+#if (CFG_PROCESSOR == cMCU_X86)
 #define DisableInterrupts()
 #define EnableInterrupts()
 #define Privilige_level_save_current()
@@ -48,7 +36,7 @@
 #define Privilige_level_save_current()      ;
 #define Privilige_level_enter_kernel_mode() ;
 #define Privilige_level_restore_saved()     ;
-#define HaltMcu()                           ;
+#define HaltMcu()                           LLF_WAIT_FOR_INTERRUPT()
 #endif
 enum os_sw_bugs_e
 {

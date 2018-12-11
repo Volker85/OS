@@ -23,7 +23,6 @@ for documentation of the MPU please read:
 
 void OS_MMU_SETUP(void)
 {
-   /*#warn "OS_MMU_SETUP not yet implemented"*/
    /* assign every task a mmu region + the scheduler an own region */
    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might run with different MMU rights
       hardware register access shall be only possible in supervisor / kernel mode via system call.... based on a security descriptor as done in windows */

@@ -236,19 +236,19 @@ ISR TCMP1(void)
 ISR TCMP2(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   OS_ISRHANDLERC1();
+   
 #endif
 }
 ISR TCMP3(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   OS_ISRHANDLERC2();
+
 #endif
 }
 ISR TCMP4(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   OS_ISRHANDLERC3();
+
 #endif
 }
 

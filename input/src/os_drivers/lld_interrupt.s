@@ -16,6 +16,7 @@ From the AAPCS, §5.1.1:
         .global LLF_INT_DISABLE
         .global LLF_INT_ENABLE
         .global LLF_DISABLE_INTERRUPTS_ALL_CORES
+        .global LLF_WAIT_FOR_INTERRUPT
         //.extern OS_START_OS
         
       
@@ -33,4 +34,6 @@ LLF_DISABLE_INTERRUPTS_ALL_CORES:
         B LLF_INT_DISABLE
         MOV R15, R14
         
+LLF_WAIT_FOR_INTERRUPT:
+        WFI
         

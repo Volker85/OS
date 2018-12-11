@@ -53,7 +53,7 @@ L5:
 	.loc 1 100 0
 	call	_LLF_INT_DISABLE
 	.loc 1 101 0
-	movl	_sys_req_reset_state.1285, %eax
+	movl	_sys_req_reset_state.1281, %eax
 	cmpl	$1, %eax
 	je	L9
 	cmpl	$1, %eax
@@ -91,7 +91,7 @@ L1:
 	ret
 	.cfi_endproc
 LFE0:
-.lcomm _sys_req_reset_state.1285,4,4
+.lcomm _sys_req_reset_state.1281,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
@@ -184,7 +184,7 @@ Ldebug_info0:
 	.long	0x185
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1285
+	.long	_sys_req_reset_state.1281
 	.byte	0
 	.uleb128 0x8
 	.ascii "OS_STATE\0"
@@ -1127,39 +1127,33 @@ Ldebug_macro0:
 	.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
 	.byte	0x1
 	.uleb128 0x12
-	.ascii "cMCU_SIMULATION 1\0"
-	.byte	0x1
-	.uleb128 0x13
-	.ascii "cMCU_POWERPC 2\0"
-	.byte	0x1
-	.uleb128 0x14
 	.ascii "cMCU_X86 3\0"
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "cMCU_CORTEX_M4 4\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x15
 	.ascii "NR_OF_CORES 1\0"
 	.byte	0x1
-	.uleb128 0x1a
+	.uleb128 0x17
 	.ascii "MCU_CLOCK_IN_HZ ((uint32)168000000u)\0"
 	.byte	0x1
-	.uleb128 0x27
+	.uleb128 0x1b
 	.ascii "DisableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x28
+	.uleb128 0x1c
 	.ascii "EnableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x29
+	.uleb128 0x1d
 	.ascii "Privilige_level_save_current() \0"
 	.byte	0x1
-	.uleb128 0x2a
+	.uleb128 0x1e
 	.ascii "Privilige_level_enter_kernel_mode() \0"
 	.byte	0x1
-	.uleb128 0x2b
+	.uleb128 0x1f
 	.ascii "Privilige_level_restore_saved() \0"
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x20
 	.ascii "HaltMcu() \0"
 	.byte	0x4
 	.byte	0x3

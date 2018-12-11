@@ -71,13 +71,7 @@ LFB10:
 L5:
 	.loc 2 20 0
 	call	_OS_ISRHANDLERC0
-	.loc 2 21 0
-	call	_OS_ISRHANDLERC1
-	.loc 2 22 0
-	call	_OS_ISRHANDLERC2
-	.loc 2 23 0
-	call	_OS_ISRHANDLERC3
-	.loc 2 25 0
+	.loc 2 26 0
 	incl	44(%esp)
 L4:
 	.loc 2 17 0
@@ -91,28 +85,28 @@ L4:
 	fnstsw	%ax
 	testb	$69, %ah
 	je	L5
-	.loc 2 28 0
+	.loc 2 29 0
 	movl	$0, (%esp)
 	call	_time
 	subl	40(%esp), %eax
 	movl	%eax, 40(%esp)
-	.loc 2 29 0
+	.loc 2 30 0
 	movl	40(%esp), %eax
 	movl	%eax, 4(%esp)
 	movl	$LC1, (%esp)
 	call	_printf
-	.loc 2 30 0
-	call	_getchar
 	.loc 2 31 0
 	call	_getchar
-	.loc 2 33 0
+	.loc 2 32 0
+	call	_getchar
+	.loc 2 34 0
 	movl	12(%ebp), %eax
 	movl	(%eax), %edx
 	movl	12(%ebp), %eax
 	movl	%edx, (%eax)
-	.loc 2 35 0
-	movl	$0, %eax
 	.loc 2 36 0
+	movl	$0, %eax
+	.loc 2 37 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -1369,39 +1363,33 @@ Ldebug_macro0:
 	.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
 	.byte	0x1
 	.uleb128 0x12
-	.ascii "cMCU_SIMULATION 1\0"
-	.byte	0x1
-	.uleb128 0x13
-	.ascii "cMCU_POWERPC 2\0"
-	.byte	0x1
-	.uleb128 0x14
 	.ascii "cMCU_X86 3\0"
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "cMCU_CORTEX_M4 4\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x15
 	.ascii "NR_OF_CORES 1\0"
 	.byte	0x1
-	.uleb128 0x1a
+	.uleb128 0x17
 	.ascii "MCU_CLOCK_IN_HZ ((uint32)168000000u)\0"
 	.byte	0x1
-	.uleb128 0x27
+	.uleb128 0x1b
 	.ascii "DisableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x28
+	.uleb128 0x1c
 	.ascii "EnableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x29
+	.uleb128 0x1d
 	.ascii "Privilige_level_save_current() \0"
 	.byte	0x1
-	.uleb128 0x2a
+	.uleb128 0x1e
 	.ascii "Privilige_level_enter_kernel_mode() \0"
 	.byte	0x1
-	.uleb128 0x2b
+	.uleb128 0x1f
 	.ascii "Privilige_level_restore_saved() \0"
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x20
 	.ascii "HaltMcu() \0"
 	.byte	0x4
 	.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_base/os_ram.h"
@@ -2158,7 +2146,4 @@ Ldebug_line0:
 	.def	_time;	.scl	2;	.type	32;	.endef
 	.def	_OS_START_OS;	.scl	2;	.type	32;	.endef
 	.def	_OS_ISRHANDLERC0;	.scl	2;	.type	32;	.endef
-	.def	_OS_ISRHANDLERC1;	.scl	2;	.type	32;	.endef
-	.def	_OS_ISRHANDLERC2;	.scl	2;	.type	32;	.endef
-	.def	_OS_ISRHANDLERC3;	.scl	2;	.type	32;	.endef
 	.def	_getchar;	.scl	2;	.type	32;	.endef

@@ -7,4 +7,4 @@
 */
 /* assumption c0 is mastercore */
 
-/*#warn "os_rte_common.c not yet implemented"*/
+/*"os_rte_common.c not yet implemented"*/

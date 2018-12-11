@@ -23,73 +23,10 @@ LFB0:
 	ret
 	.cfi_endproc
 LFE0:
-	.globl	_OS_ISRHANDLERC1
-	.def	_OS_ISRHANDLERC1;	.scl	2;	.type	32;	.endef
-_OS_ISRHANDLERC1:
-LFB1:
-	.loc 1 10 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 11 0
-	call	_ISR_TASK_DISPATCH_C1
-	.loc 1 12 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE1:
-	.globl	_OS_ISRHANDLERC2
-	.def	_OS_ISRHANDLERC2;	.scl	2;	.type	32;	.endef
-_OS_ISRHANDLERC2:
-LFB2:
-	.loc 1 14 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 15 0
-	call	_ISR_TASK_DISPATCH_C2
-	.loc 1 16 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE2:
-	.globl	_OS_ISRHANDLERC3
-	.def	_OS_ISRHANDLERC3;	.scl	2;	.type	32;	.endef
-_OS_ISRHANDLERC3:
-LFB3:
-	.loc 1 18 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 19 0
-	call	_ISR_TASK_DISPATCH_C3
-	.loc 1 20 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE3:
 Letext0:
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x159
+	.long	0x102
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -123,30 +60,6 @@ Ldebug_info0:
 	.byte	0x5
 	.long	LFB0
 	.long	LFE0-LFB0
-	.uleb128 0x1
-	.byte	0x9c
-	.uleb128 0x3
-	.ascii "OS_ISRHANDLERC1\0"
-	.byte	0x1
-	.byte	0x9
-	.long	LFB1
-	.long	LFE1-LFB1
-	.uleb128 0x1
-	.byte	0x9c
-	.uleb128 0x3
-	.ascii "OS_ISRHANDLERC2\0"
-	.byte	0x1
-	.byte	0xd
-	.long	LFB2
-	.long	LFE2-LFB2
-	.uleb128 0x1
-	.byte	0x9c
-	.uleb128 0x3
-	.ascii "OS_ISRHANDLERC3\0"
-	.byte	0x1
-	.byte	0x11
-	.long	LFB3
-	.long	LFE3-LFB3
 	.uleb128 0x1
 	.byte	0x9c
 	.byte	0
@@ -1006,39 +919,33 @@ Ldebug_macro0:
 	.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
 	.byte	0x1
 	.uleb128 0x12
-	.ascii "cMCU_SIMULATION 1\0"
-	.byte	0x1
-	.uleb128 0x13
-	.ascii "cMCU_POWERPC 2\0"
-	.byte	0x1
-	.uleb128 0x14
 	.ascii "cMCU_X86 3\0"
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "cMCU_CORTEX_M4 4\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x15
 	.ascii "NR_OF_CORES 1\0"
 	.byte	0x1
-	.uleb128 0x1a
+	.uleb128 0x17
 	.ascii "MCU_CLOCK_IN_HZ ((uint32)168000000u)\0"
 	.byte	0x1
-	.uleb128 0x27
+	.uleb128 0x1b
 	.ascii "DisableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x28
+	.uleb128 0x1c
 	.ascii "EnableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x29
+	.uleb128 0x1d
 	.ascii "Privilige_level_save_current() \0"
 	.byte	0x1
-	.uleb128 0x2a
+	.uleb128 0x1e
 	.ascii "Privilige_level_enter_kernel_mode() \0"
 	.byte	0x1
-	.uleb128 0x2b
+	.uleb128 0x1f
 	.ascii "Privilige_level_restore_saved() \0"
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x20
 	.ascii "HaltMcu() \0"
 	.byte	0x4
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
@@ -1288,6 +1195,3 @@ Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
 	.def	_ISR_TASK_DISPATCH_C0;	.scl	2;	.type	32;	.endef
-	.def	_ISR_TASK_DISPATCH_C1;	.scl	2;	.type	32;	.endef
-	.def	_ISR_TASK_DISPATCH_C2;	.scl	2;	.type	32;	.endef
-	.def	_ISR_TASK_DISPATCH_C3;	.scl	2;	.type	32;	.endef

@@ -103,7 +103,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.ascii "func_ptr_t\0"
 	.byte	0x3
-	.byte	0x57
+	.byte	0x4b
 	.long	0x107
 	.uleb128 0x4
 	.byte	0x4
@@ -1120,39 +1120,33 @@ Ldebug_macro0:
 	.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
 	.byte	0x1
 	.uleb128 0x12
-	.ascii "cMCU_SIMULATION 1\0"
-	.byte	0x1
-	.uleb128 0x13
-	.ascii "cMCU_POWERPC 2\0"
-	.byte	0x1
-	.uleb128 0x14
 	.ascii "cMCU_X86 3\0"
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "cMCU_CORTEX_M4 4\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x15
 	.ascii "NR_OF_CORES 1\0"
 	.byte	0x1
-	.uleb128 0x1a
+	.uleb128 0x17
 	.ascii "MCU_CLOCK_IN_HZ ((uint32)168000000u)\0"
 	.byte	0x1
-	.uleb128 0x27
+	.uleb128 0x1b
 	.ascii "DisableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x28
+	.uleb128 0x1c
 	.ascii "EnableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x29
+	.uleb128 0x1d
 	.ascii "Privilige_level_save_current() \0"
 	.byte	0x1
-	.uleb128 0x2a
+	.uleb128 0x1e
 	.ascii "Privilige_level_enter_kernel_mode() \0"
 	.byte	0x1
-	.uleb128 0x2b
+	.uleb128 0x1f
 	.ascii "Privilige_level_restore_saved() \0"
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x20
 	.ascii "HaltMcu() \0"
 	.byte	0x4
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"

@@ -7,6 +7,7 @@ extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);
 extern void LLF_INT_DISABLE(void);
 extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
+extern void LLF_WAIT_FOR_INTERRUPT(void);
 extern void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void);
 extern void LLF_MCU_RESET_POWER(void);
 extern unsigned_char_t LLF_GET_MPU_PRESENT(void);
