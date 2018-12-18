@@ -118,21 +118,21 @@ int fclose(FILE* file_ptr)
 }
 int remove(const char *filename)
 {
-   /*#warn "fopen"*/
+   /*TODO "fopen"*/
    return 0;
 }
 int rename(const char *oldname, const char *newname)
 {
-   /*#warn "fopen"*/
+   /*TODO "fopen"*/
    return 0;
 }
 uint32 fread(void *ptr, uint32 size, uint32 nobj, FILE *stream)
 {
-   /*#warn "fopen"*/
+   /*TODO "fopen"*/
    return 0;
 }
 uint32 fwrite(const void *ptr, uint32 size, uint32 nobj, FILE *stream)
 {
-   /*#warn "fopen"*/
+   /*TODO "fopen"*/
    return 0;
 }

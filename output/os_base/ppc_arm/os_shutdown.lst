@@ -1,90 +1,90 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccihyr3c.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccoHpofB.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m4
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 6
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.thumb
-  14              		.file	"os_shutdown.c"
-  15              		.text
-  16              	.Ltext0:
-  17              		.cfi_sections	.debug_frame
-  18              		.align	2
-  19              		.global	OS_SHUTDOWN
-  20              		.thumb
-  21              		.thumb_func
-  23              	OS_SHUTDOWN:
-  24              	.LFB0:
-  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.c"
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"os_shutdown.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.global	OS_SHUTDOWN
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  20              		.fpu softvfp
+  22              	OS_SHUTDOWN:
+  23              	.LFB0:
+  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.c"
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** #include "os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** #include "os_shutdown.h"
    3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
    4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** void OS_SHUTDOWN(os_reset_type_t reset_typ)
    5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** {
-  26              		.loc 1 5 0
-  27              		.cfi_startproc
-  28              		@ args = 0, pretend = 0, frame = 8
-  29              		@ frame_needed = 1, uses_anonymous_args = 0
-  30 0000 80B5     		push	{r7, lr}
-  31              		.cfi_def_cfa_offset 8
-  32              		.cfi_offset 7, -8
-  33              		.cfi_offset 14, -4
-  34 0002 82B0     		sub	sp, sp, #8
-  35              		.cfi_def_cfa_offset 16
-  36 0004 00AF     		add	r7, sp, #0
-  37              		.cfi_def_cfa_register 7
-  38 0006 0346     		mov	r3, r0
-  39 0008 FB71     		strb	r3, [r7, #7]
+  25              		.loc 1 5 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 8
+  28              		@ frame_needed = 1, uses_anonymous_args = 0
+  29 0000 80B5     		push	{r7, lr}
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 82B0     		sub	sp, sp, #8
+  34              		.cfi_def_cfa_offset 16
+  35 0004 00AF     		add	r7, sp, #0
+  36              		.cfi_def_cfa_register 7
+  37 0006 0346     		mov	r3, r0
+  38 0008 FB71     		strb	r3, [r7, #7]
    6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* disable interrupts for all cores -> prevents task activation, etc*/
    7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    LLF_DISABLE_INTERRUPTS_ALL_CORES();
-  40              		.loc 1 7 0
-  41 000a FFF7FEFF 		bl	LLF_DISABLE_INTERRUPTS_ALL_CORES
+  39              		.loc 1 7 0
+  40 000a FFF7FEFF 		bl	LLF_DISABLE_INTERRUPTS_ALL_CORES
    8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
    9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* clear mmu config */
   10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    LLF_MPU_DISABLE();
-  42              		.loc 1 10 0
-  43 000e FFF7FEFF 		bl	LLF_MPU_DISABLE
+  41              		.loc 1 10 0
+  42 000e FFF7FEFF 		bl	LLF_MPU_DISABLE
   11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
   12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* clear all RAM */
   13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /*LLF_CLEAR_ALL_RAM();*/
   14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
   15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* save some registers to restore after reset */
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccihyr3c.s 			page 2
-
-
   16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccoHpofB.s 			page 2
+
+
   17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* power done/reset system */
   18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    if(reset_typ == os_reset_powerdown)
-  44              		.loc 1 18 0
-  45 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  46 0014 012B     		cmp	r3, #1
-  47 0016 02D1     		bne	.L2
+  43              		.loc 1 18 0
+  44 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  45 0014 012B     		cmp	r3, #1
+  46 0016 02D1     		bne	.L2
   19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
   20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       LLF_MCU_SWITCH_OFF_POWER();
-  48              		.loc 1 20 0
-  49 0018 FFF7FEFF 		bl	LLF_MCU_SWITCH_OFF_POWER
-  50 001c 04E0     		b	.L3
-  51              	.L2:
+  47              		.loc 1 20 0
+  48 0018 FFF7FEFF 		bl	LLF_MCU_SWITCH_OFF_POWER
+  49 001c 04E0     		b	.L3
+  50              	.L2:
   21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }
   22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    else if(reset_typ == os_reset_hardreset) /* os_reset_hardreset */
-  52              		.loc 1 22 0
-  53 001e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  54 0020 002B     		cmp	r3, #0
-  55 0022 01D1     		bne	.L3
+  51              		.loc 1 22 0
+  52 001e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  53 0020 002B     		cmp	r3, #0
+  54 0022 01D1     		bne	.L3
   23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
   24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       LLF_MCU_RESET_POWER();
-  56              		.loc 1 24 0
-  57 0024 FFF7FEFF 		bl	LLF_MCU_RESET_POWER
-  58              	.L3:
+  55              		.loc 1 24 0
+  56 0024 FFF7FEFF 		bl	LLF_MCU_RESET_POWER
+  57              	.L3:
+  58              	.L4:
   25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }
   26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    else if (reset_typ == os_reset_exit)
   27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
@@ -95,24 +95,23 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccihyr3c.s 			page 1
   32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       ;
   33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }   
   34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    while(1)
-  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
-  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       /* if you enter here, the reset has failed to be executed.... */
-  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }
-  59              		.loc 1 37 0 discriminator 2
-  60 0028 FEE7     		b	.L3
+  59              		.loc 1 34 0 discriminator 2
+  60 0028 FEE7     		b	.L4
   61              		.cfi_endproc
   62              	.LFE0:
   64              	.Letext0:
-  65              		.file 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccihyr3c.s 			page 3
+  65              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  66              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  67              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  68              		.file 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccoHpofB.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_shutdown.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccihyr3c.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccihyr3c.s:23     .text:00000000 OS_SHUTDOWN
-                     .debug_frame:00000010 $d
-                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+C:\Users\PRESID~1\AppData\Local\Temp\ccoHpofB.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccoHpofB.s:22     .text:00000000 OS_SHUTDOWN
+                           .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.dc27b9b2168d1784dc01b241752b07b2
                            .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986

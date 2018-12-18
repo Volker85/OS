@@ -1,6 +1,6 @@
 #include "..\os_base\os_firstinc.h"
 #include "led.h"
-/*#warn "no LED code implemented"*/
+/*TODO "no LED code implemented"*/
 
 void USER_LED_INIT(led_t Led)
 {

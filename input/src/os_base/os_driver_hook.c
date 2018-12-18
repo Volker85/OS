@@ -5,4 +5,4 @@ RQ: kernel shall be independent of the driver support for the particular system 
 The subsystem shall define the interface name for the outside, and which name the driver shall use to provide the functionality to the subsystem
 */
 /* read the unix / linux / windows driver model, how do others solve this issue */
-/*#warn "os_driver_hook.c not yet implemented"*/
+/*TODO "os_driver_hook.c not yet implemented"*/

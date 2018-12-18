@@ -1,29 +1,28 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8UJ3cD.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m4
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 6
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.thumb
-  14              		.file	"os_start_ext_prg.c"
-  15              		.text
-  16              	.Ltext0:
-  17              		.cfi_sections	.debug_frame
-  18              		.align	2
-  19              		.thumb
-  20              		.thumb_func
-  22              	os_signatur_valid:
-  23              	.LFB0:
-  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_ext_prg.c"
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"os_start_ext_prg.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.syntax unified
+  17              		.thumb
+  18              		.thumb_func
+  19              		.fpu softvfp
+  21              	os_signatur_valid:
+  22              	.LFB0:
+  23              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_ext_prg.c"
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** #include "os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** /*
    3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    os_StartExtPrg: to be called with supervisor rights!!
@@ -32,21 +31,21 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s 			page 1
    6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** 
    7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
    8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** {
-  25              		.loc 1 8 0
-  26              		.cfi_startproc
-  27              		@ args = 0, pretend = 0, frame = 16
-  28              		@ frame_needed = 1, uses_anonymous_args = 0
-  29              		@ link register save eliminated.
-  30 0000 80B4     		push	{r7}
-  31              		.cfi_def_cfa_offset 4
-  32              		.cfi_offset 7, -4
-  33 0002 85B0     		sub	sp, sp, #20
-  34              		.cfi_def_cfa_offset 24
-  35 0004 00AF     		add	r7, sp, #0
-  36              		.cfi_def_cfa_register 7
-  37 0006 F860     		str	r0, [r7, #12]
-  38 0008 B960     		str	r1, [r7, #8]
-  39 000a 7A60     		str	r2, [r7, #4]
+  24              		.loc 1 8 0
+  25              		.cfi_startproc
+  26              		@ args = 0, pretend = 0, frame = 16
+  27              		@ frame_needed = 1, uses_anonymous_args = 0
+  28              		@ link register save eliminated.
+  29 0000 80B4     		push	{r7}
+  30              		.cfi_def_cfa_offset 4
+  31              		.cfi_offset 7, -4
+  32 0002 85B0     		sub	sp, sp, #20
+  33              		.cfi_def_cfa_offset 24
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  36 0006 F860     		str	r0, [r7, #12]
+  37 0008 B960     		str	r1, [r7, #8]
+  38 000a 7A60     		str	r2, [r7, #4]
    9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /* no signature check currently wanted, because
   10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    1. Asymetric Signature calculation takes lots of time
   11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    2. Sym Hash + Asym Signature lack of official embedded implementation free to use
@@ -56,76 +55,75 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s 			page 1
   15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    ReferenceUnusedParameter(PrgSignatur);
   16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    ReferenceUnusedParameter(PrgSize);
   17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    return True;
-  40              		.loc 1 17 0
-  41 000c 0123     		movs	r3, #1
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s 			page 2
-
-
+  39              		.loc 1 17 0
+  40 000c 0123     		movs	r3, #1
   18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** }
-  42              		.loc 1 18 0
-  43 000e 1846     		mov	r0, r3
-  44 0010 1437     		adds	r7, r7, #20
-  45              		.cfi_def_cfa_offset 4
-  46 0012 BD46     		mov	sp, r7
-  47              		.cfi_def_cfa_register 13
-  48              		@ sp needed
-  49 0014 5DF8047B 		ldr	r7, [sp], #4
-  50              		.cfi_restore 7
-  51              		.cfi_def_cfa_offset 0
-  52 0018 7047     		bx	lr
-  53              		.cfi_endproc
-  54              	.LFE0:
-  56 001a 00BF     		.align	2
-  57              		.global	OS_StartExtPrg
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8UJ3cD.s 			page 2
+
+
+  41              		.loc 1 18 0
+  42 000e 1846     		mov	r0, r3
+  43 0010 1437     		adds	r7, r7, #20
+  44              		.cfi_def_cfa_offset 4
+  45 0012 BD46     		mov	sp, r7
+  46              		.cfi_def_cfa_register 13
+  47              		@ sp needed
+  48 0014 80BC     		pop	{r7}
+  49              		.cfi_restore 7
+  50              		.cfi_def_cfa_offset 0
+  51 0016 7047     		bx	lr
+  52              		.cfi_endproc
+  53              	.LFE0:
+  55              		.align	1
+  56              		.global	OS_StartExtPrg
+  57              		.syntax unified
   58              		.thumb
   59              		.thumb_func
-  61              	OS_StartExtPrg:
-  62              	.LFB1:
+  60              		.fpu softvfp
+  62              	OS_StartExtPrg:
+  63              	.LFB1:
   19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** void OS_StartExtPrg(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
   20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** {
-  63              		.loc 1 20 0
-  64              		.cfi_startproc
-  65              		@ args = 0, pretend = 0, frame = 16
-  66              		@ frame_needed = 1, uses_anonymous_args = 0
-  67 001c 80B5     		push	{r7, lr}
-  68              		.cfi_def_cfa_offset 8
-  69              		.cfi_offset 7, -8
-  70              		.cfi_offset 14, -4
-  71 001e 84B0     		sub	sp, sp, #16
-  72              		.cfi_def_cfa_offset 24
-  73 0020 00AF     		add	r7, sp, #0
-  74              		.cfi_def_cfa_register 7
-  75 0022 F860     		str	r0, [r7, #12]
-  76 0024 B960     		str	r1, [r7, #8]
-  77 0026 7A60     		str	r2, [r7, #4]
+  64              		.loc 1 20 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 16
+  67              		@ frame_needed = 1, uses_anonymous_args = 0
+  68 0018 80B5     		push	{r7, lr}
+  69              		.cfi_def_cfa_offset 8
+  70              		.cfi_offset 7, -8
+  71              		.cfi_offset 14, -4
+  72 001a 84B0     		sub	sp, sp, #16
+  73              		.cfi_def_cfa_offset 24
+  74 001c 00AF     		add	r7, sp, #0
+  75              		.cfi_def_cfa_register 7
+  76 001e F860     		str	r0, [r7, #12]
+  77 0020 B960     		str	r1, [r7, #8]
+  78 0022 7A60     		str	r2, [r7, #4]
   21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /* 1. Check Program Signatur and size -> is it a signed Programm? (Chain of Trust) */
   22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    if(os_signatur_valid(LoadProgAddr, PrgSignatur, PrgSize) == False)
-  78              		.loc 1 22 0
-  79 0028 F868     		ldr	r0, [r7, #12]
-  80 002a B968     		ldr	r1, [r7, #8]
-  81 002c 7A68     		ldr	r2, [r7, #4]
-  82 002e FFF7E7FF 		bl	os_signatur_valid
-  83 0032 0346     		mov	r3, r0
-  84 0034 002B     		cmp	r3, #0
-  85 0036 00D1     		bne	.L4
+  79              		.loc 1 22 0
+  80 0024 7A68     		ldr	r2, [r7, #4]
+  81 0026 B968     		ldr	r1, [r7, #8]
+  82 0028 F868     		ldr	r0, [r7, #12]
+  83 002a FFF7E9FF 		bl	os_signatur_valid
+  84 002e 0346     		mov	r3, r0
+  85 0030 002B     		cmp	r3, #0
+  86 0032 06D0     		beq	.L6
   23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    {
   24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****       return;
-  86              		.loc 1 24 0
-  87 0038 05E0     		b	.L3
-  88              	.L4:
   25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    }
   26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** 
   27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /* 2. Switch off MMU (system mpu and core mpu, perhaps more mpu parts need to be switched off...
   28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    LLF_MPU_DISABLE();
-  89              		.loc 1 28 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s 			page 3
-
-
-  90 003a FFF7FEFF 		bl	LLF_MPU_DISABLE
+  87              		.loc 1 28 0
+  88 0034 FFF7FEFF 		bl	LLF_MPU_DISABLE
   29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** 
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8UJ3cD.s 			page 3
+
+
   30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    LLF_MPU_SWITCH_OFF_ALL_REGIONS();
-  91              		.loc 1 30 0
-  92 003e FFF7FEFF 		bl	LLF_MPU_SWITCH_OFF_ALL_REGIONS
+  89              		.loc 1 30 0
+  90 0038 FFF7FEFF 		bl	LLF_MPU_SWITCH_OFF_ALL_REGIONS
   31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    
   32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** 
   33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /* 3. Start ExtPrg */
@@ -135,33 +133,40 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s 			page 1
   37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    Might cause non alignment failures, in case the code in not aligned correctly
   38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    */
   39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    LoadProgAddr();
-  93              		.loc 1 39 0
-  94 0042 FB68     		ldr	r3, [r7, #12]
-  95 0044 9847     		blx	r3
-  96              	.L3:
+  91              		.loc 1 39 0
+  92 003c FB68     		ldr	r3, [r7, #12]
+  93 003e 9847     		blx	r3
+  94              	.LVL0:
+  95 0040 00E0     		b	.L3
+  96              	.L6:
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    }
+  97              		.loc 1 24 0
+  98 0042 00BF     		nop
+  99              	.L3:
   40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** }...
-  97              		.loc 1 40 0
-  98 0046 1037     		adds	r7, r7, #16
-  99              		.cfi_def_cfa_offset 8
- 100 0048 BD46     		mov	sp, r7
- 101              		.cfi_def_cfa_register 13
- 102              		@ sp needed
- 103 004a 80BD     		pop	{r7, pc}
- 104              		.cfi_endproc
- 105              	.LFE1:
- 107              	.Letext0:
- 108              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
- 109              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s 			page 4
+ 100              		.loc 1 40 0
+ 101 0044 1037     		adds	r7, r7, #16
+ 102              		.cfi_def_cfa_offset 8
+ 103 0046 BD46     		mov	sp, r7
+ 104              		.cfi_def_cfa_register 13
+ 105              		@ sp needed
+ 106 0048 80BD     		pop	{r7, pc}
+ 107              		.cfi_endproc
+ 108              	.LFE1:
+ 110              	.Letext0:
+ 111              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 112              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ 113              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 114              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8UJ3cD.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_ext_prg.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s:22     .text:00000000 os_signatur_valid
-C:\Users\PRESID~1\AppData\Local\Temp\ccyP34rh.s:61     .text:0000001c OS_StartExtPrg
-                     .debug_frame:00000010 $d
-                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+C:\Users\PRESID~1\AppData\Local\Temp\cc8UJ3cD.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cc8UJ3cD.s:21     .text:00000000 os_signatur_valid
+C:\Users\PRESID~1\AppData\Local\Temp\cc8UJ3cD.s:62     .text:00000018 OS_StartExtPrg
+                           .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.dc27b9b2168d1784dc01b241752b07b2
                            .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986

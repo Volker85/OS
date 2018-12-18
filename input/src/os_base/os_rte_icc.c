@@ -71,7 +71,7 @@ uint8 SEND_DATA(CoreID_t Core_id_transmitter, CoreID_t Core_id_receiver, uint32 
    ReferenceUnusedParameter(Core_id_receiver);
    ReferenceUnusedParameter(length);
    ReferenceUnusedParameter(data);
-   /*#warn "SEND_DATA() not yet implemented"*/
+   /*TODO "SEND_DATA() not yet implemented"*/
    return True;
 }
 /*
@@ -91,7 +91,7 @@ uint8 SEND_PACKAGE(CoreID_t Core_id_transmitter, CoreID_t Core_id_receiver, uint
    ReferenceUnusedParameter(Core_id_receiver);
    ReferenceUnusedParameter(length);
    ReferenceUnusedParameter(package);
-   /*#warn "SEND_PACKAGE() not yet implemented"*/
+   /*TODO "SEND_PACKAGE() not yet implemented"*/
    return True;
 }
 
@@ -121,7 +121,7 @@ uint8 SEND_FRAME(CoreID_t Core_id_transmitter, CoreID_t Core_id_receiver, uint32
    ReferenceUnusedParameter(Core_id_receiver);
    ReferenceUnusedParameter(length);
    ReferenceUnusedParameter(frame);
-   /*#warn "SEND_FRAME() not yet implemented"*/
+   /*TODO "SEND_FRAME() not yet implemented"*/
    return True;
 }
 

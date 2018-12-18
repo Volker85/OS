@@ -1,198 +1,209 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m4
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 6
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.thumb
-  14              		.file	"led.c"
-  15              		.text
-  16              	.Ltext0:
-  17              		.cfi_sections	.debug_frame
-  18              		.align	2
-  19              		.global	USER_LED_INIT
-  20              		.thumb
-  21              		.thumb_func
-  23              	USER_LED_INIT:
-  24              	.LFB0:
-  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.c"
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"led.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.global	USER_LED_INIT
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  20              		.fpu softvfp
+  22              	USER_LED_INIT:
+  23              	.LFB0:
+  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.c"
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** #include "..\os_base\os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** #include "led.h"
-   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** /*#warn "no LED code implemented"*/
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** /*TODO "no LED code implemented"*/
    4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** 
    5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** void USER_LED_INIT(led_t Led)
    6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** {
-  26              		.loc 1 6 0
-  27              		.cfi_startproc
-  28              		@ args = 0, pretend = 0, frame = 8
-  29              		@ frame_needed = 1, uses_anonymous_args = 0
-  30              		@ link register save eliminated.
-  31 0000 80B4     		push	{r7}
-  32              		.cfi_def_cfa_offset 4
-  33              		.cfi_offset 7, -4
-  34 0002 83B0     		sub	sp, sp, #12
-  35              		.cfi_def_cfa_offset 16
-  36 0004 00AF     		add	r7, sp, #0
-  37              		.cfi_def_cfa_register 7
-  38 0006 0346     		mov	r3, r0
-  39 0008 FB71     		strb	r3, [r7, #7]
+  25              		.loc 1 6 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 8
+  28              		@ frame_needed = 1, uses_anonymous_args = 0
+  29              		@ link register save eliminated.
+  30 0000 80B4     		push	{r7}
+  31              		.cfi_def_cfa_offset 4
+  32              		.cfi_offset 7, -4
+  33 0002 83B0     		sub	sp, sp, #12
+  34              		.cfi_def_cfa_offset 16
+  35 0004 00AF     		add	r7, sp, #0
+  36              		.cfi_def_cfa_register 7
+  37 0006 0346     		mov	r3, r0
+  38 0008 FB71     		strb	r3, [r7, #7]
    7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c ****    ReferenceUnusedParameter(Led);
    8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** }
-  40              		.loc 1 8 0
-  41 000a 0C37     		adds	r7, r7, #12
+  39              		.loc 1 8 0
+  40 000a 00BF     		nop
+  41 000c 0C37     		adds	r7, r7, #12
   42              		.cfi_def_cfa_offset 4
-  43 000c BD46     		mov	sp, r7
+  43 000e BD46     		mov	sp, r7
   44              		.cfi_def_cfa_register 13
   45              		@ sp needed
-  46 000e 5DF8047B 		ldr	r7, [sp], #4
+  46 0010 80BC     		pop	{r7}
   47              		.cfi_restore 7
   48              		.cfi_def_cfa_offset 0
   49 0012 7047     		bx	lr
   50              		.cfi_endproc
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s 			page 2
 
 
   51              	.LFE0:
-  53              		.align	2
+  53              		.align	1
   54              		.global	USER_LED_ON
-  55              		.thumb
-  56              		.thumb_func
-  58              	USER_LED_ON:
-  59              	.LFB1:
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+  58              		.fpu softvfp
+  60              	USER_LED_ON:
+  61              	.LFB1:
    9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** 
   10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** void USER_LED_ON(led_t Led)
   11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** {
-  60              		.loc 1 11 0
-  61              		.cfi_startproc
-  62              		@ args = 0, pretend = 0, frame = 8
-  63              		@ frame_needed = 1, uses_anonymous_args = 0
-  64              		@ link register save eliminated.
-  65 0014 80B4     		push	{r7}
-  66              		.cfi_def_cfa_offset 4
-  67              		.cfi_offset 7, -4
-  68 0016 83B0     		sub	sp, sp, #12
-  69              		.cfi_def_cfa_offset 16
-  70 0018 00AF     		add	r7, sp, #0
-  71              		.cfi_def_cfa_register 7
-  72 001a 0346     		mov	r3, r0
-  73 001c FB71     		strb	r3, [r7, #7]
+  62              		.loc 1 11 0
+  63              		.cfi_startproc
+  64              		@ args = 0, pretend = 0, frame = 8
+  65              		@ frame_needed = 1, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0014 80B4     		push	{r7}
+  68              		.cfi_def_cfa_offset 4
+  69              		.cfi_offset 7, -4
+  70 0016 83B0     		sub	sp, sp, #12
+  71              		.cfi_def_cfa_offset 16
+  72 0018 00AF     		add	r7, sp, #0
+  73              		.cfi_def_cfa_register 7
+  74 001a 0346     		mov	r3, r0
+  75 001c FB71     		strb	r3, [r7, #7]
   12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c ****    ReferenceUnusedParameter(Led);
   13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** }
-  74              		.loc 1 13 0
-  75 001e 0C37     		adds	r7, r7, #12
-  76              		.cfi_def_cfa_offset 4
-  77 0020 BD46     		mov	sp, r7
-  78              		.cfi_def_cfa_register 13
-  79              		@ sp needed
-  80 0022 5DF8047B 		ldr	r7, [sp], #4
-  81              		.cfi_restore 7
-  82              		.cfi_def_cfa_offset 0
-  83 0026 7047     		bx	lr
-  84              		.cfi_endproc
-  85              	.LFE1:
-  87              		.align	2
-  88              		.global	USER_LED_OFF
-  89              		.thumb
-  90              		.thumb_func
-  92              	USER_LED_OFF:
-  93              	.LFB2:
+  76              		.loc 1 13 0
+  77 001e 00BF     		nop
+  78 0020 0C37     		adds	r7, r7, #12
+  79              		.cfi_def_cfa_offset 4
+  80 0022 BD46     		mov	sp, r7
+  81              		.cfi_def_cfa_register 13
+  82              		@ sp needed
+  83 0024 80BC     		pop	{r7}
+  84              		.cfi_restore 7
+  85              		.cfi_def_cfa_offset 0
+  86 0026 7047     		bx	lr
+  87              		.cfi_endproc
+  88              	.LFE1:
+  90              		.align	1
+  91              		.global	USER_LED_OFF
+  92              		.syntax unified
+  93              		.thumb
+  94              		.thumb_func
+  95              		.fpu softvfp
+  97              	USER_LED_OFF:
+  98              	.LFB2:
   14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** 
   15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** void USER_LED_OFF(led_t Led)
   16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** {
-  94              		.loc 1 16 0
-  95              		.cfi_startproc
-  96              		@ args = 0, pretend = 0, frame = 8
-  97              		@ frame_needed = 1, uses_anonymous_args = 0
-  98              		@ link register save eliminated.
-  99 0028 80B4     		push	{r7}
- 100              		.cfi_def_cfa_offset 4
- 101              		.cfi_offset 7, -4
- 102 002a 83B0     		sub	sp, sp, #12
- 103              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s 			page 3
+  99              		.loc 1 16 0
+ 100              		.cfi_startproc
+ 101              		@ args = 0, pretend = 0, frame = 8
+ 102              		@ frame_needed = 1, uses_anonymous_args = 0
+ 103              		@ link register save eliminated.
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s 			page 3
 
 
- 104 002c 00AF     		add	r7, sp, #0
- 105              		.cfi_def_cfa_register 7
- 106 002e 0346     		mov	r3, r0
- 107 0030 FB71     		strb	r3, [r7, #7]
+ 104 0028 80B4     		push	{r7}
+ 105              		.cfi_def_cfa_offset 4
+ 106              		.cfi_offset 7, -4
+ 107 002a 83B0     		sub	sp, sp, #12
+ 108              		.cfi_def_cfa_offset 16
+ 109 002c 00AF     		add	r7, sp, #0
+ 110              		.cfi_def_cfa_register 7
+ 111 002e 0346     		mov	r3, r0
+ 112 0030 FB71     		strb	r3, [r7, #7]
   17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c ****    ReferenceUnusedParameter(Led);
   18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** }
- 108              		.loc 1 18 0
- 109 0032 0C37     		adds	r7, r7, #12
- 110              		.cfi_def_cfa_offset 4
- 111 0034 BD46     		mov	sp, r7
- 112              		.cfi_def_cfa_register 13
- 113              		@ sp needed
- 114 0036 5DF8047B 		ldr	r7, [sp], #4
- 115              		.cfi_restore 7
- 116              		.cfi_def_cfa_offset 0
- 117 003a 7047     		bx	lr
- 118              		.cfi_endproc
- 119              	.LFE2:
- 121              		.align	2
- 122              		.global	USER_LED_TOGGLE
- 123              		.thumb
- 124              		.thumb_func
- 126              	USER_LED_TOGGLE:
- 127              	.LFB3:
+ 113              		.loc 1 18 0
+ 114 0032 00BF     		nop
+ 115 0034 0C37     		adds	r7, r7, #12
+ 116              		.cfi_def_cfa_offset 4
+ 117 0036 BD46     		mov	sp, r7
+ 118              		.cfi_def_cfa_register 13
+ 119              		@ sp needed
+ 120 0038 80BC     		pop	{r7}
+ 121              		.cfi_restore 7
+ 122              		.cfi_def_cfa_offset 0
+ 123 003a 7047     		bx	lr
+ 124              		.cfi_endproc
+ 125              	.LFE2:
+ 127              		.align	1
+ 128              		.global	USER_LED_TOGGLE
+ 129              		.syntax unified
+ 130              		.thumb
+ 131              		.thumb_func
+ 132              		.fpu softvfp
+ 134              	USER_LED_TOGGLE:
+ 135              	.LFB3:
   19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** 
   20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** void USER_LED_TOGGLE(led_t Led)
   21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** {
- 128              		.loc 1 21 0
- 129              		.cfi_startproc
- 130              		@ args = 0, pretend = 0, frame = 8
- 131              		@ frame_needed = 1, uses_anonymous_args = 0
- 132              		@ link register save eliminated.
- 133 003c 80B4     		push	{r7}
- 134              		.cfi_def_cfa_offset 4
- 135              		.cfi_offset 7, -4
- 136 003e 83B0     		sub	sp, sp, #12
- 137              		.cfi_def_cfa_offset 16
- 138 0040 00AF     		add	r7, sp, #0
- 139              		.cfi_def_cfa_register 7
- 140 0042 0346     		mov	r3, r0
- 141 0044 FB71     		strb	r3, [r7, #7]
+ 136              		.loc 1 21 0
+ 137              		.cfi_startproc
+ 138              		@ args = 0, pretend = 0, frame = 8
+ 139              		@ frame_needed = 1, uses_anonymous_args = 0
+ 140              		@ link register save eliminated.
+ 141 003c 80B4     		push	{r7}
+ 142              		.cfi_def_cfa_offset 4
+ 143              		.cfi_offset 7, -4
+ 144 003e 83B0     		sub	sp, sp, #12
+ 145              		.cfi_def_cfa_offset 16
+ 146 0040 00AF     		add	r7, sp, #0
+ 147              		.cfi_def_cfa_register 7
+ 148 0042 0346     		mov	r3, r0
+ 149 0044 FB71     		strb	r3, [r7, #7]
   22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c ****    ReferenceUnusedParameter(Led);   
   23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** }...
- 142              		.loc 1 23 0
- 143 0046 0C37     		adds	r7, r7, #12
- 144              		.cfi_def_cfa_offset 4
- 145 0048 BD46     		mov	sp, r7
- 146              		.cfi_def_cfa_register 13
- 147              		@ sp needed
- 148 004a 5DF8047B 		ldr	r7, [sp], #4
- 149              		.cfi_restore 7
- 150              		.cfi_def_cfa_offset 0
- 151 004e 7047     		bx	lr
- 152              		.cfi_endproc
- 153              	.LFE3:
- 155              	.Letext0:
- 156              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s 			page 4
+ 150              		.loc 1 23 0
+ 151 0046 00BF     		nop
+ 152 0048 0C37     		adds	r7, r7, #12
+ 153              		.cfi_def_cfa_offset 4
+ 154 004a BD46     		mov	sp, r7
+ 155              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s 			page 4
 
 
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s 			page 5
+ 156              		@ sp needed
+ 157 004c 80BC     		pop	{r7}
+ 158              		.cfi_restore 7
+ 159              		.cfi_def_cfa_offset 0
+ 160 004e 7047     		bx	lr
+ 161              		.cfi_endproc
+ 162              	.LFE3:
+ 164              	.Letext0:
+ 165              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 166              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 167              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ 168              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 led.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s:23     .text:00000000 USER_LED_INIT
-C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s:58     .text:00000014 USER_LED_ON
-C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s:92     .text:00000028 USER_LED_OFF
-C:\Users\PRESID~1\AppData\Local\Temp\ccy2wYkc.s:126    .text:0000003c USER_LED_TOGGLE
-                     .debug_frame:00000010 $d
-                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s:22     .text:00000000 USER_LED_INIT
+C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s:60     .text:00000014 USER_LED_ON
+C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s:97     .text:00000028 USER_LED_OFF
+C:\Users\PRESID~1\AppData\Local\Temp\cchJMsGu.s:134    .text:0000003c USER_LED_TOGGLE
+                           .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.dc27b9b2168d1784dc01b241752b07b2
                            .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986

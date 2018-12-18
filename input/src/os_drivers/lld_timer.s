@@ -23,17 +23,17 @@ From the AAPCS, §5.1.1:
        
       
 LLF_UP_CNT_TIMER_32:
-        #warn "LLF_UP_CNT_TIMER_32 not implemented yet"
+        #TODO "LLF_UP_CNT_TIMER_32 not implemented yet"
         LDR R0, =0x00 
         MOV R15, R14
 
 LLF_ADD_2_TCMP:
-        #warn "LLF_UP_CNT_TIMER_32 not implemented yet"
+        #TODO "LLF_UP_CNT_TIMER_32 not implemented yet"
         # R0 holds the value_us
         MOV R15, R14
 
 LLF_TCMP1_CONFIG:
-        #warn "LLF_TCMP1_CONFIG not implemented yet"   
+        #TODO "LLF_TCMP1_CONFIG not implemented yet"   
         #error "needs to be implemented to allow task dispatcher to run"
         #setup the sys tick timer 
         MOV R15, R14

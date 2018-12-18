@@ -1,67 +1,69 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnTRigk.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccy2fyUO.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m4
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 6
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.thumb
-  14              		.file	"os_start_init_sw.c"
-  15              		.text
-  16              	.Ltext0:
-  17              		.cfi_sections	.debug_frame
-  18              		.align	2
-  19              		.global	OS_INIT_SW
-  20              		.thumb
-  21              		.thumb_func
-  23              	OS_INIT_SW:
-  24              	.LFB0:
-  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_sw.c"
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"os_start_init_sw.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.global	OS_INIT_SW
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  20              		.fpu softvfp
+  22              	OS_INIT_SW:
+  23              	.LFB0:
+  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_sw.c"
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c **** #include "os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c **** void OS_INIT_SW(void)
    3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c **** {
-  26              		.loc 1 3 0
-  27              		.cfi_startproc
-  28              		@ args = 0, pretend = 0, frame = 0
-  29              		@ frame_needed = 1, uses_anonymous_args = 0
-  30              		@ link register save eliminated.
-  31 0000 80B4     		push	{r7}
-  32              		.cfi_def_cfa_offset 4
-  33              		.cfi_offset 7, -4
-  34 0002 00AF     		add	r7, sp, #0
-  35              		.cfi_def_cfa_register 7
+  25              		.loc 1 3 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 0
+  28              		@ frame_needed = 1, uses_anonymous_args = 0
+  29              		@ link register save eliminated.
+  30 0000 80B4     		push	{r7}
+  31              		.cfi_def_cfa_offset 4
+  32              		.cfi_offset 7, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              		.cfi_def_cfa_register 7
    4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    /* RAM clear done in OS_INIT_MC (because no RAM usage allowed and possible before clearing the R
    5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    /* every block which needs initialisation part from 0x00 value needs to be initialized here */
-   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    /*#warn missing call of component init functions"*/
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    /*TODO missing call of component init functions"*/
    7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c **** }
-  36              		.loc 1 7 0
-  37 0004 BD46     		mov	sp, r7
+  35              		.loc 1 7 0
+  36 0004 00BF     		nop
+  37 0006 BD46     		mov	sp, r7
   38              		.cfi_def_cfa_register 13
   39              		@ sp needed
-  40 0006 5DF8047B 		ldr	r7, [sp], #4
+  40 0008 80BC     		pop	{r7}
   41              		.cfi_restore 7
   42              		.cfi_def_cfa_offset 0
   43 000a 7047     		bx	lr
   44              		.cfi_endproc
   45              	.LFE0:
   47              	.Letext0:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnTRigk.s 			page 2
+  48              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  49              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  50              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccy2fyUO.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_init_sw.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccnTRigk.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccnTRigk.s:23     .text:00000000 OS_INIT_SW
-                     .debug_frame:00000010 $d
-                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+C:\Users\PRESID~1\AppData\Local\Temp\ccy2fyUO.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccy2fyUO.s:22     .text:00000000 OS_INIT_SW
+                           .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.dc27b9b2168d1784dc01b241752b07b2
                            .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986

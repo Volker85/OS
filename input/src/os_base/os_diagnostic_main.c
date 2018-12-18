@@ -2,5 +2,5 @@
 
 void OS_DIAGNOSTIC_MAIN(void)
 {
-   /*#warn "OS_DIAGNOSTIC_MAIN() not yet implemented"*/
+   /*TODO "OS_DIAGNOSTIC_MAIN() not yet implemented"*/
 }

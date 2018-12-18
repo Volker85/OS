@@ -1,64 +1,66 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweXd0L.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccKW4lSf.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m4
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 6
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.thumb
-  14              		.file	"os_init_task_system.c"
-  15              		.text
-  16              	.Ltext0:
-  17              		.cfi_sections	.debug_frame
-  18              		.align	2
-  19              		.global	OS_INIT_TASK_SYSTEM
-  20              		.thumb
-  21              		.thumb_func
-  23              	OS_INIT_TASK_SYSTEM:
-  24              	.LFB0:
-  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.c"
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"os_init_task_system.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.global	OS_INIT_TASK_SYSTEM
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  20              		.fpu softvfp
+  22              	OS_INIT_TASK_SYSTEM:
+  23              	.LFB0:
+  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.c"
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c **** #include "os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c **** #include "os_task_scheduler.h"
    3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c **** 
    4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c **** void OS_INIT_TASK_SYSTEM(void)
    5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c **** {
-  26              		.loc 1 5 0
-  27              		.cfi_startproc
-  28              		@ args = 0, pretend = 0, frame = 0
-  29              		@ frame_needed = 1, uses_anonymous_args = 0
-  30 0000 80B5     		push	{r7, lr}
-  31              		.cfi_def_cfa_offset 8
-  32              		.cfi_offset 7, -8
-  33              		.cfi_offset 14, -4
-  34 0002 00AF     		add	r7, sp, #0
-  35              		.cfi_def_cfa_register 7
+  25              		.loc 1 5 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 0
+  28              		@ frame_needed = 1, uses_anonymous_args = 0
+  29 0000 80B5     		push	{r7, lr}
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              		.cfi_def_cfa_register 7
    6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c ****    /* Stack, Task-Function, TaskPrio, Interruptable, CoreId */
    7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c ****    OS_INIT_TASKS();
-  36              		.loc 1 7 0
-  37 0004 FFF7FEFF 		bl	OS_INIT_TASKS
+  35              		.loc 1 7 0
+  36 0004 FFF7FEFF 		bl	OS_INIT_TASKS
    8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c **** }
-  38              		.loc 1 8 0
-  39 0008 80BD     		pop	{r7, pc}
+  37              		.loc 1 8 0
+  38 0008 00BF     		nop
+  39 000a 80BD     		pop	{r7, pc}
   40              		.cfi_endproc
   41              	.LFE0:
   43              	.Letext0:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweXd0L.s 			page 2
+  44              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  45              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  46              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccKW4lSf.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_init_task_system.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccweXd0L.s:18     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccweXd0L.s:23     .text:00000000 OS_INIT_TASK_SYSTEM
-                     .debug_frame:00000010 $d
-                           .group:00000000 wm4.0.718a663455c795daf5c6dd176ef70bbe
+C:\Users\PRESID~1\AppData\Local\Temp\ccKW4lSf.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccKW4lSf.s:22     .text:00000000 OS_INIT_TASK_SYSTEM
+                           .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.dc27b9b2168d1784dc01b241752b07b2
                            .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986

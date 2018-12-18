@@ -7,10 +7,10 @@ void OS_INIT_MC(void)
 
    /* 2. all MCU IO*/
    /* configure  SPI, GPIO, UART, CAN,  etc */
-   /*#warn "TODO low prio" */
+   /*TODO "TODO low prio" */
 
    /* test SPI, I2C,  GPIO, etc */
-   /*#warn "TODO low prio" */
+   /*TODO "TODO low prio" */
 
 
 
