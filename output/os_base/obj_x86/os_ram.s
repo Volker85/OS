@@ -15,12 +15,14 @@ Ltext0:
 	.comm	_VAR_BUS_FAULT_STATUS_REG, 4, 2
 	.comm	_LINK_REGISTER_HANDLER, 4, 2
 	.comm	_BACKUP_SYSTICK_CURRENT_VAL_REG, 4, 2
+	.comm	_RAM_CHECK_FAILURE_DETECTED, 4, 2
+	.comm	_RAM_CHECK_FAILURE_ADDR, 4, 2
 Letext0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_ram.c"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x310
+	.long	0x35c
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -198,6 +200,22 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_BACKUP_SYSTICK_CURRENT_VAL_REG
+	.uleb128 0x6
+	.ascii "RAM_CHECK_FAILURE_DETECTED\0"
+	.byte	0x2
+	.byte	0x16
+	.long	0x18f
+	.uleb128 0x5
+	.byte	0x3
+	.long	_RAM_CHECK_FAILURE_DETECTED
+	.uleb128 0x6
+	.ascii "RAM_CHECK_FAILURE_ADDR\0"
+	.byte	0x2
+	.byte	0x17
+	.long	0x18f
+	.uleb128 0x5
+	.byte	0x3
+	.long	_RAM_CHECK_FAILURE_ADDR
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:

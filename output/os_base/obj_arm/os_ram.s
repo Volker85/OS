@@ -26,6 +26,8 @@
 	.comm	VAR_BUS_FAULT_STATUS_REG,4,4
 	.comm	LINK_REGISTER_HANDLER,4,4
 	.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
+	.comm	RAM_CHECK_FAILURE_DETECTED,4,4
+	.comm	RAM_CHECK_FAILURE_ADDR,4,4
 .Letext0:
 	.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
@@ -33,15 +35,15 @@
 	.file 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x4a9
+	.4byte	0x4cb
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF563
-	.byte	0x1
-	.4byte	.LASF564
 	.4byte	.LASF565
+	.byte	0x1
+	.4byte	.LASF566
+	.4byte	.LASF567
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macro0
 	.uleb128 0x2
@@ -172,7 +174,7 @@
 	.byte	0x19
 	.4byte	0x57
 	.uleb128 0x9
-	.4byte	.LASF566
+	.4byte	.LASF568
 	.byte	0x7
 	.byte	0x1
 	.4byte	0x2c
@@ -629,6 +631,22 @@
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	BACKUP_SYSTICK_CURRENT_VAL_REG
+	.uleb128 0x15
+	.4byte	.LASF563
+	.byte	0x4
+	.byte	0x16
+	.4byte	0x57
+	.uleb128 0x5
+	.byte	0x3
+	.4byte	RAM_CHECK_FAILURE_DETECTED
+	.uleb128 0x15
+	.4byte	.LASF564
+	.byte	0x4
+	.byte	0x17
+	.4byte	0x57
+	.uleb128 0x5
+	.byte	0x3
+	.4byte	RAM_CHECK_FAILURE_ADDR
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -870,6 +888,23 @@
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0xb
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x15
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x3f
+	.uleb128 0x19
 	.uleb128 0x2
 	.uleb128 0x18
 	.byte	0
@@ -2547,7 +2582,7 @@
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF563:
+.LASF565:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -2801,11 +2836,11 @@
 	.ascii	"__DA_FBIT__ 31\000"
 .LASF402:
 	.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
-.LASF513:
-	.ascii	"OS_MAIN_STACK\000"
+.LASF435:
+	.ascii	"__USES_INITFINI__ 1\000"
 .LASF232:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
-.LASF564:
+.LASF566:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_ram.c\000"
 .LASF554:
@@ -2844,8 +2879,8 @@
 	.ascii	"__FLT_RADIX__ 2\000"
 .LASF287:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
-.LASF171:
-	.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
+.LASF563:
+	.ascii	"RAM_CHECK_FAILURE_DETECTED\000"
 .LASF307:
 	.ascii	"__UACCUM_MIN__ 0.0UK\000"
 .LASF274:
@@ -2909,8 +2944,8 @@
 	.ascii	"__DEC128_MANT_DIG__ 34\000"
 .LASF429:
 	.ascii	"__ARM_ARCH_EXT_IDIV__ 1\000"
-.LASF395:
-	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
+.LASF171:
+	.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
 .LASF289:
 	.ascii	"__ULLFRACT_EPSILON__ 0x1P-64ULLR\000"
 .LASF120:
@@ -2959,7 +2994,7 @@
 	.ascii	"__FLT32_DECIMAL_DIG__ 9\000"
 .LASF553:
 	.ascii	"task_state\000"
-.LASF566:
+.LASF568:
 	.ascii	"task_state_e\000"
 .LASF83:
 	.ascii	"__WCHAR_WIDTH__ 32\000"
@@ -3017,8 +3052,8 @@
 	.ascii	"VAR_FAULT_STATUS_REG\000"
 .LASF296:
 	.ascii	"__USACCUM_IBIT__ 8\000"
-.LASF266:
-	.ascii	"__UFRACT_IBIT__ 0\000"
+.LASF513:
+	.ascii	"OS_MAIN_STACK\000"
 .LASF425:
 	.ascii	"__THUMB_INTERWORK__ 1\000"
 .LASF555:
@@ -3135,19 +3170,17 @@
 	.ascii	"__TQ_IBIT__ 0\000"
 .LASF358:
 	.ascii	"__UHA_FBIT__ 8\000"
-.LASF435:
-	.ascii	"__USES_INITFINI__ 1\000"
 .LASF457:
 	.ascii	"Rejected 0\000"
-.LASF565:
+.LASF567:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
 	.ascii	"__ELF__ 1\000"
 .LASF522:
 	.ascii	"VAR_BUS_FAULT_STATUS_REG\000"
-.LASF453:
-	.ascii	"True 1\000"
+.LASF395:
+	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
 .LASF318:
 	.ascii	"__ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK\000"
 .LASF107:
@@ -3250,8 +3283,8 @@
 	.ascii	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF303:
 	.ascii	"__ACCUM_MAX__ 0X7FFFFFFFP-15K\000"
-.LASF86:
-	.ascii	"__SIZE_WIDTH__ 32\000"
+.LASF266:
+	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF229:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
 .LASF447:
@@ -3346,6 +3379,8 @@
 	.ascii	"STM32F407VG 1\000"
 .LASF430:
 	.ascii	"__ARM_FEATURE_IDIV 1\000"
+.LASF453:
+	.ascii	"True 1\000"
 .LASF223:
 	.ascii	"__FLT32X_MIN__ 2.2250738585072014e-308F32x\000"
 .LASF138:
@@ -3458,6 +3493,8 @@
 	.ascii	"long unsigned int\000"
 .LASF378:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
+.LASF564:
+	.ascii	"RAM_CHECK_FAILURE_ADDR\000"
 .LASF20:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
 .LASF6:
@@ -3667,6 +3704,8 @@
 	.ascii	"__DEC64_MIN__ 1E-383DD\000"
 .LASF543:
 	.ascii	"WaitActUntil\000"
+.LASF86:
+	.ascii	"__SIZE_WIDTH__ 32\000"
 .LASF89:
 	.ascii	"__UINTMAX_MAX__ 0xffffffffffffffffULL\000"
 .LASF37:

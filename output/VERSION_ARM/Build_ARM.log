@@ -1,11 +1,8 @@
 "Target_ARM" 
-18.12.2018 21:36:07,16 
+19.12.2018 19:05:20,85 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s: Assembler messages:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:216: Error: invalid pseudo operation -- `str R6,=RAM_CHECK_FAILURE_DETECTED'
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:217: Error: invalid pseudo operation -- `str R7,=RAM_CHECK_FAILURE_ADDR'
 "assemble it" 
    1              		.cpu cortex-m4
    2              		.eabi_attribute 20, 1
@@ -191,5 +188,3 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_reset.s:
  167              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
  168              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h"
 "link it" 
-d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: cannot find os_exception_reset.o
-collect2.exe: error: ld returned 1 exit status

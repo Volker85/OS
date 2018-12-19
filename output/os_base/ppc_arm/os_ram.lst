@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cckrNGUe.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccK1qUo9.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -29,12 +29,14 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cckrNGUe.s 			page 1
   26              		.comm	VAR_BUS_FAULT_STATUS_REG,4,4
   27              		.comm	LINK_REGISTER_HANDLER,4,4
   28              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
-  29              	.Letext0:
-  30              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  31              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  32              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  33              		.file 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cckrNGUe.s 			page 2
+  29              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
+  30              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
+  31              	.Letext0:
+  32              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  33              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  34              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  35              		.file 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccK1qUo9.s 			page 2
 
 
 DEFINED SYMBOLS
@@ -53,6 +55,8 @@ DEFINED SYMBOLS
                             *COM*:00000004 VAR_BUS_FAULT_STATUS_REG
                             *COM*:00000004 LINK_REGISTER_HANDLER
                             *COM*:00000004 BACKUP_SYSTICK_CURRENT_VAL_REG
+                            *COM*:00000004 RAM_CHECK_FAILURE_DETECTED
+                            *COM*:00000004 RAM_CHECK_FAILURE_ADDR
                            .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.dc27b9b2168d1784dc01b241752b07b2

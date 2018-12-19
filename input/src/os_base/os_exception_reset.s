@@ -213,8 +213,10 @@ ram_check_failed:
         B loop_finished
 loop_finished:
         #store failure marker and address
-        STR R6,=RAM_CHECK_FAILURE_DETECTED
-        STR R7,=RAM_CHECK_FAILURE_ADDR
+        LDR R8,=RAM_CHECK_FAILURE_DETECTED
+        LDR R9,=RAM_CHECK_FAILURE_ADDR
+        STRB R6,[R8]
+        STRB R7,[R9]
         #LLF_INT_ENABLE();
         B LLF_INT_ENABLE
         #; Move R14 (LR) into R15 (PC)

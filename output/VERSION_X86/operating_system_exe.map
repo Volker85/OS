@@ -200,6 +200,8 @@ Common symbol       size              file
 
 RAM_BLOCK_C03_C02   0x100             E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
 RAM_BLOCK_C01_C02   0x100             E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
+RAM_CHECK_FAILURE_ADDR
+                    0x4               E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
 __DTOR_LIST__       0x8               d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_ctors.o)
 RAM_BLOCK_C02_C02   0x100             E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
 RAM_BLOCK_C00_C02   0x100             E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
@@ -239,6 +241,8 @@ VAR_BUS_FAULT_STATUS_REG
                     0x4               E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
 LINK_REGISTER_HANDLER
                     0x4               E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
+RAM_CHECK_FAILURE_DETECTED
+                    0x4               E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
 BACKUP_SYSTICK_CURRENT_VAL_REG
                     0x4               E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
 RAM_BLOCK_C03_C01   0x100             E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
@@ -251,7 +255,7 @@ Discarded input sections
 
  .drectve       0x00000000       0x1c d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtbegin.o
  .drectve       0x00000000       0x8c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
- .drectve       0x00000000      0x204 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
+ .drectve       0x00000000      0x254 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
  .drectve       0x00000000      0x220 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
  .drectve       0x00000000       0x3c d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_ctors.o)
  .text          0x00000000        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00099.o)
@@ -1161,8 +1165,9 @@ LOAD d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
                 0x004103d0                REGISTER_R2
                 0x004103d4                TASK_PTR
  *fill*         0x004103e8       0x18 
- COMMON         0x00410400     0x296c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
-                0x00410400                VAR_USAGE_FAULT_STATUS_REG
+ COMMON         0x00410400     0x2970 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
+                0x00410400                RAM_CHECK_FAILURE_ADDR
+                0x00410404                VAR_USAGE_FAULT_STATUS_REG
                 0x00410420                OS_STACK
                 0x00410520                VAR_MEM_MANAG_FAULT_STATUS_REG
                 0x00410524                VAR_BUS_FAULT_ADDR_REG
@@ -1175,8 +1180,9 @@ LOAD d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
                 0x00412c60                OS_MAIN_STACK
                 0x00412d60                VAR_BUS_FAULT_STATUS_REG
                 0x00412d64                LINK_REGISTER_HANDLER
-                0x00412d68                BACKUP_SYSTICK_CURRENT_VAL_REG
- *fill*         0x00412d6c       0x14 
+                0x00412d68                RAM_CHECK_FAILURE_DETECTED
+                0x00412d6c                BACKUP_SYSTICK_CURRENT_VAL_REG
+ *fill*         0x00412d70       0x10 
  COMMON         0x00412d80     0x1000 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
                 0x00412d80                RAM_BLOCK_C03_C02
                 0x00412e80                RAM_BLOCK_C01_C02
@@ -1692,7 +1698,7 @@ LOAD d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
 .zdebug_pubtypes
  *(.zdebug_pubtypes)
 
-.debug_info     0x00418000     0x5600
+.debug_info     0x00418000     0x5800
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00418000      0x3fd E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_common.o
  .debug_info    0x004183fd       0xd7 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_driver_hook.o
@@ -1713,18 +1719,18 @@ LOAD d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
  .debug_info    0x0041a193      0xb45 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
  .debug_info    0x0041acd8      0xbe8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
  .debug_info    0x0041b8c0      0x2ab E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
- .debug_info    0x0041bb6b      0x314 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
- .debug_info    0x0041be7f      0x2f9 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
- .debug_info    0x0041c178       0xd1 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
- .debug_info    0x0041c249      0x361 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
- .debug_info    0x0041c5aa      0x103 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_diagnostic_main.o
- .debug_info    0x0041c6ad      0x720 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
- .debug_info    0x0041cdcd      0x144 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
- .debug_info    0x0041cf11      0x178 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
- .debug_info    0x0041d089       0xf6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
- .debug_info    0x0041d17f      0x197 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
- .debug_info    0x0041d316      0x120 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
- .debug_info    0x0041d436      0x1be E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
+ .debug_info    0x0041bb6b      0x360 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
+ .debug_info    0x0041becb      0x2f9 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
+ .debug_info    0x0041c1c4       0xd1 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
+ .debug_info    0x0041c295      0x361 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
+ .debug_info    0x0041c5f6      0x103 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_diagnostic_main.o
+ .debug_info    0x0041c6f9      0x720 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
+ .debug_info    0x0041ce19      0x144 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
+ .debug_info    0x0041cf5d      0x178 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
+ .debug_info    0x0041d0d5       0xf6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
+ .debug_info    0x0041d1cb      0x197 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
+ .debug_info    0x0041d362      0x120 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
+ .debug_info    0x0041d482      0x1be E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
 
 .zdebug_info
  *(.zdebug_info .zdebug.gnu.linkonce.wi.*)
