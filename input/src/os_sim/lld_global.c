@@ -31,7 +31,7 @@ void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer)
 }
 void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
 {
-
+   /*TODO*/
 }
 void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
 {
@@ -54,7 +54,7 @@ void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
 }
 void LLF_CLEAR_ALL_GP_REGISTERS(void)
 { 
-/*TODO*/
+   /*TODO*/
 }
 void LLF_PERFORM_RAM_CHECK(void)
 {

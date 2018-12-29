@@ -3,7 +3,7 @@
 
 #include "os_task_config.h"
 #include "os_init_task_system.h"
-/*TODO make it multicore capable */
+
 enum task_state_e
 {
    Task_unspecified = 0,

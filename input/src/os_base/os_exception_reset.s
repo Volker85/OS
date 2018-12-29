@@ -242,7 +242,7 @@ START_OS:
         #/* 3c -> MMU                                 */
         #/* not existing in STM32F407VGT6             */
         #/* 4. set the new PLL clock freq             */
-        #/*.... TODO                                  */
+        #/* done in OS_INIT_MC()                      */
         #
         #/* 4 -> executing main program */
         # OS_START_OS(void)

@@ -18,6 +18,7 @@
 #define cMCU_X86        3
 #define cMCU_CORTEX_M4  4
 
+/*only 1 core is currently supported!!*/
 #define NR_OF_CORES 1
 
 #define MCU_CLOCK_IN_HZ ((uint32)168000000u)
