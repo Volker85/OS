@@ -46,8 +46,6 @@ SECTIONS{
       os_init_task_system.o
       os_main.o
       os_memory_mmu_setup.o
-      os_rte_common.o
-      os_rte_icc.o
       os_shutdown.o
       os_start_ext_prg.o
       os_start_init_hw.o
@@ -59,7 +57,6 @@ SECTIONS{
       os_task_scheduler.o   
       os_stack.o
       os_heap.o 
-      os_diagnostic_main.o     
       led.o
       _code_end = .;
       PROVIDE(code_start = .);

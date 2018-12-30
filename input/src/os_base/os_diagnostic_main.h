@@ -1,4 +1,0 @@
-#ifndef _OS_DIAGNOSTIC_MAIN_H_
-#define _OS_DIAGNOSTIC_MAIN_H_
-
-#endif /* _OS_DIAGNOSTIC_MAIN_H_ */

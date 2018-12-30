@@ -505,10 +505,11 @@ typedef unsigned long uint32;
 #define cMCU_X86 3
 #define cMCU_CORTEX_M4 4
 
+
 #define NR_OF_CORES 1
 
 #define MCU_CLOCK_IN_HZ ((uint32)168000000u)
-# 34 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+# 35 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 #define DisableInterrupts() LLF_INT_DISABLE()
 #define EnableInterrupts() LLF_INT_ENABLE()
 #define Privilige_level_save_current() ;
@@ -853,6 +854,26 @@ extern void OS_SHUTDOWN(os_reset_type_t reset_typ);
 #define _os_start_init_mc_h_ 
 
 extern void OS_INIT_MC(void);
+
+
+typedef struct
+{
+  volatile uint32 CR;
+  volatile uint32 CFGR;
+  volatile uint32 CIR;
+  volatile uint32 APB2RSTR;
+  volatile uint32 APB1RSTR;
+  volatile uint32 AHBENR;
+  volatile uint32 APB2ENR;
+  volatile uint32 APB1ENR;
+  volatile uint32 BDCR;
+  volatile uint32 CSR;
+# 29 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.h"
+} RCC_TypeDef;
+#define PERIPH_BASE ((uint32)0x40000000)
+#define AHBPERIPH_BASE (PERIPH_BASE + 0x20000)
+#define RCC_BASE (AHBPERIPH_BASE + 0x1000)
+#define RCC ((RCC_TypeDef *) RCC_BASE)
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_hw.h" 1
 
@@ -867,7 +888,7 @@ extern void OS_INIT_HW(void);
 
 extern void OS_INIT_SW(void);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.c" 2
-# 43 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.c"
+# 50 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.c"
 typedef enum os_reset_req_state_e
 {
    Reset_powerdown = 0,
@@ -890,7 +911,6 @@ void OS_STATE_HANDLER(void)
 
       OS_INIT_HW();
       OS_INIT_SW();
-      OS_INIT_TASK_SYSTEM();
 
 
 
@@ -941,6 +961,12 @@ void OS_STATE_HANDLER(void)
       case Reset_exit:
       {
          OS_SHUTDOWN(os_reset_exit);
+         break;
+      }
+      default:
+      {
+         OS_SHUTDOWN(os_reset_hardreset);
+         break;
       }
       }
       break;

@@ -555,7 +555,9 @@ Local task_t* OS_TaskScheduler(void)
 
 void ISR_TASK_DISPATCH_C0(void)
 {
-   /*TODO "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."*/
+   #if(NR_OF_CORES != 1u)
+   #warn "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."
+   #endif 
    OS_TASK_DISPATCHER();
 
 }

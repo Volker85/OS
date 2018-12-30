@@ -52,8 +52,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_init_task_system.c		-o %OUTPUT_DIR%\os_base\ppc_arm\os_init_task_system.ppc      >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_main.c					-o %OUTPUT_DIR%\os_base\ppc_arm\os_main.ppc                  >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1	
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_memory_mmu_setup.c		-o %OUTPUT_DIR%\os_base\ppc_arm\os_memory_mmu_setup.ppc      >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_rte_common.c	 		-o %OUTPUT_DIR%\os_base\ppc_arm\os_rte_common.ppc            >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1	
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_rte_icc.c				-o %OUTPUT_DIR%\os_base\ppc_arm\os_rte_icc.ppc               >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1	
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_shutdown.c				-o %OUTPUT_DIR%\os_base\ppc_arm\os_shutdown.ppc              >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_start_ext_prg.c		-o %OUTPUT_DIR%\os_base\ppc_arm\os_start_ext_prg.ppc             >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_start_init_hw.c		-o %OUTPUT_DIR%\os_base\ppc_arm\os_start_init_hw.ppc             >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
@@ -68,8 +66,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_const.c		-o %OUTPUT_DIR%\os_base\ppc_arm\os_const.ppc                               >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_stack.c		-o %OUTPUT_DIR%\os_base\ppc_arm\os_stack.ppc                             >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_heap.c		-o %OUTPUT_DIR%\os_base\ppc_arm\os_heap.ppc                             >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_diagnostic_main.c		-o %OUTPUT_DIR%\os_base\ppc_arm\os_diagnostic_main.ppc                             >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			-o %OUTPUT_DIR%\os_user_code\ppc_arm\led.ppc                             >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 
 
@@ -83,8 +79,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_init_task_system.c		 >> %OUTPUT_DIR%\os_base\ppc_arm\os_init_task_system.lst      	2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_main.c		             >> %OUTPUT_DIR%\os_base\ppc_arm\os_main.lst                    2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_setup.c		 >> %OUTPUT_DIR%\os_base\ppc_arm\os_memory_mmu_setup.lst	    2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_rte_common.c	 		 >> %OUTPUT_DIR%\os_base\ppc_arm\os_rte_common.lst              2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_rte_icc.c				 >> %OUTPUT_DIR%\os_base\ppc_arm\os_rte_icc.lst                 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_shutdown.c				 >> %OUTPUT_DIR%\os_base\ppc_arm\os_shutdown.lst                2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_ext_prg.c			 >> %OUTPUT_DIR%\os_base\ppc_arm\os_start_ext_prg.lst           2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_init_hw.c			 >> %OUTPUT_DIR%\os_base\ppc_arm\os_start_init_hw.lst           2>&1
@@ -99,8 +93,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_const.c				     >> %OUTPUT_DIR%\os_base\ppc_arm\os_const.lst                     2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_stack.c				     >> %OUTPUT_DIR%\os_base\ppc_arm\os_stack.lst                   2>&1		
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap.c				     >> %OUTPUT_DIR%\os_base\ppc_arm\os_heap.lst                   2>&1		
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_diagnostic_main.c				     >> %OUTPUT_DIR%\os_base\ppc_arm\os_diagnostic_main.lst                   2>&1		
-
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			     >> %OUTPUT_DIR%\os_user_code\ppc_arm\lld_power.lst                  2>&1
 REM
 echo "compile it" >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log
@@ -112,8 +104,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -W
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_init_task_system.c	 		-o %OUTPUT_DIR%\os_base\obj_arm\os_init_task_system.o	>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_main.c			 			-o %OUTPUT_DIR%\os_base\obj_arm\os_main.o				>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_memory_mmu_setup.c	 		-o %OUTPUT_DIR%\os_base\obj_arm\os_memory_mmu_setup.o 	>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_rte_common.c	 				-o %OUTPUT_DIR%\os_base\obj_arm\os_rte_common.o 		>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_rte_icc.c					-o %OUTPUT_DIR%\os_base\obj_arm\os_rte_icc.o 			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_shutdown.c					-o %OUTPUT_DIR%\os_base\obj_arm\os_shutdown.o			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_start_ext_prg.c				-o %OUTPUT_DIR%\os_base\obj_arm\os_start_ext_prg.o		>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_start_init_hw.c				-o %OUTPUT_DIR%\os_base\obj_arm\os_start_init_hw.o		>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
@@ -128,7 +118,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -W
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_const.c					    -o %OUTPUT_DIR%\os_base\obj_arm\os_const.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_stack.c					    -o %OUTPUT_DIR%\os_base\obj_arm\os_stack.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_heap.c					    -o %OUTPUT_DIR%\os_base\obj_arm\os_heap.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_diagnostic_main.c			-o %OUTPUT_DIR%\os_base\obj_arm\os_diagnostic_main.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-as                     -mcpu=cortex-m4 -mthumb                       -c  -ggdb              %SRC_DIR%\os_base\os_exception_reset.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\os_exception_reset.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-as                     -mcpu=cortex-m4 -mthumb                       -c  -ggdb              %SRC_DIR%\os_drivers\lld_global.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\lld_global.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-as                     -mcpu=cortex-m4 -mthumb                       -c  -ggdb              %SRC_DIR%\os_drivers\lld_interrupt.s			-o %OUTPUT_DIR%\os_drivers\obj_arm\lld_interrupt.o   			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
@@ -148,8 +137,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_init_task_system.c	 	-o %OUTPUT_DIR%\os_base\obj_arm\os_init_task_system.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_main.c			 		-o %OUTPUT_DIR%\os_base\obj_arm\os_main.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_memory_mmu_setup.c	 	-o %OUTPUT_DIR%\os_base\obj_arm\os_memory_mmu_setup.s	>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_rte_common.c	 			-o %OUTPUT_DIR%\os_base\obj_arm\os_rte_common.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_rte_icc.c					-o %OUTPUT_DIR%\os_base\obj_arm\os_rte_icc.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_shutdown.c				-o %OUTPUT_DIR%\os_base\obj_arm\os_shutdown.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_start_ext_prg.c			-o %OUTPUT_DIR%\os_base\obj_arm\os_start_ext_prg.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_start_init_hw.c			-o %OUTPUT_DIR%\os_base\obj_arm\os_start_init_hw.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
@@ -164,8 +151,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_const.c          			-o %OUTPUT_DIR%\os_base\obj_arm\os_const.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_stack.c          			-o %OUTPUT_DIR%\os_base\obj_arm\os_stack.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_heap.c          			-o %OUTPUT_DIR%\os_base\obj_arm\os_heap.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_diagnostic_main.c          			-o %OUTPUT_DIR%\os_base\obj_arm\os_diagnostic_main.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_user_code\led.c			-o %OUTPUT_DIR%\os_user_code\obj_arm\led.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 REM
 echo "link it" >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log

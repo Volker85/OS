@@ -285,6 +285,7 @@ typedef unsigned long uint32;
 #define cMCU_X86 3
 #define cMCU_CORTEX_M4 4
 
+
 #define NR_OF_CORES 1
 
 #define MCU_CLOCK_IN_HZ ((uint32)168000000u)
@@ -297,7 +298,7 @@ typedef unsigned long uint32;
 #define Privilige_level_enter_kernel_mode() 
 #define Privilige_level_restore_saved() 
 #define HaltMcu() 
-# 41 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_common.h"
+# 42 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_common.h"
 enum os_sw_bugs_e
 {
    os_bug_no_bug = 0,
@@ -608,8 +609,135 @@ extern void USER_LED_OFF(led_t Led);
 extern void USER_LED_TOGGLE(led_t Led);
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.h" 1
+
+#define _os_start_init_mc_h_ 
+
+extern void OS_INIT_MC(void);
+
+
+typedef struct
+{
+  volatile uint32 CR;
+  volatile uint32 CFGR;
+  volatile uint32 CIR;
+  volatile uint32 APB2RSTR;
+  volatile uint32 APB1RSTR;
+  volatile uint32 AHBENR;
+  volatile uint32 APB2ENR;
+  volatile uint32 APB1ENR;
+  volatile uint32 BDCR;
+  volatile uint32 CSR;
+# 29 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.h"
+} RCC_TypeDef;
+#define PERIPH_BASE ((uint32)0x40000000)
+#define AHBPERIPH_BASE (PERIPH_BASE + 0x20000)
+#define RCC_BASE (AHBPERIPH_BASE + 0x1000)
+#define RCC ((RCC_TypeDef *) RCC_BASE)
+# 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c" 2
 
 void OS_INIT_MC(void)
 {
-# 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c"
+   volatile uint32 StartUpCounter, HSEStatus;
+
+
+
+
+  ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CR |= (uint32)0x00000001;
+
+
+  ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CFGR = 0x00000000;
+
+
+  ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CR &= (uint32)0xFEF6FFFF;
+
+
+  ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->PLLCFGR = 0x24003010;
+
+
+  ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CR &= (uint32)0xFFFBFFFF;
+
+
+  ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CIR = 0x00000000;
+# 52 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c"
+  StartUpCounter = 0;
+  HSEStatus = 0;
+
+
+  ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CR |= ((uint32)RCC_CR_HSEON);
+
+
+  do
+  {
+    HSEStatus = ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CR & RCC_CR_HSERDY;
+    StartUpCounter++;
+  } while((HSEStatus == 0) && (StartUpCounter != HSE_STARTUP_TIMEOUT));
+
+  if ((((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CR & RCC_CR_HSERDY) != RESET)
+  {
+    HSEStatus = (uint32)0x01;
+  }
+  else
+  {
+    HSEStatus = (uint32)0x00;
+  }
+
+  if (HSEStatus == (uint32)0x01)
+  {
+
+    ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->APB1ENR |= RCC_APB1ENR_PWREN;
+    PWR->CR |= PWR_CR_VOS;
+
+
+    ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CFGR |= RCC_CFGR_HPRE_DIV1;
+
+
+    ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CFGR |= RCC_CFGR_PPRE2_DIV2;
+
+
+    ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CFGR |= RCC_CFGR_PPRE1_DIV4;
+
+
+    ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->PLLCFGR = PLL_M | (PLL_N << 6) | (((PLL_P >> 1) -1) << 16) |
+                   (RCC_PLLCFGR_PLLSRC_HSE) | (PLL_Q << 24);
+
+
+    ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CR |= RCC_CR_PLLON;
+
+
+    while((((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CR & RCC_CR_PLLRDY) == 0)
+    {
+    }
+
+
+    FLASH->ACR = FLASH_ACR_ICEN |FLASH_ACR_DCEN |FLASH_ACR_LATENCY_5WS;
+
+
+    ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CFGR &= (uint32)((uint32)~(RCC_CFGR_SW));
+    ((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CFGR |= RCC_CFGR_SW_PLL;
+
+
+    while ((((RCC_TypeDef *) ((((uint32)0x40000000) + 0x20000) + 0x1000))->CFGR & (uint32)RCC_CFGR_SWS ) != RCC_CFGR_SWS_PLL);
+    {
+    }
+  }
+  else
+  {
+
+  }
+
+
+
+
+
+
+
+  SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET;
+
+
+
+
+
+
+
 }

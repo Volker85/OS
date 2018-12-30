@@ -37,7 +37,7 @@ func_ptr_t isr_vec_table[] =
    0u,                            /* 0x0024 reservered                 */
    0u,                            /* 0x0028 reservered                 */
    &OS_Exception_SWI+1u,          /* 0x002C Supervisor Call            */
-   &OS_Exception_DEBUG+1u,        /* 0x0030 reserved for debug         *//* not used in STM32F4 according to spec en.DM00046982.pdf page 37*//*TODO: immediate crash after reset in case debugger attached, else the SW is running -> debug exception escalated to hard fault???*/
+   0u,/*&OS_Exception_DEBUG+1u,*/ /* 0x0030 reserved for debug         *//* not used in STM32F4 according to spec en.DM00046982.pdf page 37*/
    0u,                            /* 0x0034 reserved                   */
    &OS_Exception_PendSV+1u,        /* 0x0038 PendSV                     */
    &OS_Exception_Systick+1u,      /* 0x003C Systick                    */

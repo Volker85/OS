@@ -1,39 +1,13 @@
 "Target_x86" 
-19.12.2018 19:05:11,22 
+30.12.2018  9:25:26,11 
 "preprocess it" 
+mingw32-gcc: error: E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_rte_common.c: No such file or directory
+mingw32-gcc: fatal error: no input files
+compilation terminated.
+mingw32-gcc: error: E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_rte_icc.c: No such file or directory
+mingw32-gcc: fatal error: no input files
+compilation terminated.
+mingw32-gcc: error: E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_diagnostic_main.c: No such file or directory
+mingw32-gcc: fatal error: no input files
+compilation terminated.
 "create assembly listings" 
-"compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:10:12: warning: 'OS_Exception_Read_Status_Registers' defined but not used [-Wunused-function]
- Local void OS_Exception_Read_Status_Registers(void)
-            ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_REGISTERS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:32: warning: unused parameter 'r0' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
-                                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:43: warning: unused parameter 'r1' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
-                                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:54: warning: unused parameter 'r2' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
-                                                      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:65: warning: unused parameter 'r3' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
-                                                                 ^
-"assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:10:12: warning: 'OS_Exception_Read_Status_Registers' defined but not used [-Wunused-function]
- Local void OS_Exception_Read_Status_Registers(void)
-            ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_REGISTERS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:32: warning: unused parameter 'r0' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
-                                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:43: warning: unused parameter 'r1' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
-                                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:54: warning: unused parameter 'r2' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
-                                                      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:65: warning: unused parameter 'r3' [-Wunused-parameter]
- void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
-                                                                 ^
-"link it" 
