@@ -9,9 +9,6 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    /* clear mmu config */
    LLF_MPU_DISABLE();
 
-   /* clear all RAM */
-   /*LLF_CLEAR_ALL_RAM();*/
-
    /* save some registers to restore after reset */
 
    /* power done/reset system */
@@ -25,6 +22,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    }
    else if (reset_typ == os_reset_exit)
    {
+      /*TODO*/
       OS_DEINIT_HW();
       OS_DEINIT_SW();
       OS_DEINIT_MC();

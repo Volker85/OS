@@ -20,16 +20,16 @@ From the AAPCS, §5.1.1:
         
       
 LLF_MPU_DISABLE:
-        #"LLF_MPU_DISABLE not yet implemented"
+        # the STM32F407VGT6 eval board does not have an MPU... 
         MOV R15, R14
 
 LLF_MPU_ENABLE:
-        #"LLF_MPU_ENABLE not yet implemented"
+        # the STM32F407VGT6 eval board does not have an MPU... 
         MOV R15, R14
 
       
 LLF_MPU_SWITCH_OFF_ALL_REGIONS:
-        #"LLF_MPU_SWITCH_OFF_ALL_REGIONS not yet implemented"
+        # the STM32F407VGT6 eval board does not have an MPU... 
         MOV R15, R14
 
 LLF_GET_MPU_PRESENT:
@@ -50,5 +50,8 @@ LLF_GET_MPU_PRESENT:
         #    #endif
         #       return ret_val;
         #endif
+        # 
+        #return (False = 0)
+        MOV R0,#0
         MOV R15, R14
         

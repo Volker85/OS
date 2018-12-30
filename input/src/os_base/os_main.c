@@ -11,7 +11,7 @@
 OS_State: OS_INIT (Start im Supervisor Mode)
 - Exception Handler aufsetzen  -> Done 
 - HW Internal Peripherie, RAM, etc -> TODO
-- Tasks konfigurieren -> TODO
+- Tasks konfigurieren -> Done via OS_INIT_TASK_SYSTEM()
 --> Stack -> TODO
 --> MMU_REGION ->NA
 --> CoreId -> TODO
@@ -38,11 +38,11 @@ OS_State: OS_Running (User Mode)
 - OS_Shutdown mit Reset -> TODO
 
 OS_State: OS_Shutdown (nur erlaubt im Supervisor Mode)
-- Interrupts deaktivieren -> TODO
+- Interrupts deaktivieren -> Done
 - Tasks beenden (Timer Interrupts löschen) -> TODO
-- FMON / Watchdog deinitialisieren -> TODO
-- MMU deaktivieren / deintialisieren -> TODO
-- RAM neu initalisieren -> TODO
+- FMON / Watchdog deinitialisieren -> NA
+- MMU deaktivieren / deintialisieren -> NA
+- RAM ggf. neu initalisieren (bei einem SoftReset) -> TODO
 - HW Reset auslösen (optional) -> TODO
 
 */

@@ -34,31 +34,80 @@ LLF_SAVE_TASK_STACK:
    # 1. read the stack pointer register
    #   2. save it the correct task context
    #   3. invalidate the register (==0)
-   #
+   STR R13, [r0]
    MOV R15,R14
    
 LLF_SAVE_REGISTERS:
-   #TODO
+   # r0-r3 are the argument and scratch registers; r0-r1 are also the result registers
+   # r4-r8 are callee-save registers
+   # r9 might be a callee-save register or not (on some variants of AAPCS it is a special register)
+   # r10-r11 are callee-save registers
+   #
+   STR R0,=REGISTER_R0 
+   STR R1,=REGISTER_R1
+   STR R2,=REGISTER_R2
+   STR R3,=REGISTER_R3
+   STR R4,=REGISTER_R4
+   STR R5,=REGISTER_R5
+   STR R6,=REGISTER_R6
+   STR R7,=REGISTER_R7
+   STR R8,=REGISTER_R8
+   STR R9,=REGISTER_R9
+   STR R10,=REGISTER_R10
+   STR R11,=REGISTER_R11
    MOV R15,R14
    
 LLF_RESTORE_TASK_STACK:
-   LDR r14,r0
+   LDR r13,r0
    MOV R15,R14
    
 LLF_RESTORE_REGISTERS
-   #TODO
+   # r0-r3 are the argument and scratch registers; r0-r1 are also the result registers
+   # r4-r8 are callee-save registers
+   # r9 might be a callee-save register or not (on some variants of AAPCS it is a special register)
+   # r10-r11 are callee-save registers
+   #   
+   #
+   LDR R0,=REGISTER_R0 
+   LDR R1,=REGISTER_R1
+   LDR R2,=REGISTER_R2
+   LDR R3,=REGISTER_R3
+   LDR R4,=REGISTER_R4
+   LDR R5,=REGISTER_R5
+   LDR R6,=REGISTER_R6
+   LDR R7,=REGISTER_R7
+   LDR R8,=REGISTER_R8
+   LDR R9,=REGISTER_R9
+   LDR R10,=REGISTER_R10
+   LDR R11,=REGISTER_R11
    MOV R15,R14
    
 LLF_RESTORE_SYSTEM_STACK
-   #TODO
+   LDR r13,r0
    MOV R15,R14
    
 LLF_SAVE_SYSTEM_STACK
-   #TODO
+   STR R13, [r0]
    MOV R15,R14
    
 LLF_CLEAR_ALL_GP_REGISTERS
-   #TODO
+   # r0-r3 are the argument and scratch registers; r0-r1 are also the result registers
+   # r4-r8 are callee-save registers
+   # r9 might be a callee-save register or not (on some variants of AAPCS it is a special register)
+   # r10-r11 are callee-save registers
+   #
+   MOV R0,#0x00
+   MOV R1,#0x00
+   MOV R2,#0x00
+   MOV R3,#0x00
+   MOV R4,#0x00
+   MOV R5,#0x00
+   MOV R6,#0x00
+   MOV R7,#0x00
+   MOV R8,#0x00
+   MOV R9,#0x00
+   MOV R10,#0x00
+   MOV R11,#0x00
    MOV R15,R14
    
 LLF_PERFORM_RAM_CHECK

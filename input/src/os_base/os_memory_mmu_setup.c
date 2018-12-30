@@ -5,9 +5,7 @@ RQ: the MMU might be configured for every task, because every task has own ACL /
 for documentation of the MPU please read:
    ST  AN4838
    Application note
-   Managing memory protection unit (MPU) in STM32 MCUs 
-
-   
+   Managing memory protection unit (MPU) in STM32 MCUs   
 */
 
 #define StartAddresseC0   ((void*)0x00000000)
@@ -26,4 +24,5 @@ void OS_MMU_SETUP(void)
    /* assign every task a mmu region + the scheduler an own region */
    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might run with different MMU rights
       hardware register access shall be only possible in supervisor / kernel mode via system call.... based on a security descriptor as done in windows */
+   /* the MPU is implementation depended in STM32F4 MCU..., the eval board does not have a MPU*/   
 }
