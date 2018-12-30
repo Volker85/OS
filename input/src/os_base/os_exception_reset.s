@@ -25,7 +25,6 @@ From the AAPCS, §5.1.1:
         .global LLF_RESTORE_SYSTEM_STACK
         .global LLF_SAVE_SYSTEM_STACK
         .global LLF_PERFORM_RAM_CHECK
-        .global LLF_CLEAR_ALL_GP_REGISTERS
         .global START_OS
         .extern _ram_start
         .extern _ram_end
@@ -222,18 +221,6 @@ loop_finished:
         #; Move R14 (LR) into R15 (PC)
         MOV R15, R14
         
-
-LLF_CLEAR_ALL_GP_REGISTERS:
-        MOV r0,#0
-        MOV r1,#0
-        MOV r2,#0
-        MOV r3,#0
-        MOV r4,#0
-        MOV r5,#0
-        MOV r6,#0
-        MOV R15, R14
-
-
 START_OS:
         #/* 3a -> page tables                         */
         #/* not existing in STM32F407VGT6             */

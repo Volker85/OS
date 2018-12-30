@@ -27,40 +27,41 @@ void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer)
       3. invalidate the register (==0)
    */
    ReferenceUnusedParameter(*StackPointer);
-/*TODO*/
+   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */
 }
 void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
 {
-   /*TODO*/
+   /* no need to save the registers in the simulation, because x86 Simulation does not preempt the running task .... */
 }
 void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
 {
    ReferenceUnusedParameter(*StackPointer);
+   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */s
 }
 void LLF_RESTORE_REGISTERS(task_t* task)
 {
    ReferenceUnusedParameter(*task);
-   /*TODO*/
+   /* no need to restore the registers in the simulation, because x86 Simulation does not preempt the running task .... */
 }
 void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
 {
    ReferenceUnusedParameter(*system_stack_ptr);
-   /*TODO*/
+   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */s
 }
 void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
 {
    ReferenceUnusedParameter(*system_stack_ptr);
-   /*TODO*/
+   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */s
 }
 void LLF_CLEAR_ALL_GP_REGISTERS(void)
 { 
-   /*TODO*/
+   /* no need to clear all general purpose registers because main() is called with valid mcu registers already */
 }
 void LLF_PERFORM_RAM_CHECK(void)
 {
-   /*TODO*/
+   /* RAM check not supported by simulation because RAM layout is different in simulation */
 }
 void LLF_CHANGE_TO_USER_MODE(void)
 {
-   /*TODO*/
+   /* "change to user mode" is not supported in simulation */
 }
