@@ -12,17 +12,16 @@ OS_State: OS_INIT (Start im Supervisor Mode)
 - Exception Handler aufsetzen  -> Done 
 - HW Internal Peripherie, RAM, etc -> TODO
 - Tasks konfigurieren -> Done via OS_INIT_TASK_SYSTEM()
---> Stack -> TODO
+--> Stack -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
 --> MMU_REGION ->NA
 --> CoreId -> TODO
---> Task-Function -> TODO
+--> Task-Function -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
 --> TaskPrio -> TODO
---> Interruptable -> TODO
 --> MultipleActChk -> TODO
 --> Privilige Level (User Mode, System Mode, Abort, Undefined, FiQ, IRQ) -> TODO
 - TCMP Interrupts für Tasks konfigurieren, Starten vom Dispatcher -> Done
 - MMU konfigurieren -> NA
-- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler)(User/Supervisor Mode??) -> NA
+- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler)(User/Supervisor Mode??) -> TODO
 - SW mit erhöhtem Rechtebedarf wird mittels Interrupt gestartet (Dispatcher, WD, FMON, Shutdown)(User/Supervisor Mode??) -> Done
 - FMON / Watchdog aktivieren -> NA
 - Interrupts aktivieren -> Done
@@ -42,7 +41,6 @@ OS_State: OS_Shutdown (nur erlaubt im Supervisor Mode)
 - Tasks beenden (Timer Interrupts löschen) -> TODO
 - FMON / Watchdog deinitialisieren -> NA
 - MMU deaktivieren / deintialisieren -> NA
-- RAM ggf. neu initalisieren (bei einem SoftReset) -> TODO
 - HW Reset auslösen (optional) -> TODO
 
 */
