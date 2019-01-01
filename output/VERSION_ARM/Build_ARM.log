@@ -1,5 +1,5 @@
 "Target_ARM" 
-01.01.2019 16:45:22,55 
+01.01.2019 17:16:34,60 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
@@ -133,51 +133,10 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:12
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:124:28: error: 'VECT_TAB_OFFSET' undeclared (first use in this function)
    SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
                             ^~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:341:6: error: conflicting types for 'OS_INIT_TASK'
- void OS_INIT_TASK(
-      ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: previous declaration of 'OS_INIT_TASK' was here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:350:21: warning: unused parameter 'core' [-Wunused-parameter]
     CoreID_t         core,
                      ^~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: error: 'CoreId0' undeclared (first use in this function); did you mean 'Core0'?
-                 CoreId0,                            /* Cortex M4 has only 1 core */
-                 ^~~~~~~
-                 Core0
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:392:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,                          /* task */
-    ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:410:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:425:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:440:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s: Assembler messages:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s:46: Error: invalid pseudo operation -- `str R0,=REGISTER_R0'
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s:47: Error: invalid pseudo operation -- `str R1,=REGISTER_R1'
@@ -327,51 +286,10 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:12
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:124:28: error: 'VECT_TAB_OFFSET' undeclared (first use in this function)
    SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
                             ^~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:341:6: error: conflicting types for 'OS_INIT_TASK'
- void OS_INIT_TASK(
-      ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: previous declaration of 'OS_INIT_TASK' was here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:350:21: warning: unused parameter 'core' [-Wunused-parameter]
     CoreID_t         core,
                      ^~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: error: 'CoreId0' undeclared (first use in this function); did you mean 'Core0'?
-                 CoreId0,                            /* Cortex M4 has only 1 core */
-                 ^~~~~~~
-                 Core0
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:392:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,                          /* task */
-    ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:410:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:425:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:440:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^~~~~~~~~~~~
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^~~~~~~~~~~~
    1              		.cpu cortex-m4
    2              		.eabi_attribute 20, 1
    3              		.eabi_attribute 21, 1

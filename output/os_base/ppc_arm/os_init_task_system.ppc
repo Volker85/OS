@@ -836,7 +836,9 @@ extern void OS_INIT_TASK(
    task_group_t* p_task_group,
    unsigned_char_t* pStackAddr,
    unsigned_int32_t uStackSize,
-   unsigned_char_t KernelMode
+   privilige_mode_t privilige_mode,
+   CoreID_t core,
+   unsigned_char_t default_prio
 );
 extern void ISR_TASK_DISPATCH(void);
 extern void OS_INIT_TASKS(void);

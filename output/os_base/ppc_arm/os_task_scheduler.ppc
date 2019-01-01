@@ -839,7 +839,9 @@ extern void OS_INIT_TASK(
    task_group_t* p_task_group,
    unsigned_char_t* pStackAddr,
    unsigned_int32_t uStackSize,
-   unsigned_char_t KernelMode
+   privilige_mode_t privilige_mode,
+   CoreID_t core,
+   unsigned_char_t default_prio
 );
 extern void ISR_TASK_DISPATCH(void);
 extern void OS_INIT_TASKS(void);
@@ -1246,7 +1248,7 @@ void OS_INIT_TASKS(void)
                 (unsigned_char_t*)&TASK_STACK[0],
                 200,
                 ePriviligeMode_unpriviliged_thread_mode,
-                CoreId0,
+                Core0,
                 0
                );
    ;

@@ -397,7 +397,7 @@ void OS_INIT_TASKS(void)
                 (unsigned_char_t*)&TASK_STACK[0],  /* Task_stack */
                 200,                                /* Stack Size */
                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                CoreId0,                            /* Cortex M4 has only 1 core */
+                Core0,                            /* Cortex M4 has only 1 core */
                 0                                   /* default prio */
                );
    OS_SaveTaskPtr(task_ptr, Task_0_ptr);

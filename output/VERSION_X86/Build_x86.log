@@ -1,5 +1,5 @@
 "Target_x86" 
-01.01.2019 16:45:14,63 
+01.01.2019 17:16:23,67 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
@@ -111,50 +111,10 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:12
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:124:28: error: 'VECT_TAB_OFFSET' undeclared (first use in this function)
    SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
                             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:341:6: error: conflicting types for 'OS_INIT_TASK'
- void OS_INIT_TASK(
-      ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: previous declaration of 'OS_INIT_TASK' was here
- extern void OS_INIT_TASK(
-             ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:350:21: warning: unused parameter 'core' [-Wunused-parameter]
     CoreID_t         core,
                      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: error: 'CoreId0' undeclared (first use in this function)
-                 CoreId0,                            /* Cortex M4 has only 1 core */
-                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:392:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,                          /* task */
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:410:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:425:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:440:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_REGISTERS':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:32: warning: unused parameter 'r0' [-Wunused-parameter]
  void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
@@ -299,50 +259,10 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:12
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:124:28: error: 'VECT_TAB_OFFSET' undeclared (first use in this function)
    SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
                             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:341:6: error: conflicting types for 'OS_INIT_TASK'
- void OS_INIT_TASK(
-      ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: previous declaration of 'OS_INIT_TASK' was here
- extern void OS_INIT_TASK(
-             ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:350:21: warning: unused parameter 'core' [-Wunused-parameter]
     CoreID_t         core,
                      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: error: 'CoreId0' undeclared (first use in this function)
-                 CoreId0,                            /* Cortex M4 has only 1 core */
-                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:392:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,                          /* task */
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:410:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:425:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:440:4: error: too many arguments to function 'OS_INIT_TASK'
-    OS_INIT_TASK(task_ptr,      /* task */
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
- extern void OS_INIT_TASK(
-             ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c: In function 'LLF_SAVE_REGISTERS':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:32:32: warning: unused parameter 'r0' [-Wunused-parameter]
  void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
@@ -380,6 +300,4 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\lld_global.c:55:1: err
  ^
 "link it" 
 mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o: No such file or directory
-mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o: No such file or directory
-mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o: No such file or directory
 mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o: No such file or directory
