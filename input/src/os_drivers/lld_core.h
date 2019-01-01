@@ -11,5 +11,5 @@ enum CoreID_e
 typedef  enum CoreID_e CoreID_t;
 
 extern CoreID_t GET_CORE_ID(void);
-extern void LLF_CHANGE_TO_USER_MODE(void);
+extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 #endif /* _lld_core_h_ */

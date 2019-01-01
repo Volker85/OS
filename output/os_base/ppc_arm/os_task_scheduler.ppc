@@ -721,7 +721,7 @@ struct task_s
    unsigned_char_t* pStackPointerStart;
    unsigned_int32_t StackSize;
    unsigned_char_t* pStackPointerEnd;
-   unsigned_char_t task_kernel_mode;
+   privilige_mode_t privilige_mode;
 };
 typedef struct task_s task_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
@@ -756,7 +756,7 @@ enum CoreID_e
 typedef enum CoreID_e CoreID_t;
 
 extern CoreID_t GET_CORE_ID(void);
-extern void LLF_CHANGE_TO_USER_MODE(void);
+extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);
@@ -1084,9 +1084,9 @@ static void OS_STARTTASK(task_t* task)
 
             SET_RUNNING_TASK(task);
 
-            if(task->task_kernel_mode == 0)
+            if(task->privilige_mode != ePriviligeMode_unpriviliged_thread_mode)
             {
-               LLF_CHANGE_TO_USER_MODE();
+               LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE();
             }
 
 
@@ -1236,7 +1236,7 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_1,
                 (unsigned_char_t*)&TASK_STACK[0],
                 200,
-                1
+                ePriviligeMode_unpriviliged_thread_mode
                );
    ;
 
@@ -1252,7 +1252,7 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_1,
                 (unsigned_char_t*)&TASK_STACK[1],
                 200,
-                0
+                ePriviligeMode_unpriviliged_thread_mode
                );
    ;
 
@@ -1265,7 +1265,7 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_2,
                 (unsigned_char_t*)&TASK_STACK[2],
                 200,
-                0
+                ePriviligeMode_unpriviliged_thread_mode
                );
    ;
 
@@ -1278,7 +1278,7 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_3,
                 (unsigned_char_t*)&TASK_STACK[3],
                 200,
-                1
+                ePriviligeMode_unpriviliged_thread_mode
                );
    ;
 }

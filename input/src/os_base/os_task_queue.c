@@ -346,7 +346,8 @@ void OS_INIT_TASK(
    task_group_t*    p_task_group,
    unsigned_char_t* pStackAddr,
    unsigned_int32_t uStackSize,
-   unsigned_char_t  KernelMode
+   privilige_mode_t privilige_mode,
+   CoreID_t         core
 )
 {
    if(task!=0)
@@ -357,7 +358,7 @@ void OS_INIT_TASK(
       task->task_group       = p_task_group;
       task->NrOfInsActivated = 0;
       task->WaitActUntil     = 0;
-      task->task_kernel_mode = KernelMode;
+      task->privilige_mode   = privilige_mode;
 
       task->overwaittime_per_prio_inc_step = 1;
       task->max_allowed_wait_time          = 100000;

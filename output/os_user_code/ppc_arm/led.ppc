@@ -720,7 +720,7 @@ struct task_s
    unsigned_char_t* pStackPointerStart;
    unsigned_int32_t StackSize;
    unsigned_char_t* pStackPointerEnd;
-   unsigned_char_t task_kernel_mode;
+   privilige_mode_t privilige_mode;
 };
 typedef struct task_s task_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
@@ -755,7 +755,7 @@ enum CoreID_e
 typedef enum CoreID_e CoreID_t;
 
 extern CoreID_t GET_CORE_ID(void);
-extern void LLF_CHANGE_TO_USER_MODE(void);
+extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);
@@ -799,7 +799,6 @@ extern void USER_LED_TOGGLE(led_t Led);
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h" 1
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.c" 2
-
 
 void USER_LED_INIT(led_t Led)
 {

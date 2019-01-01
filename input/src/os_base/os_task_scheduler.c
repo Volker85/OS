@@ -235,9 +235,9 @@ Local void OS_STARTTASK(task_t* task)
             /* task execution shall not happen with disabled interrupts */
             SET_RUNNING_TASK(task);
             /* change to user mode... */
-            if(task->task_kernel_mode == False)
+            if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
             {
-               LLF_CHANGE_TO_USER_MODE();
+               LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE();
             }            
   
             /* call the task entry function */  
@@ -396,7 +396,8 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_1,                     /* Task Group */
                 (unsigned_char_t*)&TASK_STACK[0],  /* Task_stack */
                 200,                                /* Stack Size */
-                True                                /* Kernel Mode */
+                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+                CoreId0                             /* Cortex M4 has only 1 core */
                );
    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
 
@@ -412,7 +413,8 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_1, /* Task Group */
                 (unsigned_char_t*)&TASK_STACK[1],/* Task_stack */
                 200,            /* Stack Size */
-                False           /* Kernel Mode */
+                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+                Core0
                );
    OS_SaveTaskPtr(task_ptr, Task_1_ptr);
 
@@ -425,7 +427,8 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_2, /* Task Group */
                 (unsigned_char_t*)&TASK_STACK[2],/* Task_stack */
                 200,            /* Stack Size */
-                False           /* Kernel Mode */
+                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+                Core0
                );
    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
 
@@ -438,7 +441,8 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_3, /* Task Group */
                 (unsigned_char_t*)&TASK_STACK[3],/* Task_stack */
                 200,           /* Stack Size */
-                True                                /* Kernel Mode */
+                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+                Core0
                );
    OS_SaveTaskPtr(task_ptr, Task_3_ptr);   
 }

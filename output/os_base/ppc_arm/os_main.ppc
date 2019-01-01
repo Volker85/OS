@@ -721,7 +721,7 @@ struct task_s
    unsigned_char_t* pStackPointerStart;
    unsigned_int32_t StackSize;
    unsigned_char_t* pStackPointerEnd;
-   unsigned_char_t task_kernel_mode;
+   privilige_mode_t privilige_mode;
 };
 typedef struct task_s task_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
@@ -756,7 +756,7 @@ enum CoreID_e
 typedef enum CoreID_e CoreID_t;
 
 extern CoreID_t GET_CORE_ID(void);
-extern void LLF_CHANGE_TO_USER_MODE(void);
+extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);
@@ -888,7 +888,7 @@ extern void OS_INIT_HW(void);
 
 extern void OS_INIT_SW(void);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.c" 2
-# 50 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.c"
+# 48 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.c"
 typedef enum os_reset_req_state_e
 {
    Reset_powerdown = 0,
@@ -919,7 +919,6 @@ void OS_STATE_HANDLER(void)
       OS_STATE = 1;
 
       LLF_INT_ENABLE();
-      LLF_CHANGE_TO_USER_MODE();
 
 
 #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)

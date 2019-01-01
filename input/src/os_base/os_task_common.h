@@ -73,7 +73,7 @@ struct task_s
    unsigned_char_t* pStackPointerStart;
    unsigned_int32_t  StackSize;
    unsigned_char_t* pStackPointerEnd;
-   unsigned_char_t  task_kernel_mode;
+   privilige_mode_t privilige_mode;
 };
 typedef struct task_s task_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);

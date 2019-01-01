@@ -14,15 +14,15 @@ OS_State: OS_INIT (Start im Supervisor Mode)
 - Tasks konfigurieren -> Done via OS_INIT_TASK_SYSTEM()
 --> Stack -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
 --> MMU_REGION ->NA
---> CoreId -> TODO
+--> CoreId -> Done
 --> Task-Function -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
 --> TaskPrio -> TODO
 --> MultipleActChk -> TODO
---> Privilige Level (User Mode, System Mode, Abort, Undefined, FiQ, IRQ) -> TODO
+--> Privilige Level (Handler mode (priviliged): System Mode, Abort, Undefined, FiQ, IRQ; Thread mode: unpriviliged / priviliged) -> Done
 - TCMP Interrupts für Tasks konfigurieren, Starten vom Dispatcher -> Done
 - MMU konfigurieren -> NA
-- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler)(User/Supervisor Mode??) -> TODO
-- SW mit erhöhtem Rechtebedarf wird mittels Interrupt gestartet (Dispatcher, WD, FMON, Shutdown)(User/Supervisor Mode??) -> Done
+- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler) -> TODO
+- SW mit erhöhtem Rechtebedarf wird mittels Interrupt gestartet (Dispatcher, WD, FMON, Shutdown) -> Done
 - FMON / Watchdog aktivieren -> NA
 - Interrupts aktivieren -> Done
 - Zu UserMode wechseln -> Done
@@ -75,7 +75,6 @@ void OS_STATE_HANDLER(void)
       OS_STATE = os_running;
       /* activate the interrupts, tasks will be executed from now on ... */
       LLF_INT_ENABLE();
-      LLF_CHANGE_TO_USER_MODE();
 
       #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
       #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)

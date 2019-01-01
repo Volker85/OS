@@ -721,7 +721,7 @@ struct task_s
    unsigned_char_t* pStackPointerStart;
    unsigned_int32_t StackSize;
    unsigned_char_t* pStackPointerEnd;
-   unsigned_char_t task_kernel_mode;
+   privilige_mode_t privilige_mode;
 };
 typedef struct task_s task_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
@@ -756,7 +756,7 @@ enum CoreID_e
 typedef enum CoreID_e CoreID_t;
 
 extern CoreID_t GET_CORE_ID(void);
-extern void LLF_CHANGE_TO_USER_MODE(void);
+extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);
@@ -798,7 +798,7 @@ extern void USER_LED_OFF(led_t Led);
 extern void USER_LED_TOGGLE(led_t Led);
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c" 2
-# 13 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
+# 11 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
 #define StartAddresseC0 ((void*)0x00000000)
 #define StartAddresseC0T0 ((void*)0x00000000)
 #define StartAddresseC0T1 ((void*)0x00000000)
@@ -812,6 +812,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 void OS_MMU_SETUP(void)
 {
+
 
 
 

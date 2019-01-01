@@ -61,7 +61,7 @@ void LLF_PERFORM_RAM_CHECK(void)
 {
    /* RAM check not supported by simulation because RAM layout is different in simulation */
 }
-void LLF_CHANGE_TO_USER_MODE(void)
+void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void)
 {
    /* "change to user mode" is not supported in simulation */
 }

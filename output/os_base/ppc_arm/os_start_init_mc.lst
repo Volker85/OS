@@ -1,0 +1,117 @@
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
+    privilige_mode_t privilige_mode;
+    ^~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c: In function 'OS_INIT_MC':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:20:8: error: 'RCC_TypeDef {aka struct <anonymous>}' has no member named 'PLLCFGR'; did you mean 'CFGR'?
+   RCC->PLLCFGR = 0x24003010;
+        ^~~~~~~
+        CFGR
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:56:23: error: 'RCC_CR_HSEON' undeclared (first use in this function); did you mean 'RCC_BASE'?
+   RCC->CR |= ((uint32)RCC_CR_HSEON);
+                       ^~~~~~~~~~~~
+                       RCC_BASE
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:56:23: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:61:27: error: 'RCC_CR_HSERDY' undeclared (first use in this function); did you mean 'RCC_CR_HSEON'?
+     HSEStatus = RCC->CR & RCC_CR_HSERDY;
+                           ^~~~~~~~~~~~~
+                           RCC_CR_HSEON
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:63:50: error: 'HSE_STARTUP_TIMEOUT' undeclared (first use in this function)
+   } while((HSEStatus == 0) && (StartUpCounter != HSE_STARTUP_TIMEOUT));
+                                                  ^~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:65:36: error: 'RESET' undeclared (first use in this function)
+   if ((RCC->CR & RCC_CR_HSERDY) != RESET)
+                                    ^~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:77:21: error: 'RCC_APB1ENR_PWREN' undeclared (first use in this function)
+     RCC->APB1ENR |= RCC_APB1ENR_PWREN;
+                     ^~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:78:5: error: 'PWR' undeclared (first use in this function)
+     PWR->CR |= PWR_CR_VOS;
+     ^~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:78:16: error: 'PWR_CR_VOS' undeclared (first use in this function)
+     PWR->CR |= PWR_CR_VOS;
+                ^~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:81:18: error: 'RCC_CFGR_HPRE_DIV1' undeclared (first use in this function); did you mean 'RCC_CR_HSERDY'?
+     RCC->CFGR |= RCC_CFGR_HPRE_DIV1;
+                  ^~~~~~~~~~~~~~~~~~
+                  RCC_CR_HSERDY
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:84:18: error: 'RCC_CFGR_PPRE2_DIV2' undeclared (first use in this function); did you mean 'RCC_CFGR_HPRE_DIV1'?
+     RCC->CFGR |= RCC_CFGR_PPRE2_DIV2;
+                  ^~~~~~~~~~~~~~~~~~~
+                  RCC_CFGR_HPRE_DIV1
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:87:18: error: 'RCC_CFGR_PPRE1_DIV4' undeclared (first use in this function); did you mean 'RCC_CFGR_PPRE2_DIV2'?
+     RCC->CFGR |= RCC_CFGR_PPRE1_DIV4;
+                  ^~~~~~~~~~~~~~~~~~~
+                  RCC_CFGR_PPRE2_DIV2
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:90:10: error: 'RCC_TypeDef {aka struct <anonymous>}' has no member named 'PLLCFGR'; did you mean 'CFGR'?
+     RCC->PLLCFGR = PLL_M | (PLL_N << 6) | (((PLL_P >> 1) -1) << 16) |
+          ^~~~~~~
+          CFGR
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:90:20: error: 'PLL_M' undeclared (first use in this function)
+     RCC->PLLCFGR = PLL_M | (PLL_N << 6) | (((PLL_P >> 1) -1) << 16) |
+                    ^~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:90:29: error: 'PLL_N' undeclared (first use in this function); did you mean 'PLL_M'?
+     RCC->PLLCFGR = PLL_M | (PLL_N << 6) | (((PLL_P >> 1) -1) << 16) |
+                             ^~~~~
+                             PLL_M
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:90:46: error: 'PLL_P' undeclared (first use in this function); did you mean 'PLL_N'?
+     RCC->PLLCFGR = PLL_M | (PLL_N << 6) | (((PLL_P >> 1) -1) << 16) |
+                                              ^~~~~
+                                              PLL_N
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:91:21: error: 'RCC_PLLCFGR_PLLSRC_HSE' undeclared (first use in this function)
+                    (RCC_PLLCFGR_PLLSRC_HSE) | (PLL_Q << 24);
+                     ^~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:91:48: error: 'PLL_Q' undeclared (first use in this function); did you mean 'PLL_P'?
+                    (RCC_PLLCFGR_PLLSRC_HSE) | (PLL_Q << 24);
+                                                ^~~~~
+                                                PLL_P
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:94:16: error: 'RCC_CR_PLLON' undeclared (first use in this function); did you mean 'RCC_CR_HSEON'?
+     RCC->CR |= RCC_CR_PLLON;
+                ^~~~~~~~~~~~
+                RCC_CR_HSEON
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:97:22: error: 'RCC_CR_PLLRDY' undeclared (first use in this function); did you mean 'RCC_CR_PLLON'?
+     while((RCC->CR & RCC_CR_PLLRDY) == 0)
+                      ^~~~~~~~~~~~~
+                      RCC_CR_PLLON
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:102:5: error: 'FLASH' undeclared (first use in this function)
+     FLASH->ACR = FLASH_ACR_ICEN |FLASH_ACR_DCEN |FLASH_ACR_LATENCY_5WS;
+     ^~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:102:18: error: 'FLASH_ACR_ICEN' undeclared (first use in this function)
+     FLASH->ACR = FLASH_ACR_ICEN |FLASH_ACR_DCEN |FLASH_ACR_LATENCY_5WS;
+                  ^~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:102:34: error: 'FLASH_ACR_DCEN' undeclared (first use in this function); did you mean 'FLASH_ACR_ICEN'?
+     FLASH->ACR = FLASH_ACR_ICEN |FLASH_ACR_DCEN |FLASH_ACR_LATENCY_5WS;
+                                  ^~~~~~~~~~~~~~
+                                  FLASH_ACR_ICEN
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:102:50: error: 'FLASH_ACR_LATENCY_5WS' undeclared (first use in this function); did you mean 'FLASH_ACR_DCEN'?
+     FLASH->ACR = FLASH_ACR_ICEN |FLASH_ACR_DCEN |FLASH_ACR_LATENCY_5WS;
+                                                  ^~~~~~~~~~~~~~~~~~~~~
+                                                  FLASH_ACR_DCEN
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:105:37: error: 'RCC_CFGR_SW' undeclared (first use in this function); did you mean 'RCC_CR_HSEON'?
+     RCC->CFGR &= (uint32)((uint32)~(RCC_CFGR_SW));
+                                     ^~~~~~~~~~~
+                                     RCC_CR_HSEON
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:106:18: error: 'RCC_CFGR_SW_PLL' undeclared (first use in this function); did you mean 'RCC_CFGR_SW'?
+     RCC->CFGR |= RCC_CFGR_SW_PLL;
+                  ^~~~~~~~~~~~~~~
+                  RCC_CFGR_SW
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:109:33: error: 'RCC_CFGR_SWS' undeclared (first use in this function); did you mean 'RCC_CFGR_SW'?
+     while ((RCC->CFGR & (uint32)RCC_CFGR_SWS ) != RCC_CFGR_SWS_PLL);
+                                 ^~~~~~~~~~~~
+                                 RCC_CFGR_SW
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:109:51: error: 'RCC_CFGR_SWS_PLL' undeclared (first use in this function); did you mean 'RCC_CFGR_SW_PLL'?
+     while ((RCC->CFGR & (uint32)RCC_CFGR_SWS ) != RCC_CFGR_SWS_PLL);
+                                                   ^~~~~~~~~~~~~~~~
+                                                   RCC_CFGR_SW_PLL
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:124:3: error: 'SCB' undeclared (first use in this function)
+   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+   ^~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:124:15: error: 'FLASH_BASE' undeclared (first use in this function); did you mean 'FLASH'?
+   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+               ^~~~~~~~~~
+               FLASH
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:124:28: error: 'VECT_TAB_OFFSET' undeclared (first use in this function)
+   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+                            ^~~~~~~~~~~~~~~

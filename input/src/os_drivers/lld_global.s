@@ -22,7 +22,7 @@ From the AAPCS, §5.1.1:
         .global LLF_SAVE_SYSTEM_STACK
         .global LLF_CLEAR_ALL_GP_REGISTERS
         .global LLF_PERFORM_RAM_CHECK
-        .global LLF_CHANGE_TO_USER_MODE
+        .global LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
 
 GET_CORE_ID:
    #   CoreID_t ret_val = 0;
@@ -114,7 +114,7 @@ LLF_PERFORM_RAM_CHECK
    #TODO
    MOV R15,R14
    
-LLF_CHANGE_TO_USER_MODE:    
+LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE:    
    MRS r0,CONTROL
    MOV r1,#0x01
    ORR r0,r0,r1
