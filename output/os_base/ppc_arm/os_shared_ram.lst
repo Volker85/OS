@@ -1,6 +1,70 @@
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shared_ram.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyAEywd.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"os_shared_ram.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.comm	RAM_BLOCK_C00_C00,256,4
+  16              		.comm	RAM_BLOCK_C00_C01,256,4
+  17              		.comm	RAM_BLOCK_C00_C02,256,4
+  18              		.comm	RAM_BLOCK_C00_C03,256,4
+  19              		.comm	RAM_BLOCK_C01_C00,256,4
+  20              		.comm	RAM_BLOCK_C01_C01,256,4
+  21              		.comm	RAM_BLOCK_C01_C02,256,4
+  22              		.comm	RAM_BLOCK_C01_C03,256,4
+  23              		.comm	RAM_BLOCK_C02_C00,256,4
+  24              		.comm	RAM_BLOCK_C02_C01,256,4
+  25              		.comm	RAM_BLOCK_C02_C02,256,4
+  26              		.comm	RAM_BLOCK_C02_C03,256,4
+  27              		.comm	RAM_BLOCK_C03_C00,256,4
+  28              		.comm	RAM_BLOCK_C03_C01,256,4
+  29              		.comm	RAM_BLOCK_C03_C02,256,4
+  30              		.comm	RAM_BLOCK_C03_C03,256,4
+  31              	.Letext0:
+  32              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  33              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  34              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  35              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  36              		.file 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shared_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccyAEywd.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_shared_ram.c
+                            *COM*:00000100 RAM_BLOCK_C00_C00
+                            *COM*:00000100 RAM_BLOCK_C00_C01
+                            *COM*:00000100 RAM_BLOCK_C00_C02
+                            *COM*:00000100 RAM_BLOCK_C00_C03
+                            *COM*:00000100 RAM_BLOCK_C01_C00
+                            *COM*:00000100 RAM_BLOCK_C01_C01
+                            *COM*:00000100 RAM_BLOCK_C01_C02
+                            *COM*:00000100 RAM_BLOCK_C01_C03
+                            *COM*:00000100 RAM_BLOCK_C02_C00
+                            *COM*:00000100 RAM_BLOCK_C02_C01
+                            *COM*:00000100 RAM_BLOCK_C02_C02
+                            *COM*:00000100 RAM_BLOCK_C02_C03
+                            *COM*:00000100 RAM_BLOCK_C03_C00
+                            *COM*:00000100 RAM_BLOCK_C03_C01
+                            *COM*:00000100 RAM_BLOCK_C03_C02
+                            *COM*:00000100 RAM_BLOCK_C03_C03
+                           .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544
+                           .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986
+                           .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
+                           .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033
+
+NO UNDEFINED SYMBOLS

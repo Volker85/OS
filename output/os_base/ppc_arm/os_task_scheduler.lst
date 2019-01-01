@@ -1,22 +1,9 @@
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_STARTTASK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
-                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: note: each undeclared identifier is reported only once for each function it appears in
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:399:17: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: error: 'CoreId0' undeclared (first use in this function); did you mean 'Core0'?
-                 CoreId0                             /* Cortex M4 has only 1 core */
+                 CoreId0,                            /* Cortex M4 has only 1 core */
                  ^~~~~~~
                  Core0
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: note: each undeclared identifier is reported only once for each function it appears in
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:392:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,                          /* task */
     ^~~~~~~~~~~~
@@ -24,21 +11,21 @@ In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:409:4: error: too many arguments to function 'OS_INIT_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:410:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,      /* task */
     ^~~~~~~~~~~~
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:423:4: error: too many arguments to function 'OS_INIT_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:425:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,      /* task */
     ^~~~~~~~~~~~
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:437:4: error: too many arguments to function 'OS_INIT_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:440:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,      /* task */
     ^~~~~~~~~~~~
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:

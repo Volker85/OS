@@ -419,6 +419,14 @@ typedef enum CoreID_e CoreID_t;
 
 extern CoreID_t GET_CORE_ID(void);
 extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
+
+enum privilige_mode_e
+{
+   ePriviligeMode_unpriviliged_thread_mode = 0,
+   ePriviligeMode_priviliged_thread_mode,
+   ePriviligeMode_priviliged_handler_mode
+};
+typedef enum privilige_mode_e privilige_mode_t;
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_interrupt.h" 1
 
@@ -470,7 +478,8 @@ extern void LLF_CLEAR_ALL_RAM(void);
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h" 1
 
 #define _os_task_common_h_ 
-
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_firstinc.h" 1
+# 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_task_config.h" 1
 
 #define _os_task_config_h_ 

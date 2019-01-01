@@ -1,8 +1,9 @@
 #ifndef _lld_global_h_
 #define _lld_global_h_
 
-#include "..\os_base\os_task_common.h"
+
 #include "lld_core.h"
+#include "..\os_base\os_task_common.h"
 extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);
 extern void LLF_INT_DISABLE(void);

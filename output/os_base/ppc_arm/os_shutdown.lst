@@ -1,6 +1,152 @@
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVMa8JL.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"os_shutdown.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.global	OS_SHUTDOWN
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  20              		.fpu softvfp
+  22              	OS_SHUTDOWN:
+  23              	.LFB0:
+  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.c"
+   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** #include "os_firstinc.h"
+   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** #include "os_shutdown.h"
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** void OS_SHUTDOWN(os_reset_type_t reset_typ)
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** {
+  25              		.loc 1 5 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 8
+  28              		@ frame_needed = 1, uses_anonymous_args = 0
+  29 0000 80B5     		push	{r7, lr}
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 82B0     		sub	sp, sp, #8
+  34              		.cfi_def_cfa_offset 16
+  35 0004 00AF     		add	r7, sp, #0
+  36              		.cfi_def_cfa_register 7
+  37 0006 0346     		mov	r3, r0
+  38 0008 FB71     		strb	r3, [r7, #7]
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* disable interrupts for all cores -> prevents task activation, etc*/
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    LLF_DISABLE_INTERRUPTS_ALL_CORES();
+  39              		.loc 1 7 0
+  40 000a FFF7FEFF 		bl	LLF_DISABLE_INTERRUPTS_ALL_CORES
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* clear mmu config */
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    LLF_MPU_DISABLE();
+  41              		.loc 1 10 0
+  42 000e FFF7FEFF 		bl	LLF_MPU_DISABLE
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* save some registers to restore after reset */
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c **** 
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    /* power done/reset system */
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    if(reset_typ == os_reset_powerdown)
+  43              		.loc 1 15 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVMa8JL.s 			page 2
+
+
+  44 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  45 0014 012B     		cmp	r3, #1
+  46 0016 02D1     		bne	.L2
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       LLF_MCU_SWITCH_OFF_POWER();
+  47              		.loc 1 17 0
+  48 0018 FFF7FEFF 		bl	LLF_MCU_SWITCH_OFF_POWER
+  49 001c 10E0     		b	.L3
+  50              	.L2:
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    else if(reset_typ == os_reset_hardreset) /* os_reset_hardreset */
+  51              		.loc 1 19 0
+  52 001e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  53 0020 002B     		cmp	r3, #0
+  54 0022 02D1     		bne	.L4
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       LLF_MCU_RESET_POWER();
+  55              		.loc 1 21 0
+  56 0024 FFF7FEFF 		bl	LLF_MCU_RESET_POWER
+  57 0028 0AE0     		b	.L3
+  58              	.L4:
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    else if (reset_typ == os_reset_exit)
+  59              		.loc 1 23 0
+  60 002a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  61 002c 022B     		cmp	r3, #2
+  62 002e 07D1     		bne	.L3
+  63              	.LBB2:
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
+  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       /*TODO including timer interrupts */
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       OS_DEINIT_HW();
+  64              		.loc 1 26 0
+  65 0030 FFF7FEFF 		bl	OS_DEINIT_HW
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       OS_DEINIT_SW();
+  66              		.loc 1 27 0
+  67 0034 FFF7FEFF 		bl	OS_DEINIT_SW
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       OS_DEINIT_MC();
+  68              		.loc 1 28 0
+  69 0038 FFF7FEFF 		bl	OS_DEINIT_MC
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       OS_CALL_FUNC_POINTER();      
+  70              		.loc 1 29 0
+  71 003c FFF7FEFF 		bl	OS_CALL_FUNC_POINTER
+  72              	.L3:
+  73              	.L5:
+  74              	.LBE2:
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }   
+  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    else
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    {
+  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****       ;
+  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    }   
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c ****    while(1)
+  75              		.loc 1 35 0 discriminator 1
+  76 0040 FEE7     		b	.L5
+  77              		.cfi_endproc
+  78              	.LFE0:
+  80              	.Letext0:
+  81              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVMa8JL.s 			page 3
+
+
+  82              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  83              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  84              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  85              		.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVMa8JL.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_shutdown.c
+C:\Users\PRESID~1\AppData\Local\Temp\ccVMa8JL.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccVMa8JL.s:22     .text:00000000 OS_SHUTDOWN
+                           .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544
+                           .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986
+                           .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
+                           .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033
+
+UNDEFINED SYMBOLS
+LLF_DISABLE_INTERRUPTS_ALL_CORES
+LLF_MPU_DISABLE
+LLF_MCU_SWITCH_OFF_POWER
+LLF_MCU_RESET_POWER
+OS_DEINIT_HW
+OS_DEINIT_SW
+OS_DEINIT_MC
+OS_CALL_FUNC_POINTER

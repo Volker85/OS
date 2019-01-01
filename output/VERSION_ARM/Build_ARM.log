@@ -1,56 +1,8 @@
 "Target_ARM" 
-01.01.2019 13:19:37,74 
+01.01.2019 16:45:22,55 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c: In function 'OS_SHUTDOWN':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:26:7: warning: implicit declaration of function 'OS_DEINIT_HW' [-Wimplicit-function-declaration]
        OS_DEINIT_HW();
@@ -64,24 +16,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:28:7: w
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:29:7: warning: implicit declaration of function 'OS_CALL_FUNC_POINTER' [-Wimplicit-function-declaration]
        OS_CALL_FUNC_POINTER();
        ^~~~~~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_hw.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c: In function 'OS_INIT_MC':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:20:8: error: 'RCC_TypeDef {aka struct <anonymous>}' has no member named 'PLLCFGR'; did you mean 'CFGR'?
    RCC->PLLCFGR = 0x24003010;
@@ -199,52 +133,23 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:12
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:124:28: error: 'VECT_TAB_OFFSET' undeclared (first use in this function)
    SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
                             ^~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:349:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode,
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_STARTTASK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
-                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:341:6: error: conflicting types for 'OS_INIT_TASK'
+ void OS_INIT_TASK(
+      ^~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: previous declaration of 'OS_INIT_TASK' was here
+ extern void OS_INIT_TASK(
+             ^~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:350:21: warning: unused parameter 'core' [-Wunused-parameter]
+    CoreID_t         core,
+                     ^~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:399:17: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: error: 'CoreId0' undeclared (first use in this function); did you mean 'Core0'?
-                 CoreId0                             /* Cortex M4 has only 1 core */
+                 CoreId0,                            /* Cortex M4 has only 1 core */
                  ^~~~~~~
                  Core0
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: note: each undeclared identifier is reported only once for each function it appears in
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:392:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,                          /* task */
     ^~~~~~~~~~~~
@@ -252,57 +157,27 @@ In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:409:4: error: too many arguments to function 'OS_INIT_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:410:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,      /* task */
     ^~~~~~~~~~~~
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:423:4: error: too many arguments to function 'OS_INIT_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:425:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,      /* task */
     ^~~~~~~~~~~~
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:437:4: error: too many arguments to function 'OS_INIT_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:440:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,      /* task */
     ^~~~~~~~~~~~
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_ram.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shared_ram.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_const.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s: Assembler messages:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s:46: Error: invalid pseudo operation -- `str R0,=REGISTER_R0'
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s:47: Error: invalid pseudo operation -- `str R1,=REGISTER_R1'
@@ -321,61 +196,7 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s:85: E
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s:89: Error: bad instruction `llf_save_system_stack'
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s:93: Error: bad instruction `llf_clear_all_gp_registers'
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.s:113: Error: bad instruction `llf_perform_ram_check'
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
 "assemble it" 
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_table.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c: In function 'OS_SHUTDOWN':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:26:7: warning: implicit declaration of function 'OS_DEINIT_HW' [-Wimplicit-function-declaration]
        OS_DEINIT_HW();
@@ -389,24 +210,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:28:7: w
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:29:7: warning: implicit declaration of function 'OS_CALL_FUNC_POINTER' [-Wimplicit-function-declaration]
        OS_CALL_FUNC_POINTER();
        ^~~~~~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_hw.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c: In function 'OS_INIT_MC':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:20:8: error: 'RCC_TypeDef {aka struct <anonymous>}' has no member named 'PLLCFGR'; did you mean 'CFGR'?
    RCC->PLLCFGR = 0x24003010;
@@ -524,52 +327,23 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:12
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:124:28: error: 'VECT_TAB_OFFSET' undeclared (first use in this function)
    SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
                             ^~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:349:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode,
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_STARTTASK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
-                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:341:6: error: conflicting types for 'OS_INIT_TASK'
+ void OS_INIT_TASK(
+      ^~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: previous declaration of 'OS_INIT_TASK' was here
+ extern void OS_INIT_TASK(
+             ^~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:350:21: warning: unused parameter 'core' [-Wunused-parameter]
+    CoreID_t         core,
+                     ^~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKS':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:399:17: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: error: 'CoreId0' undeclared (first use in this function); did you mean 'Core0'?
-                 CoreId0                             /* Cortex M4 has only 1 core */
+                 CoreId0,                            /* Cortex M4 has only 1 core */
                  ^~~~~~~
                  Core0
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: note: each undeclared identifier is reported only once for each function it appears in
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:392:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,                          /* task */
     ^~~~~~~~~~~~
@@ -577,63 +351,210 @@ In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:409:4: error: too many arguments to function 'OS_INIT_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:410:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,      /* task */
     ^~~~~~~~~~~~
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:423:4: error: too many arguments to function 'OS_INIT_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:425:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,      /* task */
     ^~~~~~~~~~~~
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:437:4: error: too many arguments to function 'OS_INIT_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:440:4: error: too many arguments to function 'OS_INIT_TASK'
     OS_INIT_TASK(task_ptr,      /* task */
     ^~~~~~~~~~~~
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
  extern void OS_INIT_TASK(
              ^~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_ram.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shared_ram.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_const.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_heap.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:4:0,
-                 from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:12,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^~~~~~~~~~~~~~~~
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"led.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.global	USER_LED_INIT
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  20              		.fpu softvfp
+  22              	USER_LED_INIT:
+  23              	.LFB0:
+  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.c"
+   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** #include "..\os_base\os_firstinc.h"
+   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** #include "led.h"
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** 
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** void USER_LED_INIT(led_t Led)
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** {
+  25              		.loc 1 5 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 8
+  28              		@ frame_needed = 1, uses_anonymous_args = 0
+  29              		@ link register save eliminated.
+  30 0000 80B4     		push	{r7}
+  31              		.cfi_def_cfa_offset 4
+  32              		.cfi_offset 7, -4
+  33 0002 83B0     		sub	sp, sp, #12
+  34              		.cfi_def_cfa_offset 16
+  35 0004 00AF     		add	r7, sp, #0
+  36              		.cfi_def_cfa_register 7
+  37 0006 0346     		mov	r3, r0
+  38 0008 FB71     		strb	r3, [r7, #7]
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c ****    ReferenceUnusedParameter(Led);
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** }
+  39              		.loc 1 7 0
+  40 000a 00BF     		nop
+  41 000c 0C37     		adds	r7, r7, #12
+  42              		.cfi_def_cfa_offset 4
+  43 000e BD46     		mov	sp, r7
+  44              		.cfi_def_cfa_register 13
+  45              		@ sp needed
+  46 0010 80BC     		pop	{r7}
+  47              		.cfi_restore 7
+  48              		.cfi_def_cfa_offset 0
+  49 0012 7047     		bx	lr
+  50              		.cfi_endproc
+  51              	.LFE0:
+  53              		.align	1
+  54              		.global	USER_LED_ON
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+  58              		.fpu softvfp
+  60              	USER_LED_ON:
+  61              	.LFB1:
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** 
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** void USER_LED_ON(led_t Led)
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** {
+  62              		.loc 1 10 0
+  63              		.cfi_startproc
+  64              		@ args = 0, pretend = 0, frame = 8
+  65              		@ frame_needed = 1, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0014 80B4     		push	{r7}
+  68              		.cfi_def_cfa_offset 4
+  69              		.cfi_offset 7, -4
+  70 0016 83B0     		sub	sp, sp, #12
+  71              		.cfi_def_cfa_offset 16
+  72 0018 00AF     		add	r7, sp, #0
+  73              		.cfi_def_cfa_register 7
+  74 001a 0346     		mov	r3, r0
+  75 001c FB71     		strb	r3, [r7, #7]
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c ****    ReferenceUnusedParameter(Led);
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** }
+  76              		.loc 1 12 0
+  77 001e 00BF     		nop
+  78 0020 0C37     		adds	r7, r7, #12
+  79              		.cfi_def_cfa_offset 4
+  80 0022 BD46     		mov	sp, r7
+  81              		.cfi_def_cfa_register 13
+  82              		@ sp needed
+  83 0024 80BC     		pop	{r7}
+  84              		.cfi_restore 7
+  85              		.cfi_def_cfa_offset 0
+  86 0026 7047     		bx	lr
+  87              		.cfi_endproc
+  88              	.LFE1:
+  90              		.align	1
+  91              		.global	USER_LED_OFF
+  92              		.syntax unified
+  93              		.thumb
+  94              		.thumb_func
+  95              		.fpu softvfp
+  97              	USER_LED_OFF:
+  98              	.LFB2:
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** 
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** void USER_LED_OFF(led_t Led)
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** {
+  99              		.loc 1 15 0
+ 100              		.cfi_startproc
+ 101              		@ args = 0, pretend = 0, frame = 8
+ 102              		@ frame_needed = 1, uses_anonymous_args = 0
+ 103              		@ link register save eliminated.
+ 104 0028 80B4     		push	{r7}
+ 105              		.cfi_def_cfa_offset 4
+ 106              		.cfi_offset 7, -4
+ 107 002a 83B0     		sub	sp, sp, #12
+ 108              		.cfi_def_cfa_offset 16
+ 109 002c 00AF     		add	r7, sp, #0
+ 110              		.cfi_def_cfa_register 7
+ 111 002e 0346     		mov	r3, r0
+ 112 0030 FB71     		strb	r3, [r7, #7]
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c ****    ReferenceUnusedParameter(Led);
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** }
+ 113              		.loc 1 17 0
+ 114 0032 00BF     		nop
+ 115 0034 0C37     		adds	r7, r7, #12
+ 116              		.cfi_def_cfa_offset 4
+ 117 0036 BD46     		mov	sp, r7
+ 118              		.cfi_def_cfa_register 13
+ 119              		@ sp needed
+ 120 0038 80BC     		pop	{r7}
+ 121              		.cfi_restore 7
+ 122              		.cfi_def_cfa_offset 0
+ 123 003a 7047     		bx	lr
+ 124              		.cfi_endproc
+ 125              	.LFE2:
+ 127              		.align	1
+ 128              		.global	USER_LED_TOGGLE
+ 129              		.syntax unified
+ 130              		.thumb
+ 131              		.thumb_func
+ 132              		.fpu softvfp
+ 134              	USER_LED_TOGGLE:
+ 135              	.LFB3:
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** 
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** void USER_LED_TOGGLE(led_t Led)
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** {
+ 136              		.loc 1 20 0
+ 137              		.cfi_startproc
+ 138              		@ args = 0, pretend = 0, frame = 8
+ 139              		@ frame_needed = 1, uses_anonymous_args = 0
+ 140              		@ link register save eliminated.
+ 141 003c 80B4     		push	{r7}
+ 142              		.cfi_def_cfa_offset 4
+ 143              		.cfi_offset 7, -4
+ 144 003e 83B0     		sub	sp, sp, #12
+ 145              		.cfi_def_cfa_offset 16
+ 146 0040 00AF     		add	r7, sp, #0
+ 147              		.cfi_def_cfa_register 7
+ 148 0042 0346     		mov	r3, r0
+ 149 0044 FB71     		strb	r3, [r7, #7]
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c ****    ReferenceUnusedParameter(Led);   
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\led.c **** }...
+ 150              		.loc 1 22 0
+ 151 0046 00BF     		nop
+ 152 0048 0C37     		adds	r7, r7, #12
+ 153              		.cfi_def_cfa_offset 4
+ 154 004a BD46     		mov	sp, r7
+ 155              		.cfi_def_cfa_register 13
+ 156              		@ sp needed
+ 157 004c 80BC     		pop	{r7}
+ 158              		.cfi_restore 7
+ 159              		.cfi_def_cfa_offset 0
+ 160 004e 7047     		bx	lr
+ 161              		.cfi_endproc
+ 162              	.LFE3:
+ 164              	.Letext0:
+ 165              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 166              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 167              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+ 168              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ 169              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h"
 "link it" 
 d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: cannot find lld_global.o
 collect2.exe: error: ld returned 1 exit status

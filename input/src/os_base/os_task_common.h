@@ -1,6 +1,6 @@
 #ifndef _os_task_common_h_
 #define _os_task_common_h_
-
+#include "os_firstinc.h"
 #include "os_task_config.h"
 #include "os_init_task_system.h"
 

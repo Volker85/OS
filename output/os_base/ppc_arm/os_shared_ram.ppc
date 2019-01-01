@@ -623,6 +623,32 @@ extern volatile uint32 BACKUP_SYSTICK_CURRENT_VAL_REG;
 
 #define _lld_global_h_ 
 
+
+# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 1
+
+#define _lld_core_h_ 
+# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
+# 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 2
+enum CoreID_e
+{
+   Core0 = 0,
+   Core1,
+   Core2,
+   Core3
+};
+typedef enum CoreID_e CoreID_t;
+
+extern CoreID_t GET_CORE_ID(void);
+extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
+
+enum privilige_mode_e
+{
+   ePriviligeMode_unpriviliged_thread_mode = 0,
+   ePriviligeMode_priviliged_thread_mode,
+   ePriviligeMode_priviliged_handler_mode
+};
+typedef enum privilige_mode_e privilige_mode_t;
+# 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
 
 #define _os_task_common_h_ 
@@ -740,24 +766,7 @@ typedef unsigned scheduler_time_t;
 
 #define os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))
 #define os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])
-# 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 1
-
-#define _lld_core_h_ 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
-# 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 2
-enum CoreID_e
-{
-   Core0 = 0,
-   Core1,
-   Core2,
-   Core3
-};
-typedef enum CoreID_e CoreID_t;
-
-extern CoreID_t GET_CORE_ID(void);
-extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
-# 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
+# 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 extern uint32 LLF_UP_CNT_TIMER_32(void);
 extern void LLF_INT_ENABLE(void);
 extern void LLF_INT_DISABLE(void);

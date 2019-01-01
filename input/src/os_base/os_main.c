@@ -76,10 +76,6 @@ void OS_STATE_HANDLER(void)
       /* activate the interrupts, tasks will be executed from now on ... */
       LLF_INT_ENABLE();
 
-      #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-      #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
-      BACKUP_SYSTICK_CURRENT_VAL_REG = *SYSTICK_CURRENT_VAL_REG;
-      #endif
       while(1)/*wait until timer task*/
       {
 

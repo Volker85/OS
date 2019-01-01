@@ -1,9 +1,7 @@
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:1:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:349:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode,
-    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:341:6: error: conflicting types for 'OS_INIT_TASK'
+ void OS_INIT_TASK(
+      ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: previous declaration of 'OS_INIT_TASK' was here
+ extern void OS_INIT_TASK(
+             ^
