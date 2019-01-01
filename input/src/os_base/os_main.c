@@ -10,7 +10,7 @@
 /*
 OS_State: OS_INIT (Start im Supervisor Mode)
 - Exception Handler aufsetzen  -> Done 
-- HW Internal Peripherie, RAM, etc -> TODO
+- HW Internal Peripherie, RAM, etc -> Done 
 - Tasks konfigurieren -> Done via OS_INIT_TASK_SYSTEM()
 --> Stack -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
 --> MMU_REGION ->NA

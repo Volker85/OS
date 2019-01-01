@@ -127,6 +127,6 @@ void OS_INIT_MC(void)
 
    /* 2. all MCU IO*/
    /* configure GPIO (SPI, UART, CAN, etc) */
-   /*TODO "TODO low prio" */
+   /*TODO */
 
 }
