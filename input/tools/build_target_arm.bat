@@ -45,7 +45,6 @@ echo %DATE% %TIME% >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log
 REM
 echo "preprocess it" >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_common.c				-o %OUTPUT_DIR%\os_base\ppc_arm\os_common.ppc      >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_driver_hook.c			-o %OUTPUT_DIR%\os_base\ppc_arm\os_driver_hook.ppc >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=gnu90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_exception.c			-o %OUTPUT_DIR%\os_base\ppc_arm\os_exception.ppc       >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_exception_isr_handler.c	-o %OUTPUT_DIR%\os_base\ppc_arm\os_exception_isr_handler.ppc >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_exception_table.c		-o %OUTPUT_DIR%\os_base\ppc_arm\os_exception_table.ppc       >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
@@ -72,7 +71,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -E -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90
 REM
 echo "create assembly listings" >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_common.c			     >> %OUTPUT_DIR%\os_base\ppc_arm\os_common.lst	                2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_driver_hook.c		     >> %OUTPUT_DIR%\os_base\ppc_arm\os_driver_hook.lst	            2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=gnu90 -c %SRC_DIR%\os_base\os_exception.c			     >> %OUTPUT_DIR%\os_base\ppc_arm\os_exception.lst	            2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception_isr_handler.c	 >> %OUTPUT_DIR%\os_base\ppc_arm\os_exception_isr_handler.lst	2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception_table.c		 >> %OUTPUT_DIR%\os_base\ppc_arm\os_exception_table.lst	        2>&1
@@ -97,7 +95,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0
 REM
 echo "compile it" >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_common.c 					-o %OUTPUT_DIR%\os_base\obj_arm\os_common.o			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_driver_hook.c 				-o %OUTPUT_DIR%\os_base\obj_arm\os_driver_hook.o		>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=gnu90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_exception.c 					-o %OUTPUT_DIR%\os_base\obj_arm\os_exception.o 		>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_exception_isr_handler.c		-o %OUTPUT_DIR%\os_base\obj_arm\os_exception_isr_handler.o		>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_exception_table.c	 		-o %OUTPUT_DIR%\os_base\obj_arm\os_exception_table.o 	>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
@@ -130,7 +127,6 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -W
 REM
 echo "assemble it" >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_common.c 					-o %OUTPUT_DIR%\os_base\obj_arm\os_common.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=gnu90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_driver_hook.c 			-o %OUTPUT_DIR%\os_base\obj_arm\os_driver_hook.s		>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_exception.c 				-o %OUTPUT_DIR%\os_base\obj_arm\os_exception.s	>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_exception_isr_handler.c	-o %OUTPUT_DIR%\os_base\obj_arm\os_exception_isr_handler.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_exception_table.c	 		-o %OUTPUT_DIR%\os_base\obj_arm\os_exception_table.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1

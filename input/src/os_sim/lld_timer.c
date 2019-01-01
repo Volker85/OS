@@ -16,4 +16,4 @@ void LLF_TCMP1_CONFIG(void)
    /* setup the sys tick timer */
    COMPARE_VALUE_TCMP1 = 0;
 }
-/*TODO "how to simulate timer compare?"*/
+/*"timer compare can not be implemented"*/

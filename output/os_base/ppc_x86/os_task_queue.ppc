@@ -933,7 +933,8 @@ void OS_INIT_TASK(
    task_group_t* p_task_group,
    unsigned_char_t* pStackAddr,
    unsigned_int32_t uStackSize,
-   privilige_mode_t privilige_mode
+   privilige_mode_t privilige_mode,
+   CoreID_t core
 )
 {
    if(task!=0)

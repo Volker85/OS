@@ -181,7 +181,7 @@ void OS_ActivateTask(task_t* task)
          if(task->IdleTask == False)
          {
             if( (task->active == False)
-                  || ( (task->active == True) && (task->NrOfInsAllowed > task->NrOfInsActivated) )
+                  || ( (task->active == True) && (task->NrOfInsAllowed > task->NrOfInsActivated) )/* check for multiple activation */
               )
             {
                /* only activate if allowed by rule */
@@ -397,7 +397,8 @@ void OS_INIT_TASKS(void)
                 (unsigned_char_t*)&TASK_STACK[0],  /* Task_stack */
                 200,                                /* Stack Size */
                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                CoreId0                             /* Cortex M4 has only 1 core */
+                CoreId0,                            /* Cortex M4 has only 1 core */
+                0                                   /* default prio */
                );
    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
 
@@ -414,7 +415,8 @@ void OS_INIT_TASKS(void)
                 (unsigned_char_t*)&TASK_STACK[1],/* Task_stack */
                 200,            /* Stack Size */
                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                Core0
+                Core0,
+                1                                   /* default prio */
                );
    OS_SaveTaskPtr(task_ptr, Task_1_ptr);
 
@@ -428,7 +430,8 @@ void OS_INIT_TASKS(void)
                 (unsigned_char_t*)&TASK_STACK[2],/* Task_stack */
                 200,            /* Stack Size */
                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                Core0
+                Core0,
+                2                                   /* default prio */                
                );
    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
 
@@ -442,7 +445,8 @@ void OS_INIT_TASKS(void)
                 (unsigned_char_t*)&TASK_STACK[3],/* Task_stack */
                 200,           /* Stack Size */
                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                Core0
+                Core0,
+                3                                   /* default prio */                                
                );
    OS_SaveTaskPtr(task_ptr, Task_3_ptr);   
 }

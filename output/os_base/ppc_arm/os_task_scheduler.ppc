@@ -1084,7 +1084,7 @@ static void OS_STARTTASK(task_t* task)
 
             SET_RUNNING_TASK(task);
 
-            if(task->privilige_mode != ePriviligeMode_unpriviliged_thread_mode)
+            if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
             {
                LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE();
             }
@@ -1236,7 +1236,8 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_1,
                 (unsigned_char_t*)&TASK_STACK[0],
                 200,
-                ePriviligeMode_unpriviliged_thread_mode
+                ePriviligeMode_unpriviliged_thread_mode,
+                CoreId0
                );
    ;
 
@@ -1252,7 +1253,8 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_1,
                 (unsigned_char_t*)&TASK_STACK[1],
                 200,
-                ePriviligeMode_unpriviliged_thread_mode
+                ePriviligeMode_unpriviliged_thread_mode,
+                Core0
                );
    ;
 
@@ -1265,7 +1267,8 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_2,
                 (unsigned_char_t*)&TASK_STACK[2],
                 200,
-                ePriviligeMode_unpriviliged_thread_mode
+                ePriviligeMode_unpriviliged_thread_mode,
+                Core0
                );
    ;
 
@@ -1278,7 +1281,8 @@ void OS_INIT_TASKS(void)
                 &TASK_GROUP_3,
                 (unsigned_char_t*)&TASK_STACK[3],
                 200,
-                ePriviligeMode_unpriviliged_thread_mode
+                ePriviligeMode_unpriviliged_thread_mode,
+                Core0
                );
    ;
 }
@@ -1294,7 +1298,7 @@ static task_t* OS_TaskScheduler(void)
 
    scheduler_time_t delta_time = Get_current_time() - LAST_CURRENT_TIME;
    LAST_CURRENT_TIME = Get_current_time();
-# 471 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 475 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    for((element_nr) = (0); (element_nr) <= ((5)-1); (element_nr)++)
    {
       link_list_member = GetFromLinkList(element_nr);

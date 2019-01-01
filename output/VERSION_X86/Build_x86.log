@@ -1,17 +1,11 @@
 "Target_x86" 
-01.01.2019 13:03:31,02 
+01.01.2019 13:19:32,97 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:1:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_driver_hook.c:1:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
     privilige_mode_t privilige_mode;
     ^
@@ -202,7 +196,7 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\
     privilige_mode_t privilige_mode;
     ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:349:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode
+    privilige_mode_t privilige_mode,
     ^
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
@@ -212,13 +206,44 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\
     ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_STARTTASK':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-             if(task->privilige_mode != ePriviligeMode_unpriviliged_thread_mode)
+             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
                                         ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: note: each undeclared identifier is reported only once for each function it appears in
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKS':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:399:17: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-                 ePriviligeMode_unpriviliged_thread_mode /* Unpriviliged Thread Mode */
+                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
                  ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: error: 'CoreId0' undeclared (first use in this function)
+                 CoreId0                             /* Cortex M4 has only 1 core */
+                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:392:4: error: too many arguments to function 'OS_INIT_TASK'
+    OS_INIT_TASK(task_ptr,                          /* task */
+    ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
+ extern void OS_INIT_TASK(
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:409:4: error: too many arguments to function 'OS_INIT_TASK'
+    OS_INIT_TASK(task_ptr,      /* task */
+    ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
+ extern void OS_INIT_TASK(
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:423:4: error: too many arguments to function 'OS_INIT_TASK'
+    OS_INIT_TASK(task_ptr,      /* task */
+    ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
+ extern void OS_INIT_TASK(
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:437:4: error: too many arguments to function 'OS_INIT_TASK'
+    OS_INIT_TASK(task_ptr,      /* task */
+    ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
+ extern void OS_INIT_TASK(
+             ^
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\..\os_base\..\os_sim\lld_global.h:10:0,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\..\os_base\os_firstinc.h:10,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\os_sim_main.c:1:
@@ -341,12 +366,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\
     ^
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_driver_hook.c:1:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode;
-    ^
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:1:
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:76:4: error: unknown type name 'privilige_mode_t'
     privilige_mode_t privilige_mode;
@@ -532,7 +551,7 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\
     privilige_mode_t privilige_mode;
     ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:349:4: error: unknown type name 'privilige_mode_t'
-    privilige_mode_t privilige_mode
+    privilige_mode_t privilige_mode,
     ^
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
@@ -542,13 +561,44 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\
     ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_STARTTASK':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-             if(task->privilige_mode != ePriviligeMode_unpriviliged_thread_mode)
+             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
                                         ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:40: note: each undeclared identifier is reported only once for each function it appears in
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKS':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:399:17: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-                 ePriviligeMode_unpriviliged_thread_mode /* Unpriviliged Thread Mode */
+                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
                  ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:400:17: error: 'CoreId0' undeclared (first use in this function)
+                 CoreId0                             /* Cortex M4 has only 1 core */
+                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:392:4: error: too many arguments to function 'OS_INIT_TASK'
+    OS_INIT_TASK(task_ptr,                          /* task */
+    ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
+ extern void OS_INIT_TASK(
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:409:4: error: too many arguments to function 'OS_INIT_TASK'
+    OS_INIT_TASK(task_ptr,      /* task */
+    ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
+ extern void OS_INIT_TASK(
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:423:4: error: too many arguments to function 'OS_INIT_TASK'
+    OS_INIT_TASK(task_ptr,      /* task */
+    ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
+ extern void OS_INIT_TASK(
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:437:4: error: too many arguments to function 'OS_INIT_TASK'
+    OS_INIT_TASK(task_ptr,      /* task */
+    ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:20:13: note: declared here
+ extern void OS_INIT_TASK(
+             ^
 In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\..\os_base\..\os_sim\lld_global.h:10:0,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\..\os_base\os_firstinc.h:10,
                  from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_sim\os_sim_main.c:1:
@@ -664,7 +714,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_user_code\..\os_base\..\os
     ^
 "link it" 
 mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_common.o: No such file or directory
-mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_driver_hook.o: No such file or directory
 mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_exception.o: No such file or directory
 mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_exception_isr_handler.o: No such file or directory
 mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_init_task_system.o: No such file or directory

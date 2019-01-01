@@ -16,8 +16,8 @@ OS_State: OS_INIT (Start im Supervisor Mode)
 --> MMU_REGION ->NA
 --> CoreId -> Done
 --> Task-Function -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
---> TaskPrio -> TODO
---> MultipleActChk -> TODO
+--> TaskPrio -> Done 
+--> MultipleActChk -> Done in OS_ActivateTask()
 --> Privilige Level (Handler mode (priviliged): System Mode, Abort, Undefined, FiQ, IRQ; Thread mode: unpriviliged / priviliged) -> Done
 - TCMP Interrupts für Tasks konfigurieren, Starten vom Dispatcher -> Done
 - MMU konfigurieren -> NA
@@ -33,15 +33,15 @@ OS_State: OS_Running (User Mode)
 - Interrupt Prioritäten von Cat2.(SW) Interrupts und Cat1.(HW) Interrupts -> NA
 
 (OS_State: OS_Exception (Supervisor Mode))
-- Link-Register Adresse im Eeprom abspeichern, an der die Exceptioin erzeugt wurde -> TODO
-- OS_Shutdown mit Reset -> TODO
+- Link-Register Adresse im Eeprom abspeichern, an der die Exceptioin erzeugt wurde -> NA (no EEPROM exists on eval board, enter endless loop instead)
+- OS_Shutdown mit Reset -> Done in handler functions via call of "OS_SHUTDOWN(os_reset_hardreset)"
 
 OS_State: OS_Shutdown (nur erlaubt im Supervisor Mode)
 - Interrupts deaktivieren -> Done
-- Tasks beenden (Timer Interrupts löschen) -> TODO
+- Tasks beenden (Timer Interrupts löschen) -> Done OS_SHUTDOWN(os_reset_hardreset
 - FMON / Watchdog deinitialisieren -> NA
 - MMU deaktivieren / deintialisieren -> NA
-- HW Reset auslösen (optional) -> TODO
+- HW Reset auslösen -> Done 
 
 */
 
