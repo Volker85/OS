@@ -135,6 +135,7 @@ void OS_Exception_PendSV(void)
 
 void OS_Exception_Systick(void)
 {
+   /* the systick timer is stopped during debug... see CorteM4 manual */
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    task_t* task = 0u;
    /* configure the TCMP */
