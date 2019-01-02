@@ -865,26 +865,6 @@ extern void OS_SHUTDOWN(os_reset_type_t reset_typ);
 #define _os_start_init_mc_h_ 
 
 extern void OS_INIT_MC(void);
-
-
-typedef struct
-{
-  volatile uint32 CR;
-  volatile uint32 CFGR;
-  volatile uint32 CIR;
-  volatile uint32 APB2RSTR;
-  volatile uint32 APB1RSTR;
-  volatile uint32 AHBENR;
-  volatile uint32 APB2ENR;
-  volatile uint32 APB1ENR;
-  volatile uint32 BDCR;
-  volatile uint32 CSR;
-# 29 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.h"
-} RCC_TypeDef;
-#define PERIPH_BASE ((uint32)0x40000000)
-#define AHBPERIPH_BASE (PERIPH_BASE + 0x20000)
-#define RCC_BASE (AHBPERIPH_BASE + 0x1000)
-#define RCC ((RCC_TypeDef *) RCC_BASE)
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_hw.h" 1
 

@@ -49,7 +49,7 @@ L5:
 	.loc 1 99 0
 	call	_LLF_INT_DISABLE
 	.loc 1 100 0
-	movl	_sys_req_reset_state.1300, %eax
+	movl	_sys_req_reset_state.1288, %eax
 	cmpl	$1, %eax
 	je	L9
 	cmpl	$1, %eax
@@ -92,7 +92,7 @@ L1:
 	ret
 	.cfi_endproc
 LFE0:
-.lcomm _sys_req_reset_state.1300,4,4
+.lcomm _sys_req_reset_state.1288,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
@@ -148,14 +148,12 @@ Ldebug_info0:
 	.ascii "os_reset_exit\0"
 	.sleb128 2
 	.byte	0
-	.uleb128 0x6
-	.long	0xc7
 	.uleb128 0x4
 	.ascii "os_reset_req_state_e\0"
 	.byte	0x4
 	.byte	0x1
 	.byte	0x30
-	.long	0x18a
+	.long	0x185
 	.uleb128 0x5
 	.ascii "Reset_powerdown\0"
 	.sleb128 0
@@ -170,8 +168,8 @@ Ldebug_info0:
 	.ascii "os_reset_req_state_t\0"
 	.byte	0x1
 	.byte	0x35
-	.long	0x13d
-	.uleb128 0x7
+	.long	0x138
+	.uleb128 0x6
 	.ascii "OS_STATE_HANDLER\0"
 	.byte	0x1
 	.byte	0x37
@@ -179,21 +177,23 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1ea
-	.uleb128 0x8
+	.long	0x1e5
+	.uleb128 0x7
 	.ascii "sys_req_reset_state\0"
 	.byte	0x1
 	.byte	0x3a
-	.long	0x18a
+	.long	0x185
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1300
+	.long	_sys_req_reset_state.1288
 	.byte	0
-	.uleb128 0x9
+	.uleb128 0x8
 	.ascii "OS_STATE\0"
 	.byte	0x4
 	.byte	0xf
-	.long	0x138
+	.long	0x1f5
+	.uleb128 0x9
+	.long	0xc7
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -265,13 +265,6 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x6
-	.uleb128 0x35
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x7
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -296,7 +289,7 @@ Ldebug_abbrev0:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x8
+	.uleb128 0x7
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -311,7 +304,7 @@ Ldebug_abbrev0:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x9
+	.uleb128 0x8
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -326,6 +319,13 @@ Ldebug_abbrev0:
 	.uleb128 0x19
 	.uleb128 0x3c
 	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x9
+	.uleb128 0x35
+	.byte	0
+	.uleb128 0x49
+	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1414,18 +1414,6 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_start_init_mc_h_ \0"
-	.byte	0x1
-	.uleb128 0x1e
-	.ascii "PERIPH_BASE ((uint32)0x40000000)\0"
-	.byte	0x1
-	.uleb128 0x1f
-	.ascii "AHBPERIPH_BASE (PERIPH_BASE + 0x20000)\0"
-	.byte	0x1
-	.uleb128 0x20
-	.ascii "RCC_BASE (AHBPERIPH_BASE + 0x1000)\0"
-	.byte	0x1
-	.uleb128 0x21
-	.ascii "RCC ((RCC_TypeDef *) RCC_BASE)\0"
 	.byte	0x4
 	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_hw.h"
 	.byte	0x3

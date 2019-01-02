@@ -8,10 +8,8 @@
    
    
 */
-void* REGISTER_R0;
-void* REGISTER_R1;
-void* REGISTER_R2;
-void* REGISTER_R3;
+
+
 task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
 
 void OS_TASK_SAVETASK_ENVIRONMENT(task_t* task)

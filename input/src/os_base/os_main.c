@@ -21,7 +21,7 @@ OS_State: OS_INIT (Start im Supervisor Mode)
 --> Privilige Level (Handler mode (priviliged): System Mode, Abort, Undefined, FiQ, IRQ; Thread mode: unpriviliged / priviliged) -> Done
 - TCMP Interrupts für Tasks konfigurieren, Starten vom Dispatcher -> Done
 - MMU konfigurieren -> NA
-- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler) -> TODO
+- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler) -> Not needed for CortexM4
 - SW mit erhöhtem Rechtebedarf wird mittels Interrupt gestartet (Dispatcher, WD, FMON, Shutdown) -> Done
 - FMON / Watchdog aktivieren -> NA
 - Interrupts aktivieren -> Done
@@ -29,7 +29,7 @@ OS_State: OS_INIT (Start im Supervisor Mode)
 
 OS_State: OS_Running (User Mode)
 - Starten / Beenden der einzelnen Tasks auf den jeweiligen Cores(User/Supervisor Mode??) -> Done
-- Timer Compare Interrupts -> not needed  -> TODO
+- Timer Compare Interrupts -> not needed  -> Systick used instead
 - Interrupt Prioritäten von Cat2.(SW) Interrupts und Cat1.(HW) Interrupts -> NA
 
 (OS_State: OS_Exception (Supervisor Mode))

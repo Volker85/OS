@@ -27,26 +27,11 @@ LFB0:
 L2:
 	.loc 1 19 0
 	cmpl	$0, 8(%ebp)
-	jne	L4
+	jne	L3
 	.loc 1 21 0
 	call	_LLF_MCU_RESET_POWER
-	jmp	L3
-L4:
-	.loc 1 23 0
-	cmpl	$2, 8(%ebp)
-	jne	L3
-LBB2:
-	.loc 1 26 0
-	call	_OS_DEINIT_HW
-	.loc 1 27 0
-	call	_OS_DEINIT_SW
-	.loc 1 28 0
-	call	_OS_DEINIT_MC
-	.loc 1 29 0
-	call	_OS_CALL_FUNC_POINTER
 L3:
-LBE2:
-	.loc 1 38 0 discriminator 1
+	.loc 1 40 0 discriminator 2
 	jmp	L3
 	.cfi_endproc
 LFE0:
@@ -54,7 +39,7 @@ Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x1f1
+	.long	0x170
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -111,7 +96,6 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1ed
 	.uleb128 0x7
 	.ascii "reset_typ\0"
 	.byte	0x1
@@ -120,46 +104,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x8
-	.long	LBB2
-	.long	LBE2-LBB2
-	.uleb128 0x9
-	.ascii "OS_DEINIT_HW\0"
-	.byte	0x1
-	.byte	0x1a
-	.long	0x1ed
-	.long	0x199
-	.uleb128 0xa
 	.byte	0
-	.uleb128 0x9
-	.ascii "OS_DEINIT_SW\0"
-	.byte	0x1
-	.byte	0x1b
-	.long	0x1ed
-	.long	0x1b3
-	.uleb128 0xa
-	.byte	0
-	.uleb128 0x9
-	.ascii "OS_DEINIT_MC\0"
-	.byte	0x1
-	.byte	0x1c
-	.long	0x1ed
-	.long	0x1cd
-	.uleb128 0xa
-	.byte	0
-	.uleb128 0xb
-	.ascii "OS_CALL_FUNC_POINTER\0"
-	.byte	0x1
-	.byte	0x1d
-	.long	0x1ed
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -251,8 +196,6 @@ Ldebug_abbrev0:
 	.uleb128 0x18
 	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x7
@@ -268,56 +211,6 @@ Ldebug_abbrev0:
 	.uleb128 0x13
 	.uleb128 0x2
 	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x8
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x9
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xa
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1383,7 +1276,3 @@ Ldebug_line0:
 	.def	_LLF_MPU_DISABLE;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MCU_SWITCH_OFF_POWER;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MCU_RESET_POWER;	.scl	2;	.type	32;	.endef
-	.def	_OS_DEINIT_HW;	.scl	2;	.type	32;	.endef
-	.def	_OS_DEINIT_SW;	.scl	2;	.type	32;	.endef
-	.def	_OS_DEINIT_MC;	.scl	2;	.type	32;	.endef
-	.def	_OS_CALL_FUNC_POINTER;	.scl	2;	.type	32;	.endef

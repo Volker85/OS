@@ -21,7 +21,7 @@
 OS_Exception_Read_Status_Registers:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-	.loc 1 11 0
+	.loc 1 12 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -72,7 +72,7 @@ OS_Exception_Read_Status_Registers:
 	ldr	r3, [r3]
 	ldr	r2, .L2+52
 	str	r3, [r2]
-	.loc 1 28 0
+	.loc 1 27 0
 	nop
 	mov	sp, r7
 	.cfi_def_cfa_register 13
@@ -110,7 +110,7 @@ OS_Exception_Read_Status_Registers:
 	.type	OS_Exception_HARDFAULT, %function
 OS_Exception_HARDFAULT:
 .LFB1:
-	.loc 1 32 0
+	.loc 1 31 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -120,18 +120,18 @@ OS_Exception_HARDFAULT:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 34 0
+	.loc 1 33 0
 	ldr	r3, .L6
 	.syntax unified
-@ 34 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
+@ 33 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
 	LDR r0,[r3];                          STR r14,[r0];
 @ 0 "" 2
-	.loc 1 40 0
+	.loc 1 39 0
 	.thumb
 	.syntax unified
 	bl	OS_Exception_Read_Status_Registers
 .L5:
-	.loc 1 41 0 discriminator 1
+	.loc 1 40 0 discriminator 1
 	b	.L5
 .L7:
 	.align	2
@@ -149,7 +149,7 @@ OS_Exception_HARDFAULT:
 	.type	OS_Exception_NMI, %function
 OS_Exception_NMI:
 .LFB2:
-	.loc 1 48 0
+	.loc 1 47 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -159,18 +159,18 @@ OS_Exception_NMI:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 50 0
+	.loc 1 49 0
 	ldr	r3, .L10
 	.syntax unified
-@ 50 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
+@ 49 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
 	LDR r0,[r3];                          STR r14,[r0];
 @ 0 "" 2
-	.loc 1 56 0
+	.loc 1 55 0
 	.thumb
 	.syntax unified
 	bl	OS_Exception_Read_Status_Registers
 .L9:
-	.loc 1 57 0 discriminator 1
+	.loc 1 56 0 discriminator 1
 	b	.L9
 .L11:
 	.align	2
@@ -188,7 +188,7 @@ OS_Exception_NMI:
 	.type	OS_Exception_SWI, %function
 OS_Exception_SWI:
 .LFB3:
-	.loc 1 62 0
+	.loc 1 61 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -198,17 +198,17 @@ OS_Exception_SWI:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 64 0
+	.loc 1 63 0
 	ldr	r3, .L13
 	.syntax unified
-@ 64 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
+@ 63 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
 	LDR r0,[r3];                          STR r14,[r0];
 @ 0 "" 2
-	.loc 1 72 0
+	.loc 1 71 0
 	.thumb
 	.syntax unified
 	bl	OS_ISRHANDLERC0
-	.loc 1 74 0
+	.loc 1 73 0
 	nop
 	pop	{r7, pc}
 .L14:
@@ -227,7 +227,7 @@ OS_Exception_SWI:
 	.type	OS_Exception_BUS_FAULT, %function
 OS_Exception_BUS_FAULT:
 .LFB4:
-	.loc 1 76 0
+	.loc 1 75 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -237,18 +237,18 @@ OS_Exception_BUS_FAULT:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 78 0
+	.loc 1 77 0
 	ldr	r3, .L17
 	.syntax unified
-@ 78 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
+@ 77 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
 	LDR r0,[r3];                          STR r14,[r0];
 @ 0 "" 2
-	.loc 1 84 0
+	.loc 1 83 0
 	.thumb
 	.syntax unified
 	bl	OS_Exception_Read_Status_Registers
 .L16:
-	.loc 1 85 0 discriminator 1
+	.loc 1 84 0 discriminator 1
 	b	.L16
 .L18:
 	.align	2
@@ -266,7 +266,7 @@ OS_Exception_BUS_FAULT:
 	.type	OS_Exception_DEBUG, %function
 OS_Exception_DEBUG:
 .LFB5:
-	.loc 1 91 0
+	.loc 1 90 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -276,10 +276,10 @@ OS_Exception_DEBUG:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 93 0
+	.loc 1 92 0
 	bl	OS_Exception_Read_Status_Registers
 .L20:
-	.loc 1 94 0 discriminator 1
+	.loc 1 93 0 discriminator 1
 	b	.L20
 	.cfi_endproc
 .LFE5:
@@ -293,7 +293,7 @@ OS_Exception_DEBUG:
 	.type	OS_Exception_MEM_MANAG_FAULT, %function
 OS_Exception_MEM_MANAG_FAULT:
 .LFB6:
-	.loc 1 100 0
+	.loc 1 99 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -303,18 +303,18 @@ OS_Exception_MEM_MANAG_FAULT:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 102 0
+	.loc 1 101 0
 	ldr	r3, .L23
 	.syntax unified
-@ 102 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
+@ 101 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
 	LDR r0,[r3];                          STR r14,[r0];
 @ 0 "" 2
-	.loc 1 108 0
+	.loc 1 107 0
 	.thumb
 	.syntax unified
 	bl	OS_Exception_Read_Status_Registers
 .L22:
-	.loc 1 109 0 discriminator 1
+	.loc 1 108 0 discriminator 1
 	b	.L22
 .L24:
 	.align	2
@@ -332,7 +332,7 @@ OS_Exception_MEM_MANAG_FAULT:
 	.type	OS_Exception_USAGE_FAULT, %function
 OS_Exception_USAGE_FAULT:
 .LFB7:
-	.loc 1 115 0
+	.loc 1 114 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -342,18 +342,18 @@ OS_Exception_USAGE_FAULT:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 117 0
+	.loc 1 116 0
 	ldr	r3, .L27
 	.syntax unified
-@ 117 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
+@ 116 "E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c" 1
 	LDR r0,[r3];                          STR r14,[r0];
 @ 0 "" 2
-	.loc 1 123 0
+	.loc 1 122 0
 	.thumb
 	.syntax unified
 	bl	OS_Exception_Read_Status_Registers
 .L26:
-	.loc 1 124 0 discriminator 1
+	.loc 1 123 0 discriminator 1
 	b	.L26
 .L28:
 	.align	2
@@ -371,7 +371,7 @@ OS_Exception_USAGE_FAULT:
 	.type	OS_Exception_PendSV, %function
 OS_Exception_PendSV:
 .LFB8:
-	.loc 1 130 0
+	.loc 1 129 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -382,7 +382,7 @@ OS_Exception_PendSV:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 .L30:
-	.loc 1 132 0 discriminator 1
+	.loc 1 131 0 discriminator 1
 	b	.L30
 	.cfi_endproc
 .LFE8:
@@ -396,7 +396,7 @@ OS_Exception_PendSV:
 	.type	OS_Exception_Systick, %function
 OS_Exception_Systick:
 .LFB9:
-	.loc 1 138 0
+	.loc 1 137 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -408,37 +408,37 @@ OS_Exception_Systick:
 	.cfi_def_cfa_offset 16
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 140 0
+	.loc 1 139 0
 	movs	r3, #0
 	str	r3, [r7, #4]
-	.loc 1 158 0
+	.loc 1 157 0
 	ldr	r3, .L33
 	ldr	r3, [r3]
 	ldr	r2, .L33
 	orr	r3, r3, #664
 	orr	r3, r3, #3
 	str	r3, [r2]
-	.loc 1 159 0
+	.loc 1 158 0
 	ldr	r3, .L33+4
 	movs	r2, #0
 	str	r2, [r3]
-	.loc 1 160 0
+	.loc 1 159 0
 	ldr	r3, .L33+8
 	ldr	r3, [r3]
 	ldr	r2, .L33+8
 	orr	r3, r3, #3
 	str	r3, [r2]
-	.loc 1 201 0
+	.loc 1 200 0
 	bl	GetRunningTask
 	str	r0, [r7, #4]
-	.loc 1 202 0
+	.loc 1 201 0
 	ldr	r3, [r7, #4]
 	cmp	r3, #0
 	beq	.L32
-	.loc 1 204 0
+	.loc 1 203 0
 	ldr	r0, [r7, #4]
 	bl	OS_TASK_SAVETASK_ENVIRONMENT
-	.loc 1 205 0
+	.loc 1 204 0
 	bl	GET_CORE_ID
 	mov	r3, r0
 	lsls	r3, r3, #8
@@ -446,12 +446,12 @@ OS_Exception_Systick:
 	add	r3, r3, r2
 	mov	r0, r3
 	bl	OS_TASK_RESTORE_SYSTEM_STACK
-	.loc 1 206 0
+	.loc 1 205 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #0, #1
 	strb	r3, [r2]
-	.loc 1 207 0
+	.loc 1 206 0
 	bl	Get_current_time
 	mov	r2, r0
 	ldr	r3, [r7, #4]
@@ -462,7 +462,7 @@ OS_Exception_Systick:
 	add	r2, r2, r3
 	ldr	r3, [r7, #4]
 	str	r2, [r3, #28]
-	.loc 1 208 0
+	.loc 1 207 0
 	bl	Get_current_time
 	mov	r2, r0
 	ldr	r3, [r7, #4]
@@ -475,16 +475,16 @@ OS_Exception_Systick:
 	ldr	r3, [r3, #56]
 	add	r2, r2, r1
 	str	r2, [r3]
-	.loc 1 209 0
+	.loc 1 208 0
 	movs	r0, #0
 	bl	SET_RUNNING_TASK
-	.loc 1 210 0
+	.loc 1 209 0
 	ldr	r0, [r7, #4]
 	bl	OS_TERMINATE_TASK
 .L32:
-	.loc 1 212 0
+	.loc 1 211 0
 	bl	OS_STATE_HANDLER
-	.loc 1 214 0
+	.loc 1 213 0
 	nop
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -511,7 +511,7 @@ OS_Exception_Systick:
 	.type	OS_Exception_IRQ, %function
 OS_Exception_IRQ:
 .LFB10:
-	.loc 1 217 0
+	.loc 1 216 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -521,9 +521,9 @@ OS_Exception_IRQ:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 219 0
+	.loc 1 218 0
 	bl	OS_ISRHANDLERC0
-	.loc 1 221 0
+	.loc 1 220 0
 	nop
 	pop	{r7, pc}
 	.cfi_endproc
@@ -538,7 +538,7 @@ OS_Exception_IRQ:
 	.type	OS_Exception_FIQ, %function
 OS_Exception_FIQ:
 .LFB11:
-	.loc 1 223 0
+	.loc 1 222 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -548,9 +548,9 @@ OS_Exception_FIQ:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 225 0
+	.loc 1 224 0
 	bl	OS_ISRHANDLERC0
-	.loc 1 227 0
+	.loc 1 226 0
 	nop
 	pop	{r7, pc}
 	.cfi_endproc
@@ -565,7 +565,7 @@ OS_Exception_FIQ:
 	.type	TCMP1, %function
 TCMP1:
 .LFB12:
-	.loc 1 231 0
+	.loc 1 230 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -575,9 +575,9 @@ TCMP1:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 233 0
+	.loc 1 232 0
 	bl	OS_ISRHANDLERC0
-	.loc 1 235 0
+	.loc 1 234 0
 	nop
 	pop	{r7, pc}
 	.cfi_endproc
@@ -592,7 +592,7 @@ TCMP1:
 	.type	TCMP2, %function
 TCMP2:
 .LFB13:
-	.loc 1 237 0
+	.loc 1 236 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -602,7 +602,7 @@ TCMP2:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 241 0
+	.loc 1 240 0
 	nop
 	mov	sp, r7
 	.cfi_def_cfa_register 13
@@ -623,7 +623,7 @@ TCMP2:
 	.type	TCMP3, %function
 TCMP3:
 .LFB14:
-	.loc 1 243 0
+	.loc 1 242 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -633,7 +633,7 @@ TCMP3:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 247 0
+	.loc 1 246 0
 	nop
 	mov	sp, r7
 	.cfi_def_cfa_register 13
@@ -654,7 +654,7 @@ TCMP3:
 	.type	TCMP4, %function
 TCMP4:
 .LFB15:
-	.loc 1 249 0
+	.loc 1 248 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -664,7 +664,7 @@ TCMP4:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 253 0
+	.loc 1 252 0
 	nop
 	mov	sp, r7
 	.cfi_def_cfa_register 13
@@ -1238,7 +1238,7 @@ TCMP4:
 	.uleb128 0x14
 	.4byte	.LASF602
 	.byte	0x1
-	.byte	0xf8
+	.byte	0xf7
 	.4byte	.LFB15
 	.4byte	.LFE15-.LFB15
 	.uleb128 0x1
@@ -1246,7 +1246,7 @@ TCMP4:
 	.uleb128 0x14
 	.4byte	.LASF603
 	.byte	0x1
-	.byte	0xf2
+	.byte	0xf1
 	.4byte	.LFB14
 	.4byte	.LFE14-.LFB14
 	.uleb128 0x1
@@ -1254,7 +1254,7 @@ TCMP4:
 	.uleb128 0x14
 	.4byte	.LASF604
 	.byte	0x1
-	.byte	0xec
+	.byte	0xeb
 	.4byte	.LFB13
 	.4byte	.LFE13-.LFB13
 	.uleb128 0x1
@@ -1262,7 +1262,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF605
 	.byte	0x1
-	.byte	0xe6
+	.byte	0xe5
 	.4byte	.LFB12
 	.4byte	.LFE12-.LFB12
 	.uleb128 0x1
@@ -1270,7 +1270,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF606
 	.byte	0x1
-	.byte	0xde
+	.byte	0xdd
 	.4byte	.LFB11
 	.4byte	.LFE11-.LFB11
 	.uleb128 0x1
@@ -1278,7 +1278,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF607
 	.byte	0x1
-	.byte	0xd8
+	.byte	0xd7
 	.4byte	.LFB10
 	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
@@ -1286,7 +1286,7 @@ TCMP4:
 	.uleb128 0x16
 	.4byte	.LASF619
 	.byte	0x1
-	.byte	0x89
+	.byte	0x88
 	.4byte	.LFB9
 	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
@@ -1295,7 +1295,7 @@ TCMP4:
 	.uleb128 0x17
 	.4byte	.LASF620
 	.byte	0x1
-	.byte	0x8c
+	.byte	0x8b
 	.4byte	0x432
 	.uleb128 0x2
 	.byte	0x91
@@ -1304,7 +1304,7 @@ TCMP4:
 	.uleb128 0x14
 	.4byte	.LASF608
 	.byte	0x1
-	.byte	0x81
+	.byte	0x80
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
@@ -1312,7 +1312,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF609
 	.byte	0x1
-	.byte	0x72
+	.byte	0x71
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
@@ -1320,7 +1320,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF610
 	.byte	0x1
-	.byte	0x63
+	.byte	0x62
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
@@ -1328,7 +1328,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF611
 	.byte	0x1
-	.byte	0x5a
+	.byte	0x59
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
@@ -1336,7 +1336,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF612
 	.byte	0x1
-	.byte	0x4b
+	.byte	0x4a
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
@@ -1344,7 +1344,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF613
 	.byte	0x1
-	.byte	0x3d
+	.byte	0x3c
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
@@ -1352,7 +1352,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF614
 	.byte	0x1
-	.byte	0x2f
+	.byte	0x2e
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
@@ -1360,7 +1360,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF615
 	.byte	0x1
-	.byte	0x1f
+	.byte	0x1e
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
@@ -1368,7 +1368,7 @@ TCMP4:
 	.uleb128 0x18
 	.4byte	.LASF621
 	.byte	0x1
-	.byte	0xa
+	.byte	0xb
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
@@ -1914,22 +1914,22 @@ TCMP4:
 	.uleb128 0x13
 	.4byte	.LASF524
 	.byte	0x5
-	.uleb128 0x93
+	.uleb128 0x92
 	.4byte	.LASF525
 	.byte	0x5
-	.uleb128 0x94
+	.uleb128 0x93
 	.4byte	.LASF526
 	.byte	0x5
-	.uleb128 0x95
+	.uleb128 0x94
 	.4byte	.LASF527
 	.byte	0x5
-	.uleb128 0x96
+	.uleb128 0x95
 	.4byte	.LASF528
 	.byte	0x5
-	.uleb128 0x97
+	.uleb128 0x96
 	.4byte	.LASF529
 	.byte	0x5
-	.uleb128 0x98
+	.uleb128 0x97
 	.4byte	.LASF530
 	.byte	0x4
 	.byte	0

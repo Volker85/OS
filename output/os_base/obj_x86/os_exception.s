@@ -1,298 +1,281 @@
 	.file	"os_exception.c"
 	.text
 Ltext0:
-	.def	_OS_Exception_Read_Status_Registers;	.scl	3;	.type	32;	.endef
-_OS_Exception_Read_Status_Registers:
+	.globl	_OS_Exception_HARDFAULT
+	.def	_OS_Exception_HARDFAULT;	.scl	2;	.type	32;	.endef
+_OS_Exception_HARDFAULT:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_exception.c"
-	.loc 1 11 0
+	.loc 1 31 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 28 0
+	.loc 1 43 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE0:
-	.globl	_OS_Exception_HARDFAULT
-	.def	_OS_Exception_HARDFAULT;	.scl	2;	.type	32;	.endef
-_OS_Exception_HARDFAULT:
+	.globl	_OS_Exception_NMI
+	.def	_OS_Exception_NMI;	.scl	2;	.type	32;	.endef
+_OS_Exception_NMI:
 LFB1:
-	.loc 1 32 0
+	.loc 1 47 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 44 0
+	.loc 1 59 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE1:
-	.globl	_OS_Exception_NMI
-	.def	_OS_Exception_NMI;	.scl	2;	.type	32;	.endef
-_OS_Exception_NMI:
+	.globl	_OS_Exception_SWI
+	.def	_OS_Exception_SWI;	.scl	2;	.type	32;	.endef
+_OS_Exception_SWI:
 LFB2:
-	.loc 1 48 0
+	.loc 1 61 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 60 0
+	.loc 1 73 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE2:
-	.globl	_OS_Exception_SWI
-	.def	_OS_Exception_SWI;	.scl	2;	.type	32;	.endef
-_OS_Exception_SWI:
+	.globl	_OS_Exception_BUS_FAULT
+	.def	_OS_Exception_BUS_FAULT;	.scl	2;	.type	32;	.endef
+_OS_Exception_BUS_FAULT:
 LFB3:
-	.loc 1 62 0
+	.loc 1 75 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 74 0
+	.loc 1 87 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE3:
-	.globl	_OS_Exception_BUS_FAULT
-	.def	_OS_Exception_BUS_FAULT;	.scl	2;	.type	32;	.endef
-_OS_Exception_BUS_FAULT:
+	.globl	_OS_Exception_DEBUG
+	.def	_OS_Exception_DEBUG;	.scl	2;	.type	32;	.endef
+_OS_Exception_DEBUG:
 LFB4:
-	.loc 1 76 0
+	.loc 1 90 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 88 0
+	.loc 1 96 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE4:
-	.globl	_OS_Exception_DEBUG
-	.def	_OS_Exception_DEBUG;	.scl	2;	.type	32;	.endef
-_OS_Exception_DEBUG:
+	.globl	_OS_Exception_MEM_MANAG_FAULT
+	.def	_OS_Exception_MEM_MANAG_FAULT;	.scl	2;	.type	32;	.endef
+_OS_Exception_MEM_MANAG_FAULT:
 LFB5:
-	.loc 1 91 0
+	.loc 1 99 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 97 0
+	.loc 1 111 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE5:
-	.globl	_OS_Exception_MEM_MANAG_FAULT
-	.def	_OS_Exception_MEM_MANAG_FAULT;	.scl	2;	.type	32;	.endef
-_OS_Exception_MEM_MANAG_FAULT:
+	.globl	_OS_Exception_USAGE_FAULT
+	.def	_OS_Exception_USAGE_FAULT;	.scl	2;	.type	32;	.endef
+_OS_Exception_USAGE_FAULT:
 LFB6:
-	.loc 1 100 0
+	.loc 1 114 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 112 0
+	.loc 1 126 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE6:
-	.globl	_OS_Exception_USAGE_FAULT
-	.def	_OS_Exception_USAGE_FAULT;	.scl	2;	.type	32;	.endef
-_OS_Exception_USAGE_FAULT:
+	.globl	_OS_Exception_PendSV
+	.def	_OS_Exception_PendSV;	.scl	2;	.type	32;	.endef
+_OS_Exception_PendSV:
 LFB7:
-	.loc 1 115 0
+	.loc 1 129 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 127 0
+	.loc 1 134 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE7:
-	.globl	_OS_Exception_PendSV
-	.def	_OS_Exception_PendSV;	.scl	2;	.type	32;	.endef
-_OS_Exception_PendSV:
+	.globl	_OS_Exception_Systick
+	.def	_OS_Exception_Systick;	.scl	2;	.type	32;	.endef
+_OS_Exception_Systick:
 LFB8:
-	.loc 1 130 0
+	.loc 1 137 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 135 0
+	.loc 1 213 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE8:
-	.globl	_OS_Exception_Systick
-	.def	_OS_Exception_Systick;	.scl	2;	.type	32;	.endef
-_OS_Exception_Systick:
+	.globl	_OS_Exception_IRQ
+	.def	_OS_Exception_IRQ;	.scl	2;	.type	32;	.endef
+_OS_Exception_IRQ:
 LFB9:
-	.loc 1 138 0
+	.loc 1 216 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 214 0
+	.loc 1 220 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE9:
-	.globl	_OS_Exception_IRQ
-	.def	_OS_Exception_IRQ;	.scl	2;	.type	32;	.endef
-_OS_Exception_IRQ:
+	.globl	_OS_Exception_FIQ
+	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
+_OS_Exception_FIQ:
 LFB10:
-	.loc 1 217 0
+	.loc 1 222 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 221 0
+	.loc 1 226 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE10:
-	.globl	_OS_Exception_FIQ
-	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
-_OS_Exception_FIQ:
+	.globl	_TCMP1
+	.def	_TCMP1;	.scl	2;	.type	32;	.endef
+_TCMP1:
 LFB11:
-	.loc 1 223 0
+	.loc 1 230 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 227 0
+	.loc 1 234 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE11:
-	.globl	_TCMP1
-	.def	_TCMP1;	.scl	2;	.type	32;	.endef
-_TCMP1:
+	.globl	_TCMP2
+	.def	_TCMP2;	.scl	2;	.type	32;	.endef
+_TCMP2:
 LFB12:
-	.loc 1 231 0
+	.loc 1 236 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 235 0
+	.loc 1 240 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE12:
-	.globl	_TCMP2
-	.def	_TCMP2;	.scl	2;	.type	32;	.endef
-_TCMP2:
+	.globl	_TCMP3
+	.def	_TCMP3;	.scl	2;	.type	32;	.endef
+_TCMP3:
 LFB13:
-	.loc 1 237 0
+	.loc 1 242 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 241 0
+	.loc 1 246 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE13:
-	.globl	_TCMP3
-	.def	_TCMP3;	.scl	2;	.type	32;	.endef
-_TCMP3:
+	.globl	_TCMP4
+	.def	_TCMP4;	.scl	2;	.type	32;	.endef
+_TCMP4:
 LFB14:
-	.loc 1 243 0
+	.loc 1 248 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 247 0
+	.loc 1 252 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE14:
-	.globl	_TCMP4
-	.def	_TCMP4;	.scl	2;	.type	32;	.endef
-_TCMP4:
-LFB15:
-	.loc 1 249 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	.loc 1 253 0
-	popl	%ebp
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE15:
 Letext0:
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x2c8
+	.long	0x298
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -321,131 +304,123 @@ Ldebug_info0:
 	.byte	0x7
 	.ascii "unsigned int\0"
 	.uleb128 0x3
-	.ascii "OS_Exception_Read_Status_Registers\0"
+	.ascii "OS_Exception_HARDFAULT\0"
 	.byte	0x1
-	.byte	0xa
+	.byte	0x1e
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_HARDFAULT\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_NMI\0"
 	.byte	0x1
-	.byte	0x1f
+	.byte	0x2e
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_NMI\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_SWI\0"
 	.byte	0x1
-	.byte	0x2f
+	.byte	0x3c
 	.long	LFB2
 	.long	LFE2-LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_SWI\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_BUS_FAULT\0"
 	.byte	0x1
-	.byte	0x3d
+	.byte	0x4a
 	.long	LFB3
 	.long	LFE3-LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_BUS_FAULT\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_DEBUG\0"
 	.byte	0x1
-	.byte	0x4b
+	.byte	0x59
 	.long	LFB4
 	.long	LFE4-LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_DEBUG\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_MEM_MANAG_FAULT\0"
 	.byte	0x1
-	.byte	0x5a
+	.byte	0x62
 	.long	LFB5
 	.long	LFE5-LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_MEM_MANAG_FAULT\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_USAGE_FAULT\0"
 	.byte	0x1
-	.byte	0x63
+	.byte	0x71
 	.long	LFB6
 	.long	LFE6-LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_USAGE_FAULT\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_PendSV\0"
 	.byte	0x1
-	.byte	0x72
+	.byte	0x80
 	.long	LFB7
 	.long	LFE7-LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_PendSV\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_Systick\0"
 	.byte	0x1
-	.byte	0x81
+	.byte	0x88
 	.long	LFB8
 	.long	LFE8-LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_Systick\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_IRQ\0"
 	.byte	0x1
-	.byte	0x89
+	.byte	0xd7
 	.long	LFB9
 	.long	LFE9-LFB9
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_IRQ\0"
+	.uleb128 0x3
+	.ascii "OS_Exception_FIQ\0"
 	.byte	0x1
-	.byte	0xd8
+	.byte	0xdd
 	.long	LFB10
 	.long	LFE10-LFB10
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "OS_Exception_FIQ\0"
+	.uleb128 0x3
+	.ascii "TCMP1\0"
 	.byte	0x1
-	.byte	0xde
+	.byte	0xe5
 	.long	LFB11
 	.long	LFE11-LFB11
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "TCMP1\0"
+	.uleb128 0x3
+	.ascii "TCMP2\0"
 	.byte	0x1
-	.byte	0xe6
+	.byte	0xeb
 	.long	LFB12
 	.long	LFE12-LFB12
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "TCMP2\0"
+	.uleb128 0x3
+	.ascii "TCMP3\0"
 	.byte	0x1
-	.byte	0xec
+	.byte	0xf1
 	.long	LFB13
 	.long	LFE13-LFB13
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x4
-	.ascii "TCMP3\0"
-	.byte	0x1
-	.byte	0xf2
-	.long	LFB14
-	.long	LFE14-LFB14
-	.uleb128 0x1
-	.byte	0x9c
-	.uleb128 0x4
+	.uleb128 0x3
 	.ascii "TCMP4\0"
 	.byte	0x1
-	.byte	0xf8
-	.long	LFB15
-	.long	LFE15-LFB15
+	.byte	0xf7
+	.long	LFB14
+	.long	LFE14-LFB14
 	.uleb128 0x1
 	.byte	0x9c
 	.byte	0
@@ -482,27 +457,6 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x3
-	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x4
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f

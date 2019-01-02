@@ -51,29 +51,13 @@ OS_SHUTDOWN:
 	.loc 1 19 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	cmp	r3, #0
-	bne	.L4
+	bne	.L3
 	.loc 1 21 0
 	bl	LLF_MCU_RESET_POWER
-	b	.L3
-.L4:
-	.loc 1 23 0
-	ldrb	r3, [r7, #7]	@ zero_extendqisi2
-	cmp	r3, #2
-	bne	.L3
-.LBB2:
-	.loc 1 26 0
-	bl	OS_DEINIT_HW
-	.loc 1 27 0
-	bl	OS_DEINIT_SW
-	.loc 1 28 0
-	bl	OS_DEINIT_MC
-	.loc 1 29 0
-	bl	OS_CALL_FUNC_POINTER
 .L3:
-.L5:
-.LBE2:
-	.loc 1 35 0 discriminator 1
-	b	.L5
+.L4:
+	.loc 1 37 0 discriminator 2
+	b	.L4
 	.cfi_endproc
 .LFE0:
 	.size	OS_SHUTDOWN, .-OS_SHUTDOWN
@@ -85,15 +69,15 @@ OS_SHUTDOWN:
 	.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x4ce
+	.4byte	0x479
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF578
+	.4byte	.LASF575
 	.byte	0x1
-	.4byte	.LASF579
-	.4byte	.LASF580
+	.4byte	.LASF576
+	.4byte	.LASF577
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -632,62 +616,22 @@ OS_SHUTDOWN:
 	.byte	0x8
 	.4byte	0x42d
 	.uleb128 0x14
-	.4byte	.LASF581
+	.4byte	.LASF578
 	.byte	0x1
 	.byte	0x4
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x4ca
 	.uleb128 0x15
-	.4byte	.LASF582
+	.4byte	.LASF579
 	.byte	0x1
 	.byte	0x4
 	.4byte	0x451
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x16
-	.4byte	.LBB2
-	.4byte	.LBE2-.LBB2
-	.uleb128 0x17
-	.4byte	.LASF575
-	.byte	0x1
-	.byte	0x1a
-	.4byte	0x4ca
-	.4byte	0x499
-	.uleb128 0x18
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF576
-	.byte	0x1
-	.byte	0x1b
-	.4byte	0x4ca
-	.4byte	0x4aa
-	.uleb128 0x18
-	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF577
-	.byte	0x1
-	.byte	0x1c
-	.4byte	0x4ca
-	.4byte	0x4bb
-	.uleb128 0x18
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF583
-	.byte	0x1
-	.byte	0x1d
-	.4byte	0x4ca
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x1a
-	.byte	0x4
-	.byte	0x5
-	.ascii	"int\000"
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -945,8 +889,6 @@ OS_SHUTDOWN:
 	.uleb128 0x18
 	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x15
@@ -962,67 +904,6 @@ OS_SHUTDOWN:
 	.uleb128 0x13
 	.uleb128 0x2
 	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x16
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x17
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x18
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x19
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x1a
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0x8
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2696,11 +2577,11 @@ OS_SHUTDOWN:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF578:
+.LASF575:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
-.LASF581:
+.LASF578:
 	.ascii	"OS_SHUTDOWN\000"
 .LASF58:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
@@ -2900,7 +2781,7 @@ OS_SHUTDOWN:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF317:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
-.LASF582:
+.LASF579:
 	.ascii	"reset_typ\000"
 .LASF156:
 	.ascii	"__FLT_HAS_INFINITY__ 1\000"
@@ -3053,8 +2934,8 @@ OS_SHUTDOWN:
 	.ascii	"os_reset_type_t\000"
 .LASF206:
 	.ascii	"__FLT64_MAX_10_EXP__ 308\000"
-.LASF23:
-	.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
+.LASF291:
+	.ascii	"__SACCUM_IBIT__ 8\000"
 .LASF390:
 	.ascii	"__SIZEOF_PTRDIFF_T__ 4\000"
 .LASF102:
@@ -3095,6 +2976,8 @@ OS_SHUTDOWN:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
 .LASF131:
 	.ascii	"__UINT_FAST8_MAX__ 0xffffffffU\000"
+.LASF23:
+	.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
 .LASF440:
 	.ascii	"INTEGER_LLP64_IL32P64 1\000"
 .LASF322:
@@ -3166,8 +3049,6 @@ OS_SHUTDOWN:
 	.ascii	"__REGISTER_PREFIX__ \000"
 .LASF189:
 	.ascii	"__FLT32_MIN_EXP__ (-125)\000"
-.LASF577:
-	.ascii	"OS_DEINIT_MC\000"
 .LASF306:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF132:
@@ -3264,8 +3145,6 @@ OS_SHUTDOWN:
 	.ascii	"__UDQ_FBIT__ 64\000"
 .LASF125:
 	.ascii	"__INT_FAST16_MAX__ 0x7fffffff\000"
-.LASF291:
-	.ascii	"__SACCUM_IBIT__ 8\000"
 .LASF557:
 	.ascii	"default_prio\000"
 .LASF411:
@@ -3304,7 +3183,7 @@ OS_SHUTDOWN:
 	.ascii	"__USES_INITFINI__ 1\000"
 .LASF457:
 	.ascii	"Rejected 0\000"
-.LASF580:
+.LASF577:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -3557,8 +3436,6 @@ OS_SHUTDOWN:
 	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
 .LASF133:
 	.ascii	"__UINT_FAST32_MAX__ 0xffffffffU\000"
-.LASF583:
-	.ascii	"OS_CALL_FUNC_POINTER\000"
 .LASF255:
 	.ascii	"__USFRACT_FBIT__ 8\000"
 .LASF113:
@@ -3635,7 +3512,7 @@ OS_SHUTDOWN:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF509:
 	.ascii	"long unsigned int\000"
-.LASF579:
+.LASF576:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_shutdown.c\000"
 .LASF378:
@@ -3656,8 +3533,6 @@ OS_SHUTDOWN:
 	.ascii	"__has_include(STR) __has_include__(STR)\000"
 .LASF413:
 	.ascii	"__SOFTFP__ 1\000"
-.LASF576:
-	.ascii	"OS_DEINIT_SW\000"
 .LASF210:
 	.ascii	"__FLT64_EPSILON__ 2.2204460492503131e-16F64\000"
 .LASF512:
@@ -3732,8 +3607,6 @@ OS_SHUTDOWN:
 	.ascii	"exe_time\000"
 .LASF380:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
-.LASF500:
-	.ascii	"_os_init_task_system_h_ \000"
 .LASF365:
 	.ascii	"__UTA_IBIT__ 64\000"
 .LASF148:
@@ -3816,8 +3689,8 @@ OS_SHUTDOWN:
 	.ascii	"__DECIMAL_DIG__ 17\000"
 .LASF110:
 	.ascii	"__INT32_C(c) c ## L\000"
-.LASF575:
-	.ascii	"OS_DEINIT_HW\000"
+.LASF500:
+	.ascii	"_os_init_task_system_h_ \000"
 .LASF370:
 	.ascii	"__STRICT_ANSI__ 1\000"
 .LASF417:

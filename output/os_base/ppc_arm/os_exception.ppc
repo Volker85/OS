@@ -924,9 +924,9 @@ extern void OS_TASK_DISPATCHER(void);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
 
 
+
 static void OS_Exception_Read_Status_Registers(void)
 {
-
 #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
 #define MEM_MANAG_FAULT_STATUS_REG ((volatile uint8*)0xE000ED28u)
 #define BUS_FAULT_STATUS_REG ((volatile uint8*)0xE000ED29u)
@@ -941,7 +941,6 @@ static void OS_Exception_Read_Status_Registers(void)
    VAR_MEM_FAULT_ADDR_REG = *((volatile uint32*)0xE000ED34u);
    VAR_BUS_FAULT_ADDR_REG = *((volatile uint32*)0xE000ED38u);
    VAR_AUX_FAULT_STATUS_REG = *((volatile uint32*)0xE000ED3Cu);
-
 }
 
 
@@ -1075,7 +1074,7 @@ void OS_Exception_Systick(void)
    *((uint32*)0xE000E014) = *((uint32*)0xE000E014) | (((uint32)((uint32)168000000u) * ((uint32)10000u)) / ((uint32)1000000));
    *((uint32*)0xE000E018) = ((uint32)0x00000000);
    *((uint32*)0xE000E010) = *((uint32*)0xE000E010) | ((uint32)0x00000002) | ((uint32)0x00000001);
-# 201 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+# 200 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
    task = GetRunningTask();
    if(task != 0u)
    {

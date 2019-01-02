@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccSc7Bt0.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccdHY24j.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -31,13 +31,25 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccSc7Bt0.s 			page 1
   28              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
   29              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
   30              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
-  31              	.Letext0:
-  32              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  33              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  34              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  35              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  36              		.file 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccSc7Bt0.s 			page 2
+  31              		.comm	REGISTER_R0,4,4
+  32              		.comm	REGISTER_R1,4,4
+  33              		.comm	REGISTER_R2,4,4
+  34              		.comm	REGISTER_R3,4,4
+  35              		.comm	REGISTER_R4,4,4
+  36              		.comm	REGISTER_R5,4,4
+  37              		.comm	REGISTER_R6,4,4
+  38              		.comm	REGISTER_R7,4,4
+  39              		.comm	REGISTER_R8,4,4
+  40              		.comm	REGISTER_R9,4,4
+  41              		.comm	REGISTER_R10,4,4
+  42              		.comm	REGISTER_R11,4,4
+  43              	.Letext0:
+  44              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  45              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  46              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  47              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  48              		.file 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccdHY24j.s 			page 2
 
 
 DEFINED SYMBOLS
@@ -58,6 +70,18 @@ DEFINED SYMBOLS
                             *COM*:00000004 BACKUP_SYSTICK_CURRENT_VAL_REG
                             *COM*:00000004 RAM_CHECK_FAILURE_DETECTED
                             *COM*:00000004 RAM_CHECK_FAILURE_ADDR
+                            *COM*:00000004 REGISTER_R0
+                            *COM*:00000004 REGISTER_R1
+                            *COM*:00000004 REGISTER_R2
+                            *COM*:00000004 REGISTER_R3
+                            *COM*:00000004 REGISTER_R4
+                            *COM*:00000004 REGISTER_R5
+                            *COM*:00000004 REGISTER_R6
+                            *COM*:00000004 REGISTER_R7
+                            *COM*:00000004 REGISTER_R8
+                            *COM*:00000004 REGISTER_R9
+                            *COM*:00000004 REGISTER_R10
+                            *COM*:00000004 REGISTER_R11
                            .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544

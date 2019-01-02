@@ -12,10 +12,6 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
-	.comm	REGISTER_R0,4,4
-	.comm	REGISTER_R1,4,4
-	.comm	REGISTER_R2,4,4
-	.comm	REGISTER_R3,4,4
 	.comm	TASK_PTR,20,4
 	.align	1
 	.global	OS_TASK_SAVETASK_ENVIRONMENT
@@ -27,7 +23,7 @@
 OS_TASK_SAVETASK_ENVIRONMENT:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c"
-	.loc 1 18 0
+	.loc 1 16 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -40,16 +36,16 @@ OS_TASK_SAVETASK_ENVIRONMENT:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 19 0
+	.loc 1 17 0
 	ldr	r3, [r7, #4]
 	cmp	r3, #0
 	beq	.L2
-	.loc 1 25 0
+	.loc 1 23 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #112]
 	mov	r0, r3
 	bl	LLF_SAVE_TASK_STACK
-	.loc 1 29 0
+	.loc 1 27 0
 	ldr	r3, [r7, #4]
 	ldr	r0, [r3, #60]
 	ldr	r3, [r7, #4]
@@ -59,17 +55,17 @@ OS_TASK_SAVETASK_ENVIRONMENT:
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #72]
 	bl	LLF_SAVE_REGISTERS
-	.loc 1 36 0
+	.loc 1 34 0
 	b	.L1
 .L2:
-	.loc 1 34 0
+	.loc 1 32 0
 	movs	r1, #1
 	movs	r0, #2
 	bl	OS_SET_SW_BUG
-	.loc 1 36 0
+	.loc 1 34 0
 	nop
 .L1:
-	.loc 1 37 0
+	.loc 1 35 0
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
 	mov	sp, r7
@@ -88,7 +84,7 @@ OS_TASK_SAVETASK_ENVIRONMENT:
 	.type	OS_TASK_RESTORETASK_ENVIRONMENT, %function
 OS_TASK_RESTORETASK_ENVIRONMENT:
 .LFB1:
-	.loc 1 40 0
+	.loc 1 38 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -101,27 +97,27 @@ OS_TASK_RESTORETASK_ENVIRONMENT:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 41 0
+	.loc 1 39 0
 	ldr	r3, [r7, #4]
 	cmp	r3, #0
 	beq	.L6
-	.loc 1 43 0
+	.loc 1 41 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #112]
 	mov	r0, r3
 	bl	LLF_RESTORE_TASK_STACK
-	.loc 1 44 0
+	.loc 1 42 0
 	ldr	r0, [r7, #4]
 	bl	LLF_RESTORE_REGISTERS
-	.loc 1 50 0
+	.loc 1 48 0
 	b	.L8
 .L6:
-	.loc 1 48 0
+	.loc 1 46 0
 	movs	r1, #2
 	movs	r0, #2
 	bl	OS_SET_SW_BUG
 .L8:
-	.loc 1 50 0
+	.loc 1 48 0
 	nop
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -141,7 +137,7 @@ OS_TASK_RESTORETASK_ENVIRONMENT:
 	.type	OS_TASK_RESTORE_SYSTEM_STACK, %function
 OS_TASK_RESTORE_SYSTEM_STACK:
 .LFB2:
-	.loc 1 52 0
+	.loc 1 50 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -154,10 +150,10 @@ OS_TASK_RESTORE_SYSTEM_STACK:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 53 0
+	.loc 1 51 0
 	ldr	r0, [r7, #4]
 	bl	LLF_RESTORE_SYSTEM_STACK
-	.loc 1 54 0
+	.loc 1 52 0
 	nop
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -177,7 +173,7 @@ OS_TASK_RESTORE_SYSTEM_STACK:
 	.type	OS_TASK_SAVE_SYSTEM_STACK, %function
 OS_TASK_SAVE_SYSTEM_STACK:
 .LFB3:
-	.loc 1 56 0
+	.loc 1 54 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -190,10 +186,10 @@ OS_TASK_SAVE_SYSTEM_STACK:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 57 0
+	.loc 1 55 0
 	ldr	r0, [r7, #4]
 	bl	LLF_SAVE_SYSTEM_STACK
-	.loc 1 58 0
+	.loc 1 56 0
 	nop
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -213,7 +209,7 @@ OS_TASK_SAVE_SYSTEM_STACK:
 	.type	OS_Task_InitTaskEnvironment, %function
 OS_Task_InitTaskEnvironment:
 .LFB4:
-	.loc 1 60 0
+	.loc 1 58 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -226,138 +222,138 @@ OS_Task_InitTaskEnvironment:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 61 0
+	.loc 1 59 0
 	ldr	r3, [r7, #4]
 	cmp	r3, #0
 	beq	.L12
-	.loc 1 64 0
+	.loc 1 62 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #0, #1
 	strb	r3, [r2]
-	.loc 1 72 0
+	.loc 1 70 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #60]
-	.loc 1 73 0
+	.loc 1 71 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #64]
-	.loc 1 74 0
+	.loc 1 72 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #68]
-	.loc 1 75 0
+	.loc 1 73 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #72]
-	.loc 1 76 0
+	.loc 1 74 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #76]
-	.loc 1 77 0
+	.loc 1 75 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #80]
-	.loc 1 78 0
+	.loc 1 76 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #84]
-	.loc 1 79 0
+	.loc 1 77 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #88]
-	.loc 1 80 0
+	.loc 1 78 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #92]
-	.loc 1 81 0
+	.loc 1 79 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #96]
-	.loc 1 82 0
+	.loc 1 80 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #100]
-	.loc 1 83 0
+	.loc 1 81 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #104]
-	.loc 1 84 0
+	.loc 1 82 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #108]
-	.loc 1 87 0
+	.loc 1 85 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #8]
-	.loc 1 88 0
+	.loc 1 86 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #12]
-	.loc 1 89 0
+	.loc 1 87 0
 	ldr	r3, [r7, #4]
 	movs	r2, #5
 	str	r2, [r3, #16]
-	.loc 1 90 0
+	.loc 1 88 0
 	ldr	r3, [r7, #4]
 	movs	r2, #1
 	str	r2, [r3, #20]
-	.loc 1 91 0
+	.loc 1 89 0
 	ldr	r3, [r7, #4]
 	ldr	r2, .L15
 	str	r2, [r3, #24]
-	.loc 1 92 0
+	.loc 1 90 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #28]
-	.loc 1 93 0
+	.loc 1 91 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #36]
-	.loc 1 94 0
+	.loc 1 92 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #37]
-	.loc 1 97 0
+	.loc 1 95 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #48]
-	.loc 1 98 0
+	.loc 1 96 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #52]
-	.loc 1 99 0
+	.loc 1 97 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #1, #1
 	strb	r3, [r2]
-	.loc 1 100 0
+	.loc 1 98 0
 	ldr	r2, [r7, #4]
 	ldr	r3, [r2]
 	bfc	r3, #3, #29
 	str	r3, [r2]
-	.loc 1 101 0
+	.loc 1 99 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #4]
-	.loc 1 102 0
+	.loc 1 100 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #5]
-	.loc 1 103 0
+	.loc 1 101 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #44]
-	.loc 1 110 0
+	.loc 1 108 0
 	b	.L14
 .L12:
-	.loc 1 108 0
+	.loc 1 106 0
 	movs	r1, #3
 	movs	r0, #2
 	bl	OS_SET_SW_BUG
 .L14:
-	.loc 1 110 0
+	.loc 1 108 0
 	nop
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -381,7 +377,7 @@ OS_Task_InitTaskEnvironment:
 	.type	OS_Task_DeleteTaskEnvironment, %function
 OS_Task_DeleteTaskEnvironment:
 .LFB5:
-	.loc 1 113 0
+	.loc 1 111 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -394,28 +390,28 @@ OS_Task_DeleteTaskEnvironment:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 114 0
+	.loc 1 112 0
 	ldr	r3, [r7, #4]
 	cmp	r3, #0
 	beq	.L18
-	.loc 1 114 0 is_stmt 0 discriminator 1
+	.loc 1 112 0 is_stmt 0 discriminator 1
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #116]
 	cmp	r3, #0
 	beq	.L18
-	.loc 1 116 0 is_stmt 1
+	.loc 1 114 0 is_stmt 1
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #116]
 	mov	r0, r3
 	bl	os_free
 	b	.L19
 .L18:
-	.loc 1 120 0
+	.loc 1 118 0
 	movs	r1, #4
 	movs	r0, #2
 	bl	OS_SET_SW_BUG
 .L19:
-	.loc 1 123 0
+	.loc 1 121 0
 	nop
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -435,7 +431,7 @@ OS_Task_DeleteTaskEnvironment:
 	.type	OS_Task_CreateTaskEnvironment, %function
 OS_Task_CreateTaskEnvironment:
 .LFB6:
-	.loc 1 125 0
+	.loc 1 123 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -447,25 +443,25 @@ OS_Task_CreateTaskEnvironment:
 	.cfi_def_cfa_offset 16
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 126 0
+	.loc 1 124 0
 	movs	r3, #0
 	str	r3, [r7, #4]
-	.loc 1 127 0
+	.loc 1 125 0
 	movs	r0, #136
 	bl	os_malloc
 	str	r0, [r7, #4]
-	.loc 1 128 0
+	.loc 1 126 0
 	ldr	r3, [r7, #4]
 	cmp	r3, #0
 	bne	.L21
-	.loc 1 130 0
+	.loc 1 128 0
 	movs	r1, #3
 	movs	r0, #2
 	bl	OS_SET_SW_BUG
 .L21:
-	.loc 1 132 0
+	.loc 1 130 0
 	ldr	r3, [r7, #4]
-	.loc 1 133 0
+	.loc 1 131 0
 	mov	r0, r3
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -484,15 +480,15 @@ OS_Task_CreateTaskEnvironment:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x62a
+	.4byte	0x5e6
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF610
+	.4byte	.LASF606
 	.byte	0x1
-	.4byte	.LASF611
-	.4byte	.LASF612
+	.4byte	.LASF607
+	.4byte	.LASF608
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -1094,113 +1090,81 @@ OS_Task_CreateTaskEnvironment:
 	.byte	0x59
 	.4byte	0x4b9
 	.uleb128 0x14
-	.4byte	.LASF599
-	.byte	0x1
-	.byte	0xb
-	.4byte	0x269
-	.uleb128 0x5
-	.byte	0x3
-	.4byte	REGISTER_R0
-	.uleb128 0x14
-	.4byte	.LASF600
-	.byte	0x1
-	.byte	0xc
-	.4byte	0x269
-	.uleb128 0x5
-	.byte	0x3
-	.4byte	REGISTER_R1
-	.uleb128 0x14
-	.4byte	.LASF601
-	.byte	0x1
-	.byte	0xd
-	.4byte	0x269
-	.uleb128 0x5
-	.byte	0x3
-	.4byte	REGISTER_R2
-	.uleb128 0x14
-	.4byte	.LASF602
-	.byte	0x1
-	.byte	0xe
-	.4byte	0x269
-	.uleb128 0x5
-	.byte	0x3
-	.4byte	REGISTER_R3
-	.uleb128 0x15
 	.4byte	0x4cf
 	.byte	0x1
-	.byte	0xf
+	.byte	0xd
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	TASK_PTR
-	.uleb128 0x16
-	.4byte	.LASF613
+	.uleb128 0x15
+	.4byte	.LASF609
 	.byte	0x1
-	.byte	0x7c
+	.byte	0x7a
 	.4byte	0x4c9
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x553
-	.uleb128 0x17
-	.4byte	.LASF605
+	.4byte	0x50f
+	.uleb128 0x16
+	.4byte	.LASF601
 	.byte	0x1
-	.byte	0x7e
+	.byte	0x7c
 	.4byte	0x4c9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF603
+	.uleb128 0x17
+	.4byte	.LASF599
 	.byte	0x1
-	.byte	0x70
+	.byte	0x6e
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x577
-	.uleb128 0x19
-	.4byte	.LASF605
+	.4byte	0x533
+	.uleb128 0x18
+	.4byte	.LASF601
 	.byte	0x1
-	.byte	0x70
+	.byte	0x6e
 	.4byte	0x4c9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF604
+	.uleb128 0x17
+	.4byte	.LASF600
 	.byte	0x1
-	.byte	0x3b
+	.byte	0x39
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x59b
-	.uleb128 0x19
-	.4byte	.LASF605
+	.4byte	0x557
+	.uleb128 0x18
+	.4byte	.LASF601
 	.byte	0x1
-	.byte	0x3b
+	.byte	0x39
 	.4byte	0x4c9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF606
+	.uleb128 0x17
+	.4byte	.LASF602
 	.byte	0x1
-	.byte	0x37
+	.byte	0x35
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x5bf
-	.uleb128 0x19
-	.4byte	.LASF607
+	.4byte	0x57b
+	.uleb128 0x18
+	.4byte	.LASF603
 	.byte	0x1
-	.byte	0x37
-	.4byte	0x5bf
+	.byte	0x35
+	.4byte	0x57b
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
@@ -1208,54 +1172,54 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0xb
 	.byte	0x4
 	.4byte	0x3b
-	.uleb128 0x18
-	.4byte	.LASF608
+	.uleb128 0x17
+	.4byte	.LASF604
 	.byte	0x1
-	.byte	0x33
+	.byte	0x31
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x5e9
-	.uleb128 0x19
-	.4byte	.LASF607
+	.4byte	0x5a5
+	.uleb128 0x18
+	.4byte	.LASF603
 	.byte	0x1
-	.byte	0x33
-	.4byte	0x5bf
+	.byte	0x31
+	.4byte	0x57b
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF609
+	.uleb128 0x17
+	.4byte	.LASF605
 	.byte	0x1
-	.byte	0x27
+	.byte	0x25
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x60d
-	.uleb128 0x19
-	.4byte	.LASF605
+	.4byte	0x5c9
+	.uleb128 0x18
+	.4byte	.LASF601
 	.byte	0x1
-	.byte	0x27
+	.byte	0x25
 	.4byte	0x4c9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x1a
-	.4byte	.LASF614
+	.uleb128 0x19
+	.4byte	.LASF610
 	.byte	0x1
-	.byte	0x11
+	.byte	0xf
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x19
-	.4byte	.LASF605
+	.uleb128 0x18
+	.4byte	.LASF601
 	.byte	0x1
-	.byte	0x11
+	.byte	0xf
 	.4byte	0x4c9
 	.uleb128 0x2
 	.byte	0x91
@@ -1500,23 +1464,6 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x14
 	.uleb128 0x34
 	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x15
-	.uleb128 0x34
-	.byte	0
 	.uleb128 0x47
 	.uleb128 0x13
 	.uleb128 0x3a
@@ -1527,7 +1474,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x15
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1554,7 +1501,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x16
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -1569,7 +1516,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x18
+	.uleb128 0x17
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1594,7 +1541,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x18
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -1609,7 +1556,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x1a
+	.uleb128 0x19
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -3335,7 +3282,7 @@ OS_Task_CreateTaskEnvironment:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF610:
+.LASF606:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3367,7 +3314,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"Func_TerminateTask\000"
 .LASF187:
 	.ascii	"__FLT32_MANT_DIG__ 24\000"
-.LASF611:
+.LASF607:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_task_common.c\000"
 .LASF116:
@@ -3382,7 +3329,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__UDQ_IBIT__ 0\000"
 .LASF541:
 	.ascii	"HEAP\000"
-.LASF606:
+.LASF602:
 	.ascii	"OS_TASK_SAVE_SYSTEM_STACK\000"
 .LASF221:
 	.ascii	"__FLT32X_DECIMAL_DIG__ 17\000"
@@ -3424,7 +3371,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"unsigned int\000"
 .LASF559:
 	.ascii	"privilige_mode_t\000"
-.LASF614:
+.LASF610:
 	.ascii	"OS_TASK_SAVETASK_ENVIRONMENT\000"
 .LASF454:
 	.ascii	"FALSE False\000"
@@ -3566,7 +3513,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"Task_suspended\000"
 .LASF104:
 	.ascii	"__INT8_C(c) c\000"
-.LASF603:
+.LASF599:
 	.ascii	"OS_Task_DeleteTaskEnvironment\000"
 .LASF545:
 	.ascii	"VAR_HARDFAULT_STATUS_REG\000"
@@ -3606,8 +3553,8 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF419:
 	.ascii	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC\000"
-.LASF404:
-	.ascii	"__ARM_ARCH_PROFILE 77\000"
+.LASF452:
+	.ascii	"False 0\000"
 .LASF145:
 	.ascii	"__FLT_DIG__ 6\000"
 .LASF553:
@@ -3800,7 +3747,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__INT64_TYPE__ long long int\000"
 .LASF149:
 	.ascii	"__FLT_MAX_10_EXP__ 38\000"
-.LASF604:
+.LASF600:
 	.ascii	"OS_Task_InitTaskEnvironment\000"
 .LASF565:
 	.ascii	"task_state_t\000"
@@ -3820,8 +3767,8 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
 .LASF222:
 	.ascii	"__FLT32X_MAX__ 1.7976931348623157e+308F32x\000"
-.LASF452:
-	.ascii	"False 0\000"
+.LASF470:
+	.ascii	"Privilige_level_restore_saved() ;\000"
 .LASF207:
 	.ascii	"__FLT64_DECIMAL_DIG__ 17\000"
 .LASF556:
@@ -3852,14 +3799,10 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__FRACT_FBIT__ 15\000"
 .LASF212:
 	.ascii	"__FLT64_HAS_DENORM__ 1\000"
-.LASF599:
-	.ascii	"REGISTER_R0\000"
 .LASF140:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
-.LASF601:
-	.ascii	"REGISTER_R2\000"
-.LASF602:
-	.ascii	"REGISTER_R3\000"
+.LASF507:
+	.ascii	"Task_2_ptr 2\000"
 .LASF226:
 	.ascii	"__FLT32X_HAS_DENORM__ 1\000"
 .LASF427:
@@ -3902,7 +3845,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
 .LASF138:
 	.ascii	"__GCC_IEC_559 0\000"
-.LASF607:
+.LASF603:
 	.ascii	"system_stack_ptr\000"
 .LASF402:
 	.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
@@ -3974,7 +3917,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__UHA_FBIT__ 8\000"
 .LASF457:
 	.ascii	"Rejected 0\000"
-.LASF612:
+.LASF608:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -4037,8 +3980,6 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
 .LASF78:
 	.ascii	"__SCHAR_WIDTH__ 8\000"
-.LASF470:
-	.ascii	"Privilige_level_restore_saved() ;\000"
 .LASF510:
 	.ascii	"unsigned_char_t\000"
 .LASF18:
@@ -4109,7 +4050,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"_os_task_scheduler_h_ \000"
 .LASF595:
 	.ascii	"pStackPointerEnd\000"
-.LASF605:
+.LASF601:
 	.ascii	"task\000"
 .LASF81:
 	.ascii	"__LONG_WIDTH__ 32\000"
@@ -4207,7 +4148,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__SQ_FBIT__ 31\000"
 .LASF444:
 	.ascii	"CPP_VERSION_NONE 0\000"
-.LASF608:
+.LASF604:
 	.ascii	"OS_TASK_RESTORE_SYSTEM_STACK\000"
 .LASF368:
 	.ascii	"__GNUC_GNU_INLINE__ 1\000"
@@ -4251,8 +4192,8 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF332:
 	.ascii	"__HQ_FBIT__ 15\000"
-.LASF600:
-	.ascii	"REGISTER_R1\000"
+.LASF359:
+	.ascii	"__UHA_IBIT__ 8\000"
 .LASF401:
 	.ascii	"__ARM_FEATURE_SIMD32 1\000"
 .LASF72:
@@ -4349,7 +4290,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF210:
 	.ascii	"__FLT64_EPSILON__ 2.2204460492503131e-16F64\000"
-.LASF613:
+.LASF609:
 	.ascii	"OS_Task_CreateTaskEnvironment\000"
 .LASF481:
 	.ascii	"HEAP_OFFSET_FOR_CHUNK 8\000"
@@ -4415,7 +4356,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__SIZE_TYPE__ unsigned int\000"
 .LASF443:
 	.ascii	"INTEGER_SILP64 4\000"
-.LASF609:
+.LASF605:
 	.ascii	"OS_TASK_RESTORETASK_ENVIRONMENT\000"
 .LASF325:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
@@ -4427,8 +4368,6 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"exe_time\000"
 .LASF380:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
-.LASF507:
-	.ascii	"Task_2_ptr 2\000"
 .LASF365:
 	.ascii	"__UTA_IBIT__ 64\000"
 .LASF148:
@@ -4490,8 +4429,8 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__QQ_FBIT__ 7\000"
 .LASF227:
 	.ascii	"__FLT32X_HAS_INFINITY__ 1\000"
-.LASF359:
-	.ascii	"__UHA_IBIT__ 8\000"
+.LASF404:
+	.ascii	"__ARM_ARCH_PROFILE 77\000"
 .LASF598:
 	.ascii	"TASK_PTR\000"
 .LASF514:

@@ -36,7 +36,7 @@ void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
 void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
 {
    ReferenceUnusedParameter(*StackPointer);
-   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */s
+   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */
 }
 void LLF_RESTORE_REGISTERS(task_t* task)
 {
@@ -46,12 +46,12 @@ void LLF_RESTORE_REGISTERS(task_t* task)
 void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
 {
    ReferenceUnusedParameter(*system_stack_ptr);
-   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */s
+   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */
 }
 void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
 {
    ReferenceUnusedParameter(*system_stack_ptr);
-   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */s
+   /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt the running task .... */
 }
 void LLF_CLEAR_ALL_GP_REGISTERS(void)
 { 

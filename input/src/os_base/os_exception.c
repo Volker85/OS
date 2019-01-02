@@ -7,9 +7,9 @@
 #include "..\os_base\os_task_scheduler.h"
 /* the Interrupt table is set via the code linked to 0x00 and following ...   */
 /* interrupts are disabled during RESET exception and will be enabled by task system */
+#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
 Local void OS_Exception_Read_Status_Registers(void)
 {
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
    #define MEM_MANAG_FAULT_STATUS_REG     ((volatile uint8*)0xE000ED28u)
    #define BUS_FAULT_STATUS_REG     ((volatile uint8*)0xE000ED29u)
@@ -24,9 +24,8 @@ Local void OS_Exception_Read_Status_Registers(void)
    VAR_MEM_FAULT_ADDR_REG   = *MEM_FAULT_ADDR_REG;
    VAR_BUS_FAULT_ADDR_REG   = *BUS_FAULT_ADDR_REG;
    VAR_AUX_FAULT_STATUS_REG = *AUX_FAULT_STATUS_REG;
-#endif
 }
-
+#endif
 
 void OS_Exception_HARDFAULT(void)
 {

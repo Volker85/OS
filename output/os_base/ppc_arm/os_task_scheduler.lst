@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
   20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** Local task_t* OS_TaskScheduler();
   21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
   22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** Local unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 2
 
 
   23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** Local scheduler_time_t LAST_CURRENT_TIME = 0;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
   50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
   62              		.loc 1 50 0
   63 0026 00BF     		nop
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 3
 
 
   64 0028 BD46     		mov	sp, r7
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  114 0058 BD46     		mov	sp, r7
  115              		.cfi_def_cfa_register 13
  116              		@ sp needed
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 4
 
 
  117 005a 80BD     		pop	{r7, pc}
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
   65:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
   66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    case Task_unspecified:/* 1. create new task */
   67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 5
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 5
 
 
   68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       switch(task->task_state)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
   90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case Task_unspecified: /* 2. create task transition */
   91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
   92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* no checks */
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 6
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 6
 
 
   93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          task->task_state = Task_suspended;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  224 00dc BB68     		ldr	r3, [r7, #8]
  225 00de 93F83430 		ldrb	r3, [r3, #52]	@ zero_extendqisi2
  226 00e2 022B     		cmp	r3, #2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 7
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 7
 
 
  227 00e4 00D0     		beq	.L21
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  141:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
  142:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          task->task_state = Task_ready;
  143:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState   = Accepted;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 8
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 8
 
 
  144:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  283 012c 03D1     		bne	.L27
  160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
  161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TaskStateRequest);
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 9
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 9
 
 
  284              		.loc 1 161 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  326 014a 002B     		cmp	r3, #0
  327 014c 45D0     		beq	.L38
  176:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 10
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 10
 
 
  177:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       if((task->IdleTask != False)||(task->state_request(task, Task_ready)==Accepted))
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  374 01a2 9A42     		cmp	r2, r3
  375 01a4 12D9     		bls	.L37
  376              	.L35:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 11
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 11
 
 
  185:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****               )
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  404              		.loc 1 207 0
  405 01d2 0A21     		movs	r1, #10
  406 01d4 0120     		movs	r0, #1
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 12
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 12
 
 
  407 01d6 FFF7FEFF 		bl	OS_SET_SW_BUG
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  453 01fe 7B68     		ldr	r3, [r7, #4]
  454 0200 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  455 0202 03F00403 		and	r3, r3, #4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 13
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 13
 
 
  456 0206 DBB2     		uxtb	r3, r3
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  499              		.loc 1 231 0
  500 0256 7868     		ldr	r0, [r7, #4]
  501 0258 FFF7FEFF 		bl	OS_TASK_RESTORETASK_ENVIRONMENT
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 14
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 14
 
 
  232:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->start_time = Get_current_time();
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  262:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
  263:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
  526              		.loc 1 263 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 15
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 15
 
 
  527 0286 08E0     		b	.L46
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  267:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - Disable Interrupts
  268:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - os_TASK_SAVETASK_ENVIRONMENT
  269:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - add to Schedule Queue / delete from RunQueue
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 16
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 16
 
 
  270:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - delete active flag
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  618              		.loc 1 283 0
  619 02f8 7A68     		ldr	r2, [r7, #4]
  620 02fa 1378     		ldrb	r3, [r2]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 17
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 17
 
 
  621 02fc 6FF30003 		bfc	r3, #0, #1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  652              		.loc 1 303 0
  653 0330 00BF     		nop
  654 0332 0837     		adds	r7, r7, #8
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 18
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 18
 
 
  655              		.cfi_def_cfa_offset 8
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  321:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if(task!=0)
  694              		.loc 1 321 0
  695 034c 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 19
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 19
 
 
  696 034e 002B     		cmp	r3, #0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  334:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    ReferenceUnusedParameter(task_ptr);
  335:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    HaltMcu();/* HLT will be ended by timer interrupt, what shall be done with the rest of the funct
  740              		.loc 1 335 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 20
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 20
 
 
  741 0374 FFF7FEFF 		bl	LLF_WAIT_FOR_INTERRUPT
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  785 0396 80BD     		pop	{r7, pc}
  786              	.L65:
  787              		.align	2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 21
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 21
 
 
  788              	.L64:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  358:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** Local void TASK_3(void* task_ptr)
  359:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
  836              		.loc 1 359 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 22
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 22
 
 
  837              		.cfi_startproc
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  883              		.cfi_def_cfa 7, 16
  370:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    Local task_t task_0, task_1, task_2, task_3;
  371:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    Local task_group_t TASK_GROUP_1;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 23
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 23
 
 
  372:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    Local task_group_t TASK_GROUP_2;
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  395:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                 True,                              /* Idle Task */
  396:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                 &TASK_GROUP_1,                     /* Task Group */
  397:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                 (unsigned_char_t*)&TASK_STACK[0],  /* Task_stack */
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 24
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 24
 
 
  398:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                 200,                                /* Stack Size */
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  425:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_INIT_TASK(task_ptr,      /* task */
  942              		.loc 1 425 0
  943 0432 0223     		movs	r3, #2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 25
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 25
 
 
  944 0434 0593     		str	r3, [sp, #20]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  443:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                 False,          /* Idle Task */
  444:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                 &TASK_GROUP_3, /* Task Group */
  445:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                 (unsigned_char_t*)&TASK_STACK[3],/* Task_stack */
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 26
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 26
 
 
  446:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                 200,           /* Stack Size */
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  1026              		.cfi_def_cfa_offset 12
  1027              		.cfi_offset 4, -12
  1028              		.cfi_offset 7, -8
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 27
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 27
 
 
  1029              		.cfi_offset 14, -4
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  1058 04f8 0246     		mov	r2, r0
  1059 04fa 604B     		ldr	r3, .L89+4
  1060 04fc 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 28
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 28
 
 
  482:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       /*task will have a pointer on the task_obj, and might be equal to "(task_t*) 0" */
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  492:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->WaitActUntil > Get_current_time())
  1105              		.loc 1 492 0
  1106 0552 4B4B     		ldr	r3, .L89+8
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 29
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 29
 
 
  1107 0554 1B68     		ldr	r3, [r3]
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  1148 059e 9A42     		cmp	r2, r3
  1149 05a0 17D9     		bls	.L73
  506:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 30
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 30
 
 
  507:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                if(task->exe_time > Task_min_time)/* guarantee min time */
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  524:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       */
  525:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
  526:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    For_all_tasks_in_queue(element_nr)
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 31
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 31
 
 
  1185              		.loc 1 526 0 is_stmt 1
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  538:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->current_prio > Winner_prio)
  1228              		.loc 1 538 0
  1229 062a 154B     		ldr	r3, .L89+8
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 32
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 32
 
 
  1230 062c 1B68     		ldr	r3, [r3]
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  1265              	.L85:
  556:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
  557:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    else
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 33
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 33
 
 
  558:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  1310              		.loc 1 569 0
  1311 0690 FFF7FEFF 		bl	OS_TASK_DISPATCHER
  570:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 34
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 34
 
 
  571:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  1353      00000000 
  1355              		.align	2
  1356              	link_list_member.4092:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 35
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 35
 
 
  1357 0634 00000000 		.space	4
@@ -2056,55 +2056,55 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 1
  1372              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
  1373              		.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h"
  1374              		.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 36
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 36
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_task_scheduler.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:16     .bss:00000000 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:17     .bss:00000000 TASK_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:21     .bss:000003e8 LAST_CURRENT_TIME
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:25     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:32     .text:00000000 OS_ACTIVATE_DISPATCHER
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:74     .text:00000030 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:80     .text:0000003c $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:87     .text:0000003c OS_SLEEPTASK
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:128    .text:0000005c task_state_request
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:159    .text:0000007c $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:163    .text:0000008c $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:309    .text:00000140 OS_ActivateTask
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:426    .text:000001e2 OS_STARTTASK
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:552    .text:000002a4 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:556    .text:000002a8 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:563    .text:000002a8 OS_TERMINATE_TASK
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:663    .text:00000338 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:667    .text:0000033c $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:674    .text:0000033c OS_TASK_DISPATCHER
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1019   .text:000004c8 OS_TaskScheduler
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:725    .text:0000036c TASK_0
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:759    .text:00000380 TASK_1
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:789    .text:00000398 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:793    .text:0000039c $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:799    .text:0000039c TASK_2
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:834    .text:000003ae TASK_3
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:870    .text:000003c0 OS_INIT_TASKS
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:992    .text:00000488 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1340   .bss:00000414 task_0.4076
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1320   .bss:000003ec TASK_GROUP_1.4080
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1344   .bss:0000049c task_1.4077
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1348   .bss:00000524 task_2.4078
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1324   .bss:000003f4 TASK_GROUP_2.4081
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1352   .bss:000005ac task_3.4079
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1328   .bss:000003fc TASK_GROUP_3.4082
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1013   .text:000004c8 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1283   .text:00000678 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1356   .bss:00000634 link_list_member.4092
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1360   .bss:00000638 task.4089
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1363   .bss:0000063c Winner_prio.4090
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1291   .text:0000068c $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1298   .text:0000068c ISR_TASK_DISPATCH_C0
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1332   .bss:00000404 TASK_GROUP_4.4083
-C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1336   .bss:0000040c TASK_GROUP_5.4084
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:16     .bss:00000000 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:17     .bss:00000000 TASK_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:21     .bss:000003e8 LAST_CURRENT_TIME
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:25     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:32     .text:00000000 OS_ACTIVATE_DISPATCHER
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:74     .text:00000030 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:80     .text:0000003c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:87     .text:0000003c OS_SLEEPTASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:128    .text:0000005c task_state_request
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:159    .text:0000007c $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:163    .text:0000008c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:309    .text:00000140 OS_ActivateTask
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:426    .text:000001e2 OS_STARTTASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:552    .text:000002a4 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:556    .text:000002a8 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:563    .text:000002a8 OS_TERMINATE_TASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:663    .text:00000338 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:667    .text:0000033c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:674    .text:0000033c OS_TASK_DISPATCHER
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1019   .text:000004c8 OS_TaskScheduler
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:725    .text:0000036c TASK_0
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:759    .text:00000380 TASK_1
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:789    .text:00000398 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:793    .text:0000039c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:799    .text:0000039c TASK_2
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:834    .text:000003ae TASK_3
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:870    .text:000003c0 OS_INIT_TASKS
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:992    .text:00000488 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1340   .bss:00000414 task_0.4076
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1320   .bss:000003ec TASK_GROUP_1.4080
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1344   .bss:0000049c task_1.4077
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1348   .bss:00000524 task_2.4078
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1324   .bss:000003f4 TASK_GROUP_2.4081
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1352   .bss:000005ac task_3.4079
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1328   .bss:000003fc TASK_GROUP_3.4082
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1013   .text:000004c8 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1283   .text:00000678 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1356   .bss:00000634 link_list_member.4092
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1360   .bss:00000638 task.4089
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1363   .bss:0000063c Winner_prio.4090
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1291   .text:0000068c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1298   .text:0000068c ISR_TASK_DISPATCH_C0
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1332   .bss:00000404 TASK_GROUP_4.4083
+C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s:1336   .bss:0000040c TASK_GROUP_5.4084
                            .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544
@@ -2116,7 +2116,7 @@ C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s:1336   .bss:0000040c TASK_GROUP_
                            .group:00000000 wm4.os_task_scheduler.h.2.125feba674fa85672711aed1ca8ea199
                            .group:00000000 wm4.os_task_queue.h.2.9428c7964838a07bb4b1cac6c50ee9b2
 
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccm6xt7S.s 			page 37
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccHwFdS9.s 			page 37
 
 
 UNDEFINED SYMBOLS

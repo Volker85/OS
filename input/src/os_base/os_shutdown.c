@@ -22,11 +22,13 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    }
    else if (reset_typ == os_reset_exit)
    {
+      #if(0)
       /*TODO including timer interrupts */
       OS_DEINIT_HW();
       OS_DEINIT_SW();
       OS_DEINIT_MC();
       OS_CALL_FUNC_POINTER();      
+      #endif
    }   
    else
    {

@@ -841,10 +841,12 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    else if (reset_typ == os_reset_exit)
    {
 
-      OS_DEINIT_HW();
-      OS_DEINIT_SW();
-      OS_DEINIT_MC();
-      OS_CALL_FUNC_POINTER();
+
+
+
+
+
+
    }
    else
    {

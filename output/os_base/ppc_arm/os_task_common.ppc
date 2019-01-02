@@ -851,16 +851,7 @@ extern void OS_TASK_DISPATCHER(void);
 # 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c" 2
-
-
-
-
-
-
-void* REGISTER_R0;
-void* REGISTER_R1;
-void* REGISTER_R2;
-void* REGISTER_R3;
+# 13 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c"
 task_t* TASK_PTR[(5)];
 
 void OS_TASK_SAVETASK_ENVIRONMENT(task_t* task)
