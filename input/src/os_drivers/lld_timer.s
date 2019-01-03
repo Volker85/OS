@@ -13,27 +13,8 @@ From the AAPCS, §5.1.1:
         .thumb
         .syntax unified
         .text
-        .global LLF_UP_CNT_TIMER_32
         .global LLF_DISABLE_INTERRUPTS_ALL_CORES
         .global LLF_MPU_SWITCH_OFF_ALL_REGIONS
         .global LLF_GET_MPU_PRESENT
-        .global LLF_ADD_2_TCMP
-        .global LLF_TCMP1_CONFIG
        
-      
-LLF_UP_CNT_TIMER_32:
-        #TODO "LLF_UP_CNT_TIMER_32 not implemented yet"
-        LDR R0, =0x00 
-        MOV R15, R14
 
-LLF_ADD_2_TCMP:
-        #TODO "LLF_UP_CNT_TIMER_32 not implemented yet"
-        # R0 holds the value_us
-        MOV R15, R14
-
-LLF_TCMP1_CONFIG:
-        #TODO "LLF_TCMP1_CONFIG not implemented yet"   
-        #error "needs to be implemented to allow task dispatcher to run"
-        #setup the sys tick timer 
-        MOV R15, R14
-        

@@ -4,8 +4,9 @@
 void OS_INIT_MC(void)
 {
    /* 1. configure PLL */
+   /*TODO*/   
    /* 2. all MCU IO*/
    /* configure GPIO (SPI, UART, CAN, etc) */
-   /*TODO */
+   /* initialize the external parts...  */
 
 }

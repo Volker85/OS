@@ -1,5 +1,19 @@
 #include "os_firstinc.h"
 #include "os_shutdown.h"
+Local void OS_DEINIT_HW(void);
+Local void OS_DEINIT_SW(void);
+void OS_DEINIT_HW(void)
+{
+   /*QAC*/
+}
+void OS_DEINIT_SW(void)
+{
+  /*QAC*/
+}
+void OS_DEINIT_MC(void)
+{
+   /*QAC*/
+}
 
 void OS_SHUTDOWN(os_reset_type_t reset_typ)
 {
@@ -22,13 +36,10 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    }
    else if (reset_typ == os_reset_exit)
    {
-      #if(0)
-      /*TODO including timer interrupts */
       OS_DEINIT_HW();
       OS_DEINIT_SW();
       OS_DEINIT_MC();
-      OS_CALL_FUNC_POINTER();      
-      #endif
+      OS_StartExtPrg();      
    }   
    else
    {
