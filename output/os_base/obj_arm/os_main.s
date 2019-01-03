@@ -112,14 +112,14 @@ OS_STATE_HANDLER:
 	.align	2
 .L14:
 	.word	OS_STATE
-	.word	sys_req_reset_state.3998
+	.word	sys_req_reset_state.3992
 	.cfi_endproc
 .LFE0:
 	.size	OS_STATE_HANDLER, .-OS_STATE_HANDLER
 	.bss
-sys_req_reset_state.3998:
+sys_req_reset_state.3992:
 	.space	1
-	.size	sys_req_reset_state.3998, 1
+	.size	sys_req_reset_state.3992, 1
 	.text
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
@@ -708,7 +708,7 @@ sys_req_reset_state.3998:
 	.4byte	0x475
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	sys_req_reset_state.3998
+	.4byte	sys_req_reset_state.3992
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",%progbits

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccP2P7hJ.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmin77s.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -40,12 +40,13 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccP2P7hJ.s 			page 1
   33 0002 00AF     		add	r7, sp, #0
   34              		.cfi_def_cfa_register 7
    6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 1. configure PLL */
-   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 2. all MCU IO*/
-   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* configure GPIO (SPI, UART, CAN, etc) */
-   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /*TODO */
-  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
-  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** }
-  35              		.loc 1 11 0
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /*TODO*/   
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* 2. all MCU IO*/
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* configure GPIO (SPI, UART, CAN, etc) */
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* initialize the external parts...  */
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** }
+  35              		.loc 1 12 0
   36 0004 00BF     		nop
   37 0006 BD46     		mov	sp, r7
   38              		.cfi_def_cfa_register 13
@@ -57,20 +58,20 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccP2P7hJ.s 			page 1
   44              		.cfi_endproc
   45              	.LFE0:
   47              	.Letext0:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmin77s.s 			page 2
+
+
   48              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccP2P7hJ.s 			page 2
-
-
   49              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
   50              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
   51              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccP2P7hJ.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccmin77s.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_init_mc.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccP2P7hJ.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccP2P7hJ.s:22     .text:00000000 OS_INIT_MC
+C:\Users\PRESID~1\AppData\Local\Temp\ccmin77s.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccmin77s.s:22     .text:00000000 OS_INIT_MC
                            .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544

@@ -1774,52 +1774,52 @@ OS_INIT_TASK:
 	strb	r3, [r7, #7]
 	mov	r3, r2
 	strb	r3, [r7, #6]
-	.loc 1 354 0
+	.loc 1 355 0
 	ldr	r3, [r7, #12]
 	cmp	r3, #0
 	beq	.L65
-	.loc 1 356 0
+	.loc 1 357 0
 	ldr	r2, [r7, #12]
 	ldrb	r3, [r2]
 	bfc	r3, #0, #1
 	strb	r3, [r2]
-	.loc 1 357 0
+	.loc 1 358 0
 	ldr	r3, [r7, #12]
 	ldr	r2, [r7, #8]
 	str	r2, [r3, #44]
-	.loc 1 358 0
+	.loc 1 359 0
 	ldr	r3, [r7, #12]
 	ldrb	r2, [r7, #7]
 	strb	r2, [r3, #4]
-	.loc 1 359 0
+	.loc 1 360 0
 	ldr	r3, [r7, #12]
 	ldr	r2, [r7, #24]
 	str	r2, [r3, #56]
-	.loc 1 360 0
-	ldr	r3, [r7, #12]
-	movs	r2, #0
-	strb	r2, [r3, #5]
 	.loc 1 361 0
 	ldr	r3, [r7, #12]
 	movs	r2, #0
-	str	r2, [r3, #8]
+	strb	r2, [r3, #5]
 	.loc 1 362 0
+	ldr	r3, [r7, #12]
+	movs	r2, #0
+	str	r2, [r3, #8]
+	.loc 1 363 0
 	ldr	r3, [r7, #12]
 	ldrb	r2, [r7, #36]
 	strb	r2, [r3, #132]
-	.loc 1 363 0
+	.loc 1 364 0
 	ldr	r3, [r7, #12]
 	ldrb	r2, [r7, #44]
 	strb	r2, [r3, #37]
-	.loc 1 365 0
+	.loc 1 366 0
 	ldr	r3, [r7, #12]
 	movs	r2, #1
 	str	r2, [r3, #20]
-	.loc 1 366 0
+	.loc 1 367 0
 	ldr	r3, [r7, #12]
 	ldr	r2, .L71
 	str	r2, [r3, #24]
-	.loc 1 368 0
+	.loc 1 369 0
 	ldrb	r3, [r7, #6]
 	and	r3, r3, #1
 	uxtb	r1, r3
@@ -1827,70 +1827,70 @@ OS_INIT_TASK:
 	ldrb	r3, [r2]
 	bfi	r3, r1, #2, #1
 	strb	r3, [r2]
-	.loc 1 369 0
+	.loc 1 370 0
 	ldr	r3, [r7, #12]
 	ldr	r2, .L71+4
 	str	r2, [r3, #48]
-	.loc 1 372 0
+	.loc 1 373 0
 	ldrb	r3, [r7, #6]	@ zero_extendqisi2
 	cmp	r3, #0
 	beq	.L66
-	.loc 1 374 0
+	.loc 1 375 0
 	ldr	r3, [r7, #12]
 	movs	r2, #3
 	strb	r2, [r3, #52]
 	b	.L67
 .L66:
-	.loc 1 378 0
+	.loc 1 379 0
 	movs	r1, #0
 	ldr	r0, [r7, #12]
 	bl	task_state_request
-	.loc 1 379 0
+	.loc 1 380 0
 	movs	r1, #1
 	ldr	r0, [r7, #12]
 	bl	task_state_request
 .L67:
-	.loc 1 381 0
+	.loc 1 382 0
 	ldr	r3, [r7, #32]
 	cmp	r3, #200
 	bls	.L68
-	.loc 1 383 0
+	.loc 1 384 0
 	movs	r3, #200
 	str	r3, [r7, #32]
 .L68:
-	.loc 1 387 0
-	ldr	r3, [r7, #12]
-	ldr	r2, [r7, #28]
-	str	r2, [r3, #116]
 	.loc 1 388 0
 	ldr	r3, [r7, #12]
 	ldr	r2, [r7, #28]
-	str	r2, [r3, #120]
+	str	r2, [r3, #116]
 	.loc 1 389 0
+	ldr	r3, [r7, #12]
+	ldr	r2, [r7, #28]
+	str	r2, [r3, #120]
+	.loc 1 390 0
 	ldr	r3, [r7, #32]
 	subs	r3, r3, #1
 	ldr	r2, [r7, #28]
 	add	r2, r2, r3
 	ldr	r3, [r7, #12]
 	str	r2, [r3, #128]
-	.loc 1 390 0
+	.loc 1 391 0
 	ldr	r3, [r7, #12]
 	ldr	r2, [r7, #32]
 	str	r2, [r3, #124]
-	.loc 1 392 0
+	.loc 1 393 0
 	ldr	r3, [r7, #12]
 	ldr	r2, [r3, #128]
 	ldr	r3, [r7, #12]
 	str	r2, [r3, #112]
-	.loc 1 398 0
+	.loc 1 399 0
 	b	.L70
 .L65:
-	.loc 1 396 0
+	.loc 1 397 0
 	movs	r1, #9
 	movs	r0, #2
 	bl	OS_SET_SW_BUG
 .L70:
-	.loc 1 398 0
+	.loc 1 399 0
 	nop
 	adds	r7, r7, #16
 	.cfi_def_cfa_offset 8

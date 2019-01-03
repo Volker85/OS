@@ -49,7 +49,7 @@ L5:
 	.loc 1 99 0
 	call	_LLF_INT_DISABLE
 	.loc 1 100 0
-	movl	_sys_req_reset_state.1288, %eax
+	movl	_sys_req_reset_state.1282, %eax
 	cmpl	$1, %eax
 	je	L9
 	cmpl	$1, %eax
@@ -92,7 +92,7 @@ L1:
 	ret
 	.cfi_endproc
 LFE0:
-.lcomm _sys_req_reset_state.1288,4,4
+.lcomm _sys_req_reset_state.1282,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
@@ -185,7 +185,7 @@ Ldebug_info0:
 	.long	0x185
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1288
+	.long	_sys_req_reset_state.1282
 	.byte	0
 	.uleb128 0x8
 	.ascii "OS_STATE\0"

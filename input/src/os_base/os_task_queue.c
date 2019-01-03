@@ -351,6 +351,7 @@ void OS_INIT_TASK(
    unsigned_char_t  default_prio
 )
 {
+   ReferenceUnusedParameter(core);
    if(task!=0)
    {
       task->active           = False;

@@ -91,7 +91,7 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_const.c				     >> %OUTPUT_DIR%\os_base\ppc_arm\os_const.lst                     2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_stack.c				     >> %OUTPUT_DIR%\os_base\ppc_arm\os_stack.lst                   2>&1		
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap.c				     >> %OUTPUT_DIR%\os_base\ppc_arm\os_heap.lst                   2>&1		
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			     >> %OUTPUT_DIR%\os_user_code\ppc_arm\lld_power.lst                  2>&1
+arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhls  -mcpu=cortex-m4 -mthumb -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			     >> %OUTPUT_DIR%\os_user_code\ppc_arm\led.lst                  2>&1
 REM
 echo "compile it" >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -g3 -ggdb  -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_common.c 					-o %OUTPUT_DIR%\os_base\obj_arm\os_common.o			>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
@@ -142,12 +142,13 @@ arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_task_common.c				-o %OUTPUT_DIR%\os_base\obj_arm\os_task_common.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_task_queue.c				-o %OUTPUT_DIR%\os_base\obj_arm\os_task_queue.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_task_scheduler.c			-o %OUTPUT_DIR%\os_base\obj_arm\os_task_scheduler.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
+
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_ram.c          			-o %OUTPUT_DIR%\os_base\obj_arm\os_ram.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_shared_ram.c          			-o %OUTPUT_DIR%\os_base\obj_arm\os_shared_ram.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_const.c          			-o %OUTPUT_DIR%\os_base\obj_arm\os_const.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_stack.c          			-o %OUTPUT_DIR%\os_base\obj_arm\os_stack.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_base\os_heap.c          			-o %OUTPUT_DIR%\os_base\obj_arm\os_heap.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
-arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_user_code\led.c			-o %OUTPUT_DIR%\os_user_code\obj_arm\led.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
+arm-none-eabi-gcc -D CFG_PROCESSOR=4 -Wa,-adhln -S -mcpu=cortex-m4 -mthumb -g3 -Wall -Wextra -Wpedantic -O0 -std=c90 -c -DSTM32F407VG %SRC_DIR%\os_user_code\led.c			-o %OUTPUT_DIR%\os_user_code\obj_arm\led.s>>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1
 REM
 echo "link it" >> %OUTPUT_DIR%\VERSION_ARM\Build_ARM.log
 arm-none-eabi-gcc -D CFG_PROCESSOR=4 -mcpu=cortex-m4 -mthumb -nostartfiles -g3 -Wl,-g -Wl,-Map=%OUTPUT_DIR%\VERSION_ARM\operating_system_elf.map -O0 -Wl,--no-gc-sections  -Wl,-T %TOOLS_DIR%\link_arm.lnk -L%OUTPUT_DIR%\os_base\obj_arm -L%OUTPUT_DIR%\os_drivers\obj_arm -L%OUTPUT_DIR%\os_user_code\obj_arm -o %OUTPUT_DIR%\VERSION_ARM\operating_system.elf  >>%OUTPUT_DIR%\VERSION_ARM\Build_ARM.log 2>&1	

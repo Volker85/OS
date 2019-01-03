@@ -1176,47 +1176,47 @@ LFB12:
 	movb	%cl, -12(%ebp)
 	movb	%dl, -16(%ebp)
 	movb	%al, -20(%ebp)
-	.loc 1 354 0
+	.loc 1 355 0
 	cmpl	$0, 8(%ebp)
 	je	L39
-	.loc 1 356 0
+	.loc 1 357 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-2, %edx
 	movb	%dl, (%eax)
-	.loc 1 357 0
+	.loc 1 358 0
 	movl	8(%ebp), %eax
 	movl	12(%ebp), %edx
 	movl	%edx, 44(%eax)
-	.loc 1 358 0
+	.loc 1 359 0
 	movl	8(%ebp), %eax
 	movb	-12(%ebp), %dl
 	movb	%dl, 4(%eax)
-	.loc 1 359 0
+	.loc 1 360 0
 	movl	8(%ebp), %eax
 	movl	24(%ebp), %edx
 	movl	%edx, 56(%eax)
-	.loc 1 360 0
-	movl	8(%ebp), %eax
-	movb	$0, 5(%eax)
 	.loc 1 361 0
 	movl	8(%ebp), %eax
-	movl	$0, 8(%eax)
+	movb	$0, 5(%eax)
 	.loc 1 362 0
+	movl	8(%ebp), %eax
+	movl	$0, 8(%eax)
+	.loc 1 363 0
 	movl	8(%ebp), %eax
 	movl	36(%ebp), %edx
 	movl	%edx, 96(%eax)
-	.loc 1 363 0
+	.loc 1 364 0
 	movl	8(%ebp), %eax
 	movb	-20(%ebp), %dl
 	movb	%dl, 37(%eax)
-	.loc 1 365 0
-	movl	8(%ebp), %eax
-	movl	$1, 20(%eax)
 	.loc 1 366 0
 	movl	8(%ebp), %eax
+	movl	$1, 20(%eax)
+	.loc 1 367 0
+	movl	8(%ebp), %eax
 	movl	$100000, 24(%eax)
-	.loc 1 368 0
+	.loc 1 369 0
 	movb	-16(%ebp), %al
 	andl	$1, %eax
 	movb	%al, %dl
@@ -1227,66 +1227,66 @@ LFB12:
 	andl	$-5, %edx
 	orl	%ecx, %edx
 	movb	%dl, (%eax)
-	.loc 1 369 0
+	.loc 1 370 0
 	movl	8(%ebp), %eax
 	movl	$_task_state_request, 48(%eax)
-	.loc 1 372 0
+	.loc 1 373 0
 	cmpb	$0, -16(%ebp)
 	je	L40
-	.loc 1 374 0
+	.loc 1 375 0
 	movl	8(%ebp), %eax
 	movl	$3, 52(%eax)
 	jmp	L41
 L40:
-	.loc 1 378 0
+	.loc 1 379 0
 	movl	$0, 4(%esp)
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_task_state_request
-	.loc 1 379 0
+	.loc 1 380 0
 	movl	$1, 4(%esp)
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_task_state_request
 L41:
-	.loc 1 381 0
+	.loc 1 382 0
 	cmpl	$200, 32(%ebp)
 	jbe	L42
-	.loc 1 383 0
+	.loc 1 384 0
 	movl	$200, 32(%ebp)
 L42:
-	.loc 1 387 0
-	movl	8(%ebp), %eax
-	movl	28(%ebp), %edx
-	movl	%edx, 80(%eax)
 	.loc 1 388 0
 	movl	8(%ebp), %eax
 	movl	28(%ebp), %edx
-	movl	%edx, 84(%eax)
+	movl	%edx, 80(%eax)
 	.loc 1 389 0
+	movl	8(%ebp), %eax
+	movl	28(%ebp), %edx
+	movl	%edx, 84(%eax)
+	.loc 1 390 0
 	movl	32(%ebp), %eax
 	leal	-1(%eax), %edx
 	movl	28(%ebp), %eax
 	addl	%eax, %edx
 	movl	8(%ebp), %eax
 	movl	%edx, 92(%eax)
-	.loc 1 390 0
+	.loc 1 391 0
 	movl	8(%ebp), %eax
 	movl	32(%ebp), %edx
 	movl	%edx, 88(%eax)
-	.loc 1 392 0
+	.loc 1 393 0
 	movl	8(%ebp), %eax
 	movl	92(%eax), %edx
 	movl	8(%ebp), %eax
 	movl	%edx, 76(%eax)
 	jmp	L38
 L39:
-	.loc 1 396 0
+	.loc 1 397 0
 	movl	$9, 4(%esp)
 	movl	$2, (%esp)
 	call	_OS_SET_SW_BUG
 L38:
-	.loc 1 398 0
+	.loc 1 399 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4

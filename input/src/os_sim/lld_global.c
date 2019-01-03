@@ -31,6 +31,10 @@ void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer)
 }
 void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
 {
+   ReferenceUnusedParameter(r0);
+   ReferenceUnusedParameter(r1);
+   ReferenceUnusedParameter(r2);
+   ReferenceUnusedParameter(r3);
    /* no need to save the registers in the simulation, because x86 Simulation does not preempt the running task .... */
 }
 void LLF_RESTORE_TASK_STACK(uint8* StackPointer)

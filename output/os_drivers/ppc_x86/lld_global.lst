@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 1
 
 
    1              		.file	"lld_global.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
   32              		.loc 1 24 0
   33              		.cfi_startproc
   34 0012 55       		pushl	%ebp
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 2
 
 
   35              		.cfi_def_cfa_offset 8
@@ -96,9 +96,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
   59              		.cfi_offset 5, -8
   60 0022 89E5     		movl	%esp, %ebp
   61              		.cfi_def_cfa_register 5
-  34:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to save the registers in the simulation, because x86 Simulation does not preempt the 
-  35:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
-  62              		.loc 1 35 0
+  34:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(r0);
+  35:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(r1);
+  36:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(r2);
+  37:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(r3);
+  38:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to save the registers in the simulation, because x86 Simulation does not preempt the 
+  39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
+  62              		.loc 1 39 0
   63 0024 5D       		popl	%ebp
   64              		.cfi_restore 5
   65              		.cfi_def_cfa 4, 4
@@ -108,27 +112,27 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
   69              		.globl	_LLF_RESTORE_TASK_STACK
   71              	_LLF_RESTORE_TASK_STACK:
   72              	LFB3:
-  36:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
-  37:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
-  73              		.loc 1 37 0
+  40:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_RESTORE_TASK_STACK(uint8* StackPointer)
+  41:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
+  73              		.loc 1 41 0
   74              		.cfi_startproc
   75 0026 55       		pushl	%ebp
   76              		.cfi_def_cfa_offset 8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 3
+
+
   77              		.cfi_offset 5, -8
   78 0027 89E5     		movl	%esp, %ebp
   79              		.cfi_def_cfa_register 5
-  38:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(*StackPointer);
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 3
-
-
-  80              		.loc 1 38 0
+  42:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(*StackPointer);
+  80              		.loc 1 42 0
   81 0029 8B4508   		movl	8(%ebp), %eax
   82 002c 8A10     		movb	(%eax), %dl
   83 002e 8B4508   		movl	8(%ebp), %eax
   84 0031 8810     		movb	%dl, (%eax)
-  39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt t
-  40:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
-  85              		.loc 1 40 0
+  43:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt t
+  44:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
+  85              		.loc 1 44 0
   86 0033 5D       		popl	%ebp
   87              		.cfi_restore 5
   88              		.cfi_def_cfa 4, 4
@@ -138,19 +142,19 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
   92              		.globl	_LLF_RESTORE_REGISTERS
   94              	_LLF_RESTORE_REGISTERS:
   95              	LFB4:
-  41:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_RESTORE_REGISTERS(task_t* task)
-  42:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
-  96              		.loc 1 42 0
+  45:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_RESTORE_REGISTERS(task_t* task)
+  46:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
+  96              		.loc 1 46 0
   97              		.cfi_startproc
   98 0035 55       		pushl	%ebp
   99              		.cfi_def_cfa_offset 8
  100              		.cfi_offset 5, -8
  101 0036 89E5     		movl	%esp, %ebp
  102              		.cfi_def_cfa_register 5
-  43:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(*task);
-  44:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to restore the registers in the simulation, because x86 Simulation does not preempt t
-  45:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
- 103              		.loc 1 45 0
+  47:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(*task);
+  48:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to restore the registers in the simulation, because x86 Simulation does not preempt t
+  49:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
+ 103              		.loc 1 49 0
  104 0038 5D       		popl	%ebp
  105              		.cfi_restore 5
  106              		.cfi_def_cfa 4, 4
@@ -160,27 +164,27 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  110              		.globl	_LLF_RESTORE_SYSTEM_STACK
  112              	_LLF_RESTORE_SYSTEM_STACK:
  113              	LFB5:
-  46:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
-  47:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
- 114              		.loc 1 47 0
+  50:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
+  51:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
+ 114              		.loc 1 51 0
  115              		.cfi_startproc
  116 003a 55       		pushl	%ebp
  117              		.cfi_def_cfa_offset 8
  118              		.cfi_offset 5, -8
  119 003b 89E5     		movl	%esp, %ebp
  120              		.cfi_def_cfa_register 5
-  48:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(*system_stack_ptr);
- 121              		.loc 1 48 0
+  52:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(*system_stack_ptr);
+ 121              		.loc 1 52 0
  122 003d 8B4508   		movl	8(%ebp), %eax
  123 0040 8A10     		movb	(%eax), %dl
  124 0042 8B4508   		movl	8(%ebp), %eax
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 4
+
+
  125 0045 8810     		movb	%dl, (%eax)
-  49:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt t
-  50:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
- 126              		.loc 1 50 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 4
-
-
+  53:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt t
+  54:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
+ 126              		.loc 1 54 0
  127 0047 5D       		popl	%ebp
  128              		.cfi_restore 5
  129              		.cfi_def_cfa 4, 4
@@ -190,24 +194,24 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  133              		.globl	_LLF_SAVE_SYSTEM_STACK
  135              	_LLF_SAVE_SYSTEM_STACK:
  136              	LFB6:
-  51:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
-  52:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
- 137              		.loc 1 52 0
+  55:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
+  56:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
+ 137              		.loc 1 56 0
  138              		.cfi_startproc
  139 0049 55       		pushl	%ebp
  140              		.cfi_def_cfa_offset 8
  141              		.cfi_offset 5, -8
  142 004a 89E5     		movl	%esp, %ebp
  143              		.cfi_def_cfa_register 5
-  53:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(*system_stack_ptr);
- 144              		.loc 1 53 0
+  57:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    ReferenceUnusedParameter(*system_stack_ptr);
+ 144              		.loc 1 57 0
  145 004c 8B4508   		movl	8(%ebp), %eax
  146 004f 8A10     		movb	(%eax), %dl
  147 0051 8B4508   		movl	8(%ebp), %eax
  148 0054 8810     		movb	%dl, (%eax)
-  54:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt t
-  55:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
- 149              		.loc 1 55 0
+  58:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to set the stack pointer in the simulation, because x86 Simulation does not preempt t
+  59:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
+ 149              		.loc 1 59 0
  150 0056 5D       		popl	%ebp
  151              		.cfi_restore 5
  152              		.cfi_def_cfa 4, 4
@@ -217,42 +221,42 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  156              		.globl	_LLF_CLEAR_ALL_GP_REGISTERS
  158              	_LLF_CLEAR_ALL_GP_REGISTERS:
  159              	LFB7:
-  56:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_CLEAR_ALL_GP_REGISTERS(void)
-  57:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** { 
- 160              		.loc 1 57 0
+  60:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_CLEAR_ALL_GP_REGISTERS(void)
+  61:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** { 
+ 160              		.loc 1 61 0
  161              		.cfi_startproc
  162 0058 55       		pushl	%ebp
  163              		.cfi_def_cfa_offset 8
  164              		.cfi_offset 5, -8
  165 0059 89E5     		movl	%esp, %ebp
  166              		.cfi_def_cfa_register 5
-  58:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to clear all general purpose registers because main() is called with valid mcu regist
-  59:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
- 167              		.loc 1 59 0
+  62:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* no need to clear all general purpose registers because main() is called with valid mcu regist
+  63:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
+ 167              		.loc 1 63 0
  168 005b 5D       		popl	%ebp
  169              		.cfi_restore 5
  170              		.cfi_def_cfa 4, 4
  171 005c C3       		ret
  172              		.cfi_endproc
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 5
+
+
  173              	LFE7:
  174              		.globl	_LLF_PERFORM_RAM_CHECK
  176              	_LLF_PERFORM_RAM_CHECK:
  177              	LFB8:
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 5
-
-
-  60:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_PERFORM_RAM_CHECK(void)
-  61:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
- 178              		.loc 1 61 0
+  64:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_PERFORM_RAM_CHECK(void)
+  65:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
+ 178              		.loc 1 65 0
  179              		.cfi_startproc
  180 005d 55       		pushl	%ebp
  181              		.cfi_def_cfa_offset 8
  182              		.cfi_offset 5, -8
  183 005e 89E5     		movl	%esp, %ebp
  184              		.cfi_def_cfa_register 5
-  62:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* RAM check not supported by simulation because RAM layout is different in simulation */
-  63:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
- 185              		.loc 1 63 0
+  66:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* RAM check not supported by simulation because RAM layout is different in simulation */
+  67:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }
+ 185              		.loc 1 67 0
  186 0060 5D       		popl	%ebp
  187              		.cfi_restore 5
  188              		.cfi_def_cfa 4, 4
@@ -262,18 +266,18 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  192              		.globl	_LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
  194              	_LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE:
  195              	LFB9:
-  64:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void)
-  65:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
- 196              		.loc 1 65 0
+  68:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void)
+  69:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** {
+ 196              		.loc 1 69 0
  197              		.cfi_startproc
  198 0062 55       		pushl	%ebp
  199              		.cfi_def_cfa_offset 8
  200              		.cfi_offset 5, -8
  201 0063 89E5     		movl	%esp, %ebp
  202              		.cfi_def_cfa_register 5
-  66:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* "change to user mode" is not supported in simulation */
-  67:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }...
- 203              		.loc 1 67 0
+  70:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c ****    /* "change to user mode" is not supported in simulation */
+  71:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim\lld_global.c **** }...
+ 203              		.loc 1 71 0
  204 0065 5D       		popl	%ebp
  205              		.cfi_restore 5
  206              		.cfi_def_cfa 4, 4
@@ -294,13 +298,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  221 000c 474E5520 		.ascii "GNU C 4.9.3 -march=i386 -g3 -O0 -std=c90\0"
  221      4320342E 
  221      392E3320 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 6
+
+
  221      2D6D6172 
  221      63683D69 
  222 0035 01       		.byte	0x1
  223 0036 453A5C4E 		.ascii "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\lld_global.c\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 6
-
-
  223      65754F72 
  223      67615C50 
  223      726F6772 
@@ -354,13 +358,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  254      20756E73 
  254      69676E65 
  254      6420696E 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 7
+
+
  254      7400
  255 0105 02       		.uleb128 0x2
  256 0106 75696E74 		.ascii "uint32\0"
  256      333200
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 7
-
-
  257 010d 02       		.byte	0x2
  258 010e 23       		.byte	0x23
  259 010f F0000000 		.long	0xf0
@@ -414,13 +418,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  291      6E707269 
  292 0197 00       		.sleb128 0
  293 0198 05       		.uleb128 0x5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 8
+
+
  294 0199 65507269 		.ascii "ePriviligeMode_priviliged_thread_mode\0"
  294      76696C69 
  294      67654D6F 
  294      64655F70 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 8
-
-
  294      72697669 
  295 01bf 01       		.sleb128 1
  296 01c0 05       		.uleb128 0x5
@@ -474,13 +478,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  321      00
  322 0256 03       		.sleb128 3
  323 0257 00       		.byte	0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 9
+
+
  324 0258 02       		.uleb128 0x2
  325 0259 7461736B 		.ascii "task_state_t\0"
  325      5F737461 
  325      74655F74 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 9
-
-
  325      00
  326 0266 04       		.byte	0x4
  327 0267 0E       		.byte	0xe
@@ -534,13 +538,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  366 02db 0C       		.uleb128 0xc
  367 02dc 00000000 		.secrel32	LASF0
  368 02e0 04       		.byte	0x4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 10
+
+
  369 02e1 18       		.byte	0x18
  370 02e2 D8000000 		.long	0xd8
  371 02e6 00       		.byte	0
  372 02e7 0D       		.uleb128 0xd
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 10
-
-
  373 02e8 66616972 		.ascii "fair_exe_time\0"
  373      5F657865 
  373      5F74696D 
@@ -594,13 +598,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  411 0355 21       		.byte	0x21
  412 0356 86050000 		.long	0x586
  413 035a 04       		.byte	0x4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 11
+
+
  414 035b 01       		.byte	0x1
  415 035c 1D       		.byte	0x1d
  416 035d 00       		.byte	0
  417 035e 0E       		.uleb128 0xe
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 11
-
-
  418 035f 46524545 		.ascii "FREE\0"
  418      00
  419 0364 04       		.byte	0x4
@@ -654,13 +658,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  452 03d4 04       		.byte	0x4
  453 03d5 27       		.byte	0x27
  454 03d6 D8000000 		.long	0xd8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 12
+
+
  455 03da 10       		.byte	0x10
  456 03db 0D       		.uleb128 0xd
  457 03dc 6F766572 		.ascii "overwaittime_per_prio_inc_step\0"
  457      77616974 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 12
-
-
  457      74696D65 
  457      5F706572 
  457      5F707269 
@@ -714,13 +718,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  493 046a 7461736B 		.ascii "task_number\0"
  493      5F6E756D 
  493      62657200 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 13
+
+
  494 0476 04       		.byte	0x4
  495 0477 2E       		.byte	0x2e
  496 0478 D8000000 		.long	0xd8
  497 047c 28       		.byte	0x28
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 13
-
-
  498 047d 0D       		.uleb128 0xd
  499 047e 667000   		.ascii "fp\0"
  500 0481 04       		.byte	0x4
@@ -774,13 +778,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  541 04e9 45445800 		.ascii "EDX\0"
  542 04ed 04       		.byte	0x4
  543 04ee 37       		.byte	0x37
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 14
+
+
  544 04ef D8000000 		.long	0xd8
  545 04f3 48       		.byte	0x48
  546 04f4 0D       		.uleb128 0xd
  547 04f5 70537461 		.ascii "pStackPointer\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 14
-
-
  547      636B506F 
  547      696E7465 
  547      7200
@@ -834,13 +838,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  578 057e 04       		.byte	0x4
  579 057f 4C       		.byte	0x4c
  580 0580 EA010000 		.long	0x1ea
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 15
+
+
  581 0584 60       		.byte	0x60
  582 0585 00       		.byte	0
  583 0586 03       		.uleb128 0x3
  584 0587 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 15
-
-
  585 0588 07       		.byte	0x7
  586 0589 756E7369 		.ascii "unsigned int\0"
  586      676E6564 
@@ -894,13 +898,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  624 0604 9C       		.byte	0x9c
  625 0605 18060000 		.long	0x618
  626 0609 12       		.uleb128 0x12
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 16
+
+
  627 060a 1A000000 		.secrel32	LASF1
  628 060e 01       		.byte	0x1
  629 060f 17       		.byte	0x17
  630 0610 9C050000 		.long	0x59c
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 16
-
-
  631 0614 02       		.uleb128 0x2
  632 0615 91       		.byte	0x91
  633 0616 00       		.sleb128 0
@@ -954,14 +958,14 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  677 0671 11       		.uleb128 0x11
  678 0672 4C4C465F 		.ascii "LLF_RESTORE_TASK_STACK\0"
  678      52455354 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 17
+
+
  678      4F52455F 
  678      5441534B 
  678      5F535441 
  679 0689 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 17
-
-
- 680 068a 24       		.byte	0x24
+ 680 068a 28       		.byte	0x28
  681 068b 26000000 		.long	LFB3
  682 068f 0F000000 		.long	LFE3-LFB3
  683 0693 01       		.uleb128 0x1
@@ -970,7 +974,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  686 0699 12       		.uleb128 0x12
  687 069a 1A000000 		.secrel32	LASF1
  688 069e 01       		.byte	0x1
- 689 069f 24       		.byte	0x24
+ 689 069f 28       		.byte	0x28
  690 06a0 A8060000 		.long	0x6a8
  691 06a4 02       		.uleb128 0x2
  692 06a5 91       		.byte	0x91
@@ -986,7 +990,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  699      52454749 
  699      53544552 
  700 06c5 01       		.byte	0x1
- 701 06c6 29       		.byte	0x29
+ 701 06c6 2D       		.byte	0x2d
  702 06c7 35000000 		.long	LFB4
  703 06cb 05000000 		.long	LFE4-LFB4
  704 06cf 01       		.uleb128 0x1
@@ -996,7 +1000,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  708 06d6 7461736B 		.ascii "task\0"
  708      00
  709 06db 01       		.byte	0x1
- 710 06dc 29       		.byte	0x29
+ 710 06dc 2D       		.byte	0x2d
  711 06dd E5060000 		.long	0x6e5
  712 06e1 02       		.uleb128 0x2
  713 06e2 91       		.byte	0x91
@@ -1012,19 +1016,19 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  720      53595354 
  720      454D5F53 
  721 0705 01       		.byte	0x1
- 722 0706 2E       		.byte	0x2e
+ 722 0706 32       		.byte	0x32
  723 0707 3A000000 		.long	LFB5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 18
+
+
  724 070b 0F000000 		.long	LFE5-LFB5
  725 070f 01       		.uleb128 0x1
  726 0710 9C       		.byte	0x9c
  727 0711 24070000 		.long	0x724
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 18
-
-
  728 0715 12       		.uleb128 0x12
  729 0716 09000000 		.secrel32	LASF2
  730 071a 01       		.byte	0x1
- 731 071b 2E       		.byte	0x2e
+ 731 071b 32       		.byte	0x32
  732 071c A8060000 		.long	0x6a8
  733 0720 02       		.uleb128 0x2
  734 0721 91       		.byte	0x91
@@ -1037,7 +1041,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  738      54454D5F 
  738      53544143 
  739 073b 01       		.byte	0x1
- 740 073c 33       		.byte	0x33
+ 740 073c 37       		.byte	0x37
  741 073d 49000000 		.long	LFB6
  742 0741 0F000000 		.long	LFE6-LFB6
  743 0745 01       		.uleb128 0x1
@@ -1046,7 +1050,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  746 074b 12       		.uleb128 0x12
  747 074c 09000000 		.secrel32	LASF2
  748 0750 01       		.byte	0x1
- 749 0751 33       		.byte	0x33
+ 749 0751 37       		.byte	0x37
  750 0752 A8060000 		.long	0x6a8
  751 0756 02       		.uleb128 0x2
  752 0757 91       		.byte	0x91
@@ -1059,7 +1063,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  756      4C5F4750 
  756      5F524547 
  757 0776 01       		.byte	0x1
- 758 0777 38       		.byte	0x38
+ 758 0777 3C       		.byte	0x3c
  759 0778 58000000 		.long	LFB7
  760 077c 05000000 		.long	LFE7-LFB7
  761 0780 01       		.uleb128 0x1
@@ -1071,22 +1075,22 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  764      52414D5F 
  764      43484543 
  765 0799 01       		.byte	0x1
- 766 079a 3C       		.byte	0x3c
+ 766 079a 40       		.byte	0x40
  767 079b 5D000000 		.long	LFB8
  768 079f 05000000 		.long	LFE8-LFB8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 19
+
+
  769 07a3 01       		.uleb128 0x1
  770 07a4 9C       		.byte	0x9c
  771 07a5 14       		.uleb128 0x14
  772 07a6 4C4C465F 		.ascii "LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 19
-
-
  772      4348414E 
  772      47455F54 
  772      4F5F554E 
  772      50524956 
  773 07cd 01       		.byte	0x1
- 774 07ce 40       		.byte	0x40
+ 774 07ce 44       		.byte	0x44
  775 07cf 62000000 		.long	LFB9
  776 07d3 05000000 		.long	LFE9-LFB9
  777 07d7 01       		.uleb128 0x1
@@ -1134,13 +1138,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  819 0026 3E       		.uleb128 0x3e
  820 0027 0B       		.uleb128 0xb
  821 0028 03       		.uleb128 0x3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 20
+
+
  822 0029 08       		.uleb128 0x8
  823 002a 00       		.byte	0
  824 002b 00       		.byte	0
  825 002c 04       		.uleb128 0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 20
-
-
  826 002d 04       		.uleb128 0x4
  827 002e 01       		.byte	0x1
  828 002f 03       		.uleb128 0x3
@@ -1194,13 +1198,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  876 005f 00       		.byte	0
  877 0060 0B       		.uleb128 0xb
  878 0061 0B       		.uleb128 0xb
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 21
+
+
  879 0062 00       		.byte	0
  880 0063 00       		.byte	0
  881 0064 0A       		.uleb128 0xa
  882 0065 15       		.uleb128 0x15
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 21
-
-
  883 0066 01       		.byte	0x1
  884 0067 27       		.uleb128 0x27
  885 0068 19       		.uleb128 0x19
@@ -1254,13 +1258,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  933 0098 38       		.uleb128 0x38
  934 0099 0B       		.uleb128 0xb
  935 009a 00       		.byte	0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 22
+
+
  936 009b 00       		.byte	0
  937 009c 0E       		.uleb128 0xe
  938 009d 0D       		.uleb128 0xd
  939 009e 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 22
-
-
  940 009f 03       		.uleb128 0x3
  941 00a0 08       		.uleb128 0x8
  942 00a1 3A       		.uleb128 0x3a
@@ -1314,13 +1318,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  990 00d2 3A       		.uleb128 0x3a
  991 00d3 0B       		.uleb128 0xb
  992 00d4 3B       		.uleb128 0x3b
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 23
+
+
  993 00d5 0B       		.uleb128 0xb
  994 00d6 49       		.uleb128 0x49
  995 00d7 13       		.uleb128 0x13
  996 00d8 02       		.uleb128 0x2
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 23
-
-
  997 00d9 18       		.uleb128 0x18
  998 00da 00       		.byte	0
  999 00db 00       		.byte	0
@@ -1374,13 +1378,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1047 010c 3B       		.uleb128 0x3b
  1048 010d 0B       		.uleb128 0xb
  1049 010e 49       		.uleb128 0x49
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 24
+
+
  1050 010f 13       		.uleb128 0x13
  1051 0110 02       		.uleb128 0x2
  1052 0111 18       		.uleb128 0x18
  1053 0112 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 24
-
-
  1054 0113 00       		.byte	0
  1055 0114 14       		.uleb128 0x14
  1056 0115 2E       		.uleb128 0x2e
@@ -1434,13 +1438,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1101      44435F48 
  1101      4F535445 
  1101      445F5F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 25
+
+
  1101      3100
  1102 0028 01       		.byte	0x1
  1103 0029 00       		.uleb128 0
  1104 002a 5F5F474E 		.ascii "__GNUC__ 4\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 25
-
-
  1104      55435F5F 
  1104      203400
  1105 0035 01       		.byte	0x1
@@ -1494,13 +1498,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1125      203300
  1126 00ca 01       		.byte	0x1
  1127 00cb 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 26
+
+
  1128 00cc 5F5F4154 		.ascii "__ATOMIC_ACQ_REL 4\0"
  1128      4F4D4943 
  1128      5F414351 
  1128      5F52454C 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 26
-
-
  1128      203400
  1129 00df 01       		.byte	0x1
  1130 00e0 00       		.uleb128 0
@@ -1554,13 +1558,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1150 0177 01       		.byte	0x1
  1151 0178 00       		.uleb128 0
  1152 0179 5F5F5349 		.ascii "__SIZEOF_DOUBLE__ 8\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 27
+
+
  1152      5A454F46 
  1152      5F444F55 
  1152      424C455F 
  1152      5F203800 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 27
-
-
  1153 018d 01       		.byte	0x1
  1154 018e 00       		.uleb128 0
  1155 018f 5F5F5349 		.ascii "__SIZEOF_LONG_DOUBLE__ 12\0"
@@ -1614,13 +1618,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1176 0244 5F5F4259 		.ascii "__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
  1176      54455F4F 
  1176      52444552 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 28
+
+
  1176      5F5F205F 
  1176      5F4F5244 
  1177 026b 01       		.byte	0x1
  1178 026c 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 28
-
-
  1179 026d 5F5F464C 		.ascii "__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
  1179      4F41545F 
  1179      574F5244 
@@ -1674,13 +1678,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1200      4E544D41 
  1200      585F5459 
  1200      50455F5F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 29
+
+
  1200      206C6F6E 
  1201 0376 01       		.byte	0x1
  1202 0377 00       		.uleb128 0
  1203 0378 5F5F4348 		.ascii "__CHAR16_TYPE__ short unsigned int\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 29
-
-
  1203      41523136 
  1203      5F545950 
  1203      455F5F20 
@@ -1734,13 +1738,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1224      54595045 
  1224      5F5F2075 
  1224      6E736967 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 30
+
+
  1225 045e 01       		.byte	0x1
  1226 045f 00       		.uleb128 0
  1227 0460 5F5F5549 		.ascii "__UINT16_TYPE__ short unsigned int\0"
  1227      4E543136 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 30
-
-
  1227      5F545950 
  1227      455F5F20 
  1227      73686F72 
@@ -1794,13 +1798,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1248      385F5459 
  1248      50455F5F 
  1249 0573 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 31
+
+
  1250 0574 00       		.uleb128 0
  1251 0575 5F5F5549 		.ascii "__UINT_LEAST16_TYPE__ short unsigned int\0"
  1251      4E545F4C 
  1251      45415354 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 31
-
-
  1251      31365F54 
  1251      5950455F 
  1252 059e 01       		.byte	0x1
@@ -1854,13 +1858,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1272      455F5F20 
  1273 0695 01       		.byte	0x1
  1274 0696 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 32
+
+
  1275 0697 5F5F5549 		.ascii "__UINT_FAST16_TYPE__ short unsigned int\0"
  1275      4E545F46 
  1275      41535431 
  1275      365F5459 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 32
-
-
  1275      50455F5F 
  1276 06bf 01       		.byte	0x1
  1277 06c0 00       		.uleb128 0
@@ -1914,13 +1918,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1297 07be 01       		.byte	0x1
  1298 07bf 00       		.uleb128 0
  1299 07c0 5F5F5343 		.ascii "__SCHAR_MAX__ 127\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 33
+
+
  1299      4841525F 
  1299      4D41585F 
  1299      5F203132 
  1299      3700
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 33
-
-
  1300 07d2 01       		.byte	0x1
  1301 07d3 00       		.uleb128 0
  1302 07d4 5F5F5348 		.ascii "__SHRT_MAX__ 32767\0"
@@ -1974,13 +1978,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1323 0884 5F5F5749 		.ascii "__WINT_MIN__ 0\0"
  1323      4E545F4D 
  1323      494E5F5F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 34
+
+
  1323      203000
  1324 0893 01       		.byte	0x1
  1325 0894 00       		.uleb128 0
  1326 0895 5F5F5054 		.ascii "__PTRDIFF_MAX__ 2147483647\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 34
-
-
  1326      52444946 
  1326      465F4D41 
  1326      585F5F20 
@@ -2034,13 +2038,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1347      4F4D4943 
  1347      5F4D494E 
  1347      5F5F2028 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 35
+
+
  1348 099d 01       		.byte	0x1
  1349 099e 00       		.uleb128 0
  1350 099f 5F5F494E 		.ascii "__INT8_MAX__ 127\0"
  1350      54385F4D 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 35
-
-
  1350      41585F5F 
  1350      20313237 
  1350      00
@@ -2094,13 +2098,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1371      5F5F2031 
  1371      38343436 
  1372 0a78 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 36
+
+
  1373 0a79 00       		.uleb128 0
  1374 0a7a 5F5F494E 		.ascii "__INT_LEAST8_MAX__ 127\0"
  1374      545F4C45 
  1374      41535438 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 36
-
-
  1374      5F4D4158 
  1374      5F5F2031 
  1375 0a91 01       		.byte	0x1
@@ -2154,13 +2158,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1398 0b45 5F5F5549 		.ascii "__UINT_LEAST8_MAX__ 255\0"
  1398      4E545F4C 
  1398      45415354 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 37
+
+
  1398      385F4D41 
  1398      585F5F20 
  1399 0b5d 01       		.byte	0x1
  1400 0b5e 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 37
-
-
  1401 0b5f 5F5F5549 		.ascii "__UINT8_C(c) c\0"
  1401      4E54385F 
  1401      43286329 
@@ -2214,13 +2218,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1422      4D41585F 
  1422      5F203132 
  1423 0c37 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 38
+
+
  1424 0c38 00       		.uleb128 0
  1425 0c39 5F5F494E 		.ascii "__INT_FAST16_MAX__ 32767\0"
  1425      545F4641 
  1425      53543136 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 38
-
-
  1425      5F4D4158 
  1425      5F5F2033 
  1426 0c52 01       		.byte	0x1
@@ -2274,13 +2278,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1446      31343734 
  1447 0d3e 01       		.byte	0x1
  1448 0d3f 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 39
+
+
  1449 0d40 5F5F5549 		.ascii "__UINTPTR_MAX__ 4294967295U\0"
  1449      4E545054 
  1449      525F4D41 
  1449      585F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 39
-
-
  1449      34323934 
  1450 0d5c 01       		.byte	0x1
  1451 0d5d 00       		.uleb128 0
@@ -2334,13 +2338,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1473      545F4D49 
  1473      4E5F4558 
  1473      505F5F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 40
+
+
  1473      282D3132 
  1474 0e09 01       		.byte	0x1
  1475 0e0a 00       		.uleb128 0
  1476 0e0b 5F5F464C 		.ascii "__FLT_MIN_10_EXP__ (-37)\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 40
-
-
  1476      545F4D49 
  1476      4E5F3130 
  1476      5F455850 
@@ -2394,13 +2398,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1497      4E4F524D 
  1497      5F4D494E 
  1497      5F5F2031 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 41
+
+
  1498 0f1c 01       		.byte	0x1
  1499 0f1d 00       		.uleb128 0
  1500 0f1e 5F5F464C 		.ascii "__FLT_HAS_DENORM__ 1\0"
  1500      545F4841 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 41
-
-
  1500      535F4445 
  1500      4E4F524D 
  1500      5F5F2031 
@@ -2454,13 +2458,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1521      31303234 
  1522 0fda 01       		.byte	0x1
  1523 0fdb 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 42
+
+
  1524 0fdc 5F5F4442 		.ascii "__DBL_MAX_10_EXP__ 308\0"
  1524      4C5F4D41 
  1524      585F3130 
  1524      5F455850 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 42
-
-
  1524      5F5F2033 
  1525 0ff3 01       		.byte	0x1
  1526 0ff4 00       		.uleb128 0
@@ -2514,13 +2518,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1546 111a 01       		.byte	0x1
  1547 111b 00       		.uleb128 0
  1548 111c 5F5F4442 		.ascii "__DBL_HAS_QUIET_NAN__ 1\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 43
+
+
  1548      4C5F4841 
  1548      535F5155 
  1548      4945545F 
  1548      4E414E5F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 43
-
-
  1549 1134 01       		.byte	0x1
  1550 1135 00       		.uleb128 0
  1551 1136 5F5F4C44 		.ascii "__LDBL_MANT_DIG__ 64\0"
@@ -2574,13 +2578,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1572 11e2 5F5F4C44 		.ascii "__LDBL_MAX__ 1.18973149535723176502e+4932L\0"
  1572      424C5F4D 
  1572      41585F5F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 44
+
+
  1572      20312E31 
  1572      38393733 
  1573 120d 01       		.byte	0x1
  1574 120e 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 44
-
-
  1575 120f 5F5F4C44 		.ascii "__LDBL_MIN__ 3.36210314311209350626e-4932L\0"
  1575      424C5F4D 
  1575      494E5F5F 
@@ -2634,13 +2638,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1596      4333325F 
  1596      4D494E5F 
  1596      4558505F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 45
+
+
  1596      5F20282D 
  1597 131b 01       		.byte	0x1
  1598 131c 00       		.uleb128 0
  1599 131d 5F5F4445 		.ascii "__DEC32_MAX_EXP__ 97\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 45
-
-
  1599      4333325F 
  1599      4D41585F 
  1599      4558505F 
@@ -2694,13 +2698,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1620      4D41585F 
  1620      4558505F 
  1620      5F203338 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 46
+
+
  1621 13f7 01       		.byte	0x1
  1622 13f8 00       		.uleb128 0
  1623 13f9 5F5F4445 		.ascii "__DEC64_MIN__ 1E-383DD\0"
  1623      4336345F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 46
-
-
  1623      4D494E5F 
  1623      5F203145 
  1623      2D333833 
@@ -2754,13 +2758,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1644      5F5F2031 
  1644      452D3631 
  1645 14f2 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 47
+
+
  1646 14f3 00       		.uleb128 0
  1647 14f4 5F5F4445 		.ascii "__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL\0"
  1647      43313238 
  1647      5F4D4158 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 47
-
-
  1647      5F5F2039 
  1647      2E393939 
  1648 152e 01       		.byte	0x1
@@ -2814,13 +2818,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1669 1601 01       		.byte	0x1
  1670 1602 00       		.uleb128 0
  1671 1603 5F5F4743 		.ascii "__GCC_ATOMIC_BOOL_LOCK_FREE 1\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 48
+
+
  1671      435F4154 
  1671      4F4D4943 
  1671      5F424F4F 
  1671      4C5F4C4F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 48
-
-
  1672 1621 01       		.byte	0x1
  1673 1622 00       		.uleb128 0
  1674 1623 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR_LOCK_FREE 1\0"
@@ -2874,13 +2878,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1694 170d 00       		.uleb128 0
  1695 170e 5F5F4743 		.ascii "__GCC_ATOMIC_LLONG_LOCK_FREE 1\0"
  1695      435F4154 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 49
+
+
  1695      4F4D4943 
  1695      5F4C4C4F 
  1695      4E475F4C 
  1696 172d 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 49
-
-
  1697 172e 00       		.uleb128 0
  1698 172f 5F5F4743 		.ascii "__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\0"
  1698      435F4154 
@@ -2934,13 +2938,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1719 17fa 5F5F6933 		.ascii "__i386 1\0"
  1719      38362031 
  1719      00
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 50
+
+
  1720 1803 01       		.byte	0x1
  1721 1804 00       		.uleb128 0
  1722 1805 5F5F6933 		.ascii "__i386__ 1\0"
  1722      38365F5F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 50
-
-
  1722      203100
  1723 1810 01       		.byte	0x1
  1724 1811 00       		.uleb128 0
@@ -2994,13 +2998,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1746      6C6C205F 
  1746      5F617474 
  1746      72696275 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 51
+
+
  1747 18fc 01       		.byte	0x1
  1748 18fd 00       		.uleb128 0
  1749 18fe 5F5F6364 		.ascii "__cdecl __attribute__((__cdecl__))\0"
  1749      65636C20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 51
-
-
  1749      5F5F6174 
  1749      74726962 
  1749      7574655F 
@@ -3054,13 +3058,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1775 19b5 00       		.uleb128 0
  1776 19b6 5F5F5749 		.ascii "__WINNT__ 1\0"
  1776      4E4E545F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 52
+
+
  1776      5F203100 
  1777 19c2 01       		.byte	0x1
  1778 19c3 00       		.uleb128 0
  1779 19c4 5F494E54 		.ascii "_INTEGRAL_MAX_BITS 64\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 52
-
-
  1779      45475241 
  1779      4C5F4D41 
  1779      585F4249 
@@ -3114,13 +3118,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1807      4745525F 
  1807      4C4C5036 
  1807      345F494C 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 53
+
+
  1807      33325036 
  1808 1a72 01       		.byte	0x1
  1809 1a73 05       		.uleb128 0x5
  1810 1a74 494E5445 		.ascii "INTEGER_LP64_I32LP64 2\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 53
-
-
  1810      4745525F 
  1810      4C503634 
  1810      5F493332 
@@ -3174,13 +3178,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1831      32303131 
  1831      203400
  1832 1b19 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 54
+
+
  1833 1b1a 0E       		.uleb128 0xe
  1834 1b1b 49534F5F 		.ascii "ISO_CPP_VERSION CPP_VERSION_1998\0"
  1834      4350505F 
  1834      56455253 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 54
-
-
  1834      494F4E20 
  1834      4350505F 
  1835 1b3c 01       		.byte	0x1
@@ -3234,13 +3238,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1866 1bc0 4C6F6361 		.ascii "Local static\0"
  1866      6C207374 
  1866      61746963 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 55
+
+
  1866      00
  1867 1bcd 01       		.byte	0x1
  1868 1bce 0D       		.uleb128 0xd
  1869 1bcf 4C6F6361 		.ascii "Local_inline static __inline__\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 55
-
-
  1869      6C5F696E 
  1869      6C696E65 
  1869      20737461 
@@ -3294,13 +3298,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1891 1ca1 01       		.byte	0x1
  1892 1ca2 1D       		.uleb128 0x1d
  1893 1ca3 456E6162 		.ascii "EnableInterrupts() \0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 56
+
+
  1893      6C65496E 
  1893      74657272 
  1893      75707473 
  1893      28292000 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 56
-
-
  1894 1cb7 01       		.byte	0x1
  1895 1cb8 1E       		.uleb128 0x1e
  1896 1cb9 50726976 		.ascii "Privilige_level_save_current() \0"
@@ -3354,13 +3358,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1925      2000
  1926 1d59 01       		.byte	0x1
  1927 1d5a 04       		.uleb128 0x4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 57
+
+
  1928 1d5b 4F535F53 		.ascii "OS_STACK_SIZE 0x100\0"
  1928      5441434B 
  1928      5F53495A 
  1928      45203078 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 57
-
-
  1928      31303000 
  1929 1d6f 01       		.byte	0x1
  1930 1d70 06       		.uleb128 0x6
@@ -3414,13 +3418,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1954      5345545F 
  1954      464F525F 
  1954      4348554E 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 58
+
+
  1955 1e17 04       		.byte	0x4
  1956              		.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_base/os_main.
  1957 1e18 03       		.byte	0x3
  1958 1e19 07       		.uleb128 0x7
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 58
-
-
  1959 1e1a 0B       		.uleb128 0xb
  1960 1e1b 01       		.byte	0x1
  1961 1e1c 02       		.uleb128 0x2
@@ -3474,13 +3478,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  1992 1e83 04       		.byte	0x4
  1993              		.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_inter
  1994 1e84 03       		.byte	0x3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 59
+
+
  1995 1e85 05       		.uleb128 0x5
  1996 1e86 0E       		.uleb128 0xe
  1997 1e87 01       		.byte	0x1
  1998 1e88 02       		.uleb128 0x2
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 59
-
-
  1999 1e89 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
  1999      5F696E74 
  1999      65727275 
@@ -3534,13 +3538,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  2022      00
  2023 1f59 04       		.byte	0x4
  2024              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_timer
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 60
+
+
  2025 1f5a 03       		.byte	0x3
  2026 1f5b 07       		.uleb128 0x7
  2027 1f5c 10       		.uleb128 0x10
  2028 1f5d 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 60
-
-
  2029 1f5e 02       		.uleb128 0x2
  2030 1f5f 5F6C6C64 		.ascii "_lld_timer_h_ \0"
  2030      5F74696D 
@@ -3594,13 +3598,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  2064      5F636F6E 
  2064      6669675F 
  2064      685F2000 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 61
+
+
  2065 1fcd 01       		.byte	0x1
  2066 1fce 05       		.uleb128 0x5
  2067 1fcf 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
  2067      64756C65 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 61
-
-
  2067      72467265 
  2067      7175656E 
  2067      63792028 
@@ -3654,13 +3658,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  2088      495A4520 
  2088      32303000 
  2089 20d5 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 62
+
+
  2090 20d6 10       		.uleb128 0x10
  2091 20d7 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
  2091      45525F53 
  2091      45432028 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 62
-
-
  2091      31303030 
  2091      2900
  2092 20e9 01       		.byte	0x1
@@ -3714,13 +3718,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  2122 21c3 00       		.byte	0
  2123              		.section	.debug_line,"dr"
  2124              	Ldebug_line0:
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 63
+
+
  2125 0000 5A030000 		.section	.debug_str,"dr"
  2125      02002C03 
  2125      00000101 
  2125      FB0E0D00 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 63
-
-
  2125      01010101 
  2126              	LASF0:
  2127 0000 6578655F 		.ascii "exe_time\0"
@@ -3738,20 +3742,20 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 1
  2131      6E746572 
  2131      00
  2132              		.ident	"GCC: (GNU) 4.9.3"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s 			page 64
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s 			page 64
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lld_global.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:6      .text:00000000 _GET_CORE_ID
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:30     .text:00000012 _LLF_SAVE_TASK_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:53     .text:00000021 _LLF_SAVE_REGISTERS
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:71     .text:00000026 _LLF_RESTORE_TASK_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:94     .text:00000035 _LLF_RESTORE_REGISTERS
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:112    .text:0000003a _LLF_RESTORE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:135    .text:00000049 _LLF_SAVE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:158    .text:00000058 _LLF_CLEAR_ALL_GP_REGISTERS
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:176    .text:0000005d _LLF_PERFORM_RAM_CHECK
-C:\Users\PRESID~1\AppData\Local\Temp\ccW1fk2o.s:194    .text:00000062 _LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:6      .text:00000000 _GET_CORE_ID
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:30     .text:00000012 _LLF_SAVE_TASK_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:53     .text:00000021 _LLF_SAVE_REGISTERS
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:71     .text:00000026 _LLF_RESTORE_TASK_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:94     .text:00000035 _LLF_RESTORE_REGISTERS
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:112    .text:0000003a _LLF_RESTORE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:135    .text:00000049 _LLF_SAVE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:158    .text:00000058 _LLF_CLEAR_ALL_GP_REGISTERS
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:176    .text:0000005d _LLF_PERFORM_RAM_CHECK
+C:\Users\PRESID~1\AppData\Local\Temp\ccq5PXft.s:194    .text:00000062 _LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
 
 NO UNDEFINED SYMBOLS

@@ -99,12 +99,7 @@ mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_stack.c				     >> %OUTPUT_DIR%\os_base\ppc_x86\os_stack.lst                   2>&1		
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap.c				     >> %OUTPUT_DIR%\os_base\ppc_x86\os_heap.lst                   2>&1		
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_global.c		     >> %OUTPUT_DIR%\os_drivers\ppc_x86\lld_global.lst                 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_interrupt.c		     >> %OUTPUT_DIR%\os_drivers\ppc_x86\lld_interrupt.lst              2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_mmu.c			     >> %OUTPUT_DIR%\os_drivers\ppc_x86\lld_mmu.lst                    2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_ram.c			     >> %OUTPUT_DIR%\os_drivers\ppc_x86\lld_ram.lst                    2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_timer.c			     >> %OUTPUT_DIR%\os_drivers\ppc_x86\lld_timer.lst                  2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_power.c			     >> %OUTPUT_DIR%\os_drivers\ppc_x86\lld_power.lst                  2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			     >> %OUTPUT_DIR%\os_user_code\ppc_x86\led.lst                  2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c		     >> %OUTPUT_DIR%\os_user_code\ppc_arm\led.lst                 2>&1
 REM
 echo "compile it" >> %OUTPUT_DIR%\VERSION_X86\Build_X86.log
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_common.c 					-o %OUTPUT_DIR%\os_base\obj_x86\os_common.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
@@ -135,7 +130,6 @@ mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_ram.c			-o %OUTPUT_DIR%\os_drivers\obj_x86\lld_ram.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_timer.c			-o %OUTPUT_DIR%\os_drivers\obj_x86\lld_timer.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_power.c			-o %OUTPUT_DIR%\os_drivers\obj_x86\lld_power.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
-
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			-o %OUTPUT_DIR%\os_user_code\obj_x86\led.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 REM
 echo "assemble it" >> %OUTPUT_DIR%\VERSION_X86\Build_X86.log
@@ -162,12 +156,6 @@ mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -peda
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_stack.c                           -o %OUTPUT_DIR%\os_sim\obj_x86\os_stack.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap.c                           -o %OUTPUT_DIR%\os_sim\obj_x86\os_heap.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_global.c			-o %OUTPUT_DIR%\os_drivers\obj_x86\lld_global.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_interrupt.c			-o %OUTPUT_DIR%\os_drivers\obj_x86\lld_interrupt.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_mmu.c			-o %OUTPUT_DIR%\os_drivers\obj_x86\lld_mmu.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_ram.c			-o %OUTPUT_DIR%\os_drivers\obj_x86\lld_ram.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_timer.c			-o %OUTPUT_DIR%\os_drivers\obj_x86\lld_timer.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_power.c			-o %OUTPUT_DIR%\os_drivers\obj_x86\lld_power.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
-
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_user_code\led.c			-o %OUTPUT_DIR%\os_user_code\obj_x86\led.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86.log 2>&1
 echo "link it" >> %OUTPUT_DIR%\VERSION_X86\Build_X86.log
 REM %OUTPUT_DIR%\os_base\obj_x86\os_exception_table.o not linked for x86

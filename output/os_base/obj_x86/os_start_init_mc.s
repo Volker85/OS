@@ -13,7 +13,7 @@ LFB0:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 11 0
+	.loc 1 12 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4

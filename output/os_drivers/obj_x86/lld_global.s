@@ -59,7 +59,7 @@ LFB2:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 35 0
+	.loc 1 39 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -70,19 +70,19 @@ LFE2:
 	.def	_LLF_RESTORE_TASK_STACK;	.scl	2;	.type	32;	.endef
 _LLF_RESTORE_TASK_STACK:
 LFB3:
-	.loc 1 37 0
+	.loc 1 41 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 38 0
+	.loc 1 42 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	movl	8(%ebp), %eax
 	movb	%dl, (%eax)
-	.loc 1 40 0
+	.loc 1 44 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -93,14 +93,14 @@ LFE3:
 	.def	_LLF_RESTORE_REGISTERS;	.scl	2;	.type	32;	.endef
 _LLF_RESTORE_REGISTERS:
 LFB4:
-	.loc 1 42 0
+	.loc 1 46 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 45 0
+	.loc 1 49 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -111,19 +111,19 @@ LFE4:
 	.def	_LLF_RESTORE_SYSTEM_STACK;	.scl	2;	.type	32;	.endef
 _LLF_RESTORE_SYSTEM_STACK:
 LFB5:
-	.loc 1 47 0
+	.loc 1 51 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 48 0
+	.loc 1 52 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	movl	8(%ebp), %eax
 	movb	%dl, (%eax)
-	.loc 1 50 0
+	.loc 1 54 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -134,19 +134,19 @@ LFE5:
 	.def	_LLF_SAVE_SYSTEM_STACK;	.scl	2;	.type	32;	.endef
 _LLF_SAVE_SYSTEM_STACK:
 LFB6:
-	.loc 1 52 0
+	.loc 1 56 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 53 0
+	.loc 1 57 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	movl	8(%ebp), %eax
 	movb	%dl, (%eax)
-	.loc 1 55 0
+	.loc 1 59 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -157,24 +157,6 @@ LFE6:
 	.def	_LLF_CLEAR_ALL_GP_REGISTERS;	.scl	2;	.type	32;	.endef
 _LLF_CLEAR_ALL_GP_REGISTERS:
 LFB7:
-	.loc 1 57 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	.loc 1 59 0
-	popl	%ebp
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE7:
-	.globl	_LLF_PERFORM_RAM_CHECK
-	.def	_LLF_PERFORM_RAM_CHECK;	.scl	2;	.type	32;	.endef
-_LLF_PERFORM_RAM_CHECK:
-LFB8:
 	.loc 1 61 0
 	.cfi_startproc
 	pushl	%ebp
@@ -188,11 +170,11 @@ LFB8:
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
-LFE8:
-	.globl	_LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
-	.def	_LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE;	.scl	2;	.type	32;	.endef
-_LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE:
-LFB9:
+LFE7:
+	.globl	_LLF_PERFORM_RAM_CHECK
+	.def	_LLF_PERFORM_RAM_CHECK;	.scl	2;	.type	32;	.endef
+_LLF_PERFORM_RAM_CHECK:
+LFB8:
 	.loc 1 65 0
 	.cfi_startproc
 	pushl	%ebp
@@ -201,6 +183,24 @@ LFB9:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	.loc 1 67 0
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE8:
+	.globl	_LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
+	.def	_LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE;	.scl	2;	.type	32;	.endef
+_LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE:
+LFB9:
+	.loc 1 69 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	.loc 1 71 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -677,7 +677,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.ascii "LLF_RESTORE_TASK_STACK\0"
 	.byte	0x1
-	.byte	0x24
+	.byte	0x28
 	.long	LFB3
 	.long	LFE3-LFB3
 	.uleb128 0x1
@@ -686,7 +686,7 @@ Ldebug_info0:
 	.uleb128 0x12
 	.secrel32	LASF1
 	.byte	0x1
-	.byte	0x24
+	.byte	0x28
 	.long	0x6a8
 	.uleb128 0x2
 	.byte	0x91
@@ -698,7 +698,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.ascii "LLF_RESTORE_REGISTERS\0"
 	.byte	0x1
-	.byte	0x29
+	.byte	0x2d
 	.long	LFB4
 	.long	LFE4-LFB4
 	.uleb128 0x1
@@ -707,7 +707,7 @@ Ldebug_info0:
 	.uleb128 0x13
 	.ascii "task\0"
 	.byte	0x1
-	.byte	0x29
+	.byte	0x2d
 	.long	0x6e5
 	.uleb128 0x2
 	.byte	0x91
@@ -719,7 +719,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.ascii "LLF_RESTORE_SYSTEM_STACK\0"
 	.byte	0x1
-	.byte	0x2e
+	.byte	0x32
 	.long	LFB5
 	.long	LFE5-LFB5
 	.uleb128 0x1
@@ -728,7 +728,7 @@ Ldebug_info0:
 	.uleb128 0x12
 	.secrel32	LASF2
 	.byte	0x1
-	.byte	0x2e
+	.byte	0x32
 	.long	0x6a8
 	.uleb128 0x2
 	.byte	0x91
@@ -737,7 +737,7 @@ Ldebug_info0:
 	.uleb128 0x11
 	.ascii "LLF_SAVE_SYSTEM_STACK\0"
 	.byte	0x1
-	.byte	0x33
+	.byte	0x37
 	.long	LFB6
 	.long	LFE6-LFB6
 	.uleb128 0x1
@@ -746,7 +746,7 @@ Ldebug_info0:
 	.uleb128 0x12
 	.secrel32	LASF2
 	.byte	0x1
-	.byte	0x33
+	.byte	0x37
 	.long	0x6a8
 	.uleb128 0x2
 	.byte	0x91
@@ -755,7 +755,7 @@ Ldebug_info0:
 	.uleb128 0x14
 	.ascii "LLF_CLEAR_ALL_GP_REGISTERS\0"
 	.byte	0x1
-	.byte	0x38
+	.byte	0x3c
 	.long	LFB7
 	.long	LFE7-LFB7
 	.uleb128 0x1
@@ -763,7 +763,7 @@ Ldebug_info0:
 	.uleb128 0x14
 	.ascii "LLF_PERFORM_RAM_CHECK\0"
 	.byte	0x1
-	.byte	0x3c
+	.byte	0x40
 	.long	LFB8
 	.long	LFE8-LFB8
 	.uleb128 0x1
@@ -771,7 +771,7 @@ Ldebug_info0:
 	.uleb128 0x14
 	.ascii "LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE\0"
 	.byte	0x1
-	.byte	0x40
+	.byte	0x44
 	.long	LFB9
 	.long	LFE9-LFB9
 	.uleb128 0x1

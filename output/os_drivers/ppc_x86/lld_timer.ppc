@@ -457,10 +457,6 @@ extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_timer.h" 1
 
 #define _lld_timer_h_ 
-
-extern uint32 LLF_UP_CNT_TIMER_32(void);
-extern void LLF_TCMP1_CONFIG(void);
-extern void LLF_ADD_2_TCMP(unsigned_int32_t value_us);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_power.h" 1
 
@@ -618,20 +614,3 @@ extern void USER_LED_OFF(led_t Led);
 extern void USER_LED_TOGGLE(led_t Led);
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\lld_timer.c" 2
-
-
-static uint32 COMPARE_VALUE_TCMP1 = 0;
-
-uint32 LLF_UP_CNT_TIMER_32(void)
-{
-   return ((uint32)((uint32)1u*(uint32)1000u));
-}
-void LLF_ADD_2_TCMP(unsigned_int32_t value_us)
-{
-   COMPARE_VALUE_TCMP1 += value_us;
-}
-void LLF_TCMP1_CONFIG(void)
-{
-
-   COMPARE_VALUE_TCMP1 = 0;
-}

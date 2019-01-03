@@ -457,10 +457,6 @@ extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_timer.h" 1
 
 #define _lld_timer_h_ 
-
-extern uint32 LLF_UP_CNT_TIMER_32(void);
-extern void LLF_TCMP1_CONFIG(void);
-extern void LLF_ADD_2_TCMP(unsigned_int32_t value_us);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_power.h" 1
 
@@ -629,6 +625,27 @@ typedef enum os_reset_type_s
 } os_reset_type_t;
 extern void OS_SHUTDOWN(os_reset_type_t reset_typ);
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.c" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_ext_prg.h" 1
+
+#define _os_start_ext_prg_h_ 
+
+
+extern void OS_StartExtPrg(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize);
+# 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.c" 2
+static void OS_DEINIT_HW(void);
+static void OS_DEINIT_SW(void);
+void OS_DEINIT_HW(void)
+{
+
+}
+void OS_DEINIT_SW(void)
+{
+
+}
+void OS_DEINIT_MC(void)
+{
+
+}
 
 void OS_SHUTDOWN(os_reset_type_t reset_typ)
 {
@@ -651,13 +668,10 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    }
    else if (reset_typ == os_reset_exit)
    {
-
-
-
-
-
-
-
+      OS_DEINIT_HW();
+      OS_DEINIT_SW();
+      OS_DEINIT_MC();
+      OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);
    }
    else
    {

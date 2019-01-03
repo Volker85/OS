@@ -408,37 +408,37 @@ OS_Exception_Systick:
 	.cfi_def_cfa_offset 16
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 139 0
+	.loc 1 140 0
 	movs	r3, #0
 	str	r3, [r7, #4]
-	.loc 1 157 0
+	.loc 1 158 0
 	ldr	r3, .L33
 	ldr	r3, [r3]
 	ldr	r2, .L33
 	orr	r3, r3, #664
 	orr	r3, r3, #3
 	str	r3, [r2]
-	.loc 1 158 0
+	.loc 1 159 0
 	ldr	r3, .L33+4
 	movs	r2, #0
 	str	r2, [r3]
-	.loc 1 159 0
+	.loc 1 160 0
 	ldr	r3, .L33+8
 	ldr	r3, [r3]
 	ldr	r2, .L33+8
 	orr	r3, r3, #3
 	str	r3, [r2]
-	.loc 1 200 0
+	.loc 1 201 0
 	bl	GetRunningTask
 	str	r0, [r7, #4]
-	.loc 1 201 0
+	.loc 1 202 0
 	ldr	r3, [r7, #4]
 	cmp	r3, #0
 	beq	.L32
-	.loc 1 203 0
+	.loc 1 204 0
 	ldr	r0, [r7, #4]
 	bl	OS_TASK_SAVETASK_ENVIRONMENT
-	.loc 1 204 0
+	.loc 1 205 0
 	bl	GET_CORE_ID
 	mov	r3, r0
 	lsls	r3, r3, #8
@@ -446,12 +446,12 @@ OS_Exception_Systick:
 	add	r3, r3, r2
 	mov	r0, r3
 	bl	OS_TASK_RESTORE_SYSTEM_STACK
-	.loc 1 205 0
+	.loc 1 206 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #0, #1
 	strb	r3, [r2]
-	.loc 1 206 0
+	.loc 1 207 0
 	bl	Get_current_time
 	mov	r2, r0
 	ldr	r3, [r7, #4]
@@ -462,7 +462,7 @@ OS_Exception_Systick:
 	add	r2, r2, r3
 	ldr	r3, [r7, #4]
 	str	r2, [r3, #28]
-	.loc 1 207 0
+	.loc 1 208 0
 	bl	Get_current_time
 	mov	r2, r0
 	ldr	r3, [r7, #4]
@@ -475,16 +475,16 @@ OS_Exception_Systick:
 	ldr	r3, [r3, #56]
 	add	r2, r2, r1
 	str	r2, [r3]
-	.loc 1 208 0
+	.loc 1 209 0
 	movs	r0, #0
 	bl	SET_RUNNING_TASK
-	.loc 1 209 0
+	.loc 1 210 0
 	ldr	r0, [r7, #4]
 	bl	OS_TERMINATE_TASK
 .L32:
-	.loc 1 211 0
+	.loc 1 212 0
 	bl	OS_STATE_HANDLER
-	.loc 1 213 0
+	.loc 1 214 0
 	nop
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -511,7 +511,7 @@ OS_Exception_Systick:
 	.type	OS_Exception_IRQ, %function
 OS_Exception_IRQ:
 .LFB10:
-	.loc 1 216 0
+	.loc 1 217 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -521,9 +521,9 @@ OS_Exception_IRQ:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 218 0
+	.loc 1 219 0
 	bl	OS_ISRHANDLERC0
-	.loc 1 220 0
+	.loc 1 221 0
 	nop
 	pop	{r7, pc}
 	.cfi_endproc
@@ -538,7 +538,7 @@ OS_Exception_IRQ:
 	.type	OS_Exception_FIQ, %function
 OS_Exception_FIQ:
 .LFB11:
-	.loc 1 222 0
+	.loc 1 223 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -548,9 +548,9 @@ OS_Exception_FIQ:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 224 0
+	.loc 1 225 0
 	bl	OS_ISRHANDLERC0
-	.loc 1 226 0
+	.loc 1 227 0
 	nop
 	pop	{r7, pc}
 	.cfi_endproc
@@ -565,7 +565,7 @@ OS_Exception_FIQ:
 	.type	TCMP1, %function
 TCMP1:
 .LFB12:
-	.loc 1 230 0
+	.loc 1 231 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -575,9 +575,9 @@ TCMP1:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 232 0
+	.loc 1 233 0
 	bl	OS_ISRHANDLERC0
-	.loc 1 234 0
+	.loc 1 235 0
 	nop
 	pop	{r7, pc}
 	.cfi_endproc
@@ -592,7 +592,7 @@ TCMP1:
 	.type	TCMP2, %function
 TCMP2:
 .LFB13:
-	.loc 1 236 0
+	.loc 1 237 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -602,7 +602,7 @@ TCMP2:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 240 0
+	.loc 1 241 0
 	nop
 	mov	sp, r7
 	.cfi_def_cfa_register 13
@@ -623,7 +623,7 @@ TCMP2:
 	.type	TCMP3, %function
 TCMP3:
 .LFB14:
-	.loc 1 242 0
+	.loc 1 243 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -633,7 +633,7 @@ TCMP3:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 246 0
+	.loc 1 247 0
 	nop
 	mov	sp, r7
 	.cfi_def_cfa_register 13
@@ -654,7 +654,7 @@ TCMP3:
 	.type	TCMP4, %function
 TCMP4:
 .LFB15:
-	.loc 1 248 0
+	.loc 1 249 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -664,7 +664,7 @@ TCMP4:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 252 0
+	.loc 1 253 0
 	nop
 	mov	sp, r7
 	.cfi_def_cfa_register 13
@@ -1238,7 +1238,7 @@ TCMP4:
 	.uleb128 0x14
 	.4byte	.LASF602
 	.byte	0x1
-	.byte	0xf7
+	.byte	0xf8
 	.4byte	.LFB15
 	.4byte	.LFE15-.LFB15
 	.uleb128 0x1
@@ -1246,7 +1246,7 @@ TCMP4:
 	.uleb128 0x14
 	.4byte	.LASF603
 	.byte	0x1
-	.byte	0xf1
+	.byte	0xf2
 	.4byte	.LFB14
 	.4byte	.LFE14-.LFB14
 	.uleb128 0x1
@@ -1254,7 +1254,7 @@ TCMP4:
 	.uleb128 0x14
 	.4byte	.LASF604
 	.byte	0x1
-	.byte	0xeb
+	.byte	0xec
 	.4byte	.LFB13
 	.4byte	.LFE13-.LFB13
 	.uleb128 0x1
@@ -1262,7 +1262,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF605
 	.byte	0x1
-	.byte	0xe5
+	.byte	0xe6
 	.4byte	.LFB12
 	.4byte	.LFE12-.LFB12
 	.uleb128 0x1
@@ -1270,7 +1270,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF606
 	.byte	0x1
-	.byte	0xdd
+	.byte	0xde
 	.4byte	.LFB11
 	.4byte	.LFE11-.LFB11
 	.uleb128 0x1
@@ -1278,7 +1278,7 @@ TCMP4:
 	.uleb128 0x15
 	.4byte	.LASF607
 	.byte	0x1
-	.byte	0xd7
+	.byte	0xd8
 	.4byte	.LFB10
 	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
@@ -1295,7 +1295,7 @@ TCMP4:
 	.uleb128 0x17
 	.4byte	.LASF620
 	.byte	0x1
-	.byte	0x8b
+	.byte	0x8c
 	.4byte	0x432
 	.uleb128 0x2
 	.byte	0x91
@@ -1914,22 +1914,22 @@ TCMP4:
 	.uleb128 0x13
 	.4byte	.LASF524
 	.byte	0x5
-	.uleb128 0x92
+	.uleb128 0x93
 	.4byte	.LASF525
 	.byte	0x5
-	.uleb128 0x93
+	.uleb128 0x94
 	.4byte	.LASF526
 	.byte	0x5
-	.uleb128 0x94
+	.uleb128 0x95
 	.4byte	.LASF527
 	.byte	0x5
-	.uleb128 0x95
+	.uleb128 0x96
 	.4byte	.LASF528
 	.byte	0x5
-	.uleb128 0x96
+	.uleb128 0x97
 	.4byte	.LASF529
 	.byte	0x5
-	.uleb128 0x97
+	.uleb128 0x98
 	.4byte	.LASF530
 	.byte	0x4
 	.byte	0

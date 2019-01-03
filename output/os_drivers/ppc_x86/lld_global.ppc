@@ -457,10 +457,6 @@ extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_timer.h" 1
 
 #define _lld_timer_h_ 
-
-extern uint32 LLF_UP_CNT_TIMER_32(void);
-extern void LLF_TCMP1_CONFIG(void);
-extern void LLF_ADD_2_TCMP(unsigned_int32_t value_us);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_power.h" 1
 
@@ -635,6 +631,10 @@ void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer)
 }
 void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3)
 {
+   ((r0) = (r0));
+   ((r1) = (r1));
+   ((r2) = (r2));
+   ((r3) = (r3));
 
 }
 void LLF_RESTORE_TASK_STACK(uint8* StackPointer)

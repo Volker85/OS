@@ -1,45 +1,115 @@
 	.file	"os_shutdown.c"
 	.text
 Ltext0:
-	.globl	_OS_SHUTDOWN
-	.def	_OS_SHUTDOWN;	.scl	2;	.type	32;	.endef
-_OS_SHUTDOWN:
+	.def	_OS_DEINIT_HW;	.scl	3;	.type	32;	.endef
+_OS_DEINIT_HW:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.c"
-	.loc 1 5 0
+	.loc 1 7 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 7 0
-	call	_LLF_DISABLE_INTERRUPTS_ALL_CORES
-	.loc 1 10 0
-	call	_LLF_MPU_DISABLE
-	.loc 1 15 0
-	cmpl	$1, 8(%ebp)
-	jne	L2
-	.loc 1 17 0
-	call	_LLF_MCU_SWITCH_OFF_POWER
-	jmp	L3
-L2:
-	.loc 1 19 0
-	cmpl	$0, 8(%ebp)
-	jne	L3
-	.loc 1 21 0
-	call	_LLF_MCU_RESET_POWER
-L3:
-	.loc 1 40 0 discriminator 2
-	jmp	L3
+	.loc 1 9 0
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
 	.cfi_endproc
 LFE0:
+	.def	_OS_DEINIT_SW;	.scl	3;	.type	32;	.endef
+_OS_DEINIT_SW:
+LFB1:
+	.loc 1 11 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	.loc 1 13 0
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE1:
+	.globl	_OS_DEINIT_MC
+	.def	_OS_DEINIT_MC;	.scl	2;	.type	32;	.endef
+_OS_DEINIT_MC:
+LFB2:
+	.loc 1 15 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	.loc 1 17 0
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE2:
+	.globl	_OS_SHUTDOWN
+	.def	_OS_SHUTDOWN;	.scl	2;	.type	32;	.endef
+_OS_SHUTDOWN:
+LFB3:
+	.loc 1 20 0
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	subl	$24, %esp
+	.loc 1 22 0
+	call	_LLF_DISABLE_INTERRUPTS_ALL_CORES
+	.loc 1 25 0
+	call	_LLF_MPU_DISABLE
+	.loc 1 30 0
+	cmpl	$1, 8(%ebp)
+	jne	L5
+	.loc 1 32 0
+	call	_LLF_MCU_SWITCH_OFF_POWER
+	jmp	L6
+L5:
+	.loc 1 34 0
+	cmpl	$0, 8(%ebp)
+	jne	L7
+	.loc 1 36 0
+	call	_LLF_MCU_RESET_POWER
+	jmp	L6
+L7:
+	.loc 1 38 0
+	cmpl	$2, 8(%ebp)
+	jne	L6
+	.loc 1 40 0
+	call	_OS_DEINIT_HW
+	.loc 1 41 0
+	call	_OS_DEINIT_SW
+	.loc 1 42 0
+	call	_OS_DEINIT_MC
+	.loc 1 43 0
+	movl	$0, 8(%esp)
+	movl	$0, 4(%esp)
+	movl	$0, (%esp)
+	call	_OS_StartExtPrg
+L6:
+	.loc 1 52 0 discriminator 1
+	jmp	L6
+	.cfi_endproc
+LFE3:
 Letext0:
-	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
+	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
+	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
+	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x170
+	.long	0x1e5
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -63,44 +133,82 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
+	.uleb128 0x3
+	.ascii "uint32\0"
+	.byte	0x2
+	.byte	0x23
+	.long	0xb6
+	.uleb128 0x3
+	.ascii "func_ptr_t\0"
+	.byte	0x3
+	.byte	0x4c
+	.long	0xeb
+	.uleb128 0x4
+	.byte	0x4
+	.long	0xf1
+	.uleb128 0x5
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
 	.ascii "unsigned int\0"
-	.uleb128 0x3
+	.uleb128 0x6
 	.ascii "os_reset_type_s\0"
 	.byte	0x4
-	.byte	0x2
+	.byte	0x4
 	.byte	0x3
-	.long	0x12e
-	.uleb128 0x4
+	.long	0x155
+	.uleb128 0x7
 	.ascii "os_reset_hardreset\0"
 	.sleb128 0
-	.uleb128 0x4
+	.uleb128 0x7
 	.ascii "os_reset_powerdown\0"
 	.sleb128 1
-	.uleb128 0x4
+	.uleb128 0x7
 	.ascii "os_reset_exit\0"
 	.sleb128 2
 	.byte	0
-	.uleb128 0x5
+	.uleb128 0x3
 	.ascii "os_reset_type_t\0"
-	.byte	0x2
-	.byte	0x8
-	.long	0xdb
-	.uleb128 0x6
-	.ascii "OS_SHUTDOWN\0"
-	.byte	0x1
 	.byte	0x4
+	.byte	0x8
+	.long	0x102
+	.uleb128 0x8
+	.ascii "OS_DEINIT_HW\0"
+	.byte	0x1
+	.byte	0x6
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x7
+	.uleb128 0x8
+	.ascii "OS_DEINIT_SW\0"
+	.byte	0x1
+	.byte	0xa
+	.long	LFB1
+	.long	LFE1-LFB1
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0x9
+	.ascii "OS_DEINIT_MC\0"
+	.byte	0x1
+	.byte	0xe
+	.long	LFB2
+	.long	LFE2-LFB2
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0xa
+	.ascii "OS_SHUTDOWN\0"
+	.byte	0x1
+	.byte	0x13
+	.long	LFB3
+	.long	LFE3-LFB3
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0xb
 	.ascii "reset_typ\0"
 	.byte	0x1
-	.byte	0x4
-	.long	0x12e
+	.byte	0x13
+	.long	0x155
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -139,6 +247,35 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x3
+	.uleb128 0x16
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x4
+	.uleb128 0xf
+	.byte	0
+	.uleb128 0xb
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x5
+	.uleb128 0x15
+	.byte	0
+	.uleb128 0x27
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x6
 	.uleb128 0x4
 	.byte	0x1
 	.uleb128 0x3
@@ -153,7 +290,7 @@ Ldebug_abbrev0:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x4
+	.uleb128 0x7
 	.uleb128 0x28
 	.byte	0
 	.uleb128 0x3
@@ -162,8 +299,8 @@ Ldebug_abbrev0:
 	.uleb128 0xd
 	.byte	0
 	.byte	0
-	.uleb128 0x5
-	.uleb128 0x16
+	.uleb128 0x8
+	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x8
@@ -171,11 +308,42 @@ Ldebug_abbrev0:
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
 	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x9
+	.uleb128 0x2e
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0xa
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -198,7 +366,7 @@ Ldebug_abbrev0:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x7
+	.uleb128 0xb
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -927,17 +1095,16 @@ Ldebug_macro0:
 	.byte	0x3
 	.uleb128 0
 	.uleb128 0x1
-	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
+	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x1
-	.uleb128 0x3
+	.uleb128 0x5
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_firstinc_h_ \0"
-	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x4
+	.uleb128 0x2
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_BASE_TYPES_H_ \0"
@@ -975,10 +1142,9 @@ Ldebug_macro0:
 	.uleb128 0x10
 	.ascii "INTEGER_MODEL INTEGER_LLP64_IL32P64\0"
 	.byte	0x4
-	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x5
+	.uleb128 0x3
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_common_h_ \0"
@@ -1261,10 +1427,18 @@ Ldebug_macro0:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x2
+	.uleb128 0x4
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_shutdown_h_ \0"
+	.byte	0x4
+	.file 23 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_ext_prg.h"
+	.byte	0x3
+	.uleb128 0x3
+	.uleb128 0x17
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_os_start_ext_prg_h_ \0"
 	.byte	0x4
 	.byte	0x4
 	.byte	0
@@ -1276,3 +1450,4 @@ Ldebug_line0:
 	.def	_LLF_MPU_DISABLE;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MCU_SWITCH_OFF_POWER;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MCU_RESET_POWER;	.scl	2;	.type	32;	.endef
+	.def	_OS_StartExtPrg;	.scl	2;	.type	32;	.endef

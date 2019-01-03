@@ -32,7 +32,7 @@ OS_INIT_MC:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 11 0
+	.loc 1 12 0
 	nop
 	mov	sp, r7
 	.cfi_def_cfa_register 13

@@ -1,5 +1,6 @@
 #include "os_firstinc.h"
 #include "os_shutdown.h"
+#include "os_start_ext_prg.h"
 Local void OS_DEINIT_HW(void);
 Local void OS_DEINIT_SW(void);
 void OS_DEINIT_HW(void)
@@ -39,7 +40,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
       OS_DEINIT_HW();
       OS_DEINIT_SW();
       OS_DEINIT_MC();
-      OS_StartExtPrg();      
+      OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);      
    }   
    else
    {
