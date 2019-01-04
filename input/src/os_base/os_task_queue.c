@@ -3,11 +3,7 @@
 #include "os_task_queue.h"
 #include "os_task_scheduler.h"
 
-Local task_t*           pTASK_RUN_QUEUE[MAX_RUN_PQUEUE_SIZE];
-Local task_t            TASK_RUN_QUEUE[MAX_RUN_QUEUE_SIZE];
-Local task_t            RUNNING_TASK[1];/* stores the running task */
-Local task_t            TASK_IDLE_QUEUE[1];
-Local unsigned_char_t   bTASK_QUEUE_INITIALIZED = False;
+
 
 
 
@@ -180,7 +176,7 @@ void DeleteFromTaskQueue(task_t* task)
    task->current_prio                          =   0       ;
    task->default_prio                          =   0       ;
    task->fp                                    =   0       ;
-   task->state_request                         =   0       ;
+   task->state_request                         =   &task_state_request       ;
    task->task_state                            =   Task_unspecified;
    task->task_group                            =   0       ;
       #if(CFG_PROCESSOR == cMCU_X86)

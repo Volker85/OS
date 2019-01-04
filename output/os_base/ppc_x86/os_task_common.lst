@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
 
 
    1              		.file	"os_task_common.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
   30 001e 8B5848   		movl	72(%eax), %ebx
   31 0021 8B4508   		movl	8(%ebp), %eax
   32 0024 8B4844   		movl	68(%eax), %ecx
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 2
 
 
   33 0027 8B4508   		movl	8(%ebp), %eax
@@ -118,7 +118,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
   71              		.cfi_def_cfa_register 5
   72 0067 83EC18   		subl	$24, %esp
   39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****    if(task!=0)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 3
 
 
   73              		.loc 1 39 0
@@ -178,7 +178,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  111              		.loc 1 51 0
  112 00a7 8B4508   		movl	8(%ebp), %eax
  113 00aa 890424   		movl	%eax, (%esp)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 4
 
 
  114 00ad E8000000 		call	_LLF_RESTORE_SYSTEM_STACK
@@ -238,7 +238,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  159      0000
   60:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****    {
   61:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       /* general*/
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 5
 
 
   62:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->active                = False;
@@ -298,7 +298,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
   87:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->TimeToPrioInc                    = (unsigned_int32_t)        5;
  183              		.loc 1 87 0
  184 011d 8B4508   		movl	8(%ebp), %eax
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 6
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 6
 
 
  185 0120 C7401005 		movl	$5, 16(%eax)
@@ -328,10 +328,10 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  200 014f C6402500 		movb	$0, 37(%eax)
   93:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c **** 
   94:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       /* task management */
-  95:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->state_request                    =                           0;
+  95:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->state_request                    =                           &task_state_request;
  201              		.loc 1 95 0
  202 0153 8B4508   		movl	8(%ebp), %eax
- 203 0156 C7403000 		movl	$0, 48(%eax)
+ 203 0156 C7403000 		movl	$_task_state_request, 48(%eax)
  203      000000
   96:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->task_state                       =                           Task_unspecified;
  204              		.loc 1 96 0
@@ -358,7 +358,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  220              		.loc 1 100 0
  221 0182 8B4508   		movl	8(%ebp), %eax
  222 0185 C6400500 		movb	$0, 5(%eax)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 7
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 7
 
 
  101:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->fp                               = (func_p_t)                0;
@@ -418,7 +418,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  260              		.loc 1 114 0 is_stmt 1
  261 01c1 8B4508   		movl	8(%ebp), %eax
  262 01c4 8B4050   		movl	80(%eax), %eax
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 8
 
 
  263 01c7 890424   		movl	%eax, (%esp)
@@ -478,7 +478,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  299 0207 7514     		jne	L17
  127:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****    {  
  128:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       OS_SET_SW_BUG(os_bug_null_pointer,Func_CreateTaskEnvironment);
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 9
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 9
 
 
  300              		.loc 1 128 0
@@ -538,7 +538,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  337 00a5 A9000000 		.long	0xa9
  338 00a9 03       		.uleb128 0x3
  339 00aa 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 10
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 10
 
 
  340 00ab 08       		.byte	0x8
@@ -598,7 +598,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  370      61736B73 
  370      74617465 
  370      5F726571 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 11
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 11
 
 
  371 0150 01       		.sleb128 1
@@ -658,7 +658,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  397 0226 05       		.uleb128 0x5
  398 0227 46756E63 		.ascii "Func_NoFunction\0"
  398      5F4E6F46 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 12
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 12
 
 
  398      756E6374 
@@ -718,7 +718,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  422      6B536368 
  422      6564756C 
  422      657200
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 13
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 13
 
 
  423 02f8 08       		.sleb128 8
@@ -778,7 +778,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  450 03b6 65507269 		.ascii "ePriviligeMode_priviliged_handler_mode\0"
  450      76696C69 
  450      67654D6F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 14
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 14
 
 
  450      64655F70 
@@ -838,7 +838,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  481 045d F7030000 		.long	0x3f7
  482 0461 02       		.uleb128 0x2
  483 0462 66756E63 		.ascii "func_p_t\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 15
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 15
 
 
  483      5F705F74 
@@ -898,7 +898,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  526      6500
  527 04eb 05       		.byte	0x5
  528 04ec 19       		.byte	0x19
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 16
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 16
 
 
  529 04ed DD000000 		.long	0xdd
@@ -958,7 +958,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  573 055a 22       		.byte	0x22
  574 055b 7B070000 		.long	0x77b
  575 055f 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 17
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 17
 
 
  576 0560 1D       		.byte	0x1d
@@ -1018,7 +1018,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  611 05f0 05       		.byte	0x5
  612 05f1 28       		.byte	0x28
  613 05f2 DD000000 		.long	0xdd
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 18
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 18
 
 
  614 05f6 14       		.byte	0x14
@@ -1078,7 +1078,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  654 0677 2F       		.byte	0x2f
  655 0678 61040000 		.long	0x461
  656 067c 2C       		.byte	0x2c
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 19
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 19
 
 
  657 067d 0D       		.uleb128 0xd
@@ -1138,7 +1138,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  701 06f8 05       		.byte	0x5
  702 06f9 47       		.byte	0x47
  703 06fa 91070000 		.long	0x791
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 20
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 20
 
 
  704 06fe 4C       		.byte	0x4c
@@ -1198,7 +1198,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  739      20696E74 
  739      00
  740 078b 06       		.uleb128 0x6
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 21
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 21
 
 
  741 078c 04       		.byte	0x4
@@ -1258,7 +1258,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  784 0821 25       		.byte	0x25
  785 0822 E3070000 		.long	0x7e3
  786 0826 02       		.uleb128 0x2
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 22
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 22
 
 
  787 0827 91       		.byte	0x91
@@ -1318,7 +1318,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  830      5461736B 
  830      456E7669 
  831 08c4 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 23
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 23
 
 
  832 08c5 39       		.byte	0x39
@@ -1378,7 +1378,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  876 0957 7461736B 		.ascii "task\0"
  876      00
  877 095c 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 24
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 24
 
 
  878 095d 7C       		.byte	0x7c
@@ -1438,7 +1438,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  928 0017 03       		.uleb128 0x3
  929 0018 08       		.uleb128 0x8
  930 0019 3A       		.uleb128 0x3a
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 25
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 25
 
 
  931 001a 0B       		.uleb128 0xb
@@ -1498,7 +1498,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  985 0050 27       		.uleb128 0x27
  986 0051 19       		.uleb128 0x19
  987 0052 01       		.uleb128 0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 26
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 26
 
 
  988 0053 13       		.uleb128 0x13
@@ -1558,7 +1558,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1042 0089 38       		.uleb128 0x38
  1043 008a 0B       		.uleb128 0xb
  1044 008b 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 27
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 27
 
 
  1045 008c 00       		.byte	0
@@ -1618,7 +1618,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1099 00c2 40       		.uleb128 0x40
  1100 00c3 18       		.uleb128 0x18
  1101 00c4 9642     		.uleb128 0x2116
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 28
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 28
 
 
  1102 00c6 19       		.uleb128 0x19
@@ -1678,7 +1678,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1156 00fc 40       		.uleb128 0x40
  1157 00fd 18       		.uleb128 0x18
  1158 00fe 9642     		.uleb128 0x2116
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 29
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 29
 
 
  1159 0100 19       		.uleb128 0x19
@@ -1738,7 +1738,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1213 0136 00       		.byte	0
  1214 0137 00       		.byte	0
  1215              		.section	.debug_aranges,"dr"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 30
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 30
 
 
  1216 0000 1C000000 		.long	0x1c
@@ -1798,7 +1798,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1250 0076 01       		.byte	0x1
  1251 0077 00       		.uleb128 0
  1252 0078 5F5F4154 		.ascii "__ATOMIC_RELAXED 0\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 31
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 31
 
 
  1252      4F4D4943 
@@ -1858,7 +1858,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1275 0121 00       		.uleb128 0
  1276 0122 5F5F5349 		.ascii "__SIZEOF_LONG__ 4\0"
  1276      5A454F46 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 32
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 32
 
 
  1276      5F4C4F4E 
@@ -1918,7 +1918,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1300      47474553 
  1300      545F414C 
  1300      49474E4D 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 33
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 33
 
 
  1300      454E545F 
@@ -1978,7 +1978,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1324      465F5459 
  1324      50455F5F 
  1324      20696E74 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 34
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 34
 
 
  1325 02e5 01       		.byte	0x1
@@ -2038,7 +2038,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1348      5F207369 
  1348      676E6564 
  1349 03f0 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 35
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 35
 
 
  1350 03f1 00       		.uleb128 0
@@ -2098,7 +2098,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1372      455F5F20 
  1373 04ed 01       		.byte	0x1
  1374 04ee 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 36
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 36
 
 
  1375 04ef 5F5F494E 		.ascii "__INT_LEAST16_TYPE__ short int\0"
@@ -2158,7 +2158,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1397 0613 01       		.byte	0x1
  1398 0614 00       		.uleb128 0
  1399 0615 5F5F494E 		.ascii "__INT_FAST16_TYPE__ short int\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 37
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 37
 
 
  1399      545F4641 
@@ -2218,7 +2218,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1422 0728 00       		.uleb128 0
  1423 0729 5F5F5549 		.ascii "__UINTPTR_TYPE__ unsigned int\0"
  1423      4E545054 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 38
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 38
 
 
  1423      525F5459 
@@ -2278,7 +2278,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1447 081d 5F5F4C4F 		.ascii "__LONG_LONG_MAX__ 9223372036854775807LL\0"
  1447      4E475F4C 
  1447      4F4E475F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 39
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 39
 
 
  1447      4D41585F 
@@ -2338,7 +2338,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1471      29206320 
  1471      2323204C 
  1472 090a 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 40
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 40
 
 
  1473 090b 00       		.uleb128 0
@@ -2398,7 +2398,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1495      32333337 
  1496 0a07 01       		.byte	0x1
  1497 0a08 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 41
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 41
 
 
  1498 0a09 5F5F5549 		.ascii "__UINT8_MAX__ 255\0"
@@ -2458,7 +2458,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1522 0ad0 5F5F494E 		.ascii "__INT_LEAST32_MAX__ 2147483647\0"
  1522      545F4C45 
  1522      41535433 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 42
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 42
 
 
  1522      325F4D41 
@@ -2518,7 +2518,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1546      41585F5F 
  1547 0bc0 01       		.byte	0x1
  1548 0bc1 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 43
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 43
 
 
  1549 0bc2 5F5F5549 		.ascii "__UINT32_C(c) c ## U\0"
@@ -2578,7 +2578,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1571 0cb6 01       		.byte	0x1
  1572 0cb7 00       		.uleb128 0
  1573 0cb8 5F5F5549 		.ascii "__UINT_FAST16_MAX__ 65535\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 44
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 44
 
 
  1573      4E545F46 
@@ -2638,7 +2638,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1597 0da2 5F5F4445 		.ascii "__DEC_EVAL_METHOD__ 2\0"
  1597      435F4556 
  1597      414C5F4D 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 45
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 45
 
 
  1597      4554484F 
@@ -2698,7 +2698,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1621      4C5F4449 
  1621      475F5F20 
  1622 0e6a 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 46
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 46
 
 
  1623 0e6b 00       		.uleb128 0
@@ -2758,7 +2758,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1645      20353300 
  1646 0f7c 01       		.byte	0x1
  1647 0f7d 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 47
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 47
 
 
  1648 0f7e 5F5F4442 		.ascii "__DBL_DIG__ 15\0"
@@ -2818,7 +2818,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1671 1077 00       		.uleb128 0
  1672 1078 5F5F4442 		.ascii "__DBL_EPSILON__ ((double)2.22044604925031308085e-16L)\0"
  1672      4C5F4550 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 48
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 48
 
 
  1672      53494C4F 
@@ -2878,7 +2878,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1696      424C5F4D 
  1696      494E5F31 
  1696      305F4558 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 49
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 49
 
 
  1696      505F5F20 
@@ -2938,7 +2938,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1720      41535F44 
  1720      454E4F52 
  1720      4D5F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 50
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 50
 
 
  1721 12b5 01       		.byte	0x1
@@ -2998,7 +2998,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1744      4C4F4E5F 
  1744      5F203145 
  1745 1383 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 51
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 51
 
 
  1746 1384 00       		.uleb128 0
@@ -3058,7 +3058,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1768      4C5F4D49 
  1769 1487 01       		.byte	0x1
  1770 1488 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 52
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 52
 
 
  1771 1489 5F5F4445 		.ascii "__DEC128_MANT_DIG__ 34\0"
@@ -3118,7 +3118,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1793 15a9 01       		.byte	0x1
  1794 15aa 00       		.uleb128 0
  1795 15ab 5F5F5553 		.ascii "__USER_LABEL_PREFIX__ _\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 53
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 53
 
 
  1795      45525F4C 
@@ -3178,7 +3178,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1819 168b 5F5F4743 		.ascii "__GCC_ATOMIC_WCHAR_T_LOCK_FREE 1\0"
  1819      435F4154 
  1819      4F4D4943 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 54
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 54
 
 
  1819      5F574348 
@@ -3238,7 +3238,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1843      41474D41 
  1843      5F524544 
  1843      4546494E 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 55
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 55
 
 
  1843      455F4558 
@@ -3298,7 +3298,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1870 185f 5F5F636F 		.ascii "__code_model_32__ 1\0"
  1870      64655F6D 
  1870      6F64656C 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 56
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 56
 
 
  1870      5F33325F 
@@ -3358,7 +3358,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1895 1973 01       		.byte	0x1
  1896 1974 00       		.uleb128 0
  1897 1975 5F5F4D49 		.ascii "__MINGW32__ 1\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 57
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 57
 
 
  1897      4E475733 
@@ -3418,7 +3418,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1924      52203300 
  1925 1a2a 03       		.byte	0x3
  1926 1a2b 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 58
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 58
 
 
  1927 1a2c 01       		.uleb128 0x1
@@ -3478,7 +3478,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1955      203000
  1956 1ac5 01       		.byte	0x1
  1957 1ac6 0A       		.uleb128 0xa
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 59
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 59
 
 
  1958 1ac7 4350505F 		.ascii "CPP_VERSION_1998 1\0"
@@ -3538,7 +3538,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  1984 1b81 01       		.byte	0x1
  1985 1b82 07       		.uleb128 0x7
  1986 1b83 54727565 		.ascii "True 1\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 60
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 60
 
 
  1986      203100
@@ -3598,7 +3598,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  2015 1c41 13       		.uleb128 0x13
  2016 1c42 634D4355 		.ascii "cMCU_CORTEX_M4 4\0"
  2016      5F434F52 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 61
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 61
 
 
  2016      5445585F 
@@ -3658,480 +3658,490 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 1
  2040      4D637528 
  2040      292000
  2041 1d30 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 62
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 62
 
 
- 2042              		.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
+ 2042              		.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
  2043 1d31 03       		.byte	0x3
- 2044 1d32 07       		.uleb128 0x7
+ 2044 1d32 08       		.uleb128 0x8
  2045 1d33 07       		.uleb128 0x7
  2046 1d34 01       		.byte	0x1
  2047 1d35 02       		.uleb128 0x2
- 2048 1d36 5F4F535F 		.ascii "_OS_RAM_H_ \0"
- 2048      52414D5F 
- 2048      485F2000 
- 2049              		.file 8 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_firstinc.h"
- 2050 1d42 03       		.byte	0x3
- 2051 1d43 04       		.uleb128 0x4
- 2052 1d44 08       		.uleb128 0x8
- 2053 1d45 04       		.byte	0x4
- 2054              		.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_stack.h"
- 2055 1d46 03       		.byte	0x3
- 2056 1d47 05       		.uleb128 0x5
- 2057 1d48 09       		.uleb128 0x9
- 2058 1d49 01       		.byte	0x1
- 2059 1d4a 02       		.uleb128 0x2
- 2060 1d4b 5F6F735F 		.ascii "_os_stack_h_ \0"
- 2060      73746163 
- 2060      6B5F685F 
- 2060      2000
- 2061 1d59 01       		.byte	0x1
- 2062 1d5a 04       		.uleb128 0x4
- 2063 1d5b 4F535F53 		.ascii "OS_STACK_SIZE 0x100\0"
- 2063      5441434B 
- 2063      5F53495A 
- 2063      45203078 
- 2063      31303000 
- 2064 1d6f 01       		.byte	0x1
- 2065 1d70 06       		.uleb128 0x6
- 2066 1d71 4F535F53 		.ascii "OS_STACK_SIZE_END 0x01u\0"
- 2066      5441434B 
- 2066      5F53495A 
- 2066      455F454E 
- 2066      44203078 
- 2067 1d89 04       		.byte	0x4
- 2068              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
- 2069 1d8a 03       		.byte	0x3
- 2070 1d8b 06       		.uleb128 0x6
- 2071 1d8c 0A       		.uleb128 0xa
- 2072 1d8d 01       		.byte	0x1
- 2073 1d8e 02       		.uleb128 0x2
- 2074 1d8f 5F6F735F 		.ascii "_os_heap_h_ \0"
- 2074      68656170 
- 2074      5F685F20 
- 2074      00
- 2075 1d9c 01       		.byte	0x1
- 2076 1d9d 05       		.uleb128 0x5
- 2077 1d9e 48454150 		.ascii "HEAP_SIZE 10000\0"
- 2077      5F53495A 
- 2077      45203130 
- 2077      30303000 
- 2078 1dae 01       		.byte	0x1
- 2079 1daf 06       		.uleb128 0x6
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 63
+ 2048 1d36 5F6C6C64 		.ascii "_lld_global_h_ \0"
+ 2048      5F676C6F 
+ 2048      62616C5F 
+ 2048      685F2000 
+ 2049 1d46 03       		.byte	0x3
+ 2050 1d47 04       		.uleb128 0x4
+ 2051 1d48 04       		.uleb128 0x4
+ 2052 1d49 01       		.byte	0x1
+ 2053 1d4a 02       		.uleb128 0x2
+ 2054 1d4b 5F6C6C64 		.ascii "_lld_core_h_ \0"
+ 2054      5F636F72 
+ 2054      655F685F 
+ 2054      2000
+ 2055              		.file 8 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_firsti
+ 2056 1d59 03       		.byte	0x3
+ 2057 1d5a 03       		.uleb128 0x3
+ 2058 1d5b 08       		.uleb128 0x8
+ 2059 1d5c 04       		.byte	0x4
+ 2060 1d5d 04       		.byte	0x4
+ 2061              		.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
+ 2062 1d5e 03       		.byte	0x3
+ 2063 1d5f 05       		.uleb128 0x5
+ 2064 1d60 09       		.uleb128 0x9
+ 2065 1d61 01       		.byte	0x1
+ 2066 1d62 02       		.uleb128 0x2
+ 2067 1d63 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
+ 2067      5F696E74 
+ 2067      65727275 
+ 2067      70745F68 
+ 2067      5F2000
+ 2068 1d76 01       		.byte	0x1
+ 2069 1d77 05       		.uleb128 0x5
+ 2070 1d78 6F735F69 		.ascii "os_interrupt_swi_1 asm(\"swi 1\")\0"
+ 2070      6E746572 
+ 2070      72757074 
+ 2070      5F737769 
+ 2070      5F312061 
+ 2071 1d98 01       		.byte	0x1
+ 2072 1d99 06       		.uleb128 0x6
+ 2073 1d9a 6F735F69 		.ascii "os_interrupt_swi_2 asm(\"swi 2\")\0"
+ 2073      6E746572 
+ 2073      72757074 
+ 2073      5F737769 
+ 2073      5F322061 
+ 2074 1dba 01       		.byte	0x1
+ 2075 1dbb 07       		.uleb128 0x7
+ 2076 1dbc 6F735F69 		.ascii "os_interrupt_swi_3 asm(\"swi 3\")\0"
+ 2076      6E746572 
+ 2076      72757074 
+ 2076      5F737769 
+ 2076      5F332061 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 63
 
 
- 2080 1db0 4D494E5F 		.ascii "MIN_BLOCK_SIZE_HEAP 8\0"
- 2080      424C4F43 
- 2080      4B5F5349 
- 2080      5A455F48 
- 2080      45415020 
- 2081 1dc6 01       		.byte	0x1
- 2082 1dc7 09       		.uleb128 0x9
- 2083 1dc8 48454150 		.ascii "HEAP_OFFSET_FOR_SIZE 0\0"
- 2083      5F4F4646 
- 2083      5345545F 
- 2083      464F525F 
- 2083      53495A45 
- 2084 1ddf 01       		.byte	0x1
- 2085 1de0 0A       		.uleb128 0xa
- 2086 1de1 48454150 		.ascii "HEAP_OFFSET_FOR_USED_SIZE 4\0"
- 2086      5F4F4646 
- 2086      5345545F 
- 2086      464F525F 
- 2086      55534544 
- 2087 1dfd 01       		.byte	0x1
- 2088 1dfe 0B       		.uleb128 0xb
- 2089 1dff 48454150 		.ascii "HEAP_OFFSET_FOR_CHUNK 8\0"
- 2089      5F4F4646 
- 2089      5345545F 
- 2089      464F525F 
- 2089      4348554E 
- 2090 1e17 04       		.byte	0x4
- 2091              		.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_main.h"
- 2092 1e18 03       		.byte	0x3
- 2093 1e19 07       		.uleb128 0x7
- 2094 1e1a 0B       		.uleb128 0xb
- 2095 1e1b 01       		.byte	0x1
- 2096 1e1c 02       		.uleb128 0x2
- 2097 1e1d 5F6F735F 		.ascii "_os_main_h_ \0"
- 2097      6D61696E 
- 2097      5F685F20 
- 2097      00
- 2098 1e2a 01       		.byte	0x1
- 2099 1e2b 03       		.uleb128 0x3
- 2100 1e2c 6F735F69 		.ascii "os_init 0\0"
- 2100      6E697420 
- 2100      3000
- 2101 1e36 01       		.byte	0x1
- 2102 1e37 04       		.uleb128 0x4
- 2103 1e38 6F735F72 		.ascii "os_running 1\0"
- 2103      756E6E69 
- 2103      6E672031 
- 2103      00
- 2104 1e45 01       		.byte	0x1
- 2105 1e46 05       		.uleb128 0x5
- 2106 1e47 6F735F73 		.ascii "os_shutdown 2\0"
- 2106      68757464 
- 2106      6F776E20 
- 2106      3200
- 2107 1e55 04       		.byte	0x4
- 2108 1e56 04       		.byte	0x4
- 2109              		.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 64
+ 2077 1ddc 01       		.byte	0x1
+ 2078 1ddd 08       		.uleb128 0x8
+ 2079 1dde 6F735F69 		.ascii "os_interrupt_swi_4 asm(\"swi 4\")\0"
+ 2079      6E746572 
+ 2079      72757074 
+ 2079      5F737769 
+ 2079      5F342061 
+ 2080 1dfe 01       		.byte	0x1
+ 2081 1dff 09       		.uleb128 0x9
+ 2082 1e00 6F735F69 		.ascii "os_interrupt_swi_5 asm(\"swi 5\")\0"
+ 2082      6E746572 
+ 2082      72757074 
+ 2082      5F737769 
+ 2082      5F352061 
+ 2083 1e20 04       		.byte	0x4
+ 2084              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
+ 2085 1e21 03       		.byte	0x3
+ 2086 1e22 06       		.uleb128 0x6
+ 2087 1e23 0A       		.uleb128 0xa
+ 2088 1e24 01       		.byte	0x1
+ 2089 1e25 02       		.uleb128 0x2
+ 2090 1e26 5F6C6C64 		.ascii "_lld_mmu_h_ \0"
+ 2090      5F6D6D75 
+ 2090      5F685F20 
+ 2090      00
+ 2091 1e33 04       		.byte	0x4
+ 2092              		.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
+ 2093 1e34 03       		.byte	0x3
+ 2094 1e35 07       		.uleb128 0x7
+ 2095 1e36 0B       		.uleb128 0xb
+ 2096 1e37 01       		.byte	0x1
+ 2097 1e38 02       		.uleb128 0x2
+ 2098 1e39 5F6C6C64 		.ascii "_lld_timer_h_ \0"
+ 2098      5F74696D 
+ 2098      65725F68 
+ 2098      5F2000
+ 2099 1e48 04       		.byte	0x4
+ 2100              		.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
+ 2101 1e49 03       		.byte	0x3
+ 2102 1e4a 08       		.uleb128 0x8
+ 2103 1e4b 0C       		.uleb128 0xc
+ 2104 1e4c 01       		.byte	0x1
+ 2105 1e4d 02       		.uleb128 0x2
+ 2106 1e4e 5F6C6C64 		.ascii "_lld_power_h_ \0"
+ 2106      5F706F77 
+ 2106      65725F68 
+ 2106      5F2000
+ 2107 1e5d 04       		.byte	0x4
+ 2108              		.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
+ 2109 1e5e 03       		.byte	0x3
+ 2110 1e5f 09       		.uleb128 0x9
+ 2111 1e60 0D       		.uleb128 0xd
+ 2112 1e61 01       		.byte	0x1
+ 2113 1e62 02       		.uleb128 0x2
+ 2114 1e63 5F6C6C64 		.ascii "_lld_ram_h_ \0"
+ 2114      5F72616D 
+ 2114      5F685F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 64
 
 
- 2110 1e57 03       		.byte	0x3
- 2111 1e58 0A       		.uleb128 0xa
- 2112 1e59 0C       		.uleb128 0xc
- 2113 1e5a 01       		.byte	0x1
- 2114 1e5b 02       		.uleb128 0x2
- 2115 1e5c 5F6C6C64 		.ascii "_lld_global_h_ \0"
- 2115      5F676C6F 
- 2115      62616C5F 
- 2115      685F2000 
- 2116 1e6c 03       		.byte	0x3
- 2117 1e6d 04       		.uleb128 0x4
- 2118 1e6e 04       		.uleb128 0x4
- 2119 1e6f 01       		.byte	0x1
- 2120 1e70 02       		.uleb128 0x2
- 2121 1e71 5F6C6C64 		.ascii "_lld_core_h_ \0"
- 2121      5F636F72 
- 2121      655F685F 
- 2121      2000
- 2122              		.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_first
- 2123 1e7f 03       		.byte	0x3
- 2124 1e80 03       		.uleb128 0x3
- 2125 1e81 0D       		.uleb128 0xd
- 2126 1e82 04       		.byte	0x4
- 2127 1e83 04       		.byte	0x4
- 2128              		.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
- 2129 1e84 03       		.byte	0x3
- 2130 1e85 05       		.uleb128 0x5
- 2131 1e86 0E       		.uleb128 0xe
- 2132 1e87 01       		.byte	0x1
- 2133 1e88 02       		.uleb128 0x2
- 2134 1e89 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
- 2134      5F696E74 
- 2134      65727275 
- 2134      70745F68 
- 2134      5F2000
- 2135 1e9c 01       		.byte	0x1
- 2136 1e9d 05       		.uleb128 0x5
- 2137 1e9e 6F735F69 		.ascii "os_interrupt_swi_1 asm(\"swi 1\")\0"
- 2137      6E746572 
- 2137      72757074 
- 2137      5F737769 
- 2137      5F312061 
- 2138 1ebe 01       		.byte	0x1
- 2139 1ebf 06       		.uleb128 0x6
- 2140 1ec0 6F735F69 		.ascii "os_interrupt_swi_2 asm(\"swi 2\")\0"
- 2140      6E746572 
- 2140      72757074 
- 2140      5F737769 
- 2140      5F322061 
- 2141 1ee0 01       		.byte	0x1
- 2142 1ee1 07       		.uleb128 0x7
- 2143 1ee2 6F735F69 		.ascii "os_interrupt_swi_3 asm(\"swi 3\")\0"
- 2143      6E746572 
- 2143      72757074 
- 2143      5F737769 
- 2143      5F332061 
- 2144 1f02 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 65
+ 2114      00
+ 2115 1e70 04       		.byte	0x4
+ 2116 1e71 03       		.byte	0x3
+ 2117 1e72 0A       		.uleb128 0xa
+ 2118 1e73 05       		.uleb128 0x5
+ 2119 1e74 01       		.byte	0x1
+ 2120 1e75 02       		.uleb128 0x2
+ 2121 1e76 5F6F735F 		.ascii "_os_task_common_h_ \0"
+ 2121      7461736B 
+ 2121      5F636F6D 
+ 2121      6D6F6E5F 
+ 2121      685F2000 
+ 2122 1e8a 03       		.byte	0x3
+ 2123 1e8b 03       		.uleb128 0x3
+ 2124 1e8c 08       		.uleb128 0x8
+ 2125 1e8d 04       		.byte	0x4
+ 2126              		.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
+ 2127 1e8e 03       		.byte	0x3
+ 2128 1e8f 04       		.uleb128 0x4
+ 2129 1e90 0E       		.uleb128 0xe
+ 2130 1e91 01       		.byte	0x1
+ 2131 1e92 02       		.uleb128 0x2
+ 2132 1e93 5F6F735F 		.ascii "_os_task_config_h_ \0"
+ 2132      7461736B 
+ 2132      5F636F6E 
+ 2132      6669675F 
+ 2132      685F2000 
+ 2133 1ea7 01       		.byte	0x1
+ 2134 1ea8 05       		.uleb128 0x5
+ 2135 1ea9 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
+ 2135      64756C65 
+ 2135      72467265 
+ 2135      7175656E 
+ 2135      63792028 
+ 2136 1ec4 01       		.byte	0x1
+ 2137 1ec5 06       		.uleb128 0x6
+ 2138 1ec6 4D696E54 		.ascii "MinTimeSlice_s (1.0/SchedulerFrequency)\0"
+ 2138      696D6553 
+ 2138      6C696365 
+ 2138      5F732028 
+ 2138      312E302F 
+ 2139 1eee 01       		.byte	0x1
+ 2140 1eef 07       		.uleb128 0x7
+ 2141 1ef0 4D696E54 		.ascii "MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\0"
+ 2141      696D6553 
+ 2141      6C696365 
+ 2141      5F757320 
+ 2141      2828312E 
+ 2142 1f1f 01       		.byte	0x1
+ 2143 1f20 08       		.uleb128 0x8
+ 2144 1f21 5461736B 		.ascii "Task_min_time (1e0)\0"
+ 2144      5F6D696E 
+ 2144      5F74696D 
+ 2144      65202831 
+ 2144      65302900 
+ 2145 1f35 01       		.byte	0x1
+ 2146 1f36 09       		.uleb128 0x9
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 65
 
 
- 2145 1f03 08       		.uleb128 0x8
- 2146 1f04 6F735F69 		.ascii "os_interrupt_swi_4 asm(\"swi 4\")\0"
- 2146      6E746572 
- 2146      72757074 
- 2146      5F737769 
- 2146      5F342061 
- 2147 1f24 01       		.byte	0x1
- 2148 1f25 09       		.uleb128 0x9
- 2149 1f26 6F735F69 		.ascii "os_interrupt_swi_5 asm(\"swi 5\")\0"
- 2149      6E746572 
- 2149      72757074 
- 2149      5F737769 
- 2149      5F352061 
- 2150 1f46 04       		.byte	0x4
- 2151              		.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
- 2152 1f47 03       		.byte	0x3
- 2153 1f48 06       		.uleb128 0x6
- 2154 1f49 0F       		.uleb128 0xf
- 2155 1f4a 01       		.byte	0x1
- 2156 1f4b 02       		.uleb128 0x2
- 2157 1f4c 5F6C6C64 		.ascii "_lld_mmu_h_ \0"
- 2157      5F6D6D75 
- 2157      5F685F20 
- 2157      00
- 2158 1f59 04       		.byte	0x4
- 2159              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
- 2160 1f5a 03       		.byte	0x3
- 2161 1f5b 07       		.uleb128 0x7
- 2162 1f5c 10       		.uleb128 0x10
- 2163 1f5d 01       		.byte	0x1
- 2164 1f5e 02       		.uleb128 0x2
- 2165 1f5f 5F6C6C64 		.ascii "_lld_timer_h_ \0"
- 2165      5F74696D 
- 2165      65725F68 
- 2165      5F2000
- 2166 1f6e 04       		.byte	0x4
- 2167              		.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
- 2168 1f6f 03       		.byte	0x3
- 2169 1f70 08       		.uleb128 0x8
- 2170 1f71 11       		.uleb128 0x11
- 2171 1f72 01       		.byte	0x1
- 2172 1f73 02       		.uleb128 0x2
- 2173 1f74 5F6C6C64 		.ascii "_lld_power_h_ \0"
- 2173      5F706F77 
- 2173      65725F68 
- 2173      5F2000
- 2174 1f83 04       		.byte	0x4
- 2175              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
- 2176 1f84 03       		.byte	0x3
- 2177 1f85 09       		.uleb128 0x9
- 2178 1f86 12       		.uleb128 0x12
- 2179 1f87 01       		.byte	0x1
- 2180 1f88 02       		.uleb128 0x2
- 2181 1f89 5F6C6C64 		.ascii "_lld_ram_h_ \0"
- 2181      5F72616D 
- 2181      5F685F20 
- 2181      00
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 66
+ 2147 1f37 4E554D42 		.ascii "NUMBER_OF_TASKS 5\0"
+ 2147      45525F4F 
+ 2147      465F5441 
+ 2147      534B5320 
+ 2147      3500
+ 2148 1f49 01       		.byte	0x1
+ 2149 1f4a 0A       		.uleb128 0xa
+ 2150 1f4b 4D41585F 		.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
+ 2150      52554E5F 
+ 2150      51554555 
+ 2150      455F5349 
+ 2150      5A452028 
+ 2151 1f70 01       		.byte	0x1
+ 2152 1f71 0B       		.uleb128 0xb
+ 2153 1f72 4D41585F 		.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
+ 2153      52554E5F 
+ 2153      50515545 
+ 2153      55455F53 
+ 2153      495A4520 
+ 2154 1f99 01       		.byte	0x1
+ 2155 1f9a 0D       		.uleb128 0xd
+ 2156 1f9b 5441534B 		.ascii "TASK_STACK_SIZE 200\0"
+ 2156      5F535441 
+ 2156      434B5F53 
+ 2156      495A4520 
+ 2156      32303000 
+ 2157 1faf 01       		.byte	0x1
+ 2158 1fb0 10       		.uleb128 0x10
+ 2159 1fb1 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
+ 2159      45525F53 
+ 2159      45432028 
+ 2159      31303030 
+ 2159      2900
+ 2160 1fc3 01       		.byte	0x1
+ 2161 1fc4 11       		.uleb128 0x11
+ 2162 1fc5 5553455F 		.ascii "USE_STATIC_CREATED_TASKS True\0"
+ 2162      53544154 
+ 2162      49435F43 
+ 2162      52454154 
+ 2162      45445F54 
+ 2163 1fe3 04       		.byte	0x4
+ 2164              		.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_
+ 2165 1fe4 03       		.byte	0x3
+ 2166 1fe5 05       		.uleb128 0x5
+ 2167 1fe6 0F       		.uleb128 0xf
+ 2168 1fe7 01       		.byte	0x1
+ 2169 1fe8 02       		.uleb128 0x2
+ 2170 1fe9 5F6F735F 		.ascii "_os_init_task_system_h_ \0"
+ 2170      696E6974 
+ 2170      5F746173 
+ 2170      6B5F7379 
+ 2170      7374656D 
+ 2171 2002 04       		.byte	0x4
+ 2172 2003 01       		.byte	0x1
+ 2173 2004 5D       		.uleb128 0x5d
+ 2174 2005 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
+ 2174      61766554 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 66
 
 
- 2182 1f96 04       		.byte	0x4
- 2183 1f97 03       		.byte	0x3
- 2184 1f98 0A       		.uleb128 0xa
- 2185 1f99 05       		.uleb128 0x5
- 2186 1f9a 01       		.byte	0x1
- 2187 1f9b 02       		.uleb128 0x2
- 2188 1f9c 5F6F735F 		.ascii "_os_task_common_h_ \0"
- 2188      7461736B 
- 2188      5F636F6D 
- 2188      6D6F6E5F 
- 2188      685F2000 
- 2189 1fb0 03       		.byte	0x3
- 2190 1fb1 03       		.uleb128 0x3
- 2191 1fb2 0D       		.uleb128 0xd
- 2192 1fb3 04       		.byte	0x4
- 2193              		.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
- 2194 1fb4 03       		.byte	0x3
- 2195 1fb5 04       		.uleb128 0x4
- 2196 1fb6 13       		.uleb128 0x13
- 2197 1fb7 01       		.byte	0x1
- 2198 1fb8 02       		.uleb128 0x2
- 2199 1fb9 5F6F735F 		.ascii "_os_task_config_h_ \0"
- 2199      7461736B 
- 2199      5F636F6E 
- 2199      6669675F 
- 2199      685F2000 
- 2200 1fcd 01       		.byte	0x1
- 2201 1fce 05       		.uleb128 0x5
- 2202 1fcf 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
- 2202      64756C65 
- 2202      72467265 
- 2202      7175656E 
- 2202      63792028 
- 2203 1fea 01       		.byte	0x1
- 2204 1feb 06       		.uleb128 0x6
- 2205 1fec 4D696E54 		.ascii "MinTimeSlice_s (1.0/SchedulerFrequency)\0"
- 2205      696D6553 
- 2205      6C696365 
- 2205      5F732028 
- 2205      312E302F 
- 2206 2014 01       		.byte	0x1
- 2207 2015 07       		.uleb128 0x7
- 2208 2016 4D696E54 		.ascii "MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\0"
- 2208      696D6553 
- 2208      6C696365 
- 2208      5F757320 
- 2208      2828312E 
- 2209 2045 01       		.byte	0x1
- 2210 2046 08       		.uleb128 0x8
- 2211 2047 5461736B 		.ascii "Task_min_time (1e0)\0"
- 2211      5F6D696E 
- 2211      5F74696D 
- 2211      65202831 
- 2211      65302900 
- 2212 205b 01       		.byte	0x1
- 2213 205c 09       		.uleb128 0x9
- 2214 205d 4E554D42 		.ascii "NUMBER_OF_TASKS 5\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 67
+ 2174      61736B50 
+ 2174      74722874 
+ 2174      61736B5F 
+ 2175 204d 01       		.byte	0x1
+ 2176 204e 5E       		.uleb128 0x5e
+ 2177 204f 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
+ 2177      65745461 
+ 2177      736B5074 
+ 2177      72287461 
+ 2177      736B5F6E 
+ 2178 208a 04       		.byte	0x4
+ 2179 208b 04       		.byte	0x4
+ 2180              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_user_code/led.h"
+ 2181 208c 03       		.byte	0x3
+ 2182 208d 0C       		.uleb128 0xc
+ 2183 208e 10       		.uleb128 0x10
+ 2184 208f 01       		.byte	0x1
+ 2185 2090 02       		.uleb128 0x2
+ 2186 2091 5F4C4544 		.ascii "_LED_H_ \0"
+ 2186      5F485F20 
+ 2186      00
+ 2187 209a 04       		.byte	0x4
+ 2188              		.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
+ 2189 209b 03       		.byte	0x3
+ 2190 209c 0E       		.uleb128 0xe
+ 2191 209d 11       		.uleb128 0x11
+ 2192 209e 01       		.byte	0x1
+ 2193 209f 02       		.uleb128 0x2
+ 2194 20a0 5F4F535F 		.ascii "_OS_RAM_H_ \0"
+ 2194      52414D5F 
+ 2194      485F2000 
+ 2195              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_firstinc.h"
+ 2196 20ac 03       		.byte	0x3
+ 2197 20ad 04       		.uleb128 0x4
+ 2198 20ae 12       		.uleb128 0x12
+ 2199 20af 04       		.byte	0x4
+ 2200              		.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_stack.h"
+ 2201 20b0 03       		.byte	0x3
+ 2202 20b1 05       		.uleb128 0x5
+ 2203 20b2 13       		.uleb128 0x13
+ 2204 20b3 01       		.byte	0x1
+ 2205 20b4 02       		.uleb128 0x2
+ 2206 20b5 5F6F735F 		.ascii "_os_stack_h_ \0"
+ 2206      73746163 
+ 2206      6B5F685F 
+ 2206      2000
+ 2207 20c3 01       		.byte	0x1
+ 2208 20c4 04       		.uleb128 0x4
+ 2209 20c5 4F535F53 		.ascii "OS_STACK_SIZE 0x100\0"
+ 2209      5441434B 
+ 2209      5F53495A 
+ 2209      45203078 
+ 2209      31303000 
+ 2210 20d9 01       		.byte	0x1
+ 2211 20da 06       		.uleb128 0x6
+ 2212 20db 4F535F53 		.ascii "OS_STACK_SIZE_END 0x01u\0"
+ 2212      5441434B 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 67
 
 
- 2214      45525F4F 
- 2214      465F5441 
- 2214      534B5320 
- 2214      3500
- 2215 206f 01       		.byte	0x1
- 2216 2070 0A       		.uleb128 0xa
- 2217 2071 4D41585F 		.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
- 2217      52554E5F 
- 2217      51554555 
- 2217      455F5349 
- 2217      5A452028 
- 2218 2096 01       		.byte	0x1
- 2219 2097 0B       		.uleb128 0xb
- 2220 2098 4D41585F 		.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
- 2220      52554E5F 
- 2220      50515545 
- 2220      55455F53 
- 2220      495A4520 
- 2221 20bf 01       		.byte	0x1
- 2222 20c0 0D       		.uleb128 0xd
- 2223 20c1 5441534B 		.ascii "TASK_STACK_SIZE 200\0"
- 2223      5F535441 
- 2223      434B5F53 
- 2223      495A4520 
- 2223      32303000 
- 2224 20d5 01       		.byte	0x1
- 2225 20d6 10       		.uleb128 0x10
- 2226 20d7 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
- 2226      45525F53 
- 2226      45432028 
- 2226      31303030 
- 2226      2900
- 2227 20e9 01       		.byte	0x1
- 2228 20ea 11       		.uleb128 0x11
- 2229 20eb 5553455F 		.ascii "USE_STATIC_CREATED_TASKS True\0"
- 2229      53544154 
- 2229      49435F43 
- 2229      52454154 
- 2229      45445F54 
- 2230 2109 04       		.byte	0x4
- 2231              		.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_
- 2232 210a 03       		.byte	0x3
- 2233 210b 05       		.uleb128 0x5
- 2234 210c 14       		.uleb128 0x14
- 2235 210d 01       		.byte	0x1
- 2236 210e 02       		.uleb128 0x2
- 2237 210f 5F6F735F 		.ascii "_os_init_task_system_h_ \0"
- 2237      696E6974 
- 2237      5F746173 
- 2237      6B5F7379 
- 2237      7374656D 
- 2238 2128 04       		.byte	0x4
- 2239 2129 01       		.byte	0x1
- 2240 212a 5D       		.uleb128 0x5d
- 2241 212b 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
- 2241      61766554 
- 2241      61736B50 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 68
+ 2212      5F53495A 
+ 2212      455F454E 
+ 2212      44203078 
+ 2213 20f3 04       		.byte	0x4
+ 2214              		.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
+ 2215 20f4 03       		.byte	0x3
+ 2216 20f5 06       		.uleb128 0x6
+ 2217 20f6 14       		.uleb128 0x14
+ 2218 20f7 01       		.byte	0x1
+ 2219 20f8 02       		.uleb128 0x2
+ 2220 20f9 5F6F735F 		.ascii "_os_heap_h_ \0"
+ 2220      68656170 
+ 2220      5F685F20 
+ 2220      00
+ 2221 2106 01       		.byte	0x1
+ 2222 2107 05       		.uleb128 0x5
+ 2223 2108 48454150 		.ascii "HEAP_SIZE 10000\0"
+ 2223      5F53495A 
+ 2223      45203130 
+ 2223      30303000 
+ 2224 2118 01       		.byte	0x1
+ 2225 2119 06       		.uleb128 0x6
+ 2226 211a 4D494E5F 		.ascii "MIN_BLOCK_SIZE_HEAP 8\0"
+ 2226      424C4F43 
+ 2226      4B5F5349 
+ 2226      5A455F48 
+ 2226      45415020 
+ 2227 2130 01       		.byte	0x1
+ 2228 2131 09       		.uleb128 0x9
+ 2229 2132 48454150 		.ascii "HEAP_OFFSET_FOR_SIZE 0\0"
+ 2229      5F4F4646 
+ 2229      5345545F 
+ 2229      464F525F 
+ 2229      53495A45 
+ 2230 2149 01       		.byte	0x1
+ 2231 214a 0A       		.uleb128 0xa
+ 2232 214b 48454150 		.ascii "HEAP_OFFSET_FOR_USED_SIZE 4\0"
+ 2232      5F4F4646 
+ 2232      5345545F 
+ 2232      464F525F 
+ 2232      55534544 
+ 2233 2167 01       		.byte	0x1
+ 2234 2168 0B       		.uleb128 0xb
+ 2235 2169 48454150 		.ascii "HEAP_OFFSET_FOR_CHUNK 8\0"
+ 2235      5F4F4646 
+ 2235      5345545F 
+ 2235      464F525F 
+ 2235      4348554E 
+ 2236 2181 04       		.byte	0x4
+ 2237              		.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_main.h"
+ 2238 2182 03       		.byte	0x3
+ 2239 2183 07       		.uleb128 0x7
+ 2240 2184 15       		.uleb128 0x15
+ 2241 2185 01       		.byte	0x1
+ 2242 2186 02       		.uleb128 0x2
+ 2243 2187 5F6F735F 		.ascii "_os_main_h_ \0"
+ 2243      6D61696E 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 68
 
 
- 2241      74722874 
- 2241      61736B5F 
- 2242 2173 01       		.byte	0x1
- 2243 2174 5E       		.uleb128 0x5e
- 2244 2175 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
- 2244      65745461 
- 2244      736B5074 
- 2244      72287461 
- 2244      736B5F6E 
- 2245 21b0 04       		.byte	0x4
- 2246 21b1 04       		.byte	0x4
- 2247              		.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_user_code/led.h"
- 2248 21b2 03       		.byte	0x3
- 2249 21b3 0E       		.uleb128 0xe
- 2250 21b4 15       		.uleb128 0x15
- 2251 21b5 01       		.byte	0x1
- 2252 21b6 02       		.uleb128 0x2
- 2253 21b7 5F4C4544 		.ascii "_LED_H_ \0"
- 2253      5F485F20 
- 2253      00
- 2254 21c0 04       		.byte	0x4
- 2255 21c1 04       		.byte	0x4
- 2256              		.file 22 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
- 2257 21c2 03       		.byte	0x3
- 2258 21c3 02       		.uleb128 0x2
- 2259 21c4 16       		.uleb128 0x16
- 2260 21c5 04       		.byte	0x4
- 2261              		.file 23 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_scheduler.h"
- 2262 21c6 03       		.byte	0x3
- 2263 21c7 03       		.uleb128 0x3
- 2264 21c8 17       		.uleb128 0x17
- 2265 21c9 01       		.byte	0x1
- 2266 21ca 02       		.uleb128 0x2
- 2267 21cb 5F6F735F 		.ascii "_os_task_scheduler_h_ \0"
- 2267      7461736B 
- 2267      5F736368 
- 2267      6564756C 
- 2267      65725F68 
- 2268 21e2 01       		.byte	0x1
- 2269 21e3 07       		.uleb128 0x7
- 2270 21e4 5461736B 		.ascii "Task_0_ptr 0\0"
- 2270      5F305F70 
- 2270      74722030 
- 2270      00
- 2271 21f1 01       		.byte	0x1
- 2272 21f2 08       		.uleb128 0x8
- 2273 21f3 5461736B 		.ascii "Task_1_ptr 1\0"
- 2273      5F315F70 
- 2273      74722031 
- 2273      00
- 2274 2200 01       		.byte	0x1
- 2275 2201 09       		.uleb128 0x9
- 2276 2202 5461736B 		.ascii "Task_2_ptr 2\0"
- 2276      5F325F70 
- 2276      74722032 
- 2276      00
- 2277 220f 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 69
+ 2243      5F685F20 
+ 2243      00
+ 2244 2194 01       		.byte	0x1
+ 2245 2195 03       		.uleb128 0x3
+ 2246 2196 6F735F69 		.ascii "os_init 0\0"
+ 2246      6E697420 
+ 2246      3000
+ 2247 21a0 01       		.byte	0x1
+ 2248 21a1 04       		.uleb128 0x4
+ 2249 21a2 6F735F72 		.ascii "os_running 1\0"
+ 2249      756E6E69 
+ 2249      6E672031 
+ 2249      00
+ 2250 21af 01       		.byte	0x1
+ 2251 21b0 05       		.uleb128 0x5
+ 2252 21b1 6F735F73 		.ascii "os_shutdown 2\0"
+ 2252      68757464 
+ 2252      6F776E20 
+ 2252      3200
+ 2253 21bf 04       		.byte	0x4
+ 2254              		.file 22 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_task_config.h"
+ 2255 21c0 03       		.byte	0x3
+ 2256 21c1 08       		.uleb128 0x8
+ 2257 21c2 16       		.uleb128 0x16
+ 2258 21c3 04       		.byte	0x4
+ 2259              		.file 23 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_task_common.h"
+ 2260 21c4 03       		.byte	0x3
+ 2261 21c5 09       		.uleb128 0x9
+ 2262 21c6 17       		.uleb128 0x17
+ 2263 21c7 04       		.byte	0x4
+ 2264 21c8 04       		.byte	0x4
+ 2265 21c9 04       		.byte	0x4
+ 2266              		.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
+ 2267 21ca 03       		.byte	0x3
+ 2268 21cb 02       		.uleb128 0x2
+ 2269 21cc 18       		.uleb128 0x18
+ 2270 21cd 04       		.byte	0x4
+ 2271              		.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_scheduler.h"
+ 2272 21ce 03       		.byte	0x3
+ 2273 21cf 03       		.uleb128 0x3
+ 2274 21d0 19       		.uleb128 0x19
+ 2275 21d1 01       		.byte	0x1
+ 2276 21d2 02       		.uleb128 0x2
+ 2277 21d3 5F6F735F 		.ascii "_os_task_scheduler_h_ \0"
+ 2277      7461736B 
+ 2277      5F736368 
+ 2277      6564756C 
+ 2277      65725F68 
+ 2278 21ea 01       		.byte	0x1
+ 2279 21eb 07       		.uleb128 0x7
+ 2280 21ec 5461736B 		.ascii "Task_0_ptr 0\0"
+ 2280      5F305F70 
+ 2280      74722030 
+ 2280      00
+ 2281 21f9 01       		.byte	0x1
+ 2282 21fa 08       		.uleb128 0x8
+ 2283 21fb 5461736B 		.ascii "Task_1_ptr 1\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 69
 
 
- 2278 2210 0A       		.uleb128 0xa
- 2279 2211 5461736B 		.ascii "Task_3_ptr 3\0"
- 2279      5F335F70 
- 2279      74722033 
- 2279      00
- 2280 221e 01       		.byte	0x1
- 2281 221f 0C       		.uleb128 0xc
- 2282 2220 4F535F53 		.ascii "OS_SaveTaskPtr(task_ptr,Task_n_ptr) \0"
- 2282      61766554 
- 2282      61736B50 
- 2282      74722874 
- 2282      61736B5F 
- 2283 2245 04       		.byte	0x4
- 2284              		.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_heap.h"
- 2285 2246 03       		.byte	0x3
- 2286 2247 04       		.uleb128 0x4
- 2287 2248 18       		.uleb128 0x18
- 2288 2249 04       		.byte	0x4
- 2289 224a 04       		.byte	0x4
- 2290 224b 00       		.byte	0
- 2291              		.section	.debug_line,"dr"
- 2292              	Ldebug_line0:
- 2293 0000 57030000 		.section	.debug_str,"dr"
- 2293      0200FC02 
- 2293      00000101 
- 2293      FB0E0D00 
- 2293      01010101 
- 2294              	LASF1:
- 2295 0000 73797374 		.ascii "system_stack_ptr\0"
- 2295      656D5F73 
- 2295      7461636B 
- 2295      5F707472 
- 2295      00
- 2296              	LASF0:
- 2297 0011 6578655F 		.ascii "exe_time\0"
- 2297      74696D65 
- 2297      00
- 2298              		.ident	"GCC: (GNU) 4.9.3"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s 			page 70
+ 2283      5F315F70 
+ 2283      74722031 
+ 2283      00
+ 2284 2208 01       		.byte	0x1
+ 2285 2209 09       		.uleb128 0x9
+ 2286 220a 5461736B 		.ascii "Task_2_ptr 2\0"
+ 2286      5F325F70 
+ 2286      74722032 
+ 2286      00
+ 2287 2217 01       		.byte	0x1
+ 2288 2218 0A       		.uleb128 0xa
+ 2289 2219 5461736B 		.ascii "Task_3_ptr 3\0"
+ 2289      5F335F70 
+ 2289      74722033 
+ 2289      00
+ 2290 2226 01       		.byte	0x1
+ 2291 2227 0C       		.uleb128 0xc
+ 2292 2228 4F535F53 		.ascii "OS_SaveTaskPtr(task_ptr,Task_n_ptr) \0"
+ 2292      61766554 
+ 2292      61736B50 
+ 2292      74722874 
+ 2292      61736B5F 
+ 2293 224d 04       		.byte	0x4
+ 2294              		.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_heap.h"
+ 2295 224e 03       		.byte	0x3
+ 2296 224f 04       		.uleb128 0x4
+ 2297 2250 1A       		.uleb128 0x1a
+ 2298 2251 04       		.byte	0x4
+ 2299 2252 04       		.byte	0x4
+ 2300 2253 00       		.byte	0
+ 2301              		.section	.debug_line,"dr"
+ 2302              	Ldebug_line0:
+ 2303 0000 7F030000 		.section	.debug_str,"dr"
+ 2303      02002403 
+ 2303      00000101 
+ 2303      FB0E0D00 
+ 2303      01010101 
+ 2304              	LASF1:
+ 2305 0000 73797374 		.ascii "system_stack_ptr\0"
+ 2305      656D5F73 
+ 2305      7461636B 
+ 2305      5F707472 
+ 2305      00
+ 2306              	LASF0:
+ 2307 0011 6578655F 		.ascii "exe_time\0"
+ 2307      74696D65 
+ 2307      00
+ 2308              		.ident	"GCC: (GNU) 4.9.3"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 70
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_task_common.c
                             *COM*:00000014 _TASK_PTR
-C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s:7      .text:00000000 _OS_TASK_SAVETASK_ENVIRONMENT
-C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s:63     .text:00000064 _OS_TASK_RESTORETASK_ENVIRONMENT
-C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s:101    .text:000000a1 _OS_TASK_RESTORE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s:124    .text:000000b4 _OS_TASK_SAVE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s:147    .text:000000c7 _OS_Task_InitTaskEnvironment
-C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s:242    .text:000001ab _OS_Task_DeleteTaskEnvironment
-C:\Users\PRESID~1\AppData\Local\Temp\cc6tpX2N.s:281    .text:000001e7 _OS_Task_CreateTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:7      .text:00000000 _OS_TASK_SAVETASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:63     .text:00000064 _OS_TASK_RESTORETASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:101    .text:000000a1 _OS_TASK_RESTORE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:124    .text:000000b4 _OS_TASK_SAVE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:147    .text:000000c7 _OS_Task_InitTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:242    .text:000001ab _OS_Task_DeleteTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:281    .text:000001e7 _OS_Task_CreateTaskEnvironment
 
 UNDEFINED SYMBOLS
 _LLF_SAVE_TASK_STACK
@@ -4141,5 +4151,6 @@ _LLF_RESTORE_TASK_STACK
 _LLF_RESTORE_REGISTERS
 _LLF_RESTORE_SYSTEM_STACK
 _LLF_SAVE_SYSTEM_STACK
+_task_state_request
 _os_free
 _os_malloc

@@ -135,9 +135,16 @@ void OS_Exception_PendSV(void)
 
 void OS_Exception_Systick(void)
 {
-   /* the systick timer is stopped during debug... see CorteM4 manual */
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   task_t* task = 0u;
+   task_t* task;   
+   
+   DBG_RLD_VALUE = 0xFFFFFFFF;
+   DBG_CURR_VAL = 0xFFFFFFFF;
+   DBG_CTRL_VALUE = 0xFFFFFFFF;
+   DBG_CALIB_VALUE = 0xFFFFFFFF;
+   /* the systick timer is stopped during debug... see CorteM4 manual */
+
+   task = 0u;
    /* configure the TCMP */
    /*
    Dispatcher function for Core 0:
@@ -147,6 +154,9 @@ void OS_Exception_Systick(void)
    #define SYSTICK_CTRL_STAT_REG ((uint32*)0xE000E010)
    #define SYSTICK_RLD_VAL_REG   ((uint32*)0xE000E014)
    #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
+   #define SYSTICK_CALIB_VAL_REG ((uint32*)0xE000E01C)
+   #define SYSTICK_STAT_REG_CLKSRC_AHB ((uint32)0x00000004)
+   #define SYSTICK_STAT_REG_CLKSRC_AHB_8 ((uint32)0x00000000)
    #define SYSTICK_STAT_REG_TICKINT ((uint32)0x00000002)
    #define SYSTICK_STAT_REG_ENABLE  ((uint32)0x00000001)
    #define LOOPTIME_IN_USEC ((uint32)10000u)
@@ -155,9 +165,14 @@ void OS_Exception_Systick(void)
    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz
    */
    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   *SYSTICK_RLD_VAL_REG = *SYSTICK_RLD_VAL_REG | (((uint32)MCU_CLOCK_IN_HZ * LOOPTIME_IN_USEC) / ((uint32)1000000));
+   *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000 )| (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000))* LOOPTIME_IN_USEC) ;
    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_ENABLE;
+
+   DBG_RLD_VALUE  = *SYSTICK_RLD_VAL_REG;
+   DBG_CURR_VAL   = *SYSTICK_CURRENT_VAL_REG;
+   DBG_CTRL_VALUE = *SYSTICK_CTRL_STAT_REG;
+   DBG_CALIB_VALUE = *SYSTICK_CALIB_VAL_REG;
    #endif   
    /*
    4.4.1. SysTick Control and Status Register

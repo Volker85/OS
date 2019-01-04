@@ -92,7 +92,7 @@ void OS_Task_InitTaskEnvironment(task_t* task)
       task->default_prio                     = (unsigned_char_t)         0;/* the default prio for this task before increase of prio due to wait time */
 
       /* task management */
-      task->state_request                    =                           0;
+      task->state_request                    =                           &task_state_request;
       task->task_state                       =                           Task_unspecified;
       task->task_queued                      =                           False;
       task->FREE                             =                           0;

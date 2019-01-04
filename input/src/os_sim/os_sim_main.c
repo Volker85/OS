@@ -17,6 +17,7 @@ int main(int argc, char* argv[])
    while(i < 1e6)
    {
       /* emulate the interrupts */
+      OS_STATE_HANDLER();
       OS_ISRHANDLERC0();
 #if(0)
       OS_ISRHANDLERC1();

@@ -19,10 +19,6 @@ Local void TASK_1(void* task_ptr);
 Local void TASK_2(void* task_ptr);
 Local task_t* OS_TaskScheduler();
 
-Local unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
-Local scheduler_time_t LAST_CURRENT_TIME = 0;
-
-
 void OS_ACTIVATE_DISPATCHER(void)
 {
 
@@ -43,7 +39,7 @@ void OS_ACTIVATE_DISPATCHER(void)
    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz
    */
    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   *SYSTICK_RLD_VAL_REG = *SYSTICK_RLD_VAL_REG | (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000))* LOOPTIME_IN_USEC) ;
+   *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000 )| (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000))* LOOPTIME_IN_USEC) ;
    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_ENABLE;
    #endif
@@ -341,8 +337,9 @@ Local void TASK_1(void* task_ptr)
 
    /* do some things */
    /*while(1) {}*/
-   OS_SLEEPTASK((task_t*)task_ptr, 100000000);
-
+   TASK1_CALL_NR++;
+   OS_SLEEPTASK((task_t*)task_ptr, 10);
+   while(1) {}
    /* end */
 }
 Local void TASK_2(void* task_ptr)
@@ -351,8 +348,8 @@ Local void TASK_2(void* task_ptr)
    /* worker task */
 
    /* do some things */
-   /*while(1) {}*/
-
+   TASK2_CALL_NR++;
+   while(1) {}
    /* end */
 }
 Local void TASK_3(void* task_ptr)
@@ -361,8 +358,8 @@ Local void TASK_3(void* task_ptr)
    /* worker task */
 
    /* do some things */
-   /*while(1) {}*/
-
+   TASK3_CALL_NR++;
+   while(1) {}
    /* end */
 }
 void OS_INIT_TASKS(void)

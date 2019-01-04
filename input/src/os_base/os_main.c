@@ -9,14 +9,14 @@
 
 /*
 OS_State: OS_INIT (Start im Supervisor Mode)
-- Exception Handler aufsetzen  -> Done 
-- HW Internal Peripherie, RAM, etc -> Done 
+- Exception Handler aufsetzen  -> Done
+- HW Internal Peripherie, RAM, etc -> Done
 - Tasks konfigurieren -> Done via OS_INIT_TASK_SYSTEM()
 --> Stack -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
 --> MMU_REGION ->NA
 --> CoreId -> Done
 --> Task-Function -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
---> TaskPrio -> Done 
+--> TaskPrio -> Done
 --> MultipleActChk -> Done in OS_ActivateTask()
 --> Privilige Level (Handler mode (priviliged): System Mode, Abort, Undefined, FiQ, IRQ; Thread mode: unpriviliged / priviliged) -> Done
 - TCMP Interrupts für Tasks konfigurieren, Starten vom Dispatcher -> Done
@@ -41,7 +41,7 @@ OS_State: OS_Shutdown (nur erlaubt im Supervisor Mode)
 - Tasks beenden (Timer Interrupts löschen) -> Done OS_SHUTDOWN(os_reset_hardreset
 - FMON / Watchdog deinitialisieren -> NA
 - MMU deaktivieren / deintialisieren -> NA
-- HW Reset auslösen -> Done 
+- HW Reset auslösen -> Done
 
 */
 
@@ -56,7 +56,7 @@ void OS_STATE_HANDLER(void)
 {
    /* the following code runs in priviliged mode!! */
    Local os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
-   
+
    switch(OS_STATE)
    {
    case os_init:
@@ -70,33 +70,35 @@ void OS_STATE_HANDLER(void)
 
       /* trigger dispatcher */
       /* activate the dispatcher, configure TCMP interrupts for tasks */
+      OS_STARTTASK();
       OS_ACTIVATE_DISPATCHER();
 
       OS_STATE = os_running;
       /* activate the interrupts, tasks will be executed from now on ... */
       LLF_INT_ENABLE();
-
+#if(CFG_PROCESSOR != cMCU_X86)
       while(1)/*wait until timer task*/
       {
 
       }
+#endif
       break;
    }
    case os_running:
    {
       /* run the task function */
-      OS_TASK_DISPATCHER();      
+      OS_TASK_DISPATCHER();
       if(0) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
       {
          OS_STATE = os_shutdown;
-         sys_req_reset_state = Reset_restart;         
+         sys_req_reset_state = Reset_restart;
       }
-      
+
       break;
    }
    case os_shutdown:
    {
-      LLF_INT_DISABLE();         
+      LLF_INT_DISABLE();
       switch(sys_req_reset_state)
       {
       case Reset_powerdown:
@@ -117,7 +119,7 @@ void OS_STATE_HANDLER(void)
       default:
       {
          OS_SHUTDOWN(os_reset_hardreset);
-         break;         
+         break;
       }
       }
       break;

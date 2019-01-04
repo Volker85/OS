@@ -22,6 +22,16 @@ volatile uint32 BACKUP_SYSTICK_CURRENT_VAL_REG;
 volatile uint32 RAM_CHECK_FAILURE_DETECTED;
 volatile uint32 RAM_CHECK_FAILURE_ADDR;
 
+volatile uint32 DBG_RLD_VALUE;
+volatile uint32 DBG_CURR_VAL;
+volatile uint32 DBG_CTRL_VALUE;
+volatile uint32 DBG_CALIB_VALUE;
+
+volatile uint32 TASK1_CALL_NR;
+volatile uint32 TASK2_CALL_NR;
+volatile uint32 TASK3_CALL_NR;
+volatile uint32 TASK4_CALL_NR;
+
 void* REGISTER_R0;
 void* REGISTER_R1;
 void* REGISTER_R2;
@@ -34,3 +44,11 @@ void* REGISTER_R8;
 void* REGISTER_R9;
 void* REGISTER_R10;
 void* REGISTER_R11;
+
+unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
+scheduler_time_t LAST_CURRENT_TIME;
+task_t*           pTASK_RUN_QUEUE[MAX_RUN_PQUEUE_SIZE];
+task_t            TASK_RUN_QUEUE[MAX_RUN_QUEUE_SIZE];
+task_t            RUNNING_TASK[1];/* stores the running task */
+task_t            TASK_IDLE_QUEUE[1];
+unsigned_char_t   bTASK_QUEUE_INITIALIZED;

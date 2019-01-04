@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8WKWvy.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccAKp9wU.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -42,32 +42,67 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8WKWvy.s 			page 1
    6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    OS_INIT_TASK_SYSTEM();
   35              		.loc 1 6 0
   36 0004 FFF7FEFF 		bl	OS_INIT_TASK_SYSTEM
-   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c **** }
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    TASK1_CALL_NR = 0;
   37              		.loc 1 7 0
-  38 0008 00BF     		nop
-  39 000a 80BD     		pop	{r7, pc}
-  40              		.cfi_endproc
-  41              	.LFE0:
-  43              	.Letext0:
-  44              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  45              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  46              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  47              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8WKWvy.s 			page 2
+  38 0008 064B     		ldr	r3, .L2
+  39 000a 0022     		movs	r2, #0
+  40 000c 1A60     		str	r2, [r3]
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    TASK2_CALL_NR = 0;
+  41              		.loc 1 8 0
+  42 000e 064B     		ldr	r3, .L2+4
+  43 0010 0022     		movs	r2, #0
+  44 0012 1A60     		str	r2, [r3]
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    TASK3_CALL_NR = 0;
+  45              		.loc 1 9 0
+  46 0014 054B     		ldr	r3, .L2+8
+  47 0016 0022     		movs	r2, #0
+  48 0018 1A60     		str	r2, [r3]
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    TASK4_CALL_NR = 0;   
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccAKp9wU.s 			page 2
+
+
+  49              		.loc 1 10 0
+  50 001a 054B     		ldr	r3, .L2+12
+  51 001c 0022     		movs	r2, #0
+  52 001e 1A60     		str	r2, [r3]
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c **** }
+  53              		.loc 1 11 0
+  54 0020 00BF     		nop
+  55 0022 80BD     		pop	{r7, pc}
+  56              	.L3:
+  57              		.align	2
+  58              	.L2:
+  59 0024 00000000 		.word	TASK1_CALL_NR
+  60 0028 00000000 		.word	TASK2_CALL_NR
+  61 002c 00000000 		.word	TASK3_CALL_NR
+  62 0030 00000000 		.word	TASK4_CALL_NR
+  63              		.cfi_endproc
+  64              	.LFE0:
+  66              	.Letext0:
+  67              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  68              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  69              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  70              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccAKp9wU.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_init_sw.c
-C:\Users\PRESID~1\AppData\Local\Temp\cc8WKWvy.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\cc8WKWvy.s:22     .text:00000000 OS_INIT_SW
+C:\Users\PRESID~1\AppData\Local\Temp\ccAKp9wU.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccAKp9wU.s:22     .text:00000000 OS_INIT_SW
+C:\Users\PRESID~1\AppData\Local\Temp\ccAKp9wU.s:59     .text:00000024 $d
                            .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033
                            .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986
                            .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
                            .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
-                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
-                           .group:00000000 wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033
 
 UNDEFINED SYMBOLS
 OS_INIT_TASK_SYSTEM
+TASK1_CALL_NR
+TASK2_CALL_NR
+TASK3_CALL_NR
+TASK4_CALL_NR

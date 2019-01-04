@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc65cCE5.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccR2ZjHf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -31,25 +31,43 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc65cCE5.s 			page 1
   28              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
   29              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
   30              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
-  31              		.comm	REGISTER_R0,4,4
-  32              		.comm	REGISTER_R1,4,4
-  33              		.comm	REGISTER_R2,4,4
-  34              		.comm	REGISTER_R3,4,4
-  35              		.comm	REGISTER_R4,4,4
-  36              		.comm	REGISTER_R5,4,4
-  37              		.comm	REGISTER_R6,4,4
-  38              		.comm	REGISTER_R7,4,4
-  39              		.comm	REGISTER_R8,4,4
-  40              		.comm	REGISTER_R9,4,4
-  41              		.comm	REGISTER_R10,4,4
-  42              		.comm	REGISTER_R11,4,4
-  43              	.Letext0:
-  44              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  45              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  46              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  47              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  48              		.file 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc65cCE5.s 			page 2
+  31              		.comm	DBG_RLD_VALUE,4,4
+  32              		.comm	DBG_CURR_VAL,4,4
+  33              		.comm	DBG_CTRL_VALUE,4,4
+  34              		.comm	DBG_CALIB_VALUE,4,4
+  35              		.comm	TASK1_CALL_NR,4,4
+  36              		.comm	TASK2_CALL_NR,4,4
+  37              		.comm	TASK3_CALL_NR,4,4
+  38              		.comm	TASK4_CALL_NR,4,4
+  39              		.comm	REGISTER_R0,4,4
+  40              		.comm	REGISTER_R1,4,4
+  41              		.comm	REGISTER_R2,4,4
+  42              		.comm	REGISTER_R3,4,4
+  43              		.comm	REGISTER_R4,4,4
+  44              		.comm	REGISTER_R5,4,4
+  45              		.comm	REGISTER_R6,4,4
+  46              		.comm	REGISTER_R7,4,4
+  47              		.comm	REGISTER_R8,4,4
+  48              		.comm	REGISTER_R9,4,4
+  49              		.comm	REGISTER_R10,4,4
+  50              		.comm	REGISTER_R11,4,4
+  51              		.comm	TASK_STACK,1000,4
+  52              		.comm	LAST_CURRENT_TIME,4,4
+  53              		.comm	pTASK_RUN_QUEUE,20,4
+  54              		.comm	TASK_RUN_QUEUE,680,4
+  55              		.comm	RUNNING_TASK,136,4
+  56              		.comm	TASK_IDLE_QUEUE,136,4
+  57              		.comm	bTASK_QUEUE_INITIALIZED,1,1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccR2ZjHf.s 			page 2
+
+
+  58              	.Letext0:
+  59              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  60              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  61              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  62              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  63              		.file 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccR2ZjHf.s 			page 3
 
 
 DEFINED SYMBOLS
@@ -70,6 +88,14 @@ DEFINED SYMBOLS
                             *COM*:00000004 BACKUP_SYSTICK_CURRENT_VAL_REG
                             *COM*:00000004 RAM_CHECK_FAILURE_DETECTED
                             *COM*:00000004 RAM_CHECK_FAILURE_ADDR
+                            *COM*:00000004 DBG_RLD_VALUE
+                            *COM*:00000004 DBG_CURR_VAL
+                            *COM*:00000004 DBG_CTRL_VALUE
+                            *COM*:00000004 DBG_CALIB_VALUE
+                            *COM*:00000004 TASK1_CALL_NR
+                            *COM*:00000004 TASK2_CALL_NR
+                            *COM*:00000004 TASK3_CALL_NR
+                            *COM*:00000004 TASK4_CALL_NR
                             *COM*:00000004 REGISTER_R0
                             *COM*:00000004 REGISTER_R1
                             *COM*:00000004 REGISTER_R2
@@ -82,13 +108,20 @@ DEFINED SYMBOLS
                             *COM*:00000004 REGISTER_R9
                             *COM*:00000004 REGISTER_R10
                             *COM*:00000004 REGISTER_R11
+                            *COM*:000003e8 TASK_STACK
+                            *COM*:00000004 LAST_CURRENT_TIME
+                            *COM*:00000014 pTASK_RUN_QUEUE
+                            *COM*:000002a8 TASK_RUN_QUEUE
+                            *COM*:00000088 RUNNING_TASK
+                            *COM*:00000088 TASK_IDLE_QUEUE
+                            *COM*:00000001 bTASK_QUEUE_INITIALIZED
                            .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544
+                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
+                           .group:00000000 wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033
                            .group:00000000 wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986
                            .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
                            .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
-                           .group:00000000 wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914
-                           .group:00000000 wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033
 
 NO UNDEFINED SYMBOLS

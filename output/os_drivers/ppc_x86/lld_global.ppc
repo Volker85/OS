@@ -336,68 +336,6 @@ extern void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_n
 typedef void (*func_ptr_t)(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 1
-
-#define _OS_RAM_H_ 
-
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_firstinc.h" 1
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_stack.h" 1
-
-#define _os_stack_h_ 
-
-#define OS_STACK_SIZE 0x100
-
-#define OS_STACK_SIZE_END 0x01u
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_heap.h" 1
-
-#define _os_heap_h_ 
-
-
-#define HEAP_SIZE 10000
-#define MIN_BLOCK_SIZE_HEAP 8
-
-
-#define HEAP_OFFSET_FOR_SIZE 0
-#define HEAP_OFFSET_FOR_USED_SIZE 4
-#define HEAP_OFFSET_FOR_CHUNK 8
-
-
-
-extern void* os_calloc(uint32 num, uint32 size);
-extern void* os_realloc(void* ptr_old, uint32 size_new);
-extern void* os_malloc(uint32 size);
-extern void os_free(void* ptr);
-# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_main.h" 1
-
-#define _os_main_h_ 
-#define os_init 0
-#define os_running 1
-#define os_shutdown 2
-extern void OS_STATE_HANDLER(void);
-# 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
-
-
-extern unsigned_char_t HEAP[10000];
-
-
-extern unsigned_char_t OS_STACK[1][0x100];
-extern unsigned_char_t OS_MAIN_STACK[0x100];
-extern volatile uint32 OS_STATE;
-extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
-extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG ;
-extern volatile uint32 VAR_USAGE_FAULT_STATUS_REG ;
-extern volatile uint32 VAR_FAULT_STATUS_REG ;
-extern volatile uint32 VAR_MEM_FAULT_ADDR_REG ;
-extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
-extern volatile uint32 VAR_AUX_FAULT_STATUS_REG;
-extern volatile uint32 VAR_BUS_FAULT_STATUS_REG;
-extern volatile uint32 LINK_REGISTER_HANDLER;
-extern volatile uint32 BACKUP_SYSTICK_CURRENT_VAL_REG;
-# 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
-
 
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 1
 
@@ -592,7 +530,7 @@ extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_CLEAR_ALL_GP_REGISTERS(void);
 
 extern void LLF_PERFORM_RAM_CHECK(void);
-# 11 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
+# 9 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
 
 
 
@@ -612,6 +550,87 @@ extern void USER_LED_INIT(led_t Led);
 extern void USER_LED_ON(led_t Led);
 extern void USER_LED_OFF(led_t Led);
 extern void USER_LED_TOGGLE(led_t Led);
+# 13 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
+
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 1
+
+#define _OS_RAM_H_ 
+
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_firstinc.h" 1
+# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_stack.h" 1
+
+#define _os_stack_h_ 
+
+#define OS_STACK_SIZE 0x100
+
+#define OS_STACK_SIZE_END 0x01u
+# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_heap.h" 1
+
+#define _os_heap_h_ 
+
+
+#define HEAP_SIZE 10000
+#define MIN_BLOCK_SIZE_HEAP 8
+
+
+#define HEAP_OFFSET_FOR_SIZE 0
+#define HEAP_OFFSET_FOR_USED_SIZE 4
+#define HEAP_OFFSET_FOR_CHUNK 8
+
+
+
+extern void* os_calloc(uint32 num, uint32 size);
+extern void* os_realloc(void* ptr_old, uint32 size_new);
+extern void* os_malloc(uint32 size);
+extern void os_free(void* ptr);
+# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_main.h" 1
+
+#define _os_main_h_ 
+#define os_init 0
+#define os_running 1
+#define os_shutdown 2
+extern void OS_STATE_HANDLER(void);
+# 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_task_config.h" 1
+# 9 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_task_common.h" 1
+# 10 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+
+extern unsigned_char_t HEAP[10000];
+
+
+extern unsigned_char_t OS_STACK[1][0x100];
+extern unsigned_char_t OS_MAIN_STACK[0x100];
+extern volatile uint32 OS_STATE;
+extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
+extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG ;
+extern volatile uint32 VAR_USAGE_FAULT_STATUS_REG ;
+extern volatile uint32 VAR_FAULT_STATUS_REG ;
+extern volatile uint32 VAR_MEM_FAULT_ADDR_REG ;
+extern volatile uint32 VAR_BUS_FAULT_ADDR_REG ;
+extern volatile uint32 VAR_AUX_FAULT_STATUS_REG;
+extern volatile uint32 VAR_BUS_FAULT_STATUS_REG;
+extern volatile uint32 LINK_REGISTER_HANDLER;
+extern volatile uint32 BACKUP_SYSTICK_CURRENT_VAL_REG;
+extern volatile uint32 DBG_RLD_VALUE;
+extern volatile uint32 DBG_CURR_VAL;
+extern volatile uint32 DBG_CTRL_VALUE;
+extern volatile uint32 DBG_CALIB_VALUE;
+extern volatile uint32 TASK1_CALL_NR;
+extern volatile uint32 TASK2_CALL_NR;
+extern volatile uint32 TASK3_CALL_NR;
+extern volatile uint32 TASK4_CALL_NR;
+
+extern unsigned_char_t TASK_STACK[(5)][200];
+extern scheduler_time_t LAST_CURRENT_TIME;
+extern task_t* pTASK_RUN_QUEUE[(5)];
+extern task_t TASK_RUN_QUEUE[(5)];
+extern task_t RUNNING_TASK[1];
+extern task_t TASK_IDLE_QUEUE[1];
+extern unsigned_char_t bTASK_QUEUE_INITIALIZED;
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\lld_global.c" 2
 CoreID_t GET_CORE_ID(void)
