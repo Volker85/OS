@@ -6,6 +6,7 @@
 #include "os_start_init_hw.h"
 #include "os_start_init_sw.h"
 #include "os_task_scheduler.h"
+#include "os_task_queue.h"
 
 /*
 OS_State: OS_INIT (Start im Supervisor Mode)
@@ -70,7 +71,7 @@ void OS_STATE_HANDLER(void)
 
       /* trigger dispatcher */
       /* activate the dispatcher, configure TCMP interrupts for tasks */
-      OS_STARTTASK();
+      OS_STARTTASK(GetIdleTask());
       OS_ACTIVATE_DISPATCHER();
 
       OS_STATE = os_running;

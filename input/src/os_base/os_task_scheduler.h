@@ -14,7 +14,7 @@
 
 typedef unsigned task_time_t;
 
-
+extern void OS_STARTTASK(task_t* task);
 extern void OS_ActivateTask(task_t* task);
 extern void OS_SLEEPTASK(task_t* task, task_time_t millisec);
 extern void OS_INIT_TASK(

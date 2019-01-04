@@ -13,7 +13,7 @@
 5. unspecified --(create   )--> suspend
 */
 
-Local void OS_STARTTASK(task_t* task);
+
 Local void TASK_0(void* task_ptr);
 Local void TASK_1(void* task_ptr);
 Local void TASK_2(void* task_ptr);
@@ -204,7 +204,7 @@ void OS_ActivateTask(task_t* task)
       }
    }
 }
-Local void OS_STARTTASK(task_t* task)
+void OS_STARTTASK(task_t* task)
 {
    /* OS_STARTTASK
    - Disable interrupts
@@ -234,9 +234,9 @@ Local void OS_STARTTASK(task_t* task)
             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
             {
                LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE();
-            }            
-  
-            /* call the task entry function */  
+            }
+
+            /* call the task entry function */
             task->fp(task);
          }
          else
@@ -316,9 +316,9 @@ void OS_TASK_DISPATCHER(void)
    /* Preempt Task */
    if(task!=0)
    {
-      OS_TERMINATE_TASK(task);   
-   }   
-   
+      OS_TERMINATE_TASK(task);
+   }
+
 
    /* ask for the next task to be activated... */
    task = OS_TaskScheduler();
@@ -339,7 +339,9 @@ Local void TASK_1(void* task_ptr)
    /*while(1) {}*/
    TASK1_CALL_NR++;
    OS_SLEEPTASK((task_t*)task_ptr, 10);
+   #if (CFG_PROCESSOR != cMCU_X86)
    while(1) {}
+   #endif
    /* end */
 }
 Local void TASK_2(void* task_ptr)
@@ -349,7 +351,9 @@ Local void TASK_2(void* task_ptr)
 
    /* do some things */
    TASK2_CALL_NR++;
+   #if (CFG_PROCESSOR != cMCU_X86)
    while(1) {}
+   #endif
    /* end */
 }
 Local void TASK_3(void* task_ptr)
@@ -359,7 +363,9 @@ Local void TASK_3(void* task_ptr)
 
    /* do some things */
    TASK3_CALL_NR++;
+   #if (CFG_PROCESSOR != cMCU_X86)
    while(1) {}
+   #endif
    /* end */
 }
 void OS_INIT_TASKS(void)
@@ -428,7 +434,7 @@ void OS_INIT_TASKS(void)
                 200,            /* Stack Size */
                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
                 Core0,
-                2                                   /* default prio */                
+                2                                   /* default prio */
                );
    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
 
@@ -443,9 +449,9 @@ void OS_INIT_TASKS(void)
                 200,           /* Stack Size */
                 ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
                 Core0,
-                3                                   /* default prio */                                
+                3                                   /* default prio */
                );
-   OS_SaveTaskPtr(task_ptr, Task_3_ptr);   
+   OS_SaveTaskPtr(task_ptr, Task_3_ptr);
 }
 
 
@@ -562,7 +568,7 @@ void ISR_TASK_DISPATCH_C0(void)
 {
    #if(NR_OF_CORES != 1u)
    #warn "task scheduler should know which core it is running, to select the correct task to terminate/suspend/active..."
-   #endif 
+   #endif
    OS_TASK_DISPATCHER();
 
 }

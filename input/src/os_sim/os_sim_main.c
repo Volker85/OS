@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
    time_t t = time(0);
 
    OS_START_OS();
-   while(i < 1e6)
+   while(i < 1e8)
    {
       /* emulate the interrupts */
       OS_STATE_HANDLER();
