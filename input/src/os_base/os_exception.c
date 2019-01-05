@@ -51,7 +51,7 @@ void OS_Exception_NMI(void)
                         :"=m"(LINK_REGISTER_HANDLER)
                         :
                         :"r0"
-                        );   
+                        );
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
@@ -65,7 +65,7 @@ void OS_Exception_SWI(void)
                         :"=m"(LINK_REGISTER_HANDLER)
                         :
                         :"r0"
-                        );   
+                        );
    /* Mode: Supervisor:
      Exception SWI is entered, in case a user mode program executed the assembler code "SWI" (SoftWare Interrupt)    */
    OS_ISRHANDLERC0();
@@ -79,7 +79,7 @@ void OS_Exception_BUS_FAULT(void)
                         :"=m"(LINK_REGISTER_HANDLER)
                         :
                         :"r0"
-                        );   
+                        );
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
@@ -103,7 +103,7 @@ void OS_Exception_MEM_MANAG_FAULT(void)
                         :"=m"(LINK_REGISTER_HANDLER)
                         :
                         :"r0"
-                        );   
+                        );
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
@@ -118,7 +118,7 @@ void OS_Exception_USAGE_FAULT(void)
                         :"=m"(LINK_REGISTER_HANDLER)
                         :
                         :"r0"
-                        );   
+                        );
    OS_Exception_Read_Status_Registers();
    while(1){}
    OS_SHUTDOWN(os_reset_hardreset);
@@ -136,8 +136,8 @@ void OS_Exception_PendSV(void)
 void OS_Exception_Systick(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   task_t* task;   
-   
+   task_t* task;
+
    DBG_RLD_VALUE = 0xFFFFFFFF;
    DBG_CURR_VAL = 0xFFFFFFFF;
    DBG_CTRL_VALUE = 0xFFFFFFFF;
@@ -173,7 +173,7 @@ void OS_Exception_Systick(void)
    DBG_CURR_VAL   = *SYSTICK_CURRENT_VAL_REG;
    DBG_CTRL_VALUE = *SYSTICK_CTRL_STAT_REG;
    DBG_CALIB_VALUE = *SYSTICK_CALIB_VAL_REG;
-   #endif   
+   #endif
    /*
    4.4.1. SysTick Control and Status Register
 
@@ -221,8 +221,8 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
       task->active = False;
       task->exe_time += (Get_current_time() - task->start_time);
       task->task_group->exe_time += (Get_current_time() - task->start_time);
-      SET_RUNNING_TASK(0);
-      OS_TERMINATE_TASK(task);
+      SET_RUNNING_TASK(0,0);
+      OS_TERMINATE_TASK(task,0);
    }
    OS_STATE_HANDLER();
 #endif
@@ -251,7 +251,7 @@ ISR TCMP1(void)
 ISR TCMP2(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   
+
 #endif
 }
 ISR TCMP3(void)

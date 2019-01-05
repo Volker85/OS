@@ -14,7 +14,7 @@
 
 typedef unsigned task_time_t;
 
-extern void OS_STARTTASK(task_t* task);
+extern void OS_STARTTASK(task_t* task, scheduling_t* scheduling_task);
 extern void OS_ActivateTask(task_t* task);
 extern void OS_SLEEPTASK(task_t* task, task_time_t millisec);
 extern void OS_INIT_TASK(
@@ -34,7 +34,7 @@ extern void OS_INIT_TASKS(void);
 extern unsigned_char_t task_state_request(void* task, task_state_t requested_state);
 extern void ISR_TASK_DISPATCH_C0(void);
 extern void OS_ACTIVATE_DISPATCHER(void);
-extern void OS_TERMINATE_TASK(task_t* task);
+extern void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task);
 extern void OS_TASK_DISPATCHER(void);
 #endif /* _os_task_scheduler_h_  */
 

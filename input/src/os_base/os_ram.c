@@ -47,8 +47,11 @@ void* REGISTER_R11;
 
 unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
 scheduler_time_t LAST_CURRENT_TIME;
-task_t*           pTASK_RUN_QUEUE[MAX_RUN_PQUEUE_SIZE];
+scheduling_t      TASK_SCHEDULING_QUEUE[MAX_RUN_PQUEUE_SIZE];
+scheduling_t*     RUNNING_SCHEDULING_QUEUE_ENTRY;
 task_t            TASK_RUN_QUEUE[MAX_RUN_QUEUE_SIZE];
 task_t            RUNNING_TASK[1];/* stores the running task */
 task_t            TASK_IDLE_QUEUE[1];
 unsigned_char_t   bTASK_QUEUE_INITIALIZED;
+task_t TASK_0_VAR, TASK_1_VAR, TASK_2_VAR, TASK_3_VAR;
+task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK_GROUP_5;

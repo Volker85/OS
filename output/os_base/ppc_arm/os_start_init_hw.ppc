@@ -632,6 +632,7 @@ typedef void (*func_p_void_void_t) (void);
 typedef void (*func_p_t) (void* task);
 typedef unsigned_char_t (*func_p_u8_t) (void* task);
 typedef unsigned_char_t (*func_p_state_change_t)(void* task, task_state_t requested_task_state);
+
 struct task_group_s
 {
    unsigned_int32_t exe_time;
@@ -689,6 +690,7 @@ struct task_s
    privilige_mode_t privilige_mode;
 };
 typedef struct task_s task_t;
+typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
 extern unsigned_int32_t Get_current_time(void);
@@ -815,11 +817,14 @@ extern volatile uint32 TASK4_CALL_NR;
 
 extern unsigned_char_t TASK_STACK[(5)][200];
 extern scheduler_time_t LAST_CURRENT_TIME;
-extern task_t* pTASK_RUN_QUEUE[(5)];
+extern scheduling_t TASK_SCHEDULING_QUEUE[(5)];
+extern scheduling_t* RUNNING_SCHEDULING_QUEUE_ENTRY;
 extern task_t TASK_RUN_QUEUE[(5)];
 extern task_t RUNNING_TASK[1];
 extern task_t TASK_IDLE_QUEUE[1];
 extern unsigned_char_t bTASK_QUEUE_INITIALIZED;
+extern task_t TASK_0_VAR, TASK_1_VAR, TASK_2_VAR, TASK_3_VAR;
+extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK_GROUP_5;
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_hw.c" 2
 

@@ -19,6 +19,7 @@ typedef void            (*func_p_void_void_t)   (void);
 typedef void            (*func_p_t)             (void* task);
 typedef unsigned_char_t (*func_p_u8_t)          (void* task);
 typedef unsigned_char_t (*func_p_state_change_t)(void* task, task_state_t requested_task_state);
+
 struct task_group_s
 {
    unsigned_int32_t exe_time;
@@ -60,13 +61,13 @@ struct task_s
    unsigned_int32_t r3;
    unsigned_int32_t r4;
    unsigned_int32_t r5;
-   unsigned_int32_t r6;   
+   unsigned_int32_t r6;
    unsigned_int32_t r7;
    unsigned_int32_t r8;
    unsigned_int32_t r9;
    unsigned_int32_t r10;
    unsigned_int32_t r11;
-   unsigned_int32_t r12;  
+   unsigned_int32_t r12;
    #endif
    unsigned_char_t* pStackPointer;
    unsigned_char_t* pStackPointerByMalloc;
@@ -76,6 +77,7 @@ struct task_s
    privilige_mode_t privilige_mode;
 };
 typedef struct task_s task_t;
+typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
 extern unsigned_int32_t Get_current_time(void);

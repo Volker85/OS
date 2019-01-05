@@ -53,10 +53,43 @@ typedef enum os_reset_req_state_e
    Reset_exit
 } os_reset_req_state_t;
 
+Local void OS_DETERMINE_NEXT_TASK_ACTIVATION(void)
+{
+    Local uint32 call_nr = 0;
+    switch(call_nr)
+    {
+    case 0:
+        OS_ActivateTask(&TASK_1_VAR);
+        call_nr++;
+        break;
+    case 1:
+        OS_ActivateTask(&TASK_1_VAR);
+        call_nr++;
+        break;
+    case 2:
+        OS_ActivateTask(&TASK_0_VAR);
+        call_nr++;
+        break;
+    case 3:
+        OS_ActivateTask(&TASK_2_VAR);
+        call_nr++;
+        break;
+    case 4:
+        OS_ActivateTask(&TASK_3_VAR);
+        call_nr = 0;
+        break;
+    default:
+        break;
+
+    }
+
+}
+
 void OS_STATE_HANDLER(void)
 {
    /* the following code runs in priviliged mode!! */
    Local os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
+   Local uint32 call_nr = 0;
 
    switch(OS_STATE)
    {
@@ -71,7 +104,9 @@ void OS_STATE_HANDLER(void)
 
       /* trigger dispatcher */
       /* activate the dispatcher, configure TCMP interrupts for tasks */
-      OS_STARTTASK(GetIdleTask());
+      /* activate & start the Idle task */
+      OS_ActivateTask(&TASK_0_VAR);
+      OS_STARTTASK(GetIdleTask(),0);
       OS_ACTIVATE_DISPATCHER();
 
       OS_STATE = os_running;
@@ -87,6 +122,11 @@ void OS_STATE_HANDLER(void)
    }
    case os_running:
    {
+      if(call_nr % 5 == 0)
+      {
+         OS_DETERMINE_NEXT_TASK_ACTIVATION();
+      }
+      call_nr++;
       /* run the task function */
       OS_TASK_DISPATCHER();
       if(0) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */

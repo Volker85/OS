@@ -34,10 +34,14 @@ extern volatile uint32 TASK3_CALL_NR;
 extern volatile uint32 TASK4_CALL_NR;
 
 extern unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
-extern scheduler_time_t LAST_CURRENT_TIME;
-extern task_t*           pTASK_RUN_QUEUE[MAX_RUN_PQUEUE_SIZE];
+extern scheduler_time_t  LAST_CURRENT_TIME;
+extern scheduling_t      TASK_SCHEDULING_QUEUE[MAX_RUN_PQUEUE_SIZE];
+extern scheduling_t*     RUNNING_SCHEDULING_QUEUE_ENTRY;
 extern task_t            TASK_RUN_QUEUE[MAX_RUN_QUEUE_SIZE];
 extern task_t            RUNNING_TASK[1];/* stores the running task */
 extern task_t            TASK_IDLE_QUEUE[1];
 extern unsigned_char_t   bTASK_QUEUE_INITIALIZED;
+extern task_t TASK_0_VAR, TASK_1_VAR, TASK_2_VAR, TASK_3_VAR;
+extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK_GROUP_5;
+
 #endif

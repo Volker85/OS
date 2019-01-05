@@ -11,27 +11,28 @@
 /*
 1. after execution of task finished(OS_TERMINATE_TASK):
  - delete run_queue_element         (DeleteFromTaskQueue)
- - delete link in link_list         (DeleteFromPointerQueue)
- - shift pointers towards index 0   (UpdatePointerQueue)
+ - delete Scheduling queue entry    (DeleteFromSchedulingQueue)
+ - shift pointers towards index 0   (UpdateSchedulingQueue)
 
 
  2. to add new task (ActivateTask):
  - add element to run_queue at first free element (AddToTaskQueue)
- - add a link in the link_list at the end         (AddToPointerQueue)
+ - add a reference to the scheduling Queue         (AddToSchedulingQueue)
 
  3. to start task:
 - start the task at index = 0                     (GetFromTaskQueue)
 
  4. to preempt task:
-- take element of index = 0 of linklist and save it somewhere else  (UpdatePointerQueue)
-- shift all entries in linklist to 0 by 1                           (UpdatePointerQueue)
-- add saved element at first free entry in linklist                 (UpdatePointerQueue)
-- eliminate empty link entries                                      (UpdatePointerQueue)
+- take element of index = 0 of SchedulingQueue and save it somewhere else  (UpdateSchedulingQueue)
+- shift all entries in SchedulingQueue to 0 by 1                           (UpdateSchedulingQueue)
+- add saved element at first free entry in SchedulingQueue                 (UpdateSchedulingQueue)
+- eliminate empty SchedulingQueue entries                                  (UpdateSchedulingQueue)
  */
 
 
-void SET_RUNNING_TASK(task_t* task)
+void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task)
 {
+   RUNNING_SCHEDULING_QUEUE_ENTRY = scheduling_task;
    if(task != 0)
    {
       (&RUNNING_TASK[0])->active                          = task->active;
@@ -90,16 +91,14 @@ void OS_INIT_TASK_QUEUE(void)
       unsigned_char_t element_nr = 0;
       while(element_nr < MAX_RUN_QUEUE_SIZE)
       {
-
-
-         (pTASK_RUN_QUEUE[element_nr]) = (task_t*)0;
+         TASK_SCHEDULING_QUEUE[element_nr] = (scheduling_t)0;
          OS_Task_InitTaskEnvironment(&TASK_RUN_QUEUE[element_nr]);
          element_nr++;
       }
       bTASK_QUEUE_INITIALIZED = True;
    }
 }
-void* AddToTaskQueue(task_t* task)
+task_t* AddToTaskQueue(task_t* task)
 {
    unsigned_char_t element_nr = 0;
    while( (element_nr < MAX_RUN_QUEUE_SIZE)
@@ -156,7 +155,7 @@ void* AddToTaskQueue(task_t* task)
       (&TASK_RUN_QUEUE[element_nr])->StackSize                       = task->StackSize;
       (&TASK_RUN_QUEUE[element_nr])->pStackPointerEnd                = task->pStackPointerEnd;
    }
-   return ((void*)&TASK_RUN_QUEUE[element_nr]);
+   return (&TASK_RUN_QUEUE[element_nr]);
 }
 void DeleteFromTaskQueue(task_t* task)
 {
@@ -207,65 +206,63 @@ void DeleteFromTaskQueue(task_t* task)
    task->StackSize                             =   0       ;
    task->pStackPointerEnd                      =   0       ;
 }
-task_t* GetFromTaskQueue(link_list_t* link)
+task_t* GetFromTaskQueue(scheduling_t* scheduling_queue_element)
 {
-   return ((task_t*)link);/*((task_t*)*link);*/
+   return ((task_t*)*scheduling_queue_element);
 }
-link_list_t* GetFromLinkList(unsigned_char_t element_nr)
+scheduling_t* GetFromSchedulingQueue(unsigned_char_t element_nr)
 {
-   return ((link_list_t*)pTASK_RUN_QUEUE[element_nr]);
+   return ((scheduling_t*)&TASK_SCHEDULING_QUEUE[element_nr]);
 }
 /* Pointer Queue Handling*/
-void DeleteFromLinkList(unsigned_char_t element_nr)
+void DeleteFromSchedulingQueue(scheduling_t* scheduling_queue_element)
 {
-   pTASK_RUN_QUEUE[element_nr] = 0;
+   *scheduling_queue_element = 0;
 }
-void* AddToLinkList(task_t* task)
+void AddToSchedulingQueue(task_t* task)
 {
    /*
    Description:
-   add "task" into next free slot of pTASK_RUN_QUEUE
+   add "task" into next free slot of TASK_SCHEDULING_QUEUE
 
    in:     task_t* task (task to be added)
-   out     addresse of linklist_element, in which task was added
+   out:
    */
    unsigned_char_t Add_successful = False;
    unsigned_char_t index = 0;
-   void*        ret_val = 0;
 
    while(  (index < MAX_RUN_QUEUE_SIZE)
            &&(Add_successful == False))
    {
-      if(pTASK_RUN_QUEUE[index] == 0)
+      if(TASK_SCHEDULING_QUEUE[index] == 0)
       {
-         pTASK_RUN_QUEUE[index] = task;
+         TASK_SCHEDULING_QUEUE[index] = task;
          Add_successful         = True;
-         ret_val                = &pTASK_RUN_QUEUE[index];
       }
       index++;
    }
-   return ret_val;
+   return;
 }
-void UpdateLinkList(void)
+void UpdateSchedulingQueue(void)
 {
    /* eliminate emptry link list entries (should be colleted at the high numbers) */
    unsigned_char_t dest = 0, src = 0;
 
    while (dest < MAX_RUN_PQUEUE_SIZE)
    {
-      if(pTASK_RUN_QUEUE[dest] == 0)
+      if(TASK_SCHEDULING_QUEUE[dest] == 0)
       {
          /* found empty entry ->shift following elements left in array */
 
          src = dest; /* start from empty entry point */
-         while((src < MAX_RUN_PQUEUE_SIZE)&&(pTASK_RUN_QUEUE[src]==0))
+         while((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]==0))
          {
             src++;
          }
-         if((src < MAX_RUN_PQUEUE_SIZE)&&(pTASK_RUN_QUEUE[src]!=0))
+         if((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]!=0))
          {
-            pTASK_RUN_QUEUE[dest] = pTASK_RUN_QUEUE[src];
-            pTASK_RUN_QUEUE[src]  = 0;
+            TASK_SCHEDULING_QUEUE[dest] = TASK_SCHEDULING_QUEUE[src];
+            TASK_SCHEDULING_QUEUE[src]  = 0;
          }
       }
       dest++;
@@ -333,7 +330,10 @@ task_t* GetRunningTask(void)
 {
    return (&RUNNING_TASK[0]);
 }
-
+scheduling_t* GetRunningSchedulingQueueElementPtr(void)
+{
+    return RUNNING_SCHEDULING_QUEUE_ENTRY;
+}
 void OS_INIT_TASK(
    task_t*          task,
    func_p_t         TaskFunction,
@@ -364,17 +364,8 @@ void OS_INIT_TASK(
 
       task->IdleTask      = IdleTask;
       task->state_request = &task_state_request;
-
-      /* Idle Task needs to be running at the start .... (violation of transition rule!) */
-      if(IdleTask != False)
-      {
-         task->task_state       = Task_running;
-      }
-      else
-      {
-         task_state_request(task, Task_unspecified);
-         task_state_request(task, Task_suspended);
-      }
+      task_state_request(task, Task_unspecified);
+      task_state_request(task, Task_suspended);
       if(uStackSize > TASK_STACK_SIZE)
       {
          uStackSize = TASK_STACK_SIZE;

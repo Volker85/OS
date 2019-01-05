@@ -70,7 +70,7 @@ LFB10:
 	jmp	L4
 L5:
 	.loc 2 20 0
-	call	_OS_ISRHANDLERC0
+	call	_OS_STATE_HANDLER
 	.loc 2 26 0
 	incl	44(%esp)
 L4:
@@ -117,8 +117,8 @@ LFE10:
 	.align 16
 LC0:
 	.long	0
-	.long	-198967296
-	.long	16402
+	.long	-1094967296
+	.long	16409
 	.text
 Letext0:
 	.file 3 "d:/programm/mingw/include/parts/time.h"
@@ -1525,10 +1525,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x5d
+	.uleb128 0x5f
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x5e
+	.uleb128 0x60
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4
@@ -2159,5 +2159,5 @@ Ldebug_line0:
 	.def	___mingw_vprintf;	.scl	2;	.type	32;	.endef
 	.def	_time;	.scl	2;	.type	32;	.endef
 	.def	_OS_START_OS;	.scl	2;	.type	32;	.endef
-	.def	_OS_ISRHANDLERC0;	.scl	2;	.type	32;	.endef
+	.def	_OS_STATE_HANDLER;	.scl	2;	.type	32;	.endef
 	.def	_getchar;	.scl	2;	.type	32;	.endef

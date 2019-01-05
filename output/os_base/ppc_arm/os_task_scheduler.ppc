@@ -632,6 +632,7 @@ typedef void (*func_p_void_void_t) (void);
 typedef void (*func_p_t) (void* task);
 typedef unsigned_char_t (*func_p_u8_t) (void* task);
 typedef unsigned_char_t (*func_p_state_change_t)(void* task, task_state_t requested_task_state);
+
 struct task_group_s
 {
    unsigned_int32_t exe_time;
@@ -689,6 +690,7 @@ struct task_s
    privilige_mode_t privilige_mode;
 };
 typedef struct task_s task_t;
+typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
 extern unsigned_int32_t Get_current_time(void);
@@ -815,11 +817,14 @@ extern volatile uint32 TASK4_CALL_NR;
 
 extern unsigned_char_t TASK_STACK[(5)][200];
 extern scheduler_time_t LAST_CURRENT_TIME;
-extern task_t* pTASK_RUN_QUEUE[(5)];
+extern scheduling_t TASK_SCHEDULING_QUEUE[(5)];
+extern scheduling_t* RUNNING_SCHEDULING_QUEUE_ENTRY;
 extern task_t TASK_RUN_QUEUE[(5)];
 extern task_t RUNNING_TASK[1];
 extern task_t TASK_IDLE_QUEUE[1];
 extern unsigned_char_t bTASK_QUEUE_INITIALIZED;
+extern task_t TASK_0_VAR, TASK_1_VAR, TASK_2_VAR, TASK_3_VAR;
+extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK_GROUP_5;
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h" 1
@@ -843,7 +848,7 @@ extern unsigned_char_t bTASK_QUEUE_INITIALIZED;
 
 typedef unsigned task_time_t;
 
-
+extern void OS_STARTTASK(task_t* task, scheduling_t* scheduling_task);
 extern void OS_ActivateTask(task_t* task);
 extern void OS_SLEEPTASK(task_t* task, task_time_t millisec);
 extern void OS_INIT_TASK(
@@ -863,7 +868,7 @@ extern void OS_INIT_TASKS(void);
 extern unsigned_char_t task_state_request(void* task, task_state_t requested_state);
 extern void ISR_TASK_DISPATCH_C0(void);
 extern void OS_ACTIVATE_DISPATCHER(void);
-extern void OS_TERMINATE_TASK(task_t* task);
+extern void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task);
 extern void OS_TASK_DISPATCHER(void);
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.h" 1
@@ -877,29 +882,27 @@ extern void OS_TASK_DISPATCHER(void);
 
 #define For_all_tasks_in_queue(var) for((var) = First_task; (var) <= Last_task; (var)++)
 
-typedef void* link_list_t;
 extern task_t* GetRunningTask(void);
+extern task_t** GetRunningSchedulingQueueElementPtr(void);
 
-extern void* AddToTaskQueue(task_t* task);
+extern task_t* AddToTaskQueue(task_t* task);
 extern void AddToIdleTaskQueue(task_t* task);
-extern void UpdateLinkList(void);
-extern void* AddToLinkList(task_t* task);
-extern void DeleteFromLinkList(unsigned_char_t element_nr);
 extern void DeleteFromTaskQueue(task_t* task);
-extern task_t* GetFromTaskQueue(link_list_t* link);
+extern task_t* GetFromTaskQueue(scheduling_t* scheduling_task_ptr);
 extern task_t* GetIdleTask(void);
-extern link_list_t* GetFromLinkList(unsigned_char_t element_nr);
-extern void SET_RUNNING_TASK(task_t* task);
+extern scheduling_t* GetFromSchedulingQueue(unsigned_char_t element_nr);
+extern void DeleteFromSchedulingQueue(scheduling_t* scheduling_queue_element);
+extern void AddToSchedulingQueue(task_t* task);
+extern void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task);
 extern void OS_INIT_TASK_QUEUE(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.h" 1
 # 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c" 2
-# 16 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
-static void OS_STARTTASK(task_t* task);
+# 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
 static void TASK_0(void* task_ptr);
 static void TASK_1(void* task_ptr);
 static void TASK_2(void* task_ptr);
-static task_t* OS_TaskScheduler();
+static task_t** OS_TaskScheduler();
 
 void OS_ACTIVATE_DISPATCHER(void)
 {
@@ -1021,6 +1024,12 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
          RequestState = 1;
          break;
       }
+      case Task_unspecified:
+      {
+          task->task_state = Task_ready;
+          RequestState = 1;
+          break;
+      }
       default:
       {
 
@@ -1042,10 +1051,10 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
 }
 void OS_ActivateTask(task_t* task)
 {
-# 171 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 177 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    if(task != 0)
    {
-      if((task->IdleTask != 0)||(task->state_request(task, Task_ready)==1))
+      if(task->state_request(task, Task_ready)==1)
       {
          LLF_INT_DISABLE();
 
@@ -1058,8 +1067,7 @@ void OS_ActivateTask(task_t* task)
 
                task = AddToTaskQueue(task);
 
-               AddToLinkList(task);
-               UpdateLinkList();
+               AddToSchedulingQueue(task);
                task->NrOfInsActivated++;
             }
             else
@@ -1079,7 +1087,7 @@ void OS_ActivateTask(task_t* task)
       }
    }
 }
-static void OS_STARTTASK(task_t* task)
+void OS_STARTTASK(task_t* task, scheduling_t* scheduling_task)
 {
 
 
@@ -1104,7 +1112,7 @@ static void OS_STARTTASK(task_t* task)
             LLF_INT_ENABLE();
 
 
-            SET_RUNNING_TASK(task);
+            SET_RUNNING_TASK(task, scheduling_task);
 
             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
             {
@@ -1132,7 +1140,7 @@ static void OS_STARTTASK(task_t* task)
 
 
 }
-void OS_TERMINATE_TASK(task_t* task)
+void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
 {
 
 
@@ -1145,11 +1153,13 @@ void OS_TERMINATE_TASK(task_t* task)
    {
       if(task->state_request != 0)
       {
-         if((task->IdleTask != 0)||(task->state_request(task, Task_ready)== 1))
+         if(task->state_request(task, Task_ready)== 1)
          {
             LLF_INT_DISABLE();
             OS_TASK_SAVETASK_ENVIRONMENT(task);
             OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[GET_CORE_ID()][0]);
+            DeleteFromTaskQueue(task);
+            DeleteFromSchedulingQueue(scheduling_task);
 
             task->active = 0;
 
@@ -1174,22 +1184,29 @@ void OS_TERMINATE_TASK(task_t* task)
 }
 void OS_TASK_DISPATCHER(void)
 {
-# 312 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 319 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+   scheduling_t* scheduling_task_ptr;
    task_t* task = 0;
 
    task = GetRunningTask();
+   scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
 
-
-   if(task!=0)
+   if(task!=0 && scheduling_task_ptr != 0)
    {
-      OS_TERMINATE_TASK(task);
+      OS_TERMINATE_TASK(task, scheduling_task_ptr);
    }
 
 
 
-   task = OS_TaskScheduler();
-
-   OS_STARTTASK(task);
+   scheduling_task_ptr = OS_TaskScheduler();
+   if(scheduling_task_ptr != 0)
+   {
+      task = GetFromTaskQueue(scheduling_task_ptr);
+   }
+   if(task != 0 && scheduling_task_ptr != 0)
+   {
+       OS_STARTTASK(task, scheduling_task_ptr);
+   }
 }
 static void TASK_0(void* task_ptr)
 {
@@ -1205,7 +1222,9 @@ static void TASK_1(void* task_ptr)
 
    TASK1_CALL_NR++;
    OS_SLEEPTASK((task_t*)task_ptr, 10);
+
    while(1) {}
+
 
 }
 static void TASK_2(void* task_ptr)
@@ -1215,7 +1234,9 @@ static void TASK_2(void* task_ptr)
 
 
    TASK2_CALL_NR++;
+
    while(1) {}
+
 
 }
 static void TASK_3(void* task_ptr)
@@ -1225,17 +1246,13 @@ static void TASK_3(void* task_ptr)
 
 
    TASK3_CALL_NR++;
+
    while(1) {}
+
 
 }
 void OS_INIT_TASKS(void)
 {
-   static task_t task_0, task_1, task_2, task_3;
-   static task_group_t TASK_GROUP_1;
-   static task_group_t TASK_GROUP_2;
-   static task_group_t TASK_GROUP_3;
-   static task_group_t TASK_GROUP_4;
-   static task_group_t TASK_GROUP_5;
    task_t* task_ptr = 0;
    LAST_CURRENT_TIME = Get_current_time();
 
@@ -1251,7 +1268,7 @@ void OS_INIT_TASKS(void)
    OS_INIT_TASK_QUEUE();
 
 
-   task_ptr = &task_0;
+   task_ptr = &TASK_0_VAR;
    OS_INIT_TASK(task_ptr,
                 &TASK_0,
                 1,
@@ -1266,10 +1283,7 @@ void OS_INIT_TASKS(void)
    ;
 
 
-   SET_RUNNING_TASK(task_ptr);
-
-
-   task_ptr = &task_1;
+   task_ptr = &TASK_1_VAR;
    OS_INIT_TASK(task_ptr,
                 &TASK_1,
                 1,
@@ -1284,7 +1298,7 @@ void OS_INIT_TASKS(void)
    ;
 
 
-   task_ptr = &task_2;
+   task_ptr = &TASK_2_VAR;
    OS_INIT_TASK(task_ptr,
                 &TASK_2,
                 1,
@@ -1299,7 +1313,7 @@ void OS_INIT_TASKS(void)
    ;
 
 
-   task_ptr = &task_3;
+   task_ptr = &TASK_3_VAR;
    OS_INIT_TASK(task_ptr,
                 &TASK_3,
                 1,
@@ -1315,22 +1329,27 @@ void OS_INIT_TASKS(void)
 }
 
 
-static task_t* OS_TaskScheduler(void)
+static scheduling_t* OS_TaskScheduler(void)
 {
-   static task_t* task = 0;
-   static unsigned_char_t Winner_prio = 0;
-   task_t* Winner_task = 0;
-   static link_list_t* link_list_member;
+
+   scheduling_t* scheduling_queue_member;
    unsigned_char_t element_nr;
 
+   unsigned_char_t Winner_prio = 0;
+   task_t* task = 0;
+   task_t* Winner_task = 0;
+   scheduling_t* Winner_scheduling_queue_member = 0;
    scheduler_time_t delta_time = Get_current_time() - LAST_CURRENT_TIME;
+
    LAST_CURRENT_TIME = Get_current_time();
-# 476 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+
+   ((Winner_task) = (Winner_task));
+# 491 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    for((element_nr) = (0); (element_nr) <= ((5)-1); (element_nr)++)
    {
-      link_list_member = GetFromLinkList(element_nr);
+      scheduling_queue_member = GetFromSchedulingQueue(element_nr);
 
-      task = GetFromTaskQueue(link_list_member);
+      task = GetFromTaskQueue(scheduling_queue_member);
 
       if((task != 0)&&(task->task_queued != 0))
       {
@@ -1375,8 +1394,8 @@ static task_t* OS_TaskScheduler(void)
    }
    for((element_nr) = (0); (element_nr) <= ((5)-1); (element_nr)++)
    {
-      link_list_member = GetFromLinkList(element_nr);
-      task = GetFromTaskQueue(link_list_member);
+      scheduling_queue_member = GetFromSchedulingQueue(element_nr);
+      task = GetFromTaskQueue(scheduling_queue_member);
       if(task != 0)
       {
 
@@ -1389,6 +1408,7 @@ static task_t* OS_TaskScheduler(void)
          {
             Winner_prio = task->current_prio;
             Winner_task = task;
+            Winner_scheduling_queue_member = scheduling_queue_member;
          }
 
       }
@@ -1399,16 +1419,7 @@ static task_t* OS_TaskScheduler(void)
 
 
    }
-
-   if(Winner_task != 0)
-   {
-      Winner_task->current_prio = 0;
-   }
-   else
-   {
-      Winner_task = GetIdleTask();
-   }
-   return Winner_task;
+   return Winner_scheduling_queue_member;
 }
 
 void ISR_TASK_DISPATCH_C0(void)

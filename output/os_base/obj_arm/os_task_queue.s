@@ -35,212 +35,217 @@ SET_RUNNING_TASK:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
+	str	r1, [r7]
 	.loc 1 35 0
+	ldr	r2, .L4
+	ldr	r3, [r7]
+	str	r3, [r2]
+	.loc 1 36 0
 	ldr	r3, [r7, #4]
 	cmp	r3, #0
 	beq	.L3
-	.loc 1 37 0
+	.loc 1 38 0
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3]
 	ubfx	r3, r3, #0, #1
 	uxtb	r1, r3
-	ldr	r2, .L4
+	ldr	r2, .L4+4
 	ldrb	r3, [r2]
 	bfi	r3, r1, #0, #1
-	strb	r3, [r2]
-	.loc 1 38 0
-	ldr	r3, [r7, #4]
-	ldrb	r3, [r3]
-	ubfx	r3, r3, #1, #1
-	uxtb	r1, r3
-	ldr	r2, .L4
-	ldrb	r3, [r2]
-	bfi	r3, r1, #1, #1
 	strb	r3, [r2]
 	.loc 1 39 0
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3]
-	ubfx	r3, r3, #2, #1
+	ubfx	r3, r3, #1, #1
 	uxtb	r1, r3
-	ldr	r2, .L4
+	ldr	r2, .L4+4
 	ldrb	r3, [r2]
-	bfi	r3, r1, #2, #1
+	bfi	r3, r1, #1, #1
 	strb	r3, [r2]
 	.loc 1 40 0
 	ldr	r3, [r7, #4]
+	ldrb	r3, [r3]
+	ubfx	r3, r3, #2, #1
+	uxtb	r1, r3
+	ldr	r2, .L4+4
+	ldrb	r3, [r2]
+	bfi	r3, r1, #2, #1
+	strb	r3, [r2]
+	.loc 1 41 0
+	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
 	ubfx	r1, r3, #3, #29
-	ldr	r2, .L4
+	ldr	r2, .L4+4
 	ldr	r3, [r2]
 	bfi	r3, r1, #3, #29
 	str	r3, [r2]
-	.loc 1 41 0
-	ldr	r3, [r7, #4]
-	ldrb	r2, [r3, #4]	@ zero_extendqisi2
-	ldr	r3, .L4
-	strb	r2, [r3, #4]
 	.loc 1 42 0
 	ldr	r3, [r7, #4]
-	ldrb	r2, [r3, #5]	@ zero_extendqisi2
-	ldr	r3, .L4
-	strb	r2, [r3, #5]
+	ldrb	r2, [r3, #4]	@ zero_extendqisi2
+	ldr	r3, .L4+4
+	strb	r2, [r3, #4]
 	.loc 1 43 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #8]
-	ldr	r2, .L4
-	str	r3, [r2, #8]
+	ldrb	r2, [r3, #5]	@ zero_extendqisi2
+	ldr	r3, .L4+4
+	strb	r2, [r3, #5]
 	.loc 1 44 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #12]
-	ldr	r2, .L4
-	str	r3, [r2, #12]
+	ldr	r3, [r3, #8]
+	ldr	r2, .L4+4
+	str	r3, [r2, #8]
 	.loc 1 45 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #16]
-	ldr	r2, .L4
-	str	r3, [r2, #16]
+	ldr	r3, [r3, #12]
+	ldr	r2, .L4+4
+	str	r3, [r2, #12]
 	.loc 1 46 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #20]
-	ldr	r2, .L4
-	str	r3, [r2, #20]
+	ldr	r3, [r3, #16]
+	ldr	r2, .L4+4
+	str	r3, [r2, #16]
 	.loc 1 47 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #24]
-	ldr	r2, .L4
-	str	r3, [r2, #24]
+	ldr	r3, [r3, #20]
+	ldr	r2, .L4+4
+	str	r3, [r2, #20]
 	.loc 1 48 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #28]
-	ldr	r2, .L4
-	str	r3, [r2, #28]
+	ldr	r3, [r3, #24]
+	ldr	r2, .L4+4
+	str	r3, [r2, #24]
 	.loc 1 49 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #32]
-	ldr	r2, .L4
-	str	r3, [r2, #32]
+	ldr	r3, [r3, #28]
+	ldr	r2, .L4+4
+	str	r3, [r2, #28]
 	.loc 1 50 0
 	ldr	r3, [r7, #4]
-	ldrb	r2, [r3, #36]	@ zero_extendqisi2
-	ldr	r3, .L4
-	strb	r2, [r3, #36]
+	ldr	r3, [r3, #32]
+	ldr	r2, .L4+4
+	str	r3, [r2, #32]
 	.loc 1 51 0
 	ldr	r3, [r7, #4]
-	ldrb	r2, [r3, #37]	@ zero_extendqisi2
-	ldr	r3, .L4
-	strb	r2, [r3, #37]
+	ldrb	r2, [r3, #36]	@ zero_extendqisi2
+	ldr	r3, .L4+4
+	strb	r2, [r3, #36]
 	.loc 1 52 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #44]
-	ldr	r2, .L4
-	str	r3, [r2, #44]
+	ldrb	r2, [r3, #37]	@ zero_extendqisi2
+	ldr	r3, .L4+4
+	strb	r2, [r3, #37]
 	.loc 1 53 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #48]
-	ldr	r2, .L4
-	str	r3, [r2, #48]
+	ldr	r3, [r3, #44]
+	ldr	r2, .L4+4
+	str	r3, [r2, #44]
 	.loc 1 54 0
 	ldr	r3, [r7, #4]
-	ldrb	r2, [r3, #52]	@ zero_extendqisi2
-	ldr	r3, .L4
-	strb	r2, [r3, #52]
+	ldr	r3, [r3, #48]
+	ldr	r2, .L4+4
+	str	r3, [r2, #48]
 	.loc 1 55 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #56]
-	ldr	r2, .L4
-	str	r3, [r2, #56]
-	.loc 1 62 0
+	ldrb	r2, [r3, #52]	@ zero_extendqisi2
+	ldr	r3, .L4+4
+	strb	r2, [r3, #52]
+	.loc 1 56 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #60]
-	ldr	r2, .L4
-	str	r3, [r2, #60]
+	ldr	r3, [r3, #56]
+	ldr	r2, .L4+4
+	str	r3, [r2, #56]
 	.loc 1 63 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #64]
-	ldr	r2, .L4
-	str	r3, [r2, #64]
+	ldr	r3, [r3, #60]
+	ldr	r2, .L4+4
+	str	r3, [r2, #60]
 	.loc 1 64 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #68]
-	ldr	r2, .L4
-	str	r3, [r2, #68]
+	ldr	r3, [r3, #64]
+	ldr	r2, .L4+4
+	str	r3, [r2, #64]
 	.loc 1 65 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #72]
-	ldr	r2, .L4
-	str	r3, [r2, #72]
+	ldr	r3, [r3, #68]
+	ldr	r2, .L4+4
+	str	r3, [r2, #68]
 	.loc 1 66 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #76]
-	ldr	r2, .L4
-	str	r3, [r2, #76]
+	ldr	r3, [r3, #72]
+	ldr	r2, .L4+4
+	str	r3, [r2, #72]
 	.loc 1 67 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #80]
-	ldr	r2, .L4
-	str	r3, [r2, #80]
+	ldr	r3, [r3, #76]
+	ldr	r2, .L4+4
+	str	r3, [r2, #76]
 	.loc 1 68 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #84]
-	ldr	r2, .L4
-	str	r3, [r2, #84]
+	ldr	r3, [r3, #80]
+	ldr	r2, .L4+4
+	str	r3, [r2, #80]
 	.loc 1 69 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #88]
-	ldr	r2, .L4
-	str	r3, [r2, #88]
+	ldr	r3, [r3, #84]
+	ldr	r2, .L4+4
+	str	r3, [r2, #84]
 	.loc 1 70 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #92]
-	ldr	r2, .L4
-	str	r3, [r2, #92]
+	ldr	r3, [r3, #88]
+	ldr	r2, .L4+4
+	str	r3, [r2, #88]
 	.loc 1 71 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #96]
-	ldr	r2, .L4
-	str	r3, [r2, #96]
+	ldr	r3, [r3, #92]
+	ldr	r2, .L4+4
+	str	r3, [r2, #92]
 	.loc 1 72 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #100]
-	ldr	r2, .L4
-	str	r3, [r2, #100]
+	ldr	r3, [r3, #96]
+	ldr	r2, .L4+4
+	str	r3, [r2, #96]
 	.loc 1 73 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #104]
-	ldr	r2, .L4
-	str	r3, [r2, #104]
+	ldr	r3, [r3, #100]
+	ldr	r2, .L4+4
+	str	r3, [r2, #100]
 	.loc 1 74 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #108]
-	ldr	r2, .L4
-	str	r3, [r2, #108]
-	.loc 1 77 0
+	ldr	r3, [r3, #104]
+	ldr	r2, .L4+4
+	str	r3, [r2, #104]
+	.loc 1 75 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #112]
-	ldr	r2, .L4
-	str	r3, [r2, #112]
+	ldr	r3, [r3, #108]
+	ldr	r2, .L4+4
+	str	r3, [r2, #108]
 	.loc 1 78 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #116]
-	ldr	r2, .L4
-	str	r3, [r2, #116]
+	ldr	r3, [r3, #112]
+	ldr	r2, .L4+4
+	str	r3, [r2, #112]
 	.loc 1 79 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #120]
-	ldr	r2, .L4
-	str	r3, [r2, #120]
+	ldr	r3, [r3, #116]
+	ldr	r2, .L4+4
+	str	r3, [r2, #116]
 	.loc 1 80 0
 	ldr	r3, [r7, #4]
-	ldr	r3, [r3, #124]
-	ldr	r2, .L4
-	str	r3, [r2, #124]
+	ldr	r3, [r3, #120]
+	ldr	r2, .L4+4
+	str	r3, [r2, #120]
 	.loc 1 81 0
 	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #124]
+	ldr	r2, .L4+4
+	str	r3, [r2, #124]
+	.loc 1 82 0
+	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #128]
-	ldr	r2, .L4
+	ldr	r2, .L4+4
 	str	r3, [r2, #128]
 .L3:
-	.loc 1 83 0
+	.loc 1 84 0
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -254,6 +259,7 @@ SET_RUNNING_TASK:
 .L5:
 	.align	2
 .L4:
+	.word	RUNNING_SCHEDULING_QUEUE_ENTRY
 	.word	RUNNING_TASK
 	.cfi_endproc
 .LFE0:
@@ -267,7 +273,7 @@ SET_RUNNING_TASK:
 	.type	OS_INIT_TASK_QUEUE, %function
 OS_INIT_TASK_QUEUE:
 .LFB1:
-	.loc 1 87 0
+	.loc 1 88 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -279,24 +285,24 @@ OS_INIT_TASK_QUEUE:
 	.cfi_def_cfa_offset 16
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 88 0
+	.loc 1 89 0
 	ldr	r3, .L11
 	ldrb	r3, [r3]	@ zero_extendqisi2
 	cmp	r3, #0
 	bne	.L10
 .LBB2:
-	.loc 1 90 0
+	.loc 1 91 0
 	movs	r3, #0
 	strb	r3, [r7, #7]
-	.loc 1 91 0
+	.loc 1 92 0
 	b	.L8
 .L9:
-	.loc 1 95 0
+	.loc 1 94 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	ldr	r2, .L11+4
 	movs	r1, #0
 	str	r1, [r2, r3, lsl #2]
-	.loc 1 96 0
+	.loc 1 95 0
 	ldrb	r2, [r7, #7]	@ zero_extendqisi2
 	mov	r3, r2
 	lsls	r3, r3, #4
@@ -306,22 +312,22 @@ OS_INIT_TASK_QUEUE:
 	add	r3, r3, r2
 	mov	r0, r3
 	bl	OS_Task_InitTaskEnvironment
-	.loc 1 97 0
+	.loc 1 96 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	adds	r3, r3, #1
 	strb	r3, [r7, #7]
 .L8:
-	.loc 1 91 0
+	.loc 1 92 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	cmp	r3, #4
 	bls	.L9
-	.loc 1 99 0
+	.loc 1 98 0
 	ldr	r3, .L11
 	movs	r2, #1
 	strb	r2, [r3]
 .L10:
 .LBE2:
-	.loc 1 101 0
+	.loc 1 100 0
 	nop
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -333,7 +339,7 @@ OS_INIT_TASK_QUEUE:
 	.align	2
 .L11:
 	.word	bTASK_QUEUE_INITIALIZED
-	.word	pTASK_RUN_QUEUE
+	.word	TASK_SCHEDULING_QUEUE
 	.word	TASK_RUN_QUEUE
 	.cfi_endproc
 .LFE1:
@@ -347,7 +353,7 @@ OS_INIT_TASK_QUEUE:
 	.type	AddToTaskQueue, %function
 AddToTaskQueue:
 .LFB2:
-	.loc 1 103 0
+	.loc 1 102 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -360,22 +366,22 @@ AddToTaskQueue:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 104 0
+	.loc 1 103 0
 	movs	r3, #0
 	strb	r3, [r7, #15]
-	.loc 1 105 0
+	.loc 1 104 0
 	b	.L14
 .L16:
-	.loc 1 109 0
+	.loc 1 108 0
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	adds	r3, r3, #1
 	strb	r3, [r7, #15]
 .L14:
-	.loc 1 105 0
+	.loc 1 104 0
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	cmp	r3, #4
 	bhi	.L15
-	.loc 1 106 0
+	.loc 1 105 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r1, .L19
 	mov	r3, r2
@@ -389,11 +395,11 @@ AddToTaskQueue:
 	cmp	r3, #1
 	beq	.L16
 .L15:
-	.loc 1 112 0
+	.loc 1 111 0
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	cmp	r3, #4
 	bhi	.L17
-	.loc 1 112 0 is_stmt 0 discriminator 1
+	.loc 1 111 0 is_stmt 0 discriminator 1
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r1, .L19
 	mov	r3, r2
@@ -406,7 +412,7 @@ AddToTaskQueue:
 	uxtb	r3, r3
 	cmp	r3, #0
 	bne	.L17
-	.loc 1 114 0 is_stmt 1
+	.loc 1 113 0 is_stmt 1
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3]
@@ -421,7 +427,7 @@ AddToTaskQueue:
 	ldrb	r3, [r2]
 	bfi	r3, r1, #0, #1
 	strb	r3, [r2]
-	.loc 1 115 0
+	.loc 1 114 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r1, .L19
 	mov	r3, r2
@@ -432,7 +438,7 @@ AddToTaskQueue:
 	ldrb	r3, [r2]
 	orr	r3, r3, #2
 	strb	r3, [r2]
-	.loc 1 116 0
+	.loc 1 115 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3]
@@ -447,7 +453,7 @@ AddToTaskQueue:
 	ldrb	r3, [r2]
 	bfi	r3, r1, #2, #1
 	strb	r3, [r2]
-	.loc 1 117 0
+	.loc 1 116 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
@@ -461,7 +467,7 @@ AddToTaskQueue:
 	ldr	r3, [r2]
 	bfi	r3, r1, #3, #29
 	str	r3, [r2]
-	.loc 1 118 0
+	.loc 1 117 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldrb	r0, [r3, #4]	@ zero_extendqisi2
@@ -474,7 +480,7 @@ AddToTaskQueue:
 	adds	r3, r3, #4
 	mov	r2, r0
 	strb	r2, [r3]
-	.loc 1 119 0
+	.loc 1 118 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldrb	r0, [r3, #5]	@ zero_extendqisi2
@@ -487,7 +493,7 @@ AddToTaskQueue:
 	adds	r3, r3, #5
 	mov	r2, r0
 	strb	r2, [r3]
-	.loc 1 120 0
+	.loc 1 119 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #8]
@@ -499,7 +505,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #8
 	str	r1, [r3]
-	.loc 1 121 0
+	.loc 1 120 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #12]
@@ -511,7 +517,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #12
 	str	r1, [r3]
-	.loc 1 122 0
+	.loc 1 121 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #16]
@@ -523,7 +529,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #16
 	str	r1, [r3]
-	.loc 1 123 0
+	.loc 1 122 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #20]
@@ -535,7 +541,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #20
 	str	r1, [r3]
-	.loc 1 124 0
+	.loc 1 123 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #24]
@@ -547,7 +553,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #24
 	str	r1, [r3]
-	.loc 1 125 0
+	.loc 1 124 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #28]
@@ -559,7 +565,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #28
 	str	r1, [r3]
-	.loc 1 126 0
+	.loc 1 125 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #32]
@@ -571,7 +577,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #32
 	str	r1, [r3]
-	.loc 1 127 0
+	.loc 1 126 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldrb	r0, [r3, #36]	@ zero_extendqisi2
@@ -584,7 +590,7 @@ AddToTaskQueue:
 	adds	r3, r3, #36
 	mov	r2, r0
 	strb	r2, [r3]
-	.loc 1 128 0
+	.loc 1 127 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldrb	r0, [r3, #37]	@ zero_extendqisi2
@@ -597,7 +603,7 @@ AddToTaskQueue:
 	adds	r3, r3, #37
 	mov	r2, r0
 	strb	r2, [r3]
-	.loc 1 129 0
+	.loc 1 128 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #44]
@@ -609,7 +615,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #44
 	str	r1, [r3]
-	.loc 1 130 0
+	.loc 1 129 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #48]
@@ -621,7 +627,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #48
 	str	r1, [r3]
-	.loc 1 131 0
+	.loc 1 130 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldrb	r0, [r3, #52]	@ zero_extendqisi2
@@ -634,7 +640,7 @@ AddToTaskQueue:
 	adds	r3, r3, #52
 	mov	r2, r0
 	strb	r2, [r3]
-	.loc 1 132 0
+	.loc 1 131 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #56]
@@ -646,7 +652,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #56
 	str	r1, [r3]
-	.loc 1 139 0
+	.loc 1 138 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #60]
@@ -658,7 +664,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #60
 	str	r1, [r3]
-	.loc 1 140 0
+	.loc 1 139 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #64]
@@ -670,7 +676,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #64
 	str	r1, [r3]
-	.loc 1 141 0
+	.loc 1 140 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #68]
@@ -682,7 +688,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #68
 	str	r1, [r3]
-	.loc 1 142 0
+	.loc 1 141 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #72]
@@ -694,7 +700,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #72
 	str	r1, [r3]
-	.loc 1 143 0
+	.loc 1 142 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #76]
@@ -706,7 +712,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #76
 	str	r1, [r3]
-	.loc 1 144 0
+	.loc 1 143 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #80]
@@ -718,7 +724,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #80
 	str	r1, [r3]
-	.loc 1 145 0
+	.loc 1 144 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #84]
@@ -730,7 +736,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #84
 	str	r1, [r3]
-	.loc 1 146 0
+	.loc 1 145 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #88]
@@ -742,7 +748,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #88
 	str	r1, [r3]
-	.loc 1 147 0
+	.loc 1 146 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #92]
@@ -754,7 +760,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #92
 	str	r1, [r3]
-	.loc 1 148 0
+	.loc 1 147 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #96]
@@ -772,7 +778,7 @@ AddToTaskQueue:
 .L20:
 	adds	r3, r3, #96
 	str	r1, [r3]
-	.loc 1 149 0
+	.loc 1 148 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #100]
@@ -784,7 +790,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #100
 	str	r1, [r3]
-	.loc 1 150 0
+	.loc 1 149 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #104]
@@ -796,7 +802,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #104
 	str	r1, [r3]
-	.loc 1 151 0
+	.loc 1 150 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #108]
@@ -808,7 +814,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #108
 	str	r1, [r3]
-	.loc 1 153 0
+	.loc 1 152 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #112]
@@ -820,7 +826,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #112
 	str	r1, [r3]
-	.loc 1 154 0
+	.loc 1 153 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #116]
@@ -832,7 +838,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #116
 	str	r1, [r3]
-	.loc 1 155 0
+	.loc 1 154 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #120]
@@ -844,7 +850,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #120
 	str	r1, [r3]
-	.loc 1 156 0
+	.loc 1 155 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #124]
@@ -856,7 +862,7 @@ AddToTaskQueue:
 	add	r3, r3, r0
 	adds	r3, r3, #124
 	str	r1, [r3]
-	.loc 1 157 0
+	.loc 1 156 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	ldr	r3, [r7, #4]
 	ldr	r1, [r3, #128]
@@ -869,7 +875,7 @@ AddToTaskQueue:
 	adds	r3, r3, #128
 	str	r1, [r3]
 .L17:
-	.loc 1 159 0
+	.loc 1 158 0
 	ldrb	r2, [r7, #15]	@ zero_extendqisi2
 	mov	r3, r2
 	lsls	r3, r3, #4
@@ -877,7 +883,7 @@ AddToTaskQueue:
 	lsls	r3, r3, #3
 	ldr	r2, .L22
 	add	r3, r3, r2
-	.loc 1 160 0
+	.loc 1 159 0
 	mov	r0, r3
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -904,7 +910,7 @@ AddToTaskQueue:
 	.type	DeleteFromTaskQueue, %function
 DeleteFromTaskQueue:
 .LFB3:
-	.loc 1 162 0
+	.loc 1 161 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -917,159 +923,159 @@ DeleteFromTaskQueue:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 163 0
+	.loc 1 162 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #0, #1
 	strb	r3, [r2]
-	.loc 1 164 0
+	.loc 1 163 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #1, #1
 	strb	r3, [r2]
-	.loc 1 165 0
+	.loc 1 164 0
 	ldr	r2, [r7, #4]
 	ldrb	r3, [r2]
 	bfc	r3, #2, #1
 	strb	r3, [r2]
-	.loc 1 166 0
+	.loc 1 165 0
 	ldr	r2, [r7, #4]
 	ldr	r3, [r2]
 	bfc	r3, #3, #29
 	str	r3, [r2]
-	.loc 1 167 0
+	.loc 1 166 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #4]
-	.loc 1 168 0
+	.loc 1 167 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #5]
-	.loc 1 169 0
+	.loc 1 168 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #8]
-	.loc 1 170 0
+	.loc 1 169 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #12]
-	.loc 1 171 0
+	.loc 1 170 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #16]
-	.loc 1 172 0
+	.loc 1 171 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #20]
-	.loc 1 173 0
+	.loc 1 172 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #24]
-	.loc 1 174 0
+	.loc 1 173 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #28]
-	.loc 1 175 0
+	.loc 1 174 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #32]
-	.loc 1 176 0
+	.loc 1 175 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #36]
-	.loc 1 177 0
+	.loc 1 176 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #37]
-	.loc 1 178 0
+	.loc 1 177 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #44]
-	.loc 1 179 0
+	.loc 1 178 0
 	ldr	r3, [r7, #4]
 	ldr	r2, .L25
 	str	r2, [r3, #48]
-	.loc 1 180 0
+	.loc 1 179 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	strb	r2, [r3, #52]
-	.loc 1 181 0
+	.loc 1 180 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #56]
-	.loc 1 188 0
+	.loc 1 187 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #60]
-	.loc 1 189 0
+	.loc 1 188 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #64]
-	.loc 1 190 0
+	.loc 1 189 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #68]
-	.loc 1 191 0
+	.loc 1 190 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #72]
-	.loc 1 192 0
+	.loc 1 191 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #76]
-	.loc 1 193 0
+	.loc 1 192 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #80]
-	.loc 1 194 0
+	.loc 1 193 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #84]
-	.loc 1 195 0
+	.loc 1 194 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #88]
-	.loc 1 196 0
+	.loc 1 195 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #92]
-	.loc 1 197 0
+	.loc 1 196 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #96]
-	.loc 1 198 0
+	.loc 1 197 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #100]
-	.loc 1 199 0
+	.loc 1 198 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #104]
-	.loc 1 200 0
+	.loc 1 199 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #108]
-	.loc 1 204 0
+	.loc 1 203 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #112]
-	.loc 1 205 0
+	.loc 1 204 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #116]
-	.loc 1 206 0
+	.loc 1 205 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #120]
-	.loc 1 207 0
+	.loc 1 206 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #124]
-	.loc 1 208 0
+	.loc 1 207 0
 	ldr	r3, [r7, #4]
 	movs	r2, #0
 	str	r2, [r3, #128]
-	.loc 1 209 0
+	.loc 1 208 0
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1096,7 +1102,7 @@ DeleteFromTaskQueue:
 	.type	GetFromTaskQueue, %function
 GetFromTaskQueue:
 .LFB4:
-	.loc 1 211 0
+	.loc 1 210 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1109,9 +1115,10 @@ GetFromTaskQueue:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 212 0
+	.loc 1 211 0
 	ldr	r3, [r7, #4]
-	.loc 1 213 0
+	ldr	r3, [r3]
+	.loc 1 212 0
 	mov	r0, r3
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1126,15 +1133,15 @@ GetFromTaskQueue:
 .LFE4:
 	.size	GetFromTaskQueue, .-GetFromTaskQueue
 	.align	1
-	.global	GetFromLinkList
+	.global	GetFromSchedulingQueue
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	GetFromLinkList, %function
-GetFromLinkList:
+	.type	GetFromSchedulingQueue, %function
+GetFromSchedulingQueue:
 .LFB5:
-	.loc 1 215 0
+	.loc 1 214 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1148,11 +1155,12 @@ GetFromLinkList:
 	.cfi_def_cfa_register 7
 	mov	r3, r0
 	strb	r3, [r7, #7]
-	.loc 1 216 0
+	.loc 1 215 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
+	lsls	r3, r3, #2
 	ldr	r2, .L31
-	ldr	r3, [r2, r3, lsl #2]
-	.loc 1 217 0
+	add	r3, r3, r2
+	.loc 1 216 0
 	mov	r0, r3
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1166,20 +1174,20 @@ GetFromLinkList:
 .L32:
 	.align	2
 .L31:
-	.word	pTASK_RUN_QUEUE
+	.word	TASK_SCHEDULING_QUEUE
 	.cfi_endproc
 .LFE5:
-	.size	GetFromLinkList, .-GetFromLinkList
+	.size	GetFromSchedulingQueue, .-GetFromSchedulingQueue
 	.align	1
-	.global	DeleteFromLinkList
+	.global	DeleteFromSchedulingQueue
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	DeleteFromLinkList, %function
-DeleteFromLinkList:
+	.type	DeleteFromSchedulingQueue, %function
+DeleteFromSchedulingQueue:
 .LFB6:
-	.loc 1 220 0
+	.loc 1 219 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1191,14 +1199,12 @@ DeleteFromLinkList:
 	.cfi_def_cfa_offset 16
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	mov	r3, r0
-	strb	r3, [r7, #7]
+	str	r0, [r7, #4]
+	.loc 1 220 0
+	ldr	r3, [r7, #4]
+	movs	r2, #0
+	str	r2, [r3]
 	.loc 1 221 0
-	ldrb	r3, [r7, #7]	@ zero_extendqisi2
-	ldr	r2, .L34
-	movs	r1, #0
-	str	r1, [r2, r3, lsl #2]
-	.loc 1 222 0
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1209,23 +1215,19 @@ DeleteFromLinkList:
 	.cfi_restore 7
 	.cfi_def_cfa_offset 0
 	bx	lr
-.L35:
-	.align	2
-.L34:
-	.word	pTASK_RUN_QUEUE
 	.cfi_endproc
 .LFE6:
-	.size	DeleteFromLinkList, .-DeleteFromLinkList
+	.size	DeleteFromSchedulingQueue, .-DeleteFromSchedulingQueue
 	.align	1
-	.global	AddToLinkList
+	.global	AddToSchedulingQueue
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	AddToLinkList, %function
-AddToLinkList:
+	.type	AddToSchedulingQueue, %function
+AddToSchedulingQueue:
 .LFB7:
-	.loc 1 224 0
+	.loc 1 223 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1238,57 +1240,48 @@ AddToLinkList:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 232 0
+	.loc 1 231 0
 	movs	r3, #0
 	strb	r3, [r7, #15]
-	.loc 1 233 0
+	.loc 1 232 0
 	movs	r3, #0
 	strb	r3, [r7, #14]
 	.loc 1 234 0
-	movs	r3, #0
-	str	r3, [r7, #8]
-	.loc 1 236 0
-	b	.L37
-.L40:
-	.loc 1 239 0
+	b	.L35
+.L38:
+	.loc 1 237 0
 	ldrb	r3, [r7, #14]	@ zero_extendqisi2
-	ldr	r2, .L42
+	ldr	r2, .L41
 	ldr	r3, [r2, r3, lsl #2]
 	cmp	r3, #0
-	bne	.L38
-	.loc 1 241 0
+	bne	.L36
+	.loc 1 239 0
 	ldrb	r3, [r7, #14]	@ zero_extendqisi2
-	ldr	r1, .L42
+	ldr	r1, .L41
 	ldr	r2, [r7, #4]
 	str	r2, [r1, r3, lsl #2]
-	.loc 1 242 0
+	.loc 1 240 0
 	movs	r3, #1
 	strb	r3, [r7, #15]
-	.loc 1 243 0
-	ldrb	r3, [r7, #14]	@ zero_extendqisi2
-	lsls	r3, r3, #2
-	ldr	r2, .L42
-	add	r3, r3, r2
-	str	r3, [r7, #8]
-.L38:
-	.loc 1 245 0
+.L36:
+	.loc 1 242 0
 	ldrb	r3, [r7, #14]	@ zero_extendqisi2
 	adds	r3, r3, #1
 	strb	r3, [r7, #14]
-.L37:
-	.loc 1 236 0
+.L35:
+	.loc 1 234 0
 	ldrb	r3, [r7, #14]	@ zero_extendqisi2
 	cmp	r3, #4
-	bhi	.L39
-	.loc 1 237 0
+	bhi	.L40
+	.loc 1 235 0
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	cmp	r3, #0
-	beq	.L40
-.L39:
-	.loc 1 247 0
-	ldr	r3, [r7, #8]
-	.loc 1 248 0
-	mov	r0, r3
+	beq	.L38
+	.loc 1 244 0
+	nop
+.L40:
+	nop
+	.loc 1 245 0
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
 	mov	sp, r7
@@ -1298,23 +1291,23 @@ AddToLinkList:
 	.cfi_restore 7
 	.cfi_def_cfa_offset 0
 	bx	lr
-.L43:
-	.align	2
 .L42:
-	.word	pTASK_RUN_QUEUE
+	.align	2
+.L41:
+	.word	TASK_SCHEDULING_QUEUE
 	.cfi_endproc
 .LFE7:
-	.size	AddToLinkList, .-AddToLinkList
+	.size	AddToSchedulingQueue, .-AddToSchedulingQueue
 	.align	1
-	.global	UpdateLinkList
+	.global	UpdateSchedulingQueue
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	UpdateLinkList, %function
-UpdateLinkList:
+	.type	UpdateSchedulingQueue, %function
+UpdateSchedulingQueue:
 .LFB8:
-	.loc 1 250 0
+	.loc 1 247 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1326,75 +1319,75 @@ UpdateLinkList:
 	.cfi_def_cfa_offset 16
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 252 0
+	.loc 1 249 0
 	movs	r3, #0
 	strb	r3, [r7, #7]
 	movs	r3, #0
 	strb	r3, [r7, #6]
-	.loc 1 254 0
-	b	.L45
-.L50:
-	.loc 1 256 0
+	.loc 1 251 0
+	b	.L44
+.L49:
+	.loc 1 253 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
-	ldr	r2, .L51
+	ldr	r2, .L50
 	ldr	r3, [r2, r3, lsl #2]
 	cmp	r3, #0
-	bne	.L46
-	.loc 1 260 0
+	bne	.L45
+	.loc 1 257 0
 	ldrb	r3, [r7, #7]
 	strb	r3, [r7, #6]
-	.loc 1 261 0
-	b	.L47
-.L49:
-	.loc 1 263 0
+	.loc 1 258 0
+	b	.L46
+.L48:
+	.loc 1 260 0
 	ldrb	r3, [r7, #6]	@ zero_extendqisi2
 	adds	r3, r3, #1
 	strb	r3, [r7, #6]
+.L46:
+	.loc 1 258 0
+	ldrb	r3, [r7, #6]	@ zero_extendqisi2
+	cmp	r3, #4
+	bhi	.L47
+	.loc 1 258 0 is_stmt 0 discriminator 1
+	ldrb	r3, [r7, #6]	@ zero_extendqisi2
+	ldr	r2, .L50
+	ldr	r3, [r2, r3, lsl #2]
+	cmp	r3, #0
+	beq	.L48
 .L47:
-	.loc 1 261 0
+	.loc 1 262 0 is_stmt 1
 	ldrb	r3, [r7, #6]	@ zero_extendqisi2
 	cmp	r3, #4
-	bhi	.L48
-	.loc 1 261 0 is_stmt 0 discriminator 1
+	bhi	.L45
+	.loc 1 262 0 is_stmt 0 discriminator 1
 	ldrb	r3, [r7, #6]	@ zero_extendqisi2
-	ldr	r2, .L51
+	ldr	r2, .L50
 	ldr	r3, [r2, r3, lsl #2]
 	cmp	r3, #0
-	beq	.L49
-.L48:
-	.loc 1 265 0 is_stmt 1
-	ldrb	r3, [r7, #6]	@ zero_extendqisi2
-	cmp	r3, #4
-	bhi	.L46
-	.loc 1 265 0 is_stmt 0 discriminator 1
-	ldrb	r3, [r7, #6]	@ zero_extendqisi2
-	ldr	r2, .L51
-	ldr	r3, [r2, r3, lsl #2]
-	cmp	r3, #0
-	beq	.L46
-	.loc 1 267 0 is_stmt 1
+	beq	.L45
+	.loc 1 264 0 is_stmt 1
 	ldrb	r2, [r7, #6]	@ zero_extendqisi2
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
-	ldr	r1, .L51
+	ldr	r1, .L50
 	ldr	r2, [r1, r2, lsl #2]
-	ldr	r1, .L51
+	ldr	r1, .L50
 	str	r2, [r1, r3, lsl #2]
-	.loc 1 268 0
+	.loc 1 265 0
 	ldrb	r3, [r7, #6]	@ zero_extendqisi2
-	ldr	r2, .L51
+	ldr	r2, .L50
 	movs	r1, #0
 	str	r1, [r2, r3, lsl #2]
-.L46:
-	.loc 1 271 0
+.L45:
+	.loc 1 268 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	adds	r3, r3, #1
 	strb	r3, [r7, #7]
-.L45:
-	.loc 1 254 0
+.L44:
+	.loc 1 251 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	cmp	r3, #4
-	bls	.L50
-	.loc 1 273 0
+	bls	.L49
+	.loc 1 270 0
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1405,13 +1398,13 @@ UpdateLinkList:
 	.cfi_restore 7
 	.cfi_def_cfa_offset 0
 	bx	lr
-.L52:
-	.align	2
 .L51:
-	.word	pTASK_RUN_QUEUE
+	.align	2
+.L50:
+	.word	TASK_SCHEDULING_QUEUE
 	.cfi_endproc
 .LFE8:
-	.size	UpdateLinkList, .-UpdateLinkList
+	.size	UpdateSchedulingQueue, .-UpdateSchedulingQueue
 	.align	1
 	.global	GetIdleTask
 	.syntax unified
@@ -1421,7 +1414,7 @@ UpdateLinkList:
 	.type	GetIdleTask, %function
 GetIdleTask:
 .LFB9:
-	.loc 1 277 0
+	.loc 1 274 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1431,9 +1424,9 @@ GetIdleTask:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 278 0
-	ldr	r3, .L55
-	.loc 1 279 0
+	.loc 1 275 0
+	ldr	r3, .L54
+	.loc 1 276 0
 	mov	r0, r3
 	mov	sp, r7
 	.cfi_def_cfa_register 13
@@ -1442,9 +1435,9 @@ GetIdleTask:
 	.cfi_restore 7
 	.cfi_def_cfa_offset 0
 	bx	lr
-.L56:
-	.align	2
 .L55:
+	.align	2
+.L54:
 	.word	TASK_IDLE_QUEUE
 	.cfi_endproc
 .LFE9:
@@ -1458,7 +1451,7 @@ GetIdleTask:
 	.type	AddToIdleTaskQueue, %function
 AddToIdleTaskQueue:
 .LFB10:
-	.loc 1 281 0
+	.loc 1 278 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1471,209 +1464,209 @@ AddToIdleTaskQueue:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 283 0
-	ldr	r3, .L60
+	.loc 1 280 0
+	ldr	r3, .L59
 	ldrb	r3, [r3]	@ zero_extendqisi2
 	and	r3, r3, #4
 	uxtb	r3, r3
 	cmp	r3, #0
-	bne	.L59
-	.loc 1 285 0
+	bne	.L58
+	.loc 1 282 0
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3]
 	ubfx	r3, r3, #0, #1
 	uxtb	r1, r3
-	ldr	r2, .L60
+	ldr	r2, .L59
 	ldrb	r3, [r2]
 	bfi	r3, r1, #0, #1
 	strb	r3, [r2]
-	.loc 1 286 0
+	.loc 1 283 0
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3]
 	ubfx	r3, r3, #1, #1
 	uxtb	r1, r3
-	ldr	r2, .L60
+	ldr	r2, .L59
 	ldrb	r3, [r2]
 	bfi	r3, r1, #1, #1
 	strb	r3, [r2]
-	.loc 1 287 0
+	.loc 1 284 0
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3]
 	ubfx	r3, r3, #2, #1
 	uxtb	r1, r3
-	ldr	r2, .L60
+	ldr	r2, .L59
 	ldrb	r3, [r2]
 	bfi	r3, r1, #2, #1
 	strb	r3, [r2]
-	.loc 1 288 0
+	.loc 1 285 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
 	ubfx	r1, r3, #3, #29
-	ldr	r2, .L60
+	ldr	r2, .L59
 	ldr	r3, [r2]
 	bfi	r3, r1, #3, #29
 	str	r3, [r2]
-	.loc 1 289 0
+	.loc 1 286 0
 	ldr	r3, [r7, #4]
 	ldrb	r2, [r3, #4]	@ zero_extendqisi2
-	ldr	r3, .L60
+	ldr	r3, .L59
 	strb	r2, [r3, #4]
-	.loc 1 290 0
+	.loc 1 287 0
 	ldr	r3, [r7, #4]
 	ldrb	r2, [r3, #5]	@ zero_extendqisi2
-	ldr	r3, .L60
+	ldr	r3, .L59
 	strb	r2, [r3, #5]
-	.loc 1 291 0
+	.loc 1 288 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #8]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #8]
-	.loc 1 292 0
+	.loc 1 289 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #12]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #12]
-	.loc 1 293 0
+	.loc 1 290 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #16]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #16]
-	.loc 1 294 0
+	.loc 1 291 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #20]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #20]
-	.loc 1 295 0
+	.loc 1 292 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #24]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #24]
-	.loc 1 296 0
+	.loc 1 293 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #28]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #28]
-	.loc 1 297 0
+	.loc 1 294 0
 	ldr	r3, [r7, #4]
 	ldrb	r2, [r3, #36]	@ zero_extendqisi2
-	ldr	r3, .L60
+	ldr	r3, .L59
 	strb	r2, [r3, #36]
-	.loc 1 298 0
+	.loc 1 295 0
 	ldr	r3, [r7, #4]
 	ldrb	r2, [r3, #37]	@ zero_extendqisi2
-	ldr	r3, .L60
+	ldr	r3, .L59
 	strb	r2, [r3, #37]
-	.loc 1 299 0
+	.loc 1 296 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #44]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #44]
-	.loc 1 300 0
+	.loc 1 297 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #48]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #48]
-	.loc 1 301 0
-	ldr	r3, .L60
+	.loc 1 298 0
+	ldr	r3, .L59
 	movs	r2, #2
 	strb	r2, [r3, #52]
-	.loc 1 302 0
+	.loc 1 299 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #56]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #56]
-	.loc 1 309 0
+	.loc 1 306 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #60]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #60]
-	.loc 1 310 0
+	.loc 1 307 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #64]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #64]
-	.loc 1 311 0
+	.loc 1 308 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #68]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #68]
-	.loc 1 312 0
+	.loc 1 309 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #72]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #72]
-	.loc 1 313 0
+	.loc 1 310 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #76]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #76]
-	.loc 1 314 0
+	.loc 1 311 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #80]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #80]
-	.loc 1 315 0
+	.loc 1 312 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #84]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #84]
-	.loc 1 316 0
+	.loc 1 313 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #88]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #88]
-	.loc 1 317 0
+	.loc 1 314 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #92]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #92]
-	.loc 1 318 0
+	.loc 1 315 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #96]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #96]
-	.loc 1 319 0
+	.loc 1 316 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #100]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #100]
-	.loc 1 320 0
+	.loc 1 317 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #104]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #104]
-	.loc 1 321 0
+	.loc 1 318 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #108]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #108]
-	.loc 1 325 0
+	.loc 1 322 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #112]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #112]
-	.loc 1 326 0
+	.loc 1 323 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #116]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #116]
-	.loc 1 327 0
+	.loc 1 324 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #120]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #120]
-	.loc 1 328 0
+	.loc 1 325 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #124]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #124]
-	.loc 1 329 0
+	.loc 1 326 0
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #128]
-	ldr	r2, .L60
+	ldr	r2, .L59
 	str	r3, [r2, #128]
-.L59:
-	.loc 1 331 0
+.L58:
+	.loc 1 328 0
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1684,9 +1677,9 @@ AddToIdleTaskQueue:
 	.cfi_restore 7
 	.cfi_def_cfa_offset 0
 	bx	lr
-.L61:
-	.align	2
 .L60:
+	.align	2
+.L59:
 	.word	TASK_IDLE_QUEUE
 	.cfi_endproc
 .LFE10:
@@ -1700,7 +1693,7 @@ AddToIdleTaskQueue:
 	.type	GetRunningTask, %function
 GetRunningTask:
 .LFB11:
-	.loc 1 333 0
+	.loc 1 330 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1710,9 +1703,9 @@ GetRunningTask:
 	.cfi_offset 7, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 1 334 0
-	ldr	r3, .L64
-	.loc 1 335 0
+	.loc 1 331 0
+	ldr	r3, .L63
+	.loc 1 332 0
 	mov	r0, r3
 	mov	sp, r7
 	.cfi_def_cfa_register 13
@@ -1721,13 +1714,51 @@ GetRunningTask:
 	.cfi_restore 7
 	.cfi_def_cfa_offset 0
 	bx	lr
-.L65:
-	.align	2
 .L64:
+	.align	2
+.L63:
 	.word	RUNNING_TASK
 	.cfi_endproc
 .LFE11:
 	.size	GetRunningTask, .-GetRunningTask
+	.align	1
+	.global	GetRunningSchedulingQueueElementPtr
+	.syntax unified
+	.thumb
+	.thumb_func
+	.fpu softvfp
+	.type	GetRunningSchedulingQueueElementPtr, %function
+GetRunningSchedulingQueueElementPtr:
+.LFB12:
+	.loc 1 334 0
+	.cfi_startproc
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	@ link register save eliminated.
+	push	{r7}
+	.cfi_def_cfa_offset 4
+	.cfi_offset 7, -4
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	.loc 1 335 0
+	ldr	r3, .L67
+	ldr	r3, [r3]
+	.loc 1 336 0
+	mov	r0, r3
+	mov	sp, r7
+	.cfi_def_cfa_register 13
+	@ sp needed
+	pop	{r7}
+	.cfi_restore 7
+	.cfi_def_cfa_offset 0
+	bx	lr
+.L68:
+	.align	2
+.L67:
+	.word	RUNNING_SCHEDULING_QUEUE_ENTRY
+	.cfi_endproc
+.LFE12:
+	.size	GetRunningSchedulingQueueElementPtr, .-GetRunningSchedulingQueueElementPtr
 	.align	1
 	.global	OS_INIT_TASK
 	.syntax unified
@@ -1736,7 +1767,7 @@ GetRunningTask:
 	.fpu softvfp
 	.type	OS_INIT_TASK, %function
 OS_INIT_TASK:
-.LFB12:
+.LFB13:
 	.loc 1 349 0
 	.cfi_startproc
 	@ args = 24, pretend = 0, frame = 16
@@ -1760,7 +1791,7 @@ OS_INIT_TASK:
 	.loc 1 351 0
 	ldr	r3, [r7, #12]
 	cmp	r3, #0
-	beq	.L67
+	beq	.L70
 	.loc 1 353 0
 	ldr	r2, [r7, #12]
 	ldrb	r3, [r2]
@@ -1800,7 +1831,7 @@ OS_INIT_TASK:
 	str	r2, [r3, #20]
 	.loc 1 363 0
 	ldr	r3, [r7, #12]
-	ldr	r2, .L73
+	ldr	r2, .L74
 	str	r2, [r3, #24]
 	.loc 1 365 0
 	ldrb	r3, [r7, #6]
@@ -1812,68 +1843,57 @@ OS_INIT_TASK:
 	strb	r3, [r2]
 	.loc 1 366 0
 	ldr	r3, [r7, #12]
-	ldr	r2, .L73+4
+	ldr	r2, .L74+4
 	str	r2, [r3, #48]
-	.loc 1 369 0
-	ldrb	r3, [r7, #6]	@ zero_extendqisi2
-	cmp	r3, #0
-	beq	.L68
-	.loc 1 371 0
-	ldr	r3, [r7, #12]
-	movs	r2, #3
-	strb	r2, [r3, #52]
-	b	.L69
-.L68:
-	.loc 1 375 0
+	.loc 1 367 0
 	movs	r1, #0
 	ldr	r0, [r7, #12]
 	bl	task_state_request
-	.loc 1 376 0
+	.loc 1 368 0
 	movs	r1, #1
 	ldr	r0, [r7, #12]
 	bl	task_state_request
-.L69:
-	.loc 1 378 0
+	.loc 1 369 0
 	ldr	r3, [r7, #32]
 	cmp	r3, #200
-	bls	.L70
-	.loc 1 380 0
+	bls	.L71
+	.loc 1 371 0
 	movs	r3, #200
 	str	r3, [r7, #32]
-.L70:
-	.loc 1 384 0
+.L71:
+	.loc 1 375 0
 	ldr	r3, [r7, #12]
 	ldr	r2, [r7, #28]
 	str	r2, [r3, #116]
-	.loc 1 385 0
+	.loc 1 376 0
 	ldr	r3, [r7, #12]
 	ldr	r2, [r7, #28]
 	str	r2, [r3, #120]
-	.loc 1 386 0
+	.loc 1 377 0
 	ldr	r3, [r7, #32]
 	subs	r3, r3, #1
 	ldr	r2, [r7, #28]
 	add	r2, r2, r3
 	ldr	r3, [r7, #12]
 	str	r2, [r3, #128]
-	.loc 1 387 0
+	.loc 1 378 0
 	ldr	r3, [r7, #12]
 	ldr	r2, [r7, #32]
 	str	r2, [r3, #124]
-	.loc 1 389 0
+	.loc 1 380 0
 	ldr	r3, [r7, #12]
 	ldr	r2, [r3, #128]
 	ldr	r3, [r7, #12]
 	str	r2, [r3, #112]
-	.loc 1 395 0
-	b	.L72
-.L67:
-	.loc 1 393 0
+	.loc 1 386 0
+	b	.L73
+.L70:
+	.loc 1 384 0
 	movs	r1, #9
 	movs	r0, #2
 	bl	OS_SET_SW_BUG
-.L72:
-	.loc 1 395 0
+.L73:
+	.loc 1 386 0
 	nop
 	adds	r7, r7, #16
 	.cfi_def_cfa_offset 8
@@ -1881,13 +1901,13 @@ OS_INIT_TASK:
 	.cfi_def_cfa_register 13
 	@ sp needed
 	pop	{r7, pc}
-.L74:
+.L75:
 	.align	2
-.L73:
+.L74:
 	.word	100000
 	.word	task_state_request
 	.cfi_endproc
-.LFE12:
+.LFE13:
 	.size	OS_INIT_TASK, .-OS_INIT_TASK
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
@@ -1895,18 +1915,17 @@ OS_INIT_TASK:
 	.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
 	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x897
+	.4byte	0x92d
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF650
+	.4byte	.LASF661
 	.byte	0x1
-	.4byte	.LASF651
-	.4byte	.LASF652
+	.4byte	.LASF662
+	.4byte	.LASF663
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -2131,36 +2150,36 @@ OS_INIT_TASK:
 	.4byte	.LASF565
 	.byte	0x8
 	.byte	0x5
-	.byte	0x16
+	.byte	0x17
 	.4byte	0x207
 	.uleb128 0xd
 	.4byte	.LASF562
 	.byte	0x5
-	.byte	0x18
+	.byte	0x19
 	.4byte	0x42
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF563
 	.byte	0x5
-	.byte	0x19
+	.byte	0x1a
 	.4byte	0x42
 	.byte	0x4
 	.byte	0
 	.uleb128 0x2
 	.4byte	.LASF564
 	.byte	0x5
-	.byte	0x1b
+	.byte	0x1c
 	.4byte	0x1e2
 	.uleb128 0xc
 	.4byte	.LASF566
 	.byte	0x88
 	.byte	0x5
-	.byte	0x1d
+	.byte	0x1e
 	.4byte	0x3f4
 	.uleb128 0xe
 	.4byte	.LASF567
 	.byte	0x5
-	.byte	0x1f
+	.byte	0x20
 	.4byte	0x3f4
 	.byte	0x4
 	.byte	0x1
@@ -2169,7 +2188,7 @@ OS_INIT_TASK:
 	.uleb128 0xe
 	.4byte	.LASF568
 	.byte	0x5
-	.byte	0x20
+	.byte	0x21
 	.4byte	0x3f4
 	.byte	0x4
 	.byte	0x1
@@ -2178,7 +2197,7 @@ OS_INIT_TASK:
 	.uleb128 0xe
 	.4byte	.LASF569
 	.byte	0x5
-	.byte	0x21
+	.byte	0x22
 	.4byte	0x3f4
 	.byte	0x4
 	.byte	0x1
@@ -2187,7 +2206,7 @@ OS_INIT_TASK:
 	.uleb128 0xe
 	.4byte	.LASF570
 	.byte	0x5
-	.byte	0x22
+	.byte	0x23
 	.4byte	0x3f4
 	.byte	0x4
 	.byte	0x1d
@@ -2196,211 +2215,211 @@ OS_INIT_TASK:
 	.uleb128 0xd
 	.4byte	.LASF571
 	.byte	0x5
-	.byte	0x23
+	.byte	0x24
 	.4byte	0x29
 	.byte	0x4
 	.uleb128 0xd
 	.4byte	.LASF572
 	.byte	0x5
-	.byte	0x24
+	.byte	0x25
 	.4byte	0x29
 	.byte	0x5
 	.uleb128 0xd
 	.4byte	.LASF573
 	.byte	0x5
-	.byte	0x25
+	.byte	0x26
 	.4byte	0x42
 	.byte	0x8
 	.uleb128 0xd
 	.4byte	.LASF574
 	.byte	0x5
-	.byte	0x26
+	.byte	0x27
 	.4byte	0x42
 	.byte	0xc
 	.uleb128 0xd
 	.4byte	.LASF575
 	.byte	0x5
-	.byte	0x27
+	.byte	0x28
 	.4byte	0x42
 	.byte	0x10
 	.uleb128 0xd
 	.4byte	.LASF576
 	.byte	0x5
-	.byte	0x28
+	.byte	0x29
 	.4byte	0x42
 	.byte	0x14
 	.uleb128 0xd
 	.4byte	.LASF577
 	.byte	0x5
-	.byte	0x29
+	.byte	0x2a
 	.4byte	0x42
 	.byte	0x18
 	.uleb128 0xd
 	.4byte	.LASF562
 	.byte	0x5
-	.byte	0x2a
+	.byte	0x2b
 	.4byte	0x42
 	.byte	0x1c
 	.uleb128 0xd
 	.4byte	.LASF578
 	.byte	0x5
-	.byte	0x2b
+	.byte	0x2c
 	.4byte	0x42
 	.byte	0x20
 	.uleb128 0xd
 	.4byte	.LASF579
 	.byte	0x5
-	.byte	0x2c
+	.byte	0x2d
 	.4byte	0x29
 	.byte	0x24
 	.uleb128 0xd
 	.4byte	.LASF580
 	.byte	0x5
-	.byte	0x2d
+	.byte	0x2e
 	.4byte	0x29
 	.byte	0x25
 	.uleb128 0xd
 	.4byte	.LASF581
 	.byte	0x5
-	.byte	0x2e
+	.byte	0x2f
 	.4byte	0x42
 	.byte	0x28
 	.uleb128 0xf
 	.ascii	"fp\000"
 	.byte	0x5
-	.byte	0x2f
+	.byte	0x30
 	.4byte	0x19f
 	.byte	0x2c
 	.uleb128 0xd
 	.4byte	.LASF582
 	.byte	0x5
-	.byte	0x30
+	.byte	0x31
 	.4byte	0x1bd
 	.byte	0x30
 	.uleb128 0xd
 	.4byte	.LASF583
 	.byte	0x5
-	.byte	0x31
+	.byte	0x32
 	.4byte	0x194
 	.byte	0x34
 	.uleb128 0xd
 	.4byte	.LASF584
 	.byte	0x5
-	.byte	0x32
+	.byte	0x33
 	.4byte	0x3fb
 	.byte	0x38
 	.uleb128 0xf
 	.ascii	"r0\000"
 	.byte	0x5
-	.byte	0x39
+	.byte	0x3a
 	.4byte	0x42
 	.byte	0x3c
 	.uleb128 0xf
 	.ascii	"r1\000"
 	.byte	0x5
-	.byte	0x3a
+	.byte	0x3b
 	.4byte	0x42
 	.byte	0x40
 	.uleb128 0xf
 	.ascii	"r2\000"
 	.byte	0x5
-	.byte	0x3b
+	.byte	0x3c
 	.4byte	0x42
 	.byte	0x44
 	.uleb128 0xf
 	.ascii	"r3\000"
 	.byte	0x5
-	.byte	0x3c
+	.byte	0x3d
 	.4byte	0x42
 	.byte	0x48
 	.uleb128 0xf
 	.ascii	"r4\000"
 	.byte	0x5
-	.byte	0x3d
+	.byte	0x3e
 	.4byte	0x42
 	.byte	0x4c
 	.uleb128 0xf
 	.ascii	"r5\000"
 	.byte	0x5
-	.byte	0x3e
+	.byte	0x3f
 	.4byte	0x42
 	.byte	0x50
 	.uleb128 0xf
 	.ascii	"r6\000"
 	.byte	0x5
-	.byte	0x3f
+	.byte	0x40
 	.4byte	0x42
 	.byte	0x54
 	.uleb128 0xf
 	.ascii	"r7\000"
 	.byte	0x5
-	.byte	0x40
+	.byte	0x41
 	.4byte	0x42
 	.byte	0x58
 	.uleb128 0xf
 	.ascii	"r8\000"
 	.byte	0x5
-	.byte	0x41
+	.byte	0x42
 	.4byte	0x42
 	.byte	0x5c
 	.uleb128 0xf
 	.ascii	"r9\000"
 	.byte	0x5
-	.byte	0x42
+	.byte	0x43
 	.4byte	0x42
 	.byte	0x60
 	.uleb128 0xf
 	.ascii	"r10\000"
 	.byte	0x5
-	.byte	0x43
+	.byte	0x44
 	.4byte	0x42
 	.byte	0x64
 	.uleb128 0xf
 	.ascii	"r11\000"
 	.byte	0x5
-	.byte	0x44
+	.byte	0x45
 	.4byte	0x42
 	.byte	0x68
 	.uleb128 0xf
 	.ascii	"r12\000"
 	.byte	0x5
-	.byte	0x45
+	.byte	0x46
 	.4byte	0x42
 	.byte	0x6c
 	.uleb128 0xd
 	.4byte	.LASF585
 	.byte	0x5
-	.byte	0x47
+	.byte	0x48
 	.4byte	0x401
 	.byte	0x70
 	.uleb128 0xd
 	.4byte	.LASF586
 	.byte	0x5
-	.byte	0x48
+	.byte	0x49
 	.4byte	0x401
 	.byte	0x74
 	.uleb128 0xd
 	.4byte	.LASF587
 	.byte	0x5
-	.byte	0x49
+	.byte	0x4a
 	.4byte	0x401
 	.byte	0x78
 	.uleb128 0xd
 	.4byte	.LASF588
 	.byte	0x5
-	.byte	0x4a
+	.byte	0x4b
 	.4byte	0x42
 	.byte	0x7c
 	.uleb128 0xd
 	.4byte	.LASF589
 	.byte	0x5
-	.byte	0x4b
+	.byte	0x4c
 	.4byte	0x401
 	.byte	0x80
 	.uleb128 0xd
 	.4byte	.LASF590
 	.byte	0x5
-	.byte	0x4c
+	.byte	0x4d
 	.4byte	0x15f
 	.byte	0x84
 	.byte	0
@@ -2417,58 +2436,51 @@ OS_INIT_TASK:
 	.uleb128 0x2
 	.4byte	.LASF592
 	.byte	0x5
-	.byte	0x4e
+	.byte	0x4f
 	.4byte	0x212
+	.uleb128 0x2
+	.4byte	.LASF593
+	.byte	0x5
+	.byte	0x50
+	.4byte	0x41d
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x407
 	.uleb128 0x10
-	.4byte	0x422
-	.4byte	0x422
+	.4byte	0x41d
+	.4byte	0x433
 	.uleb128 0x11
 	.4byte	0x3f4
 	.byte	0x4
 	.byte	0
-	.uleb128 0x7
-	.byte	0x4
-	.4byte	0x407
 	.uleb128 0x12
-	.4byte	.LASF594
-	.byte	0x5
-	.byte	0x59
-	.4byte	0x412
-	.uleb128 0x2
-	.4byte	.LASF593
+	.4byte	.LASF595
 	.byte	0x5
 	.byte	0x5b
+	.4byte	0x423
+	.uleb128 0x2
+	.4byte	.LASF594
+	.byte	0x5
+	.byte	0x5d
 	.4byte	0x3f4
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x44f
+	.4byte	0x45a
 	.uleb128 0x13
 	.4byte	0x3f4
 	.2byte	0x270f
 	.byte	0
 	.uleb128 0x12
-	.4byte	.LASF595
-	.byte	0x6
-	.byte	0xb
-	.4byte	0x43e
-	.uleb128 0x10
-	.4byte	0x29
-	.4byte	0x470
-	.uleb128 0x11
-	.4byte	0x3f4
-	.byte	0
-	.uleb128 0x11
-	.4byte	0x3f4
-	.byte	0xff
-	.byte	0
-	.uleb128 0x12
 	.4byte	.LASF596
 	.byte	0x6
-	.byte	0xe
-	.4byte	0x45a
+	.byte	0xb
+	.4byte	0x449
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x48b
+	.4byte	0x47b
+	.uleb128 0x11
+	.4byte	0x3f4
+	.byte	0
 	.uleb128 0x11
 	.4byte	0x3f4
 	.byte	0xff
@@ -2476,106 +2488,118 @@ OS_INIT_TASK:
 	.uleb128 0x12
 	.4byte	.LASF597
 	.byte	0x6
-	.byte	0xf
-	.4byte	0x47b
+	.byte	0xe
+	.4byte	0x465
+	.uleb128 0x10
+	.4byte	0x29
+	.4byte	0x496
+	.uleb128 0x11
+	.4byte	0x3f4
+	.byte	0xff
+	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF598
+	.byte	0x6
+	.byte	0xf
+	.4byte	0x486
+	.uleb128 0x12
+	.4byte	.LASF599
 	.byte	0x6
 	.byte	0x10
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF599
+	.4byte	.LASF600
 	.byte	0x6
 	.byte	0x11
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF600
+	.4byte	.LASF601
 	.byte	0x6
 	.byte	0x12
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF601
+	.4byte	.LASF602
 	.byte	0x6
 	.byte	0x13
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF602
+	.4byte	.LASF603
 	.byte	0x6
 	.byte	0x14
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF603
+	.4byte	.LASF604
 	.byte	0x6
 	.byte	0x15
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF604
+	.4byte	.LASF605
 	.byte	0x6
 	.byte	0x16
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF605
+	.4byte	.LASF606
 	.byte	0x6
 	.byte	0x17
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF606
+	.4byte	.LASF607
 	.byte	0x6
 	.byte	0x18
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF607
+	.4byte	.LASF608
 	.byte	0x6
 	.byte	0x19
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF608
+	.4byte	.LASF609
 	.byte	0x6
 	.byte	0x1a
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF609
+	.4byte	.LASF610
 	.byte	0x6
 	.byte	0x1b
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF610
+	.4byte	.LASF611
 	.byte	0x6
 	.byte	0x1c
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF611
+	.4byte	.LASF612
 	.byte	0x6
 	.byte	0x1d
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF612
+	.4byte	.LASF613
 	.byte	0x6
 	.byte	0x1e
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF613
+	.4byte	.LASF614
 	.byte	0x6
 	.byte	0x1f
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF614
+	.4byte	.LASF615
 	.byte	0x6
 	.byte	0x20
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF615
+	.4byte	.LASF616
 	.byte	0x6
 	.byte	0x21
 	.4byte	0x5f
 	.uleb128 0x12
-	.4byte	.LASF616
+	.4byte	.LASF617
 	.byte	0x6
 	.byte	0x22
 	.4byte	0x5f
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x57d
+	.4byte	0x588
 	.uleb128 0x11
 	.4byte	0x3f4
 	.byte	0x4
@@ -2584,22 +2608,17 @@ OS_INIT_TASK:
 	.byte	0xc7
 	.byte	0
 	.uleb128 0x12
-	.4byte	.LASF617
-	.byte	0x6
-	.byte	0x24
-	.4byte	0x567
-	.uleb128 0x12
 	.4byte	.LASF618
 	.byte	0x6
-	.byte	0x25
-	.4byte	0x433
+	.byte	0x24
+	.4byte	0x572
 	.uleb128 0x12
 	.4byte	.LASF619
 	.byte	0x6
-	.byte	0x26
-	.4byte	0x412
+	.byte	0x25
+	.4byte	0x43e
 	.uleb128 0x10
-	.4byte	0x407
+	.4byte	0x412
 	.4byte	0x5ae
 	.uleb128 0x11
 	.4byte	0x3f4
@@ -2608,54 +2627,114 @@ OS_INIT_TASK:
 	.uleb128 0x12
 	.4byte	.LASF620
 	.byte	0x6
-	.byte	0x27
+	.byte	0x26
 	.4byte	0x59e
+	.uleb128 0x12
+	.4byte	.LASF621
+	.byte	0x6
+	.byte	0x27
+	.4byte	0x5c4
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x412
 	.uleb128 0x10
 	.4byte	0x407
-	.4byte	0x5c9
+	.4byte	0x5da
+	.uleb128 0x11
+	.4byte	0x3f4
+	.byte	0x4
+	.byte	0
+	.uleb128 0x12
+	.4byte	.LASF622
+	.byte	0x6
+	.byte	0x28
+	.4byte	0x5ca
+	.uleb128 0x10
+	.4byte	0x407
+	.4byte	0x5f5
 	.uleb128 0x11
 	.4byte	0x3f4
 	.byte	0
 	.byte	0
 	.uleb128 0x12
-	.4byte	.LASF621
-	.byte	0x6
-	.byte	0x28
-	.4byte	0x5b9
-	.uleb128 0x12
-	.4byte	.LASF622
-	.byte	0x6
-	.byte	0x29
-	.4byte	0x5b9
-	.uleb128 0x12
 	.4byte	.LASF623
 	.byte	0x6
-	.byte	0x2a
-	.4byte	0x29
-	.uleb128 0x2
+	.byte	0x29
+	.4byte	0x5e5
+	.uleb128 0x12
 	.4byte	.LASF624
-	.byte	0x7
-	.byte	0xb
-	.4byte	0x1bb
-	.uleb128 0x14
+	.byte	0x6
+	.byte	0x2a
+	.4byte	0x5e5
+	.uleb128 0x12
+	.4byte	.LASF625
+	.byte	0x6
+	.byte	0x2b
+	.4byte	0x29
+	.uleb128 0x12
+	.4byte	.LASF626
+	.byte	0x6
+	.byte	0x2c
+	.4byte	0x407
+	.uleb128 0x12
+	.4byte	.LASF627
+	.byte	0x6
+	.byte	0x2c
+	.4byte	0x407
+	.uleb128 0x12
+	.4byte	.LASF628
+	.byte	0x6
+	.byte	0x2c
+	.4byte	0x407
+	.uleb128 0x12
+	.4byte	.LASF629
+	.byte	0x6
+	.byte	0x2c
+	.4byte	0x407
+	.uleb128 0x12
+	.4byte	.LASF630
+	.byte	0x6
+	.byte	0x2d
+	.4byte	0x207
+	.uleb128 0x12
+	.4byte	.LASF631
+	.byte	0x6
+	.byte	0x2d
+	.4byte	0x207
+	.uleb128 0x12
 	.4byte	.LASF632
+	.byte	0x6
+	.byte	0x2d
+	.4byte	0x207
+	.uleb128 0x12
+	.4byte	.LASF633
+	.byte	0x6
+	.byte	0x2d
+	.4byte	0x207
+	.uleb128 0x12
+	.4byte	.LASF634
+	.byte	0x6
+	.byte	0x2d
+	.4byte	0x207
+	.uleb128 0x14
+	.4byte	.LASF644
 	.byte	0x1
 	.2byte	0x151
-	.4byte	.LFB12
-	.4byte	.LFE12-.LFB12
+	.4byte	.LFB13
+	.4byte	.LFE13-.LFB13
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6a2
+	.4byte	0x726
 	.uleb128 0x15
-	.4byte	.LASF625
+	.4byte	.LASF635
 	.byte	0x1
 	.2byte	0x152
-	.4byte	0x422
+	.4byte	0x41d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0x15
-	.4byte	.LASF626
+	.4byte	.LASF636
 	.byte	0x1
 	.2byte	0x153
 	.4byte	0x19f
@@ -2663,7 +2742,7 @@ OS_INIT_TASK:
 	.byte	0x91
 	.sleb128 -16
 	.uleb128 0x15
-	.4byte	.LASF627
+	.4byte	.LASF637
 	.byte	0x1
 	.2byte	0x154
 	.4byte	0x29
@@ -2679,7 +2758,7 @@ OS_INIT_TASK:
 	.byte	0x91
 	.sleb128 -18
 	.uleb128 0x15
-	.4byte	.LASF628
+	.4byte	.LASF638
 	.byte	0x1
 	.2byte	0x156
 	.4byte	0x3fb
@@ -2687,7 +2766,7 @@ OS_INIT_TASK:
 	.byte	0x91
 	.sleb128 0
 	.uleb128 0x15
-	.4byte	.LASF629
+	.4byte	.LASF639
 	.byte	0x1
 	.2byte	0x157
 	.4byte	0x401
@@ -2695,7 +2774,7 @@ OS_INIT_TASK:
 	.byte	0x91
 	.sleb128 4
 	.uleb128 0x15
-	.4byte	.LASF630
+	.4byte	.LASF640
 	.byte	0x1
 	.2byte	0x158
 	.4byte	0x42
@@ -2711,7 +2790,7 @@ OS_INIT_TASK:
 	.byte	0x91
 	.sleb128 12
 	.uleb128 0x15
-	.4byte	.LASF631
+	.4byte	.LASF641
 	.byte	0x1
 	.2byte	0x15a
 	.4byte	0x130
@@ -2728,54 +2807,66 @@ OS_INIT_TASK:
 	.sleb128 20
 	.byte	0
 	.uleb128 0x16
-	.4byte	.LASF634
+	.4byte	.LASF642
 	.byte	0x1
-	.2byte	0x14c
-	.4byte	0x422
+	.2byte	0x14d
+	.4byte	0x73c
+	.4byte	.LFB12
+	.4byte	.LFE12-.LFB12
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x41d
+	.uleb128 0x16
+	.4byte	.LASF643
+	.byte	0x1
+	.2byte	0x149
+	.4byte	0x41d
 	.4byte	.LFB11
 	.4byte	.LFE11-.LFB11
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x17
-	.4byte	.LASF633
+	.4byte	.LASF645
 	.byte	0x1
-	.2byte	0x118
+	.2byte	0x115
 	.4byte	.LFB10
 	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6de
+	.4byte	0x77e
 	.uleb128 0x15
-	.4byte	.LASF625
+	.4byte	.LASF635
 	.byte	0x1
-	.2byte	0x118
-	.4byte	0x422
+	.2byte	0x115
+	.4byte	0x41d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x16
-	.4byte	.LASF635
+	.4byte	.LASF646
 	.byte	0x1
-	.2byte	0x114
-	.4byte	0x422
+	.2byte	0x111
+	.4byte	0x41d
 	.4byte	.LFB9
 	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x18
-	.4byte	.LASF636
+	.4byte	.LASF647
 	.byte	0x1
-	.byte	0xf9
+	.byte	0xf6
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x726
+	.4byte	0x7c6
 	.uleb128 0x19
-	.4byte	.LASF637
+	.4byte	.LASF648
 	.byte	0x1
-	.byte	0xfc
+	.byte	0xf9
 	.4byte	0x29
 	.uleb128 0x2
 	.byte	0x91
@@ -2783,175 +2874,163 @@ OS_INIT_TASK:
 	.uleb128 0x1a
 	.ascii	"src\000"
 	.byte	0x1
-	.byte	0xfc
+	.byte	0xf9
 	.4byte	0x29
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -10
 	.byte	0
-	.uleb128 0x1b
-	.4byte	.LASF643
+	.uleb128 0x18
+	.4byte	.LASF649
 	.byte	0x1
-	.byte	0xdf
-	.4byte	0x1bb
+	.byte	0xde
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x778
-	.uleb128 0x1c
-	.4byte	.LASF625
+	.4byte	0x806
+	.uleb128 0x1b
+	.4byte	.LASF635
 	.byte	0x1
-	.byte	0xdf
-	.4byte	0x422
+	.byte	0xde
+	.4byte	0x41d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
 	.uleb128 0x19
-	.4byte	.LASF638
+	.4byte	.LASF650
+	.byte	0x1
+	.byte	0xe7
+	.4byte	0x29
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -9
+	.uleb128 0x19
+	.4byte	.LASF651
 	.byte	0x1
 	.byte	0xe8
 	.4byte	0x29
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -9
-	.uleb128 0x19
-	.4byte	.LASF639
-	.byte	0x1
-	.byte	0xe9
-	.4byte	0x29
-	.uleb128 0x2
-	.byte	0x91
 	.sleb128 -10
-	.uleb128 0x19
-	.4byte	.LASF640
-	.byte	0x1
-	.byte	0xea
-	.4byte	0x1bb
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -16
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF641
+	.4byte	.LASF652
 	.byte	0x1
-	.byte	0xdb
+	.byte	0xda
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x79c
-	.uleb128 0x1c
-	.4byte	.LASF642
+	.4byte	0x82a
+	.uleb128 0x1b
+	.4byte	.LASF653
 	.byte	0x1
-	.byte	0xdb
-	.4byte	0x29
+	.byte	0xda
+	.4byte	0x5c4
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -9
+	.sleb128 -12
 	.byte	0
-	.uleb128 0x1b
-	.4byte	.LASF644
+	.uleb128 0x1c
+	.4byte	.LASF655
 	.byte	0x1
-	.byte	0xd6
-	.4byte	0x7c4
+	.byte	0xd5
+	.4byte	0x5c4
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7c4
-	.uleb128 0x1c
-	.4byte	.LASF642
+	.4byte	0x852
+	.uleb128 0x1b
+	.4byte	.LASF654
 	.byte	0x1
-	.byte	0xd6
+	.byte	0xd5
 	.4byte	0x29
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
 	.byte	0
-	.uleb128 0x7
-	.byte	0x4
-	.4byte	0x5ea
-	.uleb128 0x1b
-	.4byte	.LASF645
+	.uleb128 0x1c
+	.4byte	.LASF656
 	.byte	0x1
-	.byte	0xd2
-	.4byte	0x422
+	.byte	0xd1
+	.4byte	0x41d
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7f2
-	.uleb128 0x1c
-	.4byte	.LASF646
+	.4byte	0x87a
+	.uleb128 0x1b
+	.4byte	.LASF653
 	.byte	0x1
-	.byte	0xd2
-	.4byte	0x7c4
+	.byte	0xd1
+	.4byte	0x5c4
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF647
+	.4byte	.LASF657
 	.byte	0x1
-	.byte	0xa1
+	.byte	0xa0
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x816
-	.uleb128 0x1c
-	.4byte	.LASF625
+	.4byte	0x89e
+	.uleb128 0x1b
+	.4byte	.LASF635
 	.byte	0x1
-	.byte	0xa1
-	.4byte	0x422
+	.byte	0xa0
+	.4byte	0x41d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x1b
-	.4byte	.LASF648
+	.uleb128 0x1c
+	.4byte	.LASF658
 	.byte	0x1
-	.byte	0x66
-	.4byte	0x1bb
+	.byte	0x65
+	.4byte	0x41d
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x84c
-	.uleb128 0x1c
-	.4byte	.LASF625
+	.4byte	0x8d4
+	.uleb128 0x1b
+	.4byte	.LASF635
 	.byte	0x1
-	.byte	0x66
-	.4byte	0x422
+	.byte	0x65
+	.4byte	0x41d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
 	.uleb128 0x19
-	.4byte	.LASF642
+	.4byte	.LASF654
 	.byte	0x1
-	.byte	0x68
+	.byte	0x67
 	.4byte	0x29
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
 	.byte	0
 	.uleb128 0x1d
-	.4byte	.LASF649
+	.4byte	.LASF659
 	.byte	0x1
-	.byte	0x56
+	.byte	0x57
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x87a
+	.4byte	0x902
 	.uleb128 0x1e
 	.4byte	.LBB2
 	.4byte	.LBE2-.LBB2
 	.uleb128 0x19
-	.4byte	.LASF642
+	.4byte	.LASF654
 	.byte	0x1
-	.byte	0x5a
+	.byte	0x5b
 	.4byte	0x29
 	.uleb128 0x2
 	.byte	0x91
@@ -2959,21 +3038,29 @@ OS_INIT_TASK:
 	.byte	0
 	.byte	0
 	.uleb128 0x1f
-	.4byte	.LASF653
+	.4byte	.LASF664
 	.byte	0x1
 	.byte	0x21
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x1c
-	.4byte	.LASF625
+	.uleb128 0x1b
+	.4byte	.LASF635
 	.byte	0x1
 	.byte	0x21
-	.4byte	0x422
+	.4byte	0x41d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
+	.uleb128 0x1b
+	.4byte	.LASF660
+	.byte	0x1
+	.byte	0x21
+	.4byte	0x5c4
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
@@ -3357,6 +3444,21 @@ OS_INIT_TASK:
 	.byte	0
 	.byte	0
 	.uleb128 0x1b
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x1c
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -3381,21 +3483,6 @@ OS_INIT_TASK:
 	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1c
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x1d
@@ -3478,10 +3565,10 @@ OS_INIT_TASK:
 	.byte	0x3
 	.uleb128 0
 	.uleb128 0x1
-	.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
+	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x1
-	.uleb128 0x8
+	.uleb128 0x7
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF438
@@ -3497,10 +3584,10 @@ OS_INIT_TASK:
 	.byte	0x7
 	.4byte	.Ldebug_macro3
 	.byte	0x4
-	.file 9 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
+	.file 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
 	.byte	0x3
 	.uleb128 0xa
-	.uleb128 0x9
+	.uleb128 0x8
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF472
@@ -3510,10 +3597,10 @@ OS_INIT_TASK:
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF473
-	.file 10 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
+	.file 9 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0xa
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x4
 	.byte	0x3
@@ -3524,19 +3611,19 @@ OS_INIT_TASK:
 	.4byte	.LASF474
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0xa
+	.uleb128 0x9
 	.byte	0x4
-	.file 11 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_config.h"
+	.file 10 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_config.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0xb
+	.uleb128 0xa
 	.byte	0x7
 	.4byte	.Ldebug_macro4
 	.byte	0x4
-	.file 12 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.h"
+	.file 11 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0xc
+	.uleb128 0xb
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF486
@@ -3545,10 +3632,10 @@ OS_INIT_TASK:
 	.4byte	.Ldebug_macro5
 	.byte	0x4
 	.byte	0x4
-	.file 13 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h"
+	.file 12 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h"
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0xd
+	.uleb128 0xc
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF489
@@ -3559,24 +3646,24 @@ OS_INIT_TASK:
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF490
-	.file 14 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.h"
+	.file 13 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0xe
+	.uleb128 0xd
 	.byte	0x7
 	.4byte	.Ldebug_macro6
 	.byte	0x4
-	.file 15 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h"
+	.file 14 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h"
 	.byte	0x3
 	.uleb128 0x6
-	.uleb128 0xf
+	.uleb128 0xe
 	.byte	0x7
 	.4byte	.Ldebug_macro7
 	.byte	0x4
-	.file 16 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
+	.file 15 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
 	.byte	0x3
 	.uleb128 0x7
-	.uleb128 0x10
+	.uleb128 0xf
 	.byte	0x7
 	.4byte	.Ldebug_macro8
 	.byte	0x4
@@ -3586,14 +3673,15 @@ OS_INIT_TASK:
 	.byte	0x4
 	.byte	0x4
 	.byte	0x4
-	.file 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+	.file 16 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x11
+	.uleb128 0x10
 	.byte	0x4
+	.file 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.h"
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0x7
+	.uleb128 0x11
 	.byte	0x7
 	.4byte	.Ldebug_macro9
 	.byte	0x4
@@ -5072,15 +5160,15 @@ OS_INIT_TASK:
 	.uleb128 0x11
 	.4byte	.LASF485
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.93.9db5c540899793a03f331176d195d033,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x5d
+	.uleb128 0x5f
 	.4byte	.LASF487
 	.byte	0x5
-	.uleb128 0x5e
+	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
@@ -5180,7 +5268,7 @@ OS_INIT_TASK:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF650:
+.LASF661:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -5224,14 +5312,14 @@ OS_INIT_TASK:
 	.ascii	"__WCHAR_MAX__ 0xffffffffU\000"
 .LASF258:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
-.LASF623:
+.LASF625:
 	.ascii	"bTASK_QUEUE_INITIALIZED\000"
 .LASF160:
 	.ascii	"__DBL_MIN_EXP__ (-1021)\000"
 .LASF82:
 	.ascii	"__LONG_LONG_WIDTH__ 64\000"
-.LASF557:
-	.ascii	"Task_ready\000"
+.LASF621:
+	.ascii	"RUNNING_SCHEDULING_QUEUE_ENTRY\000"
 .LASF65:
 	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
 .LASF462:
@@ -5244,12 +5332,12 @@ OS_INIT_TASK:
 	.ascii	"__ARM_FP16_FORMAT_IEEE\000"
 .LASF457:
 	.ascii	"Rejected 0\000"
+.LASF265:
+	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF281:
 	.ascii	"__LLFRACT_IBIT__ 0\000"
-.LASF228:
-	.ascii	"__FLT32X_HAS_QUIET_NAN__ 1\000"
-.LASF449:
-	.ascii	"ISO_CPP_VERSION CPP_VERSION_1998\000"
+.LASF344:
+	.ascii	"__USQ_FBIT__ 32\000"
 .LASF165:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
 .LASF426:
@@ -5276,8 +5364,10 @@ OS_INIT_TASK:
 	.ascii	"FALSE False\000"
 .LASF492:
 	.ascii	"OS_STACK_SIZE 0x100\000"
-.LASF600:
+.LASF601:
 	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
+.LASF369:
+	.ascii	"__NO_INLINE__ 1\000"
 .LASF549:
 	.ascii	"privilige_mode_e\000"
 .LASF35:
@@ -5301,6 +5391,8 @@ OS_INIT_TASK:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF391:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
+.LASF652:
+	.ascii	"DeleteFromSchedulingQueue\000"
 .LASF364:
 	.ascii	"__UTA_FBIT__ 64\000"
 .LASF158:
@@ -5337,8 +5429,8 @@ OS_INIT_TASK:
 	.ascii	"__SIZEOF_SHORT__ 2\000"
 .LASF62:
 	.ascii	"__INTPTR_TYPE__ int\000"
-.LASF467:
-	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
+.LASF649:
+	.ascii	"AddToSchedulingQueue\000"
 .LASF46:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
 .LASF397:
@@ -5356,24 +5448,24 @@ OS_INIT_TASK:
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF235:
 	.ascii	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\000"
-.LASF618:
+.LASF619:
 	.ascii	"LAST_CURRENT_TIME\000"
-.LASF605:
-	.ascii	"VAR_AUX_FAULT_STATUS_REG\000"
+.LASF575:
+	.ascii	"TimeToPrioInc\000"
 .LASF271:
 	.ascii	"__LFRACT_IBIT__ 0\000"
-.LASF494:
-	.ascii	"_os_heap_h_ \000"
 .LASF406:
 	.ascii	"__ARM_ARCH 7\000"
 .LASF465:
 	.ascii	"MCU_CLOCK_IN_HZ ((uint32)168000000u)\000"
 .LASF106:
 	.ascii	"__INT_LEAST16_MAX__ 0x7fff\000"
+.LASF642:
+	.ascii	"GetRunningSchedulingQueueElementPtr\000"
 .LASF67:
 	.ascii	"__SCHAR_MAX__ 0x7f\000"
-.LASF326:
-	.ascii	"__ULLACCUM_IBIT__ 32\000"
+.LASF218:
+	.ascii	"__FLT32X_MIN_10_EXP__ (-307)\000"
 .LASF249:
 	.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
 	.ascii	"000000001E-6143DL\000"
@@ -5395,6 +5487,8 @@ OS_INIT_TASK:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF317:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
+.LASF132:
+	.ascii	"__UINT_FAST16_MAX__ 0xffffffffU\000"
 .LASF567:
 	.ascii	"active\000"
 .LASF196:
@@ -5411,7 +5505,7 @@ OS_INIT_TASK:
 	.ascii	"__INT8_C(c) c\000"
 .LASF409:
 	.ascii	"__thumb2__ 1\000"
-.LASF599:
+.LASF600:
 	.ascii	"VAR_HARDFAULT_STATUS_REG\000"
 .LASF483:
 	.ascii	"TASK_STACK_SIZE 200\000"
@@ -5419,8 +5513,8 @@ OS_INIT_TASK:
 	.ascii	"__INT_LEAST16_WIDTH__ 16\000"
 .LASF535:
 	.ascii	"Func_StartTask\000"
-.LASF636:
-	.ascii	"UpdateLinkList\000"
+.LASF590:
+	.ascii	"privilige_mode\000"
 .LASF417:
 	.ascii	"__ARM_FP16_FORMAT_ALTERNATIVE\000"
 .LASF327:
@@ -5429,8 +5523,8 @@ OS_INIT_TASK:
 	.ascii	"os_sw_bugs_function_e\000"
 .LASF458:
 	.ascii	"Local static\000"
-.LASF423:
-	.ascii	"__ARM_NEON\000"
+.LASF628:
+	.ascii	"TASK_2_VAR\000"
 .LASF407:
 	.ascii	"__APCS_32__ 1\000"
 .LASF63:
@@ -5445,19 +5539,17 @@ OS_INIT_TASK:
 	.ascii	"__SA_IBIT__ 16\000"
 .LASF283:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
-.LASF486:
-	.ascii	"_os_init_task_system_h_ \000"
 .LASF129:
 	.ascii	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL\000"
-.LASF265:
-	.ascii	"__UFRACT_FBIT__ 16\000"
+.LASF624:
+	.ascii	"TASK_IDLE_QUEUE\000"
 .LASF419:
 	.ascii	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC\000"
 .LASF452:
 	.ascii	"False 0\000"
 .LASF145:
 	.ascii	"__FLT_DIG__ 6\000"
-.LASF607:
+.LASF608:
 	.ascii	"LINK_REGISTER_HANDLER\000"
 .LASF375:
 	.ascii	"__GCC_ATOMIC_BOOL_LOCK_FREE 2\000"
@@ -5473,11 +5565,11 @@ OS_INIT_TASK:
 	.ascii	"__USES_INITFINI__ 1\000"
 .LASF37:
 	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
-.LASF639:
+.LASF651:
 	.ascii	"index\000"
 .LASF138:
 	.ascii	"__GCC_IEC_559 0\000"
-.LASF615:
+.LASF616:
 	.ascii	"TASK3_CALL_NR\000"
 .LASF289:
 	.ascii	"__ULLFRACT_EPSILON__ 0x1P-64ULLR\000"
@@ -5495,8 +5587,6 @@ OS_INIT_TASK:
 	.ascii	"__FLT32_DECIMAL_DIG__ 9\000"
 .LASF253:
 	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
-.LASF644:
-	.ascii	"GetFromLinkList\000"
 .LASF428:
 	.ascii	"__ARM_EABI__ 1\000"
 .LASF115:
@@ -5515,7 +5605,7 @@ OS_INIT_TASK:
 	.ascii	"__LLACCUM_FBIT__ 31\000"
 .LASF288:
 	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
-.LASF611:
+.LASF612:
 	.ascii	"DBG_CTRL_VALUE\000"
 .LASF143:
 	.ascii	"__FLT_RADIX__ 2\000"
@@ -5529,12 +5619,12 @@ OS_INIT_TASK:
 	.ascii	"__UACCUM_MIN__ 0.0UK\000"
 .LASF274:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
+.LASF453:
+	.ascii	"True 1\000"
 .LASF54:
 	.ascii	"__INT_FAST8_TYPE__ int\000"
 .LASF213:
 	.ascii	"__FLT64_HAS_INFINITY__ 1\000"
-.LASF592:
-	.ascii	"task_t\000"
 .LASF225:
 	.ascii	"__FLT32X_DENORM_MIN__ 4.9406564584124654e-324F32x\000"
 .LASF523:
@@ -5545,7 +5635,7 @@ OS_INIT_TASK:
 	.ascii	"_OS_RAM_H_ \000"
 .LASF166:
 	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
-.LASF630:
+.LASF640:
 	.ascii	"uStackSize\000"
 .LASF240:
 	.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
@@ -5555,7 +5645,7 @@ OS_INIT_TASK:
 	.ascii	"__GCC_ATOMIC_INT_LOCK_FREE 2\000"
 .LASF87:
 	.ascii	"__INTMAX_MAX__ 0x7fffffffffffffffLL\000"
-.LASF631:
+.LASF641:
 	.ascii	"core\000"
 .LASF309:
 	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
@@ -5567,7 +5657,7 @@ OS_INIT_TASK:
 	.ascii	"__SIZEOF_WCHAR_T__ 4\000"
 .LASF183:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
-.LASF617:
+.LASF618:
 	.ascii	"TASK_STACK\000"
 .LASF206:
 	.ascii	"__FLT64_MAX_10_EXP__ 308\000"
@@ -5591,7 +5681,7 @@ OS_INIT_TASK:
 	.ascii	"__DEC128_MANT_DIG__ 34\000"
 .LASF429:
 	.ascii	"__ARM_ARCH_EXT_IDIV__ 1\000"
-.LASF609:
+.LASF610:
 	.ascii	"DBG_RLD_VALUE\000"
 .LASF474:
 	.ascii	"_os_task_common_h_ \000"
@@ -5601,12 +5691,10 @@ OS_INIT_TASK:
 	.ascii	"__UINT32_C(c) c ## UL\000"
 .LASF231:
 	.ascii	"__DEC32_MAX_EXP__ 97\000"
-.LASF604:
+.LASF605:
 	.ascii	"VAR_BUS_FAULT_ADDR_REG\000"
 .LASF459:
 	.ascii	"Local_inline static __inline__\000"
-.LASF437:
-	.ascii	"STM32F407VG 1\000"
 .LASF579:
 	.ascii	"current_prio\000"
 .LASF527:
@@ -5633,11 +5721,13 @@ OS_INIT_TASK:
 	.ascii	"Func_InitTask\000"
 .LASF531:
 	.ascii	"Func_SaveTaskEnvironment\000"
+.LASF633:
+	.ascii	"TASK_GROUP_4\000"
 .LASF352:
 	.ascii	"__SA_FBIT__ 15\000"
 .LASF204:
 	.ascii	"__FLT64_MIN_10_EXP__ (-307)\000"
-.LASF651:
+.LASF662:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_task_queue.c\000"
 .LASF504:
@@ -5652,12 +5742,14 @@ OS_INIT_TASK:
 	.ascii	"task_state\000"
 .LASF554:
 	.ascii	"task_state_e\000"
+.LASF449:
+	.ascii	"ISO_CPP_VERSION CPP_VERSION_1998\000"
 .LASF83:
 	.ascii	"__WCHAR_WIDTH__ 32\000"
 .LASF199:
 	.ascii	"__FLT32_HAS_INFINITY__ 1\000"
-.LASF343:
-	.ascii	"__UHQ_IBIT__ 0\000"
+.LASF620:
+	.ascii	"TASK_SCHEDULING_QUEUE\000"
 .LASF242:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
 .LASF399:
@@ -5674,7 +5766,9 @@ OS_INIT_TASK:
 	.ascii	"task_state_t\000"
 .LASF324:
 	.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
-.LASF642:
+.LASF297:
+	.ascii	"__USACCUM_MIN__ 0.0UHK\000"
+.LASF654:
 	.ascii	"element_nr\000"
 .LASF244:
 	.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
@@ -5684,15 +5778,15 @@ OS_INIT_TASK:
 	.ascii	"__USFRACT_IBIT__ 0\000"
 .LASF277:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
-.LASF222:
-	.ascii	"__FLT32X_MAX__ 1.7976931348623157e+308F32x\000"
+.LASF563:
+	.ascii	"fair_exe_time\000"
 .LASF470:
 	.ascii	"Privilige_level_restore_saved() ;\000"
-.LASF601:
-	.ascii	"VAR_USAGE_FAULT_STATUS_REG\000"
+.LASF613:
+	.ascii	"DBG_CALIB_VALUE\000"
 .LASF207:
 	.ascii	"__FLT64_DECIMAL_DIG__ 17\000"
-.LASF633:
+.LASF645:
 	.ascii	"AddToIdleTaskQueue\000"
 .LASF366:
 	.ascii	"__REGISTER_PREFIX__ \000"
@@ -5700,17 +5794,17 @@ OS_INIT_TASK:
 	.ascii	"__FLT32_MIN_EXP__ (-125)\000"
 .LASF306:
 	.ascii	"__UACCUM_IBIT__ 16\000"
-.LASF132:
-	.ascii	"__UINT_FAST16_MAX__ 0xffffffffU\000"
+.LASF142:
+	.ascii	"__DEC_EVAL_METHOD__ 2\000"
 .LASF59:
 	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
 .LASF191:
 	.ascii	"__FLT32_MAX_EXP__ 128\000"
-.LASF602:
+.LASF603:
 	.ascii	"VAR_FAULT_STATUS_REG\000"
 .LASF66:
 	.ascii	"__GXX_ABI_VERSION 1011\000"
-.LASF597:
+.LASF598:
 	.ascii	"OS_MAIN_STACK\000"
 .LASF425:
 	.ascii	"__THUMB_INTERWORK__ 1\000"
@@ -5718,7 +5812,7 @@ OS_INIT_TASK:
 	.ascii	"pStackPointer\000"
 .LASF188:
 	.ascii	"__FLT32_DIG__ 6\000"
-.LASF593:
+.LASF594:
 	.ascii	"scheduler_time_t\000"
 .LASF212:
 	.ascii	"__FLT64_HAS_DENORM__ 1\000"
@@ -5728,11 +5822,13 @@ OS_INIT_TASK:
 	.ascii	"Task_2_ptr 2\000"
 .LASF226:
 	.ascii	"__FLT32X_HAS_DENORM__ 1\000"
+.LASF660:
+	.ascii	"scheduling_task\000"
 .LASF427:
 	.ascii	"__ARM_PCS 1\000"
 .LASF58:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
-.LASF645:
+.LASF656:
 	.ascii	"GetFromTaskQueue\000"
 .LASF455:
 	.ascii	"TRUE True\000"
@@ -5812,8 +5908,8 @@ OS_INIT_TASK:
 	.ascii	"__UTQ_FBIT__ 128\000"
 .LASF43:
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
-.LASF110:
-	.ascii	"__INT32_C(c) c ## L\000"
+.LASF21:
+	.ascii	"__CHAR_BIT__ 8\000"
 .LASF415:
 	.ascii	"__ARM_FP\000"
 .LASF136:
@@ -5830,24 +5926,22 @@ OS_INIT_TASK:
 	.ascii	"__arm__ 1\000"
 .LASF172:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
-.LASF575:
-	.ascii	"TimeToPrioInc\000"
+.LASF635:
+	.ascii	"task\000"
 .LASF339:
 	.ascii	"__TQ_IBIT__ 0\000"
 .LASF358:
 	.ascii	"__UHA_FBIT__ 8\000"
-.LASF641:
-	.ascii	"DeleteFromLinkList\000"
-.LASF369:
-	.ascii	"__NO_INLINE__ 1\000"
-.LASF616:
+.LASF11:
+	.ascii	"__ATOMIC_CONSUME 1\000"
+.LASF617:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF652:
+.LASF663:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
 	.ascii	"__ELF__ 1\000"
-.LASF606:
+.LASF607:
 	.ascii	"VAR_BUS_FAULT_STATUS_REG\000"
 .LASF395:
 	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
@@ -5879,25 +5973,29 @@ OS_INIT_TASK:
 	.ascii	"Core3\000"
 .LASF0:
 	.ascii	"__STDC__ 1\000"
+.LASF626:
+	.ascii	"TASK_0_VAR\000"
+.LASF606:
+	.ascii	"VAR_AUX_FAULT_STATUS_REG\000"
 .LASF118:
 	.ascii	"__UINT16_C(c) c\000"
-.LASF596:
+.LASF597:
 	.ascii	"OS_STACK\000"
-.LASF634:
+.LASF643:
 	.ascii	"GetRunningTask\000"
 .LASF162:
 	.ascii	"__DBL_MAX_EXP__ 1024\000"
 .LASF569:
 	.ascii	"IdleTask\000"
-.LASF11:
-	.ascii	"__ATOMIC_CONSUME 1\000"
+.LASF627:
+	.ascii	"TASK_1_VAR\000"
 .LASF525:
 	.ascii	"os_bug_exception_UndefInstruction\000"
 .LASF128:
 	.ascii	"__INT_FAST32_WIDTH__ 32\000"
 .LASF32:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
-.LASF653:
+.LASF664:
 	.ascii	"SET_RUNNING_TASK\000"
 .LASF70:
 	.ascii	"__LONG_MAX__ 0x7fffffffL\000"
@@ -5917,6 +6015,8 @@ OS_INIT_TASK:
 	.ascii	"uint32\000"
 .LASF496:
 	.ascii	"MIN_BLOCK_SIZE_HEAP 8\000"
+.LASF433:
+	.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
 .LASF263:
 	.ascii	"__FRACT_MAX__ 0X7FFFP-15R\000"
 .LASF75:
@@ -5931,8 +6031,10 @@ OS_INIT_TASK:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF433:
-	.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 5\000"
+.LASF326:
+	.ascii	"__ULLACCUM_IBIT__ 32\000"
 .LASF261:
 	.ascii	"__FRACT_IBIT__ 0\000"
 .LASF181:
@@ -5947,7 +6049,7 @@ OS_INIT_TASK:
 	.ascii	"__UINT32_MAX__ 0xffffffffUL\000"
 .LASF513:
 	.ascii	"OS_SaveTaskPtr(task_ptr,Task_n_ptr) \000"
-.LASF626:
+.LASF636:
 	.ascii	"TaskFunction\000"
 .LASF174:
 	.ascii	"__LDBL_MIN_EXP__ (-1021)\000"
@@ -5977,8 +6079,8 @@ OS_INIT_TASK:
 	.ascii	"_os_task_scheduler_h_ \000"
 .LASF450:
 	.ascii	"INTEGER_MODEL INTEGER_LLP64_IL32P64\000"
-.LASF625:
-	.ascii	"task\000"
+.LASF362:
+	.ascii	"__UDA_FBIT__ 32\000"
 .LASF81:
 	.ascii	"__LONG_WIDTH__ 32\000"
 .LASF8:
@@ -5997,6 +6099,8 @@ OS_INIT_TASK:
 	.ascii	"__ARM_FEATURE_LDREX 7\000"
 .LASF333:
 	.ascii	"__HQ_IBIT__ 0\000"
+.LASF655:
+	.ascii	"GetFromSchedulingQueue\000"
 .LASF367:
 	.ascii	"__USER_LABEL_PREFIX__ \000"
 .LASF472:
@@ -6025,8 +6129,8 @@ OS_INIT_TASK:
 	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
 .LASF418:
 	.ascii	"__ARM_FP16_ARGS\000"
-.LASF25:
-	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
+.LASF557:
+	.ascii	"Task_ready\000"
 .LASF51:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
@@ -6035,7 +6139,7 @@ OS_INIT_TASK:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
 	.ascii	"CPP_VERSION_2011 4\000"
-.LASF613:
+.LASF614:
 	.ascii	"TASK1_CALL_NR\000"
 .LASF97:
 	.ascii	"__INT32_MAX__ 0x7fffffffL\000"
@@ -6047,7 +6151,7 @@ OS_INIT_TASK:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF345:
 	.ascii	"__USQ_IBIT__ 0\000"
-.LASF647:
+.LASF657:
 	.ascii	"DeleteFromTaskQueue\000"
 .LASF482:
 	.ascii	"MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\000"
@@ -6059,22 +6163,26 @@ OS_INIT_TASK:
 	.ascii	"__SIG_ATOMIC_MAX__ 0x7fffffff\000"
 .LASF238:
 	.ascii	"__DEC64_MAX_EXP__ 385\000"
+.LASF236:
+	.ascii	"__DEC64_MANT_DIG__ 16\000"
 .LASF114:
 	.ascii	"__INT_LEAST64_WIDTH__ 64\000"
 .LASF589:
 	.ascii	"pStackPointerEnd\000"
-.LASF218:
-	.ascii	"__FLT32X_MIN_10_EXP__ (-307)\000"
+.LASF592:
+	.ascii	"task_t\000"
 .LASF540:
 	.ascii	"Func_ActivateTask\000"
 .LASF60:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
-.LASF643:
-	.ascii	"AddToLinkList\000"
+.LASF437:
+	.ascii	"STM32F407VG 1\000"
 .LASF430:
 	.ascii	"__ARM_FEATURE_IDIV 1\000"
-.LASF453:
-	.ascii	"True 1\000"
+.LASF653:
+	.ascii	"scheduling_queue_element\000"
+.LASF468:
+	.ascii	"Privilige_level_save_current() ;\000"
 .LASF176:
 	.ascii	"__LDBL_MAX_EXP__ 1024\000"
 .LASF334:
@@ -6097,9 +6205,11 @@ OS_INIT_TASK:
 	.ascii	"MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\000"
 .LASF119:
 	.ascii	"__UINT_LEAST32_MAX__ 0xffffffffUL\000"
+.LASF343:
+	.ascii	"__UHQ_IBIT__ 0\000"
 .LASF436:
 	.ascii	"CFG_PROCESSOR 4\000"
-.LASF603:
+.LASF604:
 	.ascii	"VAR_MEM_FAULT_ADDR_REG\000"
 .LASF186:
 	.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
@@ -6107,7 +6217,7 @@ OS_INIT_TASK:
 	.ascii	"__INT8_TYPE__ signed char\000"
 .LASF74:
 	.ascii	"__WINT_MAX__ 0xffffffffU\000"
-.LASF648:
+.LASF658:
 	.ascii	"AddToTaskQueue\000"
 .LASF179:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
@@ -6119,18 +6229,18 @@ OS_INIT_TASK:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF259:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
+.LASF467:
+	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
 .LASF489:
 	.ascii	"_LED_H_ \000"
 .LASF232:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
-.LASF500:
-	.ascii	"_os_main_h_ \000"
 .LASF134:
 	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
 .LASF133:
 	.ascii	"__UINT_FAST32_MAX__ 0xffffffffU\000"
-.LASF163:
-	.ascii	"__DBL_MAX_10_EXP__ 308\000"
+.LASF255:
+	.ascii	"__USFRACT_FBIT__ 8\000"
 .LASF113:
 	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF332:
@@ -6151,14 +6261,12 @@ OS_INIT_TASK:
 	.ascii	"__SHRT_WIDTH__ 16\000"
 .LASF479:
 	.ascii	"Task_min_time (1e0)\000"
-.LASF627:
+.LASF637:
 	.ascii	"AllowedInstances\000"
 .LASF153:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
 .LASF49:
 	.ascii	"__INT_LEAST64_TYPE__ long long int\000"
-.LASF509:
-	.ascii	"Task_0_ptr 0\000"
 .LASF463:
 	.ascii	"cMCU_CORTEX_M4 4\000"
 .LASF44:
@@ -6201,31 +6309,27 @@ OS_INIT_TASK:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF236:
-	.ascii	"__DEC64_MANT_DIG__ 16\000"
-.LASF344:
-	.ascii	"__USQ_FBIT__ 32\000"
+.LASF222:
+	.ascii	"__FLT32X_MAX__ 1.7976931348623157e+308F32x\000"
+.LASF647:
+	.ascii	"UpdateSchedulingQueue\000"
 .LASF351:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF518:
 	.ascii	"long unsigned int\000"
 .LASF512:
 	.ascii	"Task_3_ptr 3\000"
-.LASF563:
-	.ascii	"fair_exe_time\000"
 .LASF378:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
 .LASF387:
 	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
-.LASF590:
-	.ascii	"privilige_mode\000"
-.LASF621:
+.LASF623:
 	.ascii	"RUNNING_TASK\000"
 .LASF392:
 	.ascii	"__ARM_FEATURE_QBIT 1\000"
-.LASF21:
-	.ascii	"__CHAR_BIT__ 8\000"
-.LASF610:
+.LASF20:
+	.ascii	"__SIZEOF_SIZE_T__ 4\000"
+.LASF611:
 	.ascii	"DBG_CURR_VAL\000"
 .LASF1:
 	.ascii	"__STDC_HOSTED__ 1\000"
@@ -6245,21 +6349,21 @@ OS_INIT_TASK:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF210:
 	.ascii	"__FLT64_EPSILON__ 2.2204460492503131e-16F64\000"
-.LASF595:
+.LASF596:
 	.ascii	"HEAP\000"
 .LASF499:
 	.ascii	"HEAP_OFFSET_FOR_CHUNK 8\000"
-.LASF640:
-	.ascii	"ret_val\000"
+.LASF509:
+	.ascii	"Task_0_ptr 0\000"
 .LASF383:
 	.ascii	"__GCC_ATOMIC_LLONG_LOCK_FREE 1\000"
 .LASF374:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\000"
-.LASF608:
+.LASF609:
 	.ascii	"BACKUP_SYSTICK_CURRENT_VAL_REG\000"
 .LASF524:
 	.ascii	"os_bug_Task_unspecified\000"
-.LASF638:
+.LASF650:
 	.ascii	"Add_successful\000"
 .LASF61:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
@@ -6283,18 +6387,18 @@ OS_INIT_TASK:
 	.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
 .LASF112:
 	.ascii	"__INT_LEAST64_MAX__ 0x7fffffffffffffffLL\000"
-.LASF598:
+.LASF599:
 	.ascii	"OS_STATE\000"
-.LASF142:
-	.ascii	"__DEC_EVAL_METHOD__ 2\000"
-.LASF297:
-	.ascii	"__USACCUM_MIN__ 0.0UHK\000"
-.LASF646:
-	.ascii	"link\000"
+.LASF494:
+	.ascii	"_os_heap_h_ \000"
+.LASF25:
+	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
 .LASF532:
 	.ascii	"Func_RestoreTaskEnvironment\000"
 .LASF111:
 	.ascii	"__INT_LEAST32_WIDTH__ 32\000"
+.LASF629:
+	.ascii	"TASK_3_VAR\000"
 .LASF497:
 	.ascii	"HEAP_OFFSET_FOR_SIZE 0\000"
 .LASF558:
@@ -6319,15 +6423,17 @@ OS_INIT_TASK:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
 .LASF476:
 	.ascii	"SchedulerFrequency (1.0e3)\000"
+.LASF423:
+	.ascii	"__ARM_NEON\000"
 .LASF503:
 	.ascii	"os_shutdown 2\000"
 .LASF562:
 	.ascii	"exe_time\000"
 .LASF260:
 	.ascii	"__FRACT_FBIT__ 15\000"
-.LASF635:
+.LASF646:
 	.ascii	"GetIdleTask\000"
-.LASF632:
+.LASF644:
 	.ascii	"OS_INIT_TASK\000"
 .LASF365:
 	.ascii	"__UTA_IBIT__ 64\000"
@@ -6345,7 +6451,7 @@ OS_INIT_TASK:
 	.ascii	"Global_inline __inline__\000"
 .LASF521:
 	.ascii	"os_bug_taskstate_request_denied\000"
-.LASF629:
+.LASF639:
 	.ascii	"pStackAddr\000"
 .LASF56:
 	.ascii	"__INT_FAST32_TYPE__ int\000"
@@ -6372,14 +6478,14 @@ OS_INIT_TASK:
 	.ascii	"L)\000"
 .LASF45:
 	.ascii	"__UINT64_TYPE__ long long unsigned int\000"
-.LASF624:
-	.ascii	"link_list_t\000"
-.LASF612:
-	.ascii	"DBG_CALIB_VALUE\000"
+.LASF228:
+	.ascii	"__FLT32X_HAS_QUIET_NAN__ 1\000"
+.LASF163:
+	.ascii	"__DBL_MAX_10_EXP__ 308\000"
 .LASF223:
 	.ascii	"__FLT32X_MIN__ 2.2250738585072014e-308F32x\000"
-.LASF362:
-	.ascii	"__UDA_FBIT__ 32\000"
+.LASF500:
+	.ascii	"_os_main_h_ \000"
 .LASF515:
 	.ascii	"short unsigned int\000"
 .LASF441:
@@ -6392,13 +6498,13 @@ OS_INIT_TASK:
 	.ascii	"__QQ_FBIT__ 7\000"
 .LASF227:
 	.ascii	"__FLT32X_HAS_INFINITY__ 1\000"
-.LASF468:
-	.ascii	"Privilige_level_save_current() ;\000"
+.LASF221:
+	.ascii	"__FLT32X_DECIMAL_DIG__ 17\000"
 .LASF404:
 	.ascii	"__ARM_ARCH_PROFILE 77\000"
-.LASF594:
+.LASF595:
 	.ascii	"TASK_PTR\000"
-.LASF620:
+.LASF622:
 	.ascii	"TASK_RUN_QUEUE\000"
 .LASF146:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
@@ -6414,13 +6520,13 @@ OS_INIT_TASK:
 	.ascii	"_os_common_h_ \000"
 .LASF178:
 	.ascii	"__DECIMAL_DIG__ 17\000"
-.LASF20:
-	.ascii	"__SIZEOF_SIZE_T__ 4\000"
-.LASF619:
-	.ascii	"pTASK_RUN_QUEUE\000"
+.LASF110:
+	.ascii	"__INT32_C(c) c ## L\000"
+.LASF486:
+	.ascii	"_os_init_task_system_h_ \000"
 .LASF541:
 	.ascii	"Func_TaskStateRequest\000"
-.LASF614:
+.LASF615:
 	.ascii	"TASK2_CALL_NR\000"
 .LASF370:
 	.ascii	"__STRICT_ANSI__ 1\000"
@@ -6434,32 +6540,36 @@ OS_INIT_TASK:
 	.ascii	"__UINTPTR_MAX__ 0xffffffffU\000"
 .LASF125:
 	.ascii	"__INT_FAST16_MAX__ 0x7fffffff\000"
-.LASF255:
-	.ascii	"__USFRACT_FBIT__ 8\000"
 .LASF543:
 	.ascii	"CoreID_e\000"
 .LASF507:
 	.ascii	"For_all_tasks_in_queue(var) for((var) = First_task;"
 	.ascii	" (var) <= Last_task; (var)++)\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
+.LASF630:
+	.ascii	"TASK_GROUP_1\000"
+.LASF631:
+	.ascii	"TASK_GROUP_2\000"
+.LASF632:
+	.ascii	"TASK_GROUP_3\000"
 .LASF192:
 	.ascii	"__FLT32_MAX_10_EXP__ 38\000"
+.LASF634:
+	.ascii	"TASK_GROUP_5\000"
 .LASF380:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
 .LASF273:
 	.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
 .LASF10:
 	.ascii	"__ATOMIC_ACQ_REL 4\000"
-.LASF649:
+.LASF659:
 	.ascii	"OS_INIT_TASK_QUEUE\000"
-.LASF221:
-	.ascii	"__FLT32X_DECIMAL_DIG__ 17\000"
+.LASF602:
+	.ascii	"VAR_USAGE_FAULT_STATUS_REG\000"
 .LASF323:
 	.ascii	"__LLACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LLK\000"
 .LASF548:
 	.ascii	"CoreID_t\000"
-.LASF628:
+.LASF638:
 	.ascii	"p_task_group\000"
 .LASF109:
 	.ascii	"__INT_LEAST32_MAX__ 0x7fffffffL\000"
@@ -6471,7 +6581,7 @@ OS_INIT_TASK:
 	.ascii	"WaitActUntil\000"
 .LASF89:
 	.ascii	"__UINTMAX_MAX__ 0xffffffffffffffffULL\000"
-.LASF637:
+.LASF648:
 	.ascii	"dest\000"
 .LASF550:
 	.ascii	"ePriviligeMode_unpriviliged_thread_mode\000"
@@ -6479,8 +6589,8 @@ OS_INIT_TASK:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
 .LASF161:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
-.LASF622:
-	.ascii	"TASK_IDLE_QUEUE\000"
+.LASF593:
+	.ascii	"scheduling_t\000"
 .LASF572:
 	.ascii	"NrOfInsActivated\000"
 .LASF184:

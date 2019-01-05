@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 1
 
 
    1              		.file	"os_task_common.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
   30 001e 8B5848   		movl	72(%eax), %ebx
   31 0021 8B4508   		movl	8(%ebp), %eax
   32 0024 8B4844   		movl	68(%eax), %ecx
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 2
 
 
   33 0027 8B4508   		movl	8(%ebp), %eax
@@ -118,7 +118,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
   71              		.cfi_def_cfa_register 5
   72 0067 83EC18   		subl	$24, %esp
   39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****    if(task!=0)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 3
 
 
   73              		.loc 1 39 0
@@ -178,7 +178,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  111              		.loc 1 51 0
  112 00a7 8B4508   		movl	8(%ebp), %eax
  113 00aa 890424   		movl	%eax, (%esp)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 4
 
 
  114 00ad E8000000 		call	_LLF_RESTORE_SYSTEM_STACK
@@ -238,7 +238,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  159      0000
   60:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****    {
   61:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       /* general*/
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 5
 
 
   62:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->active                = False;
@@ -298,7 +298,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
   87:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->TimeToPrioInc                    = (unsigned_int32_t)        5;
  183              		.loc 1 87 0
  184 011d 8B4508   		movl	8(%ebp), %eax
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 6
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 6
 
 
  185 0120 C7401005 		movl	$5, 16(%eax)
@@ -358,7 +358,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  220              		.loc 1 100 0
  221 0182 8B4508   		movl	8(%ebp), %eax
  222 0185 C6400500 		movb	$0, 5(%eax)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 7
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 7
 
 
  101:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->fp                               = (func_p_t)                0;
@@ -418,7 +418,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  260              		.loc 1 114 0 is_stmt 1
  261 01c1 8B4508   		movl	8(%ebp), %eax
  262 01c4 8B4050   		movl	80(%eax), %eax
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 8
 
 
  263 01c7 890424   		movl	%eax, (%esp)
@@ -478,7 +478,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  299 0207 7514     		jne	L17
  127:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****    {  
  128:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       OS_SET_SW_BUG(os_bug_null_pointer,Func_CreateTaskEnvironment);
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 9
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 9
 
 
  300              		.loc 1 128 0
@@ -538,7 +538,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  337 00a5 A9000000 		.long	0xa9
  338 00a9 03       		.uleb128 0x3
  339 00aa 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 10
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 10
 
 
  340 00ab 08       		.byte	0x8
@@ -598,7 +598,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  370      61736B73 
  370      74617465 
  370      5F726571 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 11
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 11
 
 
  371 0150 01       		.sleb128 1
@@ -658,7 +658,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  397 0226 05       		.uleb128 0x5
  398 0227 46756E63 		.ascii "Func_NoFunction\0"
  398      5F4E6F46 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 12
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 12
 
 
  398      756E6374 
@@ -718,7 +718,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  422      6B536368 
  422      6564756C 
  422      657200
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 13
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 13
 
 
  423 02f8 08       		.sleb128 8
@@ -778,7 +778,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  450 03b6 65507269 		.ascii "ePriviligeMode_priviliged_handler_mode\0"
  450      76696C69 
  450      67654D6F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 14
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 14
 
 
  450      64655F70 
@@ -838,7 +838,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  481 045d F7030000 		.long	0x3f7
  482 0461 02       		.uleb128 0x2
  483 0462 66756E63 		.ascii "func_p_t\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 15
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 15
 
 
  483      5F705F74 
@@ -883,12 +883,12 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  514      00
  515 04c9 08       		.byte	0x8
  516 04ca 05       		.byte	0x5
- 517 04cb 16       		.byte	0x16
+ 517 04cb 17       		.byte	0x17
  518 04cc F3040000 		.long	0x4f3
  519 04d0 0C       		.uleb128 0xc
  520 04d1 11000000 		.secrel32	LASF0
  521 04d5 05       		.byte	0x5
- 522 04d6 18       		.byte	0x18
+ 522 04d6 19       		.byte	0x19
  523 04d7 DD000000 		.long	0xdd
  524 04db 00       		.byte	0
  525 04dc 0D       		.uleb128 0xd
@@ -897,8 +897,8 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  526      5F74696D 
  526      6500
  527 04eb 05       		.byte	0x5
- 528 04ec 19       		.byte	0x19
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 16
+ 528 04ec 1A       		.byte	0x1a
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 16
 
 
  529 04ed DD000000 		.long	0xdd
@@ -910,20 +910,20 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  533      75705F74 
  533      00
  534 0501 05       		.byte	0x5
- 535 0502 1B       		.byte	0x1b
+ 535 0502 1C       		.byte	0x1c
  536 0503 BB040000 		.long	0x4bb
  537 0507 0B       		.uleb128 0xb
  538 0508 7461736B 		.ascii "task_s\0"
  538      5F7300
  539 050f 64       		.byte	0x64
  540 0510 05       		.byte	0x5
- 541 0511 1D       		.byte	0x1d
+ 541 0511 1E       		.byte	0x1e
  542 0512 7B070000 		.long	0x77b
  543 0516 0E       		.uleb128 0xe
  544 0517 61637469 		.ascii "active\0"
  544      766500
  545 051e 05       		.byte	0x5
- 546 051f 1F       		.byte	0x1f
+ 546 051f 20       		.byte	0x20
  547 0520 7B070000 		.long	0x77b
  548 0524 04       		.byte	0x4
  549 0525 01       		.byte	0x1
@@ -934,7 +934,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  553      5F717565 
  553      75656400 
  554 0535 05       		.byte	0x5
- 555 0536 20       		.byte	0x20
+ 555 0536 21       		.byte	0x21
  556 0537 7B070000 		.long	0x77b
  557 053b 04       		.byte	0x4
  558 053c 01       		.byte	0x1
@@ -945,7 +945,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  562      5461736B 
  562      00
  563 0549 05       		.byte	0x5
- 564 054a 21       		.byte	0x21
+ 564 054a 22       		.byte	0x22
  565 054b 7B070000 		.long	0x77b
  566 054f 04       		.byte	0x4
  567 0550 01       		.byte	0x1
@@ -955,10 +955,10 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  571 0554 46524545 		.ascii "FREE\0"
  571      00
  572 0559 05       		.byte	0x5
- 573 055a 22       		.byte	0x22
+ 573 055a 23       		.byte	0x23
  574 055b 7B070000 		.long	0x77b
  575 055f 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 17
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 17
 
 
  576 0560 1D       		.byte	0x1d
@@ -970,7 +970,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  580      6C6C6F77 
  580      656400
  581 0573 05       		.byte	0x5
- 582 0574 23       		.byte	0x23
+ 582 0574 24       		.byte	0x24
  583 0575 92000000 		.long	0x92
  584 0579 04       		.byte	0x4
  585 057a 0D       		.uleb128 0xd
@@ -980,7 +980,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  586      61746564 
  586      00
  587 058c 05       		.byte	0x5
- 588 058d 24       		.byte	0x24
+ 588 058d 25       		.byte	0x25
  589 058e 92000000 		.long	0x92
  590 0592 05       		.byte	0x5
  591 0593 0D       		.uleb128 0xd
@@ -989,7 +989,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  592      6E74696C 
  592      00
  593 05a1 05       		.byte	0x5
- 594 05a2 25       		.byte	0x25
+ 594 05a2 26       		.byte	0x26
  595 05a3 DD000000 		.long	0xdd
  596 05a7 08       		.byte	0x8
  597 05a8 0D       		.uleb128 0xd
@@ -997,7 +997,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  598      5F74696D 
  598      6500
  599 05b3 05       		.byte	0x5
- 600 05b4 26       		.byte	0x26
+ 600 05b4 27       		.byte	0x27
  601 05b5 DD000000 		.long	0xdd
  602 05b9 0C       		.byte	0xc
  603 05ba 0D       		.uleb128 0xd
@@ -1006,7 +1006,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  604      696F496E 
  604      6300
  605 05c9 05       		.byte	0x5
- 606 05ca 27       		.byte	0x27
+ 606 05ca 28       		.byte	0x28
  607 05cb DD000000 		.long	0xdd
  608 05cf 10       		.byte	0x10
  609 05d0 0D       		.uleb128 0xd
@@ -1016,9 +1016,9 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  610      5F706572 
  610      5F707269 
  611 05f0 05       		.byte	0x5
- 612 05f1 28       		.byte	0x28
+ 612 05f1 29       		.byte	0x29
  613 05f2 DD000000 		.long	0xdd
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 18
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 18
 
 
  614 05f6 14       		.byte	0x14
@@ -1029,13 +1029,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  616      77616974 
  616      5F74696D 
  617 060e 05       		.byte	0x5
- 618 060f 29       		.byte	0x29
+ 618 060f 2A       		.byte	0x2a
  619 0610 DD000000 		.long	0xdd
  620 0614 18       		.byte	0x18
  621 0615 0C       		.uleb128 0xc
  622 0616 11000000 		.secrel32	LASF0
  623 061a 05       		.byte	0x5
- 624 061b 2A       		.byte	0x2a
+ 624 061b 2B       		.byte	0x2b
  625 061c DD000000 		.long	0xdd
  626 0620 1C       		.byte	0x1c
  627 0621 0D       		.uleb128 0xd
@@ -1043,7 +1043,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  628      745F7469 
  628      6D6500
  629 062d 05       		.byte	0x5
- 630 062e 2B       		.byte	0x2b
+ 630 062e 2C       		.byte	0x2c
  631 062f DD000000 		.long	0xdd
  632 0633 20       		.byte	0x20
  633 0634 0D       		.uleb128 0xd
@@ -1052,7 +1052,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  634      7072696F 
  634      00
  635 0642 05       		.byte	0x5
- 636 0643 2C       		.byte	0x2c
+ 636 0643 2D       		.byte	0x2d
  637 0644 92000000 		.long	0x92
  638 0648 24       		.byte	0x24
  639 0649 0D       		.uleb128 0xd
@@ -1061,7 +1061,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  640      7072696F 
  640      00
  641 0657 05       		.byte	0x5
- 642 0658 2D       		.byte	0x2d
+ 642 0658 2E       		.byte	0x2e
  643 0659 92000000 		.long	0x92
  644 065d 25       		.byte	0x25
  645 065e 0D       		.uleb128 0xd
@@ -1069,16 +1069,16 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  646      5F6E756D 
  646      62657200 
  647 066b 05       		.byte	0x5
- 648 066c 2E       		.byte	0x2e
+ 648 066c 2F       		.byte	0x2f
  649 066d DD000000 		.long	0xdd
  650 0671 28       		.byte	0x28
  651 0672 0D       		.uleb128 0xd
  652 0673 667000   		.ascii "fp\0"
  653 0676 05       		.byte	0x5
- 654 0677 2F       		.byte	0x2f
+ 654 0677 30       		.byte	0x30
  655 0678 61040000 		.long	0x461
  656 067c 2C       		.byte	0x2c
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 19
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 19
 
 
  657 067d 0D       		.uleb128 0xd
@@ -1087,7 +1087,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  658      71756573 
  658      7400
  659 068c 05       		.byte	0x5
- 660 068d 30       		.byte	0x30
+ 660 068d 31       		.byte	0x31
  661 068e 84040000 		.long	0x484
  662 0692 30       		.byte	0x30
  663 0693 0D       		.uleb128 0xd
@@ -1095,7 +1095,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  664      5F737461 
  664      746500
  665 069f 05       		.byte	0x5
- 666 06a0 31       		.byte	0x31
+ 666 06a0 32       		.byte	0x32
  667 06a1 4D040000 		.long	0x44d
  668 06a5 34       		.byte	0x34
  669 06a6 0D       		.uleb128 0xd
@@ -1103,31 +1103,31 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  670      5F67726F 
  670      757000
  671 06b2 05       		.byte	0x5
- 672 06b3 32       		.byte	0x32
+ 672 06b3 33       		.byte	0x33
  673 06b4 8B070000 		.long	0x78b
  674 06b8 38       		.byte	0x38
  675 06b9 0D       		.uleb128 0xd
  676 06ba 45415800 		.ascii "EAX\0"
  677 06be 05       		.byte	0x5
- 678 06bf 34       		.byte	0x34
+ 678 06bf 35       		.byte	0x35
  679 06c0 DD000000 		.long	0xdd
  680 06c4 3C       		.byte	0x3c
  681 06c5 0D       		.uleb128 0xd
  682 06c6 45425800 		.ascii "EBX\0"
  683 06ca 05       		.byte	0x5
- 684 06cb 35       		.byte	0x35
+ 684 06cb 36       		.byte	0x36
  685 06cc DD000000 		.long	0xdd
  686 06d0 40       		.byte	0x40
  687 06d1 0D       		.uleb128 0xd
  688 06d2 45435800 		.ascii "ECX\0"
  689 06d6 05       		.byte	0x5
- 690 06d7 36       		.byte	0x36
+ 690 06d7 37       		.byte	0x37
  691 06d8 DD000000 		.long	0xdd
  692 06dc 44       		.byte	0x44
  693 06dd 0D       		.uleb128 0xd
  694 06de 45445800 		.ascii "EDX\0"
  695 06e2 05       		.byte	0x5
- 696 06e3 37       		.byte	0x37
+ 696 06e3 38       		.byte	0x38
  697 06e4 DD000000 		.long	0xdd
  698 06e8 48       		.byte	0x48
  699 06e9 0D       		.uleb128 0xd
@@ -1136,9 +1136,9 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  700      696E7465 
  700      7200
  701 06f8 05       		.byte	0x5
- 702 06f9 47       		.byte	0x47
+ 702 06f9 48       		.byte	0x48
  703 06fa 91070000 		.long	0x791
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 20
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 20
 
 
  704 06fe 4C       		.byte	0x4c
@@ -1149,7 +1149,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  706      7242794D 
  706      616C6C6F 
  707 0716 05       		.byte	0x5
- 708 0717 48       		.byte	0x48
+ 708 0717 49       		.byte	0x49
  709 0718 91070000 		.long	0x791
  710 071c 50       		.byte	0x50
  711 071d 0D       		.uleb128 0xd
@@ -1159,7 +1159,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  712      72537461 
  712      727400
  713 0731 05       		.byte	0x5
- 714 0732 49       		.byte	0x49
+ 714 0732 4A       		.byte	0x4a
  715 0733 91070000 		.long	0x791
  716 0737 54       		.byte	0x54
  717 0738 0D       		.uleb128 0xd
@@ -1167,7 +1167,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  718      6B53697A 
  718      6500
  719 0743 05       		.byte	0x5
- 720 0744 4A       		.byte	0x4a
+ 720 0744 4B       		.byte	0x4b
  721 0745 DD000000 		.long	0xdd
  722 0749 58       		.byte	0x58
  723 074a 0D       		.uleb128 0xd
@@ -1177,7 +1177,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  724      72456E64 
  724      00
  725 075c 05       		.byte	0x5
- 726 075d 4B       		.byte	0x4b
+ 726 075d 4C       		.byte	0x4c
  727 075e 91070000 		.long	0x791
  728 0762 5C       		.byte	0x5c
  729 0763 0D       		.uleb128 0xd
@@ -1186,7 +1186,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  730      655F6D6F 
  730      646500
  731 0773 05       		.byte	0x5
- 732 0774 4C       		.byte	0x4c
+ 732 0774 4D       		.byte	0x4d
  733 0775 DF030000 		.long	0x3df
  734 0779 60       		.byte	0x60
  735 077a 00       		.byte	0
@@ -1198,7 +1198,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  739      20696E74 
  739      00
  740 078b 06       		.uleb128 0x6
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 21
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 21
 
 
  741 078c 04       		.byte	0x4
@@ -1210,34 +1210,34 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  747 0798 7461736B 		.ascii "task_t\0"
  747      5F7400
  748 079f 05       		.byte	0x5
- 749 07a0 4E       		.byte	0x4e
+ 749 07a0 4F       		.byte	0x4f
  750 07a1 07050000 		.long	0x507
- 751 07a5 0F       		.uleb128 0xf
- 752 07a6 4F535F54 		.ascii "OS_TASK_SAVETASK_ENVIRONMENT\0"
- 752      41534B5F 
- 752      53415645 
- 752      5441534B 
- 752      5F454E56 
- 753 07c3 01       		.byte	0x1
- 754 07c4 0F       		.byte	0xf
- 755 07c5 00000000 		.long	LFB0
- 756 07c9 64000000 		.long	LFE0-LFB0
- 757 07cd 01       		.uleb128 0x1
- 758 07ce 9C       		.byte	0x9c
- 759 07cf E3070000 		.long	0x7e3
- 760 07d3 10       		.uleb128 0x10
- 761 07d4 7461736B 		.ascii "task\0"
- 761      00
- 762 07d9 01       		.byte	0x1
- 763 07da 0F       		.byte	0xf
- 764 07db E3070000 		.long	0x7e3
- 765 07df 02       		.uleb128 0x2
- 766 07e0 91       		.byte	0x91
- 767 07e1 00       		.sleb128 0
- 768 07e2 00       		.byte	0
- 769 07e3 06       		.uleb128 0x6
- 770 07e4 04       		.byte	0x4
- 771 07e5 97070000 		.long	0x797
+ 751 07a5 06       		.uleb128 0x6
+ 752 07a6 04       		.byte	0x4
+ 753 07a7 97070000 		.long	0x797
+ 754 07ab 0F       		.uleb128 0xf
+ 755 07ac 4F535F54 		.ascii "OS_TASK_SAVETASK_ENVIRONMENT\0"
+ 755      41534B5F 
+ 755      53415645 
+ 755      5441534B 
+ 755      5F454E56 
+ 756 07c9 01       		.byte	0x1
+ 757 07ca 0F       		.byte	0xf
+ 758 07cb 00000000 		.long	LFB0
+ 759 07cf 64000000 		.long	LFE0-LFB0
+ 760 07d3 01       		.uleb128 0x1
+ 761 07d4 9C       		.byte	0x9c
+ 762 07d5 E9070000 		.long	0x7e9
+ 763 07d9 10       		.uleb128 0x10
+ 764 07da 7461736B 		.ascii "task\0"
+ 764      00
+ 765 07df 01       		.byte	0x1
+ 766 07e0 0F       		.byte	0xf
+ 767 07e1 A5070000 		.long	0x7a5
+ 768 07e5 02       		.uleb128 0x2
+ 769 07e6 91       		.byte	0x91
+ 770 07e7 00       		.sleb128 0
+ 771 07e8 00       		.byte	0
  772 07e9 0F       		.uleb128 0xf
  773 07ea 4F535F54 		.ascii "OS_TASK_RESTORETASK_ENVIRONMENT\0"
  773      41534B5F 
@@ -1256,9 +1256,9 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  782      00
  783 0820 01       		.byte	0x1
  784 0821 25       		.byte	0x25
- 785 0822 E3070000 		.long	0x7e3
+ 785 0822 A5070000 		.long	0x7a5
  786 0826 02       		.uleb128 0x2
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 22
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 22
 
 
  787 0827 91       		.byte	0x91
@@ -1318,7 +1318,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  830      5461736B 
  830      456E7669 
  831 08c4 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 23
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 23
 
 
  832 08c5 39       		.byte	0x39
@@ -1332,7 +1332,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  839      00
  840 08da 01       		.byte	0x1
  841 08db 39       		.byte	0x39
- 842 08dc E3070000 		.long	0x7e3
+ 842 08dc A5070000 		.long	0x7a5
  843 08e0 02       		.uleb128 0x2
  844 08e1 91       		.byte	0x91
  845 08e2 00       		.sleb128 0
@@ -1355,7 +1355,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  857      00
  858 0919 01       		.byte	0x1
  859 091a 6E       		.byte	0x6e
- 860 091b E3070000 		.long	0x7e3
+ 860 091b A5070000 		.long	0x7a5
  861 091f 02       		.uleb128 0x2
  862 0920 91       		.byte	0x91
  863 0921 00       		.sleb128 0
@@ -1368,7 +1368,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  866      736B456E 
  867 0942 01       		.byte	0x1
  868 0943 7A       		.byte	0x7a
- 869 0944 E3070000 		.long	0x7e3
+ 869 0944 A5070000 		.long	0x7a5
  870 0948 E7010000 		.long	LFB6
  871 094c 3B000000 		.long	LFE6-LFB6
  872 0950 01       		.uleb128 0x1
@@ -1378,17 +1378,17 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  876 0957 7461736B 		.ascii "task\0"
  876      00
  877 095c 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 24
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 24
 
 
  878 095d 7C       		.byte	0x7c
- 879 095e E3070000 		.long	0x7e3
+ 879 095e A5070000 		.long	0x7a5
  880 0962 02       		.uleb128 0x2
  881 0963 91       		.byte	0x91
  882 0964 6C       		.sleb128 -20
  883 0965 00       		.byte	0
  884 0966 14       		.uleb128 0x14
- 885 0967 E3070000 		.long	0x7e3
+ 885 0967 A5070000 		.long	0x7a5
  886 096b 76090000 		.long	0x976
  887 096f 15       		.uleb128 0x15
  888 0970 76090000 		.long	0x976
@@ -1438,7 +1438,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  928 0017 03       		.uleb128 0x3
  929 0018 08       		.uleb128 0x8
  930 0019 3A       		.uleb128 0x3a
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 25
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 25
 
 
  931 001a 0B       		.uleb128 0xb
@@ -1498,7 +1498,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  985 0050 27       		.uleb128 0x27
  986 0051 19       		.uleb128 0x19
  987 0052 01       		.uleb128 0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 26
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 26
 
 
  988 0053 13       		.uleb128 0x13
@@ -1558,7 +1558,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1042 0089 38       		.uleb128 0x38
  1043 008a 0B       		.uleb128 0xb
  1044 008b 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 27
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 27
 
 
  1045 008c 00       		.byte	0
@@ -1618,7 +1618,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1099 00c2 40       		.uleb128 0x40
  1100 00c3 18       		.uleb128 0x18
  1101 00c4 9642     		.uleb128 0x2116
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 28
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 28
 
 
  1102 00c6 19       		.uleb128 0x19
@@ -1678,7 +1678,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1156 00fc 40       		.uleb128 0x40
  1157 00fd 18       		.uleb128 0x18
  1158 00fe 9642     		.uleb128 0x2116
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 29
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 29
 
 
  1159 0100 19       		.uleb128 0x19
@@ -1738,7 +1738,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1213 0136 00       		.byte	0
  1214 0137 00       		.byte	0
  1215              		.section	.debug_aranges,"dr"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 30
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 30
 
 
  1216 0000 1C000000 		.long	0x1c
@@ -1798,7 +1798,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1250 0076 01       		.byte	0x1
  1251 0077 00       		.uleb128 0
  1252 0078 5F5F4154 		.ascii "__ATOMIC_RELAXED 0\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 31
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 31
 
 
  1252      4F4D4943 
@@ -1858,7 +1858,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1275 0121 00       		.uleb128 0
  1276 0122 5F5F5349 		.ascii "__SIZEOF_LONG__ 4\0"
  1276      5A454F46 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 32
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 32
 
 
  1276      5F4C4F4E 
@@ -1918,7 +1918,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1300      47474553 
  1300      545F414C 
  1300      49474E4D 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 33
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 33
 
 
  1300      454E545F 
@@ -1978,7 +1978,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1324      465F5459 
  1324      50455F5F 
  1324      20696E74 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 34
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 34
 
 
  1325 02e5 01       		.byte	0x1
@@ -2038,7 +2038,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1348      5F207369 
  1348      676E6564 
  1349 03f0 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 35
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 35
 
 
  1350 03f1 00       		.uleb128 0
@@ -2098,7 +2098,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1372      455F5F20 
  1373 04ed 01       		.byte	0x1
  1374 04ee 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 36
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 36
 
 
  1375 04ef 5F5F494E 		.ascii "__INT_LEAST16_TYPE__ short int\0"
@@ -2158,7 +2158,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1397 0613 01       		.byte	0x1
  1398 0614 00       		.uleb128 0
  1399 0615 5F5F494E 		.ascii "__INT_FAST16_TYPE__ short int\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 37
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 37
 
 
  1399      545F4641 
@@ -2218,7 +2218,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1422 0728 00       		.uleb128 0
  1423 0729 5F5F5549 		.ascii "__UINTPTR_TYPE__ unsigned int\0"
  1423      4E545054 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 38
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 38
 
 
  1423      525F5459 
@@ -2278,7 +2278,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1447 081d 5F5F4C4F 		.ascii "__LONG_LONG_MAX__ 9223372036854775807LL\0"
  1447      4E475F4C 
  1447      4F4E475F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 39
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 39
 
 
  1447      4D41585F 
@@ -2338,7 +2338,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1471      29206320 
  1471      2323204C 
  1472 090a 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 40
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 40
 
 
  1473 090b 00       		.uleb128 0
@@ -2398,7 +2398,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1495      32333337 
  1496 0a07 01       		.byte	0x1
  1497 0a08 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 41
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 41
 
 
  1498 0a09 5F5F5549 		.ascii "__UINT8_MAX__ 255\0"
@@ -2458,7 +2458,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1522 0ad0 5F5F494E 		.ascii "__INT_LEAST32_MAX__ 2147483647\0"
  1522      545F4C45 
  1522      41535433 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 42
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 42
 
 
  1522      325F4D41 
@@ -2518,7 +2518,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1546      41585F5F 
  1547 0bc0 01       		.byte	0x1
  1548 0bc1 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 43
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 43
 
 
  1549 0bc2 5F5F5549 		.ascii "__UINT32_C(c) c ## U\0"
@@ -2578,7 +2578,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1571 0cb6 01       		.byte	0x1
  1572 0cb7 00       		.uleb128 0
  1573 0cb8 5F5F5549 		.ascii "__UINT_FAST16_MAX__ 65535\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 44
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 44
 
 
  1573      4E545F46 
@@ -2638,7 +2638,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1597 0da2 5F5F4445 		.ascii "__DEC_EVAL_METHOD__ 2\0"
  1597      435F4556 
  1597      414C5F4D 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 45
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 45
 
 
  1597      4554484F 
@@ -2698,7 +2698,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1621      4C5F4449 
  1621      475F5F20 
  1622 0e6a 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 46
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 46
 
 
  1623 0e6b 00       		.uleb128 0
@@ -2758,7 +2758,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1645      20353300 
  1646 0f7c 01       		.byte	0x1
  1647 0f7d 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 47
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 47
 
 
  1648 0f7e 5F5F4442 		.ascii "__DBL_DIG__ 15\0"
@@ -2818,7 +2818,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1671 1077 00       		.uleb128 0
  1672 1078 5F5F4442 		.ascii "__DBL_EPSILON__ ((double)2.22044604925031308085e-16L)\0"
  1672      4C5F4550 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 48
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 48
 
 
  1672      53494C4F 
@@ -2878,7 +2878,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1696      424C5F4D 
  1696      494E5F31 
  1696      305F4558 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 49
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 49
 
 
  1696      505F5F20 
@@ -2938,7 +2938,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1720      41535F44 
  1720      454E4F52 
  1720      4D5F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 50
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 50
 
 
  1721 12b5 01       		.byte	0x1
@@ -2998,7 +2998,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1744      4C4F4E5F 
  1744      5F203145 
  1745 1383 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 51
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 51
 
 
  1746 1384 00       		.uleb128 0
@@ -3058,7 +3058,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1768      4C5F4D49 
  1769 1487 01       		.byte	0x1
  1770 1488 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 52
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 52
 
 
  1771 1489 5F5F4445 		.ascii "__DEC128_MANT_DIG__ 34\0"
@@ -3118,7 +3118,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1793 15a9 01       		.byte	0x1
  1794 15aa 00       		.uleb128 0
  1795 15ab 5F5F5553 		.ascii "__USER_LABEL_PREFIX__ _\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 53
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 53
 
 
  1795      45525F4C 
@@ -3178,7 +3178,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1819 168b 5F5F4743 		.ascii "__GCC_ATOMIC_WCHAR_T_LOCK_FREE 1\0"
  1819      435F4154 
  1819      4F4D4943 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 54
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 54
 
 
  1819      5F574348 
@@ -3238,7 +3238,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1843      41474D41 
  1843      5F524544 
  1843      4546494E 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 55
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 55
 
 
  1843      455F4558 
@@ -3298,7 +3298,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1870 185f 5F5F636F 		.ascii "__code_model_32__ 1\0"
  1870      64655F6D 
  1870      6F64656C 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 56
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 56
 
 
  1870      5F33325F 
@@ -3358,7 +3358,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1895 1973 01       		.byte	0x1
  1896 1974 00       		.uleb128 0
  1897 1975 5F5F4D49 		.ascii "__MINGW32__ 1\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 57
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 57
 
 
  1897      4E475733 
@@ -3418,7 +3418,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1924      52203300 
  1925 1a2a 03       		.byte	0x3
  1926 1a2b 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 58
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 58
 
 
  1927 1a2c 01       		.uleb128 0x1
@@ -3478,7 +3478,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1955      203000
  1956 1ac5 01       		.byte	0x1
  1957 1ac6 0A       		.uleb128 0xa
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 59
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 59
 
 
  1958 1ac7 4350505F 		.ascii "CPP_VERSION_1998 1\0"
@@ -3538,7 +3538,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  1984 1b81 01       		.byte	0x1
  1985 1b82 07       		.uleb128 0x7
  1986 1b83 54727565 		.ascii "True 1\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 60
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 60
 
 
  1986      203100
@@ -3598,7 +3598,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2015 1c41 13       		.uleb128 0x13
  2016 1c42 634D4355 		.ascii "cMCU_CORTEX_M4 4\0"
  2016      5F434F52 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 61
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 61
 
 
  2016      5445585F 
@@ -3658,7 +3658,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2040      4D637528 
  2040      292000
  2041 1d30 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 62
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 62
 
 
  2042              		.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
@@ -3718,7 +3718,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2076      72757074 
  2076      5F737769 
  2076      5F332061 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 63
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 63
 
 
  2077 1ddc 01       		.byte	0x1
@@ -3778,7 +3778,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2114 1e63 5F6C6C64 		.ascii "_lld_ram_h_ \0"
  2114      5F72616D 
  2114      5F685F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 64
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 64
 
 
  2114      00
@@ -3838,7 +3838,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2144      65302900 
  2145 1f35 01       		.byte	0x1
  2146 1f36 09       		.uleb128 0x9
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 65
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 65
 
 
  2147 1f37 4E554D42 		.ascii "NUMBER_OF_TASKS 5\0"
@@ -3895,17 +3895,17 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2170      7374656D 
  2171 2002 04       		.byte	0x4
  2172 2003 01       		.byte	0x1
- 2173 2004 5D       		.uleb128 0x5d
+ 2173 2004 5F       		.uleb128 0x5f
  2174 2005 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
  2174      61766554 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 66
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 66
 
 
  2174      61736B50 
  2174      74722874 
  2174      61736B5F 
  2175 204d 01       		.byte	0x1
- 2176 204e 5E       		.uleb128 0x5e
+ 2176 204e 60       		.uleb128 0x60
  2177 204f 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
  2177      65745461 
  2177      736B5074 
@@ -3958,7 +3958,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2211 20da 06       		.uleb128 0x6
  2212 20db 4F535F53 		.ascii "OS_STACK_SIZE_END 0x01u\0"
  2212      5441434B 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 67
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 67
 
 
  2212      5F53495A 
@@ -4018,7 +4018,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2242 2186 02       		.uleb128 0x2
  2243 2187 5F6F735F 		.ascii "_os_main_h_ \0"
  2243      6D61696E 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 68
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 68
 
 
  2243      5F685F20 
@@ -4078,7 +4078,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2281 21f9 01       		.byte	0x1
  2282 21fa 08       		.uleb128 0x8
  2283 21fb 5461736B 		.ascii "Task_1_ptr 1\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 69
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 69
 
 
  2283      5F315F70 
@@ -4129,19 +4129,19 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 1
  2307      74696D65 
  2307      00
  2308              		.ident	"GCC: (GNU) 4.9.3"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s 			page 70
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s 			page 70
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_task_common.c
                             *COM*:00000014 _TASK_PTR
-C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:7      .text:00000000 _OS_TASK_SAVETASK_ENVIRONMENT
-C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:63     .text:00000064 _OS_TASK_RESTORETASK_ENVIRONMENT
-C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:101    .text:000000a1 _OS_TASK_RESTORE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:124    .text:000000b4 _OS_TASK_SAVE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:147    .text:000000c7 _OS_Task_InitTaskEnvironment
-C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:242    .text:000001ab _OS_Task_DeleteTaskEnvironment
-C:\Users\PRESID~1\AppData\Local\Temp\ccOlxmh4.s:281    .text:000001e7 _OS_Task_CreateTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s:7      .text:00000000 _OS_TASK_SAVETASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s:63     .text:00000064 _OS_TASK_RESTORETASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s:101    .text:000000a1 _OS_TASK_RESTORE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s:124    .text:000000b4 _OS_TASK_SAVE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s:147    .text:000000c7 _OS_Task_InitTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s:242    .text:000001ab _OS_Task_DeleteTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\ccNDp3Df.s:281    .text:000001e7 _OS_Task_CreateTaskEnvironment
 
 UNDEFINED SYMBOLS
 _LLF_SAVE_TASK_STACK

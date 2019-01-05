@@ -18,12 +18,6 @@ int main(int argc, char* argv[])
    {
       /* emulate the interrupts */
       OS_STATE_HANDLER();
-      OS_ISRHANDLERC0();
-#if(0)
-      OS_ISRHANDLERC1();
-      OS_ISRHANDLERC2();
-      OS_ISRHANDLERC3();
-#endif
       i++;
    }
 

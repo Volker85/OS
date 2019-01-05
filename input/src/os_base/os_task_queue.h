@@ -8,18 +8,17 @@
 
 #define For_all_tasks_in_queue(var) for((var) = First_task; (var) <= Last_task; (var)++)
 
-typedef void* link_list_t;
 extern task_t* GetRunningTask(void);
+extern task_t** GetRunningSchedulingQueueElementPtr(void);
 
-extern void* AddToTaskQueue(task_t* task);
+extern task_t* AddToTaskQueue(task_t* task);
 extern void AddToIdleTaskQueue(task_t* task);
-extern void UpdateLinkList(void);
-extern void* AddToLinkList(task_t* task);
-extern void DeleteFromLinkList(unsigned_char_t element_nr);
 extern void DeleteFromTaskQueue(task_t* task);
-extern task_t* GetFromTaskQueue(link_list_t* link);
+extern task_t* GetFromTaskQueue(scheduling_t* scheduling_task_ptr);
 extern task_t* GetIdleTask(void);
-extern link_list_t* GetFromLinkList(unsigned_char_t element_nr);
-extern void SET_RUNNING_TASK(task_t* task);
+extern scheduling_t* GetFromSchedulingQueue(unsigned_char_t element_nr);
+extern void DeleteFromSchedulingQueue(scheduling_t* scheduling_queue_element);
+extern void AddToSchedulingQueue(task_t* task);
+extern void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task);
 extern void OS_INIT_TASK_QUEUE(void);
 #endif /* _os_task_queue_h_ */
