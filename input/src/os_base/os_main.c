@@ -1,7 +1,7 @@
 #include "os_firstinc.h"
 #include "os_task_common.h"
 #include "os_task_scheduler.h"
-#include "os_shutdown.h"
+#include "OS_shutdown.h"
 #include "os_start_init_mc.h"
 #include "os_start_init_hw.h"
 #include "os_start_init_sw.h"
@@ -12,11 +12,11 @@
 OS_State: OS_INIT (Start im Supervisor Mode)
 - Exception Handler aufsetzen  -> Done
 - HW Internal Peripherie, RAM, etc -> Done
-- Tasks konfigurieren -> Done via OS_INIT_TASK_SYSTEM()
---> Stack -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
+- Tasks konfigurieren -> Done via OS_InitTaskSystem()
+--> Stack -> assigned in function OS_InitTasks / OS_InitTaskSystem -> Done
 --> MMU_REGION ->NA
 --> CoreId -> Done
---> Task-Function -> assigned in function OS_INIT_TASKS / OS_INIT_TASK_SYSTEM -> Done
+--> Task-Function -> assigned in function OS_InitTask / OS_InitTaskSystem -> Done
 --> TaskPrio -> Done
 --> MultipleActChk -> Done in OS_ActivateTask()
 --> Privilige Level (Handler mode (priviliged): System Mode, Abort, Undefined, FiQ, IRQ; Thread mode: unpriviliged / priviliged) -> Done
@@ -35,11 +35,11 @@ OS_State: OS_Running (User Mode)
 
 (OS_State: OS_Exception (Supervisor Mode))
 - Link-Register Adresse im Eeprom abspeichern, an der die Exceptioin erzeugt wurde -> NA (no EEPROM exists on eval board, enter endless loop instead)
-- OS_Shutdown mit Reset -> Done in handler functions via call of "OS_SHUTDOWN(os_reset_hardreset)"
+- OS_Shutdown mit Reset -> Done in handler functions via call of "OS_Shutdown(os_reset_hardreset)"
 
 OS_State: OS_Shutdown (nur erlaubt im Supervisor Mode)
 - Interrupts deaktivieren -> Done
-- Tasks beenden (Timer Interrupts löschen) -> Done OS_SHUTDOWN(os_reset_hardreset
+- Tasks beenden (Timer Interrupts löschen) -> Done OS_Shutdown(os_reset_hardreset
 - FMON / Watchdog deinitialisieren -> NA
 - MMU deaktivieren / deintialisieren -> NA
 - HW Reset auslösen -> Done
@@ -53,7 +53,7 @@ typedef enum os_reset_req_state_e
    Reset_exit
 } os_reset_req_state_t;
 
-Local void OS_DETERMINE_NEXT_TASK_ACTIVATION(void)
+Local void OS_DetermineNextTaskActivation(void)
 {
     Local uint32 call_nr = 0;
     switch(call_nr)
@@ -85,7 +85,7 @@ Local void OS_DETERMINE_NEXT_TASK_ACTIVATION(void)
 
 }
 
-void OS_STATE_HANDLER(void)
+void OS_StateHandler(void)
 {
    /* the following code runs in priviliged mode!! */
    Local os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
@@ -96,18 +96,18 @@ void OS_STATE_HANDLER(void)
    case os_init:
    {
       /*init the MCU including MMU, RAM, Registers */
-      OS_INIT_MC();
+      OS_InitMc();
       /* start the task system */
       /* initialisation of SW, HW will be done in the tasks, after starting the task system.... */
-      OS_INIT_HW();
-      OS_INIT_SW();
+      OS_InitHw();
+      OS_InitSw();
 
       /* trigger dispatcher */
       /* activate the dispatcher, configure TCMP interrupts for tasks */
       /* activate & start the Idle task */
       OS_ActivateTask(&TASK_0_VAR);
-      OS_STARTTASK(GetIdleTask(),0);
-      OS_ACTIVATE_DISPATCHER();
+      OS_StartTask(GetIdleTask(),0);
+      OS_ActivateDispatcher();
 
       OS_STATE = os_running;
       /* activate the interrupts, tasks will be executed from now on ... */
@@ -124,11 +124,11 @@ void OS_STATE_HANDLER(void)
    {
       if(call_nr % 5 == 0)
       {
-         OS_DETERMINE_NEXT_TASK_ACTIVATION();
+         OS_DetermineNextTaskActivation();
       }
       call_nr++;
       /* run the task function */
-      OS_TASK_DISPATCHER();
+      OS_TaskDispatcher();
       if(0) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
       {
          OS_STATE = os_shutdown;
@@ -144,22 +144,22 @@ void OS_STATE_HANDLER(void)
       {
       case Reset_powerdown:
       {
-         OS_SHUTDOWN(os_reset_powerdown);
+         OS_Shutdown(os_reset_powerdown);
          break;
       }
       case Reset_restart:
       {
-         OS_SHUTDOWN(os_reset_hardreset);
+         OS_Shutdown(os_reset_hardreset);
          break;
       }
       case Reset_exit:
       {
-         OS_SHUTDOWN(os_reset_exit);
+         OS_Shutdown(os_reset_exit);
          break;
       }
       default:
       {
-         OS_SHUTDOWN(os_reset_hardreset);
+         OS_Shutdown(os_reset_hardreset);
          break;
       }
       }

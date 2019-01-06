@@ -38,7 +38,7 @@ void OS_Exception_HARDFAULT(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 #endif
 }
 
@@ -54,7 +54,7 @@ void OS_Exception_NMI(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 #endif
 }
 void OS_Exception_SWI(void)
@@ -82,7 +82,7 @@ void OS_Exception_BUS_FAULT(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 #endif
 }
 
@@ -91,7 +91,7 @@ void OS_Exception_DEBUG(void)
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 #endif
 }
 
@@ -106,7 +106,7 @@ void OS_Exception_MEM_MANAG_FAULT(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 #endif
 }
 
@@ -121,7 +121,7 @@ void OS_Exception_USAGE_FAULT(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 #endif
 }
 
@@ -129,7 +129,7 @@ void OS_Exception_PendSV(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 #endif
 }
 
@@ -148,8 +148,7 @@ void OS_Exception_Systick(void)
    /* configure the TCMP */
    /*
    Dispatcher function for Core 0:
-    -> ISR_TASK_DISPATCH_C0
-   Write Adresse into the config register (interrupts are requested by SWI/SVC???)
+    Write Adresse into the config register (interrupts are requested by SWI/SVC???)
    */
    #define SYSTICK_CTRL_STAT_REG ((uint32*)0xE000E010)
    #define SYSTICK_RLD_VAL_REG   ((uint32*)0xE000E014)
@@ -216,15 +215,15 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
    task = GetRunningTask();
    if(task != 0u)
    {
-      OS_TASK_SAVETASK_ENVIRONMENT(task);
-      OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[GET_CORE_ID()][0]);
+      OS_TaskSaveTaskEnvironment(task);
+      OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
       task->active = False;
-      task->exe_time += (Get_current_time() - task->start_time);
-      task->task_group->exe_time += (Get_current_time() - task->start_time);
+      task->exe_time += (OS_GetCurrentTime() - task->start_time);
+      task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);
       SET_RUNNING_TASK(0,0);
-      OS_TERMINATE_TASK(task,0);
+      OS_TerminateTask(task,0);
    }
-   OS_STATE_HANDLER();
+   OS_StateHandler();
 #endif
 }
 
@@ -240,30 +239,3 @@ void OS_Exception_FIQ(void)
    OS_ISRHANDLERC0();
 #endif
 }
-
-
-ISR TCMP1(void)
-{
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   OS_ISRHANDLERC0();
-#endif
-}
-ISR TCMP2(void)
-{
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-
-#endif
-}
-ISR TCMP3(void)
-{
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-
-#endif
-}
-ISR TCMP4(void)
-{
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-
-#endif
-}
-

@@ -13,11 +13,11 @@ int main(int argc, char* argv[])
    unsigned int i = 0;
    time_t t = time(0);
 
-   OS_START_OS();
+   OS_StartOs();
    while(i < 1e8)
    {
       /* emulate the interrupts */
-      OS_STATE_HANDLER();
+      OS_StateHandler();
       i++;
    }
 

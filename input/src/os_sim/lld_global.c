@@ -1,5 +1,5 @@
 #include "..\os_base\os_firstinc.h"
-CoreID_t GET_CORE_ID(void)
+CoreID_t OS_GetCoreId(void)
 {
    /* the Coretex M4 process has just one core-> use static assignement of core id */
    /*

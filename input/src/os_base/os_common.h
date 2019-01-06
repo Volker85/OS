@@ -73,7 +73,7 @@ typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
 
 
-extern void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
+extern void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
 
 typedef void (*func_ptr_t)(void);
 #endif /* _os_common_h_ */

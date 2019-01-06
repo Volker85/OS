@@ -20,5 +20,5 @@ extern scheduling_t* GetFromSchedulingQueue(unsigned_char_t element_nr);
 extern void DeleteFromSchedulingQueue(scheduling_t* scheduling_queue_element);
 extern void AddToSchedulingQueue(task_t* task);
 extern void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task);
-extern void OS_INIT_TASK_QUEUE(void);
+extern void OS_InitTaskQueue(void);
 #endif /* _os_task_queue_h_ */

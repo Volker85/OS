@@ -1,22 +1,22 @@
 #include "os_firstinc.h"
-#include "os_shutdown.h"
+#include "OS_shutdown.h"
 #include "os_start_ext_prg.h"
-Local void OS_DEINIT_HW(void);
-Local void OS_DEINIT_SW(void);
-void OS_DEINIT_HW(void)
+Local void OS_DeinitHw(void);
+Local void OS_DeinitSw(void);
+void OS_DeinitHw(void)
 {
    /*QAC*/
 }
-void OS_DEINIT_SW(void)
+void OS_DeinitSw(void)
 {
   /*QAC*/
 }
-void OS_DEINIT_MC(void)
+void OS_DeinitMc(void)
 {
    /*QAC*/
 }
 
-void OS_SHUTDOWN(os_reset_type_t reset_typ)
+void OS_Shutdown(os_reset_type_t reset_typ)
 {
    /* disable interrupts for all cores -> prevents task activation, etc*/
    LLF_DISABLE_INTERRUPTS_ALL_CORES();
@@ -37,15 +37,15 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
    }
    else if (reset_typ == os_reset_exit)
    {
-      OS_DEINIT_HW();
-      OS_DEINIT_SW();
-      OS_DEINIT_MC();
-      OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);      
-   }   
+      OS_DeinitHw();
+      OS_DeinitSw();
+      OS_DeinitMc();
+      OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);
+   }
    else
    {
       ;
-   }   
+   }
    while(1)
    {
       /* if you enter here, the reset has failed to be executed.... */

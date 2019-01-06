@@ -9,7 +9,7 @@
 
 /* index 0: current task, 1,2,3,4: next tasks to be executed */
 /*
-1. after execution of task finished(OS_TERMINATE_TASK):
+1. after execution of task finished(OS_TerminateTask):
  - delete run_queue_element         (DeleteFromTaskQueue)
  - delete Scheduling queue entry    (DeleteFromSchedulingQueue)
  - shift pointers towards index 0   (UpdateSchedulingQueue)
@@ -84,7 +84,7 @@ void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task)
 }
 
 /* task queue handling */
-void OS_INIT_TASK_QUEUE(void)
+void OS_InitTaskQueue(void)
 {
    if(bTASK_QUEUE_INITIALIZED == False)
    {
@@ -334,7 +334,7 @@ scheduling_t* GetRunningSchedulingQueueElementPtr(void)
 {
     return RUNNING_SCHEDULING_QUEUE_ENTRY;
 }
-void OS_INIT_TASK(
+void OS_InitTask(
    task_t*          task,
    func_p_t         TaskFunction,
    unsigned_char_t  AllowedInstances,
@@ -381,6 +381,6 @@ void OS_INIT_TASK(
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer, Func_InitTask);
+      OS_SetSwBug(os_bug_null_pointer, Func_InitTask);
    }
 }

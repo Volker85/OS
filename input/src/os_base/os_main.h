@@ -3,5 +3,5 @@
 #define os_init    0
 #define os_running 1
 #define os_shutdown 2
-extern void OS_STATE_HANDLER(void);
+extern void OS_StateHandler(void);
 #endif /* _os_main_h_ */

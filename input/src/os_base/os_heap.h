@@ -12,8 +12,8 @@
 
 
 
-extern void* os_calloc(uint32 num, uint32 size);
-extern void* os_realloc(void* ptr_old, uint32 size_new);
-extern void* os_malloc(uint32 size);
-extern void  os_free(void* ptr);
+extern void* OS_Calloc(uint32 num, uint32 size);
+extern void* OS_Realloc(void* ptr_old, uint32 size_new);
+extern void* OS_Malloc(uint32 size);
+extern void  OS_Free(void* ptr);
 #endif
