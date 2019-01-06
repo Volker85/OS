@@ -834,9 +834,13 @@ void OS_INIT_SW(void)
 {
 
 
+   unsigned_char_t i;
    bTASK_QUEUE_INITIALIZED = 0;
 
-   OS_SW_BUG[15] = {os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug,os_bug_no_bug};
+   for(i = 0; i < 15; i++)
+   {
+      OS_SW_BUG[i] = os_bug_no_bug;
+   }
 
    OS_INIT_TASK_SYSTEM();
    TASK1_CALL_NR = 0;

@@ -63,15 +63,15 @@ Local void OS_DETERMINE_NEXT_TASK_ACTIVATION(void)
         call_nr++;
         break;
     case 1:
-        OS_ActivateTask(&TASK_1_VAR);
+
         call_nr++;
         break;
     case 2:
-        OS_ActivateTask(&TASK_0_VAR);
+        OS_ActivateTask(&TASK_2_VAR);
         call_nr++;
         break;
     case 3:
-        OS_ActivateTask(&TASK_2_VAR);
+
         call_nr++;
         break;
     case 4:
