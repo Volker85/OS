@@ -320,7 +320,9 @@ enum os_sw_bugs_function_e
    Func_DeleteTaskEnvironment,
    Func_StartTask,
    Func_PreemptTask,
-   Func_TerminateTask,
+   Func_TerminateTask_Part1,
+   Func_TerminateTask_Part2,
+   Func_TerminateTask_Part3,
    Func_TaskScheduler,
    Func_InitTask,
    Func_ActivateTask,
@@ -606,6 +608,7 @@ extern unsigned_char_t HEAP[10000];
 
 extern unsigned_char_t OS_STACK[1][0x100];
 extern unsigned_char_t OS_MAIN_STACK[0x100];
+extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
 extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG ;
@@ -1466,11 +1469,6 @@ int main(int argc, char* argv[])
    {
 
       OS_STATE_HANDLER();
-
-
-
-
-
       i++;
    }
 

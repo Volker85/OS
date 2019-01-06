@@ -13,6 +13,7 @@ extern unsigned_char_t HEAP[HEAP_SIZE];
 /* stack related RAM  */
 extern unsigned_char_t OS_STACK[NR_OF_CORES][OS_STACK_SIZE];
 extern unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];
+extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
 extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG    ;

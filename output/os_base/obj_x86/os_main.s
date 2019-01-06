@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1337, %eax
+	movl	_call_nr.1340, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,9 +33,9 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1337, %eax
+	movl	_call_nr.1340, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1337
+	movl	%eax, _call_nr.1340
 	.loc 1 64 0
 	jmp	L1
 L5:
@@ -43,9 +43,9 @@ L5:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 67 0
-	movl	_call_nr.1337, %eax
+	movl	_call_nr.1340, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1337
+	movl	%eax, _call_nr.1340
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -53,9 +53,9 @@ L6:
 	movl	$_TASK_0_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1337, %eax
+	movl	_call_nr.1340, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1337
+	movl	%eax, _call_nr.1340
 	.loc 1 72 0
 	jmp	L1
 L7:
@@ -63,9 +63,9 @@ L7:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 75 0
-	movl	_call_nr.1337, %eax
+	movl	_call_nr.1340, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1337
+	movl	%eax, _call_nr.1340
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -73,7 +73,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1337
+	movl	$0, _call_nr.1340
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -107,7 +107,7 @@ LFB1:
 	jb	L14
 	cmpl	$2, %eax
 	je	L15
-	.loc 1 171 0
+	.loc 1 170 0
 	jmp	L11
 L14:
 	.loc 1 99 0
@@ -134,7 +134,7 @@ L14:
 	jmp	L11
 L13:
 	.loc 1 125 0
-	movl	_call_nr.1349, %eax
+	movl	_call_nr.1352, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
@@ -144,19 +144,19 @@ L13:
 	.loc 1 127 0
 	call	_OS_DETERMINE_NEXT_TASK_ACTIVATION
 L17:
-	.loc 1 130 0
-	movl	_call_nr.1349, %eax
+	.loc 1 129 0
+	movl	_call_nr.1352, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1349
-	.loc 1 132 0
+	movl	%eax, _call_nr.1352
+	.loc 1 131 0
 	call	_OS_TASK_DISPATCHER
-	.loc 1 139 0
+	.loc 1 138 0
 	jmp	L11
 L15:
-	.loc 1 143 0
+	.loc 1 142 0
 	call	_LLF_INT_DISABLE
-	.loc 1 144 0
-	movl	_sys_req_reset_state.1348, %eax
+	.loc 1 143 0
+	movl	_sys_req_reset_state.1351, %eax
 	cmpl	$1, %eax
 	je	L19
 	cmpl	$1, %eax
@@ -165,43 +165,43 @@ L15:
 	je	L21
 	jmp	L23
 L20:
-	.loc 1 148 0
+	.loc 1 147 0
 	movl	$1, (%esp)
 	call	_OS_SHUTDOWN
-	.loc 1 149 0
+	.loc 1 148 0
 	jmp	L22
 L19:
-	.loc 1 153 0
+	.loc 1 152 0
 	movl	$0, (%esp)
 	call	_OS_SHUTDOWN
-	.loc 1 154 0
+	.loc 1 153 0
 	jmp	L22
 L21:
-	.loc 1 158 0
+	.loc 1 157 0
 	movl	$2, (%esp)
 	call	_OS_SHUTDOWN
-	.loc 1 159 0
+	.loc 1 158 0
 	jmp	L22
 L23:
-	.loc 1 163 0
+	.loc 1 162 0
 	movl	$0, (%esp)
 	call	_OS_SHUTDOWN
-	.loc 1 164 0
+	.loc 1 163 0
 	nop
 L22:
-	.loc 1 167 0
+	.loc 1 166 0
 	nop
 L11:
-	.loc 1 174 0
+	.loc 1 173 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1337,4,4
-.lcomm _call_nr.1349,4,4
-.lcomm _sys_req_reset_state.1348,4,4
+.lcomm _call_nr.1340,4,4
+.lcomm _call_nr.1352,4,4
+.lcomm _sys_req_reset_state.1351,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
@@ -616,7 +616,7 @@ Ldebug_info0:
 	.long	0xf6
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1337
+	.long	_call_nr.1340
 	.byte	0
 	.uleb128 0x11
 	.ascii "OS_STATE_HANDLER\0"
@@ -634,7 +634,7 @@ Ldebug_info0:
 	.long	0x5ff
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1348
+	.long	_sys_req_reset_state.1351
 	.uleb128 0x10
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -642,34 +642,34 @@ Ldebug_info0:
 	.long	0xf6
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1349
+	.long	_call_nr.1352
 	.byte	0
 	.uleb128 0x12
 	.ascii "OS_STATE\0"
 	.byte	0x6
-	.byte	0x10
+	.byte	0x11
 	.long	0x6cd
 	.uleb128 0x13
 	.long	0xf6
 	.uleb128 0x12
 	.ascii "TASK_0_VAR\0"
 	.byte	0x6
-	.byte	0x2c
+	.byte	0x2d
 	.long	0x551
 	.uleb128 0x12
 	.ascii "TASK_1_VAR\0"
 	.byte	0x6
-	.byte	0x2c
+	.byte	0x2d
 	.long	0x551
 	.uleb128 0x12
 	.ascii "TASK_2_VAR\0"
 	.byte	0x6
-	.byte	0x2c
+	.byte	0x2d
 	.long	0x551
 	.uleb128 0x12
 	.ascii "TASK_3_VAR\0"
 	.byte	0x6
-	.byte	0x2c
+	.byte	0x2d
 	.long	0x551
 	.byte	0
 	.section	.debug_abbrev,"dr"

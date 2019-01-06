@@ -290,18 +290,18 @@ void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
          }
          else
          {
-            OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TerminateTask);
+            OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TerminateTask_Part1);
          }
       }
       else
       {
-         OS_SET_SW_BUG(os_bug_null_pointer, Func_TerminateTask);
+         OS_SET_SW_BUG(os_bug_null_pointer, Func_TerminateTask_Part2);
       }
 
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer, Func_TerminateTask);
+      OS_SET_SW_BUG(os_bug_null_pointer, Func_TerminateTask_Part3);
    }
 }
 void OS_TASK_DISPATCHER(void)

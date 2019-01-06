@@ -71,7 +71,7 @@ LFB10:
 L5:
 	.loc 2 20 0
 	call	_OS_STATE_HANDLER
-	.loc 2 26 0
+	.loc 2 21 0
 	incl	44(%esp)
 L4:
 	.loc 2 17 0
@@ -85,28 +85,28 @@ L4:
 	fnstsw	%ax
 	testb	$69, %ah
 	je	L5
-	.loc 2 29 0
+	.loc 2 24 0
 	movl	$0, (%esp)
 	call	_time
 	subl	40(%esp), %eax
 	movl	%eax, 40(%esp)
-	.loc 2 30 0
+	.loc 2 25 0
 	movl	40(%esp), %eax
 	movl	%eax, 4(%esp)
 	movl	$LC1, (%esp)
 	call	_printf
-	.loc 2 31 0
+	.loc 2 26 0
 	call	_getchar
-	.loc 2 32 0
+	.loc 2 27 0
 	call	_getchar
-	.loc 2 34 0
+	.loc 2 29 0
 	movl	12(%ebp), %eax
 	movl	(%eax), %edx
 	movl	12(%ebp), %eax
 	movl	%edx, (%eax)
-	.loc 2 36 0
+	.loc 2 31 0
 	movl	$0, %eax
-	.loc 2 37 0
+	.loc 2 32 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
