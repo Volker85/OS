@@ -17,7 +17,7 @@ From the AAPCS, §5.1.1:
         .global LLF_INT_ENABLE
         .global LLF_DISABLE_INTERRUPTS_ALL_CORES
         .global LLF_WAIT_FOR_INTERRUPT
-        //.extern OS_START_OS
+        //.extern OS_StartOs
         
       
 LLF_INT_DISABLE:

@@ -1,8 +1,8 @@
 	.file	"os_shutdown.c"
 	.text
 Ltext0:
-	.def	_OS_DEINIT_HW;	.scl	3;	.type	32;	.endef
-_OS_DEINIT_HW:
+	.def	_OS_DeinitHw;	.scl	3;	.type	32;	.endef
+_OS_DeinitHw:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.c"
 	.loc 1 7 0
@@ -19,8 +19,8 @@ LFB0:
 	ret
 	.cfi_endproc
 LFE0:
-	.def	_OS_DEINIT_SW;	.scl	3;	.type	32;	.endef
-_OS_DEINIT_SW:
+	.def	_OS_DeinitSw;	.scl	3;	.type	32;	.endef
+_OS_DeinitSw:
 LFB1:
 	.loc 1 11 0
 	.cfi_startproc
@@ -36,9 +36,9 @@ LFB1:
 	ret
 	.cfi_endproc
 LFE1:
-	.globl	_OS_DEINIT_MC
-	.def	_OS_DEINIT_MC;	.scl	2;	.type	32;	.endef
-_OS_DEINIT_MC:
+	.globl	_OS_DeinitMc
+	.def	_OS_DeinitMc;	.scl	2;	.type	32;	.endef
+_OS_DeinitMc:
 LFB2:
 	.loc 1 15 0
 	.cfi_startproc
@@ -54,9 +54,9 @@ LFB2:
 	ret
 	.cfi_endproc
 LFE2:
-	.globl	_OS_SHUTDOWN
-	.def	_OS_SHUTDOWN;	.scl	2;	.type	32;	.endef
-_OS_SHUTDOWN:
+	.globl	_OS_Shutdown
+	.def	_OS_Shutdown;	.scl	2;	.type	32;	.endef
+_OS_Shutdown:
 LFB3:
 	.loc 1 20 0
 	.cfi_startproc
@@ -88,11 +88,11 @@ L7:
 	cmpl	$2, 8(%ebp)
 	jne	L6
 	.loc 1 40 0
-	call	_OS_DEINIT_HW
+	call	_OS_DeinitHw
 	.loc 1 41 0
-	call	_OS_DEINIT_SW
+	call	_OS_DeinitSw
 	.loc 1 42 0
-	call	_OS_DEINIT_MC
+	call	_OS_DeinitMc
 	.loc 1 43 0
 	movl	$0, 8(%esp)
 	movl	$0, 4(%esp)
@@ -106,10 +106,10 @@ LFE3:
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
-	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
+	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/OS_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x1e5
+	.long	0x1e2
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -141,7 +141,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "func_ptr_t\0"
 	.byte	0x3
-	.byte	0x4e
+	.byte	0x4d
 	.long	0xeb
 	.uleb128 0x4
 	.byte	0x4
@@ -173,7 +173,7 @@ Ldebug_info0:
 	.byte	0x8
 	.long	0x102
 	.uleb128 0x8
-	.ascii "OS_DEINIT_HW\0"
+	.ascii "OS_DeinitHw\0"
 	.byte	0x1
 	.byte	0x6
 	.long	LFB0
@@ -181,7 +181,7 @@ Ldebug_info0:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x8
-	.ascii "OS_DEINIT_SW\0"
+	.ascii "OS_DeinitSw\0"
 	.byte	0x1
 	.byte	0xa
 	.long	LFB1
@@ -189,7 +189,7 @@ Ldebug_info0:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x9
-	.ascii "OS_DEINIT_MC\0"
+	.ascii "OS_DeinitMc\0"
 	.byte	0x1
 	.byte	0xe
 	.long	LFB2
@@ -197,7 +197,7 @@ Ldebug_info0:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0xa
-	.ascii "OS_SHUTDOWN\0"
+	.ascii "OS_Shutdown\0"
 	.byte	0x1
 	.byte	0x13
 	.long	LFB3

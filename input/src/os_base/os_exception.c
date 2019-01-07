@@ -137,6 +137,7 @@ void OS_Exception_Systick(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    task_t* task;
+   scheduling_t* scheduling_task_ptr;
 
    DBG_RLD_VALUE = 0xFFFFFFFF;
    DBG_CURR_VAL = 0xFFFFFFFF;
@@ -213,6 +214,7 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
    */
    /* disable running task */
    task = GetRunningTask();
+   scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
    if(task != 0u)
    {
       OS_TaskSaveTaskEnvironment(task);
@@ -221,7 +223,7 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
       task->exe_time += (OS_GetCurrentTime() - task->start_time);
       task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);
       SET_RUNNING_TASK(0,0);
-      OS_TerminateTask(task,0);
+      OS_TerminateTask(task,scheduling_task_ptr);
    }
    OS_StateHandler();
 #endif

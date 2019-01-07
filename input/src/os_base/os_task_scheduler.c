@@ -167,12 +167,71 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
 void OS_CreateTask(task_t* task)
 {
    /*5. unspecified --(create   )--> suspend*/
-/*TODO*/
+   if(task != 0)
+   {
+      if(task->state_request != 0)
+      {
+         if(task->state_request(task, Task_suspended)== Accepted)
+         {
+            /*QAC*/
+         }
+         else
+         {
+            OS_SetSwBug(os_bug_taskstate_request_denied, Func_TerminateTask);
+         }
+      }
+      else
+      {
+         OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask);
+      }
+   }
+   else
+   {
+      OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask);
+   }     
 }
-void OS_PreemptTask(task_t* task)
+void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
 {
-    /*2. running     --(preempt  )--> ready*/
-/*TODO*/
+   /*2. running     --(preempt  )--> ready*/
+   /* Preempt task
+   - Disable Interrupts
+   - OS_TaskSaveTaskEnvironment
+   - add to Schedule Queue / delete from RunQueue
+   - delete active flag
+   - enable Interrupts
+   */
+   if(task != 0 && scheduling_task != 0)
+   {
+      if(task->state_request != 0)
+      {
+         if(task->state_request(task, Task_ready)== Accepted)
+         {
+            DisableInterrupts();
+            OS_TaskSaveTaskEnvironment(task);
+            OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
+            DeleteFromTaskQueue(task);
+            DeleteFromSchedulingQueue(scheduling_task);
+
+            task->active = False;
+            /* reset the prio increase for waiting */
+            task->current_prio = task->default_prio;
+            EnableInterrupts();
+         }
+         else
+         {
+            OS_SetSwBug(os_bug_taskstate_request_denied, Func_Preempt_Task);
+         }
+      }
+      else
+      {
+         OS_SetSwBug(os_bug_null_pointer, Func_Preempt_Task);
+      }
+
+   }
+   else
+   {
+      OS_SetSwBug(os_bug_null_pointer, Func_Preempt_Task);
+   }   
 }
 
 void OS_ActivateTask(task_t* task)
@@ -229,7 +288,7 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
 
    - Start Task
     */
-   if(task != 0 && ((task->task_queued != False)||(task->IdleTask != False)))
+   if( (task != 0) && (scheduling_task != 0)&& ((task->task_queued != False)||(task->IdleTask != False)))
    {
       if(task->state_request !=0)
       {
@@ -282,7 +341,7 @@ void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task)
    - delete active flag
    - enable Interrupts
    */
-   if(task != 0)
+   if(task != 0 && scheduling_task != 0)
    {
       if(task->state_request != 0)
       {
@@ -301,18 +360,18 @@ void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task)
          }
          else
          {
-            OS_SetSwBug(os_bug_taskstate_request_denied, Func_TerminateTask_Part1);
+            OS_SetSwBug(os_bug_taskstate_request_denied, Func_TerminateTask);
          }
       }
       else
       {
-         OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask_Part2);
+         OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask);
       }
 
    }
    else
    {
-      OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask_Part3);
+      OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask);
    }
 }
 void OS_TaskDispatcher(void)

@@ -50,13 +50,13 @@
 .Ltext0:
 	.cfi_sections	.debug_frame
 	.align	1
-	.global	OS_START_OS
+	.global	OS_StartOs
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_START_OS, %function
-OS_START_OS:
+	.type	OS_StartOs, %function
+OS_StartOs:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_os.c"
 	.loc 1 11 0
@@ -131,9 +131,9 @@ OS_START_OS:
 	ldr	r3, .L2+44	@ tmp134,
 	movs	r2, #0	@ tmp135,
 	str	r2, [r3]	@ tmp135, OS_STATE
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:28:    OS_STATE_HANDLER();
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:28:    OS_StateHandler();
 	.loc 1 28 0
-	bl	OS_STATE_HANDLER	@
+	bl	OS_StateHandler	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:29: }
 	.loc 1 29 0
 	nop
@@ -155,7 +155,7 @@ OS_START_OS:
 	.word	OS_STATE
 	.cfi_endproc
 .LFE0:
-	.size	OS_START_OS, .-OS_START_OS
+	.size	OS_StartOs, .-OS_StartOs
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
@@ -3016,8 +3016,8 @@ OS_START_OS:
 	.ascii	"privilige_mode_e\000"
 .LASF103:
 	.ascii	"__INT_LEAST8_MAX__ 0x7f\000"
-.LASF467:
-	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
+.LASF615:
+	.ascii	"OS_StartOs\000"
 .LASF46:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
 .LASF397:
@@ -3078,8 +3078,6 @@ OS_START_OS:
 	.ascii	"__FLT_HAS_INFINITY__ 1\000"
 .LASF543:
 	.ascii	"active\000"
-.LASF335:
-	.ascii	"__SQ_IBIT__ 0\000"
 .LASF196:
 	.ascii	"__FLT32_EPSILON__ 1.1920928955078125e-7F32\000"
 .LASF505:
@@ -3227,8 +3225,8 @@ OS_START_OS:
 	.ascii	"__UFRACT_MIN__ 0.0UR\000"
 .LASF309:
 	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
-.LASF615:
-	.ascii	"OS_START_OS\000"
+.LASF335:
+	.ascii	"__SQ_IBIT__ 0\000"
 .LASF301:
 	.ascii	"__ACCUM_IBIT__ 16\000"
 .LASF388:
@@ -3767,6 +3765,8 @@ OS_START_OS:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF259:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
+.LASF467:
+	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
 .LASF489:
 	.ascii	"_LED_H_ \000"
 .LASF134:

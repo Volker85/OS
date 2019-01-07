@@ -1,9 +1,9 @@
 	.file	"os_heap.c"
 	.text
 Ltext0:
-	.globl	_os_calloc
-	.def	_os_calloc;	.scl	2;	.type	32;	.endef
-_os_calloc:
+	.globl	_OS_Calloc
+	.def	_OS_Calloc;	.scl	2;	.type	32;	.endef
+_OS_Calloc:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_heap.c"
 	.loc 1 12 0
@@ -18,7 +18,7 @@ LFB0:
 	movl	8(%ebp), %eax
 	imull	12(%ebp), %eax
 	movl	%eax, (%esp)
-	call	_os_malloc
+	call	_OS_Malloc
 	movl	%eax, -16(%ebp)
 	.loc 1 16 0
 	movl	$0, -12(%ebp)
@@ -46,9 +46,9 @@ L2:
 	ret
 	.cfi_endproc
 LFE0:
-	.globl	_os_realloc
-	.def	_os_realloc;	.scl	2;	.type	32;	.endef
-_os_realloc:
+	.globl	_OS_Realloc
+	.def	_OS_Realloc;	.scl	2;	.type	32;	.endef
+_OS_Realloc:
 LFB1:
 	.loc 1 35 0
 	.cfi_startproc
@@ -66,7 +66,7 @@ LFB1:
 	.loc 1 40 0
 	movl	12(%ebp), %eax
 	movl	%eax, (%esp)
-	call	_os_malloc
+	call	_OS_Malloc
 	movl	%eax, -16(%ebp)
 	jmp	L7
 L6:
@@ -77,7 +77,7 @@ LBB2:
 	.loc 1 44 0
 	movl	12(%ebp), %eax
 	movl	%eax, (%esp)
-	call	_os_malloc
+	call	_OS_Malloc
 	movl	%eax, -20(%ebp)
 	.loc 1 45 0
 	cmpl	$0, -20(%ebp)
@@ -112,7 +112,7 @@ L8:
 	.loc 1 57 0
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
-	call	_os_free
+	call	_OS_Free
 L12:
 	.loc 1 59 0
 	movl	$0, -16(%ebp)
@@ -126,9 +126,9 @@ L7:
 	ret
 	.cfi_endproc
 LFE1:
-	.globl	_os_malloc
-	.def	_os_malloc;	.scl	2;	.type	32;	.endef
-_os_malloc:
+	.globl	_OS_Malloc
+	.def	_OS_Malloc;	.scl	2;	.type	32;	.endef
+_OS_Malloc:
 LFB2:
 	.loc 1 66 0
 	.cfi_startproc
@@ -162,7 +162,7 @@ L19:
 	.loc 1 104 0
 	movl	-16(%ebp), %eax
 	movl	%eax, (%esp)
-	call	_GET_UINT32_OF_4UINT8
+	call	_GetUint32Of4Uint8
 	movl	%eax, 8(%ebp)
 	.loc 1 107 0
 	movl	-16(%ebp), %eax
@@ -194,9 +194,9 @@ L18:
 	ret
 	.cfi_endproc
 LFE2:
-	.globl	_os_free
-	.def	_os_free;	.scl	2;	.type	32;	.endef
-_os_free:
+	.globl	_OS_Free
+	.def	_OS_Free;	.scl	2;	.type	32;	.endef
+_OS_Free:
 LFB3:
 	.loc 1 112 0
 	.cfi_startproc
@@ -219,7 +219,7 @@ L24:
 	.loc 1 123 0
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
-	call	_GET_UINT32_OF_4UINT8
+	call	_GetUint32Of4Uint8
 	movl	%eax, -16(%ebp)
 	.loc 1 126 0
 	movl	-12(%ebp), %eax
@@ -234,7 +234,7 @@ L24:
 	addl	$4, %eax
 	movl	$0, 4(%esp)
 	movl	%eax, (%esp)
-	call	_SET_4UINT8_TO_UINT32
+	call	_Set4Uint8ToUint32
 L23:
 	.loc 1 120 0
 	movl	-16(%ebp), %eax
@@ -254,8 +254,8 @@ L22:
 	ret
 	.cfi_endproc
 LFE3:
-	.def	_GET_UINT32_OF_4UINT8;	.scl	3;	.type	32;	.endef
-_GET_UINT32_OF_4UINT8:
+	.def	_GetUint32Of4Uint8;	.scl	3;	.type	32;	.endef
+_GetUint32Of4Uint8:
 LFB4:
 	.loc 1 135 0
 	.cfi_startproc
@@ -305,8 +305,8 @@ LFB4:
 	ret
 	.cfi_endproc
 LFE4:
-	.def	_SET_4UINT8_TO_UINT32;	.scl	3;	.type	32;	.endef
-_SET_4UINT8_TO_UINT32:
+	.def	_Set4Uint8ToUint32;	.scl	3;	.type	32;	.endef
+_Set4Uint8ToUint32:
 LFB5:
 	.loc 1 149 0
 	.cfi_startproc
@@ -356,7 +356,7 @@ Letext0:
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x35d
+	.long	0x357
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -402,7 +402,7 @@ Ldebug_info0:
 	.byte	0x7
 	.ascii "unsigned int\0"
 	.uleb128 0x5
-	.ascii "os_calloc\0"
+	.ascii "OS_Calloc\0"
 	.byte	0x1
 	.byte	0xb
 	.long	0xf9
@@ -448,7 +448,7 @@ Ldebug_info0:
 	.byte	0x4
 	.long	0xb3
 	.uleb128 0x5
-	.ascii "os_realloc\0"
+	.ascii "OS_Realloc\0"
 	.byte	0x1
 	.byte	0x22
 	.long	0xf9
@@ -503,7 +503,7 @@ Ldebug_info0:
 	.byte	0
 	.byte	0
 	.uleb128 0x5
-	.ascii "os_malloc\0"
+	.ascii "OS_Malloc\0"
 	.byte	0x1
 	.byte	0x41
 	.long	0xf9
@@ -546,7 +546,7 @@ Ldebug_info0:
 	.sleb128 -28
 	.byte	0
 	.uleb128 0xb
-	.ascii "os_free\0"
+	.ascii "OS_Free\0"
 	.byte	0x1
 	.byte	0x6f
 	.long	LFB3
@@ -588,7 +588,7 @@ Ldebug_info0:
 	.sleb128 -20
 	.byte	0
 	.uleb128 0xc
-	.ascii "GET_UINT32_OF_4UINT8\0"
+	.ascii "GetUint32Of4Uint8\0"
 	.byte	0x1
 	.byte	0x86
 	.long	0xeb
@@ -596,7 +596,7 @@ Ldebug_info0:
 	.long	LFE4-LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2f2
+	.long	0x2ef
 	.uleb128 0x6
 	.ascii "ptr\0"
 	.byte	0x1
@@ -615,14 +615,14 @@ Ldebug_info0:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0xd
-	.ascii "SET_4UINT8_TO_UINT32\0"
+	.ascii "Set4Uint8ToUint32\0"
 	.byte	0x1
 	.byte	0x94
 	.long	LFB5
 	.long	LFE5-LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x337
+	.long	0x331
 	.uleb128 0x6
 	.ascii "ptr\0"
 	.byte	0x1
@@ -642,9 +642,9 @@ Ldebug_info0:
 	.byte	0
 	.uleb128 0xe
 	.long	0x8b
-	.long	0x348
+	.long	0x342
 	.uleb128 0xf
-	.long	0x348
+	.long	0x342
 	.word	0x270f
 	.byte	0
 	.uleb128 0x3
@@ -655,7 +655,7 @@ Ldebug_info0:
 	.ascii "HEAP\0"
 	.byte	0x3
 	.byte	0xb
-	.long	0x337
+	.long	0x331
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:

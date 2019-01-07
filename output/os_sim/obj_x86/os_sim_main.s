@@ -65,12 +65,12 @@ LFB10:
 	call	_time
 	movl	%eax, 40(%esp)
 	.loc 2 16 0
-	call	_OS_START_OS
+	call	_OS_StartOs
 	.loc 2 17 0
 	jmp	L4
 L5:
 	.loc 2 20 0
-	call	_OS_STATE_HANDLER
+	call	_OS_StateHandler
 	.loc 2 21 0
 	incl	44(%esp)
 L4:
@@ -1662,9 +1662,6 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_exception_isr_handler_h_ \0"
-	.byte	0x1
-	.uleb128 0x4
-	.ascii "ISR void\0"
 	.byte	0x4
 	.file 30 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_start_os.h"
 	.byte	0x3
@@ -1672,7 +1669,7 @@ Ldebug_macro0:
 	.uleb128 0x1e
 	.byte	0x1
 	.uleb128 0x2
-	.ascii "_os_start_os_h_ \0"
+	.ascii "_os_startos_h_ \0"
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x7
@@ -2158,6 +2155,6 @@ Ldebug_line0:
 	.ident	"GCC: (GNU) 4.9.3"
 	.def	___mingw_vprintf;	.scl	2;	.type	32;	.endef
 	.def	_time;	.scl	2;	.type	32;	.endef
-	.def	_OS_START_OS;	.scl	2;	.type	32;	.endef
-	.def	_OS_STATE_HANDLER;	.scl	2;	.type	32;	.endef
+	.def	_OS_StartOs;	.scl	2;	.type	32;	.endef
+	.def	_OS_StateHandler;	.scl	2;	.type	32;	.endef
 	.def	_getchar;	.scl	2;	.type	32;	.endef

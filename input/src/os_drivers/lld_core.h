@@ -10,7 +10,7 @@ enum CoreID_e
 };
 typedef  enum CoreID_e CoreID_t;
 
-extern CoreID_t GET_CORE_ID(void);
+extern CoreID_t OS_GetCoreId(void);
 extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 
 enum privilige_mode_e

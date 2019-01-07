@@ -54,8 +54,8 @@
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_DETERMINE_NEXT_TASK_ACTIVATION, %function
-OS_DETERMINE_NEXT_TASK_ACTIVATION:
+	.type	OS_DetermineNextTaskActivation, %function
+OS_DetermineNextTaskActivation:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.c"
 	.loc 1 57 0
@@ -100,10 +100,6 @@ OS_DETERMINE_NEXT_TASK_ACTIVATION:
 	.loc 1 64 0
 	b	.L9	@
 .L5:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:66:         OS_ActivateTask(&TASK_1_VAR);
-	.loc 1 66 0
-	ldr	r0, .L11+4	@,
-	bl	OS_ActivateTask	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:67:         call_nr++;
 	.loc 1 67 0
 	ldr	r3, .L11	@ tmp122,
@@ -115,7 +111,7 @@ OS_DETERMINE_NEXT_TASK_ACTIVATION:
 	.loc 1 68 0
 	b	.L9	@
 .L6:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:70:         OS_ActivateTask(&TASK_0_VAR);
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:70:         OS_ActivateTask(&TASK_2_VAR);
 	.loc 1 70 0
 	ldr	r0, .L11+8	@,
 	bl	OS_ActivateTask	@
@@ -130,10 +126,6 @@ OS_DETERMINE_NEXT_TASK_ACTIVATION:
 	.loc 1 72 0
 	b	.L9	@
 .L7:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:74:         OS_ActivateTask(&TASK_2_VAR);
-	.loc 1 74 0
-	ldr	r0, .L11+12	@,
-	bl	OS_ActivateTask	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:75:         call_nr++;
 	.loc 1 75 0
 	ldr	r3, .L11	@ tmp126,
@@ -147,7 +139,7 @@ OS_DETERMINE_NEXT_TASK_ACTIVATION:
 .L8:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:78:         OS_ActivateTask(&TASK_3_VAR);
 	.loc 1 78 0
-	ldr	r0, .L11+16	@,
+	ldr	r0, .L11+12	@,
 	bl	OS_ActivateTask	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:79:         call_nr = 0;
 	.loc 1 79 0
@@ -169,22 +161,21 @@ OS_DETERMINE_NEXT_TASK_ACTIVATION:
 .L12:
 	.align	2
 .L11:
-	.word	call_nr.4050
+	.word	call_nr.4049
 	.word	TASK_1_VAR
-	.word	TASK_0_VAR
 	.word	TASK_2_VAR
 	.word	TASK_3_VAR
 	.cfi_endproc
 .LFE0:
-	.size	OS_DETERMINE_NEXT_TASK_ACTIVATION, .-OS_DETERMINE_NEXT_TASK_ACTIVATION
+	.size	OS_DetermineNextTaskActivation, .-OS_DetermineNextTaskActivation
 	.align	1
-	.global	OS_STATE_HANDLER
+	.global	OS_StateHandler
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_STATE_HANDLER, %function
-OS_STATE_HANDLER:
+	.type	OS_StateHandler, %function
+OS_StateHandler:
 .LFB1:
 	.loc 1 89 0
 	.cfi_startproc
@@ -210,29 +201,29 @@ OS_STATE_HANDLER:
 	.loc 1 170 0
 	b	.L20	@
 .L16:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:99:       OS_INIT_MC();
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:99:       OS_InitMc();
 	.loc 1 99 0
-	bl	OS_INIT_MC	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:102:       OS_INIT_HW();
+	bl	OS_InitMc	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:102:       OS_InitHw();
 	.loc 1 102 0
-	bl	OS_INIT_HW	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:103:       OS_INIT_SW();
+	bl	OS_InitHw	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:103:       OS_InitSw();
 	.loc 1 103 0
-	bl	OS_INIT_SW	@
+	bl	OS_InitSw	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:108:       OS_ActivateTask(&TASK_0_VAR);
 	.loc 1 108 0
 	ldr	r0, .L27+4	@,
 	bl	OS_ActivateTask	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:109:       OS_STARTTASK(GetIdleTask(),0);
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:109:       OS_StartTask(GetIdleTask(),0);
 	.loc 1 109 0
 	bl	GetIdleTask	@
 	mov	r3, r0	@ _2,
 	movs	r1, #0	@,
 	mov	r0, r3	@, _2
-	bl	OS_STARTTASK	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:110:       OS_ACTIVATE_DISPATCHER();
+	bl	OS_StartTask	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:110:       OS_ActivateDispatcher();
 	.loc 1 110 0
-	bl	OS_ACTIVATE_DISPATCHER	@
+	bl	OS_ActivateDispatcher	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:112:       OS_STATE = os_running;
 	.loc 1 112 0
 	ldr	r3, .L27	@ tmp119,
@@ -259,9 +250,9 @@ OS_STATE_HANDLER:
 	subs	r2, r1, r3	@ _4, call_nr.6_3, tmp124
 	cmp	r2, #0	@ _4,
 	bne	.L19	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:127:          OS_DETERMINE_NEXT_TASK_ACTIVATION();
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:127:          OS_DetermineNextTaskActivation();
 	.loc 1 127 0
-	bl	OS_DETERMINE_NEXT_TASK_ACTIVATION	@
+	bl	OS_DetermineNextTaskActivation	@
 .L19:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:129:       call_nr++;
 	.loc 1 129 0
@@ -270,9 +261,9 @@ OS_STATE_HANDLER:
 	adds	r3, r3, #1	@ _6, call_nr.7_5,
 	ldr	r2, .L27+8	@ tmp126,
 	str	r3, [r2]	@ _6, call_nr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:131:       OS_TASK_DISPATCHER();
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:131:       OS_TaskDispatcher();
 	.loc 1 131 0
-	bl	OS_TASK_DISPATCHER	@
+	bl	OS_TaskDispatcher	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:138:       break;
 	.loc 1 138 0
 	b	.L20	@
@@ -290,34 +281,34 @@ OS_STATE_HANDLER:
 	beq	.L23	@,
 	cmp	r3, #0	@ _8,
 	bne	.L26	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:147:          OS_SHUTDOWN(os_reset_powerdown);
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:147:          OS_Shutdown(os_reset_powerdown);
 	.loc 1 147 0
 	movs	r0, #1	@,
-	bl	OS_SHUTDOWN	@
+	bl	OS_Shutdown	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:148:          break;
 	.loc 1 148 0
 	b	.L25	@
 .L22:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:152:          OS_SHUTDOWN(os_reset_hardreset);
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:152:          OS_Shutdown(os_reset_hardreset);
 	.loc 1 152 0
 	movs	r0, #0	@,
-	bl	OS_SHUTDOWN	@
+	bl	OS_Shutdown	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:153:          break;
 	.loc 1 153 0
 	b	.L25	@
 .L23:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:157:          OS_SHUTDOWN(os_reset_exit);
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:157:          OS_Shutdown(os_reset_exit);
 	.loc 1 157 0
 	movs	r0, #2	@,
-	bl	OS_SHUTDOWN	@
+	bl	OS_Shutdown	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:158:          break;
 	.loc 1 158 0
 	b	.L25	@
 .L26:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:162:          OS_SHUTDOWN(os_reset_hardreset);
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:162:          OS_Shutdown(os_reset_hardreset);
 	.loc 1 162 0
 	movs	r0, #0	@,
-	bl	OS_SHUTDOWN	@
+	bl	OS_Shutdown	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:163:          break;
 	.loc 1 163 0
 	nop
@@ -335,24 +326,24 @@ OS_STATE_HANDLER:
 .L27:
 	.word	OS_STATE
 	.word	TASK_0_VAR
-	.word	call_nr.4062
+	.word	call_nr.4061
 	.word	-858993459
-	.word	sys_req_reset_state.4061
+	.word	sys_req_reset_state.4060
 	.cfi_endproc
 .LFE1:
-	.size	OS_STATE_HANDLER, .-OS_STATE_HANDLER
+	.size	OS_StateHandler, .-OS_StateHandler
 	.bss
 	.align	2
-call_nr.4050:
+call_nr.4049:
 	.space	4
-	.size	call_nr.4050, 4
+	.size	call_nr.4049, 4
 	.align	2
-call_nr.4062:
+call_nr.4061:
 	.space	4
-	.size	call_nr.4062, 4
-sys_req_reset_state.4061:
+	.size	call_nr.4061, 4
+sys_req_reset_state.4060:
 	.space	1
-	.size	sys_req_reset_state.4061, 1
+	.size	sys_req_reset_state.4060, 1
 	.text
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
@@ -360,7 +351,7 @@ sys_req_reset_state.4061:
 	.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
 	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
+	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\OS_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
 	.4byte	0x6bf
@@ -1166,7 +1157,7 @@ sys_req_reset_state.4061:
 	.4byte	0x65c
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	sys_req_reset_state.4061
+	.4byte	sys_req_reset_state.4060
 	.uleb128 0x15
 	.4byte	.LASF631
 	.byte	0x1
@@ -1174,7 +1165,7 @@ sys_req_reset_state.4061:
 	.4byte	0x54
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4062
+	.4byte	call_nr.4061
 	.byte	0
 	.uleb128 0x16
 	.4byte	.LASF636
@@ -1191,7 +1182,7 @@ sys_req_reset_state.4061:
 	.4byte	0x54
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4050
+	.4byte	call_nr.4049
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
@@ -3273,8 +3264,8 @@ sys_req_reset_state.4061:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF187:
 	.ascii	"__FLT32_MANT_DIG__ 24\000"
-.LASF293:
-	.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
+.LASF345:
+	.ascii	"__USQ_IBIT__ 0\000"
 .LASF116:
 	.ascii	"__UINT8_C(c) c\000"
 .LASF422:
@@ -3460,6 +3451,8 @@ sys_req_reset_state.4061:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF317:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
+.LASF636:
+	.ascii	"OS_DetermineNextTaskActivation\000"
 .LASF552:
 	.ascii	"active\000"
 .LASF196:
@@ -3566,8 +3559,6 @@ sys_req_reset_state.4061:
 	.ascii	"__FLT_RADIX__ 2\000"
 .LASF484:
 	.ascii	"MS_PER_SEC (1000)\000"
-.LASF455:
-	.ascii	"TRUE True\000"
 .LASF287:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
 .LASF171:
@@ -3780,8 +3771,8 @@ sys_req_reset_state.4061:
 	.ascii	"__ARM_PCS 1\000"
 .LASF58:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
-.LASF636:
-	.ascii	"OS_DETERMINE_NEXT_TASK_ACTIVATION\000"
+.LASF455:
+	.ascii	"TRUE True\000"
 .LASF300:
 	.ascii	"__ACCUM_FBIT__ 15\000"
 .LASF514:
@@ -3812,6 +3803,8 @@ sys_req_reset_state.4061:
 	.ascii	"HEAP_OFFSET_FOR_USED_SIZE 4\000"
 .LASF545:
 	.ascii	"func_p_t\000"
+.LASF635:
+	.ascii	"OS_StateHandler\000"
 .LASF91:
 	.ascii	"__INTMAX_WIDTH__ 64\000"
 .LASF233:
@@ -3876,8 +3869,8 @@ sys_req_reset_state.4061:
 	.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
 .LASF12:
 	.ascii	"__FINITE_MATH_ONLY__ 0\000"
-.LASF31:
-	.ascii	"__WCHAR_TYPE__ unsigned int\000"
+.LASF293:
+	.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
 .LASF405:
 	.ascii	"__arm__ 1\000"
 .LASF172:
@@ -3921,6 +3914,8 @@ sys_req_reset_state.4061:
 	.ascii	"state_request\000"
 .LASF393:
 	.ascii	"__ARM_FEATURE_SAT 1\000"
+.LASF423:
+	.ascii	"__ARM_NEON\000"
 .LASF474:
 	.ascii	"_os_task_common_h_ \000"
 .LASF432:
@@ -3958,8 +3953,8 @@ sys_req_reset_state.4061:
 	.ascii	"__INT16_MAX__ 0x7fff\000"
 .LASF167:
 	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
-.LASF78:
-	.ascii	"__SCHAR_WIDTH__ 8\000"
+.LASF31:
+	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF520:
 	.ascii	"unsigned_char_t\000"
 .LASF18:
@@ -4096,8 +4091,8 @@ sys_req_reset_state.4061:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
 .LASF340:
 	.ascii	"__UQQ_FBIT__ 8\000"
-.LASF345:
-	.ascii	"__USQ_IBIT__ 0\000"
+.LASF508:
+	.ascii	"Task_3_ptr 3\000"
 .LASF482:
 	.ascii	"MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\000"
 .LASF269:
@@ -4252,8 +4247,6 @@ sys_req_reset_state.4061:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF522:
 	.ascii	"long unsigned int\000"
-.LASF508:
-	.ascii	"Task_3_ptr 3\000"
 .LASF378:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
 .LASF609:
@@ -4354,8 +4347,8 @@ sys_req_reset_state.4061:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
 .LASF476:
 	.ascii	"SchedulerFrequency (1.0e3)\000"
-.LASF423:
-	.ascii	"__ARM_NEON\000"
+.LASF78:
+	.ascii	"__SCHAR_WIDTH__ 8\000"
 .LASF503:
 	.ascii	"os_shutdown 2\000"
 .LASF547:
@@ -4461,8 +4454,6 @@ sys_req_reset_state.4061:
 	.ascii	"__STRICT_ANSI__ 1\000"
 .LASF190:
 	.ascii	"__FLT32_MIN_10_EXP__ (-37)\000"
-.LASF635:
-	.ascii	"OS_STATE_HANDLER\000"
 .LASF177:
 	.ascii	"__LDBL_MAX_10_EXP__ 308\000"
 .LASF220:

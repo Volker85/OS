@@ -54,8 +54,8 @@
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_DEINIT_HW, %function
-OS_DEINIT_HW:
+	.type	OS_DeinitHw, %function
+OS_DeinitHw:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.c"
 	.loc 1 7 0
@@ -80,14 +80,14 @@ OS_DEINIT_HW:
 	bx	lr	@
 	.cfi_endproc
 .LFE0:
-	.size	OS_DEINIT_HW, .-OS_DEINIT_HW
+	.size	OS_DeinitHw, .-OS_DeinitHw
 	.align	1
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_DEINIT_SW, %function
-OS_DEINIT_SW:
+	.type	OS_DeinitSw, %function
+OS_DeinitSw:
 .LFB1:
 	.loc 1 11 0
 	.cfi_startproc
@@ -111,15 +111,15 @@ OS_DEINIT_SW:
 	bx	lr	@
 	.cfi_endproc
 .LFE1:
-	.size	OS_DEINIT_SW, .-OS_DEINIT_SW
+	.size	OS_DeinitSw, .-OS_DeinitSw
 	.align	1
-	.global	OS_DEINIT_MC
+	.global	OS_DeinitMc
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_DEINIT_MC, %function
-OS_DEINIT_MC:
+	.type	OS_DeinitMc, %function
+OS_DeinitMc:
 .LFB2:
 	.loc 1 15 0
 	.cfi_startproc
@@ -143,15 +143,15 @@ OS_DEINIT_MC:
 	bx	lr	@
 	.cfi_endproc
 .LFE2:
-	.size	OS_DEINIT_MC, .-OS_DEINIT_MC
+	.size	OS_DeinitMc, .-OS_DeinitMc
 	.align	1
-	.global	OS_SHUTDOWN
+	.global	OS_Shutdown
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_SHUTDOWN, %function
-OS_SHUTDOWN:
+	.type	OS_Shutdown, %function
+OS_Shutdown:
 .LFB3:
 	.loc 1 20 0
 	.cfi_startproc
@@ -198,16 +198,16 @@ OS_SHUTDOWN:
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2	@ tmp114, reset_typ
 	cmp	r3, #2	@ tmp114,
 	bne	.L6	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:40:       OS_DEINIT_HW();
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:40:       OS_DeinitHw();
 	.loc 1 40 0
-	bl	OS_DEINIT_HW	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:41:       OS_DEINIT_SW();
+	bl	OS_DeinitHw	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:41:       OS_DeinitSw();
 	.loc 1 41 0
-	bl	OS_DEINIT_SW	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:42:       OS_DEINIT_MC();
+	bl	OS_DeinitSw	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:42:       OS_DeinitMc();
 	.loc 1 42 0
-	bl	OS_DEINIT_MC	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:43:       OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);      
+	bl	OS_DeinitMc	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:43:       OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);
 	.loc 1 43 0
 	movs	r2, #0	@,
 	movs	r1, #0	@,
@@ -220,14 +220,14 @@ OS_SHUTDOWN:
 	b	.L8	@
 	.cfi_endproc
 .LFE3:
-	.size	OS_SHUTDOWN, .-OS_SHUTDOWN
+	.size	OS_Shutdown, .-OS_Shutdown
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 	.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
 	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
+	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\OS_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
 	.4byte	0x6a9
@@ -315,7 +315,7 @@ OS_SHUTDOWN:
 	.uleb128 0x2
 	.4byte	.LASF521
 	.byte	0x3
-	.byte	0x4e
+	.byte	0x4d
 	.4byte	0xc1
 	.uleb128 0x7
 	.byte	0x4
@@ -3063,12 +3063,8 @@ OS_SHUTDOWN:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
-.LASF620:
-	.ascii	"OS_SHUTDOWN\000"
 .LASF205:
 	.ascii	"__FLT64_MAX_EXP__ 1024\000"
-.LASF147:
-	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF329:
 	.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
 .LASF299:
@@ -3101,8 +3097,8 @@ OS_SHUTDOWN:
 	.ascii	"__UDQ_IBIT__ 0\000"
 .LASF258:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
-.LASF151:
-	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
+.LASF600:
+	.ascii	"bTASK_QUEUE_INITIALIZED\000"
 .LASF160:
 	.ascii	"__DBL_MIN_EXP__ (-1021)\000"
 .LASF82:
@@ -3174,6 +3170,8 @@ OS_SHUTDOWN:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF391:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
+.LASF622:
+	.ascii	"OS_DeinitMc\000"
 .LASF364:
 	.ascii	"__UTA_FBIT__ 64\000"
 .LASF158:
@@ -3212,6 +3210,8 @@ OS_SHUTDOWN:
 	.ascii	"privilige_mode_e\000"
 .LASF62:
 	.ascii	"__INTPTR_TYPE__ int\000"
+.LASF467:
+	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
 .LASF46:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
 .LASF397:
@@ -3256,8 +3256,8 @@ OS_SHUTDOWN:
 	.ascii	"__FLT64_DIG__ 15\000"
 .LASF6:
 	.ascii	"__ATOMIC_RELAXED 0\000"
-.LASF525:
-	.ascii	"ePriviligeMode_priviliged_thread_mode\000"
+.LASF48:
+	.ascii	"__INT_LEAST32_TYPE__ long int\000"
 .LASF77:
 	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
 .LASF551:
@@ -3368,14 +3368,14 @@ OS_SHUTDOWN:
 	.ascii	"__INT8_MAX__ 0x7f\000"
 .LASF279:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
-.LASF48:
-	.ascii	"__INT_LEAST32_TYPE__ long int\000"
+.LASF620:
+	.ascii	"OS_Shutdown\000"
 .LASF276:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
 .LASF320:
 	.ascii	"__LLACCUM_FBIT__ 31\000"
-.LASF600:
-	.ascii	"bTASK_QUEUE_INITIALIZED\000"
+.LASF288:
+	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
 .LASF587:
 	.ascii	"DBG_CTRL_VALUE\000"
 .LASF143:
@@ -3554,8 +3554,6 @@ OS_SHUTDOWN:
 	.ascii	"__REGISTER_PREFIX__ \000"
 .LASF189:
 	.ascii	"__FLT32_MIN_EXP__ (-125)\000"
-.LASF622:
-	.ascii	"OS_DEINIT_MC\000"
 .LASF306:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF132:
@@ -3574,14 +3572,12 @@ OS_SHUTDOWN:
 	.ascii	"__THUMB_INTERWORK__ 1\000"
 .LASF559:
 	.ascii	"pStackPointer\000"
-.LASF61:
-	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
+.LASF188:
+	.ascii	"__FLT32_DIG__ 6\000"
 .LASF568:
 	.ascii	"scheduler_time_t\000"
 .LASF212:
 	.ascii	"__FLT64_HAS_DENORM__ 1\000"
-.LASF288:
-	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
 .LASF140:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
 .LASF573:
@@ -3606,6 +3602,8 @@ OS_SHUTDOWN:
 	.ascii	"ReferenceUnusedParameter(x) ((x) = (x))\000"
 .LASF105:
 	.ascii	"__INT_LEAST8_WIDTH__ 8\000"
+.LASF339:
+	.ascii	"__TQ_IBIT__ 0\000"
 .LASF360:
 	.ascii	"__USA_FBIT__ 16\000"
 .LASF99:
@@ -3614,8 +3612,6 @@ OS_SHUTDOWN:
 	.ascii	"HEAP_SIZE 10000\000"
 .LASF100:
 	.ascii	"__UINT16_MAX__ 0xffff\000"
-.LASF522:
-	.ascii	"os_sw_bugs_e\000"
 .LASF593:
 	.ascii	"TASK_STACK\000"
 .LASF305:
@@ -3668,8 +3664,6 @@ OS_SHUTDOWN:
 	.ascii	"default_prio\000"
 .LASF411:
 	.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
-.LASF188:
-	.ascii	"__FLT32_DIG__ 6\000"
 .LASF348:
 	.ascii	"__UTQ_FBIT__ 128\000"
 .LASF43:
@@ -3690,12 +3684,14 @@ OS_SHUTDOWN:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF405:
 	.ascii	"__arm__ 1\000"
+.LASF139:
+	.ascii	"__GCC_IEC_559_COMPLEX 0\000"
 .LASF172:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
 .LASF549:
 	.ascii	"TimeToPrioInc\000"
-.LASF339:
-	.ascii	"__TQ_IBIT__ 0\000"
+.LASF615:
+	.ascii	"OS_DeinitSw\000"
 .LASF358:
 	.ascii	"__UHA_FBIT__ 8\000"
 .LASF11:
@@ -3777,8 +3773,8 @@ OS_SHUTDOWN:
 	.ascii	"uint32\000"
 .LASF496:
 	.ascii	"MIN_BLOCK_SIZE_HEAP 8\000"
-.LASF433:
-	.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
+.LASF525:
+	.ascii	"ePriviligeMode_priviliged_thread_mode\000"
 .LASF505:
 	.ascii	"_os_start_ext_prg_h_ \000"
 .LASF263:
@@ -3805,8 +3801,8 @@ OS_SHUTDOWN:
 	.ascii	"__TA_FBIT__ 63\000"
 .LASF185:
 	.ascii	"__LDBL_HAS_INFINITY__ 1\000"
-.LASF139:
-	.ascii	"__GCC_IEC_559_COMPLEX 0\000"
+.LASF61:
+	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
 .LASF101:
 	.ascii	"__UINT32_MAX__ 0xffffffffUL\000"
 .LASF174:
@@ -3963,6 +3959,8 @@ OS_SHUTDOWN:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF514:
 	.ascii	"os_bug_null_pointer\000"
+.LASF584:
+	.ascii	"BACKUP_SYSTICK_CURRENT_VAL_REG\000"
 .LASF338:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF259:
@@ -4049,6 +4047,8 @@ OS_SHUTDOWN:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF510:
 	.ascii	"long unsigned int\000"
+.LASF616:
+	.ascii	"OS_DeinitHw\000"
 .LASF618:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_shutdown.c\000"
@@ -4070,8 +4070,8 @@ OS_SHUTDOWN:
 	.ascii	"__has_include(STR) __has_include__(STR)\000"
 .LASF413:
 	.ascii	"__SOFTFP__ 1\000"
-.LASF615:
-	.ascii	"OS_DEINIT_SW\000"
+.LASF522:
+	.ascii	"os_sw_bugs_e\000"
 .LASF266:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF210:
@@ -4084,14 +4084,14 @@ OS_SHUTDOWN:
 	.ascii	"__GCC_ATOMIC_LLONG_LOCK_FREE 1\000"
 .LASF374:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\000"
-.LASF584:
-	.ascii	"BACKUP_SYSTICK_CURRENT_VAL_REG\000"
+.LASF148:
+	.ascii	"__FLT_MAX_EXP__ 128\000"
 .LASF516:
 	.ascii	"os_bug_Task_unspecified\000"
 .LASF10:
 	.ascii	"__ATOMIC_ACQ_REL 4\000"
-.LASF467:
-	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
+.LASF433:
+	.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
 .LASF520:
 	.ascii	"os_sw_bugs_t\000"
 .LASF506:
@@ -4128,6 +4128,8 @@ OS_SHUTDOWN:
 	.ascii	"Task_running\000"
 .LASF337:
 	.ascii	"__DQ_IBIT__ 0\000"
+.LASF151:
+	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
 .LASF195:
 	.ascii	"__FLT32_MIN__ 1.1754943508222875e-38F32\000"
 .LASF442:
@@ -4154,12 +4156,10 @@ OS_SHUTDOWN:
 	.ascii	"__FRACT_FBIT__ 15\000"
 .LASF380:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
-.LASF486:
-	.ascii	"_os_init_task_system_h_ \000"
 .LASF365:
 	.ascii	"__UTA_IBIT__ 64\000"
-.LASF148:
-	.ascii	"__FLT_MAX_EXP__ 128\000"
+.LASF147:
+	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF203:
 	.ascii	"__FLT64_MIN_EXP__ (-1021)\000"
 .LASF224:
@@ -4243,8 +4243,8 @@ OS_SHUTDOWN:
 	.ascii	"__DECIMAL_DIG__ 17\000"
 .LASF110:
 	.ascii	"__INT32_C(c) c ## L\000"
-.LASF616:
-	.ascii	"OS_DEINIT_HW\000"
+.LASF486:
+	.ascii	"_os_init_task_system_h_ \000"
 .LASF590:
 	.ascii	"TASK2_CALL_NR\000"
 .LASF370:

@@ -60,13 +60,12 @@ enum os_sw_bugs_function_e
    Func_DeleteTaskEnvironment,
    Func_StartTask,
    Func_PreemptTask,
-   Func_TerminateTask_Part1,
-   Func_TerminateTask_Part2,
-   Func_TerminateTask_Part3,
+   Func_TerminateTask,
    Func_TaskScheduler,
    Func_InitTask,
    Func_ActivateTask,
    Func_TaskStateRequest,
+   Func_Preempt_Task,
    Func_os_exception
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;

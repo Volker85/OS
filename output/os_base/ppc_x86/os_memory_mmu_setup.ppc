@@ -320,20 +320,19 @@ enum os_sw_bugs_function_e
    Func_DeleteTaskEnvironment,
    Func_StartTask,
    Func_PreemptTask,
-   Func_TerminateTask_Part1,
-   Func_TerminateTask_Part2,
-   Func_TerminateTask_Part3,
+   Func_TerminateTask,
    Func_TaskScheduler,
    Func_InitTask,
    Func_ActivateTask,
    Func_TaskStateRequest,
+   Func_Preempt_Task,
    Func_os_exception
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
 
 
-extern void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
+extern void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
 
 typedef void (*func_ptr_t)(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
@@ -357,7 +356,7 @@ enum CoreID_e
 };
 typedef enum CoreID_e CoreID_t;
 
-extern CoreID_t GET_CORE_ID(void);
+extern CoreID_t OS_GetCoreId(void);
 extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 
 enum privilige_mode_e
@@ -438,7 +437,7 @@ extern void LLF_CLEAR_ALL_RAM(void);
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\..\\os_base\\os_init_task_system.h" 1
 
 #define _os_init_task_system_h_ 
-extern void OS_INIT_TASK_SYSTEM(void);
+extern void OS_InitTaskSystem(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h" 2
 
 enum task_state_e
@@ -503,9 +502,9 @@ typedef struct task_s task_t;
 typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
-extern unsigned_int32_t Get_current_time(void);
+extern unsigned_int32_t OS_GetCurrentTime(void);
 
-extern void OS_TASK_SAVETASK_ENVIRONMENT(task_t* task);
+extern void OS_TaskSaveTaskEnvironment(task_t* task);
 extern void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
 extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
@@ -585,10 +584,10 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 
 
-extern void* os_calloc(uint32 num, uint32 size);
-extern void* os_realloc(void* ptr_old, uint32 size_new);
-extern void* os_malloc(uint32 size);
-extern void os_free(void* ptr);
+extern void* OS_Calloc(uint32 num, uint32 size);
+extern void* OS_Realloc(void* ptr_old, uint32 size_new);
+extern void* OS_Malloc(uint32 size);
+extern void OS_Free(void* ptr);
 # 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_main.h" 1
 
@@ -596,7 +595,7 @@ extern void os_free(void* ptr);
 #define os_init 0
 #define os_running 1
 #define os_shutdown 2
-extern void OS_STATE_HANDLER(void);
+extern void OS_StateHandler(void);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_task_config.h" 1
 # 9 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
@@ -653,7 +652,7 @@ extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK
 #define EndAddresseC1T0 ((void*)0x00000000)
 #define EndAddresseC1T1 ((void*)0x00000000)
 
-void OS_MMU_SETUP(void)
+void OS_MmuSetup(void)
 {
 
 

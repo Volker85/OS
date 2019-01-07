@@ -63,19 +63,22 @@ OS_ISRHANDLERC0:
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}	@
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
+	@ link register save eliminated.
+	push	{r7}	@
+	.cfi_def_cfa_offset 4
+	.cfi_offset 7, -4
 	add	r7, sp, #0	@,,
 	.cfi_def_cfa_register 7
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:7:    ISR_TASK_DISPATCH_C0();
-	.loc 1 7 0
-	bl	ISR_TASK_DISPATCH_C0	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:8: }
 	.loc 1 8 0
 	nop
-	pop	{r7, pc}	@
+	mov	sp, r7	@,
+	.cfi_def_cfa_register 13
+	@ sp needed	@
+	pop	{r7}	@
+	.cfi_restore 7
+	.cfi_def_cfa_offset 0
+	bx	lr	@
 	.cfi_endproc
 .LFE0:
 	.size	OS_ISRHANDLERC0, .-OS_ISRHANDLERC0
@@ -1096,7 +1099,7 @@ OS_ISRHANDLERC0:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2116
+	.uleb128 0x2117
 	.uleb128 0x19
 	.byte	0
 	.byte	0

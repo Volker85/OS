@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -35,7 +35,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
    9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** 
   10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** /* index 0: current task, 1,2,3,4: next tasks to be executed */
   11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** /*
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** 1. after execution of task finished(OS_TERMINATE_TASK):
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** 1. after execution of task finished(OS_TerminateTask):
   13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****  - delete run_queue_element         (DeleteFromTaskQueue)
   14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****  - delete Scheduling queue entry    (DeleteFromSchedulingQueue)
   15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****  - shift pointers towards index 0   (UpdateSchedulingQueue)
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
   32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** 
   33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task)
   34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 2
 
 
   25              		.loc 1 34 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
   73 0052 1370     		strb	r3, [r2]
   41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       (&RUNNING_TASK[0])->FREE                            = task->FREE;
   74              		.loc 1 41 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 3
 
 
   75 0054 7B68     		ldr	r3, [r7, #4]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  121 00a4 D361     		str	r3, [r2, #28]
   50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       (&RUNNING_TASK[0])->start_time                      = task->start_time;
  122              		.loc 1 50 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 4
 
 
  123 00a6 7B68     		ldr	r3, [r7, #4]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  163 00f2 7B68     		ldr	r3, [r7, #4]
  164 00f4 1B6C     		ldr	r3, [r3, #64]
  165 00f6 254A     		ldr	r2, .L4+4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 5
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 5
 
 
  166 00f8 1364     		str	r3, [r2, #64]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  211 0140 5366     		str	r3, [r2, #100]
   74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       (&RUNNING_TASK[0])->r11                            = task->r11;
  212              		.loc 1 74 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 6
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 6
 
 
  213 0142 7B68     		ldr	r3, [r7, #4]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  257              		.cfi_def_cfa_offset 0
  258 0186 7047     		bx	lr
  259              	.L5:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 7
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 7
 
 
  260              		.align	2
@@ -368,16 +368,16 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  264              		.cfi_endproc
  265              	.LFE0:
  267              		.align	1
- 268              		.global	OS_INIT_TASK_QUEUE
+ 268              		.global	OS_InitTaskQueue
  269              		.syntax unified
  270              		.thumb
  271              		.thumb_func
  272              		.fpu softvfp
- 274              	OS_INIT_TASK_QUEUE:
+ 274              	OS_InitTaskQueue:
  275              	.LFB1:
   85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** 
   86:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** /* task queue handling */
-  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** void OS_INIT_TASK_QUEUE(void)
+  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** void OS_InitTaskQueue(void)
   88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** {
  276              		.loc 1 88 0
  277              		.cfi_startproc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  305              		.loc 1 95 0
  306 01ae FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  307 01b0 1346     		mov	r3, r2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 8
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 8
 
 
  308 01b2 1B01     		lsls	r3, r3, #4
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  356              		.loc 1 102 0
  357              		.cfi_startproc
  358              		@ args = 0, pretend = 0, frame = 16
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 9
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 9
 
 
  359              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  402              		.loc 1 111 0 is_stmt 0 discriminator 1
  403 0224 FA7B     		ldrb	r2, [r7, #15]	@ zero_extendqisi2
  404 0226 B049     		ldr	r1, .L19
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 10
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 10
 
 
  405 0228 1346     		mov	r3, r2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  455 0294 1370     		strb	r3, [r2]
  116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       (&TASK_RUN_QUEUE[element_nr])->FREE                            = task->FREE;
  456              		.loc 1 116 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 11
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 11
 
 
  457 0296 FA7B     		ldrb	r2, [r7, #15]	@ zero_extendqisi2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  120:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       (&TASK_RUN_QUEUE[element_nr])->wait_time                       = task->wait_time;
  508              		.loc 1 120 0
  509 02fa FA7B     		ldrb	r2, [r7, #15]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 12
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 12
 
 
  510 02fc 7B68     		ldr	r3, [r7, #4]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  560 0358 6348     		ldr	r0, .L19
  561 035a 1346     		mov	r3, r2
  562 035c 1B01     		lsls	r3, r3, #4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 13
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 13
 
 
  563 035e 1344     		add	r3, r3, r2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  613 03be 1344     		add	r3, r3, r2
  614 03c0 DB00     		lsls	r3, r3, #3
  615 03c2 0344     		add	r3, r3, r0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 14
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 14
 
 
  616 03c4 2C33     		adds	r3, r3, #44
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  660 0416 1346     		mov	r3, r2
  661 0418 1B01     		lsls	r3, r3, #4
  662 041a 1344     		add	r3, r3, r2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 15
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 15
 
 
  663 041c DB00     		lsls	r3, r3, #3
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  713 0478 4C33     		adds	r3, r3, #76
  714 047a 1960     		str	r1, [r3]
  143:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       (&TASK_RUN_QUEUE[element_nr])->r5                             = task->r5;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 16
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 16
 
 
  715              		.loc 1 143 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  765 04d6 7B68     		ldr	r3, [r7, #4]
  766 04d8 196E     		ldr	r1, [r3, #96]
  767 04da 0348     		ldr	r0, .L19
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 17
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 17
 
 
  768 04dc 1346     		mov	r3, r2
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  817              		.loc 1 152 0
  818 0532 FA7B     		ldrb	r2, [r7, #15]	@ zero_extendqisi2
  819 0534 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 18
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 18
 
 
  820 0536 196F     		ldr	r1, [r3, #112]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  870 0594 1346     		mov	r3, r2
  871 0596 1B01     		lsls	r3, r3, #4
  872 0598 1344     		add	r3, r3, r2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 19
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 19
 
 
  873 059a DB00     		lsls	r3, r3, #3
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  924              		.cfi_def_cfa_register 7
  925 05c6 7860     		str	r0, [r7, #4]
  162:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    task->active                                =   False   ;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 20
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 20
 
 
  926              		.loc 1 162 0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  970              		.loc 1 172 0
  971 0614 7B68     		ldr	r3, [r7, #4]
  972 0616 0022     		movs	r2, #0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 21
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 21
 
 
  973 0618 9A61     		str	r2, [r3, #24]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1011 0656 7B68     		ldr	r3, [r7, #4]
  1012 0658 0022     		movs	r2, #0
  1013 065a 1A64     		str	r2, [r3, #64]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 22
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 22
 
 
  189:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->r2                                   =   0              ;
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1057 069c DA66     		str	r2, [r3, #108]
  200:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       #else
  201:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       #error "os_task_queue.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 23
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 23
 
 
  202:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       #endif
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1105              		.loc 1 210 0
  1106              		.cfi_startproc
  1107              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 24
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 24
 
 
  1108              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1159 06ec FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  1160 06ee 9B00     		lsls	r3, r3, #2
  1161 06f0 034A     		ldr	r2, .L31
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 25
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 25
 
 
  1162 06f2 1344     		add	r3, r3, r2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1212              		.cfi_def_cfa_register 13
  1213              		@ sp needed
  1214 0718 80BC     		pop	{r7}
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 26
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 26
 
 
  1215              		.cfi_restore 7
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1255 0732 52F82330 		ldr	r3, [r2, r3, lsl #2]
  1256 0736 002B     		cmp	r3, #0
  1257 0738 06D1     		bne	.L36
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 27
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 27
 
 
  238:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       {
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1303              		.syntax unified
  1304              		.thumb
  1305              		.thumb_func
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 28
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 28
 
 
  1306              		.fpu softvfp
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1346              	.L46:
  258:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****          while((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]==0))
  1347              		.loc 1 258 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 29
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 29
 
 
  1348 0794 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1390              		.loc 1 270 0
  1391 07de 00BF     		nop
  1392 07e0 0C37     		adds	r7, r7, #12
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 30
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 30
 
 
  1393              		.cfi_def_cfa_offset 4
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1443              	.LFE9:
  1445              		.align	1
  1446              		.global	AddToIdleTaskQueue
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 31
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 31
 
 
  1447              		.syntax unified
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1494 0842 1B78     		ldrb	r3, [r3]
  1495 0844 C3F38003 		ubfx	r3, r3, #2, #1
  1496 0848 D9B2     		uxtb	r1, r3
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 32
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 32
 
 
  1497 084a 4C4A     		ldr	r2, .L59
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1543 089c 9361     		str	r3, [r2, #24]
  293:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       (&TASK_IDLE_QUEUE[0])->exe_time                              =   task->exe_time;
  1544              		.loc 1 293 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 33
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 33
 
 
  1545 089e 7B68     		ldr	r3, [r7, #4]
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1585 08e8 1B6C     		ldr	r3, [r3, #64]
  1586 08ea 244A     		ldr	r2, .L59
  1587 08ec 1364     		str	r3, [r2, #64]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 34
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 34
 
 
  308:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       (&TASK_IDLE_QUEUE[0])->r2                                   =   task->r2              ;
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  317:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       (&TASK_IDLE_QUEUE[0])->r11                                  =   task->r11             ;
  1633              		.loc 1 317 0
  1634 0936 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 35
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 35
 
 
  1635 0938 9B6E     		ldr	r3, [r3, #104]
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1678              		.cfi_def_cfa_offset 0
  1679 097a 7047     		bx	lr
  1680              	.L60:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 36
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 36
 
 
  1681              		.align	2
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1733              		.loc 1 334 0
  1734              		.cfi_startproc
  1735              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 37
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 37
 
 
  1736              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -2189,14 +2189,14 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1759              		.cfi_endproc
  1760              	.LFE12:
  1762              		.align	1
- 1763              		.global	OS_INIT_TASK
+ 1763              		.global	OS_InitTask
  1764              		.syntax unified
  1765              		.thumb
  1766              		.thumb_func
  1767              		.fpu softvfp
- 1769              	OS_INIT_TASK:
+ 1769              	OS_InitTask:
  1770              	.LFB13:
- 337:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** void OS_INIT_TASK(
+ 337:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** void OS_InitTask(
  338:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    task_t*          task,
  339:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    func_p_t         TaskFunction,
  340:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    unsigned_char_t  AllowedInstances,
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1777              		.cfi_offset 7, -8
  1778              		.cfi_offset 14, -4
  1779 09aa 84B0     		sub	sp, sp, #16
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 38
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 38
 
 
  1780              		.cfi_def_cfa_offset 24
@@ -2237,7 +2237,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  1791              		.loc 1 351 0
  1792 09be FB68     		ldr	r3, [r7, #12]
  1793 09c0 002B     		cmp	r3, #0
- 1794 09c2 52D0     		beq	.L70
+ 1794 09c2 51D0     		beq	.L70
  352:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    {
  353:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->active           = False;
  1795              		.loc 1 353 0
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  360:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->default_prio     = default_prio;
  1824              		.loc 1 360 0
  1825 09f6 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 39
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 39
 
 
  1826 09f8 97F82C20 		ldrb	r2, [r7, #44]
@@ -2292,7 +2292,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  363:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->max_allowed_wait_time          = 100000;
  1832              		.loc 1 363 0
  1833 0a06 FB68     		ldr	r3, [r7, #12]
- 1834 0a08 1C4A     		ldr	r2, .L74
+ 1834 0a08 1B4A     		ldr	r2, .L74
  1835 0a0a 9A61     		str	r2, [r3, #24]
  364:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** 
  365:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->IdleTask      = IdleTask;
@@ -2307,149 +2307,148 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 1
  366:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->state_request = &task_state_request;
  1844              		.loc 1 366 0
  1845 0a1e FB68     		ldr	r3, [r7, #12]
- 1846 0a20 174A     		ldr	r2, .L74+4
+ 1846 0a20 164A     		ldr	r2, .L74+4
  1847 0a22 1A63     		str	r2, [r3, #48]
  367:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task_state_request(task, Task_unspecified);
  1848              		.loc 1 367 0
  1849 0a24 0021     		movs	r1, #0
  1850 0a26 F868     		ldr	r0, [r7, #12]
  1851 0a28 FFF7FEFF 		bl	task_state_request
- 368:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task_state_request(task, Task_suspended);
+ 368:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       OS_CreateTask(task);
  1852              		.loc 1 368 0
- 1853 0a2c 0121     		movs	r1, #1
- 1854 0a2e F868     		ldr	r0, [r7, #12]
- 1855 0a30 FFF7FEFF 		bl	task_state_request
+ 1853 0a2c F868     		ldr	r0, [r7, #12]
+ 1854 0a2e FFF7FEFF 		bl	OS_CreateTask
  369:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       if(uStackSize > TASK_STACK_SIZE)
- 1856              		.loc 1 369 0
- 1857 0a34 3B6A     		ldr	r3, [r7, #32]
- 1858 0a36 C82B     		cmp	r3, #200
- 1859 0a38 01D9     		bls	.L71
+ 1855              		.loc 1 369 0
+ 1856 0a32 3B6A     		ldr	r3, [r7, #32]
+ 1857 0a34 C82B     		cmp	r3, #200
+ 1858 0a36 01D9     		bls	.L71
  370:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       {
  371:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****          uStackSize = TASK_STACK_SIZE;
- 1860              		.loc 1 371 0
- 1861 0a3a C823     		movs	r3, #200
- 1862 0a3c 3B62     		str	r3, [r7, #32]
- 1863              	.L71:
+ 1859              		.loc 1 371 0
+ 1860 0a38 C823     		movs	r3, #200
+ 1861 0a3a 3B62     		str	r3, [r7, #32]
+ 1862              	.L71:
  372:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       }
  373:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** 
  374:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       /* just create stack */
  375:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->pStackPointerByMalloc = pStackAddr;
- 1864              		.loc 1 375 0
- 1865 0a3e FB68     		ldr	r3, [r7, #12]
- 1866 0a40 FA69     		ldr	r2, [r7, #28]
- 1867 0a42 5A67     		str	r2, [r3, #116]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 40
-
-
+ 1863              		.loc 1 375 0
+ 1864 0a3c FB68     		ldr	r3, [r7, #12]
+ 1865 0a3e FA69     		ldr	r2, [r7, #28]
+ 1866 0a40 5A67     		str	r2, [r3, #116]
  376:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->pStackPointerStart    = pStackAddr;/*low addresse */
- 1868              		.loc 1 376 0
- 1869 0a44 FB68     		ldr	r3, [r7, #12]
- 1870 0a46 FA69     		ldr	r2, [r7, #28]
- 1871 0a48 9A67     		str	r2, [r3, #120]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 40
+
+
+ 1867              		.loc 1 376 0
+ 1868 0a42 FB68     		ldr	r3, [r7, #12]
+ 1869 0a44 FA69     		ldr	r2, [r7, #28]
+ 1870 0a46 9A67     		str	r2, [r3, #120]
  377:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->pStackPointerEnd      = (unsigned_char_t*)pStackAddr + uStackSize - 1;/* end addresse *
- 1872              		.loc 1 377 0
- 1873 0a4a 3B6A     		ldr	r3, [r7, #32]
- 1874 0a4c 013B     		subs	r3, r3, #1
- 1875 0a4e FA69     		ldr	r2, [r7, #28]
- 1876 0a50 1A44     		add	r2, r2, r3
- 1877 0a52 FB68     		ldr	r3, [r7, #12]
- 1878 0a54 C3F88020 		str	r2, [r3, #128]
+ 1871              		.loc 1 377 0
+ 1872 0a48 3B6A     		ldr	r3, [r7, #32]
+ 1873 0a4a 013B     		subs	r3, r3, #1
+ 1874 0a4c FA69     		ldr	r2, [r7, #28]
+ 1875 0a4e 1A44     		add	r2, r2, r3
+ 1876 0a50 FB68     		ldr	r3, [r7, #12]
+ 1877 0a52 C3F88020 		str	r2, [r3, #128]
  378:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->StackSize             = uStackSize;
- 1879              		.loc 1 378 0
- 1880 0a58 FB68     		ldr	r3, [r7, #12]
- 1881 0a5a 3A6A     		ldr	r2, [r7, #32]
- 1882 0a5c DA67     		str	r2, [r3, #124]
+ 1878              		.loc 1 378 0
+ 1879 0a56 FB68     		ldr	r3, [r7, #12]
+ 1880 0a58 3A6A     		ldr	r2, [r7, #32]
+ 1881 0a5a DA67     		str	r2, [r3, #124]
  379:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       /* stack register */
  380:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       task->pStackPointer                    = task->pStackPointerEnd;/* stack w‰chst von groﬂen zu
- 1883              		.loc 1 380 0
- 1884 0a5e FB68     		ldr	r3, [r7, #12]
- 1885 0a60 D3F88020 		ldr	r2, [r3, #128]
- 1886 0a64 FB68     		ldr	r3, [r7, #12]
- 1887 0a66 1A67     		str	r2, [r3, #112]
+ 1882              		.loc 1 380 0
+ 1883 0a5c FB68     		ldr	r3, [r7, #12]
+ 1884 0a5e D3F88020 		ldr	r2, [r3, #128]
+ 1885 0a62 FB68     		ldr	r3, [r7, #12]
+ 1886 0a64 1A67     		str	r2, [r3, #112]
  381:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    }
  382:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    else
  383:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    {
- 384:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       OS_SET_SW_BUG(os_bug_null_pointer, Func_InitTask);
+ 384:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****       OS_SetSwBug(os_bug_null_pointer, Func_InitTask);
  385:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    }
  386:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c **** }
- 1888              		.loc 1 386 0
- 1889 0a68 03E0     		b	.L73
- 1890              	.L70:
+ 1887              		.loc 1 386 0
+ 1888 0a66 03E0     		b	.L73
+ 1889              	.L70:
  384:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c ****    }
- 1891              		.loc 1 384 0
- 1892 0a6a 0B21     		movs	r1, #11
- 1893 0a6c 0220     		movs	r0, #2
- 1894 0a6e FFF7FEFF 		bl	OS_SET_SW_BUG
- 1895              	.L73:
- 1896              		.loc 1 386 0
- 1897 0a72 00BF     		nop
- 1898 0a74 1037     		adds	r7, r7, #16
- 1899              		.cfi_def_cfa_offset 8
- 1900 0a76 BD46     		mov	sp, r7
- 1901              		.cfi_def_cfa_register 13
- 1902              		@ sp needed
- 1903 0a78 80BD     		pop	{r7, pc}
- 1904              	.L75:
- 1905 0a7a 00BF     		.align	2
- 1906              	.L74:
- 1907 0a7c A0860100 		.word	100000
- 1908 0a80 00000000 		.word	task_state_request
- 1909              		.cfi_endproc
- 1910              	.LFE13:
- 1912              	.Letext0:
- 1913              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 41
+ 1890              		.loc 1 384 0
+ 1891 0a68 0921     		movs	r1, #9
+ 1892 0a6a 0220     		movs	r0, #2
+ 1893 0a6c FFF7FEFF 		bl	OS_SetSwBug
+ 1894              	.L73:
+ 1895              		.loc 1 386 0
+ 1896 0a70 00BF     		nop
+ 1897 0a72 1037     		adds	r7, r7, #16
+ 1898              		.cfi_def_cfa_offset 8
+ 1899 0a74 BD46     		mov	sp, r7
+ 1900              		.cfi_def_cfa_register 13
+ 1901              		@ sp needed
+ 1902 0a76 80BD     		pop	{r7, pc}
+ 1903              	.L75:
+ 1904              		.align	2
+ 1905              	.L74:
+ 1906 0a78 A0860100 		.word	100000
+ 1907 0a7c 00000000 		.word	task_state_request
+ 1908              		.cfi_endproc
+ 1909              	.LFE13:
+ 1911              	.Letext0:
+ 1912              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 1913              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 41
 
 
- 1914              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
- 1915              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
- 1916              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
- 1917              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 42
+ 1914              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+ 1915              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ 1916              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 42
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_task_queue.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:22     .text:00000000 SET_RUNNING_TASK
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:262    .text:00000188 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:267    .text:00000190 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:274    .text:00000190 OS_INIT_TASK_QUEUE
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:341    .text:000001dc $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:347    .text:000001e8 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:354    .text:000001e8 AddToTaskQueue
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:777    .text:000004e8 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:779    .text:000004ec $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:900    .text:000005bc $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:904    .text:000005c0 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:911    .text:000005c0 DeleteFromTaskQueue
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1092   .text:000006c8 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1096   .text:000006cc $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1103   .text:000006cc GetFromTaskQueue
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1142   .text:000006e2 GetFromSchedulingQueue
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1177   .text:00000700 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1181   .text:00000704 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1188   .text:00000704 DeleteFromSchedulingQueue
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1228   .text:0000071c AddToSchedulingQueue
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1297   .text:00000768 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1301   .text:0000076c $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1308   .text:0000076c UpdateSchedulingQueue
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1404   .text:000007e8 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1408   .text:000007ec $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1415   .text:000007ec GetIdleTask
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1441   .text:000007fc $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1445   .text:00000800 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1452   .text:00000800 AddToIdleTaskQueue
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1683   .text:0000097c $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1687   .text:00000980 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1694   .text:00000980 GetRunningTask
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1720   .text:00000990 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1724   .text:00000994 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1731   .text:00000994 GetRunningSchedulingQueueElementPtr
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1758   .text:000009a4 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1762   .text:000009a8 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1769   .text:000009a8 OS_INIT_TASK
-C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s:1907   .text:00000a7c $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:22     .text:00000000 SET_RUNNING_TASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:262    .text:00000188 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:267    .text:00000190 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:274    .text:00000190 OS_InitTaskQueue
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:341    .text:000001dc $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:347    .text:000001e8 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:354    .text:000001e8 AddToTaskQueue
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:777    .text:000004e8 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:779    .text:000004ec $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:900    .text:000005bc $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:904    .text:000005c0 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:911    .text:000005c0 DeleteFromTaskQueue
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1092   .text:000006c8 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1096   .text:000006cc $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1103   .text:000006cc GetFromTaskQueue
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1142   .text:000006e2 GetFromSchedulingQueue
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1177   .text:00000700 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1181   .text:00000704 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1188   .text:00000704 DeleteFromSchedulingQueue
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1228   .text:0000071c AddToSchedulingQueue
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1297   .text:00000768 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1301   .text:0000076c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1308   .text:0000076c UpdateSchedulingQueue
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1404   .text:000007e8 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1408   .text:000007ec $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1415   .text:000007ec GetIdleTask
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1441   .text:000007fc $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1445   .text:00000800 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1452   .text:00000800 AddToIdleTaskQueue
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1683   .text:0000097c $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1687   .text:00000980 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1694   .text:00000980 GetRunningTask
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1720   .text:00000990 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1724   .text:00000994 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1731   .text:00000994 GetRunningSchedulingQueueElementPtr
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1758   .text:000009a4 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1762   .text:000009a8 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1769   .text:000009a8 OS_InitTask
+C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s:1906   .text:00000a78 $d
                            .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544
@@ -2465,7 +2464,7 @@ UNDEFINED SYMBOLS
 RUNNING_SCHEDULING_QUEUE_ENTRY
 RUNNING_TASK
 OS_Task_InitTaskEnvironment
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccfNVZQL.s 			page 43
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccnoOB0I.s 			page 43
 
 
 bTASK_QUEUE_INITIALIZED
@@ -2473,4 +2472,5 @@ TASK_SCHEDULING_QUEUE
 TASK_RUN_QUEUE
 task_state_request
 TASK_IDLE_QUEUE
-OS_SET_SW_BUG
+OS_CreateTask
+OS_SetSwBug

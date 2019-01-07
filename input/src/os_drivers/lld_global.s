@@ -13,7 +13,7 @@ From the AAPCS, §5.1.1:
         .thumb
         .syntax unified
         .text
-        .global GET_CORE_ID
+        .global OS_GetCoreId
         .global LLF_SAVE_TASK_STACK
         .global LLF_SAVE_REGISTERS
         .global LLF_RESTORE_TASK_STACK
@@ -24,7 +24,7 @@ From the AAPCS, §5.1.1:
         .global LLF_PERFORM_RAM_CHECK
         .global LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
 
-GET_CORE_ID:
+OS_GetCoreId:
         # the Cortex M4 process has just one core-> use static assignement of core id
         #
         # 14.1.1. Determining which core the code is running on

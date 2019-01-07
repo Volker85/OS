@@ -13,11 +13,8 @@ LFB0:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	subl	$8, %esp
-	.loc 1 7 0
-	call	_ISR_TASK_DISPATCH_C0
 	.loc 1 8 0
-	leave
+	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
@@ -114,7 +111,7 @@ Ldebug_abbrev0:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2116
+	.uleb128 0x2117
 	.uleb128 0x19
 	.byte	0
 	.byte	0
@@ -1208,4 +1205,3 @@ Ldebug_macro0:
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
-	.def	_ISR_TASK_DISPATCH_C0;	.scl	2;	.type	32;	.endef

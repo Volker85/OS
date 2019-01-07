@@ -245,7 +245,7 @@ OS_StartExtPrg:
 	.uleb128 0x2
 	.4byte	.LASF519
 	.byte	0x3
-	.byte	0x4e
+	.byte	0x4d
 	.4byte	0xc1
 	.uleb128 0x7
 	.byte	0x4

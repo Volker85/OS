@@ -537,20 +537,19 @@ enum os_sw_bugs_function_e
    Func_DeleteTaskEnvironment,
    Func_StartTask,
    Func_PreemptTask,
-   Func_TerminateTask_Part1,
-   Func_TerminateTask_Part2,
-   Func_TerminateTask_Part3,
+   Func_TerminateTask,
    Func_TaskScheduler,
    Func_InitTask,
    Func_ActivateTask,
    Func_TaskStateRequest,
+   Func_Preempt_Task,
    Func_os_exception
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
 
 
-extern void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
+extern void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
 
 typedef void (*func_ptr_t)(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
@@ -577,7 +576,7 @@ enum CoreID_e
 };
 typedef enum CoreID_e CoreID_t;
 
-extern CoreID_t GET_CORE_ID(void);
+extern CoreID_t OS_GetCoreId(void);
 extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 
 enum privilige_mode_e
@@ -615,7 +614,7 @@ typedef enum privilige_mode_e privilige_mode_t;
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.h" 1
 
 #define _os_init_task_system_h_ 
-extern void OS_INIT_TASK_SYSTEM(void);
+extern void OS_InitTaskSystem(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 2
 
 enum task_state_e
@@ -694,9 +693,9 @@ typedef struct task_s task_t;
 typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
-extern unsigned_int32_t Get_current_time(void);
+extern unsigned_int32_t OS_GetCurrentTime(void);
 
-extern void OS_TASK_SAVETASK_ENVIRONMENT(task_t* task);
+extern void OS_TaskSaveTaskEnvironment(task_t* task);
 extern void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
 extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
@@ -774,10 +773,10 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 
 
-extern void* os_calloc(uint32 num, uint32 size);
-extern void* os_realloc(void* ptr_old, uint32 size_new);
-extern void* os_malloc(uint32 size);
-extern void os_free(void* ptr);
+extern void* OS_Calloc(uint32 num, uint32 size);
+extern void* OS_Realloc(void* ptr_old, uint32 size_new);
+extern void* OS_Malloc(uint32 size);
+extern void OS_Free(void* ptr);
 # 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h" 1
 
@@ -785,7 +784,7 @@ extern void os_free(void* ptr);
 #define os_init 0
 #define os_running 1
 #define os_shutdown 2
-extern void OS_STATE_HANDLER(void);
+extern void OS_StateHandler(void);
 # 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
@@ -832,10 +831,6 @@ extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_isr_handler.h" 1
 
 #define _os_exception_isr_handler_h_ 
-
-#define ISR void
-extern void OS_ExceptionSetup(void);
-
 extern void OS_Exception_RESET();
 extern void OS_Exception_NMI();
 extern void OS_Exception_HARDFAULT();
@@ -849,16 +844,7 @@ extern void OS_Exception_DEBUG(void);
 extern void OS_Exception_USAGE_FAULT(void);
 extern void OS_Exception_PendSV(void);
 extern void OS_Exception_Systick(void);
-extern void TCMP1(void);
-extern void TCMP2(void);
-extern void TCMP3(void);
-extern void TCMP4(void);
-extern void ISOK_RECV(void);
-extern void ISOK_TRANS(void);
 extern void OS_ISRHANDLERC0(void);
-extern void OS_ISRHANDLERC1(void);
-extern void OS_ISRHANDLERC2(void);
-extern void OS_ISRHANDLERC3(void);
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h" 1
 
@@ -869,12 +855,12 @@ typedef enum os_reset_type_s
    os_reset_powerdown = 1,
    os_reset_exit
 } os_reset_type_t;
-extern void OS_SHUTDOWN(os_reset_type_t reset_typ);
+extern void OS_Shutdown(os_reset_type_t reset_typ);
 # 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_os.h" 1
 
-#define _os_start_os_h_ 
-extern void OS_START_OS(void);
+#define _os_startos_h_ 
+extern void OS_StartOs(void);
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 1
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
@@ -901,7 +887,7 @@ extern scheduling_t* GetFromSchedulingQueue(unsigned_char_t element_nr);
 extern void DeleteFromSchedulingQueue(scheduling_t* scheduling_queue_element);
 extern void AddToSchedulingQueue(task_t* task);
 extern void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task);
-extern void OS_INIT_TASK_QUEUE(void);
+extern void OS_InitTaskQueue(void);
 # 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h" 1
 
@@ -920,10 +906,10 @@ extern void OS_INIT_TASK_QUEUE(void);
 
 typedef unsigned task_time_t;
 
-extern void OS_STARTTASK(task_t* task, scheduling_t* scheduling_task);
+extern void OS_StartTask(task_t* task, scheduling_t* scheduling_task);
 extern void OS_ActivateTask(task_t* task);
-extern void OS_SLEEPTASK(task_t* task, task_time_t millisec);
-extern void OS_INIT_TASK(
+extern void OS_SleepTask(task_t* task, task_time_t millisec);
+extern void OS_InitTask(
    task_t* task,
    func_p_t TaskFunction,
    unsigned_char_t AllowedInstances,
@@ -936,12 +922,12 @@ extern void OS_INIT_TASK(
    unsigned_char_t default_prio
 );
 extern void ISR_TASK_DISPATCH(void);
-extern void OS_INIT_TASKS(void);
+extern void OS_InitTasks(void);
 extern unsigned_char_t task_state_request(void* task, task_state_t requested_state);
-extern void ISR_TASK_DISPATCH_C0(void);
-extern void OS_ACTIVATE_DISPATCHER(void);
-extern void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task);
-extern void OS_TASK_DISPATCHER(void);
+extern void OS_ActivateDispatcher(void);
+extern void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task);
+extern void OS_TaskDispatcher(void);
+extern void OS_CreateTask(task_t* task);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
 
 
@@ -976,7 +962,7 @@ void OS_Exception_HARDFAULT(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 
 }
 
@@ -992,7 +978,7 @@ void OS_Exception_NMI(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 
 }
 void OS_Exception_SWI(void)
@@ -1020,7 +1006,7 @@ void OS_Exception_BUS_FAULT(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 
 }
 
@@ -1029,7 +1015,7 @@ void OS_Exception_DEBUG(void)
 
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 
 }
 
@@ -1044,7 +1030,7 @@ void OS_Exception_MEM_MANAG_FAULT(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 
 }
 
@@ -1059,7 +1045,7 @@ void OS_Exception_USAGE_FAULT(void)
                         );
    OS_Exception_Read_Status_Registers();
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 
 }
 
@@ -1067,7 +1053,7 @@ void OS_Exception_PendSV(void)
 {
 
    while(1){}
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_Shutdown(os_reset_hardreset);
 
 }
 
@@ -1075,6 +1061,7 @@ void OS_Exception_Systick(void)
 {
 
    task_t* task;
+   scheduling_t* scheduling_task_ptr;
 
    DBG_RLD_VALUE = 0xFFFFFFFF;
    DBG_CURR_VAL = 0xFFFFFFFF;
@@ -1083,7 +1070,6 @@ void OS_Exception_Systick(void)
 
 
    task = 0u;
-
 
 
 
@@ -1113,17 +1099,18 @@ void OS_Exception_Systick(void)
    DBG_CALIB_VALUE = *((uint32*)0xE000E01C);
 # 216 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
    task = GetRunningTask();
+   scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
    if(task != 0u)
    {
-      OS_TASK_SAVETASK_ENVIRONMENT(task);
-      OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[GET_CORE_ID()][0]);
+      OS_TaskSaveTaskEnvironment(task);
+      OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
       task->active = 0;
-      task->exe_time += (Get_current_time() - task->start_time);
-      task->task_group->exe_time += (Get_current_time() - task->start_time);
+      task->exe_time += (OS_GetCurrentTime() - task->start_time);
+      task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);
       SET_RUNNING_TASK(0,0);
-      OS_TERMINATE_TASK(task,0);
+      OS_TerminateTask(task,scheduling_task_ptr);
    }
-   OS_STATE_HANDLER();
+   OS_StateHandler();
 
 }
 
@@ -1137,31 +1124,5 @@ void OS_Exception_FIQ(void)
 {
 
    OS_ISRHANDLERC0();
-
-}
-
-
-void TCMP1(void)
-{
-
-   OS_ISRHANDLERC0();
-
-}
-void TCMP2(void)
-{
-
-
-
-}
-void TCMP3(void)
-{
-
-
-
-}
-void TCMP4(void)
-{
-
-
 
 }

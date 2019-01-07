@@ -50,13 +50,13 @@
 .Ltext0:
 	.cfi_sections	.debug_frame
 	.align	1
-	.global	OS_MMU_SETUP
+	.global	OS_MmuSetup
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_MMU_SETUP, %function
-OS_MMU_SETUP:
+	.type	OS_MmuSetup, %function
+OS_MmuSetup:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
 	.loc 1 23 0
@@ -81,7 +81,7 @@ OS_MMU_SETUP:
 	bx	lr	@
 	.cfi_endproc
 .LFE0:
-	.size	OS_MMU_SETUP, .-OS_MMU_SETUP
+	.size	OS_MmuSetup, .-OS_MmuSetup
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
@@ -3183,8 +3183,8 @@ OS_MMU_SETUP:
 	.ascii	"__USA_IBIT__ 16\000"
 .LASF275:
 	.ascii	"__ULFRACT_FBIT__ 32\000"
-.LASF157:
-	.ascii	"__FLT_HAS_QUIET_NAN__ 1\000"
+.LASF243:
+	.ascii	"__DEC128_MANT_DIG__ 34\000"
 .LASF429:
 	.ascii	"__ARM_ARCH_EXT_IDIV__ 1\000"
 .LASF592:
@@ -3275,6 +3275,9 @@ OS_MMU_SETUP:
 	.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
 .LASF296:
 	.ascii	"__USACCUM_IBIT__ 8\000"
+.LASF487:
+	.ascii	"os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_"
+	.ascii	"name)] = (task_ptr))\000"
 .LASF277:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
 .LASF222:
@@ -3860,8 +3863,6 @@ OS_MMU_SETUP:
 	.ascii	"HEAP_OFFSET_FOR_SIZE 0\000"
 .LASF539:
 	.ascii	"Task_running\000"
-.LASF243:
-	.ascii	"__DEC128_MANT_DIG__ 34\000"
 .LASF337:
 	.ascii	"__DQ_IBIT__ 0\000"
 .LASF151:
@@ -3876,8 +3877,8 @@ OS_MMU_SETUP:
 	.ascii	"__SIZE_TYPE__ unsigned int\000"
 .LASF443:
 	.ascii	"INTEGER_SILP64 4\000"
-.LASF485:
-	.ascii	"USE_STATIC_CREATED_TASKS True\000"
+.LASF620:
+	.ascii	"OS_MmuSetup\000"
 .LASF325:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
 .LASF476:
@@ -3894,6 +3895,8 @@ OS_MMU_SETUP:
 	.ascii	"__UTA_IBIT__ 64\000"
 .LASF148:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
+.LASF203:
+	.ascii	"__FLT64_MIN_EXP__ (-1021)\000"
 .LASF224:
 	.ascii	"__FLT32X_EPSILON__ 2.2204460492503131e-16F32x\000"
 .LASF73:
@@ -3912,8 +3915,8 @@ OS_MMU_SETUP:
 	.ascii	"unsigned_int32_t\000"
 .LASF555:
 	.ascii	"wait_time\000"
-.LASF203:
-	.ascii	"__FLT64_MIN_EXP__ (-1021)\000"
+.LASF157:
+	.ascii	"__FLT_HAS_QUIET_NAN__ 1\000"
 .LASF13:
 	.ascii	"__SIZEOF_INT__ 4\000"
 .LASF33:
@@ -3926,8 +3929,6 @@ OS_MMU_SETUP:
 	.ascii	"__ARM_FEATURE_FP16_VECTOR_ARITHMETIC\000"
 .LASF407:
 	.ascii	"__APCS_32__ 1\000"
-.LASF620:
-	.ascii	"OS_MMU_SETUP\000"
 .LASF302:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
 .LASF168:
@@ -3966,9 +3967,8 @@ OS_MMU_SETUP:
 	.ascii	"\\src\\os_base\\os_memory_mmu_setup.c\000"
 .LASF146:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
-.LASF487:
-	.ascii	"os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_"
-	.ascii	"name)] = (task_ptr))\000"
+.LASF485:
+	.ascii	"USE_STATIC_CREATED_TASKS True\000"
 .LASF408:
 	.ascii	"__thumb__ 1\000"
 .LASF247:

@@ -1,9 +1,9 @@
 	.file	"os_start_init_sw.c"
 	.text
 Ltext0:
-	.globl	_OS_INIT_SW
-	.def	_OS_INIT_SW;	.scl	2;	.type	32;	.endef
-_OS_INIT_SW:
+	.globl	_OS_InitSw
+	.def	_OS_InitSw;	.scl	2;	.type	32;	.endef
+_OS_InitSw:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_sw.c"
 	.loc 1 3 0
@@ -32,7 +32,7 @@ L2:
 	cmpb	$14, -9(%ebp)
 	jbe	L3
 	.loc 1 14 0 is_stmt 1
-	call	_OS_INIT_TASK_SYSTEM
+	call	_OS_InitTaskSystem
 	.loc 1 15 0
 	movl	$0, _TASK1_CALL_NR
 	.loc 1 16 0
@@ -54,7 +54,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x2e7
+	.long	0x2e6
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -129,14 +129,14 @@ Ldebug_info0:
 	.byte	0x7
 	.ascii "unsigned int\0"
 	.uleb128 0x6
-	.ascii "OS_INIT_SW\0"
+	.ascii "OS_InitSw\0"
 	.byte	0x1
 	.byte	0x2
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x240
+	.long	0x23f
 	.uleb128 0x7
 	.ascii "i\0"
 	.byte	0x1
@@ -148,9 +148,9 @@ Ldebug_info0:
 	.byte	0
 	.uleb128 0x8
 	.long	0x1f3
-	.long	0x250
+	.long	0x24f
 	.uleb128 0x9
-	.long	0x250
+	.long	0x24f
 	.byte	0xe
 	.byte	0
 	.uleb128 0x3
@@ -161,31 +161,31 @@ Ldebug_info0:
 	.ascii "OS_SW_BUG\0"
 	.byte	0x4
 	.byte	0x10
-	.long	0x26d
+	.long	0x26c
 	.uleb128 0xb
-	.long	0x240
+	.long	0x23f
 	.uleb128 0xa
 	.ascii "TASK1_CALL_NR\0"
 	.byte	0x4
 	.byte	0x20
-	.long	0x287
+	.long	0x286
 	.uleb128 0xb
 	.long	0xe7
 	.uleb128 0xa
 	.ascii "TASK2_CALL_NR\0"
 	.byte	0x4
 	.byte	0x21
-	.long	0x287
+	.long	0x286
 	.uleb128 0xa
 	.ascii "TASK3_CALL_NR\0"
 	.byte	0x4
 	.byte	0x22
-	.long	0x287
+	.long	0x286
 	.uleb128 0xa
 	.ascii "TASK4_CALL_NR\0"
 	.byte	0x4
 	.byte	0x23
-	.long	0x287
+	.long	0x286
 	.uleb128 0xa
 	.ascii "bTASK_QUEUE_INITIALIZED\0"
 	.byte	0x4
@@ -1402,4 +1402,4 @@ Ldebug_macro0:
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
-	.def	_OS_INIT_TASK_SYSTEM;	.scl	2;	.type	32;	.endef
+	.def	_OS_InitTaskSystem;	.scl	2;	.type	32;	.endef

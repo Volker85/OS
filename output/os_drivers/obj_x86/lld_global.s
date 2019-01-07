@@ -1,9 +1,9 @@
 	.file	"lld_global.c"
 	.text
 Ltext0:
-	.globl	_GET_CORE_ID
-	.def	_GET_CORE_ID;	.scl	2;	.type	32;	.endef
-_GET_CORE_ID:
+	.globl	_OS_GetCoreId
+	.def	_OS_GetCoreId;	.scl	2;	.type	32;	.endef
+_OS_GetCoreId:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/lld_global.c"
 	.loc 1 3 0
@@ -193,7 +193,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/../os_base/os_task_common.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x7d6
+	.long	0x7d7
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -579,7 +579,7 @@ Ldebug_info0:
 	.byte	0x4
 	.long	0x5a2
 	.uleb128 0xf
-	.ascii "GET_CORE_ID\0"
+	.ascii "OS_GetCoreId\0"
 	.byte	0x1
 	.byte	0x2
 	.long	0x145
@@ -587,7 +587,7 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x5ea
+	.long	0x5eb
 	.uleb128 0x10
 	.ascii "ret_val\0"
 	.byte	0x1
@@ -605,7 +605,7 @@ Ldebug_info0:
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x61e
+	.long	0x61f
 	.uleb128 0x12
 	.secrel32	LASF1
 	.byte	0x1
@@ -623,7 +623,7 @@ Ldebug_info0:
 	.long	LFE2-LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x677
+	.long	0x678
 	.uleb128 0x13
 	.ascii "r0\0"
 	.byte	0x1
@@ -665,12 +665,12 @@ Ldebug_info0:
 	.long	LFE3-LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x6ae
+	.long	0x6af
 	.uleb128 0x12
 	.secrel32	LASF1
 	.byte	0x1
 	.byte	0x28
-	.long	0x6ae
+	.long	0x6af
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -686,7 +686,7 @@ Ldebug_info0:
 	.long	LFE4-LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x6eb
+	.long	0x6ec
 	.uleb128 0x13
 	.ascii "task\0"
 	.byte	0x1
@@ -704,12 +704,12 @@ Ldebug_info0:
 	.long	LFE5-LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x724
+	.long	0x725
 	.uleb128 0x12
 	.secrel32	LASF2
 	.byte	0x1
 	.byte	0x32
-	.long	0x6ae
+	.long	0x6af
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -722,12 +722,12 @@ Ldebug_info0:
 	.long	LFE6-LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x75a
+	.long	0x75b
 	.uleb128 0x12
 	.secrel32	LASF2
 	.byte	0x1
 	.byte	0x37
-	.long	0x6ae
+	.long	0x6af
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0

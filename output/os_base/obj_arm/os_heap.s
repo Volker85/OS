@@ -13,13 +13,13 @@
 .Ltext0:
 	.cfi_sections	.debug_frame
 	.align	1
-	.global	os_calloc
+	.global	OS_Calloc
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	os_calloc, %function
-os_calloc:
+	.type	OS_Calloc, %function
+OS_Calloc:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.c"
 	.loc 1 12 0
@@ -41,7 +41,7 @@ os_calloc:
 	ldr	r2, [r7]
 	mul	r3, r2, r3
 	mov	r0, r3
-	bl	os_malloc
+	bl	OS_Malloc
 	str	r0, [r7, #8]
 	.loc 1 16 0
 	movs	r3, #0
@@ -78,15 +78,15 @@ os_calloc:
 	pop	{r7, pc}
 	.cfi_endproc
 .LFE0:
-	.size	os_calloc, .-os_calloc
+	.size	OS_Calloc, .-OS_Calloc
 	.align	1
-	.global	os_realloc
+	.global	OS_Realloc
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	os_realloc, %function
-os_realloc:
+	.type	OS_Realloc, %function
+OS_Realloc:
 .LFB1:
 	.loc 1 35 0
 	.cfi_startproc
@@ -111,7 +111,7 @@ os_realloc:
 	bne	.L6
 	.loc 1 40 0
 	ldr	r0, [r7]
-	bl	os_malloc
+	bl	OS_Malloc
 	str	r0, [r7, #16]
 	b	.L7
 .L6:
@@ -122,7 +122,7 @@ os_realloc:
 .LBB2:
 	.loc 1 44 0
 	ldr	r0, [r7]
-	bl	os_malloc
+	bl	OS_Malloc
 	str	r0, [r7, #12]
 	.loc 1 45 0
 	ldr	r3, [r7, #12]
@@ -161,7 +161,7 @@ os_realloc:
 	beq	.L12
 	.loc 1 57 0
 	ldr	r0, [r7, #4]
-	bl	os_free
+	bl	OS_Free
 .L12:
 	.loc 1 59 0
 	movs	r3, #0
@@ -179,15 +179,15 @@ os_realloc:
 	pop	{r7, pc}
 	.cfi_endproc
 .LFE1:
-	.size	os_realloc, .-os_realloc
+	.size	OS_Realloc, .-OS_Realloc
 	.align	1
-	.global	os_malloc
+	.global	OS_Malloc
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	os_malloc, %function
-os_malloc:
+	.type	OS_Malloc, %function
+OS_Malloc:
 .LFB2:
 	.loc 1 66 0
 	.cfi_startproc
@@ -231,7 +231,7 @@ os_malloc:
 .L19:
 	.loc 1 104 0
 	ldr	r0, [r7, #16]
-	bl	GET_UINT32_OF_4UINT8
+	bl	GetUint32Of4Uint8
 	str	r0, [r7, #4]
 	.loc 1 107 0
 	ldr	r3, [r7, #16]
@@ -275,15 +275,15 @@ os_malloc:
 	.word	HEAP+10000
 	.cfi_endproc
 .LFE2:
-	.size	os_malloc, .-os_malloc
+	.size	OS_Malloc, .-OS_Malloc
 	.align	1
-	.global	os_free
+	.global	OS_Free
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	os_free, %function
-os_free:
+	.type	OS_Free, %function
+OS_Free:
 .LFB3:
 	.loc 1 112 0
 	.cfi_startproc
@@ -314,7 +314,7 @@ os_free:
 .L26:
 	.loc 1 123 0
 	ldr	r0, [r7, #20]
-	bl	GET_UINT32_OF_4UINT8
+	bl	GetUint32Of4Uint8
 	str	r0, [r7, #16]
 	.loc 1 126 0
 	ldr	r3, [r7, #20]
@@ -330,7 +330,7 @@ os_free:
 	adds	r3, r3, #4
 	movs	r1, #0
 	mov	r0, r3
-	bl	SET_4UINT8_TO_UINT32
+	bl	Set4Uint8ToUint32
 .L25:
 	.loc 1 120 0
 	ldr	r3, [r7, #16]
@@ -361,14 +361,14 @@ os_free:
 	.word	HEAP+10000
 	.cfi_endproc
 .LFE3:
-	.size	os_free, .-os_free
+	.size	OS_Free, .-OS_Free
 	.align	1
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	GET_UINT32_OF_4UINT8, %function
-GET_UINT32_OF_4UINT8:
+	.type	GetUint32Of4Uint8, %function
+GetUint32Of4Uint8:
 .LFB4:
 	.loc 1 135 0
 	.cfi_startproc
@@ -441,14 +441,14 @@ GET_UINT32_OF_4UINT8:
 	bx	lr
 	.cfi_endproc
 .LFE4:
-	.size	GET_UINT32_OF_4UINT8, .-GET_UINT32_OF_4UINT8
+	.size	GetUint32Of4Uint8, .-GetUint32Of4Uint8
 	.align	1
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	SET_4UINT8_TO_UINT32, %function
-SET_4UINT8_TO_UINT32:
+	.type	Set4Uint8ToUint32, %function
+Set4Uint8ToUint32:
 .LFB5:
 	.loc 1 149 0
 	.cfi_startproc
@@ -512,7 +512,7 @@ SET_4UINT8_TO_UINT32:
 	bx	lr
 	.cfi_endproc
 .LFE5:
-	.size	SET_4UINT8_TO_UINT32, .-SET_4UINT8_TO_UINT32
+	.size	Set4Uint8ToUint32, .-Set4Uint8ToUint32
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
@@ -3621,8 +3621,6 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF329:
 	.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
-.LASF625:
-	.ascii	"GET_UINT32_OF_4UINT8\000"
 .LASF299:
 	.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
 .LASF219:
@@ -3653,6 +3651,8 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__QQ_IBIT__ 0\000"
 .LASF347:
 	.ascii	"__UDQ_IBIT__ 0\000"
+.LASF130:
+	.ascii	"__INT_FAST64_WIDTH__ 64\000"
 .LASF472:
 	.ascii	"_lld_global_h_ \000"
 .LASF258:
@@ -3812,8 +3812,6 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__ULLFRACT_IBIT__ 0\000"
 .LASF202:
 	.ascii	"__FLT64_DIG__ 15\000"
-.LASF624:
-	.ascii	"SET_4UINT8_TO_UINT32\000"
 .LASF6:
 	.ascii	"__ATOMIC_RELAXED 0\000"
 .LASF523:
@@ -3866,6 +3864,8 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__FLT64_DENORM_MIN__ 4.9406564584124654e-324F64\000"
 .LASF317:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
+.LASF614:
+	.ascii	"OS_Malloc\000"
 .LASF353:
 	.ascii	"__SA_IBIT__ 16\000"
 .LASF283:
@@ -3894,6 +3894,8 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
 .LASF435:
 	.ascii	"__USES_INITFINI__ 1\000"
+.LASF279:
+	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
 .LASF232:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
 .LASF589:
@@ -3925,8 +3927,8 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"\\src\\os_base\\os_heap.c\000"
 .LASF95:
 	.ascii	"__INT8_MAX__ 0x7f\000"
-.LASF279:
-	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
+.LASF624:
+	.ascii	"Set4Uint8ToUint32\000"
 .LASF48:
 	.ascii	"__INT_LEAST32_TYPE__ long int\000"
 .LASF276:
@@ -3961,8 +3963,8 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"os_bug_task_max_wait_time_reached\000"
 .LASF290:
 	.ascii	"__SACCUM_FBIT__ 7\000"
-.LASF620:
-	.ascii	"os_calloc\000"
+.LASF490:
+	.ascii	"_OS_RAM_H_ \000"
 .LASF166:
 	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
 .LASF209:
@@ -4053,10 +4055,10 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__SA_FBIT__ 15\000"
 .LASF204:
 	.ascii	"__FLT64_MIN_10_EXP__ (-307)\000"
-.LASF614:
-	.ascii	"os_malloc\000"
 .LASF479:
 	.ascii	"Task_min_time (1e0)\000"
+.LASF625:
+	.ascii	"GetUint32Of4Uint8\000"
 .LASF294:
 	.ascii	"__SACCUM_EPSILON__ 0x1P-7HK\000"
 .LASF478:
@@ -4193,8 +4195,6 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__FLT64_HAS_QUIET_NAN__ 1\000"
 .LASF270:
 	.ascii	"__LFRACT_FBIT__ 31\000"
-.LASF615:
-	.ascii	"os_realloc\000"
 .LASF159:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF377:
@@ -4253,8 +4253,6 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__TQ_IBIT__ 0\000"
 .LASF358:
 	.ascii	"__UHA_FBIT__ 8\000"
-.LASF490:
-	.ascii	"_OS_RAM_H_ \000"
 .LASF11:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF590:
@@ -4468,8 +4466,6 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
 .LASF92:
 	.ascii	"__SIG_ATOMIC_MAX__ 0x7fffffff\000"
-.LASF619:
-	.ascii	"os_free\000"
 .LASF238:
 	.ascii	"__DEC64_MAX_EXP__ 385\000"
 .LASF114:
@@ -4682,6 +4678,8 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"HEAP_OFFSET_FOR_SIZE 0\000"
 .LASF530:
 	.ascii	"Task_running\000"
+.LASF615:
+	.ascii	"OS_Realloc\000"
 .LASF337:
 	.ascii	"__DQ_IBIT__ 0\000"
 .LASF151:
@@ -4795,6 +4793,8 @@ SET_4UINT8_TO_UINT32:
 .LASF247:
 	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
 	.ascii	"6144DL\000"
+.LASF620:
+	.ascii	"OS_Calloc\000"
 .LASF451:
 	.ascii	"_os_common_h_ \000"
 .LASF178:
@@ -4869,8 +4869,8 @@ SET_4UINT8_TO_UINT32:
 	.ascii	"__DEC64_MANT_DIG__ 16\000"
 .LASF155:
 	.ascii	"__FLT_HAS_DENORM__ 1\000"
-.LASF130:
-	.ascii	"__INT_FAST64_WIDTH__ 64\000"
+.LASF619:
+	.ascii	"OS_Free\000"
 .LASF164:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
 	.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"

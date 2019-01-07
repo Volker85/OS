@@ -1,9 +1,9 @@
 	.file	"os_common.c"
 	.text
 Ltext0:
-	.globl	_OS_SET_SW_BUG
-	.def	_OS_SET_SW_BUG;	.scl	2;	.type	32;	.endef
-_OS_SET_SW_BUG:
+	.globl	_OS_SetSwBug
+	.def	_OS_SetSwBug;	.scl	2;	.type	32;	.endef
+_OS_SetSwBug:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_common.c"
 	.loc 1 5 0
@@ -24,9 +24,9 @@ LFB0:
 	ret
 	.cfi_endproc
 LFE0:
-	.globl	_Get_current_time
-	.def	_Get_current_time;	.scl	2;	.type	32;	.endef
-_Get_current_time:
+	.globl	_OS_GetCurrentTime
+	.def	_OS_GetCurrentTime;	.scl	2;	.type	32;	.endef
+_OS_GetCurrentTime:
 LFB1:
 	.loc 1 9 0
 	.cfi_startproc
@@ -50,7 +50,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x437
+	.long	0x40e
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -120,7 +120,7 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x3
 	.byte	0x36
-	.long	0x371
+	.long	0x349
 	.uleb128 0x5
 	.ascii "Func_NoFunction\0"
 	.sleb128 0
@@ -143,48 +143,45 @@ Ldebug_info0:
 	.ascii "Func_PreemptTask\0"
 	.sleb128 6
 	.uleb128 0x5
-	.ascii "Func_TerminateTask_Part1\0"
+	.ascii "Func_TerminateTask\0"
 	.sleb128 7
 	.uleb128 0x5
-	.ascii "Func_TerminateTask_Part2\0"
+	.ascii "Func_TaskScheduler\0"
 	.sleb128 8
 	.uleb128 0x5
-	.ascii "Func_TerminateTask_Part3\0"
+	.ascii "Func_InitTask\0"
 	.sleb128 9
 	.uleb128 0x5
-	.ascii "Func_TaskScheduler\0"
+	.ascii "Func_ActivateTask\0"
 	.sleb128 10
 	.uleb128 0x5
-	.ascii "Func_InitTask\0"
+	.ascii "Func_TaskStateRequest\0"
 	.sleb128 11
 	.uleb128 0x5
-	.ascii "Func_ActivateTask\0"
+	.ascii "Func_Preempt_Task\0"
 	.sleb128 12
 	.uleb128 0x5
-	.ascii "Func_TaskStateRequest\0"
-	.sleb128 13
-	.uleb128 0x5
 	.ascii "Func_os_exception\0"
-	.sleb128 14
+	.sleb128 13
 	.byte	0
 	.uleb128 0x3
 	.ascii "os_sw_bugs_function_t\0"
 	.byte	0x3
-	.byte	0x48
+	.byte	0x47
 	.long	0x1f3
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
 	.ascii "unsigned int\0"
 	.uleb128 0x6
-	.ascii "OS_SET_SW_BUG\0"
+	.ascii "OS_SetSwBug\0"
 	.byte	0x1
 	.byte	0x4
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x3e6
+	.long	0x3bc
 	.uleb128 0x7
 	.ascii "bug_nr\0"
 	.byte	0x1
@@ -197,13 +194,13 @@ Ldebug_info0:
 	.ascii "task_func_nr\0"
 	.byte	0x1
 	.byte	0x4
-	.long	0x371
+	.long	0x349
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 4
 	.byte	0
 	.uleb128 0x8
-	.ascii "Get_current_time\0"
+	.ascii "OS_GetCurrentTime\0"
 	.byte	0x1
 	.byte	0x8
 	.long	0xb4
@@ -213,9 +210,9 @@ Ldebug_info0:
 	.byte	0x9c
 	.uleb128 0x9
 	.long	0x1df
-	.long	0x418
+	.long	0x3ef
 	.uleb128 0xa
-	.long	0x418
+	.long	0x3ef
 	.byte	0xe
 	.byte	0
 	.uleb128 0x2
@@ -226,9 +223,9 @@ Ldebug_info0:
 	.ascii "OS_SW_BUG\0"
 	.byte	0x4
 	.byte	0x10
-	.long	0x435
+	.long	0x40c
 	.uleb128 0xc
-	.long	0x408
+	.long	0x3df
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:

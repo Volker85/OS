@@ -1,9 +1,9 @@
 	.file	"os_start_init_mc.c"
 	.text
 Ltext0:
-	.globl	_OS_INIT_MC
-	.def	_OS_INIT_MC;	.scl	2;	.type	32;	.endef
-_OS_INIT_MC:
+	.globl	_OS_InitMc
+	.def	_OS_InitMc;	.scl	2;	.type	32;	.endef
+_OS_InitMc:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_mc.c"
 	.loc 1 5 0
@@ -23,7 +23,7 @@ LFE0:
 Letext0:
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0xf5
+	.long	0xf4
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -52,7 +52,7 @@ Ldebug_info0:
 	.byte	0x7
 	.ascii "unsigned int\0"
 	.uleb128 0x3
-	.ascii "OS_INIT_MC\0"
+	.ascii "OS_InitMc\0"
 	.byte	0x1
 	.byte	0x4
 	.long	LFB0

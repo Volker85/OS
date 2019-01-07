@@ -13,4 +13,5 @@ extern void OS_Exception_DEBUG(void);
 extern void OS_Exception_USAGE_FAULT(void);
 extern void OS_Exception_PendSV(void);
 extern void OS_Exception_Systick(void);
+extern void OS_ISRHANDLERC0(void);
 #endif /* _os_exception_isr_handler_h_ */

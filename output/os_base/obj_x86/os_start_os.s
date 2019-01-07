@@ -1,9 +1,9 @@
 	.file	"os_start_os.c"
 	.text
 Ltext0:
-	.globl	_OS_START_OS
-	.def	_OS_START_OS;	.scl	2;	.type	32;	.endef
-_OS_START_OS:
+	.globl	_OS_StartOs
+	.def	_OS_StartOs;	.scl	2;	.type	32;	.endef
+_OS_StartOs:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_os.c"
 	.loc 1 11 0
@@ -37,7 +37,7 @@ LFB0:
 	.loc 1 27 0
 	movl	$0, _OS_STATE
 	.loc 1 28 0
-	call	_OS_STATE_HANDLER
+	call	_OS_StateHandler
 	.loc 1 29 0
 	leave
 	.cfi_restore 5
@@ -50,7 +50,7 @@ Letext0:
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x257
+	.long	0x256
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -84,7 +84,7 @@ Ldebug_info0:
 	.byte	0x7
 	.ascii "unsigned int\0"
 	.uleb128 0x4
-	.ascii "OS_START_OS\0"
+	.ascii "OS_StartOs\0"
 	.byte	0x1
 	.byte	0xa
 	.long	LFB0
@@ -95,59 +95,59 @@ Ldebug_info0:
 	.ascii "OS_STATE\0"
 	.byte	0x2
 	.byte	0x11
-	.long	0x112
+	.long	0x111
 	.uleb128 0x6
 	.long	0xcb
 	.uleb128 0x5
 	.ascii "VAR_HARDFAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x12
-	.long	0x112
+	.long	0x111
 	.uleb128 0x5
 	.ascii "VAR_MEM_MANAG_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x13
-	.long	0x112
+	.long	0x111
 	.uleb128 0x5
 	.ascii "VAR_USAGE_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x14
-	.long	0x112
+	.long	0x111
 	.uleb128 0x5
 	.ascii "VAR_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x15
-	.long	0x112
+	.long	0x111
 	.uleb128 0x5
 	.ascii "VAR_MEM_FAULT_ADDR_REG\0"
 	.byte	0x2
 	.byte	0x16
-	.long	0x112
+	.long	0x111
 	.uleb128 0x5
 	.ascii "VAR_BUS_FAULT_ADDR_REG\0"
 	.byte	0x2
 	.byte	0x17
-	.long	0x112
+	.long	0x111
 	.uleb128 0x5
 	.ascii "VAR_AUX_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x18
-	.long	0x112
+	.long	0x111
 	.uleb128 0x5
 	.ascii "VAR_BUS_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x19
-	.long	0x112
+	.long	0x111
 	.uleb128 0x5
 	.ascii "LINK_REGISTER_HANDLER\0"
 	.byte	0x2
 	.byte	0x1a
-	.long	0x112
+	.long	0x111
 	.uleb128 0x5
 	.ascii "BACKUP_SYSTICK_CURRENT_VAL_REG\0"
 	.byte	0x2
 	.byte	0x1b
-	.long	0x112
+	.long	0x111
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -1321,4 +1321,4 @@ Ldebug_macro0:
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
-	.def	_OS_STATE_HANDLER;	.scl	2;	.type	32;	.endef
+	.def	_OS_StateHandler;	.scl	2;	.type	32;	.endef

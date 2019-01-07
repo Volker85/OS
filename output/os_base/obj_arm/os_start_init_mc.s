@@ -50,13 +50,13 @@
 .Ltext0:
 	.cfi_sections	.debug_frame
 	.align	1
-	.global	OS_INIT_MC
+	.global	OS_InitMc
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_INIT_MC, %function
-OS_INIT_MC:
+	.type	OS_InitMc, %function
+OS_InitMc:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c"
 	.loc 1 5 0
@@ -81,7 +81,7 @@ OS_INIT_MC:
 	bx	lr	@
 	.cfi_endproc
 .LFE0:
-	.size	OS_INIT_MC, .-OS_INIT_MC
+	.size	OS_InitMc, .-OS_InitMc
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
@@ -2818,8 +2818,6 @@ OS_INIT_MC:
 	.ascii	"__QQ_IBIT__ 0\000"
 .LASF347:
 	.ascii	"__UDQ_IBIT__ 0\000"
-.LASF611:
-	.ascii	"OS_INIT_MC\000"
 .LASF598:
 	.ascii	"bTASK_QUEUE_INITIALIZED\000"
 .LASF160:
@@ -3312,6 +3310,8 @@ OS_INIT_MC:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
 .LASF280:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
+.LASF611:
+	.ascii	"OS_InitMc\000"
 .LASF461:
 	.ascii	"ReferenceUnusedParameter(x) ((x) = (x))\000"
 .LASF105:

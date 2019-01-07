@@ -35,5 +35,6 @@ extern unsigned_char_t task_state_request(void* task, task_state_t requested_sta
 extern void OS_ActivateDispatcher(void);
 extern void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task);
 extern void OS_TaskDispatcher(void);
+extern void OS_CreateTask(task_t* task);
 #endif /* _os_task_scheduler_h_  */
 

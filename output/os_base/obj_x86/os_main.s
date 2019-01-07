@@ -1,8 +1,8 @@
 	.file	"os_main.c"
 	.text
 Ltext0:
-	.def	_OS_DETERMINE_NEXT_TASK_ACTIVATION;	.scl	3;	.type	32;	.endef
-_OS_DETERMINE_NEXT_TASK_ACTIVATION:
+	.def	_OS_DetermineNextTaskActivation;	.scl	3;	.type	32;	.endef
+_OS_DetermineNextTaskActivation:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_main.c"
 	.loc 1 57 0
@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1340, %eax
+	movl	_call_nr.1339, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,39 +33,33 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1340, %eax
+	movl	_call_nr.1339, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1340
+	movl	%eax, _call_nr.1339
 	.loc 1 64 0
 	jmp	L1
 L5:
-	.loc 1 66 0
-	movl	$_TASK_1_VAR, (%esp)
-	call	_OS_ActivateTask
 	.loc 1 67 0
-	movl	_call_nr.1340, %eax
+	movl	_call_nr.1339, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1340
+	movl	%eax, _call_nr.1339
 	.loc 1 68 0
 	jmp	L1
 L6:
 	.loc 1 70 0
-	movl	$_TASK_0_VAR, (%esp)
+	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1340, %eax
+	movl	_call_nr.1339, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1340
+	movl	%eax, _call_nr.1339
 	.loc 1 72 0
 	jmp	L1
 L7:
-	.loc 1 74 0
-	movl	$_TASK_2_VAR, (%esp)
-	call	_OS_ActivateTask
 	.loc 1 75 0
-	movl	_call_nr.1340, %eax
+	movl	_call_nr.1339, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1340
+	movl	%eax, _call_nr.1339
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -73,7 +67,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1340
+	movl	$0, _call_nr.1339
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -87,9 +81,9 @@ L1:
 	ret
 	.cfi_endproc
 LFE0:
-	.globl	_OS_STATE_HANDLER
-	.def	_OS_STATE_HANDLER;	.scl	2;	.type	32;	.endef
-_OS_STATE_HANDLER:
+	.globl	_OS_StateHandler
+	.def	_OS_StateHandler;	.scl	2;	.type	32;	.endef
+_OS_StateHandler:
 LFB1:
 	.loc 1 89 0
 	.cfi_startproc
@@ -111,11 +105,11 @@ LFB1:
 	jmp	L11
 L14:
 	.loc 1 99 0
-	call	_OS_INIT_MC
+	call	_OS_InitMc
 	.loc 1 102 0
-	call	_OS_INIT_HW
+	call	_OS_InitHw
 	.loc 1 103 0
-	call	_OS_INIT_SW
+	call	_OS_InitSw
 	.loc 1 108 0
 	movl	$_TASK_0_VAR, (%esp)
 	call	_OS_ActivateTask
@@ -123,9 +117,9 @@ L14:
 	call	_GetIdleTask
 	movl	$0, 4(%esp)
 	movl	%eax, (%esp)
-	call	_OS_STARTTASK
+	call	_OS_StartTask
 	.loc 1 110 0
-	call	_OS_ACTIVATE_DISPATCHER
+	call	_OS_ActivateDispatcher
 	.loc 1 112 0
 	movl	$1, _OS_STATE
 	.loc 1 114 0
@@ -134,7 +128,7 @@ L14:
 	jmp	L11
 L13:
 	.loc 1 125 0
-	movl	_call_nr.1352, %eax
+	movl	_call_nr.1351, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
@@ -142,21 +136,21 @@ L13:
 	testl	%eax, %eax
 	jne	L17
 	.loc 1 127 0
-	call	_OS_DETERMINE_NEXT_TASK_ACTIVATION
+	call	_OS_DetermineNextTaskActivation
 L17:
 	.loc 1 129 0
-	movl	_call_nr.1352, %eax
+	movl	_call_nr.1351, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1352
+	movl	%eax, _call_nr.1351
 	.loc 1 131 0
-	call	_OS_TASK_DISPATCHER
+	call	_OS_TaskDispatcher
 	.loc 1 138 0
 	jmp	L11
 L15:
 	.loc 1 142 0
 	call	_LLF_INT_DISABLE
 	.loc 1 143 0
-	movl	_sys_req_reset_state.1351, %eax
+	movl	_sys_req_reset_state.1350, %eax
 	cmpl	$1, %eax
 	je	L19
 	cmpl	$1, %eax
@@ -167,25 +161,25 @@ L15:
 L20:
 	.loc 1 147 0
 	movl	$1, (%esp)
-	call	_OS_SHUTDOWN
+	call	_OS_Shutdown
 	.loc 1 148 0
 	jmp	L22
 L19:
 	.loc 1 152 0
 	movl	$0, (%esp)
-	call	_OS_SHUTDOWN
+	call	_OS_Shutdown
 	.loc 1 153 0
 	jmp	L22
 L21:
 	.loc 1 157 0
 	movl	$2, (%esp)
-	call	_OS_SHUTDOWN
+	call	_OS_Shutdown
 	.loc 1 158 0
 	jmp	L22
 L23:
 	.loc 1 162 0
 	movl	$0, (%esp)
-	call	_OS_SHUTDOWN
+	call	_OS_Shutdown
 	.loc 1 163 0
 	nop
 L22:
@@ -199,18 +193,18 @@ L11:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1340,4,4
-.lcomm _call_nr.1352,4,4
-.lcomm _sys_req_reset_state.1351,4,4
+.lcomm _call_nr.1339,4,4
+.lcomm _call_nr.1351,4,4
+.lcomm _sys_req_reset_state.1350,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_common.h"
-	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
+	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/OS_shutdown.h"
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x717
+	.long	0x713
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -601,14 +595,14 @@ Ldebug_info0:
 	.byte	0x36
 	.long	0x5b2
 	.uleb128 0xf
-	.ascii "OS_DETERMINE_NEXT_TASK_ACTIVATION\0"
+	.ascii "OS_DetermineNextTaskActivation\0"
 	.byte	0x1
 	.byte	0x38
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x664
+	.long	0x661
 	.uleb128 0x10
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -616,17 +610,17 @@ Ldebug_info0:
 	.long	0xf6
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1340
+	.long	_call_nr.1339
 	.byte	0
 	.uleb128 0x11
-	.ascii "OS_STATE_HANDLER\0"
+	.ascii "OS_StateHandler\0"
 	.byte	0x1
 	.byte	0x58
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x6bd
+	.long	0x6b9
 	.uleb128 0x10
 	.ascii "sys_req_reset_state\0"
 	.byte	0x1
@@ -634,7 +628,7 @@ Ldebug_info0:
 	.long	0x5ff
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1351
+	.long	_sys_req_reset_state.1350
 	.uleb128 0x10
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -642,13 +636,13 @@ Ldebug_info0:
 	.long	0xf6
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1352
+	.long	_call_nr.1351
 	.byte	0
 	.uleb128 0x12
 	.ascii "OS_STATE\0"
 	.byte	0x6
 	.byte	0x11
-	.long	0x6cd
+	.long	0x6c9
 	.uleb128 0x13
 	.long	0xf6
 	.uleb128 0x12
@@ -2074,13 +2068,13 @@ LASF0:
 	.ascii "exe_time\0"
 	.ident	"GCC: (GNU) 4.9.3"
 	.def	_OS_ActivateTask;	.scl	2;	.type	32;	.endef
-	.def	_OS_INIT_MC;	.scl	2;	.type	32;	.endef
-	.def	_OS_INIT_HW;	.scl	2;	.type	32;	.endef
-	.def	_OS_INIT_SW;	.scl	2;	.type	32;	.endef
+	.def	_OS_InitMc;	.scl	2;	.type	32;	.endef
+	.def	_OS_InitHw;	.scl	2;	.type	32;	.endef
+	.def	_OS_InitSw;	.scl	2;	.type	32;	.endef
 	.def	_GetIdleTask;	.scl	2;	.type	32;	.endef
-	.def	_OS_STARTTASK;	.scl	2;	.type	32;	.endef
-	.def	_OS_ACTIVATE_DISPATCHER;	.scl	2;	.type	32;	.endef
+	.def	_OS_StartTask;	.scl	2;	.type	32;	.endef
+	.def	_OS_ActivateDispatcher;	.scl	2;	.type	32;	.endef
 	.def	_LLF_INT_ENABLE;	.scl	2;	.type	32;	.endef
-	.def	_OS_TASK_DISPATCHER;	.scl	2;	.type	32;	.endef
+	.def	_OS_TaskDispatcher;	.scl	2;	.type	32;	.endef
 	.def	_LLF_INT_DISABLE;	.scl	2;	.type	32;	.endef
-	.def	_OS_SHUTDOWN;	.scl	2;	.type	32;	.endef
+	.def	_OS_Shutdown;	.scl	2;	.type	32;	.endef

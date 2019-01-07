@@ -50,13 +50,13 @@
 .Ltext0:
 	.cfi_sections	.debug_frame
 	.align	1
-	.global	OS_INIT_HW
+	.global	OS_InitHw
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_INIT_HW, %function
-OS_INIT_HW:
+	.type	OS_InitHw, %function
+OS_InitHw:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_hw.c"
 	.loc 1 4 0
@@ -81,7 +81,7 @@ OS_INIT_HW:
 	bx	lr	@
 	.cfi_endproc
 .LFE0:
-	.size	OS_INIT_HW, .-OS_INIT_HW
+	.size	OS_InitHw, .-OS_InitHw
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
@@ -3322,6 +3322,8 @@ OS_INIT_HW:
 	.ascii	"HEAP_OFFSET_FOR_USED_SIZE 4\000"
 .LASF531:
 	.ascii	"func_p_t\000"
+.LASF610:
+	.ascii	"OS_InitHw\000"
 .LASF91:
 	.ascii	"__INTMAX_WIDTH__ 64\000"
 .LASF233:
@@ -3671,8 +3673,6 @@ OS_INIT_HW:
 	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF332:
 	.ascii	"__HQ_FBIT__ 15\000"
-.LASF610:
-	.ascii	"OS_INIT_HW\000"
 .LASF359:
 	.ascii	"__UHA_IBIT__ 8\000"
 .LASF401:

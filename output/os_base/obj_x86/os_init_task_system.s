@@ -1,9 +1,9 @@
 	.file	"os_init_task_system.c"
 	.text
 Ltext0:
-	.globl	_OS_INIT_TASK_SYSTEM
-	.def	_OS_INIT_TASK_SYSTEM;	.scl	2;	.type	32;	.endef
-_OS_INIT_TASK_SYSTEM:
+	.globl	_OS_InitTaskSystem
+	.def	_OS_InitTaskSystem;	.scl	2;	.type	32;	.endef
+_OS_InitTaskSystem:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_init_task_system.c"
 	.loc 1 5 0
@@ -15,7 +15,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
 	.loc 1 7 0
-	call	_OS_INIT_TASKS
+	call	_OS_InitTasks
 	.loc 1 8 0
 	leave
 	.cfi_restore 5
@@ -26,7 +26,7 @@ LFE0:
 Letext0:
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x101
+	.long	0xff
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -55,7 +55,7 @@ Ldebug_info0:
 	.byte	0x7
 	.ascii "unsigned int\0"
 	.uleb128 0x3
-	.ascii "OS_INIT_TASK_SYSTEM\0"
+	.ascii "OS_InitTaskSystem\0"
 	.byte	0x1
 	.byte	0x4
 	.long	LFB0
@@ -1208,4 +1208,4 @@ Ldebug_macro0:
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
-	.def	_OS_INIT_TASKS;	.scl	2;	.type	32;	.endef
+	.def	_OS_InitTasks;	.scl	2;	.type	32;	.endef

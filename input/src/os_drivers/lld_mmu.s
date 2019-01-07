@@ -16,7 +16,7 @@ From the AAPCS, §5.1.1:
         .global LLF_MPU_SWITCH_OFF_ALL_REGIONS
         .global LLF_GET_MPU_PRESENT
         .global LLF_MPU_DISABLE
-        //.extern OS_START_OS
+        //.extern OS_StartOs
         
       
 LLF_MPU_DISABLE:

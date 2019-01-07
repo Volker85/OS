@@ -365,7 +365,7 @@ void OS_InitTask(
       task->IdleTask      = IdleTask;
       task->state_request = &task_state_request;
       task_state_request(task, Task_unspecified);
-      task_state_request(task, Task_suspended);
+      OS_CreateTask(task);
       if(uStackSize > TASK_STACK_SIZE)
       {
          uStackSize = TASK_STACK_SIZE;

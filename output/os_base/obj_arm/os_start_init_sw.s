@@ -50,13 +50,13 @@
 .Ltext0:
 	.cfi_sections	.debug_frame
 	.align	1
-	.global	OS_INIT_SW
+	.global	OS_InitSw
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_INIT_SW, %function
-OS_INIT_SW:
+	.type	OS_InitSw, %function
+OS_InitSw:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_sw.c"
 	.loc 1 3 0
@@ -82,7 +82,7 @@ OS_INIT_SW:
 	strb	r3, [r7, #7]	@ tmp116, i
 	b	.L2	@
 .L3:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:11:       OS_SW_BUG[i] = os_bug_no_bug;   
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:11:       OS_SW_BUG[i] = os_bug_no_bug;
 	.loc 1 11 0 discriminator 3
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2	@ _1, i
 	ldr	r2, .L4+4	@ tmp117,
@@ -99,9 +99,9 @@ OS_INIT_SW:
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2	@ tmp122, i
 	cmp	r3, #14	@ tmp122,
 	bls	.L3	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:14:    OS_INIT_TASK_SYSTEM();
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:14:    OS_InitTaskSystem();
 	.loc 1 14 0 is_stmt 1
-	bl	OS_INIT_TASK_SYSTEM	@
+	bl	OS_InitTaskSystem	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:15:    TASK1_CALL_NR = 0;
 	.loc 1 15 0
 	ldr	r3, .L4+8	@ tmp123,
@@ -117,7 +117,7 @@ OS_INIT_SW:
 	ldr	r3, .L4+16	@ tmp127,
 	movs	r2, #0	@ tmp128,
 	str	r2, [r3]	@ tmp128, TASK3_CALL_NR
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:18:    TASK4_CALL_NR = 0;   
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:18:    TASK4_CALL_NR = 0;
 	.loc 1 18 0
 	ldr	r3, .L4+20	@ tmp129,
 	movs	r2, #0	@ tmp130,
@@ -142,7 +142,7 @@ OS_INIT_SW:
 	.word	TASK4_CALL_NR
 	.cfi_endproc
 .LFE0:
-	.size	OS_INIT_SW, .-OS_INIT_SW
+	.size	OS_InitSw, .-OS_InitSw
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
@@ -3304,8 +3304,6 @@ OS_INIT_SW:
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
 .LASF242:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
-.LASF610:
-	.ascii	"OS_INIT_SW\000"
 .LASF399:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
 .LASF71:
@@ -3896,8 +3894,8 @@ OS_INIT_SW:
 	.ascii	"TASK_3_VAR\000"
 .LASF497:
 	.ascii	"HEAP_OFFSET_FOR_SIZE 0\000"
-.LASF529:
-	.ascii	"Task_running\000"
+.LASF610:
+	.ascii	"OS_InitSw\000"
 .LASF337:
 	.ascii	"__DQ_IBIT__ 0\000"
 .LASF151:
@@ -4003,6 +4001,8 @@ OS_INIT_SW:
 	.ascii	"__LDBL_MAX_EXP__ 1024\000"
 .LASF146:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
+.LASF529:
+	.ascii	"Task_running\000"
 .LASF487:
 	.ascii	"os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_"
 	.ascii	"name)] = (task_ptr))\000"

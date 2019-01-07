@@ -15,9 +15,9 @@ From the AAPCS, §5.1.1:
         .text
 
         .global OS_Exception_RESET
-        .global GET_CORE_ID
+        .global OS_GetCoreId
         .extern LLF_CLEAR_ALL_RAM
-        .extern OS_START_OS
+        .extern OS_StartOs
         .global LLF_PERFORM_RAM_CHECK
         .global START_OS
         .extern _ram_start
@@ -59,5 +59,5 @@ START_OS:
         #/* done in OS_INIT_MC()                      */
         #
         #/* 4 -> executing main program */
-        # OS_START_OS(void)
-        B OS_START_OS
+        # OS_StartOs(void)
+        B OS_StartOs

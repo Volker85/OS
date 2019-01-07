@@ -50,13 +50,13 @@
 .Ltext0:
 	.cfi_sections	.debug_frame
 	.align	1
-	.global	OS_INIT_TASK_SYSTEM
+	.global	OS_InitTaskSystem
 	.syntax unified
 	.thumb
 	.thumb_func
 	.fpu softvfp
-	.type	OS_INIT_TASK_SYSTEM, %function
-OS_INIT_TASK_SYSTEM:
+	.type	OS_InitTaskSystem, %function
+OS_InitTaskSystem:
 .LFB0:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.c"
 	.loc 1 5 0
@@ -69,16 +69,16 @@ OS_INIT_TASK_SYSTEM:
 	.cfi_offset 14, -4
 	add	r7, sp, #0	@,,
 	.cfi_def_cfa_register 7
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:7:    OS_INIT_TASKS();
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:7:    OS_InitTasks();
 	.loc 1 7 0
-	bl	OS_INIT_TASKS	@
+	bl	OS_InitTasks	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:8: }
 	.loc 1 8 0
 	nop
 	pop	{r7, pc}	@
 	.cfi_endproc
 .LFE0:
-	.size	OS_INIT_TASK_SYSTEM, .-OS_INIT_TASK_SYSTEM
+	.size	OS_InitTaskSystem, .-OS_InitTaskSystem
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
@@ -3244,8 +3244,6 @@ OS_INIT_TASK_SYSTEM:
 	.ascii	"task_state\000"
 .LASF531:
 	.ascii	"task_state_e\000"
-.LASF296:
-	.ascii	"__USACCUM_IBIT__ 8\000"
 .LASF83:
 	.ascii	"__WCHAR_WIDTH__ 32\000"
 .LASF199:
@@ -3274,8 +3272,8 @@ OS_INIT_TASK_SYSTEM:
 	.ascii	"__NO_INLINE__ 1\000"
 .LASF244:
 	.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
-.LASF616:
-	.ascii	"OS_INIT_TASK_SYSTEM\000"
+.LASF296:
+	.ascii	"__USACCUM_IBIT__ 8\000"
 .LASF277:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
 .LASF222:
@@ -3545,6 +3543,8 @@ OS_INIT_TASK_SYSTEM:
 	.ascii	"__UINT32_MAX__ 0xffffffffUL\000"
 .LASF509:
 	.ascii	"OS_SaveTaskPtr(task_ptr,Task_n_ptr) \000"
+.LASF93:
+	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF174:
 	.ascii	"__LDBL_MIN_EXP__ (-1021)\000"
 .LASF285:
@@ -3565,8 +3565,8 @@ OS_INIT_TASK_SYSTEM:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
 .LASF447:
 	.ascii	"CPP_VERSION_2007 3\000"
-.LASF93:
-	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
+.LASF616:
+	.ascii	"OS_InitTaskSystem\000"
 .LASF284:
 	.ascii	"__LLFRACT_EPSILON__ 0x1P-63LLR\000"
 .LASF504:
