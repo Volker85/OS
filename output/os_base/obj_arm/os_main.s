@@ -354,7 +354,7 @@ sys_req_reset_state.4060:
 	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\OS_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x6bf
+	.4byte	0x6c2
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -847,13 +847,13 @@ sys_req_reset_state.4060:
 	.4byte	0x3c4
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x3f6
+	.4byte	0x3f7
 	.uleb128 0x11
 	.4byte	0x36f
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0x13
 	.4byte	0x36f
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF582
@@ -862,30 +862,30 @@ sys_req_reset_state.4060:
 	.4byte	0x3e0
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x411
-	.uleb128 0x11
+	.4byte	0x413
+	.uleb128 0x13
 	.4byte	0x36f
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF583
 	.byte	0x6
 	.byte	0xf
-	.4byte	0x401
+	.4byte	0x402
 	.uleb128 0x10
 	.4byte	0xb1
-	.4byte	0x42c
+	.4byte	0x42e
 	.uleb128 0x11
 	.4byte	0x36f
 	.byte	0xe
 	.byte	0
 	.uleb128 0x4
-	.4byte	0x41c
+	.4byte	0x41e
 	.uleb128 0x12
 	.4byte	.LASF584
 	.byte	0x6
 	.byte	0x10
-	.4byte	0x42c
+	.4byte	0x42e
 	.uleb128 0x12
 	.4byte	.LASF585
 	.byte	0x6
@@ -983,19 +983,19 @@ sys_req_reset_state.4060:
 	.4byte	0x5f
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x523
+	.4byte	0x526
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
-	.uleb128 0x11
+	.byte	0x9
+	.uleb128 0x13
 	.4byte	0x36f
-	.byte	0xc7
+	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF604
 	.byte	0x6
 	.byte	0x25
-	.4byte	0x50d
+	.4byte	0x50f
 	.uleb128 0x12
 	.4byte	.LASF605
 	.byte	0x6
@@ -1003,39 +1003,39 @@ sys_req_reset_state.4060:
 	.4byte	0x3b9
 	.uleb128 0x10
 	.4byte	0x38d
-	.4byte	0x549
+	.4byte	0x54c
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF606
 	.byte	0x6
 	.byte	0x27
-	.4byte	0x539
+	.4byte	0x53c
 	.uleb128 0x12
 	.4byte	.LASF607
 	.byte	0x6
 	.byte	0x28
-	.4byte	0x55f
+	.4byte	0x562
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x38d
 	.uleb128 0x10
 	.4byte	0x382
-	.4byte	0x575
+	.4byte	0x578
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF608
 	.byte	0x6
 	.byte	0x29
-	.4byte	0x565
+	.4byte	0x568
 	.uleb128 0x10
 	.4byte	0x382
-	.4byte	0x590
+	.4byte	0x593
 	.uleb128 0x11
 	.4byte	0x36f
 	.byte	0
@@ -1044,12 +1044,12 @@ sys_req_reset_state.4060:
 	.4byte	.LASF609
 	.byte	0x6
 	.byte	0x2a
-	.4byte	0x580
+	.4byte	0x583
 	.uleb128 0x12
 	.4byte	.LASF610
 	.byte	0x6
 	.byte	0x2b
-	.4byte	0x580
+	.4byte	0x583
 	.uleb128 0x12
 	.4byte	.LASF611
 	.byte	0x6
@@ -1107,7 +1107,7 @@ sys_req_reset_state.4060:
 	.4byte	0x34
 	.byte	0x7
 	.byte	0x3
-	.4byte	0x638
+	.4byte	0x63b
 	.uleb128 0x6
 	.4byte	.LASF622
 	.byte	0
@@ -1125,7 +1125,7 @@ sys_req_reset_state.4060:
 	.4byte	0x34
 	.byte	0x1
 	.byte	0x31
-	.4byte	0x65c
+	.4byte	0x65f
 	.uleb128 0x6
 	.4byte	.LASF626
 	.byte	0
@@ -1140,7 +1140,7 @@ sys_req_reset_state.4060:
 	.4byte	.LASF629
 	.byte	0x1
 	.byte	0x36
-	.4byte	0x638
+	.4byte	0x63b
 	.uleb128 0x14
 	.4byte	.LASF635
 	.byte	0x1
@@ -1149,12 +1149,12 @@ sys_req_reset_state.4060:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x69f
+	.4byte	0x6a2
 	.uleb128 0x15
 	.4byte	.LASF630
 	.byte	0x1
 	.byte	0x5b
-	.4byte	0x65c
+	.4byte	0x65f
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	sys_req_reset_state.4060
@@ -3092,7 +3092,7 @@ sys_req_reset_state.4060:
 	.uleb128 0x28
 	.4byte	.LASF471
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -3141,7 +3141,7 @@ sys_req_reset_state.4060:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -3332,8 +3332,6 @@ sys_req_reset_state.4060:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x100\000"
 .LASF587:
 	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
 .LASF16:
@@ -3981,8 +3979,6 @@ sys_req_reset_state.4060:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF261:
 	.ascii	"__FRACT_IBIT__ 0\000"
 .LASF181:
@@ -4077,6 +4073,8 @@ sys_req_reset_state.4060:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -4095,6 +4093,8 @@ sys_req_reset_state.4060:
 	.ascii	"Task_3_ptr 3\000"
 .LASF482:
 	.ascii	"MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\000"
+.LASF483:
+	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF269:
 	.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
 .LASF92:
@@ -4155,6 +4155,8 @@ sys_req_reset_state.4060:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF526:
 	.ascii	"os_bug_null_pointer\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 10\000"
 .LASF338:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF259:
@@ -4239,8 +4241,6 @@ sys_req_reset_state.4060:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF483:
-	.ascii	"TASK_STACK_SIZE 200\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:

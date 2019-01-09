@@ -528,9 +528,13 @@ OS_PreemptTask:
 	.loc 1 211 0
 	bl	OS_GetCoreId	@
 	mov	r3, r0	@ tmp122,
-	lsls	r3, r3, #8	@ tmp123, _5,
-	ldr	r2, .L45	@ tmp124,
-	add	r3, r3, r2	@ _6, tmp124
+	mov	r2, r3	@ _5, _4
+	mov	r3, r2	@ tmp123, _5
+	lsls	r3, r3, #2	@ tmp123, tmp123,
+	add	r3, r3, r2	@ tmp123, _5
+	lsls	r3, r3, #12	@ tmp124, tmp123,
+	ldr	r2, .L45	@ tmp125,
+	add	r3, r3, r2	@ _6, tmp125
 	mov	r0, r3	@, _6
 	bl	OS_TASK_RESTORE_SYSTEM_STACK	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:212:             DeleteFromTaskQueue(task);
@@ -543,16 +547,16 @@ OS_PreemptTask:
 	bl	DeleteFromSchedulingQueue	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:215:             task->active = False;
 	.loc 1 215 0
-	ldr	r2, [r7, #4]	@ tmp125, task
-	ldrb	r3, [r2]	@ tmp126, task_11(D)->active
-	bfc	r3, #0, #1	@ tmp126,,
-	strb	r3, [r2]	@ tmp126, task_11(D)->active
+	ldr	r2, [r7, #4]	@ tmp126, task
+	ldrb	r3, [r2]	@ tmp127, task_11(D)->active
+	bfc	r3, #0, #1	@ tmp127,,
+	strb	r3, [r2]	@ tmp127, task_11(D)->active
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:217:             task->current_prio = task->default_prio;
 	.loc 1 217 0
-	ldr	r3, [r7, #4]	@ tmp127, task
-	ldrb	r2, [r3, #37]	@ zero_extendqisi2	@ _7, task_11(D)->default_prio
 	ldr	r3, [r7, #4]	@ tmp128, task
-	strb	r2, [r3, #36]	@ tmp129, task_11(D)->current_prio
+	ldrb	r2, [r3, #37]	@ zero_extendqisi2	@ _7, task_11(D)->default_prio
+	ldr	r3, [r7, #4]	@ tmp129, task
+	strb	r2, [r3, #36]	@ tmp130, task_11(D)->current_prio
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:218:             EnableInterrupts();
 	.loc 1 218 0
 	bl	LLF_INT_ENABLE	@
@@ -814,9 +818,13 @@ OS_StartTask:
 	.loc 1 301 0
 	bl	OS_GetCoreId	@
 	mov	r3, r0	@ tmp142,
-	lsls	r3, r3, #8	@ tmp143, _10,
-	ldr	r2, .L63	@ tmp144,
-	add	r3, r3, r2	@ _11, tmp144
+	mov	r2, r3	@ _10, _9
+	mov	r3, r2	@ tmp143, _10
+	lsls	r3, r3, #2	@ tmp143, tmp143,
+	add	r3, r3, r2	@ tmp143, _10
+	lsls	r3, r3, #12	@ tmp144, tmp143,
+	ldr	r2, .L63	@ tmp145,
+	add	r3, r3, r2	@ _11, tmp145
 	mov	r0, r3	@, _11
 	bl	OS_TASK_SAVE_SYSTEM_STACK	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:302:             OS_TASK_RESTORETASK_ENVIRONMENT(task);
@@ -827,7 +835,7 @@ OS_StartTask:
 	.loc 1 303 0
 	bl	OS_GetCurrentTime	@
 	mov	r2, r0	@ _12,
-	ldr	r3, [r7, #4]	@ tmp145, task
+	ldr	r3, [r7, #4]	@ tmp146, task
 	str	r2, [r3, #32]	@ _12, task_18(D)->start_time
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:304:             EnableInterrupts();
 	.loc 1 304 0
@@ -839,7 +847,7 @@ OS_StartTask:
 	bl	SET_RUNNING_TASK	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:309:             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
 	.loc 1 309 0
-	ldr	r3, [r7, #4]	@ tmp146, task
+	ldr	r3, [r7, #4]	@ tmp147, task
 	ldrb	r3, [r3, #132]	@ zero_extendqisi2	@ _13, task_18(D)->privilige_mode
 	cmp	r3, #0	@ _13,
 	bne	.L60	@,
@@ -849,7 +857,7 @@ OS_StartTask:
 .L60:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:315:             task->fp(task);
 	.loc 1 315 0
-	ldr	r3, [r7, #4]	@ tmp147, task
+	ldr	r3, [r7, #4]	@ tmp148, task
 	ldr	r3, [r3, #44]	@ _14, task_18(D)->fp
 	ldr	r0, [r7, #4]	@, task
 	blx	r3	@ _14
@@ -950,9 +958,13 @@ OS_TerminateTask:
 	.loc 1 352 0
 	bl	OS_GetCoreId	@
 	mov	r3, r0	@ tmp122,
-	lsls	r3, r3, #8	@ tmp123, _5,
-	ldr	r2, .L72	@ tmp124,
-	add	r3, r3, r2	@ _6, tmp124
+	mov	r2, r3	@ _5, _4
+	mov	r3, r2	@ tmp123, _5
+	lsls	r3, r3, #2	@ tmp123, tmp123,
+	add	r3, r3, r2	@ tmp123, _5
+	lsls	r3, r3, #12	@ tmp124, tmp123,
+	ldr	r2, .L72	@ tmp125,
+	add	r3, r3, r2	@ _6, tmp125
 	mov	r0, r3	@, _6
 	bl	OS_TASK_RESTORE_SYSTEM_STACK	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:353:             DeleteFromTaskQueue(task);
@@ -965,16 +977,16 @@ OS_TerminateTask:
 	bl	DeleteFromSchedulingQueue	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:356:             task->active = False;
 	.loc 1 356 0
-	ldr	r2, [r7, #4]	@ tmp125, task
-	ldrb	r3, [r2]	@ tmp126, task_11(D)->active
-	bfc	r3, #0, #1	@ tmp126,,
-	strb	r3, [r2]	@ tmp126, task_11(D)->active
+	ldr	r2, [r7, #4]	@ tmp126, task
+	ldrb	r3, [r2]	@ tmp127, task_11(D)->active
+	bfc	r3, #0, #1	@ tmp127,,
+	strb	r3, [r2]	@ tmp127, task_11(D)->active
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:358:             task->current_prio = task->default_prio;
 	.loc 1 358 0
-	ldr	r3, [r7, #4]	@ tmp127, task
-	ldrb	r2, [r3, #37]	@ zero_extendqisi2	@ _7, task_11(D)->default_prio
 	ldr	r3, [r7, #4]	@ tmp128, task
-	strb	r2, [r3, #36]	@ tmp129, task_11(D)->current_prio
+	ldrb	r2, [r3, #37]	@ zero_extendqisi2	@ _7, task_11(D)->default_prio
+	ldr	r3, [r7, #4]	@ tmp129, task
+	strb	r2, [r3, #36]	@ tmp130, task_11(D)->current_prio
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:359:             EnableInterrupts();
 	.loc 1 359 0
 	bl	LLF_INT_ENABLE	@
@@ -1416,14 +1428,14 @@ OS_InitTasks:
 	.word	TASK_GROUP_1
 	.word	TASK_0
 	.word	TASK_1_VAR
-	.word	TASK_STACK+200
+	.word	TASK_STACK+2000
 	.word	TASK_1
 	.word	TASK_2_VAR
-	.word	TASK_STACK+400
+	.word	TASK_STACK+4000
 	.word	TASK_GROUP_2
 	.word	TASK_2
 	.word	TASK_3_VAR
-	.word	TASK_STACK+600
+	.word	TASK_STACK+6000
 	.word	TASK_GROUP_3
 	.word	TASK_3
 	.cfi_endproc
@@ -1612,7 +1624,7 @@ OS_TaskScheduler:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:561:    For_all_tasks_in_queue(element_nr)
 	.loc 1 561 0 is_stmt 0 discriminator 1
 	ldrb	r3, [r7, #23]	@ zero_extendqisi2	@ tmp178, element_nr
-	cmp	r3, #4	@ tmp178,
+	cmp	r3, #9	@ tmp178,
 	bls	.L104	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:608:    For_all_tasks_in_queue(element_nr)
 	.loc 1 608 0 is_stmt 1
@@ -1683,7 +1695,7 @@ OS_TaskScheduler:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:608:    For_all_tasks_in_queue(element_nr)
 	.loc 1 608 0 is_stmt 0 discriminator 1
 	ldrb	r3, [r7, #23]	@ zero_extendqisi2	@ tmp196, element_nr
-	cmp	r3, #4	@ tmp196,
+	cmp	r3, #9	@ tmp196,
 	bls	.L108	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:635:    return Winner_scheduling_queue_member;
 	.loc 1 635 0 is_stmt 1
@@ -1714,7 +1726,7 @@ OS_TaskScheduler:
 	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x9a2
+	.4byte	0x9a5
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -2279,13 +2291,13 @@ OS_TaskScheduler:
 	.4byte	0x454
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x486
+	.4byte	0x487
 	.uleb128 0x11
 	.4byte	0x3ff
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0x13
 	.4byte	0x3ff
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF604
@@ -2294,30 +2306,30 @@ OS_TaskScheduler:
 	.4byte	0x470
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x4a1
-	.uleb128 0x11
+	.4byte	0x4a3
+	.uleb128 0x13
 	.4byte	0x3ff
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF605
 	.byte	0x6
 	.byte	0xf
-	.4byte	0x491
+	.4byte	0x492
 	.uleb128 0x10
 	.4byte	0xb1
-	.4byte	0x4bc
+	.4byte	0x4be
 	.uleb128 0x11
 	.4byte	0x3ff
 	.byte	0xe
 	.byte	0
 	.uleb128 0x4
-	.4byte	0x4ac
+	.4byte	0x4ae
 	.uleb128 0x12
 	.4byte	.LASF606
 	.byte	0x6
 	.byte	0x10
-	.4byte	0x4bc
+	.4byte	0x4be
 	.uleb128 0x12
 	.4byte	.LASF607
 	.byte	0x6
@@ -2415,19 +2427,19 @@ OS_TaskScheduler:
 	.4byte	0x5f
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x5b3
+	.4byte	0x5b6
 	.uleb128 0x11
 	.4byte	0x3ff
-	.byte	0x4
-	.uleb128 0x11
+	.byte	0x9
+	.uleb128 0x13
 	.4byte	0x3ff
-	.byte	0xc7
+	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF626
 	.byte	0x6
 	.byte	0x25
-	.4byte	0x59d
+	.4byte	0x59f
 	.uleb128 0x12
 	.4byte	.LASF627
 	.byte	0x6
@@ -2435,39 +2447,39 @@ OS_TaskScheduler:
 	.4byte	0x449
 	.uleb128 0x10
 	.4byte	0x41d
-	.4byte	0x5d9
+	.4byte	0x5dc
 	.uleb128 0x11
 	.4byte	0x3ff
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF628
 	.byte	0x6
 	.byte	0x27
-	.4byte	0x5c9
+	.4byte	0x5cc
 	.uleb128 0x12
 	.4byte	.LASF629
 	.byte	0x6
 	.byte	0x28
-	.4byte	0x5ef
+	.4byte	0x5f2
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x41d
 	.uleb128 0x10
 	.4byte	0x412
-	.4byte	0x605
+	.4byte	0x608
 	.uleb128 0x11
 	.4byte	0x3ff
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF630
 	.byte	0x6
 	.byte	0x29
-	.4byte	0x5f5
+	.4byte	0x5f8
 	.uleb128 0x10
 	.4byte	0x412
-	.4byte	0x620
+	.4byte	0x623
 	.uleb128 0x11
 	.4byte	0x3ff
 	.byte	0
@@ -2476,12 +2488,12 @@ OS_TaskScheduler:
 	.4byte	.LASF631
 	.byte	0x6
 	.byte	0x2a
-	.4byte	0x610
+	.4byte	0x613
 	.uleb128 0x12
 	.4byte	.LASF632
 	.byte	0x6
 	.byte	0x2b
-	.4byte	0x610
+	.4byte	0x613
 	.uleb128 0x12
 	.4byte	.LASF633
 	.byte	0x6
@@ -2541,17 +2553,17 @@ OS_TaskScheduler:
 	.4byte	.LASF673
 	.byte	0x1
 	.2byte	0x215
-	.4byte	0x733
+	.4byte	0x736
 	.4byte	.LFB14
 	.4byte	.LFE14-.LFB14
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x733
+	.4byte	0x736
 	.uleb128 0x15
 	.4byte	.LASF644
 	.byte	0x1
 	.2byte	0x218
-	.4byte	0x5ef
+	.4byte	0x5f2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
@@ -2591,7 +2603,7 @@ OS_TaskScheduler:
 	.4byte	.LASF649
 	.byte	0x1
 	.2byte	0x21e
-	.4byte	0x5ef
+	.4byte	0x5f2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
@@ -2615,7 +2627,7 @@ OS_TaskScheduler:
 	.4byte	.LFE13-.LFB13
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x75f
+	.4byte	0x762
 	.uleb128 0x15
 	.4byte	.LASF651
 	.byte	0x1
@@ -2633,7 +2645,7 @@ OS_TaskScheduler:
 	.4byte	.LFE12-.LFB12
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x785
+	.4byte	0x788
 	.uleb128 0x18
 	.4byte	.LASF651
 	.byte	0x1
@@ -2651,7 +2663,7 @@ OS_TaskScheduler:
 	.4byte	.LFE11-.LFB11
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7ab
+	.4byte	0x7ae
 	.uleb128 0x18
 	.4byte	.LASF651
 	.byte	0x1
@@ -2669,7 +2681,7 @@ OS_TaskScheduler:
 	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7d1
+	.4byte	0x7d4
 	.uleb128 0x18
 	.4byte	.LASF651
 	.byte	0x1
@@ -2687,7 +2699,7 @@ OS_TaskScheduler:
 	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7f7
+	.4byte	0x7fa
 	.uleb128 0x18
 	.4byte	.LASF651
 	.byte	0x1
@@ -2705,12 +2717,12 @@ OS_TaskScheduler:
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x82c
+	.4byte	0x82f
 	.uleb128 0x15
 	.4byte	.LASF658
 	.byte	0x1
 	.2byte	0x185
-	.4byte	0x5ef
+	.4byte	0x5f2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -2731,7 +2743,7 @@ OS_TaskScheduler:
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x861
+	.4byte	0x864
 	.uleb128 0x18
 	.4byte	.LASF647
 	.byte	0x1
@@ -2744,7 +2756,7 @@ OS_TaskScheduler:
 	.4byte	.LASF660
 	.byte	0x1
 	.2byte	0x14f
-	.4byte	0x5ef
+	.4byte	0x5f2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -2757,7 +2769,7 @@ OS_TaskScheduler:
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x896
+	.4byte	0x899
 	.uleb128 0x18
 	.4byte	.LASF647
 	.byte	0x1
@@ -2770,7 +2782,7 @@ OS_TaskScheduler:
 	.4byte	.LASF660
 	.byte	0x1
 	.2byte	0x11a
-	.4byte	0x5ef
+	.4byte	0x5f2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -2783,7 +2795,7 @@ OS_TaskScheduler:
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x8ba
+	.4byte	0x8bd
 	.uleb128 0x1b
 	.4byte	.LASF647
 	.byte	0x1
@@ -2801,7 +2813,7 @@ OS_TaskScheduler:
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x8ec
+	.4byte	0x8ef
 	.uleb128 0x1b
 	.4byte	.LASF647
 	.byte	0x1
@@ -2814,7 +2826,7 @@ OS_TaskScheduler:
 	.4byte	.LASF660
 	.byte	0x1
 	.byte	0xc1
-	.4byte	0x5ef
+	.4byte	0x5f2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -2827,7 +2839,7 @@ OS_TaskScheduler:
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x910
+	.4byte	0x913
 	.uleb128 0x1b
 	.4byte	.LASF647
 	.byte	0x1
@@ -2846,7 +2858,7 @@ OS_TaskScheduler:
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x962
+	.4byte	0x965
 	.uleb128 0x1b
 	.4byte	.LASF665
 	.byte	0x1
@@ -2888,7 +2900,7 @@ OS_TaskScheduler:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x994
+	.4byte	0x997
 	.uleb128 0x1b
 	.4byte	.LASF647
 	.byte	0x1
@@ -2901,7 +2913,7 @@ OS_TaskScheduler:
 	.4byte	.LASF669
 	.byte	0x1
 	.byte	0x30
-	.4byte	0x6a4
+	.4byte	0x6a7
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -4988,7 +5000,7 @@ OS_TaskScheduler:
 	.uleb128 0x28
 	.4byte	.LASF471
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -5037,7 +5049,7 @@ OS_TaskScheduler:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -5234,8 +5246,6 @@ OS_TaskScheduler:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x100\000"
 .LASF118:
 	.ascii	"__UINT16_C(c) c\000"
 .LASF369:
@@ -5381,8 +5391,6 @@ OS_TaskScheduler:
 	.ascii	"__thumb2__ 1\000"
 .LASF608:
 	.ascii	"VAR_HARDFAULT_STATUS_REG\000"
-.LASF483:
-	.ascii	"TASK_STACK_SIZE 200\000"
 .LASF108:
 	.ascii	"__INT_LEAST16_WIDTH__ 16\000"
 .LASF542:
@@ -5635,6 +5643,8 @@ OS_TaskScheduler:
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
 .LASF242:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
+.LASF483:
+	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF399:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
 .LASF71:
@@ -5929,8 +5939,6 @@ OS_TaskScheduler:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF658:
 	.ascii	"scheduling_task_ptr\000"
 .LASF261:
@@ -6033,6 +6041,8 @@ OS_TaskScheduler:
 	.ascii	"TASK_2\000"
 .LASF652:
 	.ascii	"TASK_3\000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -6113,6 +6123,8 @@ OS_TaskScheduler:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF528:
 	.ascii	"os_bug_null_pointer\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 10\000"
 .LASF267:
 	.ascii	"__UFRACT_MIN__ 0.0UR\000"
 .LASF338:

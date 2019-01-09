@@ -177,17 +177,17 @@ void OS_CreateTask(task_t* task)
          }
          else
          {
-            OS_SetSwBug(os_bug_taskstate_request_denied, Func_TerminateTask);
+            OS_SetSwBug(os_bug_taskstate_request_denied, Func_CreateTask);
          }
       }
       else
       {
-         OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask);
+         OS_SetSwBug(os_bug_null_pointer, Func_CreateTask);
       }
    }
    else
    {
-      OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask);
+      OS_SetSwBug(os_bug_null_pointer, Func_CreateTask);
    }     
 }
 void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)

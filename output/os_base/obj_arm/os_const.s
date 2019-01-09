@@ -20,7 +20,7 @@
 	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x609
+	.4byte	0x60c
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -511,13 +511,13 @@
 	.4byte	0x3bc
 	.uleb128 0x10
 	.4byte	0x21
-	.4byte	0x3ee
+	.4byte	0x3ef
 	.uleb128 0x11
 	.4byte	0x367
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0x13
 	.4byte	0x367
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF568
@@ -526,30 +526,30 @@
 	.4byte	0x3d8
 	.uleb128 0x10
 	.4byte	0x21
-	.4byte	0x409
-	.uleb128 0x11
+	.4byte	0x40b
+	.uleb128 0x13
 	.4byte	0x367
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF569
 	.byte	0x5
 	.byte	0xf
-	.4byte	0x3f9
+	.4byte	0x3fa
 	.uleb128 0x10
 	.4byte	0xa9
-	.4byte	0x424
+	.4byte	0x426
 	.uleb128 0x11
 	.4byte	0x367
 	.byte	0xe
 	.byte	0
 	.uleb128 0x4
-	.4byte	0x414
+	.4byte	0x416
 	.uleb128 0x12
 	.4byte	.LASF570
 	.byte	0x5
 	.byte	0x10
-	.4byte	0x424
+	.4byte	0x426
 	.uleb128 0x12
 	.4byte	.LASF571
 	.byte	0x5
@@ -647,19 +647,19 @@
 	.4byte	0x57
 	.uleb128 0x10
 	.4byte	0x21
-	.4byte	0x51b
+	.4byte	0x51e
 	.uleb128 0x11
 	.4byte	0x367
-	.byte	0x4
-	.uleb128 0x11
+	.byte	0x9
+	.uleb128 0x13
 	.4byte	0x367
-	.byte	0xc7
+	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF590
 	.byte	0x5
 	.byte	0x25
-	.4byte	0x505
+	.4byte	0x507
 	.uleb128 0x12
 	.4byte	.LASF591
 	.byte	0x5
@@ -667,39 +667,39 @@
 	.4byte	0x3b1
 	.uleb128 0x10
 	.4byte	0x385
-	.4byte	0x541
+	.4byte	0x544
 	.uleb128 0x11
 	.4byte	0x367
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF592
 	.byte	0x5
 	.byte	0x27
-	.4byte	0x531
+	.4byte	0x534
 	.uleb128 0x12
 	.4byte	.LASF593
 	.byte	0x5
 	.byte	0x28
-	.4byte	0x557
+	.4byte	0x55a
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x385
 	.uleb128 0x10
 	.4byte	0x37a
-	.4byte	0x56d
+	.4byte	0x570
 	.uleb128 0x11
 	.4byte	0x367
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF594
 	.byte	0x5
 	.byte	0x29
-	.4byte	0x55d
+	.4byte	0x560
 	.uleb128 0x10
 	.4byte	0x37a
-	.4byte	0x588
+	.4byte	0x58b
 	.uleb128 0x11
 	.4byte	0x367
 	.byte	0
@@ -708,12 +708,12 @@
 	.4byte	.LASF595
 	.byte	0x5
 	.byte	0x2a
-	.4byte	0x578
+	.4byte	0x57b
 	.uleb128 0x12
 	.4byte	.LASF596
 	.byte	0x5
 	.byte	0x2b
-	.4byte	0x578
+	.4byte	0x57b
 	.uleb128 0x12
 	.4byte	.LASF597
 	.byte	0x5
@@ -2556,7 +2556,7 @@
 	.uleb128 0x28
 	.4byte	.LASF471
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -2605,7 +2605,7 @@
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -2748,8 +2748,6 @@
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x100\000"
 .LASF573:
 	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
 .LASF16:
@@ -3105,6 +3103,8 @@
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
 .LASF242:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
+.LASF483:
+	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF399:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
 .LASF71:
@@ -3381,8 +3381,6 @@
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF261:
 	.ascii	"__FRACT_IBIT__ 0\000"
 .LASF181:
@@ -3471,6 +3469,8 @@
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3545,6 +3545,8 @@
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF512:
 	.ascii	"os_bug_null_pointer\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 10\000"
 .LASF581:
 	.ascii	"BACKUP_SYSTICK_CURRENT_VAL_REG\000"
 .LASF338:
@@ -3621,8 +3623,6 @@
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF483:
-	.ascii	"TASK_STACK_SIZE 200\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:

@@ -55,7 +55,7 @@
 	.type	isr_vec_table, %object
 	.size	isr_vec_table, 1024
 isr_vec_table:
-	.word	OS_MAIN_STACK+256
+	.word	OS_MAIN_STACK+20479
 	.word	OS_Exception_RESET+1
 	.word	OS_Exception_NMI+1
 	.word	OS_Exception_HARDFAULT+1
@@ -321,7 +321,7 @@ isr_vec_table:
 	.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x63c
+	.4byte	0x63f
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -821,13 +821,13 @@ isr_vec_table:
 	.4byte	0x3ce
 	.uleb128 0x11
 	.4byte	0x21
-	.4byte	0x400
+	.4byte	0x401
 	.uleb128 0x12
 	.4byte	0x379
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x14
 	.4byte	0x379
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x13
 	.4byte	.LASF570
@@ -836,30 +836,30 @@ isr_vec_table:
 	.4byte	0x3ea
 	.uleb128 0x11
 	.4byte	0x21
-	.4byte	0x41b
-	.uleb128 0x12
+	.4byte	0x41d
+	.uleb128 0x14
 	.4byte	0x379
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x13
 	.4byte	.LASF571
 	.byte	0x5
 	.byte	0xf
-	.4byte	0x40b
+	.4byte	0x40c
 	.uleb128 0x11
 	.4byte	0xa9
-	.4byte	0x436
+	.4byte	0x438
 	.uleb128 0x12
 	.4byte	0x379
 	.byte	0xe
 	.byte	0
 	.uleb128 0x4
-	.4byte	0x426
+	.4byte	0x428
 	.uleb128 0x13
 	.4byte	.LASF572
 	.byte	0x5
 	.byte	0x10
-	.4byte	0x436
+	.4byte	0x438
 	.uleb128 0x13
 	.4byte	.LASF573
 	.byte	0x5
@@ -957,19 +957,19 @@ isr_vec_table:
 	.4byte	0x57
 	.uleb128 0x11
 	.4byte	0x21
-	.4byte	0x52d
+	.4byte	0x530
 	.uleb128 0x12
 	.4byte	0x379
-	.byte	0x4
-	.uleb128 0x12
+	.byte	0x9
+	.uleb128 0x14
 	.4byte	0x379
-	.byte	0xc7
+	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x13
 	.4byte	.LASF592
 	.byte	0x5
 	.byte	0x25
-	.4byte	0x517
+	.4byte	0x519
 	.uleb128 0x13
 	.4byte	.LASF593
 	.byte	0x5
@@ -977,39 +977,39 @@ isr_vec_table:
 	.4byte	0x3c3
 	.uleb128 0x11
 	.4byte	0x397
-	.4byte	0x553
+	.4byte	0x556
 	.uleb128 0x12
 	.4byte	0x379
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x13
 	.4byte	.LASF594
 	.byte	0x5
 	.byte	0x27
-	.4byte	0x543
+	.4byte	0x546
 	.uleb128 0x13
 	.4byte	.LASF595
 	.byte	0x5
 	.byte	0x28
-	.4byte	0x569
+	.4byte	0x56c
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x397
 	.uleb128 0x11
 	.4byte	0x38c
-	.4byte	0x57f
+	.4byte	0x582
 	.uleb128 0x12
 	.4byte	0x379
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x13
 	.4byte	.LASF596
 	.byte	0x5
 	.byte	0x29
-	.4byte	0x56f
+	.4byte	0x572
 	.uleb128 0x11
 	.4byte	0x38c
-	.4byte	0x59a
+	.4byte	0x59d
 	.uleb128 0x12
 	.4byte	0x379
 	.byte	0
@@ -1018,12 +1018,12 @@ isr_vec_table:
 	.4byte	.LASF597
 	.byte	0x5
 	.byte	0x2a
-	.4byte	0x58a
+	.4byte	0x58d
 	.uleb128 0x13
 	.4byte	.LASF598
 	.byte	0x5
 	.byte	0x2b
-	.4byte	0x58a
+	.4byte	0x58d
 	.uleb128 0x13
 	.4byte	.LASF599
 	.byte	0x5
@@ -1076,7 +1076,7 @@ isr_vec_table:
 	.4byte	0x18c
 	.uleb128 0x11
 	.4byte	0xae
-	.4byte	0x62e
+	.4byte	0x631
 	.uleb128 0x12
 	.4byte	0x379
 	.byte	0xff
@@ -1085,7 +1085,7 @@ isr_vec_table:
 	.4byte	.LASF609
 	.byte	0x6
 	.byte	0x1a
-	.4byte	0x61e
+	.4byte	0x621
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	isr_vec_table
@@ -2912,7 +2912,7 @@ isr_vec_table:
 	.uleb128 0x28
 	.4byte	.LASF471
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -2961,7 +2961,7 @@ isr_vec_table:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -3108,8 +3108,6 @@ isr_vec_table:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x100\000"
 .LASF575:
 	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
 .LASF20:
@@ -3747,8 +3745,6 @@ isr_vec_table:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF261:
 	.ascii	"__FRACT_IBIT__ 0\000"
 .LASF181:
@@ -3837,6 +3833,8 @@ isr_vec_table:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3855,6 +3853,8 @@ isr_vec_table:
 	.ascii	"__USQ_IBIT__ 0\000"
 .LASF482:
 	.ascii	"MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\000"
+.LASF483:
+	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF269:
 	.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
 .LASF92:
@@ -3909,6 +3909,8 @@ isr_vec_table:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF513:
 	.ascii	"os_bug_null_pointer\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 10\000"
 .LASF338:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF259:
@@ -3983,8 +3985,6 @@ isr_vec_table:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF483:
-	.ascii	"TASK_STACK_SIZE 200\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:

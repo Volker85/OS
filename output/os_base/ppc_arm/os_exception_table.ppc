@@ -602,11 +602,11 @@ typedef enum privilige_mode_e privilige_mode_t;
 #define MinTimeSlice_s (1.0/SchedulerFrequency)
 #define MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)
 #define Task_min_time (1e0)
-#define NUMBER_OF_TASKS 5
+#define NUMBER_OF_TASKS 10
 #define MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)
 #define MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE
 
-#define TASK_STACK_SIZE 200
+#define TASK_STACK_SIZE 2000
 
 
 #define MS_PER_SEC (1000)
@@ -755,7 +755,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 #define _os_stack_h_ 
 
-#define OS_STACK_SIZE 0x100
+#define OS_STACK_SIZE 0x5000
 
 #define OS_STACK_SIZE_END 0x01u
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
@@ -794,8 +794,8 @@ extern void OS_StateHandler(void);
 extern unsigned_char_t HEAP[10000];
 
 
-extern unsigned_char_t OS_STACK[1][0x100];
-extern unsigned_char_t OS_MAIN_STACK[0x100];
+extern unsigned_char_t OS_STACK[1][0x5000];
+extern unsigned_char_t OS_MAIN_STACK[0x5000];
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
@@ -817,11 +817,11 @@ extern volatile uint32 TASK2_CALL_NR;
 extern volatile uint32 TASK3_CALL_NR;
 extern volatile uint32 TASK4_CALL_NR;
 
-extern unsigned_char_t TASK_STACK[(5)][200];
+extern unsigned_char_t TASK_STACK[(10)][2000];
 extern scheduler_time_t LAST_CURRENT_TIME;
-extern scheduling_t TASK_SCHEDULING_QUEUE[(5)];
+extern scheduling_t TASK_SCHEDULING_QUEUE[(10)];
 extern scheduling_t* RUNNING_SCHEDULING_QUEUE_ENTRY;
-extern task_t TASK_RUN_QUEUE[(5)];
+extern task_t TASK_RUN_QUEUE[(10)];
 extern task_t RUNNING_TASK[1];
 extern task_t TASK_IDLE_QUEUE[1];
 extern unsigned_char_t bTASK_QUEUE_INITIALIZED;
@@ -852,7 +852,7 @@ extern void OS_ISRHANDLERC0(void);
 # 26 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
 func_ptr_t isr_vec_table[] =
 {
-   (func_ptr_t)(&OS_MAIN_STACK+0x01u),
+   (func_ptr_t)&OS_MAIN_STACK+0x5000 -1u,
    &OS_Exception_RESET+1u,
    &OS_Exception_NMI+1u,
    &OS_Exception_HARDFAULT+1u,

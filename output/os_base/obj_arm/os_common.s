@@ -144,7 +144,7 @@ OS_GetCurrentTime:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x6c5
+	.4byte	0x6c8
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -693,13 +693,13 @@ OS_GetCurrentTime:
 	.4byte	0x435
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x467
+	.4byte	0x468
 	.uleb128 0x11
 	.4byte	0x3e0
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0x13
 	.4byte	0x3e0
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF584
@@ -708,30 +708,30 @@ OS_GetCurrentTime:
 	.4byte	0x451
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x482
-	.uleb128 0x11
+	.4byte	0x484
+	.uleb128 0x13
 	.4byte	0x3e0
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF585
 	.byte	0x6
 	.byte	0xf
-	.4byte	0x472
+	.4byte	0x473
 	.uleb128 0x10
 	.4byte	0xb1
-	.4byte	0x49d
+	.4byte	0x49f
 	.uleb128 0x11
 	.4byte	0x3e0
 	.byte	0xe
 	.byte	0
 	.uleb128 0x4
-	.4byte	0x48d
+	.4byte	0x48f
 	.uleb128 0x12
 	.4byte	.LASF586
 	.byte	0x6
 	.byte	0x10
-	.4byte	0x49d
+	.4byte	0x49f
 	.uleb128 0x12
 	.4byte	.LASF587
 	.byte	0x6
@@ -829,19 +829,19 @@ OS_GetCurrentTime:
 	.4byte	0x5f
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x594
+	.4byte	0x597
 	.uleb128 0x11
 	.4byte	0x3e0
-	.byte	0x4
-	.uleb128 0x11
+	.byte	0x9
+	.uleb128 0x13
 	.4byte	0x3e0
-	.byte	0xc7
+	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF606
 	.byte	0x6
 	.byte	0x25
-	.4byte	0x57e
+	.4byte	0x580
 	.uleb128 0x12
 	.4byte	.LASF607
 	.byte	0x6
@@ -849,39 +849,39 @@ OS_GetCurrentTime:
 	.4byte	0x42a
 	.uleb128 0x10
 	.4byte	0x3fe
-	.4byte	0x5ba
+	.4byte	0x5bd
 	.uleb128 0x11
 	.4byte	0x3e0
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF608
 	.byte	0x6
 	.byte	0x27
-	.4byte	0x5aa
+	.4byte	0x5ad
 	.uleb128 0x12
 	.4byte	.LASF609
 	.byte	0x6
 	.byte	0x28
-	.4byte	0x5d0
+	.4byte	0x5d3
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x3fe
 	.uleb128 0x10
 	.4byte	0x3f3
-	.4byte	0x5e6
+	.4byte	0x5e9
 	.uleb128 0x11
 	.4byte	0x3e0
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF610
 	.byte	0x6
 	.byte	0x29
-	.4byte	0x5d6
+	.4byte	0x5d9
 	.uleb128 0x10
 	.4byte	0x3f3
-	.4byte	0x601
+	.4byte	0x604
 	.uleb128 0x11
 	.4byte	0x3e0
 	.byte	0
@@ -890,12 +890,12 @@ OS_GetCurrentTime:
 	.4byte	.LASF611
 	.byte	0x6
 	.byte	0x2a
-	.4byte	0x5f1
+	.4byte	0x5f4
 	.uleb128 0x12
 	.4byte	.LASF612
 	.byte	0x6
 	.byte	0x2b
-	.4byte	0x5f1
+	.4byte	0x5f4
 	.uleb128 0x12
 	.4byte	.LASF613
 	.byte	0x6
@@ -2845,7 +2845,7 @@ OS_GetCurrentTime:
 	.uleb128 0x28
 	.4byte	.LASF471
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -2894,7 +2894,7 @@ OS_GetCurrentTime:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -3043,8 +3043,6 @@ OS_GetCurrentTime:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x100\000"
 .LASF589:
 	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
 .LASF536:
@@ -3416,6 +3414,8 @@ OS_GetCurrentTime:
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
 .LASF242:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
+.LASF483:
+	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF399:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
 .LASF71:
@@ -3700,8 +3700,6 @@ OS_GetCurrentTime:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF261:
 	.ascii	"__FRACT_IBIT__ 0\000"
 .LASF181:
@@ -3792,6 +3790,8 @@ OS_GetCurrentTime:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3870,6 +3870,8 @@ OS_GetCurrentTime:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF512:
 	.ascii	"os_bug_null_pointer\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 10\000"
 .LASF338:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF259:
@@ -3946,8 +3948,6 @@ OS_GetCurrentTime:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF483:
-	.ascii	"TASK_STACK_SIZE 200\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:

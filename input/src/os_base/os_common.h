@@ -58,6 +58,7 @@ enum os_sw_bugs_function_e
    Func_RestoreTaskEnvironment,
    Func_CreateTaskEnvironment,
    Func_DeleteTaskEnvironment,
+   Func_InitTaskEnvironment,
    Func_StartTask,
    Func_PreemptTask,
    Func_TerminateTask,
@@ -66,7 +67,8 @@ enum os_sw_bugs_function_e
    Func_ActivateTask,
    Func_TaskStateRequest,
    Func_Preempt_Task,
-   Func_os_exception
+   Func_os_exception,
+   Func_CreateTask
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 

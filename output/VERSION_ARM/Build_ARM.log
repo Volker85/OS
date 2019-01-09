@@ -1,7 +1,25 @@
 "Target_ARM" 
-07.01.2019 19:29:35,58 
+09.01.2019 19:26:50,19 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:13:9: error: conflicting types for 'TASK_PTR'
+ task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
+         ^~~~~~~~
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:91:16: note: previous declaration of 'TASK_PTR' was here
+ extern task_t* TASK_PTR[5];
+                ^~~~~~~~
 "assemble it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:13:9: error: conflicting types for 'TASK_PTR'
+ task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
+         ^~~~~~~~
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:91:16: note: previous declaration of 'TASK_PTR' was here
+ extern task_t* TASK_PTR[5];
+                ^~~~~~~~
 "link it" 

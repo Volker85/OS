@@ -103,7 +103,7 @@ void OS_Task_InitTaskEnvironment(task_t* task)
    }
    else
    {
-      OS_SetSwBug(os_bug_null_pointer,Func_CreateTaskEnvironment);
+      OS_SetSwBug(os_bug_null_pointer,Func_InitTaskEnvironment);
    }
 }
 #if(USE_STATIC_CREATED_TASKS != False)

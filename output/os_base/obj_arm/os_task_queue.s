@@ -403,7 +403,7 @@ OS_InitTaskQueue:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:92:       while(element_nr < MAX_RUN_QUEUE_SIZE)
 	.loc 1 92 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2	@ tmp125, element_nr
-	cmp	r3, #4	@ tmp125,
+	cmp	r3, #9	@ tmp125,
 	bls	.L9	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:98:       bTASK_QUEUE_INITIALIZED = True;
 	.loc 1 98 0
@@ -469,7 +469,7 @@ AddToTaskQueue:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:104:    while( (element_nr < MAX_RUN_QUEUE_SIZE)
 	.loc 1 104 0
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2	@ tmp195, element_nr
-	cmp	r3, #4	@ tmp195,
+	cmp	r3, #9	@ tmp195,
 	bhi	.L15	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:105:           &&((&TASK_RUN_QUEUE[element_nr])->task_queued == True)
 	.loc 1 105 0
@@ -489,7 +489,7 @@ AddToTaskQueue:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:111:    if( (element_nr < MAX_RUN_QUEUE_SIZE) && ((&TASK_RUN_QUEUE[element_nr])->task_queued == False) )
 	.loc 1 111 0
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2	@ tmp203, element_nr
-	cmp	r3, #4	@ tmp203,
+	cmp	r3, #9	@ tmp203,
 	bhi	.L17	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:111:    if( (element_nr < MAX_RUN_QUEUE_SIZE) && ((&TASK_RUN_QUEUE[element_nr])->task_queued == False) )
 	.loc 1 111 0 is_stmt 0 discriminator 1
@@ -1455,7 +1455,7 @@ AddToSchedulingQueue:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:234:    while(  (index < MAX_RUN_QUEUE_SIZE)
 	.loc 1 234 0
 	ldrb	r3, [r7, #14]	@ zero_extendqisi2	@ tmp125, index
-	cmp	r3, #4	@ tmp125,
+	cmp	r3, #9	@ tmp125,
 	bhi	.L40	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:235:            &&(Add_successful == False))
 	.loc 1 235 0
@@ -1540,7 +1540,7 @@ UpdateSchedulingQueue:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:258:          while((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]==0))
 	.loc 1 258 0
 	ldrb	r3, [r7, #6]	@ zero_extendqisi2	@ tmp130, src
-	cmp	r3, #4	@ tmp130,
+	cmp	r3, #9	@ tmp130,
 	bhi	.L47	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:258:          while((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]==0))
 	.loc 1 258 0 is_stmt 0 discriminator 1
@@ -1553,7 +1553,7 @@ UpdateSchedulingQueue:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:262:          if((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]!=0))
 	.loc 1 262 0 is_stmt 1
 	ldrb	r3, [r7, #6]	@ zero_extendqisi2	@ tmp132, src
-	cmp	r3, #4	@ tmp132,
+	cmp	r3, #9	@ tmp132,
 	bhi	.L45	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:262:          if((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]!=0))
 	.loc 1 262 0 is_stmt 0 discriminator 1
@@ -1586,7 +1586,7 @@ UpdateSchedulingQueue:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:251:    while (dest < MAX_RUN_PQUEUE_SIZE)
 	.loc 1 251 0
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2	@ tmp140, dest
-	cmp	r3, #4	@ tmp140,
+	cmp	r3, #9	@ tmp140,
 	bls	.L49	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:270: }
 	.loc 1 270 0
@@ -2116,11 +2116,11 @@ OS_InitTask:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:369:       if(uStackSize > TASK_STACK_SIZE)
 	.loc 1 369 0
 	ldr	r3, [r7, #32]	@ tmp146, uStackSize
-	cmp	r3, #200	@ tmp146,
+	cmp	r3, #2000	@ tmp146,
 	bls	.L71	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:371:          uStackSize = TASK_STACK_SIZE;
 	.loc 1 371 0
-	movs	r3, #200	@ tmp147,
+	mov	r3, #2000	@ tmp147,
 	str	r3, [r7, #32]	@ tmp147, uStackSize
 .L71:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:375:       task->pStackPointerByMalloc = pStackAddr;
@@ -2187,7 +2187,7 @@ OS_InitTask:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x963
+	.4byte	0x966
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -2757,13 +2757,13 @@ OS_InitTask:
 	.4byte	0x45f
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x491
+	.4byte	0x492
 	.uleb128 0x11
 	.4byte	0x40a
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0x13
 	.4byte	0x40a
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF599
@@ -2772,30 +2772,30 @@ OS_InitTask:
 	.4byte	0x47b
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x4ac
-	.uleb128 0x11
+	.4byte	0x4ae
+	.uleb128 0x13
 	.4byte	0x40a
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF600
 	.byte	0x6
 	.byte	0xf
-	.4byte	0x49c
+	.4byte	0x49d
 	.uleb128 0x10
 	.4byte	0xb1
-	.4byte	0x4c7
+	.4byte	0x4c9
 	.uleb128 0x11
 	.4byte	0x40a
 	.byte	0xe
 	.byte	0
 	.uleb128 0x4
-	.4byte	0x4b7
+	.4byte	0x4b9
 	.uleb128 0x12
 	.4byte	.LASF601
 	.byte	0x6
 	.byte	0x10
-	.4byte	0x4c7
+	.4byte	0x4c9
 	.uleb128 0x12
 	.4byte	.LASF602
 	.byte	0x6
@@ -2893,19 +2893,19 @@ OS_InitTask:
 	.4byte	0x5f
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x5be
+	.4byte	0x5c1
 	.uleb128 0x11
 	.4byte	0x40a
-	.byte	0x4
-	.uleb128 0x11
+	.byte	0x9
+	.uleb128 0x13
 	.4byte	0x40a
-	.byte	0xc7
+	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF621
 	.byte	0x6
 	.byte	0x25
-	.4byte	0x5a8
+	.4byte	0x5aa
 	.uleb128 0x12
 	.4byte	.LASF622
 	.byte	0x6
@@ -2913,39 +2913,39 @@ OS_InitTask:
 	.4byte	0x454
 	.uleb128 0x10
 	.4byte	0x428
-	.4byte	0x5e4
+	.4byte	0x5e7
 	.uleb128 0x11
 	.4byte	0x40a
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF623
 	.byte	0x6
 	.byte	0x27
-	.4byte	0x5d4
+	.4byte	0x5d7
 	.uleb128 0x12
 	.4byte	.LASF624
 	.byte	0x6
 	.byte	0x28
-	.4byte	0x5fa
+	.4byte	0x5fd
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x428
 	.uleb128 0x10
 	.4byte	0x41d
-	.4byte	0x610
+	.4byte	0x613
 	.uleb128 0x11
 	.4byte	0x40a
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF625
 	.byte	0x6
 	.byte	0x29
-	.4byte	0x600
+	.4byte	0x603
 	.uleb128 0x10
 	.4byte	0x41d
-	.4byte	0x62b
+	.4byte	0x62e
 	.uleb128 0x11
 	.4byte	0x40a
 	.byte	0
@@ -2954,12 +2954,12 @@ OS_InitTask:
 	.4byte	.LASF626
 	.byte	0x6
 	.byte	0x2a
-	.4byte	0x61b
+	.4byte	0x61e
 	.uleb128 0x12
 	.4byte	.LASF627
 	.byte	0x6
 	.byte	0x2b
-	.4byte	0x61b
+	.4byte	0x61e
 	.uleb128 0x12
 	.4byte	.LASF628
 	.byte	0x6
@@ -3018,7 +3018,7 @@ OS_InitTask:
 	.4byte	.LFE13-.LFB13
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x75c
+	.4byte	0x75f
 	.uleb128 0x15
 	.4byte	.LASF638
 	.byte	0x1
@@ -3104,7 +3104,7 @@ OS_InitTask:
 	.4byte	.LASF645
 	.byte	0x1
 	.2byte	0x14d
-	.4byte	0x772
+	.4byte	0x775
 	.4byte	.LFB12
 	.4byte	.LFE12-.LFB12
 	.uleb128 0x1
@@ -3129,7 +3129,7 @@ OS_InitTask:
 	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7b4
+	.4byte	0x7b7
 	.uleb128 0x15
 	.4byte	.LASF638
 	.byte	0x1
@@ -3156,7 +3156,7 @@ OS_InitTask:
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7fc
+	.4byte	0x7ff
 	.uleb128 0x19
 	.4byte	.LASF651
 	.byte	0x1
@@ -3182,7 +3182,7 @@ OS_InitTask:
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x83c
+	.4byte	0x83f
 	.uleb128 0x1b
 	.4byte	.LASF638
 	.byte	0x1
@@ -3216,12 +3216,12 @@ OS_InitTask:
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x860
+	.4byte	0x863
 	.uleb128 0x1b
 	.4byte	.LASF656
 	.byte	0x1
 	.byte	0xda
-	.4byte	0x5fa
+	.4byte	0x5fd
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
@@ -3230,12 +3230,12 @@ OS_InitTask:
 	.4byte	.LASF658
 	.byte	0x1
 	.byte	0xd5
-	.4byte	0x5fa
+	.4byte	0x5fd
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x888
+	.4byte	0x88b
 	.uleb128 0x1b
 	.4byte	.LASF657
 	.byte	0x1
@@ -3254,12 +3254,12 @@ OS_InitTask:
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x8b0
+	.4byte	0x8b3
 	.uleb128 0x1b
 	.4byte	.LASF656
 	.byte	0x1
 	.byte	0xd1
-	.4byte	0x5fa
+	.4byte	0x5fd
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
@@ -3272,7 +3272,7 @@ OS_InitTask:
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x8d4
+	.4byte	0x8d7
 	.uleb128 0x1b
 	.4byte	.LASF638
 	.byte	0x1
@@ -3291,7 +3291,7 @@ OS_InitTask:
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x90a
+	.4byte	0x90d
 	.uleb128 0x1b
 	.4byte	.LASF638
 	.byte	0x1
@@ -3317,7 +3317,7 @@ OS_InitTask:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x938
+	.4byte	0x93b
 	.uleb128 0x1e
 	.4byte	.LBB2
 	.4byte	.LBE2-.LBB2
@@ -3351,7 +3351,7 @@ OS_InitTask:
 	.4byte	.LASF663
 	.byte	0x1
 	.byte	0x21
-	.4byte	0x5fa
+	.4byte	0x5fd
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -5416,7 +5416,7 @@ OS_InitTask:
 	.uleb128 0x28
 	.4byte	.LASF471
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -5465,7 +5465,7 @@ OS_InitTask:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -5656,8 +5656,6 @@ OS_InitTask:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x100\000"
 .LASF604:
 	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
 .LASF369:
@@ -5803,8 +5801,6 @@ OS_InitTask:
 	.ascii	"__thumb2__ 1\000"
 .LASF603:
 	.ascii	"VAR_HARDFAULT_STATUS_REG\000"
-.LASF483:
-	.ascii	"TASK_STACK_SIZE 200\000"
 .LASF108:
 	.ascii	"__INT_LEAST16_WIDTH__ 16\000"
 .LASF536:
@@ -6050,6 +6046,8 @@ OS_InitTask:
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
 .LASF242:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
+.LASF483:
+	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF399:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
 .LASF71:
@@ -6333,8 +6331,6 @@ OS_InitTask:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF326:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
 .LASF261:
@@ -6437,6 +6433,8 @@ OS_InitTask:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -6525,6 +6523,8 @@ OS_InitTask:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF522:
 	.ascii	"os_bug_null_pointer\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 10\000"
 .LASF267:
 	.ascii	"__UFRACT_MIN__ 0.0UR\000"
 .LASF338:

@@ -170,7 +170,7 @@ USER_LED_TOGGLE:
 	.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x6ce
+	.4byte	0x6d1
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -688,13 +688,13 @@ USER_LED_TOGGLE:
 	.4byte	0x3f5
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x427
+	.4byte	0x428
 	.uleb128 0x11
 	.4byte	0x36f
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0x14
 	.4byte	0x36f
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF573
@@ -703,30 +703,30 @@ USER_LED_TOGGLE:
 	.4byte	0x411
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x442
-	.uleb128 0x11
+	.4byte	0x444
+	.uleb128 0x14
 	.4byte	0x36f
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF574
 	.byte	0x7
 	.byte	0xf
-	.4byte	0x432
+	.4byte	0x433
 	.uleb128 0x10
 	.4byte	0xb1
-	.4byte	0x45d
+	.4byte	0x45f
 	.uleb128 0x11
 	.4byte	0x36f
 	.byte	0xe
 	.byte	0
 	.uleb128 0x4
-	.4byte	0x44d
+	.4byte	0x44f
 	.uleb128 0x12
 	.4byte	.LASF575
 	.byte	0x7
 	.byte	0x10
-	.4byte	0x45d
+	.4byte	0x45f
 	.uleb128 0x12
 	.4byte	.LASF576
 	.byte	0x7
@@ -824,19 +824,19 @@ USER_LED_TOGGLE:
 	.4byte	0x5f
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x554
+	.4byte	0x557
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
-	.uleb128 0x11
+	.byte	0x9
+	.uleb128 0x14
 	.4byte	0x36f
-	.byte	0xc7
+	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF595
 	.byte	0x7
 	.byte	0x25
-	.4byte	0x53e
+	.4byte	0x540
 	.uleb128 0x12
 	.4byte	.LASF596
 	.byte	0x7
@@ -844,39 +844,39 @@ USER_LED_TOGGLE:
 	.4byte	0x3b9
 	.uleb128 0x10
 	.4byte	0x38d
-	.4byte	0x57a
+	.4byte	0x57d
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF597
 	.byte	0x7
 	.byte	0x27
-	.4byte	0x56a
+	.4byte	0x56d
 	.uleb128 0x12
 	.4byte	.LASF598
 	.byte	0x7
 	.byte	0x28
-	.4byte	0x590
+	.4byte	0x593
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x38d
 	.uleb128 0x10
 	.4byte	0x382
-	.4byte	0x5a6
+	.4byte	0x5a9
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF599
 	.byte	0x7
 	.byte	0x29
-	.4byte	0x596
+	.4byte	0x599
 	.uleb128 0x10
 	.4byte	0x382
-	.4byte	0x5c1
+	.4byte	0x5c4
 	.uleb128 0x11
 	.4byte	0x36f
 	.byte	0
@@ -885,12 +885,12 @@ USER_LED_TOGGLE:
 	.4byte	.LASF600
 	.byte	0x7
 	.byte	0x2a
-	.4byte	0x5b1
+	.4byte	0x5b4
 	.uleb128 0x12
 	.4byte	.LASF601
 	.byte	0x7
 	.byte	0x2b
-	.4byte	0x5b1
+	.4byte	0x5b4
 	.uleb128 0x12
 	.4byte	.LASF602
 	.byte	0x7
@@ -949,7 +949,7 @@ USER_LED_TOGGLE:
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x669
+	.4byte	0x66c
 	.uleb128 0x16
 	.ascii	"Led\000"
 	.byte	0x1
@@ -967,7 +967,7 @@ USER_LED_TOGGLE:
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x68d
+	.4byte	0x690
 	.uleb128 0x16
 	.ascii	"Led\000"
 	.byte	0x1
@@ -985,7 +985,7 @@ USER_LED_TOGGLE:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6b1
+	.4byte	0x6b4
 	.uleb128 0x16
 	.ascii	"Led\000"
 	.byte	0x1
@@ -2892,7 +2892,7 @@ USER_LED_TOGGLE:
 	.uleb128 0x28
 	.4byte	.LASF471
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -2941,7 +2941,7 @@ USER_LED_TOGGLE:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -3088,8 +3088,6 @@ USER_LED_TOGGLE:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x100\000"
 .LASF118:
 	.ascii	"__UINT16_C(c) c\000"
 .LASF16:
@@ -3730,8 +3728,6 @@ USER_LED_TOGGLE:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF261:
 	.ascii	"__FRACT_IBIT__ 0\000"
 .LASF181:
@@ -3820,6 +3816,8 @@ USER_LED_TOGGLE:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3838,6 +3836,8 @@ USER_LED_TOGGLE:
 	.ascii	"__USQ_IBIT__ 0\000"
 .LASF482:
 	.ascii	"MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\000"
+.LASF483:
+	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF269:
 	.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
 .LASF92:
@@ -3896,6 +3896,8 @@ USER_LED_TOGGLE:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF512:
 	.ascii	"os_bug_null_pointer\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 10\000"
 .LASF338:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF259:
@@ -3972,8 +3974,6 @@ USER_LED_TOGGLE:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF483:
-	.ascii	"TASK_STACK_SIZE 200\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:

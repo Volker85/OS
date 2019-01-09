@@ -87,7 +87,7 @@ OS_InitTaskSystem:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x622
+	.4byte	0x625
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -580,13 +580,13 @@ OS_InitTaskSystem:
 	.4byte	0x3c4
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x3f6
+	.4byte	0x3f7
 	.uleb128 0x11
 	.4byte	0x36f
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0x13
 	.4byte	0x36f
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF574
@@ -595,30 +595,30 @@ OS_InitTaskSystem:
 	.4byte	0x3e0
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x411
-	.uleb128 0x11
+	.4byte	0x413
+	.uleb128 0x13
 	.4byte	0x36f
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF575
 	.byte	0x6
 	.byte	0xf
-	.4byte	0x401
+	.4byte	0x402
 	.uleb128 0x10
 	.4byte	0xb1
-	.4byte	0x42c
+	.4byte	0x42e
 	.uleb128 0x11
 	.4byte	0x36f
 	.byte	0xe
 	.byte	0
 	.uleb128 0x4
-	.4byte	0x41c
+	.4byte	0x41e
 	.uleb128 0x12
 	.4byte	.LASF576
 	.byte	0x6
 	.byte	0x10
-	.4byte	0x42c
+	.4byte	0x42e
 	.uleb128 0x12
 	.4byte	.LASF577
 	.byte	0x6
@@ -716,19 +716,19 @@ OS_InitTaskSystem:
 	.4byte	0x5f
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x523
+	.4byte	0x526
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
-	.uleb128 0x11
+	.byte	0x9
+	.uleb128 0x13
 	.4byte	0x36f
-	.byte	0xc7
+	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF596
 	.byte	0x6
 	.byte	0x25
-	.4byte	0x50d
+	.4byte	0x50f
 	.uleb128 0x12
 	.4byte	.LASF597
 	.byte	0x6
@@ -736,39 +736,39 @@ OS_InitTaskSystem:
 	.4byte	0x3b9
 	.uleb128 0x10
 	.4byte	0x38d
-	.4byte	0x549
+	.4byte	0x54c
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF598
 	.byte	0x6
 	.byte	0x27
-	.4byte	0x539
+	.4byte	0x53c
 	.uleb128 0x12
 	.4byte	.LASF599
 	.byte	0x6
 	.byte	0x28
-	.4byte	0x55f
+	.4byte	0x562
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x38d
 	.uleb128 0x10
 	.4byte	0x382
-	.4byte	0x575
+	.4byte	0x578
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF600
 	.byte	0x6
 	.byte	0x29
-	.4byte	0x565
+	.4byte	0x568
 	.uleb128 0x10
 	.4byte	0x382
-	.4byte	0x590
+	.4byte	0x593
 	.uleb128 0x11
 	.4byte	0x36f
 	.byte	0
@@ -777,12 +777,12 @@ OS_InitTaskSystem:
 	.4byte	.LASF601
 	.byte	0x6
 	.byte	0x2a
-	.4byte	0x580
+	.4byte	0x583
 	.uleb128 0x12
 	.4byte	.LASF602
 	.byte	0x6
 	.byte	0x2b
-	.4byte	0x580
+	.4byte	0x583
 	.uleb128 0x12
 	.4byte	.LASF603
 	.byte	0x6
@@ -2676,7 +2676,7 @@ OS_InitTaskSystem:
 	.uleb128 0x28
 	.4byte	.LASF471
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -2725,7 +2725,7 @@ OS_InitTaskSystem:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -2890,8 +2890,6 @@ OS_InitTaskSystem:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x100\000"
 .LASF579:
 	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
 .LASF16:
@@ -3252,6 +3250,8 @@ OS_InitTaskSystem:
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
 .LASF242:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
+.LASF483:
+	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF399:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
 .LASF71:
@@ -3527,8 +3527,6 @@ OS_InitTaskSystem:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF261:
 	.ascii	"__FRACT_IBIT__ 0\000"
 .LASF181:
@@ -3623,6 +3621,8 @@ OS_InitTaskSystem:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3697,6 +3697,8 @@ OS_InitTaskSystem:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF518:
 	.ascii	"os_bug_null_pointer\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 10\000"
 .LASF338:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF259:
@@ -3771,8 +3773,6 @@ OS_InitTaskSystem:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF483:
-	.ascii	"TASK_STACK_SIZE 200\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:

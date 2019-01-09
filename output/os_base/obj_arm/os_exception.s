@@ -564,40 +564,44 @@ OS_Exception_Systick:
 	.loc 1 221 0
 	bl	OS_GetCoreId	@
 	mov	r3, r0	@ tmp158,
-	lsls	r3, r3, #8	@ tmp159, _20,
-	ldr	r2, .L33+32	@ tmp160,
-	add	r3, r3, r2	@ _21, tmp160
+	mov	r2, r3	@ _20, _19
+	mov	r3, r2	@ tmp159, _20
+	lsls	r3, r3, #2	@ tmp159, tmp159,
+	add	r3, r3, r2	@ tmp159, _20
+	lsls	r3, r3, #12	@ tmp160, tmp159,
+	ldr	r2, .L33+32	@ tmp161,
+	add	r3, r3, r2	@ _21, tmp161
 	mov	r0, r3	@, _21
 	bl	OS_TASK_RESTORE_SYSTEM_STACK	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:222:       task->active = False;
 	.loc 1 222 0
-	ldr	r2, [r7, #4]	@ tmp161, task
-	ldrb	r3, [r2]	@ tmp162, task_47->active
-	bfc	r3, #0, #1	@ tmp162,,
-	strb	r3, [r2]	@ tmp162, task_47->active
+	ldr	r2, [r7, #4]	@ tmp162, task
+	ldrb	r3, [r2]	@ tmp163, task_47->active
+	bfc	r3, #0, #1	@ tmp163,,
+	strb	r3, [r2]	@ tmp163, task_47->active
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:223:       task->exe_time += (OS_GetCurrentTime() - task->start_time);
 	.loc 1 223 0
 	bl	OS_GetCurrentTime	@
 	mov	r2, r0	@ _22,
-	ldr	r3, [r7, #4]	@ tmp163, task
+	ldr	r3, [r7, #4]	@ tmp164, task
 	ldr	r3, [r3, #32]	@ _23, task_47->start_time
 	subs	r2, r2, r3	@ _55, _22, _23
-	ldr	r3, [r7, #4]	@ tmp164, task
+	ldr	r3, [r7, #4]	@ tmp165, task
 	ldr	r3, [r3, #28]	@ _24, task_47->exe_time
 	add	r2, r2, r3	@ _25, _24
-	ldr	r3, [r7, #4]	@ tmp165, task
+	ldr	r3, [r7, #4]	@ tmp166, task
 	str	r2, [r3, #28]	@ _25, task_47->exe_time
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:224:       task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);
 	.loc 1 224 0
 	bl	OS_GetCurrentTime	@
 	mov	r2, r0	@ _26,
-	ldr	r3, [r7, #4]	@ tmp166, task
+	ldr	r3, [r7, #4]	@ tmp167, task
 	ldr	r3, [r3, #32]	@ _27, task_47->start_time
 	subs	r1, r2, r3	@ _58, _26, _27
-	ldr	r3, [r7, #4]	@ tmp167, task
+	ldr	r3, [r7, #4]	@ tmp168, task
 	ldr	r3, [r3, #56]	@ _28, task_47->task_group
 	ldr	r2, [r3]	@ _29, _28->exe_time
-	ldr	r3, [r7, #4]	@ tmp168, task
+	ldr	r3, [r7, #4]	@ tmp169, task
 	ldr	r3, [r3, #56]	@ _30, task_47->task_group
 	add	r2, r2, r1	@ _31, _58
 	str	r2, [r3]	@ _31, _30->exe_time
@@ -706,7 +710,7 @@ OS_Exception_FIQ:
 	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x738
+	.4byte	0x73b
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -1209,13 +1213,13 @@ OS_Exception_FIQ:
 	.4byte	0x3da
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x40c
+	.4byte	0x40d
 	.uleb128 0x11
 	.4byte	0x385
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0x13
 	.4byte	0x385
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF599
@@ -1224,30 +1228,30 @@ OS_Exception_FIQ:
 	.4byte	0x3f6
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x427
-	.uleb128 0x11
+	.4byte	0x429
+	.uleb128 0x13
 	.4byte	0x385
-	.byte	0xff
+	.2byte	0x4fff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF600
 	.byte	0x6
 	.byte	0xf
-	.4byte	0x417
+	.4byte	0x418
 	.uleb128 0x10
 	.4byte	0xc7
-	.4byte	0x442
+	.4byte	0x444
 	.uleb128 0x11
 	.4byte	0x385
 	.byte	0xe
 	.byte	0
 	.uleb128 0x4
-	.4byte	0x432
+	.4byte	0x434
 	.uleb128 0x12
 	.4byte	.LASF601
 	.byte	0x6
 	.byte	0x10
-	.4byte	0x442
+	.4byte	0x444
 	.uleb128 0x12
 	.4byte	.LASF602
 	.byte	0x6
@@ -1345,19 +1349,19 @@ OS_Exception_FIQ:
 	.4byte	0x75
 	.uleb128 0x10
 	.4byte	0x29
-	.4byte	0x539
+	.4byte	0x53c
 	.uleb128 0x11
 	.4byte	0x385
-	.byte	0x4
-	.uleb128 0x11
+	.byte	0x9
+	.uleb128 0x13
 	.4byte	0x385
-	.byte	0xc7
+	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF621
 	.byte	0x6
 	.byte	0x25
-	.4byte	0x523
+	.4byte	0x525
 	.uleb128 0x12
 	.4byte	.LASF622
 	.byte	0x6
@@ -1365,39 +1369,39 @@ OS_Exception_FIQ:
 	.4byte	0x3cf
 	.uleb128 0x10
 	.4byte	0x3a3
-	.4byte	0x55f
+	.4byte	0x562
 	.uleb128 0x11
 	.4byte	0x385
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF623
 	.byte	0x6
 	.byte	0x27
-	.4byte	0x54f
+	.4byte	0x552
 	.uleb128 0x12
 	.4byte	.LASF624
 	.byte	0x6
 	.byte	0x28
-	.4byte	0x575
+	.4byte	0x578
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x3a3
 	.uleb128 0x10
 	.4byte	0x398
-	.4byte	0x58b
+	.4byte	0x58e
 	.uleb128 0x11
 	.4byte	0x385
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF625
 	.byte	0x6
 	.byte	0x29
-	.4byte	0x57b
+	.4byte	0x57e
 	.uleb128 0x10
 	.4byte	0x398
-	.4byte	0x5a6
+	.4byte	0x5a9
 	.uleb128 0x11
 	.4byte	0x385
 	.byte	0
@@ -1406,12 +1410,12 @@ OS_Exception_FIQ:
 	.4byte	.LASF626
 	.byte	0x6
 	.byte	0x2a
-	.4byte	0x596
+	.4byte	0x599
 	.uleb128 0x12
 	.4byte	.LASF627
 	.byte	0x6
 	.byte	0x2b
-	.4byte	0x596
+	.4byte	0x599
 	.uleb128 0x12
 	.4byte	.LASF628
 	.byte	0x6
@@ -1469,7 +1473,7 @@ OS_Exception_FIQ:
 	.4byte	0x34
 	.byte	0x7
 	.byte	0x3
-	.4byte	0x64e
+	.4byte	0x651
 	.uleb128 0x6
 	.4byte	.LASF639
 	.byte	0
@@ -1504,7 +1508,7 @@ OS_Exception_FIQ:
 	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6a2
+	.4byte	0x6a5
 	.uleb128 0x16
 	.4byte	.LASF644
 	.byte	0x1
@@ -1517,7 +1521,7 @@ OS_Exception_FIQ:
 	.4byte	.LASF645
 	.byte	0x1
 	.byte	0x8c
-	.4byte	0x575
+	.4byte	0x578
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -3588,7 +3592,7 @@ OS_Exception_FIQ:
 	.uleb128 0x28
 	.4byte	.LASF471
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.7cfaa082f19f6144d85c64ce1f04b914,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -3637,7 +3641,7 @@ OS_Exception_FIQ:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.19e5f67d3b2f1e569581f0c055512986,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -3829,8 +3833,6 @@ OS_Exception_FIQ:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x100\000"
 .LASF118:
 	.ascii	"__UINT16_C(c) c\000"
 .LASF16:
@@ -3958,6 +3960,8 @@ OS_Exception_FIQ:
 	.ascii	"__UINT_FAST16_MAX__ 0xffffffffU\000"
 .LASF569:
 	.ascii	"active\000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF196:
 	.ascii	"__FLT32_EPSILON__ 1.1920928955078125e-7F32\000"
 .LASF363:
@@ -4510,8 +4514,6 @@ OS_Exception_FIQ:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF480:
-	.ascii	"NUMBER_OF_TASKS 5\000"
 .LASF645:
 	.ascii	"scheduling_task_ptr\000"
 .LASF261:
@@ -4635,6 +4637,8 @@ OS_Exception_FIQ:
 	.ascii	"__USQ_IBIT__ 0\000"
 .LASF482:
 	.ascii	"MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\000"
+.LASF483:
+	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF175:
 	.ascii	"__LDBL_MIN_10_EXP__ (-307)\000"
 .LASF531:
@@ -4699,6 +4703,8 @@ OS_Exception_FIQ:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF543:
 	.ascii	"os_bug_null_pointer\000"
+.LASF480:
+	.ascii	"NUMBER_OF_TASKS 10\000"
 .LASF338:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF259:
@@ -4783,8 +4789,6 @@ OS_Exception_FIQ:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF483:
-	.ascii	"TASK_STACK_SIZE 200\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:
