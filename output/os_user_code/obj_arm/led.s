@@ -170,15 +170,15 @@ USER_LED_TOGGLE:
 	.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x6d1
+	.4byte	0x6f2
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF615
+	.4byte	.LASF618
 	.byte	0x1
-	.4byte	.LASF616
-	.4byte	.LASF617
+	.4byte	.LASF619
+	.4byte	.LASF620
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -637,7 +637,7 @@ USER_LED_TOGGLE:
 	.4byte	0x3ae
 	.uleb128 0x11
 	.4byte	0x36f
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF571
@@ -941,15 +941,30 @@ USER_LED_TOGGLE:
 	.byte	0x7
 	.byte	0x2e
 	.4byte	0x182
-	.uleb128 0x15
+	.uleb128 0x12
 	.4byte	.LASF612
+	.byte	0x7
+	.byte	0x2f
+	.4byte	0x398
+	.uleb128 0x12
+	.4byte	.LASF613
+	.byte	0x7
+	.byte	0x30
+	.4byte	0x10f
+	.uleb128 0x12
+	.4byte	.LASF614
+	.byte	0x7
+	.byte	0x31
+	.4byte	0x10f
+	.uleb128 0x15
+	.4byte	.LASF615
 	.byte	0x1
 	.byte	0x13
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x66c
+	.4byte	0x68d
 	.uleb128 0x16
 	.ascii	"Led\000"
 	.byte	0x1
@@ -960,14 +975,14 @@ USER_LED_TOGGLE:
 	.sleb128 -9
 	.byte	0
 	.uleb128 0x15
-	.4byte	.LASF613
+	.4byte	.LASF616
 	.byte	0x1
 	.byte	0xe
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x690
+	.4byte	0x6b1
 	.uleb128 0x16
 	.ascii	"Led\000"
 	.byte	0x1
@@ -978,14 +993,14 @@ USER_LED_TOGGLE:
 	.sleb128 -9
 	.byte	0
 	.uleb128 0x15
-	.4byte	.LASF614
+	.4byte	.LASF617
 	.byte	0x1
 	.byte	0x9
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6b4
+	.4byte	0x6d5
 	.uleb128 0x16
 	.ascii	"Led\000"
 	.byte	0x1
@@ -996,7 +1011,7 @@ USER_LED_TOGGLE:
 	.sleb128 -9
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LASF618
+	.4byte	.LASF621
 	.byte	0x1
 	.byte	0x4
 	.4byte	.LFB0
@@ -2998,7 +3013,7 @@ USER_LED_TOGGLE:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF615:
+.LASF618:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3203,8 +3218,6 @@ USER_LED_TOGGLE:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF317:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
-.LASF156:
-	.ascii	"__FLT_HAS_INFINITY__ 1\000"
 .LASF538:
 	.ascii	"active\000"
 .LASF335:
@@ -3249,8 +3262,6 @@ USER_LED_TOGGLE:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
 .LASF129:
 	.ascii	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL\000"
-.LASF265:
-	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF419:
 	.ascii	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC\000"
 .LASF452:
@@ -3273,6 +3284,8 @@ USER_LED_TOGGLE:
 	.ascii	"__USES_INITFINI__ 1\000"
 .LASF232:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
+.LASF612:
+	.ascii	"TASK_TRANSITION_REJECTED_TASK_ADDR\000"
 .LASF593:
 	.ascii	"TASK3_CALL_NR\000"
 .LASF289:
@@ -3421,6 +3434,8 @@ USER_LED_TOGGLE:
 	.ascii	"__UINT_FAST8_MAX__ 0xffffffffU\000"
 .LASF264:
 	.ascii	"__FRACT_EPSILON__ 0x1P-15R\000"
+.LASF250:
+	.ascii	"__SFRACT_FBIT__ 7\000"
 .LASF440:
 	.ascii	"INTEGER_LLP64_IL32P64 1\000"
 .LASF322:
@@ -3449,8 +3464,8 @@ USER_LED_TOGGLE:
 	.ascii	"__FLT32_HAS_INFINITY__ 1\000"
 .LASF597:
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
-.LASF242:
-	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
+.LASF265:
+	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF399:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
 .LASF71:
@@ -3525,7 +3540,7 @@ USER_LED_TOGGLE:
 	.ascii	"OS_SW_BUG\000"
 .LASF226:
 	.ascii	"__FLT32X_HAS_DENORM__ 1\000"
-.LASF618:
+.LASF621:
 	.ascii	"USER_LED_INIT\000"
 .LASF427:
 	.ascii	"__ARM_PCS 1\000"
@@ -3539,6 +3554,8 @@ USER_LED_TOGGLE:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF316:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
+.LASF613:
+	.ascii	"TASK_TRANSITION_REJECTED_STATE\000"
 .LASF280:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
 .LASF461:
@@ -3549,7 +3566,7 @@ USER_LED_TOGGLE:
 	.ascii	"__USA_FBIT__ 16\000"
 .LASF99:
 	.ascii	"__UINT8_MAX__ 0xff\000"
-.LASF612:
+.LASF615:
 	.ascii	"USER_LED_TOGGLE\000"
 .LASF100:
 	.ascii	"__UINT16_MAX__ 0xffff\000"
@@ -3621,7 +3638,7 @@ USER_LED_TOGGLE:
 	.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
 .LASF12:
 	.ascii	"__FINITE_MATH_ONLY__ 0\000"
-.LASF614:
+.LASF617:
 	.ascii	"USER_LED_ON\000"
 .LASF405:
 	.ascii	"__arm__ 1\000"
@@ -3637,7 +3654,7 @@ USER_LED_TOGGLE:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF594:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF617:
+.LASF620:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -3660,8 +3677,8 @@ USER_LED_TOGGLE:
 	.ascii	"__INT_FAST32_MAX__ 0x7fffffff\000"
 .LASF516:
 	.ascii	"os_bug_exception_AbortPrefetch\000"
-.LASF8:
-	.ascii	"__ATOMIC_ACQUIRE 2\000"
+.LASF156:
+	.ascii	"__FLT_HAS_INFINITY__ 1\000"
 .LASF553:
 	.ascii	"state_request\000"
 .LASF393:
@@ -3758,8 +3775,8 @@ USER_LED_TOGGLE:
 	.ascii	"__SIZE_WIDTH__ 32\000"
 .LASF229:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF447:
-	.ascii	"CPP_VERSION_2007 3\000"
+.LASF614:
+	.ascii	"TASK_TRANSITION_CURRENT_STATE\000"
 .LASF93:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF284:
@@ -3770,8 +3787,8 @@ USER_LED_TOGGLE:
 	.ascii	"__UDA_FBIT__ 32\000"
 .LASF81:
 	.ascii	"__LONG_WIDTH__ 32\000"
-.LASF250:
-	.ascii	"__SFRACT_FBIT__ 7\000"
+.LASF8:
+	.ascii	"__ATOMIC_ACQUIRE 2\000"
 .LASF36:
 	.ascii	"__CHAR32_TYPE__ long unsigned int\000"
 .LASF251:
@@ -3858,8 +3875,8 @@ USER_LED_TOGGLE:
 	.ascii	"__ARM_FEATURE_IDIV 1\000"
 .LASF453:
 	.ascii	"True 1\000"
-.LASF223:
-	.ascii	"__FLT32X_MIN__ 2.2250738585072014e-308F32x\000"
+.LASF242:
+	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
 .LASF334:
 	.ascii	"__SQ_FBIT__ 31\000"
 .LASF444:
@@ -3904,6 +3921,8 @@ USER_LED_TOGGLE:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
 .LASF489:
 	.ascii	"_LED_H_ \000"
+.LASF447:
+	.ascii	"CPP_VERSION_2007 3\000"
 .LASF134:
 	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
 .LASF133:
@@ -3980,7 +3999,7 @@ USER_LED_TOGGLE:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF508:
 	.ascii	"long unsigned int\000"
-.LASF613:
+.LASF616:
 	.ascii	"USER_LED_OFF\000"
 .LASF600:
 	.ascii	"RUNNING_TASK\000"
@@ -4056,7 +4075,7 @@ USER_LED_TOGGLE:
 	.ascii	"HEAP_SIZE 10000\000"
 .LASF529:
 	.ascii	"Task_running\000"
-.LASF616:
+.LASF619:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_user_code\\led.c\000"
 .LASF151:
@@ -4138,6 +4157,8 @@ USER_LED_TOGGLE:
 	.ascii	"__FLT32X_HAS_QUIET_NAN__ 1\000"
 .LASF163:
 	.ascii	"__DBL_MAX_10_EXP__ 308\000"
+.LASF223:
+	.ascii	"__FLT32X_MIN__ 2.2250738585072014e-308F32x\000"
 .LASF500:
 	.ascii	"_os_main_h_ \000"
 .LASF505:

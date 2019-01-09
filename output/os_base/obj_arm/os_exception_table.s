@@ -321,15 +321,15 @@ isr_vec_table:
 	.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_table.c"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x63f
+	.4byte	0x660
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF610
+	.4byte	.LASF613
 	.byte	0x1
-	.4byte	.LASF611
-	.4byte	.LASF612
+	.4byte	.LASF614
+	.4byte	.LASF615
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macro0
 	.uleb128 0x2
@@ -404,7 +404,7 @@ isr_vec_table:
 	.uleb128 0x2
 	.4byte	.LASF520
 	.byte	0x2
-	.byte	0x4d
+	.byte	0x4f
 	.4byte	0xb9
 	.uleb128 0x7
 	.byte	0x4
@@ -795,7 +795,7 @@ isr_vec_table:
 	.4byte	0x3b8
 	.uleb128 0x12
 	.4byte	0x379
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x13
 	.4byte	.LASF568
@@ -1074,18 +1074,33 @@ isr_vec_table:
 	.byte	0x5
 	.byte	0x2e
 	.4byte	0x18c
+	.uleb128 0x13
+	.4byte	.LASF609
+	.byte	0x5
+	.byte	0x2f
+	.4byte	0x3a2
+	.uleb128 0x13
+	.4byte	.LASF610
+	.byte	0x5
+	.byte	0x30
+	.4byte	0x119
+	.uleb128 0x13
+	.4byte	.LASF611
+	.byte	0x5
+	.byte	0x31
+	.4byte	0x119
 	.uleb128 0x11
 	.4byte	0xae
-	.4byte	0x631
+	.4byte	0x652
 	.uleb128 0x12
 	.4byte	0x379
 	.byte	0xff
 	.byte	0
 	.uleb128 0x15
-	.4byte	.LASF609
+	.4byte	.LASF612
 	.byte	0x6
 	.byte	0x1a
-	.4byte	0x621
+	.4byte	0x642
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	isr_vec_table
@@ -3018,7 +3033,7 @@ isr_vec_table:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF610:
+.LASF613:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3285,7 +3300,7 @@ isr_vec_table:
 	.ascii	"LINK_REGISTER_HANDLER\000"
 .LASF375:
 	.ascii	"__GCC_ATOMIC_BOOL_LOCK_FREE 2\000"
-.LASF609:
+.LASF612:
 	.ascii	"isr_vec_table\000"
 .LASF502:
 	.ascii	"os_running 1\000"
@@ -3297,6 +3312,8 @@ isr_vec_table:
 	.ascii	"__USES_INITFINI__ 1\000"
 .LASF232:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
+.LASF609:
+	.ascii	"TASK_TRANSITION_REJECTED_TASK_ADDR\000"
 .LASF590:
 	.ascii	"TASK3_CALL_NR\000"
 .LASF289:
@@ -3551,6 +3568,8 @@ isr_vec_table:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF316:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
+.LASF610:
+	.ascii	"TASK_TRANSITION_REJECTED_STATE\000"
 .LASF280:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
 .LASF461:
@@ -3637,7 +3656,7 @@ isr_vec_table:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF405:
 	.ascii	"__arm__ 1\000"
-.LASF611:
+.LASF614:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_exception_table.c\000"
 .LASF172:
@@ -3652,7 +3671,7 @@ isr_vec_table:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF591:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF612:
+.LASF615:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -3775,8 +3794,8 @@ isr_vec_table:
 	.ascii	"__SIZE_WIDTH__ 32\000"
 .LASF229:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF447:
-	.ascii	"CPP_VERSION_2007 3\000"
+.LASF611:
+	.ascii	"TASK_TRANSITION_CURRENT_STATE\000"
 .LASF93:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF284:
@@ -3917,6 +3936,8 @@ isr_vec_table:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
 .LASF489:
 	.ascii	"_LED_H_ \000"
+.LASF447:
+	.ascii	"CPP_VERSION_2007 3\000"
 .LASF134:
 	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
 .LASF133:

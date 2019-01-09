@@ -159,7 +159,12 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
    }
    if(RequestState == Rejected)
    {
+      TASK_TRANSITION_REJECTED_TASK_ADDR  = task;
+      TASK_TRANSITION_REJECTED_STATE      = requested_state;
+      TASK_TRANSITION_CURRENT_STATE       = task->task_state;
       OS_SetSwBug(os_bug_taskstate_request_denied, Func_TaskStateRequest);
+
+      
    }
    return RequestState;
 }

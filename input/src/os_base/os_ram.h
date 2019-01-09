@@ -44,5 +44,7 @@ extern task_t            TASK_IDLE_QUEUE[1];
 extern unsigned_char_t   bTASK_QUEUE_INITIALIZED;
 extern task_t TASK_0_VAR, TASK_1_VAR, TASK_2_VAR, TASK_3_VAR;
 extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK_GROUP_5;
-
+extern task_t*           TASK_TRANSITION_REJECTED_TASK_ADDR;
+extern task_state_t      TASK_TRANSITION_REJECTED_STATE;
+extern task_state_t      TASK_TRANSITION_CURRENT_STATE;
 #endif

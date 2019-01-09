@@ -6,7 +6,7 @@
 
 3. Breakpoint setzen
 <gdb> target remote localhost:3333
-<gdb> b OS_STATE_HANDLER
+<gdb> b OS_StateHandler
 <gdb> b *0x12345678
 <gdb> load E:/NeuOrga/Programmieren/c_cpp/github_os/output/VERSION_ARM/operating_system.elf
 <gdb> continue

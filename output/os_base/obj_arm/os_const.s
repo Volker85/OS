@@ -20,15 +20,15 @@
 	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x60c
+	.4byte	0x62d
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF607
+	.4byte	.LASF610
 	.byte	0x1
-	.4byte	.LASF608
-	.4byte	.LASF609
+	.4byte	.LASF611
+	.4byte	.LASF612
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macro0
 	.uleb128 0x2
@@ -485,7 +485,7 @@
 	.4byte	0x3a6
 	.uleb128 0x11
 	.4byte	0x367
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF566
@@ -764,6 +764,21 @@
 	.byte	0x5
 	.byte	0x2e
 	.4byte	0x17a
+	.uleb128 0x12
+	.4byte	.LASF607
+	.byte	0x5
+	.byte	0x2f
+	.4byte	0x390
+	.uleb128 0x12
+	.4byte	.LASF608
+	.byte	0x5
+	.byte	0x30
+	.4byte	0x107
+	.uleb128 0x12
+	.4byte	.LASF609
+	.byte	0x5
+	.byte	0x31
+	.4byte	0x107
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -2662,7 +2677,7 @@
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF607:
+.LASF610:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -2933,6 +2948,8 @@
 	.ascii	"__USES_INITFINI__ 1\000"
 .LASF232:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
+.LASF607:
+	.ascii	"TASK_TRANSITION_REJECTED_TASK_ADDR\000"
 .LASF588:
 	.ascii	"TASK3_CALL_NR\000"
 .LASF289:
@@ -3163,8 +3180,8 @@
 	.ascii	"__THUMB_INTERWORK__ 1\000"
 .LASF556:
 	.ascii	"pStackPointer\000"
-.LASF260:
-	.ascii	"__FRACT_FBIT__ 15\000"
+.LASF188:
+	.ascii	"__FLT32_DIG__ 6\000"
 .LASF565:
 	.ascii	"scheduler_time_t\000"
 .LASF212:
@@ -3175,7 +3192,7 @@
 	.ascii	"OS_SW_BUG\000"
 .LASF226:
 	.ascii	"__FLT32X_HAS_DENORM__ 1\000"
-.LASF608:
+.LASF611:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_const.c\000"
 .LASF427:
@@ -3190,6 +3207,8 @@
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF316:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
+.LASF608:
+	.ascii	"TASK_TRANSITION_REJECTED_STATE\000"
 .LASF280:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
 .LASF461:
@@ -3256,8 +3275,6 @@
 	.ascii	"default_prio\000"
 .LASF411:
 	.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
-.LASF188:
-	.ascii	"__FLT32_DIG__ 6\000"
 .LASF348:
 	.ascii	"__UTQ_FBIT__ 128\000"
 .LASF43:
@@ -3290,7 +3307,7 @@
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF589:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF609:
+.LASF612:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -3411,8 +3428,8 @@
 	.ascii	"__SIZE_WIDTH__ 32\000"
 .LASF229:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF447:
-	.ascii	"CPP_VERSION_2007 3\000"
+.LASF609:
+	.ascii	"TASK_TRANSITION_CURRENT_STATE\000"
 .LASF93:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF284:
@@ -3555,6 +3572,8 @@
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
 .LASF489:
 	.ascii	"_LED_H_ \000"
+.LASF447:
+	.ascii	"CPP_VERSION_2007 3\000"
 .LASF134:
 	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
 .LASF133:
@@ -3733,6 +3752,8 @@
 	.ascii	"os_shutdown 2\000"
 .LASF533:
 	.ascii	"exe_time\000"
+.LASF260:
+	.ascii	"__FRACT_FBIT__ 15\000"
 .LASF380:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
 .LASF365:

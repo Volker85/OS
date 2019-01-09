@@ -230,15 +230,15 @@ OS_Shutdown:
 	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\OS_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x6ac
+	.4byte	0x6cd
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF617
+	.4byte	.LASF620
 	.byte	0x1
-	.4byte	.LASF618
-	.4byte	.LASF619
+	.4byte	.LASF621
+	.4byte	.LASF622
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -315,7 +315,7 @@ OS_Shutdown:
 	.uleb128 0x2
 	.4byte	.LASF521
 	.byte	0x3
-	.byte	0x4d
+	.byte	0x4f
 	.4byte	0xc1
 	.uleb128 0x7
 	.byte	0x4
@@ -706,7 +706,7 @@ OS_Shutdown:
 	.4byte	0x3c0
 	.uleb128 0x12
 	.4byte	0x381
-	.byte	0x4
+	.byte	0x9
 	.byte	0
 	.uleb128 0x13
 	.4byte	.LASF569
@@ -985,49 +985,64 @@ OS_Shutdown:
 	.byte	0x6
 	.byte	0x2e
 	.4byte	0x194
-	.uleb128 0x5
+	.uleb128 0x13
 	.4byte	.LASF610
+	.byte	0x6
+	.byte	0x2f
+	.4byte	0x3aa
+	.uleb128 0x13
+	.4byte	.LASF611
+	.byte	0x6
+	.byte	0x30
+	.4byte	0x121
+	.uleb128 0x13
+	.4byte	.LASF612
+	.byte	0x6
+	.byte	0x31
+	.4byte	0x121
+	.uleb128 0x5
+	.4byte	.LASF613
 	.byte	0x7
 	.byte	0x1
 	.4byte	0x34
 	.byte	0x7
 	.byte	0x3
-	.4byte	0x64d
+	.4byte	0x66e
 	.uleb128 0x6
-	.4byte	.LASF611
+	.4byte	.LASF614
 	.byte	0
 	.uleb128 0x6
-	.4byte	.LASF612
+	.4byte	.LASF615
 	.byte	0x1
 	.uleb128 0x6
-	.4byte	.LASF613
+	.4byte	.LASF616
 	.byte	0x2
 	.byte	0
 	.uleb128 0x2
-	.4byte	.LASF614
+	.4byte	.LASF617
 	.byte	0x7
 	.byte	0x8
-	.4byte	0x629
+	.4byte	0x64a
 	.uleb128 0x15
-	.4byte	.LASF620
+	.4byte	.LASF623
 	.byte	0x1
 	.byte	0x13
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x67c
+	.4byte	0x69d
 	.uleb128 0x16
-	.4byte	.LASF621
+	.4byte	.LASF624
 	.byte	0x1
 	.byte	0x13
-	.4byte	0x64d
+	.4byte	0x66e
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LASF622
+	.4byte	.LASF625
 	.byte	0x1
 	.byte	0xe
 	.4byte	.LFB2
@@ -1035,7 +1050,7 @@ OS_Shutdown:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x18
-	.4byte	.LASF615
+	.4byte	.LASF618
 	.byte	0x1
 	.byte	0xa
 	.4byte	.LFB1
@@ -1043,7 +1058,7 @@ OS_Shutdown:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x18
-	.4byte	.LASF616
+	.4byte	.LASF619
 	.byte	0x1
 	.byte	0x6
 	.4byte	.LFB0
@@ -3059,7 +3074,7 @@ OS_Shutdown:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF617:
+.LASF620:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3168,7 +3183,7 @@ OS_Shutdown:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF391:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
-.LASF622:
+.LASF625:
 	.ascii	"OS_DeinitMc\000"
 .LASF364:
 	.ascii	"__UTA_FBIT__ 64\000"
@@ -3260,7 +3275,7 @@ OS_Shutdown:
 	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
 .LASF551:
 	.ascii	"max_allowed_wait_time\000"
-.LASF613:
+.LASF616:
 	.ascii	"os_reset_exit\000"
 .LASF312:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
@@ -3268,10 +3283,8 @@ OS_Shutdown:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF317:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
-.LASF621:
+.LASF624:
 	.ascii	"reset_typ\000"
-.LASF156:
-	.ascii	"__FLT_HAS_INFINITY__ 1\000"
 .LASF541:
 	.ascii	"active\000"
 .LASF196:
@@ -3314,8 +3327,6 @@ OS_Shutdown:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
 .LASF129:
 	.ascii	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL\000"
-.LASF265:
-	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF419:
 	.ascii	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC\000"
 .LASF452:
@@ -3338,6 +3349,8 @@ OS_Shutdown:
 	.ascii	"__USES_INITFINI__ 1\000"
 .LASF232:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
+.LASF610:
+	.ascii	"TASK_TRANSITION_REJECTED_TASK_ADDR\000"
 .LASF591:
 	.ascii	"TASK3_CALL_NR\000"
 .LASF289:
@@ -3366,7 +3379,7 @@ OS_Shutdown:
 	.ascii	"__INT8_MAX__ 0x7f\000"
 .LASF279:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
-.LASF620:
+.LASF623:
 	.ascii	"OS_Shutdown\000"
 .LASF276:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
@@ -3428,7 +3441,7 @@ OS_Shutdown:
 	.ascii	"__SIZEOF_WCHAR_T__ 4\000"
 .LASF183:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
-.LASF614:
+.LASF617:
 	.ascii	"os_reset_type_t\000"
 .LASF206:
 	.ascii	"__FLT64_MAX_10_EXP__ 308\000"
@@ -3482,6 +3495,8 @@ OS_Shutdown:
 	.ascii	"__UINT_FAST8_MAX__ 0xffffffffU\000"
 .LASF264:
 	.ascii	"__FRACT_EPSILON__ 0x1P-15R\000"
+.LASF250:
+	.ascii	"__SFRACT_FBIT__ 7\000"
 .LASF440:
 	.ascii	"INTEGER_LLP64_IL32P64 1\000"
 .LASF322:
@@ -3510,8 +3525,8 @@ OS_Shutdown:
 	.ascii	"__FLT32_HAS_INFINITY__ 1\000"
 .LASF595:
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
-.LASF242:
-	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
+.LASF265:
+	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF399:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
 .LASF71:
@@ -3594,6 +3609,8 @@ OS_Shutdown:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF316:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
+.LASF611:
+	.ascii	"TASK_TRANSITION_REJECTED_STATE\000"
 .LASF280:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
 .LASF461:
@@ -3688,7 +3705,7 @@ OS_Shutdown:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
 .LASF549:
 	.ascii	"TimeToPrioInc\000"
-.LASF615:
+.LASF618:
 	.ascii	"OS_DeinitSw\000"
 .LASF358:
 	.ascii	"__UHA_FBIT__ 8\000"
@@ -3696,7 +3713,7 @@ OS_Shutdown:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF592:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF619:
+.LASF622:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF268:
@@ -3719,8 +3736,8 @@ OS_Shutdown:
 	.ascii	"__INT_FAST32_MAX__ 0x7fffffff\000"
 .LASF518:
 	.ascii	"os_bug_exception_AbortPrefetch\000"
-.LASF8:
-	.ascii	"__ATOMIC_ACQUIRE 2\000"
+.LASF156:
+	.ascii	"__FLT_HAS_INFINITY__ 1\000"
 .LASF556:
 	.ascii	"state_request\000"
 .LASF393:
@@ -3819,8 +3836,8 @@ OS_Shutdown:
 	.ascii	"__SIZE_WIDTH__ 32\000"
 .LASF229:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF447:
-	.ascii	"CPP_VERSION_2007 3\000"
+.LASF612:
+	.ascii	"TASK_TRANSITION_CURRENT_STATE\000"
 .LASF93:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF284:
@@ -3831,8 +3848,8 @@ OS_Shutdown:
 	.ascii	"__UDA_FBIT__ 32\000"
 .LASF81:
 	.ascii	"__LONG_WIDTH__ 32\000"
-.LASF250:
-	.ascii	"__SFRACT_FBIT__ 7\000"
+.LASF8:
+	.ascii	"__ATOMIC_ACQUIRE 2\000"
 .LASF36:
 	.ascii	"__CHAR32_TYPE__ long unsigned int\000"
 .LASF251:
@@ -3923,8 +3940,8 @@ OS_Shutdown:
 	.ascii	"__ARM_FEATURE_IDIV 1\000"
 .LASF453:
 	.ascii	"True 1\000"
-.LASF223:
-	.ascii	"__FLT32X_MIN__ 2.2250738585072014e-308F32x\000"
+.LASF242:
+	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
 .LASF334:
 	.ascii	"__SQ_FBIT__ 31\000"
 .LASF444:
@@ -3969,6 +3986,8 @@ OS_Shutdown:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
 .LASF489:
 	.ascii	"_LED_H_ \000"
+.LASF447:
+	.ascii	"CPP_VERSION_2007 3\000"
 .LASF134:
 	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
 .LASF133:
@@ -3991,7 +4010,7 @@ OS_Shutdown:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
 .LASF79:
 	.ascii	"__SHRT_WIDTH__ 16\000"
-.LASF610:
+.LASF613:
 	.ascii	"os_reset_type_s\000"
 .LASF153:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
@@ -4009,7 +4028,7 @@ OS_Shutdown:
 	.ascii	"__SIZEOF_POINTER__ 4\000"
 .LASF308:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
-.LASF611:
+.LASF614:
 	.ascii	"os_reset_hardreset\000"
 .LASF414:
 	.ascii	"__VFP_FP__ 1\000"
@@ -4035,7 +4054,7 @@ OS_Shutdown:
 	.ascii	"__UINT64_C(c) c ## ULL\000"
 .LASF314:
 	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
-.LASF612:
+.LASF615:
 	.ascii	"os_reset_powerdown\000"
 .LASF254:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
@@ -4047,9 +4066,9 @@ OS_Shutdown:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF510:
 	.ascii	"long unsigned int\000"
-.LASF616:
+.LASF619:
 	.ascii	"OS_DeinitHw\000"
-.LASF618:
+.LASF621:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_shutdown.c\000"
 .LASF378:
@@ -4205,6 +4224,8 @@ OS_Shutdown:
 	.ascii	"__FLT32X_HAS_QUIET_NAN__ 1\000"
 .LASF163:
 	.ascii	"__DBL_MAX_10_EXP__ 308\000"
+.LASF223:
+	.ascii	"__FLT32X_MIN__ 2.2250738585072014e-308F32x\000"
 .LASF500:
 	.ascii	"_os_main_h_ \000"
 .LASF507:
