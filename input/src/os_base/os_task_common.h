@@ -88,7 +88,7 @@ extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void OS_Task_InitTaskEnvironment(task_t* task);
 extern void OS_Task_DeleteTaskEnvironment(task_t* task);
-extern task_t* TASK_PTR[5];
+extern task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
 
 typedef unsigned scheduler_time_t;
 
