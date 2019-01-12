@@ -1,7 +1,23 @@
 "Target_ARM" 
-09.01.2019 21:16:09,49 
+12.01.2019 14:56:37,73 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Systick':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:216:28: warning: comparison of distinct pointer types lacks a cast
+    if(&scheduling_task_ptr < SAVED_STACK_POINTER)
+                            ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c: In function 'OS_InitSw':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:19:24: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+    SAVED_STACK_POINTER = 0xFFFFFFFF;
+                        ^
 "assemble it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Systick':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:216:28: warning: comparison of distinct pointer types lacks a cast
+    if(&scheduling_task_ptr < SAVED_STACK_POINTER)
+                            ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c: In function 'OS_InitSw':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:19:24: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+    SAVED_STACK_POINTER = 0xFFFFFFFF;
+                        ^
 "link it" 

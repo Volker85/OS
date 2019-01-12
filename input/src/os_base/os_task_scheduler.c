@@ -47,6 +47,8 @@ void OS_ActivateDispatcher(void)
 
 void OS_SleepTask(task_t* task, task_time_t millisec)
 {
+   /*TODO: fehler, sleep Task sollte ein Preempt mit Wait time machen (task und scheduling task)
+    */
    task->WaitActUntil = OS_GetCurrentTime() + millisec;
 }
 
@@ -164,7 +166,7 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
       TASK_TRANSITION_CURRENT_STATE       = task->task_state;
       OS_SetSwBug(os_bug_taskstate_request_denied, Func_TaskStateRequest);
 
-      
+
    }
    return RequestState;
 }
@@ -193,7 +195,7 @@ void OS_CreateTask(task_t* task)
    else
    {
       OS_SetSwBug(os_bug_null_pointer, Func_CreateTask);
-   }     
+   }
 }
 void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
 {
@@ -214,8 +216,8 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
             DisableInterrupts();
             OS_TaskSaveTaskEnvironment(task);
             OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
-            DeleteFromTaskQueue(task);
-            DeleteFromSchedulingQueue(scheduling_task);
+            DeleteFromTaskQueue(task);//TODO: preempt sollte nicht löschen, sonnder nur von running->reading schalten
+            DeleteFromSchedulingQueue(scheduling_task);//TODO: preempt sollte nicht löschen
 
             task->active = False;
             /* reset the prio increase for waiting */
@@ -236,7 +238,7 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
    else
    {
       OS_SetSwBug(os_bug_null_pointer, Func_Preempt_Task);
-   }   
+   }
 }
 
 void OS_ActivateTask(task_t* task)
@@ -309,7 +311,7 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
             EnableInterrupts();
 
             /* task execution shall not happen with disabled interrupts */
-            SET_RUNNING_TASK(task, scheduling_task);
+            SET_RUNNING_TASK(task, scheduling_task);// TODO: scheduling queue, wie vermerken?
             /* change to user mode... */
             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
             {
@@ -532,6 +534,8 @@ void OS_InitTasks(void)
                 3                                   /* default prio */
                );
    OS_SaveTaskPtr(task_ptr, Task_3_ptr);
+   /*TODO init sheduling queue */
+
 }
 
 

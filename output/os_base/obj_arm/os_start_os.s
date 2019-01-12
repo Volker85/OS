@@ -164,15 +164,15 @@ OS_StartOs:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x646
+	.4byte	0x658
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF615
-	.byte	0x1
 	.4byte	.LASF616
+	.byte	0x1
 	.4byte	.LASF617
+	.4byte	.LASF618
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -925,8 +925,17 @@ OS_StartOs:
 	.byte	0x6
 	.byte	0x31
 	.4byte	0x10f
+	.uleb128 0x12
+	.4byte	.LASF615
+	.byte	0x6
+	.byte	0x32
+	.4byte	0x643
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x649
 	.uleb128 0x14
-	.4byte	.LASF618
+	.uleb128 0x15
+	.4byte	.LASF619
 	.byte	0x1
 	.byte	0xa
 	.4byte	.LFB0
@@ -1170,6 +1179,11 @@ OS_StartOs:
 	.byte	0
 	.byte	0
 	.uleb128 0x14
+	.uleb128 0x35
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x15
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -2822,7 +2836,7 @@ OS_StartOs:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.a33fb8b396f31bed4bacb411e67ef75c,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -2882,7 +2896,7 @@ OS_StartOs:
 .LASF507:
 	.ascii	"SYS_HANDLER_CTRL_STATE_BIT_MASK_MEMFAULTENA ((uint3"
 	.ascii	"2)0x00010000)\000"
-.LASF615:
+.LASF616:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3031,7 +3045,7 @@ OS_StartOs:
 	.ascii	"privilige_mode_e\000"
 .LASF103:
 	.ascii	"__INT_LEAST8_MAX__ 0x7f\000"
-.LASF618:
+.LASF619:
 	.ascii	"OS_StartOs\000"
 .LASF46:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
@@ -3514,7 +3528,7 @@ OS_StartOs:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF594:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF617:
+.LASF618:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -3571,7 +3585,7 @@ OS_StartOs:
 	.ascii	"__INT_FAST32_WIDTH__ 32\000"
 .LASF32:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
-.LASF616:
+.LASF617:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_start_os.c\000"
 .LASF70:
@@ -3696,8 +3710,6 @@ OS_StartOs:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3710,6 +3722,8 @@ OS_StartOs:
 	.ascii	"__WINT_WIDTH__ 32\000"
 .LASF248:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
+.LASF615:
+	.ascii	"SAVED_STACK_POINTER\000"
 .LASF340:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF345:
@@ -3863,6 +3877,8 @@ OS_StartOs:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000u\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:

@@ -995,7 +995,7 @@ Ldebug_macro0:
 	.ascii "Task_min_time (1e0)\0"
 	.byte	0x1
 	.uleb128 0x9
-	.ascii "NUMBER_OF_TASKS 5\0"
+	.ascii "NUMBER_OF_TASKS 10\0"
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
@@ -1004,7 +1004,7 @@ Ldebug_macro0:
 	.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
 	.byte	0x1
 	.uleb128 0xd
-	.ascii "TASK_STACK_SIZE 200\0"
+	.ascii "TASK_STACK_SIZE 2000\0"
 	.byte	0x1
 	.uleb128 0x10
 	.ascii "MS_PER_SEC (1000)\0"
@@ -1057,7 +1057,7 @@ Ldebug_macro0:
 	.ascii "_os_stack_h_ \0"
 	.byte	0x1
 	.uleb128 0x4
-	.ascii "OS_STACK_SIZE 0x100\0"
+	.ascii "OS_STACK_SIZE 0x5000u\0"
 	.byte	0x1
 	.uleb128 0x6
 	.ascii "OS_STACK_SIZE_END 0x01u\0"

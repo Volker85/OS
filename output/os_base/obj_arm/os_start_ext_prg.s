@@ -160,15 +160,15 @@ OS_StartExtPrg:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x6c7
+	.4byte	0x6d9
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF614
-	.byte	0x1
 	.4byte	.LASF615
+	.byte	0x1
 	.4byte	.LASF616
+	.4byte	.LASF617
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -930,33 +930,42 @@ OS_StartExtPrg:
 	.byte	0x6
 	.byte	0x31
 	.4byte	0x121
+	.uleb128 0x13
+	.4byte	.LASF611
+	.byte	0x6
+	.byte	0x32
+	.4byte	0x655
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x65b
 	.uleb128 0x15
-	.4byte	.LASF617
+	.uleb128 0x16
+	.4byte	.LASF618
 	.byte	0x1
 	.byte	0x13
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x68a
-	.uleb128 0x16
-	.4byte	.LASF611
+	.4byte	0x69c
+	.uleb128 0x17
+	.4byte	.LASF612
 	.byte	0x1
 	.byte	0x13
 	.4byte	0xb6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x16
-	.4byte	.LASF612
+	.uleb128 0x17
+	.4byte	.LASF613
 	.byte	0x1
 	.byte	0x13
 	.4byte	0x54
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x16
-	.4byte	.LASF613
+	.uleb128 0x17
+	.4byte	.LASF614
 	.byte	0x1
 	.byte	0x13
 	.4byte	0x54
@@ -964,8 +973,8 @@ OS_StartExtPrg:
 	.byte	0x91
 	.sleb128 -20
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF618
+	.uleb128 0x18
+	.4byte	.LASF619
 	.byte	0x1
 	.byte	0x7
 	.4byte	0x29
@@ -973,24 +982,24 @@ OS_StartExtPrg:
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x16
-	.4byte	.LASF611
+	.uleb128 0x17
+	.4byte	.LASF612
 	.byte	0x1
 	.byte	0x7
 	.4byte	0xb6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x16
-	.4byte	.LASF612
+	.uleb128 0x17
+	.4byte	.LASF613
 	.byte	0x1
 	.byte	0x7
 	.4byte	0x54
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x16
-	.4byte	.LASF613
+	.uleb128 0x17
+	.4byte	.LASF614
 	.byte	0x1
 	.byte	0x7
 	.4byte	0x54
@@ -1242,6 +1251,11 @@ OS_StartExtPrg:
 	.byte	0
 	.byte	0
 	.uleb128 0x15
+	.uleb128 0x35
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x16
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1266,7 +1280,7 @@ OS_StartExtPrg:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x17
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -1281,7 +1295,7 @@ OS_StartExtPrg:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x18
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3
@@ -2914,7 +2928,7 @@ OS_StartExtPrg:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.a33fb8b396f31bed4bacb411e67ef75c,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -2971,7 +2985,7 @@ OS_StartExtPrg:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF614:
+.LASF615:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -2999,7 +3013,7 @@ OS_StartExtPrg:
 	.ascii	"__FLT32_MANT_DIG__ 24\000"
 .LASF293:
 	.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
-.LASF612:
+.LASF613:
 	.ascii	"PrgSignatur\000"
 .LASF116:
 	.ascii	"__UINT8_C(c) c\000"
@@ -3114,7 +3128,7 @@ OS_StartExtPrg:
 	.ascii	"__FLT32_MAX__ 3.4028234663852886e+38F32\000"
 .LASF321:
 	.ascii	"__LLACCUM_IBIT__ 32\000"
-.LASF611:
+.LASF612:
 	.ascii	"LoadProgAddr\000"
 .LASF7:
 	.ascii	"__ATOMIC_SEQ_CST 5\000"
@@ -3352,6 +3366,8 @@ OS_StartExtPrg:
 	.ascii	"__UINT64_MAX__ 0xffffffffffffffffULL\000"
 .LASF477:
 	.ascii	"MinTimeSlice_s (1.0/SchedulerFrequency)\000"
+.LASF252:
+	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
 .LASF361:
 	.ascii	"__USA_IBIT__ 16\000"
 .LASF275:
@@ -3488,7 +3504,7 @@ OS_StartExtPrg:
 	.ascii	"__FLT64_HAS_DENORM__ 1\000"
 .LASF140:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
-.LASF615:
+.LASF616:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_start_ext_prg.c\000"
 .LASF226:
@@ -3605,7 +3621,7 @@ OS_StartExtPrg:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF590:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF616:
+.LASF617:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -3626,7 +3642,7 @@ OS_StartExtPrg:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF127:
 	.ascii	"__INT_FAST32_MAX__ 0x7fffffff\000"
-.LASF617:
+.LASF618:
 	.ascii	"OS_StartExtPrg\000"
 .LASF8:
 	.ascii	"__ATOMIC_ACQUIRE 2\000"
@@ -3770,8 +3786,8 @@ OS_StartExtPrg:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
 .LASF336:
 	.ascii	"__DQ_FBIT__ 63\000"
-.LASF252:
-	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
+.LASF34:
+	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
 .LASF342:
 	.ascii	"__UHQ_FBIT__ 16\000"
 .LASF94:
@@ -3790,8 +3806,6 @@ OS_StartExtPrg:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3804,6 +3818,8 @@ OS_StartExtPrg:
 	.ascii	"__WINT_WIDTH__ 32\000"
 .LASF248:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
+.LASF611:
+	.ascii	"SAVED_STACK_POINTER\000"
 .LASF340:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF345:
@@ -3940,12 +3956,14 @@ OS_StartExtPrg:
 	.ascii	"__GCC_ATOMIC_POINTER_LOCK_FREE 2\000"
 .LASF122:
 	.ascii	"__UINT64_C(c) c ## ULL\000"
-.LASF618:
+.LASF619:
 	.ascii	"os_signatur_valid\000"
 .LASF254:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000u\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:
@@ -3978,7 +3996,7 @@ OS_StartExtPrg:
 	.ascii	"__FLT64_EPSILON__ 2.2204460492503131e-16F64\000"
 .LASF568:
 	.ascii	"HEAP\000"
-.LASF613:
+.LASF614:
 	.ascii	"PrgSize\000"
 .LASF499:
 	.ascii	"HEAP_OFFSET_FOR_CHUNK 8\000"
@@ -4000,8 +4018,6 @@ OS_StartExtPrg:
 	.ascii	"unsigned char\000"
 .LASF230:
 	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
-.LASF34:
-	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
 .LASF445:
 	.ascii	"CPP_VERSION_1998 1\000"
 .LASF543:

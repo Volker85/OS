@@ -47,4 +47,5 @@ extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK
 extern task_t*           TASK_TRANSITION_REJECTED_TASK_ADDR;
 extern task_state_t      TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t      TASK_TRANSITION_CURRENT_STATE;
+extern volatile void* SAVED_STACK_POINTER;
 #endif

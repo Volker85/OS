@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1339, %eax
+	movl	_call_nr.1345, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,16 +33,16 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1339, %eax
+	movl	_call_nr.1345, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1339
+	movl	%eax, _call_nr.1345
 	.loc 1 64 0
 	jmp	L1
 L5:
 	.loc 1 67 0
-	movl	_call_nr.1339, %eax
+	movl	_call_nr.1345, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1339
+	movl	%eax, _call_nr.1345
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -50,16 +50,16 @@ L6:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1339, %eax
+	movl	_call_nr.1345, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1339
+	movl	%eax, _call_nr.1345
 	.loc 1 72 0
 	jmp	L1
 L7:
 	.loc 1 75 0
-	movl	_call_nr.1339, %eax
+	movl	_call_nr.1345, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1339
+	movl	%eax, _call_nr.1345
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -67,7 +67,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1339
+	movl	$0, _call_nr.1345
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -128,7 +128,7 @@ L14:
 	jmp	L11
 L13:
 	.loc 1 125 0
-	movl	_call_nr.1351, %eax
+	movl	_call_nr.1357, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
@@ -139,9 +139,9 @@ L13:
 	call	_OS_DetermineNextTaskActivation
 L17:
 	.loc 1 129 0
-	movl	_call_nr.1351, %eax
+	movl	_call_nr.1357, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1351
+	movl	%eax, _call_nr.1357
 	.loc 1 131 0
 	call	_OS_TaskDispatcher
 	.loc 1 138 0
@@ -150,7 +150,7 @@ L15:
 	.loc 1 142 0
 	call	_LLF_INT_DISABLE
 	.loc 1 143 0
-	movl	_sys_req_reset_state.1350, %eax
+	movl	_sys_req_reset_state.1356, %eax
 	cmpl	$1, %eax
 	je	L19
 	cmpl	$1, %eax
@@ -193,9 +193,9 @@ L11:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1339,4,4
-.lcomm _call_nr.1351,4,4
-.lcomm _sys_req_reset_state.1350,4,4
+.lcomm _call_nr.1345,4,4
+.lcomm _call_nr.1357,4,4
+.lcomm _sys_req_reset_state.1356,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
@@ -610,7 +610,7 @@ Ldebug_info0:
 	.long	0xf6
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1339
+	.long	_call_nr.1345
 	.byte	0
 	.uleb128 0x11
 	.ascii "OS_StateHandler\0"
@@ -628,7 +628,7 @@ Ldebug_info0:
 	.long	0x5ff
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1350
+	.long	_sys_req_reset_state.1356
 	.uleb128 0x10
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -636,7 +636,7 @@ Ldebug_info0:
 	.long	0xf6
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1351
+	.long	_call_nr.1357
 	.byte	0
 	.uleb128 0x12
 	.ascii "OS_STATE\0"
@@ -1865,7 +1865,7 @@ Ldebug_macro0:
 	.ascii "Task_min_time (1e0)\0"
 	.byte	0x1
 	.uleb128 0x9
-	.ascii "NUMBER_OF_TASKS 5\0"
+	.ascii "NUMBER_OF_TASKS 10\0"
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
@@ -1874,7 +1874,7 @@ Ldebug_macro0:
 	.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
 	.byte	0x1
 	.uleb128 0xd
-	.ascii "TASK_STACK_SIZE 200\0"
+	.ascii "TASK_STACK_SIZE 2000\0"
 	.byte	0x1
 	.uleb128 0x10
 	.ascii "MS_PER_SEC (1000)\0"
@@ -1926,7 +1926,7 @@ Ldebug_macro0:
 	.ascii "_os_stack_h_ \0"
 	.byte	0x1
 	.uleb128 0x4
-	.ascii "OS_STACK_SIZE 0x100\0"
+	.ascii "OS_STACK_SIZE 0x5000u\0"
 	.byte	0x1
 	.uleb128 0x6
 	.ascii "OS_STACK_SIZE_END 0x01u\0"

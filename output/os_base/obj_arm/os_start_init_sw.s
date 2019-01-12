@@ -122,8 +122,13 @@ OS_InitSw:
 	ldr	r3, .L4+20	@ tmp129,
 	movs	r2, #0	@ tmp130,
 	str	r2, [r3]	@ tmp130, TASK4_CALL_NR
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:19: }
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:19:    SAVED_STACK_POINTER = 0xFFFFFFFF;
 	.loc 1 19 0
+	ldr	r3, .L4+24	@ tmp131,
+	mov	r2, #-1	@ tmp132,
+	str	r2, [r3]	@ tmp132, SAVED_STACK_POINTER
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:20: }
+	.loc 1 20 0
 	nop
 	adds	r7, r7, #8	@,,
 	.cfi_def_cfa_offset 8
@@ -140,6 +145,7 @@ OS_InitSw:
 	.word	TASK2_CALL_NR
 	.word	TASK3_CALL_NR
 	.word	TASK4_CALL_NR
+	.word	SAVED_STACK_POINTER
 	.cfi_endproc
 .LFE0:
 	.size	OS_InitSw, .-OS_InitSw
@@ -151,15 +157,15 @@ OS_InitSw:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x653
+	.4byte	0x665
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF610
-	.byte	0x1
 	.4byte	.LASF611
+	.byte	0x1
 	.4byte	.LASF612
+	.4byte	.LASF613
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -912,15 +918,24 @@ OS_InitSw:
 	.byte	0x6
 	.byte	0x31
 	.4byte	0x10f
+	.uleb128 0x12
+	.4byte	.LASF610
+	.byte	0x6
+	.byte	0x32
+	.4byte	0x643
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x649
 	.uleb128 0x14
-	.4byte	.LASF613
+	.uleb128 0x15
+	.4byte	.LASF614
 	.byte	0x1
 	.byte	0x2
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x15
+	.uleb128 0x16
 	.ascii	"i\000"
 	.byte	0x1
 	.byte	0x6
@@ -1166,6 +1181,11 @@ OS_InitSw:
 	.byte	0
 	.byte	0
 	.uleb128 0x14
+	.uleb128 0x35
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x15
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1188,7 +1208,7 @@ OS_InitSw:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x16
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -2813,7 +2833,7 @@ OS_InitSw:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.a33fb8b396f31bed4bacb411e67ef75c,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -2870,7 +2890,7 @@ OS_InitSw:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF610:
+.LASF611:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3419,7 +3439,7 @@ OS_InitSw:
 	.ascii	"__UINT16_MAX__ 0xffff\000"
 .LASF421:
 	.ascii	"__ARM_FEATURE_FMA\000"
-.LASF611:
+.LASF612:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_start_init_sw.c\000"
 .LASF498:
@@ -3502,7 +3522,7 @@ OS_InitSw:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF589:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF612:
+.LASF613:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -3681,8 +3701,6 @@ OS_InitSw:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3695,6 +3713,8 @@ OS_InitSw:
 	.ascii	"__WINT_WIDTH__ 32\000"
 .LASF248:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
+.LASF610:
+	.ascii	"SAVED_STACK_POINTER\000"
 .LASF340:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF345:
@@ -3835,6 +3855,8 @@ OS_InitSw:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000u\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:
@@ -3915,7 +3937,7 @@ OS_InitSw:
 	.ascii	"TASK_3_VAR\000"
 .LASF497:
 	.ascii	"HEAP_OFFSET_FOR_SIZE 0\000"
-.LASF613:
+.LASF614:
 	.ascii	"OS_InitSw\000"
 .LASF337:
 	.ascii	"__DQ_IBIT__ 0\000"
