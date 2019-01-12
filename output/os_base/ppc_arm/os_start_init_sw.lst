@@ -1,4 +1,8 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s 			page 1
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c: In function 'OS_InitSw':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:19:24: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+    SAVED_STACK_POINTER = 0xFFFFFFFF;
+                        ^
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cczdqVAL.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -44,7 +48,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s 			page 1
    6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    unsigned_char_t i;
    7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    bTASK_QUEUE_INITIALIZED = False;
   37              		.loc 1 7 0
-  38 0006 114B     		ldr	r3, .L4
+  38 0006 134B     		ldr	r3, .L4
   39 0008 0022     		movs	r2, #0
   40 000a 1A70     		strb	r2, [r3]
    8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c **** 
@@ -58,10 +62,10 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s 			page 1
   11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****       OS_SW_BUG[i] = os_bug_no_bug;
   46              		.loc 1 11 0 discriminator 3
   47 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cczdqVAL.s 			page 2
 
 
-  48 0014 0E4A     		ldr	r2, .L4+4
+  48 0014 104A     		ldr	r2, .L4+4
   49 0016 0021     		movs	r1, #0
   50 0018 D154     		strb	r1, [r2, r3]
    9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    {
@@ -82,67 +86,73 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s 			page 1
   61 0026 FFF7FEFF 		bl	OS_InitTaskSystem
   15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    TASK1_CALL_NR = 0;
   62              		.loc 1 15 0
-  63 002a 0A4B     		ldr	r3, .L4+8
+  63 002a 0C4B     		ldr	r3, .L4+8
   64 002c 0022     		movs	r2, #0
   65 002e 1A60     		str	r2, [r3]
   16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    TASK2_CALL_NR = 0;
   66              		.loc 1 16 0
-  67 0030 094B     		ldr	r3, .L4+12
+  67 0030 0B4B     		ldr	r3, .L4+12
   68 0032 0022     		movs	r2, #0
   69 0034 1A60     		str	r2, [r3]
   17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    TASK3_CALL_NR = 0;
   70              		.loc 1 17 0
-  71 0036 094B     		ldr	r3, .L4+16
+  71 0036 0B4B     		ldr	r3, .L4+16
   72 0038 0022     		movs	r2, #0
   73 003a 1A60     		str	r2, [r3]
   18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    TASK4_CALL_NR = 0;
   74              		.loc 1 18 0
-  75 003c 084B     		ldr	r3, .L4+20
+  75 003c 0A4B     		ldr	r3, .L4+20
   76 003e 0022     		movs	r2, #0
   77 0040 1A60     		str	r2, [r3]
-  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c **** }
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c ****    SAVED_STACK_POINTER = 0xFFFFFFFF;
   78              		.loc 1 19 0
-  79 0042 00BF     		nop
-  80 0044 0837     		adds	r7, r7, #8
-  81              		.cfi_def_cfa_offset 8
-  82 0046 BD46     		mov	sp, r7
-  83              		.cfi_def_cfa_register 13
-  84              		@ sp needed
-  85 0048 80BD     		pop	{r7, pc}
-  86              	.L5:
-  87 004a 00BF     		.align	2
-  88              	.L4:
-  89 004c 00000000 		.word	bTASK_QUEUE_INITIALIZED
-  90 0050 00000000 		.word	OS_SW_BUG
-  91 0054 00000000 		.word	TASK1_CALL_NR
-  92 0058 00000000 		.word	TASK2_CALL_NR
-  93 005c 00000000 		.word	TASK3_CALL_NR
-  94 0060 00000000 		.word	TASK4_CALL_NR
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s 			page 3
+  79 0042 0A4B     		ldr	r3, .L4+24
+  80 0044 4FF0FF32 		mov	r2, #-1
+  81 0048 1A60     		str	r2, [r3]
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c **** }
+  82              		.loc 1 20 0
+  83 004a 00BF     		nop
+  84 004c 0837     		adds	r7, r7, #8
+  85              		.cfi_def_cfa_offset 8
+  86 004e BD46     		mov	sp, r7
+  87              		.cfi_def_cfa_register 13
+  88              		@ sp needed
+  89 0050 80BD     		pop	{r7, pc}
+  90              	.L5:
+  91 0052 00BF     		.align	2
+  92              	.L4:
+  93 0054 00000000 		.word	bTASK_QUEUE_INITIALIZED
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cczdqVAL.s 			page 3
 
 
-  95              		.cfi_endproc
-  96              	.LFE0:
-  98              	.Letext0:
-  99              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
- 100              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
- 101              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
- 102              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
- 103              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s 			page 4
+  94 0058 00000000 		.word	OS_SW_BUG
+  95 005c 00000000 		.word	TASK1_CALL_NR
+  96 0060 00000000 		.word	TASK2_CALL_NR
+  97 0064 00000000 		.word	TASK3_CALL_NR
+  98 0068 00000000 		.word	TASK4_CALL_NR
+  99 006c 00000000 		.word	SAVED_STACK_POINTER
+ 100              		.cfi_endproc
+ 101              	.LFE0:
+ 103              	.Letext0:
+ 104              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 105              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ 106              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+ 107              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ 108              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cczdqVAL.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_init_sw.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s:22     .text:00000000 OS_InitSw
-C:\Users\PRESID~1\AppData\Local\Temp\ccvZJonq.s:89     .text:0000004c $d
+C:\Users\PRESID~1\AppData\Local\Temp\cczdqVAL.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cczdqVAL.s:22     .text:00000000 OS_InitSw
+C:\Users\PRESID~1\AppData\Local\Temp\cczdqVAL.s:93     .text:00000054 $d
                            .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544
                            .group:00000000 wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898
                            .group:00000000 wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960
-                           .group:00000000 wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141
+                           .group:00000000 wm4.os_stack.h.2.a33fb8b396f31bed4bacb411e67ef75c
                            .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
                            .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
 
@@ -154,3 +164,4 @@ TASK1_CALL_NR
 TASK2_CALL_NR
 TASK3_CALL_NR
 TASK4_CALL_NR
+SAVED_STACK_POINTER

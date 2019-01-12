@@ -18,7 +18,7 @@ From the AAPCS, ยง5.1.1:
         
       
 LLF_MCU_SWITCH_OFF_POWER:
-        B LLF_MCU_RESET_POWER
+        BL  LLF_MCU_RESET_POWER
         MOV R15, R14
 
 LLF_MCU_RESET_POWER:
@@ -41,6 +41,6 @@ LLF_MCU_RESET_POWER:
         MOV R15, R14
 
 LLF_DISABLE_INTERRUPTS_ALL_CORES:
-        B LLF_INT_DISABLE
+        BL  LLF_INT_DISABLE
         MOV R15, R14
         

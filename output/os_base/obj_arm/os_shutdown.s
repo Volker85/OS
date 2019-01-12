@@ -230,15 +230,15 @@ OS_Shutdown:
 	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\OS_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x6cd
+	.4byte	0x6df
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF620
-	.byte	0x1
 	.4byte	.LASF621
+	.byte	0x1
 	.4byte	.LASF622
+	.4byte	.LASF623
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -1000,65 +1000,74 @@ OS_Shutdown:
 	.byte	0x6
 	.byte	0x31
 	.4byte	0x121
-	.uleb128 0x5
+	.uleb128 0x13
 	.4byte	.LASF613
+	.byte	0x6
+	.byte	0x32
+	.4byte	0x655
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x65b
+	.uleb128 0x15
+	.uleb128 0x5
+	.4byte	.LASF614
 	.byte	0x7
 	.byte	0x1
 	.4byte	0x34
 	.byte	0x7
 	.byte	0x3
-	.4byte	0x66e
-	.uleb128 0x6
-	.4byte	.LASF614
-	.byte	0
+	.4byte	0x680
 	.uleb128 0x6
 	.4byte	.LASF615
-	.byte	0x1
+	.byte	0
 	.uleb128 0x6
 	.4byte	.LASF616
+	.byte	0x1
+	.uleb128 0x6
+	.4byte	.LASF617
 	.byte	0x2
 	.byte	0
 	.uleb128 0x2
-	.4byte	.LASF617
+	.4byte	.LASF618
 	.byte	0x7
 	.byte	0x8
-	.4byte	0x64a
-	.uleb128 0x15
-	.4byte	.LASF623
+	.4byte	0x65c
+	.uleb128 0x16
+	.4byte	.LASF624
 	.byte	0x1
 	.byte	0x13
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x69d
-	.uleb128 0x16
-	.4byte	.LASF624
+	.4byte	0x6af
+	.uleb128 0x17
+	.4byte	.LASF625
 	.byte	0x1
 	.byte	0x13
-	.4byte	0x66e
+	.4byte	0x680
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF625
+	.uleb128 0x18
+	.4byte	.LASF626
 	.byte	0x1
 	.byte	0xe
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x18
-	.4byte	.LASF618
+	.uleb128 0x19
+	.4byte	.LASF619
 	.byte	0x1
 	.byte	0xa
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x18
-	.4byte	.LASF619
+	.uleb128 0x19
+	.4byte	.LASF620
 	.byte	0x1
 	.byte	0x6
 	.4byte	.LFB0
@@ -1309,6 +1318,11 @@ OS_Shutdown:
 	.byte	0
 	.byte	0
 	.uleb128 0x15
+	.uleb128 0x35
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x16
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1333,7 +1347,7 @@ OS_Shutdown:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x17
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -1348,7 +1362,7 @@ OS_Shutdown:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x18
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -1371,7 +1385,7 @@ OS_Shutdown:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x18
+	.uleb128 0x19
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3
@@ -3017,7 +3031,7 @@ OS_Shutdown:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.a33fb8b396f31bed4bacb411e67ef75c,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -3074,7 +3088,7 @@ OS_Shutdown:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF620:
+.LASF621:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3183,7 +3197,7 @@ OS_Shutdown:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF391:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
-.LASF625:
+.LASF626:
 	.ascii	"OS_DeinitMc\000"
 .LASF364:
 	.ascii	"__UTA_FBIT__ 64\000"
@@ -3275,7 +3289,7 @@ OS_Shutdown:
 	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
 .LASF551:
 	.ascii	"max_allowed_wait_time\000"
-.LASF616:
+.LASF617:
 	.ascii	"os_reset_exit\000"
 .LASF312:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
@@ -3283,7 +3297,7 @@ OS_Shutdown:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF317:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
-.LASF624:
+.LASF625:
 	.ascii	"reset_typ\000"
 .LASF541:
 	.ascii	"active\000"
@@ -3379,7 +3393,7 @@ OS_Shutdown:
 	.ascii	"__INT8_MAX__ 0x7f\000"
 .LASF279:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
-.LASF623:
+.LASF624:
 	.ascii	"OS_Shutdown\000"
 .LASF276:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
@@ -3441,7 +3455,7 @@ OS_Shutdown:
 	.ascii	"__SIZEOF_WCHAR_T__ 4\000"
 .LASF183:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
-.LASF617:
+.LASF618:
 	.ascii	"os_reset_type_t\000"
 .LASF206:
 	.ascii	"__FLT64_MAX_10_EXP__ 308\000"
@@ -3705,7 +3719,7 @@ OS_Shutdown:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
 .LASF549:
 	.ascii	"TimeToPrioInc\000"
-.LASF618:
+.LASF619:
 	.ascii	"OS_DeinitSw\000"
 .LASF358:
 	.ascii	"__UHA_FBIT__ 8\000"
@@ -3713,7 +3727,7 @@ OS_Shutdown:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF592:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF622:
+.LASF623:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF268:
@@ -3896,8 +3910,6 @@ OS_Shutdown:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3910,6 +3922,8 @@ OS_Shutdown:
 	.ascii	"__WINT_WIDTH__ 32\000"
 .LASF248:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
+.LASF613:
+	.ascii	"SAVED_STACK_POINTER\000"
 .LASF340:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF345:
@@ -4010,7 +4024,7 @@ OS_Shutdown:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
 .LASF79:
 	.ascii	"__SHRT_WIDTH__ 16\000"
-.LASF613:
+.LASF614:
 	.ascii	"os_reset_type_s\000"
 .LASF153:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
@@ -4028,7 +4042,7 @@ OS_Shutdown:
 	.ascii	"__SIZEOF_POINTER__ 4\000"
 .LASF308:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
-.LASF614:
+.LASF615:
 	.ascii	"os_reset_hardreset\000"
 .LASF414:
 	.ascii	"__VFP_FP__ 1\000"
@@ -4054,21 +4068,23 @@ OS_Shutdown:
 	.ascii	"__UINT64_C(c) c ## ULL\000"
 .LASF314:
 	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
-.LASF615:
+.LASF616:
 	.ascii	"os_reset_powerdown\000"
 .LASF254:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000u\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF510:
 	.ascii	"long unsigned int\000"
-.LASF619:
+.LASF620:
 	.ascii	"OS_DeinitHw\000"
-.LASF621:
+.LASF622:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_shutdown.c\000"
 .LASF378:

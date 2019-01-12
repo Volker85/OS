@@ -14,7 +14,34 @@
         .syntax unified
         .text
         .global LLF_CLEAR_ALL_RAM
-
+        .global INIT_OS_STACK
+        .extern OS_MAIN_STACK
+        
+INIT_OS_STACK:
+         # r0 = stack variable start addr
+         LDR r0, =OS_MAIN_STACK
+         # r2 = Stack size
+         MOV r2, #0x5000
+         #
+         # r1 = OS_MAIN_STACK +STACK_SIZE-1
+         #
+         # r1 = stack end addr
+         # r1 = OS_MAIN_STACK
+         MOV r1,r0
+         # r1 = r1 + STACK_SIZE
+         ADD r1,r2
+         # r1 = r1 - 1
+         #SUB r1,#1 -> r1 points to first byte not part of Stack
+         # Stack pattern
+         MOV r3,#0xAA
+Stack_write:  
+         # *r0 = 0xAA 
+         STRB r3,[r0]
+         # r0++
+         ADD r0,#1
+         CMP r1,r0
+         BNE Stack_write         
+         MOV R15, R14
         
 LLF_CLEAR_ALL_RAM:
 			#;		read the start address 0x20000000

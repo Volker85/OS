@@ -45,7 +45,6 @@ OS_Exception_RESET:
         #r14        Link register
         #r15        program counter
         */
-        #B LLF_CLEAR_ALL_RAM
         B START_OS
        
 START_OS:
@@ -60,4 +59,6 @@ START_OS:
         #
         #/* 4 -> executing main program */
         # OS_StartOs(void)
+        BL LLF_CLEAR_ALL_RAM
+        BL INIT_OS_STACK
         B OS_StartOs

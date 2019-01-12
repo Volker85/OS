@@ -157,7 +157,7 @@ LFB8:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 230 0
+	.loc 1 236 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -168,14 +168,14 @@ LFE8:
 	.def	_OS_Exception_IRQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_IRQ:
 LFB9:
-	.loc 1 233 0
+	.loc 1 239 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 237 0
+	.loc 1 243 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -186,14 +186,14 @@ LFE9:
 	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_FIQ:
 LFB10:
-	.loc 1 239 0
+	.loc 1 245 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 243 0
+	.loc 1 249 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -306,7 +306,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_IRQ\0"
 	.byte	0x1
-	.byte	0xe8
+	.byte	0xee
 	.long	LFB9
 	.long	LFE9-LFB9
 	.uleb128 0x1
@@ -314,7 +314,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_FIQ\0"
 	.byte	0x1
-	.byte	0xee
+	.byte	0xf4
 	.long	LFB10
 	.long	LFE10-LFB10
 	.uleb128 0x1
@@ -1312,7 +1312,7 @@ Ldebug_macro0:
 	.ascii "Task_min_time (1e0)\0"
 	.byte	0x1
 	.uleb128 0x9
-	.ascii "NUMBER_OF_TASKS 5\0"
+	.ascii "NUMBER_OF_TASKS 10\0"
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
@@ -1321,7 +1321,7 @@ Ldebug_macro0:
 	.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
 	.byte	0x1
 	.uleb128 0xd
-	.ascii "TASK_STACK_SIZE 200\0"
+	.ascii "TASK_STACK_SIZE 2000\0"
 	.byte	0x1
 	.uleb128 0x10
 	.ascii "MS_PER_SEC (1000)\0"
@@ -1374,7 +1374,7 @@ Ldebug_macro0:
 	.ascii "_os_stack_h_ \0"
 	.byte	0x1
 	.uleb128 0x4
-	.ascii "OS_STACK_SIZE 0x100\0"
+	.ascii "OS_STACK_SIZE 0x5000u\0"
 	.byte	0x1
 	.uleb128 0x6
 	.ascii "OS_STACK_SIZE_END 0x01u\0"

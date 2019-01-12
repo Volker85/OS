@@ -476,151 +476,166 @@ OS_Exception_Systick:
 	.cfi_def_cfa_register 7
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:142:    DBG_RLD_VALUE = 0xFFFFFFFF;
 	.loc 1 142 0
-	ldr	r3, .L33	@ tmp143,
-	mov	r2, #-1	@ tmp144,
-	str	r2, [r3]	@ tmp144, DBG_RLD_VALUE
+	ldr	r3, .L34	@ tmp146,
+	mov	r2, #-1	@ tmp147,
+	str	r2, [r3]	@ tmp147, DBG_RLD_VALUE
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:143:    DBG_CURR_VAL = 0xFFFFFFFF;
 	.loc 1 143 0
-	ldr	r3, .L33+4	@ tmp145,
-	mov	r2, #-1	@ tmp146,
-	str	r2, [r3]	@ tmp146, DBG_CURR_VAL
+	ldr	r3, .L34+4	@ tmp148,
+	mov	r2, #-1	@ tmp149,
+	str	r2, [r3]	@ tmp149, DBG_CURR_VAL
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:144:    DBG_CTRL_VALUE = 0xFFFFFFFF;
 	.loc 1 144 0
-	ldr	r3, .L33+8	@ tmp147,
-	mov	r2, #-1	@ tmp148,
-	str	r2, [r3]	@ tmp148, DBG_CTRL_VALUE
+	ldr	r3, .L34+8	@ tmp150,
+	mov	r2, #-1	@ tmp151,
+	str	r2, [r3]	@ tmp151, DBG_CTRL_VALUE
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:145:    DBG_CALIB_VALUE = 0xFFFFFFFF;
 	.loc 1 145 0
-	ldr	r3, .L33+12	@ tmp149,
-	mov	r2, #-1	@ tmp150,
-	str	r2, [r3]	@ tmp150, DBG_CALIB_VALUE
+	ldr	r3, .L34+12	@ tmp152,
+	mov	r2, #-1	@ tmp153,
+	str	r2, [r3]	@ tmp153, DBG_CALIB_VALUE
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:148:    task = 0u;
 	.loc 1 148 0
-	movs	r3, #0	@ tmp151,
-	str	r3, [r7, #4]	@ tmp151, task
+	movs	r3, #0	@ tmp154,
+	str	r3, [r7, #4]	@ tmp154, task
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:168:    *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000 )| (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000))* LOOPTIME_IN_USEC) ;
 	.loc 1 168 0
-	ldr	r3, .L33+16	@ _1,
+	ldr	r3, .L34+16	@ _1,
 	ldr	r3, [r3]	@ _2, *_1
 	and	r3, r3, #-16777216	@ _3, _2,
-	ldr	r2, .L33+16	@ _4,
+	ldr	r2, .L34+16	@ _4,
 	orr	r3, r3, #1679360	@ _5, _3,
 	orr	r3, r3, #640	@ _5, _5,
 	str	r3, [r2]	@ _5, *_4
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:169:    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
 	.loc 1 169 0
-	ldr	r3, .L33+20	@ _6,
-	movs	r2, #0	@ tmp152,
-	str	r2, [r3]	@ tmp152, *_6
+	ldr	r3, .L34+20	@ _6,
+	movs	r2, #0	@ tmp155,
+	str	r2, [r3]	@ tmp155, *_6
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:170:    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_ENABLE;
 	.loc 1 170 0
-	ldr	r3, .L33+24	@ _7,
+	ldr	r3, .L34+24	@ _7,
 	ldr	r3, [r3]	@ _8, *_7
-	ldr	r2, .L33+24	@ _9,
+	ldr	r2, .L34+24	@ _9,
 	orr	r3, r3, #3	@ _10, _8,
 	str	r3, [r2]	@ _10, *_9
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:172:    DBG_RLD_VALUE  = *SYSTICK_RLD_VAL_REG;
 	.loc 1 172 0
-	ldr	r3, .L33+16	@ _11,
+	ldr	r3, .L34+16	@ _11,
 	ldr	r3, [r3]	@ _12, *_11
-	ldr	r2, .L33	@ tmp153,
+	ldr	r2, .L34	@ tmp156,
 	str	r3, [r2]	@ _12, DBG_RLD_VALUE
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:173:    DBG_CURR_VAL   = *SYSTICK_CURRENT_VAL_REG;
 	.loc 1 173 0
-	ldr	r3, .L33+20	@ _13,
+	ldr	r3, .L34+20	@ _13,
 	ldr	r3, [r3]	@ _14, *_13
-	ldr	r2, .L33+4	@ tmp154,
+	ldr	r2, .L34+4	@ tmp157,
 	str	r3, [r2]	@ _14, DBG_CURR_VAL
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:174:    DBG_CTRL_VALUE = *SYSTICK_CTRL_STAT_REG;
 	.loc 1 174 0
-	ldr	r3, .L33+24	@ _15,
+	ldr	r3, .L34+24	@ _15,
 	ldr	r3, [r3]	@ _16, *_15
-	ldr	r2, .L33+8	@ tmp155,
+	ldr	r2, .L34+8	@ tmp158,
 	str	r3, [r2]	@ _16, DBG_CTRL_VALUE
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:175:    DBG_CALIB_VALUE = *SYSTICK_CALIB_VAL_REG;
 	.loc 1 175 0
-	ldr	r3, .L33+28	@ _17,
+	ldr	r3, .L34+28	@ _17,
 	ldr	r3, [r3]	@ _18, *_17
-	ldr	r2, .L33+12	@ tmp156,
+	ldr	r2, .L34+12	@ tmp159,
 	str	r3, [r2]	@ _18, DBG_CALIB_VALUE
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:216:    task = GetRunningTask();
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:216:    if(&scheduling_task_ptr < SAVED_STACK_POINTER)
 	.loc 1 216 0
+	ldr	r3, .L34+32	@ tmp160,
+	ldr	r2, [r3]	@ SAVED_STACK_POINTER.0_19, SAVED_STACK_POINTER
+	mov	r3, r7	@ tmp161,
+	cmp	r2, r3	@ SAVED_STACK_POINTER.0_19, tmp161
+	bls	.L32	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:218:       SAVED_STACK_POINTER = (void*)&scheduling_task_ptr;
+	.loc 1 218 0
+	ldr	r2, .L34+32	@ tmp162,
+	mov	r3, r7	@ tmp163,
+	str	r3, [r2]	@ tmp163, SAVED_STACK_POINTER
+.L32:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:222:    task = GetRunningTask();
+	.loc 1 222 0
 	bl	GetRunningTask	@
 	str	r0, [r7, #4]	@, task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:217:    scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
-	.loc 1 217 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:223:    scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
+	.loc 1 223 0
 	bl	GetRunningSchedulingQueueElementPtr	@
-	str	r0, [r7]	@, scheduling_task_ptr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:218:    if(task != 0u)
-	.loc 1 218 0
-	ldr	r3, [r7, #4]	@ tmp157, task
-	cmp	r3, #0	@ tmp157,
-	beq	.L32	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:220:       OS_TaskSaveTaskEnvironment(task);
-	.loc 1 220 0
+	mov	r3, r0	@ _20,
+	str	r3, [r7]	@ _20, scheduling_task_ptr
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:224:    if(task != 0u)
+	.loc 1 224 0
+	ldr	r3, [r7, #4]	@ tmp164, task
+	cmp	r3, #0	@ tmp164,
+	beq	.L33	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:226:       OS_TaskSaveTaskEnvironment(task);
+	.loc 1 226 0
 	ldr	r0, [r7, #4]	@, task
 	bl	OS_TaskSaveTaskEnvironment	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:221:       OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
-	.loc 1 221 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:227:       OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
+	.loc 1 227 0
 	bl	OS_GetCoreId	@
-	mov	r3, r0	@ tmp158,
-	mov	r2, r3	@ _20, _19
-	mov	r3, r2	@ tmp159, _20
-	lsls	r3, r3, #2	@ tmp159, tmp159,
-	add	r3, r3, r2	@ tmp159, _20
-	lsls	r3, r3, #12	@ tmp160, tmp159,
-	ldr	r2, .L33+32	@ tmp161,
-	add	r3, r3, r2	@ _21, tmp161
-	mov	r0, r3	@, _21
+	mov	r3, r0	@ tmp165,
+	mov	r2, r3	@ _22, _21
+	mov	r3, r2	@ tmp166, _22
+	lsls	r3, r3, #2	@ tmp166, tmp166,
+	add	r3, r3, r2	@ tmp166, _22
+	lsls	r3, r3, #12	@ tmp167, tmp166,
+	ldr	r2, .L34+36	@ tmp168,
+	add	r3, r3, r2	@ _23, tmp168
+	mov	r0, r3	@, _23
 	bl	OS_TASK_RESTORE_SYSTEM_STACK	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:222:       task->active = False;
-	.loc 1 222 0
-	ldr	r2, [r7, #4]	@ tmp162, task
-	ldrb	r3, [r2]	@ tmp163, task_47->active
-	bfc	r3, #0, #1	@ tmp163,,
-	strb	r3, [r2]	@ tmp163, task_47->active
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:223:       task->exe_time += (OS_GetCurrentTime() - task->start_time);
-	.loc 1 223 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:228:       task->active = False;
+	.loc 1 228 0
+	ldr	r2, [r7, #4]	@ tmp169, task
+	ldrb	r3, [r2]	@ tmp170, task_52->active
+	bfc	r3, #0, #1	@ tmp170,,
+	strb	r3, [r2]	@ tmp170, task_52->active
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:229:       task->exe_time += (OS_GetCurrentTime() - task->start_time);
+	.loc 1 229 0
 	bl	OS_GetCurrentTime	@
-	mov	r2, r0	@ _22,
-	ldr	r3, [r7, #4]	@ tmp164, task
-	ldr	r3, [r3, #32]	@ _23, task_47->start_time
-	subs	r2, r2, r3	@ _55, _22, _23
-	ldr	r3, [r7, #4]	@ tmp165, task
-	ldr	r3, [r3, #28]	@ _24, task_47->exe_time
-	add	r2, r2, r3	@ _25, _24
-	ldr	r3, [r7, #4]	@ tmp166, task
-	str	r2, [r3, #28]	@ _25, task_47->exe_time
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:224:       task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);
-	.loc 1 224 0
+	mov	r2, r0	@ _24,
+	ldr	r3, [r7, #4]	@ tmp171, task
+	ldr	r3, [r3, #32]	@ _25, task_52->start_time
+	subs	r2, r2, r3	@ _60, _24, _25
+	ldr	r3, [r7, #4]	@ tmp172, task
+	ldr	r3, [r3, #28]	@ _26, task_52->exe_time
+	add	r2, r2, r3	@ _27, _26
+	ldr	r3, [r7, #4]	@ tmp173, task
+	str	r2, [r3, #28]	@ _27, task_52->exe_time
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:230:       task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);
+	.loc 1 230 0
 	bl	OS_GetCurrentTime	@
-	mov	r2, r0	@ _26,
-	ldr	r3, [r7, #4]	@ tmp167, task
-	ldr	r3, [r3, #32]	@ _27, task_47->start_time
-	subs	r1, r2, r3	@ _58, _26, _27
-	ldr	r3, [r7, #4]	@ tmp168, task
-	ldr	r3, [r3, #56]	@ _28, task_47->task_group
-	ldr	r2, [r3]	@ _29, _28->exe_time
-	ldr	r3, [r7, #4]	@ tmp169, task
-	ldr	r3, [r3, #56]	@ _30, task_47->task_group
-	add	r2, r2, r1	@ _31, _58
-	str	r2, [r3]	@ _31, _30->exe_time
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:225:       SET_RUNNING_TASK(0,0);
-	.loc 1 225 0
+	mov	r2, r0	@ _28,
+	ldr	r3, [r7, #4]	@ tmp174, task
+	ldr	r3, [r3, #32]	@ _29, task_52->start_time
+	subs	r1, r2, r3	@ _63, _28, _29
+	ldr	r3, [r7, #4]	@ tmp175, task
+	ldr	r3, [r3, #56]	@ _30, task_52->task_group
+	ldr	r2, [r3]	@ _31, _30->exe_time
+	ldr	r3, [r7, #4]	@ tmp176, task
+	ldr	r3, [r3, #56]	@ _32, task_52->task_group
+	add	r2, r2, r1	@ _33, _63
+	str	r2, [r3]	@ _33, _32->exe_time
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:231:       SET_RUNNING_TASK(0,0);
+	.loc 1 231 0
 	movs	r1, #0	@,
 	movs	r0, #0	@,
 	bl	SET_RUNNING_TASK	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:226:       OS_TerminateTask(task,scheduling_task_ptr);
-	.loc 1 226 0
-	ldr	r1, [r7]	@, scheduling_task_ptr
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:232:       OS_TerminateTask(task,scheduling_task_ptr);
+	.loc 1 232 0
+	ldr	r3, [r7]	@ scheduling_task_ptr.1_34, scheduling_task_ptr
+	mov	r1, r3	@, scheduling_task_ptr.1_34
 	ldr	r0, [r7, #4]	@, task
 	bl	OS_TerminateTask	@
-.L32:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:228:    OS_StateHandler();
-	.loc 1 228 0
+.L33:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:234:    OS_StateHandler();
+	.loc 1 234 0
 	bl	OS_StateHandler	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:230: }
-	.loc 1 230 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:236: }
+	.loc 1 236 0
 	nop
 	adds	r7, r7, #8	@,,
 	.cfi_def_cfa_offset 8
@@ -628,9 +643,9 @@ OS_Exception_Systick:
 	.cfi_def_cfa_register 13
 	@ sp needed	@
 	pop	{r7, pc}	@
-.L34:
+.L35:
 	.align	2
-.L33:
+.L34:
 	.word	DBG_RLD_VALUE
 	.word	DBG_CURR_VAL
 	.word	DBG_CTRL_VALUE
@@ -639,6 +654,7 @@ OS_Exception_Systick:
 	.word	-536813544
 	.word	-536813552
 	.word	-536813540
+	.word	SAVED_STACK_POINTER
 	.word	OS_STACK
 	.cfi_endproc
 .LFE9:
@@ -652,35 +668,6 @@ OS_Exception_Systick:
 	.type	OS_Exception_IRQ, %function
 OS_Exception_IRQ:
 .LFB10:
-	.loc 1 233 0
-	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}	@
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	add	r7, sp, #0	@,,
-	.cfi_def_cfa_register 7
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:235:    OS_ISRHANDLERC0();
-	.loc 1 235 0
-	bl	OS_ISRHANDLERC0	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:237: }
-	.loc 1 237 0
-	nop
-	pop	{r7, pc}	@
-	.cfi_endproc
-.LFE10:
-	.size	OS_Exception_IRQ, .-OS_Exception_IRQ
-	.align	1
-	.global	OS_Exception_FIQ
-	.syntax unified
-	.thumb
-	.thumb_func
-	.fpu softvfp
-	.type	OS_Exception_FIQ, %function
-OS_Exception_FIQ:
-.LFB11:
 	.loc 1 239 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
@@ -699,6 +686,35 @@ OS_Exception_FIQ:
 	nop
 	pop	{r7, pc}	@
 	.cfi_endproc
+.LFE10:
+	.size	OS_Exception_IRQ, .-OS_Exception_IRQ
+	.align	1
+	.global	OS_Exception_FIQ
+	.syntax unified
+	.thumb
+	.thumb_func
+	.fpu softvfp
+	.type	OS_Exception_FIQ, %function
+OS_Exception_FIQ:
+.LFB11:
+	.loc 1 245 0
+	.cfi_startproc
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	push	{r7, lr}	@
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	add	r7, sp, #0	@,,
+	.cfi_def_cfa_register 7
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:247:    OS_ISRHANDLERC0();
+	.loc 1 247 0
+	bl	OS_ISRHANDLERC0	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:249: }
+	.loc 1 249 0
+	nop
+	pop	{r7, pc}	@
+	.cfi_endproc
 .LFE11:
 	.size	OS_Exception_FIQ, .-OS_Exception_FIQ
 .Letext0:
@@ -710,15 +726,15 @@ OS_Exception_FIQ:
 	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x75c
+	.4byte	0x76e
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF657
-	.byte	0x1
 	.4byte	.LASF658
+	.byte	0x1
 	.4byte	.LASF659
+	.4byte	.LASF660
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -1481,59 +1497,68 @@ OS_Exception_FIQ:
 	.byte	0x6
 	.byte	0x31
 	.4byte	0x125
-	.uleb128 0x5
+	.uleb128 0x12
 	.4byte	.LASF641
+	.byte	0x6
+	.byte	0x32
+	.4byte	0x659
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x65f
+	.uleb128 0x14
+	.uleb128 0x5
+	.4byte	.LASF642
 	.byte	0x7
 	.byte	0x1
 	.4byte	0x34
 	.byte	0x7
 	.byte	0x3
-	.4byte	0x672
-	.uleb128 0x6
-	.4byte	.LASF642
-	.byte	0
+	.4byte	0x684
 	.uleb128 0x6
 	.4byte	.LASF643
-	.byte	0x1
+	.byte	0
 	.uleb128 0x6
 	.4byte	.LASF644
+	.byte	0x1
+	.uleb128 0x6
+	.4byte	.LASF645
 	.byte	0x2
 	.byte	0
-	.uleb128 0x14
-	.4byte	.LASF645
+	.uleb128 0x15
+	.4byte	.LASF646
 	.byte	0x1
-	.byte	0xee
+	.byte	0xf4
 	.4byte	.LFB11
 	.4byte	.LFE11-.LFB11
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x14
-	.4byte	.LASF646
+	.uleb128 0x15
+	.4byte	.LASF647
 	.byte	0x1
-	.byte	0xe8
+	.byte	0xee
 	.4byte	.LFB10
 	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x15
-	.4byte	.LASF660
+	.uleb128 0x16
+	.4byte	.LASF661
 	.byte	0x1
 	.byte	0x88
 	.4byte	.LFB9
 	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6c6
-	.uleb128 0x16
-	.4byte	.LASF647
+	.4byte	0x6d8
+	.uleb128 0x17
+	.4byte	.LASF648
 	.byte	0x1
 	.byte	0x8b
 	.4byte	0x3ae
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x16
-	.4byte	.LASF648
+	.uleb128 0x17
+	.4byte	.LASF649
 	.byte	0x1
 	.byte	0x8c
 	.4byte	0x578
@@ -1541,72 +1566,72 @@ OS_Exception_FIQ:
 	.byte	0x91
 	.sleb128 -16
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF649
+	.uleb128 0x18
+	.4byte	.LASF650
 	.byte	0x1
 	.byte	0x80
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x14
-	.4byte	.LASF650
+	.uleb128 0x15
+	.4byte	.LASF651
 	.byte	0x1
 	.byte	0x71
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x14
-	.4byte	.LASF651
+	.uleb128 0x15
+	.4byte	.LASF652
 	.byte	0x1
 	.byte	0x62
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x14
-	.4byte	.LASF652
+	.uleb128 0x15
+	.4byte	.LASF653
 	.byte	0x1
 	.byte	0x59
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x14
-	.4byte	.LASF653
+	.uleb128 0x15
+	.4byte	.LASF654
 	.byte	0x1
 	.byte	0x4a
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x14
-	.4byte	.LASF654
+	.uleb128 0x15
+	.4byte	.LASF655
 	.byte	0x1
 	.byte	0x3c
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x14
-	.4byte	.LASF655
+	.uleb128 0x15
+	.4byte	.LASF656
 	.byte	0x1
 	.byte	0x2e
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x14
-	.4byte	.LASF656
+	.uleb128 0x15
+	.4byte	.LASF657
 	.byte	0x1
 	.byte	0x1e
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x18
-	.4byte	.LASF661
+	.uleb128 0x19
+	.4byte	.LASF662
 	.byte	0x1
 	.byte	0xb
 	.4byte	.LFB0
@@ -1850,6 +1875,11 @@ OS_Exception_FIQ:
 	.byte	0
 	.byte	0
 	.uleb128 0x14
+	.uleb128 0x35
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x15
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -1872,7 +1902,7 @@ OS_Exception_FIQ:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x16
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1897,7 +1927,7 @@ OS_Exception_FIQ:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x17
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -1912,7 +1942,7 @@ OS_Exception_FIQ:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x18
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -1935,7 +1965,7 @@ OS_Exception_FIQ:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x18
+	.uleb128 0x19
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3
@@ -3656,7 +3686,7 @@ OS_Exception_FIQ:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.a33fb8b396f31bed4bacb411e67ef75c,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -3753,7 +3783,7 @@ OS_Exception_FIQ:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF657:
+.LASF658:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3779,7 +3809,7 @@ OS_Exception_FIQ:
 	.ascii	"INTEGER_MODEL INTEGER_LLP64_IL32P64\000"
 .LASF319:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
-.LASF655:
+.LASF656:
 	.ascii	"OS_Exception_NMI\000"
 .LASF187:
 	.ascii	"__FLT32_MANT_DIG__ 24\000"
@@ -3795,7 +3825,7 @@ OS_Exception_FIQ:
 	.ascii	"__QQ_IBIT__ 0\000"
 .LASF347:
 	.ascii	"__UDQ_IBIT__ 0\000"
-.LASF646:
+.LASF647:
 	.ascii	"OS_Exception_IRQ\000"
 .LASF258:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
@@ -3837,7 +3867,7 @@ OS_Exception_FIQ:
 	.ascii	"__GNUC_MINOR__ 3\000"
 .LASF572:
 	.ascii	"FREE\000"
-.LASF658:
+.LASF659:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_exception.c\000"
 .LASF593:
@@ -3963,7 +3993,7 @@ OS_Exception_FIQ:
 	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
 .LASF579:
 	.ascii	"max_allowed_wait_time\000"
-.LASF644:
+.LASF645:
 	.ascii	"os_reset_exit\000"
 .LASF312:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
@@ -3975,8 +4005,6 @@ OS_Exception_FIQ:
 	.ascii	"__UINT_FAST16_MAX__ 0xffffffffU\000"
 .LASF569:
 	.ascii	"active\000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF196:
 	.ascii	"__FLT32_EPSILON__ 1.1920928955078125e-7F32\000"
 .LASF363:
@@ -3991,7 +4019,7 @@ OS_Exception_FIQ:
 	.ascii	"__thumb2__ 1\000"
 .LASF603:
 	.ascii	"VAR_HARDFAULT_STATUS_REG\000"
-.LASF653:
+.LASF654:
 	.ascii	"OS_Exception_BUS_FAULT\000"
 .LASF108:
 	.ascii	"__INT_LEAST16_WIDTH__ 16\000"
@@ -4007,7 +4035,7 @@ OS_Exception_FIQ:
 	.ascii	"MEM_FAULT_ADDR_REG ((volatile uint32*)0xE000ED34u)\000"
 .LASF631:
 	.ascii	"TASK_2_VAR\000"
-.LASF652:
+.LASF653:
 	.ascii	"OS_Exception_DEBUG\000"
 .LASF198:
 	.ascii	"__FLT32_HAS_DENORM__ 1\000"
@@ -4094,7 +4122,7 @@ OS_Exception_FIQ:
 	.ascii	"__FLT_RADIX__ 2\000"
 .LASF484:
 	.ascii	"MS_PER_SEC (1000)\000"
-.LASF645:
+.LASF646:
 	.ascii	"OS_Exception_FIQ\000"
 .LASF287:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
@@ -4121,6 +4149,8 @@ OS_Exception_FIQ:
 	.ascii	"os_bug_task_max_wait_time_reached\000"
 .LASF290:
 	.ascii	"__SACCUM_FBIT__ 7\000"
+.LASF522:
+	.ascii	"BUS_FAULT_ADDR_REG ((volatile uint32*)0xE000ED38u)\000"
 .LASF490:
 	.ascii	"_OS_RAM_H_ \000"
 .LASF166:
@@ -4184,13 +4214,13 @@ OS_Exception_FIQ:
 	.ascii	"__ARM_ASM_SYNTAX_UNIFIED__ 1\000"
 .LASF608:
 	.ascii	"VAR_BUS_FAULT_ADDR_REG\000"
-.LASF651:
+.LASF652:
 	.ascii	"OS_Exception_MEM_MANAG_FAULT\000"
 .LASF581:
 	.ascii	"current_prio\000"
 .LASF548:
 	.ascii	"os_bug_exception_AbortData\000"
-.LASF654:
+.LASF655:
 	.ascii	"OS_Exception_SWI\000"
 .LASF169:
 	.ascii	"__DBL_HAS_DENORM__ 1\000"
@@ -4400,7 +4430,7 @@ OS_Exception_FIQ:
 	.ascii	"__SACCUM_IBIT__ 8\000"
 .LASF582:
 	.ascii	"default_prio\000"
-.LASF649:
+.LASF650:
 	.ascii	"OS_Exception_PendSV\000"
 .LASF188:
 	.ascii	"__FLT32_DIG__ 6\000"
@@ -4426,7 +4456,7 @@ OS_Exception_FIQ:
 	.ascii	"__arm__ 1\000"
 .LASF172:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
-.LASF647:
+.LASF648:
 	.ascii	"task\000"
 .LASF339:
 	.ascii	"__TQ_IBIT__ 0\000"
@@ -4438,7 +4468,7 @@ OS_Exception_FIQ:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF620:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF659:
+.LASF660:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF506:
@@ -4533,7 +4563,7 @@ OS_Exception_FIQ:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF648:
+.LASF649:
 	.ascii	"scheduling_task_ptr\000"
 .LASF261:
 	.ascii	"__FRACT_IBIT__ 0\000"
@@ -4634,7 +4664,7 @@ OS_Exception_FIQ:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
-.LASF660:
+.LASF661:
 	.ascii	"OS_Exception_Systick\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
@@ -4648,8 +4678,8 @@ OS_Exception_FIQ:
 	.ascii	"__WINT_WIDTH__ 32\000"
 .LASF248:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
-.LASF522:
-	.ascii	"BUS_FAULT_ADDR_REG ((volatile uint32*)0xE000ED38u)\000"
+.LASF641:
+	.ascii	"SAVED_STACK_POINTER\000"
 .LASF340:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF345:
@@ -4758,7 +4788,7 @@ OS_Exception_FIQ:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
 .LASF79:
 	.ascii	"__SHRT_WIDTH__ 16\000"
-.LASF641:
+.LASF642:
 	.ascii	"os_reset_type_s\000"
 .LASF153:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
@@ -4768,7 +4798,7 @@ OS_Exception_FIQ:
 	.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
 .LASF44:
 	.ascii	"__UINT32_TYPE__ long unsigned int\000"
-.LASF650:
+.LASF651:
 	.ascii	"OS_Exception_USAGE_FAULT\000"
 .LASF438:
 	.ascii	"_os_firstinc_h_ \000"
@@ -4776,13 +4806,13 @@ OS_Exception_FIQ:
 	.ascii	"__SIZEOF_POINTER__ 4\000"
 .LASF308:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
-.LASF642:
+.LASF643:
 	.ascii	"os_reset_hardreset\000"
 .LASF414:
 	.ascii	"__VFP_FP__ 1\000"
 .LASF278:
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
-.LASF656:
+.LASF657:
 	.ascii	"OS_Exception_HARDFAULT\000"
 .LASF350:
 	.ascii	"__HA_FBIT__ 7\000"
@@ -4804,12 +4834,14 @@ OS_Exception_FIQ:
 	.ascii	"__UINT64_C(c) c ## ULL\000"
 .LASF314:
 	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
-.LASF643:
+.LASF644:
 	.ascii	"os_reset_powerdown\000"
 .LASF254:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000u\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:
@@ -4916,7 +4948,7 @@ OS_Exception_FIQ:
 	.ascii	"SchedulerFrequency (1.0e3)\000"
 .LASF423:
 	.ascii	"__ARM_NEON\000"
-.LASF661:
+.LASF662:
 	.ascii	"OS_Exception_Read_Status_Registers\000"
 .LASF564:
 	.ascii	"exe_time\000"

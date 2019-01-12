@@ -42,6 +42,8 @@ L2:
 	.loc 1 18 0
 	movl	$0, _TASK4_CALL_NR
 	.loc 1 19 0
+	movl	$-1, _SAVED_STACK_POINTER
+	.loc 1 20 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -54,7 +56,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x2e6
+	.long	0x308
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -191,6 +193,15 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x2c
 	.long	0x94
+	.uleb128 0xa
+	.ascii "SAVED_STACK_POINTER\0"
+	.byte	0x4
+	.byte	0x32
+	.long	0x304
+	.uleb128 0xc
+	.byte	0x4
+	.long	0x30a
+	.uleb128 0xd
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -341,6 +352,20 @@ Ldebug_abbrev0:
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0xc
+	.uleb128 0xf
+	.byte	0
+	.uleb128 0xb
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0xd
+	.uleb128 0x35
+	.byte	0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1278,7 +1303,7 @@ Ldebug_macro0:
 	.ascii "Task_min_time (1e0)\0"
 	.byte	0x1
 	.uleb128 0x9
-	.ascii "NUMBER_OF_TASKS 5\0"
+	.ascii "NUMBER_OF_TASKS 10\0"
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
@@ -1287,7 +1312,7 @@ Ldebug_macro0:
 	.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
 	.byte	0x1
 	.uleb128 0xd
-	.ascii "TASK_STACK_SIZE 200\0"
+	.ascii "TASK_STACK_SIZE 2000\0"
 	.byte	0x1
 	.uleb128 0x10
 	.ascii "MS_PER_SEC (1000)\0"
@@ -1339,7 +1364,7 @@ Ldebug_macro0:
 	.ascii "_os_stack_h_ \0"
 	.byte	0x1
 	.uleb128 0x4
-	.ascii "OS_STACK_SIZE 0x100\0"
+	.ascii "OS_STACK_SIZE 0x5000u\0"
 	.byte	0x1
 	.uleb128 0x6
 	.ascii "OS_STACK_SIZE_END 0x01u\0"

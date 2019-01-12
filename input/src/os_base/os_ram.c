@@ -45,6 +45,7 @@ void* REGISTER_R8;
 void* REGISTER_R9;
 void* REGISTER_R10;
 void* REGISTER_R11;
+volatile void* SAVED_STACK_POINTER;
 
 unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
 scheduler_time_t LAST_CURRENT_TIME;

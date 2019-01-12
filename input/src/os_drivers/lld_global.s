@@ -142,7 +142,7 @@ LLF_CLEAR_ALL_GP_REGISTERS:
    MOV R15,R14
    
 LLF_PERFORM_RAM_CHECK:
-        B LLF_INT_DISABLE
+        BL LLF_INT_DISABLE
 #uint8 test_pattern1 = 0x00;
 #uint8 test_pattern2 = 0xFF;
 #volatile uint8* curr_pos_ptr = (volatile*) _ram_start_addr_;
@@ -185,7 +185,7 @@ LLF_PERFORM_RAM_CHECK:
         #uint8 ram_check_failed = False;
         MOV r6, #0
         #LLF_INT_DISABLE();
-        B LLF_INT_DISABLE            
+        BL LLF_INT_DISABLE            
 loop_start:        
         #while(curr_pos_ptr < ram_end_ptr)
         CMP r0, r1
@@ -220,7 +220,7 @@ loop_finished:
         STRB R6,[R8]
         STRB R7,[R9]
         #LLF_INT_ENABLE();
-        B LLF_INT_ENABLE
+        BL LLF_INT_ENABLE
         #; Move R14 (LR) into R15 (PC)
         MOV R15, R14
    

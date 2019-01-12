@@ -318,6 +318,7 @@ enum os_sw_bugs_function_e
    Func_RestoreTaskEnvironment,
    Func_CreateTaskEnvironment,
    Func_DeleteTaskEnvironment,
+   Func_InitTaskEnvironment,
    Func_StartTask,
    Func_PreemptTask,
    Func_TerminateTask,
@@ -326,7 +327,8 @@ enum os_sw_bugs_function_e
    Func_ActivateTask,
    Func_TaskStateRequest,
    Func_Preempt_Task,
-   Func_os_exception
+   Func_os_exception,
+   Func_CreateTask
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -424,11 +426,11 @@ extern void LLF_CLEAR_ALL_RAM(void);
 #define MinTimeSlice_s (1.0/SchedulerFrequency)
 #define MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)
 #define Task_min_time (1e0)
-#define NUMBER_OF_TASKS 5
+#define NUMBER_OF_TASKS 10
 #define MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)
 #define MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE
 
-#define TASK_STACK_SIZE 200
+#define TASK_STACK_SIZE 2000
 
 
 #define MS_PER_SEC (1000)
@@ -510,7 +512,7 @@ extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void OS_Task_InitTaskEnvironment(task_t* task);
 extern void OS_Task_DeleteTaskEnvironment(task_t* task);
-extern task_t* TASK_PTR[5];
+extern task_t* TASK_PTR[(10)];
 
 typedef unsigned scheduler_time_t;
 
@@ -565,7 +567,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 #define _os_stack_h_ 
 
-#define OS_STACK_SIZE 0x100
+#define OS_STACK_SIZE 0x5000u
 
 #define OS_STACK_SIZE_END 0x01u
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
@@ -605,8 +607,8 @@ extern void OS_StateHandler(void);
 extern unsigned_char_t HEAP[10000];
 
 
-extern unsigned_char_t OS_STACK[1][0x100];
-extern unsigned_char_t OS_MAIN_STACK[0x100];
+extern unsigned_char_t OS_STACK[1][0x5000u];
+extern unsigned_char_t OS_MAIN_STACK[0x5000u];
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
@@ -628,16 +630,20 @@ extern volatile uint32 TASK2_CALL_NR;
 extern volatile uint32 TASK3_CALL_NR;
 extern volatile uint32 TASK4_CALL_NR;
 
-extern unsigned_char_t TASK_STACK[(5)][200];
+extern unsigned_char_t TASK_STACK[(10)][2000];
 extern scheduler_time_t LAST_CURRENT_TIME;
-extern scheduling_t TASK_SCHEDULING_QUEUE[(5)];
+extern scheduling_t TASK_SCHEDULING_QUEUE[(10)];
 extern scheduling_t* RUNNING_SCHEDULING_QUEUE_ENTRY;
-extern task_t TASK_RUN_QUEUE[(5)];
+extern task_t TASK_RUN_QUEUE[(10)];
 extern task_t RUNNING_TASK[1];
 extern task_t TASK_IDLE_QUEUE[1];
 extern unsigned_char_t bTASK_QUEUE_INITIALIZED;
 extern task_t TASK_0_VAR, TASK_1_VAR, TASK_2_VAR, TASK_3_VAR;
 extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK_GROUP_5;
+extern task_t* TASK_TRANSITION_REJECTED_TASK_ADDR;
+extern task_state_t TASK_TRANSITION_REJECTED_STATE;
+extern task_state_t TASK_TRANSITION_CURRENT_STATE;
+extern volatile void* SAVED_STACK_POINTER;
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h" 1
@@ -849,7 +855,12 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
    }
    if(RequestState == 0)
    {
+      TASK_TRANSITION_REJECTED_TASK_ADDR = task;
+      TASK_TRANSITION_REJECTED_STATE = requested_state;
+      TASK_TRANSITION_CURRENT_STATE = task->task_state;
       OS_SetSwBug(os_bug_taskstate_request_denied, Func_TaskStateRequest);
+
+
    }
    return RequestState;
 }
@@ -867,22 +878,22 @@ void OS_CreateTask(task_t* task)
          }
          else
          {
-            OS_SetSwBug(os_bug_taskstate_request_denied, Func_TerminateTask);
+            OS_SetSwBug(os_bug_taskstate_request_denied, Func_CreateTask);
          }
       }
       else
       {
-         OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask);
+         OS_SetSwBug(os_bug_null_pointer, Func_CreateTask);
       }
    }
    else
    {
-      OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask);
+      OS_SetSwBug(os_bug_null_pointer, Func_CreateTask);
    }
 }
 void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
 {
-# 203 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 208 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    if(task != 0 && scheduling_task != 0)
    {
       if(task->state_request != 0)
@@ -919,7 +930,7 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
 
 void OS_ActivateTask(task_t* task)
 {
-# 247 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 252 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    if(task != 0)
    {
       if(task->state_request(task, Task_ready)==1)
@@ -1052,7 +1063,7 @@ void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task)
 }
 void OS_TaskDispatcher(void)
 {
-# 389 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 394 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    scheduling_t* scheduling_task_ptr;
    task_t* task = 0;
 
@@ -1212,8 +1223,8 @@ static scheduling_t* OS_TaskScheduler(void)
    LAST_CURRENT_TIME = OS_GetCurrentTime();
 
    ((Winner_task) = (Winner_task));
-# 561 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
-   for((element_nr) = (0); (element_nr) <= ((5)-1); (element_nr)++)
+# 566 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+   for((element_nr) = (0); (element_nr) <= ((10)-1); (element_nr)++)
    {
       scheduling_queue_member = GetFromSchedulingQueue(element_nr);
 
@@ -1260,7 +1271,7 @@ static scheduling_t* OS_TaskScheduler(void)
 
 
    }
-   for((element_nr) = (0); (element_nr) <= ((5)-1); (element_nr)++)
+   for((element_nr) = (0); (element_nr) <= ((10)-1); (element_nr)++)
    {
       scheduling_queue_member = GetFromSchedulingQueue(element_nr);
       task = GetFromTaskQueue(scheduling_queue_member);

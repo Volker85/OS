@@ -144,15 +144,15 @@ OS_GetCurrentTime:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x6f5
+	.4byte	0x707
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF630
-	.byte	0x1
 	.4byte	.LASF631
+	.byte	0x1
 	.4byte	.LASF632
+	.4byte	.LASF633
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -967,8 +967,17 @@ OS_GetCurrentTime:
 	.byte	0x6
 	.byte	0x31
 	.4byte	0x18c
+	.uleb128 0x12
+	.4byte	.LASF628
+	.byte	0x6
+	.byte	0x32
+	.4byte	0x6c0
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x6c6
 	.uleb128 0x14
-	.4byte	.LASF633
+	.uleb128 0x15
+	.4byte	.LASF634
 	.byte	0x1
 	.byte	0x8
 	.4byte	0x42
@@ -976,24 +985,24 @@ OS_GetCurrentTime:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x15
-	.4byte	.LASF634
+	.uleb128 0x16
+	.4byte	.LASF635
 	.byte	0x1
 	.byte	0x4
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x16
-	.4byte	.LASF628
+	.uleb128 0x17
+	.4byte	.LASF629
 	.byte	0x1
 	.byte	0x4
 	.4byte	0xa6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x16
-	.4byte	.LASF629
+	.uleb128 0x17
+	.4byte	.LASF630
 	.byte	0x1
 	.byte	0x4
 	.4byte	0x128
@@ -1238,6 +1247,11 @@ OS_GetCurrentTime:
 	.byte	0
 	.byte	0
 	.uleb128 0x14
+	.uleb128 0x35
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x15
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -1262,7 +1276,7 @@ OS_GetCurrentTime:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x16
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1285,7 +1299,7 @@ OS_GetCurrentTime:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x17
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -2915,7 +2929,7 @@ OS_GetCurrentTime:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.a33fb8b396f31bed4bacb411e67ef75c,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -2972,7 +2986,7 @@ OS_GetCurrentTime:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF630:
+.LASF631:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3026,7 +3040,7 @@ OS_GetCurrentTime:
 	.ascii	"RUNNING_SCHEDULING_QUEUE_ENTRY\000"
 .LASF65:
 	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
-.LASF629:
+.LASF630:
 	.ascii	"task_func_nr\000"
 .LASF292:
 	.ascii	"__SACCUM_MIN__ (-0X1P7HK-0X1P7HK)\000"
@@ -3201,8 +3215,6 @@ OS_GetCurrentTime:
 	.ascii	"__INT_LEAST16_WIDTH__ 16\000"
 .LASF527:
 	.ascii	"Func_StartTask\000"
-.LASF440:
-	.ascii	"INTEGER_LLP64_IL32P64 1\000"
 .LASF579:
 	.ascii	"privilige_mode\000"
 .LASF417:
@@ -3495,7 +3507,7 @@ OS_GetCurrentTime:
 	.ascii	"VAR_FAULT_STATUS_REG\000"
 .LASF66:
 	.ascii	"__GXX_ABI_VERSION 1011\000"
-.LASF631:
+.LASF632:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_common.c\000"
 .LASF587:
@@ -3544,7 +3556,7 @@ OS_GetCurrentTime:
 	.ascii	"HEAP_SIZE 10000\000"
 .LASF100:
 	.ascii	"__UINT16_MAX__ 0xffff\000"
-.LASF628:
+.LASF629:
 	.ascii	"bug_nr\000"
 .LASF421:
 	.ascii	"__ARM_FEATURE_FMA\000"
@@ -3620,7 +3632,7 @@ OS_GetCurrentTime:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF405:
 	.ascii	"__arm__ 1\000"
-.LASF634:
+.LASF635:
 	.ascii	"OS_SetSwBug\000"
 .LASF172:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
@@ -3634,7 +3646,7 @@ OS_GetCurrentTime:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF607:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF632:
+.LASF633:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -3817,8 +3829,6 @@ OS_GetCurrentTime:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -3831,6 +3841,8 @@ OS_GetCurrentTime:
 	.ascii	"__WINT_WIDTH__ 32\000"
 .LASF248:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
+.LASF628:
+	.ascii	"SAVED_STACK_POINTER\000"
 .LASF340:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF345:
@@ -3959,8 +3971,8 @@ OS_GetCurrentTime:
 	.ascii	"__HA_FBIT__ 7\000"
 .LASF85:
 	.ascii	"__PTRDIFF_WIDTH__ 32\000"
-.LASF197:
-	.ascii	"__FLT32_DENORM_MIN__ 1.4012984643248171e-45F32\000"
+.LASF440:
+	.ascii	"INTEGER_LLP64_IL32P64 1\000"
 .LASF144:
 	.ascii	"__FLT_MANT_DIG__ 24\000"
 .LASF412:
@@ -3979,6 +3991,8 @@ OS_GetCurrentTime:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000u\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:
@@ -3991,6 +4005,8 @@ OS_GetCurrentTime:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
 .LASF613:
 	.ascii	"RUNNING_TASK\000"
+.LASF392:
+	.ascii	"__ARM_FEATURE_QBIT 1\000"
 .LASF20:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
 .LASF601:
@@ -4109,8 +4125,8 @@ OS_GetCurrentTime:
 	.ascii	"Global_inline __inline__\000"
 .LASF511:
 	.ascii	"os_bug_taskstate_request_denied\000"
-.LASF392:
-	.ascii	"__ARM_FEATURE_QBIT 1\000"
+.LASF236:
+	.ascii	"__DEC64_MANT_DIG__ 16\000"
 .LASF56:
 	.ascii	"__INT_FAST32_TYPE__ int\000"
 .LASF507:
@@ -4129,7 +4145,7 @@ OS_GetCurrentTime:
 	.ascii	"__ARM_FEATURE_FP16_VECTOR_ARITHMETIC\000"
 .LASF295:
 	.ascii	"__USACCUM_FBIT__ 8\000"
-.LASF633:
+.LASF634:
 	.ascii	"OS_GetCurrentTime\000"
 .LASF302:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
@@ -4244,8 +4260,8 @@ OS_GetCurrentTime:
 	.ascii	"_os_stack_h_ \000"
 .LASF201:
 	.ascii	"__FLT64_MANT_DIG__ 53\000"
-.LASF236:
-	.ascii	"__DEC64_MANT_DIG__ 16\000"
+.LASF197:
+	.ascii	"__FLT32_DENORM_MIN__ 1.4012984643248171e-45F32\000"
 .LASF155:
 	.ascii	"__FLT_HAS_DENORM__ 1\000"
 .LASF130:

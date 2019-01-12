@@ -579,15 +579,15 @@ OS_Task_CreateTaskEnvironment:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x7c1
+	.4byte	0x7d3
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF641
-	.byte	0x1
 	.4byte	.LASF642
+	.byte	0x1
 	.4byte	.LASF643
+	.4byte	.LASF644
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -1402,15 +1402,24 @@ OS_Task_CreateTaskEnvironment:
 	.byte	0x6
 	.byte	0x31
 	.4byte	0x18c
+	.uleb128 0x12
+	.4byte	.LASF634
+	.byte	0x6
+	.byte	0x32
+	.4byte	0x6c0
+	.uleb128 0x7
+	.byte	0x4
+	.4byte	0x6c6
 	.uleb128 0x14
+	.uleb128 0x15
 	.4byte	0x42b
 	.byte	0x1
 	.byte	0xd
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	TASK_PTR
-	.uleb128 0x15
-	.4byte	.LASF644
+	.uleb128 0x16
+	.4byte	.LASF645
 	.byte	0x1
 	.byte	0x7a
 	.4byte	0x415
@@ -1418,9 +1427,9 @@ OS_Task_CreateTaskEnvironment:
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6ea
-	.uleb128 0x16
-	.4byte	.LASF636
+	.4byte	0x6fc
+	.uleb128 0x17
+	.4byte	.LASF637
 	.byte	0x1
 	.byte	0x7c
 	.4byte	0x415
@@ -1428,17 +1437,17 @@ OS_Task_CreateTaskEnvironment:
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF634
+	.uleb128 0x18
+	.4byte	.LASF635
 	.byte	0x1
 	.byte	0x6e
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x70e
-	.uleb128 0x18
-	.4byte	.LASF636
+	.4byte	0x720
+	.uleb128 0x19
+	.4byte	.LASF637
 	.byte	0x1
 	.byte	0x6e
 	.4byte	0x415
@@ -1446,17 +1455,17 @@ OS_Task_CreateTaskEnvironment:
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF635
+	.uleb128 0x18
+	.4byte	.LASF636
 	.byte	0x1
 	.byte	0x39
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x732
-	.uleb128 0x18
-	.4byte	.LASF636
+	.4byte	0x744
+	.uleb128 0x19
+	.4byte	.LASF637
 	.byte	0x1
 	.byte	0x39
 	.4byte	0x415
@@ -1464,20 +1473,20 @@ OS_Task_CreateTaskEnvironment:
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF637
+	.uleb128 0x18
+	.4byte	.LASF638
 	.byte	0x1
 	.byte	0x35
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x756
-	.uleb128 0x18
-	.4byte	.LASF638
+	.4byte	0x768
+	.uleb128 0x19
+	.4byte	.LASF639
 	.byte	0x1
 	.byte	0x35
-	.4byte	0x756
+	.4byte	0x768
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
@@ -1485,35 +1494,35 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x7
 	.byte	0x4
 	.4byte	0x3b
-	.uleb128 0x17
-	.4byte	.LASF639
+	.uleb128 0x18
+	.4byte	.LASF640
 	.byte	0x1
 	.byte	0x31
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x780
-	.uleb128 0x18
-	.4byte	.LASF638
+	.4byte	0x792
+	.uleb128 0x19
+	.4byte	.LASF639
 	.byte	0x1
 	.byte	0x31
-	.4byte	0x756
+	.4byte	0x768
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF640
+	.uleb128 0x18
+	.4byte	.LASF641
 	.byte	0x1
 	.byte	0x25
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7a4
-	.uleb128 0x18
-	.4byte	.LASF636
+	.4byte	0x7b6
+	.uleb128 0x19
+	.4byte	.LASF637
 	.byte	0x1
 	.byte	0x25
 	.4byte	0x415
@@ -1521,16 +1530,16 @@ OS_Task_CreateTaskEnvironment:
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF645
+	.uleb128 0x1a
+	.4byte	.LASF646
 	.byte	0x1
 	.byte	0xf
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x18
-	.4byte	.LASF636
+	.uleb128 0x19
+	.4byte	.LASF637
 	.byte	0x1
 	.byte	0xf
 	.4byte	0x415
@@ -1775,6 +1784,11 @@ OS_Task_CreateTaskEnvironment:
 	.byte	0
 	.byte	0
 	.uleb128 0x14
+	.uleb128 0x35
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x15
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x47
@@ -1787,7 +1801,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x16
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1814,7 +1828,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x17
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -1829,7 +1843,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x18
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1854,7 +1868,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x18
+	.uleb128 0x19
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -1869,7 +1883,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x1a
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -3519,7 +3533,7 @@ OS_Task_CreateTaskEnvironment:
 	.uleb128 0x60
 	.4byte	.LASF488
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.6c90615f258321a46ef9203bf6ef5141,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.a33fb8b396f31bed4bacb411e67ef75c,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -3599,7 +3613,7 @@ OS_Task_CreateTaskEnvironment:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF641:
+.LASF642:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O0 -std=c90\000"
@@ -3627,7 +3641,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"Func_TerminateTask\000"
 .LASF187:
 	.ascii	"__FLT32_MANT_DIG__ 24\000"
-.LASF642:
+.LASF643:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_task_common.c\000"
 .LASF116:
@@ -3640,7 +3654,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__QQ_IBIT__ 0\000"
 .LASF347:
 	.ascii	"__UDQ_IBIT__ 0\000"
-.LASF637:
+.LASF638:
 	.ascii	"OS_TASK_SAVE_SYSTEM_STACK\000"
 .LASF72:
 	.ascii	"__WCHAR_MAX__ 0xffffffffU\000"
@@ -3832,7 +3846,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"Task_suspended\000"
 .LASF104:
 	.ascii	"__INT8_C(c) c\000"
-.LASF634:
+.LASF635:
 	.ascii	"OS_Task_DeleteTaskEnvironment\000"
 .LASF596:
 	.ascii	"VAR_HARDFAULT_STATUS_REG\000"
@@ -4094,7 +4108,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__INT64_TYPE__ long long int\000"
 .LASF149:
 	.ascii	"__FLT_MAX_10_EXP__ 38\000"
-.LASF635:
+.LASF636:
 	.ascii	"OS_Task_InitTaskEnvironment\000"
 .LASF554:
 	.ascii	"task_state_t\000"
@@ -4204,7 +4218,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
 .LASF270:
 	.ascii	"__LFRACT_FBIT__ 31\000"
-.LASF638:
+.LASF639:
 	.ascii	"system_stack_ptr\000"
 .LASF47:
 	.ascii	"__INT_LEAST16_TYPE__ short int\000"
@@ -4262,7 +4276,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__arm__ 1\000"
 .LASF172:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
-.LASF636:
+.LASF637:
 	.ascii	"task\000"
 .LASF339:
 	.ascii	"__TQ_IBIT__ 0\000"
@@ -4272,7 +4286,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF613:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF643:
+.LASF644:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -4351,7 +4365,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"MIN_BLOCK_SIZE_HEAP 8\000"
 .LASF433:
 	.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
-.LASF645:
+.LASF646:
 	.ascii	"OS_TaskSaveTaskEnvironment\000"
 .LASF75:
 	.ascii	"__WINT_MIN__ 0U\000"
@@ -4459,8 +4473,6 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
-.LASF492:
-	.ascii	"OS_STACK_SIZE 0x5000\000"
 .LASF150:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
@@ -4473,6 +4485,8 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__WINT_WIDTH__ 32\000"
 .LASF248:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
+.LASF634:
+	.ascii	"SAVED_STACK_POINTER\000"
 .LASF340:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF345:
@@ -4513,7 +4527,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__SQ_FBIT__ 31\000"
 .LASF444:
 	.ascii	"CPP_VERSION_NONE 0\000"
-.LASF639:
+.LASF640:
 	.ascii	"OS_TASK_RESTORE_SYSTEM_STACK\000"
 .LASF368:
 	.ascii	"__GNUC_GNU_INLINE__ 1\000"
@@ -4621,6 +4635,8 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF341:
 	.ascii	"__UQQ_IBIT__ 0\000"
+.LASF492:
+	.ascii	"OS_STACK_SIZE 0x5000u\000"
 .LASF344:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF351:
@@ -4659,7 +4675,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF210:
 	.ascii	"__FLT64_EPSILON__ 2.2204460492503131e-16F64\000"
-.LASF644:
+.LASF645:
 	.ascii	"OS_Task_CreateTaskEnvironment\000"
 .LASF499:
 	.ascii	"HEAP_OFFSET_FOR_CHUNK 8\000"
@@ -4725,7 +4741,7 @@ OS_Task_CreateTaskEnvironment:
 	.ascii	"__SIZE_TYPE__ unsigned int\000"
 .LASF443:
 	.ascii	"INTEGER_SILP64 4\000"
-.LASF640:
+.LASF641:
 	.ascii	"OS_TASK_RESTORETASK_ENVIRONMENT\000"
 .LASF325:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
