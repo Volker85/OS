@@ -216,8 +216,8 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
             DisableInterrupts();
             OS_TaskSaveTaskEnvironment(task);
             OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
-            DeleteFromTaskQueue(task);//TODO: preempt sollte nicht löschen, sonnder nur von running->reading schalten
-            DeleteFromSchedulingQueue(scheduling_task);//TODO: preempt sollte nicht löschen
+            DeleteFromTaskQueue(task);/*TODO: preempt sollte nicht löschen, sonnder nur von running->reading schalten*/
+            DeleteFromSchedulingQueue(scheduling_task);/*TODO: preempt sollte nicht löschen*/
 
             task->active = False;
             /* reset the prio increase for waiting */
@@ -311,7 +311,7 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
             EnableInterrupts();
 
             /* task execution shall not happen with disabled interrupts */
-            SET_RUNNING_TASK(task, scheduling_task);// TODO: scheduling queue, wie vermerken?
+            SET_RUNNING_TASK(task, scheduling_task);/* TODO: scheduling queue, wie vermerken?*/
             /* change to user mode... */
             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
             {
