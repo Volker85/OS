@@ -101,7 +101,7 @@ Loop_start:
 			#
 			#;loop	body-start...
 			#;		*addr=0x00
-			MOV		r1,#1
+			MOV		r1,#0
 			#;		*addr=0x00
 			STRB		r1,[r0]
 			#;loop	body-end
