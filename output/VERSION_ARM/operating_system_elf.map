@@ -478,7 +478,7 @@ ram              0x20000000         0x00030000
 Linker script and memory map
 
 
-.text           0x08000000    0x189c8
+.text           0x08000000    0x18a24
                 0x08000000                _ivec_start = .
  os_exception_table.o()
  .text          0x08000000        0x0 os_exception_table.o
@@ -947,140 +947,139 @@ Linker script and memory map
                 0x080140e4       0x33 os_task_queue.o
  os_task_scheduler.o()
  *fill*         0x08014117        0x1 
- .text          0x08014118      0x798 os_task_scheduler.o
+ .text          0x08014118      0x7bc os_task_scheduler.o
                 0x08014118                OS_ActivateDispatcher
                 0x08014158                OS_SleepTask
-                0x08014178                task_state_request
-                0x08014290                OS_CreateTask
-                0x080142da                OS_PreemptTask
+                0x08014182                task_state_request
+                0x0801429c                OS_CreateTask
                 0x0801437c                OS_ActivateTask
                 0x0801440c                OS_StartTask
                 0x080144e4                OS_TerminateTask
                 0x08014588                OS_TaskDispatcher
-                0x08014648                OS_InitTasks
- .data          0x080148b0        0x0 os_task_scheduler.o
- .bss           0x080148b0        0x0 os_task_scheduler.o
- .debug_info    0x080148b0      0x9e8 os_task_scheduler.o
- .debug_abbrev  0x08015298      0x1de os_task_scheduler.o
+                0x08014654                OS_InitTasks
+ .data          0x080148d4        0x0 os_task_scheduler.o
+ .bss           0x080148d4        0x0 os_task_scheduler.o
+ .debug_info    0x080148d4      0xa05 os_task_scheduler.o
+ .debug_abbrev  0x080152d9      0x1f6 os_task_scheduler.o
  .debug_aranges
-                0x08015476       0x20 os_task_scheduler.o
- .debug_macro   0x08015496       0xe0 os_task_scheduler.o
- .debug_line    0x08015576      0x3bd os_task_scheduler.o
- .debug_str     0x08015933      0x19a os_task_scheduler.o
+                0x080154cf       0x20 os_task_scheduler.o
+ .debug_macro   0x080154ef       0xe0 os_task_scheduler.o
+ .debug_line    0x080155cf      0x3c2 os_task_scheduler.o
+ .debug_str     0x08015991      0x19a os_task_scheduler.o
                                0x3ece (size before relaxing)
- .comment       0x08015acd       0x80 os_task_scheduler.o
- *fill*         0x08015acd        0x3 
- .debug_frame   0x08015ad0      0x248 os_task_scheduler.o
+ .comment       0x08015b2b       0x80 os_task_scheduler.o
+ *fill*         0x08015b2b        0x1 
+ .debug_frame   0x08015b2c      0x248 os_task_scheduler.o
  .ARM.attributes
-                0x08015d18       0x33 os_task_scheduler.o
+                0x08015d74       0x33 os_task_scheduler.o
  os_stack.o()
- *fill*         0x08015d4b        0x1 
- .text          0x08015d4c        0x0 os_stack.o
- .data          0x08015d4c        0x0 os_stack.o
- .bss           0x08015d4c        0x0 os_stack.o
- .debug_info    0x08015d4c      0x643 os_stack.o
- .debug_abbrev  0x0801638f       0xec os_stack.o
+ *fill*         0x08015da7        0x1 
+ .text          0x08015da8        0x0 os_stack.o
+ .data          0x08015da8        0x0 os_stack.o
+ .bss           0x08015da8        0x0 os_stack.o
+ .debug_info    0x08015da8      0x643 os_stack.o
+ .debug_abbrev  0x080163eb       0xec os_stack.o
  .debug_aranges
-                0x0801647b       0x18 os_stack.o
- .debug_macro   0x08016493       0x9e os_stack.o
- .debug_line    0x08016531      0x1c4 os_stack.o
- .debug_str     0x080166f5       0x46 os_stack.o
+                0x080164d7       0x18 os_stack.o
+ .debug_macro   0x080164ef       0x9e os_stack.o
+ .debug_line    0x0801658d      0x1c4 os_stack.o
+ .debug_str     0x08016751       0x46 os_stack.o
                                0x39a5 (size before relaxing)
- .comment       0x0801673b       0x80 os_stack.o
+ .comment       0x08016797       0x80 os_stack.o
  .ARM.attributes
-                0x0801673b       0x33 os_stack.o
+                0x08016797       0x33 os_stack.o
  os_heap.o()
- *fill*         0x0801676e        0x2 
- .text          0x08016770      0x22c os_heap.o
-                0x08016770                OS_Calloc
-                0x080167b8                OS_Realloc
-                0x0801682a                OS_Malloc
-                0x08016894                OS_Free
- .data          0x0801699c        0x0 os_heap.o
- .bss           0x0801699c        0x0 os_heap.o
- .debug_info    0x0801699c      0x818 os_heap.o
- .debug_abbrev  0x080171b4      0x1b7 os_heap.o
+ *fill*         0x080167ca        0x2 
+ .text          0x080167cc      0x22c os_heap.o
+                0x080167cc                OS_Calloc
+                0x08016814                OS_Realloc
+                0x08016886                OS_Malloc
+                0x080168f0                OS_Free
+ .data          0x080169f8        0x0 os_heap.o
+ .bss           0x080169f8        0x0 os_heap.o
+ .debug_info    0x080169f8      0x818 os_heap.o
+ .debug_abbrev  0x08017210      0x1b7 os_heap.o
  .debug_aranges
-                0x0801736b       0x20 os_heap.o
- .debug_macro   0x0801738b       0xa2 os_heap.o
- .debug_line    0x0801742d      0x252 os_heap.o
- .debug_str     0x0801767f       0xe6 os_heap.o
+                0x080173c7       0x20 os_heap.o
+ .debug_macro   0x080173e7       0xa2 os_heap.o
+ .debug_line    0x08017489      0x252 os_heap.o
+ .debug_str     0x080176db       0xe6 os_heap.o
                                0x3a4b (size before relaxing)
- .comment       0x08017765       0x80 os_heap.o
- *fill*         0x08017765        0x3 
- .debug_frame   0x08017768      0x100 os_heap.o
+ .comment       0x080177c1       0x80 os_heap.o
+ *fill*         0x080177c1        0x3 
+ .debug_frame   0x080177c4      0x100 os_heap.o
  .ARM.attributes
-                0x08017868       0x33 os_heap.o
+                0x080178c4       0x33 os_heap.o
  led.o()
- *fill*         0x0801789b        0x1 
- .text          0x0801789c       0x50 led.o
-                0x0801789c                USER_LED_INIT
-                0x080178b0                USER_LED_ON
-                0x080178c4                USER_LED_OFF
-                0x080178d8                USER_LED_TOGGLE
- .data          0x080178ec        0x0 led.o
- .bss           0x080178ec        0x0 led.o
- .debug_info    0x080178ec      0x708 led.o
- .debug_abbrev  0x08017ff4      0x142 led.o
+ *fill*         0x080178f7        0x1 
+ .text          0x080178f8       0x50 led.o
+                0x080178f8                USER_LED_INIT
+                0x0801790c                USER_LED_ON
+                0x08017920                USER_LED_OFF
+                0x08017934                USER_LED_TOGGLE
+ .data          0x08017948        0x0 led.o
+ .bss           0x08017948        0x0 led.o
+ .debug_info    0x08017948      0x708 led.o
+ .debug_abbrev  0x08018050      0x142 led.o
  .debug_aranges
-                0x08018136       0x20 led.o
- .debug_macro   0x08018156       0xa2 led.o
- .debug_line    0x080181f8      0x1cb led.o
- .debug_str     0x080183c3       0x97 led.o
+                0x08018192       0x20 led.o
+ .debug_macro   0x080181b2       0xa2 led.o
+ .debug_line    0x08018254      0x1cb led.o
+ .debug_str     0x0801841f       0x97 led.o
                                0x39f6 (size before relaxing)
- .comment       0x0801845a       0x80 led.o
- *fill*         0x0801845a        0x2 
- .debug_frame   0x0801845c       0xb0 led.o
+ .comment       0x080184b6       0x80 led.o
+ *fill*         0x080184b6        0x2 
+ .debug_frame   0x080184b8       0xb0 led.o
  .ARM.attributes
-                0x0801850c       0x33 led.o
-                0x0801853f                _code_end = .
+                0x08018568       0x33 led.o
+                0x0801859b                _code_end = .
                 [!provide]                PROVIDE (code_start = .)
                 [!provide]                PROVIDE (code_end = .)
- *fill*         0x0801853f        0x1 
- .text          0x08018540      0x378 d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
-                0x08018540                __aeabi_drsub
-                0x08018548                __aeabi_dsub
-                0x08018548                __subdf3
-                0x0801854c                __aeabi_dadd
-                0x0801854c                __adddf3
-                0x080187c4                __floatunsidf
-                0x080187c4                __aeabi_ui2d
-                0x080187e4                __floatsidf
-                0x080187e4                __aeabi_i2d
-                0x08018808                __aeabi_f2d
-                0x08018808                __extendsfdf2
-                0x0801884c                __floatundidf
-                0x0801884c                __aeabi_ul2d
-                0x0801885c                __floatdidf
-                0x0801885c                __aeabi_l2d
- .text          0x080188b8      0x110 d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_arm_cmpdf2.o)
-                0x080188b8                __gtdf2
-                0x080188b8                __gedf2
-                0x080188c0                __ltdf2
-                0x080188c0                __ledf2
-                0x080188c8                __nedf2
-                0x080188c8                __eqdf2
-                0x080188c8                __cmpdf2
-                0x08018944                __aeabi_cdrcmple
-                0x08018954                __aeabi_cdcmpeq
-                0x08018954                __aeabi_cdcmple
-                0x08018964                __aeabi_dcmpeq
-                0x08018978                __aeabi_dcmplt
-                0x0801898c                __aeabi_dcmple
-                0x080189a0                __aeabi_dcmpge
-                0x080189b4                __aeabi_dcmpgt
+ *fill*         0x0801859b        0x1 
+ .text          0x0801859c      0x378 d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+                0x0801859c                __aeabi_drsub
+                0x080185a4                __aeabi_dsub
+                0x080185a4                __subdf3
+                0x080185a8                __aeabi_dadd
+                0x080185a8                __adddf3
+                0x08018820                __floatunsidf
+                0x08018820                __aeabi_ui2d
+                0x08018840                __floatsidf
+                0x08018840                __aeabi_i2d
+                0x08018864                __aeabi_f2d
+                0x08018864                __extendsfdf2
+                0x080188a8                __floatundidf
+                0x080188a8                __aeabi_ul2d
+                0x080188b8                __floatdidf
+                0x080188b8                __aeabi_l2d
+ .text          0x08018914      0x110 d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_arm_cmpdf2.o)
+                0x08018914                __gtdf2
+                0x08018914                __gedf2
+                0x0801891c                __ltdf2
+                0x0801891c                __ledf2
+                0x08018924                __nedf2
+                0x08018924                __eqdf2
+                0x08018924                __cmpdf2
+                0x080189a0                __aeabi_cdrcmple
+                0x080189b0                __aeabi_cdcmpeq
+                0x080189b0                __aeabi_cdcmple
+                0x080189c0                __aeabi_dcmpeq
+                0x080189d4                __aeabi_dcmplt
+                0x080189e8                __aeabi_dcmple
+                0x080189fc                __aeabi_dcmpge
+                0x08018a10                __aeabi_dcmpgt
 
-.glue_7         0x080189c8        0x0
- .glue_7        0x080189c8        0x0 linker stubs
+.glue_7         0x08018a24        0x0
+ .glue_7        0x08018a24        0x0 linker stubs
 
-.glue_7t        0x080189c8        0x0
- .glue_7t       0x080189c8        0x0 linker stubs
+.glue_7t        0x08018a24        0x0
+ .glue_7t       0x08018a24        0x0 linker stubs
 
-.vfp11_veneer   0x080189c8        0x0
- .vfp11_veneer  0x080189c8        0x0 linker stubs
+.vfp11_veneer   0x08018a24        0x0
+ .vfp11_veneer  0x08018a24        0x0 linker stubs
 
-.v4_bx          0x080189c8        0x0
- .v4_bx         0x080189c8        0x0 linker stubs
+.v4_bx          0x08018a24        0x0
+ .v4_bx         0x08018a24        0x0 linker stubs
 
 .data           0x20000000    0x184f4
                 0x20000000                _ram_start = .

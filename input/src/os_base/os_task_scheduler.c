@@ -18,7 +18,7 @@ Local void TASK_0(void* task_ptr);
 Local void TASK_1(void* task_ptr);
 Local void TASK_2(void* task_ptr);
 Local task_t** OS_TaskScheduler();
-
+Local void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task);
 void OS_ActivateDispatcher(void)
 {
 
@@ -216,9 +216,7 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
             DisableInterrupts();
             OS_TaskSaveTaskEnvironment(task);
             OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
-            DeleteFromTaskQueue(task);/*TODO: preempt sollte nicht löschen, sonnder nur von running->reading schalten*/
-            DeleteFromSchedulingQueue(scheduling_task);/*TODO: preempt sollte nicht löschen*/
-
+            
             task->active = False;
             /* reset the prio increase for waiting */
             task->current_prio = task->default_prio;
@@ -311,7 +309,7 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
             EnableInterrupts();
 
             /* task execution shall not happen with disabled interrupts */
-            SET_RUNNING_TASK(task, scheduling_task);/* TODO: scheduling queue, wie vermerken?*/
+            SET_RUNNING_TASK(task, scheduling_task);
             /* change to user mode... */
             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
             {
@@ -423,13 +421,14 @@ Local void TASK_0(void* task_ptr)
 }
 Local void TASK_1(void* task_ptr)
 {
+   scheduling_t* scheduling_task_ptr = 0;
    ReferenceUnusedParameter(task_ptr);
    /* worker task */
-
+   scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
    /* do some things */
    /*while(1) {}*/
    TASK1_CALL_NR++;
-   OS_SleepTask((task_t*)task_ptr, 10);
+   OS_SleepTask((task_t*)task_ptr, 10, scheduling_task_ptr);
    #if (CFG_PROCESSOR != cMCU_X86)
    while(1) {}
    #endif
@@ -488,6 +487,7 @@ void OS_InitTasks(void)
                 Core0,                            /* Cortex M4 has only 1 core */
                 0                                   /* default prio */
                );
+   AddToSchedulingQueue(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
 
    /* setup worker task */
@@ -503,6 +503,7 @@ void OS_InitTasks(void)
                 Core0,
                 1                                   /* default prio */
                );
+   AddToSchedulingQueue(task_ptr);               
    OS_SaveTaskPtr(task_ptr, Task_1_ptr);
 
    /* setup worker task */
@@ -518,6 +519,7 @@ void OS_InitTasks(void)
                 Core0,
                 2                                   /* default prio */
                );
+   AddToSchedulingQueue(task_ptr);               
    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
 
    /* setup worker task */
@@ -533,9 +535,8 @@ void OS_InitTasks(void)
                 Core0,
                 3                                   /* default prio */
                );
+   AddToSchedulingQueue(task_ptr);               
    OS_SaveTaskPtr(task_ptr, Task_3_ptr);
-   /*TODO init sheduling queue */
-
 }
 
 

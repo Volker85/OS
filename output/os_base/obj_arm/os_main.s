@@ -161,7 +161,7 @@ OS_DetermineNextTaskActivation:
 .L12:
 	.align	2
 .L11:
-	.word	call_nr.4055
+	.word	call_nr.4056
 	.word	TASK_1_VAR
 	.word	TASK_2_VAR
 	.word	TASK_3_VAR
@@ -326,24 +326,24 @@ OS_StateHandler:
 .L27:
 	.word	OS_STATE
 	.word	TASK_0_VAR
-	.word	call_nr.4067
+	.word	call_nr.4068
 	.word	-858993459
-	.word	sys_req_reset_state.4066
+	.word	sys_req_reset_state.4067
 	.cfi_endproc
 .LFE1:
 	.size	OS_StateHandler, .-OS_StateHandler
 	.bss
 	.align	2
-call_nr.4055:
+call_nr.4056:
 	.space	4
-	.size	call_nr.4055, 4
+	.size	call_nr.4056, 4
 	.align	2
-call_nr.4067:
+call_nr.4068:
 	.space	4
-	.size	call_nr.4067, 4
-sys_req_reset_state.4066:
+	.size	call_nr.4068, 4
+sys_req_reset_state.4067:
 	.space	1
-	.size	sys_req_reset_state.4066, 1
+	.size	sys_req_reset_state.4067, 1
 	.text
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
@@ -1181,7 +1181,7 @@ sys_req_reset_state.4066:
 	.4byte	0x692
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	sys_req_reset_state.4066
+	.4byte	sys_req_reset_state.4067
 	.uleb128 0x16
 	.4byte	.LASF635
 	.byte	0x1
@@ -1189,7 +1189,7 @@ sys_req_reset_state.4066:
 	.4byte	0x54
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4067
+	.4byte	call_nr.4068
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LASF640
@@ -1206,7 +1206,7 @@ sys_req_reset_state.4066:
 	.4byte	0x54
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4055
+	.4byte	call_nr.4056
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",%progbits

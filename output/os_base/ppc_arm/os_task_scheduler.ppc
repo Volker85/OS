@@ -858,7 +858,7 @@ typedef unsigned task_time_t;
 
 extern void OS_StartTask(task_t* task, scheduling_t* scheduling_task);
 extern void OS_ActivateTask(task_t* task);
-extern void OS_SleepTask(task_t* task, task_time_t millisec);
+extern void OS_SleepTask(task_t* task, task_time_t millisec, scheduling_t* scheduling_task_ptr);
 extern void OS_InitTask(
    task_t* task,
    func_p_t TaskFunction,
@@ -911,7 +911,7 @@ static void TASK_0(void* task_ptr);
 static void TASK_1(void* task_ptr);
 static void TASK_2(void* task_ptr);
 static task_t** OS_TaskScheduler();
-
+static void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task);
 void OS_ActivateDispatcher(void)
 {
 
@@ -938,9 +938,11 @@ void OS_ActivateDispatcher(void)
 }
 
 
-void OS_SleepTask(task_t* task, task_time_t millisec)
+void OS_SleepTask(task_t* task, task_time_t millisec, scheduling_t* scheduling_task_ptr)
 {
+
    task->WaitActUntil = OS_GetCurrentTime() + millisec;
+   OS_PreemptTask(task,scheduling_task_ptr);
 }
 
 unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state)
@@ -1090,7 +1092,7 @@ void OS_CreateTask(task_t* task)
 }
 void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
 {
-# 208 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 210 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    if(task != 0 && scheduling_task != 0)
    {
       if(task->state_request != 0)
@@ -1100,8 +1102,6 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
             LLF_INT_DISABLE();
             OS_TaskSaveTaskEnvironment(task);
             OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
-            DeleteFromTaskQueue(task);
-            DeleteFromSchedulingQueue(scheduling_task);
 
             task->active = 0;
 
@@ -1291,13 +1291,14 @@ static void TASK_0(void* task_ptr)
 }
 static void TASK_1(void* task_ptr)
 {
+   scheduling_t* scheduling_task_ptr = 0;
    ((task_ptr) = (task_ptr));
 
-
+   scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
 
 
    TASK1_CALL_NR++;
-   OS_SleepTask((task_t*)task_ptr, 10);
+   OS_SleepTask((task_t*)task_ptr, 10, scheduling_task_ptr);
 
    while(1) {}
 
@@ -1356,6 +1357,7 @@ void OS_InitTasks(void)
                 Core0,
                 0
                );
+   AddToSchedulingQueue(task_ptr);
    ;
 
 
@@ -1371,6 +1373,7 @@ void OS_InitTasks(void)
                 Core0,
                 1
                );
+   AddToSchedulingQueue(task_ptr);
    ;
 
 
@@ -1386,6 +1389,7 @@ void OS_InitTasks(void)
                 Core0,
                 2
                );
+   AddToSchedulingQueue(task_ptr);
    ;
 
 
@@ -1401,6 +1405,7 @@ void OS_InitTasks(void)
                 Core0,
                 3
                );
+   AddToSchedulingQueue(task_ptr);
    ;
 }
 
@@ -1420,7 +1425,7 @@ static scheduling_t* OS_TaskScheduler(void)
    LAST_CURRENT_TIME = OS_GetCurrentTime();
 
    ((Winner_task) = (Winner_task));
-# 566 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 571 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    for((element_nr) = (0); (element_nr) <= ((10)-1); (element_nr)++)
    {
       scheduling_queue_member = GetFromSchedulingQueue(element_nr);

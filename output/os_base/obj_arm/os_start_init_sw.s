@@ -122,7 +122,7 @@ OS_InitSw:
 	ldr	r3, .L4+20	@ tmp129,
 	movs	r2, #0	@ tmp130,
 	str	r2, [r3]	@ tmp130, TASK4_CALL_NR
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:19:    SAVED_STACK_POINTER = 0xFFFFFFFF;
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:19:    SAVED_STACK_POINTER = (void*)0xFFFFFFFF;
 	.loc 1 19 0
 	ldr	r3, .L4+24	@ tmp131,
 	mov	r2, #-1	@ tmp132,

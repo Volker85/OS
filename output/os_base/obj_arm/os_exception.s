@@ -543,7 +543,7 @@ OS_Exception_Systick:
 	ldr	r3, [r3]	@ _18, *_17
 	ldr	r2, .L34+12	@ tmp159,
 	str	r3, [r2]	@ _18, DBG_CALIB_VALUE
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:216:    if(&scheduling_task_ptr < SAVED_STACK_POINTER)
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:216:    if(((void*)&scheduling_task_ptr) < SAVED_STACK_POINTER)
 	.loc 1 216 0
 	ldr	r3, .L34+32	@ tmp160,
 	ldr	r2, [r3]	@ SAVED_STACK_POINTER.0_19, SAVED_STACK_POINTER

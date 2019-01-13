@@ -120,30 +120,36 @@ OS_SleepTask:
 .LFB1:
 	.loc 1 49 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
+	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
 	push	{r7, lr}	@
 	.cfi_def_cfa_offset 8
 	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-	sub	sp, sp, #8	@,,
-	.cfi_def_cfa_offset 16
+	sub	sp, sp, #16	@,,
+	.cfi_def_cfa_offset 24
 	add	r7, sp, #0	@,,
 	.cfi_def_cfa_register 7
-	str	r0, [r7, #4]	@ task, task
-	str	r1, [r7]	@ millisec, millisec
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:50:    task->WaitActUntil = OS_GetCurrentTime() + millisec;
-	.loc 1 50 0
+	str	r0, [r7, #12]	@ task, task
+	str	r1, [r7, #8]	@ millisec, millisec
+	str	r2, [r7, #4]	@ scheduling_task_ptr, scheduling_task_ptr
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:51:    task->WaitActUntil = OS_GetCurrentTime() + millisec;
+	.loc 1 51 0
 	bl	OS_GetCurrentTime	@
 	mov	r2, r0	@ _1,
-	ldr	r3, [r7]	@ tmp112, millisec
+	ldr	r3, [r7, #8]	@ tmp112, millisec
 	add	r2, r2, r3	@ _2, tmp112
-	ldr	r3, [r7, #4]	@ tmp113, task
+	ldr	r3, [r7, #12]	@ tmp113, task
 	str	r2, [r3, #8]	@ _2, task_6(D)->WaitActUntil
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:51: }
-	.loc 1 51 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:52:    OS_PreemptTask(task,scheduling_task_ptr);
+	.loc 1 52 0
+	ldr	r1, [r7, #4]	@, scheduling_task_ptr
+	ldr	r0, [r7, #12]	@, task
+	bl	OS_PreemptTask	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:53: }
+	.loc 1 53 0
 	nop
-	adds	r7, r7, #8	@,,
+	adds	r7, r7, #16	@,,
 	.cfi_def_cfa_offset 8
 	mov	sp, r7	@,
 	.cfi_def_cfa_register 13
@@ -161,7 +167,7 @@ OS_SleepTask:
 	.type	task_state_request, %function
 task_state_request:
 .LFB2:
-	.loc 1 54 0
+	.loc 1 56 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -176,16 +182,16 @@ task_state_request:
 	str	r0, [r7, #4]	@ temp_task, temp_task
 	mov	r3, r1	@ tmp122, requested_state
 	strb	r3, [r7, #3]	@ tmp123, requested_state
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:55:    unsigned_char_t RequestState = Rejected;
-	.loc 1 55 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:57:    unsigned_char_t RequestState = Rejected;
+	.loc 1 57 0
 	movs	r3, #0	@ tmp124,
 	strb	r3, [r7, #15]	@ tmp125, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:57:    task_t* task = (task_t*) temp_task;
-	.loc 1 57 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:59:    task_t* task = (task_t*) temp_task;
+	.loc 1 59 0
 	ldr	r3, [r7, #4]	@ tmp126, temp_task
 	str	r3, [r7, #8]	@ tmp126, task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:59:    switch(requested_state)
-	.loc 1 59 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:61:    switch(requested_state)
+	.loc 1 61 0
 	ldrb	r3, [r7, #3]	@ zero_extendqisi2	@ _1, requested_state
 	cmp	r3, #3	@ _1,
 	bhi	.L30	@
@@ -199,109 +205,109 @@ task_state_request:
 	.word	.L11+1
 	.p2align 1
 .L7:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:63:       switch(task->task_state)
-	.loc 1 63 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:65:       switch(task->task_state)
+	.loc 1 65 0
 	ldr	r3, [r7, #8]	@ tmp127, task
 	ldrb	r3, [r3, #52]	@ zero_extendqisi2	@ _2, task_24->task_state
 	subs	r3, r3, #1	@ tmp128, _3,
 	cmp	r3, #2	@ tmp128,
 	bhi	.L12	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:69:          RequestState = Rejected;
-	.loc 1 69 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:71:          RequestState = Rejected;
+	.loc 1 71 0
 	movs	r3, #0	@ tmp129,
 	strb	r3, [r7, #15]	@ tmp130, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:70:          break;
-	.loc 1 70 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:72:          break;
+	.loc 1 72 0
 	b	.L14	@
 .L12:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:74:          task->task_state = Task_unspecified;
-	.loc 1 74 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:76:          task->task_state = Task_unspecified;
+	.loc 1 76 0
 	ldr	r3, [r7, #8]	@ tmp131, task
 	movs	r2, #0	@ tmp132,
 	strb	r2, [r3, #52]	@ tmp133, task_24->task_state
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:75:          RequestState = Accepted;
-	.loc 1 75 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:77:          RequestState = Accepted;
+	.loc 1 77 0
 	movs	r3, #1	@ tmp134,
 	strb	r3, [r7, #15]	@ tmp135, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:76:          break;
-	.loc 1 76 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:78:          break;
+	.loc 1 78 0
 	nop
 .L14:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:79:       break;
-	.loc 1 79 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:81:       break;
+	.loc 1 81 0
 	b	.L15	@
 .L9:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:83:       switch(task->task_state)
-	.loc 1 83 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:85:       switch(task->task_state)
+	.loc 1 85 0
 	ldr	r3, [r7, #8]	@ tmp136, task
 	ldrb	r3, [r3, #52]	@ zero_extendqisi2	@ _4, task_24->task_state
 	cmp	r3, #0	@ _5,
 	beq	.L17	@,
 	cmp	r3, #3	@ _5,
 	beq	.L18	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:101:          break;
-	.loc 1 101 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:103:          break;
+	.loc 1 103 0
 	b	.L19	@
 .L17:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:88:          task->task_state = Task_suspended;
-	.loc 1 88 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:90:          task->task_state = Task_suspended;
+	.loc 1 90 0
 	ldr	r3, [r7, #8]	@ tmp137, task
 	movs	r2, #1	@ tmp138,
 	strb	r2, [r3, #52]	@ tmp139, task_24->task_state
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:89:          RequestState = Accepted;
-	.loc 1 89 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:91:          RequestState = Accepted;
+	.loc 1 91 0
 	movs	r3, #1	@ tmp140,
 	strb	r3, [r7, #15]	@ tmp141, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:90:          break;
-	.loc 1 90 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:92:          break;
+	.loc 1 92 0
 	b	.L19	@
 .L18:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:94:          task->task_state = Task_suspended;
-	.loc 1 94 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:96:          task->task_state = Task_suspended;
+	.loc 1 96 0
 	ldr	r3, [r7, #8]	@ tmp142, task
 	movs	r2, #1	@ tmp143,
 	strb	r2, [r3, #52]	@ tmp144, task_24->task_state
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:95:          RequestState = Accepted;
-	.loc 1 95 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:97:          RequestState = Accepted;
+	.loc 1 97 0
 	movs	r3, #1	@ tmp145,
 	strb	r3, [r7, #15]	@ tmp146, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:96:          break;
-	.loc 1 96 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:98:          break;
+	.loc 1 98 0
 	nop
 .L19:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:104:       break;
-	.loc 1 104 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:106:       break;
+	.loc 1 106 0
 	b	.L15	@
 .L11:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:108:       switch(task->task_state)
-	.loc 1 108 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:110:       switch(task->task_state)
+	.loc 1 110 0
 	ldr	r3, [r7, #8]	@ tmp147, task
 	ldrb	r3, [r3, #52]	@ zero_extendqisi2	@ _6, task_24->task_state
 	cmp	r3, #2	@ _7,
 	beq	.L21	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:119:          break;
-	.loc 1 119 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:121:          break;
+	.loc 1 121 0
 	b	.L22	@
 .L21:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:112:          task->task_state = Task_running;
-	.loc 1 112 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:114:          task->task_state = Task_running;
+	.loc 1 114 0
 	ldr	r3, [r7, #8]	@ tmp148, task
 	movs	r2, #3	@ tmp149,
 	strb	r2, [r3, #52]	@ tmp150, task_24->task_state
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:113:          RequestState   = Accepted;
-	.loc 1 113 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:115:          RequestState   = Accepted;
+	.loc 1 115 0
 	movs	r3, #1	@ tmp151,
 	strb	r3, [r7, #15]	@ tmp152, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:114:          break;
-	.loc 1 114 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:116:          break;
+	.loc 1 116 0
 	nop
 .L22:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:122:       break;
-	.loc 1 122 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:124:       break;
+	.loc 1 124 0
 	b	.L15	@
 .L10:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:127:       switch(task->task_state)
-	.loc 1 127 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:129:       switch(task->task_state)
+	.loc 1 129 0
 	ldr	r3, [r7, #8]	@ tmp153, task
 	ldrb	r3, [r3, #52]	@ zero_extendqisi2	@ _8, task_24->task_state
 	cmp	r3, #1	@ _9,
@@ -310,89 +316,89 @@ task_state_request:
 	beq	.L25	@,
 	cmp	r3, #0	@ _9,
 	beq	.L26	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:150:          break;
-	.loc 1 150 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:152:          break;
+	.loc 1 152 0
 	b	.L27	@
 .L24:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:131:          task->task_state = Task_ready;
-	.loc 1 131 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:133:          task->task_state = Task_ready;
+	.loc 1 133 0
 	ldr	r3, [r7, #8]	@ tmp154, task
 	movs	r2, #2	@ tmp155,
 	strb	r2, [r3, #52]	@ tmp156, task_24->task_state
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:132:          RequestState   = Accepted;
-	.loc 1 132 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:134:          RequestState   = Accepted;
+	.loc 1 134 0
 	movs	r3, #1	@ tmp157,
 	strb	r3, [r7, #15]	@ tmp158, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:133:          break;
-	.loc 1 133 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:135:          break;
+	.loc 1 135 0
 	b	.L27	@
 .L25:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:137:          task->task_state = Task_ready;
-	.loc 1 137 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:139:          task->task_state = Task_ready;
+	.loc 1 139 0
 	ldr	r3, [r7, #8]	@ tmp159, task
 	movs	r2, #2	@ tmp160,
 	strb	r2, [r3, #52]	@ tmp161, task_24->task_state
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:138:          RequestState   = Accepted;
-	.loc 1 138 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:140:          RequestState   = Accepted;
+	.loc 1 140 0
 	movs	r3, #1	@ tmp162,
 	strb	r3, [r7, #15]	@ tmp163, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:139:          break;
-	.loc 1 139 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:141:          break;
+	.loc 1 141 0
 	b	.L27	@
 .L26:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:143:           task->task_state = Task_ready;
-	.loc 1 143 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:145:           task->task_state = Task_ready;
+	.loc 1 145 0
 	ldr	r3, [r7, #8]	@ tmp164, task
 	movs	r2, #2	@ tmp165,
 	strb	r2, [r3, #52]	@ tmp166, task_24->task_state
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:144:           RequestState = Accepted;
-	.loc 1 144 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:146:           RequestState = Accepted;
+	.loc 1 146 0
 	movs	r3, #1	@ tmp167,
 	strb	r3, [r7, #15]	@ tmp168, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:145:           break;
-	.loc 1 145 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:147:           break;
+	.loc 1 147 0
 	nop
 .L27:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:153:       break;
-	.loc 1 153 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:155:       break;
+	.loc 1 155 0
 	b	.L15	@
 .L30:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:157:       break;
-	.loc 1 157 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:159:       break;
+	.loc 1 159 0
 	nop
 .L15:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:160:    if(RequestState == Rejected)
-	.loc 1 160 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:162:    if(RequestState == Rejected)
+	.loc 1 162 0
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2	@ tmp169, RequestState
 	cmp	r3, #0	@ tmp169,
 	bne	.L28	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:162:       TASK_TRANSITION_REJECTED_TASK_ADDR  = task;
-	.loc 1 162 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:164:       TASK_TRANSITION_REJECTED_TASK_ADDR  = task;
+	.loc 1 164 0
 	ldr	r2, .L31	@ tmp170,
 	ldr	r3, [r7, #8]	@ tmp171, task
 	str	r3, [r2]	@ tmp171, TASK_TRANSITION_REJECTED_TASK_ADDR
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:163:       TASK_TRANSITION_REJECTED_STATE      = requested_state;
-	.loc 1 163 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:165:       TASK_TRANSITION_REJECTED_STATE      = requested_state;
+	.loc 1 165 0
 	ldr	r2, .L31+4	@ tmp172,
 	ldrb	r3, [r7, #3]	@ tmp173, requested_state
 	strb	r3, [r2]	@ tmp173, TASK_TRANSITION_REJECTED_STATE
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:164:       TASK_TRANSITION_CURRENT_STATE       = task->task_state;
-	.loc 1 164 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:166:       TASK_TRANSITION_CURRENT_STATE       = task->task_state;
+	.loc 1 166 0
 	ldr	r3, [r7, #8]	@ tmp174, task
 	ldrb	r2, [r3, #52]	@ zero_extendqisi2	@ _10, task_24->task_state
 	ldr	r3, .L31+8	@ tmp175,
 	strb	r2, [r3]	@ tmp176, TASK_TRANSITION_CURRENT_STATE
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:165:       OS_SetSwBug(os_bug_taskstate_request_denied, Func_TaskStateRequest);
-	.loc 1 165 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:167:       OS_SetSwBug(os_bug_taskstate_request_denied, Func_TaskStateRequest);
+	.loc 1 167 0
 	movs	r1, #12	@,
 	movs	r0, #1	@,
 	bl	OS_SetSwBug	@
 .L28:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:169:    return RequestState;
-	.loc 1 169 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:171:    return RequestState;
+	.loc 1 171 0
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2	@ _46, RequestState
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:170: }
-	.loc 1 170 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:172: }
+	.loc 1 172 0
 	mov	r0, r3	@, <retval>
 	adds	r7, r7, #16	@,,
 	.cfi_def_cfa_offset 8
@@ -418,7 +424,7 @@ task_state_request:
 	.type	OS_CreateTask, %function
 OS_CreateTask:
 .LFB3:
-	.loc 1 173 0
+	.loc 1 175 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -431,19 +437,19 @@ OS_CreateTask:
 	add	r7, sp, #0	@,,
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]	@ task, task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:175:    if(task != 0)
-	.loc 1 175 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:177:    if(task != 0)
+	.loc 1 177 0
 	ldr	r3, [r7, #4]	@ tmp113, task
 	cmp	r3, #0	@ tmp113,
 	beq	.L34	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:177:       if(task->state_request != 0)
-	.loc 1 177 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:179:       if(task->state_request != 0)
+	.loc 1 179 0
 	ldr	r3, [r7, #4]	@ tmp114, task
 	ldr	r3, [r3, #48]	@ _1, task_7(D)->state_request
 	cmp	r3, #0	@ _1,
 	beq	.L35	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:179:          if(task->state_request(task, Task_suspended)== Accepted)
-	.loc 1 179 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:181:          if(task->state_request(task, Task_suspended)== Accepted)
+	.loc 1 181 0
 	ldr	r3, [r7, #4]	@ tmp115, task
 	ldr	r3, [r3, #48]	@ _2, task_7(D)->state_request
 	movs	r1, #1	@,
@@ -453,32 +459,32 @@ OS_CreateTask:
 	mov	r3, r0	@ tmp116,
 	cmp	r3, #1	@ _3,
 	beq	.L39	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:185:             OS_SetSwBug(os_bug_taskstate_request_denied, Func_CreateTask);
-	.loc 1 185 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:187:             OS_SetSwBug(os_bug_taskstate_request_denied, Func_CreateTask);
+	.loc 1 187 0
 	movs	r1, #15	@,
 	movs	r0, #1	@,
 	bl	OS_SetSwBug	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:197: }
-	.loc 1 197 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:199: }
+	.loc 1 199 0
 	b	.L39	@
 .L35:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:190:          OS_SetSwBug(os_bug_null_pointer, Func_CreateTask);
-	.loc 1 190 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:192:          OS_SetSwBug(os_bug_null_pointer, Func_CreateTask);
+	.loc 1 192 0
 	movs	r1, #15	@,
 	movs	r0, #2	@,
 	bl	OS_SetSwBug	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:197: }
-	.loc 1 197 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:199: }
+	.loc 1 199 0
 	b	.L39	@
 .L34:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:195:       OS_SetSwBug(os_bug_null_pointer, Func_CreateTask);
-	.loc 1 195 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:197:       OS_SetSwBug(os_bug_null_pointer, Func_CreateTask);
+	.loc 1 197 0
 	movs	r1, #15	@,
 	movs	r0, #2	@,
 	bl	OS_SetSwBug	@
 .L39:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:197: }
-	.loc 1 197 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:199: }
+	.loc 1 199 0
 	nop
 	adds	r7, r7, #8	@,,
 	.cfi_def_cfa_offset 8
@@ -490,7 +496,6 @@ OS_CreateTask:
 .LFE3:
 	.size	OS_CreateTask, .-OS_CreateTask
 	.align	1
-	.global	OS_PreemptTask
 	.syntax unified
 	.thumb
 	.thumb_func
@@ -498,7 +503,7 @@ OS_CreateTask:
 	.type	OS_PreemptTask, %function
 OS_PreemptTask:
 .LFB4:
-	.loc 1 199 0
+	.loc 1 201 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -512,24 +517,24 @@ OS_PreemptTask:
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]	@ task, task
 	str	r1, [r7]	@ scheduling_task, scheduling_task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:208:    if(task != 0 && scheduling_task != 0)
-	.loc 1 208 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:210:    if(task != 0 && scheduling_task != 0)
+	.loc 1 210 0
 	ldr	r3, [r7, #4]	@ tmp117, task
 	cmp	r3, #0	@ tmp117,
 	beq	.L41	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:208:    if(task != 0 && scheduling_task != 0)
-	.loc 1 208 0 is_stmt 0 discriminator 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:210:    if(task != 0 && scheduling_task != 0)
+	.loc 1 210 0 is_stmt 0 discriminator 1
 	ldr	r3, [r7]	@ tmp118, scheduling_task
 	cmp	r3, #0	@ tmp118,
 	beq	.L41	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:210:       if(task->state_request != 0)
-	.loc 1 210 0 is_stmt 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:212:       if(task->state_request != 0)
+	.loc 1 212 0 is_stmt 1
 	ldr	r3, [r7, #4]	@ tmp119, task
 	ldr	r3, [r3, #48]	@ _1, task_11(D)->state_request
 	cmp	r3, #0	@ _1,
 	beq	.L42	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:212:          if(task->state_request(task, Task_ready)== Accepted)
-	.loc 1 212 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:214:          if(task->state_request(task, Task_ready)== Accepted)
+	.loc 1 214 0
 	ldr	r3, [r7, #4]	@ tmp120, task
 	ldr	r3, [r3, #48]	@ _2, task_11(D)->state_request
 	movs	r1, #2	@,
@@ -539,15 +544,15 @@ OS_PreemptTask:
 	mov	r3, r0	@ tmp121,
 	cmp	r3, #1	@ _3,
 	bne	.L43	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:214:             DisableInterrupts();
-	.loc 1 214 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:216:             DisableInterrupts();
+	.loc 1 216 0
 	bl	LLF_INT_DISABLE	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:215:             OS_TaskSaveTaskEnvironment(task);
-	.loc 1 215 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:217:             OS_TaskSaveTaskEnvironment(task);
+	.loc 1 217 0
 	ldr	r0, [r7, #4]	@, task
 	bl	OS_TaskSaveTaskEnvironment	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:216:             OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
-	.loc 1 216 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:218:             OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
+	.loc 1 218 0
 	bl	OS_GetCoreId	@
 	mov	r3, r0	@ tmp122,
 	mov	r2, r3	@ _5, _4
@@ -559,14 +564,6 @@ OS_PreemptTask:
 	add	r3, r3, r2	@ _6, tmp125
 	mov	r0, r3	@, _6
 	bl	OS_TASK_RESTORE_SYSTEM_STACK	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:217:             DeleteFromTaskQueue(task);
-	.loc 1 217 0
-	ldr	r0, [r7, #4]	@, task
-	bl	DeleteFromTaskQueue	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:218:             DeleteFromSchedulingQueue(scheduling_task);
-	.loc 1 218 0
-	ldr	r0, [r7]	@, scheduling_task
-	bl	DeleteFromSchedulingQueue	@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:220:             task->active = False;
 	.loc 1 220 0
 	ldr	r2, [r7, #4]	@ tmp126, task
@@ -582,8 +579,8 @@ OS_PreemptTask:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:223:             EnableInterrupts();
 	.loc 1 223 0
 	bl	LLF_INT_ENABLE	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:210:       if(task->state_request != 0)
-	.loc 1 210 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:212:       if(task->state_request != 0)
+	.loc 1 212 0
 	b	.L46	@
 .L43:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:227:             OS_SetSwBug(os_bug_taskstate_request_denied, Func_Preempt_Task);
@@ -591,8 +588,8 @@ OS_PreemptTask:
 	movs	r1, #13	@,
 	movs	r0, #1	@,
 	bl	OS_SetSwBug	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:210:       if(task->state_request != 0)
-	.loc 1 210 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:212:       if(task->state_request != 0)
+	.loc 1 212 0
 	b	.L46	@
 .L42:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:232:          OS_SetSwBug(os_bug_null_pointer, Func_Preempt_Task);
@@ -600,8 +597,8 @@ OS_PreemptTask:
 	movs	r1, #13	@,
 	movs	r0, #2	@,
 	bl	OS_SetSwBug	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:210:       if(task->state_request != 0)
-	.loc 1 210 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:212:       if(task->state_request != 0)
+	.loc 1 212 0
 	b	.L46	@
 .L41:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:238:       OS_SetSwBug(os_bug_null_pointer, Func_Preempt_Task);
@@ -1194,32 +1191,41 @@ TASK_1:
 .LFB10:
 	.loc 1 423 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
+	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
 	push	{r7, lr}	@
 	.cfi_def_cfa_offset 8
 	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-	sub	sp, sp, #8	@,,
-	.cfi_def_cfa_offset 16
+	sub	sp, sp, #16	@,,
+	.cfi_def_cfa_offset 24
 	add	r7, sp, #0	@,,
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]	@ task_ptr, task_ptr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:429:    TASK1_CALL_NR++;
-	.loc 1 429 0
-	ldr	r3, .L84	@ tmp112,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:424:    scheduling_t* scheduling_task_ptr = 0;
+	.loc 1 424 0
+	movs	r3, #0	@ tmp112,
+	str	r3, [r7, #12]	@ tmp112, scheduling_task_ptr
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:427:    scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
+	.loc 1 427 0
+	bl	GetRunningSchedulingQueueElementPtr	@
+	str	r0, [r7, #12]	@, scheduling_task_ptr
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:430:    TASK1_CALL_NR++;
+	.loc 1 430 0
+	ldr	r3, .L84	@ tmp113,
 	ldr	r3, [r3]	@ TASK1_CALL_NR.0_1, TASK1_CALL_NR
 	adds	r3, r3, #1	@ _2, TASK1_CALL_NR.0_1,
-	ldr	r2, .L84	@ tmp113,
+	ldr	r2, .L84	@ tmp114,
 	str	r3, [r2]	@ _2, TASK1_CALL_NR
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:430:    OS_SleepTask((task_t*)task_ptr, 10);
-	.loc 1 430 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:431:    OS_SleepTask((task_t*)task_ptr, 10, scheduling_task_ptr);
+	.loc 1 431 0
+	ldr	r2, [r7, #12]	@, scheduling_task_ptr
 	movs	r1, #10	@,
 	ldr	r0, [r7, #4]	@, task_ptr
 	bl	OS_SleepTask	@
 .L83:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:432:    while(1) {}
-	.loc 1 432 0 discriminator 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:433:    while(1) {}
+	.loc 1 433 0 discriminator 1
 	b	.L83	@
 .L85:
 	.align	2
@@ -1236,7 +1242,7 @@ TASK_1:
 	.type	TASK_2, %function
 TASK_2:
 .LFB11:
-	.loc 1 437 0
+	.loc 1 438 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1249,16 +1255,16 @@ TASK_2:
 	add	r7, sp, #0	@,,
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]	@ task_ptr, task_ptr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:442:    TASK2_CALL_NR++;
-	.loc 1 442 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:443:    TASK2_CALL_NR++;
+	.loc 1 443 0
 	ldr	r3, .L88	@ tmp112,
 	ldr	r3, [r3]	@ TASK2_CALL_NR.1_1, TASK2_CALL_NR
 	adds	r3, r3, #1	@ _2, TASK2_CALL_NR.1_1,
 	ldr	r2, .L88	@ tmp113,
 	str	r3, [r2]	@ _2, TASK2_CALL_NR
 .L87:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:444:    while(1) {}
-	.loc 1 444 0 discriminator 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:445:    while(1) {}
+	.loc 1 445 0 discriminator 1
 	b	.L87	@
 .L89:
 	.align	2
@@ -1275,7 +1281,7 @@ TASK_2:
 	.type	TASK_3, %function
 TASK_3:
 .LFB12:
-	.loc 1 449 0
+	.loc 1 450 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1288,16 +1294,16 @@ TASK_3:
 	add	r7, sp, #0	@,,
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]	@ task_ptr, task_ptr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:454:    TASK3_CALL_NR++;
-	.loc 1 454 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:455:    TASK3_CALL_NR++;
+	.loc 1 455 0
 	ldr	r3, .L92	@ tmp112,
 	ldr	r3, [r3]	@ TASK3_CALL_NR.2_1, TASK3_CALL_NR
 	adds	r3, r3, #1	@ _2, TASK3_CALL_NR.2_1,
 	ldr	r2, .L92	@ tmp113,
 	str	r3, [r2]	@ _2, TASK3_CALL_NR
 .L91:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:456:    while(1) {}
-	.loc 1 456 0 discriminator 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:457:    while(1) {}
+	.loc 1 457 0 discriminator 1
 	b	.L91	@
 .L93:
 	.align	2
@@ -1315,7 +1321,7 @@ TASK_3:
 	.type	OS_InitTasks, %function
 OS_InitTasks:
 .LFB13:
-	.loc 1 461 0
+	.loc 1 462 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1327,25 +1333,25 @@ OS_InitTasks:
 	.cfi_def_cfa_offset 40
 	add	r7, sp, #24	@,,
 	.cfi_def_cfa 7, 16
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:462:    task_t* task_ptr = 0;
-	.loc 1 462 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:463:    task_t* task_ptr = 0;
+	.loc 1 463 0
 	movs	r3, #0	@ tmp111,
 	str	r3, [r7, #4]	@ tmp111, task_ptr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:463:    LAST_CURRENT_TIME = OS_GetCurrentTime();
-	.loc 1 463 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:464:    LAST_CURRENT_TIME = OS_GetCurrentTime();
+	.loc 1 464 0
 	bl	OS_GetCurrentTime	@
 	mov	r2, r0	@ _1,
 	ldr	r3, .L95	@ tmp112,
 	str	r2, [r3]	@ _1, LAST_CURRENT_TIME
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:474:    OS_InitTaskQueue();
-	.loc 1 474 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:475:    OS_InitTaskQueue();
+	.loc 1 475 0
 	bl	OS_InitTaskQueue	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:477:    task_ptr = &TASK_0_VAR;
-	.loc 1 477 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:478:    task_ptr = &TASK_0_VAR;
+	.loc 1 478 0
 	ldr	r3, .L95+4	@ tmp113,
 	str	r3, [r7, #4]	@ tmp113, task_ptr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:478:    OS_InitTask(task_ptr,                          /* task */
-	.loc 1 478 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:479:    OS_InitTask(task_ptr,                          /* task */
+	.loc 1 479 0
 	movs	r3, #0	@ tmp114,
 	str	r3, [sp, #20]	@ tmp114,
 	movs	r3, #0	@ tmp115,
@@ -1363,12 +1369,16 @@ OS_InitTasks:
 	ldr	r1, .L95+16	@,
 	ldr	r0, [r7, #4]	@, task_ptr
 	bl	OS_InitTask	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:492:    task_ptr = &TASK_1_VAR;
-	.loc 1 492 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:490:    AddToSchedulingQueue(task_ptr);
+	.loc 1 490 0
+	ldr	r0, [r7, #4]	@, task_ptr
+	bl	AddToSchedulingQueue	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:494:    task_ptr = &TASK_1_VAR;
+	.loc 1 494 0
 	ldr	r3, .L95+20	@ tmp120,
 	str	r3, [r7, #4]	@ tmp120, task_ptr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:493:    OS_InitTask(task_ptr,      /* task */
-	.loc 1 493 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:495:    OS_InitTask(task_ptr,      /* task */
+	.loc 1 495 0
 	movs	r3, #1	@ tmp121,
 	str	r3, [sp, #20]	@ tmp121,
 	movs	r3, #0	@ tmp122,
@@ -1386,12 +1396,16 @@ OS_InitTasks:
 	ldr	r1, .L95+28	@,
 	ldr	r0, [r7, #4]	@, task_ptr
 	bl	OS_InitTask	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:507:    task_ptr = &TASK_2_VAR;
-	.loc 1 507 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:506:    AddToSchedulingQueue(task_ptr);               
+	.loc 1 506 0
+	ldr	r0, [r7, #4]	@, task_ptr
+	bl	AddToSchedulingQueue	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:510:    task_ptr = &TASK_2_VAR;
+	.loc 1 510 0
 	ldr	r3, .L95+32	@ tmp127,
 	str	r3, [r7, #4]	@ tmp127, task_ptr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:508:    OS_InitTask(task_ptr,      /* task */
-	.loc 1 508 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:511:    OS_InitTask(task_ptr,      /* task */
+	.loc 1 511 0
 	movs	r3, #2	@ tmp128,
 	str	r3, [sp, #20]	@ tmp128,
 	movs	r3, #0	@ tmp129,
@@ -1409,12 +1423,16 @@ OS_InitTasks:
 	ldr	r1, .L95+44	@,
 	ldr	r0, [r7, #4]	@, task_ptr
 	bl	OS_InitTask	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:522:    task_ptr = &TASK_3_VAR;
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:522:    AddToSchedulingQueue(task_ptr);               
 	.loc 1 522 0
+	ldr	r0, [r7, #4]	@, task_ptr
+	bl	AddToSchedulingQueue	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:526:    task_ptr = &TASK_3_VAR;
+	.loc 1 526 0
 	ldr	r3, .L95+48	@ tmp134,
 	str	r3, [r7, #4]	@ tmp134, task_ptr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:523:    OS_InitTask(task_ptr,      /* task */
-	.loc 1 523 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:527:    OS_InitTask(task_ptr,      /* task */
+	.loc 1 527 0
 	movs	r3, #3	@ tmp135,
 	str	r3, [sp, #20]	@ tmp135,
 	movs	r3, #0	@ tmp136,
@@ -1432,8 +1450,12 @@ OS_InitTasks:
 	ldr	r1, .L95+60	@,
 	ldr	r0, [r7, #4]	@, task_ptr
 	bl	OS_InitTask	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:535: }
-	.loc 1 535 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:538:    AddToSchedulingQueue(task_ptr);               
+	.loc 1 538 0
+	ldr	r0, [r7, #4]	@, task_ptr
+	bl	AddToSchedulingQueue	@
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:540: }
+	.loc 1 540 0
 	nop
 	adds	r7, r7, #8	@,,
 	.cfi_def_cfa_offset 8
@@ -1473,7 +1495,7 @@ OS_InitTasks:
 	.type	OS_TaskScheduler, %function
 OS_TaskScheduler:
 .LFB14:
-	.loc 1 539 0
+	.loc 1 544 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 24
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1486,76 +1508,76 @@ OS_TaskScheduler:
 	.cfi_def_cfa_offset 40
 	add	r7, sp, #0	@,,
 	.cfi_def_cfa_register 7
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:544:    unsigned_char_t Winner_prio = 0;
-	.loc 1 544 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:549:    unsigned_char_t Winner_prio = 0;
+	.loc 1 549 0
 	movs	r3, #0	@ tmp141,
 	strb	r3, [r7, #22]	@ tmp142, Winner_prio
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:545:    task_t*         task = 0;
-	.loc 1 545 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:550:    task_t*         task = 0;
+	.loc 1 550 0
 	movs	r3, #0	@ tmp143,
 	str	r3, [r7, #12]	@ tmp143, task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:546:    task_t*         Winner_task = 0;
-	.loc 1 546 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:551:    task_t*         Winner_task = 0;
+	.loc 1 551 0
 	movs	r3, #0	@ tmp144,
 	str	r3, [r7, #8]	@ tmp144, Winner_task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:547:    scheduling_t*   Winner_scheduling_queue_member = 0;
-	.loc 1 547 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:552:    scheduling_t*   Winner_scheduling_queue_member = 0;
+	.loc 1 552 0
 	movs	r3, #0	@ tmp145,
 	str	r3, [r7, #16]	@ tmp145, Winner_scheduling_queue_member
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:548:    scheduler_time_t delta_time = OS_GetCurrentTime() - LAST_CURRENT_TIME;
-	.loc 1 548 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:553:    scheduler_time_t delta_time = OS_GetCurrentTime() - LAST_CURRENT_TIME;
+	.loc 1 553 0
 	bl	OS_GetCurrentTime	@
 	mov	r2, r0	@ _1,
 	ldr	r3, .L113	@ tmp146,
 	ldr	r3, [r3]	@ LAST_CURRENT_TIME.3_2, LAST_CURRENT_TIME
 	subs	r3, r2, r3	@ tmp147, _1, LAST_CURRENT_TIME.3_2
 	str	r3, [r7, #4]	@ tmp147, delta_time
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:550:    LAST_CURRENT_TIME = OS_GetCurrentTime();
-	.loc 1 550 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:555:    LAST_CURRENT_TIME = OS_GetCurrentTime();
+	.loc 1 555 0
 	bl	OS_GetCurrentTime	@
 	mov	r2, r0	@ _3,
 	ldr	r3, .L113	@ tmp148,
 	str	r2, [r3]	@ _3, LAST_CURRENT_TIME
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:566:    For_all_tasks_in_queue(element_nr)
-	.loc 1 566 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:571:    For_all_tasks_in_queue(element_nr)
+	.loc 1 571 0
 	movs	r3, #0	@ tmp149,
 	strb	r3, [r7, #23]	@ tmp150, element_nr
 	b	.L98	@
 .L106:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:568:       scheduling_queue_member = GetFromSchedulingQueue(element_nr);
-	.loc 1 568 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:573:       scheduling_queue_member = GetFromSchedulingQueue(element_nr);
+	.loc 1 573 0
 	ldrb	r3, [r7, #23]	@ zero_extendqisi2	@ tmp151, element_nr
 	mov	r0, r3	@, tmp151
 	bl	GetFromSchedulingQueue	@
 	str	r0, [r7]	@, scheduling_queue_member
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:570:       task             = GetFromTaskQueue(scheduling_queue_member);
-	.loc 1 570 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:575:       task             = GetFromTaskQueue(scheduling_queue_member);
+	.loc 1 575 0
 	ldr	r0, [r7]	@, scheduling_queue_member
 	bl	GetFromTaskQueue	@
 	str	r0, [r7, #12]	@, task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:572:       if((task != 0)&&(task->task_queued != False))
-	.loc 1 572 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:577:       if((task != 0)&&(task->task_queued != False))
+	.loc 1 577 0
 	ldr	r3, [r7, #12]	@ tmp152, task
 	cmp	r3, #0	@ tmp152,
 	beq	.L99	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:572:       if((task != 0)&&(task->task_queued != False))
-	.loc 1 572 0 is_stmt 0 discriminator 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:577:       if((task != 0)&&(task->task_queued != False))
+	.loc 1 577 0 is_stmt 0 discriminator 1
 	ldr	r3, [r7, #12]	@ tmp153, task
 	ldrb	r3, [r3]	@ zero_extendqisi2	@ _4, *task_70
 	and	r3, r3, #2	@ tmp154, _4,
 	uxtb	r3, r3	@ _5, tmp154
 	cmp	r3, #0	@ _5,
 	beq	.L99	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:574:          if(task->wait_time >= task->TimeToPrioInc)
-	.loc 1 574 0 is_stmt 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:579:          if(task->wait_time >= task->TimeToPrioInc)
+	.loc 1 579 0 is_stmt 1
 	ldr	r3, [r7, #12]	@ tmp155, task
 	ldr	r2, [r3, #12]	@ _6, task_70->wait_time
 	ldr	r3, [r7, #12]	@ tmp156, task
 	ldr	r3, [r3, #16]	@ _7, task_70->TimeToPrioInc
 	cmp	r2, r3	@ _6, _7
 	bcc	.L100	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:576:             task->current_prio = task->current_prio + task->overwaittime_per_prio_inc_step;
-	.loc 1 576 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:581:             task->current_prio = task->current_prio + task->overwaittime_per_prio_inc_step;
+	.loc 1 581 0
 	ldr	r3, [r7, #12]	@ tmp157, task
 	ldrb	r2, [r3, #36]	@ zero_extendqisi2	@ _8, task_70->current_prio
 	ldr	r3, [r7, #12]	@ tmp158, task
@@ -1566,42 +1588,42 @@ OS_TaskScheduler:
 	ldr	r3, [r7, #12]	@ tmp160, task
 	strb	r2, [r3, #36]	@ tmp161, task_70->current_prio
 .L100:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:579:          if(task->WaitActUntil > OS_GetCurrentTime())
-	.loc 1 579 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:584:          if(task->WaitActUntil > OS_GetCurrentTime())
+	.loc 1 584 0
 	ldr	r3, [r7, #12]	@ tmp162, task
 	ldr	r4, [r3, #8]	@ _12, task_70->WaitActUntil
 	bl	OS_GetCurrentTime	@
 	mov	r3, r0	@ _13,
 	cmp	r4, r3	@ _12, _13
 	bls	.L101	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:581:             task->current_prio = 0;
-	.loc 1 581 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:586:             task->current_prio = 0;
+	.loc 1 586 0
 	ldr	r3, [r7, #12]	@ tmp163, task
 	movs	r2, #0	@ tmp164,
 	strb	r2, [r3, #36]	@ tmp165, task_70->current_prio
 .L101:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:583:          if(task->wait_time > task->max_allowed_wait_time)
-	.loc 1 583 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:588:          if(task->wait_time > task->max_allowed_wait_time)
+	.loc 1 588 0
 	ldr	r3, [r7, #12]	@ tmp166, task
 	ldr	r2, [r3, #12]	@ _14, task_70->wait_time
 	ldr	r3, [r7, #12]	@ tmp167, task
 	ldr	r3, [r3, #24]	@ _15, task_70->max_allowed_wait_time
 	cmp	r2, r3	@ _14, _15
 	bls	.L102	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:586:             OS_SetSwBug(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
-	.loc 1 586 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:591:             OS_SetSwBug(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
+	.loc 1 591 0
 	movs	r1, #9	@,
 	movs	r0, #3	@,
 	bl	OS_SetSwBug	@
 .L102:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:589:          if(task->task_group!=0)
-	.loc 1 589 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:594:          if(task->task_group!=0)
+	.loc 1 594 0
 	ldr	r3, [r7, #12]	@ tmp168, task
 	ldr	r3, [r3, #56]	@ _16, task_70->task_group
 	cmp	r3, #0	@ _16,
 	beq	.L103	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:592:             if(task->task_group->exe_time > task->task_group->fair_exe_time)
-	.loc 1 592 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:597:             if(task->task_group->exe_time > task->task_group->fair_exe_time)
+	.loc 1 597 0
 	ldr	r3, [r7, #12]	@ tmp169, task
 	ldr	r3, [r3, #56]	@ _17, task_70->task_group
 	ldr	r2, [r3]	@ _18, _17->exe_time
@@ -1610,8 +1632,8 @@ OS_TaskScheduler:
 	ldr	r3, [r3, #4]	@ _20, _19->fair_exe_time
 	cmp	r2, r3	@ _18, _20
 	bls	.L99	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:594:                if(task->exe_time > Task_min_time)/* guarantee min time */
-	.loc 1 594 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:599:                if(task->exe_time > Task_min_time)/* guarantee min time */
+	.loc 1 599 0
 	ldr	r3, [r7, #12]	@ tmp171, task
 	ldr	r3, [r3, #28]	@ _21, task_70->exe_time
 	mov	r0, r3	@, _21
@@ -1624,62 +1646,62 @@ OS_TaskScheduler:
 	mov	r3, r0	@ tmp172,
 	cmp	r3, #0	@ tmp172,
 	beq	.L99	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:596:                   task->current_prio = 0;
-	.loc 1 596 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:601:                   task->current_prio = 0;
+	.loc 1 601 0
 	ldr	r3, [r7, #12]	@ tmp173, task
 	movs	r2, #0	@ tmp174,
 	strb	r2, [r3, #36]	@ tmp175, task_70->current_prio
 	b	.L99	@
 .L103:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:603:             OS_SetSwBug(os_bug_null_pointer, Func_TaskScheduler);
-	.loc 1 603 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:608:             OS_SetSwBug(os_bug_null_pointer, Func_TaskScheduler);
+	.loc 1 608 0
 	movs	r1, #9	@,
 	movs	r0, #2	@,
 	bl	OS_SetSwBug	@
 .L99:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:566:    For_all_tasks_in_queue(element_nr)
-	.loc 1 566 0 discriminator 2
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:571:    For_all_tasks_in_queue(element_nr)
+	.loc 1 571 0 discriminator 2
 	ldrb	r3, [r7, #23]	@ zero_extendqisi2	@ element_nr.4_23, element_nr
 	adds	r3, r3, #1	@ tmp176, element_nr.4_23,
 	strb	r3, [r7, #23]	@ tmp177, element_nr
 .L98:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:566:    For_all_tasks_in_queue(element_nr)
-	.loc 1 566 0 is_stmt 0 discriminator 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:571:    For_all_tasks_in_queue(element_nr)
+	.loc 1 571 0 is_stmt 0 discriminator 1
 	ldrb	r3, [r7, #23]	@ zero_extendqisi2	@ tmp178, element_nr
 	cmp	r3, #9	@ tmp178,
 	bls	.L106	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:613:    For_all_tasks_in_queue(element_nr)
-	.loc 1 613 0 is_stmt 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:618:    For_all_tasks_in_queue(element_nr)
+	.loc 1 618 0 is_stmt 1
 	movs	r3, #0	@ tmp179,
 	strb	r3, [r7, #23]	@ tmp180, element_nr
 	b	.L107	@
 .L110:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:615:       scheduling_queue_member = GetFromSchedulingQueue(element_nr);
-	.loc 1 615 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:620:       scheduling_queue_member = GetFromSchedulingQueue(element_nr);
+	.loc 1 620 0
 	ldrb	r3, [r7, #23]	@ zero_extendqisi2	@ tmp181, element_nr
 	mov	r0, r3	@, tmp181
 	bl	GetFromSchedulingQueue	@
 	str	r0, [r7]	@, scheduling_queue_member
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:616:       task             = GetFromTaskQueue(scheduling_queue_member);
-	.loc 1 616 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:621:       task             = GetFromTaskQueue(scheduling_queue_member);
+	.loc 1 621 0
 	ldr	r0, [r7]	@, scheduling_queue_member
 	bl	GetFromTaskQueue	@
 	str	r0, [r7, #12]	@, task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:617:       if(task != 0)
-	.loc 1 617 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:622:       if(task != 0)
+	.loc 1 622 0
 	ldr	r3, [r7, #12]	@ tmp182, task
 	cmp	r3, #0	@ tmp182,
 	beq	.L108	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:620:          if(task->IdleTask != True)
-	.loc 1 620 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:625:          if(task->IdleTask != True)
+	.loc 1 625 0
 	ldr	r3, [r7, #12]	@ tmp183, task
 	ldrb	r3, [r3]	@ zero_extendqisi2	@ _24, *task_61
 	and	r3, r3, #4	@ tmp184, _24,
 	uxtb	r3, r3	@ _25, tmp184
 	cmp	r3, #0	@ _25,
 	bne	.L109	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:622:             task->wait_time += delta_time;
-	.loc 1 622 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:627:             task->wait_time += delta_time;
+	.loc 1 627 0
 	ldr	r3, [r7, #12]	@ tmp185, task
 	ldr	r2, [r3, #12]	@ _26, task_61->wait_time
 	ldr	r3, [r7, #4]	@ tmp186, delta_time
@@ -1687,43 +1709,43 @@ OS_TaskScheduler:
 	ldr	r3, [r7, #12]	@ tmp187, task
 	str	r2, [r3, #12]	@ _27, task_61->wait_time
 .L109:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:625:          if(task->current_prio > Winner_prio)
-	.loc 1 625 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:630:          if(task->current_prio > Winner_prio)
+	.loc 1 630 0
 	ldr	r3, [r7, #12]	@ tmp188, task
 	ldrb	r3, [r3, #36]	@ zero_extendqisi2	@ _28, task_61->current_prio
 	ldrb	r2, [r7, #22]	@ zero_extendqisi2	@ tmp189, Winner_prio
 	cmp	r2, r3	@ tmp189, _28
 	bcs	.L108	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:627:             Winner_prio = task->current_prio;
-	.loc 1 627 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:632:             Winner_prio = task->current_prio;
+	.loc 1 632 0
 	ldr	r3, [r7, #12]	@ tmp190, task
 	ldrb	r3, [r3, #36]	@ tmp191, task_61->current_prio
 	strb	r3, [r7, #22]	@ tmp191, Winner_prio
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:628:             Winner_task = task;
-	.loc 1 628 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:633:             Winner_task = task;
+	.loc 1 633 0
 	ldr	r3, [r7, #12]	@ tmp192, task
 	str	r3, [r7, #8]	@ tmp192, Winner_task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:629:             Winner_scheduling_queue_member = scheduling_queue_member;
-	.loc 1 629 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:634:             Winner_scheduling_queue_member = scheduling_queue_member;
+	.loc 1 634 0
 	ldr	r3, [r7]	@ tmp193, scheduling_queue_member
 	str	r3, [r7, #16]	@ tmp193, Winner_scheduling_queue_member
 .L108:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:613:    For_all_tasks_in_queue(element_nr)
-	.loc 1 613 0 discriminator 2
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:618:    For_all_tasks_in_queue(element_nr)
+	.loc 1 618 0 discriminator 2
 	ldrb	r3, [r7, #23]	@ zero_extendqisi2	@ element_nr.5_29, element_nr
 	adds	r3, r3, #1	@ tmp194, element_nr.5_29,
 	strb	r3, [r7, #23]	@ tmp195, element_nr
 .L107:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:613:    For_all_tasks_in_queue(element_nr)
-	.loc 1 613 0 is_stmt 0 discriminator 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:618:    For_all_tasks_in_queue(element_nr)
+	.loc 1 618 0 is_stmt 0 discriminator 1
 	ldrb	r3, [r7, #23]	@ zero_extendqisi2	@ tmp196, element_nr
 	cmp	r3, #9	@ tmp196,
 	bls	.L110	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:640:    return Winner_scheduling_queue_member;
-	.loc 1 640 0 is_stmt 1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:645:    return Winner_scheduling_queue_member;
+	.loc 1 645 0 is_stmt 1
 	ldr	r3, [r7, #16]	@ _57, Winner_scheduling_queue_member
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:641: }
-	.loc 1 641 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:646: }
+	.loc 1 646 0
 	mov	r0, r3	@, <retval>
 	adds	r7, r7, #28	@,,
 	.cfi_def_cfa_offset 12
@@ -1748,7 +1770,7 @@ OS_TaskScheduler:
 	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x9e4
+	.4byte	0xa01
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -2604,7 +2626,7 @@ OS_TaskScheduler:
 	.uleb128 0x15
 	.4byte	.LASF679
 	.byte	0x1
-	.2byte	0x21a
+	.2byte	0x21f
 	.4byte	0x775
 	.4byte	.LFB14
 	.4byte	.LFE14-.LFB14
@@ -2614,7 +2636,7 @@ OS_TaskScheduler:
 	.uleb128 0x16
 	.4byte	.LASF650
 	.byte	0x1
-	.2byte	0x21d
+	.2byte	0x222
 	.4byte	0x5fe
 	.uleb128 0x2
 	.byte	0x91
@@ -2622,7 +2644,7 @@ OS_TaskScheduler:
 	.uleb128 0x16
 	.4byte	.LASF651
 	.byte	0x1
-	.2byte	0x21e
+	.2byte	0x223
 	.4byte	0x29
 	.uleb128 0x2
 	.byte	0x91
@@ -2630,7 +2652,7 @@ OS_TaskScheduler:
 	.uleb128 0x16
 	.4byte	.LASF652
 	.byte	0x1
-	.2byte	0x220
+	.2byte	0x225
 	.4byte	0x29
 	.uleb128 0x2
 	.byte	0x91
@@ -2638,7 +2660,7 @@ OS_TaskScheduler:
 	.uleb128 0x16
 	.4byte	.LASF653
 	.byte	0x1
-	.2byte	0x221
+	.2byte	0x226
 	.4byte	0x434
 	.uleb128 0x2
 	.byte	0x91
@@ -2646,7 +2668,7 @@ OS_TaskScheduler:
 	.uleb128 0x16
 	.4byte	.LASF654
 	.byte	0x1
-	.2byte	0x222
+	.2byte	0x227
 	.4byte	0x434
 	.uleb128 0x2
 	.byte	0x91
@@ -2654,7 +2676,7 @@ OS_TaskScheduler:
 	.uleb128 0x16
 	.4byte	.LASF655
 	.byte	0x1
-	.2byte	0x223
+	.2byte	0x228
 	.4byte	0x5fe
 	.uleb128 0x2
 	.byte	0x91
@@ -2662,7 +2684,7 @@ OS_TaskScheduler:
 	.uleb128 0x16
 	.4byte	.LASF656
 	.byte	0x1
-	.2byte	0x224
+	.2byte	0x229
 	.4byte	0x455
 	.uleb128 0x2
 	.byte	0x91
@@ -2672,9 +2694,9 @@ OS_TaskScheduler:
 	.byte	0x4
 	.4byte	0x434
 	.uleb128 0x17
-	.4byte	.LASF662
+	.4byte	.LASF663
 	.byte	0x1
-	.2byte	0x1cc
+	.2byte	0x1cd
 	.4byte	.LFB13
 	.4byte	.LFE13-.LFB13
 	.uleb128 0x1
@@ -2683,7 +2705,7 @@ OS_TaskScheduler:
 	.uleb128 0x16
 	.4byte	.LASF657
 	.byte	0x1
-	.2byte	0x1ce
+	.2byte	0x1cf
 	.4byte	0x434
 	.uleb128 0x2
 	.byte	0x91
@@ -2692,7 +2714,7 @@ OS_TaskScheduler:
 	.uleb128 0x18
 	.4byte	.LASF658
 	.byte	0x1
-	.2byte	0x1c0
+	.2byte	0x1c1
 	.4byte	.LFB12
 	.4byte	.LFE12-.LFB12
 	.uleb128 0x1
@@ -2701,7 +2723,7 @@ OS_TaskScheduler:
 	.uleb128 0x19
 	.4byte	.LASF657
 	.byte	0x1
-	.2byte	0x1c0
+	.2byte	0x1c1
 	.4byte	0x1d2
 	.uleb128 0x2
 	.byte	0x91
@@ -2710,7 +2732,7 @@ OS_TaskScheduler:
 	.uleb128 0x18
 	.4byte	.LASF659
 	.byte	0x1
-	.2byte	0x1b4
+	.2byte	0x1b5
 	.4byte	.LFB11
 	.4byte	.LFE11-.LFB11
 	.uleb128 0x1
@@ -2719,7 +2741,7 @@ OS_TaskScheduler:
 	.uleb128 0x19
 	.4byte	.LASF657
 	.byte	0x1
-	.2byte	0x1b4
+	.2byte	0x1b5
 	.4byte	0x1d2
 	.uleb128 0x2
 	.byte	0x91
@@ -2733,7 +2755,7 @@ OS_TaskScheduler:
 	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x813
+	.4byte	0x822
 	.uleb128 0x19
 	.4byte	.LASF657
 	.byte	0x1
@@ -2741,17 +2763,25 @@ OS_TaskScheduler:
 	.4byte	0x1d2
 	.uleb128 0x2
 	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x16
+	.4byte	.LASF661
+	.byte	0x1
+	.2byte	0x1a8
+	.4byte	0x5fe
+	.uleb128 0x2
+	.byte	0x91
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LASF661
+	.4byte	.LASF662
 	.byte	0x1
 	.2byte	0x1a1
 	.4byte	.LFB9
 	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x839
+	.4byte	0x848
 	.uleb128 0x19
 	.4byte	.LASF657
 	.byte	0x1
@@ -2762,16 +2792,16 @@ OS_TaskScheduler:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LASF663
+	.4byte	.LASF664
 	.byte	0x1
 	.2byte	0x17e
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x86e
+	.4byte	0x87d
 	.uleb128 0x16
-	.4byte	.LASF664
+	.4byte	.LASF661
 	.byte	0x1
 	.2byte	0x18a
 	.4byte	0x5fe
@@ -2795,7 +2825,7 @@ OS_TaskScheduler:
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x8a3
+	.4byte	0x8b2
 	.uleb128 0x19
 	.4byte	.LASF653
 	.byte	0x1
@@ -2821,7 +2851,7 @@ OS_TaskScheduler:
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x8d8
+	.4byte	0x8e7
 	.uleb128 0x19
 	.4byte	.LASF653
 	.byte	0x1
@@ -2847,7 +2877,7 @@ OS_TaskScheduler:
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x8fc
+	.4byte	0x90b
 	.uleb128 0x1c
 	.4byte	.LASF653
 	.byte	0x1
@@ -2857,19 +2887,19 @@ OS_TaskScheduler:
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x1b
+	.uleb128 0x1d
 	.4byte	.LASF669
 	.byte	0x1
-	.byte	0xc6
+	.byte	0xc8
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x92e
+	.4byte	0x93d
 	.uleb128 0x1c
 	.4byte	.LASF653
 	.byte	0x1
-	.byte	0xc6
+	.byte	0xc8
 	.4byte	0x434
 	.uleb128 0x2
 	.byte	0x91
@@ -2877,7 +2907,7 @@ OS_TaskScheduler:
 	.uleb128 0x1c
 	.4byte	.LASF666
 	.byte	0x1
-	.byte	0xc6
+	.byte	0xc8
 	.4byte	0x5fe
 	.uleb128 0x2
 	.byte	0x91
@@ -2886,35 +2916,35 @@ OS_TaskScheduler:
 	.uleb128 0x1b
 	.4byte	.LASF670
 	.byte	0x1
-	.byte	0xac
+	.byte	0xae
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x952
+	.4byte	0x961
 	.uleb128 0x1c
 	.4byte	.LASF653
 	.byte	0x1
-	.byte	0xac
+	.byte	0xae
 	.4byte	0x434
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x1d
+	.uleb128 0x1e
 	.4byte	.LASF680
 	.byte	0x1
-	.byte	0x35
+	.byte	0x37
 	.4byte	0x29
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x9a4
+	.4byte	0x9b3
 	.uleb128 0x1c
 	.4byte	.LASF671
 	.byte	0x1
-	.byte	0x35
+	.byte	0x37
 	.4byte	0x1d2
 	.uleb128 0x2
 	.byte	0x91
@@ -2922,23 +2952,23 @@ OS_TaskScheduler:
 	.uleb128 0x1c
 	.4byte	.LASF672
 	.byte	0x1
-	.byte	0x35
+	.byte	0x37
 	.4byte	0x1ab
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -21
-	.uleb128 0x1e
+	.uleb128 0x1f
 	.4byte	.LASF673
 	.byte	0x1
-	.byte	0x37
+	.byte	0x39
 	.4byte	0x29
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x1e
+	.uleb128 0x1f
 	.4byte	.LASF653
 	.byte	0x1
-	.byte	0x39
+	.byte	0x3b
 	.4byte	0x434
 	.uleb128 0x2
 	.byte	0x91
@@ -2952,7 +2982,7 @@ OS_TaskScheduler:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x9d6
+	.4byte	0x9f3
 	.uleb128 0x1c
 	.4byte	.LASF653
 	.byte	0x1
@@ -2969,8 +2999,16 @@ OS_TaskScheduler:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
+	.uleb128 0x1c
+	.4byte	.LASF661
+	.byte	0x1
+	.byte	0x30
+	.4byte	0x5fe
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
 	.byte	0
-	.uleb128 0x1f
+	.uleb128 0x20
 	.4byte	.LASF681
 	.byte	0x1
 	.byte	0x16
@@ -3388,6 +3426,29 @@ OS_TaskScheduler:
 	.uleb128 0x1d
 	.uleb128 0x2e
 	.byte	0x1
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2116
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x1e
+	.uleb128 0x2e
+	.byte	0x1
 	.uleb128 0x3f
 	.uleb128 0x19
 	.uleb128 0x3
@@ -3412,7 +3473,7 @@ OS_TaskScheduler:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1e
+	.uleb128 0x1f
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -3427,7 +3488,7 @@ OS_TaskScheduler:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x1f
+	.uleb128 0x20
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -5389,7 +5450,7 @@ OS_TaskScheduler:
 	.ascii	"name)])\000"
 .LASF26:
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
-.LASF662:
+.LASF663:
 	.ascii	"OS_InitTasks\000"
 .LASF629:
 	.ascii	"LAST_CURRENT_TIME\000"
@@ -6006,7 +6067,7 @@ OS_TaskScheduler:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF664:
+.LASF661:
 	.ascii	"scheduling_task_ptr\000"
 .LASF261:
 	.ascii	"__FRACT_IBIT__ 0\000"
@@ -6100,7 +6161,7 @@ OS_TaskScheduler:
 	.ascii	"__ARM_FP16_ARGS\000"
 .LASF566:
 	.ascii	"Task_ready\000"
-.LASF661:
+.LASF662:
 	.ascii	"TASK_0\000"
 .LASF660:
 	.ascii	"TASK_1\000"
@@ -6152,7 +6213,7 @@ OS_TaskScheduler:
 	.ascii	"STM32F407VG 1\000"
 .LASF430:
 	.ascii	"__ARM_FEATURE_IDIV 1\000"
-.LASF663:
+.LASF664:
 	.ascii	"OS_TaskDispatcher\000"
 .LASF501:
 	.ascii	"os_init 0\000"

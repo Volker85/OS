@@ -914,7 +914,7 @@ typedef unsigned task_time_t;
 
 extern void OS_StartTask(task_t* task, scheduling_t* scheduling_task);
 extern void OS_ActivateTask(task_t* task);
-extern void OS_SleepTask(task_t* task, task_time_t millisec);
+extern void OS_SleepTask(task_t* task, task_time_t millisec, scheduling_t* scheduling_task_ptr);
 extern void OS_InitTask(
    task_t* task,
    func_p_t TaskFunction,
@@ -1104,7 +1104,7 @@ void OS_Exception_Systick(void)
    DBG_CTRL_VALUE = *((uint32*)0xE000E010);
    DBG_CALIB_VALUE = *((uint32*)0xE000E01C);
 # 216 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-   if(&scheduling_task_ptr < SAVED_STACK_POINTER)
+   if(((void*)&scheduling_task_ptr) < SAVED_STACK_POINTER)
    {
       SAVED_STACK_POINTER = (void*)&scheduling_task_ptr;
    }
