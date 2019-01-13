@@ -45,11 +45,11 @@ void OS_ActivateDispatcher(void)
 }
 
 
-void OS_SleepTask(task_t* task, task_time_t millisec)
+void OS_SleepTask(task_t* task, task_time_t millisec, scheduling_t* scheduling_task_ptr)
 {
-   /*TODO: fehler, sleep Task sollte ein Preempt mit Wait time machen (task und scheduling task)
-    */
+   /* sleep Task shall do a preempt task with a defined minimum wait time, the actual wait time is not guaranteed... */
    task->WaitActUntil = OS_GetCurrentTime() + millisec;
+   OS_PreemptTask(task,scheduling_task_ptr);
 }
 
 unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state)
