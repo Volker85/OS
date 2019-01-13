@@ -6,10 +6,10 @@
 #include "os_stack.h"
 
 /*
-1. running     --(terminate)--> suspend
+1. running     --(terminate)--> suspend : delete scheduling element
 2. running     --(preempt  )--> ready
-3. suspend     --(activate )--> ready
-4. ready       --(start    )--> running
+3. suspend     --(activate )--> ready   : create scheduling element
+4. ready       --(start    )--> running : use scheduling element
 5. unspecified --(create   )--> suspend
 */
 
