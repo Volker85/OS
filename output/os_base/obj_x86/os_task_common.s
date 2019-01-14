@@ -237,80 +237,6 @@ L10:
 	ret
 	.cfi_endproc
 LFE4:
-	.globl	_OS_Task_DeleteTaskEnvironment
-	.def	_OS_Task_DeleteTaskEnvironment;	.scl	2;	.type	32;	.endef
-_OS_Task_DeleteTaskEnvironment:
-LFB5:
-	.loc 1 111 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$24, %esp
-	.loc 1 112 0
-	cmpl	$0, 8(%ebp)
-	je	L14
-	.loc 1 112 0 is_stmt 0 discriminator 1
-	movl	8(%ebp), %eax
-	movl	80(%eax), %eax
-	testl	%eax, %eax
-	je	L14
-	.loc 1 114 0 is_stmt 1
-	movl	8(%ebp), %eax
-	movl	80(%eax), %eax
-	movl	%eax, (%esp)
-	call	_OS_Free
-	jmp	L13
-L14:
-	.loc 1 118 0
-	movl	$4, 4(%esp)
-	movl	$2, (%esp)
-	call	_OS_SetSwBug
-L13:
-	.loc 1 121 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE5:
-	.globl	_OS_Task_CreateTaskEnvironment
-	.def	_OS_Task_CreateTaskEnvironment;	.scl	2;	.type	32;	.endef
-_OS_Task_CreateTaskEnvironment:
-LFB6:
-	.loc 1 123 0
-	.cfi_startproc
-	pushl	%ebp
-	.cfi_def_cfa_offset 8
-	.cfi_offset 5, -8
-	movl	%esp, %ebp
-	.cfi_def_cfa_register 5
-	subl	$40, %esp
-	.loc 1 124 0
-	movl	$0, -12(%ebp)
-	.loc 1 125 0
-	movl	$100, (%esp)
-	call	_OS_Malloc
-	movl	%eax, -12(%ebp)
-	.loc 1 126 0
-	cmpl	$0, -12(%ebp)
-	jne	L17
-	.loc 1 128 0
-	movl	$3, 4(%esp)
-	movl	$2, (%esp)
-	call	_OS_SetSwBug
-L17:
-	.loc 1 130 0
-	movl	-12(%ebp), %eax
-	.loc 1 131 0
-	leave
-	.cfi_restore 5
-	.cfi_def_cfa 4, 4
-	ret
-	.cfi_endproc
-LFE6:
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -318,7 +244,7 @@ Letext0:
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_common.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x9d4
+	.long	0x952
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -361,7 +287,7 @@ Ldebug_info0:
 	.ascii "os_sw_bugs_e\0"
 	.byte	0x4
 	.byte	0x3
-	.byte	0x2a
+	.byte	0x2b
 	.long	0x208
 	.uleb128 0x5
 	.ascii "os_bug_no_bug\0"
@@ -392,7 +318,7 @@ Ldebug_info0:
 	.ascii "os_sw_bugs_function_e\0"
 	.byte	0x4
 	.byte	0x3
-	.byte	0x36
+	.byte	0x37
 	.long	0x38b
 	.uleb128 0x5
 	.ascii "Func_NoFunction\0"
@@ -853,59 +779,22 @@ Ldebug_info0:
 	.byte	0x91
 	.sleb128 0
 	.byte	0
-	.uleb128 0xf
-	.ascii "OS_Task_DeleteTaskEnvironment\0"
-	.byte	0x1
-	.byte	0x6e
-	.long	LFB5
-	.long	LFE5-LFB5
-	.uleb128 0x1
-	.byte	0x9c
-	.long	0x962
-	.uleb128 0x10
-	.ascii "task\0"
-	.byte	0x1
-	.byte	0x6e
-	.long	0x7e6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 0
-	.byte	0
 	.uleb128 0x12
-	.ascii "OS_Task_CreateTaskEnvironment\0"
-	.byte	0x1
-	.byte	0x7a
 	.long	0x7e6
-	.long	LFB6
-	.long	LFE6-LFB6
-	.uleb128 0x1
-	.byte	0x9c
-	.long	0x9a5
+	.long	0x933
 	.uleb128 0x13
-	.ascii "task\0"
-	.byte	0x1
-	.byte	0x7c
-	.long	0x7e6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -20
-	.byte	0
-	.uleb128 0x14
-	.long	0x7e6
-	.long	0x9b5
-	.uleb128 0x15
-	.long	0x9b5
+	.long	0x933
 	.byte	0x9
 	.byte	0
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
 	.ascii "sizetype\0"
-	.uleb128 0x16
+	.uleb128 0x14
 	.ascii "TASK_PTR\0"
 	.byte	0x1
 	.byte	0xd
-	.long	0x9a5
+	.long	0x923
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_PTR
@@ -1144,48 +1033,6 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x12
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2116
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x13
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x14
 	.uleb128 0x1
 	.byte	0x1
 	.uleb128 0x49
@@ -1194,7 +1041,7 @@ Ldebug_abbrev0:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -1203,7 +1050,7 @@ Ldebug_abbrev0:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x14
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -2018,34 +1865,37 @@ Ldebug_macro0:
 	.uleb128 0xf
 	.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
 	.byte	0x1
-	.uleb128 0x12
-	.ascii "cMCU_X86 3\0"
+	.uleb128 0x10
+	.ascii "DynamicMemoryUsed False\0"
 	.byte	0x1
 	.uleb128 0x13
+	.ascii "cMCU_X86 3\0"
+	.byte	0x1
+	.uleb128 0x14
 	.ascii "cMCU_CORTEX_M4 4\0"
 	.byte	0x1
-	.uleb128 0x16
+	.uleb128 0x17
 	.ascii "NR_OF_CORES 1\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x19
 	.ascii "MCU_CLOCK_IN_HZ ((uint32)168000000u)\0"
 	.byte	0x1
-	.uleb128 0x1c
+	.uleb128 0x1d
 	.ascii "DisableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x1d
+	.uleb128 0x1e
 	.ascii "EnableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x1e
+	.uleb128 0x1f
 	.ascii "Privilige_level_save_current() \0"
 	.byte	0x1
-	.uleb128 0x1f
+	.uleb128 0x20
 	.ascii "Privilige_level_enter_kernel_mode() \0"
 	.byte	0x1
-	.uleb128 0x20
+	.uleb128 0x21
 	.ascii "Privilige_level_restore_saved() \0"
 	.byte	0x1
-	.uleb128 0x21
+	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x4
 	.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
@@ -2323,5 +2173,3 @@ LASF0:
 	.def	_LLF_RESTORE_SYSTEM_STACK;	.scl	2;	.type	32;	.endef
 	.def	_LLF_SAVE_SYSTEM_STACK;	.scl	2;	.type	32;	.endef
 	.def	_task_state_request;	.scl	2;	.type	32;	.endef
-	.def	_OS_Free;	.scl	2;	.type	32;	.endef
-	.def	_OS_Malloc;	.scl	2;	.type	32;	.endef

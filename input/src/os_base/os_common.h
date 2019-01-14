@@ -13,6 +13,7 @@
 #define Local_inline static __inline__
 #define Global_inline __inline__
 #define ReferenceUnusedParameter(x) ((x) = (x))
+#define DynamicMemoryUsed False
 
 /* MCU abstraction */
 #define cMCU_X86        3

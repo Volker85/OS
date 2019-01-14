@@ -915,34 +915,37 @@ Ldebug_macro0:
 	.uleb128 0xf
 	.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
 	.byte	0x1
-	.uleb128 0x12
-	.ascii "cMCU_X86 3\0"
+	.uleb128 0x10
+	.ascii "DynamicMemoryUsed False\0"
 	.byte	0x1
 	.uleb128 0x13
+	.ascii "cMCU_X86 3\0"
+	.byte	0x1
+	.uleb128 0x14
 	.ascii "cMCU_CORTEX_M4 4\0"
 	.byte	0x1
-	.uleb128 0x16
+	.uleb128 0x17
 	.ascii "NR_OF_CORES 1\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x19
 	.ascii "MCU_CLOCK_IN_HZ ((uint32)168000000u)\0"
 	.byte	0x1
-	.uleb128 0x1c
+	.uleb128 0x1d
 	.ascii "DisableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x1d
+	.uleb128 0x1e
 	.ascii "EnableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x1e
+	.uleb128 0x1f
 	.ascii "Privilige_level_save_current() \0"
 	.byte	0x1
-	.uleb128 0x1f
+	.uleb128 0x20
 	.ascii "Privilige_level_enter_kernel_mode() \0"
 	.byte	0x1
-	.uleb128 0x20
+	.uleb128 0x21
 	.ascii "Privilige_level_restore_saved() \0"
 	.byte	0x1
-	.uleb128 0x21
+	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x4
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"

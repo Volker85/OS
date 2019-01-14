@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgVNAzu.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccldXym1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -15,80 +15,78 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgVNAzu.s 			page 1
   12              		.text
   13              	.Ltext0:
   14              		.cfi_sections	.debug_frame
-  15              		.comm	HEAP,10000,4
-  16              		.comm	OS_STACK,20480,4
-  17              		.comm	OS_MAIN_STACK,20480,4
-  18              		.comm	OS_SW_BUG,15,4
-  19              		.comm	OS_STATE,4,4
-  20              		.comm	VAR_HARDFAULT_STATUS_REG,4,4
-  21              		.comm	VAR_MEM_MANAG_FAULT_STATUS_REG,4,4
-  22              		.comm	VAR_USAGE_FAULT_STATUS_REG,4,4
-  23              		.comm	VAR_FAULT_STATUS_REG,4,4
-  24              		.comm	VAR_MEM_FAULT_ADDR_REG,4,4
-  25              		.comm	VAR_BUS_FAULT_ADDR_REG,4,4
-  26              		.comm	VAR_AUX_FAULT_STATUS_REG,4,4
-  27              		.comm	VAR_BUS_FAULT_STATUS_REG,4,4
-  28              		.comm	LINK_REGISTER_HANDLER,4,4
-  29              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
-  30              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
-  31              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
-  32              		.comm	DBG_RLD_VALUE,4,4
-  33              		.comm	DBG_CURR_VAL,4,4
-  34              		.comm	DBG_CTRL_VALUE,4,4
-  35              		.comm	DBG_CALIB_VALUE,4,4
-  36              		.comm	TASK1_CALL_NR,4,4
-  37              		.comm	TASK2_CALL_NR,4,4
-  38              		.comm	TASK3_CALL_NR,4,4
-  39              		.comm	TASK4_CALL_NR,4,4
-  40              		.comm	REGISTER_R0,4,4
-  41              		.comm	REGISTER_R1,4,4
-  42              		.comm	REGISTER_R2,4,4
-  43              		.comm	REGISTER_R3,4,4
-  44              		.comm	REGISTER_R4,4,4
-  45              		.comm	REGISTER_R5,4,4
-  46              		.comm	REGISTER_R6,4,4
-  47              		.comm	REGISTER_R7,4,4
-  48              		.comm	REGISTER_R8,4,4
-  49              		.comm	REGISTER_R9,4,4
-  50              		.comm	REGISTER_R10,4,4
-  51              		.comm	REGISTER_R11,4,4
-  52              		.comm	SAVED_STACK_POINTER,4,4
-  53              		.comm	TASK_STACK,20000,4
-  54              		.comm	LAST_CURRENT_TIME,4,4
-  55              		.comm	TASK_SCHEDULING_QUEUE,40,4
-  56              		.comm	RUNNING_SCHEDULING_QUEUE_ENTRY,4,4
-  57              		.comm	TASK_RUN_QUEUE,1360,4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgVNAzu.s 			page 2
+  15              		.comm	OS_STACK,20480,4
+  16              		.comm	OS_MAIN_STACK,20480,4
+  17              		.comm	OS_SW_BUG,15,4
+  18              		.comm	OS_STATE,4,4
+  19              		.comm	VAR_HARDFAULT_STATUS_REG,4,4
+  20              		.comm	VAR_MEM_MANAG_FAULT_STATUS_REG,4,4
+  21              		.comm	VAR_USAGE_FAULT_STATUS_REG,4,4
+  22              		.comm	VAR_FAULT_STATUS_REG,4,4
+  23              		.comm	VAR_MEM_FAULT_ADDR_REG,4,4
+  24              		.comm	VAR_BUS_FAULT_ADDR_REG,4,4
+  25              		.comm	VAR_AUX_FAULT_STATUS_REG,4,4
+  26              		.comm	VAR_BUS_FAULT_STATUS_REG,4,4
+  27              		.comm	LINK_REGISTER_HANDLER,4,4
+  28              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
+  29              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
+  30              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
+  31              		.comm	DBG_RLD_VALUE,4,4
+  32              		.comm	DBG_CURR_VAL,4,4
+  33              		.comm	DBG_CTRL_VALUE,4,4
+  34              		.comm	DBG_CALIB_VALUE,4,4
+  35              		.comm	TASK1_CALL_NR,4,4
+  36              		.comm	TASK2_CALL_NR,4,4
+  37              		.comm	TASK3_CALL_NR,4,4
+  38              		.comm	TASK4_CALL_NR,4,4
+  39              		.comm	REGISTER_R0,4,4
+  40              		.comm	REGISTER_R1,4,4
+  41              		.comm	REGISTER_R2,4,4
+  42              		.comm	REGISTER_R3,4,4
+  43              		.comm	REGISTER_R4,4,4
+  44              		.comm	REGISTER_R5,4,4
+  45              		.comm	REGISTER_R6,4,4
+  46              		.comm	REGISTER_R7,4,4
+  47              		.comm	REGISTER_R8,4,4
+  48              		.comm	REGISTER_R9,4,4
+  49              		.comm	REGISTER_R10,4,4
+  50              		.comm	REGISTER_R11,4,4
+  51              		.comm	SAVED_STACK_POINTER,4,4
+  52              		.comm	TASK_STACK,20000,4
+  53              		.comm	LAST_CURRENT_TIME,4,4
+  54              		.comm	TASK_SCHEDULING_QUEUE,40,4
+  55              		.comm	RUNNING_SCHEDULING_QUEUE_ENTRY,4,4
+  56              		.comm	TASK_RUN_QUEUE,1360,4
+  57              		.comm	RUNNING_TASK,136,4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccldXym1.s 			page 2
 
 
-  58              		.comm	RUNNING_TASK,136,4
-  59              		.comm	TASK_IDLE_QUEUE,136,4
-  60              		.comm	bTASK_QUEUE_INITIALIZED,1,1
-  61              		.comm	TASK_0_VAR,136,4
-  62              		.comm	TASK_1_VAR,136,4
-  63              		.comm	TASK_2_VAR,136,4
-  64              		.comm	TASK_3_VAR,136,4
-  65              		.comm	TASK_GROUP_1,8,4
-  66              		.comm	TASK_GROUP_2,8,4
-  67              		.comm	TASK_GROUP_3,8,4
-  68              		.comm	TASK_GROUP_4,8,4
-  69              		.comm	TASK_GROUP_5,8,4
-  70              		.comm	TASK_TRANSITION_REJECTED_TASK_ADDR,4,4
-  71              		.comm	TASK_TRANSITION_REJECTED_STATE,1,1
-  72              		.comm	TASK_TRANSITION_CURRENT_STATE,1,1
-  73              	.Letext0:
-  74              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  75              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-  76              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  77              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  78              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  79              		.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgVNAzu.s 			page 3
+  58              		.comm	TASK_IDLE_QUEUE,136,4
+  59              		.comm	bTASK_QUEUE_INITIALIZED,1,1
+  60              		.comm	TASK_0_VAR,136,4
+  61              		.comm	TASK_1_VAR,136,4
+  62              		.comm	TASK_2_VAR,136,4
+  63              		.comm	TASK_3_VAR,136,4
+  64              		.comm	TASK_GROUP_1,8,4
+  65              		.comm	TASK_GROUP_2,8,4
+  66              		.comm	TASK_GROUP_3,8,4
+  67              		.comm	TASK_GROUP_4,8,4
+  68              		.comm	TASK_GROUP_5,8,4
+  69              		.comm	TASK_TRANSITION_REJECTED_TASK_ADDR,4,4
+  70              		.comm	TASK_TRANSITION_REJECTED_STATE,1,1
+  71              		.comm	TASK_TRANSITION_CURRENT_STATE,1,1
+  72              	.Letext0:
+  73              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  74              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+  75              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  76              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  77              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  78              		.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccldXym1.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_ram.c
-                            *COM*:00002710 HEAP
                             *COM*:00005000 OS_STACK
                             *COM*:00005000 OS_MAIN_STACK
                             *COM*:0000000f OS_SW_BUG
@@ -143,15 +141,15 @@ DEFINED SYMBOLS
                             *COM*:00000008 TASK_GROUP_3
                             *COM*:00000008 TASK_GROUP_4
                             *COM*:00000008 TASK_GROUP_5
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgVNAzu.s 			page 4
-
-
                             *COM*:00000004 TASK_TRANSITION_REJECTED_TASK_ADDR
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccldXym1.s 			page 4
+
+
                             *COM*:00000001 TASK_TRANSITION_REJECTED_STATE
                             *COM*:00000001 TASK_TRANSITION_CURRENT_STATE
                            .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
-                           .group:00000000 wm4.os_common.h.2.c6c04bcf238b83a2cba2b703b96f6544
+                           .group:00000000 wm4.os_common.h.2.eb6279ca092455f62aa554ec1864872d
                            .group:00000000 wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898
                            .group:00000000 wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960
                            .group:00000000 wm4.os_stack.h.2.a33fb8b396f31bed4bacb411e67ef75c

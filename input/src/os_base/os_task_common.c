@@ -106,7 +106,7 @@ void OS_Task_InitTaskEnvironment(task_t* task)
       OS_SetSwBug(os_bug_null_pointer,Func_InitTaskEnvironment);
    }
 }
-#if(USE_STATIC_CREATED_TASKS != False)
+#if(USE_STATIC_CREATED_TASKS != False && DynamicMemoryUsed != False)
 void OS_Task_DeleteTaskEnvironment(task_t* task)
 {
    if(task!=0 && task->pStackPointerByMalloc!=0)

@@ -500,6 +500,7 @@ typedef unsigned long uint32;
 #define Local_inline static __inline__
 #define Global_inline __inline__
 #define ReferenceUnusedParameter(x) ((x) = (x))
+#define DynamicMemoryUsed False
 
 
 #define cMCU_X86 3
@@ -509,7 +510,7 @@ typedef unsigned long uint32;
 #define NR_OF_CORES 1
 
 #define MCU_CLOCK_IN_HZ ((uint32)168000000u)
-# 35 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+# 36 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 #define DisableInterrupts() LLF_INT_DISABLE()
 #define EnableInterrupts() LLF_INT_ENABLE()
 #define Privilige_level_save_current() ;
@@ -837,128 +838,3 @@ extern volatile void* SAVED_STACK_POINTER;
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.c" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.c" 2
-
-static uint32 GetUint32Of4Uint8(uint8* ptr);
-static void Set4Uint8ToUint32(uint8* ptr, uint32 value);
-
-
-
-
-
-void* OS_Calloc(uint32 num, uint32 size)
-{
-   uint8* ptr = (uint8*) OS_Malloc(num*size);
-
-   uint32 i;
-   for(i = 0u; i < (size*num); i++)
-   {
-      *((uint8*)ptr + (uint32)i) = 0x00u;
-   }
-   return (void*) ptr;
-}
-# 34 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.c"
-void* OS_Realloc(void* ptr_old, uint32 size_new)
-{
-   uint32 i;
-   void* ptr_new = 0u;
-   if(ptr_old == 0u)
-   {
-      ptr_new = (void*) OS_Malloc(size_new);
-   }
-   else if(size_new != 0u)
-   {
-      void* ptr_new = (void*) OS_Malloc(size_new);
-      if(ptr_new != 0u)
-      {
-         for(i = 0u; i < size_new; i++)
-         {
-            *((uint8*)ptr_new + (uint32)i) = *((uint8*)ptr_old + (uint32)i);
-         }
-      }
-   }
-   else
-   {
-      if(ptr_old != 0u)
-      {
-         OS_Free(ptr_old);
-      }
-      ptr_new = 0u;
-   }
-   return ptr_new;
-}
-
-
-void* OS_Malloc(uint32 size)
-{
-
-   uint8* chunk_ptr = 0;
-   uint8* heap_ptr = 0;
-   uint32 chunk_uint32o_allocate = 0;
-# 91 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.c"
-   if(size < 8)
-   {
-      chunk_uint32o_allocate = 8;
-   }
-   else
-   {
-      chunk_uint32o_allocate = size;
-   }
-   for( heap_ptr = (uint8*) &HEAP;
-         ((heap_ptr + (uint32)8 + (uint32)chunk_uint32o_allocate) <= ((uint8*)&HEAP + (uint32)sizeof(HEAP))) && (chunk_ptr == 0);
-         heap_ptr = heap_ptr + (uint32)8 + size
-      )
-   {
-      size = GetUint32Of4Uint8(heap_ptr + 0);
-
-
-      chunk_ptr = (heap_ptr + 8);
-   }
-   return (void*)chunk_ptr;
-}
-void OS_Free(void* ptr)
-{
-   uint32 size = 0;
-
-   uint8* chunk_ptr = 0;
-   uint8* heap_ptr = 0;
-
-   for( heap_ptr = (uint8*)&HEAP;
-         (heap_ptr + (uint32)8 <= ((uint8*)&HEAP + (uint32)sizeof(HEAP)));
-         heap_ptr = heap_ptr + 8 + size
-      )
-   {
-      size = GetUint32Of4Uint8(heap_ptr + 0);
-
-
-      chunk_ptr = (void*) ((uint8*)heap_ptr + (uint32)8);
-
-      if(chunk_ptr == ptr)
-      {
-         Set4Uint8ToUint32((uint8*)heap_ptr + (uint32)4, 0);
-      }
-   }
-}
-static uint32 GetUint32Of4Uint8(uint8* ptr)
-{
-   uint32 ret_val = 0;
-
-   ret_val += ((uint32) *ptr)<< 24;
-   ptr++;
-   ret_val += ((uint32) *ptr)<< 16;
-   ptr++;
-   ret_val += ((uint32) *ptr)<< 8;
-   ptr++;
-   ret_val += ((uint32) *ptr)<< 0;
-
-   return ret_val;
-}
-static void Set4Uint8ToUint32(uint8* ptr, uint32 value)
-{
-   *ptr = (value >>24)&0xFF;
-   ptr++;
-   *ptr = (value >>16)&0xFF;
-   ptr++;
-   *ptr = (value >>8)&0xFF;
-   ptr++;
-   *ptr = (value >>0)&0xFF;
-}

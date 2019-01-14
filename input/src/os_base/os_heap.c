@@ -1,6 +1,7 @@
 #include "os_firstinc.h"
 #include "..\os_base\os_heap.h"
 
+#if(DynamicMemoryUsed != False)
 Local uint32 GetUint32Of4Uint8(uint8* ptr);
 Local void Set4Uint8ToUint32(uint8* ptr, uint32 value);
 
@@ -155,3 +156,4 @@ Local void Set4Uint8ToUint32(uint8* ptr, uint32 value)
    ptr++;
    *ptr = (value >>0)&0xFF;
 }
+#endif

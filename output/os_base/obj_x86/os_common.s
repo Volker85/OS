@@ -83,7 +83,7 @@ Ldebug_info0:
 	.ascii "os_sw_bugs_e\0"
 	.byte	0x4
 	.byte	0x3
-	.byte	0x2a
+	.byte	0x2b
 	.long	0x1df
 	.uleb128 0x5
 	.ascii "os_bug_no_bug\0"
@@ -113,13 +113,13 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "os_sw_bugs_t\0"
 	.byte	0x3
-	.byte	0x35
+	.byte	0x36
 	.long	0xe1
 	.uleb128 0x4
 	.ascii "os_sw_bugs_function_e\0"
 	.byte	0x4
 	.byte	0x3
-	.byte	0x36
+	.byte	0x37
 	.long	0x376
 	.uleb128 0x5
 	.ascii "Func_NoFunction\0"
@@ -173,7 +173,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "os_sw_bugs_function_t\0"
 	.byte	0x3
-	.byte	0x49
+	.byte	0x4a
 	.long	0x1f3
 	.uleb128 0x2
 	.byte	0x4
@@ -1207,34 +1207,37 @@ Ldebug_macro0:
 	.uleb128 0xf
 	.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
 	.byte	0x1
-	.uleb128 0x12
-	.ascii "cMCU_X86 3\0"
+	.uleb128 0x10
+	.ascii "DynamicMemoryUsed False\0"
 	.byte	0x1
 	.uleb128 0x13
+	.ascii "cMCU_X86 3\0"
+	.byte	0x1
+	.uleb128 0x14
 	.ascii "cMCU_CORTEX_M4 4\0"
 	.byte	0x1
-	.uleb128 0x16
+	.uleb128 0x17
 	.ascii "NR_OF_CORES 1\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x19
 	.ascii "MCU_CLOCK_IN_HZ ((uint32)168000000u)\0"
 	.byte	0x1
-	.uleb128 0x1c
+	.uleb128 0x1d
 	.ascii "DisableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x1d
+	.uleb128 0x1e
 	.ascii "EnableInterrupts() \0"
 	.byte	0x1
-	.uleb128 0x1e
+	.uleb128 0x1f
 	.ascii "Privilige_level_save_current() \0"
 	.byte	0x1
-	.uleb128 0x1f
+	.uleb128 0x20
 	.ascii "Privilige_level_enter_kernel_mode() \0"
 	.byte	0x1
-	.uleb128 0x20
+	.uleb128 0x21
 	.ascii "Privilige_level_restore_saved() \0"
 	.byte	0x1
-	.uleb128 0x21
+	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x4
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"

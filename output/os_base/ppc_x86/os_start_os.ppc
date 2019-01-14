@@ -280,6 +280,7 @@ typedef unsigned long uint32;
 #define Local_inline static __inline__
 #define Global_inline __inline__
 #define ReferenceUnusedParameter(x) ((x) = (x))
+#define DynamicMemoryUsed False
 
 
 #define cMCU_X86 3
@@ -298,7 +299,7 @@ typedef unsigned long uint32;
 #define Privilige_level_enter_kernel_mode() 
 #define Privilige_level_restore_saved() 
 #define HaltMcu() 
-# 42 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_common.h"
+# 43 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_common.h"
 enum os_sw_bugs_e
 {
    os_bug_no_bug = 0,
