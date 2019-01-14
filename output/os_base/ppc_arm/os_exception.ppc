@@ -938,7 +938,7 @@ extern void OS_CreateTask(task_t* task);
 
 
 
-static void OS_Exception_Read_Status_Registers(void)
+static __inline__ void OS_Exception_Read_Status_Registers(void)
 {
 #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
 #define MEM_MANAG_FAULT_STATUS_REG ((volatile uint8*)0xE000ED28u)
