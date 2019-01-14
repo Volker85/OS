@@ -101,6 +101,8 @@ void OS_InitTaskQueue(void)
 task_t* AddToTaskQueue(task_t* task)
 {
    unsigned_char_t element_nr = 0;
+   task_t* ret_task = 0;
+   
    while( (element_nr < MAX_RUN_QUEUE_SIZE)
           &&((&TASK_RUN_QUEUE[element_nr])->task_queued == True)
         )
@@ -154,8 +156,9 @@ task_t* AddToTaskQueue(task_t* task)
       (&TASK_RUN_QUEUE[element_nr])->pStackPointerStart              = task->pStackPointerStart;
       (&TASK_RUN_QUEUE[element_nr])->StackSize                       = task->StackSize;
       (&TASK_RUN_QUEUE[element_nr])->pStackPointerEnd                = task->pStackPointerEnd;
+      ret_task = &TASK_RUN_QUEUE[element_nr];
    }
-   return (&TASK_RUN_QUEUE[element_nr]);
+   return ret_task;
 }
 void DeleteFromTaskQueue(task_t* task)
 {

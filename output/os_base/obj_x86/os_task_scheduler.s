@@ -410,30 +410,39 @@ L44:
 	movl	%eax, (%esp)
 	call	_AddToTaskQueue
 	movl	%eax, 8(%ebp)
-	.loc 1 267 0
+	.loc 1 266 0
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_AddToSchedulingQueue
-	.loc 1 268 0
+	.loc 1 267 0
+	cmpl	$0, 8(%ebp)
+	je	L46
+	.loc 1 269 0
 	movl	8(%ebp), %eax
 	movb	5(%eax), %al
 	leal	1(%eax), %edx
 	movl	8(%ebp), %eax
 	movb	%dl, 5(%eax)
 	jmp	L40
+L46:
+	.loc 1 273 0
+	movl	$11, 4(%esp)
+	movl	$2, (%esp)
+	call	_OS_SetSwBug
+	jmp	L40
 L43:
-	.loc 1 277 0
+	.loc 1 283 0
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_AddToIdleTaskQueue
 	jmp	L40
 L42:
-	.loc 1 283 0
+	.loc 1 289 0
 	movl	$11, 4(%esp)
 	movl	$1, (%esp)
 	call	_OS_SetSwBug
 L40:
-	.loc 1 286 0
+	.loc 1 292 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -444,7 +453,7 @@ LFE5:
 	.def	_OS_StartTask;	.scl	2;	.type	32;	.endef
 _OS_StartTask:
 LFB6:
-	.loc 1 288 0
+	.loc 1 294 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -452,31 +461,31 @@ LFB6:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 296 0
+	.loc 1 302 0
 	cmpl	$0, 8(%ebp)
-	je	L47
-	.loc 1 296 0 is_stmt 0 discriminator 1
+	je	L48
+	.loc 1 302 0 is_stmt 0 discriminator 1
 	cmpl	$0, 12(%ebp)
-	je	L47
-	.loc 1 296 0 discriminator 2
+	je	L48
+	.loc 1 302 0 discriminator 2
 	movl	8(%ebp), %eax
 	movb	(%eax), %al
 	andl	$2, %eax
 	testb	%al, %al
-	jne	L49
-	.loc 1 296 0 discriminator 3
+	jne	L50
+	.loc 1 302 0 discriminator 3
 	movl	8(%ebp), %eax
 	movb	(%eax), %al
 	andl	$4, %eax
 	testb	%al, %al
-	je	L47
-L49:
-	.loc 1 298 0 is_stmt 1
+	je	L48
+L50:
+	.loc 1 304 0 is_stmt 1
 	movl	8(%ebp), %eax
 	movl	48(%eax), %eax
 	testl	%eax, %eax
-	je	L50
-	.loc 1 300 0
+	je	L51
+	.loc 1 306 0
 	movl	8(%ebp), %eax
 	movl	48(%eax), %eax
 	movl	$3, 4(%esp)
@@ -484,21 +493,21 @@ L49:
 	movl	%edx, (%esp)
 	call	*%eax
 	cmpb	$1, %al
-	jne	L51
-	.loc 1 303 0
+	jne	L52
+	.loc 1 309 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	orl	$1, %edx
 	movb	%dl, (%eax)
-	.loc 1 304 0
+	.loc 1 310 0
 	movl	8(%ebp), %eax
 	movl	$0, 12(%eax)
-	.loc 1 305 0
+	.loc 1 311 0
 	movl	8(%ebp), %eax
 	movb	37(%eax), %dl
 	movl	8(%ebp), %eax
 	movb	%dl, 36(%eax)
-	.loc 1 306 0
+	.loc 1 312 0
 	call	_OS_GetCoreId
 	movl	%eax, %edx
 	movl	%edx, %eax
@@ -508,49 +517,49 @@ L49:
 	addl	$_OS_STACK, %eax
 	movl	%eax, (%esp)
 	call	_OS_TASK_SAVE_SYSTEM_STACK
-	.loc 1 307 0
+	.loc 1 313 0
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_OS_TASK_RESTORETASK_ENVIRONMENT
-	.loc 1 308 0
+	.loc 1 314 0
 	call	_OS_GetCurrentTime
 	movl	%eax, %edx
 	movl	8(%ebp), %eax
 	movl	%edx, 32(%eax)
-	.loc 1 312 0
+	.loc 1 318 0
 	movl	12(%ebp), %eax
 	movl	%eax, 4(%esp)
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_SET_RUNNING_TASK
-	.loc 1 314 0
+	.loc 1 320 0
 	movl	8(%ebp), %eax
 	movl	96(%eax), %eax
 	testl	%eax, %eax
-	jne	L52
-	.loc 1 316 0
+	jne	L53
+	.loc 1 322 0
 	call	_LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
-L52:
-	.loc 1 320 0
+L53:
+	.loc 1 326 0
 	movl	8(%ebp), %eax
 	movl	44(%eax), %eax
 	movl	8(%ebp), %edx
 	movl	%edx, (%esp)
 	call	*%eax
-	jmp	L47
-L51:
-	.loc 1 324 0
+	jmp	L48
+L52:
+	.loc 1 330 0
 	movl	$6, 4(%esp)
 	movl	$1, (%esp)
 	call	_OS_SetSwBug
-	jmp	L47
-L50:
-	.loc 1 330 0
+	jmp	L48
+L51:
+	.loc 1 336 0
 	movl	$6, 4(%esp)
 	movl	$2, (%esp)
 	call	_OS_SetSwBug
-L47:
-	.loc 1 339 0
+L48:
+	.loc 1 345 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -561,7 +570,7 @@ LFE6:
 	.def	_OS_TerminateTask;	.scl	2;	.type	32;	.endef
 _OS_TerminateTask:
 LFB7:
-	.loc 1 341 0
+	.loc 1 347 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -569,18 +578,18 @@ LFB7:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 349 0
+	.loc 1 355 0
 	cmpl	$0, 8(%ebp)
-	je	L55
-	.loc 1 349 0 is_stmt 0 discriminator 1
+	je	L56
+	.loc 1 355 0 is_stmt 0 discriminator 1
 	cmpl	$0, 12(%ebp)
-	je	L55
-	.loc 1 351 0 is_stmt 1
+	je	L56
+	.loc 1 357 0 is_stmt 1
 	movl	8(%ebp), %eax
 	movl	48(%eax), %eax
 	testl	%eax, %eax
-	je	L56
-	.loc 1 353 0
+	je	L57
+	.loc 1 359 0
 	movl	8(%ebp), %eax
 	movl	48(%eax), %eax
 	movl	$1, 4(%esp)
@@ -588,12 +597,12 @@ LFB7:
 	movl	%edx, (%esp)
 	call	*%eax
 	cmpb	$1, %al
-	jne	L57
-	.loc 1 356 0
+	jne	L58
+	.loc 1 362 0
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_OS_TaskSaveTaskEnvironment
-	.loc 1 357 0
+	.loc 1 363 0
 	call	_OS_GetCoreId
 	movl	%eax, %edx
 	movl	%edx, %eax
@@ -603,47 +612,47 @@ LFB7:
 	addl	$_OS_STACK, %eax
 	movl	%eax, (%esp)
 	call	_OS_TASK_RESTORE_SYSTEM_STACK
-	.loc 1 358 0
+	.loc 1 364 0
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_DeleteFromTaskQueue
-	.loc 1 359 0
+	.loc 1 365 0
 	movl	12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_DeleteFromSchedulingQueue
-	.loc 1 361 0
+	.loc 1 367 0
 	movl	8(%ebp), %eax
 	movb	(%eax), %dl
 	andl	$-2, %edx
 	movb	%dl, (%eax)
-	.loc 1 363 0
+	.loc 1 369 0
 	movl	8(%ebp), %eax
 	movb	37(%eax), %dl
 	movl	8(%ebp), %eax
 	movb	%dl, 36(%eax)
-	.loc 1 351 0
-	jmp	L54
-L57:
-	.loc 1 368 0
+	.loc 1 357 0
+	jmp	L55
+L58:
+	.loc 1 374 0
 	movl	$8, 4(%esp)
 	movl	$1, (%esp)
 	call	_OS_SetSwBug
-	.loc 1 351 0
-	jmp	L54
-L56:
-	.loc 1 373 0
-	movl	$8, 4(%esp)
-	movl	$2, (%esp)
-	call	_OS_SetSwBug
-	.loc 1 351 0
-	jmp	L54
-L55:
+	.loc 1 357 0
+	jmp	L55
+L57:
 	.loc 1 379 0
 	movl	$8, 4(%esp)
 	movl	$2, (%esp)
 	call	_OS_SetSwBug
-L54:
-	.loc 1 381 0
+	.loc 1 357 0
+	jmp	L55
+L56:
+	.loc 1 385 0
+	movl	$8, 4(%esp)
+	movl	$2, (%esp)
+	call	_OS_SetSwBug
+L55:
+	.loc 1 387 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -654,7 +663,7 @@ LFE7:
 	.def	_OS_TaskDispatcher;	.scl	2;	.type	32;	.endef
 _OS_TaskDispatcher:
 LFB8:
-	.loc 1 383 0
+	.loc 1 389 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -662,53 +671,53 @@ LFB8:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$40, %esp
-	.loc 1 395 0
+	.loc 1 401 0
 	movl	$0, -12(%ebp)
-	.loc 1 397 0
+	.loc 1 403 0
 	call	_GetRunningTask
 	movl	%eax, -12(%ebp)
-	.loc 1 398 0
+	.loc 1 404 0
 	call	_GetRunningSchedulingQueueElementPtr
 	movl	%eax, -16(%ebp)
-	.loc 1 400 0
+	.loc 1 406 0
 	cmpl	$0, -12(%ebp)
-	je	L62
-	.loc 1 400 0 is_stmt 0 discriminator 1
+	je	L63
+	.loc 1 406 0 is_stmt 0 discriminator 1
 	cmpl	$0, -16(%ebp)
-	je	L62
-	.loc 1 402 0 is_stmt 1
+	je	L63
+	.loc 1 408 0 is_stmt 1
 	movl	-16(%ebp), %eax
 	movl	%eax, 4(%esp)
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_OS_TerminateTask
-L62:
-	.loc 1 407 0
+L63:
+	.loc 1 413 0
 	call	_OS_TaskScheduler
 	movl	%eax, -16(%ebp)
-	.loc 1 408 0
+	.loc 1 414 0
 	cmpl	$0, -16(%ebp)
-	je	L63
-	.loc 1 410 0
+	je	L64
+	.loc 1 416 0
 	movl	-16(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_GetFromTaskQueue
 	movl	%eax, -12(%ebp)
-L63:
-	.loc 1 412 0
+L64:
+	.loc 1 418 0
 	cmpl	$0, -12(%ebp)
-	je	L61
-	.loc 1 412 0 is_stmt 0 discriminator 1
+	je	L62
+	.loc 1 418 0 is_stmt 0 discriminator 1
 	cmpl	$0, -16(%ebp)
-	je	L61
-	.loc 1 414 0 is_stmt 1
+	je	L62
+	.loc 1 420 0 is_stmt 1
 	movl	-16(%ebp), %eax
 	movl	%eax, 4(%esp)
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_OS_StartTask
-L61:
-	.loc 1 416 0
+L62:
+	.loc 1 422 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -718,14 +727,14 @@ LFE8:
 	.def	_TASK_0;	.scl	3;	.type	32;	.endef
 _TASK_0:
 LFB9:
-	.loc 1 418 0
+	.loc 1 424 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 421 0
+	.loc 1 427 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -735,7 +744,7 @@ LFE9:
 	.def	_TASK_1;	.scl	3;	.type	32;	.endef
 _TASK_1:
 LFB10:
-	.loc 1 423 0
+	.loc 1 429 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -743,23 +752,23 @@ LFB10:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$40, %esp
-	.loc 1 424 0
+	.loc 1 430 0
 	movl	$0, -12(%ebp)
-	.loc 1 427 0
+	.loc 1 433 0
 	call	_GetRunningSchedulingQueueElementPtr
 	movl	%eax, -12(%ebp)
-	.loc 1 430 0
+	.loc 1 436 0
 	movl	_TASK1_CALL_NR, %eax
 	incl	%eax
 	movl	%eax, _TASK1_CALL_NR
-	.loc 1 431 0
+	.loc 1 437 0
 	movl	-12(%ebp), %eax
 	movl	%eax, 8(%esp)
 	movl	$10, 4(%esp)
 	movl	8(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_OS_SleepTask
-	.loc 1 436 0
+	.loc 1 442 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -769,18 +778,18 @@ LFE10:
 	.def	_TASK_2;	.scl	3;	.type	32;	.endef
 _TASK_2:
 LFB11:
-	.loc 1 438 0
+	.loc 1 444 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 443 0
+	.loc 1 449 0
 	movl	_TASK2_CALL_NR, %eax
 	incl	%eax
 	movl	%eax, _TASK2_CALL_NR
-	.loc 1 448 0
+	.loc 1 454 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -790,18 +799,18 @@ LFE11:
 	.def	_TASK_3;	.scl	3;	.type	32;	.endef
 _TASK_3:
 LFB12:
-	.loc 1 450 0
+	.loc 1 456 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 455 0
+	.loc 1 461 0
 	movl	_TASK3_CALL_NR, %eax
 	incl	%eax
 	movl	%eax, _TASK3_CALL_NR
-	.loc 1 460 0
+	.loc 1 466 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -812,7 +821,7 @@ LFE12:
 	.def	_OS_InitTasks;	.scl	2;	.type	32;	.endef
 _OS_InitTasks:
 LFB13:
-	.loc 1 462 0
+	.loc 1 468 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -820,16 +829,16 @@ LFB13:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$72, %esp
-	.loc 1 463 0
+	.loc 1 469 0
 	movl	$0, -12(%ebp)
-	.loc 1 464 0
+	.loc 1 470 0
 	call	_OS_GetCurrentTime
 	movl	%eax, _LAST_CURRENT_TIME
-	.loc 1 475 0
+	.loc 1 481 0
 	call	_OS_InitTaskQueue
-	.loc 1 478 0
+	.loc 1 484 0
 	movl	$_TASK_0_VAR, -12(%ebp)
-	.loc 1 479 0
+	.loc 1 485 0
 	movl	$0, 36(%esp)
 	movl	$0, 32(%esp)
 	movl	$0, 28(%esp)
@@ -842,13 +851,13 @@ LFB13:
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_OS_InitTask
-	.loc 1 490 0
+	.loc 1 496 0
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_AddToSchedulingQueue
-	.loc 1 494 0
+	.loc 1 500 0
 	movl	$_TASK_1_VAR, -12(%ebp)
-	.loc 1 495 0
+	.loc 1 501 0
 	movl	$1, 36(%esp)
 	movl	$0, 32(%esp)
 	movl	$0, 28(%esp)
@@ -861,13 +870,13 @@ LFB13:
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_OS_InitTask
-	.loc 1 506 0
+	.loc 1 512 0
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_AddToSchedulingQueue
-	.loc 1 510 0
+	.loc 1 516 0
 	movl	$_TASK_2_VAR, -12(%ebp)
-	.loc 1 511 0
+	.loc 1 517 0
 	movl	$2, 36(%esp)
 	movl	$0, 32(%esp)
 	movl	$0, 28(%esp)
@@ -880,13 +889,13 @@ LFB13:
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_OS_InitTask
-	.loc 1 522 0
+	.loc 1 528 0
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_AddToSchedulingQueue
-	.loc 1 526 0
+	.loc 1 532 0
 	movl	$_TASK_3_VAR, -12(%ebp)
-	.loc 1 527 0
+	.loc 1 533 0
 	movl	$3, 36(%esp)
 	movl	$0, 32(%esp)
 	movl	$0, 28(%esp)
@@ -899,11 +908,11 @@ LFB13:
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_OS_InitTask
-	.loc 1 538 0
+	.loc 1 544 0
 	movl	-12(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_AddToSchedulingQueue
-	.loc 1 540 0
+	.loc 1 546 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -913,7 +922,7 @@ LFE13:
 	.def	_OS_TaskScheduler;	.scl	3;	.type	32;	.endef
 _OS_TaskScheduler:
 LFB14:
-	.loc 1 544 0
+	.loc 1 550 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -923,55 +932,55 @@ LFB14:
 	pushl	%ebx
 	subl	$68, %esp
 	.cfi_offset 3, -12
-	.loc 1 549 0
+	.loc 1 555 0
 	movb	$0, -10(%ebp)
-	.loc 1 550 0
+	.loc 1 556 0
 	movl	$0, -20(%ebp)
-	.loc 1 551 0
+	.loc 1 557 0
 	movl	$0, -24(%ebp)
-	.loc 1 552 0
+	.loc 1 558 0
 	movl	$0, -16(%ebp)
-	.loc 1 553 0
+	.loc 1 559 0
 	call	_OS_GetCurrentTime
 	movl	%eax, %edx
 	movl	_LAST_CURRENT_TIME, %eax
 	subl	%eax, %edx
 	movl	%edx, %eax
 	movl	%eax, -28(%ebp)
-	.loc 1 555 0
+	.loc 1 561 0
 	call	_OS_GetCurrentTime
 	movl	%eax, _LAST_CURRENT_TIME
-	.loc 1 571 0
+	.loc 1 577 0
 	movb	$0, -9(%ebp)
-	jmp	L71
-L79:
-	.loc 1 573 0
+	jmp	L72
+L80:
+	.loc 1 579 0
 	movzbl	-9(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_GetFromSchedulingQueue
 	movl	%eax, -32(%ebp)
-	.loc 1 575 0
+	.loc 1 581 0
 	movl	-32(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_GetFromTaskQueue
 	movl	%eax, -20(%ebp)
-	.loc 1 577 0
+	.loc 1 583 0
 	cmpl	$0, -20(%ebp)
-	je	L72
-	.loc 1 577 0 is_stmt 0 discriminator 1
+	je	L73
+	.loc 1 583 0 is_stmt 0 discriminator 1
 	movl	-20(%ebp), %eax
 	movb	(%eax), %al
 	andl	$2, %eax
 	testb	%al, %al
-	je	L72
-	.loc 1 579 0 is_stmt 1
+	je	L73
+	.loc 1 585 0 is_stmt 1
 	movl	-20(%ebp), %eax
 	movl	12(%eax), %edx
 	movl	-20(%ebp), %eax
 	movl	16(%eax), %eax
 	cmpl	%eax, %edx
-	jb	L73
-	.loc 1 581 0
+	jb	L74
+	.loc 1 587 0
 	movl	-20(%ebp), %eax
 	movb	36(%eax), %dl
 	movl	-20(%ebp), %eax
@@ -979,35 +988,35 @@ L79:
 	addl	%eax, %edx
 	movl	-20(%ebp), %eax
 	movb	%dl, 36(%eax)
-L73:
-	.loc 1 584 0
+L74:
+	.loc 1 590 0
 	movl	-20(%ebp), %eax
 	movl	8(%eax), %ebx
 	call	_OS_GetCurrentTime
 	cmpl	%eax, %ebx
-	jbe	L74
-	.loc 1 586 0
+	jbe	L75
+	.loc 1 592 0
 	movl	-20(%ebp), %eax
 	movb	$0, 36(%eax)
-L74:
-	.loc 1 588 0
+L75:
+	.loc 1 594 0
 	movl	-20(%ebp), %eax
 	movl	12(%eax), %edx
 	movl	-20(%ebp), %eax
 	movl	24(%eax), %eax
 	cmpl	%eax, %edx
-	jbe	L75
-	.loc 1 591 0
+	jbe	L76
+	.loc 1 597 0
 	movl	$9, 4(%esp)
 	movl	$3, (%esp)
 	call	_OS_SetSwBug
-L75:
-	.loc 1 594 0
+L76:
+	.loc 1 600 0
 	movl	-20(%ebp), %eax
 	movl	56(%eax), %eax
 	testl	%eax, %eax
-	je	L76
-	.loc 1 597 0
+	je	L77
+	.loc 1 603 0
 	movl	-20(%ebp), %eax
 	movl	56(%eax), %eax
 	movl	(%eax), %edx
@@ -1015,8 +1024,8 @@ L75:
 	movl	56(%eax), %eax
 	movl	4(%eax), %eax
 	cmpl	%eax, %edx
-	jbe	L72
-	.loc 1 599 0
+	jbe	L73
+	.loc 1 605 0
 	movl	-20(%ebp), %eax
 	movl	28(%eax), %eax
 	movl	%eax, -48(%ebp)
@@ -1027,85 +1036,85 @@ L75:
 	fucompp
 	fnstsw	%ax
 	testb	$69, %ah
-	je	L85
-	jmp	L72
-L85:
-	.loc 1 601 0
+	je	L86
+	jmp	L73
+L86:
+	.loc 1 607 0
 	movl	-20(%ebp), %eax
 	movb	$0, 36(%eax)
-	jmp	L72
-L76:
-	.loc 1 608 0
+	jmp	L73
+L77:
+	.loc 1 614 0
 	movl	$9, 4(%esp)
 	movl	$2, (%esp)
 	call	_OS_SetSwBug
-L72:
-	.loc 1 571 0 discriminator 2
+L73:
+	.loc 1 577 0 discriminator 2
 	movb	-9(%ebp), %al
 	incl	%eax
 	movb	%al, -9(%ebp)
-L71:
-	.loc 1 571 0 is_stmt 0 discriminator 1
+L72:
+	.loc 1 577 0 is_stmt 0 discriminator 1
 	cmpb	$9, -9(%ebp)
-	jbe	L79
-	.loc 1 618 0 is_stmt 1
+	jbe	L80
+	.loc 1 624 0 is_stmt 1
 	movb	$0, -9(%ebp)
-	jmp	L80
-L83:
-	.loc 1 620 0
+	jmp	L81
+L84:
+	.loc 1 626 0
 	movzbl	-9(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_GetFromSchedulingQueue
 	movl	%eax, -32(%ebp)
-	.loc 1 621 0
+	.loc 1 627 0
 	movl	-32(%ebp), %eax
 	movl	%eax, (%esp)
 	call	_GetFromTaskQueue
 	movl	%eax, -20(%ebp)
-	.loc 1 622 0
+	.loc 1 628 0
 	cmpl	$0, -20(%ebp)
-	je	L81
-	.loc 1 625 0
+	je	L82
+	.loc 1 631 0
 	movl	-20(%ebp), %eax
 	movb	(%eax), %al
 	andl	$4, %eax
 	testb	%al, %al
-	jne	L82
-	.loc 1 627 0
+	jne	L83
+	.loc 1 633 0
 	movl	-20(%ebp), %eax
 	movl	12(%eax), %edx
 	movl	-28(%ebp), %eax
 	addl	%eax, %edx
 	movl	-20(%ebp), %eax
 	movl	%edx, 12(%eax)
-L82:
-	.loc 1 630 0
+L83:
+	.loc 1 636 0
 	movl	-20(%ebp), %eax
 	movb	36(%eax), %al
 	cmpb	-10(%ebp), %al
-	jbe	L81
-	.loc 1 632 0
+	jbe	L82
+	.loc 1 638 0
 	movl	-20(%ebp), %eax
 	movb	36(%eax), %al
 	movb	%al, -10(%ebp)
-	.loc 1 633 0
+	.loc 1 639 0
 	movl	-20(%ebp), %eax
 	movl	%eax, -24(%ebp)
-	.loc 1 634 0
+	.loc 1 640 0
 	movl	-32(%ebp), %eax
 	movl	%eax, -16(%ebp)
-L81:
-	.loc 1 618 0 discriminator 2
+L82:
+	.loc 1 624 0 discriminator 2
 	movb	-9(%ebp), %al
 	incl	%eax
 	movb	%al, -9(%ebp)
-L80:
-	.loc 1 618 0 is_stmt 0 discriminator 1
+L81:
+	.loc 1 624 0 is_stmt 0 discriminator 1
 	cmpb	$9, -9(%ebp)
-	jbe	L83
-	.loc 1 645 0 is_stmt 1
+	jbe	L84
+	.loc 1 651 0 is_stmt 1
 	movl	-16(%ebp), %eax
-	.loc 1 646 0
+	.loc 1 652 0
 	addl	$68, %esp
 	popl	%ebx
 	.cfi_restore 3
@@ -1753,7 +1762,7 @@ Ldebug_info0:
 	.uleb128 0x17
 	.ascii "OS_StartTask\0"
 	.byte	0x1
-	.word	0x11f
+	.word	0x125
 	.long	LFB6
 	.long	LFE6-LFB6
 	.uleb128 0x1
@@ -1762,7 +1771,7 @@ Ldebug_info0:
 	.uleb128 0x18
 	.secrel32	LASF1
 	.byte	0x1
-	.word	0x11f
+	.word	0x125
 	.long	0x830
 	.uleb128 0x2
 	.byte	0x91
@@ -1770,7 +1779,7 @@ Ldebug_info0:
 	.uleb128 0x18
 	.secrel32	LASF3
 	.byte	0x1
-	.word	0x11f
+	.word	0x125
 	.long	0x8d2
 	.uleb128 0x2
 	.byte	0x91
@@ -1779,7 +1788,7 @@ Ldebug_info0:
 	.uleb128 0x17
 	.ascii "OS_TerminateTask\0"
 	.byte	0x1
-	.word	0x154
+	.word	0x15a
 	.long	LFB7
 	.long	LFE7-LFB7
 	.uleb128 0x1
@@ -1788,7 +1797,7 @@ Ldebug_info0:
 	.uleb128 0x18
 	.secrel32	LASF1
 	.byte	0x1
-	.word	0x154
+	.word	0x15a
 	.long	0x830
 	.uleb128 0x2
 	.byte	0x91
@@ -1796,7 +1805,7 @@ Ldebug_info0:
 	.uleb128 0x18
 	.secrel32	LASF3
 	.byte	0x1
-	.word	0x154
+	.word	0x15a
 	.long	0x8d2
 	.uleb128 0x2
 	.byte	0x91
@@ -1805,7 +1814,7 @@ Ldebug_info0:
 	.uleb128 0x17
 	.ascii "OS_TaskDispatcher\0"
 	.byte	0x1
-	.word	0x17e
+	.word	0x184
 	.long	LFB8
 	.long	LFE8-LFB8
 	.uleb128 0x1
@@ -1814,7 +1823,7 @@ Ldebug_info0:
 	.uleb128 0x19
 	.secrel32	LASF2
 	.byte	0x1
-	.word	0x18a
+	.word	0x190
 	.long	0x8d2
 	.uleb128 0x2
 	.byte	0x91
@@ -1822,7 +1831,7 @@ Ldebug_info0:
 	.uleb128 0x19
 	.secrel32	LASF1
 	.byte	0x1
-	.word	0x18b
+	.word	0x191
 	.long	0x830
 	.uleb128 0x2
 	.byte	0x91
@@ -1831,7 +1840,7 @@ Ldebug_info0:
 	.uleb128 0x1a
 	.ascii "TASK_0\0"
 	.byte	0x1
-	.word	0x1a1
+	.word	0x1a7
 	.long	LFB9
 	.long	LFE9-LFB9
 	.uleb128 0x1
@@ -1840,7 +1849,7 @@ Ldebug_info0:
 	.uleb128 0x18
 	.secrel32	LASF4
 	.byte	0x1
-	.word	0x1a1
+	.word	0x1a7
 	.long	0x4f9
 	.uleb128 0x2
 	.byte	0x91
@@ -1849,7 +1858,7 @@ Ldebug_info0:
 	.uleb128 0x1b
 	.ascii "TASK_1\0"
 	.byte	0x1
-	.word	0x1a6
+	.word	0x1ac
 	.long	LFB10
 	.long	LFE10-LFB10
 	.uleb128 0x1
@@ -1858,7 +1867,7 @@ Ldebug_info0:
 	.uleb128 0x18
 	.secrel32	LASF4
 	.byte	0x1
-	.word	0x1a6
+	.word	0x1ac
 	.long	0x4f9
 	.uleb128 0x2
 	.byte	0x91
@@ -1866,7 +1875,7 @@ Ldebug_info0:
 	.uleb128 0x19
 	.secrel32	LASF2
 	.byte	0x1
-	.word	0x1a8
+	.word	0x1ae
 	.long	0x8d2
 	.uleb128 0x2
 	.byte	0x91
@@ -1875,7 +1884,7 @@ Ldebug_info0:
 	.uleb128 0x1a
 	.ascii "TASK_2\0"
 	.byte	0x1
-	.word	0x1b5
+	.word	0x1bb
 	.long	LFB11
 	.long	LFE11-LFB11
 	.uleb128 0x1
@@ -1884,7 +1893,7 @@ Ldebug_info0:
 	.uleb128 0x18
 	.secrel32	LASF4
 	.byte	0x1
-	.word	0x1b5
+	.word	0x1bb
 	.long	0x4f9
 	.uleb128 0x2
 	.byte	0x91
@@ -1893,7 +1902,7 @@ Ldebug_info0:
 	.uleb128 0x1a
 	.ascii "TASK_3\0"
 	.byte	0x1
-	.word	0x1c1
+	.word	0x1c7
 	.long	LFB12
 	.long	LFE12-LFB12
 	.uleb128 0x1
@@ -1902,7 +1911,7 @@ Ldebug_info0:
 	.uleb128 0x18
 	.secrel32	LASF4
 	.byte	0x1
-	.word	0x1c1
+	.word	0x1c7
 	.long	0x4f9
 	.uleb128 0x2
 	.byte	0x91
@@ -1911,7 +1920,7 @@ Ldebug_info0:
 	.uleb128 0x17
 	.ascii "OS_InitTasks\0"
 	.byte	0x1
-	.word	0x1cd
+	.word	0x1d3
 	.long	LFB13
 	.long	LFE13-LFB13
 	.uleb128 0x1
@@ -1920,7 +1929,7 @@ Ldebug_info0:
 	.uleb128 0x19
 	.secrel32	LASF4
 	.byte	0x1
-	.word	0x1cf
+	.word	0x1d5
 	.long	0x830
 	.uleb128 0x2
 	.byte	0x91
@@ -1929,7 +1938,7 @@ Ldebug_info0:
 	.uleb128 0x1c
 	.ascii "OS_TaskScheduler\0"
 	.byte	0x1
-	.word	0x21f
+	.word	0x225
 	.long	0xc72
 	.long	LFB14
 	.long	LFE14-LFB14
@@ -1939,7 +1948,7 @@ Ldebug_info0:
 	.uleb128 0x1d
 	.ascii "scheduling_queue_member\0"
 	.byte	0x1
-	.word	0x222
+	.word	0x228
 	.long	0x8d2
 	.uleb128 0x2
 	.byte	0x91
@@ -1947,7 +1956,7 @@ Ldebug_info0:
 	.uleb128 0x1d
 	.ascii "element_nr\0"
 	.byte	0x1
-	.word	0x223
+	.word	0x229
 	.long	0x95
 	.uleb128 0x2
 	.byte	0x91
@@ -1955,7 +1964,7 @@ Ldebug_info0:
 	.uleb128 0x1d
 	.ascii "Winner_prio\0"
 	.byte	0x1
-	.word	0x225
+	.word	0x22b
 	.long	0x95
 	.uleb128 0x2
 	.byte	0x91
@@ -1963,7 +1972,7 @@ Ldebug_info0:
 	.uleb128 0x19
 	.secrel32	LASF1
 	.byte	0x1
-	.word	0x226
+	.word	0x22c
 	.long	0x830
 	.uleb128 0x2
 	.byte	0x91
@@ -1971,7 +1980,7 @@ Ldebug_info0:
 	.uleb128 0x1d
 	.ascii "Winner_task\0"
 	.byte	0x1
-	.word	0x227
+	.word	0x22d
 	.long	0x830
 	.uleb128 0x2
 	.byte	0x91
@@ -1979,7 +1988,7 @@ Ldebug_info0:
 	.uleb128 0x1d
 	.ascii "Winner_scheduling_queue_member\0"
 	.byte	0x1
-	.word	0x228
+	.word	0x22e
 	.long	0x8d2
 	.uleb128 0x2
 	.byte	0x91
@@ -1987,7 +1996,7 @@ Ldebug_info0:
 	.uleb128 0x1d
 	.ascii "delta_time\0"
 	.byte	0x1
-	.word	0x229
+	.word	0x22f
 	.long	0x836
 	.uleb128 0x2
 	.byte	0x91

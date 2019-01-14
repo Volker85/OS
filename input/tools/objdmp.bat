@@ -13,5 +13,5 @@ SET OUTPUT_DIR=%BASE_DIR%\output
 SET SRC_DIR=%INPUT_DIR%\src
 SET TOOLS_DIR=%INPUT_DIR%\tools
 SET LIB_DIR=D:\Programm\MinGW\lib
-call arm-none-eabi-objdump.exe -D %OUTPUT_DIR%\os_base\obj_arm\os_task_scheduler.o > %OUTPUT_DIR%\VERSION_ARM\os_task_scheduler.dump
+call arm-none-eabi-objdump.exe -D %OUTPUT_DIR%\os_base\obj_arm\os_task_queue.o > %OUTPUT_DIR%\VERSION_ARM\os_task_queue.dump
 pause

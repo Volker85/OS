@@ -263,9 +263,15 @@ void OS_ActivateTask(task_t* task)
             {
                /* only activate if allowed by rule */
                task = AddToTaskQueue(task);
-
                AddToSchedulingQueue(task);
-               task->NrOfInsActivated++;
+               if(task != 0)
+               {
+                  task->NrOfInsActivated++;
+               }   
+               else
+               {
+                  OS_SetSwBug(os_bug_null_pointer,Func_ActivateTask);
+               }                  
             }
             else
             {

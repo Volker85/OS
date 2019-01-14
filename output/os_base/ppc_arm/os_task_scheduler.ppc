@@ -1143,9 +1143,15 @@ void OS_ActivateTask(task_t* task)
             {
 
                task = AddToTaskQueue(task);
-
                AddToSchedulingQueue(task);
-               task->NrOfInsActivated++;
+               if(task != 0)
+               {
+                  task->NrOfInsActivated++;
+               }
+               else
+               {
+                  OS_SetSwBug(os_bug_null_pointer,Func_ActivateTask);
+               }
             }
             else
             {
@@ -1261,7 +1267,7 @@ void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task)
 }
 void OS_TaskDispatcher(void)
 {
-# 394 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 400 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    scheduling_t* scheduling_task_ptr;
    task_t* task = 0;
 
@@ -1426,7 +1432,7 @@ static scheduling_t* OS_TaskScheduler(void)
    LAST_CURRENT_TIME = OS_GetCurrentTime();
 
    ((Winner_task) = (Winner_task));
-# 571 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 577 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    for((element_nr) = (0); (element_nr) <= ((10)-1); (element_nr)++)
    {
       scheduling_queue_member = GetFromSchedulingQueue(element_nr);
