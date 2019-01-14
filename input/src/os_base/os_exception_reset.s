@@ -64,10 +64,10 @@ OS_Exception_RESET:
         ADD  r11,r11,r5
         ADD  r11,r11,r6
         ADD  r11,r11,r7
-        #;  read the end address 0x2002EDFF
+        #;  read the end address 0x2001BFFF
         MOV  r4, #0x20
-        MOV  r5, #0x02
-        MOV  r6, #0xED
+        MOV  r5, #0x01
+        MOV  r6, #0xBF
         MOV  r7, #0xFF
         MOV  r8,  #0x18
         MOV  r9,  #0x10
