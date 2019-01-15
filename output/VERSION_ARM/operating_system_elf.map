@@ -477,7 +477,7 @@ ram              0x20000000         0x00030000
 Linker script and memory map
 
 
-.text           0x08000000    0x182bc
+.text           0x08000000    0x1833c
                 0x08000000                _ivec_start = .
  os_exception_table.o()
  .text          0x08000000        0x0 os_exception_table.o
@@ -574,500 +574,501 @@ Linker script and memory map
                 0x0800628e       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_interrupt.o
  lld_mmu.o()
  *fill*         0x080062af        0x1 
- .text          0x080062b0        0xc E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
+ .text          0x080062b0       0x3e E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
                 0x080062b0                LLF_MPU_DISABLE
                 0x080062b4                LLF_MPU_SWITCH_OFF_ALL_REGIONS
                 0x080062b6                LLF_GET_MPU_PRESENT
- .data          0x080062bc        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
- .bss           0x080062bc        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
- .debug_line    0x080062bc       0x7d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
- .debug_info    0x08006339       0x26 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
- .debug_abbrev  0x0800635f       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
- *fill*         0x08006373        0x5 
+ .data          0x080062ee        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
+ .bss           0x080062ee        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
+ .debug_line    0x080062ee       0x8c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
+ .debug_info    0x0800637a       0x26 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
+ .debug_abbrev  0x080063a0       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
+ *fill*         0x080063b4        0x4 
  .debug_aranges
-                0x08006378       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
- .debug_str     0x08006398       0x48 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
+                0x080063b8       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
+ .debug_str     0x080063d8       0x48 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
                                  0x8e (size before relaxing)
  .ARM.attributes
-                0x080063e0       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
+                0x08006420       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_mmu.o
  lld_ram.o()
- *fill*         0x08006401        0x3 
- .text          0x08006404       0xa0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
-                0x08006404                INIT_OS_STACK
-                0x0800641e                LLF_CLEAR_ALL_RAM
- .data          0x080064a4        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
- .bss           0x080064a4        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
- .debug_line    0x080064a4       0xad E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
- .debug_info    0x08006551       0x26 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
- .debug_abbrev  0x08006577       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
- *fill*         0x0800658b        0x5 
+ *fill*         0x08006441        0x3 
+ .text          0x08006444       0xa0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
+                0x08006444                INIT_OS_STACK
+                0x0800645e                LLF_CLEAR_ALL_RAM
+ .data          0x080064e4        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
+ .bss           0x080064e4        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
+ .debug_line    0x080064e4       0xad E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
+ .debug_info    0x08006591       0x26 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
+ .debug_abbrev  0x080065b7       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
+ *fill*         0x080065cb        0x5 
  .debug_aranges
-                0x08006590       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
- .debug_str     0x080065b0       0x48 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
+                0x080065d0       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
+ .debug_str     0x080065f0       0x48 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
                                  0x8e (size before relaxing)
  .ARM.attributes
-                0x080065f8       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
+                0x08006638       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_ram.o
  lld_timer.o()
- .text          0x08006619        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_timer.o
- .data          0x08006619        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_timer.o
- .bss           0x08006619        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_timer.o
+ .text          0x08006659        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_timer.o
+ .data          0x08006659        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_timer.o
+ .bss           0x08006659        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_timer.o
  .ARM.attributes
-                0x08006619       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_timer.o
+                0x08006659       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_timer.o
  lld_power.o()
- *fill*         0x0800663a        0x2 
- .text          0x0800663c       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
-                0x0800663c                LLF_MCU_SWITCH_OFF_POWER
-                0x08006642                LLF_MCU_RESET_POWER
- .data          0x0800665c        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
- .bss           0x0800665c        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
- .debug_line    0x0800665c       0x87 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
- .debug_info    0x080066e3       0x26 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
- .debug_abbrev  0x08006709       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
- *fill*         0x0800671d        0x3 
+ *fill*         0x0800667a        0x2 
+ .text          0x0800667c       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
+                0x0800667c                LLF_MCU_SWITCH_OFF_POWER
+                0x08006682                LLF_MCU_RESET_POWER
+ .data          0x0800669c        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
+ .bss           0x0800669c        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
+ .debug_line    0x0800669c       0x87 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
+ .debug_info    0x08006723       0x26 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
+ .debug_abbrev  0x08006749       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
+ *fill*         0x0800675d        0x3 
  .debug_aranges
-                0x08006720       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
- .debug_str     0x08006740       0x4a E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
+                0x08006760       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
+ .debug_str     0x08006780       0x4a E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
                                  0x90 (size before relaxing)
  .ARM.attributes
-                0x0800678a       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
+                0x080067ca       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\lld_power.o
  os_exception_reset.o()
- *fill*         0x080067ab        0x1 
- .text          0x080067ac       0xbc E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
-                0x080067ac                OS_Exception_RESET
- .data          0x08006868        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
- .bss           0x08006868        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
- .debug_line    0x08006868       0xbe E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
- .debug_info    0x08006926       0x26 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
- .debug_abbrev  0x0800694c       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
+ *fill*         0x080067eb        0x1 
+ .text          0x080067ec       0xbc E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
+                0x080067ec                OS_Exception_RESET
+ .data          0x080068a8        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
+ .bss           0x080068a8        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
+ .debug_line    0x080068a8       0xbe E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
+ .debug_info    0x08006966       0x26 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
+ .debug_abbrev  0x0800698c       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
  .debug_aranges
-                0x08006960       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
- .debug_str     0x08006980       0x50 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
+                0x080069a0       0x20 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
+ .debug_str     0x080069c0       0x50 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
                                  0x96 (size before relaxing)
  .ARM.attributes
-                0x080069d0       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
+                0x08006a10       0x21 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o
  os_common.o()
- *fill*         0x080069f1        0x3 
- .text          0x080069f4       0x38 os_common.o
-                0x080069f4                OS_SetSwBug
-                0x08006a1c                OS_GetCurrentTime
- .data          0x08006a2c        0x0 os_common.o
- .bss           0x08006a2c        0x0 os_common.o
- .debug_info    0x08006a2c      0x70b os_common.o
- .debug_abbrev  0x08007137      0x131 os_common.o
+ *fill*         0x08006a31        0x3 
+ .text          0x08006a34       0x38 os_common.o
+                0x08006a34                OS_SetSwBug
+                0x08006a5c                OS_GetCurrentTime
+ .data          0x08006a6c        0x0 os_common.o
+ .bss           0x08006a6c        0x0 os_common.o
+ .debug_info    0x08006a6c      0x70b os_common.o
+ .debug_abbrev  0x08007177      0x131 os_common.o
  .debug_aranges
-                0x08007268       0x20 os_common.o
- .debug_macro   0x08007288       0xa2 os_common.o
- .debug_line    0x0800732a      0x1eb os_common.o
- .debug_str     0x08007515      0x1e9 os_common.o
+                0x080072a8       0x20 os_common.o
+ .debug_macro   0x080072c8       0xa2 os_common.o
+ .debug_line    0x0800736a      0x1eb os_common.o
+ .debug_str     0x08007555      0x1e9 os_common.o
                                0x3b60 (size before relaxing)
- .comment       0x080076fe       0x80 os_common.o
- *fill*         0x080076fe        0x2 
- .debug_frame   0x08007700       0x5c os_common.o
+ .comment       0x0800773e       0x80 os_common.o
+ *fill*         0x0800773e        0x2 
+ .debug_frame   0x08007740       0x5c os_common.o
  .ARM.attributes
-                0x0800775c       0x33 os_common.o
+                0x0800779c       0x33 os_common.o
  os_exception.o()
- *fill*         0x0800778f        0x1 
- .text          0x08007790      0x274 os_exception.o
-                0x08007818                OS_Exception_HARDFAULT
-                0x08007830                OS_Exception_NMI
-                0x08007848                OS_Exception_SWI
-                0x08007860                OS_Exception_BUS_FAULT
-                0x08007878                OS_Exception_DEBUG
-                0x08007882                OS_Exception_MEM_MANAG_FAULT
-                0x08007898                OS_Exception_USAGE_FAULT
-                0x080078b0                OS_Exception_PendSV
-                0x080078b6                OS_Exception_Systick
-                0x080079ec                OS_Exception_IRQ
-                0x080079f8                OS_Exception_FIQ
- .data          0x08007a04        0x0 os_exception.o
- .bss           0x08007a04        0x0 os_exception.o
- .debug_info    0x08007a04      0x772 os_exception.o
- .debug_abbrev  0x08008176      0x15f os_exception.o
+ *fill*         0x080077cf        0x1 
+ .text          0x080077d0      0x274 os_exception.o
+                0x08007858                OS_Exception_HARDFAULT
+                0x08007870                OS_Exception_NMI
+                0x08007888                OS_Exception_SWI
+                0x080078a0                OS_Exception_BUS_FAULT
+                0x080078b8                OS_Exception_DEBUG
+                0x080078c2                OS_Exception_MEM_MANAG_FAULT
+                0x080078d8                OS_Exception_USAGE_FAULT
+                0x080078f0                OS_Exception_PendSV
+                0x080078f6                OS_Exception_Systick
+                0x08007a2c                OS_Exception_IRQ
+                0x08007a38                OS_Exception_FIQ
+ .data          0x08007a44        0x0 os_exception.o
+ .bss           0x08007a44        0x0 os_exception.o
+ .debug_info    0x08007a44      0x772 os_exception.o
+ .debug_abbrev  0x080081b6      0x15f os_exception.o
  .debug_aranges
-                0x080082d5       0x20 os_exception.o
- .debug_macro   0x080082f5      0x13b os_exception.o
- .debug_macro   0x08008430      0xa3c os_exception.o
- .debug_macro   0x08008e6c       0x1c os_exception.o
- .debug_macro   0x08008e88       0x28 os_exception.o
- .debug_line    0x08008eb0      0x2b5 os_exception.o
- .debug_str     0x08009165      0x64f os_exception.o
+                0x08008315       0x20 os_exception.o
+ .debug_macro   0x08008335      0x13b os_exception.o
+ .debug_macro   0x08008470      0xa3c os_exception.o
+ .debug_macro   0x08008eac       0x1c os_exception.o
+ .debug_macro   0x08008ec8       0x28 os_exception.o
+ .debug_line    0x08008ef0      0x2b5 os_exception.o
+ .debug_str     0x080091a5      0x64f os_exception.o
                                0x3f6b (size before relaxing)
- .comment       0x080097b4       0x80 os_exception.o
- .debug_frame   0x080097b4      0x174 os_exception.o
+ .comment       0x080097f4       0x80 os_exception.o
+ .debug_frame   0x080097f4      0x174 os_exception.o
  .ARM.attributes
-                0x08009928       0x33 os_exception.o
+                0x08009968       0x33 os_exception.o
  os_exception_isr_handler.o()
- *fill*         0x0800995b        0x1 
- .text          0x0800995c        0xc os_exception_isr_handler.o
-                0x0800995c                OS_ISRHANDLERC0
- .data          0x08009968        0x0 os_exception_isr_handler.o
- .bss           0x08009968        0x0 os_exception_isr_handler.o
- .debug_info    0x08009968      0x65c os_exception_isr_handler.o
- .debug_abbrev  0x08009fc4      0x108 os_exception_isr_handler.o
+ *fill*         0x0800999b        0x1 
+ .text          0x0800999c        0xc os_exception_isr_handler.o
+                0x0800999c                OS_ISRHANDLERC0
+ .data          0x080099a8        0x0 os_exception_isr_handler.o
+ .bss           0x080099a8        0x0 os_exception_isr_handler.o
+ .debug_info    0x080099a8      0x65c os_exception_isr_handler.o
+ .debug_abbrev  0x0800a004      0x108 os_exception_isr_handler.o
  .debug_aranges
-                0x0800a0cc       0x20 os_exception_isr_handler.o
- .debug_macro   0x0800a0ec       0xab os_exception_isr_handler.o
- .debug_line    0x0800a197      0x20d os_exception_isr_handler.o
- .debug_str     0x0800a3a4       0x66 os_exception_isr_handler.o
+                0x0800a10c       0x20 os_exception_isr_handler.o
+ .debug_macro   0x0800a12c       0xab os_exception_isr_handler.o
+ .debug_line    0x0800a1d7      0x20d os_exception_isr_handler.o
+ .debug_str     0x0800a3e4       0x66 os_exception_isr_handler.o
                                0x3a4d (size before relaxing)
- .comment       0x0800a40a       0x80 os_exception_isr_handler.o
- *fill*         0x0800a40a        0x2 
- .debug_frame   0x0800a40c       0x34 os_exception_isr_handler.o
+ .comment       0x0800a44a       0x80 os_exception_isr_handler.o
+ *fill*         0x0800a44a        0x2 
+ .debug_frame   0x0800a44c       0x34 os_exception_isr_handler.o
  .ARM.attributes
-                0x0800a440       0x33 os_exception_isr_handler.o
+                0x0800a480       0x33 os_exception_isr_handler.o
  os_exception_table.o()
  os_init_task_system.o()
- *fill*         0x0800a473        0x1 
- .text          0x0800a474        0xc os_init_task_system.o
-                0x0800a474                OS_InitTaskSystem
- .data          0x0800a480        0x0 os_init_task_system.o
- .bss           0x0800a480        0x0 os_init_task_system.o
- .debug_info    0x0800a480      0x65c os_init_task_system.o
- .debug_abbrev  0x0800aadc      0x108 os_init_task_system.o
+ *fill*         0x0800a4b3        0x1 
+ .text          0x0800a4b4        0xc os_init_task_system.o
+                0x0800a4b4                OS_InitTaskSystem
+ .data          0x0800a4c0        0x0 os_init_task_system.o
+ .bss           0x0800a4c0        0x0 os_init_task_system.o
+ .debug_info    0x0800a4c0      0x65c os_init_task_system.o
+ .debug_abbrev  0x0800ab1c      0x108 os_init_task_system.o
  .debug_aranges
-                0x0800abe4       0x20 os_init_task_system.o
- .debug_macro   0x0800ac04       0xb1 os_init_task_system.o
- .debug_macro   0x0800acb5       0x22 os_init_task_system.o
- .debug_line    0x0800acd7      0x209 os_init_task_system.o
- .debug_str     0x0800aee0       0x63 os_init_task_system.o
+                0x0800ac24       0x20 os_init_task_system.o
+ .debug_macro   0x0800ac44       0xb1 os_init_task_system.o
+ .debug_macro   0x0800acf5       0x22 os_init_task_system.o
+ .debug_line    0x0800ad17      0x209 os_init_task_system.o
+ .debug_str     0x0800af20       0x63 os_init_task_system.o
                                0x3a4a (size before relaxing)
- .comment       0x0800af43       0x80 os_init_task_system.o
- *fill*         0x0800af43        0x1 
- .debug_frame   0x0800af44       0x2c os_init_task_system.o
+ .comment       0x0800af83       0x80 os_init_task_system.o
+ *fill*         0x0800af83        0x1 
+ .debug_frame   0x0800af84       0x2c os_init_task_system.o
  .ARM.attributes
-                0x0800af70       0x33 os_init_task_system.o
+                0x0800afb0       0x33 os_init_task_system.o
  os_main.o()
- *fill*         0x0800afa3        0x1 
- .text          0x0800afa4      0x148 os_main.o
-                0x0800b02c                OS_StateHandler
- .data          0x0800b0ec        0x0 os_main.o
- .bss           0x0800b0ec        0x9 os_main.o
- .debug_info    0x0800b0f5      0x6f9 os_main.o
- .debug_abbrev  0x0800b7ee      0x12f os_main.o
+ *fill*         0x0800afe3        0x1 
+ .text          0x0800afe4      0x148 os_main.o
+                0x0800b06c                OS_StateHandler
+ .data          0x0800b12c        0x0 os_main.o
+ .bss           0x0800b12c        0x9 os_main.o
+ .debug_info    0x0800b135      0x6f9 os_main.o
+ .debug_abbrev  0x0800b82e      0x12f os_main.o
  .debug_aranges
-                0x0800b91d       0x20 os_main.o
- .debug_macro   0x0800b93d       0xdc os_main.o
- .debug_line    0x0800ba19      0x29d os_main.o
- .debug_str     0x0800bcb6      0x125 os_main.o
+                0x0800b95d       0x20 os_main.o
+ .debug_macro   0x0800b97d       0xdc os_main.o
+ .debug_line    0x0800ba59      0x29d os_main.o
+ .debug_str     0x0800bcf6      0x125 os_main.o
                                0x3bf5 (size before relaxing)
- .comment       0x0800bddb       0x80 os_main.o
- *fill*         0x0800bddb        0x1 
- .debug_frame   0x0800bddc       0x48 os_main.o
+ .comment       0x0800be1b       0x80 os_main.o
+ *fill*         0x0800be1b        0x1 
+ .debug_frame   0x0800be1c       0x48 os_main.o
  .ARM.attributes
-                0x0800be24       0x33 os_main.o
+                0x0800be64       0x33 os_main.o
  os_memory_mmu_setup.o()
- *fill*         0x0800be57        0x1 
- .text          0x0800be58        0xc os_memory_mmu_setup.o
-                0x0800be58                OS_MmuSetup
- .data          0x0800be64        0x0 os_memory_mmu_setup.o
- .bss           0x0800be64        0x0 os_memory_mmu_setup.o
- .debug_info    0x0800be64      0x65c os_memory_mmu_setup.o
- .debug_abbrev  0x0800c4c0      0x108 os_memory_mmu_setup.o
+ *fill*         0x0800be97        0x1 
+ .text          0x0800be98       0x14 os_memory_mmu_setup.o
+                0x0800be98                OS_MmuSetup
+ .data          0x0800beac        0x0 os_memory_mmu_setup.o
+ .bss           0x0800beac        0x0 os_memory_mmu_setup.o
+ .debug_info    0x0800beac      0x65c os_memory_mmu_setup.o
+ .debug_abbrev  0x0800c508      0x108 os_memory_mmu_setup.o
  .debug_aranges
-                0x0800c5c8       0x20 os_memory_mmu_setup.o
- .debug_macro   0x0800c5e8       0xda os_memory_mmu_setup.o
- .debug_line    0x0800c6c2      0x1df os_memory_mmu_setup.o
- .debug_str     0x0800c8a1      0x1cb os_memory_mmu_setup.o
+                0x0800c610       0x20 os_memory_mmu_setup.o
+ .debug_macro   0x0800c630       0xda os_memory_mmu_setup.o
+ .debug_line    0x0800c70a      0x1e7 os_memory_mmu_setup.o
+ .debug_str     0x0800c8f1      0x1cb os_memory_mmu_setup.o
                                0x3b42 (size before relaxing)
- .comment       0x0800ca6c       0x80 os_memory_mmu_setup.o
- .debug_frame   0x0800ca6c       0x34 os_memory_mmu_setup.o
+ .comment       0x0800cabc       0x80 os_memory_mmu_setup.o
+ .debug_frame   0x0800cabc       0x2c os_memory_mmu_setup.o
  .ARM.attributes
-                0x0800caa0       0x33 os_memory_mmu_setup.o
+                0x0800cae8       0x33 os_memory_mmu_setup.o
  os_shutdown.o()
- *fill*         0x0800cad3        0x1 
- .text          0x0800cad4       0x6c os_shutdown.o
-                0x0800caec                OS_DeinitMc
-                0x0800caf8                OS_Shutdown
- .data          0x0800cb40        0x0 os_shutdown.o
- .bss           0x0800cb40        0x0 os_shutdown.o
- .debug_info    0x0800cb40      0x6e3 os_shutdown.o
- .debug_abbrev  0x0800d223      0x14e os_shutdown.o
+ *fill*         0x0800cb1b        0x1 
+ .text          0x0800cb1c       0x6c os_shutdown.o
+                0x0800cb34                OS_DeinitMc
+                0x0800cb40                OS_Shutdown
+ .data          0x0800cb88        0x0 os_shutdown.o
+ .bss           0x0800cb88        0x0 os_shutdown.o
+ .debug_info    0x0800cb88      0x6e3 os_shutdown.o
+ .debug_abbrev  0x0800d26b      0x14e os_shutdown.o
  .debug_aranges
-                0x0800d371       0x20 os_shutdown.o
- .debug_macro   0x0800d391       0xb2 os_shutdown.o
- .debug_line    0x0800d443      0x211 os_shutdown.o
- .debug_str     0x0800d654       0xa9 os_shutdown.o
+                0x0800d3b9       0x20 os_shutdown.o
+ .debug_macro   0x0800d3d9       0xb2 os_shutdown.o
+ .debug_line    0x0800d48b      0x211 os_shutdown.o
+ .debug_str     0x0800d69c       0xa9 os_shutdown.o
                                0x3a80 (size before relaxing)
- .comment       0x0800d6fd       0x80 os_shutdown.o
- *fill*         0x0800d6fd        0x3 
- .debug_frame   0x0800d700       0x9c os_shutdown.o
+ .comment       0x0800d745       0x80 os_shutdown.o
+ *fill*         0x0800d745        0x3 
+ .debug_frame   0x0800d748       0x9c os_shutdown.o
  .ARM.attributes
-                0x0800d79c       0x33 os_shutdown.o
+                0x0800d7e4       0x33 os_shutdown.o
  os_start_ext_prg.o()
- *fill*         0x0800d7cf        0x1 
- .text          0x0800d7d0       0x4a os_start_ext_prg.o
-                0x0800d7e8                OS_StartExtPrg
- .data          0x0800d81a        0x0 os_start_ext_prg.o
- .bss           0x0800d81a        0x0 os_start_ext_prg.o
- .debug_info    0x0800d81a      0x6dd os_start_ext_prg.o
- .debug_abbrev  0x0800def7      0x138 os_start_ext_prg.o
+ *fill*         0x0800d817        0x1 
+ .text          0x0800d818       0x4a os_start_ext_prg.o
+                0x0800d830                OS_StartExtPrg
+ .data          0x0800d862        0x0 os_start_ext_prg.o
+ .bss           0x0800d862        0x0 os_start_ext_prg.o
+ .debug_info    0x0800d862      0x6dd os_start_ext_prg.o
+ .debug_abbrev  0x0800df3f      0x138 os_start_ext_prg.o
  .debug_aranges
-                0x0800e02f       0x20 os_start_ext_prg.o
- .debug_macro   0x0800e04f       0x9e os_start_ext_prg.o
- .debug_line    0x0800e0ed      0x1ea os_start_ext_prg.o
- .debug_str     0x0800e2d7       0x90 os_start_ext_prg.o
+                0x0800e077       0x20 os_start_ext_prg.o
+ .debug_macro   0x0800e097       0x9e os_start_ext_prg.o
+ .debug_line    0x0800e135      0x1ea os_start_ext_prg.o
+ .debug_str     0x0800e31f       0x90 os_start_ext_prg.o
                                0x3a12 (size before relaxing)
- .comment       0x0800e367       0x80 os_start_ext_prg.o
- *fill*         0x0800e367        0x1 
- .debug_frame   0x0800e368       0x60 os_start_ext_prg.o
+ .comment       0x0800e3af       0x80 os_start_ext_prg.o
+ *fill*         0x0800e3af        0x1 
+ .debug_frame   0x0800e3b0       0x60 os_start_ext_prg.o
  .ARM.attributes
-                0x0800e3c8       0x33 os_start_ext_prg.o
+                0x0800e410       0x33 os_start_ext_prg.o
  os_start_init_hw.o()
- *fill*         0x0800e3fb        0x1 
- .text          0x0800e3fc        0xc os_start_init_hw.o
-                0x0800e3fc                OS_InitHw
- .data          0x0800e408        0x0 os_start_init_hw.o
- .bss           0x0800e408        0x0 os_start_init_hw.o
- .debug_info    0x0800e408      0x65c os_start_init_hw.o
- .debug_abbrev  0x0800ea64      0x108 os_start_init_hw.o
+ *fill*         0x0800e443        0x1 
+ .text          0x0800e444        0xc os_start_init_hw.o
+                0x0800e444                OS_InitHw
+ .data          0x0800e450        0x0 os_start_init_hw.o
+ .bss           0x0800e450        0x0 os_start_init_hw.o
+ .debug_info    0x0800e450      0x65c os_start_init_hw.o
+ .debug_abbrev  0x0800eaac      0x108 os_start_init_hw.o
  .debug_aranges
-                0x0800eb6c       0x20 os_start_init_hw.o
- .debug_macro   0x0800eb8c       0x9e os_start_init_hw.o
- .debug_line    0x0800ec2a      0x1da os_start_init_hw.o
- .debug_str     0x0800ee04       0x58 os_start_init_hw.o
+                0x0800ebb4       0x20 os_start_init_hw.o
+ .debug_macro   0x0800ebd4       0x9e os_start_init_hw.o
+ .debug_line    0x0800ec72      0x1da os_start_init_hw.o
+ .debug_str     0x0800ee4c       0x58 os_start_init_hw.o
                                0x39cf (size before relaxing)
- .comment       0x0800ee5c       0x80 os_start_init_hw.o
- .debug_frame   0x0800ee5c       0x34 os_start_init_hw.o
+ .comment       0x0800eea4       0x80 os_start_init_hw.o
+ .debug_frame   0x0800eea4       0x34 os_start_init_hw.o
  .ARM.attributes
-                0x0800ee90       0x33 os_start_init_hw.o
+                0x0800eed8       0x33 os_start_init_hw.o
  os_start_init_mc.o()
- *fill*         0x0800eec3        0x1 
- .text          0x0800eec4        0xc os_start_init_mc.o
-                0x0800eec4                OS_InitMc
- .data          0x0800eed0        0x0 os_start_init_mc.o
- .bss           0x0800eed0        0x0 os_start_init_mc.o
- .debug_info    0x0800eed0      0x65c os_start_init_mc.o
- .debug_abbrev  0x0800f52c      0x108 os_start_init_mc.o
+ *fill*         0x0800ef0b        0x1 
+ .text          0x0800ef0c        0xc os_start_init_mc.o
+                0x0800ef0c                OS_InitMc
+ .data          0x0800ef18        0x0 os_start_init_mc.o
+ .bss           0x0800ef18        0x0 os_start_init_mc.o
+ .debug_info    0x0800ef18      0x65c os_start_init_mc.o
+ .debug_abbrev  0x0800f574      0x108 os_start_init_mc.o
  .debug_aranges
-                0x0800f634       0x20 os_start_init_mc.o
- .debug_macro   0x0800f654       0xa8 os_start_init_mc.o
- .debug_line    0x0800f6fc      0x1f0 os_start_init_mc.o
- .debug_str     0x0800f8ec       0x58 os_start_init_mc.o
-                               0x39e5 (size before relaxing)
- .comment       0x0800f944       0x80 os_start_init_mc.o
- .debug_frame   0x0800f944       0x34 os_start_init_mc.o
+                0x0800f67c       0x20 os_start_init_mc.o
+ .debug_macro   0x0800f69c       0xb2 os_start_init_mc.o
+ .debug_line    0x0800f74e      0x20a os_start_init_mc.o
+ .debug_str     0x0800f958       0x71 os_start_init_mc.o
+                               0x39fe (size before relaxing)
+ .comment       0x0800f9c9       0x80 os_start_init_mc.o
+ *fill*         0x0800f9c9        0x3 
+ .debug_frame   0x0800f9cc       0x2c os_start_init_mc.o
  .ARM.attributes
-                0x0800f978       0x33 os_start_init_mc.o
+                0x0800f9f8       0x33 os_start_init_mc.o
  os_start_init_sw.o()
- *fill*         0x0800f9ab        0x1 
- .text          0x0800f9ac       0x70 os_start_init_sw.o
-                0x0800f9ac                OS_InitSw
- .data          0x0800fa1c        0x0 os_start_init_sw.o
- .bss           0x0800fa1c        0x0 os_start_init_sw.o
- .debug_info    0x0800fa1c      0x669 os_start_init_sw.o
- .debug_abbrev  0x08010085      0x117 os_start_init_sw.o
+ *fill*         0x0800fa2b        0x1 
+ .text          0x0800fa2c       0x70 os_start_init_sw.o
+                0x0800fa2c                OS_InitSw
+ .data          0x0800fa9c        0x0 os_start_init_sw.o
+ .bss           0x0800fa9c        0x0 os_start_init_sw.o
+ .debug_info    0x0800fa9c      0x669 os_start_init_sw.o
+ .debug_abbrev  0x08010105      0x117 os_start_init_sw.o
  .debug_aranges
-                0x0801019c       0x20 os_start_init_sw.o
- .debug_macro   0x080101bc       0x9e os_start_init_sw.o
- .debug_line    0x0801025a      0x1f3 os_start_init_sw.o
- .debug_str     0x0801044d       0x58 os_start_init_sw.o
+                0x0801021c       0x20 os_start_init_sw.o
+ .debug_macro   0x0801023c       0x9e os_start_init_sw.o
+ .debug_line    0x080102da      0x1f3 os_start_init_sw.o
+ .debug_str     0x080104cd       0x58 os_start_init_sw.o
                                0x39cf (size before relaxing)
- .comment       0x080104a5       0x80 os_start_init_sw.o
- *fill*         0x080104a5        0x3 
- .debug_frame   0x080104a8       0x38 os_start_init_sw.o
+ .comment       0x08010525       0x80 os_start_init_sw.o
+ *fill*         0x08010525        0x3 
+ .debug_frame   0x08010528       0x38 os_start_init_sw.o
  .ARM.attributes
-                0x080104e0       0x33 os_start_init_sw.o
+                0x08010560       0x33 os_start_init_sw.o
  os_start_os.o()
- *fill*         0x08010513        0x1 
- .text          0x08010514       0x8c os_start_os.o
-                0x08010514                OS_StartOs
- .data          0x080105a0        0x0 os_start_os.o
- .bss           0x080105a0        0x0 os_start_os.o
- .debug_info    0x080105a0      0x65c os_start_os.o
- .debug_abbrev  0x08010bfc      0x108 os_start_os.o
+ *fill*         0x08010593        0x1 
+ .text          0x08010594       0x8c os_start_os.o
+                0x08010594                OS_StartOs
+ .data          0x08010620        0x0 os_start_os.o
+ .bss           0x08010620        0x0 os_start_os.o
+ .debug_info    0x08010620      0x65c os_start_os.o
+ .debug_abbrev  0x08010c7c      0x108 os_start_os.o
  .debug_aranges
-                0x08010d04       0x20 os_start_os.o
- .debug_macro   0x08010d24       0xc0 os_start_os.o
- .debug_line    0x08010de4      0x1f1 os_start_os.o
- .debug_str     0x08010fd5      0x233 os_start_os.o
+                0x08010d84       0x20 os_start_os.o
+ .debug_macro   0x08010da4       0xc0 os_start_os.o
+ .debug_line    0x08010e64      0x1f1 os_start_os.o
+ .debug_str     0x08011055      0x233 os_start_os.o
                                0x3baa (size before relaxing)
- .comment       0x08011208       0x80 os_start_os.o
- .debug_frame   0x08011208       0x2c os_start_os.o
+ .comment       0x08011288       0x80 os_start_os.o
+ .debug_frame   0x08011288       0x2c os_start_os.o
  .ARM.attributes
-                0x08011234       0x33 os_start_os.o
+                0x080112b4       0x33 os_start_os.o
  os_task_common.o()
- *fill*         0x08011267        0x1 
- .text          0x08011268      0x184 os_task_common.o
-                0x08011268                OS_TaskSaveTaskEnvironment
-                0x080112a6                OS_TASK_RESTORETASK_ENVIRONMENT
-                0x080112d6                OS_TASK_RESTORE_SYSTEM_STACK
-                0x080112ec                OS_TASK_SAVE_SYSTEM_STACK
-                0x08011302                OS_Task_InitTaskEnvironment
- .data          0x080113ec        0x0 os_task_common.o
- .bss           0x080113ec        0x0 os_task_common.o
- .debug_info    0x080113ec      0x78b os_task_common.o
- .debug_abbrev  0x08011b77      0x13e os_task_common.o
+ *fill*         0x080112e7        0x1 
+ .text          0x080112e8      0x184 os_task_common.o
+                0x080112e8                OS_TaskSaveTaskEnvironment
+                0x08011326                OS_TASK_RESTORETASK_ENVIRONMENT
+                0x08011356                OS_TASK_RESTORE_SYSTEM_STACK
+                0x0801136c                OS_TASK_SAVE_SYSTEM_STACK
+                0x08011382                OS_Task_InitTaskEnvironment
+ .data          0x0801146c        0x0 os_task_common.o
+ .bss           0x0801146c        0x0 os_task_common.o
+ .debug_info    0x0801146c      0x78b os_task_common.o
+ .debug_abbrev  0x08011bf7      0x13e os_task_common.o
  .debug_aranges
-                0x08011cb5       0x20 os_task_common.o
- .debug_macro   0x08011cd5       0xaf os_task_common.o
- .debug_line    0x08011d84      0x247 os_task_common.o
- .debug_str     0x08011fcb       0xeb os_task_common.o
+                0x08011d35       0x20 os_task_common.o
+ .debug_macro   0x08011d55       0xaf os_task_common.o
+ .debug_line    0x08011e04      0x247 os_task_common.o
+ .debug_str     0x0801204b       0xeb os_task_common.o
                                0x3c37 (size before relaxing)
- .comment       0x080120b6       0x80 os_task_common.o
- *fill*         0x080120b6        0x2 
- .debug_frame   0x080120b8       0xd8 os_task_common.o
+ .comment       0x08012136       0x80 os_task_common.o
+ *fill*         0x08012136        0x2 
+ .debug_frame   0x08012138       0xd8 os_task_common.o
  .ARM.attributes
-                0x08012190       0x33 os_task_common.o
- *fill*         0x080121c3        0x1 
- COMMON         0x080121c4       0x28 os_task_common.o
-                0x080121c4                TASK_PTR
+                0x08012210       0x33 os_task_common.o
+ *fill*         0x08012243        0x1 
+ COMMON         0x08012244       0x28 os_task_common.o
+                0x08012244                TASK_PTR
  os_task_queue.o()
- .text          0x080121ec      0xa8c os_task_queue.o
-                0x080121ec                SET_RUNNING_TASK
-                0x0801237c                OS_InitTaskQueue
-                0x080123d4                AddToTaskQueue
-                0x080127b4                DeleteFromTaskQueue
-                0x080128c0                GetFromTaskQueue
-                0x080128d6                GetFromSchedulingQueue
-                0x080128f8                DeleteFromSchedulingQueue
-                0x08012910                AddToSchedulingQueue
-                0x08012960                UpdateSchedulingQueue
-                0x080129e0                GetIdleTask
-                0x080129f4                AddToIdleTaskQueue
-                0x08012b74                GetRunningTask
-                0x08012b88                GetRunningSchedulingQueueElementPtr
-                0x08012b9c                OS_InitTask
- .data          0x08012c78        0x0 os_task_queue.o
- .bss           0x08012c78        0x0 os_task_queue.o
- .debug_info    0x08012c78      0x9b7 os_task_queue.o
- .debug_abbrev  0x0801362f      0x1eb os_task_queue.o
+ .text          0x0801226c      0xa8c os_task_queue.o
+                0x0801226c                SET_RUNNING_TASK
+                0x080123fc                OS_InitTaskQueue
+                0x08012454                AddToTaskQueue
+                0x08012834                DeleteFromTaskQueue
+                0x08012940                GetFromTaskQueue
+                0x08012956                GetFromSchedulingQueue
+                0x08012978                DeleteFromSchedulingQueue
+                0x08012990                AddToSchedulingQueue
+                0x080129e0                UpdateSchedulingQueue
+                0x08012a60                GetIdleTask
+                0x08012a74                AddToIdleTaskQueue
+                0x08012bf4                GetRunningTask
+                0x08012c08                GetRunningSchedulingQueueElementPtr
+                0x08012c1c                OS_InitTask
+ .data          0x08012cf8        0x0 os_task_queue.o
+ .bss           0x08012cf8        0x0 os_task_queue.o
+ .debug_info    0x08012cf8      0x9b7 os_task_queue.o
+ .debug_abbrev  0x080136af      0x1eb os_task_queue.o
  .debug_aranges
-                0x0801381a       0x20 os_task_queue.o
- .debug_macro   0x0801383a       0xb4 os_task_queue.o
- .debug_line    0x080138ee      0x32b os_task_queue.o
- .debug_str     0x08013c19      0x222 os_task_queue.o
+                0x0801389a       0x20 os_task_queue.o
+ .debug_macro   0x080138ba       0xb4 os_task_queue.o
+ .debug_line    0x0801396e      0x32b os_task_queue.o
+ .debug_str     0x08013c99      0x222 os_task_queue.o
                                0x3dfc (size before relaxing)
- .comment       0x08013e3b       0x80 os_task_queue.o
- *fill*         0x08013e3b        0x1 
- .debug_frame   0x08013e3c      0x238 os_task_queue.o
+ .comment       0x08013ebb       0x80 os_task_queue.o
+ *fill*         0x08013ebb        0x1 
+ .debug_frame   0x08013ebc      0x238 os_task_queue.o
  .ARM.attributes
-                0x08014074       0x33 os_task_queue.o
+                0x080140f4       0x33 os_task_queue.o
  os_task_scheduler.o()
- *fill*         0x080140a7        0x1 
- .text          0x080140a8      0x7cc os_task_scheduler.o
-                0x080140a8                OS_ActivateDispatcher
-                0x080140e8                OS_SleepTask
-                0x08014112                task_state_request
-                0x0801422c                OS_CreateTask
-                0x0801430c                OS_ActivateTask
-                0x080143ac                OS_StartTask
-                0x08014484                OS_TerminateTask
-                0x08014528                OS_TaskDispatcher
-                0x080145f4                OS_InitTasks
- .data          0x08014874        0x0 os_task_scheduler.o
- .bss           0x08014874        0x0 os_task_scheduler.o
- .debug_info    0x08014874      0xa05 os_task_scheduler.o
- .debug_abbrev  0x08015279      0x1f6 os_task_scheduler.o
+ *fill*         0x08014127        0x1 
+ .text          0x08014128      0x7cc os_task_scheduler.o
+                0x08014128                OS_ActivateDispatcher
+                0x08014168                OS_SleepTask
+                0x08014192                task_state_request
+                0x080142ac                OS_CreateTask
+                0x0801438c                OS_ActivateTask
+                0x0801442c                OS_StartTask
+                0x08014504                OS_TerminateTask
+                0x080145a8                OS_TaskDispatcher
+                0x08014674                OS_InitTasks
+ .data          0x080148f4        0x0 os_task_scheduler.o
+ .bss           0x080148f4        0x0 os_task_scheduler.o
+ .debug_info    0x080148f4      0xa05 os_task_scheduler.o
+ .debug_abbrev  0x080152f9      0x1f6 os_task_scheduler.o
  .debug_aranges
-                0x0801546f       0x20 os_task_scheduler.o
- .debug_macro   0x0801548f       0xe0 os_task_scheduler.o
- .debug_line    0x0801556f      0x3c4 os_task_scheduler.o
- .debug_str     0x08015933      0x19a os_task_scheduler.o
+                0x080154ef       0x20 os_task_scheduler.o
+ .debug_macro   0x0801550f       0xe0 os_task_scheduler.o
+ .debug_line    0x080155ef      0x3c4 os_task_scheduler.o
+ .debug_str     0x080159b3      0x19a os_task_scheduler.o
                                0x3ee6 (size before relaxing)
- .comment       0x08015acd       0x80 os_task_scheduler.o
- *fill*         0x08015acd        0x3 
- .debug_frame   0x08015ad0      0x248 os_task_scheduler.o
+ .comment       0x08015b4d       0x80 os_task_scheduler.o
+ *fill*         0x08015b4d        0x3 
+ .debug_frame   0x08015b50      0x248 os_task_scheduler.o
  .ARM.attributes
-                0x08015d18       0x33 os_task_scheduler.o
+                0x08015d98       0x33 os_task_scheduler.o
  os_stack.o()
- *fill*         0x08015d4b        0x1 
- .text          0x08015d4c        0x0 os_stack.o
- .data          0x08015d4c        0x0 os_stack.o
- .bss           0x08015d4c        0x0 os_stack.o
- .debug_info    0x08015d4c      0x643 os_stack.o
- .debug_abbrev  0x0801638f       0xec os_stack.o
+ *fill*         0x08015dcb        0x1 
+ .text          0x08015dcc        0x0 os_stack.o
+ .data          0x08015dcc        0x0 os_stack.o
+ .bss           0x08015dcc        0x0 os_stack.o
+ .debug_info    0x08015dcc      0x643 os_stack.o
+ .debug_abbrev  0x0801640f       0xec os_stack.o
  .debug_aranges
-                0x0801647b       0x18 os_stack.o
- .debug_macro   0x08016493       0x9e os_stack.o
- .debug_line    0x08016531      0x1c4 os_stack.o
- .debug_str     0x080166f5       0x46 os_stack.o
+                0x080164fb       0x18 os_stack.o
+ .debug_macro   0x08016513       0x9e os_stack.o
+ .debug_line    0x080165b1      0x1c4 os_stack.o
+ .debug_str     0x08016775       0x46 os_stack.o
                                0x39bd (size before relaxing)
- .comment       0x0801673b       0x80 os_stack.o
+ .comment       0x080167bb       0x80 os_stack.o
  .ARM.attributes
-                0x0801673b       0x33 os_stack.o
+                0x080167bb       0x33 os_stack.o
  os_heap.o()
- .text          0x0801676e        0x0 os_heap.o
- .data          0x0801676e        0x0 os_heap.o
- .bss           0x0801676e        0x0 os_heap.o
- .debug_info    0x0801676e      0x643 os_heap.o
- .debug_abbrev  0x08016db1       0xec os_heap.o
+ .text          0x080167ee        0x0 os_heap.o
+ .data          0x080167ee        0x0 os_heap.o
+ .bss           0x080167ee        0x0 os_heap.o
+ .debug_info    0x080167ee      0x643 os_heap.o
+ .debug_abbrev  0x08016e31       0xec os_heap.o
  .debug_aranges
-                0x08016e9d       0x18 os_heap.o
- .debug_macro   0x08016eb5       0xa2 os_heap.o
- .debug_line    0x08016f57      0x1c3 os_heap.o
- .debug_str     0x0801711a       0x45 os_heap.o
+                0x08016f1d       0x18 os_heap.o
+ .debug_macro   0x08016f35       0xa2 os_heap.o
+ .debug_line    0x08016fd7      0x1c3 os_heap.o
+ .debug_str     0x0801719a       0x45 os_heap.o
                                0x39bc (size before relaxing)
- .comment       0x0801715f       0x80 os_heap.o
+ .comment       0x080171df       0x80 os_heap.o
  .ARM.attributes
-                0x0801715f       0x33 os_heap.o
+                0x080171df       0x33 os_heap.o
  led.o()
- .text          0x08017192       0x50 led.o
-                0x08017192                USER_LED_INIT
-                0x080171a6                USER_LED_ON
-                0x080171ba                USER_LED_OFF
-                0x080171ce                USER_LED_TOGGLE
- .data          0x080171e2        0x0 led.o
- .bss           0x080171e2        0x0 led.o
- .debug_info    0x080171e2      0x708 led.o
- .debug_abbrev  0x080178ea      0x142 led.o
+ .text          0x08017212       0x50 led.o
+                0x08017212                USER_LED_INIT
+                0x08017226                USER_LED_ON
+                0x0801723a                USER_LED_OFF
+                0x0801724e                USER_LED_TOGGLE
+ .data          0x08017262        0x0 led.o
+ .bss           0x08017262        0x0 led.o
+ .debug_info    0x08017262      0x708 led.o
+ .debug_abbrev  0x0801796a      0x142 led.o
  .debug_aranges
-                0x08017a2c       0x20 led.o
- .debug_macro   0x08017a4c       0xa2 led.o
- .debug_line    0x08017aee      0x1cb led.o
- .debug_str     0x08017cb9       0x97 led.o
+                0x08017aac       0x20 led.o
+ .debug_macro   0x08017acc       0xa2 led.o
+ .debug_line    0x08017b6e      0x1cb led.o
+ .debug_str     0x08017d39       0x97 led.o
                                0x3a0e (size before relaxing)
- .comment       0x08017d50       0x80 led.o
- .debug_frame   0x08017d50       0xb0 led.o
+ .comment       0x08017dd0       0x80 led.o
+ .debug_frame   0x08017dd0       0xb0 led.o
  .ARM.attributes
-                0x08017e00       0x33 led.o
-                0x08017e33                _code_end = .
+                0x08017e80       0x33 led.o
+                0x08017eb3                _code_end = .
                 [!provide]                PROVIDE (code_start = .)
                 [!provide]                PROVIDE (code_end = .)
- *fill*         0x08017e33        0x1 
- .text          0x08017e34      0x378 d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
-                0x08017e34                __aeabi_drsub
-                0x08017e3c                __aeabi_dsub
-                0x08017e3c                __subdf3
-                0x08017e40                __aeabi_dadd
-                0x08017e40                __adddf3
-                0x080180b8                __floatunsidf
-                0x080180b8                __aeabi_ui2d
-                0x080180d8                __floatsidf
-                0x080180d8                __aeabi_i2d
-                0x080180fc                __aeabi_f2d
-                0x080180fc                __extendsfdf2
-                0x08018140                __floatundidf
-                0x08018140                __aeabi_ul2d
-                0x08018150                __floatdidf
-                0x08018150                __aeabi_l2d
- .text          0x080181ac      0x110 d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_arm_cmpdf2.o)
-                0x080181ac                __gtdf2
-                0x080181ac                __gedf2
-                0x080181b4                __ltdf2
-                0x080181b4                __ledf2
-                0x080181bc                __nedf2
-                0x080181bc                __eqdf2
-                0x080181bc                __cmpdf2
-                0x08018238                __aeabi_cdrcmple
-                0x08018248                __aeabi_cdcmpeq
-                0x08018248                __aeabi_cdcmple
-                0x08018258                __aeabi_dcmpeq
-                0x0801826c                __aeabi_dcmplt
-                0x08018280                __aeabi_dcmple
-                0x08018294                __aeabi_dcmpge
-                0x080182a8                __aeabi_dcmpgt
+ *fill*         0x08017eb3        0x1 
+ .text          0x08017eb4      0x378 d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+                0x08017eb4                __aeabi_drsub
+                0x08017ebc                __aeabi_dsub
+                0x08017ebc                __subdf3
+                0x08017ec0                __aeabi_dadd
+                0x08017ec0                __adddf3
+                0x08018138                __floatunsidf
+                0x08018138                __aeabi_ui2d
+                0x08018158                __floatsidf
+                0x08018158                __aeabi_i2d
+                0x0801817c                __aeabi_f2d
+                0x0801817c                __extendsfdf2
+                0x080181c0                __floatundidf
+                0x080181c0                __aeabi_ul2d
+                0x080181d0                __floatdidf
+                0x080181d0                __aeabi_l2d
+ .text          0x0801822c      0x110 d:/programm/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_arm_cmpdf2.o)
+                0x0801822c                __gtdf2
+                0x0801822c                __gedf2
+                0x08018234                __ltdf2
+                0x08018234                __ledf2
+                0x0801823c                __nedf2
+                0x0801823c                __eqdf2
+                0x0801823c                __cmpdf2
+                0x080182b8                __aeabi_cdrcmple
+                0x080182c8                __aeabi_cdcmpeq
+                0x080182c8                __aeabi_cdcmple
+                0x080182d8                __aeabi_dcmpeq
+                0x080182ec                __aeabi_dcmplt
+                0x08018300                __aeabi_dcmple
+                0x08018314                __aeabi_dcmpge
+                0x08018328                __aeabi_dcmpgt
 
-.glue_7         0x080182bc        0x0
- .glue_7        0x080182bc        0x0 linker stubs
+.glue_7         0x0801833c        0x0
+ .glue_7        0x0801833c        0x0 linker stubs
 
-.glue_7t        0x080182bc        0x0
- .glue_7t       0x080182bc        0x0 linker stubs
+.glue_7t        0x0801833c        0x0
+ .glue_7t       0x0801833c        0x0 linker stubs
 
-.vfp11_veneer   0x080182bc        0x0
- .vfp11_veneer  0x080182bc        0x0 linker stubs
+.vfp11_veneer   0x0801833c        0x0
+ .vfp11_veneer  0x0801833c        0x0 linker stubs
 
-.v4_bx          0x080182bc        0x0
- .v4_bx         0x080182bc        0x0 linker stubs
+.v4_bx          0x0801833c        0x0
+ .v4_bx         0x0801833c        0x0 linker stubs
 
 .data           0x20000000    0x15df4
                 0x20000000                _ram_start = .

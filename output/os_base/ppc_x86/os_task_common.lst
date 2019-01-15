@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 1
 
 
    1              		.file	"os_task_common.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
   30 001e 8B5848   		movl	72(%eax), %ebx
   31 0021 8B4508   		movl	8(%ebp), %eax
   32 0024 8B4844   		movl	68(%eax), %ecx
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 2
 
 
   33 0027 8B4508   		movl	8(%ebp), %eax
@@ -118,7 +118,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
   71              		.cfi_def_cfa_register 5
   72 0067 83EC18   		subl	$24, %esp
   39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****    if(task!=0)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 3
 
 
   73              		.loc 1 39 0
@@ -178,7 +178,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  111              		.loc 1 51 0
  112 00a7 8B4508   		movl	8(%ebp), %eax
  113 00aa 890424   		movl	%eax, (%esp)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 4
 
 
  114 00ad E8000000 		call	_LLF_RESTORE_SYSTEM_STACK
@@ -238,7 +238,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  159      0000
   60:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****    {
   61:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       /* general*/
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 5
 
 
   62:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->active                = False;
@@ -298,7 +298,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
   87:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->TimeToPrioInc                    = (unsigned_int32_t)        5;
  183              		.loc 1 87 0
  184 011d 8B4508   		movl	8(%ebp), %eax
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 6
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 6
 
 
  185 0120 C7401005 		movl	$5, 16(%eax)
@@ -358,7 +358,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  220              		.loc 1 100 0
  221 0182 8B4508   		movl	8(%ebp), %eax
  222 0185 C6400500 		movb	$0, 5(%eax)
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 7
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 7
 
 
  101:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_task_common.c ****       task->fp                               = (func_p_t)                0;
@@ -418,7 +418,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  257 008a 00000000 		.secrel32	Ldebug_line0
  258 008e 00000000 		.secrel32	Ldebug_macro0
  259 0092 02       		.uleb128 0x2
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 8
 
 
  260 0093 756E7369 		.ascii "unsigned_char_t\0"
@@ -478,7 +478,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  292 011f 05       		.uleb128 0x5
  293 0120 6F735F62 		.ascii "os_bug_no_bug\0"
  293      75675F6E 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 9
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 9
 
 
  293      6F5F6275 
@@ -538,7 +538,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  318 0209 6F735F73 		.ascii "os_sw_bugs_function_e\0"
  318      775F6275 
  318      67735F66 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 10
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 10
 
 
  318      756E6374 
@@ -598,7 +598,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  345 02d8 46756E63 		.ascii "Func_PreemptTask\0"
  345      5F507265 
  345      656D7074 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 11
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 11
 
 
  345      5461736B 
@@ -658,7 +658,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  369      61746554 
  369      61736B00 
  370 0389 0F       		.sleb128 15
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 12
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 12
 
 
  371 038a 00       		.byte	0
@@ -718,7 +718,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  400      70656369 
  400      66696564 
  400      00
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 13
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 13
 
 
  401 045f 00       		.sleb128 0
@@ -778,7 +778,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  438 04e3 04       		.byte	0x4
  439 04e4 E8040000 		.long	0x4e8
  440 04e8 0A       		.uleb128 0xa
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 14
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 14
 
 
  441 04e9 92000000 		.long	0x92
@@ -838,7 +838,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  484 0566 01       		.byte	0x1
  485 0567 1F       		.byte	0x1f
  486 0568 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 15
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 15
 
 
  487 0569 0E       		.uleb128 0xe
@@ -898,7 +898,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  527      6E74696C 
  527      00
  528 05e2 05       		.byte	0x5
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 16
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 16
 
 
  529 05e3 26       		.byte	0x26
@@ -958,7 +958,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  568 0675 0D       		.uleb128 0xd
  569 0676 63757272 		.ascii "current_prio\0"
  569      656E745F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 17
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 17
 
 
  569      7072696F 
@@ -1018,7 +1018,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  610 06fa 0D       		.uleb128 0xd
  611 06fb 45415800 		.ascii "EAX\0"
  612 06ff 05       		.byte	0x5
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 18
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 18
 
 
  613 0700 35       		.byte	0x35
@@ -1078,7 +1078,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  654 0784 05       		.byte	0x5
  655 0785 4B       		.byte	0x4b
  656 0786 DD000000 		.long	0xdd
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 19
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 19
 
 
  657 078a 58       		.byte	0x58
@@ -1138,7 +1138,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  696 0813 9C       		.byte	0x9c
  697 0814 28080000 		.long	0x828
  698 0818 10       		.uleb128 0x10
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 20
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 20
 
 
  699 0819 7461736B 		.ascii "task\0"
@@ -1198,7 +1198,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  743 08a6 06       		.uleb128 0x6
  744 08a7 04       		.byte	0x4
  745 08a8 BA000000 		.long	0xba
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 21
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 21
 
 
  746 08ac 0F       		.uleb128 0xf
@@ -1258,7 +1258,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  791 0935 07       		.byte	0x7
  792 0936 73697A65 		.ascii "sizetype\0"
  792      74797065 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 22
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 22
 
 
  792      00
@@ -1318,7 +1318,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  844 0029 08       		.uleb128 0x8
  845 002a 00       		.byte	0
  846 002b 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 23
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 23
 
 
  847 002c 04       		.uleb128 0x4
@@ -1378,7 +1378,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  901 0062 00       		.byte	0
  902 0063 00       		.byte	0
  903 0064 0A       		.uleb128 0xa
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 24
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 24
 
 
  904 0065 15       		.uleb128 0x15
@@ -1438,7 +1438,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  958 009b 00       		.byte	0
  959 009c 0E       		.uleb128 0xe
  960 009d 0D       		.uleb128 0xd
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 25
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 25
 
 
  961 009e 00       		.byte	0
@@ -1498,7 +1498,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1015 00d5 13       		.uleb128 0x13
  1016 00d6 02       		.uleb128 0x2
  1017 00d7 18       		.uleb128 0x18
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 26
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 26
 
 
  1018 00d8 00       		.byte	0
@@ -1558,7 +1558,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1072 0000 1C000000 		.long	0x1c
  1073 0004 0200     		.word	0x2
  1074 0006 00000000 		.secrel32	Ldebug_info0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 27
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 27
 
 
  1075 000a 04       		.byte	0x4
@@ -1618,7 +1618,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1108      4F4D4943 
  1108      5F52454C 
  1108      41584544 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 28
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 28
 
 
  1108      203000
@@ -1678,7 +1678,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1132      5F4C4F4E 
  1132      475F5F20 
  1132      3400
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 29
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 29
 
 
  1133 0134 01       		.byte	0x1
@@ -1738,7 +1738,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1156      454E545F 
  1157 01eb 01       		.byte	0x1
  1158 01ec 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 30
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 30
 
 
  1159 01ed 5F5F4F52 		.ascii "__ORDER_LITTLE_ENDIAN__ 1234\0"
@@ -1798,7 +1798,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1181 02e5 01       		.byte	0x1
  1182 02e6 00       		.uleb128 0
  1183 02e7 5F5F5743 		.ascii "__WCHAR_TYPE__ short unsigned int\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 31
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 31
 
 
  1183      4841525F 
@@ -1858,7 +1858,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1206 03f1 00       		.uleb128 0
  1207 03f2 5F5F494E 		.ascii "__INT16_TYPE__ short int\0"
  1207      5431365F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 32
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 32
 
 
  1207      54595045 
@@ -1918,7 +1918,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1231 04ef 5F5F494E 		.ascii "__INT_LEAST16_TYPE__ short int\0"
  1231      545F4C45 
  1231      41535431 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 33
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 33
 
 
  1231      365F5459 
@@ -1978,7 +1978,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1255      545F4641 
  1255      53543136 
  1255      5F545950 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 34
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 34
 
 
  1255      455F5F20 
@@ -2038,7 +2038,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1279      525F5459 
  1279      50455F5F 
  1279      20756E73 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 35
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 35
 
 
  1280 0747 01       		.byte	0x1
@@ -2098,7 +2098,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1303      4D41585F 
  1303      5F203932 
  1304 0845 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 36
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 36
 
 
  1305 0846 00       		.uleb128 0
@@ -2158,7 +2158,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1329 090b 00       		.uleb128 0
  1330 090c 5F5F5549 		.ascii "__UINTMAX_MAX__ 18446744073709551615ULL\0"
  1330      4E544D41 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 37
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 37
 
 
  1330      585F4D41 
@@ -2218,7 +2218,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1354 0a09 5F5F5549 		.ascii "__UINT8_MAX__ 255\0"
  1354      4E54385F 
  1354      4D41585F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 38
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 38
 
 
  1354      5F203235 
@@ -2278,7 +2278,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1378      325F4D41 
  1378      585F5F20 
  1379 0aef 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 39
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 39
 
 
  1380 0af0 00       		.uleb128 0
@@ -2338,7 +2338,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1405 0bc2 5F5F5549 		.ascii "__UINT32_C(c) c ## U\0"
  1405      4E543332 
  1405      5F432863 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 40
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 40
 
 
  1405      29206320 
@@ -2398,7 +2398,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1429      4E545F46 
  1429      41535431 
  1429      365F4D41 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 41
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 41
 
 
  1429      585F5F20 
@@ -2458,7 +2458,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1453      4554484F 
  1453      445F5F20 
  1454 0db8 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 42
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 42
 
 
  1455 0db9 00       		.uleb128 0
@@ -2518,7 +2518,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1479 0e6b 00       		.uleb128 0
  1480 0e6c 5F5F464C 		.ascii "__FLT_MAX__ 3.40282346638528859812e+38F\0"
  1480      545F4D41 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 43
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 43
 
 
  1480      585F5F20 
@@ -2578,7 +2578,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1504 0f7e 5F5F4442 		.ascii "__DBL_DIG__ 15\0"
  1504      4C5F4449 
  1504      475F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 44
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 44
 
 
  1504      313500
@@ -2638,7 +2638,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1528      53494C4F 
  1528      4E5F5F20 
  1528      2828646F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 45
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 45
 
 
  1529 10ae 01       		.byte	0x1
@@ -2698,7 +2698,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1552      505F5F20 
  1553 1197 01       		.byte	0x1
  1554 1198 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 46
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 46
 
 
  1555 1199 5F5F4C44 		.ascii "__LDBL_MAX_EXP__ 16384\0"
@@ -2758,7 +2758,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1577 12b5 01       		.byte	0x1
  1578 12b6 00       		.uleb128 0
  1579 12b7 5F5F4C44 		.ascii "__LDBL_HAS_INFINITY__ 1\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 47
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 47
 
 
  1579      424C5F48 
@@ -2818,7 +2818,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1602 1384 00       		.uleb128 0
  1603 1385 5F5F4445 		.ascii "__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\0"
  1603      4333325F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 48
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 48
 
 
  1603      5355424E 
@@ -2878,7 +2878,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1627 1489 5F5F4445 		.ascii "__DEC128_MANT_DIG__ 34\0"
  1627      43313238 
  1627      5F4D414E 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 49
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 49
 
 
  1627      545F4449 
@@ -2938,7 +2938,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1651      45525F4C 
  1651      4142454C 
  1651      5F505245 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 50
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 50
 
 
  1651      4649585F 
@@ -2998,7 +2998,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1675      5F574348 
  1675      41525F54 
  1676 16ac 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 51
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 51
 
 
  1677 16ad 00       		.uleb128 0
@@ -3058,7 +3058,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1699      455F4558 
  1700 17b2 01       		.byte	0x1
  1701 17b3 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 52
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 52
 
 
  1702 17b4 5F5F5349 		.ascii "__SIZEOF_WCHAR_T__ 2\0"
@@ -3118,7 +3118,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1726      5F33325F 
  1726      5F203100 
  1727 1873 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 53
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 53
 
 
  1728 1874 00       		.uleb128 0
@@ -3178,7 +3178,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1753      4E475733 
  1753      325F5F20 
  1753      3100
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 54
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 54
 
 
  1754 1983 01       		.byte	0x1
@@ -3238,7 +3238,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1783 1a2c 01       		.uleb128 0x1
  1784              		.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
  1785 1a2d 03       		.byte	0x3
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 55
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 55
 
 
  1786 1a2e 01       		.uleb128 0x1
@@ -3298,7 +3298,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1814 1ac7 4350505F 		.ascii "CPP_VERSION_1998 1\0"
  1814      56455253 
  1814      494F4E5F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 56
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 56
 
 
  1814      31393938 
@@ -3358,7 +3358,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1842      203100
  1843 1b8a 01       		.byte	0x1
  1844 1b8b 08       		.uleb128 0x8
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 57
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 57
 
 
  1845 1b8c 46414C53 		.ascii "FALSE False\0"
@@ -3418,7 +3418,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1872 1c4f 634D4355 		.ascii "cMCU_X86 3\0"
  1872      5F583836 
  1872      203300
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 58
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 58
 
 
  1873 1c5a 01       		.byte	0x1
@@ -3478,7 +3478,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1896      72657374 
  1897 1d3d 01       		.byte	0x1
  1898 1d3e 22       		.uleb128 0x22
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 59
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 59
 
 
  1899 1d3f 48616C74 		.ascii "HaltMcu() \0"
@@ -3538,7 +3538,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1933 1dd4 01       		.byte	0x1
  1934 1dd5 07       		.uleb128 0x7
  1935 1dd6 6F735F69 		.ascii "os_interrupt_swi_3 asm(\"swi 3\")\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 60
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 60
 
 
  1935      6E746572 
@@ -3598,7 +3598,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  1969 1e79 09       		.uleb128 0x9
  1970 1e7a 0D       		.uleb128 0xd
  1971 1e7b 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 61
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 61
 
 
  1972 1e7c 02       		.uleb128 0x2
@@ -3658,7 +3658,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  2003 1f3b 5461736B 		.ascii "Task_min_time (1e0)\0"
  2003      5F6D696E 
  2003      5F74696D 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 62
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 62
 
 
  2003      65202831 
@@ -3718,7 +3718,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  2029      6B5F7379 
  2029      7374656D 
  2030 201e 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 63
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 63
 
 
  2031 201f 01       		.byte	0x1
@@ -3778,7 +3778,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  2068      5F53495A 
  2068      45203078 
  2068      35303030 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 64
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 64
 
 
  2069 20f7 01       		.byte	0x1
@@ -3838,7 +3838,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  2097 21a0 03       		.byte	0x3
  2098 21a1 07       		.uleb128 0x7
  2099 21a2 15       		.uleb128 0x15
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 65
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 65
 
 
  2100 21a3 01       		.byte	0x1
@@ -3898,7 +3898,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  2139 220a 5461736B 		.ascii "Task_0_ptr 0\0"
  2139      5F305F70 
  2139      74722030 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 66
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 66
 
 
  2139      00
@@ -3953,17 +3953,17 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 1
  2166      74696D65 
  2166      00
  2167              		.ident	"GCC: (GNU) 4.9.3"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s 			page 67
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s 			page 67
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_task_common.c
                             *COM*:00000028 _TASK_PTR
-C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s:7      .text:00000000 _OS_TaskSaveTaskEnvironment
-C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s:63     .text:00000064 _OS_TASK_RESTORETASK_ENVIRONMENT
-C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s:101    .text:000000a1 _OS_TASK_RESTORE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s:124    .text:000000b4 _OS_TASK_SAVE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccBlp5Lg.s:147    .text:000000c7 _OS_Task_InitTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s:7      .text:00000000 _OS_TaskSaveTaskEnvironment
+C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s:63     .text:00000064 _OS_TASK_RESTORETASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s:101    .text:000000a1 _OS_TASK_RESTORE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s:124    .text:000000b4 _OS_TASK_SAVE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\ccYJZzNk.s:147    .text:000000c7 _OS_Task_InitTaskEnvironment
 
 UNDEFINED SYMBOLS
 _LLF_SAVE_TASK_STACK

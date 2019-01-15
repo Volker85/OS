@@ -6,15 +6,18 @@ Ltext0:
 _OS_InitMc:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_mc.c"
-	.loc 1 5 0
+	.loc 1 6 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
+	subl	$8, %esp
 	.loc 1 12 0
-	popl	%ebp
+	call	_OS_MmuSetup
+	.loc 1 13 0
+	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
@@ -54,7 +57,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_InitMc\0"
 	.byte	0x1
-	.byte	0x4
+	.byte	0x5
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
@@ -111,7 +114,7 @@ Ldebug_abbrev0:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2117
+	.uleb128 0x2116
 	.uleb128 0x19
 	.byte	0
 	.byte	0
@@ -1182,9 +1185,18 @@ Ldebug_macro0:
 	.uleb128 0x2
 	.ascii "_os_start_init_mc_h_ \0"
 	.byte	0x4
+	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.h"
+	.byte	0x3
+	.uleb128 0x3
+	.uleb128 0x19
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_os_memory_mmu_setup_h_ \0"
+	.byte	0x4
 	.byte	0x4
 	.byte	0
 	.section	.debug_line,"dr"
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
+	.def	_OS_MmuSetup;	.scl	2;	.type	32;	.endef

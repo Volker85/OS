@@ -14,7 +14,7 @@ void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void)
 {  
    /* OS_SIM: no MMU implemented, always assume switched off MMU */
 }
-unsigned_char_t LLF_GET_MPU_PRESENT(void)
+uint32 LLF_GET_MPU_PRESENT(void)
 {
    /* OS_SIM: no MMU implemented, always assume switched off MMU */
    return False;

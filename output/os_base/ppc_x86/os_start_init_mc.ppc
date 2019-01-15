@@ -653,6 +653,11 @@ extern volatile void* SAVED_STACK_POINTER;
 
 extern void OS_InitMc(void);
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c" 2
+# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.h" 1
+
+#define _os_memory_mmu_setup_h_ 
+extern void OS_MmuSetup(void);
+# 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c" 2
 
 void OS_InitMc(void)
 {
@@ -661,5 +666,5 @@ void OS_InitMc(void)
 
 
 
-
+   OS_MmuSetup();
 }

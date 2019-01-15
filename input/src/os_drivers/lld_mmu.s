@@ -52,6 +52,25 @@ LLF_GET_MPU_PRESENT:
         #endif
         # 
         #return (False = 0)
-        MOV R0,#0
+        #;  read the MPU_TYPE addr 0xE000ED90
+        MOV  r4, #0xE0
+        MOV  r5, #0x00
+        MOV  r6, #0xED
+        MOV  r7, #0x90
+        MOV  r8,  #0x18
+        MOV  r9,  #0x10
+        MOV  r10, #0x08
+        LSL  r4,r4,r8
+        LSL  r5,r5,r9
+        LSL  r6,r6,r10
+        #;  build MPU_TYPE variable
+        ADD  r12,r12,r4
+        ADD  r12,r12,r5
+        ADD  r12,r12,r6
+        ADD  r12,r12,r7
+        # r13 = *r12 = *0xE000ED90
+        LDR  r13,[r12]
+        # r0: return = r13
+        MOV r0,r13        
         MOV R15, R14
         

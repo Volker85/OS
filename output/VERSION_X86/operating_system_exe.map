@@ -412,328 +412,327 @@ LOAD d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
                 0x0040146c                OS_InitTaskSystem
  .text          0x0040147c      0x16c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_main.o
                 0x004014fc                OS_StateHandler
- .text          0x004015e8        0x8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o
+ .text          0x004015e8       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o
                 0x004015e8                OS_MmuSetup
- .text          0x004015f0       0x6c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shutdown.o
-                0x004015fa                OS_DeinitMc
-                0x004015ff                OS_Shutdown
- .text          0x0040165c       0x40 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_ext_prg.o
-                0x00401663                OS_StartExtPrg
- .text          0x0040169c        0x8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_hw.o
-                0x0040169c                OS_InitHw
- .text          0x004016a4        0x8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
-                0x004016a4                OS_InitMc
- .text          0x004016ac       0x68 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
-                0x004016ac                OS_InitSw
- .text          0x00401714       0x7c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
-                0x00401714                OS_StartOs
- .text          0x00401790      0x1ac E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
-                0x00401790                OS_TaskSaveTaskEnvironment
-                0x004017f4                OS_TASK_RESTORETASK_ENVIRONMENT
-                0x00401831                OS_TASK_RESTORE_SYSTEM_STACK
-                0x00401844                OS_TASK_SAVE_SYSTEM_STACK
-                0x00401857                OS_Task_InitTaskEnvironment
- .text          0x0040193c      0xbb8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
-                0x0040193c                SET_RUNNING_TASK
-                0x00401ad8                OS_InitTaskQueue
-                0x00401b36                AddToTaskQueue
-                0x0040200c                DeleteFromTaskQueue
-                0x0040211d                GetFromTaskQueue
-                0x00402127                GetFromSchedulingQueue
-                0x00402141                DeleteFromSchedulingQueue
-                0x0040214f                AddToSchedulingQueue
-                0x00402196                UpdateSchedulingQueue
-                0x00402222                GetIdleTask
-                0x0040222c                AddToIdleTaskQueue
-                0x004023ba                GetRunningTask
-                0x004023c4                GetRunningSchedulingQueueElementPtr
-                0x004023ce                OS_InitTask
- .text          0x004024f4      0x998 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
-                0x004024f4                OS_ActivateDispatcher
-                0x004024f9                OS_SleepTask
-                0x00402525                task_state_request
-                0x0040264c                OS_CreateTask
-                0x0040277f                OS_ActivateTask
-                0x0040284a                OS_StartTask
-                0x0040295f                OS_TerminateTask
-                0x00402a3a                OS_TaskDispatcher
-                0x00402b12                OS_InitTasks
- .text          0x00402e8c       0xc8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
-                0x00402eb5                main
- .text          0x00402f54        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
- .text          0x00402f54        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
- .text          0x00402f54        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
- .text          0x00402f54        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
- .text          0x00402f54       0x40 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
-                0x00402f54                OS_GetCoreId
-                0x00402f66                LLF_SAVE_TASK_STACK
-                0x00402f6b                LLF_SAVE_REGISTERS
-                0x00402f70                LLF_RESTORE_TASK_STACK
-                0x00402f75                LLF_RESTORE_REGISTERS
-                0x00402f7a                LLF_RESTORE_SYSTEM_STACK
-                0x00402f7f                LLF_SAVE_SYSTEM_STACK
-                0x00402f84                LLF_CLEAR_ALL_GP_REGISTERS
-                0x00402f89                LLF_PERFORM_RAM_CHECK
-                0x00402f8e                LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
- .text          0x00402f94       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
-                0x00402f94                LLF_INT_DISABLE
-                0x00402f99                LLF_INT_ENABLE
-                0x00402f9e                LLF_DISABLE_INTERRUPTS_ALL_CORES
- .text          0x00402fa8       0x18 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
-                0x00402fa8                LLF_MPU_DISABLE
-                0x00402fad                LLF_MPU_ENABLE
-                0x00402fb2                LLF_MPU_SWITCH_OFF_ALL_REGIONS
-                0x00402fb7                LLF_GET_MPU_PRESENT
- .text          0x00402fc0        0x8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
-                0x00402fc0                LLF_CLEAR_ALL_RAM
- .text          0x00402fc8        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
- .text          0x00402fc8        0xc E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
-                0x00402fc8                LLF_MCU_SWITCH_OFF_POWER
-                0x00402fcd                LLF_MCU_RESET_POWER
- .text          0x00402fd4       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
-                0x00402fd4                USER_LED_INIT
-                0x00402fd9                USER_LED_ON
-                0x00402fde                USER_LED_OFF
-                0x00402fe3                USER_LED_TOGGLE
- .text          0x00402fe8        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(CRTglob.o)
- *fill*         0x00402fe8        0x8 
- .text          0x00402ff0      0x310 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(setargv.o)
-                0x00402ff0                _setargv
- .text          0x00403300        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(CRTfmode.o)
- .text          0x00403300       0xe0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(cpu_features.o)
-                0x00403300                __cpu_features_init
- .text          0x004033e0       0x10 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(CRT_fp10.o)
-                0x004033e0                fpreset
-                0x004033e0                _fpreset
- .text          0x004033f0        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(txtmode.o)
- .text          0x004033f0       0xa0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(gccmain.o)
-                0x004033f0                __do_global_dtors
-                0x00403420                __do_global_ctors
-                0x00403470                __main
- .text          0x00403490       0xf0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(tlssup.o)
-                0x004034e0                __dyn_tls_init@12
-                0x00403570                __tlregdtor
- .text          0x00403580      0x240 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(tlsthrd.o)
-                0x004035f0                ___w64_mingwthr_add_key_dtor
-                0x00403680                ___w64_mingwthr_remove_key_dtor
-                0x00403720                __mingw_TLScallback
- .text          0x004037c0      0x320 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(pseudo-reloc.o)
-                0x00403900                _pei386_runtime_relocator
- .text          0x00403ae0        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(pseudo-reloc-list.o)
- .text          0x00403ae0        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(crtst.o)
- .text          0x00403ae0       0x2c d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_chkstk_ms.o)
-                0x00403ae0                __chkstk_ms
- .text          0x00403b0c        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_ctors.o)
- *fill*         0x00403b0c        0x4 
- .text          0x00403b10       0x40 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(vprintf.o)
-                0x00403b10                __mingw_vprintf
- .text          0x00403b50      0xd00 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(glob.o)
-                0x00404750                __mingw_glob
-                0x00404830                __mingw_globfree
- .text          0x00404850      0x400 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(dirname.o)
-                0x00404850                __mingw_dirname
- .text          0x00404c50      0x4b0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(dirent.o)
-                0x00404dc0                __mingw_opendir
-                0x00404f60                __mingw_readdir
-                0x00404fb0                __mingw_closedir
-                0x00405000                __mingw_rewinddir
-                0x00405060                __mingw_telldir
-                0x00405090                __mingw_seekdir
- .text          0x00405100     0x1f10 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(pformat.o)
-                0x004066a0                __mingw_pformat
- .text          0x00407010       0x30 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(snprintf.o)
-                0x00407010                snprintf
-                0x00407010                __mingw_snprintf
- .text          0x00407040       0x80 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(vsnprintf.o)
-                0x00407040                __mingw_vsnprintf
-                0x00407040                vsnprintf
- .text          0x004070c0        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(varofmt.o)
- .text          0x004070c0      0x420 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(mbrtowc.o)
-                0x00407240                mbrtowc
-                0x004072e0                mbsrtowcs
-                0x00407450                mbrlen
- .text          0x004074e0      0x260 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(wcrtomb.o)
-                0x00407570                wcrtomb
-                0x004075f0                wcsrtombs
- .text          0x00407740     0x14a0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(gdtoa.o)
-                0x00407740                __gdtoa
- .text          0x00408be0      0x160 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(gmisc.o)
-                0x00408be0                __rshift_D2A
-                0x00408d00                __trailz_D2A
- .text          0x00408d40      0x2b0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(dmisc.o)
-                0x00408d40                __rv_alloc_D2A
-                0x00408d80                __nrv_alloc_D2A
-                0x00408dd0                __freedtoa
-                0x00408df0                __quorem_D2A
- .text          0x00408ff0      0xb50 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(misc.o)
-                0x00409110                __Balloc_D2A
-                0x004091e0                __Bfree_D2A
-                0x00409250                __multadd_D2A
-                0x00409330                __i2b_D2A
-                0x00409360                __mult_D2A
-                0x004094c0                __pow5mult_D2A
-                0x00409650                __lshift_D2A
-                0x00409760                __cmp_D2A
-                0x004097b0                __diff_D2A
-                0x00409930                __b2d_D2A
-                0x00409a20                __d2b_D2A
-                0x00409b10                __strcp_D2A
- .text          0x00409b40        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00772.o)
-                0x00409b40                wcstombs
- .text          0x00409b48        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00761.o)
-                0x00409b48                wcslen
- .text          0x00409b50        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00748.o)
-                0x00409b50                vfprintf
- .text          0x00409b58        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00742.o)
-                0x00409b58                tolower
- .text          0x00409b60        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00739.o)
-                0x00409b60                time
- .text          0x00409b68        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00721.o)
-                0x00409b68                strlen
- .text          0x00409b70        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00716.o)
-                0x00409b70                strcoll
- .text          0x00409b78        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00714.o)
-                0x00409b78                strchr
- .text          0x00409b80        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00706.o)
-                0x00409b80                signal
- .text          0x00409b88        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00704.o)
-                0x00409b88                setlocale
- .text          0x00409b90        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00698.o)
-                0x00409b90                realloc
- .text          0x00409b98        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00682.o)
-                0x00409b98                memcpy
- .text          0x00409ba0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00678.o)
-                0x00409ba0                mbstowcs
- .text          0x00409ba8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00676.o)
-                0x00409ba8                malloc
- .text          0x00409bb0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00671.o)
-                0x00409bb0                localeconv
- .text          0x00409bb8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00652.o)
-                0x00409bb8                isspace
- .text          0x00409bc0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00637.o)
-                0x00409bc0                getenv
- .text          0x00409bc8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00636.o)
-                0x00409bc8                getchar
- .text          0x00409bd0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00633.o)
-                0x00409bd0                fwrite
- .text          0x00409bd8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00625.o)
-                0x00409bd8                free
- .text          0x00409be0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00620.o)
-                0x00409be0                fputc
- .text          0x00409be8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00595.o)
-                0x00409be8                calloc
- .text          0x00409bf0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00592.o)
-                0x00409bf0                atoi
- .text          0x00409bf8        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00590.o)
- .text          0x00409bf8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00583.o)
-                0x00409bf8                abort
- .text          0x00409c00        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00426.o)
-                0x00409c00                _setmode
- .text          0x00409c08        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00383.o)
- .text          0x00409c08        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00266.o)
- .text          0x00409c08        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00228.o)
-                0x00409c08                _fullpath
- .text          0x00409c10        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00182.o)
-                0x00409c10                _errno
- .text          0x00409c18        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00147.o)
-                0x00409c18                _cexit
- .text          0x00409c20        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00079.o)
-                0x00409c20                __p__fmode
- .text          0x00409c28        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00077.o)
-                0x00409c28                __p__environ
- .text          0x00409c30        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00065.o)
- .text          0x00409c30        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00055.o)
-                0x00409c30                __getmainargs
- .text          0x00409c38        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfh.o)
- .text          0x00409c38        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczft.o)
- .text          0x00409c38        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01247.o)
-                0x00409c38                WideCharToMultiByte@32
- .text          0x00409c40        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01215.o)
-                0x00409c40                VirtualQuery@12
- .text          0x00409c48        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01213.o)
-                0x00409c48                VirtualProtect@16
- .text          0x00409c50        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01173.o)
-                0x00409c50                TlsGetValue@4
- .text          0x00409c58        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01152.o)
-                0x00409c58                Sleep@4
- .text          0x00409c60        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01140.o)
-                0x00409c60                SetUnhandledExceptionFilter@4
- .text          0x00409c68        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00860.o)
-                0x00409c68                MultiByteToWideChar@24
- .text          0x00409c70        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00817.o)
-                0x00409c70                LoadLibraryA@4
- .text          0x00409c78        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00814.o)
-                0x00409c78                LeaveCriticalSection@4
- .text          0x00409c80        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00763.o)
-                0x00409c80                IsDBCSLeadByteEx@8
- .text          0x00409c88        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00744.o)
-                0x00409c88                InterlockedExchange@8
- .text          0x00409c90        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00734.o)
-                0x00409c90                InitializeCriticalSection@4
- .text          0x00409c98        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00577.o)
-                0x00409c98                GetProcAddress@8
- .text          0x00409ca0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00529.o)
-                0x00409ca0                GetModuleHandleA@4
- .text          0x00409ca8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00510.o)
-                0x00409ca8                GetLastError@0
- .text          0x00409cb0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00388.o)
-                0x00409cb0                GetCommandLineA@0
- .text          0x00409cb8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00352.o)
-                0x00409cb8                FreeLibrary@4
- .text          0x00409cc0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00321.o)
-                0x00409cc0                FindNextFileA@8
- .text          0x00409cc8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00304.o)
-                0x00409cc8                FindFirstFileA@8
- .text          0x00409cd0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00300.o)
-                0x00409cd0                FindClose@4
- .text          0x00409cd8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00279.o)
-                0x00409cd8                ExitProcess@4
- .text          0x00409ce0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00236.o)
-                0x00409ce0                EnterCriticalSection@4
- .text          0x00409ce8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00207.o)
-                0x00409ce8                DeleteCriticalSection@4
- .text          0x00409cf0        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchdh.o)
- .text          0x00409cf0        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchdt.o)
- .text          0x00409cf0      0x110 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_udivdi3.o)
-                0x00409cf0                __udivdi3
- .text          0x00409e00      0x160 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_umoddi3.o)
-                0x00409e00                __umoddi3
- .text          0x00409f60        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmoldname.a(dxpgs00082.o)
-                0x00409f60                stricoll
- .text          0x00409f68        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmoldname.a(dxpgs00080.o)
-                0x00409f68                strdup
- .text          0x00409f70        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmoldname.a(dxpgh.o)
- .text          0x00409f70        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmoldname.a(dxpgt.o)
- .text          0x00409f70        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
+ .text          0x004015fc       0x6c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shutdown.o
+                0x00401606                OS_DeinitMc
+                0x0040160b                OS_Shutdown
+ .text          0x00401668       0x40 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_ext_prg.o
+                0x0040166f                OS_StartExtPrg
+ .text          0x004016a8        0x8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_hw.o
+                0x004016a8                OS_InitHw
+ .text          0x004016b0       0x10 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
+                0x004016b0                OS_InitMc
+ .text          0x004016c0       0x68 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
+                0x004016c0                OS_InitSw
+ .text          0x00401728       0x7c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
+                0x00401728                OS_StartOs
+ .text          0x004017a4      0x1ac E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
+                0x004017a4                OS_TaskSaveTaskEnvironment
+                0x00401808                OS_TASK_RESTORETASK_ENVIRONMENT
+                0x00401845                OS_TASK_RESTORE_SYSTEM_STACK
+                0x00401858                OS_TASK_SAVE_SYSTEM_STACK
+                0x0040186b                OS_Task_InitTaskEnvironment
+ .text          0x00401950      0xbb8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
+                0x00401950                SET_RUNNING_TASK
+                0x00401aec                OS_InitTaskQueue
+                0x00401b4a                AddToTaskQueue
+                0x00402020                DeleteFromTaskQueue
+                0x00402131                GetFromTaskQueue
+                0x0040213b                GetFromSchedulingQueue
+                0x00402155                DeleteFromSchedulingQueue
+                0x00402163                AddToSchedulingQueue
+                0x004021aa                UpdateSchedulingQueue
+                0x00402236                GetIdleTask
+                0x00402240                AddToIdleTaskQueue
+                0x004023ce                GetRunningTask
+                0x004023d8                GetRunningSchedulingQueueElementPtr
+                0x004023e2                OS_InitTask
+ .text          0x00402508      0x998 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
+                0x00402508                OS_ActivateDispatcher
+                0x0040250d                OS_SleepTask
+                0x00402539                task_state_request
+                0x00402660                OS_CreateTask
+                0x00402793                OS_ActivateTask
+                0x0040285e                OS_StartTask
+                0x00402973                OS_TerminateTask
+                0x00402a4e                OS_TaskDispatcher
+                0x00402b26                OS_InitTasks
+ .text          0x00402ea0       0xc8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
+                0x00402ec9                main
+ .text          0x00402f68        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
+ .text          0x00402f68        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
+ .text          0x00402f68        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
+ .text          0x00402f68        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
+ .text          0x00402f68       0x40 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
+                0x00402f68                OS_GetCoreId
+                0x00402f7a                LLF_SAVE_TASK_STACK
+                0x00402f7f                LLF_SAVE_REGISTERS
+                0x00402f84                LLF_RESTORE_TASK_STACK
+                0x00402f89                LLF_RESTORE_REGISTERS
+                0x00402f8e                LLF_RESTORE_SYSTEM_STACK
+                0x00402f93                LLF_SAVE_SYSTEM_STACK
+                0x00402f98                LLF_CLEAR_ALL_GP_REGISTERS
+                0x00402f9d                LLF_PERFORM_RAM_CHECK
+                0x00402fa2                LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
+ .text          0x00402fa8       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
+                0x00402fa8                LLF_INT_DISABLE
+                0x00402fad                LLF_INT_ENABLE
+                0x00402fb2                LLF_DISABLE_INTERRUPTS_ALL_CORES
+ .text          0x00402fbc       0x1c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
+                0x00402fbc                LLF_MPU_DISABLE
+                0x00402fc1                LLF_MPU_ENABLE
+                0x00402fc6                LLF_MPU_SWITCH_OFF_ALL_REGIONS
+                0x00402fcb                LLF_GET_MPU_PRESENT
+ .text          0x00402fd8        0x8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
+                0x00402fd8                LLF_CLEAR_ALL_RAM
+ .text          0x00402fe0        0x0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
+ .text          0x00402fe0        0xc E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
+                0x00402fe0                LLF_MCU_SWITCH_OFF_POWER
+                0x00402fe5                LLF_MCU_RESET_POWER
+ .text          0x00402fec       0x14 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
+                0x00402fec                USER_LED_INIT
+                0x00402ff1                USER_LED_ON
+                0x00402ff6                USER_LED_OFF
+                0x00402ffb                USER_LED_TOGGLE
+ .text          0x00403000        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(CRTglob.o)
+ .text          0x00403000      0x310 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(setargv.o)
+                0x00403000                _setargv
+ .text          0x00403310        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(CRTfmode.o)
+ .text          0x00403310       0xe0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(cpu_features.o)
+                0x00403310                __cpu_features_init
+ .text          0x004033f0       0x10 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(CRT_fp10.o)
+                0x004033f0                fpreset
+                0x004033f0                _fpreset
+ .text          0x00403400        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(txtmode.o)
+ .text          0x00403400       0xa0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(gccmain.o)
+                0x00403400                __do_global_dtors
+                0x00403430                __do_global_ctors
+                0x00403480                __main
+ .text          0x004034a0       0xf0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(tlssup.o)
+                0x004034f0                __dyn_tls_init@12
+                0x00403580                __tlregdtor
+ .text          0x00403590      0x240 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(tlsthrd.o)
+                0x00403600                ___w64_mingwthr_add_key_dtor
+                0x00403690                ___w64_mingwthr_remove_key_dtor
+                0x00403730                __mingw_TLScallback
+ .text          0x004037d0      0x320 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(pseudo-reloc.o)
+                0x00403910                _pei386_runtime_relocator
+ .text          0x00403af0        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(pseudo-reloc-list.o)
+ .text          0x00403af0        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingw32.a(crtst.o)
+ .text          0x00403af0       0x2c d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_chkstk_ms.o)
+                0x00403af0                __chkstk_ms
+ .text          0x00403b1c        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_ctors.o)
+ *fill*         0x00403b1c        0x4 
+ .text          0x00403b20       0x40 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(vprintf.o)
+                0x00403b20                __mingw_vprintf
+ .text          0x00403b60      0xd00 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(glob.o)
+                0x00404760                __mingw_glob
+                0x00404840                __mingw_globfree
+ .text          0x00404860      0x400 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(dirname.o)
+                0x00404860                __mingw_dirname
+ .text          0x00404c60      0x4b0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(dirent.o)
+                0x00404dd0                __mingw_opendir
+                0x00404f70                __mingw_readdir
+                0x00404fc0                __mingw_closedir
+                0x00405010                __mingw_rewinddir
+                0x00405070                __mingw_telldir
+                0x004050a0                __mingw_seekdir
+ .text          0x00405110     0x1f10 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(pformat.o)
+                0x004066b0                __mingw_pformat
+ .text          0x00407020       0x30 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(snprintf.o)
+                0x00407020                snprintf
+                0x00407020                __mingw_snprintf
+ .text          0x00407050       0x80 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(vsnprintf.o)
+                0x00407050                __mingw_vsnprintf
+                0x00407050                vsnprintf
+ .text          0x004070d0        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(varofmt.o)
+ .text          0x004070d0      0x420 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(mbrtowc.o)
+                0x00407250                mbrtowc
+                0x004072f0                mbsrtowcs
+                0x00407460                mbrlen
+ .text          0x004074f0      0x260 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(wcrtomb.o)
+                0x00407580                wcrtomb
+                0x00407600                wcsrtombs
+ .text          0x00407750     0x14a0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(gdtoa.o)
+                0x00407750                __gdtoa
+ .text          0x00408bf0      0x160 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(gmisc.o)
+                0x00408bf0                __rshift_D2A
+                0x00408d10                __trailz_D2A
+ .text          0x00408d50      0x2b0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(dmisc.o)
+                0x00408d50                __rv_alloc_D2A
+                0x00408d90                __nrv_alloc_D2A
+                0x00408de0                __freedtoa
+                0x00408e00                __quorem_D2A
+ .text          0x00409000      0xb50 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmingwex.a(misc.o)
+                0x00409120                __Balloc_D2A
+                0x004091f0                __Bfree_D2A
+                0x00409260                __multadd_D2A
+                0x00409340                __i2b_D2A
+                0x00409370                __mult_D2A
+                0x004094d0                __pow5mult_D2A
+                0x00409660                __lshift_D2A
+                0x00409770                __cmp_D2A
+                0x004097c0                __diff_D2A
+                0x00409940                __b2d_D2A
+                0x00409a30                __d2b_D2A
+                0x00409b20                __strcp_D2A
+ .text          0x00409b50        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00772.o)
+                0x00409b50                wcstombs
+ .text          0x00409b58        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00761.o)
+                0x00409b58                wcslen
+ .text          0x00409b60        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00748.o)
+                0x00409b60                vfprintf
+ .text          0x00409b68        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00742.o)
+                0x00409b68                tolower
+ .text          0x00409b70        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00739.o)
+                0x00409b70                time
+ .text          0x00409b78        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00721.o)
+                0x00409b78                strlen
+ .text          0x00409b80        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00716.o)
+                0x00409b80                strcoll
+ .text          0x00409b88        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00714.o)
+                0x00409b88                strchr
+ .text          0x00409b90        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00706.o)
+                0x00409b90                signal
+ .text          0x00409b98        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00704.o)
+                0x00409b98                setlocale
+ .text          0x00409ba0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00698.o)
+                0x00409ba0                realloc
+ .text          0x00409ba8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00682.o)
+                0x00409ba8                memcpy
+ .text          0x00409bb0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00678.o)
+                0x00409bb0                mbstowcs
+ .text          0x00409bb8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00676.o)
+                0x00409bb8                malloc
+ .text          0x00409bc0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00671.o)
+                0x00409bc0                localeconv
+ .text          0x00409bc8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00652.o)
+                0x00409bc8                isspace
+ .text          0x00409bd0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00637.o)
+                0x00409bd0                getenv
+ .text          0x00409bd8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00636.o)
+                0x00409bd8                getchar
+ .text          0x00409be0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00633.o)
+                0x00409be0                fwrite
+ .text          0x00409be8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00625.o)
+                0x00409be8                free
+ .text          0x00409bf0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00620.o)
+                0x00409bf0                fputc
+ .text          0x00409bf8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00595.o)
+                0x00409bf8                calloc
+ .text          0x00409c00        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00592.o)
+                0x00409c00                atoi
+ .text          0x00409c08        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00590.o)
+ .text          0x00409c08        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00583.o)
+                0x00409c08                abort
+ .text          0x00409c10        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00426.o)
+                0x00409c10                _setmode
+ .text          0x00409c18        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00383.o)
+ .text          0x00409c18        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00266.o)
+ .text          0x00409c18        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00228.o)
+                0x00409c18                _fullpath
+ .text          0x00409c20        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00182.o)
+                0x00409c20                _errno
+ .text          0x00409c28        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00147.o)
+                0x00409c28                _cexit
+ .text          0x00409c30        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00079.o)
+                0x00409c30                __p__fmode
+ .text          0x00409c38        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00077.o)
+                0x00409c38                __p__environ
+ .text          0x00409c40        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00065.o)
+ .text          0x00409c40        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfs00055.o)
+                0x00409c40                __getmainargs
+ .text          0x00409c48        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczfh.o)
+ .text          0x00409c48        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmsvcrt.a(dczft.o)
+ .text          0x00409c48        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01247.o)
+                0x00409c48                WideCharToMultiByte@32
+ .text          0x00409c50        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01215.o)
+                0x00409c50                VirtualQuery@12
+ .text          0x00409c58        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01213.o)
+                0x00409c58                VirtualProtect@16
+ .text          0x00409c60        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01173.o)
+                0x00409c60                TlsGetValue@4
+ .text          0x00409c68        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01152.o)
+                0x00409c68                Sleep@4
+ .text          0x00409c70        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds01140.o)
+                0x00409c70                SetUnhandledExceptionFilter@4
+ .text          0x00409c78        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00860.o)
+                0x00409c78                MultiByteToWideChar@24
+ .text          0x00409c80        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00817.o)
+                0x00409c80                LoadLibraryA@4
+ .text          0x00409c88        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00814.o)
+                0x00409c88                LeaveCriticalSection@4
+ .text          0x00409c90        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00763.o)
+                0x00409c90                IsDBCSLeadByteEx@8
+ .text          0x00409c98        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00744.o)
+                0x00409c98                InterlockedExchange@8
+ .text          0x00409ca0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00734.o)
+                0x00409ca0                InitializeCriticalSection@4
+ .text          0x00409ca8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00577.o)
+                0x00409ca8                GetProcAddress@8
+ .text          0x00409cb0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00529.o)
+                0x00409cb0                GetModuleHandleA@4
+ .text          0x00409cb8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00510.o)
+                0x00409cb8                GetLastError@0
+ .text          0x00409cc0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00388.o)
+                0x00409cc0                GetCommandLineA@0
+ .text          0x00409cc8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00352.o)
+                0x00409cc8                FreeLibrary@4
+ .text          0x00409cd0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00321.o)
+                0x00409cd0                FindNextFileA@8
+ .text          0x00409cd8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00304.o)
+                0x00409cd8                FindFirstFileA@8
+ .text          0x00409ce0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00300.o)
+                0x00409ce0                FindClose@4
+ .text          0x00409ce8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00279.o)
+                0x00409ce8                ExitProcess@4
+ .text          0x00409cf0        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00236.o)
+                0x00409cf0                EnterCriticalSection@4
+ .text          0x00409cf8        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchds00207.o)
+                0x00409cf8                DeleteCriticalSection@4
+ .text          0x00409d00        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchdh.o)
+ .text          0x00409d00        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libkernel32.a(dchdt.o)
+ .text          0x00409d00      0x110 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_udivdi3.o)
+                0x00409d00                __udivdi3
+ .text          0x00409e10      0x160 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_umoddi3.o)
+                0x00409e10                __umoddi3
+ .text          0x00409f70        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmoldname.a(dxpgs00082.o)
+                0x00409f70                stricoll
+ .text          0x00409f78        0x8 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmoldname.a(dxpgs00080.o)
+                0x00409f78                strdup
+ .text          0x00409f80        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmoldname.a(dxpgh.o)
+ .text          0x00409f80        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/../../..\libmoldname.a(dxpgt.o)
+ .text          0x00409f80        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
  *(SORT(.text$*))
  *(.text.*)
  .text.unlikely
-                0x00409f70        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtbegin.o
+                0x00409f80        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtbegin.o
  .text.unlikely
-                0x00409f70        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_udivdi3.o)
+                0x00409f80        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_udivdi3.o)
  .text.unlikely
-                0x00409f70        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_umoddi3.o)
+                0x00409f80        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3\libgcc.a(_umoddi3.o)
  .text.unlikely
-                0x00409f70        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
- .text.startup  0x00409f70       0x20 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
+                0x00409f80        0x0 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
+ .text.startup  0x00409f80       0x20 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
  *(.gnu.linkonce.t.*)
  *(.glue_7t)
  *(.glue_7)
-                0x00409f90                ___CTOR_LIST__ = .
-                0x00409f90                __CTOR_LIST__ = .
-                0x00409f90        0x4 LONG 0xffffffff
+                0x00409fa0                ___CTOR_LIST__ = .
+                0x00409fa0                __CTOR_LIST__ = .
+                0x00409fa0        0x4 LONG 0xffffffff
  *(.ctors)
  *(.ctor)
  *(SORT(.ctors.*))
- .ctors.65535   0x00409f94        0x4 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
-                0x00409f98        0x4 LONG 0x0
-                0x00409f9c                ___DTOR_LIST__ = .
-                0x00409f9c                __DTOR_LIST__ = .
-                0x00409f9c        0x4 LONG 0xffffffff
+ .ctors.65535   0x00409fa4        0x4 d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
+                0x00409fa8        0x4 LONG 0x0
+                0x00409fac                ___DTOR_LIST__ = .
+                0x00409fac                __DTOR_LIST__ = .
+                0x00409fac        0x4 LONG 0xffffffff
  *(.dtors)
  *(.dtor)
  *(SORT(.dtors.*))
-                0x00409fa0        0x4 LONG 0x0
+                0x00409fb0        0x4 LONG 0x0
  *(.fini)
  *(.gcc_exc)
                 [!provide]                PROVIDE (etext, .)
@@ -1743,28 +1742,28 @@ LOAD d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
  .debug_info    0x0042568f      0x106 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_exception_isr_handler.o
  .debug_info    0x00425795      0x103 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_init_task_system.o
  .debug_info    0x00425898      0x717 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_main.o
- .debug_info    0x00425faf       0xfd E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o
- .debug_info    0x004260ac      0x1e6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shutdown.o
- .debug_info    0x00426292      0x1c0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_ext_prg.o
- .debug_info    0x00426452       0xf8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_hw.o
- .debug_info    0x0042654a       0xf8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
- .debug_info    0x00426642      0x30c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
- .debug_info    0x0042694e      0x25a E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
- .debug_info    0x00426ba8      0x956 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
- .debug_info    0x004274fe      0xcef E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
- .debug_info    0x004281ed      0xe53 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
- .debug_info    0x00429040      0x2ab E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
- .debug_info    0x004292eb      0xdf6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
- .debug_info    0x0042a0e1      0x2f9 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
- .debug_info    0x0042a3da       0xd1 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
- .debug_info    0x0042a4ab       0xd0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
- .debug_info    0x0042a57b      0x7db E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
- .debug_info    0x0042ad56      0x144 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
- .debug_info    0x0042ae9a      0x178 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
- .debug_info    0x0042b012       0xf6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
- .debug_info    0x0042b108       0xd1 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
- .debug_info    0x0042b1d9      0x120 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
- .debug_info    0x0042b2f9      0x1be E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
+ .debug_info    0x00425faf      0x126 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o
+ .debug_info    0x004260d5      0x1e6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shutdown.o
+ .debug_info    0x004262bb      0x1c0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_ext_prg.o
+ .debug_info    0x0042647b       0xf8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_hw.o
+ .debug_info    0x00426573       0xf8 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
+ .debug_info    0x0042666b      0x30c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
+ .debug_info    0x00426977      0x25a E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
+ .debug_info    0x00426bd1      0x956 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
+ .debug_info    0x00427527      0xcef E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
+ .debug_info    0x00428216      0xe53 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
+ .debug_info    0x00429069      0x2ab E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
+ .debug_info    0x00429314      0xdf6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
+ .debug_info    0x0042a10a      0x2f9 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
+ .debug_info    0x0042a403       0xd1 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
+ .debug_info    0x0042a4d4       0xd0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
+ .debug_info    0x0042a5a4      0x7db E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
+ .debug_info    0x0042ad7f      0x144 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
+ .debug_info    0x0042aec3      0x16f E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
+ .debug_info    0x0042b032       0xf6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
+ .debug_info    0x0042b128       0xd1 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
+ .debug_info    0x0042b1f9      0x120 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
+ .debug_info    0x0042b319      0x1be E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
 
 .zdebug_info
  *(.zdebug_info .zdebug.gnu.linkonce.wi.*)
@@ -1776,28 +1775,28 @@ LOAD d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
  .debug_abbrev  0x0042c0ea       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_exception_isr_handler.o
  .debug_abbrev  0x0042c122       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_init_task_system.o
  .debug_abbrev  0x0042c15a      0x10b E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_main.o
- .debug_abbrev  0x0042c265       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o
- .debug_abbrev  0x0042c29d       0xaa E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shutdown.o
- .debug_abbrev  0x0042c347       0x8d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_ext_prg.o
- .debug_abbrev  0x0042c3d4       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_hw.o
- .debug_abbrev  0x0042c40c       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
- .debug_abbrev  0x0042c444       0xa6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
- .debug_abbrev  0x0042c4ea       0x5d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
- .debug_abbrev  0x0042c547      0x10d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
- .debug_abbrev  0x0042c654      0x1eb E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
- .debug_abbrev  0x0042c83f      0x218 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
- .debug_abbrev  0x0042ca57       0xde E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
- .debug_abbrev  0x0042cb35       0xe6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
- .debug_abbrev  0x0042cc1b       0x4c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
- .debug_abbrev  0x0042cc67       0x1c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
- .debug_abbrev  0x0042cc83       0x1c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
- .debug_abbrev  0x0042cc9f      0x12d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
- .debug_abbrev  0x0042cdcc       0x50 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
- .debug_abbrev  0x0042ce1c       0x5f E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
- .debug_abbrev  0x0042ce7b       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
- .debug_abbrev  0x0042ceb3       0x1c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
- .debug_abbrev  0x0042cecf       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
- .debug_abbrev  0x0042cf07       0x84 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
+ .debug_abbrev  0x0042c265       0x50 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o
+ .debug_abbrev  0x0042c2b5       0xaa E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shutdown.o
+ .debug_abbrev  0x0042c35f       0x8d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_ext_prg.o
+ .debug_abbrev  0x0042c3ec       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_hw.o
+ .debug_abbrev  0x0042c424       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
+ .debug_abbrev  0x0042c45c       0xa6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
+ .debug_abbrev  0x0042c502       0x5d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
+ .debug_abbrev  0x0042c55f      0x10d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
+ .debug_abbrev  0x0042c66c      0x1eb E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
+ .debug_abbrev  0x0042c857      0x218 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
+ .debug_abbrev  0x0042ca6f       0xde E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
+ .debug_abbrev  0x0042cb4d       0xe6 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
+ .debug_abbrev  0x0042cc33       0x4c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
+ .debug_abbrev  0x0042cc7f       0x1c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
+ .debug_abbrev  0x0042cc9b       0x1c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
+ .debug_abbrev  0x0042ccb7      0x12d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
+ .debug_abbrev  0x0042cde4       0x50 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
+ .debug_abbrev  0x0042ce34       0x5f E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
+ .debug_abbrev  0x0042ce93       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
+ .debug_abbrev  0x0042cecb       0x1c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
+ .debug_abbrev  0x0042cee7       0x38 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
+ .debug_abbrev  0x0042cf1f       0x84 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
 
 .zdebug_abbrev
  *(.zdebug_abbrev)
@@ -1809,28 +1808,28 @@ LOAD d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
  .debug_line    0x0042d6b4      0x339 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_exception_isr_handler.o
  .debug_line    0x0042d9ed      0x335 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_init_task_system.o
  .debug_line    0x0042dd22      0x3c7 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_main.o
- .debug_line    0x0042e0e9      0x30b E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o
- .debug_line    0x0042e3f4      0x340 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shutdown.o
- .debug_line    0x0042e734      0x313 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_ext_prg.o
- .debug_line    0x0042ea47      0x306 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_hw.o
- .debug_line    0x0042ed4d      0x31c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
- .debug_line    0x0042f069      0x31f E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
- .debug_line    0x0042f388      0x31c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
- .debug_line    0x0042f6a4      0x36e E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
- .debug_line    0x0042fa12      0x489 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
- .debug_line    0x0042fe9b      0x502 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
- .debug_line    0x0043039d      0x4a1 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
- .debug_line    0x0043083e      0x309 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
- .debug_line    0x00430b47      0x2f5 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
- .debug_line    0x00430e3c      0x2f0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
- .debug_line    0x0043112c      0x2ef E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
- .debug_line    0x0043141b      0x382 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
- .debug_line    0x0043179d      0x374 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
- .debug_line    0x00431b11      0x370 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
- .debug_line    0x00431e81      0x369 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
- .debug_line    0x004321ea      0x35d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
- .debug_line    0x00432547      0x375 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
- .debug_line    0x004328bc      0x398 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
+ .debug_line    0x0042e0e9      0x313 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o
+ .debug_line    0x0042e3fc      0x340 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shutdown.o
+ .debug_line    0x0042e73c      0x313 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_ext_prg.o
+ .debug_line    0x0042ea4f      0x306 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_hw.o
+ .debug_line    0x0042ed55      0x336 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
+ .debug_line    0x0042f08b      0x31f E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
+ .debug_line    0x0042f3aa      0x31c E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
+ .debug_line    0x0042f6c6      0x36e E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
+ .debug_line    0x0042fa34      0x489 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
+ .debug_line    0x0042febd      0x502 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
+ .debug_line    0x004303bf      0x4a1 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
+ .debug_line    0x00430860      0x309 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
+ .debug_line    0x00430b69      0x2f5 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
+ .debug_line    0x00430e5e      0x2f0 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
+ .debug_line    0x0043114e      0x2ef E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
+ .debug_line    0x0043143d      0x382 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
+ .debug_line    0x004317bf      0x374 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
+ .debug_line    0x00431b33      0x370 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
+ .debug_line    0x00431ea3      0x369 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
+ .debug_line    0x0043220c      0x35d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
+ .debug_line    0x00432569      0x375 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
+ .debug_line    0x004328de      0x398 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
 
 .zdebug_line
  *(.zdebug_line)
@@ -1921,24 +1920,24 @@ LOAD d:/programm/mingw/bin/../lib/gcc/mingw32/4.9.3/crtend.o
  .debug_macro   0x0044110e     0x221d E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shutdown.o
  .debug_macro   0x0044332b     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_ext_prg.o
  .debug_macro   0x00445515     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_hw.o
- .debug_macro   0x004476ff     0x2206 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
- .debug_macro   0x00449905     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
- .debug_macro   0x0044baef     0x23d7 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
- .debug_macro   0x0044dec6     0x2272 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
- .debug_macro   0x00450138     0x230e E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
- .debug_macro   0x00452446     0x2423 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
- .debug_macro   0x00454869     0x3139 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
- .debug_macro   0x004579a2     0x21f2 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
- .debug_macro   0x00459b94     0x23aa E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
- .debug_macro   0x0045bf3e     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
- .debug_macro   0x0045e128     0x21ee E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
- .debug_macro   0x00460316     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
- .debug_macro   0x00462500     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
- .debug_macro   0x004646ea     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
- .debug_macro   0x004668d4     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
- .debug_macro   0x00468abe     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
- .debug_macro   0x0046aca8     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
- .debug_macro   0x0046ce92     0x21ee E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
+ .debug_macro   0x004476ff     0x2225 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_mc.o
+ .debug_macro   0x00449924     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_init_sw.o
+ .debug_macro   0x0044bb0e     0x23d7 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_start_os.o
+ .debug_macro   0x0044dee5     0x2272 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_common.o
+ .debug_macro   0x00450157     0x230e E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_queue.o
+ .debug_macro   0x00452465     0x2423 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o
+ .debug_macro   0x00454888     0x3139 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_sim_main.o
+ .debug_macro   0x004579c1     0x21f2 E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_ram.o
+ .debug_macro   0x00459bb3     0x23aa E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_shared_ram.o
+ .debug_macro   0x0045bf5d     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o
+ .debug_macro   0x0045e147     0x21ee E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_heap.o
+ .debug_macro   0x00460335     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_global.o
+ .debug_macro   0x0046251f     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_interrupt.o
+ .debug_macro   0x00464709     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_mmu.o
+ .debug_macro   0x004668f3     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_ram.o
+ .debug_macro   0x00468add     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_timer.o
+ .debug_macro   0x0046acc7     0x21ea E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_x86\lld_power.o
+ .debug_macro   0x0046ceb1     0x21ee E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_user_code\obj_x86\led.o
 
 .zdebug_macro
  *(.zdebug_macro)

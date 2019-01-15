@@ -63,22 +63,26 @@ OS_MmuSetup:
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
-	@ link register save eliminated.
-	push	{r7}	@
-	.cfi_def_cfa_offset 4
-	.cfi_offset 7, -4
+	push	{r7, lr}	@
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
 	add	r7, sp, #0	@,,
 	.cfi_def_cfa_register 7
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:28: }
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:28:    while(LLF_GET_MPU_PRESENT() != 0)
 	.loc 1 28 0
 	nop
-	mov	sp, r7	@,
-	.cfi_def_cfa_register 13
-	@ sp needed	@
-	pop	{r7}	@
-	.cfi_restore 7
-	.cfi_def_cfa_offset 0
-	bx	lr	@
+.L2:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:28:    while(LLF_GET_MPU_PRESENT() != 0)
+	.loc 1 28 0 is_stmt 0 discriminator 1
+	bl	LLF_GET_MPU_PRESENT	@
+	mov	r3, r0	@ _1,
+	cmp	r3, #0	@ _1,
+	bne	.L2	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:32: }
+	.loc 1 32 0 is_stmt 1
+	nop
+	pop	{r7, pc}	@
 	.cfi_endproc
 .LFE0:
 	.size	OS_MmuSetup, .-OS_MmuSetup
@@ -1128,7 +1132,7 @@ OS_MmuSetup:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2117
+	.uleb128 0x2116
 	.uleb128 0x19
 	.byte	0
 	.byte	0

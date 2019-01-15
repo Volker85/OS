@@ -24,5 +24,5 @@ void OS_MmuSetup(void)
    /* assign every task a mmu region + the scheduler an own region */
    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might run with different MMU rights
       hardware register access shall be only possible in supervisor / kernel mode via system call.... based on a security descriptor as done in windows */
-   /* the MPU is implementation depended in STM32F4 MCU..., the eval board does not have a MPU*/
+   /* the MPU is implementation depended in STM32F4 MCU..., the eval board does have a MPU with 8 regions */
 }

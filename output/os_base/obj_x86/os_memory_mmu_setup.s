@@ -13,8 +13,16 @@ LFB0:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
+	subl	$8, %esp
 	.loc 1 28 0
-	popl	%ebp
+	nop
+L2:
+	.loc 1 28 0 is_stmt 0 discriminator 1
+	call	_LLF_GET_MPU_PRESENT
+	testl	%eax, %eax
+	jne	L2
+	.loc 1 32 0 is_stmt 1
+	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
@@ -23,7 +31,7 @@ LFE0:
 Letext0:
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0xf9
+	.long	0x122
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -59,6 +67,19 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
+	.long	0x11e
+	.uleb128 0x4
+	.ascii "LLF_GET_MPU_PRESENT\0"
+	.byte	0x1
+	.byte	0x1c
+	.long	0x11e
+	.uleb128 0x5
+	.byte	0
+	.byte	0
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x5
+	.ascii "int\0"
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -94,7 +115,7 @@ Ldebug_abbrev0:
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x2e
-	.byte	0
+	.byte	0x1
 	.uleb128 0x3f
 	.uleb128 0x19
 	.uleb128 0x3
@@ -111,8 +132,32 @@ Ldebug_abbrev0:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2117
+	.uleb128 0x2116
 	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x4
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x3c
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x5
+	.uleb128 0x18
+	.byte	0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1210,3 +1255,4 @@ Ldebug_macro0:
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
+	.def	_LLF_GET_MPU_PRESENT;	.scl	2;	.type	32;	.endef

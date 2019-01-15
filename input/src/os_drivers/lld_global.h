@@ -10,7 +10,7 @@ extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
 extern void LLF_WAIT_FOR_INTERRUPT(void);
 extern void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void);
 extern void LLF_MCU_RESET_POWER(void);
-extern unsigned_char_t LLF_GET_MPU_PRESENT(void);
+extern uint32 LLF_GET_MPU_PRESENT(void);
 extern void LLF_CLEAR_ALL_RAM(void);
 extern void LLF_MCU_SWITCH_OFF_POWER(void);
 extern void LLF_MPU_DISABLE(void);
