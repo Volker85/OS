@@ -185,6 +185,7 @@ LLF_PERFORM_RAM_CHECK:
         #uint8 ram_check_failed = False;
         MOV r6, #0
         #LLF_INT_DISABLE();
+        # BL only in Thumb 2
         BL LLF_INT_DISABLE            
 loop_start:        
         #while(curr_pos_ptr < ram_end_ptr)
@@ -224,7 +225,8 @@ loop_finished:
         #; Move R14 (LR) into R15 (PC)
         MOV R15, R14
    
-LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE:    
+LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE:   
+   # MRS only in Thumb 2 
    MRS r0,CONTROL
    MOV r1,#0x01
    ORR r0,r0,r1
