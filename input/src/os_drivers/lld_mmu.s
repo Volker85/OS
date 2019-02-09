@@ -13,23 +13,59 @@ From the AAPCS, §5.1.1:
         .thumb
         .syntax unified
         .text
-        .global LLF_MPU_SWITCH_OFF_ALL_REGIONS
         .global LLF_GET_MPU_PRESENT
         .global LLF_MPU_DISABLE
         //.extern OS_StartOs
         
       
 LLF_MPU_DISABLE:
-        # the STM32F407VGT6 eval board does not have an MPU... 
+        # the STM32F407VGT6 eval board has an MPU... 
+        MOV  r4, #0xE0
+        MOV  r5, #0x00
+        MOV  r6, #0xED
+        MOV  r7, #0x94
+        MOV  r8,  #0x18
+        MOV  r9,  #0x10
+        MOV  r10, #0x08
+        LSL  r4,r4,r8
+        LSL  r5,r5,r9
+        LSL  r6,r6,r10
+        #;  build MPU_CTRL variable
+        ADD  r12,r12,r4
+        ADD  r12,r12,r5
+        ADD  r12,r12,r6
+        ADD  r12,r12,r7
+        # r13 = *r12 = *0xE000ED94
+        LDR  r13,[r12]
+        # *r13 = *r13 & 0x06 
+        AND r13,r13,#0x06
+        # *r12 = r13
+        STR r13,[r12]
         MOV R15, R14
 
 LLF_MPU_ENABLE:
-        # the STM32F407VGT6 eval board does not have an MPU... 
-        MOV R15, R14
-
-      
-LLF_MPU_SWITCH_OFF_ALL_REGIONS:
-        # the STM32F407VGT6 eval board does not have an MPU... 
+        # the STM32F407VGT6 eval board has an MPU... 
+        MOV  r4, #0xE0
+        MOV  r5, #0x00
+        MOV  r6, #0xED
+        MOV  r7, #0x94
+        MOV  r8,  #0x18
+        MOV  r9,  #0x10
+        MOV  r10, #0x08
+        LSL  r4,r4,r8
+        LSL  r5,r5,r9
+        LSL  r6,r6,r10
+        #;  build MPU_CTRL variable
+        ADD  r12,r12,r4
+        ADD  r12,r12,r5
+        ADD  r12,r12,r6
+        ADD  r12,r12,r7
+        # r13 = *r12 = *0xE000ED94
+        LDR  r13,[r12]
+        # *r13 = *r13 | 0x01 
+        ORR r13,r13,#0x01
+        # *r12 = r13
+        STR r13,[r12]
         MOV R15, R14
 
 LLF_GET_MPU_PRESENT:

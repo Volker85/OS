@@ -14,7 +14,6 @@ From the AAPCS, §5.1.1:
         .syntax unified
         .text
         .global LLF_DISABLE_INTERRUPTS_ALL_CORES
-        .global LLF_MPU_SWITCH_OFF_ALL_REGIONS
         .global LLF_GET_MPU_PRESENT
        
 

@@ -27,9 +27,6 @@ void OS_StartExtPrg(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
    /* 2. Switch off MMU (system mpu and core mpu, perhaps more mpu parts need to be switched off...) (reset also regions)  and allow reconfig by ExtPrg */
    LLF_MPU_DISABLE();
 
-   LLF_MPU_SWITCH_OFF_ALL_REGIONS();
-   
-
    /* 3. Start ExtPrg */
    /*
    call function:

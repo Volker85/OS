@@ -138,7 +138,7 @@ Stack_write:
          #/* 3b -> enable caches                       */
          #/* not existing in STM32F407VGT6             */
          #/* 3c -> MMU                                 */
-         #/* not existing in STM32F407VGT6             */
+         #/* existing in STM32F407VGT6                 */
          #/* 4. set the new PLL clock freq             */
          #/* done in OS_INIT_MC()                      */
          #
