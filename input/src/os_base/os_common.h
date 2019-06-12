@@ -49,7 +49,9 @@ enum os_sw_bugs_e
    os_bug_Task_unspecified,
    os_bug_exception_UndefInstruction,
    os_bug_exception_AbortPrefetch,
-   os_bug_exception_AbortData
+   os_bug_exception_AbortData,
+   os_bug_reset_exit_or_shutdown_failed,
+   os_bug_critical_stack_usage
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 enum os_sw_bugs_function_e
@@ -69,7 +71,9 @@ enum os_sw_bugs_function_e
    Func_TaskStateRequest,
    Func_Preempt_Task,
    Func_os_exception,
-   Func_CreateTask
+   Func_CreateTask,
+   Func_Shutdown,
+   Func_StackCheck
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 

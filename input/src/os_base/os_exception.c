@@ -37,7 +37,6 @@ void OS_Exception_HARDFAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -53,7 +52,6 @@ void OS_Exception_NMI(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -81,7 +79,6 @@ void OS_Exception_BUS_FAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -90,7 +87,6 @@ void OS_Exception_DEBUG(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -105,7 +101,6 @@ void OS_Exception_MEM_MANAG_FAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -120,7 +115,6 @@ void OS_Exception_USAGE_FAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -128,13 +122,12 @@ void OS_Exception_USAGE_FAULT(void)
 void OS_Exception_PendSV(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
 
 void OS_Exception_Systick(void)
-{  
+{
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    task_t* task;
    scheduling_t* scheduling_task_ptr;
@@ -216,15 +209,15 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
    if(((void*)&scheduling_task_ptr) < SAVED_STACK_POINTER)
    {
       SAVED_STACK_POINTER = (void*)&scheduling_task_ptr;
-   }   
-   
+   }
+
    /* disable running task */
    task = GetRunningTask();
    scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
    if(task != 0u)
    {
       OS_TaskSaveTaskEnvironment(task);
-      OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
+      OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
       task->active = False;
       task->exe_time += (OS_GetCurrentTime() - task->start_time);
       task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);

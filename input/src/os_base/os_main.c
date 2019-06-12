@@ -96,6 +96,7 @@ void OS_StateHandler(void)
    case os_init:
    {
       /*init the MCU including MMU, RAM, Registers */
+      OS_StackChkPatternInit();
       OS_InitMc();
       /* start the task system */
       /* initialisation of SW, HW will be done in the tasks, after starting the task system.... */
@@ -112,12 +113,6 @@ void OS_StateHandler(void)
       OS_STATE = os_running;
       /* activate the interrupts, tasks will be executed from now on ... */
       LLF_INT_ENABLE();
-#if(CFG_PROCESSOR != cMCU_X86)
-      while(1)/*wait until timer task*/
-      {
-
-      }
-#endif
       break;
    }
    case os_running:
@@ -170,4 +165,11 @@ void OS_StateHandler(void)
       break;
    }
    }
+   OS_StackCheck();
+#if(CFG_PROCESSOR != cMCU_X86)
+   /* wait until timer task, else the program would return to the next instruction after the reset vector, which is not allowed */
+   while(1)
+   {
+   }
+#endif
 }

@@ -8,6 +8,8 @@ void OS_InitMc(void)
    /*TODO*/
    /* 2. all MCU IO*/
    /* configure GPIO (SPI, UART, CAN, etc) */
+   //TODO
    /* initialize the external parts...  */
+   //TODO
    OS_MmuSetup();
 }

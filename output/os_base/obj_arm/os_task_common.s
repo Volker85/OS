@@ -5,7 +5,7 @@
 	.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
 	.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
 	.eabi_attribute 26, 1	@ Tag_ABI_enum_size
-	.eabi_attribute 30, 6	@ Tag_ABI_optimization_goals
+	.eabi_attribute 30, 2	@ Tag_ABI_optimization_goals
 	.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
 	.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
 	.file	"os_task_common.c"
@@ -20,37 +20,62 @@
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c
 @ -mcpu=cortex-m4 -mthumb
 @ -auxbase-strip E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_arm\os_task_common.s
-@ -g3 -O0 -Wall -Wextra -Wpedantic -std=c90 -fverbose-asm
-@ options enabled:  -faggressive-loop-optimizations -fauto-inc-dec
-@ -fchkp-check-incomplete-type -fchkp-check-read -fchkp-check-write
-@ -fchkp-instrument-calls -fchkp-narrow-bounds -fchkp-optimize
-@ -fchkp-store-bounds -fchkp-use-static-bounds
-@ -fchkp-use-static-const-bounds -fchkp-use-wrappers -fcommon
-@ -fdelete-null-pointer-checks -fdwarf2-cfi-asm -fearly-inlining
-@ -feliminate-unused-debug-types -ffp-int-builtin-inexact -ffunction-cse
-@ -fgcse-lm -fgnu-runtime -fgnu-unique -fident -finline-atomics
-@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
-@ -fivopts -fkeep-static-consts -fleading-underscore -flifetime-dse
-@ -flto-odr-type-merging -fmath-errno -fmerge-debug-strings -fpeephole
-@ -fplt -fprefetch-loop-arrays -freg-struct-return
+@ -g3 -O3 -Wall -Wextra -Wpedantic -std=c90 -fverbose-asm
+@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+@ -fchkp-use-static-const-bounds -fchkp-use-wrappers -fcode-hoisting
+@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+@ -fexpensive-optimizations -fforward-propagate -ffp-int-builtin-inexact
+@ -ffunction-cse -fgcse -fgcse-after-reload -fgcse-lm -fgnu-runtime
+@ -fgnu-unique -fguess-branch-probability -fhoist-adjacent-loads -fident
+@ -fif-conversion -fif-conversion2 -findirect-inlining -finline
+@ -finline-atomics -finline-functions -finline-functions-called-once
+@ -finline-small-functions -fipa-bit-cp -fipa-cp -fipa-cp-clone -fipa-icf
+@ -fipa-icf-functions -fipa-icf-variables -fipa-profile -fipa-pure-const
+@ -fipa-ra -fipa-reference -fipa-sra -fipa-vrp -fira-hoist-pressure
+@ -fira-share-save-slots -fira-share-spill-slots
+@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+@ -fmath-errno -fmerge-constants -fmerge-debug-strings
+@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+@ -foptimize-strlen -fpartial-inlining -fpeel-loops -fpeephole -fpeephole2
+@ -fplt -fpredictive-commoning -fprefetch-loop-arrays -freg-struct-return
+@ -freorder-blocks -freorder-functions -frerun-cse-after-loop
 @ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
 @ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
-@ -fsched-rank-heuristic -fsched-spec -fsched-spec-insn-heuristic
-@ -fsched-stalled-insns-dep -fsemantic-interposition -fshow-column
-@ -fshrink-wrap-separate -fsigned-zeros -fsplit-ivs-in-unroller
-@ -fssa-backprop -fstdarg-opt -fstrict-volatile-bitfields -fsync-libcalls
-@ -ftrapping-math -ftree-cselim -ftree-forwprop -ftree-loop-if-convert
-@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-@ -ftree-parallelize-loops= -ftree-phiprop -ftree-reassoc -ftree-scev-cprop
-@ -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
-@ -masm-syntax-unified -mlittle-endian -mpic-data-is-text-relative
-@ -msched-prolog -mthumb -munaligned-access -mvectorize-with-neon-quad
+@ -fsched-pressure -fsched-rank-heuristic -fsched-spec
+@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+@ -fshow-column -fshrink-wrap -fshrink-wrap-separate -fsigned-zeros
+@ -fsplit-ivs-in-unroller -fsplit-loops -fsplit-paths -fsplit-wide-types
+@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstore-merging
+@ -fstrict-aliasing -fstrict-overflow -fstrict-volatile-bitfields
+@ -fsync-libcalls -fthread-jumps -ftoplevel-reorder -ftrapping-math
+@ -ftree-bit-ccp -ftree-builtin-call-dce -ftree-ccp -ftree-ch
+@ -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim -ftree-dce
+@ -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+@ -ftree-loop-distribute-patterns -ftree-loop-if-convert -ftree-loop-im
+@ -ftree-loop-ivcanon -ftree-loop-optimize -ftree-loop-vectorize
+@ -ftree-parallelize-loops= -ftree-partial-pre -ftree-phiprop -ftree-pre
+@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+@ -ftree-slp-vectorize -ftree-slsr -ftree-sra -ftree-switch-conversion
+@ -ftree-tail-merge -ftree-ter -ftree-vrp -funit-at-a-time -funswitch-loops
+@ -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+@ -fzero-initialized-in-bss -masm-syntax-unified -mlittle-endian
+@ -mpic-data-is-text-relative -msched-prolog -mthumb -munaligned-access
+@ -mvectorize-with-neon-quad
 
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
-	.comm	TASK_PTR,40,4
 	.align	1
+	.p2align 2,,3
 	.global	OS_TaskSaveTaskEnvironment
 	.syntax unified
 	.thumb
@@ -62,64 +87,53 @@ OS_TaskSaveTaskEnvironment:
 	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c"
 	.loc 1 16 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
-	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}	@
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	sub	sp, sp, #8	@,,
-	.cfi_def_cfa_offset 16
-	add	r7, sp, #0	@,,
-	.cfi_def_cfa_register 7
-	str	r0, [r7, #4]	@ task, task
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+.LVL0:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:17:    if(task != 0)
 	.loc 1 17 0
-	ldr	r3, [r7, #4]	@ tmp115, task
-	cmp	r3, #0	@ tmp115,
-	beq	.L2	@,
+	cbz	r0, .L2	@ task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:16: {
+	.loc 1 16 0
+	push	{r4, lr}	@
+	.cfi_def_cfa_offset 8
+	.cfi_offset 4, -8
+	.cfi_offset 14, -4
+	mov	r4, r0	@ task, task
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:23:       LLF_SAVE_TASK_STACK(task->pStackPointer);
 	.loc 1 23 0
-	ldr	r3, [r7, #4]	@ tmp116, task
-	ldr	r3, [r3, #112]	@ _1, task_7(D)->pStackPointer
-	mov	r0, r3	@, _1
+	ldr	r0, [r0, #112]	@, task_7(D)->pStackPointer
+.LVL1:
 	bl	LLF_SAVE_TASK_STACK	@
+.LVL2:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:27:       LLF_SAVE_REGISTERS(task->r0,task->r1,task->r2,task->r3);
 	.loc 1 27 0
-	ldr	r3, [r7, #4]	@ tmp117, task
-	ldr	r0, [r3, #60]	@ _2, task_7(D)->r0
-	ldr	r3, [r7, #4]	@ tmp118, task
-	ldr	r1, [r3, #64]	@ _3, task_7(D)->r1
-	ldr	r3, [r7, #4]	@ tmp119, task
-	ldr	r2, [r3, #68]	@ _4, task_7(D)->r2
-	ldr	r3, [r7, #4]	@ tmp120, task
-	ldr	r3, [r3, #72]	@ _5, task_7(D)->r3
-	bl	LLF_SAVE_REGISTERS	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:34:    return;
-	.loc 1 34 0
-	b	.L1	@
+	ldrd	r2, r3, [r4, #68]	@,, task,
+	ldrd	r0, r1, [r4, #60]	@,, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:35: }
+	.loc 1 35 0
+	pop	{r4, lr}	@
+	.cfi_restore 14
+	.cfi_restore 4
+	.cfi_def_cfa_offset 0
+.LVL3:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:27:       LLF_SAVE_REGISTERS(task->r0,task->r1,task->r2,task->r3);
+	.loc 1 27 0
+	b	LLF_SAVE_REGISTERS	@
+.LVL4:
 .L2:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:32:       OS_SetSwBug(os_bug_null_pointer,Func_SaveTaskEnvironment);
 	.loc 1 32 0
 	movs	r1, #1	@,
 	movs	r0, #2	@,
-	bl	OS_SetSwBug	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:34:    return;
-	.loc 1 34 0
-	nop
-.L1:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:35: }
-	.loc 1 35 0
-	adds	r7, r7, #8	@,,
-	.cfi_def_cfa_offset 8
-	mov	sp, r7	@,
-	.cfi_def_cfa_register 13
-	@ sp needed	@
-	pop	{r7, pc}	@
+.LVL5:
+	b	OS_SetSwBug	@
+.LVL6:
 	.cfi_endproc
 .LFE0:
 	.size	OS_TaskSaveTaskEnvironment, .-OS_TaskSaveTaskEnvironment
 	.align	1
+	.p2align 2,,3
 	.global	OS_TASK_RESTORETASK_ENVIRONMENT
 	.syntax unified
 	.thumb
@@ -130,55 +144,52 @@ OS_TASK_RESTORETASK_ENVIRONMENT:
 .LFB1:
 	.loc 1 38 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
-	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}	@
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	sub	sp, sp, #8	@,,
-	.cfi_def_cfa_offset 16
-	add	r7, sp, #0	@,,
-	.cfi_def_cfa_register 7
-	str	r0, [r7, #4]	@ task, task
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+.LVL7:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:39:    if(task!=0)
 	.loc 1 39 0
-	ldr	r3, [r7, #4]	@ tmp111, task
-	cmp	r3, #0	@ tmp111,
-	beq	.L6	@,
+	cbz	r0, .L8	@ task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:38: {
+	.loc 1 38 0
+	push	{r4, lr}	@
+	.cfi_def_cfa_offset 8
+	.cfi_offset 4, -8
+	.cfi_offset 14, -4
+	mov	r4, r0	@ task, task
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:41:       LLF_RESTORE_TASK_STACK(task->pStackPointer);
 	.loc 1 41 0
-	ldr	r3, [r7, #4]	@ tmp112, task
-	ldr	r3, [r3, #112]	@ _1, task_3(D)->pStackPointer
-	mov	r0, r3	@, _1
+	ldr	r0, [r0, #112]	@, task_3(D)->pStackPointer
+.LVL8:
 	bl	LLF_RESTORE_TASK_STACK	@
+.LVL9:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:42:       LLF_RESTORE_REGISTERS(task);
 	.loc 1 42 0
-	ldr	r0, [r7, #4]	@, task
-	bl	LLF_RESTORE_REGISTERS	@
+	mov	r0, r4	@, task
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:48: }
 	.loc 1 48 0
-	b	.L8	@
-.L6:
+	pop	{r4, lr}	@
+	.cfi_restore 14
+	.cfi_restore 4
+	.cfi_def_cfa_offset 0
+.LVL10:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:42:       LLF_RESTORE_REGISTERS(task);
+	.loc 1 42 0
+	b	LLF_RESTORE_REGISTERS	@
+.LVL11:
+.L8:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:46:       OS_SetSwBug(os_bug_null_pointer,Func_RestoreTaskEnvironment);
 	.loc 1 46 0
 	movs	r1, #2	@,
-	movs	r0, #2	@,
-	bl	OS_SetSwBug	@
-.L8:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:48: }
-	.loc 1 48 0
-	nop
-	adds	r7, r7, #8	@,,
-	.cfi_def_cfa_offset 8
-	mov	sp, r7	@,
-	.cfi_def_cfa_register 13
-	@ sp needed	@
-	pop	{r7, pc}	@
+	mov	r0, r1	@,
+.LVL12:
+	b	OS_SetSwBug	@
+.LVL13:
 	.cfi_endproc
 .LFE1:
 	.size	OS_TASK_RESTORETASK_ENVIRONMENT, .-OS_TASK_RESTORETASK_ENVIRONMENT
 	.align	1
+	.p2align 2,,3
 	.global	OS_TASK_RESTORE_SYSTEM_STACK
 	.syntax unified
 	.thumb
@@ -189,34 +200,19 @@ OS_TASK_RESTORE_SYSTEM_STACK:
 .LFB2:
 	.loc 1 50 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
-	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}	@
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	sub	sp, sp, #8	@,,
-	.cfi_def_cfa_offset 16
-	add	r7, sp, #0	@,,
-	.cfi_def_cfa_register 7
-	str	r0, [r7, #4]	@ system_stack_ptr, system_stack_ptr
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+.LVL14:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:51:    LLF_RESTORE_SYSTEM_STACK(system_stack_ptr);
 	.loc 1 51 0
-	ldr	r0, [r7, #4]	@, system_stack_ptr
-	bl	LLF_RESTORE_SYSTEM_STACK	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:52: }
-	.loc 1 52 0
-	nop
-	adds	r7, r7, #8	@,,
-	.cfi_def_cfa_offset 8
-	mov	sp, r7	@,
-	.cfi_def_cfa_register 13
-	@ sp needed	@
-	pop	{r7, pc}	@
+	b	LLF_RESTORE_SYSTEM_STACK	@
+.LVL15:
 	.cfi_endproc
 .LFE2:
 	.size	OS_TASK_RESTORE_SYSTEM_STACK, .-OS_TASK_RESTORE_SYSTEM_STACK
 	.align	1
+	.p2align 2,,3
 	.global	OS_TASK_SAVE_SYSTEM_STACK
 	.syntax unified
 	.thumb
@@ -227,34 +223,19 @@ OS_TASK_SAVE_SYSTEM_STACK:
 .LFB3:
 	.loc 1 54 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
-	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}	@
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	sub	sp, sp, #8	@,,
-	.cfi_def_cfa_offset 16
-	add	r7, sp, #0	@,,
-	.cfi_def_cfa_register 7
-	str	r0, [r7, #4]	@ system_stack_ptr, system_stack_ptr
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+.LVL16:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:55:    LLF_SAVE_SYSTEM_STACK(system_stack_ptr);
 	.loc 1 55 0
-	ldr	r0, [r7, #4]	@, system_stack_ptr
-	bl	LLF_SAVE_SYSTEM_STACK	@
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:56: }
-	.loc 1 56 0
-	nop
-	adds	r7, r7, #8	@,,
-	.cfi_def_cfa_offset 8
-	mov	sp, r7	@,
-	.cfi_def_cfa_register 13
-	@ sp needed	@
-	pop	{r7, pc}	@
+	b	LLF_SAVE_SYSTEM_STACK	@
+.LVL17:
 	.cfi_endproc
 .LFE3:
 	.size	OS_TASK_SAVE_SYSTEM_STACK, .-OS_TASK_SAVE_SYSTEM_STACK
 	.align	1
+	.p2align 2,,3
 	.global	OS_Task_InitTaskEnvironment
 	.syntax unified
 	.thumb
@@ -265,214 +246,146 @@ OS_Task_InitTaskEnvironment:
 .LFB4:
 	.loc 1 58 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
-	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}	@
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	sub	sp, sp, #8	@,,
-	.cfi_def_cfa_offset 16
-	add	r7, sp, #0	@,,
-	.cfi_def_cfa_register 7
-	str	r0, [r7, #4]	@ task, task
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+.LVL18:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:59:    if(task != 0)
 	.loc 1 59 0
-	ldr	r3, [r7, #4]	@ tmp110, task
-	cmp	r3, #0	@ tmp110,
-	beq	.L12	@,
+	cbz	r0, .L15	@ task,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:62:       task->active                = False;
 	.loc 1 62 0
-	ldr	r2, [r7, #4]	@ tmp111, task
-	ldrb	r3, [r2]	@ tmp112, task_2(D)->active
-	bfc	r3, #0, #1	@ tmp112,,
-	strb	r3, [r2]	@ tmp112, task_2(D)->active
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:70:       task->r0                             = (unsigned_int32_t)       0;
-	.loc 1 70 0
-	ldr	r3, [r7, #4]	@ tmp113, task
-	movs	r2, #0	@ tmp114,
-	str	r2, [r3, #60]	@ tmp114, task_2(D)->r0
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:71:       task->r1                             = (unsigned_int32_t)       0;
-	.loc 1 71 0
-	ldr	r3, [r7, #4]	@ tmp115, task
-	movs	r2, #0	@ tmp116,
-	str	r2, [r3, #64]	@ tmp116, task_2(D)->r1
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:72:       task->r2                             = (unsigned_int32_t)       0;
-	.loc 1 72 0
-	ldr	r3, [r7, #4]	@ tmp117, task
-	movs	r2, #0	@ tmp118,
-	str	r2, [r3, #68]	@ tmp118, task_2(D)->r2
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:73:       task->r3                             = (unsigned_int32_t)       0;
-	.loc 1 73 0
-	ldr	r3, [r7, #4]	@ tmp119, task
-	movs	r2, #0	@ tmp120,
-	str	r2, [r3, #72]	@ tmp120, task_2(D)->r3
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:74:       task->r4                             = (unsigned_int32_t)       0;
-	.loc 1 74 0
-	ldr	r3, [r7, #4]	@ tmp121, task
-	movs	r2, #0	@ tmp122,
-	str	r2, [r3, #76]	@ tmp122, task_2(D)->r4
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:75:       task->r5                             = (unsigned_int32_t)       0;
-	.loc 1 75 0
-	ldr	r3, [r7, #4]	@ tmp123, task
-	movs	r2, #0	@ tmp124,
-	str	r2, [r3, #80]	@ tmp124, task_2(D)->r5
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:76:       task->r6                             = (unsigned_int32_t)       0;
-	.loc 1 76 0
-	ldr	r3, [r7, #4]	@ tmp125, task
-	movs	r2, #0	@ tmp126,
-	str	r2, [r3, #84]	@ tmp126, task_2(D)->r6
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:77:       task->r7                             = (unsigned_int32_t)       0;
-	.loc 1 77 0
-	ldr	r3, [r7, #4]	@ tmp127, task
-	movs	r2, #0	@ tmp128,
-	str	r2, [r3, #88]	@ tmp128, task_2(D)->r7
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:78:       task->r8                             = (unsigned_int32_t)       0;
-	.loc 1 78 0
-	ldr	r3, [r7, #4]	@ tmp129, task
-	movs	r2, #0	@ tmp130,
-	str	r2, [r3, #92]	@ tmp130, task_2(D)->r8
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:79:       task->r9                             = (unsigned_int32_t)       0;
-	.loc 1 79 0
-	ldr	r3, [r7, #4]	@ tmp131, task
-	movs	r2, #0	@ tmp132,
-	str	r2, [r3, #96]	@ tmp132, task_2(D)->r9
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:80:       task->r10                             = (unsigned_int32_t)       0;
-	.loc 1 80 0
-	ldr	r3, [r7, #4]	@ tmp133, task
-	movs	r2, #0	@ tmp134,
-	str	r2, [r3, #100]	@ tmp134, task_2(D)->r10
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:81:       task->r11                             = (unsigned_int32_t)       0;
-	.loc 1 81 0
-	ldr	r3, [r7, #4]	@ tmp135, task
-	movs	r2, #0	@ tmp136,
-	str	r2, [r3, #104]	@ tmp136, task_2(D)->r11
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:82:       task->r12                             = (unsigned_int32_t)       0;
-	.loc 1 82 0
-	ldr	r3, [r7, #4]	@ tmp137, task
-	movs	r2, #0	@ tmp138,
-	str	r2, [r3, #108]	@ tmp138, task_2(D)->r12
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:85:       task->WaitActUntil                     = (unsigned_char_t)         0;
-	.loc 1 85 0
-	ldr	r3, [r7, #4]	@ tmp139, task
-	movs	r2, #0	@ tmp140,
-	str	r2, [r3, #8]	@ tmp140, task_2(D)->WaitActUntil
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:86:       task->wait_time                        = (unsigned_int32_t)        0;
-	.loc 1 86 0
-	ldr	r3, [r7, #4]	@ tmp141, task
-	movs	r2, #0	@ tmp142,
-	str	r2, [r3, #12]	@ tmp142, task_2(D)->wait_time
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:87:       task->TimeToPrioInc                    = (unsigned_int32_t)        5;
-	.loc 1 87 0
-	ldr	r3, [r7, #4]	@ tmp143, task
-	movs	r2, #5	@ tmp144,
-	str	r2, [r3, #16]	@ tmp144, task_2(D)->TimeToPrioInc
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:88:       task->overwaittime_per_prio_inc_step   = (unsigned_int32_t)        1;/* has to be >=1 */
-	.loc 1 88 0
-	ldr	r3, [r7, #4]	@ tmp145, task
-	movs	r2, #1	@ tmp146,
-	str	r2, [r3, #20]	@ tmp146, task_2(D)->overwaittime_per_prio_inc_step
+	ldrb	r2, [r0]	@ zero_extendqisi2	@, task_2(D)->active
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:89:       task->max_allowed_wait_time            = (unsigned_int32_t)        100000;
 	.loc 1 89 0
-	ldr	r3, [r7, #4]	@ tmp147, task
-	ldr	r2, .L15	@ tmp148,
-	str	r2, [r3, #24]	@ tmp148, task_2(D)->max_allowed_wait_time
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:90:       task->exe_time                         = (unsigned_int32_t)        0;
-	.loc 1 90 0
-	ldr	r3, [r7, #4]	@ tmp149, task
-	movs	r2, #0	@ tmp150,
-	str	r2, [r3, #28]	@ tmp150, task_2(D)->exe_time
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:91:       task->current_prio                     = (unsigned_char_t)         0;
-	.loc 1 91 0
-	ldr	r3, [r7, #4]	@ tmp151, task
-	movs	r2, #0	@ tmp152,
-	strb	r2, [r3, #36]	@ tmp153, task_2(D)->current_prio
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:92:       task->default_prio                     = (unsigned_char_t)         0;/* the default prio for this task before increase of prio due to wait time */
-	.loc 1 92 0
-	ldr	r3, [r7, #4]	@ tmp154, task
-	movs	r2, #0	@ tmp155,
-	strb	r2, [r3, #37]	@ tmp156, task_2(D)->default_prio
+	ldr	r3, .L21	@ tmp130,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:95:       task->state_request                    =                           &task_state_request;
 	.loc 1 95 0
-	ldr	r3, [r7, #4]	@ tmp157, task
-	ldr	r2, .L15+4	@ tmp158,
-	str	r2, [r3, #48]	@ tmp158, task_2(D)->state_request
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:96:       task->task_state                       =                           Task_unspecified;
-	.loc 1 96 0
-	ldr	r3, [r7, #4]	@ tmp159, task
-	movs	r2, #0	@ tmp160,
-	strb	r2, [r3, #52]	@ tmp161, task_2(D)->task_state
+	ldr	r1, .L21+4	@ tmp134,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:58: {
+	.loc 1 58 0
+	push	{r4, r5}	@
+	.cfi_def_cfa_offset 8
+	.cfi_offset 4, -8
+	.cfi_offset 5, -4
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:97:       task->task_queued                      =                           False;
 	.loc 1 97 0
-	ldr	r2, [r7, #4]	@ tmp162, task
-	ldrb	r3, [r2]	@ tmp163, task_2(D)->task_queued
-	bfc	r3, #1, #1	@ tmp163,,
-	strb	r3, [r2]	@ tmp163, task_2(D)->task_queued
+	and	r2, r2, #254	@ task_2(D)->task_queued, task_2(D)->active,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:89:       task->max_allowed_wait_time            = (unsigned_int32_t)        100000;
+	.loc 1 89 0
+	str	r3, [r0, #24]	@ tmp130, task_2(D)->max_allowed_wait_time
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:70:       task->r0                             = (unsigned_int32_t)       0;
+	.loc 1 70 0
+	movs	r3, #0	@ tmp113,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:97:       task->task_queued                      =                           False;
+	.loc 1 97 0
+	bfi	r2, r3, #1, #1	@ task_2(D)->task_queued, tmp113,,
+	strb	r2, [r0]	@ task_2(D)->task_queued, task_2(D)->task_queued
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:98:       task->FREE                             =                           0;
 	.loc 1 98 0
-	ldr	r2, [r7, #4]	@ tmp164, task
-	ldr	r3, [r2]	@ tmp165, task_2(D)->FREE
-	bfc	r3, #3, #29	@ tmp165,,
-	str	r3, [r2]	@ tmp165, task_2(D)->FREE
+	ldr	r2, [r0]	@ task_2(D)->FREE, task_2(D)->FREE
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:91:       task->current_prio                     = (unsigned_char_t)         0;
+	.loc 1 91 0
+	strh	r3, [r0, #36]	@ movhi	@ tmp113, MEM[(unsigned char *)task_2(D) + 36B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:87:       task->TimeToPrioInc                    = (unsigned_int32_t)        5;
+	.loc 1 87 0
+	movs	r5, #5	@ tmp128,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:88:       task->overwaittime_per_prio_inc_step   = (unsigned_int32_t)        1;/* has to be >=1 */
+	.loc 1 88 0
+	movs	r4, #1	@ tmp129,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:98:       task->FREE                             =                           0;
+	.loc 1 98 0
+	bfi	r2, r3, #3, #29	@ task_2(D)->FREE, tmp113,,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:99:       task->NrOfInsAllowed                   = (unsigned_char_t)         0;
 	.loc 1 99 0
-	ldr	r3, [r7, #4]	@ tmp166, task
-	movs	r2, #0	@ tmp167,
-	strb	r2, [r3, #4]	@ tmp168, task_2(D)->NrOfInsAllowed
+	strb	r3, [r0, #4]	@ tmp113, task_2(D)->NrOfInsAllowed
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:100:       task->NrOfInsActivated                 = (unsigned_char_t)         0;
 	.loc 1 100 0
-	ldr	r3, [r7, #4]	@ tmp169, task
-	movs	r2, #0	@ tmp170,
-	strb	r2, [r3, #5]	@ tmp171, task_2(D)->NrOfInsActivated
+	strb	r3, [r0, #5]	@ tmp113, task_2(D)->NrOfInsActivated
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:88:       task->overwaittime_per_prio_inc_step   = (unsigned_int32_t)        1;/* has to be >=1 */
+	.loc 1 88 0
+	strd	r5, r4, [r0, #16]	@ tmp128, tmp129, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:70:       task->r0                             = (unsigned_int32_t)       0;
+	.loc 1 70 0
+	str	r3, [r0, #60]	@ tmp113, task_2(D)->r0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:72:       task->r2                             = (unsigned_int32_t)       0;
+	.loc 1 72 0
+	strd	r3, r3, [r0, #64]	@ tmp113, tmp113, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:74:       task->r4                             = (unsigned_int32_t)       0;
+	.loc 1 74 0
+	strd	r3, r3, [r0, #72]	@ tmp113, tmp113, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:76:       task->r6                             = (unsigned_int32_t)       0;
+	.loc 1 76 0
+	strd	r3, r3, [r0, #80]	@ tmp113, tmp113, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:78:       task->r8                             = (unsigned_int32_t)       0;
+	.loc 1 78 0
+	strd	r3, r3, [r0, #88]	@ tmp113, tmp113, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:80:       task->r10                             = (unsigned_int32_t)       0;
+	.loc 1 80 0
+	strd	r3, r3, [r0, #96]	@ tmp113, tmp113, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:82:       task->r12                             = (unsigned_int32_t)       0;
+	.loc 1 82 0
+	strd	r3, r3, [r0, #104]	@ tmp113, tmp113, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:86:       task->wait_time                        = (unsigned_int32_t)        0;
+	.loc 1 86 0
+	strd	r3, r3, [r0, #8]	@ tmp113, tmp113, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:90:       task->exe_time                         = (unsigned_int32_t)        0;
+	.loc 1 90 0
+	str	r3, [r0, #28]	@ tmp113, task_2(D)->exe_time
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:96:       task->task_state                       =                           Task_unspecified;
+	.loc 1 96 0
+	strb	r3, [r0, #52]	@ tmp113, task_2(D)->task_state
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:101:       task->fp                               = (func_p_t)                0;
 	.loc 1 101 0
-	ldr	r3, [r7, #4]	@ tmp172, task
-	movs	r2, #0	@ tmp173,
-	str	r2, [r3, #44]	@ tmp173, task_2(D)->fp
+	str	r3, [r0, #44]	@ tmp113, task_2(D)->fp
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:98:       task->FREE                             =                           0;
+	.loc 1 98 0
+	str	r2, [r0]	@ task_2(D)->FREE, task_2(D)->FREE
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:95:       task->state_request                    =                           &task_state_request;
+	.loc 1 95 0
+	str	r1, [r0, #48]	@ tmp134, task_2(D)->state_request
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:108: }
 	.loc 1 108 0
-	b	.L14	@
-.L12:
+	pop	{r4, r5}	@
+	.cfi_restore 5
+	.cfi_restore 4
+	.cfi_def_cfa_offset 0
+	bx	lr	@
+.L15:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:106:       OS_SetSwBug(os_bug_null_pointer,Func_InitTaskEnvironment);
 	.loc 1 106 0
 	movs	r1, #5	@,
 	movs	r0, #2	@,
-	bl	OS_SetSwBug	@
-.L14:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:108: }
-	.loc 1 108 0
-	nop
-	adds	r7, r7, #8	@,,
-	.cfi_def_cfa_offset 8
-	mov	sp, r7	@,
-	.cfi_def_cfa_register 13
-	@ sp needed	@
-	pop	{r7, pc}	@
-.L16:
+.LVL19:
+	b	OS_SetSwBug	@
+.LVL20:
+.L22:
 	.align	2
-.L15:
+.L21:
 	.word	100000
 	.word	task_state_request
 	.cfi_endproc
 .LFE4:
 	.size	OS_Task_InitTaskEnvironment, .-OS_Task_InitTaskEnvironment
+	.comm	TASK_PTR,40,4
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 	.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 	.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
 	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+	.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x787
+	.4byte	0x86b
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF642
+	.4byte	.LASF650
 	.byte	0x1
-	.4byte	.LASF643
-	.4byte	.LASF644
+	.4byte	.LASF651
+	.4byte	.LASF652
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -1311,15 +1224,27 @@ OS_Task_InitTaskEnvironment:
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6f8
+	.4byte	0x70d
 	.uleb128 0x17
 	.4byte	.LASF638
 	.byte	0x1
 	.byte	0x39
 	.4byte	0x415
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -12
+	.4byte	.LLST4
+	.uleb128 0x18
+	.4byte	.LVL20
+	.4byte	0x821
+	.uleb128 0x19
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x1
+	.byte	0x32
+	.uleb128 0x19
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x1
+	.byte	0x35
+	.byte	0
 	.byte	0
 	.uleb128 0x16
 	.4byte	.LASF637
@@ -1329,15 +1254,24 @@ OS_Task_InitTaskEnvironment:
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x71c
+	.4byte	0x743
 	.uleb128 0x17
 	.4byte	.LASF639
 	.byte	0x1
 	.byte	0x35
-	.4byte	0x71c
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -12
+	.4byte	0x743
+	.4byte	.LLST3
+	.uleb128 0x18
+	.4byte	.LVL17
+	.4byte	0x82c
+	.uleb128 0x19
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x3
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0
 	.byte	0
 	.uleb128 0x7
 	.byte	0x4
@@ -1350,15 +1284,24 @@ OS_Task_InitTaskEnvironment:
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x746
+	.4byte	0x77f
 	.uleb128 0x17
 	.4byte	.LASF639
 	.byte	0x1
 	.byte	0x31
-	.4byte	0x71c
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -12
+	.4byte	0x743
+	.4byte	.LLST2
+	.uleb128 0x18
+	.4byte	.LVL15
+	.4byte	0x837
+	.uleb128 0x19
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x3
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0
 	.byte	0
 	.uleb128 0x16
 	.4byte	.LASF641
@@ -1368,33 +1311,114 @@ OS_Task_InitTaskEnvironment:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x76a
+	.4byte	0x7d6
 	.uleb128 0x17
 	.4byte	.LASF638
 	.byte	0x1
 	.byte	0x25
 	.4byte	0x415
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -12
+	.4byte	.LLST1
+	.uleb128 0x1a
+	.4byte	.LVL9
+	.4byte	0x842
+	.uleb128 0x1b
+	.4byte	.LVL11
+	.4byte	0x84d
+	.4byte	0x7c1
+	.uleb128 0x19
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x3
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF645
+	.4byte	.LVL13
+	.4byte	0x821
+	.uleb128 0x19
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x1
+	.byte	0x32
+	.uleb128 0x19
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x1
+	.byte	0x32
+	.byte	0
+	.byte	0
+	.uleb128 0x16
+	.4byte	.LASF642
 	.byte	0x1
 	.byte	0xf
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
+	.4byte	0x821
 	.uleb128 0x17
 	.4byte	.LASF638
 	.byte	0x1
 	.byte	0xf
 	.4byte	0x415
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -12
+	.4byte	.LLST0
+	.uleb128 0x1a
+	.4byte	.LVL2
+	.4byte	0x858
+	.uleb128 0x1c
+	.4byte	.LVL4
+	.4byte	0x863
+	.uleb128 0x18
+	.4byte	.LVL6
+	.4byte	0x821
+	.uleb128 0x19
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x1
+	.byte	0x32
+	.uleb128 0x19
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x1
+	.byte	0x31
 	.byte	0
+	.byte	0
+	.uleb128 0x1d
+	.4byte	.LASF643
+	.4byte	.LASF643
+	.byte	0x3
+	.byte	0x4e
+	.uleb128 0x1d
+	.4byte	.LASF644
+	.4byte	.LASF644
+	.byte	0x7
+	.byte	0x17
+	.uleb128 0x1d
+	.4byte	.LASF645
+	.4byte	.LASF645
+	.byte	0x7
+	.byte	0x14
+	.uleb128 0x1d
+	.4byte	.LASF646
+	.4byte	.LASF646
+	.byte	0x7
+	.byte	0x12
+	.uleb128 0x1d
+	.4byte	.LASF647
+	.4byte	.LASF647
+	.byte	0x7
+	.byte	0x13
+	.uleb128 0x1d
+	.4byte	.LASF648
+	.4byte	.LASF648
+	.byte	0x7
+	.byte	0x16
+	.uleb128 0x1d
+	.4byte	.LASF649
+	.4byte	.LASF649
+	.byte	0x7
+	.byte	0x11
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -1668,7 +1692,7 @@ OS_Task_InitTaskEnvironment:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2116
+	.uleb128 0x2117
 	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
@@ -1686,33 +1710,186 @@ OS_Task_InitTaskEnvironment:
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2
-	.uleb128 0x18
+	.uleb128 0x17
 	.byte	0
 	.byte	0
 	.uleb128 0x18
-	.uleb128 0x2e
+	.uleb128 0x4109
 	.byte	0x1
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x2115
+	.uleb128 0x19
+	.uleb128 0x31
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x19
+	.uleb128 0x410a
+	.byte	0
+	.uleb128 0x2
+	.uleb128 0x18
+	.uleb128 0x2111
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x1a
+	.uleb128 0x4109
+	.byte	0
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x31
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x1b
+	.uleb128 0x4109
+	.byte	0x1
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x2115
+	.uleb128 0x19
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x1c
+	.uleb128 0x4109
+	.byte	0
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x2115
+	.uleb128 0x19
+	.uleb128 0x31
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x1d
+	.uleb128 0x2e
+	.byte	0
 	.uleb128 0x3f
 	.uleb128 0x19
+	.uleb128 0x3c
+	.uleb128 0x19
+	.uleb128 0x6e
+	.uleb128 0xe
 	.uleb128 0x3
 	.uleb128 0xe
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x11
+	.byte	0
+	.byte	0
+	.byte	0
+	.section	.debug_loc,"",%progbits
+.Ldebug_loc0:
+.LLST4:
+	.4byte	.LVL18-.Ltext0
+	.4byte	.LVL19-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL19-.Ltext0
+	.4byte	.LFE4-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
 	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2116
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.byte	0
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST3:
+	.4byte	.LVL16-.Ltext0
+	.4byte	.LVL17-1-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL17-1-.Ltext0
+	.4byte	.LFE3-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST2:
+	.4byte	.LVL14-.Ltext0
+	.4byte	.LVL15-1-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL15-1-.Ltext0
+	.4byte	.LFE2-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST1:
+	.4byte	.LVL7-.Ltext0
+	.4byte	.LVL8-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL8-.Ltext0
+	.4byte	.LVL10-.Ltext0
+	.2byte	0x1
+	.byte	0x54
+	.4byte	.LVL10-.Ltext0
+	.4byte	.LVL11-1-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL11-1-.Ltext0
+	.4byte	.LVL11-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL11-.Ltext0
+	.4byte	.LVL12-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL12-.Ltext0
+	.4byte	.LFE1-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST0:
+	.4byte	.LVL0-.Ltext0
+	.4byte	.LVL1-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL1-.Ltext0
+	.4byte	.LVL3-.Ltext0
+	.2byte	0x1
+	.byte	0x54
+	.4byte	.LVL3-.Ltext0
+	.4byte	.LVL4-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL4-.Ltext0
+	.4byte	.LVL5-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL5-.Ltext0
+	.4byte	.LFE0-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
 	.section	.debug_aranges,"",%progbits
 	.4byte	0x1c
 	.2byte	0x2
@@ -1735,10 +1912,10 @@ OS_Task_InitTaskEnvironment:
 	.byte	0x3
 	.uleb128 0
 	.uleb128 0x1
-	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
+	.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x1
-	.uleb128 0x7
+	.uleb128 0x8
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF438
@@ -1754,10 +1931,9 @@ OS_Task_InitTaskEnvironment:
 	.byte	0x7
 	.4byte	.Ldebug_macro3
 	.byte	0x4
-	.file 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
 	.byte	0x3
 	.uleb128 0xa
-	.uleb128 0x8
+	.uleb128 0x7
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF473
@@ -1862,7 +2038,7 @@ OS_Task_InitTaskEnvironment:
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.0.43c007aef09d1282d02dfc36843d1273,comdat
+	.section	.debug_macro,"G",%progbits,wm4.0.1e2d41a7154507083fa09d462aac8034,comdat
 .Ldebug_macro1:
 	.2byte	0x4
 	.byte	0
@@ -3422,66 +3598,64 @@ OS_Task_InitTaskEnvironment:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF642:
-	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
-	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
-	.ascii	"O0 -std=c90\000"
-.LASF205:
-	.ascii	"__FLT64_MAX_EXP__ 1024\000"
-.LASF147:
-	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
-.LASF329:
-	.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
-.LASF299:
-	.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
-.LASF219:
-	.ascii	"__FLT32X_MAX_EXP__ 1024\000"
-.LASF126:
-	.ascii	"__INT_FAST16_WIDTH__ 32\000"
 .LASF384:
 	.ascii	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\000"
+.LASF206:
+	.ascii	"__FLT64_MAX_EXP__ 1024\000"
+.LASF148:
+	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
+.LASF330:
+	.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
+.LASF300:
+	.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
+.LASF220:
+	.ascii	"__FLT32X_MAX_EXP__ 1024\000"
+.LASF127:
+	.ascii	"__INT_FAST16_WIDTH__ 32\000"
+.LASF121:
+	.ascii	"__UINT32_C(c) c ## UL\000"
 .LASF446:
 	.ascii	"CPP_VERSION_2003 2\000"
-.LASF241:
+.LASF242:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
-.LASF319:
+.LASF320:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF537:
 	.ascii	"Func_TerminateTask\000"
-.LASF187:
+.LASF188:
 	.ascii	"__FLT32_MANT_DIG__ 24\000"
-.LASF643:
+.LASF651:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_task_common.c\000"
-.LASF116:
+.LASF117:
 	.ascii	"__UINT8_C(c) c\000"
 .LASF422:
 	.ascii	"__ARM_NEON__\000"
 .LASF389:
 	.ascii	"__SIZEOF_WINT_T__ 4\000"
-.LASF331:
+.LASF332:
 	.ascii	"__QQ_IBIT__ 0\000"
-.LASF347:
+.LASF348:
 	.ascii	"__UDQ_IBIT__ 0\000"
 .LASF637:
 	.ascii	"OS_TASK_SAVE_SYSTEM_STACK\000"
-.LASF72:
+.LASF73:
 	.ascii	"__WCHAR_MAX__ 0xffffffffU\000"
-.LASF258:
+.LASF259:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
 .LASF622:
 	.ascii	"bTASK_QUEUE_INITIALIZED\000"
-.LASF160:
+.LASF161:
 	.ascii	"__DBL_MIN_EXP__ (-1021)\000"
-.LASF82:
+.LASF83:
 	.ascii	"__LONG_LONG_WIDTH__ 64\000"
 .LASF618:
 	.ascii	"RUNNING_SCHEDULING_QUEUE_ENTRY\000"
-.LASF65:
+.LASF66:
 	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
 .LASF463:
 	.ascii	"cMCU_X86 3\000"
-.LASF272:
+.LASF273:
 	.ascii	"__LFRACT_MIN__ (-0.5LR-0.5LR)\000"
 .LASF403:
 	.ascii	"__ARM_SIZEOF_WCHAR_T 4\000"
@@ -3489,19 +3663,19 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"__ARM_FP16_FORMAT_IEEE\000"
 .LASF457:
 	.ascii	"Rejected 0\000"
-.LASF265:
+.LASF266:
 	.ascii	"__UFRACT_FBIT__ 16\000"
-.LASF281:
+.LASF282:
 	.ascii	"__LLFRACT_IBIT__ 0\000"
 .LASF449:
 	.ascii	"ISO_CPP_VERSION CPP_VERSION_1998\000"
-.LASF165:
+.LASF166:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
 .LASF426:
 	.ascii	"__ARM_ARCH_7EM__ 1\000"
-.LASF40:
+.LASF41:
 	.ascii	"__INT32_TYPE__ long int\000"
-.LASF257:
+.LASF258:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
 .LASF462:
 	.ascii	"DynamicMemoryUsed False\000"
@@ -3521,145 +3695,154 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF118:
+.LASF119:
 	.ascii	"__UINT16_C(c) c\000"
 .LASF545:
 	.ascii	"privilige_mode_e\000"
-.LASF35:
+.LASF36:
 	.ascii	"__CHAR16_TYPE__ short unsigned int\000"
-.LASF322:
+.LASF323:
 	.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
-.LASF19:
+.LASF20:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
 .LASF562:
 	.ascii	"task_s\000"
 .LASF5:
 	.ascii	"__VERSION__ \"7.3.1 20180622 (release) [ARM/embedde"
 	.ascii	"d-7-branch revision 261907]\"\000"
-.LASF123:
+.LASF124:
 	.ascii	"__INT_FAST8_MAX__ 0x7fffffff\000"
-.LASF24:
+.LASF25:
 	.ascii	"__ORDER_BIG_ENDIAN__ 4321\000"
 .LASF2:
 	.ascii	"__GNUC__ 7\000"
-.LASF246:
+.LASF247:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF391:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
-.LASF364:
+.LASF365:
 	.ascii	"__UTA_FBIT__ 64\000"
-.LASF158:
+.LASF159:
 	.ascii	"__DBL_MANT_DIG__ 53\000"
-.LASF53:
+.LASF54:
 	.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
 .LASF465:
 	.ascii	"NR_OF_CORES 1\000"
-.LASF69:
+.LASF70:
 	.ascii	"__INT_MAX__ 0x7fffffff\000"
 .LASF9:
 	.ascii	"__ATOMIC_RELEASE 3\000"
-.LASF30:
+.LASF31:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
 .LASF371:
 	.ascii	"__CHAR_UNSIGNED__ 1\000"
-.LASF39:
+.LASF40:
 	.ascii	"__INT16_TYPE__ short int\000"
 .LASF396:
 	.ascii	"__ARM_FEATURE_QRDMX\000"
-.LASF234:
+.LASF235:
 	.ascii	"__DEC32_EPSILON__ 1E-6DF\000"
-.LASF173:
+.LASF174:
 	.ascii	"__LDBL_DIG__ 15\000"
-.LASF408:
-	.ascii	"__thumb__ 1\000"
-.LASF194:
+.LASF12:
+	.ascii	"__OPTIMIZE__ 1\000"
+.LASF195:
 	.ascii	"__FLT32_MAX__ 3.4028234663852886e+38F32\000"
-.LASF321:
+.LASF322:
 	.ascii	"__LLACCUM_IBIT__ 32\000"
-.LASF488:
-	.ascii	"os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_"
-	.ascii	"name)] = (task_ptr))\000"
+.LASF310:
+	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
 .LASF7:
 	.ascii	"__ATOMIC_SEQ_CST 5\000"
-.LASF16:
+.LASF644:
+	.ascii	"LLF_SAVE_SYSTEM_STACK\000"
+.LASF17:
 	.ascii	"__SIZEOF_SHORT__ 2\000"
-.LASF62:
+.LASF63:
 	.ascii	"__INTPTR_TYPE__ int\000"
-.LASF46:
+.LASF468:
+	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
+.LASF47:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
 .LASF397:
 	.ascii	"__ARM_32BIT_STATE 1\000"
 .LASF494:
 	.ascii	"OS_STACK_SIZE_END 0x01u\000"
-.LASF90:
+.LASF91:
 	.ascii	"__UINTMAX_C(c) c ## ULL\000"
 .LASF583:
 	.ascii	"pStackPointerStart\000"
 .LASF489:
 	.ascii	"os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_"
 	.ascii	"name)])\000"
-.LASF26:
+.LASF27:
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
-.LASF235:
+.LASF236:
 	.ascii	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\000"
 .LASF616:
 	.ascii	"LAST_CURRENT_TIME\000"
 .LASF571:
 	.ascii	"TimeToPrioInc\000"
-.LASF271:
+.LASF272:
 	.ascii	"__LFRACT_IBIT__ 0\000"
+.LASF649:
+	.ascii	"LLF_SAVE_REGISTERS\000"
 .LASF406:
 	.ascii	"__ARM_ARCH 7\000"
 .LASF466:
 	.ascii	"MCU_CLOCK_IN_HZ ((uint32)168000000u)\000"
-.LASF106:
+.LASF107:
 	.ascii	"__INT_LEAST16_MAX__ 0x7fff\000"
-.LASF67:
+.LASF650:
+	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
+	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
+	.ascii	"O3 -std=c90\000"
+.LASF68:
 	.ascii	"__SCHAR_MAX__ 0x7f\000"
-.LASF326:
+.LASF327:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
-.LASF249:
+.LASF250:
 	.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
 	.ascii	"000000001E-6143DL\000"
-.LASF286:
+.LASF287:
 	.ascii	"__ULLFRACT_IBIT__ 0\000"
-.LASF202:
+.LASF203:
 	.ascii	"__FLT64_DIG__ 15\000"
 .LASF6:
 	.ascii	"__ATOMIC_RELAXED 0\000"
 .LASF547:
 	.ascii	"ePriviligeMode_priviliged_thread_mode\000"
-.LASF77:
+.LASF78:
 	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
 .LASF573:
 	.ascii	"max_allowed_wait_time\000"
-.LASF312:
+.LASF313:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
-.LASF328:
+.LASF329:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
-.LASF317:
+.LASF318:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
 .LASF470:
 	.ascii	"Privilige_level_enter_kernel_mode() ;\000"
-.LASF132:
+.LASF133:
 	.ascii	"__UINT_FAST16_MAX__ 0xffffffffU\000"
 .LASF563:
 	.ascii	"active\000"
-.LASF196:
+.LASF197:
 	.ascii	"__FLT32_EPSILON__ 1.1920928955078125e-7F32\000"
-.LASF363:
+.LASF364:
 	.ascii	"__UDA_IBIT__ 32\000"
 .LASF512:
 	.ascii	"uint8\000"
 .LASF552:
 	.ascii	"Task_suspended\000"
-.LASF104:
+.LASF105:
 	.ascii	"__INT8_C(c) c\000"
 .LASF409:
 	.ascii	"__thumb2__ 1\000"
 .LASF597:
 	.ascii	"VAR_HARDFAULT_STATUS_REG\000"
-.LASF108:
+.LASF109:
 	.ascii	"__INT_LEAST16_WIDTH__ 16\000"
 .LASF535:
 	.ascii	"Func_StartTask\000"
@@ -3667,7 +3850,7 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"privilige_mode\000"
 .LASF417:
 	.ascii	"__ARM_FP16_FORMAT_ALTERNATIVE\000"
-.LASF292:
+.LASF293:
 	.ascii	"__SACCUM_MIN__ (-0X1P7HK-0X1P7HK)\000"
 .LASF528:
 	.ascii	"os_sw_bugs_function_e\000"
@@ -3677,19 +3860,21 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"TASK_2_VAR\000"
 .LASF407:
 	.ascii	"__APCS_32__ 1\000"
-.LASF63:
+.LASF64:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
-.LASF198:
+.LASF199:
 	.ascii	"__FLT32_HAS_DENORM__ 1\000"
-.LASF211:
+.LASF212:
 	.ascii	"__FLT64_DENORM_MIN__ 4.9406564584124654e-324F64\000"
 .LASF372:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1\000"
-.LASF353:
+.LASF354:
 	.ascii	"__SA_IBIT__ 16\000"
-.LASF283:
+.LASF284:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
-.LASF129:
+.LASF226:
+	.ascii	"__FLT32X_DENORM_MIN__ 4.9406564584124654e-324F32x\000"
+.LASF130:
 	.ascii	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL\000"
 .LASF621:
 	.ascii	"TASK_IDLE_QUEUE\000"
@@ -3697,7 +3882,7 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC\000"
 .LASF452:
 	.ascii	"False 0\000"
-.LASF145:
+.LASF146:
 	.ascii	"__FLT_DIG__ 6\000"
 .LASF605:
 	.ascii	"LINK_REGISTER_HANDLER\000"
@@ -3707,125 +3892,127 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1\000"
 .LASF503:
 	.ascii	"os_running 1\000"
-.LASF354:
+.LASF355:
 	.ascii	"__DA_FBIT__ 31\000"
 .LASF543:
 	.ascii	"Func_os_exception\000"
 .LASF435:
 	.ascii	"__USES_INITFINI__ 1\000"
-.LASF232:
+.LASF233:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
+.LASF139:
+	.ascii	"__GCC_IEC_559 0\000"
 .LASF632:
 	.ascii	"TASK_TRANSITION_REJECTED_TASK_ADDR\000"
 .LASF613:
 	.ascii	"TASK3_CALL_NR\000"
-.LASF289:
+.LASF290:
 	.ascii	"__ULLFRACT_EPSILON__ 0x1P-64ULLR\000"
 .LASF580:
 	.ascii	"task_group\000"
-.LASF76:
+.LASF77:
 	.ascii	"__PTRDIFF_MAX__ 0x7fffffff\000"
-.LASF200:
+.LASF201:
 	.ascii	"__FLT32_HAS_QUIET_NAN__ 1\000"
 .LASF410:
 	.ascii	"__THUMBEL__ 1\000"
-.LASF117:
+.LASF118:
 	.ascii	"__UINT_LEAST16_MAX__ 0xffff\000"
-.LASF193:
+.LASF194:
 	.ascii	"__FLT32_DECIMAL_DIG__ 9\000"
-.LASF253:
+.LASF254:
 	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
 .LASF428:
 	.ascii	"__ARM_EABI__ 1\000"
-.LASF115:
+.LASF116:
 	.ascii	"__UINT_LEAST8_MAX__ 0xff\000"
 .LASF533:
 	.ascii	"Func_DeleteTaskEnvironment\000"
-.LASF95:
+.LASF96:
 	.ascii	"__INT8_MAX__ 0x7f\000"
-.LASF279:
+.LASF280:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
-.LASF48:
+.LASF49:
 	.ascii	"__INT_LEAST32_TYPE__ long int\000"
-.LASF276:
+.LASF277:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
-.LASF320:
+.LASF321:
 	.ascii	"__LLACCUM_FBIT__ 31\000"
-.LASF288:
+.LASF289:
 	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
 .LASF609:
 	.ascii	"DBG_CTRL_VALUE\000"
-.LASF143:
+.LASF144:
 	.ascii	"__FLT_RADIX__ 2\000"
 .LASF485:
 	.ascii	"MS_PER_SEC (1000)\000"
-.LASF287:
+.LASF288:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
-.LASF171:
+.LASF172:
 	.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
-.LASF307:
+.LASF308:
 	.ascii	"__UACCUM_MIN__ 0.0UK\000"
-.LASF274:
+.LASF275:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
-.LASF54:
+.LASF55:
 	.ascii	"__INT_FAST8_TYPE__ int\000"
-.LASF213:
+.LASF214:
 	.ascii	"__FLT64_HAS_INFINITY__ 1\000"
 .LASF588:
 	.ascii	"task_t\000"
-.LASF225:
-	.ascii	"__FLT32X_DENORM_MIN__ 4.9406564584124654e-324F32x\000"
+.LASF648:
+	.ascii	"LLF_SAVE_TASK_STACK\000"
 .LASF521:
 	.ascii	"os_bug_task_max_wait_time_reached\000"
-.LASF290:
+.LASF291:
 	.ascii	"__SACCUM_FBIT__ 7\000"
 .LASF491:
 	.ascii	"_OS_RAM_H_ \000"
-.LASF166:
+.LASF167:
 	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
-.LASF209:
+.LASF210:
 	.ascii	"__FLT64_MIN__ 2.2250738585072014e-308F64\000"
-.LASF240:
+.LASF241:
 	.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
-.LASF262:
+.LASF263:
 	.ascii	"__FRACT_MIN__ (-0.5R-0.5R)\000"
 .LASF381:
 	.ascii	"__GCC_ATOMIC_INT_LOCK_FREE 2\000"
-.LASF87:
+.LASF88:
 	.ascii	"__INTMAX_MAX__ 0x7fffffffffffffffLL\000"
-.LASF267:
+.LASF268:
 	.ascii	"__UFRACT_MIN__ 0.0UR\000"
-.LASF309:
-	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
-.LASF335:
+.LASF74:
+	.ascii	"__WCHAR_MIN__ 0U\000"
+.LASF336:
 	.ascii	"__SQ_IBIT__ 0\000"
-.LASF301:
+.LASF302:
 	.ascii	"__ACCUM_IBIT__ 16\000"
 .LASF388:
 	.ascii	"__SIZEOF_WCHAR_T__ 4\000"
-.LASF183:
+.LASF184:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
 .LASF615:
 	.ascii	"TASK_STACK\000"
-.LASF206:
+.LASF207:
 	.ascii	"__FLT64_MAX_10_EXP__ 308\000"
-.LASF23:
+.LASF24:
 	.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
 .LASF390:
 	.ascii	"__SIZEOF_PTRDIFF_T__ 4\000"
-.LASF102:
+.LASF103:
 	.ascii	"__UINT64_MAX__ 0xffffffffffffffffULL\000"
 .LASF478:
 	.ascii	"MinTimeSlice_s (1.0/SchedulerFrequency)\000"
-.LASF252:
+.LASF253:
 	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
-.LASF361:
+.LASF362:
 	.ascii	"__USA_IBIT__ 16\000"
 .LASF538:
 	.ascii	"Func_TaskScheduler\000"
-.LASF275:
+.LASF276:
 	.ascii	"__ULFRACT_FBIT__ 32\000"
-.LASF243:
+.LASF244:
 	.ascii	"__DEC128_MANT_DIG__ 34\000"
 .LASF429:
 	.ascii	"__ARM_ARCH_EXT_IDIV__ 1\000"
@@ -3833,41 +4020,39 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"DBG_RLD_VALUE\000"
 .LASF544:
 	.ascii	"Func_CreateTask\000"
-.LASF298:
+.LASF299:
 	.ascii	"__USACCUM_MAX__ 0XFFFFP-8UHK\000"
-.LASF120:
-	.ascii	"__UINT32_C(c) c ## UL\000"
-.LASF231:
+.LASF575:
+	.ascii	"current_prio\000"
+.LASF232:
 	.ascii	"__DEC32_MAX_EXP__ 97\000"
 .LASF602:
 	.ascii	"VAR_BUS_FAULT_ADDR_REG\000"
-.LASF293:
+.LASF294:
 	.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
 .LASF459:
 	.ascii	"Local_inline static __inline__\000"
 .LASF498:
 	.ascii	"HEAP_OFFSET_FOR_SIZE 0\000"
-.LASF575:
-	.ascii	"current_prio\000"
 .LASF525:
 	.ascii	"os_bug_exception_AbortData\000"
-.LASF169:
+.LASF170:
 	.ascii	"__DBL_HAS_DENORM__ 1\000"
-.LASF141:
-	.ascii	"__FLT_EVAL_METHOD_TS_18661_3__ 0\000"
-.LASF22:
+.LASF356:
+	.ascii	"__DA_IBIT__ 32\000"
+.LASF23:
 	.ascii	"__BIGGEST_ALIGNMENT__ 8\000"
-.LASF311:
+.LASF312:
 	.ascii	"__LACCUM_IBIT__ 32\000"
-.LASF124:
+.LASF125:
 	.ascii	"__INT_FAST8_WIDTH__ 32\000"
 .LASF548:
 	.ascii	"ePriviligeMode_priviliged_handler_mode\000"
-.LASF131:
+.LASF132:
 	.ascii	"__UINT_FAST8_MAX__ 0xffffffffU\000"
-.LASF264:
+.LASF265:
 	.ascii	"__FRACT_EPSILON__ 0x1P-15R\000"
-.LASF250:
+.LASF251:
 	.ascii	"__SFRACT_FBIT__ 7\000"
 .LASF539:
 	.ascii	"Func_InitTask\000"
@@ -3875,65 +4060,61 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"Func_SaveTaskEnvironment\000"
 .LASF630:
 	.ascii	"TASK_GROUP_4\000"
-.LASF352:
+.LASF353:
 	.ascii	"__SA_FBIT__ 15\000"
-.LASF204:
+.LASF205:
 	.ascii	"__FLT64_MIN_10_EXP__ (-307)\000"
 .LASF480:
 	.ascii	"Task_min_time (1e0)\000"
 .LASF507:
 	.ascii	"Task_1_ptr 1\000"
-.LASF294:
+.LASF295:
 	.ascii	"__SACCUM_EPSILON__ 0x1P-7HK\000"
 .LASF479:
 	.ascii	"MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\000"
-.LASF55:
+.LASF56:
 	.ascii	"__INT_FAST16_TYPE__ int\000"
-.LASF223:
-	.ascii	"__FLT32X_MIN__ 2.2250738585072014e-308F32x\000"
 .LASF579:
 	.ascii	"task_state\000"
 .LASF550:
 	.ascii	"task_state_e\000"
-.LASF83:
+.LASF84:
 	.ascii	"__WCHAR_WIDTH__ 32\000"
-.LASF199:
+.LASF200:
 	.ascii	"__FLT32_HAS_INFINITY__ 1\000"
 .LASF617:
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
-.LASF242:
+.LASF243:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
 .LASF484:
 	.ascii	"TASK_STACK_SIZE 2000\000"
 .LASF399:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
-.LASF71:
+.LASF72:
 	.ascii	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL\000"
 .LASF584:
 	.ascii	"StackSize\000"
-.LASF41:
+.LASF42:
 	.ascii	"__INT64_TYPE__ long long int\000"
-.LASF149:
+.LASF150:
 	.ascii	"__FLT_MAX_10_EXP__ 38\000"
 .LASF636:
 	.ascii	"OS_Task_InitTaskEnvironment\000"
 .LASF555:
 	.ascii	"task_state_t\000"
-.LASF324:
+.LASF325:
 	.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
-.LASF297:
+.LASF298:
 	.ascii	"__USACCUM_MIN__ 0.0UHK\000"
-.LASF369:
-	.ascii	"__NO_INLINE__ 1\000"
-.LASF244:
+.LASF245:
 	.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
-.LASF296:
+.LASF297:
 	.ascii	"__USACCUM_IBIT__ 8\000"
-.LASF256:
+.LASF257:
 	.ascii	"__USFRACT_IBIT__ 0\000"
-.LASF277:
+.LASF278:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
-.LASF222:
+.LASF223:
 	.ascii	"__FLT32X_MAX__ 1.7976931348623157e+308F32x\000"
 .LASF471:
 	.ascii	"Privilige_level_restore_saved() ;\000"
@@ -3941,27 +4122,27 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"DBG_CALIB_VALUE\000"
 .LASF599:
 	.ascii	"VAR_USAGE_FAULT_STATUS_REG\000"
-.LASF207:
+.LASF208:
 	.ascii	"__FLT64_DECIMAL_DIG__ 17\000"
 .LASF546:
 	.ascii	"ePriviligeMode_unpriviliged_thread_mode\000"
-.LASF366:
+.LASF367:
 	.ascii	"__REGISTER_PREFIX__ \000"
-.LASF189:
+.LASF190:
 	.ascii	"__FLT32_MIN_EXP__ (-125)\000"
-.LASF306:
+.LASF307:
 	.ascii	"__UACCUM_IBIT__ 16\000"
-.LASF142:
+.LASF143:
 	.ascii	"__DEC_EVAL_METHOD__ 2\000"
-.LASF59:
+.LASF60:
 	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
-.LASF191:
+.LASF192:
 	.ascii	"__FLT32_MAX_EXP__ 128\000"
 .LASF598:
 	.ascii	"VAR_MEM_MANAG_FAULT_STATUS_REG\000"
 .LASF600:
 	.ascii	"VAR_FAULT_STATUS_REG\000"
-.LASF66:
+.LASF67:
 	.ascii	"__GXX_ABI_VERSION 1011\000"
 .LASF594:
 	.ascii	"OS_MAIN_STACK\000"
@@ -3969,79 +4150,77 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"__THUMB_INTERWORK__ 1\000"
 .LASF581:
 	.ascii	"pStackPointer\000"
-.LASF188:
+.LASF189:
 	.ascii	"__FLT32_DIG__ 6\000"
 .LASF590:
 	.ascii	"scheduler_time_t\000"
-.LASF212:
+.LASF213:
 	.ascii	"__FLT64_HAS_DENORM__ 1\000"
-.LASF140:
+.LASF141:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
 .LASF508:
 	.ascii	"Task_2_ptr 2\000"
 .LASF595:
 	.ascii	"OS_SW_BUG\000"
-.LASF226:
+.LASF227:
 	.ascii	"__FLT32X_HAS_DENORM__ 1\000"
 .LASF427:
 	.ascii	"__ARM_PCS 1\000"
-.LASF58:
+.LASF59:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
 .LASF455:
 	.ascii	"TRUE True\000"
-.LASF300:
+.LASF301:
 	.ascii	"__ACCUM_FBIT__ 15\000"
-.LASF237:
+.LASF238:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
-.LASF316:
+.LASF317:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
 .LASF633:
 	.ascii	"TASK_TRANSITION_REJECTED_STATE\000"
-.LASF280:
+.LASF281:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
 .LASF461:
 	.ascii	"ReferenceUnusedParameter(x) ((x) = (x))\000"
-.LASF105:
+.LASF106:
 	.ascii	"__INT_LEAST8_WIDTH__ 8\000"
-.LASF360:
+.LASF361:
 	.ascii	"__USA_FBIT__ 16\000"
-.LASF99:
-	.ascii	"__UINT8_MAX__ 0xff\000"
-.LASF327:
-	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF100:
+	.ascii	"__UINT8_MAX__ 0xff\000"
+.LASF328:
+	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
+.LASF101:
 	.ascii	"__UINT16_MAX__ 0xffff\000"
 .LASF421:
 	.ascii	"__ARM_FEATURE_FMA\000"
-.LASF305:
+.LASF306:
 	.ascii	"__UACCUM_FBIT__ 16\000"
 .LASF499:
 	.ascii	"HEAP_OFFSET_FOR_USED_SIZE 4\000"
 .LASF556:
 	.ascii	"func_p_t\000"
-.LASF91:
+.LASF92:
 	.ascii	"__INTMAX_WIDTH__ 64\000"
-.LASF233:
+.LASF234:
 	.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
-.LASF138:
-	.ascii	"__GCC_IEC_559 0\000"
+.LASF271:
+	.ascii	"__LFRACT_FBIT__ 31\000"
 .LASF639:
 	.ascii	"system_stack_ptr\000"
-.LASF47:
+.LASF48:
 	.ascii	"__INT_LEAST16_TYPE__ short int\000"
-.LASF214:
+.LASF215:
 	.ascii	"__FLT64_HAS_QUIET_NAN__ 1\000"
-.LASF270:
-	.ascii	"__LFRACT_FBIT__ 31\000"
-.LASF159:
+.LASF160:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF377:
 	.ascii	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2\000"
-.LASF103:
+.LASF104:
 	.ascii	"__INT_LEAST8_MAX__ 0x7f\000"
-.LASF310:
+.LASF311:
 	.ascii	"__LACCUM_FBIT__ 31\000"
-.LASF349:
+.LASF350:
 	.ascii	"__UTQ_IBIT__ 0\000"
 .LASF474:
 	.ascii	"_lld_core_h_ \000"
@@ -4049,53 +4228,57 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"Func_NoFunction\000"
 .LASF382:
 	.ascii	"__GCC_ATOMIC_LONG_LOCK_FREE 2\000"
-.LASF216:
+.LASF217:
 	.ascii	"__FLT32X_DIG__ 15\000"
-.LASF304:
+.LASF305:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
-.LASF346:
+.LASF347:
 	.ascii	"__UDQ_FBIT__ 64\000"
-.LASF215:
+.LASF216:
 	.ascii	"__FLT32X_MANT_DIG__ 53\000"
-.LASF291:
+.LASF292:
 	.ascii	"__SACCUM_IBIT__ 8\000"
 .LASF576:
 	.ascii	"default_prio\000"
 .LASF411:
 	.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
-.LASF348:
+.LASF349:
 	.ascii	"__UTQ_FBIT__ 128\000"
-.LASF43:
+.LASF44:
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
-.LASF21:
+.LASF22:
 	.ascii	"__CHAR_BIT__ 8\000"
 .LASF415:
 	.ascii	"__ARM_FP\000"
-.LASF136:
+.LASF137:
 	.ascii	"__INTPTR_WIDTH__ 32\000"
-.LASF50:
+.LASF51:
 	.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
-.LASF180:
+.LASF181:
 	.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
-.LASF12:
+.LASF13:
 	.ascii	"__FINITE_MATH_ONLY__ 0\000"
-.LASF31:
+.LASF32:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF405:
 	.ascii	"__arm__ 1\000"
-.LASF172:
+.LASF643:
+	.ascii	"OS_SetSwBug\000"
+.LASF173:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
 .LASF638:
 	.ascii	"task\000"
-.LASF339:
+.LASF340:
 	.ascii	"__TQ_IBIT__ 0\000"
-.LASF358:
+.LASF359:
 	.ascii	"__UHA_FBIT__ 8\000"
+.LASF239:
+	.ascii	"__DEC64_MAX_EXP__ 385\000"
 .LASF11:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF614:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF644:
+.LASF652:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -4104,27 +4287,27 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"VAR_BUS_FAULT_STATUS_REG\000"
 .LASF395:
 	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
-.LASF318:
+.LASF319:
 	.ascii	"__ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK\000"
-.LASF107:
+.LASF108:
 	.ascii	"__INT16_C(c) c\000"
 .LASF386:
 	.ascii	"__GCC_HAVE_DWARF2_CFI_ASM 1\000"
-.LASF17:
+.LASF18:
 	.ascii	"__SIZEOF_FLOAT__ 4\000"
-.LASF313:
+.LASF314:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
-.LASF127:
+.LASF128:
 	.ascii	"__INT_FAST32_MAX__ 0x7fffffff\000"
 .LASF524:
 	.ascii	"os_bug_exception_AbortPrefetch\000"
-.LASF156:
+.LASF157:
 	.ascii	"__FLT_HAS_INFINITY__ 1\000"
 .LASF578:
 	.ascii	"state_request\000"
 .LASF393:
 	.ascii	"__ARM_FEATURE_SAT 1\000"
-.LASF98:
+.LASF99:
 	.ascii	"__INT64_MAX__ 0x7fffffffffffffffLL\000"
 .LASF475:
 	.ascii	"_os_task_common_h_ \000"
@@ -4136,13 +4319,13 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"TASK_0_VAR\000"
 .LASF603:
 	.ascii	"VAR_AUX_FAULT_STATUS_REG\000"
-.LASF14:
+.LASF15:
 	.ascii	"__SIZEOF_LONG__ 4\000"
 .LASF593:
 	.ascii	"OS_STACK\000"
 .LASF469:
 	.ascii	"Privilige_level_save_current() ;\000"
-.LASF162:
+.LASF163:
 	.ascii	"__DBL_MAX_EXP__ 1024\000"
 .LASF565:
 	.ascii	"IdleTask\000"
@@ -4150,21 +4333,21 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"TASK_1_VAR\000"
 .LASF523:
 	.ascii	"os_bug_exception_UndefInstruction\000"
-.LASF128:
+.LASF129:
 	.ascii	"__INT_FAST32_WIDTH__ 32\000"
-.LASF32:
+.LASF33:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
-.LASF70:
+.LASF71:
 	.ascii	"__LONG_MAX__ 0x7fffffffL\000"
-.LASF96:
+.LASF97:
 	.ascii	"__INT16_MAX__ 0x7fff\000"
-.LASF167:
+.LASF168:
 	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
-.LASF78:
+.LASF79:
 	.ascii	"__SCHAR_WIDTH__ 8\000"
 .LASF511:
 	.ascii	"unsigned_char_t\000"
-.LASF18:
+.LASF19:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
 .LASF4:
 	.ascii	"__GNUC_PATCHLEVEL__ 1\000"
@@ -4174,11 +4357,13 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"MIN_BLOCK_SIZE_HEAP 8\000"
 .LASF433:
 	.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
-.LASF645:
-	.ascii	"OS_TaskSaveTaskEnvironment\000"
-.LASF75:
-	.ascii	"__WINT_MIN__ 0U\000"
 .LASF315:
+	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
+.LASF642:
+	.ascii	"OS_TaskSaveTaskEnvironment\000"
+.LASF76:
+	.ascii	"__WINT_MIN__ 0U\000"
+.LASF316:
 	.ascii	"__ULACCUM_FBIT__ 32\000"
 .LASF574:
 	.ascii	"start_time\000"
@@ -4188,57 +4373,57 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"task_queued\000"
 .LASF424:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF261:
+.LASF262:
 	.ascii	"__FRACT_IBIT__ 0\000"
-.LASF181:
+.LASF182:
 	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
-.LASF356:
+.LASF357:
 	.ascii	"__TA_FBIT__ 63\000"
-.LASF185:
+.LASF186:
 	.ascii	"__LDBL_HAS_INFINITY__ 1\000"
-.LASF139:
+.LASF140:
 	.ascii	"__GCC_IEC_559_COMPLEX 0\000"
-.LASF101:
+.LASF102:
 	.ascii	"__UINT32_MAX__ 0xffffffffUL\000"
 .LASF510:
 	.ascii	"OS_SaveTaskPtr(task_ptr,Task_n_ptr) \000"
-.LASF174:
+.LASF175:
 	.ascii	"__LDBL_MIN_EXP__ (-1021)\000"
-.LASF285:
+.LASF286:
 	.ascii	"__ULLFRACT_FBIT__ 64\000"
 .LASF557:
 	.ascii	"func_p_state_change_t\000"
-.LASF152:
+.LASF153:
 	.ascii	"__FLT_MIN__ 1.1754943508222875e-38F\000"
 .LASF561:
 	.ascii	"task_group_s\000"
-.LASF27:
+.LASF28:
 	.ascii	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
-.LASF303:
+.LASF304:
 	.ascii	"__ACCUM_MAX__ 0X7FFFFFFFP-15K\000"
-.LASF86:
+.LASF87:
 	.ascii	"__SIZE_WIDTH__ 32\000"
-.LASF229:
+.LASF230:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
 .LASF634:
 	.ascii	"TASK_TRANSITION_CURRENT_STATE\000"
-.LASF93:
+.LASF94:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
-.LASF284:
+.LASF285:
 	.ascii	"__LLFRACT_EPSILON__ 0x1P-63LLR\000"
 .LASF505:
 	.ascii	"_os_task_scheduler_h_ \000"
 .LASF450:
 	.ascii	"INTEGER_MODEL INTEGER_LLP64_IL32P64\000"
-.LASF362:
+.LASF363:
 	.ascii	"__UDA_FBIT__ 32\000"
-.LASF81:
+.LASF82:
 	.ascii	"__LONG_WIDTH__ 32\000"
 .LASF8:
 	.ascii	"__ATOMIC_ACQUIRE 2\000"
-.LASF36:
+.LASF37:
 	.ascii	"__CHAR32_TYPE__ long unsigned int\000"
-.LASF251:
+.LASF252:
 	.ascii	"__SFRACT_IBIT__ 0\000"
 .LASF476:
 	.ascii	"_os_task_config_h_ \000"
@@ -4246,31 +4431,31 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"os_bug_no_bug\000"
 .LASF398:
 	.ascii	"__ARM_FEATURE_LDREX 7\000"
-.LASF333:
+.LASF334:
 	.ascii	"__HQ_IBIT__ 0\000"
-.LASF367:
+.LASF368:
 	.ascii	"__USER_LABEL_PREFIX__ \000"
 .LASF473:
 	.ascii	"_lld_global_h_ \000"
-.LASF154:
+.LASF155:
 	.ascii	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F\000"
 .LASF582:
 	.ascii	"pStackPointerByMalloc\000"
-.LASF52:
+.LASF53:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
-.LASF336:
+.LASF337:
 	.ascii	"__DQ_FBIT__ 63\000"
-.LASF34:
+.LASF35:
 	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
-.LASF342:
+.LASF343:
 	.ascii	"__UHQ_FBIT__ 16\000"
 .LASF536:
 	.ascii	"Func_PreemptTask\000"
-.LASF94:
+.LASF95:
 	.ascii	"__SIG_ATOMIC_WIDTH__ 32\000"
 .LASF467:
 	.ascii	"DisableInterrupts() LLF_INT_DISABLE()\000"
-.LASF68:
+.LASF69:
 	.ascii	"__SHRT_MAX__ 0x7fff\000"
 .LASF379:
 	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
@@ -4278,51 +4463,51 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"__ARM_FP16_ARGS\000"
 .LASF553:
 	.ascii	"Task_ready\000"
-.LASF51:
+.LASF52:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF439:
 	.ascii	"_BASE_TYPES_H_ \000"
-.LASF150:
+.LASF151:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF448:
 	.ascii	"CPP_VERSION_2011 4\000"
 .LASF611:
 	.ascii	"TASK1_CALL_NR\000"
-.LASF97:
+.LASF98:
 	.ascii	"__INT32_MAX__ 0x7fffffffL\000"
-.LASF84:
+.LASF85:
 	.ascii	"__WINT_WIDTH__ 32\000"
-.LASF248:
+.LASF249:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
 .LASF635:
 	.ascii	"SAVED_STACK_POINTER\000"
-.LASF340:
+.LASF341:
 	.ascii	"__UQQ_FBIT__ 8\000"
-.LASF345:
+.LASF346:
 	.ascii	"__USQ_IBIT__ 0\000"
 .LASF483:
 	.ascii	"MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\000"
 .LASF402:
 	.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
-.LASF269:
+.LASF270:
 	.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
-.LASF92:
+.LASF93:
 	.ascii	"__SIG_ATOMIC_MAX__ 0x7fffffff\000"
 .LASF534:
 	.ascii	"Func_InitTaskEnvironment\000"
-.LASF57:
+.LASF58:
 	.ascii	"__INT_FAST64_TYPE__ long long int\000"
-.LASF238:
-	.ascii	"__DEC64_MAX_EXP__ 385\000"
-.LASF114:
+.LASF646:
+	.ascii	"LLF_RESTORE_TASK_STACK\000"
+.LASF115:
 	.ascii	"__INT_LEAST64_WIDTH__ 64\000"
 .LASF585:
 	.ascii	"pStackPointerEnd\000"
-.LASF218:
+.LASF219:
 	.ascii	"__FLT32X_MIN_10_EXP__ (-307)\000"
 .LASF540:
 	.ascii	"Func_ActivateTask\000"
-.LASF60:
+.LASF61:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
 .LASF437:
 	.ascii	"STM32F407VG 1\000"
@@ -4330,125 +4515,125 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"__ARM_FEATURE_IDIV 1\000"
 .LASF453:
 	.ascii	"True 1\000"
-.LASF176:
-	.ascii	"__LDBL_MAX_EXP__ 1024\000"
-.LASF334:
+.LASF224:
+	.ascii	"__FLT32X_MIN__ 2.2250738585072014e-308F32x\000"
+.LASF335:
 	.ascii	"__SQ_FBIT__ 31\000"
 .LASF444:
 	.ascii	"CPP_VERSION_NONE 0\000"
 .LASF640:
 	.ascii	"OS_TASK_RESTORE_SYSTEM_STACK\000"
-.LASF368:
+.LASF369:
 	.ascii	"__GNUC_GNU_INLINE__ 1\000"
-.LASF245:
+.LASF246:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
-.LASF217:
+.LASF218:
 	.ascii	"__FLT32X_MIN_EXP__ (-1021)\000"
-.LASF208:
+.LASF209:
 	.ascii	"__FLT64_MAX__ 1.7976931348623157e+308F64\000"
 .LASF482:
 	.ascii	"MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\000"
-.LASF119:
+.LASF120:
 	.ascii	"__UINT_LEAST32_MAX__ 0xffffffffUL\000"
-.LASF343:
+.LASF344:
 	.ascii	"__UHQ_IBIT__ 0\000"
 .LASF436:
 	.ascii	"CFG_PROCESSOR 4\000"
 .LASF601:
 	.ascii	"VAR_MEM_FAULT_ADDR_REG\000"
-.LASF186:
+.LASF187:
 	.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
-.LASF38:
+.LASF39:
 	.ascii	"__INT8_TYPE__ signed char\000"
-.LASF74:
+.LASF75:
 	.ascii	"__WINT_MAX__ 0xffffffffU\000"
-.LASF179:
+.LASF180:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
 .LASF520:
 	.ascii	"os_bug_null_pointer\000"
 .LASF481:
 	.ascii	"NUMBER_OF_TASKS 10\000"
-.LASF338:
+.LASF339:
 	.ascii	"__TQ_FBIT__ 127\000"
-.LASF259:
+.LASF260:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
 .LASF490:
 	.ascii	"_LED_H_ \000"
 .LASF447:
 	.ascii	"CPP_VERSION_2007 3\000"
-.LASF134:
+.LASF135:
 	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
-.LASF133:
+.LASF134:
 	.ascii	"__UINT_FAST32_MAX__ 0xffffffffU\000"
-.LASF255:
+.LASF256:
 	.ascii	"__USFRACT_FBIT__ 8\000"
-.LASF113:
+.LASF114:
 	.ascii	"__INT64_C(c) c ## LL\000"
-.LASF332:
+.LASF333:
 	.ascii	"__HQ_FBIT__ 15\000"
-.LASF359:
+.LASF360:
 	.ascii	"__UHA_IBIT__ 8\000"
 .LASF401:
 	.ascii	"__ARM_FEATURE_SIMD32 1\000"
 .LASF551:
 	.ascii	"Task_unspecified\000"
-.LASF15:
+.LASF16:
 	.ascii	"__SIZEOF_LONG_LONG__ 8\000"
-.LASF42:
+.LASF43:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
-.LASF79:
+.LASF80:
 	.ascii	"__SHRT_WIDTH__ 16\000"
-.LASF153:
+.LASF154:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
-.LASF49:
+.LASF50:
 	.ascii	"__INT_LEAST64_TYPE__ long long int\000"
 .LASF464:
 	.ascii	"cMCU_CORTEX_M4 4\000"
-.LASF44:
+.LASF45:
 	.ascii	"__UINT32_TYPE__ long unsigned int\000"
-.LASF175:
+.LASF176:
 	.ascii	"__LDBL_MIN_10_EXP__ (-307)\000"
 .LASF438:
 	.ascii	"_os_firstinc_h_ \000"
-.LASF28:
+.LASF29:
 	.ascii	"__SIZEOF_POINTER__ 4\000"
-.LASF308:
+.LASF309:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
-.LASF268:
+.LASF269:
 	.ascii	"__UFRACT_MAX__ 0XFFFFP-16UR\000"
 .LASF414:
 	.ascii	"__VFP_FP__ 1\000"
-.LASF278:
+.LASF279:
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
-.LASF350:
+.LASF351:
 	.ascii	"__HA_FBIT__ 7\000"
-.LASF85:
+.LASF86:
 	.ascii	"__PTRDIFF_WIDTH__ 32\000"
 .LASF440:
 	.ascii	"INTEGER_LLP64_IL32P64 1\000"
-.LASF144:
+.LASF145:
 	.ascii	"__FLT_MANT_DIG__ 24\000"
 .LASF412:
 	.ascii	"__ARMEL__ 1\000"
-.LASF121:
+.LASF122:
 	.ascii	"__UINT_LEAST64_MAX__ 0xffffffffffffffffULL\000"
-.LASF80:
+.LASF81:
 	.ascii	"__INT_WIDTH__ 32\000"
 .LASF385:
 	.ascii	"__GCC_ATOMIC_POINTER_LOCK_FREE 2\000"
-.LASF122:
+.LASF123:
 	.ascii	"__UINT64_C(c) c ## ULL\000"
-.LASF314:
-	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
-.LASF254:
+.LASF647:
+	.ascii	"LLF_RESTORE_REGISTERS\000"
+.LASF255:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
-.LASF341:
+.LASF342:
 	.ascii	"__UQQ_IBIT__ 0\000"
 .LASF493:
 	.ascii	"OS_STACK_SIZE 0x5000u\000"
-.LASF344:
+.LASF345:
 	.ascii	"__USQ_FBIT__ 32\000"
-.LASF351:
+.LASF352:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF516:
 	.ascii	"long unsigned int\000"
@@ -4462,27 +4647,30 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"RUNNING_TASK\000"
 .LASF392:
 	.ascii	"__ARM_FEATURE_QBIT 1\000"
-.LASF20:
+.LASF21:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
+.LASF248:
+	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
+	.ascii	"6144DL\000"
 .LASF608:
 	.ascii	"DBG_CURR_VAL\000"
 .LASF1:
 	.ascii	"__STDC_HOSTED__ 1\000"
-.LASF135:
+.LASF136:
 	.ascii	"__INTPTR_MAX__ 0x7fffffff\000"
 .LASF456:
 	.ascii	"Accepted 1\000"
 .LASF400:
 	.ascii	"__ARM_FEATURE_NUMERIC_MAXMIN\000"
-.LASF64:
+.LASF65:
 	.ascii	"__has_include(STR) __has_include__(STR)\000"
 .LASF413:
 	.ascii	"__SOFTFP__ 1\000"
 .LASF527:
 	.ascii	"os_sw_bugs_e\000"
-.LASF266:
+.LASF267:
 	.ascii	"__UFRACT_IBIT__ 0\000"
-.LASF210:
+.LASF211:
 	.ascii	"__FLT64_EPSILON__ 2.2204460492503131e-16F64\000"
 .LASF592:
 	.ascii	"HEAP\000"
@@ -4500,35 +4688,36 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"os_bug_Task_unspecified\000"
 .LASF10:
 	.ascii	"__ATOMIC_ACQ_REL 4\000"
-.LASF61:
+.LASF62:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
 .LASF526:
 	.ascii	"os_sw_bugs_t\000"
 .LASF513:
 	.ascii	"unsigned char\000"
-.LASF230:
+.LASF231:
 	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
 .LASF445:
 	.ascii	"CPP_VERSION_1998 1\000"
 .LASF567:
 	.ascii	"NrOfInsAllowed\000"
-.LASF355:
-	.ascii	"__DA_IBIT__ 32\000"
 .LASF572:
 	.ascii	"overwaittime_per_prio_inc_step\000"
-.LASF182:
+.LASF183:
 	.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
-.LASF112:
+.LASF113:
 	.ascii	"__INT_LEAST64_MAX__ 0x7fffffffffffffffLL\000"
 .LASF596:
 	.ascii	"OS_STATE\000"
 .LASF495:
 	.ascii	"_os_heap_h_ \000"
-.LASF25:
+.LASF26:
 	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
+.LASF488:
+	.ascii	"os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_"
+	.ascii	"name)] = (task_ptr))\000"
 .LASF531:
 	.ascii	"Func_RestoreTaskEnvironment\000"
-.LASF111:
+.LASF112:
 	.ascii	"__INT_LEAST32_WIDTH__ 32\000"
 .LASF626:
 	.ascii	"TASK_3_VAR\000"
@@ -4536,23 +4725,23 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"HEAP_SIZE 10000\000"
 .LASF554:
 	.ascii	"Task_running\000"
-.LASF337:
+.LASF338:
 	.ascii	"__DQ_IBIT__ 0\000"
-.LASF151:
+.LASF152:
 	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
-.LASF195:
+.LASF196:
 	.ascii	"__FLT32_MIN__ 1.1754943508222875e-38F32\000"
 .LASF442:
 	.ascii	"INTEGER_ILP64 3\000"
 .LASF577:
 	.ascii	"task_number\000"
-.LASF29:
+.LASF30:
 	.ascii	"__SIZE_TYPE__ unsigned int\000"
 .LASF443:
 	.ascii	"INTEGER_SILP64 4\000"
 .LASF641:
 	.ascii	"OS_TASK_RESTORETASK_ENVIRONMENT\000"
-.LASF325:
+.LASF326:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
 .LASF477:
 	.ascii	"SchedulerFrequency (1.0e3)\000"
@@ -4562,58 +4751,58 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"os_shutdown 2\000"
 .LASF558:
 	.ascii	"exe_time\000"
-.LASF260:
+.LASF261:
 	.ascii	"__FRACT_FBIT__ 15\000"
 .LASF380:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
-.LASF365:
+.LASF366:
 	.ascii	"__UTA_IBIT__ 64\000"
-.LASF148:
+.LASF149:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
-.LASF203:
+.LASF204:
 	.ascii	"__FLT64_MIN_EXP__ (-1021)\000"
-.LASF224:
+.LASF225:
 	.ascii	"__FLT32X_EPSILON__ 2.2204460492503131e-16F32x\000"
-.LASF73:
-	.ascii	"__WCHAR_MIN__ 0U\000"
-.LASF170:
+.LASF142:
+	.ascii	"__FLT_EVAL_METHOD_TS_18661_3__ 0\000"
+.LASF171:
 	.ascii	"__DBL_HAS_INFINITY__ 1\000"
 .LASF460:
 	.ascii	"Global_inline __inline__\000"
 .LASF519:
 	.ascii	"os_bug_taskstate_request_denied\000"
-.LASF236:
+.LASF237:
 	.ascii	"__DEC64_MANT_DIG__ 16\000"
-.LASF56:
+.LASF57:
 	.ascii	"__INT_FAST32_TYPE__ int\000"
 .LASF515:
 	.ascii	"unsigned_int32_t\000"
 .LASF570:
 	.ascii	"wait_time\000"
-.LASF157:
+.LASF158:
 	.ascii	"__FLT_HAS_QUIET_NAN__ 1\000"
-.LASF13:
+.LASF14:
 	.ascii	"__SIZEOF_INT__ 4\000"
-.LASF33:
+.LASF34:
 	.ascii	"__INTMAX_TYPE__ long long int\000"
-.LASF88:
+.LASF89:
 	.ascii	"__INTMAX_C(c) c ## LL\000"
-.LASF263:
+.LASF264:
 	.ascii	"__FRACT_MAX__ 0X7FFFP-15R\000"
 .LASF420:
 	.ascii	"__ARM_FEATURE_FP16_VECTOR_ARITHMETIC\000"
-.LASF295:
+.LASF296:
 	.ascii	"__USACCUM_FBIT__ 8\000"
-.LASF302:
+.LASF303:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
-.LASF168:
+.LASF169:
 	.ascii	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324"
 	.ascii	"L)\000"
-.LASF45:
+.LASF46:
 	.ascii	"__UINT64_TYPE__ long long unsigned int\000"
-.LASF228:
+.LASF229:
 	.ascii	"__FLT32X_HAS_QUIET_NAN__ 1\000"
-.LASF163:
+.LASF164:
 	.ascii	"__DBL_MAX_10_EXP__ 308\000"
 .LASF542:
 	.ascii	"Func_Preempt_Task\000"
@@ -4627,9 +4816,9 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"__GCC_ATOMIC_CHAR_LOCK_FREE 2\000"
 .LASF560:
 	.ascii	"task_group_t\000"
-.LASF330:
+.LASF331:
 	.ascii	"__QQ_FBIT__ 7\000"
-.LASF227:
+.LASF228:
 	.ascii	"__FLT32X_HAS_INFINITY__ 1\000"
 .LASF404:
 	.ascii	"__ARM_ARCH_PROFILE 77\000"
@@ -4637,20 +4826,21 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"TASK_PTR\000"
 .LASF619:
 	.ascii	"TASK_RUN_QUEUE\000"
-.LASF146:
+.LASF177:
+	.ascii	"__LDBL_MAX_EXP__ 1024\000"
+.LASF147:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
 .LASF486:
 	.ascii	"USE_STATIC_CREATED_TASKS True\000"
-.LASF468:
-	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
-.LASF247:
-	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
-	.ascii	"6144DL\000"
+.LASF408:
+	.ascii	"__thumb__ 1\000"
+.LASF645:
+	.ascii	"LLF_RESTORE_SYSTEM_STACK\000"
 .LASF451:
 	.ascii	"_os_common_h_ \000"
-.LASF178:
+.LASF179:
 	.ascii	"__DECIMAL_DIG__ 17\000"
-.LASF110:
+.LASF111:
 	.ascii	"__INT32_C(c) c ## L\000"
 .LASF487:
 	.ascii	"_os_init_task_system_h_ \000"
@@ -4660,15 +4850,15 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"TASK2_CALL_NR\000"
 .LASF370:
 	.ascii	"__STRICT_ANSI__ 1\000"
-.LASF190:
+.LASF191:
 	.ascii	"__FLT32_MIN_10_EXP__ (-37)\000"
-.LASF177:
+.LASF178:
 	.ascii	"__LDBL_MAX_10_EXP__ 308\000"
-.LASF220:
+.LASF221:
 	.ascii	"__FLT32X_MAX_10_EXP__ 308\000"
-.LASF137:
+.LASF138:
 	.ascii	"__UINTPTR_MAX__ 0xffffffffU\000"
-.LASF125:
+.LASF126:
 	.ascii	"__INT_FAST16_MAX__ 0x7fffffff\000"
 .LASF627:
 	.ascii	"TASK_GROUP_1\000"
@@ -4676,52 +4866,52 @@ OS_Task_InitTaskEnvironment:
 	.ascii	"TASK_GROUP_2\000"
 .LASF629:
 	.ascii	"TASK_GROUP_3\000"
-.LASF192:
+.LASF193:
 	.ascii	"__FLT32_MAX_10_EXP__ 38\000"
 .LASF631:
 	.ascii	"TASK_GROUP_5\000"
 .LASF387:
 	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
-.LASF273:
+.LASF274:
 	.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
-.LASF221:
+.LASF222:
 	.ascii	"__FLT32X_DECIMAL_DIG__ 17\000"
-.LASF323:
+.LASF324:
 	.ascii	"__LLACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LLK\000"
-.LASF109:
+.LASF110:
 	.ascii	"__INT_LEAST32_MAX__ 0x7fffffffL\000"
-.LASF357:
+.LASF358:
 	.ascii	"__TA_IBIT__ 64\000"
-.LASF239:
+.LASF240:
 	.ascii	"__DEC64_MIN__ 1E-383DD\000"
 .LASF569:
 	.ascii	"WaitActUntil\000"
-.LASF89:
+.LASF90:
 	.ascii	"__UINTMAX_MAX__ 0xffffffffffffffffULL\000"
-.LASF37:
+.LASF38:
 	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
-.LASF282:
+.LASF283:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
-.LASF161:
+.LASF162:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
 .LASF589:
 	.ascii	"scheduling_t\000"
 .LASF568:
 	.ascii	"NrOfInsActivated\000"
-.LASF184:
+.LASF185:
 	.ascii	"__LDBL_HAS_DENORM__ 1\000"
 .LASF532:
 	.ascii	"Func_CreateTaskEnvironment\000"
 .LASF492:
 	.ascii	"_os_stack_h_ \000"
-.LASF201:
+.LASF202:
 	.ascii	"__FLT64_MANT_DIG__ 53\000"
-.LASF197:
+.LASF198:
 	.ascii	"__FLT32_DENORM_MIN__ 1.4012984643248171e-45F32\000"
-.LASF155:
+.LASF156:
 	.ascii	"__FLT_HAS_DENORM__ 1\000"
-.LASF130:
+.LASF131:
 	.ascii	"__INT_FAST64_WIDTH__ 64\000"
-.LASF164:
+.LASF165:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
 	.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"

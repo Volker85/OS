@@ -15,6 +15,7 @@ From the AAPCS, §5.1.1:
         .text
         .global LLF_GET_MPU_PRESENT
         .global LLF_MPU_DISABLE
+        .global LLF_MPU_ENABLE
         //.extern OS_StartOs
         
       
@@ -36,11 +37,11 @@ LLF_MPU_DISABLE:
         ADD  r12,r12,r6
         ADD  r12,r12,r7
         # r13 = *r12 = *0xE000ED94
-        LDR  r13,[r12]
+        LDR  r11,[r12]
         # *r13 = *r13 & 0x06 
-        AND r13,r13,#0x06
+        AND r11,r11,#0x06
         # *r12 = r13
-        STR r13,[r12]
+        STR r11,[r12]
         MOV R15, R14
 
 LLF_MPU_ENABLE:
@@ -61,11 +62,11 @@ LLF_MPU_ENABLE:
         ADD  r12,r12,r6
         ADD  r12,r12,r7
         # r13 = *r12 = *0xE000ED94
-        LDR  r13,[r12]
+        LDR  r11,[r12]
         # *r13 = *r13 | 0x01 
-        ORR r13,r13,#0x01
+        ORR r11,r11,#0x01
         # *r12 = r13
-        STR r13,[r12]
+        STR r11,[r12]
         MOV R15, R14
 
 LLF_GET_MPU_PRESENT:

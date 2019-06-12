@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccUiptbW.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4yFKOn.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -8,7 +8,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccUiptbW.s 			page 1
    5              		.eabi_attribute 24, 1
    6              		.eabi_attribute 25, 1
    7              		.eabi_attribute 26, 1
-   8              		.eabi_attribute 30, 6
+   8              		.eabi_attribute 30, 2
    9              		.eabi_attribute 34, 1
   10              		.eabi_attribute 18, 4
   11              		.file	"os_memory_mmu_setup.c"
@@ -16,14 +16,15 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccUiptbW.s 			page 1
   13              	.Ltext0:
   14              		.cfi_sections	.debug_frame
   15              		.align	1
-  16              		.global	OS_MmuSetup
-  17              		.syntax unified
-  18              		.thumb
-  19              		.thumb_func
-  20              		.fpu softvfp
-  22              	OS_MmuSetup:
-  23              	.LFB0:
-  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
+  16              		.p2align 2,,3
+  17              		.global	OS_MmuSetup
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	OS_MmuSetup:
+  24              	.LFB0:
+  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #include "os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** 
    3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** /*
@@ -34,68 +35,49 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccUiptbW.s 			page 1
    8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    Managing memory protection unit (MPU) in STM32 MCUs
    9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** */
   10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** 
-  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define StartAddresseC0   ((void*)0x00000000)
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define StartAddresseC0T0 ((void*)0x00000000)
-  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define StartAddresseC0T1 ((void*)0x00000000)
-  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define StartAddresseC1T0 ((void*)0x00000000)
-  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define StartAddresseC1T1 ((void*)0x00000000)
-  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define EndAddresseC0     ((void*)0x00000000)
-  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define EndAddresseC0T0   ((void*)0x00000000)
-  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define EndAddresseC0T1   ((void*)0x00000000)
-  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define EndAddresseC1T0   ((void*)0x00000000)
-  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** #define EndAddresseC1T1   ((void*)0x00000000)
-  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** 
-  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** void OS_MmuSetup(void)
-  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** {
-  25              		.loc 1 23 0
-  26              		.cfi_startproc
-  27              		@ args = 0, pretend = 0, frame = 0
-  28              		@ frame_needed = 1, uses_anonymous_args = 0
-  29 0000 80B5     		push	{r7, lr}
-  30              		.cfi_def_cfa_offset 8
-  31              		.cfi_offset 7, -8
-  32              		.cfi_offset 14, -4
-  33 0002 00AF     		add	r7, sp, #0
-  34              		.cfi_def_cfa_register 7
-  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    /* assign every task a mmu region + the scheduler an own region */
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccUiptbW.s 			page 2
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** 
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** void OS_MmuSetup(void)
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** {
+  26              		.loc 1 13 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    /* assign every task a mmu region + the scheduler an own region */
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might 
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****       hardware register access shall be only possible in supervisor / kernel mode via system call..
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    /* the MPU is implementation depended in STM32F4 MCU..., the eval board does have a MPU with 8 r
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    /* FLASH: Start Addr: 0x08000000, Length: 1024K */
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    /* RAM:   Start Addr: 0x20000000, Length: 112kB *//* + 64kB CCM, 16 kB SysRAM */
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    /* peripherie Start Addr: 0x40000000, Length: 0xFFFFFFFF - 0x40000000 + 1 *//* + 64kB CCM, 16 kB
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    
+  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    LLF_MPU_ENABLE();
+  31              		.loc 1 25 0
+  32 0000 FFF7FEBF 		b	LLF_MPU_ENABLE
+  33              	.LVL0:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4yFKOn.s 			page 2
 
 
-  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might 
-  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****       hardware register access shall be only possible in supervisor / kernel mode via system call..
-  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    /* the MPU is implementation depended in STM32F4 MCU..., the eval board does have a MPU*/
-  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    while(LLF_GET_MPU_PRESENT() != 0)
-  35              		.loc 1 28 0
-  36 0004 00BF     		nop
-  37              	.L2:
-  38              		.loc 1 28 0 is_stmt 0 discriminator 1
-  39 0006 FFF7FEFF 		bl	LLF_GET_MPU_PRESENT
-  40 000a 0346     		mov	r3, r0
-  41 000c 002B     		cmp	r3, #0
-  42 000e FAD1     		bne	.L2
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    {
-  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****       
-  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c ****    }   
-  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c **** }
-  43              		.loc 1 32 0 is_stmt 1
-  44 0010 00BF     		nop
-  45 0012 80BD     		pop	{r7, pc}
-  46              		.cfi_endproc
-  47              	.LFE0:
-  49              	.Letext0:
-  50              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  51              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-  52              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  53              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  54              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccUiptbW.s 			page 3
+  34              		.cfi_endproc
+  35              	.LFE0:
+  37              	.Letext0:
+  38              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  39              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+  40              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  41              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  42              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  43              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4yFKOn.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_memory_mmu_setup.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccUiptbW.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccUiptbW.s:22     .text:00000000 OS_MmuSetup
-                           .group:00000000 wm4.0.aa75c0738974a382baf71fbad152c229
+C:\Users\PRESID~1\AppData\Local\Temp\cc4yFKOn.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cc4yFKOn.s:23     .text:00000000 OS_MmuSetup
+                           .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.eb6279ca092455f62aa554ec1864872d
                            .group:00000000 wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898
@@ -105,4 +87,4 @@ C:\Users\PRESID~1\AppData\Local\Temp\ccUiptbW.s:22     .text:00000000 OS_MmuSetu
                            .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
 
 UNDEFINED SYMBOLS
-LLF_GET_MPU_PRESENT
+LLF_MPU_ENABLE

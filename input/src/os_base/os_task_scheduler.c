@@ -100,6 +100,7 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
       default:
       {
          /* no change in states allowed */
+         OS_SetSwBug(os_bug_taskstate_request_denied, Func_TaskStateRequest);
          break;
       }
       }
@@ -165,8 +166,6 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
       TASK_TRANSITION_REJECTED_STATE      = requested_state;
       TASK_TRANSITION_CURRENT_STATE       = task->task_state;
       OS_SetSwBug(os_bug_taskstate_request_denied, Func_TaskStateRequest);
-
-
    }
    return RequestState;
 }
@@ -215,8 +214,8 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
          {
             DisableInterrupts();
             OS_TaskSaveTaskEnvironment(task);
-            OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
-            
+            OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+
             task->active = False;
             /* reset the prio increase for waiting */
             task->current_prio = task->default_prio;
@@ -231,7 +230,6 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
       {
          OS_SetSwBug(os_bug_null_pointer, Func_Preempt_Task);
       }
-
    }
    else
    {
@@ -267,15 +265,16 @@ void OS_ActivateTask(task_t* task)
                if(task != 0)
                {
                   task->NrOfInsActivated++;
-               }   
+               }
                else
                {
                   OS_SetSwBug(os_bug_null_pointer,Func_ActivateTask);
-               }                  
+               }
             }
             else
             {
                /* multiple activation bug occured */
+               OS_SetSwBug(os_bug_taskstate_request_denied, Func_ActivateTask);
             }
          }
          else
@@ -309,7 +308,7 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
             task->active =  True;
             task->wait_time = 0;
             task->current_prio = task->default_prio;
-            OS_TASK_SAVE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
+            OS_TASK_SAVE_SYSTEM_STACK(&OS_MAIN_STACK);
             OS_TASK_RESTORETASK_ENVIRONMENT(task);
             task->start_time = OS_GetCurrentTime();
             EnableInterrupts();
@@ -329,7 +328,6 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
          {
             OS_SetSwBug(os_bug_taskstate_request_denied, Func_StartTask);
          }
-
       }
       else
       {
@@ -360,7 +358,7 @@ void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task)
          {
             DisableInterrupts();
             OS_TaskSaveTaskEnvironment(task);
-            OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
+            OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
             DeleteFromTaskQueue(task);
             DeleteFromSchedulingQueue(scheduling_task);
 
@@ -378,7 +376,6 @@ void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task)
       {
          OS_SetSwBug(os_bug_null_pointer, Func_TerminateTask);
       }
-
    }
    else
    {
@@ -407,8 +404,6 @@ void OS_TaskDispatcher(void)
    {
       OS_TerminateTask(task, scheduling_task_ptr);
    }
-
-
    /* ask for the next task to be activated... */
    scheduling_task_ptr = OS_TaskScheduler();
    if(scheduling_task_ptr != 0)
@@ -432,13 +427,11 @@ Local void TASK_1(void* task_ptr)
    /* worker task */
    scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
    /* do some things */
-   /*while(1) {}*/
    TASK1_CALL_NR++;
-   OS_SleepTask((task_t*)task_ptr, 10, scheduling_task_ptr);
-   #if (CFG_PROCESSOR != cMCU_X86)
-   while(1) {}
-   #endif
+
+
    /* end */
+   OS_TerminateTask(task,scheduling_task_ptr);
 }
 Local void TASK_2(void* task_ptr)
 {
@@ -447,10 +440,9 @@ Local void TASK_2(void* task_ptr)
 
    /* do some things */
    TASK2_CALL_NR++;
-   #if (CFG_PROCESSOR != cMCU_X86)
-   while(1) {}
-   #endif
+
    /* end */
+   OS_TerminateTask(task,scheduling_task_ptr);
 }
 Local void TASK_3(void* task_ptr)
 {
@@ -459,10 +451,9 @@ Local void TASK_3(void* task_ptr)
 
    /* do some things */
    TASK3_CALL_NR++;
-   #if (CFG_PROCESSOR != cMCU_X86)
-   while(1) {}
-   #endif
+
    /* end */
+   OS_TerminateTask(task,scheduling_task_ptr);
 }
 void OS_InitTasks(void)
 {
@@ -509,7 +500,7 @@ void OS_InitTasks(void)
                 Core0,
                 1                                   /* default prio */
                );
-   AddToSchedulingQueue(task_ptr);               
+   AddToSchedulingQueue(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_1_ptr);
 
    /* setup worker task */
@@ -525,7 +516,7 @@ void OS_InitTasks(void)
                 Core0,
                 2                                   /* default prio */
                );
-   AddToSchedulingQueue(task_ptr);               
+   AddToSchedulingQueue(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
 
    /* setup worker task */
@@ -541,7 +532,7 @@ void OS_InitTasks(void)
                 Core0,
                 3                                   /* default prio */
                );
-   AddToSchedulingQueue(task_ptr);               
+   AddToSchedulingQueue(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_3_ptr);
 }
 

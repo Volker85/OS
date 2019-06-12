@@ -5,15 +5,15 @@ Local void OS_DeinitHw(void);
 Local void OS_DeinitSw(void);
 void OS_DeinitHw(void)
 {
-   /*QAC*/
+   /*QAC*///TODO
 }
 void OS_DeinitSw(void)
 {
-  /*QAC*/
+  /*QAC*///TODO
 }
 void OS_DeinitMc(void)
 {
-   /*QAC*/
+   /*QAC*///TODO
 }
 
 void OS_Shutdown(os_reset_type_t reset_typ)
@@ -25,6 +25,7 @@ void OS_Shutdown(os_reset_type_t reset_typ)
    LLF_MPU_DISABLE();
 
    /* save some registers to restore after reset */
+   //TODO
 
    /* power done/reset system */
    if(reset_typ == os_reset_powerdown)
@@ -46,6 +47,7 @@ void OS_Shutdown(os_reset_type_t reset_typ)
    {
       ;
    }
+   OS_SetSwBug(os_bug_reset_exit_or_shutdown_failed, Func_Shutdown);
    while(1)
    {
       /* if you enter here, the reset has failed to be executed.... */

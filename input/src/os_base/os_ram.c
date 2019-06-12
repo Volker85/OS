@@ -6,6 +6,9 @@
 #if(DynamicMemoryUsed != False)
 unsigned_char_t      HEAP[HEAP_SIZE];
 #endif
+#if(OS_STACK_SIZE <= 64)
+#error "stack of 64 bytes minimum is needed for stack check pattern"
+#endif
 
 /* stack related RAM  */
 unsigned_char_t OS_STACK[NR_OF_CORES][OS_STACK_SIZE];
