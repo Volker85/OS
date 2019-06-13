@@ -12,7 +12,13 @@ unsigned_int32_t OS_GetCurrentTime(void)
    The counter will overflow every 25sec -> provide function OS_ClearCurrentTime to reset the value to 0, and !!! do not use the absolute value for calculations but use the difference between start and stop of timer
    */
    /*
-   TODO: What is the expected return of this function, some parts seems to assume a resolution of 1ms, but a resolution of 1 cpu cycle seems to be more reasonable
+   TODO: Scale the output to 1us
+   TODO: do not use elementar types (e.g. uint32) but use a structure / object which supports 128 bit at least to reprasentate the elapsed cylces, the elapsed time in us / ms / s / min / h.....
    */
    return (0);
+}
+
+void OS_ResetCurrentTime(void)
+{
+   // reset the counter DWT_CYCCNT to 0
 }
