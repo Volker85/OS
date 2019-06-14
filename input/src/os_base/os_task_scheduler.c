@@ -547,6 +547,7 @@ Local scheduling_t* OS_TaskScheduler(void)
    task_t*         task = 0;
    task_t*         Winner_task = 0;
    scheduling_t*   Winner_scheduling_queue_member = 0;
+
    scheduler_time_t delta_time = OS_GetCurrentTime() - LAST_CURRENT_TIME;
 
    LAST_CURRENT_TIME = OS_GetCurrentTime();
