@@ -1,5 +1,5 @@
 "Target_x86" 
-15.06.2019 21:01:42,80 
+15.06.2019 21:10:23,16 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
@@ -50,29 +50,19 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: not
  void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
       ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:143:4: warning: return makes integer from pointer without a cast
+    return IsEqual;   
+    ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:125:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsEqual':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:151:14: warning: variable 'IsEqual' set but not used [-Wunused-but-set-variable]
-    boolean_t IsEqual = True;/* in case no if/elseif) was entered, the numbers are equal -> return True */
-              ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:168:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:188:4: warning: return makes integer from pointer without a cast
+    return IsEqual;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:170:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:143:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsEqual':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:164:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function)
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
@@ -150,29 +140,19 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: not
  void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
       ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:143:4: warning: return makes integer from pointer without a cast
+    return IsEqual;   
+    ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:125:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsEqual':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:151:14: warning: variable 'IsEqual' set but not used [-Wunused-but-set-variable]
-    boolean_t IsEqual = True;/* in case no if/elseif) was entered, the numbers are equal -> return True */
-              ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:168:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:188:4: warning: return makes integer from pointer without a cast
+    return IsEqual;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:170:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:143:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsEqual':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:164:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function)
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   

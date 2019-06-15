@@ -139,7 +139,8 @@ boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
       {
          /* don't break, but continue with next position */
       }        
-   }   
+   }  
+   return IsEqual;   
 }
 boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
 {
@@ -160,7 +161,8 @@ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
       {
          /* don't break, but continue with next position */
       }        
-   }         
+   }
+   return IsEqual;   
 }
 boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
 {
@@ -183,6 +185,7 @@ boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
          /* don't break, but continue with next position */
       }        
    }      
+   return IsEqual;
 }
 boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
 {
