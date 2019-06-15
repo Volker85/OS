@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1397, %eax
+	movl	_call_nr.1399, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,16 +33,16 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1397, %eax
+	movl	_call_nr.1399, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1397
+	movl	%eax, _call_nr.1399
 	.loc 1 64 0
 	jmp	L1
 L5:
 	.loc 1 67 0
-	movl	_call_nr.1397, %eax
+	movl	_call_nr.1399, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1397
+	movl	%eax, _call_nr.1399
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -50,16 +50,16 @@ L6:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1397, %eax
+	movl	_call_nr.1399, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1397
+	movl	%eax, _call_nr.1399
 	.loc 1 72 0
 	jmp	L1
 L7:
 	.loc 1 75 0
-	movl	_call_nr.1397, %eax
+	movl	_call_nr.1399, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1397
+	movl	%eax, _call_nr.1399
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -67,7 +67,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1397
+	movl	$0, _call_nr.1399
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -130,7 +130,7 @@ L14:
 	jmp	L16
 L13:
 	.loc 1 120 0
-	movl	_call_nr.1409, %eax
+	movl	_call_nr.1411, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
@@ -141,9 +141,9 @@ L13:
 	call	_OS_DetermineNextTaskActivation
 L17:
 	.loc 1 124 0
-	movl	_call_nr.1409, %eax
+	movl	_call_nr.1411, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1409
+	movl	%eax, _call_nr.1411
 	.loc 1 126 0
 	call	_OS_TaskDispatcher
 	.loc 1 133 0
@@ -152,7 +152,7 @@ L15:
 	.loc 1 137 0
 	call	_LLF_INT_DISABLE
 	.loc 1 138 0
-	movl	_sys_req_reset_state.1408, %eax
+	movl	_sys_req_reset_state.1410, %eax
 	cmpl	$1, %eax
 	je	L19
 	cmpl	$1, %eax
@@ -197,9 +197,9 @@ L16:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1397,4,4
-.lcomm _call_nr.1409,4,4
-.lcomm _sys_req_reset_state.1408,4,4
+.lcomm _call_nr.1399,4,4
+.lcomm _call_nr.1411,4,4
+.lcomm _sys_req_reset_state.1410,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
@@ -208,7 +208,7 @@ Letext0:
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x765
+	.long	0x747
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -630,7 +630,7 @@ Ldebug_info0:
 	.long	0x11e
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1397
+	.long	_call_nr.1399
 	.byte	0
 	.uleb128 0x11
 	.ascii "OS_StateHandler\0"
@@ -640,7 +640,7 @@ Ldebug_info0:
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x704
+	.long	0x6ed
 	.uleb128 0x10
 	.ascii "sys_req_reset_state\0"
 	.byte	0x1
@@ -648,7 +648,7 @@ Ldebug_info0:
 	.long	0x633
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1408
+	.long	_sys_req_reset_state.1410
 	.uleb128 0x10
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -656,42 +656,31 @@ Ldebug_info0:
 	.long	0x11e
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1409
+	.long	_call_nr.1411
+	.byte	0
 	.uleb128 0x12
-	.ascii "OS_StackCheck\0"
-	.byte	0x1
-	.byte	0xa8
-	.long	0x704
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x3
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
-	.uleb128 0x14
 	.ascii "OS_STATE\0"
 	.byte	0x6
 	.byte	0x11
-	.long	0x71b
-	.uleb128 0x15
+	.long	0x6fd
+	.uleb128 0x13
 	.long	0x11e
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "TASK_0_VAR\0"
 	.byte	0x6
 	.byte	0x2d
 	.long	0x585
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "TASK_1_VAR\0"
 	.byte	0x6
 	.byte	0x2d
 	.long	0x585
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "TASK_2_VAR\0"
 	.byte	0x6
 	.byte	0x2d
 	.long	0x585
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "TASK_3_VAR\0"
 	.byte	0x6
 	.byte	0x2d
@@ -939,28 +928,6 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x12
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x13
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x14
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -977,7 +944,7 @@ Ldebug_abbrev0:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.uleb128 0x35
 	.byte	0
 	.uleb128 0x49

@@ -270,13 +270,13 @@ OS_StateHandler:
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0
-	.type	call_nr.4121, %object
-	.size	call_nr.4121, 4
-call_nr.4121:
+	.type	call_nr.4123, %object
+	.size	call_nr.4123, 4
+call_nr.4123:
 	.space	4
-	.type	call_nr.4109, %object
-	.size	call_nr.4109, 4
-call_nr.4109:
+	.type	call_nr.4111, %object
+	.size	call_nr.4111, 4
+call_nr.4111:
 	.space	4
 	.text
 .Letext0:
@@ -295,7 +295,7 @@ call_nr.4109:
 	.file 14 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x875
+	.4byte	0x85d
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -1132,7 +1132,7 @@ call_nr.4109:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7c4
+	.4byte	0x7b3
 	.uleb128 0x16
 	.4byte	.LASF640
 	.byte	0x1
@@ -1146,100 +1146,88 @@ call_nr.4109:
 	.4byte	0x69
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4121
+	.4byte	call_nr.4123
 	.uleb128 0x18
-	.4byte	.LASF645
-	.byte	0x1
-	.byte	0xa8
-	.4byte	0x7c4
-	.4byte	0x701
-	.uleb128 0x19
-	.byte	0
-	.uleb128 0x1a
-	.4byte	0x7cb
+	.4byte	0x7b3
 	.4byte	.LBB4
 	.4byte	.LBE4-.LBB4
 	.byte	0x1
 	.byte	0x7a
-	.4byte	0x73a
-	.uleb128 0x1b
+	.4byte	0x729
+	.uleb128 0x19
 	.4byte	.LBB5
 	.4byte	.LBE5-.LBB5
-	.uleb128 0x1c
+	.uleb128 0x1a
 	.4byte	.LVL13
-	.4byte	0x7e9
-	.uleb128 0x1c
+	.4byte	0x7d1
+	.uleb128 0x1a
 	.4byte	.LVL14
-	.4byte	0x7e9
-	.uleb128 0x1c
+	.4byte	0x7d1
+	.uleb128 0x1a
 	.4byte	.LVL15
-	.4byte	0x7e9
+	.4byte	0x7d1
 	.byte	0
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1a
 	.4byte	.LVL0
-	.4byte	0x7f4
-	.uleb128 0x1d
+	.4byte	0x7dc
+	.uleb128 0x1b
 	.4byte	.LVL1
-	.4byte	0x7ff
-	.4byte	0x756
-	.uleb128 0x1e
+	.4byte	0x7e7
+	.4byte	0x745
+	.uleb128 0x1c
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x1
 	.byte	0x31
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1a
 	.4byte	.LVL2
-	.4byte	0x80a
-	.uleb128 0x1c
+	.4byte	0x7f2
+	.uleb128 0x1a
 	.4byte	.LVL3
-	.4byte	0x815
-	.uleb128 0x1c
+	.4byte	0x7fd
+	.uleb128 0x1a
 	.4byte	.LVL4
-	.4byte	0x820
-	.uleb128 0x1c
+	.4byte	0x808
+	.uleb128 0x1a
 	.4byte	.LVL5
-	.4byte	0x82b
-	.uleb128 0x1c
+	.4byte	0x813
+	.uleb128 0x1a
 	.4byte	.LVL6
-	.4byte	0x836
-	.uleb128 0x1c
+	.4byte	0x81e
+	.uleb128 0x1a
 	.4byte	.LVL7
-	.4byte	0x7e9
-	.uleb128 0x1c
+	.4byte	0x7d1
+	.uleb128 0x1a
 	.4byte	.LVL8
-	.4byte	0x841
-	.uleb128 0x1d
+	.4byte	0x829
+	.uleb128 0x1b
 	.4byte	.LVL9
-	.4byte	0x84c
-	.4byte	0x7a8
-	.uleb128 0x1e
+	.4byte	0x834
+	.4byte	0x797
+	.uleb128 0x1c
 	.uleb128 0x1
 	.byte	0x51
 	.uleb128 0x1
 	.byte	0x30
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1a
 	.4byte	.LVL10
-	.4byte	0x857
-	.uleb128 0x1c
+	.4byte	0x83f
+	.uleb128 0x1a
 	.4byte	.LVL11
-	.4byte	0x862
-	.uleb128 0x1c
+	.4byte	0x84a
+	.uleb128 0x1a
 	.4byte	.LVL12
-	.4byte	0x86d
+	.4byte	0x855
 	.byte	0
-	.uleb128 0x1f
-	.byte	0x4
-	.byte	0x5
-	.ascii	"int\000"
-	.uleb128 0x20
+	.uleb128 0x1d
 	.4byte	.LASF659
 	.byte	0x1
 	.byte	0x38
 	.byte	0x1
-	.4byte	0x7e9
+	.4byte	0x7d1
 	.uleb128 0x17
 	.4byte	.LASF641
 	.byte	0x1
@@ -1247,69 +1235,69 @@ call_nr.4109:
 	.4byte	0x69
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4109
+	.4byte	call_nr.4111
 	.byte	0
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF642
 	.4byte	.LASF642
 	.byte	0x8
 	.byte	0x12
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF643
 	.4byte	.LASF643
 	.byte	0x9
 	.byte	0x8
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF644
 	.4byte	.LASF644
 	.byte	0x7
 	.byte	0x9
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF645
 	.4byte	.LASF645
-	.byte	0x1
-	.byte	0xa8
-	.uleb128 0x21
+	.byte	0xa
+	.byte	0x6
+	.uleb128 0x1e
 	.4byte	.LASF646
 	.4byte	.LASF646
 	.byte	0xa
 	.byte	0x5
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF647
 	.4byte	.LASF647
 	.byte	0xb
 	.byte	0x4
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF648
 	.4byte	.LASF648
 	.byte	0xc
 	.byte	0x5
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF649
 	.4byte	.LASF649
 	.byte	0xd
 	.byte	0x4
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF650
 	.4byte	.LASF650
 	.byte	0xe
 	.byte	0x12
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF651
 	.4byte	.LASF651
 	.byte	0x8
 	.byte	0x11
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF652
 	.4byte	.LASF652
 	.byte	0x8
 	.byte	0x23
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF653
 	.4byte	.LASF653
 	.byte	0x9
 	.byte	0x7
-	.uleb128 0x21
+	.uleb128 0x1e
 	.4byte	.LASF654
 	.4byte	.LASF654
 	.byte	0x8
@@ -1611,30 +1599,6 @@ call_nr.4109:
 	.byte	0
 	.byte	0
 	.uleb128 0x18
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x19
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x1a
 	.uleb128 0x1d
 	.byte	0x1
 	.uleb128 0x31
@@ -1651,7 +1615,7 @@ call_nr.4109:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1b
+	.uleb128 0x19
 	.uleb128 0xb
 	.byte	0x1
 	.uleb128 0x11
@@ -1660,7 +1624,7 @@ call_nr.4109:
 	.uleb128 0x6
 	.byte	0
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1a
 	.uleb128 0x4109
 	.byte	0
 	.uleb128 0x11
@@ -1669,7 +1633,7 @@ call_nr.4109:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1d
+	.uleb128 0x1b
 	.uleb128 0x4109
 	.byte	0x1
 	.uleb128 0x11
@@ -1680,7 +1644,7 @@ call_nr.4109:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1e
+	.uleb128 0x1c
 	.uleb128 0x410a
 	.byte	0
 	.uleb128 0x2
@@ -1689,18 +1653,7 @@ call_nr.4109:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x1f
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0x8
-	.byte	0
-	.byte	0
-	.uleb128 0x20
+	.uleb128 0x1d
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3
@@ -1717,7 +1670,7 @@ call_nr.4109:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x21
+	.uleb128 0x1e
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -4318,8 +4271,6 @@ call_nr.4109:
 	.ascii	"_os_task_config_h_ \000"
 .LASF528:
 	.ascii	"os_bug_no_bug\000"
-.LASF387:
-	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
 .LASF398:
 	.ascii	"__ARM_FEATURE_LDREX 7\000"
 .LASF334:
@@ -4538,6 +4489,8 @@ call_nr.4109:
 	.ascii	"long unsigned int\000"
 .LASF378:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
+.LASF387:
+	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
 .LASF615:
 	.ascii	"RUNNING_TASK\000"
 .LASF392:

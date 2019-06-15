@@ -214,7 +214,7 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
          {
             DisableInterrupts();
             OS_TaskSaveTaskEnvironment(task);
-            OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+            OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
 
             task->active = False;
             /* reset the prio increase for waiting */
@@ -308,7 +308,7 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
             task->active =  True;
             task->wait_time = 0;
             task->current_prio = task->default_prio;
-            OS_TASK_SAVE_SYSTEM_STACK(&OS_MAIN_STACK);
+            OS_TASK_SAVE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
             OS_TASK_RESTORETASK_ENVIRONMENT(task);
             task->start_time = OS_GetCurrentTime();
             EnableInterrupts();
@@ -358,7 +358,7 @@ void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task)
          {
             DisableInterrupts();
             OS_TaskSaveTaskEnvironment(task);
-            OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+            OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
             DeleteFromTaskQueue(task);
             DeleteFromSchedulingQueue(scheduling_task);
 
@@ -431,29 +431,33 @@ Local void TASK_1(void* task_ptr)
 
 
    /* end */
-   OS_TerminateTask(task,scheduling_task_ptr);
+   OS_TerminateTask(task_ptr,scheduling_task_ptr);
 }
 Local void TASK_2(void* task_ptr)
 {
+   scheduling_t* scheduling_task_ptr = 0;
    ReferenceUnusedParameter(task_ptr);
    /* worker task */
-
+   scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
    /* do some things */
-   TASK2_CALL_NR++;
+   TASK1_CALL_NR++;
+
 
    /* end */
-   OS_TerminateTask(task,scheduling_task_ptr);
+   OS_TerminateTask(task_ptr,scheduling_task_ptr);
 }
 Local void TASK_3(void* task_ptr)
 {
+   scheduling_t* scheduling_task_ptr = 0;
    ReferenceUnusedParameter(task_ptr);
    /* worker task */
-
+   scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
    /* do some things */
-   TASK3_CALL_NR++;
+   TASK1_CALL_NR++;
+
 
    /* end */
-   OS_TerminateTask(task,scheduling_task_ptr);
+   OS_TerminateTask(task_ptr,scheduling_task_ptr);
 }
 void OS_InitTasks(void)
 {

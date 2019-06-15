@@ -606,6 +606,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 #define OS_STACK_SIZE 0x5000u
 extern void OS_StackChkPatternInit(void);
+extern void OS_StackCheck(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_heap.h" 1
 

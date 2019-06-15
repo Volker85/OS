@@ -99,9 +99,9 @@ void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
 void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
 {
    BigInt tmpBigInt;
+   uint8 i1, i2;
    /* clear output */
    AssignNull(Quotient);
-   uint8 i1, i2;
    
    for(i1 = 0; i1 < BigIntSize; i1++)
    {

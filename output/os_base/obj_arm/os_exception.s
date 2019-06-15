@@ -822,7 +822,7 @@ OS_Exception_Systick:
 	mov	r0, r4	@, task
 	bl	OS_TaskSaveTaskEnvironment	@
 .LVL8:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:220:       OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:220:       OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
 	.loc 1 220 0
 	ldr	r0, .L37+28	@,
 	bl	OS_TASK_RESTORE_SYSTEM_STACK	@

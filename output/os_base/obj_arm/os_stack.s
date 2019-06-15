@@ -203,25 +203,25 @@ OS_StackChkPatternInit:
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0
-	.type	stack_pos.4029, %object
-	.size	stack_pos.4029, 4
-stack_pos.4029:
+	.type	stack_pos.4031, %object
+	.size	stack_pos.4031, 4
+stack_pos.4031:
 	.space	4
-	.type	nr_of_cores.4030, %object
-	.size	nr_of_cores.4030, 4
-nr_of_cores.4030:
+	.type	nr_of_cores.4032, %object
+	.size	nr_of_cores.4032, 4
+nr_of_cores.4032:
 	.space	4
-	.type	failed.4031, %object
-	.size	failed.4031, 4
-failed.4031:
+	.type	failed.4033, %object
+	.size	failed.4033, 4
+failed.4033:
 	.space	4
-	.type	stack_pos.4042, %object
-	.size	stack_pos.4042, 4
-stack_pos.4042:
+	.type	stack_pos.4044, %object
+	.size	stack_pos.4044, 4
+stack_pos.4044:
 	.space	4
-	.type	nr_of_cores.4043, %object
-	.size	nr_of_cores.4043, 4
-nr_of_cores.4043:
+	.type	nr_of_cores.4045, %object
+	.size	nr_of_cores.4045, 4
+nr_of_cores.4045:
 	.space	4
 	.text
 .Letext0:
@@ -1099,7 +1099,7 @@ nr_of_cores.4043:
 	.4byte	0x728
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	stack_pos.4042
+	.4byte	stack_pos.4044
 	.uleb128 0x16
 	.4byte	.LASF637
 	.byte	0x1
@@ -1107,7 +1107,7 @@ nr_of_cores.4043:
 	.4byte	0x728
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	nr_of_cores.4043
+	.4byte	nr_of_cores.4045
 	.byte	0
 	.uleb128 0x17
 	.byte	0x4
@@ -1131,7 +1131,7 @@ nr_of_cores.4043:
 	.4byte	0x728
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	stack_pos.4029
+	.4byte	stack_pos.4031
 	.uleb128 0x16
 	.4byte	.LASF637
 	.byte	0x1
@@ -1139,7 +1139,7 @@ nr_of_cores.4043:
 	.4byte	0x728
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	nr_of_cores.4030
+	.4byte	nr_of_cores.4032
 	.uleb128 0x16
 	.4byte	.LASF640
 	.byte	0x1
@@ -1147,7 +1147,7 @@ nr_of_cores.4043:
 	.4byte	0x728
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	failed.4031
+	.4byte	failed.4033
 	.uleb128 0x18
 	.4byte	.LVL0
 	.4byte	0x78a

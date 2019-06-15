@@ -1,5 +1,5 @@
 "Target_ARM" 
-15.06.2019 19:03:51,07 
+15.06.2019 21:01:51,54 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
@@ -32,9 +32,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: not
  void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
       ^~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntDiv':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:104:4: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
-    uint8 i1, i2;
-    ^~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:110:10: error: 'tmpQuotient' undeclared (first use in this function); did you mean 'Quotient'?
           tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];
           ^~~~~~~~~~~
@@ -78,21 +75,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In funct
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Systick':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:220:36: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type [-Wincompatible-pointer-types]
-       OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
-                                    ^
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:87:13: note: expected 'uint8 * {aka unsigned char *}' but argument is of type 'unsigned_char_t (*)[20480] {aka unsigned char (*)[20480]}'
- extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
-             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c: In function 'OS_StateHandler':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:168:4: warning: implicit declaration of function 'OS_StackCheck'; did you mean 'OS_StartTask'? [-Wimplicit-function-declaration]
-    OS_StackCheck();
-    ^~~~~~~~~~~~~
-    OS_StartTask
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function); did you mean 'MPU_RNR'?
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
@@ -128,60 +110,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c
     *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
                                                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                                                                     MPU_ASR_REGION_SIZE_RAM
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_PreemptTask':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:217:42: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type [-Wincompatible-pointer-types]
-             OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
-                                          ^
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:87:13: note: expected 'uint8 * {aka unsigned char *}' but argument is of type 'unsigned_char_t (*)[20480] {aka unsigned char (*)[20480]}'
- extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
-             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_StartTask':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:311:39: warning: passing argument 1 of 'OS_TASK_SAVE_SYSTEM_STACK' from incompatible pointer type [-Wincompatible-pointer-types]
-             OS_TASK_SAVE_SYSTEM_STACK(&OS_MAIN_STACK);
-                                       ^
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:88:13: note: expected 'uint8 * {aka unsigned char *}' but argument is of type 'unsigned_char_t (*)[20480] {aka unsigned char (*)[20480]}'
- extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
-             ^~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TerminateTask':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:361:42: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type [-Wincompatible-pointer-types]
-             OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
-                                          ^
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:87:13: note: expected 'uint8 * {aka unsigned char *}' but argument is of type 'unsigned_char_t (*)[20480] {aka unsigned char (*)[20480]}'
- extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
-             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_1':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:434:21: error: 'task' undeclared (first use in this function); did you mean 'task_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                     ^~~~
-                     task_t
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:434:21: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_2':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:445:21: error: 'task' undeclared (first use in this function); did you mean 'task_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                     ^~~~
-                     task_t
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:445:26: error: 'scheduling_task_ptr' undeclared (first use in this function); did you mean 'scheduling_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                          ^~~~~~~~~~~~~~~~~~~
-                          scheduling_t
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_3':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:456:21: error: 'task' undeclared (first use in this function); did you mean 'task_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                     ^~~~
-                     task_t
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:456:26: error: 'scheduling_task_ptr' undeclared (first use in this function); did you mean 'scheduling_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                          ^~~~~~~~~~~~~~~~~~~
-                          scheduling_t
 "assemble it" 
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntSub':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:59:14: warning: variable 'tmpDiff' set but not used [-Wunused-but-set-variable]
@@ -212,9 +140,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: not
  void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
       ^~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntDiv':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:104:4: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
-    uint8 i1, i2;
-    ^~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:110:10: error: 'tmpQuotient' undeclared (first use in this function); did you mean 'Quotient'?
           tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];
           ^~~~~~~~~~~
@@ -258,21 +183,6 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In funct
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_Exception_Systick':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:220:36: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type [-Wincompatible-pointer-types]
-       OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
-                                    ^
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:87:13: note: expected 'uint8 * {aka unsigned char *}' but argument is of type 'unsigned_char_t (*)[20480] {aka unsigned char (*)[20480]}'
- extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
-             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c: In function 'OS_StateHandler':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:168:4: warning: implicit declaration of function 'OS_StackCheck'; did you mean 'OS_StartTask'? [-Wimplicit-function-declaration]
-    OS_StackCheck();
-    ^~~~~~~~~~~~~
-    OS_StartTask
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function); did you mean 'MPU_RNR'?
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
@@ -308,58 +218,4 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c
     *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
                                                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                                                                     MPU_ASR_REGION_SIZE_RAM
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_PreemptTask':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:217:42: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type [-Wincompatible-pointer-types]
-             OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
-                                          ^
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:87:13: note: expected 'uint8 * {aka unsigned char *}' but argument is of type 'unsigned_char_t (*)[20480] {aka unsigned char (*)[20480]}'
- extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
-             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_StartTask':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:311:39: warning: passing argument 1 of 'OS_TASK_SAVE_SYSTEM_STACK' from incompatible pointer type [-Wincompatible-pointer-types]
-             OS_TASK_SAVE_SYSTEM_STACK(&OS_MAIN_STACK);
-                                       ^
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:88:13: note: expected 'uint8 * {aka unsigned char *}' but argument is of type 'unsigned_char_t (*)[20480] {aka unsigned char (*)[20480]}'
- extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
-             ^~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TerminateTask':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:361:42: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type [-Wincompatible-pointer-types]
-             OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
-                                          ^
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:10,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:87:13: note: expected 'uint8 * {aka unsigned char *}' but argument is of type 'unsigned_char_t (*)[20480] {aka unsigned char (*)[20480]}'
- extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
-             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_1':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:434:21: error: 'task' undeclared (first use in this function); did you mean 'task_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                     ^~~~
-                     task_t
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:434:21: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_2':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:445:21: error: 'task' undeclared (first use in this function); did you mean 'task_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                     ^~~~
-                     task_t
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:445:26: error: 'scheduling_task_ptr' undeclared (first use in this function); did you mean 'scheduling_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                          ^~~~~~~~~~~~~~~~~~~
-                          scheduling_t
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_3':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:456:21: error: 'task' undeclared (first use in this function); did you mean 'task_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                     ^~~~
-                     task_t
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:456:26: error: 'scheduling_task_ptr' undeclared (first use in this function); did you mean 'scheduling_t'?
-    OS_TerminateTask(task,scheduling_task_ptr);
-                          ^~~~~~~~~~~~~~~~~~~
-                          scheduling_t
 "link it" 

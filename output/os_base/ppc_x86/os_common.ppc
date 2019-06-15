@@ -606,6 +606,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 #define OS_STACK_SIZE 0x5000u
 extern void OS_StackChkPatternInit(void);
+extern void OS_StackCheck(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_heap.h" 1
 
@@ -783,9 +784,9 @@ void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
 void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
 {
    BigInt tmpBigInt;
+   uint8 i1, i2;
 
    AssignNull(Quotient);
-   uint8 i1, i2;
 
    for(i1 = 0; i1 < 16; i1++)
    {

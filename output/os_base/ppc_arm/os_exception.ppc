@@ -796,6 +796,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 #define OS_STACK_SIZE 0x5000u
 extern void OS_StackChkPatternInit(void);
+extern void OS_StackCheck(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 
@@ -1145,7 +1146,7 @@ void OS_Exception_Systick(void)
    if(task != 0u)
    {
       OS_TaskSaveTaskEnvironment(task);
-      OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+      OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
       task->active = 0;
       task->exe_time += (OS_GetCurrentTime() - task->start_time);
       task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);

@@ -217,7 +217,7 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
    if(task != 0u)
    {
       OS_TaskSaveTaskEnvironment(task);
-      OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+      OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
       task->active = False;
       task->exe_time += (OS_GetCurrentTime() - task->start_time);
       task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);

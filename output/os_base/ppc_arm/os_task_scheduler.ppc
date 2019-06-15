@@ -797,6 +797,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 #define OS_STACK_SIZE 0x5000u
 extern void OS_StackChkPatternInit(void);
+extern void OS_StackCheck(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 
@@ -1137,7 +1138,7 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
          {
             LLF_INT_DISABLE();
             OS_TaskSaveTaskEnvironment(task);
-            OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+            OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
 
             task->active = 0;
 
@@ -1224,7 +1225,7 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
             task->active = 1;
             task->wait_time = 0;
             task->current_prio = task->default_prio;
-            OS_TASK_SAVE_SYSTEM_STACK(&OS_MAIN_STACK);
+            OS_TASK_SAVE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
             OS_TASK_RESTORETASK_ENVIRONMENT(task);
             task->start_time = OS_GetCurrentTime();
             LLF_INT_ENABLE();
@@ -1274,7 +1275,7 @@ void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task)
          {
             LLF_INT_DISABLE();
             OS_TaskSaveTaskEnvironment(task);
-            OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+            OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
             DeleteFromTaskQueue(task);
             DeleteFromSchedulingQueue(scheduling_task);
 
@@ -1338,29 +1339,33 @@ static void TASK_1(void* task_ptr)
 
 
 
-   OS_TerminateTask(task,scheduling_task_ptr);
+   OS_TerminateTask(task_ptr,scheduling_task_ptr);
 }
 static void TASK_2(void* task_ptr)
 {
+   scheduling_t* scheduling_task_ptr = 0;
    ((task_ptr) = (task_ptr));
 
+   scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
+
+   TASK1_CALL_NR++;
 
 
-   TASK2_CALL_NR++;
 
-
-   OS_TerminateTask(task,scheduling_task_ptr);
+   OS_TerminateTask(task_ptr,scheduling_task_ptr);
 }
 static void TASK_3(void* task_ptr)
 {
+   scheduling_t* scheduling_task_ptr = 0;
    ((task_ptr) = (task_ptr));
 
+   scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
+
+   TASK1_CALL_NR++;
 
 
-   TASK3_CALL_NR++;
 
-
-   OS_TerminateTask(task,scheduling_task_ptr);
+   OS_TerminateTask(task_ptr,scheduling_task_ptr);
 }
 void OS_InitTasks(void)
 {
@@ -1460,7 +1465,7 @@ static scheduling_t* OS_TaskScheduler(void)
    LAST_CURRENT_TIME = OS_GetCurrentTime();
 
    ((Winner_task) = (Winner_task));
-# 569 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 573 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    for((element_nr) = (0); (element_nr) <= ((10)-1); (element_nr)++)
    {
       scheduling_queue_member = GetFromSchedulingQueue(element_nr);
