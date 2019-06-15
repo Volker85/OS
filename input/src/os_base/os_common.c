@@ -63,8 +63,7 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
       }
       else if((Minuend->Number[pos]+0x100)  >= (Subtrahend->Number[pos] + carry))
       {
-         tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;/*TODO*/   
-          
+         tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;          
       }
       else      
       {
@@ -72,6 +71,7 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
       }   
    }      
 }
+#if(0)
 void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
 {
    BigInt tmpBigInt;
@@ -119,6 +119,7 @@ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
       }   
    }          
 }
+#endif
 boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
 {
    uint8 pos;

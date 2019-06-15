@@ -589,8 +589,10 @@ extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsLess(BigInt* Operand1, BigInt* Operand2);
-extern void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor);
-extern void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2);
+
+
+
+
 extern void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend);
 extern void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
@@ -939,7 +941,6 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
       else if((Minuend->Number[pos]+0x100) >= (Subtrahend->Number[pos] + carry))
       {
          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
-
       }
       else
       {
@@ -947,53 +948,7 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
       }
    }
 }
-void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
-{
-   BigInt tmpBigInt;
-   uint8 i1, i2;
-
-   AssignNull(Produkt);
-
-   for(i1 = 0; i1 < 16; i1++)
-   {
-      for(i2 = 0; i2 < 16; i2++)
-      {
-         tmpProdukt = (uint16)Faktor1->Number[i1] * (uint16)Faktor2->Number[i2];
-         tmpShift = i1+i2;
-
-
-         tmpBigInt->Number[16 -1] = tmpProdukt & 0xFFu;
-         tmpBigInt->Number[16 -2] = (tmpProdukt & 0x100u)>>8;
-
-         IntAdd(Produkt, Produkt, tmpBigInt);
-
-      }
-   }
-
-}
-void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
-{
-   BigInt tmpBigInt;
-   uint8 i1, i2;
-
-   AssignNull(Quotient);
-
-   for(i1 = 0; i1 < 16; i1++)
-   {
-      for(i2 = 0; i2 < 16; i2++)
-      {
-         tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];
-         tmpShift = i1+i2;
-
-
-         tmpBigInt->Number[16 -1] = tmpQuotient & 0xFFu;
-         tmpBigInt->Number[16 -2] = (tmpQuotient & 0x100u)>>8;
-
-         IntAdd(Quotient, Quotient, tmpBigInt);
-
-      }
-   }
-}
+# 123 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
 boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
 {
    uint8 pos;

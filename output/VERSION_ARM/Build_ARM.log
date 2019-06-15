@@ -1,5 +1,5 @@
 "Target_ARM" 
-15.06.2019 21:30:00,60 
+15.06.2019 21:58:25,86 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
@@ -10,59 +10,18 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:59:14: wa
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:52:21: warning: unused parameter 'Differenz' [-Wunused-parameter]
  void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
                      ^~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntMul':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: error: 'tmpProdukt' undeclared (first use in this function); did you mean 'Produkt'?
-          tmpProdukt = (uint16)Faktor1->Number[i1] * (uint16)Faktor2->Number[i2];
-          ^~~~~~~~~~
-          Produkt
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:87:10: error: 'tmpShift' undeclared (first use in this function)
-          tmpShift = i1+i2;
-          ^~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:90:19: error: invalid type argument of '->' (have 'BigInt {aka struct BigInt_s}')
-          tmpBigInt->Number[BigIntSize-1] = tmpProdukt & 0xFFu;
-                   ^~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:91:19: error: invalid type argument of '->' (have 'BigInt {aka struct BigInt_s}')
-          tmpBigInt->Number[BigIntSize-2] = (tmpProdukt & 0x100u)>>8;
-                   ^~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:93:35: error: incompatible type for argument 3 of 'IntAdd'
-          IntAdd(Produkt, Produkt, tmpBigInt);
-                                   ^~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'BigInt * {aka struct BigInt_s *}' but argument is of type 'BigInt {aka struct BigInt_s}'
- void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-      ^~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntDiv':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:110:10: error: 'tmpQuotient' undeclared (first use in this function); did you mean 'Quotient'?
-          tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];
-          ^~~~~~~~~~~
-          Quotient
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:111:10: error: 'tmpShift' undeclared (first use in this function)
-          tmpShift = i1+i2;
-          ^~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:114:19: error: invalid type argument of '->' (have 'BigInt {aka struct BigInt_s}')
-          tmpBigInt->Number[BigIntSize-1] = tmpQuotient & 0xFFu;
-                   ^~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:115:19: error: invalid type argument of '->' (have 'BigInt {aka struct BigInt_s}')
-          tmpBigInt->Number[BigIntSize-2] = (tmpQuotient & 0x100u)>>8;
-                   ^~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:117:37: error: incompatible type for argument 3 of 'IntAdd'
-          IntAdd(Quotient, Quotient, tmpBigInt);
-                                     ^~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'BigInt * {aka struct BigInt_s *}' but argument is of type 'BigInt {aka struct BigInt_s}'
- void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-      ^~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:143:11: warning: return makes integer from pointer without a cast [-Wint-conversion]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:144:11: warning: return makes integer from pointer without a cast [-Wint-conversion]
     return IsEqual;
            ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:125:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:126:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:188:11: warning: return makes integer from pointer without a cast [-Wint-conversion]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:189:11: warning: return makes integer from pointer without a cast [-Wint-conversion]
     return IsEqual;
            ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:170:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:171:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^~~~~~
 "assemble it" 
@@ -73,59 +32,18 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:59:14: wa
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:52:21: warning: unused parameter 'Differenz' [-Wunused-parameter]
  void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
                      ^~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntMul':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: error: 'tmpProdukt' undeclared (first use in this function); did you mean 'Produkt'?
-          tmpProdukt = (uint16)Faktor1->Number[i1] * (uint16)Faktor2->Number[i2];
-          ^~~~~~~~~~
-          Produkt
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:87:10: error: 'tmpShift' undeclared (first use in this function)
-          tmpShift = i1+i2;
-          ^~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:90:19: error: invalid type argument of '->' (have 'BigInt {aka struct BigInt_s}')
-          tmpBigInt->Number[BigIntSize-1] = tmpProdukt & 0xFFu;
-                   ^~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:91:19: error: invalid type argument of '->' (have 'BigInt {aka struct BigInt_s}')
-          tmpBigInt->Number[BigIntSize-2] = (tmpProdukt & 0x100u)>>8;
-                   ^~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:93:35: error: incompatible type for argument 3 of 'IntAdd'
-          IntAdd(Produkt, Produkt, tmpBigInt);
-                                   ^~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'BigInt * {aka struct BigInt_s *}' but argument is of type 'BigInt {aka struct BigInt_s}'
- void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-      ^~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntDiv':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:110:10: error: 'tmpQuotient' undeclared (first use in this function); did you mean 'Quotient'?
-          tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];
-          ^~~~~~~~~~~
-          Quotient
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:111:10: error: 'tmpShift' undeclared (first use in this function)
-          tmpShift = i1+i2;
-          ^~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:114:19: error: invalid type argument of '->' (have 'BigInt {aka struct BigInt_s}')
-          tmpBigInt->Number[BigIntSize-1] = tmpQuotient & 0xFFu;
-                   ^~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:115:19: error: invalid type argument of '->' (have 'BigInt {aka struct BigInt_s}')
-          tmpBigInt->Number[BigIntSize-2] = (tmpQuotient & 0x100u)>>8;
-                   ^~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:117:37: error: incompatible type for argument 3 of 'IntAdd'
-          IntAdd(Quotient, Quotient, tmpBigInt);
-                                     ^~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'BigInt * {aka struct BigInt_s *}' but argument is of type 'BigInt {aka struct BigInt_s}'
- void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-      ^~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:143:11: warning: return makes integer from pointer without a cast [-Wint-conversion]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:144:11: warning: return makes integer from pointer without a cast [-Wint-conversion]
     return IsEqual;
            ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:125:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:126:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^~~~~~
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:188:11: warning: return makes integer from pointer without a cast [-Wint-conversion]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:189:11: warning: return makes integer from pointer without a cast [-Wint-conversion]
     return IsEqual;
            ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:170:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:171:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^~~~~~
 "link it" 
