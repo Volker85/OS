@@ -11,8 +11,8 @@ for documentation of the MPU please read:
 #define MPU_RBAR ((volatile uint32*)0xE000ED9C)
 #define MPU_RASR ((volatile uint32*)0xE000EDA0)
 
-#define MPU_ASR_NON_CACHABLE                    0x00080000 
-#define MPU_ASR_STRONGLY_ORDERED                0x00000000 
+#define MPU_ASR_NON_CACHABLE                    0x00080000
+#define MPU_ASR_STRONGLY_ORDERED                0x00000000
 
 #define MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO        0x07000000
 #define MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW        0x03000000
@@ -25,6 +25,7 @@ for documentation of the MPU please read:
 
 void OS_MmuSetup(void)
 {
+   #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    /* assign every task a mmu region + the scheduler an own region */
    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might run with different MMU rights
       hardware register access shall be only possible in supervisor / kernel mode via system call.... based on a security descriptor as done in windows */
@@ -40,13 +41,13 @@ void OS_MmuSetup(void)
    /* region 0 FLASH */
    *MPU_RNR  = 0;
    *MPU_RBAR = 0x08000000;/* FLASH Start */
-   *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-   
+   *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
+
    /* region 1 RAM */
    *MPU_RNR  = 1;
    *MPU_RBAR = 0x20000000;/* RAM Start */
-   *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
-   
+   *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
+
    /* region 2 Peripherie */
    *MPU_RNR  = 2;
    *MPU_RBAR = 0x40000000;/* Peripherie Start */
@@ -59,7 +60,7 @@ void OS_MmuSetup(void)
    /* region 5 */
    /* region 6 */
    /* region 7 */
-   
+   #endif
    /* now activate the MPU */
    LLF_MPU_ENABLE();
 }
