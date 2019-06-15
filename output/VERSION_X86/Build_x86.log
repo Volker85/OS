@@ -1,5 +1,5 @@
 "Target_x86" 
-15.06.2019 21:01:42,80 
+15.06.2019 21:58:16,60 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
@@ -10,98 +10,20 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:59:14: wa
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:52:21: warning: unused parameter 'Differenz' [-Wunused-parameter]
  void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
                      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntMul':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: error: 'tmpProdukt' undeclared (first use in this function)
-          tmpProdukt = (uint16)Faktor1->Number[i1] * (uint16)Faktor2->Number[i2];      
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:87:10: error: 'tmpShift' undeclared (first use in this function)
-          tmpShift = i1+i2;
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:90:19: error: invalid type argument of '->' (have 'BigInt')
-          tmpBigInt->Number[BigIntSize-1] = tmpProdukt & 0xFFu;
-                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:91:19: error: invalid type argument of '->' (have 'BigInt')
-          tmpBigInt->Number[BigIntSize-2] = (tmpProdukt & 0x100u)>>8;
-                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:93:10: error: incompatible type for argument 3 of 'IntAdd'
-          IntAdd(Produkt, Produkt, tmpBigInt);         
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'struct BigInt *' but argument is of type 'BigInt'
- void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntDiv':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:110:10: error: 'tmpQuotient' undeclared (first use in this function)
-          tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];      
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:111:10: error: 'tmpShift' undeclared (first use in this function)
-          tmpShift = i1+i2;
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:114:19: error: invalid type argument of '->' (have 'BigInt')
-          tmpBigInt->Number[BigIntSize-1] = tmpQuotient & 0xFFu;
-                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:115:19: error: invalid type argument of '->' (have 'BigInt')
-          tmpBigInt->Number[BigIntSize-2] = (tmpQuotient & 0x100u)>>8;
-                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:117:10: error: incompatible type for argument 3 of 'IntAdd'
-          IntAdd(Quotient, Quotient, tmpBigInt);       
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'struct BigInt *' but argument is of type 'BigInt'
- void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-      ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:125:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:144:4: warning: return makes integer from pointer without a cast
+    return IsEqual;   
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:126:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsEqual':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:151:14: warning: variable 'IsEqual' set but not used [-Wunused-but-set-variable]
-    boolean_t IsEqual = True;/* in case no if/elseif) was entered, the numbers are equal -> return True */
-              ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:168:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:189:4: warning: return makes integer from pointer without a cast
+    return IsEqual;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:171:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:143:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsEqual':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:164:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:33: error: 'MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:68: error: 'MPU_ASR_REGION_SIZE_FLASH' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-                                                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:96: error: 'MPU_ASR_REGION_ENABLE' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-                                                                                                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:36:33: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
-                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:36:68: error: 'MPU_ASR_REGION_SIZE_RAM' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
-                                                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:16: error: 'MPU_ASR_STRONGLY_ORDERED' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
-                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:43: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
-                                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:84: error: 'MPU_ASR_REGION_SIZE_PERIPHERIE' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
-                                                                                    ^
 "assemble it" 
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntSub':
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:59:14: warning: variable 'tmpDiff' set but not used [-Wunused-but-set-variable]
@@ -110,98 +32,18 @@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:59:14: wa
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:52:21: warning: unused parameter 'Differenz' [-Wunused-parameter]
  void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
                      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntMul':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: error: 'tmpProdukt' undeclared (first use in this function)
-          tmpProdukt = (uint16)Faktor1->Number[i1] * (uint16)Faktor2->Number[i2];      
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:87:10: error: 'tmpShift' undeclared (first use in this function)
-          tmpShift = i1+i2;
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:90:19: error: invalid type argument of '->' (have 'BigInt')
-          tmpBigInt->Number[BigIntSize-1] = tmpProdukt & 0xFFu;
-                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:91:19: error: invalid type argument of '->' (have 'BigInt')
-          tmpBigInt->Number[BigIntSize-2] = (tmpProdukt & 0x100u)>>8;
-                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:93:10: error: incompatible type for argument 3 of 'IntAdd'
-          IntAdd(Produkt, Produkt, tmpBigInt);         
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'struct BigInt *' but argument is of type 'BigInt'
- void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntDiv':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:110:10: error: 'tmpQuotient' undeclared (first use in this function)
-          tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];      
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:111:10: error: 'tmpShift' undeclared (first use in this function)
-          tmpShift = i1+i2;
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:114:19: error: invalid type argument of '->' (have 'BigInt')
-          tmpBigInt->Number[BigIntSize-1] = tmpQuotient & 0xFFu;
-                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:115:19: error: invalid type argument of '->' (have 'BigInt')
-          tmpBigInt->Number[BigIntSize-2] = (tmpQuotient & 0x100u)>>8;
-                   ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:117:10: error: incompatible type for argument 3 of 'IntAdd'
-          IntAdd(Quotient, Quotient, tmpBigInt);       
-          ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'struct BigInt *' but argument is of type 'BigInt'
- void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-      ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:125:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:144:4: warning: return makes integer from pointer without a cast
+    return IsEqual;   
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:126:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsEqual':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:151:14: warning: variable 'IsEqual' set but not used [-Wunused-but-set-variable]
-    boolean_t IsEqual = True;/* in case no if/elseif) was entered, the numbers are equal -> return True */
-              ^
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:168:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:189:4: warning: return makes integer from pointer without a cast
+    return IsEqual;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:171:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
     boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:143:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsEqual':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:164:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:33: error: 'MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:68: error: 'MPU_ASR_REGION_SIZE_FLASH' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-                                                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:96: error: 'MPU_ASR_REGION_ENABLE' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-                                                                                                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:36:33: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
-                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:36:68: error: 'MPU_ASR_REGION_SIZE_RAM' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
-                                                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:16: error: 'MPU_ASR_STRONGLY_ORDERED' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
-                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:43: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
-                                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:84: error: 'MPU_ASR_REGION_SIZE_PERIPHERIE' undeclared (first use in this function)
-    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
-                                                                                    ^
 "link it" 
-mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_common.o: No such file or directory
-mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o: No such file or directory

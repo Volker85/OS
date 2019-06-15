@@ -104,8 +104,10 @@ extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsLess(BigInt* Operand1, BigInt* Operand2);
+#if(0)
 extern void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor);
 extern void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2);
+#endif
 extern void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend);
 extern void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand);
 #endif /* _os_common_h_ */

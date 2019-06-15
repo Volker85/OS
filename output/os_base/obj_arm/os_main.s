@@ -270,13 +270,13 @@ OS_StateHandler:
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0
-	.type	call_nr.4123, %object
-	.size	call_nr.4123, 4
-call_nr.4123:
+	.type	call_nr.4115, %object
+	.size	call_nr.4115, 4
+call_nr.4115:
 	.space	4
-	.type	call_nr.4111, %object
-	.size	call_nr.4111, 4
-call_nr.4111:
+	.type	call_nr.4103, %object
+	.size	call_nr.4103, 4
+call_nr.4103:
 	.space	4
 	.text
 .Letext0:
@@ -1146,7 +1146,7 @@ call_nr.4111:
 	.4byte	0x69
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4123
+	.4byte	call_nr.4115
 	.uleb128 0x18
 	.4byte	0x7b3
 	.4byte	.LBB4
@@ -1235,7 +1235,7 @@ call_nr.4111:
 	.4byte	0x69
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4111
+	.4byte	call_nr.4103
 	.byte	0
 	.uleb128 0x1e
 	.4byte	.LASF642

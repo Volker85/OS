@@ -371,8 +371,10 @@ extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsLess(BigInt* Operand1, BigInt* Operand2);
-extern void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor);
-extern void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2);
+
+
+
+
 extern void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend);
 extern void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
@@ -688,23 +690,38 @@ extern volatile void* SAVED_STACK_POINTER;
 #define MPU_RBAR ((volatile uint32*)0xE000ED9C)
 #define MPU_RASR ((volatile uint32*)0xE000EDA0)
 
+#define MPU_ASR_NON_CACHABLE 0x00080000
+#define MPU_ASR_STRONGLY_ORDERED 0x00000000
+
+#define MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO 0x07000000
+#define MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW 0x03000000
+#define MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS 0x01000000
+
+#define MPU_ASR_REGION_SIZE_FLASH 0x20000000
+#define MPU_ASR_REGION_SIZE_RAM 0x20000000
+#define MPU_ASR_REGION_SIZE_PERIPHERIE 0x20000000
+#define MPU_ASR_REGION_ENABLE 0x00000001
+
 void OS_MmuSetup(void)
 {
-# 29 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
+# 41 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
    *((volatile uint32*)0xE000ED98) = 0;
    *((volatile uint32*)0xE000ED9C) = 0x08000000;
-   *((volatile uint32*)0xE000EDA0) = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
+   *((volatile uint32*)0xE000EDA0) = 0x00080000 | 0x07000000 | 0x20000000 | 0x00000001;
 
 
    *((volatile uint32*)0xE000ED98) = 1;
    *((volatile uint32*)0xE000ED9C) = 0x20000000;
-   *((volatile uint32*)0xE000EDA0) = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
+   *((volatile uint32*)0xE000EDA0) = 0x00080000 | 0x03000000 | 0x20000000 | 0x00000001;
 
 
    *((volatile uint32*)0xE000ED98) = 2;
    *((volatile uint32*)0xE000ED9C) = 0x40000000;
-   *((volatile uint32*)0xE000EDA0) = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+   *((volatile uint32*)0xE000EDA0) = 0x00000000 | 0x01000000 | 0x20000000 | 0x00000001;
 
+   *((volatile uint32*)0xE000ED98) = 3;
+   *((volatile uint32*)0xE000ED9C) = 0xE0000000;
+   *((volatile uint32*)0xE000EDA0) = 0x00000000 | 0x01000000 | 0x20000000 | 0x00000001;
 
 
 
