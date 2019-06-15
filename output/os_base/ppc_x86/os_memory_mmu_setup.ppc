@@ -257,12 +257,19 @@
 #define INTEGER_MODEL INTEGER_LLP64_IL32P64
 # 29 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_base_types.h"
 typedef unsigned char unsigned_char_t;
+typedef signed char signed_char_t;
 typedef unsigned char unsigned_int8_t;
+typedef signed char signed_int8_t;
 typedef unsigned char uint8;
+typedef signed char sint8;
 typedef unsigned short unsigned_int16_t;
+typedef signed short signed_int16_t;
 typedef unsigned short uint16;
+typedef signed short sint16;
 typedef unsigned long unsigned_int32_t;
+typedef signed long signed_int32_t;
 typedef unsigned long uint32;
+typedef signed long sint32;
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_common.h" 1
 
@@ -314,6 +321,7 @@ enum os_sw_bugs_e
    os_bug_critical_stack_usage
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
+typedef uint8 boolean_t;
 enum os_sw_bugs_function_e
 {
    Func_NoFunction = 0,
@@ -342,6 +350,31 @@ typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 extern void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
 
 typedef void (*func_ptr_t)(void);
+
+
+#define BigIntSize 16
+typedef struct BigInt_s
+{
+
+
+
+
+
+
+
+  uint8 Number[16];
+}BigInt;
+extern void AssignNull(BigInt* leftOperand);
+extern void Assign(BigInt* leftOperand, BigInt* rightOperand);
+extern boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsLess(BigInt* Operand1, BigInt* Operand2);
+extern void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor);
+extern void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2);
+extern void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend);
+extern void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 
@@ -649,23 +682,27 @@ extern task_state_t TASK_TRANSITION_CURRENT_STATE;
 extern volatile void* SAVED_STACK_POINTER;
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c" 2
-# 12 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
+# 10 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
+#define MPU_RNR ((volatile uint32*)0xE000ED98)
+#define MPU_RBAR ((volatile uint32*)0xE000ED9C)
+#define MPU_RASR ((volatile uint32*)0xE000EDA0)
+
 void OS_MmuSetup(void)
 {
-# 27 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
-   *MPU_RNR = 0;
-   *MPU_RBAR = 0x08000000;
-   *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
+# 29 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
+   *((volatile uint32*)0xE000ED98) = 0;
+   *((volatile uint32*)0xE000ED9C) = 0x08000000;
+   *((volatile uint32*)0xE000EDA0) = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
 
 
-   *MPU_RNR = 1;
-   *MPU_RBAR = 0x20000000;
-   *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
+   *((volatile uint32*)0xE000ED98) = 1;
+   *((volatile uint32*)0xE000ED9C) = 0x20000000;
+   *((volatile uint32*)0xE000EDA0) = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
 
 
-   *MPU_RNR = 2;
-   *MPU_RBAR = 0x40000000;
-   *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+   *((volatile uint32*)0xE000ED98) = 2;
+   *((volatile uint32*)0xE000ED9C) = 0x40000000;
+   *((volatile uint32*)0xE000EDA0) = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
 
 
 

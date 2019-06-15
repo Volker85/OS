@@ -64,7 +64,7 @@ Letext0:
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x1bc
+	.long	0x1f0
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -86,27 +86,43 @@ Ldebug_info0:
 	.byte	0x8
 	.ascii "unsigned char\0"
 	.uleb128 0x3
+	.byte	0x1
+	.byte	0x6
+	.ascii "signed char\0"
+	.uleb128 0x3
 	.byte	0x2
 	.byte	0x7
 	.ascii "short unsigned int\0"
 	.uleb128 0x3
+	.byte	0x2
+	.byte	0x5
+	.ascii "short int\0"
+	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
+	.uleb128 0x3
+	.byte	0x4
+	.byte	0x5
+	.ascii "long int\0"
 	.uleb128 0x2
 	.ascii "uint32\0"
 	.byte	0x2
-	.byte	0x23
-	.long	0xd2
+	.byte	0x29
+	.long	0xee
 	.uleb128 0x2
 	.ascii "func_ptr_t\0"
 	.byte	0x3
-	.byte	0x54
-	.long	0x107
+	.byte	0x55
+	.long	0x12f
 	.uleb128 0x4
 	.byte	0x4
-	.long	0x10d
+	.long	0x135
 	.uleb128 0x5
+	.uleb128 0x3
+	.byte	0x4
+	.byte	0x7
+	.ascii "sizetype\0"
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
@@ -120,12 +136,12 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x174
+	.long	0x1a8
 	.uleb128 0x7
 	.secrel32	LASF0
 	.byte	0x1
 	.byte	0x7
-	.long	0xf5
+	.long	0x11d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -133,7 +149,7 @@ Ldebug_info0:
 	.secrel32	LASF1
 	.byte	0x1
 	.byte	0x7
-	.long	0xe7
+	.long	0x10f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 4
@@ -141,7 +157,7 @@ Ldebug_info0:
 	.ascii "PrgSize\0"
 	.byte	0x1
 	.byte	0x7
-	.long	0xe7
+	.long	0x10f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
@@ -158,7 +174,7 @@ Ldebug_info0:
 	.secrel32	LASF0
 	.byte	0x1
 	.byte	0x13
-	.long	0xf5
+	.long	0x11d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -166,7 +182,7 @@ Ldebug_info0:
 	.secrel32	LASF1
 	.byte	0x1
 	.byte	0x13
-	.long	0xe7
+	.long	0x10f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 4
@@ -174,7 +190,7 @@ Ldebug_info0:
 	.ascii "PrgSize\0"
 	.byte	0x1
 	.byte	0x13
-	.long	0xe7
+	.long	0x10f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
@@ -1149,6 +1165,9 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
+	.byte	0x1
+	.uleb128 0x58
+	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
 	.byte	0x3

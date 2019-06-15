@@ -1,46 +1,35 @@
 E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:27:5: error: 'MPU_RNR' undeclared (first use in this function)
-    *MPU_RNR  = 0;
-     ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:27:5: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:28:5: error: 'MPU_RBAR' undeclared (first use in this function); did you mean 'MPU_RNR'?
-    *MPU_RBAR = 0x08000000;/* FLASH Start */
-     ^~~~~~~~
-     MPU_RNR
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:5: error: 'MPU_RASR' undeclared (first use in this function); did you mean 'MPU_RBAR'?
-    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
-     ^~~~~~~~
-     MPU_RBAR
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function); did you mean 'MPU_RNR'?
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function); did you mean 'MPU_RNR'?
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
                 ^~~~~~~~~~~~~~
                 MPU_RNR
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:33: error: 'MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO' undeclared (first use in this function)
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:16: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:33: error: 'MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO' undeclared (first use in this function)
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:68: error: 'MPU_ASR_REGION_SIZE_FLASH' undeclared (first use in this function)
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:68: error: 'MPU_ASR_REGION_SIZE_FLASH' undeclared (first use in this function)
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
                                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:96: error: 'MPU_ASR_REGION_ENABLE' undeclared (first use in this function); did you mean 'MPU_ASR_REGION_SIZE_FLASH'?
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:31:96: error: 'MPU_ASR_REGION_ENABLE' undeclared (first use in this function); did you mean 'MPU_ASR_REGION_SIZE_FLASH'?
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
                                                                                                 ^~~~~~~~~~~~~~~~~~~~~
                                                                                                 MPU_ASR_REGION_SIZE_FLASH
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:34:33: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW' undeclared (first use in this function); did you mean 'MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO'?
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:36:33: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW' undeclared (first use in this function); did you mean 'MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO'?
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                  MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:34:68: error: 'MPU_ASR_REGION_SIZE_RAM' undeclared (first use in this function); did you mean 'MPU_ASR_REGION_SIZE_FLASH'?
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:36:68: error: 'MPU_ASR_REGION_SIZE_RAM' undeclared (first use in this function); did you mean 'MPU_ASR_REGION_SIZE_FLASH'?
     *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
                                                                     ^~~~~~~~~~~~~~~~~~~~~~~
                                                                     MPU_ASR_REGION_SIZE_FLASH
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:39:16: error: 'MPU_ASR_STRONGLY_ORDERED' undeclared (first use in this function)
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:16: error: 'MPU_ASR_STRONGLY_ORDERED' undeclared (first use in this function)
     *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
                 ^~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:39:43: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS' undeclared (first use in this function); did you mean 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW'?
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:43: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS' undeclared (first use in this function); did you mean 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW'?
     *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                            MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:39:84: error: 'MPU_ASR_REGION_SIZE_PERIPHERIE' undeclared (first use in this function); did you mean 'MPU_ASR_REGION_SIZE_RAM'?
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:84: error: 'MPU_ASR_REGION_SIZE_PERIPHERIE' undeclared (first use in this function); did you mean 'MPU_ASR_REGION_SIZE_RAM'?
     *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
                                                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                                                                     MPU_ASR_REGION_SIZE_RAM

@@ -124,7 +124,7 @@ Letext0:
 	.file 3 "d:/programm/mingw/include/parts/time.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x2a7
+	.long	0x2cf
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -141,13 +141,29 @@ Ldebug_info0:
 	.byte	0x8
 	.ascii "unsigned char\0"
 	.uleb128 0x2
+	.byte	0x1
+	.byte	0x6
+	.ascii "signed char\0"
+	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
 	.ascii "short unsigned int\0"
 	.uleb128 0x2
+	.byte	0x2
+	.byte	0x5
+	.ascii "short int\0"
+	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x5
+	.ascii "long int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x7
+	.ascii "sizetype\0"
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
@@ -155,7 +171,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.byte	0x4
 	.ascii "__builtin_va_list\0"
-	.long	0xf2
+	.long	0x126
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x6
@@ -165,59 +181,59 @@ Ldebug_info0:
 	.byte	0x20
 	.byte	0x1
 	.byte	0x82
-	.long	0x181
+	.long	0x1b5
 	.uleb128 0x5
 	.ascii "_ptr\0"
 	.byte	0x1
 	.byte	0x84
-	.long	0x181
+	.long	0x1b5
 	.byte	0
 	.uleb128 0x5
 	.ascii "_cnt\0"
 	.byte	0x1
 	.byte	0x85
-	.long	0x187
+	.long	0x1bb
 	.byte	0x4
 	.uleb128 0x5
 	.ascii "_base\0"
 	.byte	0x1
 	.byte	0x86
-	.long	0x181
+	.long	0x1b5
 	.byte	0x8
 	.uleb128 0x5
 	.ascii "_flag\0"
 	.byte	0x1
 	.byte	0x87
-	.long	0x187
+	.long	0x1bb
 	.byte	0xc
 	.uleb128 0x5
 	.ascii "_file\0"
 	.byte	0x1
 	.byte	0x88
-	.long	0x187
+	.long	0x1bb
 	.byte	0x10
 	.uleb128 0x5
 	.ascii "_charbuf\0"
 	.byte	0x1
 	.byte	0x89
-	.long	0x187
+	.long	0x1bb
 	.byte	0x14
 	.uleb128 0x5
 	.ascii "_bufsiz\0"
 	.byte	0x1
 	.byte	0x8a
-	.long	0x187
+	.long	0x1bb
 	.byte	0x18
 	.uleb128 0x5
 	.ascii "_tmpfname\0"
 	.byte	0x1
 	.byte	0x8b
-	.long	0x181
+	.long	0x1b5
 	.byte	0x1c
 	.byte	0
 	.uleb128 0x6
 	.byte	0x4
-	.long	0xf2
+	.long	0x126
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x5
@@ -226,7 +242,7 @@ Ldebug_info0:
 	.ascii "FILE\0"
 	.byte	0x1
 	.byte	0x8c
-	.long	0xfa
+	.long	0x12e
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x5
@@ -235,31 +251,27 @@ Ldebug_info0:
 	.ascii "__time32_t\0"
 	.byte	0x3
 	.byte	0x40
-	.long	0x1bd
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x5
-	.ascii "long int\0"
+	.long	0xe6
 	.uleb128 0x7
 	.ascii "time_t\0"
 	.byte	0x3
 	.byte	0x4a
-	.long	0x1ab
+	.long	0x1df
 	.uleb128 0x8
 	.ascii "printf\0"
 	.byte	0x1
 	.byte	0xfb
-	.long	0x187
+	.long	0x1bb
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x231
+	.long	0x259
 	.uleb128 0x9
 	.ascii "__format\0"
 	.byte	0x1
 	.byte	0xfb
-	.long	0x231
+	.long	0x259
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -268,38 +280,38 @@ Ldebug_info0:
 	.ascii "__retval\0"
 	.byte	0x1
 	.byte	0xfd
-	.long	0x187
+	.long	0x1bb
 	.uleb128 0x1
 	.byte	0x53
 	.uleb128 0xb
 	.ascii "__local_argv\0"
 	.byte	0x1
 	.byte	0xfe
-	.long	0xda
+	.long	0x10e
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
 	.byte	0
 	.uleb128 0x6
 	.byte	0x4
-	.long	0x237
+	.long	0x25f
 	.uleb128 0xc
-	.long	0xf2
+	.long	0x126
 	.uleb128 0xd
 	.ascii "main\0"
 	.byte	0x2
 	.byte	0xa
-	.long	0x187
+	.long	0x1bb
 	.long	LFB10
 	.long	LFE10-LFB10
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x28d
+	.long	0x2b5
 	.uleb128 0x9
 	.ascii "argc\0"
 	.byte	0x2
 	.byte	0xa
-	.long	0x187
+	.long	0x1bb
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -307,7 +319,7 @@ Ldebug_info0:
 	.ascii "argv\0"
 	.byte	0x2
 	.byte	0xa
-	.long	0x28d
+	.long	0x2b5
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 4
@@ -315,7 +327,7 @@ Ldebug_info0:
 	.ascii "i\0"
 	.byte	0x2
 	.byte	0xd
-	.long	0xca
+	.long	0xfe
 	.uleb128 0x2
 	.byte	0x74
 	.sleb128 44
@@ -323,24 +335,24 @@ Ldebug_info0:
 	.ascii "t\0"
 	.byte	0x2
 	.byte	0xe
-	.long	0x1c9
+	.long	0x1f1
 	.uleb128 0x2
 	.byte	0x74
 	.sleb128 40
 	.byte	0
 	.uleb128 0x6
 	.byte	0x4
-	.long	0x181
+	.long	0x1b5
 	.uleb128 0xe
-	.long	0x18e
-	.long	0x29e
+	.long	0x1c2
+	.long	0x2c6
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0x10
 	.ascii "_iob\0"
 	.byte	0x1
 	.byte	0x9b
-	.long	0x293
+	.long	0x2bb
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -1394,6 +1406,9 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
+	.byte	0x1
+	.uleb128 0x58
+	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_global.h"
 	.byte	0x3

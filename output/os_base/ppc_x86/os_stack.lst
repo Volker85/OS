@@ -1,9 +1,3246 @@
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackCheck':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:15:54: error: 'nr_of_coresj' undeclared (first use in this function)
-       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
-                                                      ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:15:54: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackChkPatternInit':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:41:54: error: 'nr_of_coresj' undeclared (first use in this function)
-       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
-                                                      ^
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 1
+
+
+   1              		.file	"os_stack.c"
+   2              		.text
+   3              	Ltext0:
+   4              		.globl	_OS_StackCheck
+   6              	_OS_StackCheck:
+   7              	LFB0:
+   8              		.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_stack.c"
+   1:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c **** #include "os_firstinc.h"
+   2:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c **** 
+   3:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c **** void OS_StackCheck(void)
+   4:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c **** {
+   9              		.loc 1 4 0
+  10              		.cfi_startproc
+  11 0000 55       		pushl	%ebp
+  12              		.cfi_def_cfa_offset 8
+  13              		.cfi_offset 5, -8
+  14 0001 89E5     		movl	%esp, %ebp
+  15              		.cfi_def_cfa_register 5
+  16 0003 83EC18   		subl	$24, %esp
+   5:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    /* the last 64 bytes are reserved for stack check for every stack 
+   6:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    unsigned_char_t OS_STACK[NR_OF_CORES][OS_STACK_SIZE];
+   7:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];
+   8:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    
+   9:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    the stack is starting at the highest address and growing to lower addresses -> pattern start on 
+  10:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    
+  11:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    */
+  12:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    static volatile int stack_pos = 0, nr_of_cores = 0, failed = False;
+  13:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < 64; stack_pos++)
+  17              		.loc 1 13 0
+  18 0006 C7050000 		movl	$0, _stack_pos.1317
+  18      00000000 
+  18      0000
+  19 0010 EB71     		jmp	L2
+  20              	L7:
+  14:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    {
+  15:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES; nr_of_cores++)
+  21              		.loc 1 15 0
+  22 0012 C7050400 		movl	$0, _nr_of_cores.1318
+  22      00000000 
+  22      0000
+  23 001c EB38     		jmp	L3
+  24              	L5:
+  16:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       {
+  17:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****          if(OS_STACK[nr_of_cores][stack_pos] != 0xAA)
+  25              		.loc 1 17 0
+  26 001e 8B150400 		movl	_nr_of_cores.1318, %edx
+  26      0000
+  27 0024 8B0D0000 		movl	_stack_pos.1317, %ecx
+  27      0000
+  28 002a 89D0     		movl	%edx, %eax
+  29 002c C1E002   		sall	$2, %eax
+  30 002f 01D0     		addl	%edx, %eax
+  31 0031 C1E00C   		sall	$12, %eax
+  32 0034 01C8     		addl	%ecx, %eax
+  33 0036 05000000 		addl	$_OS_STACK, %eax
+  33      00
+  34 003b 8A00     		movb	(%eax), %al
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 2
+
+
+  35 003d 3CAA     		cmpb	$-86, %al
+  36 003f 740A     		je	L4
+  18:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****          {
+  19:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****             failed = True;
+  37              		.loc 1 19 0
+  38 0041 C7050800 		movl	$1, _failed.1319
+  38      00000100 
+  38      0000
+  39              	L4:
+  15:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       {
+  40              		.loc 1 15 0 discriminator 2
+  41 004b A1040000 		movl	_nr_of_cores.1318, %eax
+  41      00
+  42 0050 40       		incl	%eax
+  43 0051 A3040000 		movl	%eax, _nr_of_cores.1318
+  43      00
+  44              	L3:
+  15:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       {
+  45              		.loc 1 15 0 is_stmt 0 discriminator 1
+  46 0056 A1040000 		movl	_nr_of_cores.1318, %eax
+  46      00
+  47 005b 85C0     		testl	%eax, %eax
+  48 005d 7EBF     		jle	L5
+  20:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****          }   
+  21:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       }
+  22:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       if(OS_MAIN_STACK[stack_pos] != 0xAA)
+  49              		.loc 1 22 0 is_stmt 1
+  50 005f A1000000 		movl	_stack_pos.1317, %eax
+  50      00
+  51 0064 8A800000 		movb	_OS_MAIN_STACK(%eax), %al
+  51      0000
+  52 006a 3CAA     		cmpb	$-86, %al
+  53 006c 740A     		je	L6
+  23:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       {
+  24:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****          failed = True;
+  54              		.loc 1 24 0
+  55 006e C7050800 		movl	$1, _failed.1319
+  55      00000100 
+  55      0000
+  56              	L6:
+  13:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    {
+  57              		.loc 1 13 0 discriminator 2
+  58 0078 A1000000 		movl	_stack_pos.1317, %eax
+  58      00
+  59 007d 40       		incl	%eax
+  60 007e A3000000 		movl	%eax, _stack_pos.1317
+  60      00
+  61              	L2:
+  13:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    {
+  62              		.loc 1 13 0 is_stmt 0 discriminator 1
+  63 0083 A1000000 		movl	_stack_pos.1317, %eax
+  63      00
+  64 0088 83F83F   		cmpl	$63, %eax
+  65 008b 7E85     		jle	L7
+  25:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       }         
+  26:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    }
+  27:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    if(failed == True)   
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 3
+
+
+  66              		.loc 1 27 0 is_stmt 1
+  67 008d A1080000 		movl	_failed.1319, %eax
+  67      00
+  68 0092 83F801   		cmpl	$1, %eax
+  69 0095 7516     		jne	L1
+  28:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    {
+  29:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       OS_SetSwBug(os_bug_critical_stack_usage,Func_StackCheck);
+  70              		.loc 1 29 0
+  71 0097 C7442404 		movl	$17, 4(%esp)
+  71      11000000 
+  72 009f C7042409 		movl	$9, (%esp)
+  72      000000
+  73 00a6 E8000000 		call	_OS_SetSwBug
+  73      00
+  74              	L9:
+  30:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       while(1)
+  31:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       {
+  32:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****          /* allow easy debugging */
+  33:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       }  
+  75              		.loc 1 33 0 discriminator 1
+  76 00ab EBFE     		jmp	L9
+  77              	L1:
+  34:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    }   
+  35:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c **** }
+  78              		.loc 1 35 0
+  79 00ad C9       		leave
+  80              		.cfi_restore 5
+  81              		.cfi_def_cfa 4, 4
+  82 00ae C3       		ret
+  83              		.cfi_endproc
+  84              	LFE0:
+  85              		.globl	_OS_StackChkPatternInit
+  87              	_OS_StackChkPatternInit:
+  88              	LFB1:
+  36:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c **** void OS_StackChkPatternInit(void)
+  37:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c **** {
+  89              		.loc 1 37 0
+  90              		.cfi_startproc
+  91 00af 55       		pushl	%ebp
+  92              		.cfi_def_cfa_offset 8
+  93              		.cfi_offset 5, -8
+  94 00b0 89E5     		movl	%esp, %ebp
+  95              		.cfi_def_cfa_register 5
+  38:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    static volatile int stack_pos = 0,nr_of_cores = 0;
+  39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < 64; stack_pos++)
+  96              		.loc 1 39 0
+  97 00b2 C7050C00 		movl	$0, _stack_pos.1330
+  97      00000000 
+  97      0000
+  98 00bc EB57     		jmp	L11
+  99              	L14:
+  40:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    {
+  41:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES; nr_of_cores++)
+ 100              		.loc 1 41 0
+ 101 00be C7051000 		movl	$0, _nr_of_cores.1331
+ 101      00000000 
+ 101      0000
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 4
+
+
+ 102 00c8 EB2B     		jmp	L12
+ 103              	L13:
+  42:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       {
+  43:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****          OS_STACK[nr_of_cores][stack_pos] = 0xAA;
+ 104              		.loc 1 43 0 discriminator 3
+ 105 00ca 8B151000 		movl	_nr_of_cores.1331, %edx
+ 105      0000
+ 106 00d0 8B0D0C00 		movl	_stack_pos.1330, %ecx
+ 106      0000
+ 107 00d6 89D0     		movl	%edx, %eax
+ 108 00d8 C1E002   		sall	$2, %eax
+ 109 00db 01D0     		addl	%edx, %eax
+ 110 00dd C1E00C   		sall	$12, %eax
+ 111 00e0 01C8     		addl	%ecx, %eax
+ 112 00e2 05000000 		addl	$_OS_STACK, %eax
+ 112      00
+ 113 00e7 C600AA   		movb	$-86, (%eax)
+  41:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       {
+ 114              		.loc 1 41 0 discriminator 3
+ 115 00ea A1100000 		movl	_nr_of_cores.1331, %eax
+ 115      00
+ 116 00ef 40       		incl	%eax
+ 117 00f0 A3100000 		movl	%eax, _nr_of_cores.1331
+ 117      00
+ 118              	L12:
+  41:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       {
+ 119              		.loc 1 41 0 is_stmt 0 discriminator 1
+ 120 00f5 A1100000 		movl	_nr_of_cores.1331, %eax
+ 120      00
+ 121 00fa 85C0     		testl	%eax, %eax
+ 122 00fc 7ECC     		jle	L13
+  44:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       }
+  45:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****       OS_MAIN_STACK[stack_pos] = 0xAA;
+ 123              		.loc 1 45 0 is_stmt 1 discriminator 2
+ 124 00fe A10C0000 		movl	_stack_pos.1330, %eax
+ 124      00
+ 125 0103 C6800000 		movb	$-86, _OS_MAIN_STACK(%eax)
+ 125      0000AA
+  39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    {
+ 126              		.loc 1 39 0 discriminator 2
+ 127 010a A10C0000 		movl	_stack_pos.1330, %eax
+ 127      00
+ 128 010f 40       		incl	%eax
+ 129 0110 A30C0000 		movl	%eax, _stack_pos.1330
+ 129      00
+ 130              	L11:
+  39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    {
+ 131              		.loc 1 39 0 is_stmt 0 discriminator 1
+ 132 0115 A10C0000 		movl	_stack_pos.1330, %eax
+ 132      00
+ 133 011a 83F83F   		cmpl	$63, %eax
+ 134 011d 7E9F     		jle	L14
+  46:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c ****    }    
+  47:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_stack.c **** }   ...
+ 135              		.loc 1 47 0 is_stmt 1
+ 136 011f 5D       		popl	%ebp
+ 137              		.cfi_restore 5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 5
+
+
+ 138              		.cfi_def_cfa 4, 4
+ 139 0120 C3       		ret
+ 140              		.cfi_endproc
+ 141              	LFE1:
+ 142              	.lcomm _stack_pos.1317,4,4
+ 143              	.lcomm _nr_of_cores.1318,4,4
+ 144              	.lcomm _failed.1319,4,4
+ 145              	.lcomm _stack_pos.1330,4,4
+ 146              	.lcomm _nr_of_cores.1331,4,4
+ 147              	Letext0:
+ 148              		.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
+ 149              		.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
+ 150              		.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
+ 151 0121 909090   		.section	.debug_info,"dr"
+ 152              	Ldebug_info0:
+ 153 0000 02050000 		.long	0x502
+ 154 0004 0400     		.word	0x4
+ 155 0006 00000000 		.secrel32	Ldebug_abbrev0
+ 156 000a 04       		.byte	0x4
+ 157 000b 01       		.uleb128 0x1
+ 158 000c 474E5520 		.ascii "GNU C 4.9.3 -march=i386 -g3 -O0 -std=c90\0"
+ 158      4320342E 
+ 158      392E3320 
+ 158      2D6D6172 
+ 158      63683D69 
+ 159 0035 01       		.byte	0x1
+ 160 0036 453A5C4E 		.ascii "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.c\0"
+ 160      65754F72 
+ 160      67615C50 
+ 160      726F6772 
+ 160      616D6D69 
+ 161 007c 00000000 		.long	Ltext0
+ 162 0080 21010000 		.long	Letext0-Ltext0
+ 163 0084 00000000 		.secrel32	Ldebug_line0
+ 164 0088 00000000 		.secrel32	Ldebug_macro0
+ 165 008c 02       		.uleb128 0x2
+ 166 008d 756E7369 		.ascii "unsigned_char_t\0"
+ 166      676E6564 
+ 166      5F636861 
+ 166      725F7400 
+ 167 009d 04       		.byte	0x4
+ 168 009e 1D       		.byte	0x1d
+ 169 009f A3000000 		.long	0xa3
+ 170 00a3 03       		.uleb128 0x3
+ 171 00a4 01       		.byte	0x1
+ 172 00a5 08       		.byte	0x8
+ 173 00a6 756E7369 		.ascii "unsigned char\0"
+ 173      676E6564 
+ 173      20636861 
+ 173      7200
+ 174 00b4 03       		.uleb128 0x3
+ 175 00b5 01       		.byte	0x1
+ 176 00b6 06       		.byte	0x6
+ 177 00b7 7369676E 		.ascii "signed char\0"
+ 177      65642063 
+ 177      68617200 
+ 178 00c3 03       		.uleb128 0x3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 6
+
+
+ 179 00c4 02       		.byte	0x2
+ 180 00c5 07       		.byte	0x7
+ 181 00c6 73686F72 		.ascii "short unsigned int\0"
+ 181      7420756E 
+ 181      7369676E 
+ 181      65642069 
+ 181      6E7400
+ 182 00d9 03       		.uleb128 0x3
+ 183 00da 02       		.byte	0x2
+ 184 00db 05       		.byte	0x5
+ 185 00dc 73686F72 		.ascii "short int\0"
+ 185      7420696E 
+ 185      7400
+ 186 00e6 03       		.uleb128 0x3
+ 187 00e7 04       		.byte	0x4
+ 188 00e8 07       		.byte	0x7
+ 189 00e9 6C6F6E67 		.ascii "long unsigned int\0"
+ 189      20756E73 
+ 189      69676E65 
+ 189      6420696E 
+ 189      7400
+ 190 00fb 03       		.uleb128 0x3
+ 191 00fc 04       		.byte	0x4
+ 192 00fd 05       		.byte	0x5
+ 193 00fe 6C6F6E67 		.ascii "long int\0"
+ 193      20696E74 
+ 193      00
+ 194 0107 04       		.uleb128 0x4
+ 195 0108 6F735F73 		.ascii "os_sw_bugs_e\0"
+ 195      775F6275 
+ 195      67735F65 
+ 195      00
+ 196 0115 04       		.byte	0x4
+ 197 0116 02       		.byte	0x2
+ 198 0117 2B       		.byte	0x2b
+ 199 0118 4A020000 		.long	0x24a
+ 200 011c 05       		.uleb128 0x5
+ 201 011d 6F735F62 		.ascii "os_bug_no_bug\0"
+ 201      75675F6E 
+ 201      6F5F6275 
+ 201      6700
+ 202 012b 00       		.sleb128 0
+ 203 012c 05       		.uleb128 0x5
+ 204 012d 6F735F62 		.ascii "os_bug_taskstate_request_denied\0"
+ 204      75675F74 
+ 204      61736B73 
+ 204      74617465 
+ 204      5F726571 
+ 205 014d 01       		.sleb128 1
+ 206 014e 05       		.uleb128 0x5
+ 207 014f 6F735F62 		.ascii "os_bug_null_pointer\0"
+ 207      75675F6E 
+ 207      756C6C5F 
+ 207      706F696E 
+ 207      74657200 
+ 208 0163 02       		.sleb128 2
+ 209 0164 05       		.uleb128 0x5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 7
+
+
+ 210 0165 6F735F62 		.ascii "os_bug_task_max_wait_time_reached\0"
+ 210      75675F74 
+ 210      61736B5F 
+ 210      6D61785F 
+ 210      77616974 
+ 211 0187 03       		.sleb128 3
+ 212 0188 05       		.uleb128 0x5
+ 213 0189 6F735F62 		.ascii "os_bug_Task_unspecified\0"
+ 213      75675F54 
+ 213      61736B5F 
+ 213      756E7370 
+ 213      65636966 
+ 214 01a1 04       		.sleb128 4
+ 215 01a2 05       		.uleb128 0x5
+ 216 01a3 6F735F62 		.ascii "os_bug_exception_UndefInstruction\0"
+ 216      75675F65 
+ 216      78636570 
+ 216      74696F6E 
+ 216      5F556E64 
+ 217 01c5 05       		.sleb128 5
+ 218 01c6 05       		.uleb128 0x5
+ 219 01c7 6F735F62 		.ascii "os_bug_exception_AbortPrefetch\0"
+ 219      75675F65 
+ 219      78636570 
+ 219      74696F6E 
+ 219      5F41626F 
+ 220 01e6 06       		.sleb128 6
+ 221 01e7 05       		.uleb128 0x5
+ 222 01e8 6F735F62 		.ascii "os_bug_exception_AbortData\0"
+ 222      75675F65 
+ 222      78636570 
+ 222      74696F6E 
+ 222      5F41626F 
+ 223 0203 07       		.sleb128 7
+ 224 0204 05       		.uleb128 0x5
+ 225 0205 6F735F62 		.ascii "os_bug_reset_exit_or_shutdown_failed\0"
+ 225      75675F72 
+ 225      65736574 
+ 225      5F657869 
+ 225      745F6F72 
+ 226 022a 08       		.sleb128 8
+ 227 022b 05       		.uleb128 0x5
+ 228 022c 6F735F62 		.ascii "os_bug_critical_stack_usage\0"
+ 228      75675F63 
+ 228      72697469 
+ 228      63616C5F 
+ 228      73746163 
+ 229 0248 09       		.sleb128 9
+ 230 0249 00       		.byte	0
+ 231 024a 04       		.uleb128 0x4
+ 232 024b 6F735F73 		.ascii "os_sw_bugs_function_e\0"
+ 232      775F6275 
+ 232      67735F66 
+ 232      756E6374 
+ 232      696F6E5F 
+ 233 0261 04       		.byte	0x4
+ 234 0262 02       		.byte	0x2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 8
+
+
+ 235 0263 3A       		.byte	0x3a
+ 236 0264 EF030000 		.long	0x3ef
+ 237 0268 05       		.uleb128 0x5
+ 238 0269 46756E63 		.ascii "Func_NoFunction\0"
+ 238      5F4E6F46 
+ 238      756E6374 
+ 238      696F6E00 
+ 239 0279 00       		.sleb128 0
+ 240 027a 05       		.uleb128 0x5
+ 241 027b 46756E63 		.ascii "Func_SaveTaskEnvironment\0"
+ 241      5F536176 
+ 241      65546173 
+ 241      6B456E76 
+ 241      69726F6E 
+ 242 0294 01       		.sleb128 1
+ 243 0295 05       		.uleb128 0x5
+ 244 0296 46756E63 		.ascii "Func_RestoreTaskEnvironment\0"
+ 244      5F526573 
+ 244      746F7265 
+ 244      5461736B 
+ 244      456E7669 
+ 245 02b2 02       		.sleb128 2
+ 246 02b3 05       		.uleb128 0x5
+ 247 02b4 46756E63 		.ascii "Func_CreateTaskEnvironment\0"
+ 247      5F437265 
+ 247      61746554 
+ 247      61736B45 
+ 247      6E766972 
+ 248 02cf 03       		.sleb128 3
+ 249 02d0 05       		.uleb128 0x5
+ 250 02d1 46756E63 		.ascii "Func_DeleteTaskEnvironment\0"
+ 250      5F44656C 
+ 250      65746554 
+ 250      61736B45 
+ 250      6E766972 
+ 251 02ec 04       		.sleb128 4
+ 252 02ed 05       		.uleb128 0x5
+ 253 02ee 46756E63 		.ascii "Func_InitTaskEnvironment\0"
+ 253      5F496E69 
+ 253      74546173 
+ 253      6B456E76 
+ 253      69726F6E 
+ 254 0307 05       		.sleb128 5
+ 255 0308 05       		.uleb128 0x5
+ 256 0309 46756E63 		.ascii "Func_StartTask\0"
+ 256      5F537461 
+ 256      72745461 
+ 256      736B00
+ 257 0318 06       		.sleb128 6
+ 258 0319 05       		.uleb128 0x5
+ 259 031a 46756E63 		.ascii "Func_PreemptTask\0"
+ 259      5F507265 
+ 259      656D7074 
+ 259      5461736B 
+ 259      00
+ 260 032b 07       		.sleb128 7
+ 261 032c 05       		.uleb128 0x5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 9
+
+
+ 262 032d 46756E63 		.ascii "Func_TerminateTask\0"
+ 262      5F546572 
+ 262      6D696E61 
+ 262      74655461 
+ 262      736B00
+ 263 0340 08       		.sleb128 8
+ 264 0341 05       		.uleb128 0x5
+ 265 0342 46756E63 		.ascii "Func_TaskScheduler\0"
+ 265      5F546173 
+ 265      6B536368 
+ 265      6564756C 
+ 265      657200
+ 266 0355 09       		.sleb128 9
+ 267 0356 05       		.uleb128 0x5
+ 268 0357 46756E63 		.ascii "Func_InitTask\0"
+ 268      5F496E69 
+ 268      74546173 
+ 268      6B00
+ 269 0365 0A       		.sleb128 10
+ 270 0366 05       		.uleb128 0x5
+ 271 0367 46756E63 		.ascii "Func_ActivateTask\0"
+ 271      5F416374 
+ 271      69766174 
+ 271      65546173 
+ 271      6B00
+ 272 0379 0B       		.sleb128 11
+ 273 037a 05       		.uleb128 0x5
+ 274 037b 46756E63 		.ascii "Func_TaskStateRequest\0"
+ 274      5F546173 
+ 274      6B537461 
+ 274      74655265 
+ 274      71756573 
+ 275 0391 0C       		.sleb128 12
+ 276 0392 05       		.uleb128 0x5
+ 277 0393 46756E63 		.ascii "Func_Preempt_Task\0"
+ 277      5F507265 
+ 277      656D7074 
+ 277      5F546173 
+ 277      6B00
+ 278 03a5 0D       		.sleb128 13
+ 279 03a6 05       		.uleb128 0x5
+ 280 03a7 46756E63 		.ascii "Func_os_exception\0"
+ 280      5F6F735F 
+ 280      65786365 
+ 280      7074696F 
+ 280      6E00
+ 281 03b9 0E       		.sleb128 14
+ 282 03ba 05       		.uleb128 0x5
+ 283 03bb 46756E63 		.ascii "Func_CreateTask\0"
+ 283      5F437265 
+ 283      61746554 
+ 283      61736B00 
+ 284 03cb 0F       		.sleb128 15
+ 285 03cc 05       		.uleb128 0x5
+ 286 03cd 46756E63 		.ascii "Func_Shutdown\0"
+ 286      5F536875 
+ 286      74646F77 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 10
+
+
+ 286      6E00
+ 287 03db 10       		.sleb128 16
+ 288 03dc 05       		.uleb128 0x5
+ 289 03dd 46756E63 		.ascii "Func_StackCheck\0"
+ 289      5F537461 
+ 289      636B4368 
+ 289      65636B00 
+ 290 03ed 11       		.sleb128 17
+ 291 03ee 00       		.byte	0
+ 292 03ef 03       		.uleb128 0x3
+ 293 03f0 04       		.byte	0x4
+ 294 03f1 07       		.byte	0x7
+ 295 03f2 73697A65 		.ascii "sizetype\0"
+ 295      74797065 
+ 295      00
+ 296 03fb 03       		.uleb128 0x3
+ 297 03fc 04       		.byte	0x4
+ 298 03fd 07       		.byte	0x7
+ 299 03fe 756E7369 		.ascii "unsigned int\0"
+ 299      676E6564 
+ 299      20696E74 
+ 299      00
+ 300 040b 06       		.uleb128 0x6
+ 301 040c 4F535F53 		.ascii "OS_StackCheck\0"
+ 301      7461636B 
+ 301      43686563 
+ 301      6B00
+ 302 041a 01       		.byte	0x1
+ 303 041b 03       		.byte	0x3
+ 304 041c 00000000 		.long	LFB0
+ 305 0420 AF000000 		.long	LFE0-LFB0
+ 306 0424 01       		.uleb128 0x1
+ 307 0425 9C       		.byte	0x9c
+ 308 0426 61040000 		.long	0x461
+ 309 042a 07       		.uleb128 0x7
+ 310 042b 00000000 		.secrel32	LASF0
+ 311 042f 01       		.byte	0x1
+ 312 0430 0C       		.byte	0xc
+ 313 0431 61040000 		.long	0x461
+ 314 0435 05       		.uleb128 0x5
+ 315 0436 03       		.byte	0x3
+ 316 0437 00000000 		.long	_stack_pos.1317
+ 317 043b 07       		.uleb128 0x7
+ 318 043c 0A000000 		.secrel32	LASF1
+ 319 0440 01       		.byte	0x1
+ 320 0441 0C       		.byte	0xc
+ 321 0442 61040000 		.long	0x461
+ 322 0446 05       		.uleb128 0x5
+ 323 0447 03       		.byte	0x3
+ 324 0448 04000000 		.long	_nr_of_cores.1318
+ 325 044c 08       		.uleb128 0x8
+ 326 044d 6661696C 		.ascii "failed\0"
+ 326      656400
+ 327 0454 01       		.byte	0x1
+ 328 0455 0C       		.byte	0xc
+ 329 0456 61040000 		.long	0x461
+ 330 045a 05       		.uleb128 0x5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 11
+
+
+ 331 045b 03       		.byte	0x3
+ 332 045c 08000000 		.long	_failed.1319
+ 333 0460 00       		.byte	0
+ 334 0461 09       		.uleb128 0x9
+ 335 0462 66040000 		.long	0x466
+ 336 0466 03       		.uleb128 0x3
+ 337 0467 04       		.byte	0x4
+ 338 0468 05       		.byte	0x5
+ 339 0469 696E7400 		.ascii "int\0"
+ 340 046d 0A       		.uleb128 0xa
+ 341 046e 4F535F53 		.ascii "OS_StackChkPatternInit\0"
+ 341      7461636B 
+ 341      43686B50 
+ 341      61747465 
+ 341      726E496E 
+ 342 0485 01       		.byte	0x1
+ 343 0486 24       		.byte	0x24
+ 344 0487 AF000000 		.long	LFB1
+ 345 048b 72000000 		.long	LFE1-LFB1
+ 346 048f 01       		.uleb128 0x1
+ 347 0490 9C       		.byte	0x9c
+ 348 0491 B8040000 		.long	0x4b8
+ 349 0495 07       		.uleb128 0x7
+ 350 0496 00000000 		.secrel32	LASF0
+ 351 049a 01       		.byte	0x1
+ 352 049b 26       		.byte	0x26
+ 353 049c 61040000 		.long	0x461
+ 354 04a0 05       		.uleb128 0x5
+ 355 04a1 03       		.byte	0x3
+ 356 04a2 0C000000 		.long	_stack_pos.1330
+ 357 04a6 07       		.uleb128 0x7
+ 358 04a7 0A000000 		.secrel32	LASF1
+ 359 04ab 01       		.byte	0x1
+ 360 04ac 26       		.byte	0x26
+ 361 04ad 61040000 		.long	0x461
+ 362 04b1 05       		.uleb128 0x5
+ 363 04b2 03       		.byte	0x3
+ 364 04b3 10000000 		.long	_nr_of_cores.1331
+ 365 04b7 00       		.byte	0
+ 366 04b8 0B       		.uleb128 0xb
+ 367 04b9 8C000000 		.long	0x8c
+ 368 04bd CF040000 		.long	0x4cf
+ 369 04c1 0C       		.uleb128 0xc
+ 370 04c2 EF030000 		.long	0x3ef
+ 371 04c6 00       		.byte	0
+ 372 04c7 0D       		.uleb128 0xd
+ 373 04c8 EF030000 		.long	0x3ef
+ 374 04cc FF4F     		.word	0x4fff
+ 375 04ce 00       		.byte	0
+ 376 04cf 0E       		.uleb128 0xe
+ 377 04d0 4F535F53 		.ascii "OS_STACK\0"
+ 377      5441434B 
+ 377      00
+ 378 04d9 03       		.byte	0x3
+ 379 04da 0E       		.byte	0xe
+ 380 04db B8040000 		.long	0x4b8
+ 381 04df 0B       		.uleb128 0xb
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 12
+
+
+ 382 04e0 8C000000 		.long	0x8c
+ 383 04e4 F0040000 		.long	0x4f0
+ 384 04e8 0D       		.uleb128 0xd
+ 385 04e9 EF030000 		.long	0x3ef
+ 386 04ed FF4F     		.word	0x4fff
+ 387 04ef 00       		.byte	0
+ 388 04f0 0E       		.uleb128 0xe
+ 389 04f1 4F535F4D 		.ascii "OS_MAIN_STACK\0"
+ 389      41494E5F 
+ 389      53544143 
+ 389      4B00
+ 390 04ff 03       		.byte	0x3
+ 391 0500 0F       		.byte	0xf
+ 392 0501 DF040000 		.long	0x4df
+ 393 0505 00       		.byte	0
+ 394              		.section	.debug_abbrev,"dr"
+ 395              	Ldebug_abbrev0:
+ 396 0000 01       		.uleb128 0x1
+ 397 0001 11       		.uleb128 0x11
+ 398 0002 01       		.byte	0x1
+ 399 0003 25       		.uleb128 0x25
+ 400 0004 08       		.uleb128 0x8
+ 401 0005 13       		.uleb128 0x13
+ 402 0006 0B       		.uleb128 0xb
+ 403 0007 03       		.uleb128 0x3
+ 404 0008 08       		.uleb128 0x8
+ 405 0009 11       		.uleb128 0x11
+ 406 000a 01       		.uleb128 0x1
+ 407 000b 12       		.uleb128 0x12
+ 408 000c 06       		.uleb128 0x6
+ 409 000d 10       		.uleb128 0x10
+ 410 000e 17       		.uleb128 0x17
+ 411 000f 9942     		.uleb128 0x2119
+ 412 0011 17       		.uleb128 0x17
+ 413 0012 00       		.byte	0
+ 414 0013 00       		.byte	0
+ 415 0014 02       		.uleb128 0x2
+ 416 0015 16       		.uleb128 0x16
+ 417 0016 00       		.byte	0
+ 418 0017 03       		.uleb128 0x3
+ 419 0018 08       		.uleb128 0x8
+ 420 0019 3A       		.uleb128 0x3a
+ 421 001a 0B       		.uleb128 0xb
+ 422 001b 3B       		.uleb128 0x3b
+ 423 001c 0B       		.uleb128 0xb
+ 424 001d 49       		.uleb128 0x49
+ 425 001e 13       		.uleb128 0x13
+ 426 001f 00       		.byte	0
+ 427 0020 00       		.byte	0
+ 428 0021 03       		.uleb128 0x3
+ 429 0022 24       		.uleb128 0x24
+ 430 0023 00       		.byte	0
+ 431 0024 0B       		.uleb128 0xb
+ 432 0025 0B       		.uleb128 0xb
+ 433 0026 3E       		.uleb128 0x3e
+ 434 0027 0B       		.uleb128 0xb
+ 435 0028 03       		.uleb128 0x3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 13
+
+
+ 436 0029 08       		.uleb128 0x8
+ 437 002a 00       		.byte	0
+ 438 002b 00       		.byte	0
+ 439 002c 04       		.uleb128 0x4
+ 440 002d 04       		.uleb128 0x4
+ 441 002e 01       		.byte	0x1
+ 442 002f 03       		.uleb128 0x3
+ 443 0030 08       		.uleb128 0x8
+ 444 0031 0B       		.uleb128 0xb
+ 445 0032 0B       		.uleb128 0xb
+ 446 0033 3A       		.uleb128 0x3a
+ 447 0034 0B       		.uleb128 0xb
+ 448 0035 3B       		.uleb128 0x3b
+ 449 0036 0B       		.uleb128 0xb
+ 450 0037 01       		.uleb128 0x1
+ 451 0038 13       		.uleb128 0x13
+ 452 0039 00       		.byte	0
+ 453 003a 00       		.byte	0
+ 454 003b 05       		.uleb128 0x5
+ 455 003c 28       		.uleb128 0x28
+ 456 003d 00       		.byte	0
+ 457 003e 03       		.uleb128 0x3
+ 458 003f 08       		.uleb128 0x8
+ 459 0040 1C       		.uleb128 0x1c
+ 460 0041 0D       		.uleb128 0xd
+ 461 0042 00       		.byte	0
+ 462 0043 00       		.byte	0
+ 463 0044 06       		.uleb128 0x6
+ 464 0045 2E       		.uleb128 0x2e
+ 465 0046 01       		.byte	0x1
+ 466 0047 3F       		.uleb128 0x3f
+ 467 0048 19       		.uleb128 0x19
+ 468 0049 03       		.uleb128 0x3
+ 469 004a 08       		.uleb128 0x8
+ 470 004b 3A       		.uleb128 0x3a
+ 471 004c 0B       		.uleb128 0xb
+ 472 004d 3B       		.uleb128 0x3b
+ 473 004e 0B       		.uleb128 0xb
+ 474 004f 27       		.uleb128 0x27
+ 475 0050 19       		.uleb128 0x19
+ 476 0051 11       		.uleb128 0x11
+ 477 0052 01       		.uleb128 0x1
+ 478 0053 12       		.uleb128 0x12
+ 479 0054 06       		.uleb128 0x6
+ 480 0055 40       		.uleb128 0x40
+ 481 0056 18       		.uleb128 0x18
+ 482 0057 9642     		.uleb128 0x2116
+ 483 0059 19       		.uleb128 0x19
+ 484 005a 01       		.uleb128 0x1
+ 485 005b 13       		.uleb128 0x13
+ 486 005c 00       		.byte	0
+ 487 005d 00       		.byte	0
+ 488 005e 07       		.uleb128 0x7
+ 489 005f 34       		.uleb128 0x34
+ 490 0060 00       		.byte	0
+ 491 0061 03       		.uleb128 0x3
+ 492 0062 0E       		.uleb128 0xe
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 14
+
+
+ 493 0063 3A       		.uleb128 0x3a
+ 494 0064 0B       		.uleb128 0xb
+ 495 0065 3B       		.uleb128 0x3b
+ 496 0066 0B       		.uleb128 0xb
+ 497 0067 49       		.uleb128 0x49
+ 498 0068 13       		.uleb128 0x13
+ 499 0069 02       		.uleb128 0x2
+ 500 006a 18       		.uleb128 0x18
+ 501 006b 00       		.byte	0
+ 502 006c 00       		.byte	0
+ 503 006d 08       		.uleb128 0x8
+ 504 006e 34       		.uleb128 0x34
+ 505 006f 00       		.byte	0
+ 506 0070 03       		.uleb128 0x3
+ 507 0071 08       		.uleb128 0x8
+ 508 0072 3A       		.uleb128 0x3a
+ 509 0073 0B       		.uleb128 0xb
+ 510 0074 3B       		.uleb128 0x3b
+ 511 0075 0B       		.uleb128 0xb
+ 512 0076 49       		.uleb128 0x49
+ 513 0077 13       		.uleb128 0x13
+ 514 0078 02       		.uleb128 0x2
+ 515 0079 18       		.uleb128 0x18
+ 516 007a 00       		.byte	0
+ 517 007b 00       		.byte	0
+ 518 007c 09       		.uleb128 0x9
+ 519 007d 35       		.uleb128 0x35
+ 520 007e 00       		.byte	0
+ 521 007f 49       		.uleb128 0x49
+ 522 0080 13       		.uleb128 0x13
+ 523 0081 00       		.byte	0
+ 524 0082 00       		.byte	0
+ 525 0083 0A       		.uleb128 0xa
+ 526 0084 2E       		.uleb128 0x2e
+ 527 0085 01       		.byte	0x1
+ 528 0086 3F       		.uleb128 0x3f
+ 529 0087 19       		.uleb128 0x19
+ 530 0088 03       		.uleb128 0x3
+ 531 0089 08       		.uleb128 0x8
+ 532 008a 3A       		.uleb128 0x3a
+ 533 008b 0B       		.uleb128 0xb
+ 534 008c 3B       		.uleb128 0x3b
+ 535 008d 0B       		.uleb128 0xb
+ 536 008e 27       		.uleb128 0x27
+ 537 008f 19       		.uleb128 0x19
+ 538 0090 11       		.uleb128 0x11
+ 539 0091 01       		.uleb128 0x1
+ 540 0092 12       		.uleb128 0x12
+ 541 0093 06       		.uleb128 0x6
+ 542 0094 40       		.uleb128 0x40
+ 543 0095 18       		.uleb128 0x18
+ 544 0096 9742     		.uleb128 0x2117
+ 545 0098 19       		.uleb128 0x19
+ 546 0099 01       		.uleb128 0x1
+ 547 009a 13       		.uleb128 0x13
+ 548 009b 00       		.byte	0
+ 549 009c 00       		.byte	0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 15
+
+
+ 550 009d 0B       		.uleb128 0xb
+ 551 009e 01       		.uleb128 0x1
+ 552 009f 01       		.byte	0x1
+ 553 00a0 49       		.uleb128 0x49
+ 554 00a1 13       		.uleb128 0x13
+ 555 00a2 01       		.uleb128 0x1
+ 556 00a3 13       		.uleb128 0x13
+ 557 00a4 00       		.byte	0
+ 558 00a5 00       		.byte	0
+ 559 00a6 0C       		.uleb128 0xc
+ 560 00a7 21       		.uleb128 0x21
+ 561 00a8 00       		.byte	0
+ 562 00a9 49       		.uleb128 0x49
+ 563 00aa 13       		.uleb128 0x13
+ 564 00ab 2F       		.uleb128 0x2f
+ 565 00ac 0B       		.uleb128 0xb
+ 566 00ad 00       		.byte	0
+ 567 00ae 00       		.byte	0
+ 568 00af 0D       		.uleb128 0xd
+ 569 00b0 21       		.uleb128 0x21
+ 570 00b1 00       		.byte	0
+ 571 00b2 49       		.uleb128 0x49
+ 572 00b3 13       		.uleb128 0x13
+ 573 00b4 2F       		.uleb128 0x2f
+ 574 00b5 05       		.uleb128 0x5
+ 575 00b6 00       		.byte	0
+ 576 00b7 00       		.byte	0
+ 577 00b8 0E       		.uleb128 0xe
+ 578 00b9 34       		.uleb128 0x34
+ 579 00ba 00       		.byte	0
+ 580 00bb 03       		.uleb128 0x3
+ 581 00bc 08       		.uleb128 0x8
+ 582 00bd 3A       		.uleb128 0x3a
+ 583 00be 0B       		.uleb128 0xb
+ 584 00bf 3B       		.uleb128 0x3b
+ 585 00c0 0B       		.uleb128 0xb
+ 586 00c1 49       		.uleb128 0x49
+ 587 00c2 13       		.uleb128 0x13
+ 588 00c3 3F       		.uleb128 0x3f
+ 589 00c4 19       		.uleb128 0x19
+ 590 00c5 3C       		.uleb128 0x3c
+ 591 00c6 19       		.uleb128 0x19
+ 592 00c7 00       		.byte	0
+ 593 00c8 00       		.byte	0
+ 594 00c9 00       		.byte	0
+ 595              		.section	.debug_aranges,"dr"
+ 596 0000 1C000000 		.long	0x1c
+ 597 0004 0200     		.word	0x2
+ 598 0006 00000000 		.secrel32	Ldebug_info0
+ 599 000a 04       		.byte	0x4
+ 600 000b 00       		.byte	0
+ 601 000c 0000     		.word	0
+ 602 000e 0000     		.word	0
+ 603 0010 00000000 		.long	Ltext0
+ 604 0014 21010000 		.long	Letext0-Ltext0
+ 605 0018 00000000 		.long	0
+ 606 001c 00000000 		.long	0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 16
+
+
+ 607              		.section	.debug_macro,"dr"
+ 608              	Ldebug_macro0:
+ 609 0000 0400     		.word	0x4
+ 610 0002 02       		.byte	0x2
+ 611 0003 00000000 		.secrel32	Ldebug_line0
+ 612 0007 01       		.byte	0x1
+ 613 0008 00       		.uleb128 0
+ 614 0009 5F5F5354 		.ascii "__STDC__ 1\0"
+ 614      44435F5F 
+ 614      203100
+ 615 0014 01       		.byte	0x1
+ 616 0015 00       		.uleb128 0
+ 617 0016 5F5F5354 		.ascii "__STDC_HOSTED__ 1\0"
+ 617      44435F48 
+ 617      4F535445 
+ 617      445F5F20 
+ 617      3100
+ 618 0028 01       		.byte	0x1
+ 619 0029 00       		.uleb128 0
+ 620 002a 5F5F474E 		.ascii "__GNUC__ 4\0"
+ 620      55435F5F 
+ 620      203400
+ 621 0035 01       		.byte	0x1
+ 622 0036 00       		.uleb128 0
+ 623 0037 5F5F474E 		.ascii "__GNUC_MINOR__ 9\0"
+ 623      55435F4D 
+ 623      494E4F52 
+ 623      5F5F2039 
+ 623      00
+ 624 0048 01       		.byte	0x1
+ 625 0049 00       		.uleb128 0
+ 626 004a 5F5F474E 		.ascii "__GNUC_PATCHLEVEL__ 3\0"
+ 626      55435F50 
+ 626      41544348 
+ 626      4C455645 
+ 626      4C5F5F20 
+ 627 0060 01       		.byte	0x1
+ 628 0061 00       		.uleb128 0
+ 629 0062 5F5F5645 		.ascii "__VERSION__ \"4.9.3\"\0"
+ 629      5253494F 
+ 629      4E5F5F20 
+ 629      22342E39 
+ 629      2E332200 
+ 630 0076 01       		.byte	0x1
+ 631 0077 00       		.uleb128 0
+ 632 0078 5F5F4154 		.ascii "__ATOMIC_RELAXED 0\0"
+ 632      4F4D4943 
+ 632      5F52454C 
+ 632      41584544 
+ 632      203000
+ 633 008b 01       		.byte	0x1
+ 634 008c 00       		.uleb128 0
+ 635 008d 5F5F4154 		.ascii "__ATOMIC_SEQ_CST 5\0"
+ 635      4F4D4943 
+ 635      5F534551 
+ 635      5F435354 
+ 635      203500
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 17
+
+
+ 636 00a0 01       		.byte	0x1
+ 637 00a1 00       		.uleb128 0
+ 638 00a2 5F5F4154 		.ascii "__ATOMIC_ACQUIRE 2\0"
+ 638      4F4D4943 
+ 638      5F414351 
+ 638      55495245 
+ 638      203200
+ 639 00b5 01       		.byte	0x1
+ 640 00b6 00       		.uleb128 0
+ 641 00b7 5F5F4154 		.ascii "__ATOMIC_RELEASE 3\0"
+ 641      4F4D4943 
+ 641      5F52454C 
+ 641      45415345 
+ 641      203300
+ 642 00ca 01       		.byte	0x1
+ 643 00cb 00       		.uleb128 0
+ 644 00cc 5F5F4154 		.ascii "__ATOMIC_ACQ_REL 4\0"
+ 644      4F4D4943 
+ 644      5F414351 
+ 644      5F52454C 
+ 644      203400
+ 645 00df 01       		.byte	0x1
+ 646 00e0 00       		.uleb128 0
+ 647 00e1 5F5F4154 		.ascii "__ATOMIC_CONSUME 1\0"
+ 647      4F4D4943 
+ 647      5F434F4E 
+ 647      53554D45 
+ 647      203100
+ 648 00f4 01       		.byte	0x1
+ 649 00f5 00       		.uleb128 0
+ 650 00f6 5F5F4649 		.ascii "__FINITE_MATH_ONLY__ 0\0"
+ 650      4E495445 
+ 650      5F4D4154 
+ 650      485F4F4E 
+ 650      4C595F5F 
+ 651 010d 01       		.byte	0x1
+ 652 010e 00       		.uleb128 0
+ 653 010f 5F5F5349 		.ascii "__SIZEOF_INT__ 4\0"
+ 653      5A454F46 
+ 653      5F494E54 
+ 653      5F5F2034 
+ 653      00
+ 654 0120 01       		.byte	0x1
+ 655 0121 00       		.uleb128 0
+ 656 0122 5F5F5349 		.ascii "__SIZEOF_LONG__ 4\0"
+ 656      5A454F46 
+ 656      5F4C4F4E 
+ 656      475F5F20 
+ 656      3400
+ 657 0134 01       		.byte	0x1
+ 658 0135 00       		.uleb128 0
+ 659 0136 5F5F5349 		.ascii "__SIZEOF_LONG_LONG__ 8\0"
+ 659      5A454F46 
+ 659      5F4C4F4E 
+ 659      475F4C4F 
+ 659      4E475F5F 
+ 660 014d 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 18
+
+
+ 661 014e 00       		.uleb128 0
+ 662 014f 5F5F5349 		.ascii "__SIZEOF_SHORT__ 2\0"
+ 662      5A454F46 
+ 662      5F53484F 
+ 662      52545F5F 
+ 662      203200
+ 663 0162 01       		.byte	0x1
+ 664 0163 00       		.uleb128 0
+ 665 0164 5F5F5349 		.ascii "__SIZEOF_FLOAT__ 4\0"
+ 665      5A454F46 
+ 665      5F464C4F 
+ 665      41545F5F 
+ 665      203400
+ 666 0177 01       		.byte	0x1
+ 667 0178 00       		.uleb128 0
+ 668 0179 5F5F5349 		.ascii "__SIZEOF_DOUBLE__ 8\0"
+ 668      5A454F46 
+ 668      5F444F55 
+ 668      424C455F 
+ 668      5F203800 
+ 669 018d 01       		.byte	0x1
+ 670 018e 00       		.uleb128 0
+ 671 018f 5F5F5349 		.ascii "__SIZEOF_LONG_DOUBLE__ 12\0"
+ 671      5A454F46 
+ 671      5F4C4F4E 
+ 671      475F444F 
+ 671      55424C45 
+ 672 01a9 01       		.byte	0x1
+ 673 01aa 00       		.uleb128 0
+ 674 01ab 5F5F5349 		.ascii "__SIZEOF_SIZE_T__ 4\0"
+ 674      5A454F46 
+ 674      5F53495A 
+ 674      455F545F 
+ 674      5F203400 
+ 675 01bf 01       		.byte	0x1
+ 676 01c0 00       		.uleb128 0
+ 677 01c1 5F5F4348 		.ascii "__CHAR_BIT__ 8\0"
+ 677      41525F42 
+ 677      49545F5F 
+ 677      203800
+ 678 01d0 01       		.byte	0x1
+ 679 01d1 00       		.uleb128 0
+ 680 01d2 5F5F4249 		.ascii "__BIGGEST_ALIGNMENT__ 16\0"
+ 680      47474553 
+ 680      545F414C 
+ 680      49474E4D 
+ 680      454E545F 
+ 681 01eb 01       		.byte	0x1
+ 682 01ec 00       		.uleb128 0
+ 683 01ed 5F5F4F52 		.ascii "__ORDER_LITTLE_ENDIAN__ 1234\0"
+ 683      4445525F 
+ 683      4C495454 
+ 683      4C455F45 
+ 683      4E444941 
+ 684 020a 01       		.byte	0x1
+ 685 020b 00       		.uleb128 0
+ 686 020c 5F5F4F52 		.ascii "__ORDER_BIG_ENDIAN__ 4321\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 19
+
+
+ 686      4445525F 
+ 686      4249475F 
+ 686      454E4449 
+ 686      414E5F5F 
+ 687 0226 01       		.byte	0x1
+ 688 0227 00       		.uleb128 0
+ 689 0228 5F5F4F52 		.ascii "__ORDER_PDP_ENDIAN__ 3412\0"
+ 689      4445525F 
+ 689      5044505F 
+ 689      454E4449 
+ 689      414E5F5F 
+ 690 0242 01       		.byte	0x1
+ 691 0243 00       		.uleb128 0
+ 692 0244 5F5F4259 		.ascii "__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
+ 692      54455F4F 
+ 692      52444552 
+ 692      5F5F205F 
+ 692      5F4F5244 
+ 693 026b 01       		.byte	0x1
+ 694 026c 00       		.uleb128 0
+ 695 026d 5F5F464C 		.ascii "__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
+ 695      4F41545F 
+ 695      574F5244 
+ 695      5F4F5244 
+ 695      45525F5F 
+ 696 029a 01       		.byte	0x1
+ 697 029b 00       		.uleb128 0
+ 698 029c 5F5F5349 		.ascii "__SIZEOF_POINTER__ 4\0"
+ 698      5A454F46 
+ 698      5F504F49 
+ 698      4E544552 
+ 698      5F5F2034 
+ 699 02b1 01       		.byte	0x1
+ 700 02b2 00       		.uleb128 0
+ 701 02b3 5F5F5349 		.ascii "__SIZE_TYPE__ unsigned int\0"
+ 701      5A455F54 
+ 701      5950455F 
+ 701      5F20756E 
+ 701      7369676E 
+ 702 02ce 01       		.byte	0x1
+ 703 02cf 00       		.uleb128 0
+ 704 02d0 5F5F5054 		.ascii "__PTRDIFF_TYPE__ int\0"
+ 704      52444946 
+ 704      465F5459 
+ 704      50455F5F 
+ 704      20696E74 
+ 705 02e5 01       		.byte	0x1
+ 706 02e6 00       		.uleb128 0
+ 707 02e7 5F5F5743 		.ascii "__WCHAR_TYPE__ short unsigned int\0"
+ 707      4841525F 
+ 707      54595045 
+ 707      5F5F2073 
+ 707      686F7274 
+ 708 0309 01       		.byte	0x1
+ 709 030a 00       		.uleb128 0
+ 710 030b 5F5F5749 		.ascii "__WINT_TYPE__ short unsigned int\0"
+ 710      4E545F54 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 20
+
+
+ 710      5950455F 
+ 710      5F207368 
+ 710      6F727420 
+ 711 032c 01       		.byte	0x1
+ 712 032d 00       		.uleb128 0
+ 713 032e 5F5F494E 		.ascii "__INTMAX_TYPE__ long long int\0"
+ 713      544D4158 
+ 713      5F545950 
+ 713      455F5F20 
+ 713      6C6F6E67 
+ 714 034c 01       		.byte	0x1
+ 715 034d 00       		.uleb128 0
+ 716 034e 5F5F5549 		.ascii "__UINTMAX_TYPE__ long long unsigned int\0"
+ 716      4E544D41 
+ 716      585F5459 
+ 716      50455F5F 
+ 716      206C6F6E 
+ 717 0376 01       		.byte	0x1
+ 718 0377 00       		.uleb128 0
+ 719 0378 5F5F4348 		.ascii "__CHAR16_TYPE__ short unsigned int\0"
+ 719      41523136 
+ 719      5F545950 
+ 719      455F5F20 
+ 719      73686F72 
+ 720 039b 01       		.byte	0x1
+ 721 039c 00       		.uleb128 0
+ 722 039d 5F5F4348 		.ascii "__CHAR32_TYPE__ unsigned int\0"
+ 722      41523332 
+ 722      5F545950 
+ 722      455F5F20 
+ 722      756E7369 
+ 723 03ba 01       		.byte	0x1
+ 724 03bb 00       		.uleb128 0
+ 725 03bc 5F5F5349 		.ascii "__SIG_ATOMIC_TYPE__ int\0"
+ 725      475F4154 
+ 725      4F4D4943 
+ 725      5F545950 
+ 725      455F5F20 
+ 726 03d4 01       		.byte	0x1
+ 727 03d5 00       		.uleb128 0
+ 728 03d6 5F5F494E 		.ascii "__INT8_TYPE__ signed char\0"
+ 728      54385F54 
+ 728      5950455F 
+ 728      5F207369 
+ 728      676E6564 
+ 729 03f0 01       		.byte	0x1
+ 730 03f1 00       		.uleb128 0
+ 731 03f2 5F5F494E 		.ascii "__INT16_TYPE__ short int\0"
+ 731      5431365F 
+ 731      54595045 
+ 731      5F5F2073 
+ 731      686F7274 
+ 732 040b 01       		.byte	0x1
+ 733 040c 00       		.uleb128 0
+ 734 040d 5F5F494E 		.ascii "__INT32_TYPE__ int\0"
+ 734      5433325F 
+ 734      54595045 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 21
+
+
+ 734      5F5F2069 
+ 734      6E7400
+ 735 0420 01       		.byte	0x1
+ 736 0421 00       		.uleb128 0
+ 737 0422 5F5F494E 		.ascii "__INT64_TYPE__ long long int\0"
+ 737      5436345F 
+ 737      54595045 
+ 737      5F5F206C 
+ 737      6F6E6720 
+ 738 043f 01       		.byte	0x1
+ 739 0440 00       		.uleb128 0
+ 740 0441 5F5F5549 		.ascii "__UINT8_TYPE__ unsigned char\0"
+ 740      4E54385F 
+ 740      54595045 
+ 740      5F5F2075 
+ 740      6E736967 
+ 741 045e 01       		.byte	0x1
+ 742 045f 00       		.uleb128 0
+ 743 0460 5F5F5549 		.ascii "__UINT16_TYPE__ short unsigned int\0"
+ 743      4E543136 
+ 743      5F545950 
+ 743      455F5F20 
+ 743      73686F72 
+ 744 0483 01       		.byte	0x1
+ 745 0484 00       		.uleb128 0
+ 746 0485 5F5F5549 		.ascii "__UINT32_TYPE__ unsigned int\0"
+ 746      4E543332 
+ 746      5F545950 
+ 746      455F5F20 
+ 746      756E7369 
+ 747 04a2 01       		.byte	0x1
+ 748 04a3 00       		.uleb128 0
+ 749 04a4 5F5F5549 		.ascii "__UINT64_TYPE__ long long unsigned int\0"
+ 749      4E543634 
+ 749      5F545950 
+ 749      455F5F20 
+ 749      6C6F6E67 
+ 750 04cb 01       		.byte	0x1
+ 751 04cc 00       		.uleb128 0
+ 752 04cd 5F5F494E 		.ascii "__INT_LEAST8_TYPE__ signed char\0"
+ 752      545F4C45 
+ 752      41535438 
+ 752      5F545950 
+ 752      455F5F20 
+ 753 04ed 01       		.byte	0x1
+ 754 04ee 00       		.uleb128 0
+ 755 04ef 5F5F494E 		.ascii "__INT_LEAST16_TYPE__ short int\0"
+ 755      545F4C45 
+ 755      41535431 
+ 755      365F5459 
+ 755      50455F5F 
+ 756 050e 01       		.byte	0x1
+ 757 050f 00       		.uleb128 0
+ 758 0510 5F5F494E 		.ascii "__INT_LEAST32_TYPE__ int\0"
+ 758      545F4C45 
+ 758      41535433 
+ 758      325F5459 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 22
+
+
+ 758      50455F5F 
+ 759 0529 01       		.byte	0x1
+ 760 052a 00       		.uleb128 0
+ 761 052b 5F5F494E 		.ascii "__INT_LEAST64_TYPE__ long long int\0"
+ 761      545F4C45 
+ 761      41535436 
+ 761      345F5459 
+ 761      50455F5F 
+ 762 054e 01       		.byte	0x1
+ 763 054f 00       		.uleb128 0
+ 764 0550 5F5F5549 		.ascii "__UINT_LEAST8_TYPE__ unsigned char\0"
+ 764      4E545F4C 
+ 764      45415354 
+ 764      385F5459 
+ 764      50455F5F 
+ 765 0573 01       		.byte	0x1
+ 766 0574 00       		.uleb128 0
+ 767 0575 5F5F5549 		.ascii "__UINT_LEAST16_TYPE__ short unsigned int\0"
+ 767      4E545F4C 
+ 767      45415354 
+ 767      31365F54 
+ 767      5950455F 
+ 768 059e 01       		.byte	0x1
+ 769 059f 00       		.uleb128 0
+ 770 05a0 5F5F5549 		.ascii "__UINT_LEAST32_TYPE__ unsigned int\0"
+ 770      4E545F4C 
+ 770      45415354 
+ 770      33325F54 
+ 770      5950455F 
+ 771 05c3 01       		.byte	0x1
+ 772 05c4 00       		.uleb128 0
+ 773 05c5 5F5F5549 		.ascii "__UINT_LEAST64_TYPE__ long long unsigned int\0"
+ 773      4E545F4C 
+ 773      45415354 
+ 773      36345F54 
+ 773      5950455F 
+ 774 05f2 01       		.byte	0x1
+ 775 05f3 00       		.uleb128 0
+ 776 05f4 5F5F494E 		.ascii "__INT_FAST8_TYPE__ signed char\0"
+ 776      545F4641 
+ 776      5354385F 
+ 776      54595045 
+ 776      5F5F2073 
+ 777 0613 01       		.byte	0x1
+ 778 0614 00       		.uleb128 0
+ 779 0615 5F5F494E 		.ascii "__INT_FAST16_TYPE__ short int\0"
+ 779      545F4641 
+ 779      53543136 
+ 779      5F545950 
+ 779      455F5F20 
+ 780 0633 01       		.byte	0x1
+ 781 0634 00       		.uleb128 0
+ 782 0635 5F5F494E 		.ascii "__INT_FAST32_TYPE__ int\0"
+ 782      545F4641 
+ 782      53543332 
+ 782      5F545950 
+ 782      455F5F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 23
+
+
+ 783 064d 01       		.byte	0x1
+ 784 064e 00       		.uleb128 0
+ 785 064f 5F5F494E 		.ascii "__INT_FAST64_TYPE__ long long int\0"
+ 785      545F4641 
+ 785      53543634 
+ 785      5F545950 
+ 785      455F5F20 
+ 786 0671 01       		.byte	0x1
+ 787 0672 00       		.uleb128 0
+ 788 0673 5F5F5549 		.ascii "__UINT_FAST8_TYPE__ unsigned char\0"
+ 788      4E545F46 
+ 788      41535438 
+ 788      5F545950 
+ 788      455F5F20 
+ 789 0695 01       		.byte	0x1
+ 790 0696 00       		.uleb128 0
+ 791 0697 5F5F5549 		.ascii "__UINT_FAST16_TYPE__ short unsigned int\0"
+ 791      4E545F46 
+ 791      41535431 
+ 791      365F5459 
+ 791      50455F5F 
+ 792 06bf 01       		.byte	0x1
+ 793 06c0 00       		.uleb128 0
+ 794 06c1 5F5F5549 		.ascii "__UINT_FAST32_TYPE__ unsigned int\0"
+ 794      4E545F46 
+ 794      41535433 
+ 794      325F5459 
+ 794      50455F5F 
+ 795 06e3 01       		.byte	0x1
+ 796 06e4 00       		.uleb128 0
+ 797 06e5 5F5F5549 		.ascii "__UINT_FAST64_TYPE__ long long unsigned int\0"
+ 797      4E545F46 
+ 797      41535436 
+ 797      345F5459 
+ 797      50455F5F 
+ 798 0711 01       		.byte	0x1
+ 799 0712 00       		.uleb128 0
+ 800 0713 5F5F494E 		.ascii "__INTPTR_TYPE__ int\0"
+ 800      54505452 
+ 800      5F545950 
+ 800      455F5F20 
+ 800      696E7400 
+ 801 0727 01       		.byte	0x1
+ 802 0728 00       		.uleb128 0
+ 803 0729 5F5F5549 		.ascii "__UINTPTR_TYPE__ unsigned int\0"
+ 803      4E545054 
+ 803      525F5459 
+ 803      50455F5F 
+ 803      20756E73 
+ 804 0747 01       		.byte	0x1
+ 805 0748 00       		.uleb128 0
+ 806 0749 5F5F6861 		.ascii "__has_include(STR) __has_include__(STR)\0"
+ 806      735F696E 
+ 806      636C7564 
+ 806      65285354 
+ 806      5229205F 
+ 807 0771 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 24
+
+
+ 808 0772 00       		.uleb128 0
+ 809 0773 5F5F6861 		.ascii "__has_include_next(STR) __has_include_next__(STR)\0"
+ 809      735F696E 
+ 809      636C7564 
+ 809      655F6E65 
+ 809      78742853 
+ 810 07a5 01       		.byte	0x1
+ 811 07a6 00       		.uleb128 0
+ 812 07a7 5F5F4758 		.ascii "__GXX_ABI_VERSION 1002\0"
+ 812      585F4142 
+ 812      495F5645 
+ 812      5253494F 
+ 812      4E203130 
+ 813 07be 01       		.byte	0x1
+ 814 07bf 00       		.uleb128 0
+ 815 07c0 5F5F5343 		.ascii "__SCHAR_MAX__ 127\0"
+ 815      4841525F 
+ 815      4D41585F 
+ 815      5F203132 
+ 815      3700
+ 816 07d2 01       		.byte	0x1
+ 817 07d3 00       		.uleb128 0
+ 818 07d4 5F5F5348 		.ascii "__SHRT_MAX__ 32767\0"
+ 818      52545F4D 
+ 818      41585F5F 
+ 818      20333237 
+ 818      363700
+ 819 07e7 01       		.byte	0x1
+ 820 07e8 00       		.uleb128 0
+ 821 07e9 5F5F494E 		.ascii "__INT_MAX__ 2147483647\0"
+ 821      545F4D41 
+ 821      585F5F20 
+ 821      32313437 
+ 821      34383336 
+ 822 0800 01       		.byte	0x1
+ 823 0801 00       		.uleb128 0
+ 824 0802 5F5F4C4F 		.ascii "__LONG_MAX__ 2147483647L\0"
+ 824      4E475F4D 
+ 824      41585F5F 
+ 824      20323134 
+ 824      37343833 
+ 825 081b 01       		.byte	0x1
+ 826 081c 00       		.uleb128 0
+ 827 081d 5F5F4C4F 		.ascii "__LONG_LONG_MAX__ 9223372036854775807LL\0"
+ 827      4E475F4C 
+ 827      4F4E475F 
+ 827      4D41585F 
+ 827      5F203932 
+ 828 0845 01       		.byte	0x1
+ 829 0846 00       		.uleb128 0
+ 830 0847 5F5F5743 		.ascii "__WCHAR_MAX__ 65535\0"
+ 830      4841525F 
+ 830      4D41585F 
+ 830      5F203635 
+ 830      35333500 
+ 831 085b 01       		.byte	0x1
+ 832 085c 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 25
+
+
+ 833 085d 5F5F5743 		.ascii "__WCHAR_MIN__ 0\0"
+ 833      4841525F 
+ 833      4D494E5F 
+ 833      5F203000 
+ 834 086d 01       		.byte	0x1
+ 835 086e 00       		.uleb128 0
+ 836 086f 5F5F5749 		.ascii "__WINT_MAX__ 65535\0"
+ 836      4E545F4D 
+ 836      41585F5F 
+ 836      20363535 
+ 836      333500
+ 837 0882 01       		.byte	0x1
+ 838 0883 00       		.uleb128 0
+ 839 0884 5F5F5749 		.ascii "__WINT_MIN__ 0\0"
+ 839      4E545F4D 
+ 839      494E5F5F 
+ 839      203000
+ 840 0893 01       		.byte	0x1
+ 841 0894 00       		.uleb128 0
+ 842 0895 5F5F5054 		.ascii "__PTRDIFF_MAX__ 2147483647\0"
+ 842      52444946 
+ 842      465F4D41 
+ 842      585F5F20 
+ 842      32313437 
+ 843 08b0 01       		.byte	0x1
+ 844 08b1 00       		.uleb128 0
+ 845 08b2 5F5F5349 		.ascii "__SIZE_MAX__ 4294967295U\0"
+ 845      5A455F4D 
+ 845      41585F5F 
+ 845      20343239 
+ 845      34393637 
+ 846 08cb 01       		.byte	0x1
+ 847 08cc 00       		.uleb128 0
+ 848 08cd 5F5F494E 		.ascii "__INTMAX_MAX__ 9223372036854775807LL\0"
+ 848      544D4158 
+ 848      5F4D4158 
+ 848      5F5F2039 
+ 848      32323333 
+ 849 08f2 01       		.byte	0x1
+ 850 08f3 00       		.uleb128 0
+ 851 08f4 5F5F494E 		.ascii "__INTMAX_C(c) c ## LL\0"
+ 851      544D4158 
+ 851      5F432863 
+ 851      29206320 
+ 851      2323204C 
+ 852 090a 01       		.byte	0x1
+ 853 090b 00       		.uleb128 0
+ 854 090c 5F5F5549 		.ascii "__UINTMAX_MAX__ 18446744073709551615ULL\0"
+ 854      4E544D41 
+ 854      585F4D41 
+ 854      585F5F20 
+ 854      31383434 
+ 855 0934 01       		.byte	0x1
+ 856 0935 00       		.uleb128 0
+ 857 0936 5F5F5549 		.ascii "__UINTMAX_C(c) c ## ULL\0"
+ 857      4E544D41 
+ 857      585F4328 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 26
+
+
+ 857      63292063 
+ 857      20232320 
+ 858 094e 01       		.byte	0x1
+ 859 094f 00       		.uleb128 0
+ 860 0950 5F5F5349 		.ascii "__SIG_ATOMIC_MAX__ 2147483647\0"
+ 860      475F4154 
+ 860      4F4D4943 
+ 860      5F4D4158 
+ 860      5F5F2032 
+ 861 096e 01       		.byte	0x1
+ 862 096f 00       		.uleb128 0
+ 863 0970 5F5F5349 		.ascii "__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\0"
+ 863      475F4154 
+ 863      4F4D4943 
+ 863      5F4D494E 
+ 863      5F5F2028 
+ 864 099d 01       		.byte	0x1
+ 865 099e 00       		.uleb128 0
+ 866 099f 5F5F494E 		.ascii "__INT8_MAX__ 127\0"
+ 866      54385F4D 
+ 866      41585F5F 
+ 866      20313237 
+ 866      00
+ 867 09b0 01       		.byte	0x1
+ 868 09b1 00       		.uleb128 0
+ 869 09b2 5F5F494E 		.ascii "__INT16_MAX__ 32767\0"
+ 869      5431365F 
+ 869      4D41585F 
+ 869      5F203332 
+ 869      37363700 
+ 870 09c6 01       		.byte	0x1
+ 871 09c7 00       		.uleb128 0
+ 872 09c8 5F5F494E 		.ascii "__INT32_MAX__ 2147483647\0"
+ 872      5433325F 
+ 872      4D41585F 
+ 872      5F203231 
+ 872      34373438 
+ 873 09e1 01       		.byte	0x1
+ 874 09e2 00       		.uleb128 0
+ 875 09e3 5F5F494E 		.ascii "__INT64_MAX__ 9223372036854775807LL\0"
+ 875      5436345F 
+ 875      4D41585F 
+ 875      5F203932 
+ 875      32333337 
+ 876 0a07 01       		.byte	0x1
+ 877 0a08 00       		.uleb128 0
+ 878 0a09 5F5F5549 		.ascii "__UINT8_MAX__ 255\0"
+ 878      4E54385F 
+ 878      4D41585F 
+ 878      5F203235 
+ 878      3500
+ 879 0a1b 01       		.byte	0x1
+ 880 0a1c 00       		.uleb128 0
+ 881 0a1d 5F5F5549 		.ascii "__UINT16_MAX__ 65535\0"
+ 881      4E543136 
+ 881      5F4D4158 
+ 881      5F5F2036 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 27
+
+
+ 881      35353335 
+ 882 0a32 01       		.byte	0x1
+ 883 0a33 00       		.uleb128 0
+ 884 0a34 5F5F5549 		.ascii "__UINT32_MAX__ 4294967295U\0"
+ 884      4E543332 
+ 884      5F4D4158 
+ 884      5F5F2034 
+ 884      32393439 
+ 885 0a4f 01       		.byte	0x1
+ 886 0a50 00       		.uleb128 0
+ 887 0a51 5F5F5549 		.ascii "__UINT64_MAX__ 18446744073709551615ULL\0"
+ 887      4E543634 
+ 887      5F4D4158 
+ 887      5F5F2031 
+ 887      38343436 
+ 888 0a78 01       		.byte	0x1
+ 889 0a79 00       		.uleb128 0
+ 890 0a7a 5F5F494E 		.ascii "__INT_LEAST8_MAX__ 127\0"
+ 890      545F4C45 
+ 890      41535438 
+ 890      5F4D4158 
+ 890      5F5F2031 
+ 891 0a91 01       		.byte	0x1
+ 892 0a92 00       		.uleb128 0
+ 893 0a93 5F5F494E 		.ascii "__INT8_C(c) c\0"
+ 893      54385F43 
+ 893      28632920 
+ 893      6300
+ 894 0aa1 01       		.byte	0x1
+ 895 0aa2 00       		.uleb128 0
+ 896 0aa3 5F5F494E 		.ascii "__INT_LEAST16_MAX__ 32767\0"
+ 896      545F4C45 
+ 896      41535431 
+ 896      365F4D41 
+ 896      585F5F20 
+ 897 0abd 01       		.byte	0x1
+ 898 0abe 00       		.uleb128 0
+ 899 0abf 5F5F494E 		.ascii "__INT16_C(c) c\0"
+ 899      5431365F 
+ 899      43286329 
+ 899      206300
+ 900 0ace 01       		.byte	0x1
+ 901 0acf 00       		.uleb128 0
+ 902 0ad0 5F5F494E 		.ascii "__INT_LEAST32_MAX__ 2147483647\0"
+ 902      545F4C45 
+ 902      41535433 
+ 902      325F4D41 
+ 902      585F5F20 
+ 903 0aef 01       		.byte	0x1
+ 904 0af0 00       		.uleb128 0
+ 905 0af1 5F5F494E 		.ascii "__INT32_C(c) c\0"
+ 905      5433325F 
+ 905      43286329 
+ 905      206300
+ 906 0b00 01       		.byte	0x1
+ 907 0b01 00       		.uleb128 0
+ 908 0b02 5F5F494E 		.ascii "__INT_LEAST64_MAX__ 9223372036854775807LL\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 28
+
+
+ 908      545F4C45 
+ 908      41535436 
+ 908      345F4D41 
+ 908      585F5F20 
+ 909 0b2c 01       		.byte	0x1
+ 910 0b2d 00       		.uleb128 0
+ 911 0b2e 5F5F494E 		.ascii "__INT64_C(c) c ## LL\0"
+ 911      5436345F 
+ 911      43286329 
+ 911      20632023 
+ 911      23204C4C 
+ 912 0b43 01       		.byte	0x1
+ 913 0b44 00       		.uleb128 0
+ 914 0b45 5F5F5549 		.ascii "__UINT_LEAST8_MAX__ 255\0"
+ 914      4E545F4C 
+ 914      45415354 
+ 914      385F4D41 
+ 914      585F5F20 
+ 915 0b5d 01       		.byte	0x1
+ 916 0b5e 00       		.uleb128 0
+ 917 0b5f 5F5F5549 		.ascii "__UINT8_C(c) c\0"
+ 917      4E54385F 
+ 917      43286329 
+ 917      206300
+ 918 0b6e 01       		.byte	0x1
+ 919 0b6f 00       		.uleb128 0
+ 920 0b70 5F5F5549 		.ascii "__UINT_LEAST16_MAX__ 65535\0"
+ 920      4E545F4C 
+ 920      45415354 
+ 920      31365F4D 
+ 920      41585F5F 
+ 921 0b8b 01       		.byte	0x1
+ 922 0b8c 00       		.uleb128 0
+ 923 0b8d 5F5F5549 		.ascii "__UINT16_C(c) c\0"
+ 923      4E543136 
+ 923      5F432863 
+ 923      29206300 
+ 924 0b9d 01       		.byte	0x1
+ 925 0b9e 00       		.uleb128 0
+ 926 0b9f 5F5F5549 		.ascii "__UINT_LEAST32_MAX__ 4294967295U\0"
+ 926      4E545F4C 
+ 926      45415354 
+ 926      33325F4D 
+ 926      41585F5F 
+ 927 0bc0 01       		.byte	0x1
+ 928 0bc1 00       		.uleb128 0
+ 929 0bc2 5F5F5549 		.ascii "__UINT32_C(c) c ## U\0"
+ 929      4E543332 
+ 929      5F432863 
+ 929      29206320 
+ 929      23232055 
+ 930 0bd7 01       		.byte	0x1
+ 931 0bd8 00       		.uleb128 0
+ 932 0bd9 5F5F5549 		.ascii "__UINT_LEAST64_MAX__ 18446744073709551615ULL\0"
+ 932      4E545F4C 
+ 932      45415354 
+ 932      36345F4D 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 29
+
+
+ 932      41585F5F 
+ 933 0c06 01       		.byte	0x1
+ 934 0c07 00       		.uleb128 0
+ 935 0c08 5F5F5549 		.ascii "__UINT64_C(c) c ## ULL\0"
+ 935      4E543634 
+ 935      5F432863 
+ 935      29206320 
+ 935      23232055 
+ 936 0c1f 01       		.byte	0x1
+ 937 0c20 00       		.uleb128 0
+ 938 0c21 5F5F494E 		.ascii "__INT_FAST8_MAX__ 127\0"
+ 938      545F4641 
+ 938      5354385F 
+ 938      4D41585F 
+ 938      5F203132 
+ 939 0c37 01       		.byte	0x1
+ 940 0c38 00       		.uleb128 0
+ 941 0c39 5F5F494E 		.ascii "__INT_FAST16_MAX__ 32767\0"
+ 941      545F4641 
+ 941      53543136 
+ 941      5F4D4158 
+ 941      5F5F2033 
+ 942 0c52 01       		.byte	0x1
+ 943 0c53 00       		.uleb128 0
+ 944 0c54 5F5F494E 		.ascii "__INT_FAST32_MAX__ 2147483647\0"
+ 944      545F4641 
+ 944      53543332 
+ 944      5F4D4158 
+ 944      5F5F2032 
+ 945 0c72 01       		.byte	0x1
+ 946 0c73 00       		.uleb128 0
+ 947 0c74 5F5F494E 		.ascii "__INT_FAST64_MAX__ 9223372036854775807LL\0"
+ 947      545F4641 
+ 947      53543634 
+ 947      5F4D4158 
+ 947      5F5F2039 
+ 948 0c9d 01       		.byte	0x1
+ 949 0c9e 00       		.uleb128 0
+ 950 0c9f 5F5F5549 		.ascii "__UINT_FAST8_MAX__ 255\0"
+ 950      4E545F46 
+ 950      41535438 
+ 950      5F4D4158 
+ 950      5F5F2032 
+ 951 0cb6 01       		.byte	0x1
+ 952 0cb7 00       		.uleb128 0
+ 953 0cb8 5F5F5549 		.ascii "__UINT_FAST16_MAX__ 65535\0"
+ 953      4E545F46 
+ 953      41535431 
+ 953      365F4D41 
+ 953      585F5F20 
+ 954 0cd2 01       		.byte	0x1
+ 955 0cd3 00       		.uleb128 0
+ 956 0cd4 5F5F5549 		.ascii "__UINT_FAST32_MAX__ 4294967295U\0"
+ 956      4E545F46 
+ 956      41535433 
+ 956      325F4D41 
+ 956      585F5F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 30
+
+
+ 957 0cf4 01       		.byte	0x1
+ 958 0cf5 00       		.uleb128 0
+ 959 0cf6 5F5F5549 		.ascii "__UINT_FAST64_MAX__ 18446744073709551615ULL\0"
+ 959      4E545F46 
+ 959      41535436 
+ 959      345F4D41 
+ 959      585F5F20 
+ 960 0d22 01       		.byte	0x1
+ 961 0d23 00       		.uleb128 0
+ 962 0d24 5F5F494E 		.ascii "__INTPTR_MAX__ 2147483647\0"
+ 962      54505452 
+ 962      5F4D4158 
+ 962      5F5F2032 
+ 962      31343734 
+ 963 0d3e 01       		.byte	0x1
+ 964 0d3f 00       		.uleb128 0
+ 965 0d40 5F5F5549 		.ascii "__UINTPTR_MAX__ 4294967295U\0"
+ 965      4E545054 
+ 965      525F4D41 
+ 965      585F5F20 
+ 965      34323934 
+ 966 0d5c 01       		.byte	0x1
+ 967 0d5d 00       		.uleb128 0
+ 968 0d5e 5F5F4743 		.ascii "__GCC_IEC_559 2\0"
+ 968      435F4945 
+ 968      435F3535 
+ 968      39203200 
+ 969 0d6e 01       		.byte	0x1
+ 970 0d6f 00       		.uleb128 0
+ 971 0d70 5F5F4743 		.ascii "__GCC_IEC_559_COMPLEX 2\0"
+ 971      435F4945 
+ 971      435F3535 
+ 971      395F434F 
+ 971      4D504C45 
+ 972 0d88 01       		.byte	0x1
+ 973 0d89 00       		.uleb128 0
+ 974 0d8a 5F5F464C 		.ascii "__FLT_EVAL_METHOD__ 2\0"
+ 974      545F4556 
+ 974      414C5F4D 
+ 974      4554484F 
+ 974      445F5F20 
+ 975 0da0 01       		.byte	0x1
+ 976 0da1 00       		.uleb128 0
+ 977 0da2 5F5F4445 		.ascii "__DEC_EVAL_METHOD__ 2\0"
+ 977      435F4556 
+ 977      414C5F4D 
+ 977      4554484F 
+ 977      445F5F20 
+ 978 0db8 01       		.byte	0x1
+ 979 0db9 00       		.uleb128 0
+ 980 0dba 5F5F464C 		.ascii "__FLT_RADIX__ 2\0"
+ 980      545F5241 
+ 980      4449585F 
+ 980      5F203200 
+ 981 0dca 01       		.byte	0x1
+ 982 0dcb 00       		.uleb128 0
+ 983 0dcc 5F5F464C 		.ascii "__FLT_MANT_DIG__ 24\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 31
+
+
+ 983      545F4D41 
+ 983      4E545F44 
+ 983      49475F5F 
+ 983      20323400 
+ 984 0de0 01       		.byte	0x1
+ 985 0de1 00       		.uleb128 0
+ 986 0de2 5F5F464C 		.ascii "__FLT_DIG__ 6\0"
+ 986      545F4449 
+ 986      475F5F20 
+ 986      3600
+ 987 0df0 01       		.byte	0x1
+ 988 0df1 00       		.uleb128 0
+ 989 0df2 5F5F464C 		.ascii "__FLT_MIN_EXP__ (-125)\0"
+ 989      545F4D49 
+ 989      4E5F4558 
+ 989      505F5F20 
+ 989      282D3132 
+ 990 0e09 01       		.byte	0x1
+ 991 0e0a 00       		.uleb128 0
+ 992 0e0b 5F5F464C 		.ascii "__FLT_MIN_10_EXP__ (-37)\0"
+ 992      545F4D49 
+ 992      4E5F3130 
+ 992      5F455850 
+ 992      5F5F2028 
+ 993 0e24 01       		.byte	0x1
+ 994 0e25 00       		.uleb128 0
+ 995 0e26 5F5F464C 		.ascii "__FLT_MAX_EXP__ 128\0"
+ 995      545F4D41 
+ 995      585F4558 
+ 995      505F5F20 
+ 995      31323800 
+ 996 0e3a 01       		.byte	0x1
+ 997 0e3b 00       		.uleb128 0
+ 998 0e3c 5F5F464C 		.ascii "__FLT_MAX_10_EXP__ 38\0"
+ 998      545F4D41 
+ 998      585F3130 
+ 998      5F455850 
+ 998      5F5F2033 
+ 999 0e52 01       		.byte	0x1
+ 1000 0e53 00       		.uleb128 0
+ 1001 0e54 5F5F464C 		.ascii "__FLT_DECIMAL_DIG__ 9\0"
+ 1001      545F4445 
+ 1001      43494D41 
+ 1001      4C5F4449 
+ 1001      475F5F20 
+ 1002 0e6a 01       		.byte	0x1
+ 1003 0e6b 00       		.uleb128 0
+ 1004 0e6c 5F5F464C 		.ascii "__FLT_MAX__ 3.40282346638528859812e+38F\0"
+ 1004      545F4D41 
+ 1004      585F5F20 
+ 1004      332E3430 
+ 1004      32383233 
+ 1005 0e94 01       		.byte	0x1
+ 1006 0e95 00       		.uleb128 0
+ 1007 0e96 5F5F464C 		.ascii "__FLT_MIN__ 1.17549435082228750797e-38F\0"
+ 1007      545F4D49 
+ 1007      4E5F5F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 32
+
+
+ 1007      312E3137 
+ 1007      35343934 
+ 1008 0ebe 01       		.byte	0x1
+ 1009 0ebf 00       		.uleb128 0
+ 1010 0ec0 5F5F464C 		.ascii "__FLT_EPSILON__ 1.19209289550781250000e-7F\0"
+ 1010      545F4550 
+ 1010      53494C4F 
+ 1010      4E5F5F20 
+ 1010      312E3139 
+ 1011 0eeb 01       		.byte	0x1
+ 1012 0eec 00       		.uleb128 0
+ 1013 0eed 5F5F464C 		.ascii "__FLT_DENORM_MIN__ 1.40129846432481707092e-45F\0"
+ 1013      545F4445 
+ 1013      4E4F524D 
+ 1013      5F4D494E 
+ 1013      5F5F2031 
+ 1014 0f1c 01       		.byte	0x1
+ 1015 0f1d 00       		.uleb128 0
+ 1016 0f1e 5F5F464C 		.ascii "__FLT_HAS_DENORM__ 1\0"
+ 1016      545F4841 
+ 1016      535F4445 
+ 1016      4E4F524D 
+ 1016      5F5F2031 
+ 1017 0f33 01       		.byte	0x1
+ 1018 0f34 00       		.uleb128 0
+ 1019 0f35 5F5F464C 		.ascii "__FLT_HAS_INFINITY__ 1\0"
+ 1019      545F4841 
+ 1019      535F494E 
+ 1019      46494E49 
+ 1019      54595F5F 
+ 1020 0f4c 01       		.byte	0x1
+ 1021 0f4d 00       		.uleb128 0
+ 1022 0f4e 5F5F464C 		.ascii "__FLT_HAS_QUIET_NAN__ 1\0"
+ 1022      545F4841 
+ 1022      535F5155 
+ 1022      4945545F 
+ 1022      4E414E5F 
+ 1023 0f66 01       		.byte	0x1
+ 1024 0f67 00       		.uleb128 0
+ 1025 0f68 5F5F4442 		.ascii "__DBL_MANT_DIG__ 53\0"
+ 1025      4C5F4D41 
+ 1025      4E545F44 
+ 1025      49475F5F 
+ 1025      20353300 
+ 1026 0f7c 01       		.byte	0x1
+ 1027 0f7d 00       		.uleb128 0
+ 1028 0f7e 5F5F4442 		.ascii "__DBL_DIG__ 15\0"
+ 1028      4C5F4449 
+ 1028      475F5F20 
+ 1028      313500
+ 1029 0f8d 01       		.byte	0x1
+ 1030 0f8e 00       		.uleb128 0
+ 1031 0f8f 5F5F4442 		.ascii "__DBL_MIN_EXP__ (-1021)\0"
+ 1031      4C5F4D49 
+ 1031      4E5F4558 
+ 1031      505F5F20 
+ 1031      282D3130 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 33
+
+
+ 1032 0fa7 01       		.byte	0x1
+ 1033 0fa8 00       		.uleb128 0
+ 1034 0fa9 5F5F4442 		.ascii "__DBL_MIN_10_EXP__ (-307)\0"
+ 1034      4C5F4D49 
+ 1034      4E5F3130 
+ 1034      5F455850 
+ 1034      5F5F2028 
+ 1035 0fc3 01       		.byte	0x1
+ 1036 0fc4 00       		.uleb128 0
+ 1037 0fc5 5F5F4442 		.ascii "__DBL_MAX_EXP__ 1024\0"
+ 1037      4C5F4D41 
+ 1037      585F4558 
+ 1037      505F5F20 
+ 1037      31303234 
+ 1038 0fda 01       		.byte	0x1
+ 1039 0fdb 00       		.uleb128 0
+ 1040 0fdc 5F5F4442 		.ascii "__DBL_MAX_10_EXP__ 308\0"
+ 1040      4C5F4D41 
+ 1040      585F3130 
+ 1040      5F455850 
+ 1040      5F5F2033 
+ 1041 0ff3 01       		.byte	0x1
+ 1042 0ff4 00       		.uleb128 0
+ 1043 0ff5 5F5F4442 		.ascii "__DBL_DECIMAL_DIG__ 17\0"
+ 1043      4C5F4445 
+ 1043      43494D41 
+ 1043      4C5F4449 
+ 1043      475F5F20 
+ 1044 100c 01       		.byte	0x1
+ 1045 100d 00       		.uleb128 0
+ 1046 100e 5F5F4442 		.ascii "__DBL_MAX__ ((double)1.79769313486231570815e+308L)\0"
+ 1046      4C5F4D41 
+ 1046      585F5F20 
+ 1046      2828646F 
+ 1046      75626C65 
+ 1047 1041 01       		.byte	0x1
+ 1048 1042 00       		.uleb128 0
+ 1049 1043 5F5F4442 		.ascii "__DBL_MIN__ ((double)2.22507385850720138309e-308L)\0"
+ 1049      4C5F4D49 
+ 1049      4E5F5F20 
+ 1049      2828646F 
+ 1049      75626C65 
+ 1050 1076 01       		.byte	0x1
+ 1051 1077 00       		.uleb128 0
+ 1052 1078 5F5F4442 		.ascii "__DBL_EPSILON__ ((double)2.22044604925031308085e-16L)\0"
+ 1052      4C5F4550 
+ 1052      53494C4F 
+ 1052      4E5F5F20 
+ 1052      2828646F 
+ 1053 10ae 01       		.byte	0x1
+ 1054 10af 00       		.uleb128 0
+ 1055 10b0 5F5F4442 		.ascii "__DBL_DENORM_MIN__ ((double)4.94065645841246544177e-324L)\0"
+ 1055      4C5F4445 
+ 1055      4E4F524D 
+ 1055      5F4D494E 
+ 1055      5F5F2028 
+ 1056 10ea 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 34
+
+
+ 1057 10eb 00       		.uleb128 0
+ 1058 10ec 5F5F4442 		.ascii "__DBL_HAS_DENORM__ 1\0"
+ 1058      4C5F4841 
+ 1058      535F4445 
+ 1058      4E4F524D 
+ 1058      5F5F2031 
+ 1059 1101 01       		.byte	0x1
+ 1060 1102 00       		.uleb128 0
+ 1061 1103 5F5F4442 		.ascii "__DBL_HAS_INFINITY__ 1\0"
+ 1061      4C5F4841 
+ 1061      535F494E 
+ 1061      46494E49 
+ 1061      54595F5F 
+ 1062 111a 01       		.byte	0x1
+ 1063 111b 00       		.uleb128 0
+ 1064 111c 5F5F4442 		.ascii "__DBL_HAS_QUIET_NAN__ 1\0"
+ 1064      4C5F4841 
+ 1064      535F5155 
+ 1064      4945545F 
+ 1064      4E414E5F 
+ 1065 1134 01       		.byte	0x1
+ 1066 1135 00       		.uleb128 0
+ 1067 1136 5F5F4C44 		.ascii "__LDBL_MANT_DIG__ 64\0"
+ 1067      424C5F4D 
+ 1067      414E545F 
+ 1067      4449475F 
+ 1067      5F203634 
+ 1068 114b 01       		.byte	0x1
+ 1069 114c 00       		.uleb128 0
+ 1070 114d 5F5F4C44 		.ascii "__LDBL_DIG__ 18\0"
+ 1070      424C5F44 
+ 1070      49475F5F 
+ 1070      20313800 
+ 1071 115d 01       		.byte	0x1
+ 1072 115e 00       		.uleb128 0
+ 1073 115f 5F5F4C44 		.ascii "__LDBL_MIN_EXP__ (-16381)\0"
+ 1073      424C5F4D 
+ 1073      494E5F45 
+ 1073      58505F5F 
+ 1073      20282D31 
+ 1074 1179 01       		.byte	0x1
+ 1075 117a 00       		.uleb128 0
+ 1076 117b 5F5F4C44 		.ascii "__LDBL_MIN_10_EXP__ (-4931)\0"
+ 1076      424C5F4D 
+ 1076      494E5F31 
+ 1076      305F4558 
+ 1076      505F5F20 
+ 1077 1197 01       		.byte	0x1
+ 1078 1198 00       		.uleb128 0
+ 1079 1199 5F5F4C44 		.ascii "__LDBL_MAX_EXP__ 16384\0"
+ 1079      424C5F4D 
+ 1079      41585F45 
+ 1079      58505F5F 
+ 1079      20313633 
+ 1080 11b0 01       		.byte	0x1
+ 1081 11b1 00       		.uleb128 0
+ 1082 11b2 5F5F4C44 		.ascii "__LDBL_MAX_10_EXP__ 4932\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 35
+
+
+ 1082      424C5F4D 
+ 1082      41585F31 
+ 1082      305F4558 
+ 1082      505F5F20 
+ 1083 11cb 01       		.byte	0x1
+ 1084 11cc 00       		.uleb128 0
+ 1085 11cd 5F5F4445 		.ascii "__DECIMAL_DIG__ 21\0"
+ 1085      43494D41 
+ 1085      4C5F4449 
+ 1085      475F5F20 
+ 1085      323100
+ 1086 11e0 01       		.byte	0x1
+ 1087 11e1 00       		.uleb128 0
+ 1088 11e2 5F5F4C44 		.ascii "__LDBL_MAX__ 1.18973149535723176502e+4932L\0"
+ 1088      424C5F4D 
+ 1088      41585F5F 
+ 1088      20312E31 
+ 1088      38393733 
+ 1089 120d 01       		.byte	0x1
+ 1090 120e 00       		.uleb128 0
+ 1091 120f 5F5F4C44 		.ascii "__LDBL_MIN__ 3.36210314311209350626e-4932L\0"
+ 1091      424C5F4D 
+ 1091      494E5F5F 
+ 1091      20332E33 
+ 1091      36323130 
+ 1092 123a 01       		.byte	0x1
+ 1093 123b 00       		.uleb128 0
+ 1094 123c 5F5F4C44 		.ascii "__LDBL_EPSILON__ 1.08420217248550443401e-19L\0"
+ 1094      424C5F45 
+ 1094      5053494C 
+ 1094      4F4E5F5F 
+ 1094      20312E30 
+ 1095 1269 01       		.byte	0x1
+ 1096 126a 00       		.uleb128 0
+ 1097 126b 5F5F4C44 		.ascii "__LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L\0"
+ 1097      424C5F44 
+ 1097      454E4F52 
+ 1097      4D5F4D49 
+ 1097      4E5F5F20 
+ 1098 129d 01       		.byte	0x1
+ 1099 129e 00       		.uleb128 0
+ 1100 129f 5F5F4C44 		.ascii "__LDBL_HAS_DENORM__ 1\0"
+ 1100      424C5F48 
+ 1100      41535F44 
+ 1100      454E4F52 
+ 1100      4D5F5F20 
+ 1101 12b5 01       		.byte	0x1
+ 1102 12b6 00       		.uleb128 0
+ 1103 12b7 5F5F4C44 		.ascii "__LDBL_HAS_INFINITY__ 1\0"
+ 1103      424C5F48 
+ 1103      41535F49 
+ 1103      4E46494E 
+ 1103      4954595F 
+ 1104 12cf 01       		.byte	0x1
+ 1105 12d0 00       		.uleb128 0
+ 1106 12d1 5F5F4C44 		.ascii "__LDBL_HAS_QUIET_NAN__ 1\0"
+ 1106      424C5F48 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 36
+
+
+ 1106      41535F51 
+ 1106      55494554 
+ 1106      5F4E414E 
+ 1107 12ea 01       		.byte	0x1
+ 1108 12eb 00       		.uleb128 0
+ 1109 12ec 5F5F4445 		.ascii "__DEC32_MANT_DIG__ 7\0"
+ 1109      4333325F 
+ 1109      4D414E54 
+ 1109      5F444947 
+ 1109      5F5F2037 
+ 1110 1301 01       		.byte	0x1
+ 1111 1302 00       		.uleb128 0
+ 1112 1303 5F5F4445 		.ascii "__DEC32_MIN_EXP__ (-94)\0"
+ 1112      4333325F 
+ 1112      4D494E5F 
+ 1112      4558505F 
+ 1112      5F20282D 
+ 1113 131b 01       		.byte	0x1
+ 1114 131c 00       		.uleb128 0
+ 1115 131d 5F5F4445 		.ascii "__DEC32_MAX_EXP__ 97\0"
+ 1115      4333325F 
+ 1115      4D41585F 
+ 1115      4558505F 
+ 1115      5F203937 
+ 1116 1332 01       		.byte	0x1
+ 1117 1333 00       		.uleb128 0
+ 1118 1334 5F5F4445 		.ascii "__DEC32_MIN__ 1E-95DF\0"
+ 1118      4333325F 
+ 1118      4D494E5F 
+ 1118      5F203145 
+ 1118      2D393544 
+ 1119 134a 01       		.byte	0x1
+ 1120 134b 00       		.uleb128 0
+ 1121 134c 5F5F4445 		.ascii "__DEC32_MAX__ 9.999999E96DF\0"
+ 1121      4333325F 
+ 1121      4D41585F 
+ 1121      5F20392E 
+ 1121      39393939 
+ 1122 1368 01       		.byte	0x1
+ 1123 1369 00       		.uleb128 0
+ 1124 136a 5F5F4445 		.ascii "__DEC32_EPSILON__ 1E-6DF\0"
+ 1124      4333325F 
+ 1124      45505349 
+ 1124      4C4F4E5F 
+ 1124      5F203145 
+ 1125 1383 01       		.byte	0x1
+ 1126 1384 00       		.uleb128 0
+ 1127 1385 5F5F4445 		.ascii "__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\0"
+ 1127      4333325F 
+ 1127      5355424E 
+ 1127      4F524D41 
+ 1127      4C5F4D49 
+ 1128 13ac 01       		.byte	0x1
+ 1129 13ad 00       		.uleb128 0
+ 1130 13ae 5F5F4445 		.ascii "__DEC64_MANT_DIG__ 16\0"
+ 1130      4336345F 
+ 1130      4D414E54 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 37
+
+
+ 1130      5F444947 
+ 1130      5F5F2031 
+ 1131 13c4 01       		.byte	0x1
+ 1132 13c5 00       		.uleb128 0
+ 1133 13c6 5F5F4445 		.ascii "__DEC64_MIN_EXP__ (-382)\0"
+ 1133      4336345F 
+ 1133      4D494E5F 
+ 1133      4558505F 
+ 1133      5F20282D 
+ 1134 13df 01       		.byte	0x1
+ 1135 13e0 00       		.uleb128 0
+ 1136 13e1 5F5F4445 		.ascii "__DEC64_MAX_EXP__ 385\0"
+ 1136      4336345F 
+ 1136      4D41585F 
+ 1136      4558505F 
+ 1136      5F203338 
+ 1137 13f7 01       		.byte	0x1
+ 1138 13f8 00       		.uleb128 0
+ 1139 13f9 5F5F4445 		.ascii "__DEC64_MIN__ 1E-383DD\0"
+ 1139      4336345F 
+ 1139      4D494E5F 
+ 1139      5F203145 
+ 1139      2D333833 
+ 1140 1410 01       		.byte	0x1
+ 1141 1411 00       		.uleb128 0
+ 1142 1412 5F5F4445 		.ascii "__DEC64_MAX__ 9.999999999999999E384DD\0"
+ 1142      4336345F 
+ 1142      4D41585F 
+ 1142      5F20392E 
+ 1142      39393939 
+ 1143 1438 01       		.byte	0x1
+ 1144 1439 00       		.uleb128 0
+ 1145 143a 5F5F4445 		.ascii "__DEC64_EPSILON__ 1E-15DD\0"
+ 1145      4336345F 
+ 1145      45505349 
+ 1145      4C4F4E5F 
+ 1145      5F203145 
+ 1146 1454 01       		.byte	0x1
+ 1147 1455 00       		.uleb128 0
+ 1148 1456 5F5F4445 		.ascii "__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\0"
+ 1148      4336345F 
+ 1148      5355424E 
+ 1148      4F524D41 
+ 1148      4C5F4D49 
+ 1149 1487 01       		.byte	0x1
+ 1150 1488 00       		.uleb128 0
+ 1151 1489 5F5F4445 		.ascii "__DEC128_MANT_DIG__ 34\0"
+ 1151      43313238 
+ 1151      5F4D414E 
+ 1151      545F4449 
+ 1151      475F5F20 
+ 1152 14a0 01       		.byte	0x1
+ 1153 14a1 00       		.uleb128 0
+ 1154 14a2 5F5F4445 		.ascii "__DEC128_MIN_EXP__ (-6142)\0"
+ 1154      43313238 
+ 1154      5F4D494E 
+ 1154      5F455850 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 38
+
+
+ 1154      5F5F2028 
+ 1155 14bd 01       		.byte	0x1
+ 1156 14be 00       		.uleb128 0
+ 1157 14bf 5F5F4445 		.ascii "__DEC128_MAX_EXP__ 6145\0"
+ 1157      43313238 
+ 1157      5F4D4158 
+ 1157      5F455850 
+ 1157      5F5F2036 
+ 1158 14d7 01       		.byte	0x1
+ 1159 14d8 00       		.uleb128 0
+ 1160 14d9 5F5F4445 		.ascii "__DEC128_MIN__ 1E-6143DL\0"
+ 1160      43313238 
+ 1160      5F4D494E 
+ 1160      5F5F2031 
+ 1160      452D3631 
+ 1161 14f2 01       		.byte	0x1
+ 1162 14f3 00       		.uleb128 0
+ 1163 14f4 5F5F4445 		.ascii "__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL\0"
+ 1163      43313238 
+ 1163      5F4D4158 
+ 1163      5F5F2039 
+ 1163      2E393939 
+ 1164 152e 01       		.byte	0x1
+ 1165 152f 00       		.uleb128 0
+ 1166 1530 5F5F4445 		.ascii "__DEC128_EPSILON__ 1E-33DL\0"
+ 1166      43313238 
+ 1166      5F455053 
+ 1166      494C4F4E 
+ 1166      5F5F2031 
+ 1167 154b 01       		.byte	0x1
+ 1168 154c 00       		.uleb128 0
+ 1169 154d 5F5F4445 		.ascii "__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL\0"
+ 1169      43313238 
+ 1169      5F535542 
+ 1169      4E4F524D 
+ 1169      414C5F4D 
+ 1170 1592 01       		.byte	0x1
+ 1171 1593 00       		.uleb128 0
+ 1172 1594 5F5F5245 		.ascii "__REGISTER_PREFIX__ \0"
+ 1172      47495354 
+ 1172      45525F50 
+ 1172      52454649 
+ 1172      585F5F20 
+ 1173 15a9 01       		.byte	0x1
+ 1174 15aa 00       		.uleb128 0
+ 1175 15ab 5F5F5553 		.ascii "__USER_LABEL_PREFIX__ _\0"
+ 1175      45525F4C 
+ 1175      4142454C 
+ 1175      5F505245 
+ 1175      4649585F 
+ 1176 15c3 01       		.byte	0x1
+ 1177 15c4 00       		.uleb128 0
+ 1178 15c5 5F5F474E 		.ascii "__GNUC_GNU_INLINE__ 1\0"
+ 1178      55435F47 
+ 1178      4E555F49 
+ 1178      4E4C494E 
+ 1178      455F5F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 39
+
+
+ 1179 15db 01       		.byte	0x1
+ 1180 15dc 00       		.uleb128 0
+ 1181 15dd 5F5F4E4F 		.ascii "__NO_INLINE__ 1\0"
+ 1181      5F494E4C 
+ 1181      494E455F 
+ 1181      5F203100 
+ 1182 15ed 01       		.byte	0x1
+ 1183 15ee 00       		.uleb128 0
+ 1184 15ef 5F5F5354 		.ascii "__STRICT_ANSI__ 1\0"
+ 1184      52494354 
+ 1184      5F414E53 
+ 1184      495F5F20 
+ 1184      3100
+ 1185 1601 01       		.byte	0x1
+ 1186 1602 00       		.uleb128 0
+ 1187 1603 5F5F4743 		.ascii "__GCC_ATOMIC_BOOL_LOCK_FREE 1\0"
+ 1187      435F4154 
+ 1187      4F4D4943 
+ 1187      5F424F4F 
+ 1187      4C5F4C4F 
+ 1188 1621 01       		.byte	0x1
+ 1189 1622 00       		.uleb128 0
+ 1190 1623 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR_LOCK_FREE 1\0"
+ 1190      435F4154 
+ 1190      4F4D4943 
+ 1190      5F434841 
+ 1190      525F4C4F 
+ 1191 1641 01       		.byte	0x1
+ 1192 1642 00       		.uleb128 0
+ 1193 1643 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR16_T_LOCK_FREE 1\0"
+ 1193      435F4154 
+ 1193      4F4D4943 
+ 1193      5F434841 
+ 1193      5231365F 
+ 1194 1665 01       		.byte	0x1
+ 1195 1666 00       		.uleb128 0
+ 1196 1667 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR32_T_LOCK_FREE 1\0"
+ 1196      435F4154 
+ 1196      4F4D4943 
+ 1196      5F434841 
+ 1196      5233325F 
+ 1197 1689 01       		.byte	0x1
+ 1198 168a 00       		.uleb128 0
+ 1199 168b 5F5F4743 		.ascii "__GCC_ATOMIC_WCHAR_T_LOCK_FREE 1\0"
+ 1199      435F4154 
+ 1199      4F4D4943 
+ 1199      5F574348 
+ 1199      41525F54 
+ 1200 16ac 01       		.byte	0x1
+ 1201 16ad 00       		.uleb128 0
+ 1202 16ae 5F5F4743 		.ascii "__GCC_ATOMIC_SHORT_LOCK_FREE 1\0"
+ 1202      435F4154 
+ 1202      4F4D4943 
+ 1202      5F53484F 
+ 1202      52545F4C 
+ 1203 16cd 01       		.byte	0x1
+ 1204 16ce 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 40
+
+
+ 1205 16cf 5F5F4743 		.ascii "__GCC_ATOMIC_INT_LOCK_FREE 1\0"
+ 1205      435F4154 
+ 1205      4F4D4943 
+ 1205      5F494E54 
+ 1205      5F4C4F43 
+ 1206 16ec 01       		.byte	0x1
+ 1207 16ed 00       		.uleb128 0
+ 1208 16ee 5F5F4743 		.ascii "__GCC_ATOMIC_LONG_LOCK_FREE 1\0"
+ 1208      435F4154 
+ 1208      4F4D4943 
+ 1208      5F4C4F4E 
+ 1208      475F4C4F 
+ 1209 170c 01       		.byte	0x1
+ 1210 170d 00       		.uleb128 0
+ 1211 170e 5F5F4743 		.ascii "__GCC_ATOMIC_LLONG_LOCK_FREE 1\0"
+ 1211      435F4154 
+ 1211      4F4D4943 
+ 1211      5F4C4C4F 
+ 1211      4E475F4C 
+ 1212 172d 01       		.byte	0x1
+ 1213 172e 00       		.uleb128 0
+ 1214 172f 5F5F4743 		.ascii "__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\0"
+ 1214      435F4154 
+ 1214      4F4D4943 
+ 1214      5F544553 
+ 1214      545F414E 
+ 1215 1753 01       		.byte	0x1
+ 1216 1754 00       		.uleb128 0
+ 1217 1755 5F5F4743 		.ascii "__GCC_ATOMIC_POINTER_LOCK_FREE 1\0"
+ 1217      435F4154 
+ 1217      4F4D4943 
+ 1217      5F504F49 
+ 1217      4E544552 
+ 1218 1776 01       		.byte	0x1
+ 1219 1777 00       		.uleb128 0
+ 1220 1778 5F5F4743 		.ascii "__GCC_HAVE_DWARF2_CFI_ASM 1\0"
+ 1220      435F4841 
+ 1220      56455F44 
+ 1220      57415246 
+ 1220      325F4346 
+ 1221 1794 01       		.byte	0x1
+ 1222 1795 00       		.uleb128 0
+ 1223 1796 5F5F5052 		.ascii "__PRAGMA_REDEFINE_EXTNAME 1\0"
+ 1223      41474D41 
+ 1223      5F524544 
+ 1223      4546494E 
+ 1223      455F4558 
+ 1224 17b2 01       		.byte	0x1
+ 1225 17b3 00       		.uleb128 0
+ 1226 17b4 5F5F5349 		.ascii "__SIZEOF_WCHAR_T__ 2\0"
+ 1226      5A454F46 
+ 1226      5F574348 
+ 1226      41525F54 
+ 1226      5F5F2032 
+ 1227 17c9 01       		.byte	0x1
+ 1228 17ca 00       		.uleb128 0
+ 1229 17cb 5F5F5349 		.ascii "__SIZEOF_WINT_T__ 2\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 41
+
+
+ 1229      5A454F46 
+ 1229      5F57494E 
+ 1229      545F545F 
+ 1229      5F203200 
+ 1230 17df 01       		.byte	0x1
+ 1231 17e0 00       		.uleb128 0
+ 1232 17e1 5F5F5349 		.ascii "__SIZEOF_PTRDIFF_T__ 4\0"
+ 1232      5A454F46 
+ 1232      5F505452 
+ 1232      44494646 
+ 1232      5F545F5F 
+ 1233 17f8 01       		.byte	0x1
+ 1234 17f9 00       		.uleb128 0
+ 1235 17fa 5F5F6933 		.ascii "__i386 1\0"
+ 1235      38362031 
+ 1235      00
+ 1236 1803 01       		.byte	0x1
+ 1237 1804 00       		.uleb128 0
+ 1238 1805 5F5F6933 		.ascii "__i386__ 1\0"
+ 1238      38365F5F 
+ 1238      203100
+ 1239 1810 01       		.byte	0x1
+ 1240 1811 00       		.uleb128 0
+ 1241 1812 5F5F4154 		.ascii "__ATOMIC_HLE_ACQUIRE 65536\0"
+ 1241      4F4D4943 
+ 1241      5F484C45 
+ 1241      5F414351 
+ 1241      55495245 
+ 1242 182d 01       		.byte	0x1
+ 1243 182e 00       		.uleb128 0
+ 1244 182f 5F5F4154 		.ascii "__ATOMIC_HLE_RELEASE 131072\0"
+ 1244      4F4D4943 
+ 1244      5F484C45 
+ 1244      5F52454C 
+ 1244      45415345 
+ 1245 184b 01       		.byte	0x1
+ 1246 184c 00       		.uleb128 0
+ 1247 184d 5F5F7475 		.ascii "__tune_i386__ 1\0"
+ 1247      6E655F69 
+ 1247      3338365F 
+ 1247      5F203100 
+ 1248 185d 01       		.byte	0x1
+ 1249 185e 00       		.uleb128 0
+ 1250 185f 5F5F636F 		.ascii "__code_model_32__ 1\0"
+ 1250      64655F6D 
+ 1250      6F64656C 
+ 1250      5F33325F 
+ 1250      5F203100 
+ 1251 1873 01       		.byte	0x1
+ 1252 1874 00       		.uleb128 0
+ 1253 1875 5F583836 		.ascii "_X86_ 1\0"
+ 1253      5F203100 
+ 1254 187d 01       		.byte	0x1
+ 1255 187e 00       		.uleb128 0
+ 1256 187f 5F5F7374 		.ascii "__stdcall __attribute__((__stdcall__))\0"
+ 1256      6463616C 
+ 1256      6C205F5F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 42
+
+
+ 1256      61747472 
+ 1256      69627574 
+ 1257 18a6 01       		.byte	0x1
+ 1258 18a7 00       		.uleb128 0
+ 1259 18a8 5F5F6661 		.ascii "__fastcall __attribute__((__fastcall__))\0"
+ 1259      73746361 
+ 1259      6C6C205F 
+ 1259      5F617474 
+ 1259      72696275 
+ 1260 18d1 01       		.byte	0x1
+ 1261 18d2 00       		.uleb128 0
+ 1262 18d3 5F5F7468 		.ascii "__thiscall __attribute__((__thiscall__))\0"
+ 1262      69736361 
+ 1262      6C6C205F 
+ 1262      5F617474 
+ 1262      72696275 
+ 1263 18fc 01       		.byte	0x1
+ 1264 18fd 00       		.uleb128 0
+ 1265 18fe 5F5F6364 		.ascii "__cdecl __attribute__((__cdecl__))\0"
+ 1265      65636C20 
+ 1265      5F5F6174 
+ 1265      74726962 
+ 1265      7574655F 
+ 1266 1921 01       		.byte	0x1
+ 1267 1922 00       		.uleb128 0
+ 1268 1923 5F5F4758 		.ascii "__GXX_MERGED_TYPEINFO_NAMES 0\0"
+ 1268      585F4D45 
+ 1268      52474544 
+ 1268      5F545950 
+ 1268      45494E46 
+ 1269 1941 01       		.byte	0x1
+ 1270 1942 00       		.uleb128 0
+ 1271 1943 5F5F4758 		.ascii "__GXX_TYPEINFO_EQUALITY_INLINE 0\0"
+ 1271      585F5459 
+ 1271      5045494E 
+ 1271      464F5F45 
+ 1271      5155414C 
+ 1272 1964 01       		.byte	0x1
+ 1273 1965 00       		.uleb128 0
+ 1274 1966 5F5F4D53 		.ascii "__MSVCRT__ 1\0"
+ 1274      56435254 
+ 1274      5F5F2031 
+ 1274      00
+ 1275 1973 01       		.byte	0x1
+ 1276 1974 00       		.uleb128 0
+ 1277 1975 5F5F4D49 		.ascii "__MINGW32__ 1\0"
+ 1277      4E475733 
+ 1277      325F5F20 
+ 1277      3100
+ 1278 1983 01       		.byte	0x1
+ 1279 1984 00       		.uleb128 0
+ 1280 1985 5F57494E 		.ascii "_WIN32 1\0"
+ 1280      33322031 
+ 1280      00
+ 1281 198e 01       		.byte	0x1
+ 1282 198f 00       		.uleb128 0
+ 1283 1990 5F5F5749 		.ascii "__WIN32 1\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 43
+
+
+ 1283      4E333220 
+ 1283      3100
+ 1284 199a 01       		.byte	0x1
+ 1285 199b 00       		.uleb128 0
+ 1286 199c 5F5F5749 		.ascii "__WIN32__ 1\0"
+ 1286      4E33325F 
+ 1286      5F203100 
+ 1287 19a8 01       		.byte	0x1
+ 1288 19a9 00       		.uleb128 0
+ 1289 19aa 5F5F5749 		.ascii "__WINNT 1\0"
+ 1289      4E4E5420 
+ 1289      3100
+ 1290 19b4 01       		.byte	0x1
+ 1291 19b5 00       		.uleb128 0
+ 1292 19b6 5F5F5749 		.ascii "__WINNT__ 1\0"
+ 1292      4E4E545F 
+ 1292      5F203100 
+ 1293 19c2 01       		.byte	0x1
+ 1294 19c3 00       		.uleb128 0
+ 1295 19c4 5F494E54 		.ascii "_INTEGRAL_MAX_BITS 64\0"
+ 1295      45475241 
+ 1295      4C5F4D41 
+ 1295      585F4249 
+ 1295      54532036 
+ 1296 19da 01       		.byte	0x1
+ 1297 19db 00       		.uleb128 0
+ 1298 19dc 5F5F6465 		.ascii "__declspec(x) __attribute__((x))\0"
+ 1298      636C7370 
+ 1298      65632878 
+ 1298      29205F5F 
+ 1298      61747472 
+ 1299 19fd 01       		.byte	0x1
+ 1300 19fe 00       		.uleb128 0
+ 1301 19ff 5F5F4445 		.ascii "__DECIMAL_BID_FORMAT__ 1\0"
+ 1301      43494D41 
+ 1301      4C5F4249 
+ 1301      445F464F 
+ 1301      524D4154 
+ 1302 1a18 01       		.byte	0x1
+ 1303 1a19 00       		.uleb128 0
+ 1304 1a1a 4346475F 		.ascii "CFG_PROCESSOR 3\0"
+ 1304      50524F43 
+ 1304      4553534F 
+ 1304      52203300 
+ 1305 1a2a 03       		.byte	0x3
+ 1306 1a2b 00       		.uleb128 0
+ 1307 1a2c 01       		.uleb128 0x1
+ 1308              		.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
+ 1309 1a2d 03       		.byte	0x3
+ 1310 1a2e 01       		.uleb128 0x1
+ 1311 1a2f 05       		.uleb128 0x5
+ 1312 1a30 01       		.byte	0x1
+ 1313 1a31 02       		.uleb128 0x2
+ 1314 1a32 5F6F735F 		.ascii "_os_firstinc_h_ \0"
+ 1314      66697273 
+ 1314      74696E63 
+ 1314      5F685F20 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 44
+
+
+ 1314      00
+ 1315 1a43 03       		.byte	0x3
+ 1316 1a44 04       		.uleb128 0x4
+ 1317 1a45 04       		.uleb128 0x4
+ 1318 1a46 01       		.byte	0x1
+ 1319 1a47 02       		.uleb128 0x2
+ 1320 1a48 5F424153 		.ascii "_BASE_TYPES_H_ \0"
+ 1320      455F5459 
+ 1320      5045535F 
+ 1320      485F2000 
+ 1321 1a58 01       		.byte	0x1
+ 1322 1a59 04       		.uleb128 0x4
+ 1323 1a5a 494E5445 		.ascii "INTEGER_LLP64_IL32P64 1\0"
+ 1323      4745525F 
+ 1323      4C4C5036 
+ 1323      345F494C 
+ 1323      33325036 
+ 1324 1a72 01       		.byte	0x1
+ 1325 1a73 05       		.uleb128 0x5
+ 1326 1a74 494E5445 		.ascii "INTEGER_LP64_I32LP64 2\0"
+ 1326      4745525F 
+ 1326      4C503634 
+ 1326      5F493332 
+ 1326      4C503634 
+ 1327 1a8b 01       		.byte	0x1
+ 1328 1a8c 06       		.uleb128 0x6
+ 1329 1a8d 494E5445 		.ascii "INTEGER_ILP64 3\0"
+ 1329      4745525F 
+ 1329      494C5036 
+ 1329      34203300 
+ 1330 1a9d 01       		.byte	0x1
+ 1331 1a9e 07       		.uleb128 0x7
+ 1332 1a9f 494E5445 		.ascii "INTEGER_SILP64 4\0"
+ 1332      4745525F 
+ 1332      53494C50 
+ 1332      36342034 
+ 1332      00
+ 1333 1ab0 01       		.byte	0x1
+ 1334 1ab1 09       		.uleb128 0x9
+ 1335 1ab2 4350505F 		.ascii "CPP_VERSION_NONE 0\0"
+ 1335      56455253 
+ 1335      494F4E5F 
+ 1335      4E4F4E45 
+ 1335      203000
+ 1336 1ac5 01       		.byte	0x1
+ 1337 1ac6 0A       		.uleb128 0xa
+ 1338 1ac7 4350505F 		.ascii "CPP_VERSION_1998 1\0"
+ 1338      56455253 
+ 1338      494F4E5F 
+ 1338      31393938 
+ 1338      203100
+ 1339 1ada 01       		.byte	0x1
+ 1340 1adb 0B       		.uleb128 0xb
+ 1341 1adc 4350505F 		.ascii "CPP_VERSION_2003 2\0"
+ 1341      56455253 
+ 1341      494F4E5F 
+ 1341      32303033 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 45
+
+
+ 1341      203200
+ 1342 1aef 01       		.byte	0x1
+ 1343 1af0 0C       		.uleb128 0xc
+ 1344 1af1 4350505F 		.ascii "CPP_VERSION_2007 3\0"
+ 1344      56455253 
+ 1344      494F4E5F 
+ 1344      32303037 
+ 1344      203300
+ 1345 1b04 01       		.byte	0x1
+ 1346 1b05 0D       		.uleb128 0xd
+ 1347 1b06 4350505F 		.ascii "CPP_VERSION_2011 4\0"
+ 1347      56455253 
+ 1347      494F4E5F 
+ 1347      32303131 
+ 1347      203400
+ 1348 1b19 01       		.byte	0x1
+ 1349 1b1a 0E       		.uleb128 0xe
+ 1350 1b1b 49534F5F 		.ascii "ISO_CPP_VERSION CPP_VERSION_1998\0"
+ 1350      4350505F 
+ 1350      56455253 
+ 1350      494F4E20 
+ 1350      4350505F 
+ 1351 1b3c 01       		.byte	0x1
+ 1352 1b3d 10       		.uleb128 0x10
+ 1353 1b3e 494E5445 		.ascii "INTEGER_MODEL INTEGER_LLP64_IL32P64\0"
+ 1353      4745525F 
+ 1353      4D4F4445 
+ 1353      4C20494E 
+ 1353      54454745 
+ 1354 1b62 04       		.byte	0x4
+ 1355 1b63 03       		.byte	0x3
+ 1356 1b64 05       		.uleb128 0x5
+ 1357 1b65 02       		.uleb128 0x2
+ 1358 1b66 01       		.byte	0x1
+ 1359 1b67 02       		.uleb128 0x2
+ 1360 1b68 5F6F735F 		.ascii "_os_common_h_ \0"
+ 1360      636F6D6D 
+ 1360      6F6E5F68 
+ 1360      5F2000
+ 1361 1b77 01       		.byte	0x1
+ 1362 1b78 06       		.uleb128 0x6
+ 1363 1b79 46616C73 		.ascii "False 0\0"
+ 1363      65203000 
+ 1364 1b81 01       		.byte	0x1
+ 1365 1b82 07       		.uleb128 0x7
+ 1366 1b83 54727565 		.ascii "True 1\0"
+ 1366      203100
+ 1367 1b8a 01       		.byte	0x1
+ 1368 1b8b 08       		.uleb128 0x8
+ 1369 1b8c 46414C53 		.ascii "FALSE False\0"
+ 1369      45204661 
+ 1369      6C736500 
+ 1370 1b98 01       		.byte	0x1
+ 1371 1b99 09       		.uleb128 0x9
+ 1372 1b9a 54525545 		.ascii "TRUE True\0"
+ 1372      20547275 
+ 1372      6500
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 46
+
+
+ 1373 1ba4 01       		.byte	0x1
+ 1374 1ba5 0A       		.uleb128 0xa
+ 1375 1ba6 41636365 		.ascii "Accepted 1\0"
+ 1375      70746564 
+ 1375      203100
+ 1376 1bb1 01       		.byte	0x1
+ 1377 1bb2 0B       		.uleb128 0xb
+ 1378 1bb3 52656A65 		.ascii "Rejected 0\0"
+ 1378      63746564 
+ 1378      203000
+ 1379 1bbe 01       		.byte	0x1
+ 1380 1bbf 0C       		.uleb128 0xc
+ 1381 1bc0 4C6F6361 		.ascii "Local static\0"
+ 1381      6C207374 
+ 1381      61746963 
+ 1381      00
+ 1382 1bcd 01       		.byte	0x1
+ 1383 1bce 0D       		.uleb128 0xd
+ 1384 1bcf 4C6F6361 		.ascii "Local_inline static __inline__\0"
+ 1384      6C5F696E 
+ 1384      6C696E65 
+ 1384      20737461 
+ 1384      74696320 
+ 1385 1bee 01       		.byte	0x1
+ 1386 1bef 0E       		.uleb128 0xe
+ 1387 1bf0 476C6F62 		.ascii "Global_inline __inline__\0"
+ 1387      616C5F69 
+ 1387      6E6C696E 
+ 1387      65205F5F 
+ 1387      696E6C69 
+ 1388 1c09 01       		.byte	0x1
+ 1389 1c0a 0F       		.uleb128 0xf
+ 1390 1c0b 52656665 		.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
+ 1390      72656E63 
+ 1390      65556E75 
+ 1390      73656450 
+ 1390      6172616D 
+ 1391 1c33 01       		.byte	0x1
+ 1392 1c34 10       		.uleb128 0x10
+ 1393 1c35 44796E61 		.ascii "DynamicMemoryUsed False\0"
+ 1393      6D69634D 
+ 1393      656D6F72 
+ 1393      79557365 
+ 1393      64204661 
+ 1394 1c4d 01       		.byte	0x1
+ 1395 1c4e 13       		.uleb128 0x13
+ 1396 1c4f 634D4355 		.ascii "cMCU_X86 3\0"
+ 1396      5F583836 
+ 1396      203300
+ 1397 1c5a 01       		.byte	0x1
+ 1398 1c5b 14       		.uleb128 0x14
+ 1399 1c5c 634D4355 		.ascii "cMCU_CORTEX_M4 4\0"
+ 1399      5F434F52 
+ 1399      5445585F 
+ 1399      4D342034 
+ 1399      00
+ 1400 1c6d 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 47
+
+
+ 1401 1c6e 17       		.uleb128 0x17
+ 1402 1c6f 4E525F4F 		.ascii "NR_OF_CORES 1\0"
+ 1402      465F434F 
+ 1402      52455320 
+ 1402      3100
+ 1403 1c7d 01       		.byte	0x1
+ 1404 1c7e 19       		.uleb128 0x19
+ 1405 1c7f 4D43555F 		.ascii "MCU_CLOCK_IN_HZ ((uint32)168000000u)\0"
+ 1405      434C4F43 
+ 1405      4B5F494E 
+ 1405      5F485A20 
+ 1405      28287569 
+ 1406 1ca4 01       		.byte	0x1
+ 1407 1ca5 1D       		.uleb128 0x1d
+ 1408 1ca6 44697361 		.ascii "DisableInterrupts() \0"
+ 1408      626C6549 
+ 1408      6E746572 
+ 1408      72757074 
+ 1408      73282920 
+ 1409 1cbb 01       		.byte	0x1
+ 1410 1cbc 1E       		.uleb128 0x1e
+ 1411 1cbd 456E6162 		.ascii "EnableInterrupts() \0"
+ 1411      6C65496E 
+ 1411      74657272 
+ 1411      75707473 
+ 1411      28292000 
+ 1412 1cd1 01       		.byte	0x1
+ 1413 1cd2 1F       		.uleb128 0x1f
+ 1414 1cd3 50726976 		.ascii "Privilige_level_save_current() \0"
+ 1414      696C6967 
+ 1414      655F6C65 
+ 1414      76656C5F 
+ 1414      73617665 
+ 1415 1cf3 01       		.byte	0x1
+ 1416 1cf4 20       		.uleb128 0x20
+ 1417 1cf5 50726976 		.ascii "Privilige_level_enter_kernel_mode() \0"
+ 1417      696C6967 
+ 1417      655F6C65 
+ 1417      76656C5F 
+ 1417      656E7465 
+ 1418 1d1a 01       		.byte	0x1
+ 1419 1d1b 21       		.uleb128 0x21
+ 1420 1d1c 50726976 		.ascii "Privilige_level_restore_saved() \0"
+ 1420      696C6967 
+ 1420      655F6C65 
+ 1420      76656C5F 
+ 1420      72657374 
+ 1421 1d3d 01       		.byte	0x1
+ 1422 1d3e 22       		.uleb128 0x22
+ 1423 1d3f 48616C74 		.ascii "HaltMcu() \0"
+ 1423      4D637528 
+ 1423      292000
+ 1424 1d4a 01       		.byte	0x1
+ 1425 1d4b 58       		.uleb128 0x58
+ 1426 1d4c 42696749 		.ascii "BigIntSize 16\0"
+ 1426      6E745369 
+ 1426      7A652031 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 48
+
+
+ 1426      3600
+ 1427 1d5a 04       		.byte	0x4
+ 1428              		.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
+ 1429 1d5b 03       		.byte	0x3
+ 1430 1d5c 08       		.uleb128 0x8
+ 1431 1d5d 06       		.uleb128 0x6
+ 1432 1d5e 01       		.byte	0x1
+ 1433 1d5f 02       		.uleb128 0x2
+ 1434 1d60 5F6C6C64 		.ascii "_lld_global_h_ \0"
+ 1434      5F676C6F 
+ 1434      62616C5F 
+ 1434      685F2000 
+ 1435              		.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_core.h"
+ 1436 1d70 03       		.byte	0x3
+ 1437 1d71 04       		.uleb128 0x4
+ 1438 1d72 07       		.uleb128 0x7
+ 1439 1d73 01       		.byte	0x1
+ 1440 1d74 02       		.uleb128 0x2
+ 1441 1d75 5F6C6C64 		.ascii "_lld_core_h_ \0"
+ 1441      5F636F72 
+ 1441      655F685F 
+ 1441      2000
+ 1442              		.file 8 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_firsti
+ 1443 1d83 03       		.byte	0x3
+ 1444 1d84 03       		.uleb128 0x3
+ 1445 1d85 08       		.uleb128 0x8
+ 1446 1d86 04       		.byte	0x4
+ 1447 1d87 04       		.byte	0x4
+ 1448              		.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_interrupt.h"
+ 1449 1d88 03       		.byte	0x3
+ 1450 1d89 05       		.uleb128 0x5
+ 1451 1d8a 09       		.uleb128 0x9
+ 1452 1d8b 01       		.byte	0x1
+ 1453 1d8c 02       		.uleb128 0x2
+ 1454 1d8d 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
+ 1454      5F696E74 
+ 1454      65727275 
+ 1454      70745F68 
+ 1454      5F2000
+ 1455 1da0 01       		.byte	0x1
+ 1456 1da1 05       		.uleb128 0x5
+ 1457 1da2 6F735F69 		.ascii "os_interrupt_swi_1 asm(\"swi 1\")\0"
+ 1457      6E746572 
+ 1457      72757074 
+ 1457      5F737769 
+ 1457      5F312061 
+ 1458 1dc2 01       		.byte	0x1
+ 1459 1dc3 06       		.uleb128 0x6
+ 1460 1dc4 6F735F69 		.ascii "os_interrupt_swi_2 asm(\"swi 2\")\0"
+ 1460      6E746572 
+ 1460      72757074 
+ 1460      5F737769 
+ 1460      5F322061 
+ 1461 1de4 01       		.byte	0x1
+ 1462 1de5 07       		.uleb128 0x7
+ 1463 1de6 6F735F69 		.ascii "os_interrupt_swi_3 asm(\"swi 3\")\0"
+ 1463      6E746572 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 49
+
+
+ 1463      72757074 
+ 1463      5F737769 
+ 1463      5F332061 
+ 1464 1e06 01       		.byte	0x1
+ 1465 1e07 08       		.uleb128 0x8
+ 1466 1e08 6F735F69 		.ascii "os_interrupt_swi_4 asm(\"swi 4\")\0"
+ 1466      6E746572 
+ 1466      72757074 
+ 1466      5F737769 
+ 1466      5F342061 
+ 1467 1e28 01       		.byte	0x1
+ 1468 1e29 09       		.uleb128 0x9
+ 1469 1e2a 6F735F69 		.ascii "os_interrupt_swi_5 asm(\"swi 5\")\0"
+ 1469      6E746572 
+ 1469      72757074 
+ 1469      5F737769 
+ 1469      5F352061 
+ 1470 1e4a 04       		.byte	0x4
+ 1471              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
+ 1472 1e4b 03       		.byte	0x3
+ 1473 1e4c 06       		.uleb128 0x6
+ 1474 1e4d 0A       		.uleb128 0xa
+ 1475 1e4e 01       		.byte	0x1
+ 1476 1e4f 02       		.uleb128 0x2
+ 1477 1e50 5F6C6C64 		.ascii "_lld_mmu_h_ \0"
+ 1477      5F6D6D75 
+ 1477      5F685F20 
+ 1477      00
+ 1478 1e5d 04       		.byte	0x4
+ 1479              		.file 11 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
+ 1480 1e5e 03       		.byte	0x3
+ 1481 1e5f 07       		.uleb128 0x7
+ 1482 1e60 0B       		.uleb128 0xb
+ 1483 1e61 01       		.byte	0x1
+ 1484 1e62 02       		.uleb128 0x2
+ 1485 1e63 5F6C6C64 		.ascii "_lld_timer_h_ \0"
+ 1485      5F74696D 
+ 1485      65725F68 
+ 1485      5F2000
+ 1486 1e72 04       		.byte	0x4
+ 1487              		.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_power.h"
+ 1488 1e73 03       		.byte	0x3
+ 1489 1e74 08       		.uleb128 0x8
+ 1490 1e75 0C       		.uleb128 0xc
+ 1491 1e76 01       		.byte	0x1
+ 1492 1e77 02       		.uleb128 0x2
+ 1493 1e78 5F6C6C64 		.ascii "_lld_power_h_ \0"
+ 1493      5F706F77 
+ 1493      65725F68 
+ 1493      5F2000
+ 1494 1e87 04       		.byte	0x4
+ 1495              		.file 13 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_ram.h"
+ 1496 1e88 03       		.byte	0x3
+ 1497 1e89 09       		.uleb128 0x9
+ 1498 1e8a 0D       		.uleb128 0xd
+ 1499 1e8b 01       		.byte	0x1
+ 1500 1e8c 02       		.uleb128 0x2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 50
+
+
+ 1501 1e8d 5F6C6C64 		.ascii "_lld_ram_h_ \0"
+ 1501      5F72616D 
+ 1501      5F685F20 
+ 1501      00
+ 1502 1e9a 04       		.byte	0x4
+ 1503              		.file 14 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
+ 1504 1e9b 03       		.byte	0x3
+ 1505 1e9c 0A       		.uleb128 0xa
+ 1506 1e9d 0E       		.uleb128 0xe
+ 1507 1e9e 01       		.byte	0x1
+ 1508 1e9f 02       		.uleb128 0x2
+ 1509 1ea0 5F6F735F 		.ascii "_os_task_common_h_ \0"
+ 1509      7461736B 
+ 1509      5F636F6D 
+ 1509      6D6F6E5F 
+ 1509      685F2000 
+ 1510 1eb4 03       		.byte	0x3
+ 1511 1eb5 03       		.uleb128 0x3
+ 1512 1eb6 08       		.uleb128 0x8
+ 1513 1eb7 04       		.byte	0x4
+ 1514              		.file 15 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
+ 1515 1eb8 03       		.byte	0x3
+ 1516 1eb9 04       		.uleb128 0x4
+ 1517 1eba 0F       		.uleb128 0xf
+ 1518 1ebb 01       		.byte	0x1
+ 1519 1ebc 02       		.uleb128 0x2
+ 1520 1ebd 5F6F735F 		.ascii "_os_task_config_h_ \0"
+ 1520      7461736B 
+ 1520      5F636F6E 
+ 1520      6669675F 
+ 1520      685F2000 
+ 1521 1ed1 01       		.byte	0x1
+ 1522 1ed2 05       		.uleb128 0x5
+ 1523 1ed3 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
+ 1523      64756C65 
+ 1523      72467265 
+ 1523      7175656E 
+ 1523      63792028 
+ 1524 1eee 01       		.byte	0x1
+ 1525 1eef 06       		.uleb128 0x6
+ 1526 1ef0 4D696E54 		.ascii "MinTimeSlice_s (1.0/SchedulerFrequency)\0"
+ 1526      696D6553 
+ 1526      6C696365 
+ 1526      5F732028 
+ 1526      312E302F 
+ 1527 1f18 01       		.byte	0x1
+ 1528 1f19 07       		.uleb128 0x7
+ 1529 1f1a 4D696E54 		.ascii "MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)\0"
+ 1529      696D6553 
+ 1529      6C696365 
+ 1529      5F757320 
+ 1529      2828312E 
+ 1530 1f49 01       		.byte	0x1
+ 1531 1f4a 08       		.uleb128 0x8
+ 1532 1f4b 5461736B 		.ascii "Task_min_time (1e0)\0"
+ 1532      5F6D696E 
+ 1532      5F74696D 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 51
+
+
+ 1532      65202831 
+ 1532      65302900 
+ 1533 1f5f 01       		.byte	0x1
+ 1534 1f60 09       		.uleb128 0x9
+ 1535 1f61 4E554D42 		.ascii "NUMBER_OF_TASKS 10\0"
+ 1535      45525F4F 
+ 1535      465F5441 
+ 1535      534B5320 
+ 1535      313000
+ 1536 1f74 01       		.byte	0x1
+ 1537 1f75 0A       		.uleb128 0xa
+ 1538 1f76 4D41585F 		.ascii "MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)\0"
+ 1538      52554E5F 
+ 1538      51554555 
+ 1538      455F5349 
+ 1538      5A452028 
+ 1539 1f9b 01       		.byte	0x1
+ 1540 1f9c 0B       		.uleb128 0xb
+ 1541 1f9d 4D41585F 		.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
+ 1541      52554E5F 
+ 1541      50515545 
+ 1541      55455F53 
+ 1541      495A4520 
+ 1542 1fc4 01       		.byte	0x1
+ 1543 1fc5 0D       		.uleb128 0xd
+ 1544 1fc6 5441534B 		.ascii "TASK_STACK_SIZE 2000\0"
+ 1544      5F535441 
+ 1544      434B5F53 
+ 1544      495A4520 
+ 1544      32303030 
+ 1545 1fdb 01       		.byte	0x1
+ 1546 1fdc 10       		.uleb128 0x10
+ 1547 1fdd 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
+ 1547      45525F53 
+ 1547      45432028 
+ 1547      31303030 
+ 1547      2900
+ 1548 1fef 01       		.byte	0x1
+ 1549 1ff0 11       		.uleb128 0x11
+ 1550 1ff1 5553455F 		.ascii "USE_STATIC_CREATED_TASKS True\0"
+ 1550      53544154 
+ 1550      49435F43 
+ 1550      52454154 
+ 1550      45445F54 
+ 1551 200f 04       		.byte	0x4
+ 1552              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_
+ 1553 2010 03       		.byte	0x3
+ 1554 2011 05       		.uleb128 0x5
+ 1555 2012 10       		.uleb128 0x10
+ 1556 2013 01       		.byte	0x1
+ 1557 2014 02       		.uleb128 0x2
+ 1558 2015 5F6F735F 		.ascii "_os_init_task_system_h_ \0"
+ 1558      696E6974 
+ 1558      5F746173 
+ 1558      6B5F7379 
+ 1558      7374656D 
+ 1559 202e 04       		.byte	0x4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 52
+
+
+ 1560 202f 01       		.byte	0x1
+ 1561 2030 5F       		.uleb128 0x5f
+ 1562 2031 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
+ 1562      61766554 
+ 1562      61736B50 
+ 1562      74722874 
+ 1562      61736B5F 
+ 1563 2079 01       		.byte	0x1
+ 1564 207a 60       		.uleb128 0x60
+ 1565 207b 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
+ 1565      65745461 
+ 1565      736B5074 
+ 1565      72287461 
+ 1565      736B5F6E 
+ 1566 20b6 04       		.byte	0x4
+ 1567 20b7 04       		.byte	0x4
+ 1568              		.file 17 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_user_code/led.h"
+ 1569 20b8 03       		.byte	0x3
+ 1570 20b9 0C       		.uleb128 0xc
+ 1571 20ba 11       		.uleb128 0x11
+ 1572 20bb 01       		.byte	0x1
+ 1573 20bc 02       		.uleb128 0x2
+ 1574 20bd 5F4C4544 		.ascii "_LED_H_ \0"
+ 1574      5F485F20 
+ 1574      00
+ 1575 20c6 04       		.byte	0x4
+ 1576 20c7 03       		.byte	0x3
+ 1577 20c8 0E       		.uleb128 0xe
+ 1578 20c9 03       		.uleb128 0x3
+ 1579 20ca 01       		.byte	0x1
+ 1580 20cb 02       		.uleb128 0x2
+ 1581 20cc 5F4F535F 		.ascii "_OS_RAM_H_ \0"
+ 1581      52414D5F 
+ 1581      485F2000 
+ 1582              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_firstinc.h"
+ 1583 20d8 03       		.byte	0x3
+ 1584 20d9 04       		.uleb128 0x4
+ 1585 20da 12       		.uleb128 0x12
+ 1586 20db 04       		.byte	0x4
+ 1587              		.file 19 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_stack.h"
+ 1588 20dc 03       		.byte	0x3
+ 1589 20dd 05       		.uleb128 0x5
+ 1590 20de 13       		.uleb128 0x13
+ 1591 20df 01       		.byte	0x1
+ 1592 20e0 02       		.uleb128 0x2
+ 1593 20e1 5F6F735F 		.ascii "_os_stack_h_ \0"
+ 1593      73746163 
+ 1593      6B5F685F 
+ 1593      2000
+ 1594 20ef 01       		.byte	0x1
+ 1595 20f0 04       		.uleb128 0x4
+ 1596 20f1 4F535F53 		.ascii "OS_STACK_SIZE 0x5000u\0"
+ 1596      5441434B 
+ 1596      5F53495A 
+ 1596      45203078 
+ 1596      35303030 
+ 1597 2107 04       		.byte	0x4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 53
+
+
+ 1598              		.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
+ 1599 2108 03       		.byte	0x3
+ 1600 2109 06       		.uleb128 0x6
+ 1601 210a 14       		.uleb128 0x14
+ 1602 210b 01       		.byte	0x1
+ 1603 210c 02       		.uleb128 0x2
+ 1604 210d 5F6F735F 		.ascii "_os_heap_h_ \0"
+ 1604      68656170 
+ 1604      5F685F20 
+ 1604      00
+ 1605 211a 01       		.byte	0x1
+ 1606 211b 05       		.uleb128 0x5
+ 1607 211c 48454150 		.ascii "HEAP_SIZE 10000\0"
+ 1607      5F53495A 
+ 1607      45203130 
+ 1607      30303000 
+ 1608 212c 01       		.byte	0x1
+ 1609 212d 06       		.uleb128 0x6
+ 1610 212e 4D494E5F 		.ascii "MIN_BLOCK_SIZE_HEAP 8\0"
+ 1610      424C4F43 
+ 1610      4B5F5349 
+ 1610      5A455F48 
+ 1610      45415020 
+ 1611 2144 01       		.byte	0x1
+ 1612 2145 09       		.uleb128 0x9
+ 1613 2146 48454150 		.ascii "HEAP_OFFSET_FOR_SIZE 0\0"
+ 1613      5F4F4646 
+ 1613      5345545F 
+ 1613      464F525F 
+ 1613      53495A45 
+ 1614 215d 01       		.byte	0x1
+ 1615 215e 0A       		.uleb128 0xa
+ 1616 215f 48454150 		.ascii "HEAP_OFFSET_FOR_USED_SIZE 4\0"
+ 1616      5F4F4646 
+ 1616      5345545F 
+ 1616      464F525F 
+ 1616      55534544 
+ 1617 217b 01       		.byte	0x1
+ 1618 217c 0B       		.uleb128 0xb
+ 1619 217d 48454150 		.ascii "HEAP_OFFSET_FOR_CHUNK 8\0"
+ 1619      5F4F4646 
+ 1619      5345545F 
+ 1619      464F525F 
+ 1619      4348554E 
+ 1620 2195 04       		.byte	0x4
+ 1621              		.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_main.h"
+ 1622 2196 03       		.byte	0x3
+ 1623 2197 07       		.uleb128 0x7
+ 1624 2198 15       		.uleb128 0x15
+ 1625 2199 01       		.byte	0x1
+ 1626 219a 02       		.uleb128 0x2
+ 1627 219b 5F6F735F 		.ascii "_os_main_h_ \0"
+ 1627      6D61696E 
+ 1627      5F685F20 
+ 1627      00
+ 1628 21a8 01       		.byte	0x1
+ 1629 21a9 03       		.uleb128 0x3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 54
+
+
+ 1630 21aa 6F735F69 		.ascii "os_init 0\0"
+ 1630      6E697420 
+ 1630      3000
+ 1631 21b4 01       		.byte	0x1
+ 1632 21b5 04       		.uleb128 0x4
+ 1633 21b6 6F735F72 		.ascii "os_running 1\0"
+ 1633      756E6E69 
+ 1633      6E672031 
+ 1633      00
+ 1634 21c3 01       		.byte	0x1
+ 1635 21c4 05       		.uleb128 0x5
+ 1636 21c5 6F735F73 		.ascii "os_shutdown 2\0"
+ 1636      68757464 
+ 1636      6F776E20 
+ 1636      3200
+ 1637 21d3 04       		.byte	0x4
+ 1638              		.file 22 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_task_config.h"
+ 1639 21d4 03       		.byte	0x3
+ 1640 21d5 08       		.uleb128 0x8
+ 1641 21d6 16       		.uleb128 0x16
+ 1642 21d7 04       		.byte	0x4
+ 1643              		.file 23 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_task_common.h"
+ 1644 21d8 03       		.byte	0x3
+ 1645 21d9 09       		.uleb128 0x9
+ 1646 21da 17       		.uleb128 0x17
+ 1647 21db 04       		.byte	0x4
+ 1648 21dc 04       		.byte	0x4
+ 1649 21dd 04       		.byte	0x4
+ 1650 21de 04       		.byte	0x4
+ 1651 21df 00       		.byte	0
+ 1652              		.section	.debug_line,"dr"
+ 1653              	Ldebug_line0:
+ 1654 0000 51030000 		.section	.debug_str,"dr"
+ 1654      0200E602 
+ 1654      00000101 
+ 1654      FB0E0D00 
+ 1654      01010101 
+ 1655              	LASF0:
+ 1656 0000 73746163 		.ascii "stack_pos\0"
+ 1656      6B5F706F 
+ 1656      7300
+ 1657              	LASF1:
+ 1658 000a 6E725F6F 		.ascii "nr_of_cores\0"
+ 1658      665F636F 
+ 1658      72657300 
+ 1659              		.ident	"GCC: (GNU) 4.9.3"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s 			page 55
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_stack.c
+C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s:6      .text:00000000 _OS_StackCheck
+C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s:142    .bss:00000000 _stack_pos.1317
+C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s:143    .bss:00000004 _nr_of_cores.1318
+C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s:144    .bss:00000008 _failed.1319
+C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s:87     .text:000000af _OS_StackChkPatternInit
+C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s:145    .bss:0000000c _stack_pos.1330
+C:\Users\PRESID~1\AppData\Local\Temp\cc8DB9Ff.s:146    .bss:00000010 _nr_of_cores.1331
+
+UNDEFINED SYMBOLS
+_OS_STACK
+_OS_MAIN_STACK
+_OS_SetSwBug

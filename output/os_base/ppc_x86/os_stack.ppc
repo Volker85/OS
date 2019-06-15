@@ -257,12 +257,19 @@
 #define INTEGER_MODEL INTEGER_LLP64_IL32P64
 # 29 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_base_types.h"
 typedef unsigned char unsigned_char_t;
+typedef signed char signed_char_t;
 typedef unsigned char unsigned_int8_t;
+typedef signed char signed_int8_t;
 typedef unsigned char uint8;
+typedef signed char sint8;
 typedef unsigned short unsigned_int16_t;
+typedef signed short signed_int16_t;
 typedef unsigned short uint16;
+typedef signed short sint16;
 typedef unsigned long unsigned_int32_t;
+typedef signed long signed_int32_t;
 typedef unsigned long uint32;
+typedef signed long sint32;
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_common.h" 1
 
@@ -314,6 +321,7 @@ enum os_sw_bugs_e
    os_bug_critical_stack_usage
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
+typedef uint8 boolean_t;
 enum os_sw_bugs_function_e
 {
    Func_NoFunction = 0,
@@ -342,6 +350,31 @@ typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 extern void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
 
 typedef void (*func_ptr_t)(void);
+
+
+#define BigIntSize 16
+typedef struct BigInt_s
+{
+
+
+
+
+
+
+
+  uint8 Number[16];
+}BigInt;
+extern void AssignNull(BigInt* leftOperand);
+extern void Assign(BigInt* leftOperand, BigInt* rightOperand);
+extern boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsLess(BigInt* Operand1, BigInt* Operand2);
+extern void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor);
+extern void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2);
+extern void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend);
+extern void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 
@@ -659,10 +692,10 @@ void OS_StackCheck(void)
 
 
 
-   volatile static int stack_pos = 0,nr_of_cores = 0, failed = 0;
-   for(stack_pos = 0; stack_pos < 64;stack_pos++)
+   static volatile int stack_pos = 0, nr_of_cores = 0, failed = 0;
+   for(stack_pos = 0; stack_pos < 64; stack_pos++)
    {
-      for(nr_of_cores = 0; nr_of_cores < 1;nr_of_coresj++)
+      for(nr_of_cores = 0; nr_of_cores < 1; nr_of_cores++)
       {
          if(OS_STACK[nr_of_cores][stack_pos] != 0xAA)
          {
@@ -685,10 +718,10 @@ void OS_StackCheck(void)
 }
 void OS_StackChkPatternInit(void)
 {
-   volatile static int stack_pos = 0,nr_of_cores = 0;
-   for(stack_pos = 0; stack_pos < 64;stack_pos++)
+   static volatile int stack_pos = 0,nr_of_cores = 0;
+   for(stack_pos = 0; stack_pos < 64; stack_pos++)
    {
-      for(nr_of_cores = 0; nr_of_cores < 1;nr_of_coresj++)
+      for(nr_of_cores = 0; nr_of_cores < 1; nr_of_cores++)
       {
          OS_STACK[nr_of_cores][stack_pos] = 0xAA;
       }

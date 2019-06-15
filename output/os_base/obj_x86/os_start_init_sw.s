@@ -56,7 +56,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x34d
+	.long	0x375
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -78,24 +78,36 @@ Ldebug_info0:
 	.byte	0x8
 	.ascii "unsigned char\0"
 	.uleb128 0x3
+	.byte	0x1
+	.byte	0x6
+	.ascii "signed char\0"
+	.uleb128 0x3
 	.byte	0x2
 	.byte	0x7
 	.ascii "short unsigned int\0"
 	.uleb128 0x3
+	.byte	0x2
+	.byte	0x5
+	.ascii "short int\0"
+	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
+	.uleb128 0x3
+	.byte	0x4
+	.byte	0x5
+	.ascii "long int\0"
 	.uleb128 0x2
 	.ascii "uint32\0"
 	.byte	0x2
-	.byte	0x23
-	.long	0xd2
+	.byte	0x29
+	.long	0xee
 	.uleb128 0x4
 	.ascii "os_sw_bugs_e\0"
 	.byte	0x4
 	.byte	0x3
 	.byte	0x2b
-	.long	0x238
+	.long	0x260
 	.uleb128 0x5
 	.ascii "os_bug_no_bug\0"
 	.sleb128 0
@@ -131,7 +143,11 @@ Ldebug_info0:
 	.ascii "os_sw_bugs_t\0"
 	.byte	0x3
 	.byte	0x38
-	.long	0xf5
+	.long	0x11d
+	.uleb128 0x3
+	.byte	0x4
+	.byte	0x7
+	.ascii "sizetype\0"
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
@@ -144,7 +160,7 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x284
+	.long	0x2b8
 	.uleb128 0x7
 	.ascii "i\0"
 	.byte	0x1
@@ -155,45 +171,41 @@ Ldebug_info0:
 	.sleb128 -17
 	.byte	0
 	.uleb128 0x8
-	.long	0x238
-	.long	0x294
+	.long	0x260
+	.long	0x2c8
 	.uleb128 0x9
-	.long	0x294
+	.long	0x274
 	.byte	0xe
 	.byte	0
-	.uleb128 0x3
-	.byte	0x4
-	.byte	0x7
-	.ascii "sizetype\0"
 	.uleb128 0xa
 	.ascii "OS_SW_BUG\0"
 	.byte	0x4
 	.byte	0x10
-	.long	0x2b1
+	.long	0x2d9
 	.uleb128 0xb
-	.long	0x284
+	.long	0x2b8
 	.uleb128 0xa
 	.ascii "TASK1_CALL_NR\0"
 	.byte	0x4
 	.byte	0x20
-	.long	0x2cb
+	.long	0x2f3
 	.uleb128 0xb
-	.long	0xe7
+	.long	0x10f
 	.uleb128 0xa
 	.ascii "TASK2_CALL_NR\0"
 	.byte	0x4
 	.byte	0x21
-	.long	0x2cb
+	.long	0x2f3
 	.uleb128 0xa
 	.ascii "TASK3_CALL_NR\0"
 	.byte	0x4
 	.byte	0x22
-	.long	0x2cb
+	.long	0x2f3
 	.uleb128 0xa
 	.ascii "TASK4_CALL_NR\0"
 	.byte	0x4
 	.byte	0x23
-	.long	0x2cb
+	.long	0x2f3
 	.uleb128 0xa
 	.ascii "bTASK_QUEUE_INITIALIZED\0"
 	.byte	0x4
@@ -203,10 +215,10 @@ Ldebug_info0:
 	.ascii "SAVED_STACK_POINTER\0"
 	.byte	0x4
 	.byte	0x32
-	.long	0x349
+	.long	0x371
 	.uleb128 0xc
 	.byte	0x4
-	.long	0x34f
+	.long	0x377
 	.uleb128 0xd
 	.byte	0
 	.section	.debug_abbrev,"dr"
@@ -1204,6 +1216,9 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
+	.byte	0x1
+	.uleb128 0x58
+	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
 	.byte	0x3

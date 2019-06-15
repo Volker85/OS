@@ -7,7 +7,9 @@ for documentation of the MPU please read:
    Application note
    Managing memory protection unit (MPU) in STM32 MCUs
 */
-
+#define MPU_RNR  ((volatile uint32*)0xE000ED98)
+#define MPU_RBAR ((volatile uint32*)0xE000ED9C)
+#define MPU_RASR ((volatile uint32*)0xE000EDA0)
 
 void OS_MmuSetup(void)
 {

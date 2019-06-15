@@ -193,7 +193,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/../os_base/os_task_common.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x7d7
+	.long	0x80b
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -214,35 +214,51 @@ Ldebug_info0:
 	.byte	0x1
 	.byte	0x8
 	.ascii "unsigned char\0"
+	.uleb128 0x3
+	.byte	0x1
+	.byte	0x6
+	.ascii "signed char\0"
 	.uleb128 0x2
 	.ascii "uint8\0"
 	.byte	0x2
-	.byte	0x1f
+	.byte	0x21
 	.long	0xa4
 	.uleb128 0x3
 	.byte	0x2
 	.byte	0x7
 	.ascii "short unsigned int\0"
+	.uleb128 0x3
+	.byte	0x2
+	.byte	0x5
+	.ascii "short int\0"
 	.uleb128 0x2
 	.ascii "unsigned_int32_t\0"
 	.byte	0x2
-	.byte	0x22
-	.long	0xf0
+	.byte	0x27
+	.long	0x10c
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
+	.uleb128 0x3
+	.byte	0x4
+	.byte	0x5
+	.ascii "long int\0"
 	.uleb128 0x2
 	.ascii "uint32\0"
 	.byte	0x2
-	.byte	0x23
-	.long	0xf0
+	.byte	0x29
+	.long	0x10c
+	.uleb128 0x3
+	.byte	0x4
+	.byte	0x7
+	.ascii "sizetype\0"
 	.uleb128 0x4
 	.ascii "CoreID_e\0"
 	.byte	0x4
 	.byte	0x3
 	.byte	0x4
-	.long	0x145
+	.long	0x179
 	.uleb128 0x5
 	.ascii "Core0\0"
 	.sleb128 0
@@ -260,13 +276,13 @@ Ldebug_info0:
 	.ascii "CoreID_t\0"
 	.byte	0x3
 	.byte	0xb
-	.long	0x113
+	.long	0x147
 	.uleb128 0x4
 	.ascii "privilige_mode_e\0"
 	.byte	0x4
 	.byte	0x3
 	.byte	0x10
-	.long	0x1ea
+	.long	0x21e
 	.uleb128 0x5
 	.ascii "ePriviligeMode_unpriviliged_thread_mode\0"
 	.sleb128 0
@@ -281,13 +297,13 @@ Ldebug_info0:
 	.ascii "privilige_mode_t\0"
 	.byte	0x3
 	.byte	0x16
-	.long	0x155
+	.long	0x189
 	.uleb128 0x4
 	.ascii "task_state_e\0"
 	.byte	0x4
 	.byte	0x4
 	.byte	0x7
-	.long	0x258
+	.long	0x28c
 	.uleb128 0x5
 	.ascii "Task_unspecified\0"
 	.sleb128 0
@@ -305,19 +321,19 @@ Ldebug_info0:
 	.ascii "task_state_t\0"
 	.byte	0x4
 	.byte	0xe
-	.long	0x202
+	.long	0x236
 	.uleb128 0x2
 	.ascii "func_p_t\0"
 	.byte	0x4
 	.byte	0x13
-	.long	0x27c
+	.long	0x2b0
 	.uleb128 0x6
 	.byte	0x4
-	.long	0x282
+	.long	0x2b6
 	.uleb128 0x7
-	.long	0x28d
+	.long	0x2c1
 	.uleb128 0x8
-	.long	0x28d
+	.long	0x2c1
 	.byte	0
 	.uleb128 0x9
 	.byte	0x4
@@ -325,53 +341,53 @@ Ldebug_info0:
 	.ascii "func_p_state_change_t\0"
 	.byte	0x4
 	.byte	0x15
-	.long	0x2ac
+	.long	0x2e0
 	.uleb128 0x6
 	.byte	0x4
-	.long	0x2b2
+	.long	0x2e6
 	.uleb128 0xa
 	.long	0x8d
-	.long	0x2c6
+	.long	0x2fa
 	.uleb128 0x8
-	.long	0x28d
+	.long	0x2c1
 	.uleb128 0x8
-	.long	0x258
+	.long	0x28c
 	.byte	0
 	.uleb128 0xb
 	.ascii "task_group_s\0"
 	.byte	0x8
 	.byte	0x4
 	.byte	0x17
-	.long	0x2fe
+	.long	0x332
 	.uleb128 0xc
 	.secrel32	LASF0
 	.byte	0x4
 	.byte	0x19
-	.long	0xd8
+	.long	0xf4
 	.byte	0
 	.uleb128 0xd
 	.ascii "fair_exe_time\0"
 	.byte	0x4
 	.byte	0x1a
-	.long	0xd8
+	.long	0xf4
 	.byte	0x4
 	.byte	0
 	.uleb128 0x2
 	.ascii "task_group_t\0"
 	.byte	0x4
 	.byte	0x1c
-	.long	0x2c6
+	.long	0x2fa
 	.uleb128 0xb
 	.ascii "task_s\0"
 	.byte	0x64
 	.byte	0x4
 	.byte	0x1e
-	.long	0x586
+	.long	0x5ba
 	.uleb128 0xe
 	.ascii "active\0"
 	.byte	0x4
 	.byte	0x20
-	.long	0x586
+	.long	0x5ba
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -380,7 +396,7 @@ Ldebug_info0:
 	.ascii "task_queued\0"
 	.byte	0x4
 	.byte	0x21
-	.long	0x586
+	.long	0x5ba
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -389,7 +405,7 @@ Ldebug_info0:
 	.ascii "IdleTask\0"
 	.byte	0x4
 	.byte	0x22
-	.long	0x586
+	.long	0x5ba
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -398,7 +414,7 @@ Ldebug_info0:
 	.ascii "FREE\0"
 	.byte	0x4
 	.byte	0x23
-	.long	0x586
+	.long	0x5ba
 	.byte	0x4
 	.byte	0x1d
 	.byte	0
@@ -419,43 +435,43 @@ Ldebug_info0:
 	.ascii "WaitActUntil\0"
 	.byte	0x4
 	.byte	0x26
-	.long	0xd8
+	.long	0xf4
 	.byte	0x8
 	.uleb128 0xd
 	.ascii "wait_time\0"
 	.byte	0x4
 	.byte	0x27
-	.long	0xd8
+	.long	0xf4
 	.byte	0xc
 	.uleb128 0xd
 	.ascii "TimeToPrioInc\0"
 	.byte	0x4
 	.byte	0x28
-	.long	0xd8
+	.long	0xf4
 	.byte	0x10
 	.uleb128 0xd
 	.ascii "overwaittime_per_prio_inc_step\0"
 	.byte	0x4
 	.byte	0x29
-	.long	0xd8
+	.long	0xf4
 	.byte	0x14
 	.uleb128 0xd
 	.ascii "max_allowed_wait_time\0"
 	.byte	0x4
 	.byte	0x2a
-	.long	0xd8
+	.long	0xf4
 	.byte	0x18
 	.uleb128 0xc
 	.secrel32	LASF0
 	.byte	0x4
 	.byte	0x2b
-	.long	0xd8
+	.long	0xf4
 	.byte	0x1c
 	.uleb128 0xd
 	.ascii "start_time\0"
 	.byte	0x4
 	.byte	0x2c
-	.long	0xd8
+	.long	0xf4
 	.byte	0x20
 	.uleb128 0xd
 	.ascii "current_prio\0"
@@ -473,91 +489,91 @@ Ldebug_info0:
 	.ascii "task_number\0"
 	.byte	0x4
 	.byte	0x2f
-	.long	0xd8
+	.long	0xf4
 	.byte	0x28
 	.uleb128 0xd
 	.ascii "fp\0"
 	.byte	0x4
 	.byte	0x30
-	.long	0x26c
+	.long	0x2a0
 	.byte	0x2c
 	.uleb128 0xd
 	.ascii "state_request\0"
 	.byte	0x4
 	.byte	0x31
-	.long	0x28f
+	.long	0x2c3
 	.byte	0x30
 	.uleb128 0xd
 	.ascii "task_state\0"
 	.byte	0x4
 	.byte	0x32
-	.long	0x258
+	.long	0x28c
 	.byte	0x34
 	.uleb128 0xd
 	.ascii "task_group\0"
 	.byte	0x4
 	.byte	0x33
-	.long	0x596
+	.long	0x5ca
 	.byte	0x38
 	.uleb128 0xd
 	.ascii "EAX\0"
 	.byte	0x4
 	.byte	0x35
-	.long	0xd8
+	.long	0xf4
 	.byte	0x3c
 	.uleb128 0xd
 	.ascii "EBX\0"
 	.byte	0x4
 	.byte	0x36
-	.long	0xd8
+	.long	0xf4
 	.byte	0x40
 	.uleb128 0xd
 	.ascii "ECX\0"
 	.byte	0x4
 	.byte	0x37
-	.long	0xd8
+	.long	0xf4
 	.byte	0x44
 	.uleb128 0xd
 	.ascii "EDX\0"
 	.byte	0x4
 	.byte	0x38
-	.long	0xd8
+	.long	0xf4
 	.byte	0x48
 	.uleb128 0xd
 	.ascii "pStackPointer\0"
 	.byte	0x4
 	.byte	0x48
-	.long	0x59c
+	.long	0x5d0
 	.byte	0x4c
 	.uleb128 0xd
 	.ascii "pStackPointerByMalloc\0"
 	.byte	0x4
 	.byte	0x49
-	.long	0x59c
+	.long	0x5d0
 	.byte	0x50
 	.uleb128 0xd
 	.ascii "pStackPointerStart\0"
 	.byte	0x4
 	.byte	0x4a
-	.long	0x59c
+	.long	0x5d0
 	.byte	0x54
 	.uleb128 0xd
 	.ascii "StackSize\0"
 	.byte	0x4
 	.byte	0x4b
-	.long	0xd8
+	.long	0xf4
 	.byte	0x58
 	.uleb128 0xd
 	.ascii "pStackPointerEnd\0"
 	.byte	0x4
 	.byte	0x4c
-	.long	0x59c
+	.long	0x5d0
 	.byte	0x5c
 	.uleb128 0xd
 	.ascii "privilige_mode\0"
 	.byte	0x4
 	.byte	0x4d
-	.long	0x1ea
+	.long	0x21e
 	.byte	0x60
 	.byte	0
 	.uleb128 0x3
@@ -566,7 +582,7 @@ Ldebug_info0:
 	.ascii "unsigned int\0"
 	.uleb128 0x6
 	.byte	0x4
-	.long	0x2fe
+	.long	0x332
 	.uleb128 0x6
 	.byte	0x4
 	.long	0x8d
@@ -574,25 +590,25 @@ Ldebug_info0:
 	.ascii "task_t\0"
 	.byte	0x4
 	.byte	0x4f
-	.long	0x312
+	.long	0x346
 	.uleb128 0x6
 	.byte	0x4
-	.long	0x5a2
+	.long	0x5d6
 	.uleb128 0xf
 	.ascii "OS_GetCoreId\0"
 	.byte	0x1
 	.byte	0x2
-	.long	0x145
+	.long	0x179
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x5eb
+	.long	0x61f
 	.uleb128 0x10
 	.ascii "ret_val\0"
 	.byte	0x1
 	.byte	0x14
-	.long	0x145
+	.long	0x179
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
@@ -605,12 +621,12 @@ Ldebug_info0:
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x61f
+	.long	0x653
 	.uleb128 0x12
 	.secrel32	LASF1
 	.byte	0x1
 	.byte	0x17
-	.long	0x59c
+	.long	0x5d0
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -623,12 +639,12 @@ Ldebug_info0:
 	.long	LFE2-LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x678
+	.long	0x6ac
 	.uleb128 0x13
 	.ascii "r0\0"
 	.byte	0x1
 	.byte	0x20
-	.long	0x105
+	.long	0x12d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -636,7 +652,7 @@ Ldebug_info0:
 	.ascii "r1\0"
 	.byte	0x1
 	.byte	0x20
-	.long	0x105
+	.long	0x12d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 4
@@ -644,7 +660,7 @@ Ldebug_info0:
 	.ascii "r2\0"
 	.byte	0x1
 	.byte	0x20
-	.long	0x105
+	.long	0x12d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
@@ -652,7 +668,7 @@ Ldebug_info0:
 	.ascii "r3\0"
 	.byte	0x1
 	.byte	0x20
-	.long	0x105
+	.long	0x12d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 12
@@ -665,19 +681,19 @@ Ldebug_info0:
 	.long	LFE3-LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x6af
+	.long	0x6e3
 	.uleb128 0x12
 	.secrel32	LASF1
 	.byte	0x1
 	.byte	0x28
-	.long	0x6af
+	.long	0x6e3
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.byte	0
 	.uleb128 0x6
 	.byte	0x4
-	.long	0xb5
+	.long	0xc4
 	.uleb128 0x11
 	.ascii "LLF_RESTORE_REGISTERS\0"
 	.byte	0x1
@@ -686,12 +702,12 @@ Ldebug_info0:
 	.long	LFE4-LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x6ec
+	.long	0x720
 	.uleb128 0x13
 	.ascii "task\0"
 	.byte	0x1
 	.byte	0x2d
-	.long	0x5b0
+	.long	0x5e4
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -704,12 +720,12 @@ Ldebug_info0:
 	.long	LFE5-LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x725
+	.long	0x759
 	.uleb128 0x12
 	.secrel32	LASF2
 	.byte	0x1
 	.byte	0x32
-	.long	0x6af
+	.long	0x6e3
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -722,12 +738,12 @@ Ldebug_info0:
 	.long	LFE6-LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x75b
+	.long	0x78f
 	.uleb128 0x12
 	.secrel32	LASF2
 	.byte	0x1
 	.byte	0x37
-	.long	0x6af
+	.long	0x6e3
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -1886,6 +1902,9 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
+	.byte	0x1
+	.uleb128 0x58
+	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_global.h"
 	.byte	0x3

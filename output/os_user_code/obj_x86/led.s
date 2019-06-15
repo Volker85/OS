@@ -78,7 +78,7 @@ Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_user_code/../os_base/../os_user_code/led.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x1ba
+	.long	0x1ee
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -95,13 +95,29 @@ Ldebug_info0:
 	.byte	0x8
 	.ascii "unsigned char\0"
 	.uleb128 0x2
+	.byte	0x1
+	.byte	0x6
+	.ascii "signed char\0"
+	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
 	.ascii "short unsigned int\0"
 	.uleb128 0x2
+	.byte	0x2
+	.byte	0x5
+	.ascii "short int\0"
+	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x5
+	.ascii "long int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x7
+	.ascii "sizetype\0"
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
@@ -110,7 +126,7 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x2
 	.byte	0x29
-	.long	0xfd
+	.long	0x131
 	.uleb128 0x4
 	.ascii "LED1\0"
 	.sleb128 0
@@ -128,7 +144,7 @@ Ldebug_info0:
 	.ascii "led_t\0"
 	.byte	0x2
 	.byte	0x2e
-	.long	0xd8
+	.long	0x10c
 	.uleb128 0x6
 	.ascii "USER_LED_INIT\0"
 	.byte	0x1
@@ -137,12 +153,12 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x138
+	.long	0x16c
 	.uleb128 0x7
 	.ascii "Led\0"
 	.byte	0x1
 	.byte	0x4
-	.long	0xfd
+	.long	0x131
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -155,12 +171,12 @@ Ldebug_info0:
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x164
+	.long	0x198
 	.uleb128 0x7
 	.ascii "Led\0"
 	.byte	0x1
 	.byte	0x9
-	.long	0xfd
+	.long	0x131
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -173,12 +189,12 @@ Ldebug_info0:
 	.long	LFE2-LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x191
+	.long	0x1c5
 	.uleb128 0x7
 	.ascii "Led\0"
 	.byte	0x1
 	.byte	0xe
-	.long	0xfd
+	.long	0x131
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -195,7 +211,7 @@ Ldebug_info0:
 	.ascii "Led\0"
 	.byte	0x1
 	.byte	0x13
-	.long	0xfd
+	.long	0x131
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -1163,6 +1179,9 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
+	.byte	0x1
+	.uleb128 0x58
+	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_user_code/../os_base/../os_sim/lld_global.h"
 	.byte	0x3

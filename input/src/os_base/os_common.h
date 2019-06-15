@@ -54,6 +54,7 @@ enum os_sw_bugs_e
    os_bug_critical_stack_usage
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
+typedef uint8 boolean_t;
 enum os_sw_bugs_function_e
 {
    Func_NoFunction = 0,
@@ -82,4 +83,29 @@ typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 extern void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
 
 typedef void (*func_ptr_t)(void);
+
+
+#define BigIntSize 16
+typedef struct BigInt_s
+{
+  /*
+  number 0x4000 is stored as {0x00,0x00,0x00,0x00,
+                              0x00,0x00,0x00,0x00,
+                              0x00,0x00,0x00,0x00,
+                              0x00,0x00,0x40,0x00}
+                              Big endian 
+  */ 
+  uint8  Number[BigIntSize]; 
+}BigInt;
+extern void AssignNull(BigInt* leftOperand);
+extern void Assign(BigInt* leftOperand, BigInt* rightOperand);
+extern boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2);
+extern boolean_t IsLess(BigInt* Operand1, BigInt* Operand2);
+extern void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor);
+extern void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2);
+extern void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend);
+extern void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand);
 #endif /* _os_common_h_ */

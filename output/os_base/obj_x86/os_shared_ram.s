@@ -22,7 +22,7 @@ Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x2f5
+	.long	0x31d
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -42,33 +42,45 @@ Ldebug_info0:
 	.byte	0x8
 	.ascii "unsigned char\0"
 	.uleb128 0x3
+	.byte	0x1
+	.byte	0x6
+	.ascii "signed char\0"
+	.uleb128 0x3
 	.byte	0x2
 	.byte	0x7
 	.ascii "short unsigned int\0"
+	.uleb128 0x3
+	.byte	0x2
+	.byte	0x5
+	.ascii "short int\0"
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
 	.uleb128 0x3
 	.byte	0x4
-	.byte	0x7
-	.ascii "unsigned int\0"
-	.uleb128 0x4
-	.long	0x89
-	.long	0xfc
-	.uleb128 0x5
-	.long	0xfc
-	.byte	0xff
-	.byte	0
+	.byte	0x5
+	.ascii "long int\0"
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x7
 	.ascii "sizetype\0"
+	.uleb128 0x3
+	.byte	0x4
+	.byte	0x7
+	.ascii "unsigned int\0"
+	.uleb128 0x4
+	.long	0x89
+	.long	0x130
+	.uleb128 0x5
+	.long	0x104
+	.byte	0xff
+	.byte	0
 	.uleb128 0x6
 	.ascii "RAM_BLOCK_C00_C00\0"
 	.byte	0x1
 	.byte	0x15
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C00_C00
@@ -76,7 +88,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C00_C01\0"
 	.byte	0x1
 	.byte	0x16
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C00_C01
@@ -84,7 +96,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C00_C02\0"
 	.byte	0x1
 	.byte	0x17
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C00_C02
@@ -92,7 +104,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C00_C03\0"
 	.byte	0x1
 	.byte	0x18
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C00_C03
@@ -100,7 +112,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C01_C00\0"
 	.byte	0x1
 	.byte	0x1a
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C01_C00
@@ -108,7 +120,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C01_C01\0"
 	.byte	0x1
 	.byte	0x1b
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C01_C01
@@ -116,7 +128,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C01_C02\0"
 	.byte	0x1
 	.byte	0x1c
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C01_C02
@@ -124,7 +136,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C01_C03\0"
 	.byte	0x1
 	.byte	0x1d
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C01_C03
@@ -132,7 +144,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C02_C00\0"
 	.byte	0x1
 	.byte	0x1f
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C02_C00
@@ -140,7 +152,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C02_C01\0"
 	.byte	0x1
 	.byte	0x20
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C02_C01
@@ -148,7 +160,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C02_C02\0"
 	.byte	0x1
 	.byte	0x21
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C02_C02
@@ -156,7 +168,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C02_C03\0"
 	.byte	0x1
 	.byte	0x22
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C02_C03
@@ -164,7 +176,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C03_C00\0"
 	.byte	0x1
 	.byte	0x24
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C03_C00
@@ -172,7 +184,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C03_C01\0"
 	.byte	0x1
 	.byte	0x25
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C03_C01
@@ -180,7 +192,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C03_C02\0"
 	.byte	0x1
 	.byte	0x26
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C03_C02
@@ -188,7 +200,7 @@ Ldebug_info0:
 	.ascii "RAM_BLOCK_C03_C03\0"
 	.byte	0x1
 	.byte	0x27
-	.long	0xec
+	.long	0x120
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_BLOCK_C03_C03
@@ -1098,6 +1110,9 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
+	.byte	0x1
+	.uleb128 0x58
+	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
 	.byte	0x3

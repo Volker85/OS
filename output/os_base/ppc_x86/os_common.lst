@@ -1,114 +1,39 @@
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_GetCurrentTime':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:20:11: error: invalid type argument of unary '*' (have 'long unsigned int')
-    return *DWT_CYCCNT;
-           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_ResetCurrentTime':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:26:4: error: invalid type argument of unary '*' (have 'long unsigned int')
-    *DWT_LAR = 0xC5ACCE55; 
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:29:4: error: invalid type argument of unary '*' (have 'long unsigned int')
-    *SCB_DEMCR |= 0x01000000; 
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:32:4: error: invalid type argument of unary '*' (have 'long unsigned int')
-    *DWT_CYCCNT = 0;
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:4: error: invalid type argument of unary '*' (have 'long unsigned int')
-    *DWT_CTRL |= 1; 
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: At top level:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:17: error: 'BigIntSize' undeclared here (not in a function)
-   uint8  Number[BigIntSize]; 
-                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:1: warning: useless storage class specifier in empty declaration
- };
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:50:13: error: unknown type name 'BBigInt'
- void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:50:29: error: unknown type name 'BigInt'
- void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-                             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:50:52: error: unknown type name 'BigInt'
- void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-                                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:60:13: error: unknown type name 'BigInt'
- void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:60:32: error: unknown type name 'BigInt'
- void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
-                                ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:60:49: error: unknown type name 'BigInt'
- void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
-                                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:81:13: error: unknown type name 'BigInt'
- void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:81:30: error: unknown type name 'BigInt'
- void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
-                              ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:81:47: error: unknown type name 'BigInt'
- void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
-                                               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:103:13: error: unknown type name 'BigInt'
- void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:103:31: error: unknown type name 'BigInt'
- void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
-                               ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:103:49: error: unknown type name 'BigInt'
- void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
-                                                 ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:124:1: error: unknown type name 'boolean_t'
- boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:124:18: error: unknown type name 'BigInt'
- boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
-                  ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:124:36: error: unknown type name 'BigInt'
- boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
-                                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:145:1: error: unknown type name 'boolean_t'
- boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:145:25: error: unknown type name 'BigInt'
- boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
-                         ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:145:43: error: unknown type name 'BigInt'
- boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
-                                           ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:149:1: error: unknown type name 'boolean_t'
- boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:149:19: error: unknown type name 'BigInt'
- boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntMul':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: error: 'tmpProdukt' undeclared (first use in this function)
+          tmpProdukt = (uint16)Faktor1->Number[i1] * (uint16)Faktor2->Number[i2];      
+          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:86:10: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:87:10: error: 'tmpShift' undeclared (first use in this function)
+          tmpShift = i1+i2;
+          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:90:19: error: invalid type argument of '->' (have 'BigInt')
+          tmpBigInt->Number[BigIntSize-1] = tmpProdukt & 0xFFu;
                    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:149:37: error: unknown type name 'BigInt'
- boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
-                                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:1: error: unknown type name 'boolean_t'
- boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:21: error: unknown type name 'BigInt'
- boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
-                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:39: error: unknown type name 'BigInt'
- boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
-                                       ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:1: error: unknown type name 'boolean_t'
- boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
- ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:28: error: unknown type name 'BigInt'
- boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
-                            ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:46: error: unknown type name 'BigInt'
- boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
-                                              ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:190:13: error: unknown type name 'BigInt'
- void Assign(BigInt* leftOperand, BigInt* rightOperand)
-             ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:190:34: error: unknown type name 'BigInt'
- void Assign(BigInt* leftOperand, BigInt* rightOperand)
-                                  ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:197:17: error: unknown type name 'BigInt'
- void AssignNull(BigInt* leftOperand)
-                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:91:19: error: invalid type argument of '->' (have 'BigInt')
+          tmpBigInt->Number[BigIntSize-2] = (tmpProdukt & 0x100u)>>8;
+                   ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:93:10: error: incompatible type for argument 3 of 'IntAdd'
+          IntAdd(Produkt, Produkt, tmpBigInt);         
+          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'struct BigInt *' but argument is of type 'BigInt'
+ void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+      ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntDiv':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:110:10: error: 'tmpQuotient' undeclared (first use in this function)
+          tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];      
+          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:111:10: error: 'tmpShift' undeclared (first use in this function)
+          tmpShift = i1+i2;
+          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:114:19: error: invalid type argument of '->' (have 'BigInt')
+          tmpBigInt->Number[BigIntSize-1] = tmpQuotient & 0xFFu;
+                   ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:115:19: error: invalid type argument of '->' (have 'BigInt')
+          tmpBigInt->Number[BigIntSize-2] = (tmpQuotient & 0x100u)>>8;
+                   ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:117:10: error: incompatible type for argument 3 of 'IntAdd'
+          IntAdd(Quotient, Quotient, tmpBigInt);       
+          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:40:6: note: expected 'struct BigInt *' but argument is of type 'BigInt'
+ void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+      ^

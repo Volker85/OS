@@ -5,11 +5,11 @@ void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 {
    OS_SW_BUG[task_func_nr] = bug_nr;
 }
-#define DWT_CTRL   ((volatile uint32)0xE0001000)
-#define DWT_CYCCNT ((volatile uint32)0xE0001004)
+#define DWT_CTRL   ((volatile uint32*)0xE0001000)
+#define DWT_CYCCNT ((volatile uint32*)0xE0001004)
 
-#define DWT_LAR     ((volatile uint32)0xE0001FB0)
-#define SCB_DEMCR   ((volatile uint32)0xE000EDFC)
+#define DWT_LAR     ((volatile uint32*)0xE0001FB0)
+#define SCB_DEMCR   ((volatile uint32*)0xE000EDFC)
 
 
 unsigned_int32_t OS_GetCurrentTime(void)
@@ -35,41 +35,35 @@ void OS_ResetCurrentTime(void)
    *DWT_CTRL |= 1; 
 }
 
-typedef struct BigInt
-{
-  /*
-  number 0x4000 is stored as {0x00,0x00,0x00,0x00,
-                              0x00,0x00,0x00,0x00,
-                              0x00,0x00,0x00,0x00,
-                              0x00,0x00,0x40,0x00}
-                              Big endian 
-  */ 
-  uint8  Number[BigIntSize]; 
-};
 
-void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+
+void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
 {
+   sint8 pos;
    uint16 carry  = 0;
-   for(uint8 pos = BigIntSize-1; pos >= 0; pos--)
+
+   for(pos = BigIntSize-1; pos >= 0; pos--)
    {
-      uint16 tmpSum = (uint16)ErsterSummand->Number[i] +(uint16)ZweiterSummand->Number[i] + carry;   
+      uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
       Summe->Number[pos] = tmpSum & 0xFFu;
       carry = tmpSum & 0xFF00u;      
    }   
 }
 void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
 {
+   sint8 pos;
    uint16 carry  = 0;
-   for(uint8 pos = BigIntSize-1; pos >= 0; pos--)
+   
+   for(pos = BigIntSize-1; pos >= 0; pos--)
    {
       uint16 tmpDiff;
-      if(Minuend->Number[i]  >= (Subtrahend->Number[i] + carry))
+      if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
       {
-         tmpDiff = (uint16)Minuend->Number[i] - (uint16)Subtrahend->Number[i] - carry;   
+         tmpDiff = (uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - carry;   
       }
-      else if((Minuend->Number[i]+0x100)  >= (Subtrahend->Number[i] + carry))
+      else if((Minuend->Number[pos]+0x100)  >= (Subtrahend->Number[pos] + carry))
       {
-         tmpDiff = 0x100+(uint16)Minuend->Number[i] - (uint16)Subtrahend->Number[i] - (uint16)carry;   
+         tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;/*TODO*/   
           
       }
       else      
@@ -81,12 +75,13 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
 void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
 {
    BigInt tmpBigInt;
+   uint8 i1, i2;
    /* clear output */
    AssignNull(Produkt);
    
-   for(uint8 i1 = 0; i1 < BigIntSize; i1++)
+   for(i1 = 0; i1 < BigIntSize; i1++)
    {
-      for(uint8 i2 = 0; i2 < BigIntSize; i2++)
+      for(i2 = 0; i2 < BigIntSize; i2++)
       {         
          tmpProdukt = (uint16)Faktor1->Number[i1] * (uint16)Faktor2->Number[i2];      
          tmpShift = i1+i2;
@@ -96,6 +91,7 @@ void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
          tmpBigInt->Number[BigIntSize-2] = (tmpProdukt & 0x100u)>>8;
          /* add tmpBigInt to Produkt*/
          IntAdd(Produkt, Produkt, tmpBigInt);         
+         /*TODO*/   
       }   
    }   
    
@@ -105,10 +101,11 @@ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
    BigInt tmpBigInt;
    /* clear output */
    AssignNull(Quotient);
+   uint8 i1, i2;
    
-   for(uint8 i1 = 0; i1 < BigIntSize; i1++)
+   for(i1 = 0; i1 < BigIntSize; i1++)
    {
-      for(uint8 i2 = 0; i2 < BigIntSize; i2++)
+      for(i2 = 0; i2 < BigIntSize; i2++)
       {         
          tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];      
          tmpShift = i1+i2;
@@ -117,14 +114,16 @@ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
          tmpBigInt->Number[BigIntSize-1] = tmpQuotient & 0xFFu;
          tmpBigInt->Number[BigIntSize-2] = (tmpQuotient & 0x100u)>>8;
          /* add tmpBigInt to Quotient*/
-         IntAdd(Quotient, Quotient, tmpBigInt);         
+         IntAdd(Quotient, Quotient, tmpBigInt);       
+         /*TODO*/            
       }   
    }          
 }
 boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
 {
+   uint8 pos;
    boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
-   for(uint8 pos = 0; pos < BigIntSize; pos++)
+   for(pos = 0; pos < BigIntSize; pos++)
    {
       if(Operand1->Number[pos] < Operand2->Number[pos])
       {
@@ -148,8 +147,9 @@ boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
 }
 boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
 {
+   uint8 pos;
    boolean_t IsEqual = True;/* in case no if/elseif) was entered, the numbers are equal -> return True */
-   for(uint8 pos = 0; pos < BigIntSize; pos++)
+   for(pos = 0; pos < BigIntSize; pos++)
    {
       if(Operand1->Number[pos] != Operand2->Number[pos])
       {
@@ -164,8 +164,9 @@ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
 }
 boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
 {
+   uint8 pos;
    boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
-   for(uint8 pos = 0; pos < BigIntSize; pos++)
+   for(pos = 0; pos < BigIntSize; pos++)
    {
       if(Operand1->Number[pos] < Operand2->Number[pos])
       {
@@ -189,14 +190,16 @@ boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
 }
 void Assign(BigInt* leftOperand, BigInt* rightOperand)
 {
-   for (uint8 pos = 0; pos < BigIntSize; pos++)
+   uint8 pos;
+   for (pos = 0; pos < BigIntSize; pos++)
    {
       leftOperand->Number[pos] = rightOperand->Number[pos];
    }
 }
 void AssignNull(BigInt* leftOperand)
 {
-   for (uint8 pos = 0; pos < BigIntSize; pos++)
+   uint8 pos;
+   for (pos = 0; pos < BigIntSize; pos++)
    {
       leftOperand->Number[pos] = 0x00;
    }

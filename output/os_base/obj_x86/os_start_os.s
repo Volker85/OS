@@ -50,7 +50,7 @@ Letext0:
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x256
+	.long	0x28a
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -67,18 +67,34 @@ Ldebug_info0:
 	.byte	0x8
 	.ascii "unsigned char\0"
 	.uleb128 0x2
+	.byte	0x1
+	.byte	0x6
+	.ascii "signed char\0"
+	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
 	.ascii "short unsigned int\0"
 	.uleb128 0x2
+	.byte	0x2
+	.byte	0x5
+	.ascii "short int\0"
+	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x5
+	.ascii "long int\0"
 	.uleb128 0x3
 	.ascii "uint32\0"
 	.byte	0x3
-	.byte	0x23
-	.long	0xb6
+	.byte	0x29
+	.long	0xd2
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x7
+	.ascii "sizetype\0"
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
@@ -95,59 +111,59 @@ Ldebug_info0:
 	.ascii "OS_STATE\0"
 	.byte	0x2
 	.byte	0x11
-	.long	0x111
+	.long	0x145
 	.uleb128 0x6
-	.long	0xcb
+	.long	0xf3
 	.uleb128 0x5
 	.ascii "VAR_HARDFAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x12
-	.long	0x111
+	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_MEM_MANAG_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x13
-	.long	0x111
+	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_USAGE_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x14
-	.long	0x111
+	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x15
-	.long	0x111
+	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_MEM_FAULT_ADDR_REG\0"
 	.byte	0x2
 	.byte	0x16
-	.long	0x111
+	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_BUS_FAULT_ADDR_REG\0"
 	.byte	0x2
 	.byte	0x17
-	.long	0x111
+	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_AUX_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x18
-	.long	0x111
+	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_BUS_FAULT_STATUS_REG\0"
 	.byte	0x2
 	.byte	0x19
-	.long	0x111
+	.long	0x145
 	.uleb128 0x5
 	.ascii "LINK_REGISTER_HANDLER\0"
 	.byte	0x2
 	.byte	0x1a
-	.long	0x111
+	.long	0x145
 	.uleb128 0x5
 	.ascii "BACKUP_SYSTICK_CURRENT_VAL_REG\0"
 	.byte	0x2
 	.byte	0x1b
-	.long	0x111
+	.long	0x145
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -1072,6 +1088,9 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
+	.byte	0x1
+	.uleb128 0x58
+	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
 	.byte	0x3

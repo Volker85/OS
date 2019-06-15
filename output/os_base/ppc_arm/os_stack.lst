@@ -1,11 +1,324 @@
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackCheck':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:15:54: error: 'nr_of_coresj' undeclared (first use in this function); did you mean 'nr_of_cores'?
-       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
-                                                      ^~~~~~~~~~~~
-                                                      nr_of_cores
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:15:54: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackChkPatternInit':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:41:54: error: 'nr_of_coresj' undeclared (first use in this function); did you mean 'nr_of_cores'?
-       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
-                                                      ^~~~~~~~~~~~
-                                                      nr_of_cores
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 2
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"os_stack.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	OS_StackCheck
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	OS_StackCheck:
+  24              	.LFB0:
+  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.c"
+   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** #include "os_firstinc.h"
+   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** void OS_StackCheck(void)
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** {
+  26              		.loc 1 4 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    /* the last 64 bytes are reserved for stack check for every stack 
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    unsigned_char_t OS_STACK[NR_OF_CORES][OS_STACK_SIZE];
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    the stack is starting at the highest address and growing to lower addresses -> pattern start on 
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    */
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    static volatile int stack_pos = 0, nr_of_cores = 0, failed = False;
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < 64; stack_pos++)
+  30              		.loc 1 13 0
+  31 0000 184A     		ldr	r2, .L17
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    /* the last 64 bytes are reserved for stack check for every stack 
+  32              		.loc 1 4 0
+  33 0002 70B5     		push	{r4, r5, r6, lr}
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 4, -16
+  36              		.cfi_offset 5, -12
+  37              		.cfi_offset 6, -8
+  38              		.cfi_offset 14, -4
+  39              		.loc 1 13 0
+  40 0004 0025     		movs	r5, #0
+  41 0006 1560     		str	r5, [r2]
+  42 0008 1368     		ldr	r3, [r2]
+  43 000a 3F2B     		cmp	r3, #63
+  44 000c 21DC     		bgt	.L3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s 			page 2
+
+
+  45 000e 164E     		ldr	r6, .L17+4
+  46 0010 1648     		ldr	r0, .L17+8
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES; nr_of_cores++)
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          if(OS_STACK[nr_of_cores][stack_pos] != 0xAA)
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          {
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             failed = True;
+  47              		.loc 1 19 0
+  48 0012 0124     		movs	r4, #1
+  49              	.L2:
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  50              		.loc 1 15 0
+  51 0014 5560     		str	r5, [r2, #4]
+  52 0016 5368     		ldr	r3, [r2, #4]
+  53 0018 002B     		cmp	r3, #0
+  54 001a 0FDC     		bgt	.L5
+  55              	.L4:
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          {
+  56              		.loc 1 17 0
+  57 001c 5368     		ldr	r3, [r2, #4]
+  58 001e 1168     		ldr	r1, [r2]
+  59 0020 03EB8303 		add	r3, r3, r3, lsl #2
+  60 0024 00EB0333 		add	r3, r0, r3, lsl #12
+  61 0028 5B5C     		ldrb	r3, [r3, r1]	@ zero_extendqisi2
+  62 002a AA2B     		cmp	r3, #170
+  63              		.loc 1 19 0
+  64 002c 18BF     		it	ne
+  65 002e 9460     		strne	r4, [r2, #8]
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  66              		.loc 1 15 0
+  67 0030 5368     		ldr	r3, [r2, #4]
+  68 0032 0133     		adds	r3, r3, #1
+  69 0034 5360     		str	r3, [r2, #4]
+  70 0036 5368     		ldr	r3, [r2, #4]
+  71 0038 002B     		cmp	r3, #0
+  72 003a EFDD     		ble	.L4
+  73              	.L5:
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          }   
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       if(OS_MAIN_STACK[stack_pos] != 0xAA)
+  74              		.loc 1 22 0
+  75 003c 1368     		ldr	r3, [r2]
+  76 003e F35C     		ldrb	r3, [r6, r3]	@ zero_extendqisi2
+  77 0040 AA2B     		cmp	r3, #170
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          failed = True;
+  78              		.loc 1 24 0
+  79 0042 18BF     		it	ne
+  80 0044 9460     		strne	r4, [r2, #8]
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  81              		.loc 1 13 0
+  82 0046 1368     		ldr	r3, [r2]
+  83 0048 0133     		adds	r3, r3, #1
+  84 004a 1360     		str	r3, [r2]
+  85 004c 1368     		ldr	r3, [r2]
+  86 004e 3F2B     		cmp	r3, #63
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s 			page 3
+
+
+  87 0050 E0DD     		ble	.L2
+  88              	.L3:
+  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }         
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    if(failed == True)   
+  89              		.loc 1 27 0
+  90 0052 9368     		ldr	r3, [r2, #8]
+  91 0054 012B     		cmp	r3, #1
+  92 0056 00D0     		beq	.L16
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       OS_SetSwBug(os_bug_critical_stack_usage,Func_StackCheck);
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       while(1)
+  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          /* allow easy debugging */
+  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }  
+  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }   
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** }
+  93              		.loc 1 35 0
+  94 0058 70BD     		pop	{r4, r5, r6, pc}
+  95              	.L16:
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       while(1)
+  96              		.loc 1 29 0
+  97 005a 1121     		movs	r1, #17
+  98 005c 0920     		movs	r0, #9
+  99 005e FFF7FEFF 		bl	OS_SetSwBug
+ 100              	.LVL0:
+ 101              	.L11:
+ 102 0062 FEE7     		b	.L11
+ 103              	.L18:
+ 104              		.align	2
+ 105              	.L17:
+ 106 0064 00000000 		.word	.LANCHOR0
+ 107 0068 00000000 		.word	OS_MAIN_STACK
+ 108 006c 00000000 		.word	OS_STACK
+ 109              		.cfi_endproc
+ 110              	.LFE0:
+ 112              		.align	1
+ 113              		.p2align 2,,3
+ 114              		.global	OS_StackChkPatternInit
+ 115              		.syntax unified
+ 116              		.thumb
+ 117              		.thumb_func
+ 118              		.fpu softvfp
+ 120              	OS_StackChkPatternInit:
+ 121              	.LFB1:
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** void OS_StackChkPatternInit(void)
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** {
+ 122              		.loc 1 37 0
+ 123              		.cfi_startproc
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126              		@ link register save eliminated.
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    static volatile int stack_pos = 0,nr_of_cores = 0;
+  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < 64; stack_pos++)
+ 127              		.loc 1 39 0
+ 128 0070 124A     		ldr	r2, .L27
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    static volatile int stack_pos = 0,nr_of_cores = 0;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s 			page 4
+
+
+ 129              		.loc 1 37 0
+ 130 0072 F0B4     		push	{r4, r5, r6, r7}
+ 131              		.cfi_def_cfa_offset 16
+ 132              		.cfi_offset 4, -16
+ 133              		.cfi_offset 5, -12
+ 134              		.cfi_offset 6, -8
+ 135              		.cfi_offset 7, -4
+ 136              		.loc 1 39 0
+ 137 0074 0026     		movs	r6, #0
+ 138 0076 D660     		str	r6, [r2, #12]
+ 139 0078 D368     		ldr	r3, [r2, #12]
+ 140 007a 3F2B     		cmp	r3, #63
+ 141 007c 1BDC     		bgt	.L19
+ 142 007e 104F     		ldr	r7, .L27+4
+ 143 0080 104D     		ldr	r5, .L27+8
+  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES; nr_of_cores++)
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          OS_STACK[nr_of_cores][stack_pos] = 0xAA;
+ 144              		.loc 1 43 0
+ 145 0082 AA24     		movs	r4, #170
+ 146              	.L23:
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 147              		.loc 1 41 0
+ 148 0084 1661     		str	r6, [r2, #16]
+ 149 0086 1369     		ldr	r3, [r2, #16]
+ 150 0088 002B     		cmp	r3, #0
+ 151 008a 0CDC     		bgt	.L21
+ 152              	.L22:
+ 153              		.loc 1 43 0 discriminator 3
+ 154 008c 1369     		ldr	r3, [r2, #16]
+ 155 008e D068     		ldr	r0, [r2, #12]
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 156              		.loc 1 41 0 discriminator 3
+ 157 0090 1169     		ldr	r1, [r2, #16]
+ 158 0092 0131     		adds	r1, r1, #1
+ 159 0094 1161     		str	r1, [r2, #16]
+ 160              		.loc 1 43 0 discriminator 3
+ 161 0096 03EB8303 		add	r3, r3, r3, lsl #2
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 162              		.loc 1 41 0 discriminator 3
+ 163 009a 1169     		ldr	r1, [r2, #16]
+ 164              		.loc 1 43 0 discriminator 3
+ 165 009c 05EB0333 		add	r3, r5, r3, lsl #12
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 166              		.loc 1 41 0 discriminator 3
+ 167 00a0 0029     		cmp	r1, #0
+ 168              		.loc 1 43 0 discriminator 3
+ 169 00a2 1C54     		strb	r4, [r3, r0]
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 170              		.loc 1 41 0 discriminator 3
+ 171 00a4 F2DD     		ble	.L22
+ 172              	.L21:
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       OS_MAIN_STACK[stack_pos] = 0xAA;
+ 173              		.loc 1 45 0
+ 174 00a6 D168     		ldr	r1, [r2, #12]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s 			page 5
+
+
+  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 175              		.loc 1 39 0
+ 176 00a8 D368     		ldr	r3, [r2, #12]
+ 177              		.loc 1 45 0
+ 178 00aa 7C54     		strb	r4, [r7, r1]
+  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 179              		.loc 1 39 0
+ 180 00ac 0133     		adds	r3, r3, #1
+ 181 00ae D360     		str	r3, [r2, #12]
+ 182 00b0 D368     		ldr	r3, [r2, #12]
+ 183 00b2 3F2B     		cmp	r3, #63
+ 184 00b4 E6DD     		ble	.L23
+ 185              	.L19:
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }    
+  47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** }   ...
+ 186              		.loc 1 47 0
+ 187 00b6 F0BC     		pop	{r4, r5, r6, r7}
+ 188              		.cfi_restore 7
+ 189              		.cfi_restore 6
+ 190              		.cfi_restore 5
+ 191              		.cfi_restore 4
+ 192              		.cfi_def_cfa_offset 0
+ 193 00b8 7047     		bx	lr
+ 194              	.L28:
+ 195 00ba 00BF     		.align	2
+ 196              	.L27:
+ 197 00bc 00000000 		.word	.LANCHOR0
+ 198 00c0 00000000 		.word	OS_MAIN_STACK
+ 199 00c4 00000000 		.word	OS_STACK
+ 200              		.cfi_endproc
+ 201              	.LFE1:
+ 203              		.bss
+ 204              		.align	2
+ 205              		.set	.LANCHOR0,. + 0
+ 208              	stack_pos.4029:
+ 209 0000 00000000 		.space	4
+ 212              	nr_of_cores.4030:
+ 213 0004 00000000 		.space	4
+ 216              	failed.4031:
+ 217 0008 00000000 		.space	4
+ 220              	stack_pos.4042:
+ 221 000c 00000000 		.space	4
+ 224              	nr_of_cores.4043:
+ 225 0010 00000000 		.space	4
+ 226              		.text
+ 227              	.Letext0:
+ 228              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 229              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ 230              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+ 231              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ 232              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_stack.c
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:23     .text:00000000 OS_StackCheck
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:106    .text:00000064 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:112    .text:00000070 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:120    .text:00000070 OS_StackChkPatternInit
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:197    .text:000000bc $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:204    .bss:00000000 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:208    .bss:00000000 stack_pos.4029
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:212    .bss:00000004 nr_of_cores.4030
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:216    .bss:00000008 failed.4031
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:220    .bss:0000000c stack_pos.4042
+C:\Users\PRESID~1\AppData\Local\Temp\ccVVNjjJ.s:224    .bss:00000010 nr_of_cores.4043
+                           .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
+                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
+                           .group:00000000 wm4.os_common.h.2.7d3083dfb0b17ee9cbe20f6fe4481cd9
+                           .group:00000000 wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898
+                           .group:00000000 wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960
+                           .group:00000000 wm4.os_stack.h.2.f736ad9941e78e3f128684d765efeb27
+                           .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
+                           .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
+
+UNDEFINED SYMBOLS
+OS_SetSwBug
+OS_MAIN_STACK
+OS_STACK

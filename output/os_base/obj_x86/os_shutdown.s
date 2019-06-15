@@ -119,7 +119,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/OS_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x4ca
+	.long	0x4fe
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -136,24 +136,36 @@ Ldebug_info0:
 	.byte	0x8
 	.ascii "unsigned char\0"
 	.uleb128 0x2
+	.byte	0x1
+	.byte	0x6
+	.ascii "signed char\0"
+	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
 	.ascii "short unsigned int\0"
 	.uleb128 0x2
+	.byte	0x2
+	.byte	0x5
+	.ascii "short int\0"
+	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
 	.ascii "long unsigned int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x5
+	.ascii "long int\0"
 	.uleb128 0x3
 	.ascii "uint32\0"
 	.byte	0x3
-	.byte	0x23
-	.long	0xb6
+	.byte	0x29
+	.long	0xd2
 	.uleb128 0x4
 	.ascii "os_sw_bugs_e\0"
 	.byte	0x4
 	.byte	0x2
 	.byte	0x2b
-	.long	0x21c
+	.long	0x244
 	.uleb128 0x5
 	.ascii "os_bug_no_bug\0"
 	.sleb128 0
@@ -189,8 +201,8 @@ Ldebug_info0:
 	.ascii "os_sw_bugs_function_e\0"
 	.byte	0x4
 	.byte	0x2
-	.byte	0x39
-	.long	0x3c1
+	.byte	0x3a
+	.long	0x3e9
 	.uleb128 0x5
 	.ascii "Func_NoFunction\0"
 	.sleb128 0
@@ -249,12 +261,16 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "func_ptr_t\0"
 	.byte	0x2
-	.byte	0x54
-	.long	0x3d3
+	.byte	0x55
+	.long	0x3fb
 	.uleb128 0x6
 	.byte	0x4
-	.long	0x3d9
+	.long	0x401
 	.uleb128 0x7
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x7
+	.ascii "sizetype\0"
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
@@ -264,7 +280,7 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x4
 	.byte	0x3
-	.long	0x43d
+	.long	0x471
 	.uleb128 0x5
 	.ascii "os_reset_hardreset\0"
 	.sleb128 0
@@ -279,7 +295,7 @@ Ldebug_info0:
 	.ascii "os_reset_type_t\0"
 	.byte	0x4
 	.byte	0x8
-	.long	0x3ea
+	.long	0x41e
 	.uleb128 0x8
 	.ascii "OS_DeinitHw\0"
 	.byte	0x1
@@ -316,7 +332,7 @@ Ldebug_info0:
 	.ascii "reset_typ\0"
 	.byte	0x1
 	.byte	0x17
-	.long	0x43d
+	.long	0x471
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -1319,6 +1335,9 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
+	.byte	0x1
+	.uleb128 0x58
+	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
 	.byte	0x3

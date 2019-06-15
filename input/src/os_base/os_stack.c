@@ -35,7 +35,7 @@ void OS_StackCheck(void)
 }
 void OS_StackChkPatternInit(void)
 {
-   volatile static int stack_pos = 0,nr_of_cores = 0;
+   static volatile int stack_pos = 0,nr_of_cores = 0;
    for(stack_pos = 0; stack_pos < 64; stack_pos++)
    {
       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES; nr_of_cores++)
