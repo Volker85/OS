@@ -104,23 +104,22 @@ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
 {
    BigInt tmpBigInt;
    /* clear output */
-   AssignNull(Produkt);
+   AssignNull(Quotient);
    
    for(uint8 i1 = 0; i1 < BigIntSize; i1++)
    {
       for(uint8 i2 = 0; i2 < BigIntSize; i2++)
       {         
-         //tmpProdukt = (uint16)Faktor1->Number[i1] * (uint16)Faktor2->Number[i2];      
-         //tmpShift = i1+i2;
+         tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];      
+         tmpShift = i1+i2;
          
          /* store the number in an temporary BigInt variable ...*/
-         tmpBigInt->Number[BigIntSize-1] = tmpProdukt & 0xFFu;
-         tmpBigInt->Number[BigIntSize-2] = (tmpProdukt & 0x100u)>>8;
-         /* add tmpBigInt to Produkt*/
+         tmpBigInt->Number[BigIntSize-1] = tmpQuotient & 0xFFu;
+         tmpBigInt->Number[BigIntSize-2] = (tmpQuotient & 0x100u)>>8;
+         /* add tmpBigInt to Quotient*/
          IntAdd(Quotient, Quotient, tmpBigInt);         
-         //TODO: not correct
       }   
-   }            
+   }          
 }
 boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
 {

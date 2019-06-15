@@ -1,15 +1,459 @@
 "Target_x86" 
-15.01.2019 19:15:48,97 
+15.06.2019 18:10:32,86 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:28:4: warning: implicit declaration of function 'LLF_GET_MPU_PRESENT' [-Wimplicit-function-declaration]
-    while(LLF_GET_MPU_PRESENT() != 0)
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_GetCurrentTime':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:20:11: error: invalid type argument of unary '*' (have 'long unsigned int')
+    return *DWT_CYCCNT;
+           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_ResetCurrentTime':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:26:4: error: invalid type argument of unary '*' (have 'long unsigned int')
+    *DWT_LAR = 0xC5ACCE55; 
     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:29:4: error: invalid type argument of unary '*' (have 'long unsigned int')
+    *SCB_DEMCR |= 0x01000000; 
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:32:4: error: invalid type argument of unary '*' (have 'long unsigned int')
+    *DWT_CYCCNT = 0;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:4: error: invalid type argument of unary '*' (have 'long unsigned int')
+    *DWT_CTRL |= 1; 
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: At top level:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:17: error: 'BigIntSize' undeclared here (not in a function)
+   uint8  Number[BigIntSize]; 
+                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:50:13: error: unknown type name 'BBigInt'
+ void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:50:29: error: unknown type name 'BigInt'
+ void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+                             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:50:52: error: unknown type name 'BigInt'
+ void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+                                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:60:13: error: unknown type name 'BigInt'
+ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:60:32: error: unknown type name 'BigInt'
+ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
+                                ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:60:49: error: unknown type name 'BigInt'
+ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
+                                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:81:13: error: unknown type name 'BigInt'
+ void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:81:30: error: unknown type name 'BigInt'
+ void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
+                              ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:81:47: error: unknown type name 'BigInt'
+ void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
+                                               ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:103:13: error: unknown type name 'BigInt'
+ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:103:31: error: unknown type name 'BigInt'
+ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
+                               ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:103:49: error: unknown type name 'BigInt'
+ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
+                                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:124:1: error: unknown type name 'boolean_t'
+ boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:124:18: error: unknown type name 'BigInt'
+ boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
+                  ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:124:36: error: unknown type name 'BigInt'
+ boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
+                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:145:1: error: unknown type name 'boolean_t'
+ boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:145:25: error: unknown type name 'BigInt'
+ boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
+                         ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:145:43: error: unknown type name 'BigInt'
+ boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
+                                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:149:1: error: unknown type name 'boolean_t'
+ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:149:19: error: unknown type name 'BigInt'
+ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+                   ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:149:37: error: unknown type name 'BigInt'
+ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+                                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:1: error: unknown type name 'boolean_t'
+ boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:21: error: unknown type name 'BigInt'
+ boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:39: error: unknown type name 'BigInt'
+ boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
+                                       ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:1: error: unknown type name 'boolean_t'
+ boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:28: error: unknown type name 'BigInt'
+ boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
+                            ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:46: error: unknown type name 'BigInt'
+ boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
+                                              ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:190:13: error: unknown type name 'BigInt'
+ void Assign(BigInt* leftOperand, BigInt* rightOperand)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:190:34: error: unknown type name 'BigInt'
+ void Assign(BigInt* leftOperand, BigInt* rightOperand)
+                                  ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:197:17: error: unknown type name 'BigInt'
+ void AssignNull(BigInt* leftOperand)
+                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_GetCurrentTime':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c: In function 'OS_StateHandler':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:168:4: warning: implicit declaration of function 'OS_StackCheck' [-Wimplicit-function-declaration]
+    OS_StackCheck();
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:27:5: error: 'MPU_RNR' undeclared (first use in this function)
+    *MPU_RNR  = 0;
+     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:27:5: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:28:5: error: 'MPU_RBAR' undeclared (first use in this function)
+    *MPU_RBAR = 0x08000000;/* FLASH Start */
+     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:5: error: 'MPU_RASR' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+                ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:33: error: 'MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:68: error: 'MPU_ASR_REGION_SIZE_FLASH' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+                                                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:96: error: 'MPU_ASR_REGION_ENABLE' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+                                                                                                ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:34:33: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
+                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:34:68: error: 'MPU_ASR_REGION_SIZE_RAM' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
+                                                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:39:16: error: 'MPU_ASR_STRONGLY_ORDERED' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+                ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:39:43: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+                                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:39:84: error: 'MPU_ASR_REGION_SIZE_PERIPHERIE' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+                                                                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_PreemptTask':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:217:42: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type
+             OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+                                          ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:8,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:87:13: note: expected 'uint8 *' but argument is of type 'unsigned_char_t (*)[20480]'
+ extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_StartTask':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:311:39: warning: passing argument 1 of 'OS_TASK_SAVE_SYSTEM_STACK' from incompatible pointer type
+             OS_TASK_SAVE_SYSTEM_STACK(&OS_MAIN_STACK);
+                                       ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:8,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:88:13: note: expected 'uint8 *' but argument is of type 'unsigned_char_t (*)[20480]'
+ extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TerminateTask':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:361:42: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type
+             OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+                                          ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:8,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:87:13: note: expected 'uint8 *' but argument is of type 'unsigned_char_t (*)[20480]'
+ extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_1':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:434:21: error: 'task' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:434:21: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_2':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:445:21: error: 'task' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:445:26: error: 'scheduling_task_ptr' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_3':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:456:21: error: 'task' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:456:26: error: 'scheduling_task_ptr' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackCheck':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:12:4: warning: 'static' is not at beginning of declaration [-Wold-style-declaration]
+    volatile static int stack_pos = 0,nr_of_cores = 0, failed = False;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:15:54: error: 'nr_of_coresj' undeclared (first use in this function)
+       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
+                                                      ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:15:54: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackChkPatternInit':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:38:4: warning: 'static' is not at beginning of declaration [-Wold-style-declaration]
+    volatile static int stack_pos = 0,nr_of_cores = 0;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:41:54: error: 'nr_of_coresj' undeclared (first use in this function)
+       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
+                                                      ^
 "assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:28:4: warning: implicit declaration of function 'LLF_GET_MPU_PRESENT' [-Wimplicit-function-declaration]
-    while(LLF_GET_MPU_PRESENT() != 0)
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_GetCurrentTime':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:20:11: error: invalid type argument of unary '*' (have 'long unsigned int')
+    return *DWT_CYCCNT;
+           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_ResetCurrentTime':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:26:4: error: invalid type argument of unary '*' (have 'long unsigned int')
+    *DWT_LAR = 0xC5ACCE55; 
     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:29:4: error: invalid type argument of unary '*' (have 'long unsigned int')
+    *SCB_DEMCR |= 0x01000000; 
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:32:4: error: invalid type argument of unary '*' (have 'long unsigned int')
+    *DWT_CYCCNT = 0;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:4: error: invalid type argument of unary '*' (have 'long unsigned int')
+    *DWT_CTRL |= 1; 
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: At top level:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:17: error: 'BigIntSize' undeclared here (not in a function)
+   uint8  Number[BigIntSize]; 
+                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:50:13: error: unknown type name 'BBigInt'
+ void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:50:29: error: unknown type name 'BigInt'
+ void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+                             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:50:52: error: unknown type name 'BigInt'
+ void IntAdd(BBigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+                                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:60:13: error: unknown type name 'BigInt'
+ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:60:32: error: unknown type name 'BigInt'
+ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
+                                ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:60:49: error: unknown type name 'BigInt'
+ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
+                                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:81:13: error: unknown type name 'BigInt'
+ void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:81:30: error: unknown type name 'BigInt'
+ void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
+                              ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:81:47: error: unknown type name 'BigInt'
+ void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
+                                               ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:103:13: error: unknown type name 'BigInt'
+ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:103:31: error: unknown type name 'BigInt'
+ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
+                               ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:103:49: error: unknown type name 'BigInt'
+ void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
+                                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:124:1: error: unknown type name 'boolean_t'
+ boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:124:18: error: unknown type name 'BigInt'
+ boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
+                  ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:124:36: error: unknown type name 'BigInt'
+ boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
+                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:145:1: error: unknown type name 'boolean_t'
+ boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:145:25: error: unknown type name 'BigInt'
+ boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
+                         ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:145:43: error: unknown type name 'BigInt'
+ boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
+                                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:149:1: error: unknown type name 'boolean_t'
+ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:149:19: error: unknown type name 'BigInt'
+ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+                   ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:149:37: error: unknown type name 'BigInt'
+ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+                                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:1: error: unknown type name 'boolean_t'
+ boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:21: error: unknown type name 'BigInt'
+ boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:39: error: unknown type name 'BigInt'
+ boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
+                                       ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:1: error: unknown type name 'boolean_t'
+ boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:28: error: unknown type name 'BigInt'
+ boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
+                            ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:46: error: unknown type name 'BigInt'
+ boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
+                                              ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:190:13: error: unknown type name 'BigInt'
+ void Assign(BigInt* leftOperand, BigInt* rightOperand)
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:190:34: error: unknown type name 'BigInt'
+ void Assign(BigInt* leftOperand, BigInt* rightOperand)
+                                  ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:197:17: error: unknown type name 'BigInt'
+ void AssignNull(BigInt* leftOperand)
+                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_GetCurrentTime':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c: In function 'OS_StateHandler':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:168:4: warning: implicit declaration of function 'OS_StackCheck' [-Wimplicit-function-declaration]
+    OS_StackCheck();
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c: In function 'OS_MmuSetup':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:27:5: error: 'MPU_RNR' undeclared (first use in this function)
+    *MPU_RNR  = 0;
+     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:27:5: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:28:5: error: 'MPU_RBAR' undeclared (first use in this function)
+    *MPU_RBAR = 0x08000000;/* FLASH Start */
+     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:5: error: 'MPU_RASR' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:16: error: 'MPU_ASR_NORMAL' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+                ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:33: error: 'MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:68: error: 'MPU_ASR_REGION_SIZE_FLASH' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+                                                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:29:96: error: 'MPU_ASR_REGION_ENABLE' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+                                                                                                ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:34:33: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
+                                 ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:34:68: error: 'MPU_ASR_REGION_SIZE_RAM' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
+                                                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:39:16: error: 'MPU_ASR_STRONGLY_ORDERED' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+                ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:39:43: error: 'MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+                                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:39:84: error: 'MPU_ASR_REGION_SIZE_PERIPHERIE' undeclared (first use in this function)
+    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+                                                                                    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_PreemptTask':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:217:42: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type
+             OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+                                          ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:8,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:87:13: note: expected 'uint8 *' but argument is of type 'unsigned_char_t (*)[20480]'
+ extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_StartTask':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:311:39: warning: passing argument 1 of 'OS_TASK_SAVE_SYSTEM_STACK' from incompatible pointer type
+             OS_TASK_SAVE_SYSTEM_STACK(&OS_MAIN_STACK);
+                                       ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:8,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:88:13: note: expected 'uint8 *' but argument is of type 'unsigned_char_t (*)[20480]'
+ extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TerminateTask':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:361:42: warning: passing argument 1 of 'OS_TASK_RESTORE_SYSTEM_STACK' from incompatible pointer type
+             OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
+                                          ^
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\lld_global.h:10:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:8,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\..\os_sim\..\os_base\os_task_common.h:87:13: note: expected 'uint8 *' but argument is of type 'unsigned_char_t (*)[20480]'
+ extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
+             ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_1':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:434:21: error: 'task' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:434:21: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_2':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:445:21: error: 'task' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:445:26: error: 'scheduling_task_ptr' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'TASK_3':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:456:21: error: 'task' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                     ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:456:26: error: 'scheduling_task_ptr' undeclared (first use in this function)
+    OS_TerminateTask(task,scheduling_task_ptr);
+                          ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackCheck':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:12:4: warning: 'static' is not at beginning of declaration [-Wold-style-declaration]
+    volatile static int stack_pos = 0,nr_of_cores = 0, failed = False;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:15:54: error: 'nr_of_coresj' undeclared (first use in this function)
+       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
+                                                      ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:15:54: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackChkPatternInit':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:38:4: warning: 'static' is not at beginning of declaration [-Wold-style-declaration]
+    volatile static int stack_pos = 0,nr_of_cores = 0;
+    ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:41:54: error: 'nr_of_coresj' undeclared (first use in this function)
+       for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
+                                                      ^
 "link it" 
+mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_common.o: No such file or directory
+mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_memory_mmu_setup.o: No such file or directory
+mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_base\obj_x86\os_task_scheduler.o: No such file or directory
+mingw32-g++.exe: error: E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_sim\obj_x86\os_stack.o: No such file or directory

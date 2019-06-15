@@ -12,7 +12,7 @@ LFB0:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 9 0
+	.loc 1 10 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -22,14 +22,14 @@ LFE0:
 	.def	_OS_DeinitSw;	.scl	3;	.type	32;	.endef
 _OS_DeinitSw:
 LFB1:
-	.loc 1 11 0
+	.loc 1 12 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 13 0
+	.loc 1 15 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -40,15 +40,20 @@ LFE1:
 	.def	_OS_DeinitMc;	.scl	2;	.type	32;	.endef
 _OS_DeinitMc:
 LFB2:
-	.loc 1 15 0
+	.loc 1 17 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 17 0
-	popl	%ebp
+	subl	$8, %esp
+	.loc 1 18 0
+	call	_LLF_MPU_DISABLE
+	.loc 1 19 0
+	call	_LLF_DISABLE_INTERRUPTS_ALL_CORES
+	.loc 1 21 0
+	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
@@ -58,7 +63,7 @@ LFE2:
 	.def	_OS_Shutdown;	.scl	2;	.type	32;	.endef
 _OS_Shutdown:
 LFB3:
-	.loc 1 20 0
+	.loc 1 24 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -66,50 +71,55 @@ LFB3:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 22 0
+	.loc 1 26 0
 	call	_LLF_DISABLE_INTERRUPTS_ALL_CORES
-	.loc 1 25 0
+	.loc 1 29 0
 	call	_LLF_MPU_DISABLE
-	.loc 1 30 0
+	.loc 1 32 0
 	cmpl	$1, 8(%ebp)
 	jne	L5
-	.loc 1 32 0
+	.loc 1 34 0
 	call	_LLF_MCU_SWITCH_OFF_POWER
 	jmp	L6
 L5:
-	.loc 1 34 0
+	.loc 1 36 0
 	cmpl	$0, 8(%ebp)
 	jne	L7
-	.loc 1 36 0
+	.loc 1 38 0
 	call	_LLF_MCU_RESET_POWER
 	jmp	L6
 L7:
-	.loc 1 38 0
+	.loc 1 40 0
 	cmpl	$2, 8(%ebp)
 	jne	L6
-	.loc 1 40 0
-	call	_OS_DeinitHw
-	.loc 1 41 0
-	call	_OS_DeinitSw
 	.loc 1 42 0
-	call	_OS_DeinitMc
+	call	_OS_DeinitHw
 	.loc 1 43 0
+	call	_OS_DeinitSw
+	.loc 1 44 0
+	call	_OS_DeinitMc
+	.loc 1 45 0
 	movl	$0, 8(%esp)
 	movl	$0, 4(%esp)
 	movl	$0, (%esp)
 	call	_OS_StartExtPrg
 L6:
-	.loc 1 52 0 discriminator 1
-	jmp	L6
+	.loc 1 51 0
+	movl	$16, 4(%esp)
+	movl	$8, (%esp)
+	call	_OS_SetSwBug
+L8:
+	.loc 1 55 0 discriminator 1
+	jmp	L8
 	.cfi_endproc
 LFE3:
 Letext0:
-	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
-	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
+	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
+	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/OS_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x1e2
+	.long	0x4ca
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -135,35 +145,133 @@ Ldebug_info0:
 	.ascii "long unsigned int\0"
 	.uleb128 0x3
 	.ascii "uint32\0"
-	.byte	0x2
+	.byte	0x3
 	.byte	0x23
 	.long	0xb6
+	.uleb128 0x4
+	.ascii "os_sw_bugs_e\0"
+	.byte	0x4
+	.byte	0x2
+	.byte	0x2b
+	.long	0x21c
+	.uleb128 0x5
+	.ascii "os_bug_no_bug\0"
+	.sleb128 0
+	.uleb128 0x5
+	.ascii "os_bug_taskstate_request_denied\0"
+	.sleb128 1
+	.uleb128 0x5
+	.ascii "os_bug_null_pointer\0"
+	.sleb128 2
+	.uleb128 0x5
+	.ascii "os_bug_task_max_wait_time_reached\0"
+	.sleb128 3
+	.uleb128 0x5
+	.ascii "os_bug_Task_unspecified\0"
+	.sleb128 4
+	.uleb128 0x5
+	.ascii "os_bug_exception_UndefInstruction\0"
+	.sleb128 5
+	.uleb128 0x5
+	.ascii "os_bug_exception_AbortPrefetch\0"
+	.sleb128 6
+	.uleb128 0x5
+	.ascii "os_bug_exception_AbortData\0"
+	.sleb128 7
+	.uleb128 0x5
+	.ascii "os_bug_reset_exit_or_shutdown_failed\0"
+	.sleb128 8
+	.uleb128 0x5
+	.ascii "os_bug_critical_stack_usage\0"
+	.sleb128 9
+	.byte	0
+	.uleb128 0x4
+	.ascii "os_sw_bugs_function_e\0"
+	.byte	0x4
+	.byte	0x2
+	.byte	0x39
+	.long	0x3c1
+	.uleb128 0x5
+	.ascii "Func_NoFunction\0"
+	.sleb128 0
+	.uleb128 0x5
+	.ascii "Func_SaveTaskEnvironment\0"
+	.sleb128 1
+	.uleb128 0x5
+	.ascii "Func_RestoreTaskEnvironment\0"
+	.sleb128 2
+	.uleb128 0x5
+	.ascii "Func_CreateTaskEnvironment\0"
+	.sleb128 3
+	.uleb128 0x5
+	.ascii "Func_DeleteTaskEnvironment\0"
+	.sleb128 4
+	.uleb128 0x5
+	.ascii "Func_InitTaskEnvironment\0"
+	.sleb128 5
+	.uleb128 0x5
+	.ascii "Func_StartTask\0"
+	.sleb128 6
+	.uleb128 0x5
+	.ascii "Func_PreemptTask\0"
+	.sleb128 7
+	.uleb128 0x5
+	.ascii "Func_TerminateTask\0"
+	.sleb128 8
+	.uleb128 0x5
+	.ascii "Func_TaskScheduler\0"
+	.sleb128 9
+	.uleb128 0x5
+	.ascii "Func_InitTask\0"
+	.sleb128 10
+	.uleb128 0x5
+	.ascii "Func_ActivateTask\0"
+	.sleb128 11
+	.uleb128 0x5
+	.ascii "Func_TaskStateRequest\0"
+	.sleb128 12
+	.uleb128 0x5
+	.ascii "Func_Preempt_Task\0"
+	.sleb128 13
+	.uleb128 0x5
+	.ascii "Func_os_exception\0"
+	.sleb128 14
+	.uleb128 0x5
+	.ascii "Func_CreateTask\0"
+	.sleb128 15
+	.uleb128 0x5
+	.ascii "Func_Shutdown\0"
+	.sleb128 16
+	.uleb128 0x5
+	.ascii "Func_StackCheck\0"
+	.sleb128 17
+	.byte	0
 	.uleb128 0x3
 	.ascii "func_ptr_t\0"
-	.byte	0x3
-	.byte	0x50
-	.long	0xeb
-	.uleb128 0x4
+	.byte	0x2
+	.byte	0x54
+	.long	0x3d3
+	.uleb128 0x6
 	.byte	0x4
-	.long	0xf1
-	.uleb128 0x5
+	.long	0x3d9
+	.uleb128 0x7
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
 	.ascii "unsigned int\0"
-	.uleb128 0x6
+	.uleb128 0x4
 	.ascii "os_reset_type_s\0"
 	.byte	0x4
 	.byte	0x4
 	.byte	0x3
-	.long	0x155
-	.uleb128 0x7
+	.long	0x43d
+	.uleb128 0x5
 	.ascii "os_reset_hardreset\0"
 	.sleb128 0
-	.uleb128 0x7
+	.uleb128 0x5
 	.ascii "os_reset_powerdown\0"
 	.sleb128 1
-	.uleb128 0x7
+	.uleb128 0x5
 	.ascii "os_reset_exit\0"
 	.sleb128 2
 	.byte	0
@@ -171,7 +279,7 @@ Ldebug_info0:
 	.ascii "os_reset_type_t\0"
 	.byte	0x4
 	.byte	0x8
-	.long	0x102
+	.long	0x3ea
 	.uleb128 0x8
 	.ascii "OS_DeinitHw\0"
 	.byte	0x1
@@ -183,7 +291,7 @@ Ldebug_info0:
 	.uleb128 0x8
 	.ascii "OS_DeinitSw\0"
 	.byte	0x1
-	.byte	0xa
+	.byte	0xb
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
@@ -191,7 +299,7 @@ Ldebug_info0:
 	.uleb128 0x9
 	.ascii "OS_DeinitMc\0"
 	.byte	0x1
-	.byte	0xe
+	.byte	0x10
 	.long	LFB2
 	.long	LFE2-LFB2
 	.uleb128 0x1
@@ -199,7 +307,7 @@ Ldebug_info0:
 	.uleb128 0xa
 	.ascii "OS_Shutdown\0"
 	.byte	0x1
-	.byte	0x13
+	.byte	0x17
 	.long	LFB3
 	.long	LFE3-LFB3
 	.uleb128 0x1
@@ -207,8 +315,8 @@ Ldebug_info0:
 	.uleb128 0xb
 	.ascii "reset_typ\0"
 	.byte	0x1
-	.byte	0x13
-	.long	0x155
+	.byte	0x17
+	.long	0x43d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -260,22 +368,6 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x4
-	.uleb128 0xf
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x5
-	.uleb128 0x15
-	.byte	0
-	.uleb128 0x27
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x6
 	.uleb128 0x4
 	.byte	0x1
 	.uleb128 0x3
@@ -290,13 +382,29 @@ Ldebug_abbrev0:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x7
+	.uleb128 0x5
 	.uleb128 0x28
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x8
 	.uleb128 0x1c
 	.uleb128 0xd
+	.byte	0
+	.byte	0
+	.uleb128 0x6
+	.uleb128 0xf
+	.byte	0
+	.uleb128 0xb
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x7
+	.uleb128 0x15
+	.byte	0
+	.uleb128 0x27
+	.uleb128 0x19
 	.byte	0
 	.byte	0
 	.uleb128 0x8
@@ -339,7 +447,7 @@ Ldebug_abbrev0:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2117
+	.uleb128 0x2116
 	.uleb128 0x19
 	.byte	0
 	.byte	0
@@ -1104,7 +1212,7 @@ Ldebug_macro0:
 	.ascii "_os_firstinc_h_ \0"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x2
+	.uleb128 0x3
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_BASE_TYPES_H_ \0"
@@ -1144,7 +1252,7 @@ Ldebug_macro0:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x3
+	.uleb128 0x2
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_common_h_ \0"
@@ -1382,9 +1490,6 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x4
 	.ascii "OS_STACK_SIZE 0x5000u\0"
-	.byte	0x1
-	.uleb128 0x6
-	.ascii "OS_STACK_SIZE_END 0x01u\0"
 	.byte	0x4
 	.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
 	.byte	0x3
@@ -1459,8 +1564,9 @@ Ldebug_macro0:
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
-	.def	_LLF_DISABLE_INTERRUPTS_ALL_CORES;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MPU_DISABLE;	.scl	2;	.type	32;	.endef
+	.def	_LLF_DISABLE_INTERRUPTS_ALL_CORES;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MCU_SWITCH_OFF_POWER;	.scl	2;	.type	32;	.endef
 	.def	_LLF_MCU_RESET_POWER;	.scl	2;	.type	32;	.endef
 	.def	_OS_StartExtPrg;	.scl	2;	.type	32;	.endef
+	.def	_OS_SetSwBug;	.scl	2;	.type	32;	.endef

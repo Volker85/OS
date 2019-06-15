@@ -527,7 +527,9 @@ enum os_sw_bugs_e
    os_bug_Task_unspecified,
    os_bug_exception_UndefInstruction,
    os_bug_exception_AbortPrefetch,
-   os_bug_exception_AbortData
+   os_bug_exception_AbortData,
+   os_bug_reset_exit_or_shutdown_failed,
+   os_bug_critical_stack_usage
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 enum os_sw_bugs_function_e
@@ -547,7 +549,9 @@ enum os_sw_bugs_function_e
    Func_TaskStateRequest,
    Func_Preempt_Task,
    Func_os_exception,
-   Func_CreateTask
+   Func_CreateTask,
+   Func_Shutdown,
+   Func_StackCheck
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -759,8 +763,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 #define _os_stack_h_ 
 
 #define OS_STACK_SIZE 0x5000u
-
-#define OS_STACK_SIZE_END 0x01u
+extern void OS_StackChkPatternInit(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 
@@ -850,6 +853,8 @@ extern void OS_MmuSetup(void);
 
 void OS_InitMc(void)
 {
+
+
 
 
 

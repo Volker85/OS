@@ -48,13 +48,11 @@ LFB1:
 L4:
 	.loc 1 28 0
 	call	_LLF_MPU_DISABLE
-	.loc 1 30 0
-	call	_LLF_MPU_SWITCH_OFF_ALL_REGIONS
-	.loc 1 39 0
+	.loc 1 36 0
 	movl	8(%ebp), %eax
 	call	*%eax
 L3:
-	.loc 1 40 0
+	.loc 1 37 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -103,7 +101,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.ascii "func_ptr_t\0"
 	.byte	0x3
-	.byte	0x50
+	.byte	0x54
 	.long	0x107
 	.uleb128 0x4
 	.byte	0x4
@@ -1322,9 +1320,6 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x4
 	.ascii "OS_STACK_SIZE 0x5000u\0"
-	.byte	0x1
-	.uleb128 0x6
-	.ascii "OS_STACK_SIZE_END 0x01u\0"
 	.byte	0x4
 	.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
 	.byte	0x3
@@ -1389,4 +1384,3 @@ LASF1:
 	.ascii "PrgSignatur\0"
 	.ident	"GCC: (GNU) 4.9.3"
 	.def	_LLF_MPU_DISABLE;	.scl	2;	.type	32;	.endef
-	.def	_LLF_MPU_SWITCH_OFF_ALL_REGIONS;	.scl	2;	.type	32;	.endef

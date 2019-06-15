@@ -56,7 +56,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x308
+	.long	0x34d
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -95,7 +95,7 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x3
 	.byte	0x2b
-	.long	0x1f3
+	.long	0x238
 	.uleb128 0x5
 	.ascii "os_bug_no_bug\0"
 	.sleb128 0
@@ -120,11 +120,17 @@ Ldebug_info0:
 	.uleb128 0x5
 	.ascii "os_bug_exception_AbortData\0"
 	.sleb128 7
+	.uleb128 0x5
+	.ascii "os_bug_reset_exit_or_shutdown_failed\0"
+	.sleb128 8
+	.uleb128 0x5
+	.ascii "os_bug_critical_stack_usage\0"
+	.sleb128 9
 	.byte	0
 	.uleb128 0x2
 	.ascii "os_sw_bugs_t\0"
 	.byte	0x3
-	.byte	0x36
+	.byte	0x38
 	.long	0xf5
 	.uleb128 0x3
 	.byte	0x4
@@ -138,7 +144,7 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23f
+	.long	0x284
 	.uleb128 0x7
 	.ascii "i\0"
 	.byte	0x1
@@ -149,10 +155,10 @@ Ldebug_info0:
 	.sleb128 -17
 	.byte	0
 	.uleb128 0x8
-	.long	0x1f3
-	.long	0x24f
+	.long	0x238
+	.long	0x294
 	.uleb128 0x9
-	.long	0x24f
+	.long	0x294
 	.byte	0xe
 	.byte	0
 	.uleb128 0x3
@@ -163,31 +169,31 @@ Ldebug_info0:
 	.ascii "OS_SW_BUG\0"
 	.byte	0x4
 	.byte	0x10
-	.long	0x26c
+	.long	0x2b1
 	.uleb128 0xb
-	.long	0x23f
+	.long	0x284
 	.uleb128 0xa
 	.ascii "TASK1_CALL_NR\0"
 	.byte	0x4
 	.byte	0x20
-	.long	0x286
+	.long	0x2cb
 	.uleb128 0xb
 	.long	0xe7
 	.uleb128 0xa
 	.ascii "TASK2_CALL_NR\0"
 	.byte	0x4
 	.byte	0x21
-	.long	0x286
+	.long	0x2cb
 	.uleb128 0xa
 	.ascii "TASK3_CALL_NR\0"
 	.byte	0x4
 	.byte	0x22
-	.long	0x286
+	.long	0x2cb
 	.uleb128 0xa
 	.ascii "TASK4_CALL_NR\0"
 	.byte	0x4
 	.byte	0x23
-	.long	0x286
+	.long	0x2cb
 	.uleb128 0xa
 	.ascii "bTASK_QUEUE_INITIALIZED\0"
 	.byte	0x4
@@ -197,10 +203,10 @@ Ldebug_info0:
 	.ascii "SAVED_STACK_POINTER\0"
 	.byte	0x4
 	.byte	0x32
-	.long	0x304
+	.long	0x349
 	.uleb128 0xc
 	.byte	0x4
-	.long	0x30a
+	.long	0x34f
 	.uleb128 0xd
 	.byte	0
 	.section	.debug_abbrev,"dr"
@@ -1368,9 +1374,6 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x4
 	.ascii "OS_STACK_SIZE 0x5000u\0"
-	.byte	0x1
-	.uleb128 0x6
-	.ascii "OS_STACK_SIZE_END 0x01u\0"
 	.byte	0x4
 	.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
 	.byte	0x3

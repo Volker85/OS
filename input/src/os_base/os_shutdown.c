@@ -5,15 +5,19 @@ Local void OS_DeinitHw(void);
 Local void OS_DeinitSw(void);
 void OS_DeinitHw(void)
 {
-   /*QAC*///TODO
+   /* no deinit needed because nothing was initialized */
+   /*QAC*/
 }
 void OS_DeinitSw(void)
 {
-  /*QAC*///TODO
+   /* no deinit of sw needed */
+   /*QAC*/
 }
 void OS_DeinitMc(void)
 {
-   /*QAC*///TODO
+   LLF_MPU_DISABLE();
+   LLF_DISABLE_INTERRUPTS_ALL_CORES();
+   /*QAC*/
 }
 
 void OS_Shutdown(os_reset_type_t reset_typ)
@@ -23,9 +27,6 @@ void OS_Shutdown(os_reset_type_t reset_typ)
 
    /* clear mmu config */
    LLF_MPU_DISABLE();
-
-   /* save some registers to restore after reset */
-   //TODO
 
    /* power done/reset system */
    if(reset_typ == os_reset_powerdown)

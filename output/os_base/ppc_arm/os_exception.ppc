@@ -526,7 +526,9 @@ enum os_sw_bugs_e
    os_bug_Task_unspecified,
    os_bug_exception_UndefInstruction,
    os_bug_exception_AbortPrefetch,
-   os_bug_exception_AbortData
+   os_bug_exception_AbortData,
+   os_bug_reset_exit_or_shutdown_failed,
+   os_bug_critical_stack_usage
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 enum os_sw_bugs_function_e
@@ -546,7 +548,9 @@ enum os_sw_bugs_function_e
    Func_TaskStateRequest,
    Func_Preempt_Task,
    Func_os_exception,
-   Func_CreateTask
+   Func_CreateTask,
+   Func_Shutdown,
+   Func_StackCheck
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -758,8 +762,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 #define _os_stack_h_ 
 
 #define OS_STACK_SIZE 0x5000u
-
-#define OS_STACK_SIZE_END 0x01u
+extern void OS_StackChkPatternInit(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 
@@ -968,7 +971,6 @@ void OS_Exception_HARDFAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 
 }
@@ -984,7 +986,6 @@ void OS_Exception_NMI(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 
 }
@@ -1012,7 +1013,6 @@ void OS_Exception_BUS_FAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 
 }
@@ -1021,7 +1021,6 @@ void OS_Exception_DEBUG(void)
 {
 
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 
 }
@@ -1036,7 +1035,6 @@ void OS_Exception_MEM_MANAG_FAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 
 }
@@ -1051,7 +1049,6 @@ void OS_Exception_USAGE_FAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 
 }
@@ -1059,7 +1056,6 @@ void OS_Exception_USAGE_FAULT(void)
 void OS_Exception_PendSV(void)
 {
 
-   while(1){}
    OS_Shutdown(os_reset_hardreset);
 
 }
@@ -1104,7 +1100,7 @@ void OS_Exception_Systick(void)
    DBG_CURR_VAL = *((uint32*)0xE000E018);
    DBG_CTRL_VALUE = *((uint32*)0xE000E010);
    DBG_CALIB_VALUE = *((uint32*)0xE000E01C);
-# 216 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+# 209 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
    if(((void*)&scheduling_task_ptr) < SAVED_STACK_POINTER)
    {
       SAVED_STACK_POINTER = (void*)&scheduling_task_ptr;
@@ -1116,7 +1112,7 @@ void OS_Exception_Systick(void)
    if(task != 0u)
    {
       OS_TaskSaveTaskEnvironment(task);
-      OS_TASK_RESTORE_SYSTEM_STACK(&OS_STACK[OS_GetCoreId()][0]);
+      OS_TASK_RESTORE_SYSTEM_STACK(&OS_MAIN_STACK);
       task->active = 0;
       task->exe_time += (OS_GetCurrentTime() - task->start_time);
       task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);

@@ -309,7 +309,9 @@ enum os_sw_bugs_e
    os_bug_Task_unspecified,
    os_bug_exception_UndefInstruction,
    os_bug_exception_AbortPrefetch,
-   os_bug_exception_AbortData
+   os_bug_exception_AbortData,
+   os_bug_reset_exit_or_shutdown_failed,
+   os_bug_critical_stack_usage
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 enum os_sw_bugs_function_e
@@ -329,7 +331,9 @@ enum os_sw_bugs_function_e
    Func_TaskStateRequest,
    Func_Preempt_Task,
    Func_os_exception,
-   Func_CreateTask
+   Func_CreateTask,
+   Func_Shutdown,
+   Func_StackCheck
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -393,7 +397,6 @@ extern void LLF_WAIT_FOR_INTERRUPT(void);
 
 extern void LLF_MPU_DISABLE(void);
 extern void LLF_MPU_ENABLE(void);
-extern void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void);
 extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 # 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_timer.h" 1
@@ -569,8 +572,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 #define _os_stack_h_ 
 
 #define OS_STACK_SIZE 0x5000u
-
-#define OS_STACK_SIZE_END 0x01u
+extern void OS_StackChkPatternInit(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_heap.h" 1
 
@@ -647,26 +649,29 @@ extern task_state_t TASK_TRANSITION_CURRENT_STATE;
 extern volatile void* SAVED_STACK_POINTER;
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c" 2
-# 11 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
-#define StartAddresseC0 ((void*)0x00000000)
-#define StartAddresseC0T0 ((void*)0x00000000)
-#define StartAddresseC0T1 ((void*)0x00000000)
-#define StartAddresseC1T0 ((void*)0x00000000)
-#define StartAddresseC1T1 ((void*)0x00000000)
-#define EndAddresseC0 ((void*)0x00000000)
-#define EndAddresseC0T0 ((void*)0x00000000)
-#define EndAddresseC0T1 ((void*)0x00000000)
-#define EndAddresseC1T0 ((void*)0x00000000)
-#define EndAddresseC1T1 ((void*)0x00000000)
-
+# 12 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
 void OS_MmuSetup(void)
 {
+# 27 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
+   *MPU_RNR = 0;
+   *MPU_RBAR = 0x08000000;
+   *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
+
+
+   *MPU_RNR = 1;
+   *MPU_RBAR = 0x20000000;
+   *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
+
+
+   *MPU_RNR = 2;
+   *MPU_RBAR = 0x40000000;
+   *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
 
 
 
 
-   while(LLF_GET_MPU_PRESENT() != 0)
-   {
 
-   }
+
+
+   LLF_MPU_ENABLE();
 }

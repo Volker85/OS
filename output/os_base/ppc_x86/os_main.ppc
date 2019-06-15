@@ -309,7 +309,9 @@ enum os_sw_bugs_e
    os_bug_Task_unspecified,
    os_bug_exception_UndefInstruction,
    os_bug_exception_AbortPrefetch,
-   os_bug_exception_AbortData
+   os_bug_exception_AbortData,
+   os_bug_reset_exit_or_shutdown_failed,
+   os_bug_critical_stack_usage
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 enum os_sw_bugs_function_e
@@ -329,7 +331,9 @@ enum os_sw_bugs_function_e
    Func_TaskStateRequest,
    Func_Preempt_Task,
    Func_os_exception,
-   Func_CreateTask
+   Func_CreateTask,
+   Func_Shutdown,
+   Func_StackCheck
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -393,7 +397,6 @@ extern void LLF_WAIT_FOR_INTERRUPT(void);
 
 extern void LLF_MPU_DISABLE(void);
 extern void LLF_MPU_ENABLE(void);
-extern void LLF_MPU_SWITCH_OFF_ALL_REGIONS(void);
 extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 # 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_timer.h" 1
@@ -569,8 +572,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 #define _os_stack_h_ 
 
 #define OS_STACK_SIZE 0x5000u
-
-#define OS_STACK_SIZE_END 0x01u
+extern void OS_StackChkPatternInit(void);
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_heap.h" 1
 
@@ -796,6 +798,7 @@ void OS_StateHandler(void)
    case 0:
    {
 
+      OS_StackChkPatternInit();
       OS_InitMc();
 
 
@@ -812,12 +815,6 @@ void OS_StateHandler(void)
       OS_STATE = 1;
 
       LLF_INT_ENABLE();
-
-
-
-
-
-
       break;
    }
    case 1:
@@ -870,4 +867,11 @@ void OS_StateHandler(void)
       break;
    }
    }
+   OS_StackCheck();
+
+
+
+
+
+
 }

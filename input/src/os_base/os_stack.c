@@ -9,10 +9,10 @@ void OS_StackCheck(void)
    the stack is starting at the highest address and growing to lower addresses -> pattern start on OS_STACK[0][0] / OS_MAIN_STACK[0] for 64 bytes
    
    */
-   volatile static int stack_pos = 0,nr_of_cores = 0, failed = False;
-   for(stack_pos = 0; stack_pos < 64;stack_pos++)
+   static volatile int stack_pos = 0, nr_of_cores = 0, failed = False;
+   for(stack_pos = 0; stack_pos < 64; stack_pos++)
    {
-      for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
+      for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES; nr_of_cores++)
       {
          if(OS_STACK[nr_of_cores][stack_pos] != 0xAA)
          {
@@ -36,9 +36,9 @@ void OS_StackCheck(void)
 void OS_StackChkPatternInit(void)
 {
    volatile static int stack_pos = 0,nr_of_cores = 0;
-   for(stack_pos = 0; stack_pos < 64;stack_pos++)
+   for(stack_pos = 0; stack_pos < 64; stack_pos++)
    {
-      for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES;nr_of_coresj++)
+      for(nr_of_cores = 0; nr_of_cores < NR_OF_CORES; nr_of_cores++)
       {
          OS_STACK[nr_of_cores][stack_pos] = 0xAA;
       }

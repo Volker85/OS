@@ -21,7 +21,28 @@ void OS_MmuSetup(void)
    /* RAM:   Start Addr: 0x20000000, Length: 112kB *//* + 64kB CCM, 16 kB SysRAM */
 
    /* peripherie Start Addr: 0x40000000, Length: 0xFFFFFFFF - 0x40000000 + 1 *//* + 64kB CCM, 16 kB SysRAM */
-   //TODO: configure the MPU registers before activating...
 
+   /* interrupts are still disabled at this point of startup, no 2nd disable required... */
+   /* region 0 FLASH */
+   *MPU_RNR  = 0;
+   *MPU_RBAR = 0x08000000;/* FLASH Start */
+   *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+   
+   /* region 1 RAM */
+   *MPU_RNR  = 1;
+   *MPU_RBAR = 0x20000000;/* RAM Start */
+   *MPU_RASR = MPU_ASR_NORMAL | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
+   
+   /* region 2 Peripherie */
+   *MPU_RNR  = 2;
+   *MPU_RBAR = 0x40000000;/* Peripherie Start */
+   *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+   /* region 3 */
+   /* region 4 */
+   /* region 5 */
+   /* region 6 */
+   /* region 7 */
+   
+   /* now activate the MPU */
    LLF_MPU_ENABLE();
 }
