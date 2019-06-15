@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
   55 0028 1248     		ldr	r0, .L4+36
   56 002a DBB2     		uxtb	r3, r3
   57 002c 0B60     		str	r3, [r1]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 2
 
 
   58 002e 1388     		ldrh	r3, [r2]
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
   10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
   11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** Local __inline__ void OS_Exception_Read_Status_Registers(void)
   12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 3
 
 
   13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  122              		.syntax unified
  123              	.LBB16:
  124              	.LBB17:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 4
 
 
   20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    VAR_MEM_MANAG_FAULT_STATUS_REG     = *MEM_MANAG_FAULT_STATUS_REG;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  165 00c0 1232     		adds	r2, r2, #18
  166 00c2 0E4B     		ldr	r3, .L8+44
  167 00c4 1268     		ldr	r2, [r2]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 5
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 5
 
 
  168 00c6 1A60     		str	r2, [r3]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  212              		@ frame_needed = 0, uses_anonymous_args = 0
  213              		@ link register save eliminated.
   60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 6
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 6
 
 
   61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    __asm__ __volatile__ ("LDR r0,%0;\
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  259 011e 1968     		ldr	r1, [r3]
  260 0120 1160     		str	r1, [r2]
  261 0122 043B     		subs	r3, r3, #4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 7
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 7
 
 
  262 0124 114C     		ldr	r4, .L15+12
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  317              		.fpu softvfp
  319              	OS_Exception_DEBUG:
  320              	.LFB5:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 8
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 8
 
 
   70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** #endif
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  351              		.loc 1 22 0
  352 01ac 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
   24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    VAR_BUS_FAULT_ADDR_REG   = *BUS_FAULT_ADDR_REG;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 9
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 9
 
 
  353              		.loc 1 24 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  394 01e0 00000000 		.word	VAR_MEM_MANAG_FAULT_STATUS_REG
  395 01e4 29ED00E0 		.word	-536810199
  396 01e8 00000000 		.word	VAR_BUS_FAULT_STATUS_REG
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 10
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 10
 
 
  397 01ec 2AED00E0 		.word	-536810198
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  452 0238 2B60     		str	r3, [r5]
  453 023a 2368     		ldr	r3, [r4]
  454 023c 0360     		str	r3, [r0]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 11
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 11
 
 
  455 023e D2F80E30 		ldr	r3, [r2, #14]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  510 028e 124B     		ldr	r3, .L27+4
  511 0290 124A     		ldr	r2, .L27+8
  512 0292 1968     		ldr	r1, [r3]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 12
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 12
 
 
  513 0294 1160     		str	r1, [r2]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  568              		.thumb
  569              		.thumb_func
  570              		.fpu softvfp
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 13
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 13
 
 
  572              	OS_Exception_PendSV:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  595              	.LFB9:
  126:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** #endif
  127:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** }
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 14
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 14
 
 
  128:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
  161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000 )| (((uint32)MCU_CLOCK_IN_HZ / ((uint3
  615              		.loc 1 161 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 15
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 15
 
 
  616 0316 DFF8D0C0 		ldr	ip, .L37+32
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  621              		.loc 1 209 0
  622 031e DFF8CCE0 		ldr	lr, .L37+36
  135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****    DBG_CURR_VAL = 0xFFFFFFFF;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 16
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 16
 
 
  623              		.loc 1 135 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  661              		.loc 1 130 0
  662 035a 83B0     		sub	sp, sp, #12
  663              		.cfi_def_cfa_offset 32
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 17
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 17
 
 
  664              		.loc 1 209 0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  704 039c E361     		str	r3, [r4, #28]
  223:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c ****       task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);
  705              		.loc 1 223 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 18
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 18
 
 
  706 039e FFF7FEFF 		bl	OS_GetCurrentTime
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  754              		.global	OS_Exception_IRQ
  755              		.syntax unified
  756              		.thumb
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 19
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 19
 
 
  757              		.thumb_func
@@ -1127,39 +1127,39 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 1
  799              		.file 9 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h"
  800              		.file 10 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
  801              		.file 11 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_isr_hand
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 20
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_exception.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:23     .text:00000000 OS_Exception_HARDFAULT
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:79     .text:00000050 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:94     .text:00000080 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:102    .text:00000080 OS_Exception_NMI
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:184    .text:000000d0 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:199    .text:00000100 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:207    .text:00000100 OS_Exception_SWI
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:228    .text:0000010c $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:232    .text:00000110 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:240    .text:00000110 OS_Exception_BUS_FAULT
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:296    .text:00000160 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:311    .text:00000190 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:319    .text:00000190 OS_Exception_DEBUG
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:392    .text:000001d8 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:406    .text:00000204 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:414    .text:00000204 OS_Exception_MEM_MANAG_FAULT
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:470    .text:00000254 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:485    .text:00000284 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:493    .text:00000284 OS_Exception_USAGE_FAULT
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:549    .text:000002d4 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:564    .text:00000304 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:572    .text:00000304 OS_Exception_PendSV
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:594    .text:0000030c OS_Exception_Systick
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:739    .text:000003c8 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:752    .text:000003f0 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:760    .text:000003f0 OS_Exception_IRQ
-C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s:781    .text:000003f4 OS_Exception_FIQ
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:23     .text:00000000 OS_Exception_HARDFAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:79     .text:00000050 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:94     .text:00000080 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:102    .text:00000080 OS_Exception_NMI
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:184    .text:000000d0 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:199    .text:00000100 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:207    .text:00000100 OS_Exception_SWI
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:228    .text:0000010c $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:232    .text:00000110 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:240    .text:00000110 OS_Exception_BUS_FAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:296    .text:00000160 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:311    .text:00000190 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:319    .text:00000190 OS_Exception_DEBUG
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:392    .text:000001d8 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:406    .text:00000204 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:414    .text:00000204 OS_Exception_MEM_MANAG_FAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:470    .text:00000254 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:485    .text:00000284 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:493    .text:00000284 OS_Exception_USAGE_FAULT
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:549    .text:000002d4 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:564    .text:00000304 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:572    .text:00000304 OS_Exception_PendSV
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:594    .text:0000030c OS_Exception_Systick
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:739    .text:000003c8 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:752    .text:000003f0 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:760    .text:000003f0 OS_Exception_IRQ
+C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s:781    .text:000003f4 OS_Exception_FIQ
                            .group:00000000 wm4.0.c0793757704d250d57c533755ef2cd77
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.7d3083dfb0b17ee9cbe20f6fe4481cd9
@@ -1187,7 +1187,7 @@ GetRunningSchedulingQueueElementPtr
 OS_TaskSaveTaskEnvironment
 OS_TASK_RESTORE_SYSTEM_STACK
 OS_GetCurrentTime
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccgLoQN6.s 			page 21
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccPOWY8H.s 			page 21
 
 
 SET_RUNNING_TASK
