@@ -76,119 +76,6 @@
 	.cfi_sections	.debug_frame
 	.align	1
 	.p2align 2,,3
-	.global	IsEqual
-	.syntax unified
-	.thumb
-	.thumb_func
-	.fpu softvfp
-	.type	IsEqual, %function
-IsEqual:
-.LFB7:
-	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
-	.loc 1 151 0
-	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 0, uses_anonymous_args = 0
-	@ link register save eliminated.
-.LVL0:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:156:       if(Operand1->Number[pos] != Operand2->Number[pos])
-	.loc 1 156 0
-	ldrb	r2, [r0]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL1:
-	ldrb	r2, [r0, #1]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #1]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL2:
-	ldrb	r2, [r0, #2]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #2]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL3:
-	ldrb	r2, [r0, #3]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #3]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL4:
-	ldrb	r2, [r0, #4]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #4]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL5:
-	ldrb	r2, [r0, #5]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #5]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL6:
-	ldrb	r2, [r0, #6]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #6]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL7:
-	ldrb	r2, [r0, #7]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #7]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL8:
-	ldrb	r2, [r0, #8]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #8]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL9:
-	ldrb	r2, [r0, #9]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #9]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL10:
-	ldrb	r2, [r0, #10]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #10]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL11:
-	ldrb	r2, [r0, #11]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #11]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL12:
-	ldrb	r2, [r0, #12]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #12]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL13:
-	ldrb	r2, [r0, #13]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #13]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL14:
-	ldrb	r2, [r0, #14]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-	ldrb	r3, [r1, #14]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
-	bne	.L17	@,
-.LVL15:
-	ldrb	r0, [r0, #15]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
-.LVL16:
-	ldrb	r3, [r1, #15]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:158:          IsEqual = False;
-	.loc 1 158 0
-	subs	r0, r0, r3	@ <retval>, Operand1_7(D)->Number, Operand2_8(D)->Number
-	clz	r0, r0	@ <retval>, <retval>
-	lsrs	r0, r0, #5	@ <retval>, <retval>,
-	bx	lr	@
-.LVL17:
-.L17:
-	movs	r0, #0	@ <retval>,
-.LVL18:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:167: }
-	.loc 1 167 0
-	bx	lr	@
-	.cfi_endproc
-.LFE7:
-	.size	IsEqual, .-IsEqual
-	.align	1
-	.p2align 2,,3
 	.global	OS_SetSwBug
 	.syntax unified
 	.thumb
@@ -197,22 +84,23 @@ IsEqual:
 	.type	OS_SetSwBug, %function
 OS_SetSwBug:
 .LFB0:
+	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
 	.loc 1 5 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-.LVL19:
+.LVL0:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:6:    OS_SW_BUG[task_func_nr] = bug_nr;
 	.loc 1 6 0
-	ldr	r3, .L20	@ tmp113,
+	ldr	r3, .L3	@ tmp113,
 	strb	r0, [r3, r1]	@ bug_nr, OS_SW_BUG
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:7: }
 	.loc 1 7 0
 	bx	lr	@
-.L21:
+.L4:
 	.align	2
-.L20:
+.L3:
 	.word	OS_SW_BUG
 	.cfi_endproc
 .LFE0:
@@ -232,16 +120,16 @@ OS_GetCurrentTime:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:20:    return *DWT_CYCCNT;
-	.loc 1 20 0
-	ldr	r3, .L23	@ tmp111,
-	ldr	r0, [r3]	@ <retval>, MEM[(volatile uint32 *)3758100484B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:21: }
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:21:    return *DWT_CYCCNT;
 	.loc 1 21 0
+	ldr	r3, .L6	@ tmp111,
+	ldr	r0, [r3]	@ <retval>, MEM[(volatile uint32 *)3758100484B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:27: }
+	.loc 1 27 0
 	bx	lr	@
-.L24:
+.L7:
 	.align	2
-.L23:
+.L6:
 	.word	-536866812
 	.cfi_endproc
 .LFE1:
@@ -256,65 +144,65 @@ OS_GetCurrentTime:
 	.type	OS_ResetCurrentTime, %function
 OS_ResetCurrentTime:
 .LFB2:
-	.loc 1 24 0
+	.loc 1 30 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:26:    *DWT_LAR = 0xC5ACCE55; 
-	.loc 1 26 0
-	ldr	r3, .L27	@ tmp114,
-	ldr	r2, .L27+4	@ tmp115,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:29:    *SCB_DEMCR |= 0x01000000; 
-	.loc 1 29 0
-	ldr	r1, .L27+8	@ tmp116,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:32:    *DWT_CYCCNT = 0;
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:32:    *DWT_LAR = 0xC5ACCE55;
 	.loc 1 32 0
-	ldr	r0, .L27+12	@ tmp118,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:24: {
-	.loc 1 24 0
+	ldr	r3, .L10	@ tmp114,
+	ldr	r2, .L10+4	@ tmp115,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:    *SCB_DEMCR |= 0x01000000;
+	.loc 1 35 0
+	ldr	r1, .L10+8	@ tmp116,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:38:    *DWT_CYCCNT = 0;
+	.loc 1 38 0
+	ldr	r0, .L10+12	@ tmp118,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:30: {
+	.loc 1 30 0
 	push	{r4}	@
 	.cfi_def_cfa_offset 4
 	.cfi_offset 4, -4
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:26:    *DWT_LAR = 0xC5ACCE55; 
-	.loc 1 26 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:32:    *DWT_LAR = 0xC5ACCE55;
+	.loc 1 32 0
 	str	r2, [r3]	@ tmp115, MEM[(volatile uint32 *)3758104496B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:29:    *SCB_DEMCR |= 0x01000000; 
-	.loc 1 29 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:    *SCB_DEMCR |= 0x01000000;
+	.loc 1 35 0
 	ldr	r3, [r1]	@ _1, MEM[(volatile uint32 *)3758157308B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:    *DWT_CTRL |= 1; 
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:41:    *DWT_CTRL |= 1;
+	.loc 1 41 0
+	ldr	r2, .L10+16	@ tmp120,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:    *SCB_DEMCR |= 0x01000000;
 	.loc 1 35 0
-	ldr	r2, .L27+16	@ tmp120,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:29:    *SCB_DEMCR |= 0x01000000; 
-	.loc 1 29 0
 	orr	r3, r3, #16777216	@ _2, _1,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:32:    *DWT_CYCCNT = 0;
-	.loc 1 32 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:38:    *DWT_CYCCNT = 0;
+	.loc 1 38 0
 	movs	r4, #0	@ tmp119,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:29:    *SCB_DEMCR |= 0x01000000; 
-	.loc 1 29 0
-	str	r3, [r1]	@ _2, MEM[(volatile uint32 *)3758157308B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:32:    *DWT_CYCCNT = 0;
-	.loc 1 32 0
-	str	r4, [r0]	@ tmp119, MEM[(volatile uint32 *)3758100484B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:    *DWT_CTRL |= 1; 
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:    *SCB_DEMCR |= 0x01000000;
 	.loc 1 35 0
+	str	r3, [r1]	@ _2, MEM[(volatile uint32 *)3758157308B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:38:    *DWT_CYCCNT = 0;
+	.loc 1 38 0
+	str	r4, [r0]	@ tmp119, MEM[(volatile uint32 *)3758100484B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:41:    *DWT_CTRL |= 1;
+	.loc 1 41 0
 	ldr	r3, [r2]	@ _3, MEM[(volatile uint32 *)3758100480B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:36: }
-	.loc 1 36 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:42: }
+	.loc 1 42 0
 	pop	{r4}	@
 	.cfi_restore 4
 	.cfi_def_cfa_offset 0
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:35:    *DWT_CTRL |= 1; 
-	.loc 1 35 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:41:    *DWT_CTRL |= 1;
+	.loc 1 41 0
 	orr	r3, r3, #1	@ _4, _3,
 	str	r3, [r2]	@ _4, MEM[(volatile uint32 *)3758100480B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:36: }
-	.loc 1 36 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:42: }
+	.loc 1 42 0
 	bx	lr	@
-.L28:
+.L11:
 	.align	2
-.L27:
+.L10:
 	.word	-536862800
 	.word	-978530731
 	.word	-536809988
@@ -333,285 +221,285 @@ OS_ResetCurrentTime:
 	.type	IntAdd, %function
 IntAdd:
 .LFB3:
-	.loc 1 41 0
+	.loc 1 47 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-.LVL20:
+.LVL1:
 	push	{r4, r5}	@
 	.cfi_def_cfa_offset 8
 	.cfi_offset 4, -8
 	.cfi_offset 5, -4
 .LBB10:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r3, [r1, #15]	@ zero_extendqisi2	@ _30, ErsterSummand_14(D)->Number
 	ldrb	r4, [r2, #15]	@ zero_extendqisi2	@ _28, ZweiterSummand_15(D)->Number
-.LVL21:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL2:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	add	r4, r4, r3	@ tmp239, _30
-.LVL22:
+.LVL3:
 	strb	r4, [r0, #15]	@ tmp239, Summe_17(D)->Number
-.LVL23:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL4:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r5, [r2, #14]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
 	ldrb	r3, [r1, #14]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r4, r4, #255	@ tmp250, tmp239,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	add	r3, r3, r5	@ tmp245, ZweiterSummand_15(D)->Number
 	add	r3, r3, r4	@ tmpSum, tmp250
-.LVL24:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL5:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #14]	@ tmpSum, Summe_17(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r5, [r2, #13]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
 	ldrb	r4, [r1, #13]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	and	r3, r3, #768	@ carry, tmpSum,
-.LVL25:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL6:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	add	r4, r4, r5	@ tmp260, ZweiterSummand_15(D)->Number
 	add	r3, r3, r4	@ tmpSum, tmp260
-.LVL26:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL7:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #13]	@ tmpSum, Summe_17(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r5, [r2, #12]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
 	ldrb	r4, [r1, #12]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	and	r3, r3, #1792	@ carry, tmpSum,
-.LVL27:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL8:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	add	r4, r4, r5	@ tmp269, ZweiterSummand_15(D)->Number
 	add	r3, r3, r4	@ tmpSum, tmp269
-.LVL28:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL9:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #12]	@ tmpSum, Summe_17(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r5, [r2, #11]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
 	ldrb	r4, [r1, #11]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	and	r3, r3, #3840	@ carry, tmpSum,
-.LVL29:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL10:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	add	r4, r4, r5	@ tmp278, ZweiterSummand_15(D)->Number
 	add	r3, r3, r4	@ tmpSum, tmp278
-.LVL30:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL11:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #11]	@ tmpSum, Summe_17(D)->Number
-.LVL31:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL12:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r4, [r1, #10]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #10]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r3, r3, #255	@ tmp282, tmpSum,
-.LVL32:
+.LVL13:
 	add	r3, r3, r4	@ _258, ErsterSummand_14(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	add	r3, r3, r5	@ tmpSum, ZweiterSummand_15(D)->Number
-.LVL33:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL14:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #10]	@ tmpSum, Summe_17(D)->Number
-.LVL34:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL15:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r4, [r1, #9]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #9]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r3, r3, #255	@ tmp291, tmpSum,
-.LVL35:
+.LVL16:
 	add	r4, r4, r3	@ _259, tmp291
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	add	r4, r4, r5	@ tmp298, ZweiterSummand_15(D)->Number
 	uxth	r4, r4	@ tmpSum, tmp298
-.LVL36:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL17:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r4, [r0, #9]	@ tmpSum, Summe_17(D)->Number
-.LVL37:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL18:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r3, [r1, #8]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #8]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r4, r4, #255	@ tmp300, tmpSum,
-.LVL38:
+.LVL19:
 	add	r3, r3, r4	@ tmp304, tmp300
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	uxtah	r3, r5, r3	@ tmp307, ZweiterSummand_15(D)->Number, tmp304
 	uxth	r3, r3	@ tmpSum, tmp307
-.LVL39:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL20:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #8]	@ tmpSum, Summe_17(D)->Number
-.LVL40:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL21:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r4, [r1, #7]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #7]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r3, r3, #255	@ tmp309, tmpSum,
-.LVL41:
+.LVL22:
 	add	r4, r4, r3	@ tmp313, tmp309
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	uxtah	r4, r5, r4	@ tmp316, ZweiterSummand_15(D)->Number, tmp313
 	uxth	r4, r4	@ tmpSum, tmp316
-.LVL42:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL23:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r4, [r0, #7]	@ tmpSum, Summe_17(D)->Number
-.LVL43:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL24:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r3, [r1, #6]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #6]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r4, r4, #255	@ tmp318, tmpSum,
-.LVL44:
+.LVL25:
 	add	r3, r3, r4	@ tmp322, tmp318
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	uxtah	r3, r5, r3	@ tmp325, ZweiterSummand_15(D)->Number, tmp322
 	uxth	r3, r3	@ tmpSum, tmp325
-.LVL45:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL26:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #6]	@ tmpSum, Summe_17(D)->Number
-.LVL46:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL27:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r4, [r1, #5]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #5]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r3, r3, #255	@ tmp327, tmpSum,
-.LVL47:
+.LVL28:
 	add	r4, r4, r3	@ tmp331, tmp327
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	uxtah	r4, r5, r4	@ tmp334, ZweiterSummand_15(D)->Number, tmp331
 	uxth	r4, r4	@ tmpSum, tmp334
-.LVL48:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL29:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r4, [r0, #5]	@ tmpSum, Summe_17(D)->Number
-.LVL49:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL30:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r3, [r1, #4]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #4]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r4, r4, #255	@ tmp336, tmpSum,
-.LVL50:
+.LVL31:
 	add	r3, r3, r4	@ tmp340, tmp336
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	uxtah	r3, r5, r3	@ tmp343, ZweiterSummand_15(D)->Number, tmp340
 	uxth	r3, r3	@ tmpSum, tmp343
-.LVL51:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL32:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #4]	@ tmpSum, Summe_17(D)->Number
-.LVL52:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL33:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r4, [r1, #3]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #3]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r3, r3, #255	@ tmp345, tmpSum,
-.LVL53:
+.LVL34:
 	add	r4, r4, r3	@ tmp349, tmp345
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	uxtah	r4, r5, r4	@ tmp352, ZweiterSummand_15(D)->Number, tmp349
 	uxth	r4, r4	@ tmpSum, tmp352
-.LVL54:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL35:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r4, [r0, #3]	@ tmpSum, Summe_17(D)->Number
-.LVL55:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL36:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r3, [r1, #2]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #2]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r4, r4, #255	@ tmp354, tmpSum,
-.LVL56:
+.LVL37:
 	add	r3, r3, r4	@ tmp358, tmp354
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	uxtah	r3, r5, r3	@ tmp361, ZweiterSummand_15(D)->Number, tmp358
 	uxth	r3, r3	@ tmpSum, tmp361
-.LVL57:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL38:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #2]	@ tmpSum, Summe_17(D)->Number
-.LVL58:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL39:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r4, [r1, #1]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
 	ldrb	r5, [r2, #1]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:49:       carry = tmpSum & 0xFF00u;      
-	.loc 1 49 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:55:       carry = tmpSum & 0xFF00u;
+	.loc 1 55 0
 	bic	r3, r3, #255	@ tmp363, tmpSum,
-.LVL59:
+.LVL40:
 	add	r3, r3, r4	@ tmp367, ErsterSummand_14(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	uxtah	r3, r5, r3	@ tmp370, ZweiterSummand_15(D)->Number, tmp367
 	uxth	r3, r3	@ tmpSum, tmp370
-.LVL60:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+.LVL41:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0, #1]	@ tmpSum, Summe_17(D)->Number
-.LVL61:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:47:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;   
-	.loc 1 47 0
+.LVL42:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:53:       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+	.loc 1 53 0
 	ldrb	r3, [r1]	@ zero_extendqisi2	@ ErsterSummand_14(D)->Number, ErsterSummand_14(D)->Number
-.LVL62:
+.LVL43:
 	ldrb	r2, [r2]	@ zero_extendqisi2	@ ZweiterSummand_15(D)->Number, ZweiterSummand_15(D)->Number
-.LVL63:
+.LVL44:
 	add	r3, r3, r2	@ tmp379, ZweiterSummand_15(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:48:       Summe->Number[pos] = tmpSum & 0xFFu;
-	.loc 1 48 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:54:       Summe->Number[pos] = tmpSum & 0xFFu;
+	.loc 1 54 0
 	strb	r3, [r0]	@ tmp379, Summe_17(D)->Number
-.LVL64:
+.LVL45:
 .LBE10:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:51: }
-	.loc 1 51 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:57: }
+	.loc 1 57 0
 	pop	{r4, r5}	@
 	.cfi_restore 5
 	.cfi_restore 4
@@ -630,14 +518,320 @@ IntAdd:
 	.type	IntSub, %function
 IntSub:
 .LFB4:
-	.loc 1 53 0
+	.loc 1 59 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
+.LVL46:
+	push	{r4, r5, r6}	@
+	.cfi_def_cfa_offset 12
+	.cfi_offset 4, -12
+	.cfi_offset 5, -8
+	.cfi_offset 6, -4
+.LBB11:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r4, [r1, #15]	@ zero_extendqisi2	@ _30, Minuend_17(D)->Number
+	ldrb	r5, [r2, #15]	@ zero_extendqisi2	@ _1, Subtrahend_18(D)->Number
+	uxth	r3, r4	@ _2, _30
+	uxth	r6, r5	@ _3, _1
+	cmp	r5, r4	@ _1, _30
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:68:          tmpDiff = (uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - carry;
+	.loc 1 68 0
+	sub	r3, r3, r6	@ tmp234, _2, _3
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	hi
+	addhi	r3, r3, #256	@ tmp237, tmp235,
+	uxth	r3, r3	@ tmpDiff, tmp237
+.LVL47:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #15]	@ tmpDiff, Differenz_20(D)->Number
+.LVL48:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #14]	@ zero_extendqisi2	@ _54, Minuend_17(D)->Number
+	ldrb	r4, [r2, #14]	@ zero_extendqisi2	@ _55, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _56, _54
+	uxth	r6, r4	@ _57, _55
+	cmp	r5, r4	@ _54, _55
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:68:          tmpDiff = (uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - carry;
+	.loc 1 68 0
+	sub	r3, r3, r6	@ tmp239, _56, _57
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp242, tmp240,
+	uxth	r3, r3	@ _58, tmp242
+.LVL49:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #14]	@ _58, Differenz_20(D)->Number
+.LVL50:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #13]	@ zero_extendqisi2	@ _72, Minuend_17(D)->Number
+	ldrb	r4, [r2, #13]	@ zero_extendqisi2	@ _73, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _74, _72
+	cmp	r5, r4	@ _72, _73
+	uxth	r6, r4	@ _75, _73
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp245, _74,
+	subs	r3, r3, r6	@ tmp247, tmp245, _75
+	uxth	r3, r3	@ _76, tmp247
+.LVL51:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #13]	@ _76, Differenz_20(D)->Number
+.LVL52:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #12]	@ zero_extendqisi2	@ _90, Minuend_17(D)->Number
+	ldrb	r4, [r2, #12]	@ zero_extendqisi2	@ _91, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _92, _90
+	cmp	r5, r4	@ _90, _91
+	uxth	r6, r4	@ _93, _91
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp250, _92,
+	subs	r3, r3, r6	@ tmp252, tmp250, _93
+	uxth	r3, r3	@ _94, tmp252
+.LVL53:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #12]	@ _94, Differenz_20(D)->Number
+.LVL54:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #11]	@ zero_extendqisi2	@ _108, Minuend_17(D)->Number
+	ldrb	r4, [r2, #11]	@ zero_extendqisi2	@ _109, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _110, _108
+	cmp	r5, r4	@ _108, _109
+	uxth	r6, r4	@ _111, _109
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp255, _110,
+	subs	r3, r3, r6	@ tmp257, tmp255, _111
+	uxth	r3, r3	@ _112, tmp257
+.LVL55:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #11]	@ _112, Differenz_20(D)->Number
+.LVL56:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #10]	@ zero_extendqisi2	@ _126, Minuend_17(D)->Number
+	ldrb	r4, [r2, #10]	@ zero_extendqisi2	@ _127, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _128, _126
+	cmp	r5, r4	@ _126, _127
+	uxth	r6, r4	@ _129, _127
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp260, _128,
+	subs	r3, r3, r6	@ tmp262, tmp260, _129
+	uxth	r3, r3	@ _130, tmp262
+.LVL57:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #10]	@ _130, Differenz_20(D)->Number
+.LVL58:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #9]	@ zero_extendqisi2	@ _144, Minuend_17(D)->Number
+	ldrb	r4, [r2, #9]	@ zero_extendqisi2	@ _145, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _146, _144
+	cmp	r5, r4	@ _144, _145
+	uxth	r6, r4	@ _147, _145
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp265, _146,
+	subs	r3, r3, r6	@ tmp267, tmp265, _147
+	uxth	r3, r3	@ _148, tmp267
+.LVL59:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #9]	@ _148, Differenz_20(D)->Number
+.LVL60:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #8]	@ zero_extendqisi2	@ _162, Minuend_17(D)->Number
+	ldrb	r4, [r2, #8]	@ zero_extendqisi2	@ _163, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _164, _162
+	cmp	r5, r4	@ _162, _163
+	uxth	r6, r4	@ _165, _163
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp270, _164,
+	subs	r3, r3, r6	@ tmp272, tmp270, _165
+	uxth	r3, r3	@ _166, tmp272
+.LVL61:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #8]	@ _166, Differenz_20(D)->Number
+.LVL62:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #7]	@ zero_extendqisi2	@ _180, Minuend_17(D)->Number
+	ldrb	r4, [r2, #7]	@ zero_extendqisi2	@ _181, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _182, _180
+	cmp	r5, r4	@ _180, _181
+	uxth	r6, r4	@ _183, _181
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp275, _182,
+	subs	r3, r3, r6	@ tmp277, tmp275, _183
+	uxth	r3, r3	@ _184, tmp277
+.LVL63:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #7]	@ _184, Differenz_20(D)->Number
+.LVL64:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #6]	@ zero_extendqisi2	@ _198, Minuend_17(D)->Number
+	ldrb	r4, [r2, #6]	@ zero_extendqisi2	@ _199, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _200, _198
+	cmp	r5, r4	@ _198, _199
+	uxth	r6, r4	@ _201, _199
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp280, _200,
+	subs	r3, r3, r6	@ tmp282, tmp280, _201
+	uxth	r3, r3	@ _202, tmp282
 .LVL65:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:73: }
-	.loc 1 73 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #6]	@ _202, Differenz_20(D)->Number
+.LVL66:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #5]	@ zero_extendqisi2	@ _216, Minuend_17(D)->Number
+	ldrb	r4, [r2, #5]	@ zero_extendqisi2	@ _217, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _218, _216
+	cmp	r5, r4	@ _216, _217
+	uxth	r6, r4	@ _219, _217
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp285, _218,
+	subs	r3, r3, r6	@ tmp287, tmp285, _219
+	uxth	r3, r3	@ _220, tmp287
+.LVL67:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #5]	@ _220, Differenz_20(D)->Number
+.LVL68:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #4]	@ zero_extendqisi2	@ _234, Minuend_17(D)->Number
+	ldrb	r4, [r2, #4]	@ zero_extendqisi2	@ _235, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _236, _234
+	cmp	r5, r4	@ _234, _235
+	uxth	r6, r4	@ _237, _235
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp290, _236,
+	subs	r3, r3, r6	@ tmp292, tmp290, _237
+	uxth	r3, r3	@ _238, tmp292
+.LVL69:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #4]	@ _238, Differenz_20(D)->Number
+.LVL70:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #3]	@ zero_extendqisi2	@ _252, Minuend_17(D)->Number
+	ldrb	r4, [r2, #3]	@ zero_extendqisi2	@ _253, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _254, _252
+	cmp	r5, r4	@ _252, _253
+	uxth	r6, r4	@ _255, _253
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp295, _254,
+	subs	r3, r3, r6	@ tmp297, tmp295, _255
+	uxth	r3, r3	@ _256, tmp297
+.LVL71:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #3]	@ _256, Differenz_20(D)->Number
+.LVL72:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #2]	@ zero_extendqisi2	@ _270, Minuend_17(D)->Number
+	ldrb	r4, [r2, #2]	@ zero_extendqisi2	@ _271, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _272, _270
+	cmp	r5, r4	@ _270, _271
+	uxth	r6, r4	@ _273, _271
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp300, _272,
+	subs	r3, r3, r6	@ tmp302, tmp300, _273
+	uxth	r3, r3	@ _274, tmp302
+.LVL73:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #2]	@ _274, Differenz_20(D)->Number
+.LVL74:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r5, [r1, #1]	@ zero_extendqisi2	@ _288, Minuend_17(D)->Number
+	ldrb	r4, [r2, #1]	@ zero_extendqisi2	@ _289, Subtrahend_18(D)->Number
+	uxth	r3, r5	@ _290, _288
+	cmp	r5, r4	@ _288, _289
+	uxth	r6, r4	@ _291, _289
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	cc
+	addcc	r3, r3, #256	@ tmp305, _290,
+	subs	r3, r3, r6	@ tmp307, tmp305, _291
+	uxth	r3, r3	@ _292, tmp307
+.LVL75:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0, #1]	@ _292, Differenz_20(D)->Number
+.LVL76:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:66:       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+	.loc 1 66 0
+	ldrb	r1, [r1]	@ zero_extendqisi2	@ _25, Minuend_17(D)->Number
+.LVL77:
+	ldrb	r2, [r2]	@ zero_extendqisi2	@ _24, Subtrahend_18(D)->Number
+.LVL78:
+	uxth	r3, r1	@ _15, _25
+	cmp	r2, r1	@ _24, _25
+	uxth	r4, r2	@ _13, _24
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:72:          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+	.loc 1 72 0
+	it	hi
+	addhi	r3, r3, #256	@ tmp310, _15,
+	subs	r3, r3, r4	@ tmp312, tmp310, _13
+	uxth	r3, r3	@ tmpDiff, tmp312
+.LVL79:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:78:       Differenz->Number[pos] = tmpDiff;
+	.loc 1 78 0
+	strb	r3, [r0]	@ tmpDiff, Differenz_20(D)->Number
+.LVL80:
+.LBE11:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:80: }
+	.loc 1 80 0
+	pop	{r4, r5, r6}	@
+	.cfi_restore 6
+	.cfi_restore 5
+	.cfi_restore 4
+	.cfi_def_cfa_offset 0
 	bx	lr	@
 	.cfi_endproc
 .LFE4:
@@ -651,20 +845,193 @@ IntSub:
 	.fpu softvfp
 	.type	IsLess, %function
 IsLess:
-.LFB15:
+.LFB5:
+	.loc 1 131 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-	ldr	r0, .L33	@ tmp116,
-	uxtb	r0, r0	@, tmp116
+.LVL81:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0]	@ zero_extendqisi2	@ _15, Operand1_7(D)->Number
+	ldrb	r3, [r1]	@ zero_extendqisi2	@ _16, Operand2_8(D)->Number
+	cmp	r2, r3	@ _15, _16
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL82:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #1]	@ zero_extendqisi2	@ _22, Operand1_7(D)->Number
+	ldrb	r3, [r1, #1]	@ zero_extendqisi2	@ _23, Operand2_8(D)->Number
+	cmp	r2, r3	@ _22, _23
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL83:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #2]	@ zero_extendqisi2	@ _29, Operand1_7(D)->Number
+	ldrb	r3, [r1, #2]	@ zero_extendqisi2	@ _30, Operand2_8(D)->Number
+	cmp	r2, r3	@ _29, _30
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL84:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #3]	@ zero_extendqisi2	@ _36, Operand1_7(D)->Number
+	ldrb	r3, [r1, #3]	@ zero_extendqisi2	@ _37, Operand2_8(D)->Number
+	cmp	r2, r3	@ _36, _37
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL85:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #4]	@ zero_extendqisi2	@ _43, Operand1_7(D)->Number
+	ldrb	r3, [r1, #4]	@ zero_extendqisi2	@ _44, Operand2_8(D)->Number
+	cmp	r2, r3	@ _43, _44
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL86:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #5]	@ zero_extendqisi2	@ _50, Operand1_7(D)->Number
+	ldrb	r3, [r1, #5]	@ zero_extendqisi2	@ _51, Operand2_8(D)->Number
+	cmp	r2, r3	@ _50, _51
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL87:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #6]	@ zero_extendqisi2	@ _57, Operand1_7(D)->Number
+	ldrb	r3, [r1, #6]	@ zero_extendqisi2	@ _58, Operand2_8(D)->Number
+	cmp	r2, r3	@ _57, _58
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL88:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #7]	@ zero_extendqisi2	@ _64, Operand1_7(D)->Number
+	ldrb	r3, [r1, #7]	@ zero_extendqisi2	@ _65, Operand2_8(D)->Number
+	cmp	r2, r3	@ _64, _65
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL89:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #8]	@ zero_extendqisi2	@ _71, Operand1_7(D)->Number
+	ldrb	r3, [r1, #8]	@ zero_extendqisi2	@ _72, Operand2_8(D)->Number
+	cmp	r2, r3	@ _71, _72
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL90:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #9]	@ zero_extendqisi2	@ _78, Operand1_7(D)->Number
+	ldrb	r3, [r1, #9]	@ zero_extendqisi2	@ _79, Operand2_8(D)->Number
+	cmp	r2, r3	@ _78, _79
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL91:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #10]	@ zero_extendqisi2	@ _85, Operand1_7(D)->Number
+	ldrb	r3, [r1, #10]	@ zero_extendqisi2	@ _86, Operand2_8(D)->Number
+	cmp	r2, r3	@ _85, _86
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL92:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #11]	@ zero_extendqisi2	@ _92, Operand1_7(D)->Number
+	ldrb	r3, [r1, #11]	@ zero_extendqisi2	@ _93, Operand2_8(D)->Number
+	cmp	r2, r3	@ _92, _93
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL93:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #12]	@ zero_extendqisi2	@ _99, Operand1_7(D)->Number
+	ldrb	r3, [r1, #12]	@ zero_extendqisi2	@ _100, Operand2_8(D)->Number
+	cmp	r2, r3	@ _99, _100
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL94:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #13]	@ zero_extendqisi2	@ _106, Operand1_7(D)->Number
+	ldrb	r3, [r1, #13]	@ zero_extendqisi2	@ _107, Operand2_8(D)->Number
+	cmp	r2, r3	@ _106, _107
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL95:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0, #14]	@ zero_extendqisi2	@ _113, Operand1_7(D)->Number
+	ldrb	r3, [r1, #14]	@ zero_extendqisi2	@ _114, Operand2_8(D)->Number
+	cmp	r2, r3	@ _113, _114
+	bcc	.L94	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L95	@,
+.LVL96:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r0, [r0, #15]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+.LVL97:
+	ldrb	r3, [r1, #15]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:138:          IsLess = True;
+	.loc 1 138 0
+	cmp	r0, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	ite	cs
+	movcs	r0, #0	@ <retval>,
+	movcc	r0, #1	@ <retval>,
 	bx	lr	@
-.L34:
-	.align	2
-.L33:
-	.word	IsEqual
+.LVL98:
+.L95:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:143:          IsLess = False;
+	.loc 1 143 0
+	movs	r0, #0	@ <retval>,
+.LVL99:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:152: }
+	.loc 1 152 0
+	bx	lr	@
+.LVL100:
+.L94:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:138:          IsLess = True;
+	.loc 1 138 0
+	movs	r0, #1	@ <retval>,
+.LVL101:
+	bx	lr	@
 	.cfi_endproc
-.LFE15:
+.LFE5:
 	.size	IsLess, .-IsLess
 	.align	1
 	.p2align 2,,3
@@ -675,104 +1042,438 @@ IsLess:
 	.fpu softvfp
 	.type	IsLessOrEqual, %function
 IsLessOrEqual:
-.LFB13:
+.LFB6:
+	.loc 1 154 0
+	.cfi_startproc
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+.LVL102:
+.LBB12:
+.LBB13:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r2, [r0]	@ zero_extendqisi2	@ _122, Operand1_3(D)->Number
+	ldrb	r3, [r1]	@ zero_extendqisi2	@ _123, Operand2_4(D)->Number
+	cmp	r2, r3	@ _122, _123
+	bcc	.L99	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L100	@,
+.LVL103:
+.LBE13:
+.LBE12:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:154: {
+	.loc 1 154 0
+	push	{r4, r5, r6, r7, lr}	@
+	.cfi_def_cfa_offset 20
+	.cfi_offset 4, -20
+	.cfi_offset 5, -16
+	.cfi_offset 6, -12
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+.LBB17:
+.LBB14:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r5, [r1, #1]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	ldrb	r4, [r0, #1]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	cmp	r4, r5	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L131	@,
+.LVL104:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	r7, [r0, #2]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r6, [r1, #2]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r7, r6	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL105:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #3]	@ zero_extendqisi2	@ _143, Operand1_3(D)->Number
+	ldrb	ip, [r1, #3]	@ zero_extendqisi2	@ _144, Operand2_4(D)->Number
+	cmp	lr, ip	@ _143, _144
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL106:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #4]	@ zero_extendqisi2	@ _150, Operand1_3(D)->Number
+	ldrb	ip, [r1, #4]	@ zero_extendqisi2	@ _151, Operand2_4(D)->Number
+	cmp	lr, ip	@ _150, _151
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL107:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #5]	@ zero_extendqisi2	@ _157, Operand1_3(D)->Number
+	ldrb	ip, [r1, #5]	@ zero_extendqisi2	@ _158, Operand2_4(D)->Number
+	cmp	lr, ip	@ _157, _158
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL108:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #6]	@ zero_extendqisi2	@ _164, Operand1_3(D)->Number
+	ldrb	ip, [r1, #6]	@ zero_extendqisi2	@ _165, Operand2_4(D)->Number
+	cmp	lr, ip	@ _164, _165
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL109:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #7]	@ zero_extendqisi2	@ _171, Operand1_3(D)->Number
+	ldrb	ip, [r1, #7]	@ zero_extendqisi2	@ _172, Operand2_4(D)->Number
+	cmp	lr, ip	@ _171, _172
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL110:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #8]	@ zero_extendqisi2	@ _178, Operand1_3(D)->Number
+	ldrb	ip, [r1, #8]	@ zero_extendqisi2	@ _179, Operand2_4(D)->Number
+	cmp	lr, ip	@ _178, _179
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL111:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #9]	@ zero_extendqisi2	@ _185, Operand1_3(D)->Number
+	ldrb	ip, [r1, #9]	@ zero_extendqisi2	@ _186, Operand2_4(D)->Number
+	cmp	lr, ip	@ _185, _186
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL112:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #10]	@ zero_extendqisi2	@ _192, Operand1_3(D)->Number
+	ldrb	ip, [r1, #10]	@ zero_extendqisi2	@ _193, Operand2_4(D)->Number
+	cmp	lr, ip	@ _192, _193
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL113:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #11]	@ zero_extendqisi2	@ _199, Operand1_3(D)->Number
+	ldrb	ip, [r1, #11]	@ zero_extendqisi2	@ _200, Operand2_4(D)->Number
+	cmp	lr, ip	@ _199, _200
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL114:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #12]	@ zero_extendqisi2	@ _206, Operand1_3(D)->Number
+	ldrb	ip, [r1, #12]	@ zero_extendqisi2	@ _207, Operand2_4(D)->Number
+	cmp	lr, ip	@ _206, _207
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL115:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #13]	@ zero_extendqisi2	@ _213, Operand1_3(D)->Number
+	ldrb	ip, [r1, #13]	@ zero_extendqisi2	@ _214, Operand2_4(D)->Number
+	cmp	lr, ip	@ _213, _214
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL116:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #14]	@ zero_extendqisi2	@ _220, Operand1_3(D)->Number
+	ldrb	ip, [r1, #14]	@ zero_extendqisi2	@ _221, Operand2_4(D)->Number
+	cmp	lr, ip	@ _220, _221
+	bcc	.L116	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	bhi	.L98	@,
+.LVL117:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	ldrb	lr, [r0, #15]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	ip, [r1, #15]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	lr, ip	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bcc	.L116	@,
+.LVL118:
+.L98:
+.LBE14:
+.LBE17:
+.LBB18:
+.LBB19:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:163:       if(Operand1->Number[pos] != Operand2->Number[pos])
+	.loc 1 163 0
+	cmp	r2, r3	@ _122, _123
+	bne	.L131	@,
+.LVL119:
+	cmp	r5, r4	@ Operand2_4(D)->Number, Operand1_3(D)->Number
+	bne	.L131	@,
+.LVL120:
+	cmp	r7, r6	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL121:
+	ldrb	r2, [r0, #3]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #3]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL122:
+	ldrb	r2, [r0, #4]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #4]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL123:
+	ldrb	r2, [r0, #5]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #5]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL124:
+	ldrb	r2, [r0, #6]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #6]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL125:
+	ldrb	r2, [r0, #7]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #7]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL126:
+	ldrb	r2, [r0, #8]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #8]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL127:
+	ldrb	r2, [r0, #9]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #9]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL128:
+	ldrb	r2, [r0, #10]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #10]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL129:
+	ldrb	r2, [r0, #11]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #11]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL130:
+	ldrb	r2, [r0, #12]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #12]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL131:
+	ldrb	r2, [r0, #13]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #13]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL132:
+	ldrb	r2, [r0, #14]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #14]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L131	@,
+.LVL133:
+	ldrb	r0, [r0, #15]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+.LVL134:
+	ldrb	r3, [r1, #15]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	subs	r0, r0, r3	@ <retval>, Operand1_3(D)->Number, Operand2_4(D)->Number
+	clz	r0, r0	@ <retval>, <retval>
+	lsrs	r0, r0, #5	@ <retval>, <retval>,
+.LBE19:
+.LBE18:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:156: }
+	.loc 1 156 0
+	pop	{r4, r5, r6, r7, pc}	@
+.LVL135:
+.L131:
+.LBB21:
+.LBB20:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:163:       if(Operand1->Number[pos] != Operand2->Number[pos])
+	.loc 1 163 0
+	movs	r0, #0	@ <retval>,
+.LVL136:
+.LBE20:
+.LBE21:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:156: }
+	.loc 1 156 0
+	pop	{r4, r5, r6, r7, pc}	@
+.LVL137:
+.L116:
+.LBB22:
+.LBB15:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	movs	r0, #1	@ <retval>,
+.LVL138:
+.LBE15:
+.LBE22:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:156: }
+	.loc 1 156 0
+	pop	{r4, r5, r6, r7, pc}	@
+.LVL139:
+.L99:
+	.cfi_def_cfa_offset 0
+	.cfi_restore 4
+	.cfi_restore 5
+	.cfi_restore 6
+	.cfi_restore 7
+	.cfi_restore 14
+.LBB23:
+.LBB16:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:136:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 136 0
+	movs	r0, #1	@ <retval>,
+.LVL140:
+	bx	lr	@
+.LVL141:
+.L100:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:141:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 141 0
+	movs	r0, #0	@ <retval>,
+.LVL142:
+.LBE16:
+.LBE23:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:156: }
+	.loc 1 156 0
+	bx	lr	@
+	.cfi_endproc
+.LFE6:
+	.size	IsLessOrEqual, .-IsLessOrEqual
+	.align	1
+	.p2align 2,,3
+	.global	IsEqual
+	.syntax unified
+	.thumb
+	.thumb_func
+	.fpu softvfp
+	.type	IsEqual, %function
+IsEqual:
+.LFB7:
+	.loc 1 158 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-	ldr	r3, .L57	@ tmp149,
-	ands	r3, r3, #255	@ tmp150, tmp149,
-	bne	.L37	@,
-	push	{r4}	@
-	.cfi_def_cfa_offset 4
-	.cfi_offset 4, -4
-	ldrb	r2, [r1]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	ldrb	r4, [r0]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	cmp	r4, r2	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r4, [r0, #1]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r2, [r1, #1]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r4, r2	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r4, [r0, #2]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r2, [r1, #2]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r4, r2	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r4, [r0, #3]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r2, [r1, #3]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r4, r2	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r4, [r0, #4]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r2, [r1, #4]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r4, r2	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r4, [r0, #5]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r2, [r1, #5]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r4, r2	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r4, [r0, #6]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r2, [r1, #6]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r4, r2	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r4, [r0, #7]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r2, [r1, #7]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r4, r2	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r2, [r0, #8]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r3, [r1, #8]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r2, r3	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r2, [r0, #9]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r3, [r1, #9]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r2, r3	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r2, [r0, #10]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r3, [r1, #10]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r2, r3	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r2, [r0, #11]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r3, [r1, #11]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r2, r3	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r2, [r0, #12]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r3, [r1, #12]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r2, r3	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r2, [r0, #13]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r3, [r1, #13]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r2, r3	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r2, [r0, #14]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r3, [r1, #14]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	cmp	r2, r3	@ Operand1_2(D)->Number, Operand2_3(D)->Number
-	bne	.L52	@,
-	ldrb	r0, [r0, #15]	@ zero_extendqisi2	@ Operand1_2(D)->Number, Operand1_2(D)->Number
-	ldrb	r3, [r1, #15]	@ zero_extendqisi2	@ Operand2_3(D)->Number, Operand2_3(D)->Number
-	pop	{r4}	@
-	.cfi_remember_state
-	.cfi_restore 4
-	.cfi_def_cfa_offset 0
-	subs	r0, r0, r3	@ <retval>, Operand1_2(D)->Number, Operand2_3(D)->Number
+.LVL143:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:163:       if(Operand1->Number[pos] != Operand2->Number[pos])
+	.loc 1 163 0
+	ldrb	r2, [r0]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL144:
+	ldrb	r2, [r0, #1]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #1]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL145:
+	ldrb	r2, [r0, #2]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #2]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL146:
+	ldrb	r2, [r0, #3]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #3]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL147:
+	ldrb	r2, [r0, #4]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #4]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL148:
+	ldrb	r2, [r0, #5]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #5]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL149:
+	ldrb	r2, [r0, #6]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #6]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL150:
+	ldrb	r2, [r0, #7]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #7]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL151:
+	ldrb	r2, [r0, #8]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #8]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL152:
+	ldrb	r2, [r0, #9]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #9]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL153:
+	ldrb	r2, [r0, #10]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #10]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL154:
+	ldrb	r2, [r0, #11]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #11]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL155:
+	ldrb	r2, [r0, #12]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #12]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL156:
+	ldrb	r2, [r0, #13]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #13]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL157:
+	ldrb	r2, [r0, #14]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+	ldrb	r3, [r1, #14]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+	cmp	r2, r3	@ Operand1_7(D)->Number, Operand2_8(D)->Number
+	bne	.L152	@,
+.LVL158:
+	ldrb	r0, [r0, #15]	@ zero_extendqisi2	@ Operand1_7(D)->Number, Operand1_7(D)->Number
+.LVL159:
+	ldrb	r3, [r1, #15]	@ zero_extendqisi2	@ Operand2_8(D)->Number, Operand2_8(D)->Number
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:165:          IsEqual = False;
+	.loc 1 165 0
+	subs	r0, r0, r3	@ <retval>, Operand1_7(D)->Number, Operand2_8(D)->Number
 	clz	r0, r0	@ <retval>, <retval>
 	lsrs	r0, r0, #5	@ <retval>, <retval>,
 	bx	lr	@
-.L52:
-	.cfi_restore_state
+.LVL160:
+.L152:
 	movs	r0, #0	@ <retval>,
-	pop	{r4}	@
-	.cfi_restore 4
-	.cfi_def_cfa_offset 0
+.LVL161:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:174: }
+	.loc 1 174 0
 	bx	lr	@
-.L37:
-	movs	r0, #1	@ <retval>,
-	bx	lr	@
-.L58:
-	.align	2
-.L57:
-	.word	IsEqual
 	.cfi_endproc
-.LFE13:
-	.size	IsLessOrEqual, .-IsLessOrEqual
+.LFE7:
+	.size	IsEqual, .-IsEqual
 	.align	1
 	.p2align 2,,3
 	.global	IsGreater
@@ -783,24 +1484,191 @@ IsLessOrEqual:
 	.type	IsGreater, %function
 IsGreater:
 .LFB8:
-	.loc 1 169 0
+	.loc 1 176 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-.LVL66:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:189:    return IsEqual;
-	.loc 1 189 0
-	ldr	r0, .L60	@ tmp116,
-.LVL67:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:190: }
-	.loc 1 190 0
-	uxtb	r0, r0	@, tmp116
+.LVL162:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0]	@ zero_extendqisi2	@ _15, Operand1_7(D)->Number
+	ldrb	r3, [r1]	@ zero_extendqisi2	@ _16, Operand2_8(D)->Number
+	cmp	r2, r3	@ _15, _16
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL163:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #1]	@ zero_extendqisi2	@ _22, Operand1_7(D)->Number
+	ldrb	r3, [r1, #1]	@ zero_extendqisi2	@ _23, Operand2_8(D)->Number
+	cmp	r2, r3	@ _22, _23
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL164:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #2]	@ zero_extendqisi2	@ _29, Operand1_7(D)->Number
+	ldrb	r3, [r1, #2]	@ zero_extendqisi2	@ _30, Operand2_8(D)->Number
+	cmp	r2, r3	@ _29, _30
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL165:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #3]	@ zero_extendqisi2	@ _36, Operand1_7(D)->Number
+	ldrb	r3, [r1, #3]	@ zero_extendqisi2	@ _37, Operand2_8(D)->Number
+	cmp	r2, r3	@ _36, _37
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL166:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #4]	@ zero_extendqisi2	@ _43, Operand1_7(D)->Number
+	ldrb	r3, [r1, #4]	@ zero_extendqisi2	@ _44, Operand2_8(D)->Number
+	cmp	r2, r3	@ _43, _44
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL167:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #5]	@ zero_extendqisi2	@ _50, Operand1_7(D)->Number
+	ldrb	r3, [r1, #5]	@ zero_extendqisi2	@ _51, Operand2_8(D)->Number
+	cmp	r2, r3	@ _50, _51
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL168:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #6]	@ zero_extendqisi2	@ _57, Operand1_7(D)->Number
+	ldrb	r3, [r1, #6]	@ zero_extendqisi2	@ _58, Operand2_8(D)->Number
+	cmp	r2, r3	@ _57, _58
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL169:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #7]	@ zero_extendqisi2	@ _64, Operand1_7(D)->Number
+	ldrb	r3, [r1, #7]	@ zero_extendqisi2	@ _65, Operand2_8(D)->Number
+	cmp	r2, r3	@ _64, _65
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL170:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #8]	@ zero_extendqisi2	@ _71, Operand1_7(D)->Number
+	ldrb	r3, [r1, #8]	@ zero_extendqisi2	@ _72, Operand2_8(D)->Number
+	cmp	r2, r3	@ _71, _72
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL171:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #9]	@ zero_extendqisi2	@ _78, Operand1_7(D)->Number
+	ldrb	r3, [r1, #9]	@ zero_extendqisi2	@ _79, Operand2_8(D)->Number
+	cmp	r2, r3	@ _78, _79
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL172:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #10]	@ zero_extendqisi2	@ _85, Operand1_7(D)->Number
+	ldrb	r3, [r1, #10]	@ zero_extendqisi2	@ _86, Operand2_8(D)->Number
+	cmp	r2, r3	@ _85, _86
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL173:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #11]	@ zero_extendqisi2	@ _92, Operand1_7(D)->Number
+	ldrb	r3, [r1, #11]	@ zero_extendqisi2	@ _93, Operand2_8(D)->Number
+	cmp	r2, r3	@ _92, _93
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL174:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #12]	@ zero_extendqisi2	@ _99, Operand1_7(D)->Number
+	ldrb	r3, [r1, #12]	@ zero_extendqisi2	@ _100, Operand2_8(D)->Number
+	cmp	r2, r3	@ _99, _100
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL175:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #13]	@ zero_extendqisi2	@ _106, Operand1_7(D)->Number
+	ldrb	r3, [r1, #13]	@ zero_extendqisi2	@ _107, Operand2_8(D)->Number
+	cmp	r2, r3	@ _106, _107
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL176:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #14]	@ zero_extendqisi2	@ _113, Operand1_7(D)->Number
+	ldrb	r3, [r1, #14]	@ zero_extendqisi2	@ _114, Operand2_8(D)->Number
+	cmp	r2, r3	@ _113, _114
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L184	@,
+.LVL177:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0, #15]	@ zero_extendqisi2	@ _2, Operand1_7(D)->Number
+	ldrb	r3, [r1, #15]	@ zero_extendqisi2	@ _3, Operand2_8(D)->Number
+	cmp	r2, r3	@ _2, _3
+	bcc	.L185	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:183:          IsGreater = False;
+	.loc 1 183 0
+	ite	hi
+	movhi	r0, #1	@ <retval>,
+.LVL178:
+	movls	r0, #0	@ <retval>,
 	bx	lr	@
-.L61:
-	.align	2
-.L60:
-	.word	IsEqual
+.LVL179:
+.L184:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:188:          IsGreater = True;
+	.loc 1 188 0
+	movs	r0, #1	@ <retval>,
+.LVL180:
+	bx	lr	@
+.LVL181:
+.L185:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:183:          IsGreater = False;
+	.loc 1 183 0
+	movs	r0, #0	@ <retval>,
+.LVL182:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:197: }
+	.loc 1 197 0
+	bx	lr	@
 	.cfi_endproc
 .LFE8:
 	.size	IsGreater, .-IsGreater
@@ -814,137 +1682,325 @@ IsGreater:
 	.type	IsGreaterOrEqual, %function
 IsGreaterOrEqual:
 .LFB9:
-	.loc 1 192 0
+	.loc 1 199 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	@ link register save eliminated.
-.LVL68:
-.LBB11:
-.LBB12:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:189:    return IsEqual;
-	.loc 1 189 0
-	ldr	r2, .L69	@ tmp148,
-.LBE12:
-.LBE11:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:192: {
-	.loc 1 192 0
-	mov	r3, r0	@ Operand1, Operand1
-.LVL69:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:193:    return IsGreater(Operand1,Operand2) || IsEqual(Operand1,Operand2);
-	.loc 1 193 0
-	ands	r0, r2, #255	@ <retval>, tmp148,
-.LVL70:
-	bne	.L64	@,
-.LVL71:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:192: {
-	.loc 1 192 0
-	push	{r4}	@
-	.cfi_def_cfa_offset 4
-	.cfi_offset 4, -4
-.LBB13:
-.LBB14:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:156:       if(Operand1->Number[pos] != Operand2->Number[pos])
-	.loc 1 156 0
-	ldrb	r2, [r1]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	ldrb	r4, [r3]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL72:
-	ldrb	r4, [r3, #1]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #1]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL73:
-	ldrb	r4, [r3, #2]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #2]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL74:
-	ldrb	r4, [r3, #3]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #3]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL75:
-	ldrb	r4, [r3, #4]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #4]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL76:
-	ldrb	r4, [r3, #5]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #5]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL77:
-	ldrb	r4, [r3, #6]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #6]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL78:
-	ldrb	r4, [r3, #7]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #7]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL79:
-	ldrb	r4, [r3, #8]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #8]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL80:
-	ldrb	r4, [r3, #9]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #9]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL81:
-	ldrb	r4, [r3, #10]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #10]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL82:
-	ldrb	r4, [r3, #11]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #11]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL83:
-	ldrb	r4, [r3, #12]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #12]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL84:
-	ldrb	r4, [r3, #13]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #13]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL85:
-	ldrb	r4, [r3, #14]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r2, [r1, #14]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	cmp	r4, r2	@ Operand1_3(D)->Number, Operand2_4(D)->Number
-	bne	.L63	@,
-.LVL86:
-	ldrb	r2, [r3, #15]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
-	ldrb	r0, [r1, #15]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
-	subs	r0, r2, r0	@ <retval>, Operand1_3(D)->Number, Operand2_4(D)->Number
+.LVL183:
+.LBB24:
+.LBB25:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r2, [r0]	@ zero_extendqisi2	@ _122, Operand1_3(D)->Number
+	ldrb	r3, [r1]	@ zero_extendqisi2	@ _123, Operand2_4(D)->Number
+	cmp	r2, r3	@ _122, _123
+	bcc	.L189	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L190	@,
+.LVL184:
+.LBE25:
+.LBE24:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:199: {
+	.loc 1 199 0
+	push	{r4, r5, r6, r7, lr}	@
+	.cfi_def_cfa_offset 20
+	.cfi_offset 4, -20
+	.cfi_offset 5, -16
+	.cfi_offset 6, -12
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+.LBB29:
+.LBB26:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r5, [r1, #1]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	ldrb	r4, [r0, #1]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	cmp	r4, r5	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bcc	.L221	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL185:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	r7, [r0, #2]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r6, [r1, #2]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r7, r6	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL186:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #3]	@ zero_extendqisi2	@ _143, Operand1_3(D)->Number
+	ldrb	ip, [r1, #3]	@ zero_extendqisi2	@ _144, Operand2_4(D)->Number
+	cmp	lr, ip	@ _143, _144
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL187:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #4]	@ zero_extendqisi2	@ _150, Operand1_3(D)->Number
+	ldrb	ip, [r1, #4]	@ zero_extendqisi2	@ _151, Operand2_4(D)->Number
+	cmp	lr, ip	@ _150, _151
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL188:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #5]	@ zero_extendqisi2	@ _157, Operand1_3(D)->Number
+	ldrb	ip, [r1, #5]	@ zero_extendqisi2	@ _158, Operand2_4(D)->Number
+	cmp	lr, ip	@ _157, _158
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL189:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #6]	@ zero_extendqisi2	@ _164, Operand1_3(D)->Number
+	ldrb	ip, [r1, #6]	@ zero_extendqisi2	@ _165, Operand2_4(D)->Number
+	cmp	lr, ip	@ _164, _165
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL190:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #7]	@ zero_extendqisi2	@ _171, Operand1_3(D)->Number
+	ldrb	ip, [r1, #7]	@ zero_extendqisi2	@ _172, Operand2_4(D)->Number
+	cmp	lr, ip	@ _171, _172
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL191:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #8]	@ zero_extendqisi2	@ _178, Operand1_3(D)->Number
+	ldrb	ip, [r1, #8]	@ zero_extendqisi2	@ _179, Operand2_4(D)->Number
+	cmp	lr, ip	@ _178, _179
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL192:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #9]	@ zero_extendqisi2	@ _185, Operand1_3(D)->Number
+	ldrb	ip, [r1, #9]	@ zero_extendqisi2	@ _186, Operand2_4(D)->Number
+	cmp	lr, ip	@ _185, _186
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL193:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #10]	@ zero_extendqisi2	@ _192, Operand1_3(D)->Number
+	ldrb	ip, [r1, #10]	@ zero_extendqisi2	@ _193, Operand2_4(D)->Number
+	cmp	lr, ip	@ _192, _193
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL194:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #11]	@ zero_extendqisi2	@ _199, Operand1_3(D)->Number
+	ldrb	ip, [r1, #11]	@ zero_extendqisi2	@ _200, Operand2_4(D)->Number
+	cmp	lr, ip	@ _199, _200
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL195:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #12]	@ zero_extendqisi2	@ _206, Operand1_3(D)->Number
+	ldrb	ip, [r1, #12]	@ zero_extendqisi2	@ _207, Operand2_4(D)->Number
+	cmp	lr, ip	@ _206, _207
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL196:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #13]	@ zero_extendqisi2	@ _213, Operand1_3(D)->Number
+	ldrb	ip, [r1, #13]	@ zero_extendqisi2	@ _214, Operand2_4(D)->Number
+	cmp	lr, ip	@ _213, _214
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL197:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #14]	@ zero_extendqisi2	@ _220, Operand1_3(D)->Number
+	ldrb	ip, [r1, #14]	@ zero_extendqisi2	@ _221, Operand2_4(D)->Number
+	cmp	lr, ip	@ _220, _221
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL198:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	ldrb	lr, [r0, #15]	@ zero_extendqisi2	@ _8, Operand1_3(D)->Number
+	ldrb	ip, [r1, #15]	@ zero_extendqisi2	@ _9, Operand2_4(D)->Number
+	cmp	lr, ip	@ _8, _9
+	bcc	.L188	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	bhi	.L206	@,
+.LVL199:
+.L188:
+.LBE26:
+.LBE29:
+.LBB30:
+.LBB31:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:163:       if(Operand1->Number[pos] != Operand2->Number[pos])
+	.loc 1 163 0
+	cmp	r2, r3	@ _122, _123
+	bne	.L221	@,
+.LVL200:
+	cmp	r5, r4	@ Operand2_4(D)->Number, Operand1_3(D)->Number
+	bne	.L221	@,
+.LVL201:
+	cmp	r7, r6	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL202:
+	ldrb	r2, [r0, #3]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #3]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL203:
+	ldrb	r2, [r0, #4]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #4]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL204:
+	ldrb	r2, [r0, #5]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #5]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL205:
+	ldrb	r2, [r0, #6]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #6]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL206:
+	ldrb	r2, [r0, #7]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #7]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL207:
+	ldrb	r2, [r0, #8]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #8]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL208:
+	ldrb	r2, [r0, #9]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #9]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL209:
+	ldrb	r2, [r0, #10]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #10]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL210:
+	ldrb	r2, [r0, #11]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #11]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL211:
+	ldrb	r2, [r0, #12]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #12]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL212:
+	ldrb	r2, [r0, #13]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #13]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL213:
+	ldrb	r2, [r0, #14]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+	ldrb	r3, [r1, #14]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	cmp	r2, r3	@ Operand1_3(D)->Number, Operand2_4(D)->Number
+	bne	.L221	@,
+.LVL214:
+	ldrb	r0, [r0, #15]	@ zero_extendqisi2	@ Operand1_3(D)->Number, Operand1_3(D)->Number
+.LVL215:
+	ldrb	r3, [r1, #15]	@ zero_extendqisi2	@ Operand2_4(D)->Number, Operand2_4(D)->Number
+	subs	r0, r0, r3	@ <retval>, Operand1_3(D)->Number, Operand2_4(D)->Number
 	clz	r0, r0	@ <retval>, <retval>
 	lsrs	r0, r0, #5	@ <retval>, <retval>,
-.LVL87:
-.L63:
-.LBE14:
-.LBE13:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:194: }
-	.loc 1 194 0 discriminator 6
-	pop	{r4}	@
-	.cfi_restore 4
-	.cfi_def_cfa_offset 0
-	bx	lr	@
-.L64:
+.LBE31:
+.LBE30:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:201: }
+	.loc 1 201 0
+	pop	{r4, r5, r6, r7, pc}	@
+.LVL216:
+.L221:
+.LBB33:
+.LBB32:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:163:       if(Operand1->Number[pos] != Operand2->Number[pos])
+	.loc 1 163 0
+	movs	r0, #0	@ <retval>,
+.LVL217:
+.LBE32:
+.LBE33:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:201: }
+	.loc 1 201 0
+	pop	{r4, r5, r6, r7, pc}	@
+.LVL218:
+.L206:
+.LBB34:
+.LBB27:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
 	movs	r0, #1	@ <retval>,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:194: }
-	.loc 1 194 0 is_stmt 0
+.LVL219:
+.LBE27:
+.LBE34:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:201: }
+	.loc 1 201 0
+	pop	{r4, r5, r6, r7, pc}	@
+.LVL220:
+.L189:
+	.cfi_def_cfa_offset 0
+	.cfi_restore 4
+	.cfi_restore 5
+	.cfi_restore 6
+	.cfi_restore 7
+	.cfi_restore 14
+.LBB35:
+.LBB28:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:181:       if(Operand1->Number[pos] < Operand2->Number[pos])
+	.loc 1 181 0
+	movs	r0, #0	@ <retval>,
+.LVL221:
 	bx	lr	@
-.L70:
-	.align	2
-.L69:
-	.word	IsEqual
+.LVL222:
+.L190:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:186:       else if (Operand1->Number[pos] > Operand2->Number[pos])
+	.loc 1 186 0
+	movs	r0, #1	@ <retval>,
+.LVL223:
+.LBE28:
+.LBE35:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:201: }
+	.loc 1 201 0
+	bx	lr	@
 	.cfi_endproc
 .LFE9:
 	.size	IsGreaterOrEqual, .-IsGreaterOrEqual
@@ -958,108 +2014,108 @@ IsGreaterOrEqual:
 	.type	Assign, %function
 Assign:
 .LFB10:
-	.loc 1 196 0 is_stmt 1
+	.loc 1 203 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-.LVL88:
-	adds	r2, r0, #4	@ vectp_leftOperand.60, leftOperand,
-	cmp	r1, r2	@ rightOperand, vectp_leftOperand.60
-	bcs	.L83	@,
+.LVL224:
+	adds	r2, r0, #4	@ vectp_leftOperand.56, leftOperand,
+	cmp	r1, r2	@ rightOperand, vectp_leftOperand.56
+	bcs	.L238	@,
 	adds	r3, r1, #4	@ tmp169, rightOperand,
 	cmp	r0, r3	@ leftOperand, tmp169
-	bcc	.L72	@,
-.L83:
+	bcc	.L227	@,
+.L238:
 	negs	r3, r1	@ tmp173, rightOperand
-	ands	r3, r3, #3	@ prolog_loop_niters.50, tmp173,
+	ands	r3, r3, #3	@ prolog_loop_niters.46, tmp173,
 	push	{r4, r5, r6, r7}	@
 	.cfi_def_cfa_offset 16
 	.cfi_offset 4, -16
 	.cfi_offset 5, -12
 	.cfi_offset 6, -8
 	.cfi_offset 7, -4
-	beq	.L74	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:200:       leftOperand->Number[pos] = rightOperand->Number[pos];
-	.loc 1 200 0
+	beq	.L229	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:207:       leftOperand->Number[pos] = rightOperand->Number[pos];
+	.loc 1 207 0
 	ldrb	r2, [r1]	@ zero_extendqisi2	@ _231, rightOperand_6(D)->Number
 	strb	r2, [r0]	@ _231, leftOperand_7(D)->Number
-.LVL89:
-	cmp	r3, #1	@ prolog_loop_niters.50,
-	beq	.L81	@,
+.LVL225:
+	cmp	r3, #1	@ prolog_loop_niters.46,
+	beq	.L236	@,
 	ldrb	r2, [r1, #1]	@ zero_extendqisi2	@ _241, rightOperand_6(D)->Number
 	strb	r2, [r0, #1]	@ _241, leftOperand_7(D)->Number
-.LVL90:
-	cmp	r3, #3	@ prolog_loop_niters.50,
-	bne	.L82	@,
+.LVL226:
+	cmp	r3, #3	@ prolog_loop_niters.46,
+	bne	.L237	@,
 	ldrb	r2, [r1, #2]	@ zero_extendqisi2	@ _31, rightOperand_6(D)->Number
 	strb	r2, [r0, #2]	@ _31, leftOperand_7(D)->Number
-.LVL91:
+.LVL227:
 	movs	r7, #13	@ ivtmp_254,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:198:    for (pos = 0; pos < BigIntSize; pos++)
-	.loc 1 198 0
-	mov	r6, r3	@ pos, prolog_loop_niters.50
-.LVL92:
-.L75:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:200:       leftOperand->Number[pos] = rightOperand->Number[pos];
-	.loc 1 200 0
-	ldr	r2, [r1, r3]	@ vect__2.59, MEM[(uint8[16] *)vectp_rightOperand.58_199]
-	str	r2, [r0, r3]	@ unaligned	@ vect__2.59, MEM[(uint8[16] *)vectp_leftOperand.61_248]
-	adds	r5, r1, r3	@ vectp_rightOperand.58, rightOperand, prolog_loop_niters.50
-	adds	r2, r0, r3	@ vectp_leftOperand.61, leftOperand, prolog_loop_niters.50
-	adds	r5, r5, #4	@ vectp_rightOperand.57, vectp_rightOperand.58,
-	adds	r4, r2, #4	@ vectp_leftOperand.60, vectp_leftOperand.61,
-	rsb	ip, r3, #16	@ tmp205, prolog_loop_niters.50,
-	ldr	r3, [r5]	@ vect__2.59, MEM[(uint8[16] *)vectp_rightOperand.57_263]
-	str	r3, [r4]	@ unaligned	@ vect__2.59, MEM[(uint8[16] *)vectp_leftOperand.60_264]
-	movs	r2, #3	@ bnd.53,
-	ldr	r3, [r5, #4]	@ vect__2.59, MEM[(uint8[16] *)vectp_rightOperand.57_263 + 4B]
-	str	r3, [r4, #4]	@ unaligned	@ vect__2.59, MEM[(uint8[16] *)vectp_leftOperand.60_264 + 4B]
-	cmp	r2, #4	@ bnd.53,
-	uxtb	ip, ip	@ niters.52, tmp205
-	bne	.L96	@,
-.L79:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:200:       leftOperand->Number[pos] = rightOperand->Number[pos];
-	.loc 1 200 0 is_stmt 0 discriminator 3
-	ldr	r3, [r5, #8]	@ vect__2.59, MEM[(uint8[16] *)vectp_rightOperand.57_263 + 8B]
-	str	r3, [r4, #8]	@ unaligned	@ vect__2.59, MEM[(uint8[16] *)vectp_leftOperand.60_264 + 8B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:205:    for (pos = 0; pos < BigIntSize; pos++)
+	.loc 1 205 0
+	mov	r6, r3	@ pos, prolog_loop_niters.46
+.LVL228:
+.L230:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:207:       leftOperand->Number[pos] = rightOperand->Number[pos];
+	.loc 1 207 0
+	ldr	r2, [r1, r3]	@ vect__2.55, MEM[(uint8[16] *)vectp_rightOperand.54_199]
+	str	r2, [r0, r3]	@ unaligned	@ vect__2.55, MEM[(uint8[16] *)vectp_leftOperand.57_248]
+	adds	r5, r1, r3	@ vectp_rightOperand.54, rightOperand, prolog_loop_niters.46
+	adds	r2, r0, r3	@ vectp_leftOperand.57, leftOperand, prolog_loop_niters.46
+	adds	r5, r5, #4	@ vectp_rightOperand.53, vectp_rightOperand.54,
+	adds	r4, r2, #4	@ vectp_leftOperand.56, vectp_leftOperand.57,
+	rsb	ip, r3, #16	@ tmp205, prolog_loop_niters.46,
+	ldr	r3, [r5]	@ vect__2.55, MEM[(uint8[16] *)vectp_rightOperand.53_263]
+	str	r3, [r4]	@ unaligned	@ vect__2.55, MEM[(uint8[16] *)vectp_leftOperand.56_264]
+	movs	r2, #3	@ bnd.49,
+	ldr	r3, [r5, #4]	@ vect__2.55, MEM[(uint8[16] *)vectp_rightOperand.53_263 + 4B]
+	str	r3, [r4, #4]	@ unaligned	@ vect__2.55, MEM[(uint8[16] *)vectp_leftOperand.56_264 + 4B]
+	cmp	r2, #4	@ bnd.49,
+	uxtb	ip, ip	@ niters.48, tmp205
+	bne	.L251	@,
+.L234:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:207:       leftOperand->Number[pos] = rightOperand->Number[pos];
+	.loc 1 207 0 is_stmt 0 discriminator 3
+	ldr	r3, [r5, #8]	@ vect__2.55, MEM[(uint8[16] *)vectp_rightOperand.53_263 + 8B]
+	str	r3, [r4, #8]	@ unaligned	@ vect__2.55, MEM[(uint8[16] *)vectp_leftOperand.56_264 + 8B]
 	sub	r2, r7, #16	@ tmp180, ivtmp_254,
-	cmp	ip, #16	@ niters.52,
-	uxtb	r2, r2	@ tmp.56, tmp180
-	add	r3, r6, #16	@ tmp.55, pos,
-	beq	.L71	@,
-.L80:
-.LVL93:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:200:       leftOperand->Number[pos] = rightOperand->Number[pos];
-	.loc 1 200 0
+	cmp	ip, #16	@ niters.48,
+	uxtb	r2, r2	@ tmp.52, tmp180
+	add	r3, r6, #16	@ tmp.51, pos,
+	beq	.L226	@,
+.L235:
+.LVL229:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:207:       leftOperand->Number[pos] = rightOperand->Number[pos];
+	.loc 1 207 0
 	ldrb	r4, [r1, r3]	@ zero_extendqisi2	@ _187, rightOperand_6(D)->Number
 	strb	r4, [r0, r3]	@ _187, leftOperand_7(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:198:    for (pos = 0; pos < BigIntSize; pos++)
-	.loc 1 198 0 is_stmt 1
-	cmp	r2, #1	@ tmp.56,
-	add	r4, r3, #1	@ tmp182, tmp.55,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:205:    for (pos = 0; pos < BigIntSize; pos++)
+	.loc 1 205 0 is_stmt 1
+	cmp	r2, #1	@ tmp.52,
+	add	r4, r3, #1	@ tmp182, tmp.51,
 	uxtb	r4, r4	@ pos, tmp182
-.LVL94:
-	beq	.L71	@,
-	adds	r3, r3, #2	@ tmp187, tmp.55,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:200:       leftOperand->Number[pos] = rightOperand->Number[pos];
-	.loc 1 200 0
+.LVL230:
+	beq	.L226	@,
+	adds	r3, r3, #2	@ tmp187, tmp.51,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:207:       leftOperand->Number[pos] = rightOperand->Number[pos];
+	.loc 1 207 0
 	ldrb	r5, [r1, r4]	@ zero_extendqisi2	@ _195, rightOperand_6(D)->Number
 	strb	r5, [r0, r4]	@ _195, leftOperand_7(D)->Number
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:198:    for (pos = 0; pos < BigIntSize; pos++)
-	.loc 1 198 0
-	cmp	r2, #2	@ tmp.56,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:205:    for (pos = 0; pos < BigIntSize; pos++)
+	.loc 1 205 0
+	cmp	r2, #2	@ tmp.52,
 	uxtb	r3, r3	@ pos, tmp187
-.LVL95:
-	beq	.L71	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:200:       leftOperand->Number[pos] = rightOperand->Number[pos];
-	.loc 1 200 0
+.LVL231:
+	beq	.L226	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:207:       leftOperand->Number[pos] = rightOperand->Number[pos];
+	.loc 1 207 0
 	ldrb	r2, [r1, r3]	@ zero_extendqisi2	@ _53, rightOperand_6(D)->Number
 	strb	r2, [r0, r3]	@ _53, leftOperand_7(D)->Number
-.LVL96:
-.L71:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:202: }
-	.loc 1 202 0
+.LVL232:
+.L226:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:209: }
+	.loc 1 209 0
 	pop	{r4, r5, r6, r7}	@
 	.cfi_restore 7
 	.cfi_restore 6
@@ -1067,105 +2123,105 @@ Assign:
 	.cfi_restore 4
 	.cfi_def_cfa_offset 0
 	bx	lr	@
-.LVL97:
-.L72:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:200:       leftOperand->Number[pos] = rightOperand->Number[pos];
-	.loc 1 200 0
+.LVL233:
+.L227:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:207:       leftOperand->Number[pos] = rightOperand->Number[pos];
+	.loc 1 207 0
 	ldrb	r3, [r1]	@ zero_extendqisi2	@ _1, rightOperand_6(D)->Number
 	strb	r3, [r0]	@ _1, leftOperand_7(D)->Number
-.LVL98:
+.LVL234:
 	ldrb	r3, [r1, #1]	@ zero_extendqisi2	@ _75, rightOperand_6(D)->Number
 	strb	r3, [r0, #1]	@ _75, leftOperand_7(D)->Number
-.LVL99:
+.LVL235:
 	ldrb	r3, [r1, #2]	@ zero_extendqisi2	@ _83, rightOperand_6(D)->Number
 	strb	r3, [r0, #2]	@ _83, leftOperand_7(D)->Number
-.LVL100:
+.LVL236:
 	ldrb	r3, [r1, #3]	@ zero_extendqisi2	@ _91, rightOperand_6(D)->Number
 	strb	r3, [r0, #3]	@ _91, leftOperand_7(D)->Number
-.LVL101:
+.LVL237:
 	ldrb	r3, [r1, #4]	@ zero_extendqisi2	@ _99, rightOperand_6(D)->Number
 	strb	r3, [r0, #4]	@ _99, leftOperand_7(D)->Number
-.LVL102:
+.LVL238:
 	ldrb	r3, [r1, #5]	@ zero_extendqisi2	@ _107, rightOperand_6(D)->Number
 	strb	r3, [r0, #5]	@ _107, leftOperand_7(D)->Number
-.LVL103:
+.LVL239:
 	ldrb	r3, [r1, #6]	@ zero_extendqisi2	@ _115, rightOperand_6(D)->Number
 	strb	r3, [r0, #6]	@ _115, leftOperand_7(D)->Number
-.LVL104:
+.LVL240:
 	ldrb	r3, [r1, #7]	@ zero_extendqisi2	@ _123, rightOperand_6(D)->Number
 	strb	r3, [r0, #7]	@ _123, leftOperand_7(D)->Number
-.LVL105:
+.LVL241:
 	ldrb	r3, [r1, #8]	@ zero_extendqisi2	@ _131, rightOperand_6(D)->Number
 	strb	r3, [r0, #8]	@ _131, leftOperand_7(D)->Number
-.LVL106:
+.LVL242:
 	ldrb	r3, [r1, #9]	@ zero_extendqisi2	@ _139, rightOperand_6(D)->Number
 	strb	r3, [r0, #9]	@ _139, leftOperand_7(D)->Number
-.LVL107:
+.LVL243:
 	ldrb	r3, [r1, #10]	@ zero_extendqisi2	@ _147, rightOperand_6(D)->Number
 	strb	r3, [r0, #10]	@ _147, leftOperand_7(D)->Number
-.LVL108:
+.LVL244:
 	ldrb	r3, [r1, #11]	@ zero_extendqisi2	@ _155, rightOperand_6(D)->Number
 	strb	r3, [r0, #11]	@ _155, leftOperand_7(D)->Number
-.LVL109:
+.LVL245:
 	ldrb	r3, [r1, #12]	@ zero_extendqisi2	@ _163, rightOperand_6(D)->Number
 	strb	r3, [r0, #12]	@ _163, leftOperand_7(D)->Number
-.LVL110:
+.LVL246:
 	ldrb	r3, [r1, #13]	@ zero_extendqisi2	@ _171, rightOperand_6(D)->Number
 	strb	r3, [r0, #13]	@ _171, leftOperand_7(D)->Number
-.LVL111:
+.LVL247:
 	ldrb	r3, [r1, #14]	@ zero_extendqisi2	@ _179, rightOperand_6(D)->Number
 	strb	r3, [r0, #14]	@ _179, leftOperand_7(D)->Number
-.LVL112:
+.LVL248:
 	ldrb	r3, [r1, #15]	@ zero_extendqisi2	@ _21, rightOperand_6(D)->Number
 	strb	r3, [r0, #15]	@ _21, leftOperand_7(D)->Number
-.LVL113:
+.LVL249:
 	bx	lr	@
-.LVL114:
-.L81:
+.LVL250:
+.L236:
 	.cfi_def_cfa_offset 16
 	.cfi_offset 4, -16
 	.cfi_offset 5, -12
 	.cfi_offset 6, -8
 	.cfi_offset 7, -4
 	movs	r7, #15	@ ivtmp_254,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:198:    for (pos = 0; pos < BigIntSize; pos++)
-	.loc 1 198 0
-	mov	r6, r3	@ pos, prolog_loop_niters.50
-	b	.L75	@
-.LVL115:
-.L74:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:200:       leftOperand->Number[pos] = rightOperand->Number[pos];
-	.loc 1 200 0
-	mov	r5, r1	@ vectp_rightOperand.57, rightOperand
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:198:    for (pos = 0; pos < BigIntSize; pos++)
-	.loc 1 198 0
-	mov	r6, r3	@ pos, prolog_loop_niters.50
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:200:       leftOperand->Number[pos] = rightOperand->Number[pos];
-	.loc 1 200 0
-	ldr	r4, [r5], #4	@ vect__2.59, MEM[(uint8[16] *)vectp_rightOperand.58_118]
-	str	r4, [r0]	@ unaligned	@ vect__2.59, MEM[(uint8[16] *)vectp_leftOperand.61_126]
-	mov	r4, r2	@ vectp_leftOperand.60, vectp_leftOperand.60
-	ldr	r3, [r5]	@ vect__2.59, MEM[(uint8[16] *)vectp_rightOperand.57_263]
-	str	r3, [r4]	@ unaligned	@ vect__2.59, MEM[(uint8[16] *)vectp_leftOperand.60_264]
-	movs	r2, #4	@ bnd.53,
-	mov	ip, #16	@ niters.52,
-	ldr	r3, [r5, #4]	@ vect__2.59, MEM[(uint8[16] *)vectp_rightOperand.57_263 + 4B]
-	str	r3, [r4, #4]	@ unaligned	@ vect__2.59, MEM[(uint8[16] *)vectp_leftOperand.60_264 + 4B]
-	cmp	r2, #4	@ bnd.53,
-	mov	r7, ip	@ ivtmp_254, niters.52
-	beq	.L79	@,
-.L96:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:205:    for (pos = 0; pos < BigIntSize; pos++)
+	.loc 1 205 0
+	mov	r6, r3	@ pos, prolog_loop_niters.46
+	b	.L230	@
+.LVL251:
+.L229:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:207:       leftOperand->Number[pos] = rightOperand->Number[pos];
+	.loc 1 207 0
+	mov	r5, r1	@ vectp_rightOperand.53, rightOperand
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:205:    for (pos = 0; pos < BigIntSize; pos++)
+	.loc 1 205 0
+	mov	r6, r3	@ pos, prolog_loop_niters.46
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:207:       leftOperand->Number[pos] = rightOperand->Number[pos];
+	.loc 1 207 0
+	ldr	r4, [r5], #4	@ vect__2.55, MEM[(uint8[16] *)vectp_rightOperand.54_118]
+	str	r4, [r0]	@ unaligned	@ vect__2.55, MEM[(uint8[16] *)vectp_leftOperand.57_126]
+	mov	r4, r2	@ vectp_leftOperand.56, vectp_leftOperand.56
+	ldr	r3, [r5]	@ vect__2.55, MEM[(uint8[16] *)vectp_rightOperand.53_263]
+	str	r3, [r4]	@ unaligned	@ vect__2.55, MEM[(uint8[16] *)vectp_leftOperand.56_264]
+	movs	r2, #4	@ bnd.49,
+	mov	ip, #16	@ niters.48,
+	ldr	r3, [r5, #4]	@ vect__2.55, MEM[(uint8[16] *)vectp_rightOperand.53_263 + 4B]
+	str	r3, [r4, #4]	@ unaligned	@ vect__2.55, MEM[(uint8[16] *)vectp_leftOperand.56_264 + 4B]
+	cmp	r2, #4	@ bnd.49,
+	mov	r7, ip	@ ivtmp_254, niters.48
+	beq	.L234	@,
+.L251:
 	sub	r2, r7, #12	@ tmp207, ivtmp_254,
-	uxtb	r2, r2	@ tmp.56, tmp207
-	add	r3, r6, #12	@ tmp.55, pos,
-	b	.L80	@
-.LVL116:
-.L82:
+	uxtb	r2, r2	@ tmp.52, tmp207
+	add	r3, r6, #12	@ tmp.51, pos,
+	b	.L235	@
+.LVL252:
+.L237:
 	movs	r7, #14	@ ivtmp_254,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:198:    for (pos = 0; pos < BigIntSize; pos++)
-	.loc 1 198 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:205:    for (pos = 0; pos < BigIntSize; pos++)
+	.loc 1 205 0
 	movs	r6, #2	@ pos,
-	b	.L75	@
+	b	.L230	@
 	.cfi_endproc
 .LFE10:
 	.size	Assign, .-Assign
@@ -1179,19 +2235,19 @@ Assign:
 	.type	AssignNull, %function
 AssignNull:
 .LFB11:
-	.loc 1 204 0
+	.loc 1 211 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-.LVL117:
+.LVL253:
 	movs	r3, #0	@ tmp112,
 	str	r3, [r0]	@ unaligned	@ tmp112, MEM[(void *)leftOperand_5(D)]
 	str	r3, [r0, #4]	@ unaligned	@ tmp112, MEM[(void *)leftOperand_5(D)]
 	str	r3, [r0, #8]	@ unaligned	@ tmp112, MEM[(void *)leftOperand_5(D)]
 	str	r3, [r0, #12]	@ unaligned	@ tmp112, MEM[(void *)leftOperand_5(D)]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:210: }
-	.loc 1 210 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:217: }
+	.loc 1 217 0
 	bx	lr	@
 	.cfi_endproc
 .LFE11:
@@ -1204,15 +2260,15 @@ AssignNull:
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0xadd
+	.4byte	0xb87
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF672
-	.byte	0x1
 	.4byte	.LASF673
+	.byte	0x1
 	.4byte	.LASF674
+	.4byte	.LASF675
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -2108,7 +3164,7 @@ AssignNull:
 	.uleb128 0x15
 	.4byte	.LASF648
 	.byte	0x1
-	.byte	0xcb
+	.byte	0xd2
 	.4byte	.LFB11
 	.4byte	.LFE11-.LFB11
 	.uleb128 0x1
@@ -2117,14 +3173,14 @@ AssignNull:
 	.uleb128 0x16
 	.4byte	.LASF650
 	.byte	0x1
-	.byte	0xcb
+	.byte	0xd2
 	.4byte	0x783
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x17
 	.ascii	"pos\000"
 	.byte	0x1
-	.byte	0xcd
+	.byte	0xd4
 	.4byte	0x42
 	.byte	0
 	.byte	0
@@ -2134,7 +3190,7 @@ AssignNull:
 	.uleb128 0x15
 	.4byte	.LASF649
 	.byte	0x1
-	.byte	0xc3
+	.byte	0xca
 	.4byte	.LFB10
 	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
@@ -2143,254 +3199,349 @@ AssignNull:
 	.uleb128 0x16
 	.4byte	.LASF650
 	.byte	0x1
-	.byte	0xc3
+	.byte	0xca
 	.4byte	0x783
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x16
 	.4byte	.LASF651
 	.byte	0x1
-	.byte	0xc3
+	.byte	0xca
 	.4byte	0x783
 	.uleb128 0x1
 	.byte	0x51
 	.uleb128 0x18
 	.ascii	"pos\000"
 	.byte	0x1
-	.byte	0xc5
+	.byte	0xcc
 	.4byte	0x42
-	.4byte	.LLST9
+	.4byte	.LLST22
 	.byte	0
 	.uleb128 0x19
-	.4byte	.LASF654
-	.byte	0x1
-	.byte	0xbf
-	.4byte	0xf8
-	.byte	0x1
-	.4byte	0x7ef
-	.uleb128 0x1a
-	.4byte	.LASF652
-	.byte	0x1
-	.byte	0xbf
-	.4byte	0x783
-	.uleb128 0x1a
-	.4byte	.LASF653
-	.byte	0x1
-	.byte	0xbf
-	.4byte	0x783
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF655
-	.byte	0x1
-	.byte	0xa8
-	.4byte	0xf8
-	.byte	0x1
-	.4byte	0x82c
-	.uleb128 0x1a
-	.4byte	.LASF652
-	.byte	0x1
-	.byte	0xa8
-	.4byte	0x783
-	.uleb128 0x1a
-	.4byte	.LASF653
-	.byte	0x1
-	.byte	0xa8
-	.4byte	0x783
-	.uleb128 0x1b
-	.ascii	"pos\000"
-	.byte	0x1
-	.byte	0xaa
-	.4byte	0x42
-	.uleb128 0x1c
 	.4byte	.LASF656
 	.byte	0x1
-	.byte	0xab
+	.byte	0xc6
 	.4byte	0xf8
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF657
-	.byte	0x1
-	.byte	0x96
-	.4byte	0xf8
-	.byte	0x1
-	.4byte	0x869
+	.4byte	.LFB9
+	.4byte	.LFE9-.LFB9
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x85c
 	.uleb128 0x1a
 	.4byte	.LASF652
 	.byte	0x1
-	.byte	0x96
+	.byte	0xc6
 	.4byte	0x783
-	.uleb128 0x1a
+	.4byte	.LLST20
+	.uleb128 0x16
 	.4byte	.LASF653
 	.byte	0x1
-	.byte	0x96
+	.byte	0xc6
 	.4byte	0x783
+	.uleb128 0x1
+	.byte	0x51
 	.uleb128 0x1b
+	.4byte	0x85c
+	.4byte	.LBB24
+	.4byte	.Ldebug_ranges0+0x40
+	.byte	0x1
+	.byte	0xc8
+	.4byte	0x831
+	.uleb128 0x1c
+	.4byte	0x877
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x1d
+	.4byte	0x86c
+	.4byte	.LLST21
+	.uleb128 0x1e
+	.4byte	.Ldebug_ranges0+0x40
+	.uleb128 0x1f
+	.4byte	0xb77
+	.uleb128 0x1f
+	.4byte	0xb80
+	.byte	0
+	.byte	0
+	.uleb128 0x20
+	.4byte	0x899
+	.4byte	.LBB30
+	.4byte	.Ldebug_ranges0+0x68
+	.byte	0x1
+	.byte	0xc8
+	.uleb128 0x21
+	.4byte	0x8b4
+	.uleb128 0x21
+	.4byte	0x8a9
+	.uleb128 0x1e
+	.4byte	.Ldebug_ranges0+0x68
+	.uleb128 0x1f
+	.4byte	0xb45
+	.uleb128 0x1f
+	.4byte	0xb4e
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x22
+	.4byte	.LASF654
+	.byte	0x1
+	.byte	0xaf
+	.4byte	0xf8
+	.byte	0x1
+	.4byte	0x899
+	.uleb128 0x23
+	.4byte	.LASF652
+	.byte	0x1
+	.byte	0xaf
+	.4byte	0x783
+	.uleb128 0x23
+	.4byte	.LASF653
+	.byte	0x1
+	.byte	0xaf
+	.4byte	0x783
+	.uleb128 0x24
 	.ascii	"pos\000"
 	.byte	0x1
-	.byte	0x98
+	.byte	0xb1
 	.4byte	0x42
-	.uleb128 0x1c
+	.uleb128 0x25
+	.4byte	.LASF654
+	.byte	0x1
+	.byte	0xb2
+	.4byte	0xf8
+	.byte	0
+	.uleb128 0x22
+	.4byte	.LASF655
+	.byte	0x1
+	.byte	0x9d
+	.4byte	0xf8
+	.byte	0x1
+	.4byte	0x8d6
+	.uleb128 0x23
+	.4byte	.LASF652
+	.byte	0x1
+	.byte	0x9d
+	.4byte	0x783
+	.uleb128 0x23
+	.4byte	.LASF653
+	.byte	0x1
+	.byte	0x9d
+	.4byte	0x783
+	.uleb128 0x24
+	.ascii	"pos\000"
+	.byte	0x1
+	.byte	0x9f
+	.4byte	0x42
+	.uleb128 0x25
+	.4byte	.LASF655
+	.byte	0x1
+	.byte	0xa0
+	.4byte	0xf8
+	.byte	0
+	.uleb128 0x19
 	.4byte	.LASF657
 	.byte	0x1
 	.byte	0x99
 	.4byte	0xf8
-	.byte	0
-	.uleb128 0x1d
-	.4byte	.LASF675
-	.byte	0x1
-	.byte	0x92
-	.4byte	0xf8
-	.4byte	0x88f
+	.4byte	.LFB6
+	.4byte	.LFE6-.LFB6
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x96e
 	.uleb128 0x1a
 	.4byte	.LASF652
 	.byte	0x1
-	.byte	0x92
+	.byte	0x99
 	.4byte	0x783
-	.uleb128 0x1a
+	.4byte	.LLST11
+	.uleb128 0x16
 	.4byte	.LASF653
 	.byte	0x1
-	.byte	0x92
+	.byte	0x99
 	.4byte	0x783
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF656
-	.byte	0x1
-	.byte	0x7b
-	.4byte	0xf8
-	.byte	0x1
-	.4byte	0x8cc
-	.uleb128 0x1a
-	.4byte	.LASF652
-	.byte	0x1
-	.byte	0x7b
-	.4byte	0x783
-	.uleb128 0x1a
-	.4byte	.LASF653
-	.byte	0x1
-	.byte	0x7b
-	.4byte	0x783
+	.uleb128 0x1
+	.byte	0x51
 	.uleb128 0x1b
+	.4byte	0x96e
+	.4byte	.LBB12
+	.4byte	.Ldebug_ranges0+0
+	.byte	0x1
+	.byte	0x9b
+	.4byte	0x93f
+	.uleb128 0x1c
+	.4byte	0x989
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x1d
+	.4byte	0x97e
+	.4byte	.LLST12
+	.uleb128 0x1e
+	.4byte	.Ldebug_ranges0+0
+	.uleb128 0x1f
+	.4byte	0xb0f
+	.uleb128 0x1f
+	.4byte	0xb18
+	.byte	0
+	.byte	0
+	.uleb128 0x20
+	.4byte	0x899
+	.4byte	.LBB18
+	.4byte	.Ldebug_ranges0+0x28
+	.byte	0x1
+	.byte	0x9b
+	.uleb128 0x21
+	.4byte	0x8b4
+	.uleb128 0x21
+	.4byte	0x8a9
+	.uleb128 0x1e
+	.4byte	.Ldebug_ranges0+0x28
+	.uleb128 0x26
+	.4byte	0x8bf
+	.4byte	.LLST13
+	.uleb128 0x1f
+	.4byte	0x8ca
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x22
+	.4byte	.LASF658
+	.byte	0x1
+	.byte	0x82
+	.4byte	0xf8
+	.byte	0x1
+	.4byte	0x9ab
+	.uleb128 0x23
+	.4byte	.LASF652
+	.byte	0x1
+	.byte	0x82
+	.4byte	0x783
+	.uleb128 0x23
+	.4byte	.LASF653
+	.byte	0x1
+	.byte	0x82
+	.4byte	0x783
+	.uleb128 0x24
 	.ascii	"pos\000"
 	.byte	0x1
-	.byte	0x7d
+	.byte	0x84
 	.4byte	0x42
-	.uleb128 0x1c
-	.4byte	.LASF656
+	.uleb128 0x25
+	.4byte	.LASF658
 	.byte	0x1
-	.byte	0x7e
+	.byte	0x85
 	.4byte	0xf8
 	.byte	0
 	.uleb128 0x15
-	.4byte	.LASF658
+	.4byte	.LASF659
 	.byte	0x1
-	.byte	0x34
+	.byte	0x3a
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x92e
-	.uleb128 0x16
-	.4byte	.LASF659
-	.byte	0x1
-	.byte	0x34
-	.4byte	0x783
-	.uleb128 0x1
-	.byte	0x50
+	.4byte	0xa20
 	.uleb128 0x16
 	.4byte	.LASF660
 	.byte	0x1
-	.byte	0x34
+	.byte	0x3a
 	.4byte	0x783
 	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x16
+	.byte	0x50
+	.uleb128 0x1a
 	.4byte	.LASF661
 	.byte	0x1
-	.byte	0x34
+	.byte	0x3a
 	.4byte	0x783
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x17
-	.ascii	"pos\000"
-	.byte	0x1
-	.byte	0x36
-	.4byte	0x4d
-	.byte	0xf
-	.uleb128 0x1e
+	.4byte	.LLST4
+	.uleb128 0x1a
 	.4byte	.LASF662
 	.byte	0x1
-	.byte	0x37
-	.4byte	0x66
-	.byte	0
-	.uleb128 0x1f
-	.uleb128 0x1c
+	.byte	0x3a
+	.4byte	0x783
+	.4byte	.LLST5
+	.uleb128 0x18
+	.ascii	"pos\000"
+	.byte	0x1
+	.byte	0x3c
+	.4byte	0x4d
+	.4byte	.LLST6
+	.uleb128 0x27
 	.4byte	.LASF663
 	.byte	0x1
-	.byte	0x3b
+	.byte	0x3d
 	.4byte	0x66
+	.byte	0
+	.uleb128 0x28
+	.4byte	.LBB11
+	.4byte	.LBE11-.LBB11
+	.uleb128 0x29
+	.4byte	.LASF664
+	.byte	0x1
+	.byte	0x41
+	.4byte	0x66
+	.4byte	.LLST7
 	.byte	0
 	.byte	0
 	.uleb128 0x15
-	.4byte	.LASF664
+	.4byte	.LASF665
 	.byte	0x1
-	.byte	0x28
+	.byte	0x2e
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x9a4
+	.4byte	0xa96
 	.uleb128 0x16
-	.4byte	.LASF665
+	.4byte	.LASF666
 	.byte	0x1
-	.byte	0x28
+	.byte	0x2e
 	.4byte	0x783
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x16
-	.4byte	.LASF666
+	.4byte	.LASF667
 	.byte	0x1
-	.byte	0x28
+	.byte	0x2e
 	.4byte	0x783
 	.uleb128 0x1
 	.byte	0x51
-	.uleb128 0x20
-	.4byte	.LASF667
+	.uleb128 0x1a
+	.4byte	.LASF668
 	.byte	0x1
-	.byte	0x28
+	.byte	0x2e
 	.4byte	0x783
-	.4byte	.LLST3
+	.4byte	.LLST0
 	.uleb128 0x18
 	.ascii	"pos\000"
 	.byte	0x1
-	.byte	0x2a
+	.byte	0x30
 	.4byte	0x4d
-	.4byte	.LLST4
-	.uleb128 0x21
-	.4byte	.LASF662
+	.4byte	.LLST1
+	.uleb128 0x29
+	.4byte	.LASF663
 	.byte	0x1
-	.byte	0x2b
+	.byte	0x31
 	.4byte	0x66
-	.4byte	.LLST5
-	.uleb128 0x22
+	.4byte	.LLST2
+	.uleb128 0x28
 	.4byte	.LBB10
 	.4byte	.LBE10-.LBB10
-	.uleb128 0x21
-	.4byte	.LASF668
+	.uleb128 0x29
+	.4byte	.LASF669
 	.byte	0x1
-	.byte	0x2f
+	.byte	0x35
 	.4byte	0x66
-	.4byte	.LLST6
+	.4byte	.LLST3
 	.byte	0
 	.byte	0
-	.uleb128 0x23
+	.uleb128 0x2a
 	.4byte	.LASF676
 	.byte	0x1
-	.byte	0x17
+	.byte	0x1d
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x24
+	.uleb128 0x2b
 	.4byte	.LASF677
 	.byte	0x1
 	.byte	0xf
@@ -2400,123 +3551,90 @@ AssignNull:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x15
-	.4byte	.LASF669
+	.4byte	.LASF670
 	.byte	0x1
 	.byte	0x4
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x9fa
+	.4byte	0xaec
 	.uleb128 0x16
-	.4byte	.LASF670
+	.4byte	.LASF671
 	.byte	0x1
 	.byte	0x4
 	.4byte	0xe8
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x16
-	.4byte	.LASF671
+	.4byte	.LASF672
 	.byte	0x1
 	.byte	0x4
 	.4byte	0x181
 	.uleb128 0x1
 	.byte	0x51
 	.byte	0
-	.uleb128 0x25
-	.4byte	0x82c
+	.uleb128 0x2c
+	.4byte	0x96e
+	.4byte	.LFB5
+	.4byte	.LFE5-.LFB5
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xb22
+	.uleb128 0x1d
+	.4byte	0x97e
+	.4byte	.LLST8
+	.uleb128 0x1c
+	.4byte	0x989
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x26
+	.4byte	0x994
+	.4byte	.LLST9
+	.uleb128 0x26
+	.4byte	0x99f
+	.4byte	.LLST10
+	.byte	0
+	.uleb128 0x2c
+	.4byte	0x899
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xa30
-	.uleb128 0x26
-	.4byte	0x83c
-	.4byte	.LLST0
-	.uleb128 0x27
-	.4byte	0x847
+	.4byte	0xb58
+	.uleb128 0x1d
+	.4byte	0x8a9
+	.4byte	.LLST14
+	.uleb128 0x1c
+	.4byte	0x8b4
 	.uleb128 0x1
 	.byte	0x51
-	.uleb128 0x28
-	.4byte	0x852
-	.4byte	.LLST1
-	.uleb128 0x28
-	.4byte	0x85d
-	.4byte	.LLST2
+	.uleb128 0x26
+	.4byte	0x8bf
+	.4byte	.LLST15
+	.uleb128 0x26
+	.4byte	0x8ca
+	.4byte	.LLST16
 	.byte	0
-	.uleb128 0x25
-	.4byte	0x7ef
+	.uleb128 0x2d
+	.4byte	0x85c
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xa60
-	.uleb128 0x26
-	.4byte	0x7ff
-	.4byte	.LLST7
-	.uleb128 0x27
-	.4byte	0x80a
+	.uleb128 0x1d
+	.4byte	0x86c
+	.4byte	.LLST17
+	.uleb128 0x1c
+	.4byte	0x877
 	.uleb128 0x1
 	.byte	0x51
-	.uleb128 0x29
-	.4byte	0x815
-	.byte	0
-	.uleb128 0x29
-	.4byte	0x820
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x7c8
-	.4byte	.LFB9
-	.4byte	.LFE9-.LFB9
-	.uleb128 0x1
-	.byte	0x9c
 	.uleb128 0x26
-	.4byte	0x7d8
-	.4byte	.LLST8
-	.uleb128 0x27
-	.4byte	0x7e3
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x2b
-	.4byte	0x7ef
-	.4byte	.LBB11
-	.4byte	.LBE11-.LBB11
-	.byte	0x1
-	.byte	0xc1
-	.4byte	0xab1
-	.uleb128 0x2c
-	.4byte	0x80a
-	.uleb128 0x2c
-	.4byte	0x7ff
-	.uleb128 0x22
-	.4byte	.LBB12
-	.4byte	.LBE12-.LBB12
-	.uleb128 0x2d
-	.4byte	0xa53
-	.uleb128 0x2d
-	.4byte	0xa59
-	.byte	0
-	.byte	0
-	.uleb128 0x2e
-	.4byte	0x82c
-	.4byte	.LBB13
-	.4byte	.LBE13-.LBB13
-	.byte	0x1
-	.byte	0xc1
-	.uleb128 0x2c
-	.4byte	0x847
-	.uleb128 0x2c
-	.4byte	0x83c
-	.uleb128 0x22
-	.4byte	.LBB14
-	.4byte	.LBE14-.LBB14
-	.uleb128 0x2d
-	.4byte	0xa1d
-	.uleb128 0x2d
-	.4byte	0xa26
-	.byte	0
-	.byte	0
+	.4byte	0x882
+	.4byte	.LLST18
+	.uleb128 0x26
+	.4byte	0x88d
+	.4byte	.LLST19
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
@@ -2844,8 +3962,14 @@ AssignNull:
 	.uleb128 0x19
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x20
-	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
@@ -2861,9 +3985,116 @@ AssignNull:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x17
 	.byte	0
 	.byte	0
 	.uleb128 0x1b
+	.uleb128 0x1d
+	.byte	0x1
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x52
+	.uleb128 0x1
+	.uleb128 0x55
+	.uleb128 0x17
+	.uleb128 0x58
+	.uleb128 0xb
+	.uleb128 0x59
+	.uleb128 0xb
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x1c
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x1d
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x17
+	.byte	0
+	.byte	0
+	.uleb128 0x1e
+	.uleb128 0xb
+	.byte	0x1
+	.uleb128 0x55
+	.uleb128 0x17
+	.byte	0
+	.byte	0
+	.uleb128 0x1f
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x20
+	.uleb128 0x1d
+	.byte	0x1
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x52
+	.uleb128 0x1
+	.uleb128 0x55
+	.uleb128 0x17
+	.uleb128 0x58
+	.uleb128 0xb
+	.uleb128 0x59
+	.uleb128 0xb
+	.byte	0
+	.byte	0
+	.uleb128 0x21
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x22
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x20
+	.uleb128 0xb
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x23
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x24
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -2876,164 +4107,21 @@ AssignNull:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1c
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1d
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1e
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x1f
-	.uleb128 0xb
-	.byte	0x1
-	.byte	0
-	.byte	0
-	.uleb128 0x20
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x21
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x22
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x23
-	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x24
-	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.byte	0
-	.byte	0
 	.uleb128 0x25
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.uleb128 0x1
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x26
-	.uleb128 0x5
+	.uleb128 0x34
 	.byte	0
 	.uleb128 0x31
 	.uleb128 0x13
@@ -3042,37 +4130,57 @@ AssignNull:
 	.byte	0
 	.byte	0
 	.uleb128 0x27
-	.uleb128 0x5
+	.uleb128 0x34
 	.byte	0
-	.uleb128 0x31
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
+	.uleb128 0x1c
+	.uleb128 0xb
 	.byte	0
 	.byte	0
 	.uleb128 0x28
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
+	.uleb128 0xb
+	.byte	0x1
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
 	.byte	0
 	.byte	0
 	.uleb128 0x29
 	.uleb128 0x34
 	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1c
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
 	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x17
 	.byte	0
 	.byte	0
 	.uleb128 0x2a
 	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -3084,7 +4192,32 @@ AssignNull:
 	.byte	0
 	.byte	0
 	.uleb128 0x2b
-	.uleb128 0x1d
+	.uleb128 0x2e
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x2c
+	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x31
 	.uleb128 0x13
@@ -3092,30 +4225,16 @@ AssignNull:
 	.uleb128 0x1
 	.uleb128 0x12
 	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
 	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x2c
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
 	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x2d
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
 	.uleb128 0x2e
-	.uleb128 0x1d
 	.byte	0x1
 	.uleb128 0x31
 	.uleb128 0x13
@@ -3123,151 +4242,730 @@ AssignNull:
 	.uleb128 0x1
 	.uleb128 0x12
 	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
 	.byte	0
 	.byte	0
 	.byte	0
 	.section	.debug_loc,"",%progbits
 .Ldebug_loc0:
-.LLST9:
-	.4byte	.LVL88-.Ltext0
-	.4byte	.LVL89-.Ltext0
+.LLST22:
+	.4byte	.LVL224-.Ltext0
+	.4byte	.LVL225-.Ltext0
 	.2byte	0x2
 	.byte	0x30
 	.byte	0x9f
-	.4byte	.LVL89-.Ltext0
-	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL225-.Ltext0
+	.4byte	.LVL226-.Ltext0
 	.2byte	0x2
 	.byte	0x31
 	.byte	0x9f
-	.4byte	.LVL90-.Ltext0
-	.4byte	.LVL91-.Ltext0
+	.4byte	.LVL226-.Ltext0
+	.4byte	.LVL227-.Ltext0
 	.2byte	0x2
 	.byte	0x32
 	.byte	0x9f
-	.4byte	.LVL91-.Ltext0
-	.4byte	.LVL92-.Ltext0
+	.4byte	.LVL227-.Ltext0
+	.4byte	.LVL228-.Ltext0
 	.2byte	0x2
 	.byte	0x33
 	.byte	0x9f
-	.4byte	.LVL93-.Ltext0
-	.4byte	.LVL94-.Ltext0
+	.4byte	.LVL229-.Ltext0
+	.4byte	.LVL230-.Ltext0
 	.2byte	0x1
 	.byte	0x53
-	.4byte	.LVL94-.Ltext0
-	.4byte	.LVL95-.Ltext0
+	.4byte	.LVL230-.Ltext0
+	.4byte	.LVL231-.Ltext0
 	.2byte	0x1
 	.byte	0x54
-	.4byte	.LVL95-.Ltext0
-	.4byte	.LVL96-.Ltext0
+	.4byte	.LVL231-.Ltext0
+	.4byte	.LVL232-.Ltext0
 	.2byte	0x1
 	.byte	0x53
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL98-.Ltext0
+	.4byte	.LVL233-.Ltext0
+	.4byte	.LVL234-.Ltext0
 	.2byte	0x2
 	.byte	0x30
 	.byte	0x9f
-	.4byte	.LVL98-.Ltext0
-	.4byte	.LVL99-.Ltext0
+	.4byte	.LVL234-.Ltext0
+	.4byte	.LVL235-.Ltext0
 	.2byte	0x2
 	.byte	0x31
 	.byte	0x9f
-	.4byte	.LVL99-.Ltext0
-	.4byte	.LVL100-.Ltext0
+	.4byte	.LVL235-.Ltext0
+	.4byte	.LVL236-.Ltext0
 	.2byte	0x2
 	.byte	0x32
 	.byte	0x9f
-	.4byte	.LVL100-.Ltext0
-	.4byte	.LVL101-.Ltext0
+	.4byte	.LVL236-.Ltext0
+	.4byte	.LVL237-.Ltext0
 	.2byte	0x2
 	.byte	0x33
 	.byte	0x9f
-	.4byte	.LVL101-.Ltext0
-	.4byte	.LVL102-.Ltext0
+	.4byte	.LVL237-.Ltext0
+	.4byte	.LVL238-.Ltext0
 	.2byte	0x2
 	.byte	0x34
 	.byte	0x9f
-	.4byte	.LVL102-.Ltext0
-	.4byte	.LVL103-.Ltext0
+	.4byte	.LVL238-.Ltext0
+	.4byte	.LVL239-.Ltext0
 	.2byte	0x2
 	.byte	0x35
 	.byte	0x9f
-	.4byte	.LVL103-.Ltext0
-	.4byte	.LVL104-.Ltext0
+	.4byte	.LVL239-.Ltext0
+	.4byte	.LVL240-.Ltext0
 	.2byte	0x2
 	.byte	0x36
 	.byte	0x9f
-	.4byte	.LVL104-.Ltext0
-	.4byte	.LVL105-.Ltext0
+	.4byte	.LVL240-.Ltext0
+	.4byte	.LVL241-.Ltext0
 	.2byte	0x2
 	.byte	0x37
 	.byte	0x9f
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL106-.Ltext0
+	.4byte	.LVL241-.Ltext0
+	.4byte	.LVL242-.Ltext0
 	.2byte	0x2
 	.byte	0x38
 	.byte	0x9f
-	.4byte	.LVL106-.Ltext0
-	.4byte	.LVL107-.Ltext0
+	.4byte	.LVL242-.Ltext0
+	.4byte	.LVL243-.Ltext0
 	.2byte	0x2
 	.byte	0x39
 	.byte	0x9f
-	.4byte	.LVL107-.Ltext0
-	.4byte	.LVL108-.Ltext0
+	.4byte	.LVL243-.Ltext0
+	.4byte	.LVL244-.Ltext0
 	.2byte	0x2
 	.byte	0x3a
 	.byte	0x9f
-	.4byte	.LVL108-.Ltext0
-	.4byte	.LVL109-.Ltext0
+	.4byte	.LVL244-.Ltext0
+	.4byte	.LVL245-.Ltext0
 	.2byte	0x2
 	.byte	0x3b
 	.byte	0x9f
-	.4byte	.LVL109-.Ltext0
-	.4byte	.LVL110-.Ltext0
+	.4byte	.LVL245-.Ltext0
+	.4byte	.LVL246-.Ltext0
 	.2byte	0x2
 	.byte	0x3c
 	.byte	0x9f
-	.4byte	.LVL110-.Ltext0
-	.4byte	.LVL111-.Ltext0
+	.4byte	.LVL246-.Ltext0
+	.4byte	.LVL247-.Ltext0
 	.2byte	0x2
 	.byte	0x3d
 	.byte	0x9f
-	.4byte	.LVL111-.Ltext0
-	.4byte	.LVL112-.Ltext0
+	.4byte	.LVL247-.Ltext0
+	.4byte	.LVL248-.Ltext0
 	.2byte	0x2
 	.byte	0x3e
 	.byte	0x9f
-	.4byte	.LVL112-.Ltext0
-	.4byte	.LVL113-.Ltext0
+	.4byte	.LVL248-.Ltext0
+	.4byte	.LVL249-.Ltext0
 	.2byte	0x2
 	.byte	0x3f
 	.byte	0x9f
-	.4byte	.LVL113-.Ltext0
-	.4byte	.LVL114-.Ltext0
+	.4byte	.LVL249-.Ltext0
+	.4byte	.LVL250-.Ltext0
 	.2byte	0x2
 	.byte	0x40
 	.byte	0x9f
-	.4byte	.LVL114-.Ltext0
-	.4byte	.LVL115-.Ltext0
+	.4byte	.LVL250-.Ltext0
+	.4byte	.LVL251-.Ltext0
 	.2byte	0x2
 	.byte	0x31
 	.byte	0x9f
-	.4byte	.LVL116-.Ltext0
+	.4byte	.LVL252-.Ltext0
 	.4byte	.LFE10-.Ltext0
 	.2byte	0x2
 	.byte	0x32
 	.byte	0x9f
 	.4byte	0
 	.4byte	0
-.LLST3:
-	.4byte	.LVL20-.Ltext0
-	.4byte	.LVL63-.Ltext0
+.LLST20:
+	.4byte	.LVL183-.Ltext0
+	.4byte	.LVL215-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL215-.Ltext0
+	.4byte	.LVL216-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL216-.Ltext0
+	.4byte	.LVL217-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL217-.Ltext0
+	.4byte	.LVL218-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL218-.Ltext0
+	.4byte	.LVL219-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL219-.Ltext0
+	.4byte	.LVL220-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL220-.Ltext0
+	.4byte	.LVL221-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL221-.Ltext0
+	.4byte	.LVL222-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL222-.Ltext0
+	.4byte	.LVL223-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL223-.Ltext0
+	.4byte	.LFE9-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST21:
+	.4byte	.LVL183-.Ltext0
+	.4byte	.LVL215-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL215-.Ltext0
+	.4byte	.LVL216-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL216-.Ltext0
+	.4byte	.LVL217-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL217-.Ltext0
+	.4byte	.LVL218-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL218-.Ltext0
+	.4byte	.LVL219-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL219-.Ltext0
+	.4byte	.LVL220-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL220-.Ltext0
+	.4byte	.LVL221-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL221-.Ltext0
+	.4byte	.LVL222-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL222-.Ltext0
+	.4byte	.LVL223-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL223-.Ltext0
+	.4byte	.LFE9-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST11:
+	.4byte	.LVL102-.Ltext0
+	.4byte	.LVL134-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL134-.Ltext0
+	.4byte	.LVL135-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL135-.Ltext0
+	.4byte	.LVL136-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL136-.Ltext0
+	.4byte	.LVL137-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL137-.Ltext0
+	.4byte	.LVL138-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL138-.Ltext0
+	.4byte	.LVL139-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL139-.Ltext0
+	.4byte	.LVL140-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL140-.Ltext0
+	.4byte	.LVL141-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL141-.Ltext0
+	.4byte	.LVL142-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL142-.Ltext0
+	.4byte	.LFE6-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST12:
+	.4byte	.LVL102-.Ltext0
+	.4byte	.LVL134-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL134-.Ltext0
+	.4byte	.LVL135-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL135-.Ltext0
+	.4byte	.LVL136-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL136-.Ltext0
+	.4byte	.LVL137-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL137-.Ltext0
+	.4byte	.LVL138-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL138-.Ltext0
+	.4byte	.LVL139-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL139-.Ltext0
+	.4byte	.LVL140-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL140-.Ltext0
+	.4byte	.LVL141-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL141-.Ltext0
+	.4byte	.LVL142-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL142-.Ltext0
+	.4byte	.LFE6-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST13:
+	.4byte	.LVL118-.Ltext0
+	.4byte	.LVL119-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL119-.Ltext0
+	.4byte	.LVL120-.Ltext0
+	.2byte	0x2
+	.byte	0x31
+	.byte	0x9f
+	.4byte	.LVL120-.Ltext0
+	.4byte	.LVL121-.Ltext0
+	.2byte	0x2
+	.byte	0x32
+	.byte	0x9f
+	.4byte	.LVL121-.Ltext0
+	.4byte	.LVL122-.Ltext0
+	.2byte	0x2
+	.byte	0x33
+	.byte	0x9f
+	.4byte	.LVL122-.Ltext0
+	.4byte	.LVL123-.Ltext0
+	.2byte	0x2
+	.byte	0x34
+	.byte	0x9f
+	.4byte	.LVL123-.Ltext0
+	.4byte	.LVL124-.Ltext0
+	.2byte	0x2
+	.byte	0x35
+	.byte	0x9f
+	.4byte	.LVL124-.Ltext0
+	.4byte	.LVL125-.Ltext0
+	.2byte	0x2
+	.byte	0x36
+	.byte	0x9f
+	.4byte	.LVL125-.Ltext0
+	.4byte	.LVL126-.Ltext0
+	.2byte	0x2
+	.byte	0x37
+	.byte	0x9f
+	.4byte	.LVL126-.Ltext0
+	.4byte	.LVL127-.Ltext0
+	.2byte	0x2
+	.byte	0x38
+	.byte	0x9f
+	.4byte	.LVL127-.Ltext0
+	.4byte	.LVL128-.Ltext0
+	.2byte	0x2
+	.byte	0x39
+	.byte	0x9f
+	.4byte	.LVL128-.Ltext0
+	.4byte	.LVL129-.Ltext0
+	.2byte	0x2
+	.byte	0x3a
+	.byte	0x9f
+	.4byte	.LVL129-.Ltext0
+	.4byte	.LVL130-.Ltext0
+	.2byte	0x2
+	.byte	0x3b
+	.byte	0x9f
+	.4byte	.LVL130-.Ltext0
+	.4byte	.LVL131-.Ltext0
+	.2byte	0x2
+	.byte	0x3c
+	.byte	0x9f
+	.4byte	.LVL131-.Ltext0
+	.4byte	.LVL132-.Ltext0
+	.2byte	0x2
+	.byte	0x3d
+	.byte	0x9f
+	.4byte	.LVL132-.Ltext0
+	.4byte	.LVL133-.Ltext0
+	.2byte	0x2
+	.byte	0x3e
+	.byte	0x9f
+	.4byte	.LVL133-.Ltext0
+	.4byte	.LVL135-.Ltext0
+	.2byte	0x2
+	.byte	0x3f
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST4:
+	.4byte	.LVL46-.Ltext0
+	.4byte	.LVL77-.Ltext0
+	.2byte	0x1
+	.byte	0x51
+	.4byte	.LVL77-.Ltext0
+	.4byte	.LFE4-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x51
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST5:
+	.4byte	.LVL46-.Ltext0
+	.4byte	.LVL78-.Ltext0
 	.2byte	0x1
 	.byte	0x52
+	.4byte	.LVL78-.Ltext0
+	.4byte	.LFE4-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x52
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST6:
+	.4byte	.LVL46-.Ltext0
+	.4byte	.LVL48-.Ltext0
+	.2byte	0x2
+	.byte	0x3f
+	.byte	0x9f
+	.4byte	.LVL48-.Ltext0
+	.4byte	.LVL50-.Ltext0
+	.2byte	0x2
+	.byte	0x3e
+	.byte	0x9f
+	.4byte	.LVL50-.Ltext0
+	.4byte	.LVL52-.Ltext0
+	.2byte	0x2
+	.byte	0x3d
+	.byte	0x9f
+	.4byte	.LVL52-.Ltext0
+	.4byte	.LVL54-.Ltext0
+	.2byte	0x2
+	.byte	0x3c
+	.byte	0x9f
+	.4byte	.LVL54-.Ltext0
+	.4byte	.LVL56-.Ltext0
+	.2byte	0x2
+	.byte	0x3b
+	.byte	0x9f
+	.4byte	.LVL56-.Ltext0
+	.4byte	.LVL58-.Ltext0
+	.2byte	0x2
+	.byte	0x3a
+	.byte	0x9f
+	.4byte	.LVL58-.Ltext0
+	.4byte	.LVL60-.Ltext0
+	.2byte	0x2
+	.byte	0x39
+	.byte	0x9f
+	.4byte	.LVL60-.Ltext0
+	.4byte	.LVL62-.Ltext0
+	.2byte	0x2
+	.byte	0x38
+	.byte	0x9f
+	.4byte	.LVL62-.Ltext0
+	.4byte	.LVL64-.Ltext0
+	.2byte	0x2
+	.byte	0x37
+	.byte	0x9f
+	.4byte	.LVL64-.Ltext0
+	.4byte	.LVL66-.Ltext0
+	.2byte	0x2
+	.byte	0x36
+	.byte	0x9f
+	.4byte	.LVL66-.Ltext0
+	.4byte	.LVL68-.Ltext0
+	.2byte	0x2
+	.byte	0x35
+	.byte	0x9f
+	.4byte	.LVL68-.Ltext0
+	.4byte	.LVL70-.Ltext0
+	.2byte	0x2
+	.byte	0x34
+	.byte	0x9f
+	.4byte	.LVL70-.Ltext0
+	.4byte	.LVL72-.Ltext0
+	.2byte	0x2
+	.byte	0x33
+	.byte	0x9f
+	.4byte	.LVL72-.Ltext0
+	.4byte	.LVL74-.Ltext0
+	.2byte	0x2
+	.byte	0x32
+	.byte	0x9f
+	.4byte	.LVL74-.Ltext0
+	.4byte	.LVL76-.Ltext0
+	.2byte	0x2
+	.byte	0x31
+	.byte	0x9f
+	.4byte	.LVL76-.Ltext0
+	.4byte	.LVL80-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL80-.Ltext0
+	.4byte	.LFE4-.Ltext0
+	.2byte	0x3
+	.byte	0x9
+	.byte	0xff
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST7:
+	.4byte	.LVL46-.Ltext0
+	.4byte	.LVL47-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL47-.Ltext0
+	.4byte	.LVL48-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL48-.Ltext0
+	.4byte	.LVL49-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL49-.Ltext0
+	.4byte	.LVL50-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL50-.Ltext0
+	.4byte	.LVL51-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL51-.Ltext0
+	.4byte	.LVL52-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL52-.Ltext0
+	.4byte	.LVL53-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL53-.Ltext0
+	.4byte	.LVL54-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL54-.Ltext0
+	.4byte	.LVL55-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL55-.Ltext0
+	.4byte	.LVL56-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL56-.Ltext0
+	.4byte	.LVL57-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL57-.Ltext0
+	.4byte	.LVL58-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL58-.Ltext0
+	.4byte	.LVL59-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL59-.Ltext0
+	.4byte	.LVL60-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL60-.Ltext0
+	.4byte	.LVL61-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL61-.Ltext0
+	.4byte	.LVL62-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL62-.Ltext0
 	.4byte	.LVL63-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL63-.Ltext0
+	.4byte	.LVL64-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL64-.Ltext0
+	.4byte	.LVL65-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL65-.Ltext0
+	.4byte	.LVL66-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL66-.Ltext0
+	.4byte	.LVL67-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL67-.Ltext0
+	.4byte	.LVL68-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL68-.Ltext0
+	.4byte	.LVL69-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL69-.Ltext0
+	.4byte	.LVL70-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL70-.Ltext0
+	.4byte	.LVL71-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL71-.Ltext0
+	.4byte	.LVL72-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL72-.Ltext0
+	.4byte	.LVL73-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL73-.Ltext0
+	.4byte	.LVL74-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL74-.Ltext0
+	.4byte	.LVL75-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL75-.Ltext0
+	.4byte	.LVL76-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL76-.Ltext0
+	.4byte	.LVL79-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL79-.Ltext0
+	.4byte	.LFE4-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	0
+	.4byte	0
+.LLST0:
+	.4byte	.LVL1-.Ltext0
+	.4byte	.LVL44-.Ltext0
+	.2byte	0x1
+	.byte	0x52
+	.4byte	.LVL44-.Ltext0
 	.4byte	.LFE3-.Ltext0
 	.2byte	0x4
 	.byte	0xf3
@@ -3276,88 +4974,88 @@ AssignNull:
 	.byte	0x9f
 	.4byte	0
 	.4byte	0
-.LLST4:
-	.4byte	.LVL20-.Ltext0
-	.4byte	.LVL23-.Ltext0
+.LLST1:
+	.4byte	.LVL1-.Ltext0
+	.4byte	.LVL4-.Ltext0
 	.2byte	0x2
 	.byte	0x3f
 	.byte	0x9f
-	.4byte	.LVL23-.Ltext0
-	.4byte	.LVL25-.Ltext0
+	.4byte	.LVL4-.Ltext0
+	.4byte	.LVL6-.Ltext0
 	.2byte	0x2
 	.byte	0x3e
 	.byte	0x9f
-	.4byte	.LVL25-.Ltext0
-	.4byte	.LVL27-.Ltext0
+	.4byte	.LVL6-.Ltext0
+	.4byte	.LVL8-.Ltext0
 	.2byte	0x2
 	.byte	0x3d
 	.byte	0x9f
-	.4byte	.LVL27-.Ltext0
-	.4byte	.LVL29-.Ltext0
+	.4byte	.LVL8-.Ltext0
+	.4byte	.LVL10-.Ltext0
 	.2byte	0x2
 	.byte	0x3c
 	.byte	0x9f
-	.4byte	.LVL29-.Ltext0
-	.4byte	.LVL31-.Ltext0
+	.4byte	.LVL10-.Ltext0
+	.4byte	.LVL12-.Ltext0
 	.2byte	0x2
 	.byte	0x3b
 	.byte	0x9f
-	.4byte	.LVL31-.Ltext0
-	.4byte	.LVL34-.Ltext0
+	.4byte	.LVL12-.Ltext0
+	.4byte	.LVL15-.Ltext0
 	.2byte	0x2
 	.byte	0x3a
 	.byte	0x9f
-	.4byte	.LVL34-.Ltext0
-	.4byte	.LVL37-.Ltext0
+	.4byte	.LVL15-.Ltext0
+	.4byte	.LVL18-.Ltext0
 	.2byte	0x2
 	.byte	0x39
 	.byte	0x9f
-	.4byte	.LVL37-.Ltext0
-	.4byte	.LVL40-.Ltext0
+	.4byte	.LVL18-.Ltext0
+	.4byte	.LVL21-.Ltext0
 	.2byte	0x2
 	.byte	0x38
 	.byte	0x9f
-	.4byte	.LVL40-.Ltext0
-	.4byte	.LVL43-.Ltext0
+	.4byte	.LVL21-.Ltext0
+	.4byte	.LVL24-.Ltext0
 	.2byte	0x2
 	.byte	0x37
 	.byte	0x9f
-	.4byte	.LVL43-.Ltext0
-	.4byte	.LVL46-.Ltext0
+	.4byte	.LVL24-.Ltext0
+	.4byte	.LVL27-.Ltext0
 	.2byte	0x2
 	.byte	0x36
 	.byte	0x9f
-	.4byte	.LVL46-.Ltext0
-	.4byte	.LVL49-.Ltext0
+	.4byte	.LVL27-.Ltext0
+	.4byte	.LVL30-.Ltext0
 	.2byte	0x2
 	.byte	0x35
 	.byte	0x9f
-	.4byte	.LVL49-.Ltext0
-	.4byte	.LVL52-.Ltext0
+	.4byte	.LVL30-.Ltext0
+	.4byte	.LVL33-.Ltext0
 	.2byte	0x2
 	.byte	0x34
 	.byte	0x9f
-	.4byte	.LVL52-.Ltext0
-	.4byte	.LVL55-.Ltext0
+	.4byte	.LVL33-.Ltext0
+	.4byte	.LVL36-.Ltext0
 	.2byte	0x2
 	.byte	0x33
 	.byte	0x9f
-	.4byte	.LVL55-.Ltext0
-	.4byte	.LVL58-.Ltext0
+	.4byte	.LVL36-.Ltext0
+	.4byte	.LVL39-.Ltext0
 	.2byte	0x2
 	.byte	0x32
 	.byte	0x9f
-	.4byte	.LVL58-.Ltext0
-	.4byte	.LVL61-.Ltext0
+	.4byte	.LVL39-.Ltext0
+	.4byte	.LVL42-.Ltext0
 	.2byte	0x2
 	.byte	0x31
 	.byte	0x9f
-	.4byte	.LVL61-.Ltext0
-	.4byte	.LVL64-.Ltext0
+	.4byte	.LVL42-.Ltext0
+	.4byte	.LVL45-.Ltext0
 	.2byte	0x2
 	.byte	0x30
 	.byte	0x9f
-	.4byte	.LVL64-.Ltext0
+	.4byte	.LVL45-.Ltext0
 	.4byte	.LFE3-.Ltext0
 	.2byte	0x3
 	.byte	0x9
@@ -3365,26 +5063,26 @@ AssignNull:
 	.byte	0x9f
 	.4byte	0
 	.4byte	0
-.LLST5:
-	.4byte	.LVL20-.Ltext0
-	.4byte	.LVL23-.Ltext0
+.LLST2:
+	.4byte	.LVL1-.Ltext0
+	.4byte	.LVL4-.Ltext0
 	.2byte	0x2
 	.byte	0x30
 	.byte	0x9f
-	.4byte	.LVL25-.Ltext0
-	.4byte	.LVL26-.Ltext0
+	.4byte	.LVL6-.Ltext0
+	.4byte	.LVL7-.Ltext0
 	.2byte	0x1
 	.byte	0x53
-	.4byte	.LVL27-.Ltext0
-	.4byte	.LVL28-.Ltext0
+	.4byte	.LVL8-.Ltext0
+	.4byte	.LVL9-.Ltext0
 	.2byte	0x1
 	.byte	0x53
-	.4byte	.LVL29-.Ltext0
-	.4byte	.LVL30-.Ltext0
+	.4byte	.LVL10-.Ltext0
+	.4byte	.LVL11-.Ltext0
 	.2byte	0x1
 	.byte	0x53
-	.4byte	.LVL31-.Ltext0
-	.4byte	.LVL32-.Ltext0
+	.4byte	.LVL12-.Ltext0
+	.4byte	.LVL13-.Ltext0
 	.2byte	0x7
 	.byte	0x73
 	.sleb128 0
@@ -3392,8 +5090,8 @@ AssignNull:
 	.2byte	0xff00
 	.byte	0x1a
 	.byte	0x9f
-	.4byte	.LVL34-.Ltext0
-	.4byte	.LVL35-.Ltext0
+	.4byte	.LVL15-.Ltext0
+	.4byte	.LVL16-.Ltext0
 	.2byte	0x7
 	.byte	0x73
 	.sleb128 0
@@ -3401,8 +5099,8 @@ AssignNull:
 	.2byte	0xff00
 	.byte	0x1a
 	.byte	0x9f
-	.4byte	.LVL37-.Ltext0
-	.4byte	.LVL38-.Ltext0
+	.4byte	.LVL18-.Ltext0
+	.4byte	.LVL19-.Ltext0
 	.2byte	0x7
 	.byte	0x74
 	.sleb128 0
@@ -3410,83 +5108,83 @@ AssignNull:
 	.2byte	0xff00
 	.byte	0x1a
 	.byte	0x9f
-	.4byte	.LVL40-.Ltext0
-	.4byte	.LVL41-.Ltext0
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0xb
-	.2byte	0xff00
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL43-.Ltext0
-	.4byte	.LVL44-.Ltext0
-	.2byte	0x7
-	.byte	0x74
-	.sleb128 0
-	.byte	0xb
-	.2byte	0xff00
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL46-.Ltext0
-	.4byte	.LVL47-.Ltext0
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0xb
-	.2byte	0xff00
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL49-.Ltext0
-	.4byte	.LVL50-.Ltext0
-	.2byte	0x7
-	.byte	0x74
-	.sleb128 0
-	.byte	0xb
-	.2byte	0xff00
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL52-.Ltext0
-	.4byte	.LVL53-.Ltext0
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0xb
-	.2byte	0xff00
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL55-.Ltext0
-	.4byte	.LVL56-.Ltext0
-	.2byte	0x7
-	.byte	0x74
-	.sleb128 0
-	.byte	0xb
-	.2byte	0xff00
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL58-.Ltext0
-	.4byte	.LVL59-.Ltext0
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0xb
-	.2byte	0xff00
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL61-.Ltext0
-	.4byte	.LVL62-.Ltext0
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0xb
-	.2byte	0xff00
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST6:
 	.4byte	.LVL21-.Ltext0
 	.4byte	.LVL22-.Ltext0
+	.2byte	0x7
+	.byte	0x73
+	.sleb128 0
+	.byte	0xb
+	.2byte	0xff00
+	.byte	0x1a
+	.byte	0x9f
+	.4byte	.LVL24-.Ltext0
+	.4byte	.LVL25-.Ltext0
+	.2byte	0x7
+	.byte	0x74
+	.sleb128 0
+	.byte	0xb
+	.2byte	0xff00
+	.byte	0x1a
+	.byte	0x9f
+	.4byte	.LVL27-.Ltext0
+	.4byte	.LVL28-.Ltext0
+	.2byte	0x7
+	.byte	0x73
+	.sleb128 0
+	.byte	0xb
+	.2byte	0xff00
+	.byte	0x1a
+	.byte	0x9f
+	.4byte	.LVL30-.Ltext0
+	.4byte	.LVL31-.Ltext0
+	.2byte	0x7
+	.byte	0x74
+	.sleb128 0
+	.byte	0xb
+	.2byte	0xff00
+	.byte	0x1a
+	.byte	0x9f
+	.4byte	.LVL33-.Ltext0
+	.4byte	.LVL34-.Ltext0
+	.2byte	0x7
+	.byte	0x73
+	.sleb128 0
+	.byte	0xb
+	.2byte	0xff00
+	.byte	0x1a
+	.byte	0x9f
+	.4byte	.LVL36-.Ltext0
+	.4byte	.LVL37-.Ltext0
+	.2byte	0x7
+	.byte	0x74
+	.sleb128 0
+	.byte	0xb
+	.2byte	0xff00
+	.byte	0x1a
+	.byte	0x9f
+	.4byte	.LVL39-.Ltext0
+	.4byte	.LVL40-.Ltext0
+	.2byte	0x7
+	.byte	0x73
+	.sleb128 0
+	.byte	0xb
+	.2byte	0xff00
+	.byte	0x1a
+	.byte	0x9f
+	.4byte	.LVL42-.Ltext0
+	.4byte	.LVL43-.Ltext0
+	.2byte	0x7
+	.byte	0x73
+	.sleb128 0
+	.byte	0xb
+	.2byte	0xff00
+	.byte	0x1a
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST3:
+	.4byte	.LVL2-.Ltext0
+	.4byte	.LVL3-.Ltext0
 	.2byte	0xc
 	.byte	0x74
 	.sleb128 0
@@ -3500,8 +5198,8 @@ AssignNull:
 	.byte	0x1a
 	.byte	0x22
 	.byte	0x9f
-	.4byte	.LVL22-.Ltext0
-	.4byte	.LVL23-.Ltext0
+	.4byte	.LVL3-.Ltext0
+	.4byte	.LVL4-.Ltext0
 	.2byte	0xe
 	.byte	0x72
 	.sleb128 15
@@ -3517,82 +5215,93 @@ AssignNull:
 	.byte	0x1a
 	.byte	0x22
 	.byte	0x9f
-	.4byte	.LVL24-.Ltext0
+	.4byte	.LVL5-.Ltext0
+	.4byte	.LVL6-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL7-.Ltext0
+	.4byte	.LVL8-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL9-.Ltext0
+	.4byte	.LVL10-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL11-.Ltext0
+	.4byte	.LVL13-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL14-.Ltext0
+	.4byte	.LVL16-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL17-.Ltext0
+	.4byte	.LVL19-.Ltext0
+	.2byte	0x1
+	.byte	0x54
+	.4byte	.LVL20-.Ltext0
+	.4byte	.LVL22-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL23-.Ltext0
 	.4byte	.LVL25-.Ltext0
 	.2byte	0x1
-	.byte	0x53
+	.byte	0x54
 	.4byte	.LVL26-.Ltext0
-	.4byte	.LVL27-.Ltext0
-	.2byte	0x1
-	.byte	0x53
 	.4byte	.LVL28-.Ltext0
+	.2byte	0x1
+	.byte	0x53
 	.4byte	.LVL29-.Ltext0
+	.4byte	.LVL31-.Ltext0
 	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL30-.Ltext0
+	.byte	0x54
 	.4byte	.LVL32-.Ltext0
+	.4byte	.LVL34-.Ltext0
 	.2byte	0x1
 	.byte	0x53
-	.4byte	.LVL33-.Ltext0
 	.4byte	.LVL35-.Ltext0
+	.4byte	.LVL37-.Ltext0
 	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL36-.Ltext0
+	.byte	0x54
 	.4byte	.LVL38-.Ltext0
+	.4byte	.LVL40-.Ltext0
 	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL39-.Ltext0
+	.byte	0x53
 	.4byte	.LVL41-.Ltext0
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL42-.Ltext0
-	.4byte	.LVL44-.Ltext0
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL45-.Ltext0
-	.4byte	.LVL47-.Ltext0
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL48-.Ltext0
-	.4byte	.LVL50-.Ltext0
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL51-.Ltext0
-	.4byte	.LVL53-.Ltext0
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL54-.Ltext0
-	.4byte	.LVL56-.Ltext0
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL57-.Ltext0
-	.4byte	.LVL59-.Ltext0
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL60-.Ltext0
-	.4byte	.LVL62-.Ltext0
+	.4byte	.LVL43-.Ltext0
 	.2byte	0x1
 	.byte	0x53
 	.4byte	0
 	.4byte	0
-.LLST0:
-	.4byte	.LVL0-.Ltext0
-	.4byte	.LVL16-.Ltext0
+.LLST8:
+	.4byte	.LVL81-.Ltext0
+	.4byte	.LVL97-.Ltext0
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL16-.Ltext0
-	.4byte	.LVL17-.Ltext0
+	.4byte	.LVL97-.Ltext0
+	.4byte	.LVL98-.Ltext0
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
 	.byte	0x50
 	.byte	0x9f
-	.4byte	.LVL17-.Ltext0
-	.4byte	.LVL18-.Ltext0
+	.4byte	.LVL98-.Ltext0
+	.4byte	.LVL99-.Ltext0
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL18-.Ltext0
-	.4byte	.LFE7-.Ltext0
+	.4byte	.LVL99-.Ltext0
+	.4byte	.LVL100-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL100-.Ltext0
+	.4byte	.LVL101-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL101-.Ltext0
+	.4byte	.LFE5-.Ltext0
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
@@ -3600,107 +5309,254 @@ AssignNull:
 	.byte	0x9f
 	.4byte	0
 	.4byte	0
-.LLST1:
-	.4byte	.LVL0-.Ltext0
-	.4byte	.LVL1-.Ltext0
+.LLST9:
+	.4byte	.LVL81-.Ltext0
+	.4byte	.LVL82-.Ltext0
 	.2byte	0x2
 	.byte	0x30
 	.byte	0x9f
-	.4byte	.LVL1-.Ltext0
-	.4byte	.LVL2-.Ltext0
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL83-.Ltext0
 	.2byte	0x2
 	.byte	0x31
 	.byte	0x9f
-	.4byte	.LVL2-.Ltext0
-	.4byte	.LVL3-.Ltext0
+	.4byte	.LVL83-.Ltext0
+	.4byte	.LVL84-.Ltext0
 	.2byte	0x2
 	.byte	0x32
 	.byte	0x9f
-	.4byte	.LVL3-.Ltext0
-	.4byte	.LVL4-.Ltext0
+	.4byte	.LVL84-.Ltext0
+	.4byte	.LVL85-.Ltext0
 	.2byte	0x2
 	.byte	0x33
 	.byte	0x9f
-	.4byte	.LVL4-.Ltext0
-	.4byte	.LVL5-.Ltext0
+	.4byte	.LVL85-.Ltext0
+	.4byte	.LVL86-.Ltext0
 	.2byte	0x2
 	.byte	0x34
 	.byte	0x9f
-	.4byte	.LVL5-.Ltext0
-	.4byte	.LVL6-.Ltext0
+	.4byte	.LVL86-.Ltext0
+	.4byte	.LVL87-.Ltext0
 	.2byte	0x2
 	.byte	0x35
 	.byte	0x9f
-	.4byte	.LVL6-.Ltext0
-	.4byte	.LVL7-.Ltext0
+	.4byte	.LVL87-.Ltext0
+	.4byte	.LVL88-.Ltext0
 	.2byte	0x2
 	.byte	0x36
 	.byte	0x9f
-	.4byte	.LVL7-.Ltext0
-	.4byte	.LVL8-.Ltext0
+	.4byte	.LVL88-.Ltext0
+	.4byte	.LVL89-.Ltext0
 	.2byte	0x2
 	.byte	0x37
 	.byte	0x9f
-	.4byte	.LVL8-.Ltext0
-	.4byte	.LVL9-.Ltext0
+	.4byte	.LVL89-.Ltext0
+	.4byte	.LVL90-.Ltext0
 	.2byte	0x2
 	.byte	0x38
 	.byte	0x9f
-	.4byte	.LVL9-.Ltext0
-	.4byte	.LVL10-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL91-.Ltext0
 	.2byte	0x2
 	.byte	0x39
 	.byte	0x9f
-	.4byte	.LVL10-.Ltext0
-	.4byte	.LVL11-.Ltext0
+	.4byte	.LVL91-.Ltext0
+	.4byte	.LVL92-.Ltext0
 	.2byte	0x2
 	.byte	0x3a
 	.byte	0x9f
-	.4byte	.LVL11-.Ltext0
-	.4byte	.LVL12-.Ltext0
+	.4byte	.LVL92-.Ltext0
+	.4byte	.LVL93-.Ltext0
 	.2byte	0x2
 	.byte	0x3b
 	.byte	0x9f
-	.4byte	.LVL12-.Ltext0
-	.4byte	.LVL13-.Ltext0
+	.4byte	.LVL93-.Ltext0
+	.4byte	.LVL94-.Ltext0
 	.2byte	0x2
 	.byte	0x3c
 	.byte	0x9f
-	.4byte	.LVL13-.Ltext0
-	.4byte	.LVL14-.Ltext0
+	.4byte	.LVL94-.Ltext0
+	.4byte	.LVL95-.Ltext0
 	.2byte	0x2
 	.byte	0x3d
 	.byte	0x9f
-	.4byte	.LVL14-.Ltext0
-	.4byte	.LVL15-.Ltext0
+	.4byte	.LVL95-.Ltext0
+	.4byte	.LVL96-.Ltext0
 	.2byte	0x2
 	.byte	0x3e
 	.byte	0x9f
-	.4byte	.LVL15-.Ltext0
-	.4byte	.LVL17-.Ltext0
+	.4byte	.LVL96-.Ltext0
+	.4byte	.LVL98-.Ltext0
 	.2byte	0x2
 	.byte	0x3f
 	.byte	0x9f
 	.4byte	0
 	.4byte	0
-.LLST2:
-	.4byte	.LVL0-.Ltext0
-	.4byte	.LVL18-.Ltext0
+.LLST10:
+	.4byte	.LVL81-.Ltext0
+	.4byte	.LVL99-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL99-.Ltext0
+	.4byte	.LVL100-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL100-.Ltext0
+	.4byte	.LFE5-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST14:
+	.4byte	.LVL143-.Ltext0
+	.4byte	.LVL159-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL159-.Ltext0
+	.4byte	.LVL160-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL160-.Ltext0
+	.4byte	.LVL161-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL161-.Ltext0
+	.4byte	.LFE7-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST15:
+	.4byte	.LVL143-.Ltext0
+	.4byte	.LVL144-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL144-.Ltext0
+	.4byte	.LVL145-.Ltext0
 	.2byte	0x2
 	.byte	0x31
 	.byte	0x9f
-	.4byte	.LVL18-.Ltext0
+	.4byte	.LVL145-.Ltext0
+	.4byte	.LVL146-.Ltext0
+	.2byte	0x2
+	.byte	0x32
+	.byte	0x9f
+	.4byte	.LVL146-.Ltext0
+	.4byte	.LVL147-.Ltext0
+	.2byte	0x2
+	.byte	0x33
+	.byte	0x9f
+	.4byte	.LVL147-.Ltext0
+	.4byte	.LVL148-.Ltext0
+	.2byte	0x2
+	.byte	0x34
+	.byte	0x9f
+	.4byte	.LVL148-.Ltext0
+	.4byte	.LVL149-.Ltext0
+	.2byte	0x2
+	.byte	0x35
+	.byte	0x9f
+	.4byte	.LVL149-.Ltext0
+	.4byte	.LVL150-.Ltext0
+	.2byte	0x2
+	.byte	0x36
+	.byte	0x9f
+	.4byte	.LVL150-.Ltext0
+	.4byte	.LVL151-.Ltext0
+	.2byte	0x2
+	.byte	0x37
+	.byte	0x9f
+	.4byte	.LVL151-.Ltext0
+	.4byte	.LVL152-.Ltext0
+	.2byte	0x2
+	.byte	0x38
+	.byte	0x9f
+	.4byte	.LVL152-.Ltext0
+	.4byte	.LVL153-.Ltext0
+	.2byte	0x2
+	.byte	0x39
+	.byte	0x9f
+	.4byte	.LVL153-.Ltext0
+	.4byte	.LVL154-.Ltext0
+	.2byte	0x2
+	.byte	0x3a
+	.byte	0x9f
+	.4byte	.LVL154-.Ltext0
+	.4byte	.LVL155-.Ltext0
+	.2byte	0x2
+	.byte	0x3b
+	.byte	0x9f
+	.4byte	.LVL155-.Ltext0
+	.4byte	.LVL156-.Ltext0
+	.2byte	0x2
+	.byte	0x3c
+	.byte	0x9f
+	.4byte	.LVL156-.Ltext0
+	.4byte	.LVL157-.Ltext0
+	.2byte	0x2
+	.byte	0x3d
+	.byte	0x9f
+	.4byte	.LVL157-.Ltext0
+	.4byte	.LVL158-.Ltext0
+	.2byte	0x2
+	.byte	0x3e
+	.byte	0x9f
+	.4byte	.LVL158-.Ltext0
+	.4byte	.LVL160-.Ltext0
+	.2byte	0x2
+	.byte	0x3f
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST16:
+	.4byte	.LVL143-.Ltext0
+	.4byte	.LVL161-.Ltext0
+	.2byte	0x2
+	.byte	0x31
+	.byte	0x9f
+	.4byte	.LVL161-.Ltext0
 	.4byte	.LFE7-.Ltext0
 	.2byte	0x1
 	.byte	0x50
 	.4byte	0
 	.4byte	0
-.LLST7:
-	.4byte	.LVL66-.Ltext0
-	.4byte	.LVL67-.Ltext0
+.LLST17:
+	.4byte	.LVL162-.Ltext0
+	.4byte	.LVL178-.Ltext0
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL67-.Ltext0
+	.4byte	.LVL178-.Ltext0
+	.4byte	.LVL179-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL179-.Ltext0
+	.4byte	.LVL180-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL180-.Ltext0
+	.4byte	.LVL181-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
+	.byte	0x9f
+	.4byte	.LVL181-.Ltext0
+	.4byte	.LVL182-.Ltext0
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL182-.Ltext0
 	.4byte	.LFE8-.Ltext0
 	.2byte	0x4
 	.byte	0xf3
@@ -3709,15 +5565,99 @@ AssignNull:
 	.byte	0x9f
 	.4byte	0
 	.4byte	0
-.LLST8:
-	.4byte	.LVL68-.Ltext0
-	.4byte	.LVL70-.Ltext0
+.LLST18:
+	.4byte	.LVL162-.Ltext0
+	.4byte	.LVL163-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL163-.Ltext0
+	.4byte	.LVL164-.Ltext0
+	.2byte	0x2
+	.byte	0x31
+	.byte	0x9f
+	.4byte	.LVL164-.Ltext0
+	.4byte	.LVL165-.Ltext0
+	.2byte	0x2
+	.byte	0x32
+	.byte	0x9f
+	.4byte	.LVL165-.Ltext0
+	.4byte	.LVL166-.Ltext0
+	.2byte	0x2
+	.byte	0x33
+	.byte	0x9f
+	.4byte	.LVL166-.Ltext0
+	.4byte	.LVL167-.Ltext0
+	.2byte	0x2
+	.byte	0x34
+	.byte	0x9f
+	.4byte	.LVL167-.Ltext0
+	.4byte	.LVL168-.Ltext0
+	.2byte	0x2
+	.byte	0x35
+	.byte	0x9f
+	.4byte	.LVL168-.Ltext0
+	.4byte	.LVL169-.Ltext0
+	.2byte	0x2
+	.byte	0x36
+	.byte	0x9f
+	.4byte	.LVL169-.Ltext0
+	.4byte	.LVL170-.Ltext0
+	.2byte	0x2
+	.byte	0x37
+	.byte	0x9f
+	.4byte	.LVL170-.Ltext0
+	.4byte	.LVL171-.Ltext0
+	.2byte	0x2
+	.byte	0x38
+	.byte	0x9f
+	.4byte	.LVL171-.Ltext0
+	.4byte	.LVL172-.Ltext0
+	.2byte	0x2
+	.byte	0x39
+	.byte	0x9f
+	.4byte	.LVL172-.Ltext0
+	.4byte	.LVL173-.Ltext0
+	.2byte	0x2
+	.byte	0x3a
+	.byte	0x9f
+	.4byte	.LVL173-.Ltext0
+	.4byte	.LVL174-.Ltext0
+	.2byte	0x2
+	.byte	0x3b
+	.byte	0x9f
+	.4byte	.LVL174-.Ltext0
+	.4byte	.LVL175-.Ltext0
+	.2byte	0x2
+	.byte	0x3c
+	.byte	0x9f
+	.4byte	.LVL175-.Ltext0
+	.4byte	.LVL176-.Ltext0
+	.2byte	0x2
+	.byte	0x3d
+	.byte	0x9f
+	.4byte	.LVL176-.Ltext0
+	.4byte	.LVL177-.Ltext0
+	.2byte	0x2
+	.byte	0x3e
+	.byte	0x9f
+	.4byte	.LVL177-.Ltext0
+	.4byte	.LVL179-.Ltext0
+	.2byte	0x2
+	.byte	0x3f
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST19:
+	.4byte	.LVL162-.Ltext0
+	.4byte	.LVL182-.Ltext0
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL182-.Ltext0
+	.4byte	.LFE8-.Ltext0
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL70-.Ltext0
-	.4byte	.LFE9-.Ltext0
-	.2byte	0x1
-	.byte	0x53
 	.4byte	0
 	.4byte	0
 	.section	.debug_aranges,"",%progbits
@@ -3730,6 +5670,40 @@ AssignNull:
 	.2byte	0
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
+	.4byte	0
+	.4byte	0
+	.section	.debug_ranges,"",%progbits
+.Ldebug_ranges0:
+	.4byte	.LBB12-.Ltext0
+	.4byte	.LBE12-.Ltext0
+	.4byte	.LBB17-.Ltext0
+	.4byte	.LBE17-.Ltext0
+	.4byte	.LBB22-.Ltext0
+	.4byte	.LBE22-.Ltext0
+	.4byte	.LBB23-.Ltext0
+	.4byte	.LBE23-.Ltext0
+	.4byte	0
+	.4byte	0
+	.4byte	.LBB18-.Ltext0
+	.4byte	.LBE18-.Ltext0
+	.4byte	.LBB21-.Ltext0
+	.4byte	.LBE21-.Ltext0
+	.4byte	0
+	.4byte	0
+	.4byte	.LBB24-.Ltext0
+	.4byte	.LBE24-.Ltext0
+	.4byte	.LBB29-.Ltext0
+	.4byte	.LBE29-.Ltext0
+	.4byte	.LBB34-.Ltext0
+	.4byte	.LBE34-.Ltext0
+	.4byte	.LBB35-.Ltext0
+	.4byte	.LBE35-.Ltext0
+	.4byte	0
+	.4byte	0
+	.4byte	.LBB30-.Ltext0
+	.4byte	.LBE30-.Ltext0
+	.4byte	.LBB33-.Ltext0
+	.4byte	.LBE33-.Ltext0
 	.4byte	0
 	.4byte	0
 	.section	.debug_macro,"",%progbits
@@ -5408,7 +7382,7 @@ AssignNull:
 	.section	.debug_str,"MS",%progbits,1
 .LASF479:
 	.ascii	"MinTimeSlice_s (1.0/SchedulerFrequency)\000"
-.LASF665:
+.LASF666:
 	.ascii	"Summe\000"
 .LASF206:
 	.ascii	"__FLT64_MAX_EXP__ 1024\000"
@@ -5462,7 +7436,7 @@ AssignNull:
 	.ascii	"Task_ready\000"
 .LASF66:
 	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
-.LASF671:
+.LASF672:
 	.ascii	"task_func_nr\000"
 .LASF403:
 	.ascii	"__ARM_SIZEOF_WCHAR_T 4\000"
@@ -5563,7 +7537,7 @@ AssignNull:
 	.ascii	"privilige_mode_e\000"
 .LASF63:
 	.ascii	"__INTPTR_TYPE__ int\000"
-.LASF663:
+.LASF664:
 	.ascii	"tmpDiff\000"
 .LASF47:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
@@ -5596,7 +7570,7 @@ AssignNull:
 	.ascii	"MCU_CLOCK_IN_HZ ((uint32)168000000u)\000"
 .LASF107:
 	.ascii	"__INT_LEAST16_MAX__ 0x7fff\000"
-.LASF672:
+.LASF673:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O3 -std=c90\000"
@@ -5615,11 +7589,11 @@ AssignNull:
 	.ascii	"__ATOMIC_RELAXED 0\000"
 .LASF558:
 	.ascii	"ePriviligeMode_priviliged_thread_mode\000"
-.LASF656:
+.LASF658:
 	.ascii	"IsLess\000"
 .LASF78:
 	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
-.LASF654:
+.LASF656:
 	.ascii	"IsGreaterOrEqual\000"
 .LASF313:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
@@ -5663,7 +7637,7 @@ AssignNull:
 	.ascii	"os_sw_bugs_function_e\000"
 .LASF458:
 	.ascii	"Local static\000"
-.LASF666:
+.LASF667:
 	.ascii	"ErsterSummand\000"
 .LASF637:
 	.ascii	"TASK_2_VAR\000"
@@ -5709,7 +7683,7 @@ AssignNull:
 	.ascii	"__USES_INITFINI__ 1\000"
 .LASF233:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
-.LASF662:
+.LASF663:
 	.ascii	"carry\000"
 .LASF139:
 	.ascii	"__GCC_IEC_559 0\000"
@@ -5815,7 +7789,7 @@ AssignNull:
 	.ascii	"__SIZEOF_PTRDIFF_T__ 4\000"
 .LASF103:
 	.ascii	"__UINT64_MAX__ 0xffffffffffffffffULL\000"
-.LASF659:
+.LASF660:
 	.ascii	"Differenz\000"
 .LASF253:
 	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
@@ -5873,7 +7847,7 @@ AssignNull:
 	.ascii	"Func_InitTask\000"
 .LASF536:
 	.ascii	"Func_SaveTaskEnvironment\000"
-.LASF661:
+.LASF662:
 	.ascii	"Subtrahend\000"
 .LASF232:
 	.ascii	"__DEC32_MAX_EXP__ 97\000"
@@ -5883,7 +7857,7 @@ AssignNull:
 	.ascii	"__FLT64_MIN_10_EXP__ (-307)\000"
 .LASF481:
 	.ascii	"Task_min_time (1e0)\000"
-.LASF667:
+.LASF668:
 	.ascii	"ZweiterSummand\000"
 .LASF295:
 	.ascii	"__SACCUM_EPSILON__ 0x1P-7HK\000"
@@ -5961,7 +7935,7 @@ AssignNull:
 	.ascii	"VAR_FAULT_STATUS_REG\000"
 .LASF67:
 	.ascii	"__GXX_ABI_VERSION 1011\000"
-.LASF673:
+.LASF674:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_common.c\000"
 .LASF606:
@@ -6014,7 +7988,7 @@ AssignNull:
 	.ascii	"HEAP_SIZE 10000\000"
 .LASF101:
 	.ascii	"__UINT16_MAX__ 0xffff\000"
-.LASF670:
+.LASF671:
 	.ascii	"bug_nr\000"
 .LASF421:
 	.ascii	"__ARM_FEATURE_FMA\000"
@@ -6036,7 +8010,7 @@ AssignNull:
 	.ascii	"__INT_LEAST16_TYPE__ short int\000"
 .LASF192:
 	.ascii	"__FLT32_MAX_EXP__ 128\000"
-.LASF675:
+.LASF657:
 	.ascii	"IsLessOrEqual\000"
 .LASF160:
 	.ascii	"__DBL_DIG__ 15\000"
@@ -6076,7 +8050,7 @@ AssignNull:
 	.ascii	"__UTQ_FBIT__ 128\000"
 .LASF44:
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
-.LASF660:
+.LASF661:
 	.ascii	"Minuend\000"
 .LASF653:
 	.ascii	"Operand2\000"
@@ -6094,7 +8068,7 @@ AssignNull:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF405:
 	.ascii	"__arm__ 1\000"
-.LASF669:
+.LASF670:
 	.ascii	"OS_SetSwBug\000"
 .LASF173:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
@@ -6108,7 +8082,7 @@ AssignNull:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF626:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF674:
+.LASF675:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -6227,7 +8201,7 @@ AssignNull:
 	.ascii	"__GCC_IEC_559_COMPLEX 0\000"
 .LASF102:
 	.ascii	"__UINT32_MAX__ 0xffffffffUL\000"
-.LASF668:
+.LASF669:
 	.ascii	"tmpSum\000"
 .LASF175:
 	.ascii	"__LDBL_MIN_EXP__ (-1021)\000"
@@ -6385,7 +8359,7 @@ AssignNull:
 	.ascii	"__UINT_LEAST32_MAX__ 0xffffffffUL\000"
 .LASF344:
 	.ascii	"__UHQ_IBIT__ 0\000"
-.LASF664:
+.LASF665:
 	.ascii	"IntAdd\000"
 .LASF613:
 	.ascii	"VAR_MEM_FAULT_ADDR_REG\000"
@@ -6617,7 +8591,7 @@ AssignNull:
 	.ascii	"RUNNING_SCHEDULING_QUEUE_ENTRY\000"
 .LASF522:
 	.ascii	"os_bug_taskstate_request_denied\000"
-.LASF655:
+.LASF654:
 	.ascii	"IsGreater\000"
 .LASF57:
 	.ascii	"__INT_FAST32_TYPE__ int\000"
@@ -6633,7 +8607,7 @@ AssignNull:
 	.ascii	"TASK_0_VAR\000"
 .LASF89:
 	.ascii	"__INTMAX_C(c) c ## LL\000"
-.LASF657:
+.LASF655:
 	.ascii	"IsEqual\000"
 .LASF420:
 	.ascii	"__ARM_FEATURE_FP16_VECTOR_ARITHMETIC\000"
@@ -6714,7 +8688,7 @@ AssignNull:
 	.ascii	"__UINTPTR_MAX__ 0xffffffffU\000"
 .LASF126:
 	.ascii	"__INT_FAST16_MAX__ 0x7fffffff\000"
-.LASF658:
+.LASF659:
 	.ascii	"IntSub\000"
 .LASF639:
 	.ascii	"TASK_GROUP_1\000"

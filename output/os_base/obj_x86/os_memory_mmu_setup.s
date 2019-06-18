@@ -14,45 +14,9 @@ LFB0:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 41 0
-	movl	$-536810088, %eax
-	movl	$0, (%eax)
-	.loc 1 42 0
-	movl	$-536810084, %eax
-	movl	$134217728, (%eax)
-	.loc 1 43 0
-	movl	$-536810080, %eax
-	movl	$654835713, (%eax)
-	.loc 1 46 0
-	movl	$-536810088, %eax
-	movl	$1, (%eax)
-	.loc 1 47 0
-	movl	$-536810084, %eax
-	movl	$536870912, (%eax)
-	.loc 1 48 0
-	movl	$-536810080, %eax
-	movl	$587726849, (%eax)
-	.loc 1 51 0
-	movl	$-536810088, %eax
-	movl	$2, (%eax)
-	.loc 1 52 0
-	movl	$-536810084, %eax
-	movl	$1073741824, (%eax)
-	.loc 1 53 0
-	movl	$-536810080, %eax
-	movl	$553648129, (%eax)
-	.loc 1 55 0
-	movl	$-536810088, %eax
-	movl	$3, (%eax)
-	.loc 1 56 0
-	movl	$-536810084, %eax
-	movl	$-536870912, (%eax)
-	.loc 1 57 0
-	movl	$-536810080, %eax
-	movl	$553648129, (%eax)
-	.loc 1 64 0
-	call	_LLF_MPU_ENABLE
 	.loc 1 65 0
+	call	_LLF_MPU_ENABLE
+	.loc 1 66 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -60,10 +24,9 @@ LFB0:
 	.cfi_endproc
 LFE0:
 Letext0:
-	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x13b
+	.long	0x12d
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -99,11 +62,6 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x5
 	.ascii "long int\0"
-	.uleb128 0x3
-	.ascii "uint32\0"
-	.byte	0x2
-	.byte	0x29
-	.long	0xda
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
@@ -112,7 +70,7 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x7
 	.ascii "unsigned int\0"
-	.uleb128 0x4
+	.uleb128 0x3
 	.ascii "OS_MmuSetup\0"
 	.byte	0x1
 	.byte	0x1a
@@ -154,19 +112,6 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x3
-	.uleb128 0x16
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x4
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -903,16 +848,17 @@ Ldebug_macro0:
 	.byte	0x3
 	.uleb128 0
 	.uleb128 0x1
-	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
+	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_firstinc.h"
 	.byte	0x3
 	.uleb128 0x1
-	.uleb128 0x3
+	.uleb128 0x2
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_firstinc_h_ \0"
+	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x2
+	.uleb128 0x3
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_BASE_TYPES_H_ \0"

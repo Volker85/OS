@@ -894,7 +894,13 @@ unsigned_int32_t OS_GetCurrentTime(void)
 
 
 
+
    return *((volatile uint32*)0xE0001004);
+
+
+
+
+
 }
 
 void OS_ResetCurrentTime(void)
@@ -933,7 +939,7 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
 
    for(pos = 16 -1; pos >= 0; pos--)
    {
-      uint16 tmpDiff;
+      uint16 tmpDiff = 0u;
       if(Minuend->Number[pos] >= (Subtrahend->Number[pos] + carry))
       {
          tmpDiff = (uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - carry;
@@ -946,9 +952,10 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
       {
 
       }
+      Differenz->Number[pos] = tmpDiff;
    }
 }
-# 123 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
+# 130 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
 boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
 {
    uint8 pos;
@@ -970,7 +977,7 @@ boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
 
       }
    }
-   return IsEqual;
+   return IsLess;
 }
 boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
 {
@@ -997,17 +1004,17 @@ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
 boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
 {
    uint8 pos;
-   boolean_t IsLess = 0;
+   boolean_t IsGreater = 0;
    for(pos = 0; pos < 16; pos++)
    {
       if(Operand1->Number[pos] < Operand2->Number[pos])
       {
-         IsLess = 1;
+         IsGreater = 0;
          break;
       }
       else if (Operand1->Number[pos] > Operand2->Number[pos])
       {
-         IsLess = 0;
+         IsGreater = 1;
          break;
       }
       else
@@ -1015,7 +1022,7 @@ boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
 
       }
    }
-   return IsEqual;
+   return IsGreater;
 }
 boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
 {

@@ -1,49 +1,7 @@
 "Target_x86" 
-15.06.2019 21:58:16,60 
+18.06.2019 15:59:44,81 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntSub':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:59:14: warning: variable 'tmpDiff' set but not used [-Wunused-but-set-variable]
-       uint16 tmpDiff;
-              ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:52:21: warning: unused parameter 'Differenz' [-Wunused-parameter]
- void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
-                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:144:4: warning: return makes integer from pointer without a cast
-    return IsEqual;   
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:126:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
-    boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
-              ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:189:4: warning: return makes integer from pointer without a cast
-    return IsEqual;
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:171:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
-    boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
-              ^
 "assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IntSub':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:59:14: warning: variable 'tmpDiff' set but not used [-Wunused-but-set-variable]
-       uint16 tmpDiff;
-              ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:52:21: warning: unused parameter 'Differenz' [-Wunused-parameter]
- void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
-                     ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsLess':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:144:4: warning: return makes integer from pointer without a cast
-    return IsEqual;   
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:126:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
-    boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
-              ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'IsGreater':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:189:4: warning: return makes integer from pointer without a cast
-    return IsEqual;
-    ^
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:171:14: warning: variable 'IsLess' set but not used [-Wunused-but-set-variable]
-    boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
-              ^
 "link it" 

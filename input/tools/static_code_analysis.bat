@@ -11,8 +11,9 @@ IF EXIST %OUTPUT_DIR% (
    echo ""
 )
 mkdir %OUTPUT_DIR%
+echo "CppCheck" > %OUTPUT_DIR%\code_analysis_error.txt
+echo %DATE% %TIME% >> %OUTPUT_DIR%\code_analysis_error.txt
 
-echo "CppCheck\n" > %OUTPUT_DIR%\filename.txt
-cppcheck %BASE_DIR% --enable=warning,style,performance,portability 2> %OUTPUT_DIR%\err.txt
+cppcheck %BASE_DIR% --enable=warning,style,performance,portability 2>> %OUTPUT_DIR%\code_analysis_error.txt
 pause
 

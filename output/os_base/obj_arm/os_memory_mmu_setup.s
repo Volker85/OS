@@ -90,17 +90,17 @@ OS_MmuSetup:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:    *MPU_RNR  = 0;
-	.loc 1 41 0
-	ldr	r1, .L4	@ tmp110,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:42:    *MPU_RBAR = 0x08000000;/* FLASH Start */
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:42:    *MPU_RNR  = 0;
 	.loc 1 42 0
-	ldr	r2, .L4+4	@ tmp112,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:43:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
+	ldr	r1, .L4	@ tmp110,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:43:    *MPU_RBAR = 0x08000000;/* FLASH Start */
 	.loc 1 43 0
+	ldr	r2, .L4+4	@ tmp112,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:44:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
+	.loc 1 44 0
 	ldr	r3, .L4+8	@ tmp114,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:53:    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
-	.loc 1 53 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:54:    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+	.loc 1 54 0
 	ldr	r0, .L4+12	@ tmp127,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:27: {
 	.loc 1 27 0
@@ -109,73 +109,73 @@ OS_MmuSetup:
 	.cfi_offset 4, -12
 	.cfi_offset 5, -8
 	.cfi_offset 6, -4
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:41:    *MPU_RNR  = 0;
-	.loc 1 41 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:42:    *MPU_RNR  = 0;
+	.loc 1 42 0
 	movs	r6, #0	@ tmp111,
 	str	r6, [r1]	@ tmp111, MEM[(volatile uint32 *)3758157208B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:43:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-	.loc 1 43 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:44:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
+	.loc 1 44 0
 	ldr	r5, .L4+16	@ tmp115,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:48:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
-	.loc 1 48 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:49:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
+	.loc 1 49 0
 	ldr	r4, .L4+20	@ tmp121,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:42:    *MPU_RBAR = 0x08000000;/* FLASH Start */
-	.loc 1 42 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:43:    *MPU_RBAR = 0x08000000;/* FLASH Start */
+	.loc 1 43 0
 	mov	r6, #134217728	@ tmp113,
 	str	r6, [r2]	@ tmp113, MEM[(volatile uint32 *)3758157212B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:43:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;   
-	.loc 1 43 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:44:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
+	.loc 1 44 0
 	str	r5, [r3]	@ tmp115, MEM[(volatile uint32 *)3758157216B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:46:    *MPU_RNR  = 1;
-	.loc 1 46 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:47:    *MPU_RNR  = 1;
+	.loc 1 47 0
 	movs	r5, #1	@ tmp117,
 	str	r5, [r1]	@ tmp117, MEM[(volatile uint32 *)3758157208B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:47:    *MPU_RBAR = 0x20000000;/* RAM Start */
-	.loc 1 47 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:48:    *MPU_RBAR = 0x20000000;/* RAM Start */
+	.loc 1 48 0
 	mov	r5, #536870912	@ tmp119,
 	str	r5, [r2]	@ tmp119, MEM[(volatile uint32 *)3758157212B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:48:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;   
-	.loc 1 48 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:49:    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
+	.loc 1 49 0
 	str	r4, [r3]	@ tmp121, MEM[(volatile uint32 *)3758157216B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:51:    *MPU_RNR  = 2;
-	.loc 1 51 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:52:    *MPU_RNR  = 2;
+	.loc 1 52 0
 	movs	r5, #2	@ tmp123,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:52:    *MPU_RBAR = 0x40000000;/* Peripherie Start */
-	.loc 1 52 0
-	mov	r4, #1073741824	@ tmp125,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:51:    *MPU_RNR  = 2;
-	.loc 1 51 0
-	str	r5, [r1]	@ tmp123, MEM[(volatile uint32 *)3758157208B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:52:    *MPU_RBAR = 0x40000000;/* Peripherie Start */
-	.loc 1 52 0
-	str	r4, [r2]	@ tmp125, MEM[(volatile uint32 *)3758157212B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:55:    *MPU_RNR  = 3;
-	.loc 1 55 0
-	movs	r5, #3	@ tmp129,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:56:    *MPU_RBAR = 0xE0000000;/* Peripherie Start */
-	.loc 1 56 0
-	mov	r4, #-536870912	@ tmp131,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:53:    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:53:    *MPU_RBAR = 0x40000000;/* Peripherie Start */
 	.loc 1 53 0
-	str	r0, [r3]	@ tmp127, MEM[(volatile uint32 *)3758157216B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:55:    *MPU_RNR  = 3;
-	.loc 1 55 0
-	str	r5, [r1]	@ tmp129, MEM[(volatile uint32 *)3758157208B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:56:    *MPU_RBAR = 0xE0000000;/* Peripherie Start */
+	mov	r4, #1073741824	@ tmp125,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:52:    *MPU_RNR  = 2;
+	.loc 1 52 0
+	str	r5, [r1]	@ tmp123, MEM[(volatile uint32 *)3758157208B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:53:    *MPU_RBAR = 0x40000000;/* Peripherie Start */
+	.loc 1 53 0
+	str	r4, [r2]	@ tmp125, MEM[(volatile uint32 *)3758157212B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:56:    *MPU_RNR  = 3;
 	.loc 1 56 0
-	str	r4, [r2]	@ tmp131, MEM[(volatile uint32 *)3758157212B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:57:    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+	movs	r5, #3	@ tmp129,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:57:    *MPU_RBAR = 0xE0000000;/* Peripherie Start */
 	.loc 1 57 0
+	mov	r4, #-536870912	@ tmp131,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:54:    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+	.loc 1 54 0
 	str	r0, [r3]	@ tmp127, MEM[(volatile uint32 *)3758157216B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:65: }
-	.loc 1 65 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:56:    *MPU_RNR  = 3;
+	.loc 1 56 0
+	str	r5, [r1]	@ tmp129, MEM[(volatile uint32 *)3758157208B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:57:    *MPU_RBAR = 0xE0000000;/* Peripherie Start */
+	.loc 1 57 0
+	str	r4, [r2]	@ tmp131, MEM[(volatile uint32 *)3758157212B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:58:    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
+	.loc 1 58 0
+	str	r0, [r3]	@ tmp127, MEM[(volatile uint32 *)3758157216B]
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:66: }
+	.loc 1 66 0
 	pop	{r4, r5, r6}	@
 	.cfi_restore 6
 	.cfi_restore 5
 	.cfi_restore 4
 	.cfi_def_cfa_offset 0
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:64:    LLF_MPU_ENABLE();
-	.loc 1 64 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_memory_mmu_setup.c:65:    LLF_MPU_ENABLE();
+	.loc 1 65 0
 	b	LLF_MPU_ENABLE	@
 .LVL0:
 .L5:

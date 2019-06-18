@@ -62,7 +62,7 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
 
    for(pos = BigIntSize-1; pos >= 0; pos--)
    {
-      uint16 tmpDiff;
+      uint16 tmpDiff = 0u;
       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
       {
          tmpDiff = (uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - carry;
@@ -75,6 +75,7 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
       {
          /* not possible */
       }
+      Differenz->Number[pos] = tmpDiff;
    }
 }
 #if(0)
