@@ -99,6 +99,7 @@ typedef struct BigInt_s
 }BigInt;
 extern void AssignNull(BigInt* leftOperand);
 extern void Assign(BigInt* leftOperand, BigInt* rightOperand);
+extern void AssignUint32(BigInt* leftOperand, uint32 rightOperand);
 extern boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);

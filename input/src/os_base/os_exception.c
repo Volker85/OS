@@ -131,6 +131,8 @@ void OS_Exception_Systick(void)
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    task_t* task;
    scheduling_t* scheduling_task_ptr;
+   BigInt Diff;
+   timebig_t time;
 
    DBG_RLD_VALUE = 0xFFFFFFFF;
    DBG_CURR_VAL = 0xFFFFFFFF;
@@ -157,7 +159,6 @@ void OS_Exception_Systick(void)
    CLOCK = HCLK / 8
    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz
    */
-   #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000 )| (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000))* LOOPTIME_IN_USEC) ;
    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_ENABLE;
@@ -166,7 +167,6 @@ void OS_Exception_Systick(void)
    DBG_CURR_VAL   = *SYSTICK_CURRENT_VAL_REG;
    DBG_CTRL_VALUE = *SYSTICK_CTRL_STAT_REG;
    DBG_CALIB_VALUE = *SYSTICK_CALIB_VAL_REG;
-   #endif
    /*
    4.4.1. SysTick Control and Status Register
 
@@ -219,8 +219,12 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
       OS_TaskSaveTaskEnvironment(task);
       OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
       task->active = False;
-      task->exe_time += (OS_GetCurrentTime() - task->start_time);
-      task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);
+      /*task->exe_time += (OS_GetCurrentTime() - task->start_time);*/     
+      OS_GetCurrentTime(&time);
+      IntSub(&Diff, &time, &task->start_time);
+      IntAdd(&task->exe_time, &task->exe_time, &Diff);
+      /*task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);*/
+      IntAdd(&task->task_group->exe_time, &task->task_group->exe_time, &Diff);
       SET_RUNNING_TASK(0,0);
       OS_TerminateTask(task,scheduling_task_ptr);
    }

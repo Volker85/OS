@@ -53,6 +53,9 @@ mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -peda
 echo "link it" >> %OUTPUT_DIR%\VERSION_X86_TEST\Build_test_x86.log
 REM %OUTPUT_DIR%\os_test\obj_x86\os_exception_table.o not linked for x86
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86_TEST\operating_system_test_exe.map -O0  %OUTPUT_DIR%\os_test\obj_x86\mcu_start.o  -o %OUTPUT_DIR%\VERSION_X86_TEST\operating_system_test_exe.exe  >> %OUTPUT_DIR%\VERSION_X86_TEST\Build_test_x86.log 2>&1	
+REM start component test
+%OUTPUT_DIR%\VERSION_X86_TEST\operating_system_test_exe.exe
+pause 
 @ENDLOCAL
 pause
 pause

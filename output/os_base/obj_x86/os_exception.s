@@ -157,7 +157,7 @@ LFB8:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 229 0
+	.loc 1 233 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -168,14 +168,14 @@ LFE8:
 	.def	_OS_Exception_IRQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_IRQ:
 LFB9:
-	.loc 1 232 0
+	.loc 1 236 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 236 0
+	.loc 1 240 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -186,14 +186,14 @@ LFE9:
 	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_FIQ:
 LFB10:
-	.loc 1 238 0
+	.loc 1 242 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 242 0
+	.loc 1 246 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -322,7 +322,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_IRQ\0"
 	.byte	0x1
-	.byte	0xe7
+	.byte	0xeb
 	.long	LFB9
 	.long	LFE9-LFB9
 	.uleb128 0x1
@@ -330,7 +330,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_FIQ\0"
 	.byte	0x1
-	.byte	0xed
+	.byte	0xf1
 	.long	LFB10
 	.long	LFE10-LFB10
 	.uleb128 0x1
@@ -1360,10 +1360,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x5f
+	.uleb128 0x60
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x60
+	.uleb128 0x61
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4

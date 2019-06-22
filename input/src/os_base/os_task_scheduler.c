@@ -45,10 +45,12 @@ void OS_ActivateDispatcher(void)
 }
 
 
-void OS_SleepTask(task_t* task, task_time_t usec, scheduling_t* scheduling_task_ptr)
+void OS_SleepTask(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr)
 {
+   timebig_t time;
+   OS_GetCurrentTime(&time);   
    /* sleep Task shall do a preempt task with a defined minimum wait time, the actual wait time is not guaranteed... */
-   task->WaitActUntil = OS_GetCurrentTime() + usec;
+   IntAdd(&task->WaitActUntil, &time, &usec);
    OS_PreemptTask(task,scheduling_task_ptr);
 }
 
@@ -298,6 +300,8 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
 
    - Start Task
     */
+   timebig_t time;
+   
    if( (task != 0) && (scheduling_task != 0)&& ((task->task_queued != False)||(task->IdleTask != False)))
    {
       if(task->state_request !=0)
@@ -306,11 +310,12 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
          {
             DisableInterrupts();
             task->active =  True;
-            task->wait_time = 0;
+            AssignNull(&task->wait_time);
             task->current_prio = task->default_prio;
             OS_TASK_SAVE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
             OS_TASK_RESTORETASK_ENVIRONMENT(task);
-            task->start_time = OS_GetCurrentTime();
+            OS_GetCurrentTime(&time);
+            Assign(&task->start_time, &time);
             EnableInterrupts();
 
             /* task execution shall not happen with disabled interrupts */
@@ -462,7 +467,7 @@ Local void TASK_3(void* task_ptr)
 void OS_InitTasks(void)
 {
    task_t* task_ptr = 0;
-   LAST_CURRENT_TIME = OS_GetCurrentTime();
+   OS_GetCurrentTime(&LAST_CURRENT_TIME);
 
    ReferenceUnusedParameter (TASK_GROUP_1);
    ReferenceUnusedParameter (TASK_GROUP_2);
@@ -551,10 +556,15 @@ Local scheduling_t* OS_TaskScheduler(void)
    task_t*         task = 0;
    task_t*         Winner_task = 0;
    scheduling_t*   Winner_scheduling_queue_member = 0;
+   timebig_t       delta_time;
+   
+   timebig_t time;
+   
+   OS_GetCurrentTime(&time);
 
-   scheduler_time_t delta_time = OS_GetCurrentTime() - LAST_CURRENT_TIME;
-
-   LAST_CURRENT_TIME = OS_GetCurrentTime();
+   IntSub(&delta_time, &time, &LAST_CURRENT_TIME);
+   
+   Assign(&LAST_CURRENT_TIME,&time);
 
    ReferenceUnusedParameter(Winner_task);
    /*
@@ -578,30 +588,31 @@ Local scheduling_t* OS_TaskScheduler(void)
       /* increase prio: high numbers->high prio */
       if((task != 0)&&(task->task_queued != False))
       {
-         if(task->wait_time >= task->TimeToPrioInc)
+         if(IsGreaterOrEqual(&task->wait_time, &task->TimeToPrioInc))
          {
             task->current_prio = task->current_prio + task->overwaittime_per_prio_inc_step;
          }
          /* in case wait condition not yet fulfilled, set prio to 0 */
-         if(task->WaitActUntil > OS_GetCurrentTime())
+         if(IsGreater(&task->WaitActUntil, &time))
          {
             task->current_prio = 0;
          }
-         if(task->wait_time > task->max_allowed_wait_time)
+         if(IsGreater(&task->wait_time,&task->max_allowed_wait_time))
          {
             /* set bug */
             OS_SetSwBug(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
          }
          /* not active TASK_RUN_QUEUE elements have no valid task_group!!*/
-         if(task->task_group!=0)
+         if(task->task_group!=0u)
          {
             /* usage the exe time for scheduling strategy */
-            if(task->task_group->exe_time > task->task_group->fair_exe_time)
+            if(IsGreater(&task->task_group->exe_time, &task->task_group->fair_exe_time) != False)
             {
-               if(task->exe_time > Task_min_time)/* guarantee min time */
+               timebig_t tTime;
+               AssignUint32(&tTime, Task_min_time);
+               if(IsGreaterOrEqual(&task->exe_time, &tTime))/* guarantee min time */
                {
                   task->current_prio = 0;
-
                }
             }
          }
@@ -626,7 +637,7 @@ Local scheduling_t* OS_TaskScheduler(void)
          /*update wait time */
          if(task->IdleTask != True)
          {
-            task->wait_time += delta_time;
+            IntAdd(&task->wait_time, &task->wait_time, &delta_time);
          }
          /* search for task with highest prio and assign it to Winner_task */
          if(task->current_prio > Winner_prio)

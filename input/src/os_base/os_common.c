@@ -10,20 +10,19 @@ void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 
 #define DWT_LAR     ((volatile uint32*)0xE0001FB0)
 #define SCB_DEMCR   ((volatile uint32*)0xE000EDFC)
+static timebig_t GLOBAL_TIMER1;
 
-
-unsigned_int32_t OS_GetCurrentTime(void)
+void OS_GetCurrentTime(timebig_t* time)
 {
    /* the only free running counter on STM32F4 is the DWT counter DWT_CYCCNT
    The counter will overflow every 25sec -> provide function OS_ClearCurrentTime to reset the value to 0, and !!! do not use the absolute value for calculations but use the difference between start and stop of timer
    */
+   
    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   return *DWT_CYCCNT;
+   AssignUint32(time, *DWT_CYCCNT);
    #else
-   static uint32 time = 0;
-   return time++;
+   Assign(time, &GLOBAL_TIMER1);
    #endif
-
 }
 
 void OS_ResetCurrentTime(void)
@@ -39,6 +38,9 @@ void OS_ResetCurrentTime(void)
 
    /* enable the counter */
    *DWT_CTRL |= 1;
+   
+   /* clear the global time variable */
+   AssignNull(&GLOBAL_TIMER1);
 }
 
 
@@ -78,55 +80,6 @@ void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
       Differenz->Number[pos] = tmpDiff;
    }
 }
-#if(0)
-void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
-{
-   BigInt tmpBigInt;
-   uint8 i1, i2;
-   /* clear output */
-   AssignNull(Produkt);
-
-   for(i1 = 0; i1 < BigIntSize; i1++)
-   {
-      for(i2 = 0; i2 < BigIntSize; i2++)
-      {
-         tmpProdukt = (uint16)Faktor1->Number[i1] * (uint16)Faktor2->Number[i2];
-         tmpShift = i1+i2;
-
-         /* store the number in an temporary BigInt variable ...*/
-         tmpBigInt->Number[BigIntSize-1] = tmpProdukt & 0xFFu;
-         tmpBigInt->Number[BigIntSize-2] = (tmpProdukt & 0x100u)>>8;
-         /* add tmpBigInt to Produkt*/
-         IntAdd(Produkt, Produkt, tmpBigInt);
-         /*TODO*/
-      }
-   }
-
-}
-void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
-{
-   BigInt tmpBigInt;
-   uint8 i1, i2;
-   /* clear output */
-   AssignNull(Quotient);
-
-   for(i1 = 0; i1 < BigIntSize; i1++)
-   {
-      for(i2 = 0; i2 < BigIntSize; i2++)
-      {
-         tmpQuotient = (uint16)Dividend->Number[i1] / (uint16)Divisor->Number[i2];
-         tmpShift = i1+i2;
-
-         /* store the number in an temporary BigInt variable ...*/
-         tmpBigInt->Number[BigIntSize-1] = tmpQuotient & 0xFFu;
-         tmpBigInt->Number[BigIntSize-2] = (tmpQuotient & 0x100u)>>8;
-         /* add tmpBigInt to Quotient*/
-         IntAdd(Quotient, Quotient, tmpBigInt);
-         /*TODO*/
-      }
-   }
-}
-#endif
 boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
 {
    uint8 pos;
@@ -213,5 +166,19 @@ void AssignNull(BigInt* leftOperand)
    for (pos = 0; pos < BigIntSize; pos++)
    {
       leftOperand->Number[pos] = 0x00;
+   }
+}
+
+void AssignUint32(BigInt* leftOperand, uint32 rightOperand)
+{
+   uint8 pos;
+   uint8 i;
+   for (pos = 0; pos < BigIntSize; pos++)
+   {
+      leftOperand->Number[pos] = 0x00;
+   }   
+   for (pos = BigIntSize-1, i = 0; pos >= (BigIntSize-sizeof(uint32)); pos--, i++)
+   {
+      leftOperand->Number[pos] = (rightOperand>>i)&0xFFu;
    }
 }
