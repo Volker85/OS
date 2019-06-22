@@ -270,13 +270,13 @@ OS_StateHandler:
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0
-	.type	call_nr.4116, %object
-	.size	call_nr.4116, 4
-call_nr.4116:
+	.type	call_nr.4118, %object
+	.size	call_nr.4118, 4
+call_nr.4118:
 	.space	4
-	.type	call_nr.4104, %object
-	.size	call_nr.4104, 4
-call_nr.4104:
+	.type	call_nr.4106, %object
+	.size	call_nr.4106, 4
+call_nr.4106:
 	.space	4
 	.text
 .Letext0:
@@ -540,7 +540,7 @@ call_nr.4104:
 	.4byte	0x1cf
 	.uleb128 0x7
 	.4byte	.LASF563
-	.byte	0xd8
+	.byte	0xd0
 	.byte	0x5
 	.byte	0x1f
 	.4byte	0x3e1
@@ -614,182 +614,182 @@ call_nr.4104:
 	.4byte	.LASF573
 	.byte	0x5
 	.byte	0x2a
-	.4byte	0x1c4
-	.byte	0x36
+	.4byte	0x74
+	.byte	0x38
 	.uleb128 0x8
 	.4byte	.LASF574
 	.byte	0x5
 	.byte	0x2b
 	.4byte	0x1c4
-	.byte	0x46
+	.byte	0x3c
 	.uleb128 0x8
 	.4byte	.LASF560
 	.byte	0x5
 	.byte	0x2c
 	.4byte	0x1c4
-	.byte	0x56
+	.byte	0x4c
 	.uleb128 0x8
 	.4byte	.LASF575
 	.byte	0x5
 	.byte	0x2d
 	.4byte	0x1c4
-	.byte	0x66
+	.byte	0x5c
 	.uleb128 0x8
 	.4byte	.LASF576
 	.byte	0x5
 	.byte	0x2e
 	.4byte	0x29
-	.byte	0x76
+	.byte	0x6c
 	.uleb128 0x8
 	.4byte	.LASF577
 	.byte	0x5
 	.byte	0x2f
 	.4byte	0x29
-	.byte	0x77
+	.byte	0x6d
 	.uleb128 0x8
 	.4byte	.LASF578
 	.byte	0x5
 	.byte	0x30
 	.4byte	0x5b
-	.byte	0x78
+	.byte	0x70
 	.uleb128 0x11
 	.ascii	"fp\000"
 	.byte	0x5
 	.byte	0x31
 	.4byte	0x181
-	.byte	0x7c
+	.byte	0x74
 	.uleb128 0x8
 	.4byte	.LASF579
 	.byte	0x5
 	.byte	0x32
 	.4byte	0x19f
-	.byte	0x80
+	.byte	0x78
 	.uleb128 0x8
 	.4byte	.LASF580
 	.byte	0x5
 	.byte	0x33
 	.4byte	0x176
-	.byte	0x84
+	.byte	0x7c
 	.uleb128 0x8
 	.4byte	.LASF581
 	.byte	0x5
 	.byte	0x34
 	.4byte	0x3e1
-	.byte	0x88
+	.byte	0x80
 	.uleb128 0x11
 	.ascii	"r0\000"
 	.byte	0x5
 	.byte	0x3b
 	.4byte	0x5b
-	.byte	0x8c
+	.byte	0x84
 	.uleb128 0x11
 	.ascii	"r1\000"
 	.byte	0x5
 	.byte	0x3c
 	.4byte	0x5b
-	.byte	0x90
+	.byte	0x88
 	.uleb128 0x11
 	.ascii	"r2\000"
 	.byte	0x5
 	.byte	0x3d
 	.4byte	0x5b
-	.byte	0x94
+	.byte	0x8c
 	.uleb128 0x11
 	.ascii	"r3\000"
 	.byte	0x5
 	.byte	0x3e
 	.4byte	0x5b
-	.byte	0x98
+	.byte	0x90
 	.uleb128 0x11
 	.ascii	"r4\000"
 	.byte	0x5
 	.byte	0x3f
 	.4byte	0x5b
-	.byte	0x9c
+	.byte	0x94
 	.uleb128 0x11
 	.ascii	"r5\000"
 	.byte	0x5
 	.byte	0x40
 	.4byte	0x5b
-	.byte	0xa0
+	.byte	0x98
 	.uleb128 0x11
 	.ascii	"r6\000"
 	.byte	0x5
 	.byte	0x41
 	.4byte	0x5b
-	.byte	0xa4
+	.byte	0x9c
 	.uleb128 0x11
 	.ascii	"r7\000"
 	.byte	0x5
 	.byte	0x42
 	.4byte	0x5b
-	.byte	0xa8
+	.byte	0xa0
 	.uleb128 0x11
 	.ascii	"r8\000"
 	.byte	0x5
 	.byte	0x43
 	.4byte	0x5b
-	.byte	0xac
+	.byte	0xa4
 	.uleb128 0x11
 	.ascii	"r9\000"
 	.byte	0x5
 	.byte	0x44
 	.4byte	0x5b
-	.byte	0xb0
+	.byte	0xa8
 	.uleb128 0x11
 	.ascii	"r10\000"
 	.byte	0x5
 	.byte	0x45
 	.4byte	0x5b
-	.byte	0xb4
+	.byte	0xac
 	.uleb128 0x11
 	.ascii	"r11\000"
 	.byte	0x5
 	.byte	0x46
 	.4byte	0x5b
-	.byte	0xb8
+	.byte	0xb0
 	.uleb128 0x11
 	.ascii	"r12\000"
 	.byte	0x5
 	.byte	0x47
 	.4byte	0x5b
-	.byte	0xbc
+	.byte	0xb4
 	.uleb128 0x8
 	.4byte	.LASF582
 	.byte	0x5
 	.byte	0x49
 	.4byte	0x3e7
-	.byte	0xc0
+	.byte	0xb8
 	.uleb128 0x8
 	.4byte	.LASF583
 	.byte	0x5
 	.byte	0x4a
 	.4byte	0x3e7
-	.byte	0xc4
+	.byte	0xbc
 	.uleb128 0x8
 	.4byte	.LASF584
 	.byte	0x5
 	.byte	0x4b
 	.4byte	0x3e7
-	.byte	0xc8
+	.byte	0xc0
 	.uleb128 0x8
 	.4byte	.LASF585
 	.byte	0x5
 	.byte	0x4c
 	.4byte	0x5b
-	.byte	0xcc
+	.byte	0xc4
 	.uleb128 0x8
 	.4byte	.LASF586
 	.byte	0x5
 	.byte	0x4d
 	.4byte	0x3e7
-	.byte	0xd0
+	.byte	0xc8
 	.uleb128 0x8
 	.4byte	.LASF587
 	.byte	0x5
 	.byte	0x4e
 	.4byte	0x141
-	.byte	0xd4
+	.byte	0xcc
 	.byte	0
 	.uleb128 0xb
 	.byte	0x4
@@ -1181,7 +1181,7 @@ call_nr.4104:
 	.4byte	0x74
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4116
+	.4byte	call_nr.4118
 	.uleb128 0x18
 	.4byte	0x7fd
 	.4byte	.LBB4
@@ -1270,13 +1270,13 @@ call_nr.4104:
 	.4byte	0x74
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4104
+	.4byte	call_nr.4106
 	.byte	0
 	.uleb128 0x1e
 	.4byte	.LASF647
 	.4byte	.LASF647
 	.byte	0x8
-	.byte	0x12
+	.byte	0x11
 	.uleb128 0x1e
 	.4byte	.LASF648
 	.4byte	.LASF648
@@ -1321,12 +1321,12 @@ call_nr.4104:
 	.4byte	.LASF656
 	.4byte	.LASF656
 	.byte	0x8
-	.byte	0x11
+	.byte	0x10
 	.uleb128 0x1e
 	.4byte	.LASF657
 	.4byte	.LASF657
 	.byte	0x8
-	.byte	0x23
+	.byte	0x22
 	.uleb128 0x1e
 	.4byte	.LASF658
 	.4byte	.LASF658
@@ -1336,7 +1336,7 @@ call_nr.4104:
 	.4byte	.LASF659
 	.4byte	.LASF659
 	.byte	0x8
-	.byte	0x25
+	.byte	0x24
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:

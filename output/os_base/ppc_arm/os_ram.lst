@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3LeGe4.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cctq5zIc.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -23,14 +23,14 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3LeGe4.s 			page 1
   20              		.comm	TASK_GROUP_3,32,4
   21              		.comm	TASK_GROUP_2,32,4
   22              		.comm	TASK_GROUP_1,32,4
-  23              		.comm	TASK_3_VAR,216,4
-  24              		.comm	TASK_2_VAR,216,4
-  25              		.comm	TASK_1_VAR,216,4
-  26              		.comm	TASK_0_VAR,216,4
+  23              		.comm	TASK_3_VAR,208,4
+  24              		.comm	TASK_2_VAR,208,4
+  25              		.comm	TASK_1_VAR,208,4
+  26              		.comm	TASK_0_VAR,208,4
   27              		.comm	bTASK_QUEUE_INITIALIZED,1,1
-  28              		.comm	TASK_IDLE_QUEUE,216,4
-  29              		.comm	RUNNING_TASK,216,4
-  30              		.comm	TASK_RUN_QUEUE,2160,4
+  28              		.comm	TASK_IDLE_QUEUE,208,4
+  29              		.comm	RUNNING_TASK,208,4
+  30              		.comm	TASK_RUN_QUEUE,2080,4
   31              		.comm	RUNNING_SCHEDULING_QUEUE_ENTRY,4,4
   32              		.comm	TASK_SCHEDULING_QUEUE,40,4
   33              		.comm	LAST_CURRENT_TIME,16,4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3LeGe4.s 			page 1
   55              		.comm	DBG_RLD_VALUE,4,4
   56              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
   57              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3LeGe4.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cctq5zIc.s 			page 2
 
 
   58              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
@@ -82,7 +82,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3LeGe4.s 			page 1
   76              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
   77              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
   78              		.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3LeGe4.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cctq5zIc.s 			page 3
 
 
 DEFINED SYMBOLS
@@ -95,14 +95,14 @@ DEFINED SYMBOLS
                             *COM*:00000020 TASK_GROUP_3
                             *COM*:00000020 TASK_GROUP_2
                             *COM*:00000020 TASK_GROUP_1
-                            *COM*:000000d8 TASK_3_VAR
-                            *COM*:000000d8 TASK_2_VAR
-                            *COM*:000000d8 TASK_1_VAR
-                            *COM*:000000d8 TASK_0_VAR
+                            *COM*:000000d0 TASK_3_VAR
+                            *COM*:000000d0 TASK_2_VAR
+                            *COM*:000000d0 TASK_1_VAR
+                            *COM*:000000d0 TASK_0_VAR
                             *COM*:00000001 bTASK_QUEUE_INITIALIZED
-                            *COM*:000000d8 TASK_IDLE_QUEUE
-                            *COM*:000000d8 RUNNING_TASK
-                            *COM*:00000870 TASK_RUN_QUEUE
+                            *COM*:000000d0 TASK_IDLE_QUEUE
+                            *COM*:000000d0 RUNNING_TASK
+                            *COM*:00000820 TASK_RUN_QUEUE
                             *COM*:00000004 RUNNING_SCHEDULING_QUEUE_ENTRY
                             *COM*:00000028 TASK_SCHEDULING_QUEUE
                             *COM*:00000010 LAST_CURRENT_TIME
@@ -142,7 +142,7 @@ DEFINED SYMBOLS
                             *COM*:00000004 VAR_HARDFAULT_STATUS_REG
                             *COM*:00000004 OS_STATE
                             *COM*:0000000f OS_SW_BUG
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc3LeGe4.s 			page 4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cctq5zIc.s 			page 4
 
 
                             *COM*:00005000 OS_MAIN_STACK

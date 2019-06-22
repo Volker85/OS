@@ -12,11 +12,10 @@
 #define OS_SaveTaskPtr(task_ptr, Task_n_ptr)
 
 
-typedef unsigned task_time_t;
 
 extern void OS_StartTask(task_t* task, scheduling_t* scheduling_task);
 extern void OS_ActivateTask(task_t* task);
-extern void OS_SleepTask(task_t* task, task_time_t millisec, scheduling_t* scheduling_task_ptr);
+extern void OS_SleepTask(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr);
 extern void OS_InitTask(
    task_t*          task,
    func_p_t         TaskFunction,

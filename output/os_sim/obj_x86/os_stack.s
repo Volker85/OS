@@ -15,16 +15,16 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 13 0
-	movl	$0, _stack_pos.1312
+	movl	$0, _stack_pos.1315
 	jmp	L2
 L7:
 	.loc 1 15 0
-	movl	$0, _nr_of_cores.1313
+	movl	$0, _nr_of_cores.1316
 	jmp	L3
 L5:
 	.loc 1 17 0
-	movl	_nr_of_cores.1313, %edx
-	movl	_stack_pos.1312, %ecx
+	movl	_nr_of_cores.1316, %edx
+	movl	_stack_pos.1315, %ecx
 	movl	%edx, %eax
 	sall	$2, %eax
 	addl	%edx, %eax
@@ -35,36 +35,36 @@ L5:
 	cmpb	$-86, %al
 	je	L4
 	.loc 1 19 0
-	movl	$1, _failed.1314
+	movl	$1, _failed.1317
 L4:
 	.loc 1 15 0 discriminator 2
-	movl	_nr_of_cores.1313, %eax
+	movl	_nr_of_cores.1316, %eax
 	incl	%eax
-	movl	%eax, _nr_of_cores.1313
+	movl	%eax, _nr_of_cores.1316
 L3:
 	.loc 1 15 0 is_stmt 0 discriminator 1
-	movl	_nr_of_cores.1313, %eax
+	movl	_nr_of_cores.1316, %eax
 	testl	%eax, %eax
 	jle	L5
 	.loc 1 22 0 is_stmt 1
-	movl	_stack_pos.1312, %eax
+	movl	_stack_pos.1315, %eax
 	movb	_OS_MAIN_STACK(%eax), %al
 	cmpb	$-86, %al
 	je	L6
 	.loc 1 24 0
-	movl	$1, _failed.1314
+	movl	$1, _failed.1317
 L6:
 	.loc 1 13 0 discriminator 2
-	movl	_stack_pos.1312, %eax
+	movl	_stack_pos.1315, %eax
 	incl	%eax
-	movl	%eax, _stack_pos.1312
+	movl	%eax, _stack_pos.1315
 L2:
 	.loc 1 13 0 is_stmt 0 discriminator 1
-	movl	_stack_pos.1312, %eax
+	movl	_stack_pos.1315, %eax
 	cmpl	$63, %eax
 	jle	L7
 	.loc 1 27 0 is_stmt 1
-	movl	_failed.1314, %eax
+	movl	_failed.1317, %eax
 	cmpl	$1, %eax
 	jne	L1
 	.loc 1 29 0
@@ -94,16 +94,16 @@ LFB1:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	.loc 1 39 0
-	movl	$0, _stack_pos.1325
+	movl	$0, _stack_pos.1328
 	jmp	L11
 L14:
 	.loc 1 41 0
-	movl	$0, _nr_of_cores.1326
+	movl	$0, _nr_of_cores.1329
 	jmp	L12
 L13:
 	.loc 1 43 0 discriminator 3
-	movl	_nr_of_cores.1326, %edx
-	movl	_stack_pos.1325, %ecx
+	movl	_nr_of_cores.1329, %edx
+	movl	_stack_pos.1328, %ecx
 	movl	%edx, %eax
 	sall	$2, %eax
 	addl	%edx, %eax
@@ -112,24 +112,24 @@ L13:
 	addl	$_OS_STACK, %eax
 	movb	$-86, (%eax)
 	.loc 1 41 0 discriminator 3
-	movl	_nr_of_cores.1326, %eax
+	movl	_nr_of_cores.1329, %eax
 	incl	%eax
-	movl	%eax, _nr_of_cores.1326
+	movl	%eax, _nr_of_cores.1329
 L12:
 	.loc 1 41 0 is_stmt 0 discriminator 1
-	movl	_nr_of_cores.1326, %eax
+	movl	_nr_of_cores.1329, %eax
 	testl	%eax, %eax
 	jle	L13
 	.loc 1 45 0 is_stmt 1 discriminator 2
-	movl	_stack_pos.1325, %eax
+	movl	_stack_pos.1328, %eax
 	movb	$-86, _OS_MAIN_STACK(%eax)
 	.loc 1 39 0 discriminator 2
-	movl	_stack_pos.1325, %eax
+	movl	_stack_pos.1328, %eax
 	incl	%eax
-	movl	%eax, _stack_pos.1325
+	movl	%eax, _stack_pos.1328
 L11:
 	.loc 1 39 0 is_stmt 0 discriminator 1
-	movl	_stack_pos.1325, %eax
+	movl	_stack_pos.1328, %eax
 	cmpl	$63, %eax
 	jle	L14
 	.loc 1 47 0 is_stmt 1
@@ -139,11 +139,11 @@ L11:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _stack_pos.1312,4,4
-.lcomm _nr_of_cores.1313,4,4
-.lcomm _failed.1314,4,4
-.lcomm _stack_pos.1325,4,4
-.lcomm _nr_of_cores.1326,4,4
+.lcomm _stack_pos.1315,4,4
+.lcomm _nr_of_cores.1316,4,4
+.lcomm _failed.1317,4,4
+.lcomm _stack_pos.1328,4,4
+.lcomm _nr_of_cores.1329,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
@@ -313,7 +313,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_pos.1312
+	.long	_stack_pos.1315
 	.uleb128 0x7
 	.secrel32	LASF1
 	.byte	0x1
@@ -321,7 +321,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_nr_of_cores.1313
+	.long	_nr_of_cores.1316
 	.uleb128 0x8
 	.ascii "failed\0"
 	.byte	0x1
@@ -329,7 +329,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_failed.1314
+	.long	_failed.1317
 	.byte	0
 	.uleb128 0x9
 	.long	0x466
@@ -353,7 +353,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_pos.1325
+	.long	_stack_pos.1328
 	.uleb128 0x7
 	.secrel32	LASF1
 	.byte	0x1
@@ -361,7 +361,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_nr_of_cores.1326
+	.long	_nr_of_cores.1329
 	.byte	0
 	.uleb128 0xb
 	.long	0x8c

@@ -366,6 +366,7 @@ typedef struct BigInt_s
 }BigInt;
 extern void AssignNull(BigInt* leftOperand);
 extern void Assign(BigInt* leftOperand, BigInt* rightOperand);
+extern void AssignUint32(BigInt* leftOperand, uint32 rightOperand);
 extern boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
@@ -516,7 +517,7 @@ struct task_s
    timebig_t WaitActUntil;
    timebig_t wait_time;
    timebig_t TimeToPrioInc;
-   timebig_t overwaittime_per_prio_inc_step;
+   uint32 overwaittime_per_prio_inc_step;
    timebig_t max_allowed_wait_time;
    timebig_t exe_time;
    timebig_t start_time;
@@ -544,7 +545,7 @@ typedef struct task_s task_t;
 typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
-extern timebig_t OS_GetCurrentTime(void);
+extern void OS_GetCurrentTime(timebig_t* time);
 
 extern void OS_TaskSaveTaskEnvironment(task_t* task);
 extern void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
@@ -700,7 +701,7 @@ void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 #define SCB_DEMCR ((volatile uint32*)0xE000EDFC)
 static timebig_t GLOBAL_TIMER1;
 
-timebig_t OS_GetCurrentTime(void)
+void OS_GetCurrentTime(timebig_t* time)
 {
 
 
@@ -708,9 +709,8 @@ timebig_t OS_GetCurrentTime(void)
 
 
 
-   static uint32 time = 0;
-   return time++;
 
+   Assign(time, &GLOBAL_TIMER1);
 
 }
 
@@ -855,5 +855,19 @@ void AssignNull(BigInt* leftOperand)
    for (pos = 0; pos < 16; pos++)
    {
       leftOperand->Number[pos] = 0x00;
+   }
+}
+
+void AssignUint32(BigInt* leftOperand, uint32 rightOperand)
+{
+   uint8 pos;
+   uint8 i;
+   for (pos = 0; pos < 16; pos++)
+   {
+      leftOperand->Number[pos] = 0x00;
+   }
+   for (pos = 16 -1, i = 0; pos >= (16 -sizeof(uint32)); pos--, i++)
+   {
+      leftOperand->Number[pos] = (rightOperand>>i)&0xFFu;
    }
 }

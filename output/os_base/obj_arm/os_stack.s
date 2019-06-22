@@ -203,25 +203,25 @@ OS_StackChkPatternInit:
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0
-	.type	stack_pos.4024, %object
-	.size	stack_pos.4024, 4
-stack_pos.4024:
+	.type	stack_pos.4027, %object
+	.size	stack_pos.4027, 4
+stack_pos.4027:
 	.space	4
-	.type	nr_of_cores.4025, %object
-	.size	nr_of_cores.4025, 4
-nr_of_cores.4025:
+	.type	nr_of_cores.4028, %object
+	.size	nr_of_cores.4028, 4
+nr_of_cores.4028:
 	.space	4
-	.type	failed.4026, %object
-	.size	failed.4026, 4
-failed.4026:
+	.type	failed.4029, %object
+	.size	failed.4029, 4
+failed.4029:
 	.space	4
-	.type	stack_pos.4037, %object
-	.size	stack_pos.4037, 4
-stack_pos.4037:
+	.type	stack_pos.4040, %object
+	.size	stack_pos.4040, 4
+stack_pos.4040:
 	.space	4
-	.type	nr_of_cores.4038, %object
-	.size	nr_of_cores.4038, 4
-nr_of_cores.4038:
+	.type	nr_of_cores.4041, %object
+	.size	nr_of_cores.4041, 4
+nr_of_cores.4041:
 	.space	4
 	.text
 .Letext0:
@@ -540,7 +540,7 @@ nr_of_cores.4038:
 	.4byte	0x24d
 	.uleb128 0x7
 	.4byte	.LASF568
-	.byte	0xd8
+	.byte	0xd0
 	.byte	0x5
 	.byte	0x1f
 	.4byte	0x45f
@@ -614,182 +614,182 @@ nr_of_cores.4038:
 	.4byte	.LASF578
 	.byte	0x5
 	.byte	0x2a
-	.4byte	0x242
-	.byte	0x36
+	.4byte	0x74
+	.byte	0x38
 	.uleb128 0x8
 	.4byte	.LASF579
 	.byte	0x5
 	.byte	0x2b
 	.4byte	0x242
-	.byte	0x46
+	.byte	0x3c
 	.uleb128 0x8
 	.4byte	.LASF565
 	.byte	0x5
 	.byte	0x2c
 	.4byte	0x242
-	.byte	0x56
+	.byte	0x4c
 	.uleb128 0x8
 	.4byte	.LASF580
 	.byte	0x5
 	.byte	0x2d
 	.4byte	0x242
-	.byte	0x66
+	.byte	0x5c
 	.uleb128 0x8
 	.4byte	.LASF581
 	.byte	0x5
 	.byte	0x2e
 	.4byte	0x29
-	.byte	0x76
+	.byte	0x6c
 	.uleb128 0x8
 	.4byte	.LASF582
 	.byte	0x5
 	.byte	0x2f
 	.4byte	0x29
-	.byte	0x77
+	.byte	0x6d
 	.uleb128 0x8
 	.4byte	.LASF583
 	.byte	0x5
 	.byte	0x30
 	.4byte	0x5b
-	.byte	0x78
+	.byte	0x70
 	.uleb128 0x11
 	.ascii	"fp\000"
 	.byte	0x5
 	.byte	0x31
 	.4byte	0x1ff
-	.byte	0x7c
+	.byte	0x74
 	.uleb128 0x8
 	.4byte	.LASF584
 	.byte	0x5
 	.byte	0x32
 	.4byte	0x21d
-	.byte	0x80
+	.byte	0x78
 	.uleb128 0x8
 	.4byte	.LASF585
 	.byte	0x5
 	.byte	0x33
 	.4byte	0x1f4
-	.byte	0x84
+	.byte	0x7c
 	.uleb128 0x8
 	.4byte	.LASF586
 	.byte	0x5
 	.byte	0x34
 	.4byte	0x45f
-	.byte	0x88
+	.byte	0x80
 	.uleb128 0x11
 	.ascii	"r0\000"
 	.byte	0x5
 	.byte	0x3b
 	.4byte	0x5b
-	.byte	0x8c
+	.byte	0x84
 	.uleb128 0x11
 	.ascii	"r1\000"
 	.byte	0x5
 	.byte	0x3c
 	.4byte	0x5b
-	.byte	0x90
+	.byte	0x88
 	.uleb128 0x11
 	.ascii	"r2\000"
 	.byte	0x5
 	.byte	0x3d
 	.4byte	0x5b
-	.byte	0x94
+	.byte	0x8c
 	.uleb128 0x11
 	.ascii	"r3\000"
 	.byte	0x5
 	.byte	0x3e
 	.4byte	0x5b
-	.byte	0x98
+	.byte	0x90
 	.uleb128 0x11
 	.ascii	"r4\000"
 	.byte	0x5
 	.byte	0x3f
 	.4byte	0x5b
-	.byte	0x9c
+	.byte	0x94
 	.uleb128 0x11
 	.ascii	"r5\000"
 	.byte	0x5
 	.byte	0x40
 	.4byte	0x5b
-	.byte	0xa0
+	.byte	0x98
 	.uleb128 0x11
 	.ascii	"r6\000"
 	.byte	0x5
 	.byte	0x41
 	.4byte	0x5b
-	.byte	0xa4
+	.byte	0x9c
 	.uleb128 0x11
 	.ascii	"r7\000"
 	.byte	0x5
 	.byte	0x42
 	.4byte	0x5b
-	.byte	0xa8
+	.byte	0xa0
 	.uleb128 0x11
 	.ascii	"r8\000"
 	.byte	0x5
 	.byte	0x43
 	.4byte	0x5b
-	.byte	0xac
+	.byte	0xa4
 	.uleb128 0x11
 	.ascii	"r9\000"
 	.byte	0x5
 	.byte	0x44
 	.4byte	0x5b
-	.byte	0xb0
+	.byte	0xa8
 	.uleb128 0x11
 	.ascii	"r10\000"
 	.byte	0x5
 	.byte	0x45
 	.4byte	0x5b
-	.byte	0xb4
+	.byte	0xac
 	.uleb128 0x11
 	.ascii	"r11\000"
 	.byte	0x5
 	.byte	0x46
 	.4byte	0x5b
-	.byte	0xb8
+	.byte	0xb0
 	.uleb128 0x11
 	.ascii	"r12\000"
 	.byte	0x5
 	.byte	0x47
 	.4byte	0x5b
-	.byte	0xbc
+	.byte	0xb4
 	.uleb128 0x8
 	.4byte	.LASF587
 	.byte	0x5
 	.byte	0x49
 	.4byte	0x465
-	.byte	0xc0
+	.byte	0xb8
 	.uleb128 0x8
 	.4byte	.LASF588
 	.byte	0x5
 	.byte	0x4a
 	.4byte	0x465
-	.byte	0xc4
+	.byte	0xbc
 	.uleb128 0x8
 	.4byte	.LASF589
 	.byte	0x5
 	.byte	0x4b
 	.4byte	0x465
-	.byte	0xc8
+	.byte	0xc0
 	.uleb128 0x8
 	.4byte	.LASF590
 	.byte	0x5
 	.byte	0x4c
 	.4byte	0x5b
-	.byte	0xcc
+	.byte	0xc4
 	.uleb128 0x8
 	.4byte	.LASF591
 	.byte	0x5
 	.byte	0x4d
 	.4byte	0x465
-	.byte	0xd0
+	.byte	0xc8
 	.uleb128 0x8
 	.4byte	.LASF592
 	.byte	0x5
 	.byte	0x4e
 	.4byte	0x1bf
-	.byte	0xd4
+	.byte	0xcc
 	.byte	0
 	.uleb128 0xb
 	.byte	0x4
@@ -1134,7 +1134,7 @@ nr_of_cores.4038:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	stack_pos.4037
+	.4byte	stack_pos.4040
 	.uleb128 0x16
 	.4byte	.LASF642
 	.byte	0x1
@@ -1142,7 +1142,7 @@ nr_of_cores.4038:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	nr_of_cores.4038
+	.4byte	nr_of_cores.4041
 	.byte	0
 	.uleb128 0x17
 	.byte	0x4
@@ -1166,7 +1166,7 @@ nr_of_cores.4038:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	stack_pos.4024
+	.4byte	stack_pos.4027
 	.uleb128 0x16
 	.4byte	.LASF642
 	.byte	0x1
@@ -1174,7 +1174,7 @@ nr_of_cores.4038:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	nr_of_cores.4025
+	.4byte	nr_of_cores.4028
 	.uleb128 0x16
 	.4byte	.LASF645
 	.byte	0x1
@@ -1182,7 +1182,7 @@ nr_of_cores.4038:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	failed.4026
+	.4byte	failed.4029
 	.uleb128 0x18
 	.4byte	.LVL0
 	.4byte	0x7d4

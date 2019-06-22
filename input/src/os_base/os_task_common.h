@@ -39,7 +39,7 @@ struct task_s
    timebig_t WaitActUntil;
    timebig_t wait_time;
    timebig_t TimeToPrioInc;
-   timebig_t overwaittime_per_prio_inc_step;
+   uint32 overwaittime_per_prio_inc_step;
    timebig_t max_allowed_wait_time;
    timebig_t exe_time;
    timebig_t start_time;
@@ -81,7 +81,7 @@ typedef struct task_s task_t;
 typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
-extern timebig_t OS_GetCurrentTime(void);
+extern void OS_GetCurrentTime(timebig_t* time);
 
 extern void OS_TaskSaveTaskEnvironment(task_t* task);
 extern void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);

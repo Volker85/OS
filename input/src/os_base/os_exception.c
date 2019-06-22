@@ -132,6 +132,7 @@ void OS_Exception_Systick(void)
    task_t* task;
    scheduling_t* scheduling_task_ptr;
    BigInt Diff;
+   timebig_t time;
 
    DBG_RLD_VALUE = 0xFFFFFFFF;
    DBG_CURR_VAL = 0xFFFFFFFF;
@@ -218,8 +219,9 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
       OS_TaskSaveTaskEnvironment(task);
       OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
       task->active = False;
-      /*task->exe_time += (OS_GetCurrentTime() - task->start_time);*/
-      IntSub(&Diff, &OS_GetCurrentTime(), &task->start_time);
+      /*task->exe_time += (OS_GetCurrentTime() - task->start_time);*/     
+      OS_GetCurrentTime(&time);
+      IntSub(&Diff, &time, &task->start_time);
       IntAdd(&task->exe_time, &task->exe_time, &Diff);
       /*task->task_group->exe_time += (OS_GetCurrentTime() - task->start_time);*/
       IntAdd(&task->task_group->exe_time, &task->task_group->exe_time, &Diff);

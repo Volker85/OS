@@ -41,10 +41,10 @@ void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task)
       (&RUNNING_TASK[0])->FREE                            = task->FREE;
       (&RUNNING_TASK[0])->NrOfInsAllowed                  = task->NrOfInsAllowed;
       (&RUNNING_TASK[0])->NrOfInsActivated                = task->NrOfInsActivated;
-      Assign(&(&RUNNING_TASK[0])->WaitActUntil          , &task->WaitActUntil;
+      Assign(&(&RUNNING_TASK[0])->WaitActUntil          , &task->WaitActUntil);
       Assign(&(&RUNNING_TASK[0])->wait_time             , &task->wait_time);
       Assign(&(&RUNNING_TASK[0])->TimeToPrioInc         , &task->TimeToPrioInc);
-      Assign(&(&RUNNING_TASK[0])->overwaittime_per_prio_inc_step, &task->overwaittime_per_prio_inc_step);
+      (&RUNNING_TASK[0])->overwaittime_per_prio_inc_step  = task->overwaittime_per_prio_inc_step;
       Assign(&(&RUNNING_TASK[0])->max_allowed_wait_time , &task->max_allowed_wait_time);
       Assign(&(&RUNNING_TASK[0])->exe_time              , &task->exe_time  );
       Assign(&(&RUNNING_TASK[0])->start_time            , &task->start_time);
@@ -121,7 +121,7 @@ task_t* AddToTaskQueue(task_t* task)
       Assign(&(&TASK_RUN_QUEUE[element_nr])->WaitActUntil                  , &task->WaitActUntil);
       Assign(&(&TASK_RUN_QUEUE[element_nr])->wait_time                     , &task->wait_time);
       Assign(&(&TASK_RUN_QUEUE[element_nr])->TimeToPrioInc                 , &task->TimeToPrioInc);
-      Assign(&(&TASK_RUN_QUEUE[element_nr])->overwaittime_per_prio_inc_step, &task->overwaittime_per_prio_inc_step);
+      (&TASK_RUN_QUEUE[element_nr])->overwaittime_per_prio_inc_step  = task->overwaittime_per_prio_inc_step;
       Assign(&(&TASK_RUN_QUEUE[element_nr])->max_allowed_wait_time         , &task->max_allowed_wait_time);
       Assign(&(&TASK_RUN_QUEUE[element_nr])->exe_time                      , &task->exe_time   );
       Assign(&(&TASK_RUN_QUEUE[element_nr])->start_time                    , &task->start_time );
@@ -171,7 +171,7 @@ void DeleteFromTaskQueue(task_t* task)
    AssignNull(&task->WaitActUntil);
    AssignNull(&task->wait_time);
    AssignNull(&task->TimeToPrioInc);
-   AssignNull(&task->overwaittime_per_prio_inc_step);
+   task->overwaittime_per_prio_inc_step        =   0       ;
    AssignNull(&task->max_allowed_wait_time);
    AssignNull(&task->exe_time);
    AssignNull(&task->start_time);
@@ -291,7 +291,7 @@ void AddToIdleTaskQueue(task_t* task)
       Assign(&(&TASK_IDLE_QUEUE[0])->WaitActUntil                   , &task->WaitActUntil);
       Assign(&(&TASK_IDLE_QUEUE[0])->wait_time                      , &task->wait_time);
       Assign(&(&TASK_IDLE_QUEUE[0])->TimeToPrioInc                  , &task->TimeToPrioInc);
-      Assign(&(&TASK_IDLE_QUEUE[0])->overwaittime_per_prio_inc_step , &task->overwaittime_per_prio_inc_step);
+      (&TASK_IDLE_QUEUE[0])->overwaittime_per_prio_inc_step       =    task->overwaittime_per_prio_inc_step;
       Assign(&(&TASK_IDLE_QUEUE[0])->max_allowed_wait_time          , &task->max_allowed_wait_time);
       Assign(&(&TASK_IDLE_QUEUE[0])->exe_time                       , &task->exe_time);
       (&TASK_IDLE_QUEUE[0])->current_prio                          =   task->current_prio     ;
@@ -362,8 +362,8 @@ void OS_InitTask(
       task->privilige_mode   = privilige_mode;
       task->default_prio     = default_prio;
 
-      task->overwaittime_per_prio_inc_step = 1;
-      task->max_allowed_wait_time          = 100000;
+      task->overwaittime_per_prio_inc_step = 1u;
+      AssignUint32(&task->max_allowed_wait_time, 100000u);
 
       task->IdleTask      = IdleTask;
       task->state_request = &task_state_request;

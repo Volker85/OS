@@ -84,9 +84,9 @@ void OS_Task_InitTaskEnvironment(task_t* task)
       /* task scheduling */
       AssignNull(&task->WaitActUntil);
       AssignNull(&task->wait_time);
-      task->TimeToPrioInc                    = (unsigned_int32_t)        5;//TODO
-      Assign(&task->overwaittime_per_prio_inc_step,1u     );/* has to be >=1 */
-      Assign(&task->max_allowed_wait_time,         100000u);
+      AssignUint32(&task->TimeToPrioInc, 5u);
+      task->overwaittime_per_prio_inc_step   = (unsigned_int32_t)        1u;/* has to be >=1 */
+      AssignUint32(&task->max_allowed_wait_time,         100000u);
       AssignNull(&task->exe_time);
       task->current_prio                     = (unsigned_char_t)         0;
       task->default_prio                     = (unsigned_char_t)         0;/* the default prio for this task before increase of prio due to wait time */

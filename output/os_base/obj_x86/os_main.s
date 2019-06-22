@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1392, %eax
+	movl	_call_nr.1394, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,16 +33,16 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1392, %eax
+	movl	_call_nr.1394, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1392
+	movl	%eax, _call_nr.1394
 	.loc 1 64 0
 	jmp	L1
 L5:
 	.loc 1 67 0
-	movl	_call_nr.1392, %eax
+	movl	_call_nr.1394, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1392
+	movl	%eax, _call_nr.1394
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -50,16 +50,16 @@ L6:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1392, %eax
+	movl	_call_nr.1394, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1392
+	movl	%eax, _call_nr.1394
 	.loc 1 72 0
 	jmp	L1
 L7:
 	.loc 1 75 0
-	movl	_call_nr.1392, %eax
+	movl	_call_nr.1394, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1392
+	movl	%eax, _call_nr.1394
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -67,7 +67,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1392
+	movl	$0, _call_nr.1394
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -130,7 +130,7 @@ L14:
 	jmp	L16
 L13:
 	.loc 1 120 0
-	movl	_call_nr.1404, %eax
+	movl	_call_nr.1406, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
@@ -141,9 +141,9 @@ L13:
 	call	_OS_DetermineNextTaskActivation
 L17:
 	.loc 1 124 0
-	movl	_call_nr.1404, %eax
+	movl	_call_nr.1406, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1404
+	movl	%eax, _call_nr.1406
 	.loc 1 126 0
 	call	_OS_TaskDispatcher
 	.loc 1 133 0
@@ -152,7 +152,7 @@ L15:
 	.loc 1 137 0
 	call	_LLF_INT_DISABLE
 	.loc 1 138 0
-	movl	_sys_req_reset_state.1403, %eax
+	movl	_sys_req_reset_state.1405, %eax
 	cmpl	$1, %eax
 	je	L19
 	cmpl	$1, %eax
@@ -197,9 +197,9 @@ L16:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1392,4,4
-.lcomm _call_nr.1404,4,4
-.lcomm _sys_req_reset_state.1403,4,4
+.lcomm _call_nr.1394,4,4
+.lcomm _call_nr.1406,4,4
+.lcomm _sys_req_reset_state.1405,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -401,7 +401,7 @@ Ldebug_info0:
 	.long	0x306
 	.uleb128 0x4
 	.ascii "task_s\0"
-	.byte	0xb4
+	.byte	0xac
 	.byte	0x5
 	.byte	0x1f
 	.long	0x5c6
@@ -475,128 +475,128 @@ Ldebug_info0:
 	.ascii "overwaittime_per_prio_inc_step\0"
 	.byte	0x5
 	.byte	0x2a
-	.long	0x2f5
-	.byte	0x36
+	.long	0x12b
+	.byte	0x38
 	.uleb128 0x5
 	.ascii "max_allowed_wait_time\0"
 	.byte	0x5
 	.byte	0x2b
 	.long	0x2f5
-	.byte	0x46
+	.byte	0x3c
 	.uleb128 0xf
 	.secrel32	LASF0
 	.byte	0x5
 	.byte	0x2c
 	.long	0x2f5
-	.byte	0x56
+	.byte	0x4c
 	.uleb128 0x5
 	.ascii "start_time\0"
 	.byte	0x5
 	.byte	0x2d
 	.long	0x2f5
-	.byte	0x66
+	.byte	0x5c
 	.uleb128 0x5
 	.ascii "current_prio\0"
 	.byte	0x5
 	.byte	0x2e
 	.long	0x8b
-	.byte	0x76
+	.byte	0x6c
 	.uleb128 0x5
 	.ascii "default_prio\0"
 	.byte	0x5
 	.byte	0x2f
 	.long	0x8b
-	.byte	0x77
+	.byte	0x6d
 	.uleb128 0x5
 	.ascii "task_number\0"
 	.byte	0x5
 	.byte	0x30
 	.long	0xf2
-	.byte	0x78
+	.byte	0x70
 	.uleb128 0x5
 	.ascii "fp\0"
 	.byte	0x5
 	.byte	0x31
 	.long	0x29b
-	.byte	0x7c
+	.byte	0x74
 	.uleb128 0x5
 	.ascii "state_request\0"
 	.byte	0x5
 	.byte	0x32
 	.long	0x2be
-	.byte	0x80
+	.byte	0x78
 	.uleb128 0x5
 	.ascii "task_state\0"
 	.byte	0x5
 	.byte	0x33
 	.long	0x287
-	.byte	0x84
+	.byte	0x7c
 	.uleb128 0x5
 	.ascii "task_group\0"
 	.byte	0x5
 	.byte	0x34
 	.long	0x5d6
-	.byte	0x88
+	.byte	0x80
 	.uleb128 0x5
 	.ascii "EAX\0"
 	.byte	0x5
 	.byte	0x36
 	.long	0xf2
-	.byte	0x8c
+	.byte	0x84
 	.uleb128 0x5
 	.ascii "EBX\0"
 	.byte	0x5
 	.byte	0x37
 	.long	0xf2
-	.byte	0x90
+	.byte	0x88
 	.uleb128 0x5
 	.ascii "ECX\0"
 	.byte	0x5
 	.byte	0x38
 	.long	0xf2
-	.byte	0x94
+	.byte	0x8c
 	.uleb128 0x5
 	.ascii "EDX\0"
 	.byte	0x5
 	.byte	0x39
 	.long	0xf2
-	.byte	0x98
+	.byte	0x90
 	.uleb128 0x5
 	.ascii "pStackPointer\0"
 	.byte	0x5
 	.byte	0x49
 	.long	0x5dc
-	.byte	0x9c
+	.byte	0x94
 	.uleb128 0x5
 	.ascii "pStackPointerByMalloc\0"
 	.byte	0x5
 	.byte	0x4a
 	.long	0x5dc
-	.byte	0xa0
+	.byte	0x98
 	.uleb128 0x5
 	.ascii "pStackPointerStart\0"
 	.byte	0x5
 	.byte	0x4b
 	.long	0x5dc
-	.byte	0xa4
+	.byte	0x9c
 	.uleb128 0x5
 	.ascii "StackSize\0"
 	.byte	0x5
 	.byte	0x4c
 	.long	0xf2
-	.byte	0xa8
+	.byte	0xa0
 	.uleb128 0x5
 	.ascii "pStackPointerEnd\0"
 	.byte	0x5
 	.byte	0x4d
 	.long	0x5dc
-	.byte	0xac
+	.byte	0xa4
 	.uleb128 0x5
 	.ascii "privilige_mode\0"
 	.byte	0x5
 	.byte	0x4e
 	.long	0x219
-	.byte	0xb0
+	.byte	0xa8
 	.byte	0
 	.uleb128 0x3
 	.byte	0x4
@@ -666,7 +666,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1392
+	.long	_call_nr.1394
 	.byte	0
 	.uleb128 0x13
 	.ascii "OS_StateHandler\0"
@@ -684,7 +684,7 @@ Ldebug_info0:
 	.long	0x690
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1403
+	.long	_sys_req_reset_state.1405
 	.uleb128 0x12
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -692,7 +692,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1404
+	.long	_call_nr.1406
 	.byte	0
 	.uleb128 0x14
 	.ascii "OS_STATE\0"

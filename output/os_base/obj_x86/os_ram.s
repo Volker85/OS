@@ -42,14 +42,14 @@ Ltext0:
 	.comm	_LAST_CURRENT_TIME, 16, 2
 	.comm	_TASK_SCHEDULING_QUEUE, 40, 5
 	.comm	_RUNNING_SCHEDULING_QUEUE_ENTRY, 4, 2
-	.comm	_TASK_RUN_QUEUE, 1800, 5
-	.comm	_RUNNING_TASK, 180, 5
-	.comm	_TASK_IDLE_QUEUE, 180, 5
+	.comm	_TASK_RUN_QUEUE, 1720, 5
+	.comm	_RUNNING_TASK, 172, 5
+	.comm	_TASK_IDLE_QUEUE, 172, 5
 	.comm	_bTASK_QUEUE_INITIALIZED, 1, 0
-	.comm	_TASK_0_VAR, 180, 5
-	.comm	_TASK_1_VAR, 180, 5
-	.comm	_TASK_2_VAR, 180, 5
-	.comm	_TASK_3_VAR, 180, 5
+	.comm	_TASK_0_VAR, 172, 5
+	.comm	_TASK_1_VAR, 172, 5
+	.comm	_TASK_2_VAR, 172, 5
+	.comm	_TASK_3_VAR, 172, 5
 	.comm	_TASK_GROUP_1, 32, 5
 	.comm	_TASK_GROUP_2, 32, 5
 	.comm	_TASK_GROUP_3, 32, 5
@@ -298,7 +298,7 @@ Ldebug_info0:
 	.long	0x454
 	.uleb128 0x6
 	.ascii "task_s\0"
-	.byte	0xb4
+	.byte	0xac
 	.byte	0x4
 	.byte	0x1f
 	.long	0x714
@@ -372,128 +372,128 @@ Ldebug_info0:
 	.ascii "overwaittime_per_prio_inc_step\0"
 	.byte	0x4
 	.byte	0x2a
-	.long	0x443
-	.byte	0x36
+	.long	0x122
+	.byte	0x38
 	.uleb128 0x7
 	.ascii "max_allowed_wait_time\0"
 	.byte	0x4
 	.byte	0x2b
 	.long	0x443
-	.byte	0x46
+	.byte	0x3c
 	.uleb128 0xf
 	.secrel32	LASF0
 	.byte	0x4
 	.byte	0x2c
 	.long	0x443
-	.byte	0x56
+	.byte	0x4c
 	.uleb128 0x7
 	.ascii "start_time\0"
 	.byte	0x4
 	.byte	0x2d
 	.long	0x443
-	.byte	0x66
+	.byte	0x5c
 	.uleb128 0x7
 	.ascii "current_prio\0"
 	.byte	0x4
 	.byte	0x2e
 	.long	0x82
-	.byte	0x76
+	.byte	0x6c
 	.uleb128 0x7
 	.ascii "default_prio\0"
 	.byte	0x4
 	.byte	0x2f
 	.long	0x82
-	.byte	0x77
+	.byte	0x6d
 	.uleb128 0x7
 	.ascii "task_number\0"
 	.byte	0x4
 	.byte	0x30
 	.long	0xe9
-	.byte	0x78
+	.byte	0x70
 	.uleb128 0x7
 	.ascii "fp\0"
 	.byte	0x4
 	.byte	0x31
 	.long	0x3e9
-	.byte	0x7c
+	.byte	0x74
 	.uleb128 0x7
 	.ascii "state_request\0"
 	.byte	0x4
 	.byte	0x32
 	.long	0x40c
-	.byte	0x80
+	.byte	0x78
 	.uleb128 0x7
 	.ascii "task_state\0"
 	.byte	0x4
 	.byte	0x33
 	.long	0x3d5
-	.byte	0x84
+	.byte	0x7c
 	.uleb128 0x7
 	.ascii "task_group\0"
 	.byte	0x4
 	.byte	0x34
 	.long	0x724
-	.byte	0x88
+	.byte	0x80
 	.uleb128 0x7
 	.ascii "EAX\0"
 	.byte	0x4
 	.byte	0x36
 	.long	0xe9
-	.byte	0x8c
+	.byte	0x84
 	.uleb128 0x7
 	.ascii "EBX\0"
 	.byte	0x4
 	.byte	0x37
 	.long	0xe9
-	.byte	0x90
+	.byte	0x88
 	.uleb128 0x7
 	.ascii "ECX\0"
 	.byte	0x4
 	.byte	0x38
 	.long	0xe9
-	.byte	0x94
+	.byte	0x8c
 	.uleb128 0x7
 	.ascii "EDX\0"
 	.byte	0x4
 	.byte	0x39
 	.long	0xe9
-	.byte	0x98
+	.byte	0x90
 	.uleb128 0x7
 	.ascii "pStackPointer\0"
 	.byte	0x4
 	.byte	0x49
 	.long	0x72a
-	.byte	0x9c
+	.byte	0x94
 	.uleb128 0x7
 	.ascii "pStackPointerByMalloc\0"
 	.byte	0x4
 	.byte	0x4a
 	.long	0x72a
-	.byte	0xa0
+	.byte	0x98
 	.uleb128 0x7
 	.ascii "pStackPointerStart\0"
 	.byte	0x4
 	.byte	0x4b
 	.long	0x72a
-	.byte	0xa4
+	.byte	0x9c
 	.uleb128 0x7
 	.ascii "StackSize\0"
 	.byte	0x4
 	.byte	0x4c
 	.long	0xe9
-	.byte	0xa8
+	.byte	0xa0
 	.uleb128 0x7
 	.ascii "pStackPointerEnd\0"
 	.byte	0x4
 	.byte	0x4d
 	.long	0x72a
-	.byte	0xac
+	.byte	0xa4
 	.uleb128 0x7
 	.ascii "privilige_mode\0"
 	.byte	0x4
 	.byte	0x4e
 	.long	0x367
-	.byte	0xb0
+	.byte	0xa8
 	.byte	0
 	.uleb128 0x3
 	.byte	0x4

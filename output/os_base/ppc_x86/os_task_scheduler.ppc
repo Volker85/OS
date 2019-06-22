@@ -366,6 +366,7 @@ typedef struct BigInt_s
 }BigInt;
 extern void AssignNull(BigInt* leftOperand);
 extern void Assign(BigInt* leftOperand, BigInt* rightOperand);
+extern void AssignUint32(BigInt* leftOperand, uint32 rightOperand);
 extern boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
@@ -516,7 +517,7 @@ struct task_s
    timebig_t WaitActUntil;
    timebig_t wait_time;
    timebig_t TimeToPrioInc;
-   timebig_t overwaittime_per_prio_inc_step;
+   uint32 overwaittime_per_prio_inc_step;
    timebig_t max_allowed_wait_time;
    timebig_t exe_time;
    timebig_t start_time;
@@ -544,7 +545,7 @@ typedef struct task_s task_t;
 typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
-extern timebig_t OS_GetCurrentTime(void);
+extern void OS_GetCurrentTime(timebig_t* time);
 
 extern void OS_TaskSaveTaskEnvironment(task_t* task);
 extern void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
@@ -705,11 +706,10 @@ extern volatile void* SAVED_STACK_POINTER;
 #define OS_SaveTaskPtr(task_ptr,Task_n_ptr) 
 
 
-typedef unsigned task_time_t;
 
 extern void OS_StartTask(task_t* task, scheduling_t* scheduling_task);
 extern void OS_ActivateTask(task_t* task);
-extern void OS_SleepTask(task_t* task, task_time_t millisec, scheduling_t* scheduling_task_ptr);
+extern void OS_SleepTask(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr);
 extern void OS_InitTask(
    task_t* task,
    func_p_t TaskFunction,
@@ -783,8 +783,10 @@ void OS_ActivateDispatcher(void)
 
 void OS_SleepTask(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr)
 {
+   timebig_t time;
+   OS_GetCurrentTime(&time);
 
-   IntAdd(&task->WaitActUntil, OS_GetCurrentTime(), &usec);
+   IntAdd(&task->WaitActUntil, &time, &usec);
    OS_PreemptTask(task,scheduling_task_ptr);
 }
 
@@ -934,7 +936,7 @@ void OS_CreateTask(task_t* task)
 }
 void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
 {
-# 209 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 211 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    if(task != 0 && scheduling_task != 0)
    {
       if(task->state_request != 0)
@@ -968,7 +970,7 @@ void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
 
 void OS_ActivateTask(task_t* task)
 {
-# 250 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 252 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    if(task != 0)
    {
       if(task->state_request(task, Task_ready)==1)
@@ -1020,6 +1022,8 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
 
 
 
+   timebig_t time;
+
    if( (task != 0) && (scheduling_task != 0)&& ((task->task_queued != 0)||(task->IdleTask != 0)))
    {
       if(task->state_request !=0)
@@ -1032,7 +1036,8 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
             task->current_prio = task->default_prio;
             OS_TASK_SAVE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
             OS_TASK_RESTORETASK_ENVIRONMENT(task);
-            Assign(&task->start_time, &OS_GetCurrentTime());
+            OS_GetCurrentTime(&time);
+            Assign(&task->start_time, &time);
             ;
 
 
@@ -1106,7 +1111,7 @@ void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task)
 }
 void OS_TaskDispatcher(void)
 {
-# 397 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 402 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    scheduling_t* scheduling_task_ptr;
    task_t* task = 0;
 
@@ -1175,7 +1180,7 @@ static void TASK_3(void* task_ptr)
 void OS_InitTasks(void)
 {
    task_t* task_ptr = 0;
-   LAST_CURRENT_TIME = OS_GetCurrentTime();
+   OS_GetCurrentTime(&LAST_CURRENT_TIME);
 
    ((TASK_GROUP_1) = (TASK_GROUP_1));
    ((TASK_GROUP_2) = (TASK_GROUP_2));
@@ -1264,13 +1269,18 @@ static scheduling_t* OS_TaskScheduler(void)
    task_t* task = 0;
    task_t* Winner_task = 0;
    scheduling_t* Winner_scheduling_queue_member = 0;
+   timebig_t delta_time;
 
-   IntSub(&delta_time, &OS_GetCurrentTime(), &LAST_CURRENT_TIME);
+   timebig_t time;
 
-   Assign(&LAST_CURRENT_TIME,&OS_GetCurrentTime());
+   OS_GetCurrentTime(&time);
+
+   IntSub(&delta_time, &time, &LAST_CURRENT_TIME);
+
+   Assign(&LAST_CURRENT_TIME,&time);
 
    ((Winner_task) = (Winner_task));
-# 573 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+# 583 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    for((element_nr) = (0); (element_nr) <= ((10)-1); (element_nr)++)
    {
       scheduling_queue_member = GetFromSchedulingQueue(element_nr);
@@ -1279,16 +1289,16 @@ static scheduling_t* OS_TaskScheduler(void)
 
       if((task != 0)&&(task->task_queued != 0))
       {
-         if(IsGreaterOrEqual(task->wait_time, task->TimeToPrioInc))
+         if(IsGreaterOrEqual(&task->wait_time, &task->TimeToPrioInc))
          {
             task->current_prio = task->current_prio + task->overwaittime_per_prio_inc_step;
          }
 
-         if(IsGreater(task->WaitActUntil, OS_GetCurrentTime()))
+         if(IsGreater(&task->WaitActUntil, &time))
          {
             task->current_prio = 0;
          }
-         if(IsGreater(task->wait_time,task->max_allowed_wait_time))
+         if(IsGreater(&task->wait_time,&task->max_allowed_wait_time))
          {
 
             OS_SetSwBug(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
@@ -1297,9 +1307,11 @@ static scheduling_t* OS_TaskScheduler(void)
          if(task->task_group!=0u)
          {
 
-            if(IsGreater(task->task_group->exe_time, task->task_group->fair_exe_time) != 0)
+            if(IsGreater(&task->task_group->exe_time, &task->task_group->fair_exe_time) != 0)
             {
-               if(IsGreaterOrEqual(task->exe_time, (1e0)))
+               timebig_t tTime;
+               AssignUint32(&tTime, (1e0));
+               if(IsGreaterOrEqual(&task->exe_time, &tTime))
                {
                   task->current_prio = 0;
                }
@@ -1326,7 +1338,7 @@ static scheduling_t* OS_TaskScheduler(void)
 
          if(task->IdleTask != 1)
          {
-            IntAdd(&task->wait_time, &delta_time);
+            IntAdd(&task->wait_time, &task->wait_time, &delta_time);
          }
 
          if(task->current_prio > Winner_prio)

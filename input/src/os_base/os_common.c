@@ -12,18 +12,17 @@ void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 #define SCB_DEMCR   ((volatile uint32*)0xE000EDFC)
 static timebig_t GLOBAL_TIMER1;
 
-timebig_t OS_GetCurrentTime(void)
+void OS_GetCurrentTime(timebig_t* time)
 {
    /* the only free running counter on STM32F4 is the DWT counter DWT_CYCCNT
    The counter will overflow every 25sec -> provide function OS_ClearCurrentTime to reset the value to 0, and !!! do not use the absolute value for calculations but use the difference between start and stop of timer
    */
+   
    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   return *DWT_CYCCNT;
+   AssignUint32(time, *DWT_CYCCNT);
    #else
-   static uint32 time = 0;
-   return time++;
+   Assign(time, &GLOBAL_TIMER1);
    #endif
-
 }
 
 void OS_ResetCurrentTime(void)
@@ -173,9 +172,13 @@ void AssignNull(BigInt* leftOperand)
 void AssignUint32(BigInt* leftOperand, uint32 rightOperand)
 {
    uint8 pos;
+   uint8 i;
    for (pos = 0; pos < BigIntSize; pos++)
    {
       leftOperand->Number[pos] = 0x00;
    }   
-   //TODO
+   for (pos = BigIntSize-1, i = 0; pos >= (BigIntSize-sizeof(uint32)); pos--, i++)
+   {
+      leftOperand->Number[pos] = (rightOperand>>i)&0xFFu;
+   }
 }
