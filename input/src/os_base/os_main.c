@@ -165,7 +165,8 @@ void OS_StateHandler(void)
       break;
    }
    }
-   OS_StackCheck();
+   /*check the complete stack apart from the first 64 bytes to detect critical stack usage */
+   OS_StackCheck(OS_STACK_SIZE-64u);
 #if(CFG_PROCESSOR != cMCU_X86)
    /* wait until timer task, else the program would return to the next instruction after the reset vector, which is not allowed */
    while(1)

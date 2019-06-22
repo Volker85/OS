@@ -117,8 +117,9 @@ OS_StateHandler:
 	bl	OS_Shutdown	@
 .LVL1:
 .L2:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:168:    OS_StackCheck();
-	.loc 1 168 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:169:    OS_StackCheck(OS_STACK_SIZE-64u);
+	.loc 1 169 0
+	movw	r0, #20416	@,
 	bl	OS_StackCheck	@
 .LVL2:
 .L13:
@@ -295,7 +296,7 @@ call_nr.4108:
 	.file 14 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x8a7
+	.4byte	0x8b3
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -1167,7 +1168,7 @@ call_nr.4108:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7fd
+	.4byte	0x809
 	.uleb128 0x16
 	.4byte	.LASF645
 	.byte	0x1
@@ -1183,7 +1184,7 @@ call_nr.4108:
 	.byte	0x3
 	.4byte	call_nr.4120
 	.uleb128 0x18
-	.4byte	0x7fd
+	.4byte	0x809
 	.4byte	.LBB4
 	.4byte	.LBE4-.LBB4
 	.byte	0x1
@@ -1194,21 +1195,21 @@ call_nr.4108:
 	.4byte	.LBE5-.LBB5
 	.uleb128 0x1a
 	.4byte	.LVL13
-	.4byte	0x81b
+	.4byte	0x827
 	.uleb128 0x1a
 	.4byte	.LVL14
-	.4byte	0x81b
+	.4byte	0x827
 	.uleb128 0x1a
 	.4byte	.LVL15
-	.4byte	0x81b
+	.4byte	0x827
 	.byte	0
 	.byte	0
 	.uleb128 0x1a
 	.4byte	.LVL0
-	.4byte	0x826
+	.4byte	0x832
 	.uleb128 0x1b
 	.4byte	.LVL1
-	.4byte	0x831
+	.4byte	0x83d
 	.4byte	0x78f
 	.uleb128 0x1c
 	.uleb128 0x1
@@ -1216,31 +1217,39 @@ call_nr.4108:
 	.uleb128 0x1
 	.byte	0x31
 	.byte	0
-	.uleb128 0x1a
+	.uleb128 0x1b
 	.4byte	.LVL2
-	.4byte	0x83c
+	.4byte	0x848
+	.4byte	0x7a4
+	.uleb128 0x1c
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x3
+	.byte	0xa
+	.2byte	0x4fc0
+	.byte	0
 	.uleb128 0x1a
 	.4byte	.LVL3
-	.4byte	0x847
+	.4byte	0x853
 	.uleb128 0x1a
 	.4byte	.LVL4
-	.4byte	0x852
+	.4byte	0x85e
 	.uleb128 0x1a
 	.4byte	.LVL5
-	.4byte	0x85d
+	.4byte	0x869
 	.uleb128 0x1a
 	.4byte	.LVL6
-	.4byte	0x868
+	.4byte	0x874
 	.uleb128 0x1a
 	.4byte	.LVL7
-	.4byte	0x81b
+	.4byte	0x827
 	.uleb128 0x1a
 	.4byte	.LVL8
-	.4byte	0x873
+	.4byte	0x87f
 	.uleb128 0x1b
 	.4byte	.LVL9
-	.4byte	0x87e
-	.4byte	0x7e1
+	.4byte	0x88a
+	.4byte	0x7ed
 	.uleb128 0x1c
 	.uleb128 0x1
 	.byte	0x51
@@ -1249,20 +1258,20 @@ call_nr.4108:
 	.byte	0
 	.uleb128 0x1a
 	.4byte	.LVL10
-	.4byte	0x889
+	.4byte	0x895
 	.uleb128 0x1a
 	.4byte	.LVL11
-	.4byte	0x894
+	.4byte	0x8a0
 	.uleb128 0x1a
 	.4byte	.LVL12
-	.4byte	0x89f
+	.4byte	0x8ab
 	.byte	0
 	.uleb128 0x1d
 	.4byte	.LASF664
 	.byte	0x1
 	.byte	0x38
 	.byte	0x1
-	.4byte	0x81b
+	.4byte	0x827
 	.uleb128 0x17
 	.4byte	.LASF646
 	.byte	0x1

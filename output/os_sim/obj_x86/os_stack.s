@@ -14,15 +14,15 @@ LFB0:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 13 0
+	.loc 1 17 0
 	movl	$0, _stack_pos.1319
 	jmp	L2
 L7:
-	.loc 1 15 0
+	.loc 1 19 0
 	movl	$0, _nr_of_cores.1320
 	jmp	L3
 L5:
-	.loc 1 17 0
+	.loc 1 21 0
 	movl	_nr_of_cores.1320, %edx
 	movl	_stack_pos.1319, %ecx
 	movl	%edx, %eax
@@ -34,48 +34,103 @@ L5:
 	movb	(%eax), %al
 	cmpb	$-86, %al
 	je	L4
-	.loc 1 19 0
+	.loc 1 23 0
 	movl	$1, _failed.1321
+	.loc 1 24 0
+	movl	_stack_pos.1319, %edx
+	movl	_critical_pos.1323, %eax
+	cmpl	%eax, %edx
+	jnb	L4
+	.loc 1 26 0
+	movl	_stack_pos.1319, %eax
+	movl	%eax, _critical_pos.1323
+	.loc 1 27 0
+	movl	_nr_of_cores.1320, %edx
+	movl	_stack_pos.1319, %ecx
+	movl	%edx, %eax
+	sall	$2, %eax
+	addl	%edx, %eax
+	sall	$12, %eax
+	addl	%ecx, %eax
+	addl	$_OS_STACK, %eax
+	movl	%eax, _critical_addr.1322
 L4:
-	.loc 1 15 0 discriminator 2
+	.loc 1 19 0 discriminator 2
 	movl	_nr_of_cores.1320, %eax
 	incl	%eax
 	movl	%eax, _nr_of_cores.1320
 L3:
-	.loc 1 15 0 is_stmt 0 discriminator 1
+	.loc 1 19 0 is_stmt 0 discriminator 1
 	movl	_nr_of_cores.1320, %eax
 	testl	%eax, %eax
-	jle	L5
-	.loc 1 22 0 is_stmt 1
+	je	L5
+	.loc 1 31 0 is_stmt 1
 	movl	_stack_pos.1319, %eax
 	movb	_OS_MAIN_STACK(%eax), %al
 	cmpb	$-86, %al
 	je	L6
-	.loc 1 24 0
+	.loc 1 33 0
 	movl	$1, _failed.1321
+	.loc 1 34 0
+	movl	_stack_pos.1319, %edx
+	movl	_critical_pos.1323, %eax
+	cmpl	%eax, %edx
+	jnb	L6
+	.loc 1 36 0
+	movl	_stack_pos.1319, %eax
+	movl	%eax, _critical_pos.1323
+	.loc 1 37 0
+	movl	_stack_pos.1319, %eax
+	addl	$_OS_MAIN_STACK, %eax
+	movl	%eax, _critical_addr.1322
 L6:
-	.loc 1 13 0 discriminator 2
+	.loc 1 17 0 discriminator 2
 	movl	_stack_pos.1319, %eax
 	incl	%eax
 	movl	%eax, _stack_pos.1319
 L2:
-	.loc 1 13 0 is_stmt 0 discriminator 1
+	.loc 1 17 0 is_stmt 0 discriminator 1
 	movl	_stack_pos.1319, %eax
-	cmpl	$63, %eax
-	jle	L7
-	.loc 1 27 0 is_stmt 1
+	cmpl	8(%ebp), %eax
+	jb	L7
+	.loc 1 41 0 is_stmt 1
+	movl	_critical_pos.1323, %edx
+	movl	%edx, %eax
+	sall	$2, %eax
+	addl	%edx, %eax
+	leal	0(,%eax,4), %edx
+	addl	%edx, %eax
+	sall	$2, %eax
+	negl	%eax
+	leal	2048000(%eax), %edx
+	movl	$-858993459, %eax
+	mull	%edx
+	movl	%edx, %eax
+	shrl	$14, %eax
+	movl	%eax, _critical_stack_usage_percent.1324
+	.loc 1 43 0
 	movl	_failed.1321, %eax
 	cmpl	$1, %eax
 	jne	L1
-	.loc 1 29 0
+	.loc 1 43 0 is_stmt 0 discriminator 1
+	movl	_critical_stack_usage_percent.1324, %eax
+	cmpl	$80, %eax
+	jbe	L1
+	.loc 1 45 0 is_stmt 1
 	movl	$17, 4(%esp)
 	movl	$9, (%esp)
 	call	_OS_SetSwBug
+	.loc 1 46 0
+	movl	_critical_pos.1323, %eax
+	movl	%eax, _critical_pos.1323
+	.loc 1 47 0
+	movl	_critical_addr.1322, %eax
+	movl	%eax, _critical_addr.1322
 L9:
-	.loc 1 33 0 discriminator 1
+	.loc 1 51 0 discriminator 1
 	jmp	L9
 L1:
-	.loc 1 35 0
+	.loc 1 53 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -86,24 +141,24 @@ LFE0:
 	.def	_OS_StackChkPatternInit;	.scl	2;	.type	32;	.endef
 _OS_StackChkPatternInit:
 LFB1:
-	.loc 1 37 0
+	.loc 1 55 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 39 0
-	movl	$0, _stack_pos.1332
+	.loc 1 58 0
+	movl	$0, _stack_pos.1335
 	jmp	L11
 L14:
-	.loc 1 41 0
-	movl	$0, _nr_of_cores.1333
+	.loc 1 60 0
+	movl	$0, _nr_of_cores.1336
 	jmp	L12
 L13:
-	.loc 1 43 0 discriminator 3
-	movl	_nr_of_cores.1333, %edx
-	movl	_stack_pos.1332, %ecx
+	.loc 1 62 0 discriminator 3
+	movl	_nr_of_cores.1336, %edx
+	movl	_stack_pos.1335, %ecx
 	movl	%edx, %eax
 	sall	$2, %eax
 	addl	%edx, %eax
@@ -111,28 +166,28 @@ L13:
 	addl	%ecx, %eax
 	addl	$_OS_STACK, %eax
 	movb	$-86, (%eax)
-	.loc 1 41 0 discriminator 3
-	movl	_nr_of_cores.1333, %eax
+	.loc 1 60 0 discriminator 3
+	movl	_nr_of_cores.1336, %eax
 	incl	%eax
-	movl	%eax, _nr_of_cores.1333
+	movl	%eax, _nr_of_cores.1336
 L12:
-	.loc 1 41 0 is_stmt 0 discriminator 1
-	movl	_nr_of_cores.1333, %eax
+	.loc 1 60 0 is_stmt 0 discriminator 1
+	movl	_nr_of_cores.1336, %eax
 	testl	%eax, %eax
-	jle	L13
-	.loc 1 45 0 is_stmt 1 discriminator 2
-	movl	_stack_pos.1332, %eax
+	je	L13
+	.loc 1 64 0 is_stmt 1 discriminator 2
+	movl	_stack_pos.1335, %eax
 	movb	$-86, _OS_MAIN_STACK(%eax)
-	.loc 1 39 0 discriminator 2
-	movl	_stack_pos.1332, %eax
+	.loc 1 58 0 discriminator 2
+	movl	_stack_pos.1335, %eax
 	incl	%eax
-	movl	%eax, _stack_pos.1332
+	movl	%eax, _stack_pos.1335
 L11:
-	.loc 1 39 0 is_stmt 0 discriminator 1
-	movl	_stack_pos.1332, %eax
-	cmpl	$63, %eax
-	jle	L14
-	.loc 1 47 0 is_stmt 1
+	.loc 1 58 0 is_stmt 0 discriminator 1
+	movl	_stack_pos.1335, %eax
+	cmpl	$20415, %eax
+	jbe	L14
+	.loc 1 66 0 is_stmt 1
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -142,15 +197,24 @@ LFE1:
 .lcomm _stack_pos.1319,4,4
 .lcomm _nr_of_cores.1320,4,4
 .lcomm _failed.1321,4,4
-.lcomm _stack_pos.1332,4,4
-.lcomm _nr_of_cores.1333,4,4
+	.data
+	.align 4
+_critical_pos.1323:
+	.long	-1
+	.align 4
+_critical_addr.1322:
+	.long	-1
+.lcomm _critical_stack_usage_percent.1324,4,4
+.lcomm _stack_pos.1335,4,4
+.lcomm _nr_of_cores.1336,4,4
+	.text
 Letext0:
-	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
-	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
-	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
+	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
+	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
+	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x502
+	.long	0x58e
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -164,7 +228,7 @@ Ldebug_info0:
 	.secrel32	Ldebug_macro0
 	.uleb128 0x2
 	.ascii "unsigned_char_t\0"
-	.byte	0x4
+	.byte	0x2
 	.byte	0x1d
 	.long	0xa3
 	.uleb128 0x3
@@ -191,12 +255,17 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x5
 	.ascii "long int\0"
+	.uleb128 0x2
+	.ascii "uint32\0"
+	.byte	0x2
+	.byte	0x29
+	.long	0xe6
 	.uleb128 0x4
 	.ascii "os_sw_bugs_e\0"
 	.byte	0x4
-	.byte	0x2
+	.byte	0x3
 	.byte	0x2b
-	.long	0x24a
+	.long	0x258
 	.uleb128 0x5
 	.ascii "os_bug_no_bug\0"
 	.sleb128 0
@@ -231,9 +300,9 @@ Ldebug_info0:
 	.uleb128 0x4
 	.ascii "os_sw_bugs_function_e\0"
 	.byte	0x4
-	.byte	0x2
+	.byte	0x3
 	.byte	0x3a
-	.long	0x3ef
+	.long	0x3fd
 	.uleb128 0x5
 	.ascii "Func_NoFunction\0"
 	.sleb128 0
@@ -305,91 +374,122 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x461
+	.long	0x4ee
 	.uleb128 0x7
+	.ascii "amount_bytes_to_check\0"
+	.byte	0x1
+	.byte	0x3
+	.long	0x107
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
+	.uleb128 0x8
 	.secrel32	LASF0
 	.byte	0x1
 	.byte	0xc
-	.long	0x461
+	.long	0x4ee
 	.uleb128 0x5
 	.byte	0x3
 	.long	_stack_pos.1319
-	.uleb128 0x7
+	.uleb128 0x8
 	.secrel32	LASF1
 	.byte	0x1
 	.byte	0xc
-	.long	0x461
+	.long	0x4ee
 	.uleb128 0x5
 	.byte	0x3
 	.long	_nr_of_cores.1320
-	.uleb128 0x8
+	.uleb128 0x9
 	.ascii "failed\0"
 	.byte	0x1
 	.byte	0xc
-	.long	0x461
+	.long	0x4ee
 	.uleb128 0x5
 	.byte	0x3
 	.long	_failed.1321
-	.byte	0
 	.uleb128 0x9
-	.long	0x466
-	.uleb128 0x3
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
+	.ascii "critical_addr\0"
+	.byte	0x1
+	.byte	0xd
+	.long	0x4f3
+	.uleb128 0x5
+	.byte	0x3
+	.long	_critical_addr.1322
+	.uleb128 0x9
+	.ascii "critical_pos\0"
+	.byte	0x1
+	.byte	0xe
+	.long	0x4ee
+	.uleb128 0x5
+	.byte	0x3
+	.long	_critical_pos.1323
+	.uleb128 0x9
+	.ascii "critical_stack_usage_percent\0"
+	.byte	0x1
+	.byte	0xf
+	.long	0x4ee
+	.uleb128 0x5
+	.byte	0x3
+	.long	_critical_stack_usage_percent.1324
+	.byte	0
 	.uleb128 0xa
+	.long	0x107
+	.uleb128 0xb
+	.byte	0x4
+	.long	0x4ee
+	.uleb128 0xc
 	.ascii "OS_StackChkPatternInit\0"
 	.byte	0x1
-	.byte	0x24
+	.byte	0x36
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x4b8
-	.uleb128 0x7
+	.long	0x544
+	.uleb128 0x8
 	.secrel32	LASF0
 	.byte	0x1
-	.byte	0x26
-	.long	0x461
+	.byte	0x38
+	.long	0x4ee
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_pos.1332
-	.uleb128 0x7
+	.long	_stack_pos.1335
+	.uleb128 0x8
 	.secrel32	LASF1
 	.byte	0x1
-	.byte	0x26
-	.long	0x461
+	.byte	0x38
+	.long	0x4ee
 	.uleb128 0x5
 	.byte	0x3
-	.long	_nr_of_cores.1333
-	.byte	0
-	.uleb128 0xb
-	.long	0x8c
-	.long	0x4cf
-	.uleb128 0xc
-	.long	0x3ef
+	.long	_nr_of_cores.1336
 	.byte	0
 	.uleb128 0xd
-	.long	0x3ef
+	.long	0x8c
+	.long	0x55b
+	.uleb128 0xe
+	.long	0x3fd
+	.byte	0
+	.uleb128 0xf
+	.long	0x3fd
 	.word	0x4fff
 	.byte	0
-	.uleb128 0xe
+	.uleb128 0x10
 	.ascii "OS_STACK\0"
-	.byte	0x3
+	.byte	0x4
 	.byte	0xe
-	.long	0x4b8
-	.uleb128 0xb
-	.long	0x8c
-	.long	0x4f0
+	.long	0x544
 	.uleb128 0xd
-	.long	0x3ef
+	.long	0x8c
+	.long	0x57c
+	.uleb128 0xf
+	.long	0x3fd
 	.word	0x4fff
 	.byte	0
-	.uleb128 0xe
+	.uleb128 0x10
 	.ascii "OS_MAIN_STACK\0"
-	.byte	0x3
+	.byte	0x4
 	.byte	0xf
-	.long	0x4df
+	.long	0x56b
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -486,6 +586,21 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x7
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x8
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -500,7 +615,7 @@ Ldebug_abbrev0:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x8
+	.uleb128 0x9
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -515,14 +630,23 @@ Ldebug_abbrev0:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x9
+	.uleb128 0xa
 	.uleb128 0x35
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0xa
+	.uleb128 0xb
+	.uleb128 0xf
+	.byte	0
+	.uleb128 0xb
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0xc
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -547,7 +671,7 @@ Ldebug_abbrev0:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0xb
+	.uleb128 0xd
 	.uleb128 0x1
 	.byte	0x1
 	.uleb128 0x49
@@ -556,7 +680,7 @@ Ldebug_abbrev0:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0xc
+	.uleb128 0xe
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -565,7 +689,7 @@ Ldebug_abbrev0:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0xd
+	.uleb128 0xf
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -574,7 +698,7 @@ Ldebug_abbrev0:
 	.uleb128 0x5
 	.byte	0
 	.byte	0
-	.uleb128 0xe
+	.uleb128 0x10
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -1314,7 +1438,7 @@ Ldebug_macro0:
 	.ascii "_os_firstinc_h_ \0"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x4
+	.uleb128 0x2
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_BASE_TYPES_H_ \0"
@@ -1354,7 +1478,7 @@ Ldebug_macro0:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x2
+	.uleb128 0x3
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_common_h_ \0"
@@ -1575,7 +1699,7 @@ Ldebug_macro0:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0x3
+	.uleb128 0x4
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_OS_RAM_H_ \0"

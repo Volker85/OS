@@ -802,7 +802,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 #define OS_STACK_SIZE 0x5000u
 extern void OS_StackChkPatternInit(void);
-extern void OS_StackCheck(void);
+extern void OS_StackCheck(uint32 amount_bytes_to_check);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 
@@ -879,7 +879,7 @@ extern volatile void* SAVED_STACK_POINTER;
 # 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.c" 2
 
-void OS_StackCheck(void)
+void OS_StackCheck(uint32 amount_bytes_to_check)
 {
 
 
@@ -888,24 +888,42 @@ void OS_StackCheck(void)
 
 
 
-   static volatile int stack_pos = 0, nr_of_cores = 0, failed = 0;
-   for(stack_pos = 0; stack_pos < 64; stack_pos++)
+   static volatile uint32 stack_pos = 0, nr_of_cores = 0, failed = 0;
+   static volatile uint32* critical_addr = (volatile uint32*)-1;
+   static volatile uint32 critical_pos = (volatile uint32) -1;
+   static volatile uint32 critical_stack_usage_percent = 0u;
+
+   for(stack_pos = 0; stack_pos < amount_bytes_to_check; stack_pos++)
    {
       for(nr_of_cores = 0; nr_of_cores < 1; nr_of_cores++)
       {
          if(OS_STACK[nr_of_cores][stack_pos] != 0xAA)
          {
             failed = 1;
+            if(stack_pos < critical_pos)
+            {
+               critical_pos = (volatile uint32 )stack_pos;
+               critical_addr = (volatile uint32*)&OS_STACK[nr_of_cores][stack_pos];
+            }
          }
       }
       if(OS_MAIN_STACK[stack_pos] != 0xAA)
       {
          failed = 1;
+         if(stack_pos < critical_pos)
+         {
+            critical_pos = (volatile uint32 )stack_pos;
+            critical_addr = (volatile uint32*)&OS_MAIN_STACK[stack_pos];
+         }
       }
    }
-   if(failed == 1)
+   critical_stack_usage_percent = (0x5000u - critical_pos) * 100u / 0x5000u;
+
+   if((failed == 1) && (critical_stack_usage_percent > 80u))
    {
       OS_SetSwBug(os_bug_critical_stack_usage,Func_StackCheck);
+      ((critical_pos) = (critical_pos));
+      ((critical_addr) = (critical_addr));
       while(1)
       {
 
@@ -914,8 +932,9 @@ void OS_StackCheck(void)
 }
 void OS_StackChkPatternInit(void)
 {
-   static volatile int stack_pos = 0,nr_of_cores = 0;
-   for(stack_pos = 0; stack_pos < 64; stack_pos++)
+   static volatile uint32 stack_pos = 0,nr_of_cores = 0;
+
+   for(stack_pos = 0; stack_pos < (0x5000u -64); stack_pos++)
    {
       for(nr_of_cores = 0; nr_of_cores < 1; nr_of_cores++)
       {

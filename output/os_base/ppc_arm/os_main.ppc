@@ -802,7 +802,7 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 #define OS_STACK_SIZE 0x5000u
 extern void OS_StackChkPatternInit(void);
-extern void OS_StackCheck(void);
+extern void OS_StackCheck(uint32 amount_bytes_to_check);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 
@@ -1095,7 +1095,8 @@ void OS_StateHandler(void)
       break;
    }
    }
-   OS_StackCheck();
+
+   OS_StackCheck(0x5000u -64u);
 
 
    while(1)

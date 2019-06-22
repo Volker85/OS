@@ -188,9 +188,10 @@ L22:
 	.loc 1 161 0
 	nop
 L16:
-	.loc 1 168 0
+	.loc 1 169 0
+	movl	$20416, (%esp)
 	call	_OS_StackCheck
-	.loc 1 175 0
+	.loc 1 176 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
