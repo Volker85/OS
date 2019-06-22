@@ -433,6 +433,7 @@ extern void LLF_WAIT_FOR_INTERRUPT(void);
 
 extern void LLF_MPU_DISABLE(void);
 extern void LLF_MPU_ENABLE(void);
+extern uint32 LLF_GET_MPU_PRESENT(void);
 extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 # 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_sim\\lld_timer.h" 1
@@ -545,6 +546,7 @@ typedef struct task_s task_t;
 typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
+extern void OS_ResetCurrentTime(void);
 extern void OS_GetCurrentTime(timebig_t* time);
 
 extern void OS_TaskSaveTaskEnvironment(task_t* task);
@@ -925,33 +927,7 @@ void AddToSchedulingQueue(task_t* task)
    }
    return;
 }
-void UpdateSchedulingQueue(void)
-{
-
-   unsigned_char_t dest = 0, src = 0;
-
-   while (dest < (10))
-   {
-      if(TASK_SCHEDULING_QUEUE[dest] == 0)
-      {
-
-
-         src = dest;
-         while((src < (10))&&(TASK_SCHEDULING_QUEUE[src]==0))
-         {
-            src++;
-         }
-         if((src < (10))&&(TASK_SCHEDULING_QUEUE[src]!=0))
-         {
-            TASK_SCHEDULING_QUEUE[dest] = TASK_SCHEDULING_QUEUE[src];
-            TASK_SCHEDULING_QUEUE[src] = 0;
-         }
-      }
-      dest++;
-   }
-}
-
-
+# 278 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.c"
 task_t* GetIdleTask(void)
 {
    return (&TASK_IDLE_QUEUE[0]);
@@ -984,7 +960,7 @@ void AddToIdleTaskQueue(task_t* task)
       (&TASK_IDLE_QUEUE[0])->EBX = task->EBX ;
       (&TASK_IDLE_QUEUE[0])->ECX = task->ECX ;
       (&TASK_IDLE_QUEUE[0])->EDX = task->EDX ;
-# 325 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.c"
+# 327 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.c"
       (&TASK_IDLE_QUEUE[0])->pStackPointer = task->pStackPointer ;
       (&TASK_IDLE_QUEUE[0])->pStackPointerByMalloc = task->pStackPointerByMalloc;
       (&TASK_IDLE_QUEUE[0])->pStackPointerStart = task->pStackPointerStart;

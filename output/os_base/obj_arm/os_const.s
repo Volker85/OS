@@ -543,12 +543,12 @@
 	.uleb128 0x12
 	.4byte	.LASF577
 	.byte	0x4
-	.byte	0x5c
+	.byte	0x5d
 	.4byte	0x401
 	.uleb128 0x2
 	.4byte	.LASF576
 	.byte	0x4
-	.byte	0x5e
+	.byte	0x5f
 	.4byte	0x1bc
 	.uleb128 0x9
 	.4byte	0x21
@@ -2682,15 +2682,15 @@
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.96.c6cf1cfbe059fc867289a313c6d016c8,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x60
+	.uleb128 0x61
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x62
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.f736ad9941e78e3f128684d765efeb27,comdat

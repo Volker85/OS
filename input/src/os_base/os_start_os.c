@@ -1,5 +1,6 @@
 #include "os_firstinc.h"
 #include "os_main.h"
+#include "os_start_os.h"
 
 #define SYS_HANDLER_CTRL_STATE_REG ((uint32*)0xE000ED24)
 #define SYS_HANDLER_CTRL_STATE_BIT_MASK_USGFAULTENA ((uint32)0x00040000)

@@ -5,14 +5,14 @@ Ltext0:
 _OS_DeinitHw:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.c"
-	.loc 1 7 0
+	.loc 1 9 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 10 0
+	.loc 1 12 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -22,25 +22,24 @@ LFE0:
 	.def	_OS_DeinitSw;	.scl	3;	.type	32;	.endef
 _OS_DeinitSw:
 LFB1:
-	.loc 1 12 0
+	.loc 1 14 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 15 0
+	.loc 1 17 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE1:
-	.globl	_OS_DeinitMc
-	.def	_OS_DeinitMc;	.scl	2;	.type	32;	.endef
+	.def	_OS_DeinitMc;	.scl	3;	.type	32;	.endef
 _OS_DeinitMc:
 LFB2:
-	.loc 1 17 0
+	.loc 1 19 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -48,11 +47,11 @@ LFB2:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 18 0
+	.loc 1 20 0
 	call	_LLF_MPU_DISABLE
-	.loc 1 19 0
-	call	_LLF_DISABLE_INTERRUPTS_ALL_CORES
 	.loc 1 21 0
+	call	_LLF_DISABLE_INTERRUPTS_ALL_CORES
+	.loc 1 23 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -63,7 +62,7 @@ LFE2:
 	.def	_OS_Shutdown;	.scl	2;	.type	32;	.endef
 _OS_Shutdown:
 LFB3:
-	.loc 1 24 0
+	.loc 1 26 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -71,45 +70,45 @@ LFB3:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 26 0
+	.loc 1 28 0
 	call	_LLF_DISABLE_INTERRUPTS_ALL_CORES
-	.loc 1 29 0
+	.loc 1 31 0
 	call	_LLF_MPU_DISABLE
-	.loc 1 32 0
+	.loc 1 34 0
 	cmpl	$1, 8(%ebp)
 	jne	L5
-	.loc 1 34 0
+	.loc 1 36 0
 	call	_LLF_MCU_SWITCH_OFF_POWER
 	jmp	L6
 L5:
-	.loc 1 36 0
+	.loc 1 38 0
 	cmpl	$0, 8(%ebp)
 	jne	L7
-	.loc 1 38 0
+	.loc 1 40 0
 	call	_LLF_MCU_RESET_POWER
 	jmp	L6
 L7:
-	.loc 1 40 0
+	.loc 1 42 0
 	cmpl	$2, 8(%ebp)
 	jne	L6
-	.loc 1 42 0
-	call	_OS_DeinitHw
-	.loc 1 43 0
-	call	_OS_DeinitSw
 	.loc 1 44 0
-	call	_OS_DeinitMc
+	call	_OS_DeinitHw
 	.loc 1 45 0
+	call	_OS_DeinitSw
+	.loc 1 46 0
+	call	_OS_DeinitMc
+	.loc 1 47 0
 	movl	$0, 8(%esp)
 	movl	$0, 4(%esp)
 	movl	$0, (%esp)
 	call	_OS_StartExtPrg
 L6:
-	.loc 1 51 0
+	.loc 1 53 0
 	movl	$16, 4(%esp)
 	movl	$8, (%esp)
 	call	_OS_SetSwBug
 L8:
-	.loc 1 55 0 discriminator 1
+	.loc 1 57 0 discriminator 1
 	jmp	L8
 	.cfi_endproc
 LFE3:
@@ -299,7 +298,7 @@ Ldebug_info0:
 	.uleb128 0x8
 	.ascii "OS_DeinitHw\0"
 	.byte	0x1
-	.byte	0x6
+	.byte	0x8
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
@@ -307,7 +306,7 @@ Ldebug_info0:
 	.uleb128 0x8
 	.ascii "OS_DeinitSw\0"
 	.byte	0x1
-	.byte	0xb
+	.byte	0xd
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
@@ -315,7 +314,7 @@ Ldebug_info0:
 	.uleb128 0x9
 	.ascii "OS_DeinitMc\0"
 	.byte	0x1
-	.byte	0x10
+	.byte	0x12
 	.long	LFB2
 	.long	LFE2-LFB2
 	.uleb128 0x1
@@ -323,7 +322,7 @@ Ldebug_info0:
 	.uleb128 0xa
 	.ascii "OS_Shutdown\0"
 	.byte	0x1
-	.byte	0x17
+	.byte	0x19
 	.long	LFB3
 	.long	LFE3-LFB3
 	.uleb128 0x1
@@ -331,7 +330,7 @@ Ldebug_info0:
 	.uleb128 0xb
 	.ascii "reset_typ\0"
 	.byte	0x1
-	.byte	0x17
+	.byte	0x19
 	.long	0x471
 	.uleb128 0x2
 	.byte	0x91
@@ -447,8 +446,6 @@ Ldebug_abbrev0:
 	.uleb128 0x9
 	.uleb128 0x2e
 	.byte	0
-	.uleb128 0x3f
-	.uleb128 0x19
 	.uleb128 0x3
 	.uleb128 0x8
 	.uleb128 0x3a
@@ -1472,10 +1469,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x60
+	.uleb128 0x61
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x62
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4

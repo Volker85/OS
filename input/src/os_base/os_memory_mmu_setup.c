@@ -1,5 +1,5 @@
 #include "os_firstinc.h"
-
+#include "os_memory_mmu_setup.h"
 /*
 RQ: the MMU might be configured for every task, because every task has own ACL / access rights!!
 for documentation of the MPU please read:

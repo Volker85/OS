@@ -433,6 +433,7 @@ extern void LLF_WAIT_FOR_INTERRUPT(void);
 
 extern void LLF_MPU_DISABLE(void);
 extern void LLF_MPU_ENABLE(void);
+extern uint32 LLF_GET_MPU_PRESENT(void);
 extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 # 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\..\\os_base\\..\\os_sim\\lld_global.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\..\\os_base\\..\\os_sim\\lld_timer.h" 1
@@ -545,6 +546,7 @@ typedef struct task_s task_t;
 typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
+extern void OS_ResetCurrentTime(void);
 extern void OS_GetCurrentTime(timebig_t* time);
 
 extern void OS_TaskSaveTaskEnvironment(task_t* task);

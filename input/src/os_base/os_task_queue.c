@@ -246,6 +246,7 @@ void AddToSchedulingQueue(task_t* task)
    }
    return;
 }
+#if(0)
 void UpdateSchedulingQueue(void)
 {
    /* eliminate emptry link list entries (should be colleted at the high numbers) */
@@ -271,6 +272,7 @@ void UpdateSchedulingQueue(void)
       dest++;
    }
 }
+#endif
 
 /* Idle task queue handling */
 task_t* GetIdleTask(void)

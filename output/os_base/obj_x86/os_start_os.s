@@ -6,7 +6,7 @@ Ltext0:
 _OS_StartOs:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_os.c"
-	.loc 1 11 0
+	.loc 1 12 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -14,31 +14,31 @@ LFB0:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 12 0
-	movl	$0, _VAR_HARDFAULT_STATUS_REG
 	.loc 1 13 0
-	movl	$0, _VAR_MEM_MANAG_FAULT_STATUS_REG
+	movl	$0, _VAR_HARDFAULT_STATUS_REG
 	.loc 1 14 0
-	movl	$0, _VAR_USAGE_FAULT_STATUS_REG
+	movl	$0, _VAR_MEM_MANAG_FAULT_STATUS_REG
 	.loc 1 15 0
-	movl	$0, _VAR_FAULT_STATUS_REG
+	movl	$0, _VAR_USAGE_FAULT_STATUS_REG
 	.loc 1 16 0
-	movl	$0, _VAR_MEM_FAULT_ADDR_REG
+	movl	$0, _VAR_FAULT_STATUS_REG
 	.loc 1 17 0
-	movl	$0, _VAR_BUS_FAULT_ADDR_REG
+	movl	$0, _VAR_MEM_FAULT_ADDR_REG
 	.loc 1 18 0
-	movl	$0, _VAR_AUX_FAULT_STATUS_REG
+	movl	$0, _VAR_BUS_FAULT_ADDR_REG
 	.loc 1 19 0
-	movl	$0, _VAR_BUS_FAULT_STATUS_REG
+	movl	$0, _VAR_AUX_FAULT_STATUS_REG
 	.loc 1 20 0
-	movl	$0, _LINK_REGISTER_HANDLER
+	movl	$0, _VAR_BUS_FAULT_STATUS_REG
 	.loc 1 21 0
+	movl	$0, _LINK_REGISTER_HANDLER
+	.loc 1 22 0
 	movl	$0, _BACKUP_SYSTICK_CURRENT_VAL_REG
-	.loc 1 27 0
-	movl	$0, _OS_STATE
 	.loc 1 28 0
-	call	_OS_StateHandler
+	movl	$0, _OS_STATE
 	.loc 1 29 0
+	call	_OS_StateHandler
+	.loc 1 30 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -102,7 +102,7 @@ Ldebug_info0:
 	.uleb128 0x4
 	.ascii "OS_StartOs\0"
 	.byte	0x1
-	.byte	0xa
+	.byte	0xb
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
@@ -1225,10 +1225,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x60
+	.uleb128 0x61
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x62
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4
@@ -1319,20 +1319,28 @@ Ldebug_macro0:
 	.uleb128 0x2
 	.uleb128 0x18
 	.byte	0x4
+	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_os.h"
+	.byte	0x3
+	.uleb128 0x3
+	.uleb128 0x19
 	.byte	0x1
-	.uleb128 0x4
-	.ascii "SYS_HANDLER_CTRL_STATE_REG ((uint32*)0xE000ED24)\0"
+	.uleb128 0x2
+	.ascii "_os_startos_h_ \0"
+	.byte	0x4
 	.byte	0x1
 	.uleb128 0x5
-	.ascii "SYS_HANDLER_CTRL_STATE_BIT_MASK_USGFAULTENA ((uint32)0x00040000)\0"
+	.ascii "SYS_HANDLER_CTRL_STATE_REG ((uint32*)0xE000ED24)\0"
 	.byte	0x1
 	.uleb128 0x6
-	.ascii "SYS_HANDLER_CTRL_STATE_BIT_MASK_BUSFAULTENA ((uint32)0x00020000)\0"
+	.ascii "SYS_HANDLER_CTRL_STATE_BIT_MASK_USGFAULTENA ((uint32)0x00040000)\0"
 	.byte	0x1
 	.uleb128 0x7
-	.ascii "SYS_HANDLER_CTRL_STATE_BIT_MASK_MEMFAULTENA ((uint32)0x00010000)\0"
+	.ascii "SYS_HANDLER_CTRL_STATE_BIT_MASK_BUSFAULTENA ((uint32)0x00020000)\0"
 	.byte	0x1
 	.uleb128 0x8
+	.ascii "SYS_HANDLER_CTRL_STATE_BIT_MASK_MEMFAULTENA ((uint32)0x00010000)\0"
+	.byte	0x1
+	.uleb128 0x9
 	.ascii "SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP (*SYS_HANDLER_CTRL_STATE_REG = *SYS_HANDLER_CTRL_STATE_REG | SYS_HANDLER_CTRL_STATE_BIT_MASK_USGFAULTENA | SYS_HANDLER_CTRL_STATE_BIT_MASK_BUSFAULTENA | SYS_HANDLER_CTRL_STATE_BIT_MASK_MEMFAULTENA)\0"
 	.byte	0x4
 	.byte	0

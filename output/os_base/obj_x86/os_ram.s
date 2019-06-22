@@ -521,7 +521,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.ascii "scheduler_time_t\0"
 	.byte	0x4
-	.byte	0x5e
+	.byte	0x5f
 	.long	0x443
 	.uleb128 0x8
 	.long	0x82
@@ -2239,10 +2239,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x60
+	.uleb128 0x61
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x62
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4

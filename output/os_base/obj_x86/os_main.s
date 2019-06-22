@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1394, %eax
+	movl	_call_nr.1398, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,16 +33,16 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1394, %eax
+	movl	_call_nr.1398, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1394
+	movl	%eax, _call_nr.1398
 	.loc 1 64 0
 	jmp	L1
 L5:
 	.loc 1 67 0
-	movl	_call_nr.1394, %eax
+	movl	_call_nr.1398, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1394
+	movl	%eax, _call_nr.1398
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -50,16 +50,16 @@ L6:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1394, %eax
+	movl	_call_nr.1398, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1394
+	movl	%eax, _call_nr.1398
 	.loc 1 72 0
 	jmp	L1
 L7:
 	.loc 1 75 0
-	movl	_call_nr.1394, %eax
+	movl	_call_nr.1398, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1394
+	movl	%eax, _call_nr.1398
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -67,7 +67,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1394
+	movl	$0, _call_nr.1398
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -130,7 +130,7 @@ L14:
 	jmp	L16
 L13:
 	.loc 1 120 0
-	movl	_call_nr.1406, %eax
+	movl	_call_nr.1410, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
@@ -141,9 +141,9 @@ L13:
 	call	_OS_DetermineNextTaskActivation
 L17:
 	.loc 1 124 0
-	movl	_call_nr.1406, %eax
+	movl	_call_nr.1410, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1406
+	movl	%eax, _call_nr.1410
 	.loc 1 126 0
 	call	_OS_TaskDispatcher
 	.loc 1 133 0
@@ -152,7 +152,7 @@ L15:
 	.loc 1 137 0
 	call	_LLF_INT_DISABLE
 	.loc 1 138 0
-	movl	_sys_req_reset_state.1405, %eax
+	movl	_sys_req_reset_state.1409, %eax
 	cmpl	$1, %eax
 	je	L19
 	cmpl	$1, %eax
@@ -197,9 +197,9 @@ L16:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1394,4,4
-.lcomm _call_nr.1406,4,4
-.lcomm _sys_req_reset_state.1405,4,4
+.lcomm _call_nr.1398,4,4
+.lcomm _call_nr.1410,4,4
+.lcomm _sys_req_reset_state.1409,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -666,7 +666,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1394
+	.long	_call_nr.1398
 	.byte	0
 	.uleb128 0x13
 	.ascii "OS_StateHandler\0"
@@ -684,7 +684,7 @@ Ldebug_info0:
 	.long	0x690
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1405
+	.long	_sys_req_reset_state.1409
 	.uleb128 0x12
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -692,7 +692,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1406
+	.long	_call_nr.1410
 	.byte	0
 	.uleb128 0x14
 	.ascii "OS_STATE\0"
@@ -1970,10 +1970,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x60
+	.uleb128 0x61
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x62
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4

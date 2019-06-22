@@ -76,42 +76,6 @@
 	.cfi_sections	.debug_frame
 	.align	1
 	.p2align 2,,3
-	.global	OS_DeinitMc
-	.syntax unified
-	.thumb
-	.thumb_func
-	.fpu softvfp
-	.type	OS_DeinitMc, %function
-OS_DeinitMc:
-.LFB2:
-	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.c"
-	.loc 1 17 0
-	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r3, lr}	@
-	.cfi_def_cfa_offset 8
-	.cfi_offset 3, -8
-	.cfi_offset 14, -4
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:18:    LLF_MPU_DISABLE();
-	.loc 1 18 0
-	bl	LLF_MPU_DISABLE	@
-.LVL0:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:21: }
-	.loc 1 21 0
-	pop	{r3, lr}	@
-	.cfi_restore 14
-	.cfi_restore 3
-	.cfi_def_cfa_offset 0
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:19:    LLF_DISABLE_INTERRUPTS_ALL_CORES();
-	.loc 1 19 0
-	b	LLF_DISABLE_INTERRUPTS_ALL_CORES	@
-.LVL1:
-	.cfi_endproc
-.LFE2:
-	.size	OS_DeinitMc, .-OS_DeinitMc
-	.align	1
-	.p2align 2,,3
 	.global	OS_Shutdown
 	.syntax unified
 	.thumb
@@ -120,78 +84,79 @@ OS_DeinitMc:
 	.type	OS_Shutdown, %function
 OS_Shutdown:
 .LFB3:
-	.loc 1 24 0
+	.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.c"
+	.loc 1 26 0
 	.cfi_startproc
 	@ Volatile: function does not return.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-.LVL2:
+.LVL0:
 	mov	r4, r0	@ reset_typ, reset_typ
 	push	{r3, lr}	@
 	.cfi_def_cfa_offset 8
 	.cfi_offset 3, -8
 	.cfi_offset 14, -4
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:26:    LLF_DISABLE_INTERRUPTS_ALL_CORES();
-	.loc 1 26 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:28:    LLF_DISABLE_INTERRUPTS_ALL_CORES();
+	.loc 1 28 0
 	bl	LLF_DISABLE_INTERRUPTS_ALL_CORES	@
-.LVL3:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:29:    LLF_MPU_DISABLE();
-	.loc 1 29 0
+.LVL1:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:31:    LLF_MPU_DISABLE();
+	.loc 1 31 0
 	bl	LLF_MPU_DISABLE	@
-.LVL4:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:32:    if(reset_typ == os_reset_powerdown)
-	.loc 1 32 0
+.LVL2:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:34:    if(reset_typ == os_reset_powerdown)
+	.loc 1 34 0
 	cmp	r4, #1	@ reset_typ,
-	beq	.L10	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:36:    else if(reset_typ == os_reset_hardreset) /* os_reset_hardreset */
-	.loc 1 36 0
-	cbz	r4, .L11	@ reset_typ,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:40:    else if (reset_typ == os_reset_exit)
-	.loc 1 40 0
+	beq	.L8	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:38:    else if(reset_typ == os_reset_hardreset) /* os_reset_hardreset */
+	.loc 1 38 0
+	cbz	r4, .L9	@ reset_typ,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:42:    else if (reset_typ == os_reset_exit)
+	.loc 1 42 0
 	cmp	r4, #2	@ reset_typ,
-	beq	.L12	@,
-.L6:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:51:    OS_SetSwBug(os_bug_reset_exit_or_shutdown_failed, Func_Shutdown);
-	.loc 1 51 0
+	beq	.L10	@,
+.L3:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:53:    OS_SetSwBug(os_bug_reset_exit_or_shutdown_failed, Func_Shutdown);
+	.loc 1 53 0
 	movs	r1, #16	@,
 	movs	r0, #8	@,
 	bl	OS_SetSwBug	@
-.LVL5:
-.L8:
-	b	.L8	@
-.L12:
+.LVL3:
+.L5:
+	b	.L5	@
+.L10:
 .LBB8:
 .LBB9:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:18:    LLF_MPU_DISABLE();
-	.loc 1 18 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:20:    LLF_MPU_DISABLE();
+	.loc 1 20 0
 	bl	LLF_MPU_DISABLE	@
-.LVL6:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:19:    LLF_DISABLE_INTERRUPTS_ALL_CORES();
-	.loc 1 19 0
+.LVL4:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:21:    LLF_DISABLE_INTERRUPTS_ALL_CORES();
+	.loc 1 21 0
 	bl	LLF_DISABLE_INTERRUPTS_ALL_CORES	@
-.LVL7:
+.LVL5:
 .LBE9:
 .LBE8:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:45:       OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);
-	.loc 1 45 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:47:       OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);
+	.loc 1 47 0
 	movs	r2, #0	@,
 	mov	r1, r2	@,
 	mov	r0, r2	@,
 	bl	OS_StartExtPrg	@
-.LVL8:
-	b	.L6	@
-.L11:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:38:       LLF_MCU_RESET_POWER();
-	.loc 1 38 0
+.LVL6:
+	b	.L3	@
+.L9:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:40:       LLF_MCU_RESET_POWER();
+	.loc 1 40 0
 	bl	LLF_MCU_RESET_POWER	@
-.LVL9:
-	b	.L6	@
-.L10:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:34:       LLF_MCU_SWITCH_OFF_POWER();
-	.loc 1 34 0
+.LVL7:
+	b	.L3	@
+.L8:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:36:       LLF_MCU_SWITCH_OFF_POWER();
+	.loc 1 36 0
 	bl	LLF_MCU_SWITCH_OFF_POWER	@
-.LVL10:
-	b	.L6	@
+.LVL8:
+	b	.L3	@
 	.cfi_endproc
 .LFE3:
 	.size	OS_Shutdown, .-OS_Shutdown
@@ -206,15 +171,15 @@ OS_Shutdown:
 	.file 9 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_ext_prg.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x895
+	.4byte	0x86f
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF657
-	.byte	0x1
 	.4byte	.LASF658
+	.byte	0x1
 	.4byte	.LASF659
+	.4byte	.LASF660
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -803,12 +768,12 @@ OS_Shutdown:
 	.uleb128 0x13
 	.4byte	.LASF599
 	.byte	0x5
-	.byte	0x5c
+	.byte	0x5d
 	.4byte	0x499
 	.uleb128 0x2
 	.4byte	.LASF598
 	.byte	0x5
-	.byte	0x5e
+	.byte	0x5f
 	.4byte	0x254
 	.uleb128 0xb
 	.4byte	0x29
@@ -1125,18 +1090,18 @@ OS_Shutdown:
 	.byte	0x8
 	.4byte	0x745
 	.uleb128 0x16
-	.4byte	.LASF660
+	.4byte	.LASF661
 	.byte	0x1
-	.byte	0x17
+	.byte	0x19
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0x818
 	.uleb128 0x17
-	.4byte	.LASF661
+	.4byte	.LASF662
 	.byte	0x1
-	.byte	0x17
+	.byte	0x19
 	.4byte	0x769
 	.4byte	.LLST0
 	.uleb128 0x18
@@ -1144,24 +1109,24 @@ OS_Shutdown:
 	.4byte	.LBB8
 	.4byte	.LBE8-.LBB8
 	.byte	0x1
-	.byte	0x2c
+	.byte	0x2e
 	.4byte	0x7be
 	.uleb128 0x19
-	.4byte	.LVL6
-	.4byte	0x856
+	.4byte	.LVL4
+	.4byte	0x830
 	.uleb128 0x19
-	.4byte	.LVL7
-	.4byte	0x861
+	.4byte	.LVL5
+	.4byte	0x83b
 	.byte	0
 	.uleb128 0x19
-	.4byte	.LVL3
-	.4byte	0x861
+	.4byte	.LVL1
+	.4byte	0x83b
 	.uleb128 0x19
-	.4byte	.LVL4
-	.4byte	0x856
+	.4byte	.LVL2
+	.4byte	0x830
 	.uleb128 0x1a
-	.4byte	.LVL5
-	.4byte	0x86c
+	.4byte	.LVL3
+	.4byte	0x846
 	.4byte	0x7e8
 	.uleb128 0x1b
 	.uleb128 0x1
@@ -1175,8 +1140,8 @@ OS_Shutdown:
 	.byte	0x40
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LVL8
-	.4byte	0x877
+	.4byte	.LVL6
+	.4byte	0x851
 	.4byte	0x805
 	.uleb128 0x1b
 	.uleb128 0x1
@@ -1195,69 +1160,55 @@ OS_Shutdown:
 	.byte	0x30
 	.byte	0
 	.uleb128 0x19
-	.4byte	.LVL9
-	.4byte	0x882
+	.4byte	.LVL7
+	.4byte	0x85c
 	.uleb128 0x19
-	.4byte	.LVL10
-	.4byte	0x88d
+	.4byte	.LVL8
+	.4byte	0x867
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF662
-	.byte	0x1
-	.byte	0x10
-	.byte	0x1
-	.uleb128 0x1d
 	.4byte	.LASF649
 	.byte	0x1
-	.byte	0xb
+	.byte	0x12
 	.byte	0x1
-	.uleb128 0x1d
+	.uleb128 0x1c
 	.4byte	.LASF650
 	.byte	0x1
-	.byte	0x6
+	.byte	0xd
 	.byte	0x1
-	.uleb128 0x1e
-	.4byte	0x818
-	.4byte	.LFB2
-	.4byte	.LFE2-.LFB2
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x856
-	.uleb128 0x19
-	.4byte	.LVL0
-	.4byte	0x856
-	.uleb128 0x1f
-	.4byte	.LVL1
-	.4byte	0x861
-	.byte	0
-	.uleb128 0x20
+	.uleb128 0x1c
 	.4byte	.LASF651
-	.4byte	.LASF651
+	.byte	0x1
+	.byte	0x8
+	.byte	0x1
+	.uleb128 0x1d
+	.4byte	.LASF652
+	.4byte	.LASF652
 	.byte	0x8
 	.byte	0xf
-	.uleb128 0x20
-	.4byte	.LASF652
-	.4byte	.LASF652
+	.uleb128 0x1d
+	.4byte	.LASF653
+	.4byte	.LASF653
 	.byte	0x8
 	.byte	0x9
-	.uleb128 0x20
-	.4byte	.LASF653
-	.4byte	.LASF653
+	.uleb128 0x1d
+	.4byte	.LASF654
+	.4byte	.LASF654
 	.byte	0x3
 	.byte	0x53
-	.uleb128 0x20
-	.4byte	.LASF654
-	.4byte	.LASF654
+	.uleb128 0x1d
+	.4byte	.LASF655
+	.4byte	.LASF655
 	.byte	0x9
 	.byte	0x5
-	.uleb128 0x20
-	.4byte	.LASF655
-	.4byte	.LASF655
+	.uleb128 0x1d
+	.4byte	.LASF656
+	.4byte	.LASF656
 	.byte	0x8
 	.byte	0xb
-	.uleb128 0x20
-	.4byte	.LASF656
-	.4byte	.LASF656
+	.uleb128 0x1d
+	.4byte	.LASF657
+	.4byte	.LASF657
 	.byte	0x8
 	.byte	0xe
 	.byte	0
@@ -1597,8 +1548,6 @@ OS_Shutdown:
 	.uleb128 0x1c
 	.uleb128 0x2e
 	.byte	0
-	.uleb128 0x3f
-	.uleb128 0x19
 	.uleb128 0x3
 	.uleb128 0xe
 	.uleb128 0x3a
@@ -1612,49 +1561,6 @@ OS_Shutdown:
 	.byte	0
 	.byte	0
 	.uleb128 0x1d
-	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x20
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x1e
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1f
-	.uleb128 0x4109
-	.byte	0
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x2115
-	.uleb128 0x19
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x20
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -1675,11 +1581,11 @@ OS_Shutdown:
 	.section	.debug_loc,"",%progbits
 .Ldebug_loc0:
 .LLST0:
-	.4byte	.LVL2-.Ltext0
-	.4byte	.LVL3-1-.Ltext0
+	.4byte	.LVL0-.Ltext0
+	.4byte	.LVL1-1-.Ltext0
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL3-1-.Ltext0
+	.4byte	.LVL1-1-.Ltext0
 	.4byte	.LFE3-.Ltext0
 	.2byte	0x4
 	.byte	0xf3
@@ -3305,15 +3211,15 @@ OS_Shutdown:
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.96.c6cf1cfbe059fc867289a313c6d016c8,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x60
+	.uleb128 0x61
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x62
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.f736ad9941e78e3f128684d765efeb27,comdat
@@ -3483,7 +3389,7 @@ OS_Shutdown:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF391:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
-.LASF662:
+.LASF649:
 	.ascii	"OS_DeinitMc\000"
 .LASF365:
 	.ascii	"__UTA_FBIT__ 64\000"
@@ -3546,7 +3452,7 @@ OS_Shutdown:
 	.ascii	"__LFRACT_IBIT__ 0\000"
 .LASF495:
 	.ascii	"_os_heap_h_ \000"
-.LASF655:
+.LASF656:
 	.ascii	"LLF_MCU_RESET_POWER\000"
 .LASF406:
 	.ascii	"__ARM_ARCH 7\000"
@@ -3554,7 +3460,7 @@ OS_Shutdown:
 	.ascii	"MCU_CLOCK_IN_HZ ((uint32)168000000u)\000"
 .LASF107:
 	.ascii	"__INT_LEAST16_MAX__ 0x7fff\000"
-.LASF657:
+.LASF658:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O3 -std=c90\000"
@@ -3585,7 +3491,7 @@ OS_Shutdown:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF318:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
-.LASF661:
+.LASF662:
 	.ascii	"reset_typ\000"
 .LASF572:
 	.ascii	"active\000"
@@ -3693,7 +3599,7 @@ OS_Shutdown:
 	.ascii	"__INT8_MAX__ 0x7f\000"
 .LASF280:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
-.LASF660:
+.LASF661:
 	.ascii	"OS_Shutdown\000"
 .LASF277:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
@@ -3799,7 +3705,7 @@ OS_Shutdown:
 	.ascii	"current_prio\000"
 .LASF524:
 	.ascii	"os_bug_exception_AbortData\000"
-.LASF656:
+.LASF657:
 	.ascii	"LLF_MCU_SWITCH_OFF_POWER\000"
 .LASF142:
 	.ascii	"__FLT_EVAL_METHOD_TS_18661_3__ 0\000"
@@ -4023,13 +3929,13 @@ OS_Shutdown:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF405:
 	.ascii	"__arm__ 1\000"
-.LASF653:
+.LASF654:
 	.ascii	"OS_SetSwBug\000"
 .LASF173:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
 .LASF580:
 	.ascii	"TimeToPrioInc\000"
-.LASF649:
+.LASF650:
 	.ascii	"OS_DeinitSw\000"
 .LASF359:
 	.ascii	"__UHA_FBIT__ 8\000"
@@ -4037,12 +3943,12 @@ OS_Shutdown:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF622:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF659:
+.LASF660:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF269:
 	.ascii	"__UFRACT_MAX__ 0XFFFFP-16UR\000"
-.LASF651:
+.LASF652:
 	.ascii	"LLF_MPU_DISABLE\000"
 .LASF395:
 	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
@@ -4058,7 +3964,7 @@ OS_Shutdown:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF128:
 	.ascii	"__INT_FAST32_MAX__ 0x7fffffff\000"
-.LASF654:
+.LASF655:
 	.ascii	"OS_StartExtPrg\000"
 .LASF157:
 	.ascii	"__FLT_HAS_INFINITY__ 1\000"
@@ -4138,7 +4044,7 @@ OS_Shutdown:
 	.ascii	"os_init 0\000"
 .LASF573:
 	.ascii	"task_queued\000"
-.LASF652:
+.LASF653:
 	.ascii	"LLF_DISABLE_INTERRUPTS_ALL_CORES\000"
 .LASF433:
 	.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
@@ -4426,9 +4332,9 @@ OS_Shutdown:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF514:
 	.ascii	"long unsigned int\000"
-.LASF650:
+.LASF651:
 	.ascii	"OS_DeinitHw\000"
-.LASF658:
+.LASF659:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_shutdown.c\000"
 .LASF378:

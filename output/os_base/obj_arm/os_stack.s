@@ -203,25 +203,25 @@ OS_StackChkPatternInit:
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0
-	.type	stack_pos.4027, %object
-	.size	stack_pos.4027, 4
-stack_pos.4027:
+	.type	stack_pos.4029, %object
+	.size	stack_pos.4029, 4
+stack_pos.4029:
 	.space	4
-	.type	nr_of_cores.4028, %object
-	.size	nr_of_cores.4028, 4
-nr_of_cores.4028:
+	.type	nr_of_cores.4030, %object
+	.size	nr_of_cores.4030, 4
+nr_of_cores.4030:
 	.space	4
-	.type	failed.4029, %object
-	.size	failed.4029, 4
-failed.4029:
+	.type	failed.4031, %object
+	.size	failed.4031, 4
+failed.4031:
 	.space	4
-	.type	stack_pos.4040, %object
-	.size	stack_pos.4040, 4
-stack_pos.4040:
+	.type	stack_pos.4042, %object
+	.size	stack_pos.4042, 4
+stack_pos.4042:
 	.space	4
-	.type	nr_of_cores.4041, %object
-	.size	nr_of_cores.4041, 4
-nr_of_cores.4041:
+	.type	nr_of_cores.4043, %object
+	.size	nr_of_cores.4043, 4
+nr_of_cores.4043:
 	.space	4
 	.text
 .Letext0:
@@ -820,12 +820,12 @@ nr_of_cores.4041:
 	.uleb128 0x12
 	.4byte	.LASF596
 	.byte	0x5
-	.byte	0x5c
+	.byte	0x5d
 	.4byte	0x487
 	.uleb128 0x2
 	.4byte	.LASF595
 	.byte	0x5
-	.byte	0x5e
+	.byte	0x5f
 	.4byte	0x242
 	.uleb128 0x9
 	.4byte	0x29
@@ -1134,7 +1134,7 @@ nr_of_cores.4041:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	stack_pos.4040
+	.4byte	stack_pos.4042
 	.uleb128 0x16
 	.4byte	.LASF642
 	.byte	0x1
@@ -1142,7 +1142,7 @@ nr_of_cores.4041:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	nr_of_cores.4041
+	.4byte	nr_of_cores.4043
 	.byte	0
 	.uleb128 0x17
 	.byte	0x4
@@ -1166,7 +1166,7 @@ nr_of_cores.4041:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	stack_pos.4027
+	.4byte	stack_pos.4029
 	.uleb128 0x16
 	.4byte	.LASF642
 	.byte	0x1
@@ -1174,7 +1174,7 @@ nr_of_cores.4041:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	nr_of_cores.4028
+	.4byte	nr_of_cores.4030
 	.uleb128 0x16
 	.4byte	.LASF645
 	.byte	0x1
@@ -1182,7 +1182,7 @@ nr_of_cores.4041:
 	.4byte	0x772
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	failed.4029
+	.4byte	failed.4031
 	.uleb128 0x18
 	.4byte	.LVL0
 	.4byte	0x7d4
@@ -3135,15 +3135,15 @@ nr_of_cores.4041:
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.96.c6cf1cfbe059fc867289a313c6d016c8,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x60
+	.uleb128 0x61
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x62
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.f736ad9941e78e3f128684d765efeb27,comdat

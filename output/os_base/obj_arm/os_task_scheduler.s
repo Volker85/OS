@@ -2606,12 +2606,12 @@ OS_InitTasks:
 	.uleb128 0x12
 	.4byte	.LASF617
 	.byte	0x5
-	.byte	0x5c
+	.byte	0x5d
 	.4byte	0x4b1
 	.uleb128 0x2
 	.4byte	.LASF616
 	.byte	0x5
-	.byte	0x5e
+	.byte	0x5f
 	.4byte	0x26c
 	.uleb128 0x9
 	.4byte	0x29
@@ -4672,7 +4672,7 @@ OS_InitTasks:
 	.4byte	.LASF689
 	.4byte	.LASF689
 	.byte	0x5
-	.byte	0x54
+	.byte	0x55
 	.uleb128 0x3e
 	.4byte	.LASF690
 	.4byte	.LASF690
@@ -4707,12 +4707,12 @@ OS_InitTasks:
 	.4byte	.LASF696
 	.4byte	.LASF696
 	.byte	0x5
-	.byte	0x56
+	.byte	0x57
 	.uleb128 0x3e
 	.4byte	.LASF697
 	.4byte	.LASF697
 	.byte	0x5
-	.byte	0x58
+	.byte	0x59
 	.uleb128 0x3e
 	.4byte	.LASF698
 	.4byte	.LASF698
@@ -4797,12 +4797,12 @@ OS_InitTasks:
 	.4byte	.LASF714
 	.4byte	.LASF714
 	.byte	0x5
-	.byte	0x59
+	.byte	0x5a
 	.uleb128 0x3e
 	.4byte	.LASF715
 	.4byte	.LASF715
 	.byte	0x5
-	.byte	0x57
+	.byte	0x58
 	.uleb128 0x3e
 	.4byte	.LASF716
 	.4byte	.LASF716
@@ -8277,15 +8277,15 @@ OS_InitTasks:
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.96.c6cf1cfbe059fc867289a313c6d016c8,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x60
+	.uleb128 0x61
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x62
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.f736ad9941e78e3f128684d765efeb27,comdat

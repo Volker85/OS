@@ -3,6 +3,8 @@
 #include "os_start_ext_prg.h"
 Local void OS_DeinitHw(void);
 Local void OS_DeinitSw(void);
+Local void OS_DeinitMc(void);
+
 void OS_DeinitHw(void)
 {
    /* no deinit needed because nothing was initialized */

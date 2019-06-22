@@ -357,9 +357,9 @@ OS_InitTaskQueue:
 	ldr	r8, .L18+8	@ tmp156,
 	ldrb	r6, [r8]	@ zero_extendqisi2	@ bTASK_QUEUE_INITIALIZED, bTASK_QUEUE_INITIALIZED
 	cbnz	r6, .L13	@ bTASK_QUEUE_INITIALIZED,
-	ldr	r4, .L18	@ ivtmp.32,
-	ldr	r5, .L18+4	@ ivtmp.33,
-	add	r7, r4, #40	@ _17, ivtmp.32,
+	ldr	r4, .L18	@ ivtmp.29,
+	ldr	r5, .L18+4	@ ivtmp.30,
+	add	r7, r4, #40	@ _17, ivtmp.29,
 .L15:
 .LBB2:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:94:          TASK_SCHEDULING_QUEUE[element_nr] = (scheduling_t)0;
@@ -367,13 +367,13 @@ OS_InitTaskQueue:
 	str	r6, [r4], #4	@ tmp152, MEM[base: _19, offset: 0B]
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:95:          OS_Task_InitTaskEnvironment(&TASK_RUN_QUEUE[element_nr]);
 	.loc 1 95 0
-	mov	r0, r5	@, ivtmp.33
+	mov	r0, r5	@, ivtmp.30
 	bl	OS_Task_InitTaskEnvironment	@
 .LVL10:
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:92:       while(element_nr < MAX_RUN_QUEUE_SIZE)
 	.loc 1 92 0
-	cmp	r4, r7	@ ivtmp.32, _17
-	add	r5, r5, #208	@ ivtmp.33, ivtmp.33,
+	cmp	r4, r7	@ ivtmp.29, _17
+	add	r5, r5, #208	@ ivtmp.30, ivtmp.30,
 	bne	.L15	@,
 @ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:98:       bTASK_QUEUE_INITIALIZED = True;
 	.loc 1 98 0
@@ -1022,143 +1022,6 @@ AddToSchedulingQueue:
 	.size	AddToSchedulingQueue, .-AddToSchedulingQueue
 	.align	1
 	.p2align 2,,3
-	.global	UpdateSchedulingQueue
-	.syntax unified
-	.thumb
-	.thumb_func
-	.fpu softvfp
-	.type	UpdateSchedulingQueue, %function
-UpdateSchedulingQueue:
-.LFB8:
-	.loc 1 250 0
-	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 0, uses_anonymous_args = 0
-	@ link register save eliminated.
-.LVL74:
-	push	{r4, r5, r6, r7}	@
-	.cfi_def_cfa_offset 16
-	.cfi_offset 4, -16
-	.cfi_offset 5, -12
-	.cfi_offset 6, -8
-	.cfi_offset 7, -4
-	ldr	r6, .L98	@ tmp288,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:250: {
-	.loc 1 250 0
-	movs	r2, #1	@ ivtmp.50,
-	mov	r3, r6	@ ivtmp.52, tmp288
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:268:             TASK_SCHEDULING_QUEUE[src]  = 0;
-	.loc 1 268 0
-	movs	r7, #0	@ tmp290,
-	b	.L60	@
-.LVL75:
-.L61:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:254:    while (dest < MAX_RUN_PQUEUE_SIZE)
-	.loc 1 254 0
-	cmp	r2, #10	@ ivtmp.50,
-	beq	.L59	@,
-.LVL76:
-.L97:
-	adds	r1, r2, #1	@ ivtmp.50, ivtmp.50,
-.L65:
-	mov	r2, r1	@ ivtmp.50, ivtmp.50
-	adds	r3, r3, #4	@ ivtmp.52, ivtmp.52,
-.L60:
-.LVL77:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:256:       if(TASK_SCHEDULING_QUEUE[dest] == 0)
-	.loc 1 256 0
-	ldr	r1, [r3]	@ MEM[base: _45, offset: 0B], MEM[base: _45, offset: 0B]
-	cmp	r1, #0	@ MEM[base: _45, offset: 0B]
-	bne	.L61	@
-.LVL78:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:261:          while((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]==0))
-	.loc 1 261 0
-	cmp	r2, #10	@ ivtmp.50,
-	uxtb	r4, r2	@ _18, ivtmp.50
-	beq	.L59	@,
-	ldr	r0, [r3, #4]	@ _23, MEM[base: _45, offset: 4B]
-	mov	r5, r2	@ _22, ivtmp.50
-	adds	r1, r2, #1	@ ivtmp.50, _22,
-	cbnz	r0, .L63	@ _23,
-.LVL79:
-	cmp	r4, #9	@ _18,
-	beq	.L97	@,
-	ldr	r0, [r3, #8]	@ _23, MEM[base: _45, offset: 8B]
-	adds	r1, r2, #1	@ ivtmp.50, ivtmp.50,
-	mov	r5, r1	@ _22, ivtmp.50
-	cbnz	r0, .L63	@ _23,
-.LVL80:
-	cmp	r4, #8	@ _18,
-	beq	.L65	@,
-	ldr	r0, [r3, #12]	@ _23, MEM[base: _45, offset: 12B]
-	adds	r5, r2, #2	@ _22, ivtmp.50,
-	cbnz	r0, .L63	@ _23,
-.LVL81:
-	cmp	r4, #7	@ _18,
-	beq	.L65	@,
-	ldr	r0, [r3, #16]	@ _23, MEM[base: _45, offset: 16B]
-	adds	r5, r2, #3	@ _22, ivtmp.50,
-	cbnz	r0, .L63	@ _23,
-.LVL82:
-	cmp	r4, #6	@ _18,
-	beq	.L65	@,
-	ldr	r0, [r3, #20]	@ _23, MEM[base: _45, offset: 20B]
-	adds	r5, r2, #4	@ _22, ivtmp.50,
-	cbnz	r0, .L63	@ _23,
-.LVL83:
-	cmp	r4, #5	@ _18,
-	beq	.L65	@,
-	ldr	r0, [r3, #24]	@ _23, MEM[base: _45, offset: 24B]
-	adds	r5, r2, #5	@ _22, ivtmp.50,
-	cbnz	r0, .L63	@ _23,
-.LVL84:
-	cmp	r4, #4	@ _18,
-	beq	.L65	@,
-	ldr	r0, [r3, #28]	@ _23, MEM[base: _45, offset: 28B]
-	adds	r5, r2, #6	@ _22, ivtmp.50,
-	cbnz	r0, .L63	@ _23,
-.LVL85:
-	cmp	r4, #3	@ _18,
-	beq	.L65	@,
-	ldr	r0, [r3, #32]	@ _23, MEM[base: _45, offset: 32B]
-	adds	r5, r2, #7	@ _22, ivtmp.50,
-	cbnz	r0, .L63	@ _23,
-.LVL86:
-	cmp	r4, #1	@ _18,
-	bne	.L65	@,
-	ldr	r0, [r6, #36]	@ _23, TASK_SCHEDULING_QUEUE
-	movs	r5, #9	@ _22,
-	cmp	r0, #0	@ _23
-	beq	.L65	@
-.LVL87:
-.L63:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:267:             TASK_SCHEDULING_QUEUE[dest] = TASK_SCHEDULING_QUEUE[src];
-	.loc 1 267 0
-	str	r0, [r3]	@ _23, MEM[base: _45, offset: 0B]
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:268:             TASK_SCHEDULING_QUEUE[src]  = 0;
-	.loc 1 268 0
-	str	r7, [r6, r5, lsl #2]	@ tmp290, TASK_SCHEDULING_QUEUE
-	b	.L65	@
-.LVL88:
-.L59:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:273: }
-	.loc 1 273 0
-	pop	{r4, r5, r6, r7}	@
-	.cfi_restore 7
-	.cfi_restore 6
-	.cfi_restore 5
-	.cfi_restore 4
-	.cfi_def_cfa_offset 0
-	bx	lr	@
-.L99:
-	.align	2
-.L98:
-	.word	TASK_SCHEDULING_QUEUE
-	.cfi_endproc
-.LFE8:
-	.size	UpdateSchedulingQueue, .-UpdateSchedulingQueue
-	.align	1
-	.p2align 2,,3
 	.global	GetIdleTask
 	.syntax unified
 	.thumb
@@ -1166,22 +1029,22 @@ UpdateSchedulingQueue:
 	.fpu softvfp
 	.type	GetIdleTask, %function
 GetIdleTask:
-.LFB9:
-	.loc 1 277 0
+.LFB8:
+	.loc 1 279 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:279: }
-	.loc 1 279 0
-	ldr	r0, .L101	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:281: }
+	.loc 1 281 0
+	ldr	r0, .L60	@,
 	bx	lr	@
-.L102:
+.L61:
 	.align	2
-.L101:
+.L60:
 	.word	TASK_IDLE_QUEUE
 	.cfi_endproc
-.LFE9:
+.LFE8:
 	.size	GetIdleTask, .-GetIdleTask
 	.align	1
 	.p2align 2,,3
@@ -1192,234 +1055,234 @@ GetIdleTask:
 	.fpu softvfp
 	.type	AddToIdleTaskQueue, %function
 AddToIdleTaskQueue:
-.LFB10:
-	.loc 1 281 0
+.LFB9:
+	.loc 1 283 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-.LVL89:
+.LVL74:
 	push	{r4, r5, r6, lr}	@
 	.cfi_def_cfa_offset 16
 	.cfi_offset 4, -16
 	.cfi_offset 5, -12
 	.cfi_offset 6, -8
 	.cfi_offset 14, -4
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:283:    if((&TASK_IDLE_QUEUE[0])->IdleTask == False)
-	.loc 1 283 0
-	ldr	r4, .L107	@ tmp148,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:285:    if((&TASK_IDLE_QUEUE[0])->IdleTask == False)
+	.loc 1 285 0
+	ldr	r4, .L66	@ tmp148,
 	ldrb	r3, [r4]	@ zero_extendqisi2	@ TASK_IDLE_QUEUE, TASK_IDLE_QUEUE
 	lsls	r2, r3, #29	@, TASK_IDLE_QUEUE,
-	bpl	.L106	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:331: }
-	.loc 1 331 0
+	bpl	.L65	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:333: }
+	.loc 1 333 0
 	pop	{r4, r5, r6, pc}	@
-.L106:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:285:       (&TASK_IDLE_QUEUE[0])->active                                =   task->active           ;
-	.loc 1 285 0
+.L65:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:287:       (&TASK_IDLE_QUEUE[0])->active                                =   task->active           ;
+	.loc 1 287 0
 	ldrb	r2, [r0]	@ zero_extendqisi2	@ *task_40(D), *task_40(D)
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:290:       (&TASK_IDLE_QUEUE[0])->NrOfInsActivated                      =   task->NrOfInsActivated ;
-	.loc 1 290 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:292:       (&TASK_IDLE_QUEUE[0])->NrOfInsActivated                      =   task->NrOfInsActivated ;
+	.loc 1 292 0
 	ldrb	r6, [r0, #5]	@ zero_extendqisi2	@ _8, task_40(D)->NrOfInsActivated
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:285:       (&TASK_IDLE_QUEUE[0])->active                                =   task->active           ;
-	.loc 1 285 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:287:       (&TASK_IDLE_QUEUE[0])->active                                =   task->active           ;
+	.loc 1 287 0
 	bfi	r3, r2, #0, #1	@ TASK_IDLE_QUEUE[0].active, *task_40(D),,
 	strb	r3, [r4]	@ TASK_IDLE_QUEUE[0].active, TASK_IDLE_QUEUE[0].active
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:286:       (&TASK_IDLE_QUEUE[0])->task_queued                           =   task->task_queued      ;
-	.loc 1 286 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:288:       (&TASK_IDLE_QUEUE[0])->task_queued                           =   task->task_queued      ;
+	.loc 1 288 0
 	ldrb	r3, [r0]	@ zero_extendqisi2	@ *task_40(D), *task_40(D)
 	ldrb	r2, [r4]	@ zero_extendqisi2	@, TASK_IDLE_QUEUE[0].task_queued
 	ubfx	r3, r3, #1, #1	@ _4, *task_40(D),,
 	bfi	r2, r3, #1, #1	@ TASK_IDLE_QUEUE[0].task_queued, _4,,
 	strb	r2, [r4]	@ TASK_IDLE_QUEUE[0].task_queued, TASK_IDLE_QUEUE[0].task_queued
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:287:       (&TASK_IDLE_QUEUE[0])->IdleTask                              =   task->IdleTask         ;
-	.loc 1 287 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:289:       (&TASK_IDLE_QUEUE[0])->IdleTask                              =   task->IdleTask         ;
+	.loc 1 289 0
 	ldrb	r3, [r0]	@ zero_extendqisi2	@ *task_40(D), *task_40(D)
 	uxtb	r2, r2	@ tmp173, TASK_IDLE_QUEUE[0].task_queued
 	ubfx	r3, r3, #2, #1	@ _5, *task_40(D),,
 	bfi	r2, r3, #2, #1	@ TASK_IDLE_QUEUE[0].IdleTask, _5,,
 	strb	r2, [r4]	@ TASK_IDLE_QUEUE[0].IdleTask, TASK_IDLE_QUEUE[0].IdleTask
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:288:       (&TASK_IDLE_QUEUE[0])->FREE                                  =   task->FREE             ;
-	.loc 1 288 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:290:       (&TASK_IDLE_QUEUE[0])->FREE                                  =   task->FREE             ;
+	.loc 1 290 0
 	ldr	r3, [r0]	@ *task_40(D), *task_40(D)
 	ldr	r2, [r4]	@ TASK_IDLE_QUEUE[0].FREE, TASK_IDLE_QUEUE[0].FREE
 	ubfx	r3, r3, #3, #29	@ _6, *task_40(D),,
 	bfi	r2, r3, #3, #29	@ TASK_IDLE_QUEUE[0].FREE, _6,,
 	str	r2, [r4]	@ TASK_IDLE_QUEUE[0].FREE, TASK_IDLE_QUEUE[0].FREE
 	mov	r5, r0	@ task, task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:289:       (&TASK_IDLE_QUEUE[0])->NrOfInsAllowed                        =   task->NrOfInsAllowed   ;
-	.loc 1 289 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:291:       (&TASK_IDLE_QUEUE[0])->NrOfInsAllowed                        =   task->NrOfInsAllowed   ;
+	.loc 1 291 0
 	ldrb	r3, [r0, #4]	@ zero_extendqisi2	@ _7, task_40(D)->NrOfInsAllowed
 	strb	r3, [r4, #4]	@ _7, TASK_IDLE_QUEUE[0].NrOfInsAllowed
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:291:       Assign(&(&TASK_IDLE_QUEUE[0])->WaitActUntil                   , &task->WaitActUntil);
-	.loc 1 291 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:293:       Assign(&(&TASK_IDLE_QUEUE[0])->WaitActUntil                   , &task->WaitActUntil);
+	.loc 1 293 0
 	adds	r1, r0, #6	@, task,
 	adds	r0, r4, #6	@, tmp148,
-.LVL90:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:290:       (&TASK_IDLE_QUEUE[0])->NrOfInsActivated                      =   task->NrOfInsActivated ;
-	.loc 1 290 0
-	strb	r6, [r4, #5]	@ _8, TASK_IDLE_QUEUE[0].NrOfInsActivated
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:291:       Assign(&(&TASK_IDLE_QUEUE[0])->WaitActUntil                   , &task->WaitActUntil);
-	.loc 1 291 0
-	bl	Assign	@
-.LVL91:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:292:       Assign(&(&TASK_IDLE_QUEUE[0])->wait_time                      , &task->wait_time);
+.LVL75:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:292:       (&TASK_IDLE_QUEUE[0])->NrOfInsActivated                      =   task->NrOfInsActivated ;
 	.loc 1 292 0
+	strb	r6, [r4, #5]	@ _8, TASK_IDLE_QUEUE[0].NrOfInsActivated
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:293:       Assign(&(&TASK_IDLE_QUEUE[0])->WaitActUntil                   , &task->WaitActUntil);
+	.loc 1 293 0
+	bl	Assign	@
+.LVL76:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:294:       Assign(&(&TASK_IDLE_QUEUE[0])->wait_time                      , &task->wait_time);
+	.loc 1 294 0
 	add	r1, r5, #22	@, task,
 	add	r0, r4, #22	@, tmp148,
 	bl	Assign	@
-.LVL92:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:293:       Assign(&(&TASK_IDLE_QUEUE[0])->TimeToPrioInc                  , &task->TimeToPrioInc);
-	.loc 1 293 0
+.LVL77:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:295:       Assign(&(&TASK_IDLE_QUEUE[0])->TimeToPrioInc                  , &task->TimeToPrioInc);
+	.loc 1 295 0
 	add	r1, r5, #38	@, task,
 	add	r0, r4, #38	@, tmp148,
 	bl	Assign	@
-.LVL93:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:294:       (&TASK_IDLE_QUEUE[0])->overwaittime_per_prio_inc_step       =    task->overwaittime_per_prio_inc_step;
-	.loc 1 294 0
+.LVL78:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:296:       (&TASK_IDLE_QUEUE[0])->overwaittime_per_prio_inc_step       =    task->overwaittime_per_prio_inc_step;
+	.loc 1 296 0
 	ldr	r3, [r5, #56]	@ _12, task_40(D)->overwaittime_per_prio_inc_step
 	str	r3, [r4, #56]	@ _12, TASK_IDLE_QUEUE[0].overwaittime_per_prio_inc_step
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:295:       Assign(&(&TASK_IDLE_QUEUE[0])->max_allowed_wait_time          , &task->max_allowed_wait_time);
-	.loc 1 295 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:297:       Assign(&(&TASK_IDLE_QUEUE[0])->max_allowed_wait_time          , &task->max_allowed_wait_time);
+	.loc 1 297 0
 	add	r1, r5, #60	@, task,
 	add	r0, r4, #60	@, tmp148,
 	bl	Assign	@
-.LVL94:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:296:       Assign(&(&TASK_IDLE_QUEUE[0])->exe_time                       , &task->exe_time);
-	.loc 1 296 0
+.LVL79:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:298:       Assign(&(&TASK_IDLE_QUEUE[0])->exe_time                       , &task->exe_time);
+	.loc 1 298 0
 	add	r1, r5, #76	@, task,
 	add	r0, r4, #76	@, tmp148,
 	bl	Assign	@
-.LVL95:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:300:       (&TASK_IDLE_QUEUE[0])->state_request                         =   task->state_request    ;
-	.loc 1 300 0
+.LVL80:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:302:       (&TASK_IDLE_QUEUE[0])->state_request                         =   task->state_request    ;
+	.loc 1 302 0
 	ldrd	r1, r2, [r5, #116]	@ _17, _18, task,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:297:       (&TASK_IDLE_QUEUE[0])->current_prio                          =   task->current_prio     ;
-	.loc 1 297 0
-	ldrb	r3, [r5, #108]	@ zero_extendqisi2	@ _15, task_40(D)->current_prio
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:298:       (&TASK_IDLE_QUEUE[0])->default_prio                          =   task->default_prio     ;
-	.loc 1 298 0
-	ldrb	r0, [r5, #109]	@ zero_extendqisi2	@ _16, task_40(D)->default_prio
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:297:       (&TASK_IDLE_QUEUE[0])->current_prio                          =   task->current_prio     ;
-	.loc 1 297 0
-	strb	r3, [r4, #108]	@ _15, TASK_IDLE_QUEUE[0].current_prio
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:301:       (&TASK_IDLE_QUEUE[0])->task_state                            =   Task_ready             ;
-	.loc 1 301 0
-	movs	r3, #2	@ tmp200,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:298:       (&TASK_IDLE_QUEUE[0])->default_prio                          =   task->default_prio     ;
-	.loc 1 298 0
-	strb	r0, [r4, #109]	@ _16, TASK_IDLE_QUEUE[0].default_prio
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:299:       (&TASK_IDLE_QUEUE[0])->fp                                    =   task->fp               ;
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:299:       (&TASK_IDLE_QUEUE[0])->current_prio                          =   task->current_prio     ;
 	.loc 1 299 0
-	str	r1, [r4, #116]	@ _17, TASK_IDLE_QUEUE[0].fp
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:302:       (&TASK_IDLE_QUEUE[0])->task_group                            =   task->task_group       ;
-	.loc 1 302 0
-	ldr	r0, [r5, #128]	@ _19, task_40(D)->task_group
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:309:       (&TASK_IDLE_QUEUE[0])->r0                                   =   task->r0              ;
-	.loc 1 309 0
-	ldr	r1, [r5, #132]	@ _20, task_40(D)->r0
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:300:       (&TASK_IDLE_QUEUE[0])->state_request                         =   task->state_request    ;
+	ldrb	r3, [r5, #108]	@ zero_extendqisi2	@ _15, task_40(D)->current_prio
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:300:       (&TASK_IDLE_QUEUE[0])->default_prio                          =   task->default_prio     ;
 	.loc 1 300 0
-	str	r2, [r4, #120]	@ _18, TASK_IDLE_QUEUE[0].state_request
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:301:       (&TASK_IDLE_QUEUE[0])->task_state                            =   Task_ready             ;
+	ldrb	r0, [r5, #109]	@ zero_extendqisi2	@ _16, task_40(D)->default_prio
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:299:       (&TASK_IDLE_QUEUE[0])->current_prio                          =   task->current_prio     ;
+	.loc 1 299 0
+	strb	r3, [r4, #108]	@ _15, TASK_IDLE_QUEUE[0].current_prio
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:303:       (&TASK_IDLE_QUEUE[0])->task_state                            =   Task_ready             ;
+	.loc 1 303 0
+	movs	r3, #2	@ tmp200,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:300:       (&TASK_IDLE_QUEUE[0])->default_prio                          =   task->default_prio     ;
+	.loc 1 300 0
+	strb	r0, [r4, #109]	@ _16, TASK_IDLE_QUEUE[0].default_prio
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:301:       (&TASK_IDLE_QUEUE[0])->fp                                    =   task->fp               ;
 	.loc 1 301 0
-	strb	r3, [r4, #124]	@ tmp200, TASK_IDLE_QUEUE[0].task_state
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:310:       (&TASK_IDLE_QUEUE[0])->r1                                   =   task->r1              ;
-	.loc 1 310 0
-	ldr	r2, [r5, #136]	@ _21, task_40(D)->r1
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:311:       (&TASK_IDLE_QUEUE[0])->r2                                   =   task->r2              ;
+	str	r1, [r4, #116]	@ _17, TASK_IDLE_QUEUE[0].fp
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:304:       (&TASK_IDLE_QUEUE[0])->task_group                            =   task->task_group       ;
+	.loc 1 304 0
+	ldr	r0, [r5, #128]	@ _19, task_40(D)->task_group
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:311:       (&TASK_IDLE_QUEUE[0])->r0                                   =   task->r0              ;
 	.loc 1 311 0
-	ldr	r3, [r5, #140]	@ _22, task_40(D)->r2
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:302:       (&TASK_IDLE_QUEUE[0])->task_group                            =   task->task_group       ;
+	ldr	r1, [r5, #132]	@ _20, task_40(D)->r0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:302:       (&TASK_IDLE_QUEUE[0])->state_request                         =   task->state_request    ;
 	.loc 1 302 0
+	str	r2, [r4, #120]	@ _18, TASK_IDLE_QUEUE[0].state_request
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:303:       (&TASK_IDLE_QUEUE[0])->task_state                            =   Task_ready             ;
+	.loc 1 303 0
+	strb	r3, [r4, #124]	@ tmp200, TASK_IDLE_QUEUE[0].task_state
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:312:       (&TASK_IDLE_QUEUE[0])->r1                                   =   task->r1              ;
+	.loc 1 312 0
+	ldr	r2, [r5, #136]	@ _21, task_40(D)->r1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:313:       (&TASK_IDLE_QUEUE[0])->r2                                   =   task->r2              ;
+	.loc 1 313 0
+	ldr	r3, [r5, #140]	@ _22, task_40(D)->r2
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:304:       (&TASK_IDLE_QUEUE[0])->task_group                            =   task->task_group       ;
+	.loc 1 304 0
 	str	r0, [r4, #128]	@ _19, TASK_IDLE_QUEUE[0].task_group
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:309:       (&TASK_IDLE_QUEUE[0])->r0                                   =   task->r0              ;
-	.loc 1 309 0
-	str	r1, [r4, #132]	@ _20, TASK_IDLE_QUEUE[0].r0
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:312:       (&TASK_IDLE_QUEUE[0])->r3                                   =   task->r3              ;
-	.loc 1 312 0
-	ldr	r0, [r5, #144]	@ _23, task_40(D)->r3
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:313:       (&TASK_IDLE_QUEUE[0])->r4                                   =   task->r4              ;
-	.loc 1 313 0
-	ldr	r1, [r5, #148]	@ _24, task_40(D)->r4
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:310:       (&TASK_IDLE_QUEUE[0])->r1                                   =   task->r1              ;
-	.loc 1 310 0
-	str	r2, [r4, #136]	@ _21, TASK_IDLE_QUEUE[0].r1
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:311:       (&TASK_IDLE_QUEUE[0])->r2                                   =   task->r2              ;
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:311:       (&TASK_IDLE_QUEUE[0])->r0                                   =   task->r0              ;
 	.loc 1 311 0
-	str	r3, [r4, #140]	@ _22, TASK_IDLE_QUEUE[0].r2
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:314:       (&TASK_IDLE_QUEUE[0])->r5                                   =   task->r5              ;
+	str	r1, [r4, #132]	@ _20, TASK_IDLE_QUEUE[0].r0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:314:       (&TASK_IDLE_QUEUE[0])->r3                                   =   task->r3              ;
 	.loc 1 314 0
-	ldr	r2, [r5, #152]	@ _25, task_40(D)->r5
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:315:       (&TASK_IDLE_QUEUE[0])->r6                                   =   task->r6              ;
+	ldr	r0, [r5, #144]	@ _23, task_40(D)->r3
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:315:       (&TASK_IDLE_QUEUE[0])->r4                                   =   task->r4              ;
 	.loc 1 315 0
-	ldr	r3, [r5, #156]	@ _26, task_40(D)->r6
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:312:       (&TASK_IDLE_QUEUE[0])->r3                                   =   task->r3              ;
+	ldr	r1, [r5, #148]	@ _24, task_40(D)->r4
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:312:       (&TASK_IDLE_QUEUE[0])->r1                                   =   task->r1              ;
 	.loc 1 312 0
-	str	r0, [r4, #144]	@ _23, TASK_IDLE_QUEUE[0].r3
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:313:       (&TASK_IDLE_QUEUE[0])->r4                                   =   task->r4              ;
+	str	r2, [r4, #136]	@ _21, TASK_IDLE_QUEUE[0].r1
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:313:       (&TASK_IDLE_QUEUE[0])->r2                                   =   task->r2              ;
 	.loc 1 313 0
-	str	r1, [r4, #148]	@ _24, TASK_IDLE_QUEUE[0].r4
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:316:       (&TASK_IDLE_QUEUE[0])->r7                                   =   task->r7              ;
+	str	r3, [r4, #140]	@ _22, TASK_IDLE_QUEUE[0].r2
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:316:       (&TASK_IDLE_QUEUE[0])->r5                                   =   task->r5              ;
 	.loc 1 316 0
-	ldr	r0, [r5, #160]	@ _27, task_40(D)->r7
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:317:       (&TASK_IDLE_QUEUE[0])->r8                                   =   task->r8              ;
+	ldr	r2, [r5, #152]	@ _25, task_40(D)->r5
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:317:       (&TASK_IDLE_QUEUE[0])->r6                                   =   task->r6              ;
 	.loc 1 317 0
-	ldr	r1, [r5, #164]	@ _28, task_40(D)->r8
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:314:       (&TASK_IDLE_QUEUE[0])->r5                                   =   task->r5              ;
+	ldr	r3, [r5, #156]	@ _26, task_40(D)->r6
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:314:       (&TASK_IDLE_QUEUE[0])->r3                                   =   task->r3              ;
 	.loc 1 314 0
-	str	r2, [r4, #152]	@ _25, TASK_IDLE_QUEUE[0].r5
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:315:       (&TASK_IDLE_QUEUE[0])->r6                                   =   task->r6              ;
+	str	r0, [r4, #144]	@ _23, TASK_IDLE_QUEUE[0].r3
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:315:       (&TASK_IDLE_QUEUE[0])->r4                                   =   task->r4              ;
 	.loc 1 315 0
-	str	r3, [r4, #156]	@ _26, TASK_IDLE_QUEUE[0].r6
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:318:       (&TASK_IDLE_QUEUE[0])->r9                                   =   task->r9              ;
+	str	r1, [r4, #148]	@ _24, TASK_IDLE_QUEUE[0].r4
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:318:       (&TASK_IDLE_QUEUE[0])->r7                                   =   task->r7              ;
 	.loc 1 318 0
-	ldr	r2, [r5, #168]	@ _29, task_40(D)->r9
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:319:       (&TASK_IDLE_QUEUE[0])->r10                                  =   task->r10             ;
+	ldr	r0, [r5, #160]	@ _27, task_40(D)->r7
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:319:       (&TASK_IDLE_QUEUE[0])->r8                                   =   task->r8              ;
 	.loc 1 319 0
-	ldr	r3, [r5, #172]	@ _30, task_40(D)->r10
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:317:       (&TASK_IDLE_QUEUE[0])->r8                                   =   task->r8              ;
+	ldr	r1, [r5, #164]	@ _28, task_40(D)->r8
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:316:       (&TASK_IDLE_QUEUE[0])->r5                                   =   task->r5              ;
+	.loc 1 316 0
+	str	r2, [r4, #152]	@ _25, TASK_IDLE_QUEUE[0].r5
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:317:       (&TASK_IDLE_QUEUE[0])->r6                                   =   task->r6              ;
 	.loc 1 317 0
-	strd	r0, r1, [r4, #160]	@ _27, _28, tmp148,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:319:       (&TASK_IDLE_QUEUE[0])->r10                                  =   task->r10             ;
-	.loc 1 319 0
-	strd	r2, r3, [r4, #168]	@ _29, _30, tmp148,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:321:       (&TASK_IDLE_QUEUE[0])->r12                                  =   task->r12             ;
-	.loc 1 321 0
-	ldrd	r2, r3, [r5, #176]	@ _31, _32, task,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:326:       (&TASK_IDLE_QUEUE[0])->pStackPointerByMalloc                 =   task->pStackPointerByMalloc;
-	.loc 1 326 0
-	ldrd	r6, r0, [r5, #184]	@ _33, _34, task,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:320:       (&TASK_IDLE_QUEUE[0])->r11                                  =   task->r11             ;
+	str	r3, [r4, #156]	@ _26, TASK_IDLE_QUEUE[0].r6
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:320:       (&TASK_IDLE_QUEUE[0])->r9                                   =   task->r9              ;
 	.loc 1 320 0
-	str	r2, [r4, #176]	@ _31, TASK_IDLE_QUEUE[0].r11
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:321:       (&TASK_IDLE_QUEUE[0])->r12                                  =   task->r12             ;
+	ldr	r2, [r5, #168]	@ _29, task_40(D)->r9
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:321:       (&TASK_IDLE_QUEUE[0])->r10                                  =   task->r10             ;
 	.loc 1 321 0
-	str	r3, [r4, #180]	@ _32, TASK_IDLE_QUEUE[0].r12
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:329:       (&TASK_IDLE_QUEUE[0])->pStackPointerEnd                      =   task->pStackPointerEnd ;
-	.loc 1 329 0
-	ldrd	r2, r3, [r5, #196]	@ _36, _37, task,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:327:       (&TASK_IDLE_QUEUE[0])->pStackPointerStart                    =   task->pStackPointerStart;
-	.loc 1 327 0
-	ldr	r1, [r5, #192]	@ _35, task_40(D)->pStackPointerStart
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:329:       (&TASK_IDLE_QUEUE[0])->pStackPointerEnd                      =   task->pStackPointerEnd ;
-	.loc 1 329 0
-	str	r3, [r4, #200]	@ _37, TASK_IDLE_QUEUE[0].pStackPointerEnd
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:326:       (&TASK_IDLE_QUEUE[0])->pStackPointerByMalloc                 =   task->pStackPointerByMalloc;
-	.loc 1 326 0
-	strd	r6, r0, [r4, #184]	@ _33, _34, tmp148,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:328:       (&TASK_IDLE_QUEUE[0])->StackSize                             =   task->StackSize        ;
+	ldr	r3, [r5, #172]	@ _30, task_40(D)->r10
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:319:       (&TASK_IDLE_QUEUE[0])->r8                                   =   task->r8              ;
+	.loc 1 319 0
+	strd	r0, r1, [r4, #160]	@ _27, _28, tmp148,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:321:       (&TASK_IDLE_QUEUE[0])->r10                                  =   task->r10             ;
+	.loc 1 321 0
+	strd	r2, r3, [r4, #168]	@ _29, _30, tmp148,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:323:       (&TASK_IDLE_QUEUE[0])->r12                                  =   task->r12             ;
+	.loc 1 323 0
+	ldrd	r2, r3, [r5, #176]	@ _31, _32, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:328:       (&TASK_IDLE_QUEUE[0])->pStackPointerByMalloc                 =   task->pStackPointerByMalloc;
 	.loc 1 328 0
-	strd	r1, r2, [r4, #192]	@ _35, _36, tmp148,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:331: }
+	ldrd	r6, r0, [r5, #184]	@ _33, _34, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:322:       (&TASK_IDLE_QUEUE[0])->r11                                  =   task->r11             ;
+	.loc 1 322 0
+	str	r2, [r4, #176]	@ _31, TASK_IDLE_QUEUE[0].r11
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:323:       (&TASK_IDLE_QUEUE[0])->r12                                  =   task->r12             ;
+	.loc 1 323 0
+	str	r3, [r4, #180]	@ _32, TASK_IDLE_QUEUE[0].r12
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:331:       (&TASK_IDLE_QUEUE[0])->pStackPointerEnd                      =   task->pStackPointerEnd ;
 	.loc 1 331 0
+	ldrd	r2, r3, [r5, #196]	@ _36, _37, task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:329:       (&TASK_IDLE_QUEUE[0])->pStackPointerStart                    =   task->pStackPointerStart;
+	.loc 1 329 0
+	ldr	r1, [r5, #192]	@ _35, task_40(D)->pStackPointerStart
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:331:       (&TASK_IDLE_QUEUE[0])->pStackPointerEnd                      =   task->pStackPointerEnd ;
+	.loc 1 331 0
+	str	r3, [r4, #200]	@ _37, TASK_IDLE_QUEUE[0].pStackPointerEnd
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:328:       (&TASK_IDLE_QUEUE[0])->pStackPointerByMalloc                 =   task->pStackPointerByMalloc;
+	.loc 1 328 0
+	strd	r6, r0, [r4, #184]	@ _33, _34, tmp148,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:330:       (&TASK_IDLE_QUEUE[0])->StackSize                             =   task->StackSize        ;
+	.loc 1 330 0
+	strd	r1, r2, [r4, #192]	@ _35, _36, tmp148,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:333: }
+	.loc 1 333 0
 	pop	{r4, r5, r6, pc}	@
-.LVL96:
-.L108:
+.LVL81:
+.L67:
 	.align	2
-.L107:
+.L66:
 	.word	TASK_IDLE_QUEUE
 	.cfi_endproc
-.LFE10:
+.LFE9:
 	.size	AddToIdleTaskQueue, .-AddToIdleTaskQueue
 	.align	1
 	.p2align 2,,3
@@ -1430,22 +1293,22 @@ AddToIdleTaskQueue:
 	.fpu softvfp
 	.type	GetRunningTask, %function
 GetRunningTask:
-.LFB11:
-	.loc 1 333 0
+.LFB10:
+	.loc 1 335 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:335: }
-	.loc 1 335 0
-	ldr	r0, .L110	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:337: }
+	.loc 1 337 0
+	ldr	r0, .L69	@,
 	bx	lr	@
-.L111:
+.L70:
 	.align	2
-.L110:
+.L69:
 	.word	RUNNING_TASK
 	.cfi_endproc
-.LFE11:
+.LFE10:
 	.size	GetRunningTask, .-GetRunningTask
 	.align	1
 	.p2align 2,,3
@@ -1456,25 +1319,25 @@ GetRunningTask:
 	.fpu softvfp
 	.type	GetRunningSchedulingQueueElementPtr, %function
 GetRunningSchedulingQueueElementPtr:
-.LFB12:
-	.loc 1 337 0
+.LFB11:
+	.loc 1 339 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:338:     return RUNNING_SCHEDULING_QUEUE_ENTRY;
-	.loc 1 338 0
-	ldr	r3, .L113	@ tmp112,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:339: }
-	.loc 1 339 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:340:     return RUNNING_SCHEDULING_QUEUE_ENTRY;
+	.loc 1 340 0
+	ldr	r3, .L72	@ tmp112,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:341: }
+	.loc 1 341 0
 	ldr	r0, [r3]	@, RUNNING_SCHEDULING_QUEUE_ENTRY
 	bx	lr	@
-.L114:
+.L73:
 	.align	2
-.L113:
+.L72:
 	.word	RUNNING_SCHEDULING_QUEUE_ENTRY
 	.cfi_endproc
-.LFE12:
+.LFE11:
 	.size	GetRunningSchedulingQueueElementPtr, .-GetRunningSchedulingQueueElementPtr
 	.align	1
 	.p2align 2,,3
@@ -1485,12 +1348,12 @@ GetRunningSchedulingQueueElementPtr:
 	.fpu softvfp
 	.type	OS_InitTask, %function
 OS_InitTask:
-.LFB13:
-	.loc 1 352 0
+.LFB12:
+	.loc 1 354 0
 	.cfi_startproc
 	@ args = 24, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-.LVL97:
+.LVL82:
 	push	{r4, r5, r6, r7, r8, r9, r10, lr}	@
 	.cfi_def_cfa_offset 32
 	.cfi_offset 4, -32
@@ -1501,122 +1364,122 @@ OS_InitTask:
 	.cfi_offset 9, -12
 	.cfi_offset 10, -8
 	.cfi_offset 14, -4
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:352: {
-	.loc 1 352 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:354: {
+	.loc 1 354 0
 	ldr	r5, [sp, #40]	@ uStackSize, uStackSize
 	ldrb	r9, [sp, #44]	@ zero_extendqisi2	@ privilige_mode, privilige_mode
 	ldrb	r8, [sp, #52]	@ zero_extendqisi2	@ default_prio, default_prio
 	ldrd	ip, r6, [sp, #32]	@ p_task_group, pStackAddr,,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:354:    if(task!=0)
-	.loc 1 354 0
-	cbz	r0, .L116	@ task,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:356:    if(task!=0)
+	.loc 1 356 0
+	cbz	r0, .L75	@ task,
 	mov	r7, r3	@ IdleTask, IdleTask
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:356:       task->active           = False;
-	.loc 1 356 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:358:       task->active           = False;
+	.loc 1 358 0
 	ldrb	r3, [r0]	@ zero_extendqisi2	@, task_9(D)->active
-.LVL98:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:359:       task->task_group       = p_task_group;
-	.loc 1 359 0
+.LVL83:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:361:       task->task_group       = p_task_group;
+	.loc 1 361 0
 	str	ip, [r0, #128]	@ p_task_group, task_9(D)->task_group
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:356:       task->active           = False;
-	.loc 1 356 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:358:       task->active           = False;
+	.loc 1 358 0
 	bfc	r3, #0, #1	@ task_9(D)->active,,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:360:       task->NrOfInsActivated = 0;
-	.loc 1 360 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:362:       task->NrOfInsActivated = 0;
+	.loc 1 362 0
 	mov	r10, #0	@ tmp129,
 	mov	r4, r0	@ task, task
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:358:       task->NrOfInsAllowed   = AllowedInstances;
-	.loc 1 358 0
-	strb	r2, [r0, #4]	@ AllowedInstances, task_9(D)->NrOfInsAllowed
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:357:       task->fp               = TaskFunction;
-	.loc 1 357 0
-	str	r1, [r0, #116]	@ TaskFunction, task_9(D)->fp
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:356:       task->active           = False;
-	.loc 1 356 0
-	strb	r3, [r0]	@ task_9(D)->active, task_9(D)->active
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:360:       task->NrOfInsActivated = 0;
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:360:       task->NrOfInsAllowed   = AllowedInstances;
 	.loc 1 360 0
+	strb	r2, [r0, #4]	@ AllowedInstances, task_9(D)->NrOfInsAllowed
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:359:       task->fp               = TaskFunction;
+	.loc 1 359 0
+	str	r1, [r0, #116]	@ TaskFunction, task_9(D)->fp
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:358:       task->active           = False;
+	.loc 1 358 0
+	strb	r3, [r0]	@ task_9(D)->active, task_9(D)->active
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:362:       task->NrOfInsActivated = 0;
+	.loc 1 362 0
 	strb	r10, [r0, #5]	@ tmp129, task_9(D)->NrOfInsActivated
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:361:       AssignNull(&task->WaitActUntil);
-	.loc 1 361 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:363:       AssignNull(&task->WaitActUntil);
+	.loc 1 363 0
 	adds	r0, r0, #6	@, task,
-.LVL99:
+.LVL84:
 	bl	AssignNull	@
-.LVL100:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:365:       task->overwaittime_per_prio_inc_step = 1u;
-	.loc 1 365 0
+.LVL85:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:367:       task->overwaittime_per_prio_inc_step = 1u;
+	.loc 1 367 0
 	movs	r3, #1	@ tmp134,
 	str	r3, [r4, #56]	@ tmp134, task_9(D)->overwaittime_per_prio_inc_step
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:366:       AssignUint32(&task->max_allowed_wait_time, 100000u);
-	.loc 1 366 0
-	ldr	r1, .L120	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:362:       task->privilige_mode   = privilige_mode;
-	.loc 1 362 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:368:       AssignUint32(&task->max_allowed_wait_time, 100000u);
+	.loc 1 368 0
+	ldr	r1, .L79	@,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:364:       task->privilige_mode   = privilige_mode;
+	.loc 1 364 0
 	strb	r9, [r4, #204]	@ privilige_mode, task_9(D)->privilige_mode
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:366:       AssignUint32(&task->max_allowed_wait_time, 100000u);
-	.loc 1 366 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:368:       AssignUint32(&task->max_allowed_wait_time, 100000u);
+	.loc 1 368 0
 	add	r0, r4, #60	@, task,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:363:       task->default_prio     = default_prio;
-	.loc 1 363 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:365:       task->default_prio     = default_prio;
+	.loc 1 365 0
 	strb	r8, [r4, #109]	@ default_prio, task_9(D)->default_prio
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:366:       AssignUint32(&task->max_allowed_wait_time, 100000u);
-	.loc 1 366 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:368:       AssignUint32(&task->max_allowed_wait_time, 100000u);
+	.loc 1 368 0
 	bl	AssignUint32	@
-.LVL101:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:368:       task->IdleTask      = IdleTask;
-	.loc 1 368 0
+.LVL86:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:370:       task->IdleTask      = IdleTask;
+	.loc 1 370 0
 	ldrb	r3, [r4]	@ zero_extendqisi2	@, task_9(D)->IdleTask
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:369:       task->state_request = &task_state_request;
-	.loc 1 369 0
-	ldr	r2, .L120+4	@ tmp139,
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:371:       task->state_request = &task_state_request;
+	.loc 1 371 0
+	ldr	r2, .L79+4	@ tmp139,
 	str	r2, [r4, #120]	@ tmp139, task_9(D)->state_request
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:368:       task->IdleTask      = IdleTask;
-	.loc 1 368 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:370:       task->IdleTask      = IdleTask;
+	.loc 1 370 0
 	bfi	r3, r7, #2, #1	@ task_9(D)->IdleTask, IdleTask,,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:370:       task_state_request(task, Task_unspecified);
-	.loc 1 370 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:372:       task_state_request(task, Task_unspecified);
+	.loc 1 372 0
 	mov	r1, r10	@, tmp129
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:368:       task->IdleTask      = IdleTask;
-	.loc 1 368 0
-	strb	r3, [r4]	@ task_9(D)->IdleTask, task_9(D)->IdleTask
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:370:       task_state_request(task, Task_unspecified);
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:370:       task->IdleTask      = IdleTask;
 	.loc 1 370 0
+	strb	r3, [r4]	@ task_9(D)->IdleTask, task_9(D)->IdleTask
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:372:       task_state_request(task, Task_unspecified);
+	.loc 1 372 0
 	mov	r0, r4	@, task
 	bl	task_state_request	@
-.LVL102:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:371:       OS_CreateTask(task);
-	.loc 1 371 0
+.LVL87:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:373:       OS_CreateTask(task);
+	.loc 1 373 0
 	mov	r0, r4	@, task
 	bl	OS_CreateTask	@
-.LVL103:
+.LVL88:
 	cmp	r5, #2000	@ uStackSize,
 	it	cs
 	movcs	r5, #2000	@ uStackSize,
-.LVL104:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:380:       task->pStackPointerEnd      = (unsigned_char_t*)pStackAddr + uStackSize - 1;/* end addresse */
-	.loc 1 380 0
+.LVL89:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:382:       task->pStackPointerEnd      = (unsigned_char_t*)pStackAddr + uStackSize - 1;/* end addresse */
+	.loc 1 382 0
 	subs	r2, r5, #1	@ tmp140, uStackSize,
 	add	r2, r2, r6	@ _5, pStackAddr
 	strd	r5, r2, [r4, #196]	@ uStackSize, _5, task,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:378:       task->pStackPointerByMalloc = pStackAddr;
-	.loc 1 378 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:380:       task->pStackPointerByMalloc = pStackAddr;
+	.loc 1 380 0
 	strd	r2, r6, [r4, #184]	@ _5, pStackAddr, task,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:379:       task->pStackPointerStart    = pStackAddr;/*low addresse */
-	.loc 1 379 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:381:       task->pStackPointerStart    = pStackAddr;/*low addresse */
+	.loc 1 381 0
 	str	r6, [r4, #192]	@ pStackAddr, task_9(D)->pStackPointerStart
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:389: }
-	.loc 1 389 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:391: }
+	.loc 1 391 0
 	pop	{r4, r5, r6, r7, r8, r9, r10, pc}	@
-.LVL105:
-.L116:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:387:       OS_SetSwBug(os_bug_null_pointer, Func_InitTask);
-	.loc 1 387 0
-	movs	r1, #10	@,
-.LVL106:
-	movs	r0, #2	@,
-.LVL107:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:389: }
+.LVL90:
+.L75:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:389:       OS_SetSwBug(os_bug_null_pointer, Func_InitTask);
 	.loc 1 389 0
+	movs	r1, #10	@,
+.LVL91:
+	movs	r0, #2	@,
+.LVL92:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:391: }
+	.loc 1 391 0
 	pop	{r4, r5, r6, r7, r8, r9, r10, lr}	@
 	.cfi_restore 14
 	.cfi_restore 10
@@ -1627,18 +1490,18 @@ OS_InitTask:
 	.cfi_restore 5
 	.cfi_restore 4
 	.cfi_def_cfa_offset 0
-.LVL108:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:387:       OS_SetSwBug(os_bug_null_pointer, Func_InitTask);
-	.loc 1 387 0
+.LVL93:
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:389:       OS_SetSwBug(os_bug_null_pointer, Func_InitTask);
+	.loc 1 389 0
 	b	OS_SetSwBug	@
-.LVL109:
-.L121:
+.LVL94:
+.L80:
 	.align	2
-.L120:
+.L79:
 	.word	100000
 	.word	task_state_request
 	.cfi_endproc
-.LFE13:
+.LFE12:
 	.size	OS_InitTask, .-OS_InitTask
 .Letext0:
 	.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
@@ -1649,15 +1512,15 @@ OS_InitTask:
 	.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0xd5a
+	.4byte	0xd26
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF692
+	.4byte	.LASF690
 	.byte	0x1
-	.4byte	.LASF693
-	.4byte	.LASF694
+	.4byte	.LASF691
+	.4byte	.LASF692
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -2263,12 +2126,12 @@ OS_InitTask:
 	.uleb128 0x12
 	.4byte	.LASF612
 	.byte	0x5
-	.byte	0x5c
+	.byte	0x5d
 	.4byte	0x4bc
 	.uleb128 0x2
 	.4byte	.LASF611
 	.byte	0x5
-	.byte	0x5e
+	.byte	0x5f
 	.4byte	0x277
 	.uleb128 0x9
 	.4byte	0x29
@@ -2564,75 +2427,75 @@ OS_InitTask:
 	.uleb128 0x15
 	.4byte	.LASF666
 	.byte	0x1
-	.2byte	0x154
-	.4byte	.LFB13
-	.4byte	.LFE13-.LFB13
+	.2byte	0x156
+	.4byte	.LFB12
+	.4byte	.LFE12-.LFB12
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0x892
 	.uleb128 0x16
 	.4byte	.LASF657
 	.byte	0x1
-	.2byte	0x155
+	.2byte	0x157
 	.4byte	0x4b6
-	.4byte	.LLST13
+	.4byte	.LLST11
 	.uleb128 0x16
 	.4byte	.LASF658
 	.byte	0x1
-	.2byte	0x156
+	.2byte	0x158
 	.4byte	0x234
-	.4byte	.LLST14
+	.4byte	.LLST12
 	.uleb128 0x16
 	.4byte	.LASF659
 	.byte	0x1
-	.2byte	0x157
+	.2byte	0x159
 	.4byte	0x29
-	.4byte	.LLST15
+	.4byte	.LLST13
 	.uleb128 0x16
 	.4byte	.LASF587
 	.byte	0x1
-	.2byte	0x158
+	.2byte	0x15a
 	.4byte	0x29
-	.4byte	.LLST16
+	.4byte	.LLST14
 	.uleb128 0x16
 	.4byte	.LASF660
 	.byte	0x1
-	.2byte	0x159
+	.2byte	0x15b
 	.4byte	0x494
-	.4byte	.LLST17
+	.4byte	.LLST15
 	.uleb128 0x16
 	.4byte	.LASF661
 	.byte	0x1
-	.2byte	0x15a
+	.2byte	0x15c
 	.4byte	0x49a
-	.4byte	.LLST18
+	.4byte	.LLST16
 	.uleb128 0x16
 	.4byte	.LASF662
 	.byte	0x1
-	.2byte	0x15b
+	.2byte	0x15d
 	.4byte	0x5b
-	.4byte	.LLST19
+	.4byte	.LLST17
 	.uleb128 0x16
 	.4byte	.LASF608
 	.byte	0x1
-	.2byte	0x15c
+	.2byte	0x15e
 	.4byte	0x1f4
-	.4byte	.LLST20
+	.4byte	.LLST18
 	.uleb128 0x16
 	.4byte	.LASF663
 	.byte	0x1
-	.2byte	0x15d
+	.2byte	0x15f
 	.4byte	0x1c5
-	.4byte	.LLST21
+	.4byte	.LLST19
 	.uleb128 0x16
 	.4byte	.LASF598
 	.byte	0x1
-	.2byte	0x15e
+	.2byte	0x160
 	.4byte	0x29
-	.4byte	.LLST22
+	.4byte	.LLST20
 	.uleb128 0x17
-	.4byte	.LVL100
-	.4byte	0xd10
+	.4byte	.LVL85
+	.4byte	0xcdc
 	.4byte	0x832
 	.uleb128 0x18
 	.uleb128 0x1
@@ -2642,8 +2505,8 @@ OS_InitTask:
 	.sleb128 6
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LVL101
-	.4byte	0xd1b
+	.4byte	.LVL86
+	.4byte	0xce7
 	.4byte	0x84f
 	.uleb128 0x18
 	.uleb128 0x1
@@ -2659,8 +2522,8 @@ OS_InitTask:
 	.4byte	0x186a0
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LVL102
-	.4byte	0xd26
+	.4byte	.LVL87
+	.4byte	0xcf2
 	.4byte	0x869
 	.uleb128 0x18
 	.uleb128 0x1
@@ -2676,8 +2539,8 @@ OS_InitTask:
 	.sleb128 0
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LVL103
-	.4byte	0xd31
+	.4byte	.LVL88
+	.4byte	0xcfd
 	.4byte	0x87d
 	.uleb128 0x18
 	.uleb128 0x1
@@ -2687,8 +2550,8 @@ OS_InitTask:
 	.sleb128 0
 	.byte	0
 	.uleb128 0x19
-	.4byte	.LVL109
-	.4byte	0xd3c
+	.4byte	.LVL94
+	.4byte	0xd08
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -2704,10 +2567,10 @@ OS_InitTask:
 	.uleb128 0x1a
 	.4byte	.LASF664
 	.byte	0x1
-	.2byte	0x150
+	.2byte	0x152
 	.4byte	0x8a8
-	.4byte	.LFB12
-	.4byte	.LFE12-.LFB12
+	.4byte	.LFB11
+	.4byte	.LFE11-.LFB11
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0xb
@@ -2716,30 +2579,30 @@ OS_InitTask:
 	.uleb128 0x1a
 	.4byte	.LASF665
 	.byte	0x1
-	.2byte	0x14c
+	.2byte	0x14e
 	.4byte	0x4b6
-	.4byte	.LFB11
-	.4byte	.LFE11-.LFB11
+	.4byte	.LFB10
+	.4byte	.LFE10-.LFB10
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x15
 	.4byte	.LASF667
 	.byte	0x1
-	.2byte	0x118
-	.4byte	.LFB10
-	.4byte	.LFE10-.LFB10
+	.2byte	0x11a
+	.4byte	.LFB9
+	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0x96b
 	.uleb128 0x16
 	.4byte	.LASF657
 	.byte	0x1
-	.2byte	0x118
+	.2byte	0x11a
 	.4byte	0x4b6
-	.4byte	.LLST12
+	.4byte	.LLST10
 	.uleb128 0x17
-	.4byte	.LVL91
-	.4byte	0xd47
+	.4byte	.LVL76
+	.4byte	0xd13
 	.4byte	0x904
 	.uleb128 0x18
 	.uleb128 0x1
@@ -2755,8 +2618,8 @@ OS_InitTask:
 	.sleb128 6
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LVL92
-	.4byte	0xd47
+	.4byte	.LVL77
+	.4byte	0xd13
 	.4byte	0x91e
 	.uleb128 0x18
 	.uleb128 0x1
@@ -2772,8 +2635,8 @@ OS_InitTask:
 	.sleb128 22
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LVL93
-	.4byte	0xd47
+	.4byte	.LVL78
+	.4byte	0xd13
 	.4byte	0x938
 	.uleb128 0x18
 	.uleb128 0x1
@@ -2789,8 +2652,8 @@ OS_InitTask:
 	.sleb128 38
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LVL94
-	.4byte	0xd47
+	.4byte	.LVL79
+	.4byte	0xd13
 	.4byte	0x952
 	.uleb128 0x18
 	.uleb128 0x1
@@ -2806,8 +2669,8 @@ OS_InitTask:
 	.sleb128 60
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LVL95
-	.4byte	0xd47
+	.4byte	.LVL80
+	.4byte	0xd13
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -2825,82 +2688,60 @@ OS_InitTask:
 	.uleb128 0x1a
 	.4byte	.LASF668
 	.byte	0x1
-	.2byte	0x114
+	.2byte	0x116
 	.4byte	0x4b6
-	.4byte	.LFB9
-	.4byte	.LFE9-.LFB9
-	.uleb128 0x1
-	.byte	0x9c
-	.uleb128 0x1c
-	.4byte	.LASF669
-	.byte	0x1
-	.byte	0xf9
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x9b5
-	.uleb128 0x1d
-	.4byte	.LASF670
-	.byte	0x1
-	.byte	0xfc
-	.4byte	0x29
-	.4byte	.LLST10
-	.uleb128 0x1e
-	.ascii	"src\000"
-	.byte	0x1
-	.byte	0xfc
-	.4byte	0x29
-	.4byte	.LLST11
-	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF671
+	.4byte	.LASF669
 	.byte	0x1
 	.byte	0xe1
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x9f6
-	.uleb128 0x1f
+	.4byte	0x9c2
+	.uleb128 0x1d
 	.4byte	.LASF657
 	.byte	0x1
 	.byte	0xe1
 	.4byte	0x4b6
 	.uleb128 0x1
 	.byte	0x50
-	.uleb128 0x1d
-	.4byte	.LASF672
+	.uleb128 0x1e
+	.4byte	.LASF670
 	.byte	0x1
 	.byte	0xea
 	.4byte	0x29
 	.4byte	.LLST8
-	.uleb128 0x1d
-	.4byte	.LASF673
+	.uleb128 0x1e
+	.4byte	.LASF671
 	.byte	0x1
 	.byte	0xeb
 	.4byte	0x29
 	.4byte	.LLST9
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF674
+	.4byte	.LASF672
 	.byte	0x1
 	.byte	0xdd
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xa19
-	.uleb128 0x1f
-	.4byte	.LASF675
+	.4byte	0x9e5
+	.uleb128 0x1d
+	.4byte	.LASF673
 	.byte	0x1
 	.byte	0xdd
 	.4byte	0x680
 	.uleb128 0x1
 	.byte	0x50
 	.byte	0
-	.uleb128 0x20
-	.4byte	.LASF677
+	.uleb128 0x1f
+	.4byte	.LASF675
 	.byte	0x1
 	.byte	0xd8
 	.4byte	0x680
@@ -2908,16 +2749,16 @@ OS_InitTask:
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xa42
-	.uleb128 0x21
-	.4byte	.LASF676
+	.4byte	0xa0e
+	.uleb128 0x20
+	.4byte	.LASF674
 	.byte	0x1
 	.byte	0xd8
 	.4byte	0x29
 	.4byte	.LLST7
 	.byte	0
-	.uleb128 0x20
-	.4byte	.LASF678
+	.uleb128 0x1f
+	.4byte	.LASF676
 	.byte	0x1
 	.byte	0xd4
 	.4byte	0x4b6
@@ -2925,24 +2766,24 @@ OS_InitTask:
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xa6b
-	.uleb128 0x21
-	.4byte	.LASF675
+	.4byte	0xa37
+	.uleb128 0x20
+	.4byte	.LASF673
 	.byte	0x1
 	.byte	0xd4
 	.4byte	0x680
 	.4byte	.LLST6
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF679
+	.4byte	.LASF677
 	.byte	0x1
 	.byte	0xa3
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xb06
-	.uleb128 0x21
+	.4byte	0xad2
+	.uleb128 0x20
 	.4byte	.LASF657
 	.byte	0x1
 	.byte	0xa3
@@ -2950,8 +2791,8 @@ OS_InitTask:
 	.4byte	.LLST5
 	.uleb128 0x17
 	.4byte	.LVL42
-	.4byte	0xd10
-	.4byte	0xaa3
+	.4byte	0xcdc
+	.4byte	0xa6f
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -2961,8 +2802,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL43
-	.4byte	0xd10
-	.4byte	0xab7
+	.4byte	0xcdc
+	.4byte	0xa83
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -2972,8 +2813,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL44
-	.4byte	0xd10
-	.4byte	0xacb
+	.4byte	0xcdc
+	.4byte	0xa97
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -2983,8 +2824,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL45
-	.4byte	0xd10
-	.4byte	0xadf
+	.4byte	0xcdc
+	.4byte	0xaab
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -2994,8 +2835,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL46
-	.4byte	0xd10
-	.4byte	0xaf4
+	.4byte	0xcdc
+	.4byte	0xac0
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3005,7 +2846,7 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x1b
 	.4byte	.LVL47
-	.4byte	0xd10
+	.4byte	0xcdc
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3014,8 +2855,8 @@ OS_InitTask:
 	.sleb128 92
 	.byte	0
 	.byte	0
-	.uleb128 0x20
-	.4byte	.LASF680
+	.uleb128 0x1f
+	.4byte	.LASF678
 	.byte	0x1
 	.byte	0x65
 	.4byte	0x4b6
@@ -3023,29 +2864,29 @@ OS_InitTask:
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xc05
-	.uleb128 0x21
+	.4byte	0xbd1
+	.uleb128 0x20
 	.4byte	.LASF657
 	.byte	0x1
 	.byte	0x65
 	.4byte	0x4b6
 	.4byte	.LLST2
-	.uleb128 0x1d
-	.4byte	.LASF676
+	.uleb128 0x1e
+	.4byte	.LASF674
 	.byte	0x1
 	.byte	0x67
 	.4byte	0x29
 	.4byte	.LLST3
-	.uleb128 0x1d
-	.4byte	.LASF681
+	.uleb128 0x1e
+	.4byte	.LASF679
 	.byte	0x1
 	.byte	0x68
 	.4byte	0x4b6
 	.4byte	.LLST4
 	.uleb128 0x17
 	.4byte	.LVL25
-	.4byte	0xd47
-	.4byte	0xb6b
+	.4byte	0xd13
+	.4byte	0xb37
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3066,8 +2907,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL26
-	.4byte	0xd47
-	.4byte	0xb8a
+	.4byte	0xd13
+	.4byte	0xb56
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3088,8 +2929,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL27
-	.4byte	0xd47
-	.4byte	0xba9
+	.4byte	0xd13
+	.4byte	0xb75
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3110,8 +2951,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL28
-	.4byte	0xd47
-	.4byte	0xbc8
+	.4byte	0xd13
+	.4byte	0xb94
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3132,8 +2973,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL29
-	.4byte	0xd47
-	.4byte	0xbe8
+	.4byte	0xd13
+	.4byte	0xbb4
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3154,7 +2995,7 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x1b
 	.4byte	.LVL30
-	.4byte	0xd47
+	.4byte	0xd13
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3175,25 +3016,25 @@ OS_InitTask:
 	.byte	0
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF682
+	.4byte	.LASF680
 	.byte	0x1
 	.byte	0x57
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xc40
-	.uleb128 0x22
+	.4byte	0xc0c
+	.uleb128 0x21
 	.4byte	.LBB2
 	.4byte	.LBE2-.LBB2
-	.uleb128 0x23
-	.4byte	.LASF676
+	.uleb128 0x22
+	.4byte	.LASF674
 	.byte	0x1
 	.byte	0x5b
 	.4byte	0x29
 	.uleb128 0x1b
 	.4byte	.LVL10
-	.4byte	0xd52
+	.4byte	0xd1e
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3204,30 +3045,30 @@ OS_InitTask:
 	.byte	0
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF683
+	.4byte	.LASF681
 	.byte	0x1
 	.byte	0x21
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xd10
-	.uleb128 0x21
+	.4byte	0xcdc
+	.uleb128 0x20
 	.4byte	.LASF657
 	.byte	0x1
 	.byte	0x21
 	.4byte	0x4b6
 	.4byte	.LLST0
-	.uleb128 0x21
-	.4byte	.LASF684
+	.uleb128 0x20
+	.4byte	.LASF682
 	.byte	0x1
 	.byte	0x21
 	.4byte	0x680
 	.4byte	.LLST1
 	.uleb128 0x17
 	.4byte	.LVL3
-	.4byte	0xd47
-	.4byte	0xc8d
+	.4byte	0xd13
+	.4byte	0xc59
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3243,8 +3084,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL4
-	.4byte	0xd47
-	.4byte	0xca7
+	.4byte	0xd13
+	.4byte	0xc73
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3260,8 +3101,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL5
-	.4byte	0xd47
-	.4byte	0xcc1
+	.4byte	0xd13
+	.4byte	0xc8d
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3277,8 +3118,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL6
-	.4byte	0xd47
-	.4byte	0xcdb
+	.4byte	0xd13
+	.4byte	0xca7
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3294,8 +3135,8 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x17
 	.4byte	.LVL7
-	.4byte	0xd47
-	.4byte	0xcf7
+	.4byte	0xd13
+	.4byte	0xcc3
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3311,7 +3152,7 @@ OS_InitTask:
 	.byte	0
 	.uleb128 0x1b
 	.4byte	.LVL8
-	.4byte	0xd47
+	.4byte	0xd13
 	.uleb128 0x18
 	.uleb128 0x1
 	.byte	0x50
@@ -3326,41 +3167,41 @@ OS_InitTask:
 	.sleb128 92
 	.byte	0
 	.byte	0
-	.uleb128 0x24
-	.4byte	.LASF685
-	.4byte	.LASF685
+	.uleb128 0x23
+	.4byte	.LASF683
+	.4byte	.LASF683
 	.byte	0x3
 	.byte	0x64
-	.uleb128 0x24
-	.4byte	.LASF686
-	.4byte	.LASF686
+	.uleb128 0x23
+	.4byte	.LASF684
+	.4byte	.LASF684
 	.byte	0x3
 	.byte	0x66
-	.uleb128 0x24
-	.4byte	.LASF687
-	.4byte	.LASF687
+	.uleb128 0x23
+	.4byte	.LASF685
+	.4byte	.LASF685
 	.byte	0x7
 	.byte	0x21
-	.uleb128 0x24
-	.4byte	.LASF688
-	.4byte	.LASF688
+	.uleb128 0x23
+	.4byte	.LASF686
+	.4byte	.LASF686
 	.byte	0x7
 	.byte	0x25
-	.uleb128 0x24
-	.4byte	.LASF689
-	.4byte	.LASF689
+	.uleb128 0x23
+	.4byte	.LASF687
+	.4byte	.LASF687
 	.byte	0x3
 	.byte	0x53
-	.uleb128 0x24
-	.4byte	.LASF690
-	.4byte	.LASF690
+	.uleb128 0x23
+	.4byte	.LASF688
+	.4byte	.LASF688
 	.byte	0x3
 	.byte	0x65
-	.uleb128 0x24
-	.4byte	.LASF691
-	.4byte	.LASF691
+	.uleb128 0x23
+	.4byte	.LASF689
+	.4byte	.LASF689
 	.byte	0x5
-	.byte	0x5a
+	.byte	0x5b
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -3733,36 +3574,6 @@ OS_InitTask:
 	.byte	0
 	.byte	0
 	.uleb128 0x1d
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x1e
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x1f
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -3777,7 +3588,22 @@ OS_InitTask:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x20
+	.uleb128 0x1e
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x17
+	.byte	0
+	.byte	0
+	.uleb128 0x1f
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -3804,7 +3630,7 @@ OS_InitTask:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x21
+	.uleb128 0x20
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -3819,7 +3645,7 @@ OS_InitTask:
 	.uleb128 0x17
 	.byte	0
 	.byte	0
-	.uleb128 0x22
+	.uleb128 0x21
 	.uleb128 0xb
 	.byte	0x1
 	.uleb128 0x11
@@ -3828,7 +3654,7 @@ OS_InitTask:
 	.uleb128 0x6
 	.byte	0
 	.byte	0
-	.uleb128 0x23
+	.uleb128 0x22
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -3841,7 +3667,7 @@ OS_InitTask:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x24
+	.uleb128 0x23
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -3861,308 +3687,230 @@ OS_InitTask:
 	.byte	0
 	.section	.debug_loc,"",%progbits
 .Ldebug_loc0:
-.LLST13:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL99-.Ltext0
+.LLST11:
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL84-.Ltext0
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL99-.Ltext0
-	.4byte	.LVL105-.Ltext0
+	.4byte	.LVL84-.Ltext0
+	.4byte	.LVL90-.Ltext0
 	.2byte	0x1
 	.byte	0x54
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL107-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL92-.Ltext0
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL107-.Ltext0
-	.4byte	.LFE13-.Ltext0
+	.4byte	.LVL92-.Ltext0
+	.4byte	.LFE12-.Ltext0
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
 	.byte	0x50
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST12:
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL85-1-.Ltext0
+	.2byte	0x1
+	.byte	0x51
+	.4byte	.LVL85-1-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x51
+	.byte	0x9f
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL91-.Ltext0
+	.2byte	0x1
+	.byte	0x51
+	.4byte	.LVL91-.Ltext0
+	.4byte	.LFE12-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x51
+	.byte	0x9f
+	.4byte	0
+	.4byte	0
+.LLST13:
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL85-1-.Ltext0
+	.2byte	0x1
+	.byte	0x52
+	.4byte	.LVL85-1-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x52
+	.byte	0x9f
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL94-1-.Ltext0
+	.2byte	0x1
+	.byte	0x52
+	.4byte	.LVL94-1-.Ltext0
+	.4byte	.LFE12-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x52
 	.byte	0x9f
 	.4byte	0
 	.4byte	0
 .LLST14:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL100-1-.Ltext0
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL83-.Ltext0
 	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL100-1-.Ltext0
-	.4byte	.LVL105-.Ltext0
+	.byte	0x53
+	.4byte	.LVL83-.Ltext0
+	.4byte	.LVL90-.Ltext0
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
-	.byte	0x51
+	.byte	0x53
 	.byte	0x9f
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL106-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL94-1-.Ltext0
 	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL106-.Ltext0
-	.4byte	.LFE13-.Ltext0
+	.byte	0x53
+	.4byte	.LVL94-1-.Ltext0
+	.4byte	.LFE12-.Ltext0
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
-	.byte	0x51
+	.byte	0x53
 	.byte	0x9f
 	.4byte	0
 	.4byte	0
 .LLST15:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL100-1-.Ltext0
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL100-1-.Ltext0
-	.4byte	.LVL105-.Ltext0
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL109-1-.Ltext0
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL109-1-.Ltext0
-	.4byte	.LFE13-.Ltext0
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 0
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL93-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 0
+	.4byte	.LVL93-.Ltext0
+	.4byte	.LFE12-.Ltext0
+	.2byte	0x2
+	.byte	0x7d
+	.sleb128 0
 	.4byte	0
 	.4byte	0
 .LLST16:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL98-.Ltext0
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL98-.Ltext0
-	.4byte	.LVL105-.Ltext0
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x53
-	.byte	0x9f
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL109-1-.Ltext0
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL109-1-.Ltext0
-	.4byte	.LFE13-.Ltext0
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x53
-	.byte	0x9f
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 4
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL93-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 4
+	.4byte	.LVL93-.Ltext0
+	.4byte	.LFE12-.Ltext0
+	.2byte	0x2
+	.byte	0x7d
+	.sleb128 4
 	.4byte	0
 	.4byte	0
 .LLST17:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL105-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 0
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL108-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 0
-	.4byte	.LVL108-.Ltext0
-	.4byte	.LFE13-.Ltext0
-	.2byte	0x2
-	.byte	0x7d
-	.sleb128 0
-	.4byte	0
-	.4byte	0
-.LLST18:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL105-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 4
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL108-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 4
-	.4byte	.LVL108-.Ltext0
-	.4byte	.LFE13-.Ltext0
-	.2byte	0x2
-	.byte	0x7d
-	.sleb128 4
-	.4byte	0
-	.4byte	0
-.LLST19:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL104-.Ltext0
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL89-.Ltext0
 	.2byte	0x2
 	.byte	0x91
 	.sleb128 8
-	.4byte	.LVL104-.Ltext0
-	.4byte	.LVL105-.Ltext0
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL108-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 8
-	.4byte	.LVL108-.Ltext0
-	.4byte	.LFE13-.Ltext0
-	.2byte	0x2
-	.byte	0x7d
-	.sleb128 8
-	.4byte	0
-	.4byte	0
-.LLST20:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL105-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 12
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL108-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 12
-	.4byte	.LVL108-.Ltext0
-	.4byte	.LFE13-.Ltext0
-	.2byte	0x2
-	.byte	0x7d
-	.sleb128 12
-	.4byte	0
-	.4byte	0
-.LLST21:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL105-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 16
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL108-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 16
-	.4byte	.LVL108-.Ltext0
-	.4byte	.LFE13-.Ltext0
-	.2byte	0x2
-	.byte	0x7d
-	.sleb128 16
-	.4byte	0
-	.4byte	0
-.LLST22:
-	.4byte	.LVL97-.Ltext0
-	.4byte	.LVL105-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 20
-	.4byte	.LVL105-.Ltext0
-	.4byte	.LVL108-.Ltext0
-	.2byte	0x2
-	.byte	0x91
-	.sleb128 20
-	.4byte	.LVL108-.Ltext0
-	.4byte	.LFE13-.Ltext0
-	.2byte	0x2
-	.byte	0x7d
-	.sleb128 20
-	.4byte	0
-	.4byte	0
-.LLST12:
 	.4byte	.LVL89-.Ltext0
 	.4byte	.LVL90-.Ltext0
 	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL90-.Ltext0
-	.4byte	.LVL96-.Ltext0
-	.2byte	0x1
 	.byte	0x55
-	.4byte	.LVL96-.Ltext0
-	.4byte	.LFE10-.Ltext0
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL93-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 8
+	.4byte	.LVL93-.Ltext0
+	.4byte	.LFE12-.Ltext0
+	.2byte	0x2
+	.byte	0x7d
+	.sleb128 8
+	.4byte	0
+	.4byte	0
+.LLST18:
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 12
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL93-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 12
+	.4byte	.LVL93-.Ltext0
+	.4byte	.LFE12-.Ltext0
+	.2byte	0x2
+	.byte	0x7d
+	.sleb128 12
+	.4byte	0
+	.4byte	0
+.LLST19:
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 16
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL93-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 16
+	.4byte	.LVL93-.Ltext0
+	.4byte	.LFE12-.Ltext0
+	.2byte	0x2
+	.byte	0x7d
+	.sleb128 16
+	.4byte	0
+	.4byte	0
+.LLST20:
+	.4byte	.LVL82-.Ltext0
+	.4byte	.LVL90-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 20
+	.4byte	.LVL90-.Ltext0
+	.4byte	.LVL93-.Ltext0
+	.2byte	0x2
+	.byte	0x91
+	.sleb128 20
+	.4byte	.LVL93-.Ltext0
+	.4byte	.LFE12-.Ltext0
+	.2byte	0x2
+	.byte	0x7d
+	.sleb128 20
 	.4byte	0
 	.4byte	0
 .LLST10:
 	.4byte	.LVL74-.Ltext0
 	.4byte	.LVL75-.Ltext0
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL75-.Ltext0
-	.4byte	.LVL76-.Ltext0
 	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL77-.Ltext0
-	.4byte	.LVL88-.Ltext0
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 -1
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST11:
-	.4byte	.LVL74-.Ltext0
+	.byte	0x50
 	.4byte	.LVL75-.Ltext0
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL78-.Ltext0
-	.4byte	.LVL79-.Ltext0
+	.4byte	.LVL81-.Ltext0
 	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL79-.Ltext0
-	.4byte	.LVL80-.Ltext0
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 1
-	.byte	0x9f
-	.4byte	.LVL80-.Ltext0
+	.byte	0x55
 	.4byte	.LVL81-.Ltext0
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 2
-	.byte	0x9f
-	.4byte	.LVL81-.Ltext0
-	.4byte	.LVL82-.Ltext0
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 3
-	.byte	0x9f
-	.4byte	.LVL82-.Ltext0
-	.4byte	.LVL83-.Ltext0
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 4
-	.byte	0x9f
-	.4byte	.LVL83-.Ltext0
-	.4byte	.LVL84-.Ltext0
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 5
-	.byte	0x9f
-	.4byte	.LVL84-.Ltext0
-	.4byte	.LVL85-.Ltext0
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 6
-	.byte	0x9f
-	.4byte	.LVL85-.Ltext0
-	.4byte	.LVL86-.Ltext0
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 7
-	.byte	0x9f
-	.4byte	.LVL86-.Ltext0
-	.4byte	.LVL87-.Ltext0
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 8
+	.4byte	.LFE9-.Ltext0
+	.2byte	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x50
 	.byte	0x9f
 	.4byte	0
 	.4byte	0
@@ -6109,15 +5857,15 @@ OS_InitTask:
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.96.c6cf1cfbe059fc867289a313c6d016c8,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x60
+	.uleb128 0x61
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x62
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.f736ad9941e78e3f128684d765efeb27,comdat
@@ -6282,8 +6030,8 @@ OS_InitTask:
 	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF282:
 	.ascii	"__LLFRACT_IBIT__ 0\000"
-.LASF345:
-	.ascii	"__USQ_FBIT__ 32\000"
+.LASF449:
+	.ascii	"ISO_CPP_VERSION CPP_VERSION_1998\000"
 .LASF166:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
 .LASF426:
@@ -6333,7 +6081,7 @@ OS_InitTask:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF391:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
-.LASF674:
+.LASF672:
 	.ascii	"DeleteFromSchedulingQueue\000"
 .LASF365:
 	.ascii	"__UTA_FBIT__ 64\000"
@@ -6367,13 +6115,13 @@ OS_InitTask:
 	.ascii	"TASK_GROUP_3\000"
 .LASF667:
 	.ascii	"AddToIdleTaskQueue\000"
-.LASF687:
+.LASF685:
 	.ascii	"task_state_request\000"
 .LASF564:
 	.ascii	"privilige_mode_e\000"
 .LASF63:
 	.ascii	"__INTPTR_TYPE__ int\000"
-.LASF671:
+.LASF669:
 	.ascii	"AddToSchedulingQueue\000"
 .LASF47:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
@@ -6419,7 +6167,7 @@ OS_InitTask:
 	.ascii	"__ATOMIC_RELAXED 0\000"
 .LASF566:
 	.ascii	"ePriviligeMode_priviliged_thread_mode\000"
-.LASF688:
+.LASF686:
 	.ascii	"OS_CreateTask\000"
 .LASF595:
 	.ascii	"max_allowed_wait_time\000"
@@ -6509,9 +6257,9 @@ OS_InitTask:
 	.ascii	"Func_os_exception\000"
 .LASF435:
 	.ascii	"__USES_INITFINI__ 1\000"
-.LASF38:
-	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
-.LASF673:
+.LASF233:
+	.ascii	"__DEC32_MIN__ 1E-95DF\000"
+.LASF671:
 	.ascii	"index\000"
 .LASF139:
 	.ascii	"__GCC_IEC_559 0\000"
@@ -6629,7 +6377,7 @@ OS_InitTask:
 	.ascii	"__LLACCUM_IBIT__ 32\000"
 .LASF547:
 	.ascii	"Func_TaskScheduler\000"
-.LASF681:
+.LASF679:
 	.ascii	"ret_task\000"
 .LASF244:
 	.ascii	"__DEC128_MANT_DIG__ 34\000"
@@ -6685,7 +6433,7 @@ OS_InitTask:
 	.ascii	"__SA_FBIT__ 15\000"
 .LASF205:
 	.ascii	"__FLT64_MIN_10_EXP__ (-307)\000"
-.LASF693:
+.LASF691:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_task_queue.c\000"
 .LASF505:
@@ -6704,8 +6452,6 @@ OS_InitTask:
 	.ascii	"task_state\000"
 .LASF569:
 	.ascii	"task_state_e\000"
-.LASF449:
-	.ascii	"ISO_CPP_VERSION CPP_VERSION_1998\000"
 .LASF84:
 	.ascii	"__WCHAR_WIDTH__ 32\000"
 .LASF200:
@@ -6726,7 +6472,7 @@ OS_InitTask:
 	.ascii	"__INT64_TYPE__ long long int\000"
 .LASF150:
 	.ascii	"__FLT_MAX_10_EXP__ 38\000"
-.LASF691:
+.LASF689:
 	.ascii	"OS_Task_InitTaskEnvironment\000"
 .LASF574:
 	.ascii	"task_state_t\000"
@@ -6734,7 +6480,7 @@ OS_InitTask:
 	.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
 .LASF298:
 	.ascii	"__USACCUM_MIN__ 0.0UHK\000"
-.LASF676:
+.LASF674:
 	.ascii	"element_nr\000"
 .LASF245:
 	.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
@@ -6746,8 +6492,8 @@ OS_InitTask:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
 .LASF582:
 	.ascii	"fair_exe_time\000"
-.LASF471:
-	.ascii	"Privilige_level_restore_saved() ;\000"
+.LASF683:
+	.ascii	"AssignNull\000"
 .LASF631:
 	.ascii	"DBG_CALIB_VALUE\000"
 .LASF208:
@@ -6776,8 +6522,8 @@ OS_InitTask:
 	.ascii	"__THUMB_INTERWORK__ 1\000"
 .LASF603:
 	.ascii	"pStackPointer\000"
-.LASF62:
-	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
+.LASF189:
+	.ascii	"__FLT32_DIG__ 6\000"
 .LASF19:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
 .LASF213:
@@ -6790,13 +6536,13 @@ OS_InitTask:
 	.ascii	"OS_SW_BUG\000"
 .LASF592:
 	.ascii	"wait_time\000"
-.LASF684:
+.LASF682:
 	.ascii	"scheduling_task\000"
 .LASF427:
 	.ascii	"__ARM_PCS 1\000"
 .LASF59:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
-.LASF678:
+.LASF676:
 	.ascii	"GetFromTaskQueue\000"
 .LASF455:
 	.ascii	"TRUE True\000"
@@ -6876,15 +6622,13 @@ OS_InitTask:
 	.ascii	"default_prio\000"
 .LASF411:
 	.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
-.LASF189:
-	.ascii	"__FLT32_DIG__ 6\000"
 .LASF349:
 	.ascii	"__UTQ_FBIT__ 128\000"
 .LASF44:
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF22:
 	.ascii	"__CHAR_BIT__ 8\000"
-.LASF682:
+.LASF680:
 	.ascii	"OS_InitTaskQueue\000"
 .LASF415:
 	.ascii	"__ARM_FP\000"
@@ -6900,7 +6644,7 @@ OS_InitTask:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF405:
 	.ascii	"__arm__ 1\000"
-.LASF689:
+.LASF687:
 	.ascii	"OS_SetSwBug\000"
 .LASF173:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
@@ -6914,7 +6658,7 @@ OS_InitTask:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF635:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF694:
+.LASF692:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF434:
@@ -6973,11 +6717,9 @@ OS_InitTask:
 	.ascii	"os_bug_exception_UndefInstruction\000"
 .LASF129:
 	.ascii	"__INT_FAST32_WIDTH__ 32\000"
-.LASF78:
-	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
 .LASF33:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
-.LASF683:
+.LASF681:
 	.ascii	"SET_RUNNING_TASK\000"
 .LASF71:
 	.ascii	"__LONG_MAX__ 0x7fffffffL\000"
@@ -6987,6 +6729,8 @@ OS_InitTask:
 	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
 .LASF79:
 	.ascii	"__SCHAR_WIDTH__ 8\000"
+.LASF471:
+	.ascii	"Privilige_level_restore_saved() ;\000"
 .LASF517:
 	.ascii	"unsigned_char_t\000"
 .LASF596:
@@ -7019,7 +6763,7 @@ OS_InitTask:
 	.ascii	"__ARM_NEON_FP\000"
 .LASF327:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
-.LASF686:
+.LASF684:
 	.ascii	"AssignUint32\000"
 .LASF182:
 	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
@@ -7079,15 +6823,13 @@ OS_InitTask:
 	.ascii	"_os_task_config_h_ \000"
 .LASF525:
 	.ascii	"os_bug_no_bug\000"
-.LASF507:
-	.ascii	"Last_task (MAX_RUN_QUEUE_SIZE-1)\000"
 .LASF398:
 	.ascii	"__ARM_FEATURE_LDREX 7\000"
 .LASF334:
 	.ascii	"__HQ_IBIT__ 0\000"
-.LASF685:
-	.ascii	"AssignNull\000"
-.LASF677:
+.LASF78:
+	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
+.LASF675:
 	.ascii	"GetFromSchedulingQueue\000"
 .LASF368:
 	.ascii	"__USER_LABEL_PREFIX__ \000"
@@ -7135,7 +6877,7 @@ OS_InitTask:
 	.ascii	"__WINT_WIDTH__ 32\000"
 .LASF249:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
-.LASF690:
+.LASF688:
 	.ascii	"Assign\000"
 .LASF656:
 	.ascii	"SAVED_STACK_POINTER\000"
@@ -7143,7 +6885,7 @@ OS_InitTask:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF346:
 	.ascii	"__USQ_IBIT__ 0\000"
-.LASF679:
+.LASF677:
 	.ascii	"DeleteFromTaskQueue\000"
 .LASF484:
 	.ascii	"MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\000"
@@ -7179,7 +6921,7 @@ OS_InitTask:
 	.ascii	"STM32F407VG 1\000"
 .LASF430:
 	.ascii	"__ARM_FEATURE_IDIV 1\000"
-.LASF675:
+.LASF673:
 	.ascii	"scheduling_queue_element\000"
 .LASF469:
 	.ascii	"Privilige_level_save_current() ;\000"
@@ -7217,7 +6959,7 @@ OS_InitTask:
 	.ascii	"__INT8_TYPE__ signed char\000"
 .LASF75:
 	.ascii	"__WINT_MAX__ 0xffffffffU\000"
-.LASF680:
+.LASF678:
 	.ascii	"AddToTaskQueue\000"
 .LASF180:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
@@ -7229,10 +6971,12 @@ OS_InitTask:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF260:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
+.LASF468:
+	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
 .LASF362:
 	.ascii	"__USA_IBIT__ 16\000"
-.LASF233:
-	.ascii	"__DEC32_MIN__ 1E-95DF\000"
+.LASF507:
+	.ascii	"Last_task (MAX_RUN_QUEUE_SIZE-1)\000"
 .LASF371:
 	.ascii	"__CHAR_UNSIGNED__ 1\000"
 .LASF135:
@@ -7313,8 +7057,8 @@ OS_InitTask:
 	.ascii	"__UQQ_IBIT__ 0\000"
 .LASF223:
 	.ascii	"__FLT32X_MAX__ 1.7976931348623157e+308F32x\000"
-.LASF669:
-	.ascii	"UpdateSchedulingQueue\000"
+.LASF345:
+	.ascii	"__USQ_FBIT__ 32\000"
 .LASF352:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF522:
@@ -7337,7 +7081,7 @@ OS_InitTask:
 	.ascii	"__STDC_HOSTED__ 1\000"
 .LASF136:
 	.ascii	"__INTPTR_MAX__ 0x7fffffff\000"
-.LASF692:
+.LASF690:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O3 -std=c90\000"
@@ -7367,10 +7111,10 @@ OS_InitTask:
 	.ascii	"BACKUP_SYSTICK_CURRENT_VAL_REG\000"
 .LASF529:
 	.ascii	"os_bug_Task_unspecified\000"
-.LASF672:
+.LASF670:
 	.ascii	"Add_successful\000"
-.LASF468:
-	.ascii	"EnableInterrupts() LLF_INT_ENABLE()\000"
+.LASF62:
+	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
 .LASF99:
 	.ascii	"__INT64_MAX__ 0x7fffffffffffffffLL\000"
 .LASF515:
@@ -7587,8 +7331,8 @@ OS_InitTask:
 	.ascii	"WaitActUntil\000"
 .LASF90:
 	.ascii	"__UINTMAX_MAX__ 0xffffffffffffffffULL\000"
-.LASF670:
-	.ascii	"dest\000"
+.LASF38:
+	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
 .LASF494:
 	.ascii	"OS_STACK_SIZE 0x5000u\000"
 .LASF283:

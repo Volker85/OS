@@ -738,6 +738,7 @@ typedef struct task_s task_t;
 typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
+extern void OS_ResetCurrentTime(void);
 extern void OS_GetCurrentTime(timebig_t* time);
 
 extern void OS_TaskSaveTaskEnvironment(task_t* task);
@@ -897,6 +898,8 @@ extern void OS_StartExtPrg(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 P
 # 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.c" 2
 static void OS_DeinitHw(void);
 static void OS_DeinitSw(void);
+static void OS_DeinitMc(void);
+
 void OS_DeinitHw(void)
 {
 
