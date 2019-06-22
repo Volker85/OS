@@ -19,11 +19,12 @@ typedef void            (*func_p_void_void_t)   (void);
 typedef void            (*func_p_t)             (void* task);
 typedef unsigned_char_t (*func_p_u8_t)          (void* task);
 typedef unsigned_char_t (*func_p_state_change_t)(void* task, task_state_t requested_task_state);
+typedef BigInt timebig_t;
 
 struct task_group_s
 {
-   unsigned_int32_t exe_time;
-   unsigned_int32_t fair_exe_time;
+   timebig_t exe_time;
+   timebig_t fair_exe_time;
 };
 typedef struct task_group_s task_group_t;
 
@@ -35,13 +36,13 @@ struct task_s
    unsigned FREE        :29;
    unsigned_char_t NrOfInsAllowed;
    unsigned_char_t NrOfInsActivated;
-   unsigned_int32_t WaitActUntil;
-   unsigned_int32_t wait_time;
-   unsigned_int32_t TimeToPrioInc;
-   unsigned_int32_t overwaittime_per_prio_inc_step;
-   unsigned_int32_t max_allowed_wait_time;
-   unsigned_int32_t exe_time;
-   unsigned_int32_t start_time;
+   timebig_t WaitActUntil;
+   timebig_t wait_time;
+   timebig_t TimeToPrioInc;
+   timebig_t overwaittime_per_prio_inc_step;
+   timebig_t max_allowed_wait_time;
+   timebig_t exe_time;
+   timebig_t start_time;
    unsigned_char_t current_prio;
    unsigned_char_t default_prio;
    unsigned_int32_t task_number;
@@ -80,7 +81,7 @@ typedef struct task_s task_t;
 typedef task_t* scheduling_t;
 extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
 extern void Inc_current_time(void);
-extern unsigned_int32_t OS_GetCurrentTime(void);
+extern timebig_t OS_GetCurrentTime(void);
 
 extern void OS_TaskSaveTaskEnvironment(task_t* task);
 extern void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
@@ -90,7 +91,7 @@ extern void OS_Task_InitTaskEnvironment(task_t* task);
 extern void OS_Task_DeleteTaskEnvironment(task_t* task);
 extern task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
 
-typedef unsigned scheduler_time_t;
+typedef timebig_t scheduler_time_t;
 
 #define os_SaveTaskPtr(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
 #define os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])

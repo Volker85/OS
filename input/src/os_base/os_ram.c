@@ -53,7 +53,7 @@ void* REGISTER_R11;
 volatile void* SAVED_STACK_POINTER;
 
 unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
-scheduler_time_t LAST_CURRENT_TIME;
+scheduler_time_t  LAST_CURRENT_TIME;
 scheduling_t      TASK_SCHEDULING_QUEUE[MAX_RUN_PQUEUE_SIZE];
 scheduling_t*     RUNNING_SCHEDULING_QUEUE_ENTRY;
 task_t            TASK_RUN_QUEUE[MAX_RUN_QUEUE_SIZE];

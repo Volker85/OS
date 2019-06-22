@@ -10,9 +10,9 @@ void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 
 #define DWT_LAR     ((volatile uint32*)0xE0001FB0)
 #define SCB_DEMCR   ((volatile uint32*)0xE000EDFC)
-static BigInt GLOBAL_TIMER1;
+static timebig_t GLOBAL_TIMER1;
 
-BigInt* OS_GetCurrentTime(void)
+timebig_t OS_GetCurrentTime(void)
 {
    /* the only free running counter on STM32F4 is the DWT counter DWT_CYCCNT
    The counter will overflow every 25sec -> provide function OS_ClearCurrentTime to reset the value to 0, and !!! do not use the absolute value for calculations but use the difference between start and stop of timer
@@ -168,4 +168,14 @@ void AssignNull(BigInt* leftOperand)
    {
       leftOperand->Number[pos] = 0x00;
    }
+}
+
+void AssignUint32(BigInt* leftOperand, uint32 rightOperand)
+{
+   uint8 pos;
+   for (pos = 0; pos < BigIntSize; pos++)
+   {
+      leftOperand->Number[pos] = 0x00;
+   }   
+   //TODO
 }

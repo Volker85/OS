@@ -15,16 +15,16 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 13 0
-	movl	$0, _stack_pos.1311
+	movl	$0, _stack_pos.1312
 	jmp	L2
 L7:
 	.loc 1 15 0
-	movl	$0, _nr_of_cores.1312
+	movl	$0, _nr_of_cores.1313
 	jmp	L3
 L5:
 	.loc 1 17 0
-	movl	_nr_of_cores.1312, %edx
-	movl	_stack_pos.1311, %ecx
+	movl	_nr_of_cores.1313, %edx
+	movl	_stack_pos.1312, %ecx
 	movl	%edx, %eax
 	sall	$2, %eax
 	addl	%edx, %eax
@@ -35,36 +35,36 @@ L5:
 	cmpb	$-86, %al
 	je	L4
 	.loc 1 19 0
-	movl	$1, _failed.1313
+	movl	$1, _failed.1314
 L4:
 	.loc 1 15 0 discriminator 2
-	movl	_nr_of_cores.1312, %eax
+	movl	_nr_of_cores.1313, %eax
 	incl	%eax
-	movl	%eax, _nr_of_cores.1312
+	movl	%eax, _nr_of_cores.1313
 L3:
 	.loc 1 15 0 is_stmt 0 discriminator 1
-	movl	_nr_of_cores.1312, %eax
+	movl	_nr_of_cores.1313, %eax
 	testl	%eax, %eax
 	jle	L5
 	.loc 1 22 0 is_stmt 1
-	movl	_stack_pos.1311, %eax
+	movl	_stack_pos.1312, %eax
 	movb	_OS_MAIN_STACK(%eax), %al
 	cmpb	$-86, %al
 	je	L6
 	.loc 1 24 0
-	movl	$1, _failed.1313
+	movl	$1, _failed.1314
 L6:
 	.loc 1 13 0 discriminator 2
-	movl	_stack_pos.1311, %eax
+	movl	_stack_pos.1312, %eax
 	incl	%eax
-	movl	%eax, _stack_pos.1311
+	movl	%eax, _stack_pos.1312
 L2:
 	.loc 1 13 0 is_stmt 0 discriminator 1
-	movl	_stack_pos.1311, %eax
+	movl	_stack_pos.1312, %eax
 	cmpl	$63, %eax
 	jle	L7
 	.loc 1 27 0 is_stmt 1
-	movl	_failed.1313, %eax
+	movl	_failed.1314, %eax
 	cmpl	$1, %eax
 	jne	L1
 	.loc 1 29 0
@@ -94,16 +94,16 @@ LFB1:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	.loc 1 39 0
-	movl	$0, _stack_pos.1324
+	movl	$0, _stack_pos.1325
 	jmp	L11
 L14:
 	.loc 1 41 0
-	movl	$0, _nr_of_cores.1325
+	movl	$0, _nr_of_cores.1326
 	jmp	L12
 L13:
 	.loc 1 43 0 discriminator 3
-	movl	_nr_of_cores.1325, %edx
-	movl	_stack_pos.1324, %ecx
+	movl	_nr_of_cores.1326, %edx
+	movl	_stack_pos.1325, %ecx
 	movl	%edx, %eax
 	sall	$2, %eax
 	addl	%edx, %eax
@@ -112,24 +112,24 @@ L13:
 	addl	$_OS_STACK, %eax
 	movb	$-86, (%eax)
 	.loc 1 41 0 discriminator 3
-	movl	_nr_of_cores.1325, %eax
+	movl	_nr_of_cores.1326, %eax
 	incl	%eax
-	movl	%eax, _nr_of_cores.1325
+	movl	%eax, _nr_of_cores.1326
 L12:
 	.loc 1 41 0 is_stmt 0 discriminator 1
-	movl	_nr_of_cores.1325, %eax
+	movl	_nr_of_cores.1326, %eax
 	testl	%eax, %eax
 	jle	L13
 	.loc 1 45 0 is_stmt 1 discriminator 2
-	movl	_stack_pos.1324, %eax
+	movl	_stack_pos.1325, %eax
 	movb	$-86, _OS_MAIN_STACK(%eax)
 	.loc 1 39 0 discriminator 2
-	movl	_stack_pos.1324, %eax
+	movl	_stack_pos.1325, %eax
 	incl	%eax
-	movl	%eax, _stack_pos.1324
+	movl	%eax, _stack_pos.1325
 L11:
 	.loc 1 39 0 is_stmt 0 discriminator 1
-	movl	_stack_pos.1324, %eax
+	movl	_stack_pos.1325, %eax
 	cmpl	$63, %eax
 	jle	L14
 	.loc 1 47 0 is_stmt 1
@@ -139,11 +139,11 @@ L11:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _stack_pos.1311,4,4
-.lcomm _nr_of_cores.1312,4,4
-.lcomm _failed.1313,4,4
-.lcomm _stack_pos.1324,4,4
-.lcomm _nr_of_cores.1325,4,4
+.lcomm _stack_pos.1312,4,4
+.lcomm _nr_of_cores.1313,4,4
+.lcomm _failed.1314,4,4
+.lcomm _stack_pos.1325,4,4
+.lcomm _nr_of_cores.1326,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
@@ -313,7 +313,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_pos.1311
+	.long	_stack_pos.1312
 	.uleb128 0x7
 	.secrel32	LASF1
 	.byte	0x1
@@ -321,7 +321,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_nr_of_cores.1312
+	.long	_nr_of_cores.1313
 	.uleb128 0x8
 	.ascii "failed\0"
 	.byte	0x1
@@ -329,7 +329,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_failed.1313
+	.long	_failed.1314
 	.byte	0
 	.uleb128 0x9
 	.long	0x466
@@ -353,7 +353,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_pos.1324
+	.long	_stack_pos.1325
 	.uleb128 0x7
 	.secrel32	LASF1
 	.byte	0x1
@@ -361,7 +361,7 @@ Ldebug_info0:
 	.long	0x461
 	.uleb128 0x5
 	.byte	0x3
-	.long	_nr_of_cores.1325
+	.long	_nr_of_cores.1326
 	.byte	0
 	.uleb128 0xb
 	.long	0x8c
@@ -1558,10 +1558,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x5f
+	.uleb128 0x60
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x60
+	.uleb128 0x61
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4
