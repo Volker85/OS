@@ -34,6 +34,9 @@ extern volatile uint32 TASK2_CALL_NR;
 extern volatile uint32 TASK3_CALL_NR;
 extern volatile uint32 TASK4_CALL_NR;
 
+extern volatile uint32* CRITICAL_ADDR;
+extern volatile uint32  CRITICAL_POS;
+extern volatile uint32  CRITICAL_STACK_USAGE_PERCENT;
 extern unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
 extern scheduler_time_t  LAST_CURRENT_TIME;
 extern scheduling_t      TASK_SCHEDULING_QUEUE[MAX_RUN_PQUEUE_SIZE];

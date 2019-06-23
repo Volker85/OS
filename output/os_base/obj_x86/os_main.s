@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1398, %eax
+	movl	_call_nr.1401, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,16 +33,16 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1398, %eax
+	movl	_call_nr.1401, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1398
+	movl	%eax, _call_nr.1401
 	.loc 1 64 0
 	jmp	L1
 L5:
 	.loc 1 67 0
-	movl	_call_nr.1398, %eax
+	movl	_call_nr.1401, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1398
+	movl	%eax, _call_nr.1401
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -50,16 +50,16 @@ L6:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1398, %eax
+	movl	_call_nr.1401, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1398
+	movl	%eax, _call_nr.1401
 	.loc 1 72 0
 	jmp	L1
 L7:
 	.loc 1 75 0
-	movl	_call_nr.1398, %eax
+	movl	_call_nr.1401, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1398
+	movl	%eax, _call_nr.1401
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -67,7 +67,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1398
+	movl	$0, _call_nr.1401
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -101,58 +101,56 @@ LFB1:
 	jb	L14
 	cmpl	$2, %eax
 	je	L15
-	.loc 1 165 0
+	.loc 1 164 0
 	jmp	L16
 L14:
 	.loc 1 99 0
-	call	_OS_StackChkPatternInit
-	.loc 1 100 0
 	call	_OS_InitMc
-	.loc 1 103 0
+	.loc 1 102 0
 	call	_OS_InitHw
-	.loc 1 104 0
+	.loc 1 103 0
 	call	_OS_InitSw
-	.loc 1 109 0
+	.loc 1 108 0
 	movl	$_TASK_0_VAR, (%esp)
 	call	_OS_ActivateTask
-	.loc 1 110 0
+	.loc 1 109 0
 	call	_GetIdleTask
 	movl	$0, 4(%esp)
 	movl	%eax, (%esp)
 	call	_OS_StartTask
-	.loc 1 111 0
+	.loc 1 110 0
 	call	_OS_ActivateDispatcher
-	.loc 1 113 0
+	.loc 1 112 0
 	movl	$1, _OS_STATE
-	.loc 1 115 0
+	.loc 1 114 0
 	call	_LLF_INT_ENABLE
-	.loc 1 116 0
+	.loc 1 115 0
 	jmp	L16
 L13:
-	.loc 1 120 0
-	movl	_call_nr.1410, %eax
+	.loc 1 119 0
+	movl	_call_nr.1413, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
 	movl	%edx, %eax
 	testl	%eax, %eax
 	jne	L17
-	.loc 1 122 0
+	.loc 1 121 0
 	call	_OS_DetermineNextTaskActivation
 L17:
-	.loc 1 124 0
-	movl	_call_nr.1410, %eax
+	.loc 1 123 0
+	movl	_call_nr.1413, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1410
-	.loc 1 126 0
+	movl	%eax, _call_nr.1413
+	.loc 1 125 0
 	call	_OS_TaskDispatcher
-	.loc 1 133 0
+	.loc 1 132 0
 	jmp	L16
 L15:
-	.loc 1 137 0
+	.loc 1 136 0
 	call	_LLF_INT_DISABLE
-	.loc 1 138 0
-	movl	_sys_req_reset_state.1409, %eax
+	.loc 1 137 0
+	movl	_sys_req_reset_state.1412, %eax
 	cmpl	$1, %eax
 	je	L19
 	cmpl	$1, %eax
@@ -161,46 +159,46 @@ L15:
 	je	L21
 	jmp	L23
 L20:
-	.loc 1 142 0
+	.loc 1 141 0
 	movl	$1, (%esp)
 	call	_OS_Shutdown
-	.loc 1 143 0
+	.loc 1 142 0
 	jmp	L22
 L19:
-	.loc 1 147 0
+	.loc 1 146 0
 	movl	$0, (%esp)
 	call	_OS_Shutdown
-	.loc 1 148 0
+	.loc 1 147 0
 	jmp	L22
 L21:
-	.loc 1 152 0
+	.loc 1 151 0
 	movl	$2, (%esp)
 	call	_OS_Shutdown
-	.loc 1 153 0
+	.loc 1 152 0
 	jmp	L22
 L23:
-	.loc 1 157 0
+	.loc 1 156 0
 	movl	$0, (%esp)
 	call	_OS_Shutdown
-	.loc 1 158 0
+	.loc 1 157 0
 	nop
 L22:
-	.loc 1 161 0
+	.loc 1 160 0
 	nop
 L16:
-	.loc 1 169 0
-	movl	$20416, (%esp)
+	.loc 1 168 0
+	movl	$448, (%esp)
 	call	_OS_StackCheck
-	.loc 1 176 0
+	.loc 1 175 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1398,4,4
-.lcomm _call_nr.1410,4,4
-.lcomm _sys_req_reset_state.1409,4,4
+.lcomm _call_nr.1401,4,4
+.lcomm _call_nr.1413,4,4
+.lcomm _sys_req_reset_state.1412,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -667,7 +665,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1398
+	.long	_call_nr.1401
 	.byte	0
 	.uleb128 0x13
 	.ascii "OS_StateHandler\0"
@@ -685,7 +683,7 @@ Ldebug_info0:
 	.long	0x690
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1409
+	.long	_sys_req_reset_state.1412
 	.uleb128 0x12
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -693,7 +691,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1410
+	.long	_call_nr.1413
 	.byte	0
 	.uleb128 0x14
 	.ascii "OS_STATE\0"
@@ -705,22 +703,22 @@ Ldebug_info0:
 	.uleb128 0x14
 	.ascii "TASK_0_VAR\0"
 	.byte	0x7
-	.byte	0x2d
+	.byte	0x30
 	.long	0x5e2
 	.uleb128 0x14
 	.ascii "TASK_1_VAR\0"
 	.byte	0x7
-	.byte	0x2d
+	.byte	0x30
 	.long	0x5e2
 	.uleb128 0x14
 	.ascii "TASK_2_VAR\0"
 	.byte	0x7
-	.byte	0x2d
+	.byte	0x30
 	.long	0x5e2
 	.uleb128 0x14
 	.ascii "TASK_3_VAR\0"
 	.byte	0x7
-	.byte	0x2d
+	.byte	0x30
 	.long	0x5e2
 	.byte	0
 	.section	.debug_abbrev,"dr"
@@ -2006,7 +2004,7 @@ Ldebug_macro0:
 	.ascii "_os_stack_h_ \0"
 	.byte	0x1
 	.uleb128 0x4
-	.ascii "OS_STACK_SIZE 0x5000u\0"
+	.ascii "OS_STACK_SIZE 0x200u\0"
 	.byte	0x4
 	.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
 	.byte	0x3
@@ -2145,7 +2143,6 @@ LASF0:
 	.ascii "exe_time\0"
 	.ident	"GCC: (GNU) 4.9.3"
 	.def	_OS_ActivateTask;	.scl	2;	.type	32;	.endef
-	.def	_OS_StackChkPatternInit;	.scl	2;	.type	32;	.endef
 	.def	_OS_InitMc;	.scl	2;	.type	32;	.endef
 	.def	_OS_InitHw;	.scl	2;	.type	32;	.endef
 	.def	_OS_InitSw;	.scl	2;	.type	32;	.endef

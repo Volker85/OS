@@ -96,7 +96,6 @@ void OS_StateHandler(void)
    case os_init:
    {
       /*init the MCU including MMU, RAM, Registers */
-      OS_StackChkPatternInit();
       OS_InitMc();
       /* start the task system */
       /* initialisation of SW, HW will be done in the tasks, after starting the task system.... */

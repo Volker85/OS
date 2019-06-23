@@ -2,6 +2,7 @@
 
 void OS_StackCheck(uint32 amount_bytes_to_check)
 {
+   #if(1)
    /* the last 64 bytes are reserved for stack check for every stack 
    unsigned_char_t OS_STACK[NR_OF_CORES][OS_STACK_SIZE];
    unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];
@@ -10,9 +11,9 @@ void OS_StackCheck(uint32 amount_bytes_to_check)
    
    */
    static volatile uint32 stack_pos = 0, nr_of_cores = 0, failed = False;
-   static volatile uint32* critical_addr = (volatile uint32*)-1;
-   static volatile uint32  critical_pos =  (volatile uint32) -1;
-   static volatile uint32  critical_stack_usage_percent = 0u;
+   CRITICAL_ADDR = (volatile uint32*)-1;
+   CRITICAL_POS =  (volatile uint32) -1;
+   CRITICAL_STACK_USAGE_PERCENT = 0u;
 
    for(stack_pos = 0; stack_pos < amount_bytes_to_check; stack_pos++)
    {
@@ -21,39 +22,40 @@ void OS_StackCheck(uint32 amount_bytes_to_check)
          if(OS_STACK[nr_of_cores][stack_pos] != 0xAA)
          {
             failed = True;
-            if(stack_pos < critical_pos)
+            if(stack_pos < CRITICAL_POS)
             {
-               critical_pos  = (volatile uint32 )stack_pos;
-               critical_addr = (volatile uint32*)&OS_STACK[nr_of_cores][stack_pos];
+               CRITICAL_POS  = (volatile uint32 )stack_pos;
+               CRITICAL_ADDR = (volatile uint32*)&OS_STACK[nr_of_cores][stack_pos];
             }   
          }   
       }
       if(OS_MAIN_STACK[stack_pos] != 0xAA)
       {
          failed = True;
-         if(stack_pos < critical_pos)
+         if(stack_pos < CRITICAL_POS)
          {
-            critical_pos  = (volatile uint32 )stack_pos;
-            critical_addr = (volatile uint32*)&OS_MAIN_STACK[stack_pos];
+            CRITICAL_POS  = (volatile uint32 )stack_pos;
+            CRITICAL_ADDR = (volatile uint32*)&OS_MAIN_STACK[stack_pos];
          }          
       }         
    }
-   critical_stack_usage_percent = (OS_STACK_SIZE - critical_pos) * 100u / OS_STACK_SIZE;
+   CRITICAL_STACK_USAGE_PERCENT = (OS_STACK_SIZE - CRITICAL_POS) * 100u / OS_STACK_SIZE;
    
-   if((failed == True) && (critical_stack_usage_percent > 80u))
+   if((failed == True) && (CRITICAL_STACK_USAGE_PERCENT > 80u))
    {
       OS_SetSwBug(os_bug_critical_stack_usage,Func_StackCheck);
-      ReferenceUnusedParameter(critical_pos);
-      ReferenceUnusedParameter(critical_addr);
+      ReferenceUnusedParameter(CRITICAL_POS);
+      ReferenceUnusedParameter(CRITICAL_ADDR);
       while(1)
       {
          /* allow easy debugging */
       }  
    }   
+   #endif
 }
 void OS_StackChkPatternInit(void)
 {
-   static volatile uint32 stack_pos = 0,nr_of_cores = 0;
+   uint32 stack_pos = 0,nr_of_cores = 0;
    /* init the stack with 0xAA (only the highest 64 bytes leave out, because they might be already in use by SW) */
    for(stack_pos = 0; stack_pos < (OS_STACK_SIZE-64); stack_pos++)
    {

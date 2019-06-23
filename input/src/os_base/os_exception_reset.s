@@ -24,6 +24,9 @@
         .extern _ram_end
         .extern RAM_CHECK_FAILURE_DETECTED
         .extern RAM_CHECK_FAILURE_ADDR
+        #value for OS_STACK_SIZE needs to be equal to be value defined in os_stack.h
+        .equ OS_STACK_SIZE, 0x200
+        
 
 OS_Exception_RESET:
         MOV r0, #0/*Step 1:  init general purpose registers: r0...r12: general purpose */
@@ -113,7 +116,7 @@ Loop_end:
          # r0 = stack variable start addr
          LDR r0, =OS_MAIN_STACK
          # r2 = Stack size
-         MOV r2, #0x5000
+         MOV r2, OS_STACK_SIZE
          #
          # r1 = OS_MAIN_STACK +STACK_SIZE-1
          #

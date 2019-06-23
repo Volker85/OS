@@ -2170,7 +2170,7 @@ Ldebug_info0:
 	.long	0xdd4
 	.uleb128 0x21
 	.long	0x45c
-	.word	0x4fff
+	.word	0x1ff
 	.byte	0
 	.uleb128 0x22
 	.ascii "OS_MAIN_STACK\0"
@@ -2197,72 +2197,72 @@ Ldebug_info0:
 	.uleb128 0x22
 	.ascii "TASK_STACK\0"
 	.byte	0x6
-	.byte	0x25
+	.byte	0x28
 	.long	0xe03
 	.uleb128 0x22
 	.ascii "LAST_CURRENT_TIME\0"
 	.byte	0x6
-	.byte	0x26
+	.byte	0x29
 	.long	0x92e
 	.uleb128 0x22
 	.ascii "TASK_0_VAR\0"
 	.byte	0x6
-	.byte	0x2d
+	.byte	0x30
 	.long	0x906
 	.uleb128 0x22
 	.ascii "TASK_1_VAR\0"
 	.byte	0x6
-	.byte	0x2d
+	.byte	0x30
 	.long	0x906
 	.uleb128 0x22
 	.ascii "TASK_2_VAR\0"
 	.byte	0x6
-	.byte	0x2d
+	.byte	0x30
 	.long	0x906
 	.uleb128 0x22
 	.ascii "TASK_3_VAR\0"
 	.byte	0x6
-	.byte	0x2d
+	.byte	0x30
 	.long	0x906
 	.uleb128 0x22
 	.ascii "TASK_GROUP_1\0"
 	.byte	0x6
-	.byte	0x2e
+	.byte	0x31
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_GROUP_2\0"
 	.byte	0x6
-	.byte	0x2e
+	.byte	0x31
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_GROUP_3\0"
 	.byte	0x6
-	.byte	0x2e
+	.byte	0x31
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_GROUP_4\0"
 	.byte	0x6
-	.byte	0x2e
+	.byte	0x31
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_GROUP_5\0"
 	.byte	0x6
-	.byte	0x2e
+	.byte	0x31
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_TRANSITION_REJECTED_TASK_ADDR\0"
 	.byte	0x6
-	.byte	0x2f
+	.byte	0x32
 	.long	0x928
 	.uleb128 0x22
 	.ascii "TASK_TRANSITION_REJECTED_STATE\0"
 	.byte	0x6
-	.byte	0x30
+	.byte	0x33
 	.long	0x5ab
 	.uleb128 0x22
 	.ascii "TASK_TRANSITION_CURRENT_STATE\0"
 	.byte	0x6
-	.byte	0x31
+	.byte	0x34
 	.long	0x5ab
 	.byte	0
 	.section	.debug_abbrev,"dr"
@@ -3802,7 +3802,7 @@ Ldebug_macro0:
 	.ascii "_os_stack_h_ \0"
 	.byte	0x1
 	.uleb128 0x4
-	.ascii "OS_STACK_SIZE 0x5000u\0"
+	.ascii "OS_STACK_SIZE 0x200u\0"
 	.byte	0x4
 	.file 20 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
 	.byte	0x3

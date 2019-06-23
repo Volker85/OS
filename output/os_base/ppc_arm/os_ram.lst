@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccbPk9QO.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4uAlxk.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccbPk9QO.s 			page 1
   55              		.comm	DBG_RLD_VALUE,4,4
   56              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
   57              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccbPk9QO.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4uAlxk.s 			page 2
 
 
   58              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
@@ -73,16 +73,19 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccbPk9QO.s 			page 1
   67              		.comm	VAR_HARDFAULT_STATUS_REG,4,4
   68              		.comm	OS_STATE,4,4
   69              		.comm	OS_SW_BUG,15,4
-  70              		.comm	OS_MAIN_STACK,20480,4
-  71              		.comm	OS_STACK,20480,4
-  72              	.Letext0:
-  73              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  74              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-  75              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  76              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  77              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  78              		.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccbPk9QO.s 			page 3
+  70              		.comm	OS_MAIN_STACK,512,4
+  71              		.comm	OS_STACK,512,4
+  72              		.comm	CRITICAL_STACK_USAGE_PERCENT,4,4
+  73              		.comm	CRITICAL_POS,4,4
+  74              		.comm	CRITICAL_ADDR,4,4
+  75              	.Letext0:
+  76              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  77              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+  78              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  79              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  80              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  81              		.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4uAlxk.s 			page 3
 
 
 DEFINED SYMBOLS
@@ -142,17 +145,20 @@ DEFINED SYMBOLS
                             *COM*:00000004 VAR_HARDFAULT_STATUS_REG
                             *COM*:00000004 OS_STATE
                             *COM*:0000000f OS_SW_BUG
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccbPk9QO.s 			page 4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4uAlxk.s 			page 4
 
 
-                            *COM*:00005000 OS_MAIN_STACK
-                            *COM*:00005000 OS_STACK
+                            *COM*:00000200 OS_MAIN_STACK
+                            *COM*:00000200 OS_STACK
+                            *COM*:00000004 CRITICAL_STACK_USAGE_PERCENT
+                            *COM*:00000004 CRITICAL_POS
+                            *COM*:00000004 CRITICAL_ADDR
                            .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.7d3083dfb0b17ee9cbe20f6fe4481cd9
                            .group:00000000 wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898
                            .group:00000000 wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1
-                           .group:00000000 wm4.os_stack.h.2.f736ad9941e78e3f128684d765efeb27
+                           .group:00000000 wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4
                            .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
                            .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
 

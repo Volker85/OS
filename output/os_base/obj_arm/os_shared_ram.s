@@ -37,15 +37,15 @@
 	.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shared_ram.c"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x7ca
+	.4byte	0x7f1
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF654
+	.4byte	.LASF657
 	.byte	0x1
-	.4byte	.LASF655
-	.4byte	.LASF656
+	.4byte	.LASF658
+	.4byte	.LASF659
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macro0
 	.uleb128 0x2
@@ -587,7 +587,7 @@
 	.byte	0
 	.uleb128 0x13
 	.4byte	0x103
-	.2byte	0x4fff
+	.2byte	0x1ff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF595
@@ -599,7 +599,7 @@
 	.4byte	0x476
 	.uleb128 0x13
 	.4byte	0x103
-	.2byte	0x4fff
+	.2byte	0x1ff
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF596
@@ -715,9 +715,27 @@
 	.byte	0x5
 	.byte	0x23
 	.4byte	0x77
+	.uleb128 0x12
+	.4byte	.LASF617
+	.byte	0x5
+	.byte	0x25
+	.4byte	0x57d
+	.uleb128 0xb
+	.byte	0x4
+	.4byte	0x77
+	.uleb128 0x12
+	.4byte	.LASF618
+	.byte	0x5
+	.byte	0x26
+	.4byte	0x77
+	.uleb128 0x12
+	.4byte	.LASF619
+	.byte	0x5
+	.byte	0x27
+	.4byte	0x77
 	.uleb128 0x9
 	.4byte	0x21
-	.4byte	0x589
+	.4byte	0x5b0
 	.uleb128 0xa
 	.4byte	0x103
 	.byte	0x9
@@ -726,270 +744,270 @@
 	.2byte	0x7cf
 	.byte	0
 	.uleb128 0x12
-	.4byte	.LASF617
-	.byte	0x5
-	.byte	0x25
-	.4byte	0x572
-	.uleb128 0x12
-	.4byte	.LASF618
-	.byte	0x5
-	.byte	0x26
-	.4byte	0x41c
-	.uleb128 0x9
-	.4byte	0x3f0
-	.4byte	0x5af
-	.uleb128 0xa
-	.4byte	0x103
-	.byte	0x9
-	.byte	0
-	.uleb128 0x12
-	.4byte	.LASF619
-	.byte	0x5
-	.byte	0x27
-	.4byte	0x59f
-	.uleb128 0x12
 	.4byte	.LASF620
 	.byte	0x5
 	.byte	0x28
-	.4byte	0x5c5
-	.uleb128 0xb
-	.byte	0x4
-	.4byte	0x3f0
-	.uleb128 0x9
-	.4byte	0x3e5
-	.4byte	0x5db
-	.uleb128 0xa
-	.4byte	0x103
-	.byte	0x9
-	.byte	0
+	.4byte	0x599
 	.uleb128 0x12
 	.4byte	.LASF621
 	.byte	0x5
 	.byte	0x29
-	.4byte	0x5cb
+	.4byte	0x41c
 	.uleb128 0x9
-	.4byte	0x3e5
-	.4byte	0x5f6
+	.4byte	0x3f0
+	.4byte	0x5d6
 	.uleb128 0xa
 	.4byte	0x103
-	.byte	0
+	.byte	0x9
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF622
 	.byte	0x5
 	.byte	0x2a
-	.4byte	0x5e6
+	.4byte	0x5c6
 	.uleb128 0x12
 	.4byte	.LASF623
 	.byte	0x5
 	.byte	0x2b
-	.4byte	0x5e6
+	.4byte	0x5ec
+	.uleb128 0xb
+	.byte	0x4
+	.4byte	0x3f0
+	.uleb128 0x9
+	.4byte	0x3e5
+	.4byte	0x602
+	.uleb128 0xa
+	.4byte	0x103
+	.byte	0x9
+	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF624
 	.byte	0x5
 	.byte	0x2c
-	.4byte	0x21
+	.4byte	0x5f2
+	.uleb128 0x9
+	.4byte	0x3e5
+	.4byte	0x61d
+	.uleb128 0xa
+	.4byte	0x103
+	.byte	0
+	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF625
 	.byte	0x5
 	.byte	0x2d
-	.4byte	0x3e5
+	.4byte	0x60d
 	.uleb128 0x12
 	.4byte	.LASF626
 	.byte	0x5
-	.byte	0x2d
-	.4byte	0x3e5
+	.byte	0x2e
+	.4byte	0x60d
 	.uleb128 0x12
 	.4byte	.LASF627
 	.byte	0x5
-	.byte	0x2d
-	.4byte	0x3e5
+	.byte	0x2f
+	.4byte	0x21
 	.uleb128 0x12
 	.4byte	.LASF628
 	.byte	0x5
-	.byte	0x2d
+	.byte	0x30
 	.4byte	0x3e5
 	.uleb128 0x12
 	.4byte	.LASF629
 	.byte	0x5
-	.byte	0x2e
-	.4byte	0x1ec
+	.byte	0x30
+	.4byte	0x3e5
 	.uleb128 0x12
 	.4byte	.LASF630
 	.byte	0x5
-	.byte	0x2e
-	.4byte	0x1ec
+	.byte	0x30
+	.4byte	0x3e5
 	.uleb128 0x12
 	.4byte	.LASF631
 	.byte	0x5
-	.byte	0x2e
-	.4byte	0x1ec
+	.byte	0x30
+	.4byte	0x3e5
 	.uleb128 0x12
 	.4byte	.LASF632
 	.byte	0x5
-	.byte	0x2e
+	.byte	0x31
 	.4byte	0x1ec
 	.uleb128 0x12
 	.4byte	.LASF633
 	.byte	0x5
-	.byte	0x2e
+	.byte	0x31
 	.4byte	0x1ec
 	.uleb128 0x12
 	.4byte	.LASF634
 	.byte	0x5
-	.byte	0x2f
-	.4byte	0x3fb
+	.byte	0x31
+	.4byte	0x1ec
 	.uleb128 0x12
 	.4byte	.LASF635
 	.byte	0x5
-	.byte	0x30
-	.4byte	0x16e
+	.byte	0x31
+	.4byte	0x1ec
 	.uleb128 0x12
 	.4byte	.LASF636
 	.byte	0x5
 	.byte	0x31
-	.4byte	0x16e
+	.4byte	0x1ec
 	.uleb128 0x12
 	.4byte	.LASF637
 	.byte	0x5
 	.byte	0x32
-	.4byte	0x6a6
+	.4byte	0x3fb
+	.uleb128 0x12
+	.4byte	.LASF638
+	.byte	0x5
+	.byte	0x33
+	.4byte	0x16e
+	.uleb128 0x12
+	.4byte	.LASF639
+	.byte	0x5
+	.byte	0x34
+	.4byte	0x16e
+	.uleb128 0x12
+	.4byte	.LASF640
+	.byte	0x5
+	.byte	0x35
+	.4byte	0x6cd
 	.uleb128 0xb
 	.byte	0x4
-	.4byte	0x6ac
+	.4byte	0x6d3
 	.uleb128 0x14
 	.uleb128 0x9
 	.4byte	0x21
-	.4byte	0x6bd
+	.4byte	0x6e4
 	.uleb128 0xa
 	.4byte	0x103
 	.byte	0xff
 	.byte	0
 	.uleb128 0x15
-	.4byte	.LASF638
+	.4byte	.LASF641
 	.byte	0x6
 	.byte	0x15
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C00_C00
 	.uleb128 0x15
-	.4byte	.LASF639
+	.4byte	.LASF642
 	.byte	0x6
 	.byte	0x16
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C00_C01
 	.uleb128 0x15
-	.4byte	.LASF640
+	.4byte	.LASF643
 	.byte	0x6
 	.byte	0x17
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C00_C02
 	.uleb128 0x15
-	.4byte	.LASF641
+	.4byte	.LASF644
 	.byte	0x6
 	.byte	0x18
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C00_C03
 	.uleb128 0x15
-	.4byte	.LASF642
+	.4byte	.LASF645
 	.byte	0x6
 	.byte	0x1a
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C01_C00
 	.uleb128 0x15
-	.4byte	.LASF643
+	.4byte	.LASF646
 	.byte	0x6
 	.byte	0x1b
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C01_C01
 	.uleb128 0x15
-	.4byte	.LASF644
+	.4byte	.LASF647
 	.byte	0x6
 	.byte	0x1c
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C01_C02
 	.uleb128 0x15
-	.4byte	.LASF645
+	.4byte	.LASF648
 	.byte	0x6
 	.byte	0x1d
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C01_C03
 	.uleb128 0x15
-	.4byte	.LASF646
+	.4byte	.LASF649
 	.byte	0x6
 	.byte	0x1f
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C02_C00
 	.uleb128 0x15
-	.4byte	.LASF647
+	.4byte	.LASF650
 	.byte	0x6
 	.byte	0x20
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C02_C01
 	.uleb128 0x15
-	.4byte	.LASF648
+	.4byte	.LASF651
 	.byte	0x6
 	.byte	0x21
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C02_C02
 	.uleb128 0x15
-	.4byte	.LASF649
+	.4byte	.LASF652
 	.byte	0x6
 	.byte	0x22
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C02_C03
 	.uleb128 0x15
-	.4byte	.LASF650
+	.4byte	.LASF653
 	.byte	0x6
 	.byte	0x24
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C03_C00
 	.uleb128 0x15
-	.4byte	.LASF651
+	.4byte	.LASF654
 	.byte	0x6
 	.byte	0x25
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C03_C01
 	.uleb128 0x15
-	.4byte	.LASF652
+	.4byte	.LASF655
 	.byte	0x6
 	.byte	0x26
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C03_C02
 	.uleb128 0x15
-	.4byte	.LASF653
+	.4byte	.LASF656
 	.byte	0x6
 	.byte	0x27
-	.4byte	0x6ad
+	.4byte	0x6d4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	RAM_BLOCK_C03_C03
@@ -2909,7 +2927,7 @@
 	.uleb128 0x62
 	.4byte	.LASF490
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.f736ad9941e78e3f128684d765efeb27,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4,comdat
 .Ldebug_macro6:
 	.2byte	0x4
 	.byte	0
@@ -2995,6 +3013,8 @@
 	.ascii	"__ARM_NEON__\000"
 .LASF389:
 	.ascii	"__SIZEOF_WINT_T__ 4\000"
+.LASF619:
+	.ascii	"CRITICAL_STACK_USAGE_PERCENT\000"
 .LASF332:
 	.ascii	"__QQ_IBIT__ 0\000"
 .LASF348:
@@ -3003,7 +3023,7 @@
 	.ascii	"timebig_t\000"
 .LASF259:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
-.LASF624:
+.LASF627:
 	.ascii	"bTASK_QUEUE_INITIALIZED\000"
 .LASF111:
 	.ascii	"__INT32_C(c) c ## L\000"
@@ -3053,7 +3073,7 @@
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
 .LASF454:
 	.ascii	"FALSE False\000"
-.LASF655:
+.LASF658:
 	.ascii	"E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input"
 	.ascii	"\\src\\os_base\\os_shared_ram.c\000"
 .LASF17:
@@ -3093,13 +3113,13 @@
 	.ascii	"__INT_MAX__ 0x7fffffff\000"
 .LASF9:
 	.ascii	"__ATOMIC_RELEASE 3\000"
-.LASF650:
-	.ascii	"RAM_BLOCK_C03_C00\000"
-.LASF651:
-	.ascii	"RAM_BLOCK_C03_C01\000"
-.LASF652:
-	.ascii	"RAM_BLOCK_C03_C02\000"
 .LASF653:
+	.ascii	"RAM_BLOCK_C03_C00\000"
+.LASF654:
+	.ascii	"RAM_BLOCK_C03_C01\000"
+.LASF655:
+	.ascii	"RAM_BLOCK_C03_C02\000"
+.LASF656:
 	.ascii	"RAM_BLOCK_C03_C03\000"
 .LASF40:
 	.ascii	"__INT16_TYPE__ short int\000"
@@ -3117,6 +3137,8 @@
 	.ascii	"__LLACCUM_IBIT__ 32\000"
 .LASF7:
 	.ascii	"__ATOMIC_SEQ_CST 5\000"
+.LASF617:
+	.ascii	"CRITICAL_ADDR\000"
 .LASF545:
 	.ascii	"privilige_mode_e\000"
 .LASF63:
@@ -3138,7 +3160,7 @@
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF236:
 	.ascii	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\000"
-.LASF618:
+.LASF621:
 	.ascii	"LAST_CURRENT_TIME\000"
 .LASF605:
 	.ascii	"VAR_AUX_FAULT_STATUS_REG\000"
@@ -3154,13 +3176,13 @@
 	.ascii	"MCU_CLOCK_IN_HZ ((uint32)168000000u)\000"
 .LASF107:
 	.ascii	"__INT_LEAST16_MAX__ 0x7fff\000"
-.LASF638:
+.LASF641:
 	.ascii	"RAM_BLOCK_C00_C00\000"
-.LASF639:
+.LASF642:
 	.ascii	"RAM_BLOCK_C00_C01\000"
 .LASF68:
 	.ascii	"__SCHAR_MAX__ 0x7f\000"
-.LASF641:
+.LASF644:
 	.ascii	"RAM_BLOCK_C00_C03\000"
 .LASF250:
 	.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
@@ -3213,7 +3235,7 @@
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF458:
 	.ascii	"Local static\000"
-.LASF627:
+.LASF630:
 	.ascii	"TASK_2_VAR\000"
 .LASF407:
 	.ascii	"__APCS_32__ 1\000"
@@ -3257,7 +3279,7 @@
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
 .LASF139:
 	.ascii	"__GCC_IEC_559 0\000"
-.LASF634:
+.LASF637:
 	.ascii	"TASK_TRANSITION_REJECTED_TASK_ADDR\000"
 .LASF615:
 	.ascii	"TASK3_CALL_NR\000"
@@ -3349,7 +3371,7 @@
 	.ascii	"__SIZEOF_WCHAR_T__ 4\000"
 .LASF184:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
-.LASF617:
+.LASF620:
 	.ascii	"TASK_STACK\000"
 .LASF207:
 	.ascii	"__FLT64_MAX_10_EXP__ 308\000"
@@ -3411,9 +3433,9 @@
 	.ascii	"__SFRACT_FBIT__ 7\000"
 .LASF440:
 	.ascii	"INTEGER_LLP64_IL32P64 1\000"
-.LASF631:
+.LASF634:
 	.ascii	"TASK_GROUP_3\000"
-.LASF632:
+.LASF635:
 	.ascii	"TASK_GROUP_4\000"
 .LASF12:
 	.ascii	"__OPTIMIZE__ 1\000"
@@ -3441,7 +3463,7 @@
 	.ascii	"__WCHAR_WIDTH__ 32\000"
 .LASF200:
 	.ascii	"__FLT32_HAS_INFINITY__ 1\000"
-.LASF619:
+.LASF622:
 	.ascii	"TASK_SCHEDULING_QUEUE\000"
 .LASF243:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
@@ -3531,7 +3553,7 @@
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF317:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
-.LASF635:
+.LASF638:
 	.ascii	"TASK_TRANSITION_REJECTED_STATE\000"
 .LASF281:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
@@ -3539,7 +3561,7 @@
 	.ascii	"ReferenceUnusedParameter(x) ((x) = (x))\000"
 .LASF106:
 	.ascii	"__INT_LEAST8_WIDTH__ 8\000"
-.LASF640:
+.LASF643:
 	.ascii	"RAM_BLOCK_C00_C02\000"
 .LASF361:
 	.ascii	"__USA_FBIT__ 16\000"
@@ -3557,15 +3579,15 @@
 	.ascii	"HEAP_OFFSET_FOR_USED_SIZE 4\000"
 .LASF556:
 	.ascii	"func_p_t\000"
-.LASF647:
+.LASF650:
 	.ascii	"RAM_BLOCK_C02_C01\000"
-.LASF648:
+.LASF651:
 	.ascii	"RAM_BLOCK_C02_C02\000"
 .LASF92:
 	.ascii	"__INTMAX_WIDTH__ 64\000"
 .LASF234:
 	.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
-.LASF654:
+.LASF657:
 	.ascii	"GNU C89 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mcpu=cortex-m4 -mthumb -g3 -"
 	.ascii	"O3 -std=c90\000"
@@ -3617,6 +3639,8 @@
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF22:
 	.ascii	"__CHAR_BIT__ 8\000"
+.LASF618:
+	.ascii	"CRITICAL_POS\000"
 .LASF415:
 	.ascii	"__ARM_FP\000"
 .LASF137:
@@ -3645,7 +3669,7 @@
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF616:
 	.ascii	"TASK4_CALL_NR\000"
-.LASF646:
+.LASF649:
 	.ascii	"RAM_BLOCK_C02_C00\000"
 .LASF434:
 	.ascii	"__ELF__ 1\000"
@@ -3661,8 +3685,8 @@
 	.ascii	"__GCC_HAVE_DWARF2_CFI_ASM 1\000"
 .LASF517:
 	.ascii	"RTE_RAM_SIZE_C03C00 0x100\000"
-.LASF30:
-	.ascii	"__SIZE_TYPE__ unsigned int\000"
+.LASF18:
+	.ascii	"__SIZEOF_FLOAT__ 4\000"
 .LASF31:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
 .LASF128:
@@ -3685,9 +3709,9 @@
 	.ascii	"__ARM_FEATURE_COPROC 15\000"
 .LASF0:
 	.ascii	"__STDC__ 1\000"
-.LASF625:
+.LASF628:
 	.ascii	"TASK_0_VAR\000"
-.LASF623:
+.LASF626:
 	.ascii	"TASK_IDLE_QUEUE\000"
 .LASF119:
 	.ascii	"__UINT16_C(c) c\000"
@@ -3699,7 +3723,7 @@
 	.ascii	"__DBL_MAX_EXP__ 1024\000"
 .LASF568:
 	.ascii	"IdleTask\000"
-.LASF626:
+.LASF629:
 	.ascii	"TASK_1_VAR\000"
 .LASF536:
 	.ascii	"os_bug_exception_UndefInstruction\000"
@@ -3777,7 +3801,7 @@
 	.ascii	"__SIZE_WIDTH__ 32\000"
 .LASF230:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF636:
+.LASF639:
 	.ascii	"TASK_TRANSITION_CURRENT_STATE\000"
 .LASF94:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
@@ -3827,6 +3851,8 @@
 	.ascii	"__SIG_ATOMIC_WIDTH__ 32\000"
 .LASF467:
 	.ascii	"DisableInterrupts() LLF_INT_DISABLE()\000"
+.LASF494:
+	.ascii	"OS_STACK_SIZE 0x200u\000"
 .LASF69:
 	.ascii	"__SHRT_MAX__ 0x7fff\000"
 .LASF314:
@@ -3849,13 +3875,13 @@
 	.ascii	"__INT32_MAX__ 0x7fffffffL\000"
 .LASF512:
 	.ascii	"RTE_RAM_SIZE_C01C03 0x100\000"
-.LASF649:
+.LASF652:
 	.ascii	"RAM_BLOCK_C02_C03\000"
 .LASF85:
 	.ascii	"__WINT_WIDTH__ 32\000"
 .LASF249:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
-.LASF637:
+.LASF640:
 	.ascii	"SAVED_STACK_POINTER\000"
 .LASF341:
 	.ascii	"__UQQ_FBIT__ 8\000"
@@ -4013,9 +4039,7 @@
 	.ascii	"long unsigned int\000"
 .LASF378:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
-.LASF387:
-	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
-.LASF622:
+.LASF625:
 	.ascii	"RUNNING_TASK\000"
 .LASF392:
 	.ascii	"__ARM_FEATURE_QBIT 1\000"
@@ -4025,13 +4049,13 @@
 	.ascii	"DBG_CURR_VAL\000"
 .LASF1:
 	.ascii	"__STDC_HOSTED__ 1\000"
-.LASF642:
-	.ascii	"RAM_BLOCK_C01_C00\000"
-.LASF643:
-	.ascii	"RAM_BLOCK_C01_C01\000"
-.LASF644:
-	.ascii	"RAM_BLOCK_C01_C02\000"
 .LASF645:
+	.ascii	"RAM_BLOCK_C01_C00\000"
+.LASF646:
+	.ascii	"RAM_BLOCK_C01_C01\000"
+.LASF647:
+	.ascii	"RAM_BLOCK_C01_C02\000"
+.LASF648:
 	.ascii	"RAM_BLOCK_C01_C03\000"
 .LASF400:
 	.ascii	"__ARM_FEATURE_NUMERIC_MAXMIN\000"
@@ -4065,6 +4089,8 @@
 	.ascii	"os_sw_bugs_t\000"
 .LASF521:
 	.ascii	"unsigned char\000"
+.LASF231:
+	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
 .LASF445:
 	.ascii	"CPP_VERSION_1998 1\000"
 .LASF570:
@@ -4089,7 +4115,7 @@
 	.ascii	"__USFRACT_IBIT__ 0\000"
 .LASF112:
 	.ascii	"__INT_LEAST32_WIDTH__ 32\000"
-.LASF628:
+.LASF631:
 	.ascii	"TASK_3_VAR\000"
 .LASF61:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
@@ -4107,8 +4133,8 @@
 	.ascii	"INTEGER_ILP64 3\000"
 .LASF580:
 	.ascii	"task_number\000"
-.LASF231:
-	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
+.LASF30:
+	.ascii	"__SIZE_TYPE__ unsigned int\000"
 .LASF443:
 	.ascii	"INTEGER_SILP64 4\000"
 .LASF487:
@@ -4141,7 +4167,7 @@
 	.ascii	"__WCHAR_MIN__ 0U\000"
 .LASF171:
 	.ascii	"__DBL_HAS_INFINITY__ 1\000"
-.LASF620:
+.LASF623:
 	.ascii	"RUNNING_SCHEDULING_QUEUE_ENTRY\000"
 .LASF532:
 	.ascii	"os_bug_taskstate_request_denied\000"
@@ -4163,7 +4189,7 @@
 	.ascii	"__INTMAX_C(c) c ## LL\000"
 .LASF420:
 	.ascii	"__ARM_FEATURE_FP16_VECTOR_ARITHMETIC\000"
-.LASF656:
+.LASF659:
 	.ascii	"D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-upd"
 	.ascii	"ate\\bin\000"
 .LASF303:
@@ -4189,15 +4215,15 @@
 	.ascii	"__GCC_ATOMIC_CHAR_LOCK_FREE 2\000"
 .LASF564:
 	.ascii	"task_group_t\000"
-.LASF18:
-	.ascii	"__SIZEOF_FLOAT__ 4\000"
+.LASF331:
+	.ascii	"__QQ_FBIT__ 7\000"
 .LASF228:
 	.ascii	"__FLT32X_HAS_INFINITY__ 1\000"
 .LASF404:
 	.ascii	"__ARM_ARCH_PROFILE 77\000"
 .LASF593:
 	.ascii	"TASK_PTR\000"
-.LASF621:
+.LASF624:
 	.ascii	"TASK_RUN_QUEUE\000"
 .LASF147:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
@@ -4231,18 +4257,18 @@
 	.ascii	"__UINTPTR_MAX__ 0xffffffffU\000"
 .LASF126:
 	.ascii	"__INT_FAST16_MAX__ 0x7fffffff\000"
-.LASF629:
+.LASF632:
 	.ascii	"TASK_GROUP_1\000"
-.LASF630:
+.LASF633:
 	.ascii	"TASK_GROUP_2\000"
 .LASF540:
 	.ascii	"os_bug_critical_stack_usage\000"
 .LASF193:
 	.ascii	"__FLT32_MAX_10_EXP__ 38\000"
-.LASF633:
+.LASF636:
 	.ascii	"TASK_GROUP_5\000"
-.LASF331:
-	.ascii	"__QQ_FBIT__ 7\000"
+.LASF387:
+	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
 .LASF274:
 	.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
 .LASF222:
@@ -4261,8 +4287,6 @@
 	.ascii	"__UINTMAX_MAX__ 0xffffffffffffffffULL\000"
 .LASF38:
 	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
-.LASF494:
-	.ascii	"OS_STACK_SIZE 0x5000u\000"
 .LASF283:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
 .LASF162:

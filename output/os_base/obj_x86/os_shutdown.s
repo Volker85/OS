@@ -1505,7 +1505,7 @@ Ldebug_macro0:
 	.ascii "_os_stack_h_ \0"
 	.byte	0x1
 	.uleb128 0x4
-	.ascii "OS_STACK_SIZE 0x5000u\0"
+	.ascii "OS_STACK_SIZE 0x200u\0"
 	.byte	0x4
 	.file 21 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_heap.h"
 	.byte	0x3
