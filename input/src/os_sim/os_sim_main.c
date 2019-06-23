@@ -13,6 +13,7 @@ int main(int argc, char* argv[])
    unsigned int i = 0;
    time_t t = time(0);
 
+   OS_StackChkPatternInit();
    OS_StartOs();
    while(i < 1e8)
    {
