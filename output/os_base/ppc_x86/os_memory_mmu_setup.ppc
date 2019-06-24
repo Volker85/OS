@@ -716,6 +716,7 @@ extern void OS_MmuSetup(void);
 #define MPU_ASR_NON_CACHABLE 0x00080000
 #define MPU_ASR_STRONGLY_ORDERED 0x00000000
 
+#define MPU_ASR_ACCESS_PRIV_NOACCESS_UNPRIV_NOACCESS 0x00000000
 #define MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO 0x07000000
 #define MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW 0x03000000
 #define MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS 0x01000000
@@ -728,6 +729,6 @@ extern void OS_MmuSetup(void);
 
 void OS_MmuSetup(void)
 {
-# 69 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
+# 70 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
    LLF_MPU_ENABLE();
 }

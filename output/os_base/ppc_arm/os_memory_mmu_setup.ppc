@@ -905,6 +905,7 @@ extern void OS_MmuSetup(void);
 #define MPU_ASR_NON_CACHABLE 0x00080000
 #define MPU_ASR_STRONGLY_ORDERED 0x00000000
 
+#define MPU_ASR_ACCESS_PRIV_NOACCESS_UNPRIV_NOACCESS 0x00000000
 #define MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO 0x07000000
 #define MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW 0x03000000
 #define MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS 0x01000000
@@ -917,7 +918,7 @@ extern void OS_MmuSetup(void);
 
 void OS_MmuSetup(void)
 {
-# 43 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
+# 44 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.c"
    *((volatile uint32*)0xE000ED98) = 0;
    *((volatile uint32*)0xE000ED9C) = 0x08000000;
    *((volatile uint32*)0xE000EDA0) = 0x00080000 | 0x07000000 | 0x20000000 | 0x00000001;
@@ -938,7 +939,7 @@ void OS_MmuSetup(void)
 
    *((volatile uint32*)0xE000ED98) = 4;
    *((volatile uint32*)0xE000ED9C) = 0x20000000;
-   *((volatile uint32*)0xE000EDA0) = 0x00080000 | 0x07000000 | 0x00000010 | 0x00000001;
+   *((volatile uint32*)0xE000EDA0) = 0x00080000 | 0x00000000 | 0x00000010 | 0x00000001;
 
 
 

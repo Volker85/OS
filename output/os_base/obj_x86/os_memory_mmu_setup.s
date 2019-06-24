@@ -6,7 +6,7 @@ Ltext0:
 _OS_MmuSetup:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.c"
-	.loc 1 28 0
+	.loc 1 29 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -14,9 +14,9 @@ LFB0:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 69 0
-	call	_LLF_MPU_ENABLE
 	.loc 1 70 0
+	call	_LLF_MPU_ENABLE
+	.loc 1 71 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -73,7 +73,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_MmuSetup\0"
 	.byte	0x1
-	.byte	0x1b
+	.byte	0x1c
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
@@ -1226,27 +1226,30 @@ Ldebug_macro0:
 	.ascii "MPU_ASR_STRONGLY_ORDERED 0x00000000\0"
 	.byte	0x1
 	.uleb128 0x11
-	.ascii "MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO 0x07000000\0"
+	.ascii "MPU_ASR_ACCESS_PRIV_NOACCESS_UNPRIV_NOACCESS 0x00000000\0"
 	.byte	0x1
 	.uleb128 0x12
-	.ascii "MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW 0x03000000\0"
+	.ascii "MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO 0x07000000\0"
 	.byte	0x1
 	.uleb128 0x13
+	.ascii "MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW 0x03000000\0"
+	.byte	0x1
+	.uleb128 0x14
 	.ascii "MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS 0x01000000\0"
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x16
 	.ascii "MPU_ASR_REGION_SIZE_FLASH 0x20000000\0"
 	.byte	0x1
-	.uleb128 0x16
+	.uleb128 0x17
 	.ascii "MPU_ASR_REGION_SIZE_RAM 0x20000000\0"
 	.byte	0x1
-	.uleb128 0x17
+	.uleb128 0x18
 	.ascii "MPU_ASR_REGION_SIZE_PERIPHERIE 0x20000000\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x19
 	.ascii "MPU_ASR_REGION_SIZE_STACK_COOKIE 0x00000010\0"
 	.byte	0x1
-	.uleb128 0x19
+	.uleb128 0x1a
 	.ascii "MPU_ASR_REGION_ENABLE 0x00000001\0"
 	.byte	0x4
 	.byte	0
