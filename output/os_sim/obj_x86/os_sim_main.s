@@ -65,16 +65,18 @@ LFB10:
 	call	_time
 	movl	%eax, 40(%esp)
 	.loc 2 16 0
-	call	_OS_StartOs
+	call	_OS_StackChkPatternInit
 	.loc 2 17 0
+	call	_OS_StartOs
+	.loc 2 18 0
 	jmp	L4
 L5:
-	.loc 2 20 0
-	call	_OS_StateHandler
 	.loc 2 21 0
+	call	_OS_StateHandler
+	.loc 2 22 0
 	incl	44(%esp)
 L4:
-	.loc 2 17 0
+	.loc 2 18 0
 	movl	44(%esp), %eax
 	movl	$0, %edx
 	movl	%eax, 24(%esp)
@@ -85,28 +87,28 @@ L4:
 	fnstsw	%ax
 	testb	$69, %ah
 	je	L5
-	.loc 2 24 0
+	.loc 2 25 0
 	movl	$0, (%esp)
 	call	_time
 	subl	40(%esp), %eax
 	movl	%eax, 40(%esp)
-	.loc 2 25 0
+	.loc 2 26 0
 	movl	40(%esp), %eax
 	movl	%eax, 4(%esp)
 	movl	$LC1, (%esp)
 	call	_printf
-	.loc 2 26 0
-	call	_getchar
 	.loc 2 27 0
 	call	_getchar
-	.loc 2 29 0
+	.loc 2 28 0
+	call	_getchar
+	.loc 2 30 0
 	movl	12(%ebp), %eax
 	movl	(%eax), %edx
 	movl	12(%ebp), %eax
 	movl	%edx, (%eax)
-	.loc 2 31 0
-	movl	$0, %eax
 	.loc 2 32 0
+	movl	$0, %eax
+	.loc 2 33 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -2170,6 +2172,7 @@ Ldebug_line0:
 	.ident	"GCC: (GNU) 4.9.3"
 	.def	___mingw_vprintf;	.scl	2;	.type	32;	.endef
 	.def	_time;	.scl	2;	.type	32;	.endef
+	.def	_OS_StackChkPatternInit;	.scl	2;	.type	32;	.endef
 	.def	_OS_StartOs;	.scl	2;	.type	32;	.endef
 	.def	_OS_StateHandler;	.scl	2;	.type	32;	.endef
 	.def	_getchar;	.scl	2;	.type	32;	.endef

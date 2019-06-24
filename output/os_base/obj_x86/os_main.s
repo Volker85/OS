@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1400, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,16 +33,16 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1400, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1401
+	movl	%eax, _call_nr.1400
 	.loc 1 64 0
 	jmp	L1
 L5:
 	.loc 1 67 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1400, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1401
+	movl	%eax, _call_nr.1400
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -50,16 +50,16 @@ L6:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1400, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1401
+	movl	%eax, _call_nr.1400
 	.loc 1 72 0
 	jmp	L1
 L7:
 	.loc 1 75 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1400, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1401
+	movl	%eax, _call_nr.1400
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -67,7 +67,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1401
+	movl	$0, _call_nr.1400
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -128,7 +128,7 @@ L14:
 	jmp	L16
 L13:
 	.loc 1 119 0
-	movl	_call_nr.1413, %eax
+	movl	_call_nr.1412, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
@@ -139,9 +139,9 @@ L13:
 	call	_OS_DetermineNextTaskActivation
 L17:
 	.loc 1 123 0
-	movl	_call_nr.1413, %eax
+	movl	_call_nr.1412, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1413
+	movl	%eax, _call_nr.1412
 	.loc 1 125 0
 	call	_OS_TaskDispatcher
 	.loc 1 132 0
@@ -150,7 +150,7 @@ L15:
 	.loc 1 136 0
 	call	_LLF_INT_DISABLE
 	.loc 1 137 0
-	movl	_sys_req_reset_state.1412, %eax
+	movl	_sys_req_reset_state.1411, %eax
 	cmpl	$1, %eax
 	je	L19
 	cmpl	$1, %eax
@@ -196,9 +196,9 @@ L16:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1401,4,4
-.lcomm _call_nr.1413,4,4
-.lcomm _sys_req_reset_state.1412,4,4
+.lcomm _call_nr.1400,4,4
+.lcomm _call_nr.1412,4,4
+.lcomm _sys_req_reset_state.1411,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -665,7 +665,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1401
+	.long	_call_nr.1400
 	.byte	0
 	.uleb128 0x13
 	.ascii "OS_StateHandler\0"
@@ -683,7 +683,7 @@ Ldebug_info0:
 	.long	0x690
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1412
+	.long	_sys_req_reset_state.1411
 	.uleb128 0x12
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -691,34 +691,34 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1413
+	.long	_call_nr.1412
 	.byte	0
 	.uleb128 0x14
 	.ascii "OS_STATE\0"
 	.byte	0x7
-	.byte	0x11
+	.byte	0x10
 	.long	0x75a
 	.uleb128 0x15
 	.long	0x12b
 	.uleb128 0x14
 	.ascii "TASK_0_VAR\0"
 	.byte	0x7
-	.byte	0x30
+	.byte	0x2f
 	.long	0x5e2
 	.uleb128 0x14
 	.ascii "TASK_1_VAR\0"
 	.byte	0x7
-	.byte	0x30
+	.byte	0x2f
 	.long	0x5e2
 	.uleb128 0x14
 	.ascii "TASK_2_VAR\0"
 	.byte	0x7
-	.byte	0x30
+	.byte	0x2f
 	.long	0x5e2
 	.uleb128 0x14
 	.ascii "TASK_3_VAR\0"
 	.byte	0x7
-	.byte	0x30
+	.byte	0x2f
 	.long	0x5e2
 	.byte	0
 	.section	.debug_abbrev,"dr"

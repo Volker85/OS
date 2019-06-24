@@ -16,5 +16,4 @@ void OS_InitSw(void)
    TASK2_CALL_NR = 0;
    TASK3_CALL_NR = 0;
    TASK4_CALL_NR = 0;
-   SAVED_STACK_POINTER = (void*)0xFFFFFFFF;
 }

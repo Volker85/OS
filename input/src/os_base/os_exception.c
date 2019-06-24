@@ -205,12 +205,6 @@ Enables the counter:
 
 When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR register and then counts down. On reaching 0, it sets the COUNTFLAG to 1 and optionally asserts the SysTick depending on the value of TICKINT. It then loads the RELOAD value again, and begins counting.
    */
-   /*stack check*/
-   if(((void*)&scheduling_task_ptr) < SAVED_STACK_POINTER)
-   {
-      SAVED_STACK_POINTER = (void*)&scheduling_task_ptr;
-   }
-
    /* disable running task */
    task = GetRunningTask();
    scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
@@ -228,6 +222,7 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
       SET_RUNNING_TASK(0,0);
       OS_TerminateTask(task,scheduling_task_ptr);
    }
+   /* call OS_StateHandler to determine what steps needs to be performed next */
    OS_StateHandler();
 #endif
 }

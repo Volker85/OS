@@ -157,7 +157,7 @@ LFB8:
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 233 0
+	.loc 1 228 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -168,14 +168,14 @@ LFE8:
 	.def	_OS_Exception_IRQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_IRQ:
 LFB9:
-	.loc 1 236 0
+	.loc 1 231 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 240 0
+	.loc 1 235 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -186,14 +186,14 @@ LFE9:
 	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_FIQ:
 LFB10:
-	.loc 1 242 0
+	.loc 1 237 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 246 0
+	.loc 1 241 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -322,7 +322,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_IRQ\0"
 	.byte	0x1
-	.byte	0xeb
+	.byte	0xe6
 	.long	LFB9
 	.long	LFE9-LFB9
 	.uleb128 0x1
@@ -330,7 +330,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_FIQ\0"
 	.byte	0x1
-	.byte	0xf1
+	.byte	0xec
 	.long	LFB10
 	.long	LFE10-LFB10
 	.uleb128 0x1

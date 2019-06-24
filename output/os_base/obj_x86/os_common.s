@@ -1349,7 +1349,7 @@ Ldebug_info0:
 	.uleb128 0x16
 	.ascii "OS_SW_BUG\0"
 	.byte	0x5
-	.byte	0x10
+	.byte	0xf
 	.long	0x918
 	.uleb128 0x17
 	.long	0x8f7

@@ -650,7 +650,6 @@ extern void OS_StateHandler(void);
 extern unsigned_char_t HEAP[10000];
 
 
-extern unsigned_char_t OS_STACK[1][0x200u];
 extern unsigned_char_t OS_MAIN_STACK[0x200u];
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
@@ -1501,6 +1500,7 @@ int main(int argc, char* argv[])
    unsigned int i = 0;
    time_t t = time(0);
 
+   OS_StackChkPatternInit();
    OS_StartOs();
    while(i < 1e8)
    {

@@ -18,6 +18,7 @@
         .global OS_GetCoreId
         .extern LLF_CLEAR_ALL_RAM
         .extern OS_StartOs
+        .extern INIT_OS_STACK
         .global LLF_PERFORM_RAM_CHECK
         .global START_OS
         .extern _ram_start
@@ -42,7 +43,7 @@ OS_Exception_RESET:
         #MOV r10, #0
         #MOV r11, #0
         #MOV r12, #0
-        #MOV r13, OS_STACK[0][0] #step 2: init system stack
+        #MOV r13, #step 2: init system stack
         #r13        Stack pointer
         #r14        Link register
         #r15        program counter
@@ -113,29 +114,7 @@ Loop_start:
         #
         B  Loop_start
 Loop_end:
-         # r0 = stack variable start addr
-         LDR r0, =OS_MAIN_STACK
-         # r2 = Stack size
-         MOV r2, OS_STACK_SIZE
-         #
-         # r1 = OS_MAIN_STACK +STACK_SIZE-1
-         #
-         # r1 = stack end addr
-         # r1 = OS_MAIN_STACK
-         MOV r1,r0
-         # r1 = r1 + STACK_SIZE
-         ADD r1,r2
-         # r1 = r1 - 1
-         #SUB r1,#1 -> r1 points to first byte not part of Stack
-         # Stack pattern
-         MOV r3,#0xAA
-Stack_write:  
-         # *r0 = 0xAA 
-         STRB r3,[r0]
-         # r0++
-         ADD r0,#1
-         CMP r1,r0
-         BNE Stack_write           
+         B INIT_OS_STACK       
          #/* 3a -> page tables                         */
          #/* not existing in STM32F407VGT6             */
          #/* 3b -> enable caches                       */

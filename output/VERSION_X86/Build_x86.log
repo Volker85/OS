@@ -1,7 +1,23 @@
 "Target_x86" 
-23.06.2019  8:37:19,56 
+23.06.2019 17:05:27,05 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackCheck':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:3:27: warning: unused parameter 'amount_bytes_to_check' [-Wunused-parameter]
+ void OS_StackCheck(uint32 amount_bytes_to_check)
+                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackChkPatternInit':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:45:25: warning: unused variable 'nr_of_cores' [-Wunused-variable]
+    uint32 stack_pos = 0,nr_of_cores = 0;
+                         ^
 "assemble it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackCheck':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:3:27: warning: unused parameter 'amount_bytes_to_check' [-Wunused-parameter]
+ void OS_StackCheck(uint32 amount_bytes_to_check)
+                           ^
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_StackChkPatternInit':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:45:25: warning: unused variable 'nr_of_cores' [-Wunused-variable]
+    uint32 stack_pos = 0,nr_of_cores = 0;
+                         ^
 "link it" 

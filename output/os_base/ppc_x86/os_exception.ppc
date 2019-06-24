@@ -650,7 +650,6 @@ extern void OS_StateHandler(void);
 extern unsigned_char_t HEAP[10000];
 
 
-extern unsigned_char_t OS_STACK[1][0x200u];
 extern unsigned_char_t OS_MAIN_STACK[0x200u];
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
@@ -839,7 +838,7 @@ void OS_Exception_PendSV(void)
 
 void OS_Exception_Systick(void)
 {
-# 233 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+# 228 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
 }
 
 void OS_Exception_IRQ(void)

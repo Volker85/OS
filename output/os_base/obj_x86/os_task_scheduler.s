@@ -2175,12 +2175,12 @@ Ldebug_info0:
 	.uleb128 0x22
 	.ascii "OS_MAIN_STACK\0"
 	.byte	0x6
-	.byte	0xf
+	.byte	0xe
 	.long	0xdc3
 	.uleb128 0x22
 	.ascii "TASK1_CALL_NR\0"
 	.byte	0x6
-	.byte	0x20
+	.byte	0x1f
 	.long	0xdfe
 	.uleb128 0x23
 	.long	0x135
@@ -2197,72 +2197,72 @@ Ldebug_info0:
 	.uleb128 0x22
 	.ascii "TASK_STACK\0"
 	.byte	0x6
-	.byte	0x28
+	.byte	0x27
 	.long	0xe03
 	.uleb128 0x22
 	.ascii "LAST_CURRENT_TIME\0"
 	.byte	0x6
-	.byte	0x29
+	.byte	0x28
 	.long	0x92e
 	.uleb128 0x22
 	.ascii "TASK_0_VAR\0"
 	.byte	0x6
-	.byte	0x30
+	.byte	0x2f
 	.long	0x906
 	.uleb128 0x22
 	.ascii "TASK_1_VAR\0"
 	.byte	0x6
-	.byte	0x30
+	.byte	0x2f
 	.long	0x906
 	.uleb128 0x22
 	.ascii "TASK_2_VAR\0"
 	.byte	0x6
-	.byte	0x30
+	.byte	0x2f
 	.long	0x906
 	.uleb128 0x22
 	.ascii "TASK_3_VAR\0"
 	.byte	0x6
-	.byte	0x30
+	.byte	0x2f
 	.long	0x906
 	.uleb128 0x22
 	.ascii "TASK_GROUP_1\0"
 	.byte	0x6
-	.byte	0x31
+	.byte	0x30
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_GROUP_2\0"
 	.byte	0x6
-	.byte	0x31
+	.byte	0x30
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_GROUP_3\0"
 	.byte	0x6
-	.byte	0x31
+	.byte	0x30
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_GROUP_4\0"
 	.byte	0x6
-	.byte	0x31
+	.byte	0x30
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_GROUP_5\0"
 	.byte	0x6
-	.byte	0x31
+	.byte	0x30
 	.long	0x662
 	.uleb128 0x22
 	.ascii "TASK_TRANSITION_REJECTED_TASK_ADDR\0"
 	.byte	0x6
-	.byte	0x32
+	.byte	0x31
 	.long	0x928
 	.uleb128 0x22
 	.ascii "TASK_TRANSITION_REJECTED_STATE\0"
 	.byte	0x6
-	.byte	0x33
+	.byte	0x32
 	.long	0x5ab
 	.uleb128 0x22
 	.ascii "TASK_TRANSITION_CURRENT_STATE\0"
 	.byte	0x6
-	.byte	0x34
+	.byte	0x33
 	.long	0x5ab
 	.byte	0
 	.section	.debug_abbrev,"dr"

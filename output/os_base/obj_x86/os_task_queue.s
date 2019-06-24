@@ -2243,12 +2243,12 @@ Ldebug_info0:
 	.uleb128 0x1f
 	.ascii "TASK_SCHEDULING_QUEUE\0"
 	.byte	0x6
-	.byte	0x2a
+	.byte	0x29
 	.long	0xcd0
 	.uleb128 0x1f
 	.ascii "RUNNING_SCHEDULING_QUEUE_ENTRY\0"
 	.byte	0x6
-	.byte	0x2b
+	.byte	0x2a
 	.long	0x96c
 	.uleb128 0x8
 	.long	0x8f9
@@ -2260,7 +2260,7 @@ Ldebug_info0:
 	.uleb128 0x1f
 	.ascii "TASK_RUN_QUEUE\0"
 	.byte	0x6
-	.byte	0x2c
+	.byte	0x2b
 	.long	0xd23
 	.uleb128 0x8
 	.long	0x8f9
@@ -2272,17 +2272,17 @@ Ldebug_info0:
 	.uleb128 0x1f
 	.ascii "RUNNING_TASK\0"
 	.byte	0x6
-	.byte	0x2d
+	.byte	0x2c
 	.long	0xd49
 	.uleb128 0x1f
 	.ascii "TASK_IDLE_QUEUE\0"
 	.byte	0x6
-	.byte	0x2e
+	.byte	0x2d
 	.long	0xd49
 	.uleb128 0x1f
 	.ascii "bTASK_QUEUE_INITIALIZED\0"
 	.byte	0x6
-	.byte	0x2f
+	.byte	0x2e
 	.long	0x91
 	.byte	0
 	.section	.debug_abbrev,"dr"

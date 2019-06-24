@@ -650,7 +650,6 @@ extern void OS_StateHandler(void);
 extern unsigned_char_t HEAP[10000];
 
 
-extern unsigned_char_t OS_STACK[1][0x200u];
 extern unsigned_char_t OS_MAIN_STACK[0x200u];
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
@@ -700,7 +699,6 @@ extern volatile void* SAVED_STACK_POINTER;
 volatile uint32* CRITICAL_ADDR;
 volatile uint32 CRITICAL_POS;
 volatile uint32 CRITICAL_STACK_USAGE_PERCENT;
-unsigned_char_t OS_STACK[1][0x200u];
 unsigned_char_t OS_MAIN_STACK[0x200u];
 volatile os_sw_bugs_t OS_SW_BUG[15];
 volatile uint32 OS_STATE;

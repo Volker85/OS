@@ -42,8 +42,6 @@ L2:
 	.loc 1 18 0
 	movl	$0, _TASK4_CALL_NR
 	.loc 1 19 0
-	movl	$-1, _SAVED_STACK_POINTER
-	.loc 1 20 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -56,7 +54,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x375
+	.long	0x353
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -180,46 +178,37 @@ Ldebug_info0:
 	.uleb128 0xa
 	.ascii "OS_SW_BUG\0"
 	.byte	0x4
-	.byte	0x10
+	.byte	0xf
 	.long	0x2d9
 	.uleb128 0xb
 	.long	0x2b8
 	.uleb128 0xa
 	.ascii "TASK1_CALL_NR\0"
 	.byte	0x4
-	.byte	0x20
+	.byte	0x1f
 	.long	0x2f3
 	.uleb128 0xb
 	.long	0x10f
 	.uleb128 0xa
 	.ascii "TASK2_CALL_NR\0"
 	.byte	0x4
-	.byte	0x21
+	.byte	0x20
 	.long	0x2f3
 	.uleb128 0xa
 	.ascii "TASK3_CALL_NR\0"
 	.byte	0x4
-	.byte	0x22
+	.byte	0x21
 	.long	0x2f3
 	.uleb128 0xa
 	.ascii "TASK4_CALL_NR\0"
 	.byte	0x4
-	.byte	0x23
+	.byte	0x22
 	.long	0x2f3
 	.uleb128 0xa
 	.ascii "bTASK_QUEUE_INITIALIZED\0"
 	.byte	0x4
-	.byte	0x2f
+	.byte	0x2e
 	.long	0x94
-	.uleb128 0xa
-	.ascii "SAVED_STACK_POINTER\0"
-	.byte	0x4
-	.byte	0x35
-	.long	0x371
-	.uleb128 0xc
-	.byte	0x4
-	.long	0x377
-	.uleb128 0xd
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -370,20 +359,6 @@ Ldebug_abbrev0:
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xc
-	.uleb128 0xf
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.uleb128 0x35
-	.byte	0
 	.byte	0
 	.byte	0
 	.byte	0

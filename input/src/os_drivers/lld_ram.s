@@ -21,7 +21,7 @@ INIT_OS_STACK:
          # r0 = stack variable start addr
          LDR r0, =OS_MAIN_STACK
          # r2 = Stack size
-         MOV r2, #0x5000
+         MOV r2, #0x200
          #
          # r1 = OS_MAIN_STACK +STACK_SIZE-1
          #

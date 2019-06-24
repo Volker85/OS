@@ -838,7 +838,6 @@ extern void OS_StateHandler(void);
 extern unsigned_char_t HEAP[10000];
 
 
-extern unsigned_char_t OS_STACK[1][0x200u];
 extern unsigned_char_t OS_MAIN_STACK[0x200u];
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
@@ -1143,12 +1142,6 @@ void OS_Exception_Systick(void)
    DBG_CTRL_VALUE = *((uint32*)0xE000E010);
    DBG_CALIB_VALUE = *((uint32*)0xE000E01C);
 # 209 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-   if(((void*)&scheduling_task_ptr) < SAVED_STACK_POINTER)
-   {
-      SAVED_STACK_POINTER = (void*)&scheduling_task_ptr;
-   }
-
-
    task = GetRunningTask();
    scheduling_task_ptr = GetRunningSchedulingQueueElementPtr();
    if(task != 0u)
@@ -1165,6 +1158,7 @@ void OS_Exception_Systick(void)
       SET_RUNNING_TASK(0,0);
       OS_TerminateTask(task,scheduling_task_ptr);
    }
+
    OS_StateHandler();
 
 }

@@ -839,7 +839,6 @@ extern void OS_StateHandler(void);
 extern unsigned_char_t HEAP[10000];
 
 
-extern unsigned_char_t OS_STACK[1][0x200u];
 extern unsigned_char_t OS_MAIN_STACK[0x200u];
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
@@ -884,49 +883,7 @@ extern volatile void* SAVED_STACK_POINTER;
 
 void OS_StackCheck(uint32 amount_bytes_to_check)
 {
-# 13 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.c"
-   static volatile uint32 stack_pos = 0, nr_of_cores = 0, failed = 0;
-   CRITICAL_ADDR = (volatile uint32*)-1;
-   CRITICAL_POS = (volatile uint32) -1;
-   CRITICAL_STACK_USAGE_PERCENT = 0u;
-
-   for(stack_pos = 0; stack_pos < amount_bytes_to_check; stack_pos++)
-   {
-      for(nr_of_cores = 0; nr_of_cores < 1; nr_of_cores++)
-      {
-         if(OS_STACK[nr_of_cores][stack_pos] != 0xAA)
-         {
-            failed = 1;
-            if(stack_pos < CRITICAL_POS)
-            {
-               CRITICAL_POS = (volatile uint32 )stack_pos;
-               CRITICAL_ADDR = (volatile uint32*)&OS_STACK[nr_of_cores][stack_pos];
-            }
-         }
-      }
-      if(OS_MAIN_STACK[stack_pos] != 0xAA)
-      {
-         failed = 1;
-         if(stack_pos < CRITICAL_POS)
-         {
-            CRITICAL_POS = (volatile uint32 )stack_pos;
-            CRITICAL_ADDR = (volatile uint32*)&OS_MAIN_STACK[stack_pos];
-         }
-      }
-   }
-   CRITICAL_STACK_USAGE_PERCENT = (0x200u - CRITICAL_POS) * 100u / 0x200u;
-
-   if((failed == 1) && (CRITICAL_STACK_USAGE_PERCENT > 80u))
-   {
-      OS_SetSwBug(os_bug_critical_stack_usage,Func_StackCheck);
-      ((CRITICAL_POS) = (CRITICAL_POS));
-      ((CRITICAL_ADDR) = (CRITICAL_ADDR));
-      while(1)
-      {
-
-      }
-   }
-
+# 42 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.c"
 }
 void OS_StackChkPatternInit(void)
 {
@@ -934,10 +891,6 @@ void OS_StackChkPatternInit(void)
 
    for(stack_pos = 0; stack_pos < (0x200u -64); stack_pos++)
    {
-      for(nr_of_cores = 0; nr_of_cores < 1; nr_of_cores++)
-      {
-         OS_STACK[nr_of_cores][stack_pos] = 0xAA;
-      }
       OS_MAIN_STACK[stack_pos] = 0xAA;
    }
 }

@@ -11,10 +11,9 @@ unsigned_char_t      HEAP[HEAP_SIZE];
 #endif
 
 /* stack related RAM  */
-volatile uint32* CRITICAL_ADDR;
-volatile uint32  CRITICAL_POS;
-volatile uint32  CRITICAL_STACK_USAGE_PERCENT;
-unsigned_char_t OS_STACK[NR_OF_CORES][OS_STACK_SIZE];
+volatile uint32* STACK_ADDR;
+volatile uint32  STACK_POS;
+volatile uint32  STACK_USAGE_PERCENT;
 unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];
 volatile os_sw_bugs_t OS_SW_BUG[15];
 volatile uint32 OS_STATE;
