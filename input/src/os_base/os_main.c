@@ -82,7 +82,7 @@ Local void OS_DetermineNextTaskActivation(void)
         break;
 
     }
-    //TODO: mehrere unterschiedliche Tasks mit Ansteuerung der LEDs bauen, sodass die korrekte zeitliche Abfolge ausprobiert werden kann
+    /*TODO: mehrere unterschiedliche Tasks mit Ansteuerung der LEDs bauen, sodass die korrekte zeitliche Abfolge ausprobiert werden kann*/
 
 }
 

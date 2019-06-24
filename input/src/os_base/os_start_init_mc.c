@@ -6,11 +6,11 @@ void OS_InitMc(void)
 {
    /* 1. configure PLL */
    /* keep the default MCU frequency */
-   //TODO
+   /*TODO*/
    /* 2. all MCU IO*/
    /* configure GPIO (SPI, UART, CAN, etc) */
    /* not needed for OS */
-   //TODO
+   /*TODO*/
    /* initialize the external parts...  */
    /* no relevant external parts */
    OS_MmuSetup();

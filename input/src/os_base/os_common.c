@@ -17,13 +17,13 @@ void OS_GetCurrentTime(timebig_t* time)
    /* the only free running counter on STM32F4 is the DWT counter DWT_CYCCNT
    The counter will overflow every 25sec -> provide function OS_ClearCurrentTime to reset the value to 0, and !!! do not use the absolute value for calculations but use the difference between start and stop of timer
    */
-   
+
    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    AssignUint32(time, *DWT_CYCCNT);
    #else
    Assign(time, &GLOBAL_TIMER1);
    #endif
-   //TODO handling von overflow für DWT_CYCCNT existiert nicht!! fehler!!
+   /*TODO handling von overflow für DWT_CYCCNT existiert nicht!! fehler!!*/
 }
 
 void OS_ResetCurrentTime(void)
@@ -39,7 +39,7 @@ void OS_ResetCurrentTime(void)
 
    /* enable the counter */
    *DWT_CTRL |= 1;
-   
+
    /* clear the global time variable */
    AssignNull(&GLOBAL_TIMER1);
 }
@@ -177,7 +177,7 @@ void AssignUint32(BigInt* leftOperand, uint32 rightOperand)
    for (pos = 0; pos < BigIntSize; pos++)
    {
       leftOperand->Number[pos] = 0x00;
-   }   
+   }
    for (pos = BigIntSize-1, i = 0; pos >= (BigIntSize-sizeof(uint32)); pos--, i++)
    {
       leftOperand->Number[pos] = (rightOperand>>i)&0xFFu;

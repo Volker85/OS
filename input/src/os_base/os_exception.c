@@ -7,7 +7,7 @@
 /* the Interrupt table is set via the code linked to 0x00 and following ...   */
 /* interrupts are disabled during RESET exception and will be enabled by task system */
 
-//TODO alle informationen für einen fault in eine eigene structure verschieben
+/*TODO alle informationen für einen fault in eine eigene structure verschieben*/
 
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
 Local __inline__ void OS_Exception_Read_Status_Registers(void)
@@ -215,7 +215,7 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
       OS_TaskSaveTaskEnvironment(task);
       OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
       task->active = False;
-      /*task->exe_time += (OS_GetCurrentTime() - task->start_time);*/     
+      /*task->exe_time += (OS_GetCurrentTime() - task->start_time);*/
       OS_GetCurrentTime(&time);
       IntSub(&Diff, &time, &task->start_time);
       IntAdd(&task->exe_time, &task->exe_time, &Diff);

@@ -11,7 +11,7 @@ unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, u
    2. Sym Hash + Asym Signature lack of official embedded implementation free to use
    3. Signature not in the scope of the project
    */
-   //TODO
+   /*TODO*/
    ReferenceUnusedParameter(LoadProgAddr);
    ReferenceUnusedParameter(PrgSignatur);
    ReferenceUnusedParameter(PrgSize);
