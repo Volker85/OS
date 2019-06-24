@@ -6,6 +6,9 @@
 #include "..\os_base\os_task_scheduler.h"
 /* the Interrupt table is set via the code linked to 0x00 and following ...   */
 /* interrupts are disabled during RESET exception and will be enabled by task system */
+
+//TODO alle informationen für einen fault in eine eigene structure verschieben
+
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
 Local __inline__ void OS_Exception_Read_Status_Registers(void)
 {

@@ -21,6 +21,8 @@ The processor uses a full descending stack.
  with a pointer for each held in independent registers,
  see Stack Pointer.
 */
+//TODO: how is the stack switch done ??
+
 /* the amount of IRQn entries is implementation specific for STM32F4 = 240 */
 
 func_ptr_t isr_vec_table[] =

@@ -23,6 +23,7 @@ void OS_GetCurrentTime(timebig_t* time)
    #else
    Assign(time, &GLOBAL_TIMER1);
    #endif
+   //TODO handling von overflow für DWT_CYCCNT existiert nicht!! fehler!!
 }
 
 void OS_ResetCurrentTime(void)
