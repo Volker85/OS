@@ -5,10 +5,12 @@ syntax depends on linker
 /* link os_exception_table to certain addresse:
 PowerPC/ARM: 0x0 
 */
+/* stc - stack cookie to detect stack overflow via MPU */
 MEMORY 
 {
   rom : ORIGIN = 0x08000000, LENGTH = 1024K
-  ram : ORIGIN = 0x20000000, LENGTH = 192K
+  stc : ORIGIN = 0x20000000, LENGTH = 10
+  ram : ORIGIN = 0x20000010, LENGTH = 192K
 } 
 
 SECTIONS{
@@ -61,6 +63,14 @@ SECTIONS{
       PROVIDE(code_start = .);
       PROVIDE(code_end = .);       
    } > rom
+   .data :
+   {      
+      _ram_stack_start = .;
+      os_ram_stack.o   
+      _ram_stack_end = .;
+      PROVIDE(ram_stack_start = .);
+      PROVIDE(ram_stack_end = .);
+   } > ram   
    .data :
    {      
       _ram_start = .;

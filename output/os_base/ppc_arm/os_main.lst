@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 1
   31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** OS_State: OS_Running (User Mode)
   32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** - Starten / Beenden der einzelnen Tasks auf den jeweiligen Cores(User/Supervisor Mode??) -> Done
   33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** - Timer Compare Interrupts -> not needed  -> Systick used instead
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s 			page 2
 
 
   34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** - Interrupt Prioritäten von Cat2.(SW) Interrupts und Cat1.(HW) Interrupts -> NA
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 1
   88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** void OS_StateHandler(void)
   89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** {
   26              		.loc 1 89 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s 			page 3
 
 
   27              		.cfi_startproc
@@ -131,7 +131,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 1
   93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** 
   94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    switch(OS_STATE)
   31              		.loc 1 94 0
-  32 0000 2B4C     		ldr	r4, .L17
+  32 0000 354D     		ldr	r5, .L22
   89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    /* the following code runs in priviliged mode!! */
   33              		.loc 1 89 0
   34 0002 08B5     		push	{r3, lr}
@@ -139,12 +139,12 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 1
   36              		.cfi_offset 3, -8
   37              		.cfi_offset 14, -4
   38              		.loc 1 94 0
-  39 0004 2368     		ldr	r3, [r4]
+  39 0004 2B68     		ldr	r3, [r5]
   40 0006 012B     		cmp	r3, #1
-  41 0008 21D0     		beq	.L3
-  42 000a 0BD3     		bcc	.L4
+  41 0008 24D0     		beq	.L3
+  42 000a 0ED3     		bcc	.L4
   43 000c 022B     		cmp	r3, #2
-  44 000e 04D1     		bne	.L2
+  44 000e 09D1     		bne	.L2
   95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    {
   96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    case os_init:
   97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    {
@@ -176,250 +176,294 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 1
  123:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       call_nr++;
  124:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       /* run the task function */
  125:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       OS_TaskDispatcher();
- 126:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       if(0) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be su
+ 126:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: current
  127:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s 			page 4
 
 
  128:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          OS_STATE = os_shutdown;
  129:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          sys_req_reset_state = Reset_restart;
  130:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
- 131:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** 
- 132:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       break;
- 133:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    case os_shutdown:
- 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    {
- 136:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       LLF_INT_DISABLE();
-  45              		.loc 1 136 0
+ 131:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       break;
+ 132:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
+ 133:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    case os_shutdown:
+ 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    {
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       LLF_INT_DISABLE();
+  45              		.loc 1 135 0
   46 0010 FFF7FEFF 		bl	LLF_INT_DISABLE
   47              	.LVL0:
- 137:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       switch(sys_req_reset_state)
- 138:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       case Reset_powerdown:
- 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
- 141:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          OS_Shutdown(os_reset_powerdown);
-  48              		.loc 1 141 0
-  49 0014 0120     		movs	r0, #1
-  50 0016 FFF7FEFF 		bl	OS_Shutdown
-  51              	.LVL1:
-  52              	.L2:
- 142:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
- 143:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
- 144:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       case Reset_restart:
- 145:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
- 146:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          OS_Shutdown(os_reset_hardreset);
- 147:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
- 148:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
- 149:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       case Reset_exit:
- 150:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
- 151:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          OS_Shutdown(os_reset_exit);
- 152:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
- 153:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
- 154:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       default:
- 155:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
- 156:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          OS_Shutdown(os_reset_hardreset);
- 157:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
+ 136:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       switch(sys_req_reset_state)
+  48              		.loc 1 136 0
+  49 0014 314B     		ldr	r3, .L22+4
+  50 0016 187A     		ldrb	r0, [r3, #8]	@ zero_extendqisi2
+  51 0018 0028     		cmp	r0, #0
+  52 001a 36D0     		beq	.L14
+  53 001c 0228     		cmp	r0, #2
+  54 001e 30D1     		bne	.L20
+ 137:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
+ 138:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       case Reset_powerdown:
+ 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          OS_Shutdown(os_reset_powerdown);
+ 141:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
+ 142:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
+ 143:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       case Reset_restart:
+ 144:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
+ 145:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          OS_Shutdown(os_reset_hardreset);
+ 146:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
+ 147:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
+ 148:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       case Reset_exit:
+ 149:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
+ 150:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          OS_Shutdown(os_reset_exit);
+  55              		.loc 1 150 0
+  56 0020 FFF7FEFF 		bl	OS_Shutdown
+  57              	.LVL1:
+  58              	.L2:
+ 151:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
+ 152:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
+ 153:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       default:
+ 154:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
+ 155:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          OS_Shutdown(os_reset_hardreset);
+ 156:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
+ 157:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
  158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
- 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       break;
- 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
- 162:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    default:
- 163:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    {
- 164:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       break;
+ 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       break;
+ 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    default:
+ 162:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    {
+ 163:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       break;
+ 164:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
  165:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
- 166:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
- 167:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    /*check the complete stack apart from the first 64 bytes to detect critical stack usage */
- 168:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    OS_StackCheck(OS_STACK_SIZE-64u);
-  53              		.loc 1 168 0
-  54 001a 4FF4E070 		mov	r0, #448
-  55 001e FFF7FEFF 		bl	OS_StackCheck
-  56              	.LVL2:
-  57              	.L13:
-  58 0022 FEE7     		b	.L13
-  59              	.L4:
+ 166:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    /*check the complete stack apart from the first 64 bytes to detect critical stack usage */
+ 167:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    OS_StackCheck();
+  59              		.loc 1 167 0
+  60 0024 FFF7FEFF 		bl	OS_StackCheck
+  61              	.LVL2:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s 			page 5
+
+
+  62              	.L16:
+  63 0028 FEE7     		b	.L16
+  64              	.L4:
   99:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       /* start the task system */
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 5
-
-
-  60              		.loc 1 99 0
-  61 0024 FFF7FEFF 		bl	OS_InitMc
-  62              	.LVL3:
+  65              		.loc 1 99 0
+  66 002a FFF7FEFF 		bl	OS_InitMc
+  67              	.LVL3:
  102:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       OS_InitSw();
-  63              		.loc 1 102 0
-  64 0028 FFF7FEFF 		bl	OS_InitHw
-  65              	.LVL4:
+  68              		.loc 1 102 0
+  69 002e FFF7FEFF 		bl	OS_InitHw
+  70              	.LVL4:
  103:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** 
-  66              		.loc 1 103 0
-  67 002c FFF7FEFF 		bl	OS_InitSw
-  68              	.LVL5:
+  71              		.loc 1 103 0
+  72 0032 FFF7FEFF 		bl	OS_InitSw
+  73              	.LVL5:
  108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       OS_StartTask(GetIdleTask(),0);
-  69              		.loc 1 108 0
-  70 0030 2048     		ldr	r0, .L17+4
-  71 0032 FFF7FEFF 		bl	OS_ActivateTask
-  72              	.LVL6:
+  74              		.loc 1 108 0
+  75 0036 2A48     		ldr	r0, .L22+8
+  76 0038 FFF7FEFF 		bl	OS_ActivateTask
+  77              	.LVL6:
  109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       OS_ActivateDispatcher();
-  73              		.loc 1 109 0
-  74 0036 FFF7FEFF 		bl	GetIdleTask
-  75              	.LVL7:
-  76 003a 0021     		movs	r1, #0
-  77 003c FFF7FEFF 		bl	OS_StartTask
-  78              	.LVL8:
+  78              		.loc 1 109 0
+  79 003c FFF7FEFF 		bl	GetIdleTask
+  80              	.LVL7:
+  81 0040 0021     		movs	r1, #0
+  82 0042 FFF7FEFF 		bl	OS_StartTask
+  83              	.LVL8:
  110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c **** 
-  79              		.loc 1 110 0
-  80 0040 FFF7FEFF 		bl	OS_ActivateDispatcher
-  81              	.LVL9:
+  84              		.loc 1 110 0
+  85 0046 FFF7FEFF 		bl	OS_ActivateDispatcher
+  86              	.LVL9:
  112:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       /* activate the interrupts, tasks will be executed from now on ... */
-  82              		.loc 1 112 0
-  83 0044 0123     		movs	r3, #1
-  84 0046 2360     		str	r3, [r4]
+  87              		.loc 1 112 0
+  88 004a 0123     		movs	r3, #1
+  89 004c 2B60     		str	r3, [r5]
  114:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       break;
-  85              		.loc 1 114 0
-  86 0048 FFF7FEFF 		bl	LLF_INT_ENABLE
-  87              	.LVL10:
+  90              		.loc 1 114 0
+  91 004e FFF7FEFF 		bl	LLF_INT_ENABLE
+  92              	.LVL10:
  115:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
-  88              		.loc 1 115 0
-  89 004c E5E7     		b	.L2
-  90              	.L3:
+  93              		.loc 1 115 0
+  94 0052 E7E7     		b	.L2
+  95              	.L3:
  119:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
-  91              		.loc 1 119 0
-  92 004e 1A4C     		ldr	r4, .L17+8
-  93 0050 2268     		ldr	r2, [r4]
-  94 0052 0523     		movs	r3, #5
-  95 0054 B2FBF3F3 		udiv	r3, r2, r3
-  96 0058 03EB8303 		add	r3, r3, r3, lsl #2
-  97 005c 9A42     		cmp	r2, r3
-  98 005e 05D0     		beq	.L16
-  99              	.L6:
+  96              		.loc 1 119 0
+  97 0054 214C     		ldr	r4, .L22+4
+  98 0056 2268     		ldr	r2, [r4]
+  99 0058 0523     		movs	r3, #5
+ 100 005a B2FBF3F3 		udiv	r3, r2, r3
+ 101 005e 03EB8303 		add	r3, r3, r3, lsl #2
+ 102 0062 9A42     		cmp	r2, r3
+ 103 0064 15D0     		beq	.L21
+ 104              	.L6:
  123:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       /* run the task function */
- 100              		.loc 1 123 0
- 101 0060 2368     		ldr	r3, [r4]
- 102 0062 0133     		adds	r3, r3, #1
- 103 0064 2360     		str	r3, [r4]
- 125:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       if(0) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be su
- 104              		.loc 1 125 0
- 105 0066 FFF7FEFF 		bl	OS_TaskDispatcher
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 6
+ 105              		.loc 1 123 0
+ 106 0066 2368     		ldr	r3, [r4]
+ 107 0068 0133     		adds	r3, r3, #1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s 			page 6
 
 
- 106              	.LVL11:
- 132:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****    }
- 107              		.loc 1 132 0
- 108 006a D6E7     		b	.L2
- 109              	.L16:
- 110              	.LBB4:
- 111              	.LBB5:
+ 108 006a 2360     		str	r3, [r4]
+ 125:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: current
+ 109              		.loc 1 125 0
+ 110 006c FFF7FEFF 		bl	OS_TaskDispatcher
+ 111              	.LVL11:
+ 126:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       {
+ 112              		.loc 1 126 0
+ 113 0070 1C4B     		ldr	r3, .L22+12
+ 114 0072 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 115 0074 DBB2     		uxtb	r3, r3
+ 116 0076 022B     		cmp	r3, #2
+ 117 0078 D4D1     		bne	.L2
+ 129:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
+ 118              		.loc 1 129 0
+ 119 007a 0122     		movs	r2, #1
+ 128:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          sys_req_reset_state = Reset_restart;
+ 120              		.loc 1 128 0
+ 121 007c 2B60     		str	r3, [r5]
+ 129:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
+ 122              		.loc 1 129 0
+ 123 007e 2272     		strb	r2, [r4, #8]
+ 124 0080 D0E7     		b	.L2
+ 125              	.L20:
+ 145:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
+ 126              		.loc 1 145 0
+ 127 0082 0020     		movs	r0, #0
+ 128 0084 FFF7FEFF 		bl	OS_Shutdown
+ 129              	.LVL12:
+ 146:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
+ 130              		.loc 1 146 0
+ 131 0088 CCE7     		b	.L2
+ 132              	.L14:
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****          break;
+ 133              		.loc 1 140 0
+ 134 008a 0120     		movs	r0, #1
+ 135 008c FFF7FEFF 		bl	OS_Shutdown
+ 136              	.LVL13:
+ 141:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****       }
+ 137              		.loc 1 141 0
+ 138 0090 C8E7     		b	.L2
+ 139              	.L21:
+ 140              	.LBB4:
+ 141              	.LBB5:
   59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****     {
- 112              		.loc 1 59 0
- 113 006c 6368     		ldr	r3, [r4, #4]
- 114 006e 042B     		cmp	r3, #4
- 115 0070 F6D8     		bhi	.L6
- 116 0072 DFE803F0 		tbb	[pc, r3]
- 117              	.L8:
- 118 0076 03       		.byte	(.L7-.L8)/2
- 119 0077 1A       		.byte	(.L9-.L8)/2
- 120 0078 13       		.byte	(.L10-.L8)/2
- 121 0079 10       		.byte	(.L11-.L8)/2
- 122 007a 0A       		.byte	(.L12-.L8)/2
- 123 007b 00       		.p2align 1
- 124              	.L7:
+ 142              		.loc 1 59 0
+ 143 0092 6368     		ldr	r3, [r4, #4]
+ 144 0094 042B     		cmp	r3, #4
+ 145 0096 E6D8     		bhi	.L6
+ 146 0098 DFE803F0 		tbb	[pc, r3]
+ 147              	.L8:
+ 148 009c 03       		.byte	(.L7-.L8)/2
+ 149 009d 1A       		.byte	(.L9-.L8)/2
+ 150 009e 13       		.byte	(.L10-.L8)/2
+ 151 009f 10       		.byte	(.L11-.L8)/2
+ 152 00a0 0A       		.byte	(.L12-.L8)/2
+ 153 00a1 00       		.p2align 1
+ 154              	.L7:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s 			page 7
+
+
   62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****         call_nr++;
- 125              		.loc 1 62 0
- 126 007c 0F48     		ldr	r0, .L17+12
- 127 007e FFF7FEFF 		bl	OS_ActivateTask
- 128              	.LVL12:
+ 155              		.loc 1 62 0
+ 156 00a2 1148     		ldr	r0, .L22+16
+ 157 00a4 FFF7FEFF 		bl	OS_ActivateTask
+ 158              	.LVL14:
   63:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****         break;
- 129              		.loc 1 63 0
- 130 0082 6368     		ldr	r3, [r4, #4]
- 131 0084 0133     		adds	r3, r3, #1
- 132 0086 6360     		str	r3, [r4, #4]
- 133 0088 EAE7     		b	.L6
- 134              	.L12:
+ 159              		.loc 1 63 0
+ 160 00a8 6368     		ldr	r3, [r4, #4]
+ 161 00aa 0133     		adds	r3, r3, #1
+ 162 00ac 6360     		str	r3, [r4, #4]
+ 163 00ae DAE7     		b	.L6
+ 164              	.L12:
   78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****         call_nr = 0;
- 135              		.loc 1 78 0
- 136 008a 0D48     		ldr	r0, .L17+16
- 137 008c FFF7FEFF 		bl	OS_ActivateTask
- 138              	.LVL13:
+ 165              		.loc 1 78 0
+ 166 00b0 0E48     		ldr	r0, .L22+20
+ 167 00b2 FFF7FEFF 		bl	OS_ActivateTask
+ 168              	.LVL15:
   79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****         break;
- 139              		.loc 1 79 0
- 140 0090 0023     		movs	r3, #0
- 141 0092 6360     		str	r3, [r4, #4]
- 142 0094 E4E7     		b	.L6
- 143              	.L11:
+ 169              		.loc 1 79 0
+ 170 00b6 0023     		movs	r3, #0
+ 171 00b8 6360     		str	r3, [r4, #4]
+ 172 00ba D4E7     		b	.L6
+ 173              	.L11:
   75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****         break;
- 144              		.loc 1 75 0
- 145 0096 0423     		movs	r3, #4
- 146 0098 6360     		str	r3, [r4, #4]
- 147 009a E1E7     		b	.L6
- 148              	.L10:
+ 174              		.loc 1 75 0
+ 175 00bc 0423     		movs	r3, #4
+ 176 00be 6360     		str	r3, [r4, #4]
+ 177 00c0 D1E7     		b	.L6
+ 178              	.L10:
   70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****         call_nr++;
- 149              		.loc 1 70 0
- 150 009c 0948     		ldr	r0, .L17+20
- 151 009e FFF7FEFF 		bl	OS_ActivateTask
- 152              	.LVL14:
+ 179              		.loc 1 70 0
+ 180 00c2 0B48     		ldr	r0, .L22+24
+ 181 00c4 FFF7FEFF 		bl	OS_ActivateTask
+ 182              	.LVL16:
   71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****         break;
- 153              		.loc 1 71 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 7
-
-
- 154 00a2 6368     		ldr	r3, [r4, #4]
- 155 00a4 0133     		adds	r3, r3, #1
- 156 00a6 6360     		str	r3, [r4, #4]
- 157 00a8 DAE7     		b	.L6
- 158              	.L9:
+ 183              		.loc 1 71 0
+ 184 00c8 6368     		ldr	r3, [r4, #4]
+ 185 00ca 0133     		adds	r3, r3, #1
+ 186 00cc 6360     		str	r3, [r4, #4]
+ 187 00ce CAE7     		b	.L6
+ 188              	.L9:
   67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c ****         break;
- 159              		.loc 1 67 0
- 160 00aa 0223     		movs	r3, #2
- 161 00ac 6360     		str	r3, [r4, #4]
- 162 00ae D7E7     		b	.L6
- 163              	.L18:
- 164              		.align	2
- 165              	.L17:
- 166 00b0 00000000 		.word	OS_STATE
- 167 00b4 00000000 		.word	TASK_0_VAR
- 168 00b8 00000000 		.word	.LANCHOR0
- 169 00bc 00000000 		.word	TASK_1_VAR
- 170 00c0 00000000 		.word	TASK_3_VAR
- 171 00c4 00000000 		.word	TASK_2_VAR
- 172              	.LBE5:
- 173              	.LBE4:
- 174              		.cfi_endproc
- 175              	.LFE1:
- 177              		.bss
- 178              		.align	2
- 179              		.set	.LANCHOR0,. + 0
- 182              	call_nr.4122:
- 183 0000 00000000 		.space	4
- 186              	call_nr.4110:
- 187 0004 00000000 		.space	4
- 188              		.text
- 189              	.Letext0:
- 190              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
- 191              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
- 192              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
- 193              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
- 194              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
- 195              		.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\OS_shutdown.h"
- 196              		.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h"
- 197              		.file 9 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
- 198              		.file 10 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.h"
- 199              		.file 11 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.h"
- 200              		.file 12 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_hw.h"
- 201              		.file 13 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_sw.h"
- 202              		.file 14 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s 			page 8
+ 189              		.loc 1 67 0
+ 190 00d0 0223     		movs	r3, #2
+ 191 00d2 6360     		str	r3, [r4, #4]
+ 192 00d4 C7E7     		b	.L6
+ 193              	.L23:
+ 194 00d6 00BF     		.align	2
+ 195              	.L22:
+ 196 00d8 00000000 		.word	OS_STATE
+ 197 00dc 00000000 		.word	.LANCHOR0
+ 198 00e0 00000000 		.word	TASK_0_VAR
+ 199 00e4 00000000 		.word	SYSTEM_STATE_ACCEPTED
+ 200 00e8 00000000 		.word	TASK_1_VAR
+ 201 00ec 00000000 		.word	TASK_3_VAR
+ 202 00f0 00000000 		.word	TASK_2_VAR
+ 203              	.LBE5:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s 			page 8
+
+
+ 204              	.LBE4:
+ 205              		.cfi_endproc
+ 206              	.LFE1:
+ 208              		.bss
+ 209              		.align	2
+ 210              		.set	.LANCHOR0,. + 0
+ 213              	call_nr.4123:
+ 214 0000 00000000 		.space	4
+ 217              	call_nr.4111:
+ 218 0004 00000000 		.space	4
+ 221              	sys_req_reset_state.4122:
+ 222 0008 00       		.space	1
+ 223              		.text
+ 224              	.Letext0:
+ 225              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 226              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ 227              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+ 228              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ 229              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 230              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
+ 231              		.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\OS_shutdown.h"
+ 232              		.file 9 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h"
+ 233              		.file 10 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
+ 234              		.file 11 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.h"
+ 235              		.file 12 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.h"
+ 236              		.file 13 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_hw.h"
+ 237              		.file 14 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_sw.h"
+ 238              		.file 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_main.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s:23     .text:00000000 OS_StateHandler
-C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s:118    .text:00000076 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s:166    .text:000000b0 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s:178    .bss:00000000 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s:182    .bss:00000000 call_nr.4122
-C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s:186    .bss:00000004 call_nr.4110
-C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s:123    .text:0000007b $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccI6G39c.s:123    .text:0000007c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:23     .text:00000000 OS_StateHandler
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:148    .text:0000009c $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:196    .text:000000d8 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:209    .bss:00000000 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:213    .bss:00000000 call_nr.4123
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:217    .bss:00000004 call_nr.4111
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:221    .bss:00000008 sys_req_reset_state.4122
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:153    .text:000000a1 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccaMKUCh.s:153    .text:000000a2 $t
                            .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.7d3083dfb0b17ee9cbe20f6fe4481cd9
@@ -446,6 +490,7 @@ LLF_INT_ENABLE
 OS_TaskDispatcher
 OS_STATE
 TASK_0_VAR
+SYSTEM_STATE_ACCEPTED
 TASK_1_VAR
 TASK_3_VAR
 TASK_2_VAR

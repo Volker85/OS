@@ -1349,7 +1349,7 @@ Ldebug_info0:
 	.uleb128 0x16
 	.ascii "OS_SW_BUG\0"
 	.byte	0x5
-	.byte	0xf
+	.byte	0xe
 	.long	0x918
 	.uleb128 0x17
 	.long	0x8f7
@@ -2781,11 +2781,19 @@ Ldebug_macro0:
 	.uleb128 0x17
 	.byte	0x4
 	.byte	0x4
+	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x18
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
-	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
+	.byte	0x4
+	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x18
+	.uleb128 0x19
 	.byte	0x4
 	.byte	0x1
 	.uleb128 0x8

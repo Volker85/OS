@@ -11,7 +11,6 @@
 extern unsigned_char_t HEAP[HEAP_SIZE];
 
 /* stack related RAM  */
-extern unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
 extern volatile uint32 OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
@@ -33,9 +32,9 @@ extern volatile uint32 TASK2_CALL_NR;
 extern volatile uint32 TASK3_CALL_NR;
 extern volatile uint32 TASK4_CALL_NR;
 
-extern volatile uint32* CRITICAL_ADDR;
-extern volatile uint32  CRITICAL_POS;
-extern volatile uint32  CRITICAL_STACK_USAGE_PERCENT;
+extern volatile uint32* STACK_ADDR;
+extern volatile uint32  STACK_POS;
+extern volatile uint32  STACK_USAGE_PERCENT;
 extern unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
 extern scheduler_time_t  LAST_CURRENT_TIME;
 extern scheduling_t      TASK_SCHEDULING_QUEUE[MAX_RUN_PQUEUE_SIZE];
@@ -50,4 +49,5 @@ extern task_t*           TASK_TRANSITION_REJECTED_TASK_ADDR;
 extern task_state_t      TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t      TASK_TRANSITION_CURRENT_STATE;
 extern volatile void* SAVED_STACK_POINTER;
+extern volatile uint8 SYSTEM_STATE_ACCEPTED;
 #endif

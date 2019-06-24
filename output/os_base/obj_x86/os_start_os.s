@@ -110,59 +110,59 @@ Ldebug_info0:
 	.uleb128 0x5
 	.ascii "OS_STATE\0"
 	.byte	0x2
-	.byte	0x10
+	.byte	0xf
 	.long	0x145
 	.uleb128 0x6
 	.long	0xf3
 	.uleb128 0x5
 	.ascii "VAR_HARDFAULT_STATUS_REG\0"
 	.byte	0x2
-	.byte	0x11
+	.byte	0x10
 	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_MEM_MANAG_FAULT_STATUS_REG\0"
 	.byte	0x2
-	.byte	0x12
+	.byte	0x11
 	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_USAGE_FAULT_STATUS_REG\0"
 	.byte	0x2
-	.byte	0x13
+	.byte	0x12
 	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_FAULT_STATUS_REG\0"
 	.byte	0x2
-	.byte	0x14
+	.byte	0x13
 	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_MEM_FAULT_ADDR_REG\0"
 	.byte	0x2
-	.byte	0x15
+	.byte	0x14
 	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_BUS_FAULT_ADDR_REG\0"
 	.byte	0x2
-	.byte	0x16
+	.byte	0x15
 	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_AUX_FAULT_STATUS_REG\0"
 	.byte	0x2
-	.byte	0x17
+	.byte	0x16
 	.long	0x145
 	.uleb128 0x5
 	.ascii "VAR_BUS_FAULT_STATUS_REG\0"
 	.byte	0x2
-	.byte	0x18
+	.byte	0x17
 	.long	0x145
 	.uleb128 0x5
 	.ascii "LINK_REGISTER_HANDLER\0"
 	.byte	0x2
-	.byte	0x19
+	.byte	0x18
 	.long	0x145
 	.uleb128 0x5
 	.ascii "BACKUP_SYSTICK_CURRENT_VAL_REG\0"
 	.byte	0x2
-	.byte	0x1a
+	.byte	0x19
 	.long	0x145
 	.byte	0
 	.section	.debug_abbrev,"dr"
@@ -1313,16 +1313,24 @@ Ldebug_macro0:
 	.uleb128 0x17
 	.byte	0x4
 	.byte	0x4
+	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x18
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
-	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_main.h"
+	.byte	0x4
+	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_main.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x18
+	.uleb128 0x19
 	.byte	0x4
-	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_os.h"
+	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_os.h"
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0x19
+	.uleb128 0x1a
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_startos_h_ \0"

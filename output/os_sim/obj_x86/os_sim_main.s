@@ -1634,16 +1634,24 @@ Ldebug_macro0:
 	.uleb128 0x19
 	.byte	0x4
 	.byte	0x4
+	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x1a
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
-	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_main.h"
+	.byte	0x4
+	.file 27 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_main.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x1a
+	.uleb128 0x1b
 	.byte	0x4
-	.file 27 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_task_scheduler.h"
+	.file 28 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_task_scheduler.h"
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0x1b
+	.uleb128 0x1c
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_task_scheduler_h_ \0"
@@ -1651,10 +1659,10 @@ Ldebug_macro0:
 	.uleb128 0x4
 	.uleb128 0x4
 	.byte	0x4
-	.file 28 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_task_common.h"
+	.file 29 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_task_common.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x1c
+	.uleb128 0x1d
 	.byte	0x4
 	.byte	0x1
 	.uleb128 0x7
@@ -1672,18 +1680,18 @@ Ldebug_macro0:
 	.uleb128 0xc
 	.ascii "OS_SaveTaskPtr(task_ptr,Task_n_ptr) \0"
 	.byte	0x4
-	.file 29 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_exception_isr_handler.h"
+	.file 30 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_exception_isr_handler.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x1d
+	.uleb128 0x1e
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_exception_isr_handler_h_ \0"
 	.byte	0x4
-	.file 30 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_start_os.h"
+	.file 31 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_start_os.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x1e
+	.uleb128 0x1f
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_startos_h_ \0"
@@ -1694,10 +1702,10 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x10
 	.ascii "_STDIO_H_ \0"
-	.file 31 "d:/programm/mingw/include/_mingw.h"
+	.file 32 "d:/programm/mingw/include/_mingw.h"
 	.byte	0x3
 	.uleb128 0x13
-	.uleb128 0x1f
+	.uleb128 0x20
 	.byte	0x1
 	.uleb128 0x17
 	.ascii "__MINGW_H \0"
@@ -1843,10 +1851,10 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x19
 	.ascii "__need_wint_t \0"
-	.file 32 "d:/programm/mingw/lib/gcc/mingw32/4.9.3/include/stddef.h"
+	.file 33 "d:/programm/mingw/lib/gcc/mingw32/4.9.3/include/stddef.h"
 	.byte	0x3
 	.uleb128 0x1a
-	.uleb128 0x20
+	.uleb128 0x21
 	.byte	0x1
 	.uleb128 0xb8
 	.ascii "__size_t__ \0"
@@ -1971,10 +1979,10 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x1b
 	.ascii "__need___va_list \0"
-	.file 33 "d:/programm/mingw/lib/gcc/mingw32/4.9.3/include/stdarg.h"
+	.file 34 "d:/programm/mingw/lib/gcc/mingw32/4.9.3/include/stdarg.h"
 	.byte	0x3
 	.uleb128 0x1c
-	.uleb128 0x21
+	.uleb128 0x22
 	.byte	0x2
 	.uleb128 0x22
 	.ascii "__need___va_list\0"
@@ -2100,10 +2108,10 @@ Ldebug_macro0:
 	.uleb128 0x2ac
 	.ascii "_WSTDIO_DEFINED \0"
 	.byte	0x4
-	.file 34 "d:/programm/mingw/include/time.h"
+	.file 35 "d:/programm/mingw/include/time.h"
 	.byte	0x3
 	.uleb128 0x8
-	.uleb128 0x22
+	.uleb128 0x23
 	.byte	0x1
 	.uleb128 0x21
 	.ascii "_TIME_H \0"
@@ -2140,7 +2148,7 @@ Ldebug_macro0:
 	.ascii "__need_size_t \0"
 	.byte	0x3
 	.uleb128 0x3d
-	.uleb128 0x20
+	.uleb128 0x21
 	.byte	0x2
 	.uleb128 0xea
 	.ascii "__need_size_t\0"

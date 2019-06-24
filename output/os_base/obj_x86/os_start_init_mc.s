@@ -1192,19 +1192,27 @@ Ldebug_macro0:
 	.uleb128 0x17
 	.byte	0x4
 	.byte	0x4
+	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x18
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
-	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_mc.h"
+	.byte	0x4
+	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_mc.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x18
+	.uleb128 0x19
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_start_init_mc_h_ \0"
 	.byte	0x4
-	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.h"
+	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.h"
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0x19
+	.uleb128 0x1a
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_memory_mmu_setup_h_ \0"

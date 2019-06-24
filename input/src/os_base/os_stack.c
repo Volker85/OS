@@ -8,10 +8,10 @@ void OS_StackCheck(void)
    the stack is starting at the highest address and growing to lower addresses -> pattern start on OS_MAIN_STACK[0] for 64 bytes
 
    */
-   static volatile uint32 stack_pos = 0, nr_of_cores = 0, stack_used = False;
+   static volatile uint32 stack_pos = 0, stack_used = False;
    STACK_ADDR = (volatile uint32*)-1;
    STACK_POS =  (volatile uint32) -1;
-   STACK_STACK_USAGE_PERCENT = 0u;
+   STACK_USAGE_PERCENT = 0u;
 
    for(stack_pos = 0; stack_pos < OS_STACK_SIZE; stack_pos++)
    {

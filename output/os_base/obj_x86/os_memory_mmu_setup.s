@@ -6,7 +6,7 @@ Ltext0:
 _OS_MmuSetup:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.c"
-	.loc 1 27 0
+	.loc 1 28 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -14,9 +14,9 @@ LFB0:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 65 0
+	.loc 1 69 0
 	call	_LLF_MPU_ENABLE
-	.loc 1 66 0
+	.loc 1 70 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -73,7 +73,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_MmuSetup\0"
 	.byte	0x1
-	.byte	0x1a
+	.byte	0x1b
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
@@ -1192,11 +1192,19 @@ Ldebug_macro0:
 	.uleb128 0x17
 	.byte	0x4
 	.byte	0x4
+	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x18
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
-	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.h"
+	.byte	0x4
+	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x18
+	.uleb128 0x19
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_memory_mmu_setup_h_ \0"
@@ -1236,6 +1244,9 @@ Ldebug_macro0:
 	.ascii "MPU_ASR_REGION_SIZE_PERIPHERIE 0x20000000\0"
 	.byte	0x1
 	.uleb128 0x18
+	.ascii "MPU_ASR_REGION_SIZE_STACK_COOKIE 0x00000010\0"
+	.byte	0x1
+	.uleb128 0x19
 	.ascii "MPU_ASR_REGION_ENABLE 0x00000001\0"
 	.byte	0x4
 	.byte	0

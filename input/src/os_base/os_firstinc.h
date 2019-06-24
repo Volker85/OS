@@ -12,5 +12,6 @@
 #include "..\os_user_code\led.h"
 
 #include "..\os_base\os_ram.h"
+#include "..\os_base\os_ram_stack.h"
 
 #endif /* _os_firstinc_h_ */

@@ -123,12 +123,11 @@ void OS_StateHandler(void)
       call_nr++;
       /* run the task function */
       OS_TaskDispatcher();
-      if(0) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
+      if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
       {
          OS_STATE = os_shutdown;
          sys_req_reset_state = Reset_restart;
       }
-
       break;
    }
    case os_shutdown:

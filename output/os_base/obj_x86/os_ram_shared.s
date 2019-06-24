@@ -1,4 +1,4 @@
-	.file	"os_shared_ram.c"
+	.file	"os_ram_shared.c"
 	.text
 Ltext0:
 	.comm	_RAM_BLOCK_C00_C00, 256, 5
@@ -18,7 +18,7 @@ Ltext0:
 	.comm	_RAM_BLOCK_C03_C02, 256, 5
 	.comm	_RAM_BLOCK_C03_C03, 256, 5
 Letext0:
-	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shared_ram.c"
+	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_ram_shared.c"
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
@@ -29,7 +29,7 @@ Ldebug_info0:
 	.uleb128 0x1
 	.ascii "GNU C 4.9.3 -march=i386 -g3 -O0 -std=c90\0"
 	.byte	0x1
-	.ascii "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shared_ram.c\0"
+	.ascii "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_shared.c\0"
 	.secrel32	Ldebug_line0
 	.secrel32	Ldebug_macro0
 	.uleb128 0x2
@@ -1335,6 +1335,14 @@ Ldebug_macro0:
 	.uleb128 0x9
 	.uleb128 0x17
 	.byte	0x4
+	.byte	0x4
+	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x18
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
 	.byte	0x4
 	.byte	0x1

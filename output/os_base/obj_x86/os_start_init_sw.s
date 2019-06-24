@@ -178,36 +178,36 @@ Ldebug_info0:
 	.uleb128 0xa
 	.ascii "OS_SW_BUG\0"
 	.byte	0x4
-	.byte	0xf
+	.byte	0xe
 	.long	0x2d9
 	.uleb128 0xb
 	.long	0x2b8
 	.uleb128 0xa
 	.ascii "TASK1_CALL_NR\0"
 	.byte	0x4
-	.byte	0x1f
+	.byte	0x1e
 	.long	0x2f3
 	.uleb128 0xb
 	.long	0x10f
 	.uleb128 0xa
 	.ascii "TASK2_CALL_NR\0"
 	.byte	0x4
-	.byte	0x20
+	.byte	0x1f
 	.long	0x2f3
 	.uleb128 0xa
 	.ascii "TASK3_CALL_NR\0"
 	.byte	0x4
-	.byte	0x21
+	.byte	0x20
 	.long	0x2f3
 	.uleb128 0xa
 	.ascii "TASK4_CALL_NR\0"
 	.byte	0x4
-	.byte	0x22
+	.byte	0x21
 	.long	0x2f3
 	.uleb128 0xa
 	.ascii "bTASK_QUEUE_INITIALIZED\0"
 	.byte	0x4
-	.byte	0x2e
+	.byte	0x2d
 	.long	0x94
 	.byte	0
 	.section	.debug_abbrev,"dr"
@@ -1415,6 +1415,14 @@ Ldebug_macro0:
 	.uleb128 0x9
 	.uleb128 0x17
 	.byte	0x4
+	.byte	0x4
+	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x18
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
 	.byte	0x4
 	.byte	0x4

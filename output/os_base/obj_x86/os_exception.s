@@ -6,14 +6,14 @@ Ltext0:
 _OS_Exception_HARDFAULT:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_exception.c"
-	.loc 1 31 0
+	.loc 1 30 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 42 0
+	.loc 1 41 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -24,14 +24,14 @@ LFE0:
 	.def	_OS_Exception_NMI;	.scl	2;	.type	32;	.endef
 _OS_Exception_NMI:
 LFB1:
-	.loc 1 46 0
+	.loc 1 45 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 57 0
+	.loc 1 56 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -42,14 +42,14 @@ LFE1:
 	.def	_OS_Exception_SWI;	.scl	2;	.type	32;	.endef
 _OS_Exception_SWI:
 LFB2:
-	.loc 1 59 0
+	.loc 1 58 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 71 0
+	.loc 1 70 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -60,14 +60,14 @@ LFE2:
 	.def	_OS_Exception_BUS_FAULT;	.scl	2;	.type	32;	.endef
 _OS_Exception_BUS_FAULT:
 LFB3:
-	.loc 1 73 0
+	.loc 1 72 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 84 0
+	.loc 1 83 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -78,14 +78,14 @@ LFE3:
 	.def	_OS_Exception_DEBUG;	.scl	2;	.type	32;	.endef
 _OS_Exception_DEBUG:
 LFB4:
-	.loc 1 87 0
+	.loc 1 86 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 92 0
+	.loc 1 91 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -96,14 +96,14 @@ LFE4:
 	.def	_OS_Exception_MEM_MANAG_FAULT;	.scl	2;	.type	32;	.endef
 _OS_Exception_MEM_MANAG_FAULT:
 LFB5:
-	.loc 1 95 0
+	.loc 1 94 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 106 0
+	.loc 1 105 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -114,14 +114,14 @@ LFE5:
 	.def	_OS_Exception_USAGE_FAULT;	.scl	2;	.type	32;	.endef
 _OS_Exception_USAGE_FAULT:
 LFB6:
-	.loc 1 109 0
+	.loc 1 108 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 120 0
+	.loc 1 119 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -132,14 +132,14 @@ LFE6:
 	.def	_OS_Exception_PendSV;	.scl	2;	.type	32;	.endef
 _OS_Exception_PendSV:
 LFB7:
-	.loc 1 123 0
+	.loc 1 122 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 127 0
+	.loc 1 126 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -150,14 +150,14 @@ LFE7:
 	.def	_OS_Exception_Systick;	.scl	2;	.type	32;	.endef
 _OS_Exception_Systick:
 LFB8:
-	.loc 1 130 0
+	.loc 1 129 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 228 0
+	.loc 1 227 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -168,14 +168,14 @@ LFE8:
 	.def	_OS_Exception_IRQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_IRQ:
 LFB9:
-	.loc 1 231 0
+	.loc 1 230 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 235 0
+	.loc 1 234 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -186,14 +186,14 @@ LFE9:
 	.def	_OS_Exception_FIQ;	.scl	2;	.type	32;	.endef
 _OS_Exception_FIQ:
 LFB10:
-	.loc 1 237 0
+	.loc 1 236 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 241 0
+	.loc 1 240 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -250,7 +250,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_HARDFAULT\0"
 	.byte	0x1
-	.byte	0x1e
+	.byte	0x1d
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
@@ -258,7 +258,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_NMI\0"
 	.byte	0x1
-	.byte	0x2d
+	.byte	0x2c
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
@@ -266,7 +266,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_SWI\0"
 	.byte	0x1
-	.byte	0x3a
+	.byte	0x39
 	.long	LFB2
 	.long	LFE2-LFB2
 	.uleb128 0x1
@@ -274,7 +274,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_BUS_FAULT\0"
 	.byte	0x1
-	.byte	0x48
+	.byte	0x47
 	.long	LFB3
 	.long	LFE3-LFB3
 	.uleb128 0x1
@@ -282,7 +282,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_DEBUG\0"
 	.byte	0x1
-	.byte	0x56
+	.byte	0x55
 	.long	LFB4
 	.long	LFE4-LFB4
 	.uleb128 0x1
@@ -290,7 +290,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_MEM_MANAG_FAULT\0"
 	.byte	0x1
-	.byte	0x5e
+	.byte	0x5d
 	.long	LFB5
 	.long	LFE5-LFB5
 	.uleb128 0x1
@@ -298,7 +298,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_USAGE_FAULT\0"
 	.byte	0x1
-	.byte	0x6c
+	.byte	0x6b
 	.long	LFB6
 	.long	LFE6-LFB6
 	.uleb128 0x1
@@ -306,7 +306,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_PendSV\0"
 	.byte	0x1
-	.byte	0x7a
+	.byte	0x79
 	.long	LFB7
 	.long	LFE7-LFB7
 	.uleb128 0x1
@@ -314,7 +314,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_Systick\0"
 	.byte	0x1
-	.byte	0x81
+	.byte	0x80
 	.long	LFB8
 	.long	LFE8-LFB8
 	.uleb128 0x1
@@ -322,7 +322,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_IRQ\0"
 	.byte	0x1
-	.byte	0xe6
+	.byte	0xe5
 	.long	LFB9
 	.long	LFE9-LFB9
 	.uleb128 0x1
@@ -330,7 +330,7 @@ Ldebug_info0:
 	.uleb128 0x3
 	.ascii "OS_Exception_FIQ\0"
 	.byte	0x1
-	.byte	0xec
+	.byte	0xeb
 	.long	LFB10
 	.long	LFE10-LFB10
 	.uleb128 0x1
@@ -1449,39 +1449,42 @@ Ldebug_macro0:
 	.uleb128 0x17
 	.byte	0x4
 	.byte	0x4
+	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x18
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
-	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_exception_isr_handler.h"
+	.byte	0x4
+	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_exception_isr_handler.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x18
+	.uleb128 0x19
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_exception_isr_handler_h_ \0"
 	.byte	0x4
-	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
+	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_shutdown.h"
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0x19
+	.uleb128 0x1a
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_shutdown_h_ \0"
 	.byte	0x4
-	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_os.h"
+	.file 27 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_os.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x1a
+	.uleb128 0x1b
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_startos_h_ \0"
 	.byte	0x4
-	.file 27 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_ram.h"
-	.byte	0x3
-	.uleb128 0x5
-	.uleb128 0x1b
-	.byte	0x4
 	.file 28 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_task_queue.h"
 	.byte	0x3
-	.uleb128 0x6
+	.uleb128 0x5
 	.uleb128 0x1c
 	.byte	0x1
 	.uleb128 0x2
@@ -1498,7 +1501,7 @@ Ldebug_macro0:
 	.byte	0x4
 	.file 29 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_task_scheduler.h"
 	.byte	0x3
-	.uleb128 0x7
+	.uleb128 0x6
 	.uleb128 0x1d
 	.byte	0x1
 	.uleb128 0x2

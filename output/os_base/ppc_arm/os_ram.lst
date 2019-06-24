@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFMVL5t.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccoKx1Ag.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFMVL5t.s 			page 1
   55              		.comm	DBG_RLD_VALUE,4,4
   56              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
   57              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFMVL5t.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccoKx1Ag.s 			page 2
 
 
   58              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
@@ -71,20 +71,21 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFMVL5t.s 			page 1
   65              		.comm	VAR_USAGE_FAULT_STATUS_REG,4,4
   66              		.comm	VAR_MEM_MANAG_FAULT_STATUS_REG,4,4
   67              		.comm	VAR_HARDFAULT_STATUS_REG,4,4
-  68              		.comm	OS_STATE,4,4
-  69              		.comm	OS_SW_BUG,15,4
-  70              		.comm	OS_MAIN_STACK,512,4
-  71              		.comm	CRITICAL_STACK_USAGE_PERCENT,4,4
-  72              		.comm	CRITICAL_POS,4,4
-  73              		.comm	CRITICAL_ADDR,4,4
+  68              		.comm	SYSTEM_STATE_ACCEPTED,1,1
+  69              		.comm	OS_STATE,4,4
+  70              		.comm	OS_SW_BUG,15,4
+  71              		.comm	STACK_USAGE_PERCENT,4,4
+  72              		.comm	STACK_POS,4,4
+  73              		.comm	STACK_ADDR,4,4
   74              	.Letext0:
   75              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
   76              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
   77              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
   78              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
   79              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  80              		.file 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFMVL5t.s 			page 3
+  80              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
+  81              		.file 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccoKx1Ag.s 			page 3
 
 
 DEFINED SYMBOLS
@@ -142,15 +143,15 @@ DEFINED SYMBOLS
                             *COM*:00000004 VAR_USAGE_FAULT_STATUS_REG
                             *COM*:00000004 VAR_MEM_MANAG_FAULT_STATUS_REG
                             *COM*:00000004 VAR_HARDFAULT_STATUS_REG
+                            *COM*:00000001 SYSTEM_STATE_ACCEPTED
                             *COM*:00000004 OS_STATE
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccoKx1Ag.s 			page 4
+
+
                             *COM*:0000000f OS_SW_BUG
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccFMVL5t.s 			page 4
-
-
-                            *COM*:00000200 OS_MAIN_STACK
-                            *COM*:00000004 CRITICAL_STACK_USAGE_PERCENT
-                            *COM*:00000004 CRITICAL_POS
-                            *COM*:00000004 CRITICAL_ADDR
+                            *COM*:00000004 STACK_USAGE_PERCENT
+                            *COM*:00000004 STACK_POS
+                            *COM*:00000004 STACK_ADDR
                            .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
                            .group:00000000 wm4.os_common.h.2.7d3083dfb0b17ee9cbe20f6fe4481cd9

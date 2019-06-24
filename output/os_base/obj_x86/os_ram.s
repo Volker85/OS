@@ -1,12 +1,12 @@
 	.file	"os_ram.c"
 	.text
 Ltext0:
-	.comm	_CRITICAL_ADDR, 4, 2
-	.comm	_CRITICAL_POS, 4, 2
-	.comm	_CRITICAL_STACK_USAGE_PERCENT, 4, 2
-	.comm	_OS_MAIN_STACK, 512, 5
+	.comm	_STACK_ADDR, 4, 2
+	.comm	_STACK_POS, 4, 2
+	.comm	_STACK_USAGE_PERCENT, 4, 2
 	.comm	_OS_SW_BUG, 60, 5
 	.comm	_OS_STATE, 4, 2
+	.comm	_SYSTEM_STATE_ACCEPTED, 1, 0
 	.comm	_VAR_HARDFAULT_STATUS_REG, 4, 2
 	.comm	_VAR_MEM_MANAG_FAULT_STATUS_REG, 4, 2
 	.comm	_VAR_USAGE_FAULT_STATUS_REG, 4, 2
@@ -68,7 +68,7 @@ Letext0:
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_ram.c"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0xef4
+	.long	0xee1
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -526,237 +526,222 @@ Ldebug_info0:
 	.byte	0x5f
 	.long	0x443
 	.uleb128 0x8
-	.long	0x82
-	.long	0x781
-	.uleb128 0x11
-	.long	0x2b8
-	.word	0x1ff
-	.byte	0
-	.uleb128 0x12
-	.ascii "OS_MAIN_STACK\0"
-	.byte	0x5
-	.byte	0x11
-	.long	0x770
-	.uleb128 0x5
-	.byte	0x3
-	.long	_OS_MAIN_STACK
-	.uleb128 0x8
 	.long	0x273
-	.long	0x7ac
+	.long	0x780
 	.uleb128 0x9
 	.long	0x2b8
 	.byte	0xe
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "OS_SW_BUG\0"
 	.byte	0x5
-	.byte	0x12
-	.long	0x7c3
+	.byte	0x11
+	.long	0x797
 	.uleb128 0x5
 	.byte	0x3
 	.long	_OS_SW_BUG
-	.uleb128 0x13
-	.long	0x79c
 	.uleb128 0x12
+	.long	0x770
+	.uleb128 0x11
 	.ascii "OS_STATE\0"
 	.byte	0x5
-	.byte	0x13
-	.long	0x7de
+	.byte	0x12
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_OS_STATE
-	.uleb128 0x13
-	.long	0x122
 	.uleb128 0x12
+	.long	0x122
+	.uleb128 0x11
 	.ascii "VAR_HARDFAULT_STATUS_REG\0"
 	.byte	0x5
 	.byte	0x14
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_VAR_HARDFAULT_STATUS_REG
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "VAR_MEM_MANAG_FAULT_STATUS_REG\0"
 	.byte	0x5
 	.byte	0x15
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_VAR_MEM_MANAG_FAULT_STATUS_REG
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "VAR_USAGE_FAULT_STATUS_REG\0"
 	.byte	0x5
 	.byte	0x16
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_VAR_USAGE_FAULT_STATUS_REG
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "VAR_FAULT_STATUS_REG\0"
 	.byte	0x5
 	.byte	0x17
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_VAR_FAULT_STATUS_REG
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "VAR_MEM_FAULT_ADDR_REG\0"
 	.byte	0x5
 	.byte	0x18
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_VAR_MEM_FAULT_ADDR_REG
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "VAR_BUS_FAULT_ADDR_REG\0"
 	.byte	0x5
 	.byte	0x19
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_VAR_BUS_FAULT_ADDR_REG
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "VAR_AUX_FAULT_STATUS_REG\0"
 	.byte	0x5
 	.byte	0x1a
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_VAR_AUX_FAULT_STATUS_REG
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "VAR_BUS_FAULT_STATUS_REG\0"
 	.byte	0x5
 	.byte	0x1b
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_VAR_BUS_FAULT_STATUS_REG
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "LINK_REGISTER_HANDLER\0"
 	.byte	0x5
 	.byte	0x1c
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_LINK_REGISTER_HANDLER
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "BACKUP_SYSTICK_CURRENT_VAL_REG\0"
 	.byte	0x5
 	.byte	0x1d
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_BACKUP_SYSTICK_CURRENT_VAL_REG
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "DBG_RLD_VALUE\0"
 	.byte	0x5
 	.byte	0x21
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_DBG_RLD_VALUE
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "DBG_CURR_VAL\0"
 	.byte	0x5
 	.byte	0x22
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_DBG_CURR_VAL
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "DBG_CTRL_VALUE\0"
 	.byte	0x5
 	.byte	0x23
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_DBG_CTRL_VALUE
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "DBG_CALIB_VALUE\0"
 	.byte	0x5
 	.byte	0x24
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_DBG_CALIB_VALUE
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK1_CALL_NR\0"
 	.byte	0x5
 	.byte	0x26
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK1_CALL_NR
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK2_CALL_NR\0"
 	.byte	0x5
 	.byte	0x27
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK2_CALL_NR
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK3_CALL_NR\0"
 	.byte	0x5
 	.byte	0x28
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK3_CALL_NR
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK4_CALL_NR\0"
 	.byte	0x5
 	.byte	0x29
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK4_CALL_NR
-	.uleb128 0x12
-	.ascii "CRITICAL_ADDR\0"
+	.uleb128 0x11
+	.ascii "STACK_ADDR\0"
 	.byte	0x5
 	.byte	0xe
-	.long	0xa57
+	.long	0xa28
 	.uleb128 0x5
 	.byte	0x3
-	.long	_CRITICAL_ADDR
+	.long	_STACK_ADDR
 	.uleb128 0xa
 	.byte	0x4
-	.long	0x7de
-	.uleb128 0x12
-	.ascii "CRITICAL_POS\0"
+	.long	0x7b2
+	.uleb128 0x11
+	.ascii "STACK_POS\0"
 	.byte	0x5
 	.byte	0xf
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
-	.long	_CRITICAL_POS
-	.uleb128 0x12
-	.ascii "CRITICAL_STACK_USAGE_PERCENT\0"
+	.long	_STACK_POS
+	.uleb128 0x11
+	.ascii "STACK_USAGE_PERCENT\0"
 	.byte	0x5
 	.byte	0x10
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
-	.long	_CRITICAL_STACK_USAGE_PERCENT
+	.long	_STACK_USAGE_PERCENT
 	.uleb128 0x8
 	.long	0x82
-	.long	0xab8
+	.long	0xa7d
 	.uleb128 0x9
 	.long	0x2b8
 	.byte	0x9
-	.uleb128 0x11
+	.uleb128 0x13
 	.long	0x2b8
 	.word	0x7cf
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_STACK\0"
 	.byte	0x5
 	.byte	0x39
-	.long	0xaa1
+	.long	0xa66
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_STACK
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "LAST_CURRENT_TIME\0"
 	.byte	0x5
 	.byte	0x3a
@@ -766,24 +751,24 @@ Ldebug_info0:
 	.long	_LAST_CURRENT_TIME
 	.uleb128 0x8
 	.long	0x73e
-	.long	0xaff
+	.long	0xac4
 	.uleb128 0x9
 	.long	0x2b8
 	.byte	0x9
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_SCHEDULING_QUEUE\0"
 	.byte	0x5
 	.byte	0x3b
-	.long	0xaef
+	.long	0xab4
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_SCHEDULING_QUEUE
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "RUNNING_SCHEDULING_QUEUE_ENTRY\0"
 	.byte	0x5
 	.byte	0x3c
-	.long	0xb4e
+	.long	0xb13
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RUNNING_SCHEDULING_QUEUE_ENTRY
@@ -792,43 +777,43 @@ Ldebug_info0:
 	.long	0x73e
 	.uleb128 0x8
 	.long	0x730
-	.long	0xb64
+	.long	0xb29
 	.uleb128 0x9
 	.long	0x2b8
 	.byte	0x9
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_RUN_QUEUE\0"
 	.byte	0x5
 	.byte	0x3d
-	.long	0xb54
+	.long	0xb19
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_RUN_QUEUE
 	.uleb128 0x8
 	.long	0x730
-	.long	0xb90
+	.long	0xb55
 	.uleb128 0x9
 	.long	0x2b8
 	.byte	0
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "RUNNING_TASK\0"
 	.byte	0x5
 	.byte	0x3e
-	.long	0xb80
+	.long	0xb45
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RUNNING_TASK
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_IDLE_QUEUE\0"
 	.byte	0x5
 	.byte	0x3f
-	.long	0xb80
+	.long	0xb45
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_IDLE_QUEUE
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "bTASK_QUEUE_INITIALIZED\0"
 	.byte	0x5
 	.byte	0x40
@@ -836,7 +821,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_bTASK_QUEUE_INITIALIZED
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_0_VAR\0"
 	.byte	0x5
 	.byte	0x41
@@ -844,7 +829,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_0_VAR
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_1_VAR\0"
 	.byte	0x5
 	.byte	0x41
@@ -852,7 +837,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_1_VAR
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_2_VAR\0"
 	.byte	0x5
 	.byte	0x41
@@ -860,7 +845,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_2_VAR
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_3_VAR\0"
 	.byte	0x5
 	.byte	0x41
@@ -868,7 +853,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_3_VAR
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_GROUP_1\0"
 	.byte	0x5
 	.byte	0x42
@@ -876,7 +861,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_GROUP_1
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_GROUP_2\0"
 	.byte	0x5
 	.byte	0x42
@@ -884,7 +869,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_GROUP_2
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_GROUP_3\0"
 	.byte	0x5
 	.byte	0x42
@@ -892,7 +877,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_GROUP_3
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_GROUP_4\0"
 	.byte	0x5
 	.byte	0x42
@@ -900,7 +885,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_GROUP_4
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_GROUP_5\0"
 	.byte	0x5
 	.byte	0x42
@@ -908,7 +893,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_GROUP_5
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_TRANSITION_REJECTED_TASK_ADDR\0"
 	.byte	0x5
 	.byte	0x43
@@ -916,7 +901,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_TRANSITION_REJECTED_TASK_ADDR
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_TRANSITION_REJECTED_STATE\0"
 	.byte	0x5
 	.byte	0x44
@@ -924,7 +909,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_TRANSITION_REJECTED_STATE
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "TASK_TRANSITION_CURRENT_STATE\0"
 	.byte	0x5
 	.byte	0x45
@@ -932,35 +917,45 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_TASK_TRANSITION_CURRENT_STATE
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "SAVED_STACK_POINTER\0"
 	.byte	0x5
 	.byte	0x37
-	.long	0xd76
+	.long	0xd3b
 	.uleb128 0x5
 	.byte	0x3
 	.long	_SAVED_STACK_POINTER
 	.uleb128 0xa
 	.byte	0x4
-	.long	0xd7c
+	.long	0xd41
 	.uleb128 0x14
+	.uleb128 0x11
+	.ascii "SYSTEM_STATE_ACCEPTED\0"
+	.byte	0x5
+	.byte	0x13
+	.long	0xd65
+	.uleb128 0x5
+	.byte	0x3
+	.long	_SYSTEM_STATE_ACCEPTED
 	.uleb128 0x12
+	.long	0xb9
+	.uleb128 0x11
 	.ascii "RAM_CHECK_FAILURE_DETECTED\0"
 	.byte	0x5
 	.byte	0x1e
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_CHECK_FAILURE_DETECTED
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "RAM_CHECK_FAILURE_ADDR\0"
 	.byte	0x5
 	.byte	0x1f
-	.long	0x7de
+	.long	0x7b2
 	.uleb128 0x5
 	.byte	0x3
 	.long	_RAM_CHECK_FAILURE_ADDR
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R0\0"
 	.byte	0x5
 	.byte	0x2b
@@ -968,7 +963,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R0
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R1\0"
 	.byte	0x5
 	.byte	0x2c
@@ -976,7 +971,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R1
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R2\0"
 	.byte	0x5
 	.byte	0x2d
@@ -984,7 +979,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R2
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R3\0"
 	.byte	0x5
 	.byte	0x2e
@@ -992,7 +987,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R3
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R4\0"
 	.byte	0x5
 	.byte	0x2f
@@ -1000,7 +995,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R4
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R5\0"
 	.byte	0x5
 	.byte	0x30
@@ -1008,7 +1003,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R5
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R6\0"
 	.byte	0x5
 	.byte	0x31
@@ -1016,7 +1011,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R6
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R7\0"
 	.byte	0x5
 	.byte	0x32
@@ -1024,7 +1019,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R7
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R8\0"
 	.byte	0x5
 	.byte	0x33
@@ -1032,7 +1027,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R8
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R9\0"
 	.byte	0x5
 	.byte	0x34
@@ -1040,7 +1035,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R9
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R10\0"
 	.byte	0x5
 	.byte	0x35
@@ -1048,7 +1043,7 @@ Ldebug_info0:
 	.uleb128 0x5
 	.byte	0x3
 	.long	_REGISTER_R10
-	.uleb128 0x12
+	.uleb128 0x11
 	.ascii "REGISTER_R11\0"
 	.byte	0x5
 	.byte	0x36
@@ -1250,15 +1245,6 @@ Ldebug_abbrev0:
 	.byte	0
 	.byte	0
 	.uleb128 0x11
-	.uleb128 0x21
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2f
-	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0x12
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -1275,11 +1261,20 @@ Ldebug_abbrev0:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x13
+	.uleb128 0x12
 	.uleb128 0x35
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x13
+	.uleb128 0x21
+	.byte	0
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2f
+	.uleb128 0x5
 	.byte	0
 	.byte	0
 	.uleb128 0x14
@@ -2339,16 +2334,24 @@ Ldebug_macro0:
 	.uleb128 0x17
 	.byte	0x4
 	.byte	0x4
+	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x18
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
-	.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_stack.h"
+	.byte	0x4
+	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_stack.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x18
+	.uleb128 0x19
 	.byte	0x4
-	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_heap.h"
+	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_heap.h"
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0x19
+	.uleb128 0x1a
 	.byte	0x4
 	.byte	0x4
 	.byte	0

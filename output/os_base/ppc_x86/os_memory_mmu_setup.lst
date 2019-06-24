@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 1
 
 
    1              		.file	"os_memory_mmu_setup.c"
@@ -28,14 +28,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
   18:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW        0x03000000
   19:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS  0x01000000
   20:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
-  21:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_REGION_SIZE_FLASH       0x20000000
-  22:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_REGION_SIZE_RAM         0x20000000
-  23:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_REGION_SIZE_PERIPHERIE  0x20000000
-  24:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_REGION_ENABLE           0x00000001
-  25:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
-  26:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** void OS_MmuSetup(void)
-  27:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** {
-   9              		.loc 1 27 0
+  21:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_REGION_SIZE_FLASH        0x20000000
+  22:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_REGION_SIZE_RAM          0x20000000
+  23:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_REGION_SIZE_PERIPHERIE   0x20000000
+  24:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_REGION_SIZE_STACK_COOKIE 0x00000010
+  25:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** #define MPU_ASR_REGION_ENABLE            0x00000001
+  26:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
+  27:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** void OS_MmuSetup(void)
+  28:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** {
+   9              		.loc 1 28 0
   10              		.cfi_startproc
   11 0000 55       		pushl	%ebp
   12              		.cfi_def_cfa_offset 8
@@ -43,52 +44,55 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
   14 0001 89E5     		movl	%esp, %ebp
   15              		.cfi_def_cfa_register 5
   16 0003 83EC08   		subl	$8, %esp
-  28:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-  29:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* assign every task a mmu region + the scheduler an own region */
-  30:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might 
-  31:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****       hardware register access shall be only possible in supervisor / kernel mode via system call..
-  32:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* the MPU is implementation depended in STM32F4 MCU..., the eval board does have a MPU with 8 r
-  33:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
-  34:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* FLASH: Start Addr: 0x08000000, Length: 1024K */
-  35:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
-  36:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* RAM:   Start Addr: 0x20000000, Length: 112kB *//* + 64kB CCM, 16 kB SysRAM */
-  37:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
-  38:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* peripherie Start Addr: 0x40000000, Length: 0xFFFFFFFF - 0x40000000 + 1 *//* + 64kB CCM, 16 kB
-  39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
-  40:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* interrupts are still disabled at this point of startup, no 2nd disable required... */
-  41:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 0 FLASH */
-  42:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RNR  = 0;
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 2
+  29:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+  30:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* assign every task a mmu region + the scheduler an own region */
+  31:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might 
+  32:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****       hardware register access shall be only possible in supervisor / kernel mode via system call..
+  33:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* the MPU is implementation depended in STM32F4 MCU..., the eval board does have a MPU with 8 r
+  34:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
+  35:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* FLASH: Start Addr: 0x08000000, Length: 1024K */
+  36:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
+  37:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* RAM:   Start Addr: 0x20000000, Length: 112kB *//* + 64kB CCM, 16 kB SysRAM */
+  38:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
+  39:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* peripherie Start Addr: 0x40000000, Length: 0xFFFFFFFF - 0x40000000 + 1 *//* + 64kB CCM, 16 kB
+  40:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
+  41:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* interrupts are still disabled at this point of startup, no 2nd disable required... */
+  42:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 0 FLASH */
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 2
 
 
-  43:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RBAR = 0x08000000;/* FLASH Start */
-  44:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH 
-  45:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
-  46:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 1 RAM */
-  47:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RNR  = 1;
-  48:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RBAR = 0x20000000;/* RAM Start */
-  49:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | 
-  50:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
-  51:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 2 Peripherie */
-  52:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RNR  = 2;
-  53:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RBAR = 0x40000000;/* Peripherie Start */
-  54:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_S
-  55:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 3 Peripherie 2 */
-  56:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RNR  = 3;
-  57:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RBAR = 0xE0000000;/* Peripherie Start */
-  58:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_S
-  59:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 4 */
-  60:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 5 */
-  61:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 6 */
-  62:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 7 */
-  63:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    #endif
-  64:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* now activate the MPU */
-  65:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    LLF_MPU_ENABLE();
-  17              		.loc 1 65 0
+  43:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RNR  = 0;
+  44:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RBAR = 0x08000000;/* FLASH Start */
+  45:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH 
+  46:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
+  47:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 1 RAM */
+  48:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RNR  = 1;
+  49:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RBAR = 0x20000000;/* RAM Start */
+  50:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW | MPU_ASR_REGION_SIZE_RAM | 
+  51:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** 
+  52:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 2 Peripherie */
+  53:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RNR  = 2;
+  54:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RBAR = 0x40000000;/* Peripherie Start */
+  55:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_S
+  56:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 3 Peripherie 2 */
+  57:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RNR  = 3;
+  58:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RBAR = 0xE0000000;/* Peripherie Start */
+  59:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_S
+  60:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 4 StackCookie */
+  61:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RNR  = 4;
+  62:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RBAR = 0x20000000;/* Cookie Start */
+  63:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_STACK_
+  64:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 5 */
+  65:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 6 */
+  66:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* region 7 */
+  67:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    #endif
+  68:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    /* now activate the MPU */
+  69:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c ****    LLF_MPU_ENABLE();
+  17              		.loc 1 69 0
   18 0006 E8000000 		call	_LLF_MPU_ENABLE
   18      00
-  66:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** }
-  19              		.loc 1 66 0
+  70:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_memory_mmu_setup.c **** }
+  19              		.loc 1 70 0
   20 000b C9       		leave
   21              		.cfi_restore 5
   22              		.cfi_def_cfa 4, 4
@@ -114,13 +118,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
   36      67615C50 
   36      726F6772 
   36      616D6D69 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 3
+
+
   37 0087 00000000 		.long	Ltext0
   38 008b 0D000000 		.long	Letext0-Ltext0
   39 008f 00000000 		.secrel32	Ldebug_line0
   40 0093 00000000 		.secrel32	Ldebug_macro0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 3
-
-
   41 0097 02       		.uleb128 0x2
   42 0098 01       		.byte	0x1
   43 0099 08       		.byte	0x8
@@ -174,16 +178,16 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
   72 010a 756E7369 		.ascii "unsigned int\0"
   72      676E6564 
   72      20696E74 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 4
+
+
   72      00
   73 0117 03       		.uleb128 0x3
   74 0118 4F535F4D 		.ascii "OS_MmuSetup\0"
   74      6D755365 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 4
-
-
   74      74757000 
   75 0124 01       		.byte	0x1
-  76 0125 1A       		.byte	0x1a
+  76 0125 1B       		.byte	0x1b
   77 0126 00000000 		.long	LFB0
   78 012a 0D000000 		.long	LFE0-LFB0
   79 012e 01       		.uleb128 0x1
@@ -234,13 +238,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  124 0029 0B       		.uleb128 0xb
  125 002a 27       		.uleb128 0x27
  126 002b 19       		.uleb128 0x19
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 5
+
+
  127 002c 11       		.uleb128 0x11
  128 002d 01       		.uleb128 0x1
  129 002e 12       		.uleb128 0x12
  130 002f 06       		.uleb128 0x6
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 5
-
-
  131 0030 40       		.uleb128 0x40
  132 0031 18       		.uleb128 0x18
  133 0032 9642     		.uleb128 0x2116
@@ -294,13 +298,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  169 004a 5F5F474E 		.ascii "__GNUC_PATCHLEVEL__ 3\0"
  169      55435F50 
  169      41544348 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 6
+
+
  169      4C455645 
  169      4C5F5F20 
  170 0060 01       		.byte	0x1
  171 0061 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 6
-
-
  172 0062 5F5F5645 		.ascii "__VERSION__ \"4.9.3\"\0"
  172      5253494F 
  172      4E5F5F20 
@@ -354,13 +358,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  193      4E495445 
  193      5F4D4154 
  193      485F4F4E 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 7
+
+
  193      4C595F5F 
  194 010d 01       		.byte	0x1
  195 010e 00       		.uleb128 0
  196 010f 5F5F5349 		.ascii "__SIZEOF_INT__ 4\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 7
-
-
  196      5A454F46 
  196      5F494E54 
  196      5F5F2034 
@@ -414,13 +418,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  217      5F53495A 
  217      455F545F 
  217      5F203400 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 8
+
+
  218 01bf 01       		.byte	0x1
  219 01c0 00       		.uleb128 0
  220 01c1 5F5F4348 		.ascii "__CHAR_BIT__ 8\0"
  220      41525F42 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 8
-
-
  220      49545F5F 
  220      203800
  221 01d0 01       		.byte	0x1
@@ -474,13 +478,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  241      5F5F2034 
  242 02b1 01       		.byte	0x1
  243 02b2 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 9
+
+
  244 02b3 5F5F5349 		.ascii "__SIZE_TYPE__ unsigned int\0"
  244      5A455F54 
  244      5950455F 
  244      5F20756E 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 9
-
-
  244      7369676E 
  245 02ce 01       		.byte	0x1
  246 02cf 00       		.uleb128 0
@@ -534,13 +538,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  266 03ba 01       		.byte	0x1
  267 03bb 00       		.uleb128 0
  268 03bc 5F5F5349 		.ascii "__SIG_ATOMIC_TYPE__ int\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 10
+
+
  268      475F4154 
  268      4F4D4943 
  268      5F545950 
  268      455F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 10
-
-
  269 03d4 01       		.byte	0x1
  270 03d5 00       		.uleb128 0
  271 03d6 5F5F494E 		.ascii "__INT8_TYPE__ signed char\0"
@@ -594,13 +598,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  291 04a3 00       		.uleb128 0
  292 04a4 5F5F5549 		.ascii "__UINT64_TYPE__ long long unsigned int\0"
  292      4E543634 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 11
+
+
  292      5F545950 
  292      455F5F20 
  292      6C6F6E67 
  293 04cb 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 11
-
-
  294 04cc 00       		.uleb128 0
  295 04cd 5F5F494E 		.ascii "__INT_LEAST8_TYPE__ signed char\0"
  295      545F4C45 
@@ -654,13 +658,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  316 05c5 5F5F5549 		.ascii "__UINT_LEAST64_TYPE__ long long unsigned int\0"
  316      4E545F4C 
  316      45415354 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 12
+
+
  316      36345F54 
  316      5950455F 
  317 05f2 01       		.byte	0x1
  318 05f3 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 12
-
-
  319 05f4 5F5F494E 		.ascii "__INT_FAST8_TYPE__ signed char\0"
  319      545F4641 
  319      5354385F 
@@ -714,13 +718,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  340      4E545F46 
  340      41535436 
  340      345F5459 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 13
+
+
  340      50455F5F 
  341 0711 01       		.byte	0x1
  342 0712 00       		.uleb128 0
  343 0713 5F5F494E 		.ascii "__INTPTR_TYPE__ int\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 13
-
-
  343      54505452 
  343      5F545950 
  343      455F5F20 
@@ -774,13 +778,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  364      585F5F20 
  364      32313437 
  364      34383336 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 14
+
+
  365 0800 01       		.byte	0x1
  366 0801 00       		.uleb128 0
  367 0802 5F5F4C4F 		.ascii "__LONG_MAX__ 2147483647L\0"
  367      4E475F4D 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 14
-
-
  367      41585F5F 
  367      20323134 
  367      37343833 
@@ -834,13 +838,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  389 08cb 01       		.byte	0x1
  390 08cc 00       		.uleb128 0
  391 08cd 5F5F494E 		.ascii "__INTMAX_MAX__ 9223372036854775807LL\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 15
+
+
  391      544D4158 
  391      5F4D4158 
  391      5F5F2039 
  391      32323333 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 15
-
-
  392 08f2 01       		.byte	0x1
  393 08f3 00       		.uleb128 0
  394 08f4 5F5F494E 		.ascii "__INTMAX_C(c) c ## LL\0"
@@ -894,13 +898,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  414 09c7 00       		.uleb128 0
  415 09c8 5F5F494E 		.ascii "__INT32_MAX__ 2147483647\0"
  415      5433325F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 16
+
+
  415      4D41585F 
  415      5F203231 
  415      34373438 
  416 09e1 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 16
-
-
  417 09e2 00       		.uleb128 0
  418 09e3 5F5F494E 		.ascii "__INT64_MAX__ 9223372036854775807LL\0"
  418      5436345F 
@@ -954,13 +958,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  439      545F4C45 
  439      41535431 
  439      365F4D41 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 17
+
+
  439      585F5F20 
  440 0abd 01       		.byte	0x1
  441 0abe 00       		.uleb128 0
  442 0abf 5F5F494E 		.ascii "__INT16_C(c) c\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 17
-
-
  442      5431365F 
  442      43286329 
  442      206300
@@ -1014,13 +1018,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  464 0b8b 01       		.byte	0x1
  465 0b8c 00       		.uleb128 0
  466 0b8d 5F5F5549 		.ascii "__UINT16_C(c) c\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 18
+
+
  466      4E543136 
  466      5F432863 
  466      29206300 
  467 0b9d 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 18
-
-
  468 0b9e 00       		.uleb128 0
  469 0b9f 5F5F5549 		.ascii "__UINT_LEAST32_MAX__ 4294967295U\0"
  469      4E545F4C 
@@ -1074,13 +1078,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  490 0c74 5F5F494E 		.ascii "__INT_FAST64_MAX__ 9223372036854775807LL\0"
  490      545F4641 
  490      53543634 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 19
+
+
  490      5F4D4158 
  490      5F5F2039 
  491 0c9d 01       		.byte	0x1
  492 0c9e 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 19
-
-
  493 0c9f 5F5F5549 		.ascii "__UINT_FAST8_MAX__ 255\0"
  493      4E545F46 
  493      41535438 
@@ -1134,13 +1138,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  514      435F3535 
  514      395F434F 
  514      4D504C45 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 20
+
+
  515 0d88 01       		.byte	0x1
  516 0d89 00       		.uleb128 0
  517 0d8a 5F5F464C 		.ascii "__FLT_EVAL_METHOD__ 2\0"
  517      545F4556 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 20
-
-
  517      414C5F4D 
  517      4554484F 
  517      445F5F20 
@@ -1194,13 +1198,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  539 0e3a 01       		.byte	0x1
  540 0e3b 00       		.uleb128 0
  541 0e3c 5F5F464C 		.ascii "__FLT_MAX_10_EXP__ 38\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 21
+
+
  541      545F4D41 
  541      585F3130 
  541      5F455850 
  541      5F5F2033 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 21
-
-
  542 0e52 01       		.byte	0x1
  543 0e53 00       		.uleb128 0
  544 0e54 5F5F464C 		.ascii "__FLT_DECIMAL_DIG__ 9\0"
@@ -1254,13 +1258,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  564 0f4d 00       		.uleb128 0
  565 0f4e 5F5F464C 		.ascii "__FLT_HAS_QUIET_NAN__ 1\0"
  565      545F4841 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 22
+
+
  565      535F5155 
  565      4945545F 
  565      4E414E5F 
  566 0f66 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 22
-
-
  567 0f67 00       		.uleb128 0
  568 0f68 5F5F4442 		.ascii "__DBL_MANT_DIG__ 53\0"
  568      4C5F4D41 
@@ -1314,13 +1318,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  589      4C5F4D41 
  589      585F5F20 
  589      2828646F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 23
+
+
  589      75626C65 
  590 1041 01       		.byte	0x1
  591 1042 00       		.uleb128 0
  592 1043 5F5F4442 		.ascii "__DBL_MIN__ ((double)2.22507385850720138309e-308L)\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 23
-
-
  592      4C5F4D49 
  592      4E5F5F20 
  592      2828646F 
@@ -1374,13 +1378,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  613      49475F5F 
  613      20313800 
  614 115d 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 24
+
+
  615 115e 00       		.uleb128 0
  616 115f 5F5F4C44 		.ascii "__LDBL_MIN_EXP__ (-16381)\0"
  616      424C5F4D 
  616      494E5F45 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 24
-
-
  616      58505F5F 
  616      20282D31 
  617 1179 01       		.byte	0x1
@@ -1434,13 +1438,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  637      20312E30 
  638 1269 01       		.byte	0x1
  639 126a 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 25
+
+
  640 126b 5F5F4C44 		.ascii "__LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L\0"
  640      424C5F44 
  640      454E4F52 
  640      4D5F4D49 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 25
-
-
  640      4E5F5F20 
  641 129d 01       		.byte	0x1
  642 129e 00       		.uleb128 0
@@ -1494,13 +1498,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  662 134a 01       		.byte	0x1
  663 134b 00       		.uleb128 0
  664 134c 5F5F4445 		.ascii "__DEC32_MAX__ 9.999999E96DF\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 26
+
+
  664      4333325F 
  664      4D41585F 
  664      5F20392E 
  664      39393939 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 26
-
-
  665 1368 01       		.byte	0x1
  666 1369 00       		.uleb128 0
  667 136a 5F5F4445 		.ascii "__DEC32_EPSILON__ 1E-6DF\0"
@@ -1554,13 +1558,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  687 1439 00       		.uleb128 0
  688 143a 5F5F4445 		.ascii "__DEC64_EPSILON__ 1E-15DD\0"
  688      4336345F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 27
+
+
  688      45505349 
  688      4C4F4E5F 
  688      5F203145 
  689 1454 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 27
-
-
  690 1455 00       		.uleb128 0
  691 1456 5F5F4445 		.ascii "__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\0"
  691      4336345F 
@@ -1614,13 +1618,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  712 154d 5F5F4445 		.ascii "__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL\0"
  712      43313238 
  712      5F535542 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 28
+
+
  712      4E4F524D 
  712      414C5F4D 
  713 1592 01       		.byte	0x1
  714 1593 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 28
-
-
  715 1594 5F5F5245 		.ascii "__REGISTER_PREFIX__ \0"
  715      47495354 
  715      45525F50 
@@ -1674,13 +1678,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  736      4F4D4943 
  736      5F434841 
  736      5231365F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 29
+
+
  737 1665 01       		.byte	0x1
  738 1666 00       		.uleb128 0
  739 1667 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR32_T_LOCK_FREE 1\0"
  739      435F4154 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 29
-
-
  739      4F4D4943 
  739      5F434841 
  739      5233325F 
@@ -1734,13 +1738,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  760      5F504F49 
  760      4E544552 
  761 1776 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 30
+
+
  762 1777 00       		.uleb128 0
  763 1778 5F5F4743 		.ascii "__GCC_HAVE_DWARF2_CFI_ASM 1\0"
  763      435F4841 
  763      56455F44 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 30
-
-
  763      57415246 
  763      325F4346 
  764 1794 01       		.byte	0x1
@@ -1794,13 +1798,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  787      4F4D4943 
  787      5F484C45 
  787      5F52454C 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 31
+
+
  787      45415345 
  788 184b 01       		.byte	0x1
  789 184c 00       		.uleb128 0
  790 184d 5F5F7475 		.ascii "__tune_i386__ 1\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 31
-
-
  790      6E655F69 
  790      3338365F 
  790      5F203100 
@@ -1854,13 +1858,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  813 1942 00       		.uleb128 0
  814 1943 5F5F4758 		.ascii "__GXX_TYPEINFO_EQUALITY_INLINE 0\0"
  814      585F5459 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 32
+
+
  814      5045494E 
  814      464F5F45 
  814      5155414C 
  815 1964 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 32
-
-
  816 1965 00       		.uleb128 0
  817 1966 5F5F4D53 		.ascii "__MSVCRT__ 1\0"
  817      56435254 
@@ -1914,13 +1918,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  842 19fd 01       		.byte	0x1
  843 19fe 00       		.uleb128 0
  844 19ff 5F5F4445 		.ascii "__DECIMAL_BID_FORMAT__ 1\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 33
+
+
  844      43494D41 
  844      4C5F4249 
  844      445F464F 
  844      524D4154 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 33
-
-
  845 1a18 01       		.byte	0x1
  846 1a19 00       		.uleb128 0
  847 1a1a 4346475F 		.ascii "CFG_PROCESSOR 3\0"
@@ -1974,13 +1978,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  874 1a9d 01       		.byte	0x1
  875 1a9e 07       		.uleb128 0x7
  876 1a9f 494E5445 		.ascii "INTEGER_SILP64 4\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 34
+
+
  876      4745525F 
  876      53494C50 
  876      36342034 
  876      00
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 34
-
-
  877 1ab0 01       		.byte	0x1
  878 1ab1 09       		.uleb128 0x9
  879 1ab2 4350505F 		.ascii "CPP_VERSION_NONE 0\0"
@@ -2034,13 +2038,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  899              		.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
  900 1b63 03       		.byte	0x3
  901 1b64 05       		.uleb128 0x5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 35
+
+
  902 1b65 04       		.uleb128 0x4
  903 1b66 01       		.byte	0x1
  904 1b67 02       		.uleb128 0x2
  905 1b68 5F6F735F 		.ascii "_os_common_h_ \0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 35
-
-
  905      636F6D6D 
  905      6F6E5F68 
  905      5F2000
@@ -2094,13 +2098,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  932      696E6C69 
  933 1c09 01       		.byte	0x1
  934 1c0a 0F       		.uleb128 0xf
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 36
+
+
  935 1c0b 52656665 		.ascii "ReferenceUnusedParameter(x) ((x) = (x))\0"
  935      72656E63 
  935      65556E75 
  935      73656450 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 36
-
-
  935      6172616D 
  936 1c33 01       		.byte	0x1
  937 1c34 10       		.uleb128 0x10
@@ -2154,13 +2158,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  959      696C6967 
  959      655F6C65 
  959      76656C5F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 37
+
+
  959      73617665 
  960 1cf3 01       		.byte	0x1
  961 1cf4 20       		.uleb128 0x20
  962 1cf5 50726976 		.ascii "Privilige_level_enter_kernel_mode() \0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 37
-
-
  962      696C6967 
  962      655F6C65 
  962      76656C5F 
@@ -2214,13 +2218,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  994 1d88 03       		.byte	0x3
  995 1d89 05       		.uleb128 0x5
  996 1d8a 08       		.uleb128 0x8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 38
+
+
  997 1d8b 01       		.byte	0x1
  998 1d8c 02       		.uleb128 0x2
  999 1d8d 5F6C6C64 		.ascii "_lld_interrupt_h_ \0"
  999      5F696E74 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 38
-
-
  999      65727275 
  999      70745F68 
  999      5F2000
@@ -2274,13 +2278,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  1024              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_timer.h"
  1025 1e5e 03       		.byte	0x3
  1026 1e5f 07       		.uleb128 0x7
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 39
+
+
  1027 1e60 0A       		.uleb128 0xa
  1028 1e61 01       		.byte	0x1
  1029 1e62 02       		.uleb128 0x2
  1030 1e63 5F6C6C64 		.ascii "_lld_timer_h_ \0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 39
-
-
  1030      5F74696D 
  1030      65725F68 
  1030      5F2000
@@ -2334,13 +2338,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  1065      6669675F 
  1065      685F2000 
  1066 1ed1 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 40
+
+
  1067 1ed2 05       		.uleb128 0x5
  1068 1ed3 53636865 		.ascii "SchedulerFrequency (1.0e3)\0"
  1068      64756C65 
  1068      72467265 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 40
-
-
  1068      7175656E 
  1068      63792028 
  1069 1eee 01       		.byte	0x1
@@ -2394,13 +2398,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  1089      32303030 
  1090 1fdb 01       		.byte	0x1
  1091 1fdc 10       		.uleb128 0x10
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 41
+
+
  1092 1fdd 4D535F50 		.ascii "MS_PER_SEC (1000)\0"
  1092      45525F53 
  1092      45432028 
  1092      31303030 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 41
-
-
  1092      2900
  1093 1fef 01       		.byte	0x1
  1094 1ff0 11       		.uleb128 0x11
@@ -2454,13 +2458,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  1124 20c9 11       		.uleb128 0x11
  1125 20ca 01       		.byte	0x1
  1126 20cb 02       		.uleb128 0x2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 42
+
+
  1127 20cc 5F4F535F 		.ascii "_OS_RAM_H_ \0"
  1127      52414D5F 
  1127      485F2000 
  1128              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_firstinc.h"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 42
-
-
  1129 20d8 03       		.byte	0x3
  1130 20d9 04       		.uleb128 0x4
  1131 20da 12       		.uleb128 0x12
@@ -2514,13 +2518,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  1159      464F525F 
  1159      53495A45 
  1160 215c 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 43
+
+
  1161 215d 0A       		.uleb128 0xa
  1162 215e 48454150 		.ascii "HEAP_OFFSET_FOR_USED_SIZE 4\0"
  1162      5F4F4646 
  1162      5345545F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 43
-
-
  1162      464F525F 
  1162      55534544 
  1163 217a 01       		.byte	0x1
@@ -2570,125 +2574,147 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 1
  1192 21d9 17       		.uleb128 0x17
  1193 21da 04       		.byte	0x4
  1194 21db 04       		.byte	0x4
- 1195 21dc 04       		.byte	0x4
- 1196              		.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.h"
- 1197 21dd 03       		.byte	0x3
- 1198 21de 02       		.uleb128 0x2
- 1199 21df 18       		.uleb128 0x18
- 1200 21e0 01       		.byte	0x1
- 1201 21e1 02       		.uleb128 0x2
- 1202 21e2 5F6F735F 		.ascii "_os_memory_mmu_setup_h_ \0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 44
+ 1195              		.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+ 1196 21dc 03       		.byte	0x3
+ 1197 21dd 0F       		.uleb128 0xf
+ 1198 21de 18       		.uleb128 0x18
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 44
 
 
- 1202      6D656D6F 
- 1202      72795F6D 
- 1202      6D755F73 
- 1202      65747570 
- 1203 21fb 04       		.byte	0x4
- 1204 21fc 01       		.byte	0x1
- 1205 21fd 0A       		.uleb128 0xa
- 1206 21fe 4D50555F 		.ascii "MPU_RNR ((volatile uint32*)0xE000ED98)\0"
- 1206      524E5220 
- 1206      2828766F 
- 1206      6C617469 
- 1206      6C652075 
- 1207 2225 01       		.byte	0x1
- 1208 2226 0B       		.uleb128 0xb
- 1209 2227 4D50555F 		.ascii "MPU_RBAR ((volatile uint32*)0xE000ED9C)\0"
- 1209      52424152 
- 1209      20282876 
- 1209      6F6C6174 
- 1209      696C6520 
- 1210 224f 01       		.byte	0x1
- 1211 2250 0C       		.uleb128 0xc
- 1212 2251 4D50555F 		.ascii "MPU_RASR ((volatile uint32*)0xE000EDA0)\0"
- 1212      52415352 
- 1212      20282876 
- 1212      6F6C6174 
- 1212      696C6520 
- 1213 2279 01       		.byte	0x1
- 1214 227a 0E       		.uleb128 0xe
- 1215 227b 4D50555F 		.ascii "MPU_ASR_NON_CACHABLE 0x00080000\0"
- 1215      4153525F 
- 1215      4E4F4E5F 
- 1215      43414348 
- 1215      41424C45 
- 1216 229b 01       		.byte	0x1
- 1217 229c 0F       		.uleb128 0xf
- 1218 229d 4D50555F 		.ascii "MPU_ASR_STRONGLY_ORDERED 0x00000000\0"
- 1218      4153525F 
- 1218      5354524F 
- 1218      4E474C59 
- 1218      5F4F5244 
- 1219 22c1 01       		.byte	0x1
- 1220 22c2 11       		.uleb128 0x11
- 1221 22c3 4D50555F 		.ascii "MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO 0x07000000\0"
- 1221      4153525F 
- 1221      41434345 
- 1221      53535F50 
- 1221      5249565F 
- 1222 22ef 01       		.byte	0x1
- 1223 22f0 12       		.uleb128 0x12
- 1224 22f1 4D50555F 		.ascii "MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW 0x03000000\0"
- 1224      4153525F 
- 1224      41434345 
- 1224      53535F50 
- 1224      5249565F 
- 1225 231d 01       		.byte	0x1
- 1226 231e 13       		.uleb128 0x13
- 1227 231f 4D50555F 		.ascii "MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS 0x01000000\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 45
+ 1199 21df 01       		.byte	0x1
+ 1200 21e0 02       		.uleb128 0x2
+ 1201 21e1 5F4F535F 		.ascii "_OS_RAM_STACK_H_ \0"
+ 1201      52414D5F 
+ 1201      53544143 
+ 1201      4B5F485F 
+ 1201      2000
+ 1202 21f3 04       		.byte	0x4
+ 1203 21f4 04       		.byte	0x4
+ 1204              		.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.h"
+ 1205 21f5 03       		.byte	0x3
+ 1206 21f6 02       		.uleb128 0x2
+ 1207 21f7 19       		.uleb128 0x19
+ 1208 21f8 01       		.byte	0x1
+ 1209 21f9 02       		.uleb128 0x2
+ 1210 21fa 5F6F735F 		.ascii "_os_memory_mmu_setup_h_ \0"
+ 1210      6D656D6F 
+ 1210      72795F6D 
+ 1210      6D755F73 
+ 1210      65747570 
+ 1211 2213 04       		.byte	0x4
+ 1212 2214 01       		.byte	0x1
+ 1213 2215 0A       		.uleb128 0xa
+ 1214 2216 4D50555F 		.ascii "MPU_RNR ((volatile uint32*)0xE000ED98)\0"
+ 1214      524E5220 
+ 1214      2828766F 
+ 1214      6C617469 
+ 1214      6C652075 
+ 1215 223d 01       		.byte	0x1
+ 1216 223e 0B       		.uleb128 0xb
+ 1217 223f 4D50555F 		.ascii "MPU_RBAR ((volatile uint32*)0xE000ED9C)\0"
+ 1217      52424152 
+ 1217      20282876 
+ 1217      6F6C6174 
+ 1217      696C6520 
+ 1218 2267 01       		.byte	0x1
+ 1219 2268 0C       		.uleb128 0xc
+ 1220 2269 4D50555F 		.ascii "MPU_RASR ((volatile uint32*)0xE000EDA0)\0"
+ 1220      52415352 
+ 1220      20282876 
+ 1220      6F6C6174 
+ 1220      696C6520 
+ 1221 2291 01       		.byte	0x1
+ 1222 2292 0E       		.uleb128 0xe
+ 1223 2293 4D50555F 		.ascii "MPU_ASR_NON_CACHABLE 0x00080000\0"
+ 1223      4153525F 
+ 1223      4E4F4E5F 
+ 1223      43414348 
+ 1223      41424C45 
+ 1224 22b3 01       		.byte	0x1
+ 1225 22b4 0F       		.uleb128 0xf
+ 1226 22b5 4D50555F 		.ascii "MPU_ASR_STRONGLY_ORDERED 0x00000000\0"
+ 1226      4153525F 
+ 1226      5354524F 
+ 1226      4E474C59 
+ 1226      5F4F5244 
+ 1227 22d9 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 45
 
 
- 1227      4153525F 
- 1227      41434345 
- 1227      53535F50 
- 1227      5249565F 
- 1228 2351 01       		.byte	0x1
- 1229 2352 15       		.uleb128 0x15
- 1230 2353 4D50555F 		.ascii "MPU_ASR_REGION_SIZE_FLASH 0x20000000\0"
- 1230      4153525F 
- 1230      52454749 
- 1230      4F4E5F53 
- 1230      495A455F 
- 1231 2378 01       		.byte	0x1
- 1232 2379 16       		.uleb128 0x16
- 1233 237a 4D50555F 		.ascii "MPU_ASR_REGION_SIZE_RAM 0x20000000\0"
- 1233      4153525F 
- 1233      52454749 
- 1233      4F4E5F53 
- 1233      495A455F 
- 1234 239d 01       		.byte	0x1
- 1235 239e 17       		.uleb128 0x17
- 1236 239f 4D50555F 		.ascii "MPU_ASR_REGION_SIZE_PERIPHERIE 0x20000000\0"
- 1236      4153525F 
- 1236      52454749 
- 1236      4F4E5F53 
- 1236      495A455F 
- 1237 23c9 01       		.byte	0x1
- 1238 23ca 18       		.uleb128 0x18
- 1239 23cb 4D50555F 		.ascii "MPU_ASR_REGION_ENABLE 0x00000001\0"
- 1239      4153525F 
- 1239      52454749 
- 1239      4F4E5F45 
- 1239      4E41424C 
- 1240 23ec 04       		.byte	0x4
- 1241 23ed 00       		.byte	0
- 1242              		.section	.debug_line,"dr"
- 1243              	Ldebug_line0:
- 1244 0000 23030000 		.section	.debug_str,"dr"
- 1244      02000A03 
- 1244      00000101 
- 1244      FB0E0D00 
- 1244      01010101 
- 1245              		.ident	"GCC: (GNU) 4.9.3"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s 			page 46
+ 1228 22da 11       		.uleb128 0x11
+ 1229 22db 4D50555F 		.ascii "MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO 0x07000000\0"
+ 1229      4153525F 
+ 1229      41434345 
+ 1229      53535F50 
+ 1229      5249565F 
+ 1230 2307 01       		.byte	0x1
+ 1231 2308 12       		.uleb128 0x12
+ 1232 2309 4D50555F 		.ascii "MPU_ASR_ACCESS_PRIV_RW_UNPRIV_RW 0x03000000\0"
+ 1232      4153525F 
+ 1232      41434345 
+ 1232      53535F50 
+ 1232      5249565F 
+ 1233 2335 01       		.byte	0x1
+ 1234 2336 13       		.uleb128 0x13
+ 1235 2337 4D50555F 		.ascii "MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS 0x01000000\0"
+ 1235      4153525F 
+ 1235      41434345 
+ 1235      53535F50 
+ 1235      5249565F 
+ 1236 2369 01       		.byte	0x1
+ 1237 236a 15       		.uleb128 0x15
+ 1238 236b 4D50555F 		.ascii "MPU_ASR_REGION_SIZE_FLASH 0x20000000\0"
+ 1238      4153525F 
+ 1238      52454749 
+ 1238      4F4E5F53 
+ 1238      495A455F 
+ 1239 2390 01       		.byte	0x1
+ 1240 2391 16       		.uleb128 0x16
+ 1241 2392 4D50555F 		.ascii "MPU_ASR_REGION_SIZE_RAM 0x20000000\0"
+ 1241      4153525F 
+ 1241      52454749 
+ 1241      4F4E5F53 
+ 1241      495A455F 
+ 1242 23b5 01       		.byte	0x1
+ 1243 23b6 17       		.uleb128 0x17
+ 1244 23b7 4D50555F 		.ascii "MPU_ASR_REGION_SIZE_PERIPHERIE 0x20000000\0"
+ 1244      4153525F 
+ 1244      52454749 
+ 1244      4F4E5F53 
+ 1244      495A455F 
+ 1245 23e1 01       		.byte	0x1
+ 1246 23e2 18       		.uleb128 0x18
+ 1247 23e3 4D50555F 		.ascii "MPU_ASR_REGION_SIZE_STACK_COOKIE 0x00000010\0"
+ 1247      4153525F 
+ 1247      52454749 
+ 1247      4F4E5F53 
+ 1247      495A455F 
+ 1248 240f 01       		.byte	0x1
+ 1249 2410 19       		.uleb128 0x19
+ 1250 2411 4D50555F 		.ascii "MPU_ASR_REGION_ENABLE 0x00000001\0"
+ 1250      4153525F 
+ 1250      52454749 
+ 1250      4F4E5F45 
+ 1250      4E41424C 
+ 1251 2432 04       		.byte	0x4
+ 1252 2433 00       		.byte	0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 46
+
+
+ 1253              		.section	.debug_line,"dr"
+ 1254              	Ldebug_line0:
+ 1255 0000 35030000 		.section	.debug_str,"dr"
+ 1255      02001C03 
+ 1255      00000101 
+ 1255      FB0E0D00 
+ 1255      01010101 
+ 1256              		.ident	"GCC: (GNU) 4.9.3"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s 			page 47
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_memory_mmu_setup.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccpbJQoC.s:6      .text:00000000 _OS_MmuSetup
+C:\Users\PRESID~1\AppData\Local\Temp\ccZ0wTXb.s:6      .text:00000000 _OS_MmuSetup
 
 UNDEFINED SYMBOLS
 _LLF_MPU_ENABLE

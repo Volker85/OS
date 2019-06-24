@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1400, %eax
+	movl	_call_nr.1401, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,16 +33,16 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1400, %eax
+	movl	_call_nr.1401, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1400
+	movl	%eax, _call_nr.1401
 	.loc 1 64 0
 	jmp	L1
 L5:
 	.loc 1 67 0
-	movl	_call_nr.1400, %eax
+	movl	_call_nr.1401, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1400
+	movl	%eax, _call_nr.1401
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -50,16 +50,16 @@ L6:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1400, %eax
+	movl	_call_nr.1401, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1400
+	movl	%eax, _call_nr.1401
 	.loc 1 72 0
 	jmp	L1
 L7:
 	.loc 1 75 0
-	movl	_call_nr.1400, %eax
+	movl	_call_nr.1401, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1400
+	movl	%eax, _call_nr.1401
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -67,7 +67,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1400
+	movl	$0, _call_nr.1401
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -101,7 +101,7 @@ LFB1:
 	jb	L14
 	cmpl	$2, %eax
 	je	L15
-	.loc 1 164 0
+	.loc 1 163 0
 	jmp	L16
 L14:
 	.loc 1 99 0
@@ -128,7 +128,7 @@ L14:
 	jmp	L16
 L13:
 	.loc 1 119 0
-	movl	_call_nr.1412, %eax
+	movl	_call_nr.1413, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
@@ -139,66 +139,75 @@ L13:
 	call	_OS_DetermineNextTaskActivation
 L17:
 	.loc 1 123 0
-	movl	_call_nr.1412, %eax
+	movl	_call_nr.1413, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1412
+	movl	%eax, _call_nr.1413
 	.loc 1 125 0
 	call	_OS_TaskDispatcher
-	.loc 1 132 0
+	.loc 1 126 0
+	movb	_SYSTEM_STATE_ACCEPTED, %al
+	cmpb	$2, %al
+	jne	L18
+	.loc 1 128 0
+	movl	$2, _OS_STATE
+	.loc 1 129 0
+	movl	$1, _sys_req_reset_state.1412
+	.loc 1 131 0
+	jmp	L16
+L18:
 	jmp	L16
 L15:
-	.loc 1 136 0
+	.loc 1 135 0
 	call	_LLF_INT_DISABLE
-	.loc 1 137 0
-	movl	_sys_req_reset_state.1411, %eax
+	.loc 1 136 0
+	movl	_sys_req_reset_state.1412, %eax
 	cmpl	$1, %eax
-	je	L19
+	je	L20
 	cmpl	$1, %eax
-	jb	L20
+	jb	L21
 	cmpl	$2, %eax
-	je	L21
-	jmp	L23
-L20:
-	.loc 1 141 0
+	je	L22
+	jmp	L24
+L21:
+	.loc 1 140 0
 	movl	$1, (%esp)
 	call	_OS_Shutdown
-	.loc 1 142 0
-	jmp	L22
-L19:
-	.loc 1 146 0
+	.loc 1 141 0
+	jmp	L23
+L20:
+	.loc 1 145 0
 	movl	$0, (%esp)
 	call	_OS_Shutdown
-	.loc 1 147 0
-	jmp	L22
-L21:
-	.loc 1 151 0
+	.loc 1 146 0
+	jmp	L23
+L22:
+	.loc 1 150 0
 	movl	$2, (%esp)
 	call	_OS_Shutdown
-	.loc 1 152 0
-	jmp	L22
-L23:
-	.loc 1 156 0
+	.loc 1 151 0
+	jmp	L23
+L24:
+	.loc 1 155 0
 	movl	$0, (%esp)
 	call	_OS_Shutdown
-	.loc 1 157 0
+	.loc 1 156 0
 	nop
-L22:
-	.loc 1 160 0
+L23:
+	.loc 1 159 0
 	nop
 L16:
-	.loc 1 168 0
-	movl	$448, (%esp)
+	.loc 1 167 0
 	call	_OS_StackCheck
-	.loc 1 175 0
+	.loc 1 174 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1400,4,4
-.lcomm _call_nr.1412,4,4
-.lcomm _sys_req_reset_state.1411,4,4
+.lcomm _call_nr.1401,4,4
+.lcomm _call_nr.1413,4,4
+.lcomm _sys_req_reset_state.1412,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -208,7 +217,7 @@ Letext0:
 	.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x7a4
+	.long	0x7c6
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -665,7 +674,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1400
+	.long	_call_nr.1401
 	.byte	0
 	.uleb128 0x13
 	.ascii "OS_StateHandler\0"
@@ -683,7 +692,7 @@ Ldebug_info0:
 	.long	0x690
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1411
+	.long	_sys_req_reset_state.1412
 	.uleb128 0x12
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -691,35 +700,42 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1412
+	.long	_call_nr.1413
 	.byte	0
 	.uleb128 0x14
 	.ascii "OS_STATE\0"
 	.byte	0x7
-	.byte	0x10
+	.byte	0xf
 	.long	0x75a
 	.uleb128 0x15
 	.long	0x12b
 	.uleb128 0x14
 	.ascii "TASK_0_VAR\0"
 	.byte	0x7
-	.byte	0x2f
+	.byte	0x2e
 	.long	0x5e2
 	.uleb128 0x14
 	.ascii "TASK_1_VAR\0"
 	.byte	0x7
-	.byte	0x2f
+	.byte	0x2e
 	.long	0x5e2
 	.uleb128 0x14
 	.ascii "TASK_2_VAR\0"
 	.byte	0x7
-	.byte	0x2f
+	.byte	0x2e
 	.long	0x5e2
 	.uleb128 0x14
 	.ascii "TASK_3_VAR\0"
 	.byte	0x7
-	.byte	0x2f
+	.byte	0x2e
 	.long	0x5e2
+	.uleb128 0x14
+	.ascii "SYSTEM_STATE_ACCEPTED\0"
+	.byte	0x7
+	.byte	0x34
+	.long	0x7c4
+	.uleb128 0x15
+	.long	0xc2
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -2057,16 +2073,24 @@ Ldebug_macro0:
 	.uleb128 0x18
 	.byte	0x4
 	.byte	0x4
+	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
+	.byte	0x3
+	.uleb128 0xf
+	.uleb128 0x19
+	.byte	0x1
+	.uleb128 0x2
+	.ascii "_OS_RAM_STACK_H_ \0"
 	.byte	0x4
-	.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
+	.byte	0x4
+	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_common.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x19
+	.uleb128 0x1a
 	.byte	0x4
-	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_scheduler.h"
+	.file 27 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_scheduler.h"
 	.byte	0x3
 	.uleb128 0x3
-	.uleb128 0x1a
+	.uleb128 0x1b
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_task_scheduler_h_ \0"
@@ -2093,34 +2117,34 @@ Ldebug_macro0:
 	.uleb128 0x2
 	.ascii "_os_shutdown_h_ \0"
 	.byte	0x4
-	.file 27 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_mc.h"
+	.file 28 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_mc.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x1b
+	.uleb128 0x1c
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_start_init_mc_h_ \0"
 	.byte	0x4
-	.file 28 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_hw.h"
+	.file 29 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_hw.h"
 	.byte	0x3
 	.uleb128 0x6
-	.uleb128 0x1c
+	.uleb128 0x1d
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_start_init_hw_h_ \0"
 	.byte	0x4
-	.file 29 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_sw.h"
+	.file 30 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_start_init_sw.h"
 	.byte	0x3
 	.uleb128 0x7
-	.uleb128 0x1d
+	.uleb128 0x1e
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_start_init_sw_h_ \0"
 	.byte	0x4
-	.file 30 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_queue.h"
+	.file 31 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_queue.h"
 	.byte	0x3
 	.uleb128 0x9
-	.uleb128 0x1e
+	.uleb128 0x1f
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "_os_task_queue_h_ \0"

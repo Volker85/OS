@@ -2,7 +2,6 @@
 #include "os_exception_isr_handler.h"
 #include "os_shutdown.h"
 #include "os_start_os.h"
-#include "os_ram.h"
 #include "..\os_base\os_task_queue.h"
 #include "..\os_base\os_task_scheduler.h"
 /* the Interrupt table is set via the code linked to 0x00 and following ...   */
