@@ -7,7 +7,8 @@
 /* the Interrupt table is set via the code linked to 0x00 and following ...   */
 /* interrupts are disabled during RESET exception and will be enabled by task system */
 
-/*TODO alle informationen für einen fault in eine eigene structure verschieben*/
+/*All infos regarding faults are stored in seperate variables (not in a shared structure)
+ because the debugger can read from addresses only, but does not know padding of structures.... */
 
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
 Local __inline__ void OS_Exception_Read_Status_Registers(void)

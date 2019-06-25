@@ -21,7 +21,10 @@ The processor uses a full descending stack.
  with a pointer for each held in independent registers,
  see Stack Pointer.
 */
-/*TODO: how is the stack switch done ??*/
+/* Hint: no stack switch is needed because shared stack is used. 
+This is not ideal for safety reasons 
+(MPU can not protect the data stored in stack from access by other task).
+But to make life in embedded more easy, it was choosen this way. */
 
 /* the amount of IRQn entries is implementation specific for STM32F4 = 240 */
 
