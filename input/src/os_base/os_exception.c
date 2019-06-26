@@ -29,22 +29,9 @@ Local __inline__ void OS_Exception_Read_Status_Registers(void)
    VAR_AUX_FAULT_STATUS_REG = *AUX_FAULT_STATUS_REG;
 }
 #endif
-
-void OS_Exception_HARDFAULT(void)
-{
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   __asm__ __volatile__ ("LDR r0,%0;\
-                          STR r14,[r0];"
-                        :"=m"(LINK_REGISTER_HANDLER)
-                        :
-                        :"r0"
-                        );
-   OS_Exception_Read_Status_Registers();
-   OS_Shutdown(os_reset_hardreset);
-#endif
-}
-
-
+/* 0x00000000 Stack -> not implemented via function, see stack.c        */
+/* 0x00000004 OS_Exception_RESET -> implemented in os_exception_reset.s */
+/* 0x00000008 OS_Exception_NMI */
 void OS_Exception_NMI(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
@@ -55,24 +42,15 @@ void OS_Exception_NMI(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
+  
+   /* run all exceptions in handler mode */
+   LLF_EXCEPTION_TO_HANDLER_MODE();
+   
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
-void OS_Exception_SWI(void)
-{
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   __asm__ __volatile__ ("LDR r0,%0;\
-                          STR r14,[r0];"
-                        :"=m"(LINK_REGISTER_HANDLER)
-                        :
-                        :"r0"
-                        );
-   /* Mode: Supervisor:
-     Exception SWI is entered, in case a user mode program executed the assembler code "SWI" (SoftWare Interrupt)    */
-   OS_ISRHANDLERC0();
-#endif
-}
-void OS_Exception_BUS_FAULT(void)
+/* 0x0000000C OS_Exception_HARDFAULT */
+void OS_Exception_HARDFAULT(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    __asm__ __volatile__ ("LDR r0,%0;\
@@ -82,18 +60,14 @@ void OS_Exception_BUS_FAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
+ 
+   /* run all exceptions in handler mode */
+   LLF_EXCEPTION_TO_HANDLER_MODE();
+   
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
-
-void OS_Exception_DEBUG(void)
-{
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   OS_Exception_Read_Status_Registers();
-   OS_Shutdown(os_reset_hardreset);
-#endif
-}
-
+/* 0x00000010 OS_Exception_MEM_MANAG_FAULT */
 void OS_Exception_MEM_MANAG_FAULT(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
@@ -104,10 +78,32 @@ void OS_Exception_MEM_MANAG_FAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
+   
+   /* run all exceptions in handler mode */
+   LLF_EXCEPTION_TO_HANDLER_MODE();
+   
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
-
+/* 0x00000014 OS_Exception_BUS_FAULT */
+void OS_Exception_BUS_FAULT(void)
+{
+#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   __asm__ __volatile__ ("LDR r0,%0;\
+                          STR r14,[r0];"
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );
+   OS_Exception_Read_Status_Registers();
+   
+   /* run all exceptions in handler mode */
+   LLF_EXCEPTION_TO_HANDLER_MODE();
+   
+   OS_Shutdown(os_reset_hardreset);
+#endif
+}
+/* 0x00000018 OS_Exception_BUS_FAULT */
 void OS_Exception_USAGE_FAULT(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
@@ -118,17 +114,42 @@ void OS_Exception_USAGE_FAULT(void)
                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
+   
+   /* run all exceptions in handler mode */
+   LLF_EXCEPTION_TO_HANDLER_MODE();
+   
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
-
+/* 0x0000001C reserved */
+/* 0x00000020 reserved */
+/* 0x00000024 reserved */
+/* 0x00000028 reserved */
+/* 0x0000002C OS_Exception_SVC -> implemented in lld_global */
+/* 0x00000030 OS_Exception_DEBUG */
+void OS_Exception_DEBUG(void)
+{
+#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   OS_Exception_Read_Status_Registers();
+   
+   /* run all exceptions in handler mode */
+   LLF_EXCEPTION_TO_HANDLER_MODE();
+   
+   OS_Shutdown(os_reset_hardreset);
+#endif
+}
+/* 0x00000034 reserved */
+/* 0x00000038 OS_Exception_PendSV */
 void OS_Exception_PendSV(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+/* run all exceptions in handler mode */
+   LLF_EXCEPTION_TO_HANDLER_MODE();
+   
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
-
+/* 0x0000003C OS_Exception_Systick */
 void OS_Exception_Systick(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
@@ -136,6 +157,9 @@ void OS_Exception_Systick(void)
    scheduling_t* scheduling_task_ptr;
    BigInt Diff;
    timebig_t time;
+   
+   /* run all exceptions in handler mode */
+   LLF_EXCEPTION_TO_HANDLER_MODE();
 
    DBG_RLD_VALUE = 0xFFFFFFFF;
    DBG_CURR_VAL = 0xFFFFFFFF;
@@ -229,16 +253,21 @@ When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR re
    OS_StateHandler();
 #endif
 }
-
+/* 0x00000040...0x00000040+4n IRQ */
 void OS_Exception_IRQ(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   OS_ISRHANDLERC0();
-#endif
-}
-void OS_Exception_FIQ(void)
-{
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   OS_ISRHANDLERC0();
-#endif
+   __asm__ __volatile__ ("LDR r0,%0;\
+                          STR r14,[r0];"
+                        :"=m"(LINK_REGISTER_HANDLER)
+                        :
+                        :"r0"
+                        );
+   OS_Exception_Read_Status_Registers();
+   
+   /* run all exceptions in handler mode */
+   LLF_EXCEPTION_TO_HANDLER_MODE();
+   
+   OS_Shutdown(os_reset_hardreset);
+#endif   
 }

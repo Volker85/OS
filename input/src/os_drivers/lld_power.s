@@ -38,9 +38,4 @@ LLF_MCU_RESET_POWER:
         # step 4: write back the result to the AIPCR register
         LDR R2, =0xE000ED0C       
         STR R0, [R2]
-        MOV R15, R14
-
-LLF_DISABLE_INTERRUPTS_ALL_CORES:
-        BL  LLF_INT_DISABLE
-        MOV R15, R14
-        
+        MOV R15, R14      

@@ -1180,7 +1180,7 @@ Ldebug_macro0:
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x1
-	.uleb128 0x58
+	.uleb128 0x5a
 	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_user_code/../os_base/../os_sim/lld_global.h"

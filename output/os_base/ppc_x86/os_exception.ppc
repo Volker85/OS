@@ -318,7 +318,8 @@ enum os_sw_bugs_e
    os_bug_exception_AbortPrefetch,
    os_bug_exception_AbortData,
    os_bug_reset_exit_or_shutdown_failed,
-   os_bug_critical_stack_usage
+   os_bug_critical_stack_usage,
+   os_bug_svc_number_missing
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 typedef uint8 boolean_t;
@@ -341,7 +342,8 @@ enum os_sw_bugs_function_e
    Func_os_exception,
    Func_CreateTask,
    Func_Shutdown,
-   Func_StackCheck
+   Func_StackCheck,
+   Func_IsrHandler
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -700,20 +702,20 @@ extern unsigned_char_t OS_MAIN_STACK[0x200u];
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_isr_handler.h" 1
 
 #define _os_exception_isr_handler_h_ 
-extern void OS_Exception_RESET();
-extern void OS_Exception_NMI();
-extern void OS_Exception_HARDFAULT();
-extern void OS_Exception_SWI();
-extern void OS_Exception_BUS_FAULT();
-extern void OS_Exception_MEM_MANAG_FAULT();
-extern void OS_Exception_IRQ();
-extern void OS_Exception_FIQ();
-extern void OS_ExceptionHandler(void);
-extern void OS_Exception_DEBUG(void);
+extern void OS_Exception_RESET(void);
+extern void OS_Exception_NMI(void);
+extern void OS_Exception_HARDFAULT(void);
+extern void OS_Exception_MEM_MANAG_FAULT(void);
+extern void OS_Exception_BUS_FAULT(void);
 extern void OS_Exception_USAGE_FAULT(void);
+
+extern void OS_Exception_SVC(void);
+extern void OS_Exception_DEBUG(void);
+
 extern void OS_Exception_PendSV(void);
 extern void OS_Exception_Systick(void);
-extern void OS_ISRHANDLERC0(void);
+extern void OS_Exception_IRQ(void);
+extern void OS_ISRHANDLERC0(uint32 svc_number);
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h" 1
 
@@ -795,46 +797,48 @@ extern void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task);
 extern void OS_TaskDispatcher(void);
 extern void OS_CreateTask(task_t* task);
 # 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c" 2
-# 29 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-void OS_Exception_HARDFAULT(void)
-{
-# 41 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-}
-
-
+# 35 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
 void OS_Exception_NMI(void)
 {
-# 56 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-}
-void OS_Exception_SWI(void)
-{
-# 70 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
-}
-void OS_Exception_BUS_FAULT(void)
-{
-# 83 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+# 51 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
 }
 
-void OS_Exception_DEBUG(void)
+void OS_Exception_HARDFAULT(void)
 {
-
-
-
-
+# 69 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
 }
 
 void OS_Exception_MEM_MANAG_FAULT(void)
+{
+# 87 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+}
+
+void OS_Exception_BUS_FAULT(void)
 {
 # 105 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
 }
 
 void OS_Exception_USAGE_FAULT(void)
 {
-# 119 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+# 123 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
 }
+
+
+
+
+
+
+void OS_Exception_DEBUG(void)
+{
+# 140 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+}
+
 
 void OS_Exception_PendSV(void)
 {
+
+
+
 
 
 
@@ -842,18 +846,10 @@ void OS_Exception_PendSV(void)
 
 void OS_Exception_Systick(void)
 {
-# 227 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
+# 255 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
 }
 
 void OS_Exception_IRQ(void)
 {
-
-
-
-}
-void OS_Exception_FIQ(void)
-{
-
-
-
+# 273 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception.c"
 }

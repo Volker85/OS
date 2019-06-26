@@ -254,12 +254,12 @@ Ldebug_info0:
 	.ascii "BigInt_s\0"
 	.byte	0x10
 	.byte	0x3
-	.byte	0x59
+	.byte	0x5b
 	.long	0x15c
 	.uleb128 0x5
 	.ascii "Number\0"
 	.byte	0x3
-	.byte	0x62
+	.byte	0x64
 	.long	0x15c
 	.byte	0
 	.byte	0
@@ -277,7 +277,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.ascii "BigInt\0"
 	.byte	0x3
-	.byte	0x63
+	.byte	0x65
 	.long	0x13b
 	.uleb128 0x8
 	.ascii "CoreID_e\0"
@@ -1951,7 +1951,7 @@ Ldebug_macro0:
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x1
-	.uleb128 0x58
+	.uleb128 0x5a
 	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/../os_sim/lld_global.h"

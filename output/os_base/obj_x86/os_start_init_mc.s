@@ -14,9 +14,9 @@ LFB0:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 14 0
+	.loc 1 16 0
 	call	_OS_MmuSetup
-	.loc 1 15 0
+	.loc 1 17 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -967,7 +967,7 @@ Ldebug_macro0:
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x1
-	.uleb128 0x58
+	.uleb128 0x5a
 	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"

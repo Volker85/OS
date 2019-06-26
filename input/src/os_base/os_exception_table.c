@@ -41,7 +41,7 @@ func_ptr_t isr_vec_table[] =
    0u,                            /* 0x0020 reservered                 */
    0u,                            /* 0x0024 reservered                 */
    0u,                            /* 0x0028 reservered                 */
-   &OS_Exception_SWI+1u,          /* 0x002C Supervisor Call            */
+   &OS_Exception_SVC+1u,          /* 0x002C Supervisor Call            */
    0u,/*&OS_Exception_DEBUG+1u,*/ /* 0x0030 reserved for debug         *//* not used in STM32F4 according to spec en.DM00046982.pdf page 37*/
    0u,                            /* 0x0034 reserved                   */
    &OS_Exception_PendSV+1u,        /* 0x0038 PendSV                     */

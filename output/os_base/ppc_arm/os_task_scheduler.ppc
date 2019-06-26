@@ -536,7 +536,8 @@ enum os_sw_bugs_e
    os_bug_exception_AbortPrefetch,
    os_bug_exception_AbortData,
    os_bug_reset_exit_or_shutdown_failed,
-   os_bug_critical_stack_usage
+   os_bug_critical_stack_usage,
+   os_bug_svc_number_missing
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 typedef uint8 boolean_t;
@@ -559,7 +560,8 @@ enum os_sw_bugs_function_e
    Func_os_exception,
    Func_CreateTask,
    Func_Shutdown,
-   Func_StackCheck
+   Func_StackCheck,
+   Func_IsrHandler
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -622,6 +624,9 @@ typedef enum CoreID_e CoreID_t;
 
 extern CoreID_t OS_GetCoreId(void);
 extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
+extern void LLF_EXCEPTION_TO_HANDLER_MODE(void);
+extern void LLF_EXCEPTION_TO_THREAD_MODE_PRIV(void);
+extern void LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV(void);
 
 enum privilige_mode_e
 {
@@ -960,7 +965,7 @@ extern void OS_InitTaskQueue(void);
 static void TASK_0(void* task_ptr);
 static void TASK_1(void* task_ptr);
 static void TASK_2(void* task_ptr);
-static task_t** OS_TaskScheduler();
+static task_t** OS_TaskScheduler(void);
 static void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task);
 void OS_ActivateDispatcher(void)
 {

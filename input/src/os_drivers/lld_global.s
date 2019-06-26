@@ -23,6 +23,11 @@ From the AAPCS, §5.1.1:
         .global LLF_CLEAR_ALL_GP_REGISTERS
         .global LLF_PERFORM_RAM_CHECK
         .global LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
+        .extern OS_ISRHANDLERC0
+        .global LLF_EXCEPTION_TO_HANDLER_MODE
+        .global LLF_EXCEPTION_TO_THREAD_MODE_PRIV
+        .global LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV     
+        .global OS_Exception_SVC
 
 OS_GetCoreId:
         # the Cortex M4 process has just one core-> use static assignement of core id
@@ -233,3 +238,43 @@ LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE:
    MSR CONTROL,r0
    MOV R15, R14
 
+LLF_EXCEPTION_TO_HANDLER_MODE:
+   # Return to Handler mode.
+   # Exception return gets state from the main stack.
+   # Execution uses MSP after return.
+   MOV R0, #0xFFFFFFF1
+   BX  R0 
+   MOV R15, R14
+
+LLF_EXCEPTION_TO_THREAD_MODE_PRIV:
+   #Return to Thread mode.
+   # Exception Return get state from the main stack.
+   # Execution uses MSP after return.
+   MOV R0, #0xFFFFFFF9
+   BX  R0 
+   MOV R15, R14
+   
+LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV:
+   MOV R0, #0xFFFFFFFD
+   MOV R15, R14
+
+OS_Exception_SVC:
+   # The handler must first load the SWI instruction that caused the exception into a register. At this point, lr_SVC holds the address of the instruction that follows the SWI instruction, so the SWI is loaded into the register (in this case r0) using:
+   # lines taken from infocenter.arm.com
+   LDR R0,[LR,#-4]
+   #The handler can then examine the comment field bits, to determine the required operation. The SWI number is extracted by clearing the top eight bits of the opcode:
+   BIC R0, R0, #0xFF000000
+#
+#   # Test EXC_RETURN number in LR bit 2
+#   TST LR, #4   
+#   # if zero (equal) then
+#   ITE EQ
+#   # Main stack was used, put MSP in r0
+#   MRSEQ R0, MSP 
+#   # else process stack was used, put PSP in R0
+#   MRSNE R0, PSP 
+#   
+   #    
+   # now branch 
+   B OS_ISRHANDLERC0      
+   

@@ -17,7 +17,7 @@
 Local void TASK_0(void* task_ptr);
 Local void TASK_1(void* task_ptr);
 Local void TASK_2(void* task_ptr);
-Local task_t** OS_TaskScheduler();
+Local task_t** OS_TaskScheduler(void);
 Local void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task);
 void OS_ActivateDispatcher(void)
 {

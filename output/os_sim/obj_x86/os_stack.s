@@ -21,36 +21,36 @@ LFB0:
 	.loc 1 14 0
 	movl	$0, _STACK_USAGE_PERCENT
 	.loc 1 16 0
-	movl	$0, _stack_pos.1322
+	movl	$0, _stack_pos.1324
 	jmp	L2
 L4:
 	.loc 1 18 0
-	movl	_stack_pos.1322, %eax
+	movl	_stack_pos.1324, %eax
 	movb	_OS_MAIN_STACK(%eax), %al
 	cmpb	$-86, %al
 	je	L3
 	.loc 1 20 0
-	movl	$1, _stack_used.1323
+	movl	$1, _stack_used.1325
 	.loc 1 21 0
-	movl	_stack_pos.1322, %edx
+	movl	_stack_pos.1324, %edx
 	movl	_STACK_POS, %eax
 	cmpl	%eax, %edx
 	jnb	L3
 	.loc 1 23 0
-	movl	_stack_pos.1322, %eax
+	movl	_stack_pos.1324, %eax
 	movl	%eax, _STACK_POS
 	.loc 1 24 0
-	movl	_stack_pos.1322, %eax
+	movl	_stack_pos.1324, %eax
 	addl	$_OS_MAIN_STACK, %eax
 	movl	%eax, _STACK_ADDR
 L3:
 	.loc 1 16 0 discriminator 2
-	movl	_stack_pos.1322, %eax
+	movl	_stack_pos.1324, %eax
 	incl	%eax
-	movl	%eax, _stack_pos.1322
+	movl	%eax, _stack_pos.1324
 L2:
 	.loc 1 16 0 is_stmt 0 discriminator 1
-	movl	_stack_pos.1322, %eax
+	movl	_stack_pos.1324, %eax
 	cmpl	$511, %eax
 	jbe	L4
 	.loc 1 28 0 is_stmt 1
@@ -66,7 +66,7 @@ L2:
 	shrl	$9, %eax
 	movl	%eax, _STACK_USAGE_PERCENT
 	.loc 1 30 0
-	movl	_stack_used.1323, %eax
+	movl	_stack_used.1325, %eax
 	cmpl	$1, %eax
 	jne	L1
 	.loc 1 30 0 is_stmt 0 discriminator 1
@@ -108,7 +108,6 @@ LFB1:
 	subl	$16, %esp
 	.loc 1 44 0
 	movl	$0, -4(%ebp)
-	movl	$0, -8(%ebp)
 	.loc 1 46 0
 	movl	$0, -4(%ebp)
 	jmp	L8
@@ -130,8 +129,8 @@ L8:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _stack_pos.1322,4,4
-.lcomm _stack_used.1323,4,4
+.lcomm _stack_pos.1324,4,4
+.lcomm _stack_used.1325,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -139,7 +138,7 @@ Letext0:
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x51b
+	.long	0x533
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -190,7 +189,7 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x3
 	.byte	0x2b
-	.long	0x258
+	.long	0x274
 	.uleb128 0x5
 	.ascii "os_bug_no_bug\0"
 	.sleb128 0
@@ -221,13 +220,16 @@ Ldebug_info0:
 	.uleb128 0x5
 	.ascii "os_bug_critical_stack_usage\0"
 	.sleb128 9
+	.uleb128 0x5
+	.ascii "os_bug_svc_number_missing\0"
+	.sleb128 10
 	.byte	0
 	.uleb128 0x4
 	.ascii "os_sw_bugs_function_e\0"
 	.byte	0x4
 	.byte	0x3
-	.byte	0x3a
-	.long	0x3fd
+	.byte	0x3b
+	.long	0x42b
 	.uleb128 0x5
 	.ascii "Func_NoFunction\0"
 	.sleb128 0
@@ -282,6 +284,9 @@ Ldebug_info0:
 	.uleb128 0x5
 	.ascii "Func_StackCheck\0"
 	.sleb128 17
+	.uleb128 0x5
+	.ascii "Func_IsrHandler\0"
+	.sleb128 18
 	.byte	0
 	.uleb128 0x3
 	.byte	0x4
@@ -299,23 +304,23 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x462
+	.long	0x490
 	.uleb128 0x7
 	.secrel32	LASF0
 	.byte	0x1
 	.byte	0xb
-	.long	0x462
+	.long	0x490
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_pos.1322
+	.long	_stack_pos.1324
 	.uleb128 0x8
 	.ascii "stack_used\0"
 	.byte	0x1
 	.byte	0xb
-	.long	0x462
+	.long	0x490
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_used.1323
+	.long	_stack_used.1325
 	.byte	0
 	.uleb128 0x9
 	.long	0x107
@@ -327,7 +332,7 @@ Ldebug_info0:
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x4b4
+	.long	0x4cc
 	.uleb128 0x7
 	.secrel32	LASF0
 	.byte	0x1
@@ -336,45 +341,37 @@ Ldebug_info0:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x8
-	.ascii "nr_of_cores\0"
-	.byte	0x1
-	.byte	0x2c
-	.long	0x107
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -16
 	.byte	0
 	.uleb128 0xb
 	.ascii "STACK_ADDR\0"
 	.byte	0x4
 	.byte	0x23
-	.long	0x4c6
+	.long	0x4de
 	.uleb128 0xc
 	.byte	0x4
-	.long	0x462
+	.long	0x490
 	.uleb128 0xb
 	.ascii "STACK_POS\0"
 	.byte	0x4
 	.byte	0x24
-	.long	0x462
+	.long	0x490
 	.uleb128 0xb
 	.ascii "STACK_USAGE_PERCENT\0"
 	.byte	0x4
 	.byte	0x25
-	.long	0x462
+	.long	0x490
 	.uleb128 0xd
 	.long	0x8c
-	.long	0x509
+	.long	0x521
 	.uleb128 0xe
-	.long	0x3fd
+	.long	0x42b
 	.word	0x1ff
 	.byte	0
 	.uleb128 0xb
 	.ascii "OS_MAIN_STACK\0"
 	.byte	0x5
 	.byte	0xc
-	.long	0x4f8
+	.long	0x510
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -1407,7 +1404,7 @@ Ldebug_macro0:
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x1
-	.uleb128 0x58
+	.uleb128 0x5a
 	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 7 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"

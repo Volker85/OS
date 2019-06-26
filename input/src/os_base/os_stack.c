@@ -41,7 +41,7 @@ void OS_StackCheck(void)
 #if(CFG_PROCESSOR == cMCU_X86)
 void OS_StackChkPatternInit(void)
 {
-   uint32 stack_pos = 0,nr_of_cores = 0;
+   uint32 stack_pos = 0;
    /* init the stack with 0xAA (only the highest 64 bytes leave out, because they might be already in use by SW) */
    for(stack_pos = 0; stack_pos < (OS_STACK_SIZE-64); stack_pos++)
    {

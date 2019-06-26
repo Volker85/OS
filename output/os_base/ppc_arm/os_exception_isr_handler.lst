@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVKd47Q.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8OfAVB.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -28,37 +28,89 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVKd47Q.s 			page 1
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #include "os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #include "os_task_common.h"
    3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #include "os_task_scheduler.h"
-   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** 
-   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** void OS_ISRHANDLERC0(void)
-   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** {
-  26              		.loc 1 6 0
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #include "os_shutdown.h"
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** 
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #define SVC_00 0x00
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #define SVC_01 0x01
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** 
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** void OS_ISRHANDLERC0(uint32 svc_number)
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** {    
+  26              		.loc 1 10 0
   27              		.cfi_startproc
   28              		@ args = 0, pretend = 0, frame = 0
   29              		@ frame_needed = 0, uses_anonymous_args = 0
-  30              		@ link register save eliminated.
-   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****    
-   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** }...
-  31              		.loc 1 8 0
-  32 0000 7047     		bx	lr
-  33              		.cfi_endproc
-  34              	.LFE0:
-  36              	.Letext0:
-  37              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  38              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-  39              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  40              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  41              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  42              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccVKd47Q.s 			page 2
+  30              	.LVL0:
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     switch(svc_number)
+  31              		.loc 1 11 0
+  32 0000 0128     		cmp	r0, #1
+  33 0002 00D8     		bhi	.L9
+  34 0004 7047     		bx	lr
+  35              	.L9:
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     switch(svc_number)
+  36              		.loc 1 10 0
+  37 0006 08B5     		push	{r3, lr}
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 3, -8
+  40              		.cfi_offset 14, -4
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     {        
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     case SVC_00:            /* Handle SVC 00 */    
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     {
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        /*TODO*/
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        break;
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     }
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8OfAVB.s 			page 2
+
+
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     case SVC_01:            /* Handle SVC 01 */            
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     {
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        /*TODO*/
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        break;
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     }
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     default:                /* Unknown SVC */            
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     {
+  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        OS_SetSwBug(os_bug_svc_number_missing, Func_IsrHandler);
+  41              		.loc 1 25 0
+  42 0008 0A20     		movs	r0, #10
+  43              	.LVL1:
+  44 000a 1221     		movs	r1, #18
+  45 000c FFF7FEFF 		bl	OS_SetSwBug
+  46              	.LVL2:
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        OS_Shutdown(os_reset_hardreset);
+  47              		.loc 1 26 0
+  48 0010 0020     		movs	r0, #0
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        break;
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     }
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     }   
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** }...
+  49              		.loc 1 30 0
+  50 0012 BDE80840 		pop	{r3, lr}
+  51              		.cfi_restore 14
+  52              		.cfi_restore 3
+  53              		.cfi_def_cfa_offset 0
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        OS_Shutdown(os_reset_hardreset);
+  54              		.loc 1 26 0
+  55 0016 FFF7FEBF 		b	OS_Shutdown
+  56              	.LVL3:
+  57              		.cfi_endproc
+  58              	.LFE0:
+  60              	.Letext0:
+  61              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  62              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+  63              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  64              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  65              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+  66              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
+  67              		.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc8OfAVB.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_exception_isr_handler.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccVKd47Q.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccVKd47Q.s:23     .text:00000000 OS_ISRHANDLERC0
+C:\Users\PRESID~1\AppData\Local\Temp\cc8OfAVB.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cc8OfAVB.s:23     .text:00000000 OS_ISRHANDLERC0
                            .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
-                           .group:00000000 wm4.os_common.h.2.7d3083dfb0b17ee9cbe20f6fe4481cd9
+                           .group:00000000 wm4.os_common.h.2.7e9aadbd6cc66ffeb9ea2492a31fabc8
                            .group:00000000 wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898
                            .group:00000000 wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1
                            .group:00000000 wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4
@@ -66,4 +118,6 @@ C:\Users\PRESID~1\AppData\Local\Temp\ccVKd47Q.s:23     .text:00000000 OS_ISRHAND
                            .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
                            .group:00000000 wm4.os_task_scheduler.h.2.125feba674fa85672711aed1ca8ea199
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+OS_SetSwBug
+OS_Shutdown

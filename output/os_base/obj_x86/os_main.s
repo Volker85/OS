@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1403, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,16 +33,16 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1403, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1401
+	movl	%eax, _call_nr.1403
 	.loc 1 64 0
 	jmp	L1
 L5:
 	.loc 1 67 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1403, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1401
+	movl	%eax, _call_nr.1403
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -50,16 +50,16 @@ L6:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1403, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1401
+	movl	%eax, _call_nr.1403
 	.loc 1 72 0
 	jmp	L1
 L7:
 	.loc 1 75 0
-	movl	_call_nr.1401, %eax
+	movl	_call_nr.1403, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1401
+	movl	%eax, _call_nr.1403
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -67,14 +67,14 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1401
+	movl	$0, _call_nr.1403
 	.loc 1 80 0
 	jmp	L1
 L10:
 	.loc 1 82 0
 	nop
 L1:
-	.loc 1 86 0
+	.loc 1 87 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -85,7 +85,7 @@ LFE0:
 	.def	_OS_StateHandler;	.scl	2;	.type	32;	.endef
 _OS_StateHandler:
 LFB1:
-	.loc 1 89 0
+	.loc 1 90 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -93,7 +93,7 @@ LFB1:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 94 0
+	.loc 1 95 0
 	movl	_OS_STATE, %eax
 	cmpl	$1, %eax
 	je	L13
@@ -101,66 +101,66 @@ LFB1:
 	jb	L14
 	cmpl	$2, %eax
 	je	L15
-	.loc 1 163 0
+	.loc 1 164 0
 	jmp	L16
 L14:
-	.loc 1 99 0
+	.loc 1 100 0
 	call	_OS_InitMc
-	.loc 1 102 0
-	call	_OS_InitHw
 	.loc 1 103 0
+	call	_OS_InitHw
+	.loc 1 104 0
 	call	_OS_InitSw
-	.loc 1 108 0
+	.loc 1 109 0
 	movl	$_TASK_0_VAR, (%esp)
 	call	_OS_ActivateTask
-	.loc 1 109 0
+	.loc 1 110 0
 	call	_GetIdleTask
 	movl	$0, 4(%esp)
 	movl	%eax, (%esp)
 	call	_OS_StartTask
-	.loc 1 110 0
+	.loc 1 111 0
 	call	_OS_ActivateDispatcher
-	.loc 1 112 0
+	.loc 1 113 0
 	movl	$1, _OS_STATE
-	.loc 1 114 0
-	call	_LLF_INT_ENABLE
 	.loc 1 115 0
+	call	_LLF_INT_ENABLE
+	.loc 1 116 0
 	jmp	L16
 L13:
-	.loc 1 119 0
-	movl	_call_nr.1413, %eax
+	.loc 1 120 0
+	movl	_call_nr.1415, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
 	movl	%edx, %eax
 	testl	%eax, %eax
 	jne	L17
-	.loc 1 121 0
+	.loc 1 122 0
 	call	_OS_DetermineNextTaskActivation
 L17:
-	.loc 1 123 0
-	movl	_call_nr.1413, %eax
+	.loc 1 124 0
+	movl	_call_nr.1415, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1413
-	.loc 1 125 0
-	call	_OS_TaskDispatcher
+	movl	%eax, _call_nr.1415
 	.loc 1 126 0
+	call	_OS_TaskDispatcher
+	.loc 1 127 0
 	movb	_SYSTEM_STATE_ACCEPTED, %al
 	cmpb	$2, %al
 	jne	L18
-	.loc 1 128 0
-	movl	$2, _OS_STATE
 	.loc 1 129 0
-	movl	$1, _sys_req_reset_state.1412
-	.loc 1 131 0
+	movl	$2, _OS_STATE
+	.loc 1 130 0
+	movl	$1, _sys_req_reset_state.1414
+	.loc 1 132 0
 	jmp	L16
 L18:
 	jmp	L16
 L15:
-	.loc 1 135 0
-	call	_LLF_INT_DISABLE
 	.loc 1 136 0
-	movl	_sys_req_reset_state.1412, %eax
+	call	_LLF_INT_DISABLE
+	.loc 1 137 0
+	movl	_sys_req_reset_state.1414, %eax
 	cmpl	$1, %eax
 	je	L20
 	cmpl	$1, %eax
@@ -169,45 +169,45 @@ L15:
 	je	L22
 	jmp	L24
 L21:
-	.loc 1 140 0
+	.loc 1 141 0
 	movl	$1, (%esp)
 	call	_OS_Shutdown
-	.loc 1 141 0
+	.loc 1 142 0
 	jmp	L23
 L20:
-	.loc 1 145 0
+	.loc 1 146 0
 	movl	$0, (%esp)
 	call	_OS_Shutdown
-	.loc 1 146 0
+	.loc 1 147 0
 	jmp	L23
 L22:
-	.loc 1 150 0
+	.loc 1 151 0
 	movl	$2, (%esp)
 	call	_OS_Shutdown
-	.loc 1 151 0
+	.loc 1 152 0
 	jmp	L23
 L24:
-	.loc 1 155 0
+	.loc 1 156 0
 	movl	$0, (%esp)
 	call	_OS_Shutdown
-	.loc 1 156 0
+	.loc 1 157 0
 	nop
 L23:
-	.loc 1 159 0
+	.loc 1 160 0
 	nop
 L16:
-	.loc 1 167 0
+	.loc 1 168 0
 	call	_OS_StackCheck
-	.loc 1 174 0
+	.loc 1 175 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1401,4,4
-.lcomm _call_nr.1413,4,4
-.lcomm _sys_req_reset_state.1412,4,4
+.lcomm _call_nr.1403,4,4
+.lcomm _call_nr.1415,4,4
+.lcomm _sys_req_reset_state.1414,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -277,12 +277,12 @@ Ldebug_info0:
 	.ascii "BigInt_s\0"
 	.byte	0x10
 	.byte	0x3
-	.byte	0x59
+	.byte	0x5b
 	.long	0x15a
 	.uleb128 0x5
 	.ascii "Number\0"
 	.byte	0x3
-	.byte	0x62
+	.byte	0x64
 	.long	0x15a
 	.byte	0
 	.byte	0
@@ -300,7 +300,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.ascii "BigInt\0"
 	.byte	0x3
-	.byte	0x63
+	.byte	0x65
 	.long	0x139
 	.uleb128 0x8
 	.ascii "privilige_mode_e\0"
@@ -674,12 +674,12 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1401
+	.long	_call_nr.1403
 	.byte	0
 	.uleb128 0x13
 	.ascii "OS_StateHandler\0"
 	.byte	0x1
-	.byte	0x58
+	.byte	0x59
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
@@ -688,19 +688,19 @@ Ldebug_info0:
 	.uleb128 0x12
 	.ascii "sys_req_reset_state\0"
 	.byte	0x1
-	.byte	0x5b
+	.byte	0x5c
 	.long	0x690
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1412
+	.long	_sys_req_reset_state.1414
 	.uleb128 0x12
 	.ascii "call_nr\0"
 	.byte	0x1
-	.byte	0x5c
+	.byte	0x5d
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1413
+	.long	_call_nr.1415
 	.byte	0
 	.uleb128 0x14
 	.ascii "OS_STATE\0"
@@ -1851,7 +1851,7 @@ Ldebug_macro0:
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x1
-	.uleb128 0x58
+	.uleb128 0x5a
 	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 9 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"

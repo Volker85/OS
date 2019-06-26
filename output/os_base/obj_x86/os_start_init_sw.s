@@ -54,7 +54,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x353
+	.long	0x36f
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -105,7 +105,7 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x3
 	.byte	0x2b
-	.long	0x260
+	.long	0x27c
 	.uleb128 0x5
 	.ascii "os_bug_no_bug\0"
 	.sleb128 0
@@ -136,11 +136,14 @@ Ldebug_info0:
 	.uleb128 0x5
 	.ascii "os_bug_critical_stack_usage\0"
 	.sleb128 9
+	.uleb128 0x5
+	.ascii "os_bug_svc_number_missing\0"
+	.sleb128 10
 	.byte	0
 	.uleb128 0x2
 	.ascii "os_sw_bugs_t\0"
 	.byte	0x3
-	.byte	0x38
+	.byte	0x39
 	.long	0x11d
 	.uleb128 0x3
 	.byte	0x4
@@ -158,7 +161,7 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2b8
+	.long	0x2d4
 	.uleb128 0x7
 	.ascii "i\0"
 	.byte	0x1
@@ -169,41 +172,41 @@ Ldebug_info0:
 	.sleb128 -17
 	.byte	0
 	.uleb128 0x8
-	.long	0x260
-	.long	0x2c8
+	.long	0x27c
+	.long	0x2e4
 	.uleb128 0x9
-	.long	0x274
+	.long	0x290
 	.byte	0xe
 	.byte	0
 	.uleb128 0xa
 	.ascii "OS_SW_BUG\0"
 	.byte	0x4
 	.byte	0xe
-	.long	0x2d9
+	.long	0x2f5
 	.uleb128 0xb
-	.long	0x2b8
+	.long	0x2d4
 	.uleb128 0xa
 	.ascii "TASK1_CALL_NR\0"
 	.byte	0x4
 	.byte	0x1e
-	.long	0x2f3
+	.long	0x30f
 	.uleb128 0xb
 	.long	0x10f
 	.uleb128 0xa
 	.ascii "TASK2_CALL_NR\0"
 	.byte	0x4
 	.byte	0x1f
-	.long	0x2f3
+	.long	0x30f
 	.uleb128 0xa
 	.ascii "TASK3_CALL_NR\0"
 	.byte	0x4
 	.byte	0x20
-	.long	0x2f3
+	.long	0x30f
 	.uleb128 0xa
 	.ascii "TASK4_CALL_NR\0"
 	.byte	0x4
 	.byte	0x21
-	.long	0x2f3
+	.long	0x30f
 	.uleb128 0xa
 	.ascii "bTASK_QUEUE_INITIALIZED\0"
 	.byte	0x4
@@ -1192,7 +1195,7 @@ Ldebug_macro0:
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x1
-	.uleb128 0x58
+	.uleb128 0x5a
 	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"

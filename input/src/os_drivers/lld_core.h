@@ -12,6 +12,9 @@ typedef  enum CoreID_e CoreID_t;
 
 extern CoreID_t OS_GetCoreId(void);
 extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
+extern void LLF_EXCEPTION_TO_HANDLER_MODE(void);
+extern void LLF_EXCEPTION_TO_THREAD_MODE_PRIV(void);
+extern void LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV(void);
 
 enum privilige_mode_e
 {

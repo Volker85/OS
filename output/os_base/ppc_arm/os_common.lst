@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
   50              		.fpu softvfp
   52              	OS_GetCurrentTime:
   53              	.LFB1:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 2
 
 
    8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** #define DWT_CTRL   ((volatile uint32*)0xE0001000)
@@ -83,7 +83,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
   17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* the only free running counter on STM32F4 is the DWT counter DWT_CYCCNT
   18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    The counter will overflow every 25sec -> provide function OS_ClearCurrentTime to reset the value
   19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    */
-  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
   21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
   22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    AssignUint32(time, *DWT_CYCCNT);
   64              		.loc 1 22 0
@@ -95,173 +95,174 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
   23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    #else
   24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    Assign(time, &GLOBAL_TIMER1);
   25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    #endif
-  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
-  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
-  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void OS_ResetCurrentTime(void)
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
-  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* unlock the CoreSight (CM4) */
-  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    *DWT_LAR = 0xC5ACCE55;
-  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
-  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* enable trace/debug block TRCENA */
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    *SCB_DEMCR |= 0x01000000;
-  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
-  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* reset the counter to 0 cycle */
-  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    *DWT_CYCCNT = 0;
-  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
-  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* enable the counter */
-  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    *DWT_CTRL |= 1;
-  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    
-  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* clear the global time variable */
-  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    AssignNull(&GLOBAL_TIMER1);
-  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
-  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /*TODO handling von overflow für DWT_CYCCNT existiert nicht!! fehler!!*/
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void OS_ResetCurrentTime(void)
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* unlock the CoreSight (CM4) */
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    *DWT_LAR = 0xC5ACCE55;
+  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* enable trace/debug block TRCENA */
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    *SCB_DEMCR |= 0x01000000;
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* reset the counter to 0 cycle */
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    *DWT_CYCCNT = 0;
+  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* enable the counter */
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    *DWT_CTRL |= 1;
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* clear the global time variable */
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    AssignNull(&GLOBAL_TIMER1);
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
   46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
   47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
-  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 3
+  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 3
 
 
-  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
-  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    sint8 pos;
-  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint16 carry  = 0;
-  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
-  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = BigIntSize-1; pos >= 0; pos--)
-  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + car
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
-  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
-  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
-  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
-  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
-  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    sint8 pos;
-  63:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint16 carry  = 0;
-  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
-  65:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = BigIntSize-1; pos >= 0; pos--)
-  66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
-  67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       uint16 tmpDiff = 0u;
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
-  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          tmpDiff = (uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - carry;
-  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
-  72:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else if((Minuend->Number[pos]+0x100)  >= (Subtrahend->Number[pos] + carry))
-  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)c
-  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
-  76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else
-  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-  78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          /* not possible */
-  79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Differenz->Number[pos] = tmpDiff;
-  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
-  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
-  83:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
-  84:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
-  85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
-  86:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
-  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = 0; pos < BigIntSize; pos++)
-  88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       if(Operand1->Number[pos] < Operand2->Number[pos])
-  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsLess = True;
-  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
-  93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else if (Operand1->Number[pos] > Operand2->Number[pos])
-  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsLess = False;
-  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
-  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
-  99:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else
- 100:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 101:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          /* don't break, but continue with next position */
- 102:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 103:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 104:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsLess;
- 105:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 4
+  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    sint8 pos;
+  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint16 carry  = 0;
+  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = BigIntSize-1; pos >= 0; pos--)
+  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + car
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+  63:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    sint8 pos;
+  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint16 carry  = 0;
+  65:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+  66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = BigIntSize-1; pos >= 0; pos--)
+  67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       uint16 tmpDiff = 0u;
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
+  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          tmpDiff = (uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - carry;
+  72:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else if((Minuend->Number[pos]+0x100)  >= (Subtrahend->Number[pos] + carry))
+  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)c
+  76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else
+  78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+  79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          /* not possible */
+  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Differenz->Number[pos] = tmpDiff;
+  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+  83:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+  84:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
+  85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+  86:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
+  88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = 0; pos < BigIntSize; pos++)
+  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       if(Operand1->Number[pos] < Operand2->Number[pos])
+  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsLess = True;
+  93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else if (Operand1->Number[pos] > Operand2->Number[pos])
+  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsLess = False;
+  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+  99:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 100:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else
+ 101:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 102:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          /* don't break, but continue with next position */
+ 103:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 104:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 105:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsLess;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 4
 
 
- 106:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
- 107:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
- 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsLess(Operand1,Operand2) || IsEqual(Operand1,Operand2);
- 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
- 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
- 111:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
- 112:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 113:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    boolean_t IsEqual = True;/* in case no if/elseif) was entered, the numbers are equal -> return T
- 114:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = 0; pos < BigIntSize; pos++)
- 115:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       if(Operand1->Number[pos] != Operand2->Number[pos])
- 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 118:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsEqual = False;
- 119:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
- 120:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 121:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else
- 122:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 123:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          /* don't break, but continue with next position */
- 124:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 125:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 126:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsEqual;
- 127:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
- 128:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
- 129:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
- 130:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 131:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    boolean_t IsGreater = False;/* in case no if was entered, the numbers are equal -> return False 
- 132:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = 0; pos < BigIntSize; pos++)
- 133:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       if(Operand1->Number[pos] < Operand2->Number[pos])
- 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 136:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsGreater = False;
- 137:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
- 138:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else if (Operand1->Number[pos] > Operand2->Number[pos])
- 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 141:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsGreater = True;
- 142:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
- 143:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 144:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else
- 145:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 146:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          /* don't break, but continue with next position */
- 147:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 148:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 149:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsGreater;
- 150:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
- 151:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
- 152:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
- 153:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsGreater(Operand1,Operand2) || IsEqual(Operand1,Operand2);
- 154:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
- 155:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
- 156:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
- 157:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for (pos = 0; pos < BigIntSize; pos++)
- 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       leftOperand->Number[pos] = rightOperand->Number[pos];
- 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 162:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 5
+ 106:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+ 107:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+ 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsLess(Operand1,Operand2) || IsEqual(Operand1,Operand2);
+ 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+ 111:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+ 112:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+ 113:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 114:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    boolean_t IsEqual = True;/* in case no if/elseif) was entered, the numbers are equal -> return T
+ 115:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = 0; pos < BigIntSize; pos++)
+ 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       if(Operand1->Number[pos] != Operand2->Number[pos])
+ 118:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 119:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsEqual = False;
+ 120:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 121:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 122:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else
+ 123:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 124:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          /* don't break, but continue with next position */
+ 125:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 126:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 127:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsEqual;
+ 128:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+ 129:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
+ 130:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+ 131:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 132:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    boolean_t IsGreater = False;/* in case no if was entered, the numbers are equal -> return False 
+ 133:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for(pos = 0; pos < BigIntSize; pos++)
+ 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       if(Operand1->Number[pos] < Operand2->Number[pos])
+ 136:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 137:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsGreater = False;
+ 138:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else if (Operand1->Number[pos] > Operand2->Number[pos])
+ 141:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 142:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          IsGreater = True;
+ 143:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 144:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 145:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       else
+ 146:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 147:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          /* don't break, but continue with next position */
+ 148:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 149:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 150:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsGreater;
+ 151:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+ 152:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
+ 153:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+ 154:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsGreater(Operand1,Operand2) || IsEqual(Operand1,Operand2);
+ 155:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+ 156:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
+ 157:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+ 158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for (pos = 0; pos < BigIntSize; pos++)
+ 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       leftOperand->Number[pos] = rightOperand->Number[pos];
+ 162:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 5
 
 
- 163:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void AssignNull(BigInt* leftOperand)
- 164:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
- 165:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 166:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for (pos = 0; pos < BigIntSize; pos++)
- 167:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 168:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       leftOperand->Number[pos] = 0x00;
- 169:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 170:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
- 171:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 172:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void AssignUint32(BigInt* leftOperand, uint32 rightOperand)
- 173:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
- 174:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 175:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 i;
- 176:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for (pos = 0; pos < BigIntSize; pos++)
- 177:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 178:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       leftOperand->Number[pos] = 0x00;
- 179:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }   
- 180:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for (pos = BigIntSize-1, i = 0; pos >= (BigIntSize-sizeof(uint32)); pos--, i++)
- 181:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 182:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       leftOperand->Number[pos] = (rightOperand>>i)&0xFFu;
-  70              		.loc 1 182 0
+ 163:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+ 164:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void AssignNull(BigInt* leftOperand)
+ 165:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+ 166:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 167:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for (pos = 0; pos < BigIntSize; pos++)
+ 168:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 169:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       leftOperand->Number[pos] = 0x00;
+ 170:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 171:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+ 172:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 173:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void AssignUint32(BigInt* leftOperand, uint32 rightOperand)
+ 174:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** {
+ 175:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 176:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 i;
+ 177:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for (pos = 0; pos < BigIntSize; pos++)
+ 178:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 179:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       leftOperand->Number[pos] = 0x00;
+ 180:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 181:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    for (pos = BigIntSize-1, i = 0; pos >= (BigIntSize-sizeof(uint32)); pos--, i++)
+ 182:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 183:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       leftOperand->Number[pos] = (rightOperand>>i)&0xFFu;
+  70              		.loc 1 183 0
   71 0012 C373     		strb	r3, [r0, #15]
   72 0014 0022     		movs	r2, #0
   73 0016 5D08     		lsrs	r5, r3, #1
@@ -276,8 +277,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
   82              	.LVL3:
   83              	.LBE15:
   84              	.LBE14:
-  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
-  85              		.loc 1 26 0
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+  85              		.loc 1 27 0
   86 0028 30BC     		pop	{r4, r5}
   87              		.cfi_restore 5
   88              		.cfi_restore 4
@@ -297,70 +298,70 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  103              		.thumb_func
  104              		.fpu softvfp
  106              	OS_ResetCurrentTime:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 6
+
+
  107              	.LFB2:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 6
-
-
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* unlock the CoreSight (CM4) */
- 108              		.loc 1 29 0
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* unlock the CoreSight (CM4) */
+ 108              		.loc 1 30 0
  109              		.cfi_startproc
  110              		@ args = 0, pretend = 0, frame = 0
  111              		@ frame_needed = 0, uses_anonymous_args = 0
  112              		@ link register save eliminated.
-  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 113              		.loc 1 31 0
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 113              		.loc 1 32 0
  114 0030 094B     		ldr	r3, .L11
  115 0032 0A4A     		ldr	r2, .L11+4
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 116              		.loc 1 34 0
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 116              		.loc 1 35 0
  117 0034 0A49     		ldr	r1, .L11+8
-  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 118              		.loc 1 37 0
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 118              		.loc 1 38 0
  119 0036 0B48     		ldr	r0, .L11+12
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* unlock the CoreSight (CM4) */
- 120              		.loc 1 29 0
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    /* unlock the CoreSight (CM4) */
+ 120              		.loc 1 30 0
  121 0038 10B4     		push	{r4}
  122              		.cfi_def_cfa_offset 4
  123              		.cfi_offset 4, -4
-  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 124              		.loc 1 31 0
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 124              		.loc 1 32 0
  125 003a 1A60     		str	r2, [r3]
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 126              		.loc 1 34 0
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 126              		.loc 1 35 0
  127 003c 0B68     		ldr	r3, [r1]
-  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    
- 128              		.loc 1 40 0
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 128              		.loc 1 41 0
  129 003e 0A4A     		ldr	r2, .L11+16
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 130              		.loc 1 34 0
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 130              		.loc 1 35 0
  131 0040 43F08073 		orr	r3, r3, #16777216
-  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 132              		.loc 1 37 0
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 132              		.loc 1 38 0
  133 0044 0024     		movs	r4, #0
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 134              		.loc 1 34 0
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 134              		.loc 1 35 0
  135 0046 0B60     		str	r3, [r1]
-  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 136              		.loc 1 37 0
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 136              		.loc 1 38 0
  137 0048 0460     		str	r4, [r0]
-  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    
- 138              		.loc 1 40 0
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 138              		.loc 1 41 0
  139 004a 1368     		ldr	r3, [r2]
-  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 140              		.loc 1 44 0
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 140              		.loc 1 45 0
  141 004c 10BC     		pop	{r4}
  142              		.cfi_restore 4
  143              		.cfi_def_cfa_offset 0
-  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    
- 144              		.loc 1 40 0
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 144              		.loc 1 41 0
  145 004e 43F00103 		orr	r3, r3, #1
  146 0052 1360     		str	r3, [r2]
-  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 147              		.loc 1 44 0
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 147              		.loc 1 45 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 7
+
+
  148 0054 7047     		bx	lr
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 7
-
-
  149              	.L12:
  150 0056 00BF     		.align	2
  151              	.L11:
@@ -380,8 +381,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  166              		.fpu softvfp
  168              	IntAdd:
  169              	.LFB3:
-  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    sint8 pos;
- 170              		.loc 1 49 0
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    sint8 pos;
+ 170              		.loc 1 50 0
  171              		.cfi_startproc
  172              		@ args = 0, pretend = 0, frame = 0
  173              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -392,289 +393,289 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  178              		.cfi_offset 4, -8
  179              		.cfi_offset 5, -4
  180              	.LBB16:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 181              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 181              		.loc 1 56 0
  182 006e CB7B     		ldrb	r3, [r1, #15]	@ zero_extendqisi2
  183 0070 D47B     		ldrb	r4, [r2, #15]	@ zero_extendqisi2
  184              	.LVL5:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 185              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 185              		.loc 1 57 0
  186 0072 1C44     		add	r4, r4, r3
  187              	.LVL6:
  188 0074 C473     		strb	r4, [r0, #15]
  189              	.LVL7:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 190              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 190              		.loc 1 56 0
  191 0076 957B     		ldrb	r5, [r2, #14]	@ zero_extendqisi2
  192 0078 8B7B     		ldrb	r3, [r1, #14]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 193              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 193              		.loc 1 58 0
  194 007a 24F0FF04 		bic	r4, r4, #255
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 195              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 195              		.loc 1 56 0
  196 007e 2B44     		add	r3, r3, r5
  197 0080 2344     		add	r3, r3, r4
  198              	.LVL8:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 199              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 199              		.loc 1 57 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 8
+
+
  200 0082 8373     		strb	r3, [r0, #14]
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 8
-
-
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 201              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 201              		.loc 1 56 0
  202 0084 557B     		ldrb	r5, [r2, #13]	@ zero_extendqisi2
  203 0086 4C7B     		ldrb	r4, [r1, #13]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 204              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 204              		.loc 1 58 0
  205 0088 03F44073 		and	r3, r3, #768
  206              	.LVL9:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 207              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 207              		.loc 1 56 0
  208 008c 2C44     		add	r4, r4, r5
  209 008e 2344     		add	r3, r3, r4
  210              	.LVL10:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 211              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 211              		.loc 1 57 0
  212 0090 4373     		strb	r3, [r0, #13]
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 213              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 213              		.loc 1 56 0
  214 0092 157B     		ldrb	r5, [r2, #12]	@ zero_extendqisi2
  215 0094 0C7B     		ldrb	r4, [r1, #12]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 216              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 216              		.loc 1 58 0
  217 0096 03F4E063 		and	r3, r3, #1792
  218              	.LVL11:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 219              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 219              		.loc 1 56 0
  220 009a 2C44     		add	r4, r4, r5
  221 009c 2344     		add	r3, r3, r4
  222              	.LVL12:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 223              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 223              		.loc 1 57 0
  224 009e 0373     		strb	r3, [r0, #12]
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 225              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 225              		.loc 1 56 0
  226 00a0 D57A     		ldrb	r5, [r2, #11]	@ zero_extendqisi2
  227 00a2 CC7A     		ldrb	r4, [r1, #11]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 228              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 228              		.loc 1 58 0
  229 00a4 03F47063 		and	r3, r3, #3840
  230              	.LVL13:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 231              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 231              		.loc 1 56 0
  232 00a8 2C44     		add	r4, r4, r5
  233 00aa 2344     		add	r3, r3, r4
  234              	.LVL14:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 235              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 235              		.loc 1 57 0
  236 00ac C372     		strb	r3, [r0, #11]
  237              	.LVL15:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 238              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 238              		.loc 1 56 0
  239 00ae 8C7A     		ldrb	r4, [r1, #10]	@ zero_extendqisi2
  240 00b0 957A     		ldrb	r5, [r2, #10]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 241              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 241              		.loc 1 58 0
  242 00b2 23F0FF03 		bic	r3, r3, #255
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 9
+
+
  243              	.LVL16:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 9
-
-
  244 00b6 2344     		add	r3, r3, r4
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 245              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 245              		.loc 1 56 0
  246 00b8 2B44     		add	r3, r3, r5
  247              	.LVL17:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 248              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 248              		.loc 1 57 0
  249 00ba 8372     		strb	r3, [r0, #10]
  250              	.LVL18:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 251              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 251              		.loc 1 56 0
  252 00bc 4C7A     		ldrb	r4, [r1, #9]	@ zero_extendqisi2
  253 00be 557A     		ldrb	r5, [r2, #9]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 254              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 254              		.loc 1 58 0
  255 00c0 23F0FF03 		bic	r3, r3, #255
  256              	.LVL19:
  257 00c4 1C44     		add	r4, r4, r3
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 258              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 258              		.loc 1 56 0
  259 00c6 2C44     		add	r4, r4, r5
  260 00c8 A4B2     		uxth	r4, r4
  261              	.LVL20:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 262              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 262              		.loc 1 57 0
  263 00ca 4472     		strb	r4, [r0, #9]
  264              	.LVL21:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 265              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 265              		.loc 1 56 0
  266 00cc 0B7A     		ldrb	r3, [r1, #8]	@ zero_extendqisi2
  267 00ce 157A     		ldrb	r5, [r2, #8]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 268              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 268              		.loc 1 58 0
  269 00d0 24F0FF04 		bic	r4, r4, #255
  270              	.LVL22:
  271 00d4 2344     		add	r3, r3, r4
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 272              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 272              		.loc 1 56 0
  273 00d6 15FA83F3 		uxtah	r3, r5, r3
  274 00da 9BB2     		uxth	r3, r3
  275              	.LVL23:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 276              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 276              		.loc 1 57 0
  277 00dc 0372     		strb	r3, [r0, #8]
  278              	.LVL24:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 279              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 279              		.loc 1 56 0
  280 00de CC79     		ldrb	r4, [r1, #7]	@ zero_extendqisi2
  281 00e0 D579     		ldrb	r5, [r2, #7]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 282              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 282              		.loc 1 58 0
  283 00e2 23F0FF03 		bic	r3, r3, #255
  284              	.LVL25:
  285 00e6 1C44     		add	r4, r4, r3
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 286              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 286              		.loc 1 56 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 10
+
+
  287 00e8 15FA84F4 		uxtah	r4, r5, r4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 10
-
-
  288 00ec A4B2     		uxth	r4, r4
  289              	.LVL26:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 290              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 290              		.loc 1 57 0
  291 00ee C471     		strb	r4, [r0, #7]
  292              	.LVL27:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 293              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 293              		.loc 1 56 0
  294 00f0 8B79     		ldrb	r3, [r1, #6]	@ zero_extendqisi2
  295 00f2 9579     		ldrb	r5, [r2, #6]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 296              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 296              		.loc 1 58 0
  297 00f4 24F0FF04 		bic	r4, r4, #255
  298              	.LVL28:
  299 00f8 2344     		add	r3, r3, r4
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 300              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 300              		.loc 1 56 0
  301 00fa 15FA83F3 		uxtah	r3, r5, r3
  302 00fe 9BB2     		uxth	r3, r3
  303              	.LVL29:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 304              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 304              		.loc 1 57 0
  305 0100 8371     		strb	r3, [r0, #6]
  306              	.LVL30:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 307              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 307              		.loc 1 56 0
  308 0102 4C79     		ldrb	r4, [r1, #5]	@ zero_extendqisi2
  309 0104 5579     		ldrb	r5, [r2, #5]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 310              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 310              		.loc 1 58 0
  311 0106 23F0FF03 		bic	r3, r3, #255
  312              	.LVL31:
  313 010a 1C44     		add	r4, r4, r3
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 314              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 314              		.loc 1 56 0
  315 010c 15FA84F4 		uxtah	r4, r5, r4
  316 0110 A4B2     		uxth	r4, r4
  317              	.LVL32:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 318              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 318              		.loc 1 57 0
  319 0112 4471     		strb	r4, [r0, #5]
  320              	.LVL33:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 321              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 321              		.loc 1 56 0
  322 0114 0B79     		ldrb	r3, [r1, #4]	@ zero_extendqisi2
  323 0116 1579     		ldrb	r5, [r2, #4]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 324              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 324              		.loc 1 58 0
  325 0118 24F0FF04 		bic	r4, r4, #255
  326              	.LVL34:
  327 011c 2344     		add	r3, r3, r4
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 328              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 328              		.loc 1 56 0
  329 011e 15FA83F3 		uxtah	r3, r5, r3
  330 0122 9BB2     		uxth	r3, r3
  331              	.LVL35:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 11
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 11
 
 
- 332              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 332              		.loc 1 57 0
  333 0124 0371     		strb	r3, [r0, #4]
  334              	.LVL36:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 335              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 335              		.loc 1 56 0
  336 0126 CC78     		ldrb	r4, [r1, #3]	@ zero_extendqisi2
  337 0128 D578     		ldrb	r5, [r2, #3]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 338              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 338              		.loc 1 58 0
  339 012a 23F0FF03 		bic	r3, r3, #255
  340              	.LVL37:
  341 012e 1C44     		add	r4, r4, r3
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 342              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 342              		.loc 1 56 0
  343 0130 15FA84F4 		uxtah	r4, r5, r4
  344 0134 A4B2     		uxth	r4, r4
  345              	.LVL38:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 346              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 346              		.loc 1 57 0
  347 0136 C470     		strb	r4, [r0, #3]
  348              	.LVL39:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 349              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 349              		.loc 1 56 0
  350 0138 8B78     		ldrb	r3, [r1, #2]	@ zero_extendqisi2
  351 013a 9578     		ldrb	r5, [r2, #2]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 352              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 352              		.loc 1 58 0
  353 013c 24F0FF04 		bic	r4, r4, #255
  354              	.LVL40:
  355 0140 2344     		add	r3, r3, r4
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 356              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 356              		.loc 1 56 0
  357 0142 15FA83F3 		uxtah	r3, r5, r3
  358 0146 9BB2     		uxth	r3, r3
  359              	.LVL41:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 360              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 360              		.loc 1 57 0
  361 0148 8370     		strb	r3, [r0, #2]
  362              	.LVL42:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 363              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 363              		.loc 1 56 0
  364 014a 4C78     		ldrb	r4, [r1, #1]	@ zero_extendqisi2
  365 014c 5578     		ldrb	r5, [r2, #1]	@ zero_extendqisi2
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 366              		.loc 1 57 0
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 366              		.loc 1 58 0
  367 014e 23F0FF03 		bic	r3, r3, #255
  368              	.LVL43:
  369 0152 2344     		add	r3, r3, r4
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 370              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 370              		.loc 1 56 0
  371 0154 15FA83F3 		uxtah	r3, r5, r3
  372 0158 9BB2     		uxth	r3, r3
  373              	.LVL44:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 374              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 374              		.loc 1 57 0
  375 015a 4370     		strb	r3, [r0, #1]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 12
+
+
  376              	.LVL45:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 12
-
-
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
- 377              		.loc 1 55 0
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       Summe->Number[pos] = tmpSum & 0xFFu;
+ 377              		.loc 1 56 0
  378 015c 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  379              	.LVL46:
  380 015e 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
  381              	.LVL47:
  382 0160 1344     		add	r3, r3, r2
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
- 383              		.loc 1 56 0
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       carry = tmpSum & 0xFF00u;
+ 383              		.loc 1 57 0
  384 0162 0370     		strb	r3, [r0]
  385              	.LVL48:
  386              	.LBE16:
-  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
- 387              		.loc 1 59 0
+  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
+ 387              		.loc 1 60 0
  388 0164 30BC     		pop	{r4, r5}
  389              		.cfi_restore 5
  390              		.cfi_restore 4
@@ -691,8 +692,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  402              		.fpu softvfp
  404              	IntSub:
  405              	.LFB4:
-  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    sint8 pos;
- 406              		.loc 1 61 0
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    sint8 pos;
+ 406              		.loc 1 62 0
  407              		.cfi_startproc
  408              		@ args = 0, pretend = 0, frame = 0
  409              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -704,297 +705,297 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  415              		.cfi_offset 5, -8
  416              		.cfi_offset 6, -4
  417              	.LBB17:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 418              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 418              		.loc 1 69 0
  419 016a CC7B     		ldrb	r4, [r1, #15]	@ zero_extendqisi2
  420 016c D57B     		ldrb	r5, [r2, #15]	@ zero_extendqisi2
  421 016e A3B2     		uxth	r3, r4
  422 0170 AEB2     		uxth	r6, r5
  423 0172 A542     		cmp	r5, r4
-  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 424              		.loc 1 70 0
+  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 424              		.loc 1 71 0
  425 0174 A3EB0603 		sub	r3, r3, r6
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 426              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 426              		.loc 1 75 0
  427 0178 88BF     		it	hi
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 13
+
+
  428 017a 03F58073 		addhi	r3, r3, #256
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 13
-
-
  429 017e 9BB2     		uxth	r3, r3
  430              	.LVL50:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 431              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 431              		.loc 1 81 0
  432 0180 C373     		strb	r3, [r0, #15]
  433              	.LVL51:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 434              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 434              		.loc 1 69 0
  435 0182 8D7B     		ldrb	r5, [r1, #14]	@ zero_extendqisi2
  436 0184 947B     		ldrb	r4, [r2, #14]	@ zero_extendqisi2
  437 0186 ABB2     		uxth	r3, r5
  438 0188 A6B2     		uxth	r6, r4
  439 018a A542     		cmp	r5, r4
-  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 440              		.loc 1 70 0
+  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 440              		.loc 1 71 0
  441 018c A3EB0603 		sub	r3, r3, r6
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 442              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 442              		.loc 1 75 0
  443 0190 38BF     		it	cc
  444 0192 03F58073 		addcc	r3, r3, #256
  445 0196 9BB2     		uxth	r3, r3
  446              	.LVL52:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 447              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 447              		.loc 1 81 0
  448 0198 8373     		strb	r3, [r0, #14]
  449              	.LVL53:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 450              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 450              		.loc 1 69 0
  451 019a 4D7B     		ldrb	r5, [r1, #13]	@ zero_extendqisi2
  452 019c 547B     		ldrb	r4, [r2, #13]	@ zero_extendqisi2
  453 019e ABB2     		uxth	r3, r5
  454 01a0 A542     		cmp	r5, r4
  455 01a2 A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 456              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 456              		.loc 1 75 0
  457 01a4 38BF     		it	cc
  458 01a6 03F58073 		addcc	r3, r3, #256
  459 01aa 9B1B     		subs	r3, r3, r6
  460 01ac 9BB2     		uxth	r3, r3
  461              	.LVL54:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 462              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 462              		.loc 1 81 0
  463 01ae 4373     		strb	r3, [r0, #13]
  464              	.LVL55:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 465              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 465              		.loc 1 69 0
  466 01b0 0D7B     		ldrb	r5, [r1, #12]	@ zero_extendqisi2
  467 01b2 147B     		ldrb	r4, [r2, #12]	@ zero_extendqisi2
  468 01b4 ABB2     		uxth	r3, r5
  469 01b6 A542     		cmp	r5, r4
  470 01b8 A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 471              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 471              		.loc 1 75 0
  472 01ba 38BF     		it	cc
  473 01bc 03F58073 		addcc	r3, r3, #256
  474 01c0 9B1B     		subs	r3, r3, r6
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 14
+
+
  475 01c2 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 14
-
-
  476              	.LVL56:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 477              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 477              		.loc 1 81 0
  478 01c4 0373     		strb	r3, [r0, #12]
  479              	.LVL57:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 480              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 480              		.loc 1 69 0
  481 01c6 CD7A     		ldrb	r5, [r1, #11]	@ zero_extendqisi2
  482 01c8 D47A     		ldrb	r4, [r2, #11]	@ zero_extendqisi2
  483 01ca ABB2     		uxth	r3, r5
  484 01cc A542     		cmp	r5, r4
  485 01ce A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 486              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 486              		.loc 1 75 0
  487 01d0 38BF     		it	cc
  488 01d2 03F58073 		addcc	r3, r3, #256
  489 01d6 9B1B     		subs	r3, r3, r6
  490 01d8 9BB2     		uxth	r3, r3
  491              	.LVL58:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 492              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 492              		.loc 1 81 0
  493 01da C372     		strb	r3, [r0, #11]
  494              	.LVL59:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 495              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 495              		.loc 1 69 0
  496 01dc 8D7A     		ldrb	r5, [r1, #10]	@ zero_extendqisi2
  497 01de 947A     		ldrb	r4, [r2, #10]	@ zero_extendqisi2
  498 01e0 ABB2     		uxth	r3, r5
  499 01e2 A542     		cmp	r5, r4
  500 01e4 A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 501              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 501              		.loc 1 75 0
  502 01e6 38BF     		it	cc
  503 01e8 03F58073 		addcc	r3, r3, #256
  504 01ec 9B1B     		subs	r3, r3, r6
  505 01ee 9BB2     		uxth	r3, r3
  506              	.LVL60:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 507              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 507              		.loc 1 81 0
  508 01f0 8372     		strb	r3, [r0, #10]
  509              	.LVL61:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 510              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 510              		.loc 1 69 0
  511 01f2 4D7A     		ldrb	r5, [r1, #9]	@ zero_extendqisi2
  512 01f4 547A     		ldrb	r4, [r2, #9]	@ zero_extendqisi2
  513 01f6 ABB2     		uxth	r3, r5
  514 01f8 A542     		cmp	r5, r4
  515 01fa A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 516              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 516              		.loc 1 75 0
  517 01fc 38BF     		it	cc
  518 01fe 03F58073 		addcc	r3, r3, #256
  519 0202 9B1B     		subs	r3, r3, r6
  520 0204 9BB2     		uxth	r3, r3
  521              	.LVL62:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 522              		.loc 1 80 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 15
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 15
 
 
+ 522              		.loc 1 81 0
  523 0206 4372     		strb	r3, [r0, #9]
  524              	.LVL63:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 525              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 525              		.loc 1 69 0
  526 0208 0D7A     		ldrb	r5, [r1, #8]	@ zero_extendqisi2
  527 020a 147A     		ldrb	r4, [r2, #8]	@ zero_extendqisi2
  528 020c ABB2     		uxth	r3, r5
  529 020e A542     		cmp	r5, r4
  530 0210 A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 531              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 531              		.loc 1 75 0
  532 0212 38BF     		it	cc
  533 0214 03F58073 		addcc	r3, r3, #256
  534 0218 9B1B     		subs	r3, r3, r6
  535 021a 9BB2     		uxth	r3, r3
  536              	.LVL64:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 537              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 537              		.loc 1 81 0
  538 021c 0372     		strb	r3, [r0, #8]
  539              	.LVL65:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 540              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 540              		.loc 1 69 0
  541 021e CD79     		ldrb	r5, [r1, #7]	@ zero_extendqisi2
  542 0220 D479     		ldrb	r4, [r2, #7]	@ zero_extendqisi2
  543 0222 ABB2     		uxth	r3, r5
  544 0224 A542     		cmp	r5, r4
  545 0226 A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 546              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 546              		.loc 1 75 0
  547 0228 38BF     		it	cc
  548 022a 03F58073 		addcc	r3, r3, #256
  549 022e 9B1B     		subs	r3, r3, r6
  550 0230 9BB2     		uxth	r3, r3
  551              	.LVL66:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 552              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 552              		.loc 1 81 0
  553 0232 C371     		strb	r3, [r0, #7]
  554              	.LVL67:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 555              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 555              		.loc 1 69 0
  556 0234 8D79     		ldrb	r5, [r1, #6]	@ zero_extendqisi2
  557 0236 9479     		ldrb	r4, [r2, #6]	@ zero_extendqisi2
  558 0238 ABB2     		uxth	r3, r5
  559 023a A542     		cmp	r5, r4
  560 023c A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 561              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 561              		.loc 1 75 0
  562 023e 38BF     		it	cc
  563 0240 03F58073 		addcc	r3, r3, #256
  564 0244 9B1B     		subs	r3, r3, r6
  565 0246 9BB2     		uxth	r3, r3
  566              	.LVL68:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 567              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 567              		.loc 1 81 0
  568 0248 8371     		strb	r3, [r0, #6]
  569              	.LVL69:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 16
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 16
 
 
- 570              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 570              		.loc 1 69 0
  571 024a 4D79     		ldrb	r5, [r1, #5]	@ zero_extendqisi2
  572 024c 5479     		ldrb	r4, [r2, #5]	@ zero_extendqisi2
  573 024e ABB2     		uxth	r3, r5
  574 0250 A542     		cmp	r5, r4
  575 0252 A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 576              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 576              		.loc 1 75 0
  577 0254 38BF     		it	cc
  578 0256 03F58073 		addcc	r3, r3, #256
  579 025a 9B1B     		subs	r3, r3, r6
  580 025c 9BB2     		uxth	r3, r3
  581              	.LVL70:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 582              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 582              		.loc 1 81 0
  583 025e 4371     		strb	r3, [r0, #5]
  584              	.LVL71:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 585              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 585              		.loc 1 69 0
  586 0260 0D79     		ldrb	r5, [r1, #4]	@ zero_extendqisi2
  587 0262 1479     		ldrb	r4, [r2, #4]	@ zero_extendqisi2
  588 0264 ABB2     		uxth	r3, r5
  589 0266 A542     		cmp	r5, r4
  590 0268 A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 591              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 591              		.loc 1 75 0
  592 026a 38BF     		it	cc
  593 026c 03F58073 		addcc	r3, r3, #256
  594 0270 9B1B     		subs	r3, r3, r6
  595 0272 9BB2     		uxth	r3, r3
  596              	.LVL72:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 597              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 597              		.loc 1 81 0
  598 0274 0371     		strb	r3, [r0, #4]
  599              	.LVL73:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 600              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 600              		.loc 1 69 0
  601 0276 CD78     		ldrb	r5, [r1, #3]	@ zero_extendqisi2
  602 0278 D478     		ldrb	r4, [r2, #3]	@ zero_extendqisi2
  603 027a ABB2     		uxth	r3, r5
  604 027c A542     		cmp	r5, r4
  605 027e A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 606              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 606              		.loc 1 75 0
  607 0280 38BF     		it	cc
  608 0282 03F58073 		addcc	r3, r3, #256
  609 0286 9B1B     		subs	r3, r3, r6
  610 0288 9BB2     		uxth	r3, r3
  611              	.LVL74:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 612              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 612              		.loc 1 81 0
  613 028a C370     		strb	r3, [r0, #3]
  614              	.LVL75:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 615              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 615              		.loc 1 69 0
  616 028c 8D78     		ldrb	r5, [r1, #2]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 17
+
+
  617 028e 9478     		ldrb	r4, [r2, #2]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 17
-
-
  618 0290 ABB2     		uxth	r3, r5
  619 0292 A542     		cmp	r5, r4
  620 0294 A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 621              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 621              		.loc 1 75 0
  622 0296 38BF     		it	cc
  623 0298 03F58073 		addcc	r3, r3, #256
  624 029c 9B1B     		subs	r3, r3, r6
  625 029e 9BB2     		uxth	r3, r3
  626              	.LVL76:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 627              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 627              		.loc 1 81 0
  628 02a0 8370     		strb	r3, [r0, #2]
  629              	.LVL77:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 630              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 630              		.loc 1 69 0
  631 02a2 4D78     		ldrb	r5, [r1, #1]	@ zero_extendqisi2
  632 02a4 5478     		ldrb	r4, [r2, #1]	@ zero_extendqisi2
  633 02a6 ABB2     		uxth	r3, r5
  634 02a8 A542     		cmp	r5, r4
  635 02aa A6B2     		uxth	r6, r4
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 636              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 636              		.loc 1 75 0
  637 02ac 38BF     		it	cc
  638 02ae 03F58073 		addcc	r3, r3, #256
  639 02b2 9B1B     		subs	r3, r3, r6
  640 02b4 9BB2     		uxth	r3, r3
  641              	.LVL78:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 642              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 642              		.loc 1 81 0
  643 02b6 4370     		strb	r3, [r0, #1]
  644              	.LVL79:
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 645              		.loc 1 68 0
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 645              		.loc 1 69 0
  646 02b8 0978     		ldrb	r1, [r1]	@ zero_extendqisi2
  647              	.LVL80:
  648 02ba 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
@@ -1002,25 +1003,25 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  650 02bc 8BB2     		uxth	r3, r1
  651 02be 8A42     		cmp	r2, r1
  652 02c0 94B2     		uxth	r4, r2
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
- 653              		.loc 1 74 0
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       }
+ 653              		.loc 1 75 0
  654 02c2 88BF     		it	hi
  655 02c4 03F58073 		addhi	r3, r3, #256
  656 02c8 1B1B     		subs	r3, r3, r4
  657 02ca 9BB2     		uxth	r3, r3
  658              	.LVL82:
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 659              		.loc 1 80 0
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 659              		.loc 1 81 0
  660 02cc 0370     		strb	r3, [r0]
  661              	.LVL83:
  662              	.LBE17:
-  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
- 663              		.loc 1 82 0
+  83:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
+ 663              		.loc 1 83 0
  664 02ce 70BC     		pop	{r4, r5, r6}
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 18
+
+
  665              		.cfi_restore 6
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 18
-
-
  666              		.cfi_restore 5
  667              		.cfi_restore 4
  668              		.cfi_def_cfa_offset 0
@@ -1036,179 +1037,179 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  679              		.fpu softvfp
  681              	IsLess:
  682              	.LFB5:
-  84:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 683              		.loc 1 84 0
+  85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 683              		.loc 1 85 0
  684              		.cfi_startproc
  685              		@ args = 0, pretend = 0, frame = 0
  686              		@ frame_needed = 0, uses_anonymous_args = 0
  687              		@ link register save eliminated.
  688              	.LVL84:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 689              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 689              		.loc 1 90 0
  690 02d4 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
  691 02d6 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  692 02d8 9A42     		cmp	r2, r3
  693 02da 4FD3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 694              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 694              		.loc 1 95 0
  695 02dc 4CD8     		bhi	.L96
  696              	.LVL85:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 697              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 697              		.loc 1 90 0
  698 02de 4278     		ldrb	r2, [r0, #1]	@ zero_extendqisi2
  699 02e0 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
  700 02e2 9A42     		cmp	r2, r3
  701 02e4 4AD3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 702              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 702              		.loc 1 95 0
  703 02e6 47D8     		bhi	.L96
  704              	.LVL86:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 705              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 705              		.loc 1 90 0
  706 02e8 8278     		ldrb	r2, [r0, #2]	@ zero_extendqisi2
  707 02ea 8B78     		ldrb	r3, [r1, #2]	@ zero_extendqisi2
  708 02ec 9A42     		cmp	r2, r3
  709 02ee 45D3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 710              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 710              		.loc 1 95 0
  711 02f0 42D8     		bhi	.L96
  712              	.LVL87:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 713              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 713              		.loc 1 90 0
  714 02f2 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
  715 02f4 CB78     		ldrb	r3, [r1, #3]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 19
+
+
  716 02f6 9A42     		cmp	r2, r3
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 19
-
-
  717 02f8 40D3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 718              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 718              		.loc 1 95 0
  719 02fa 3DD8     		bhi	.L96
  720              	.LVL88:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 721              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 721              		.loc 1 90 0
  722 02fc 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
  723 02fe 0B79     		ldrb	r3, [r1, #4]	@ zero_extendqisi2
  724 0300 9A42     		cmp	r2, r3
  725 0302 3BD3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 726              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 726              		.loc 1 95 0
  727 0304 38D8     		bhi	.L96
  728              	.LVL89:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 729              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 729              		.loc 1 90 0
  730 0306 4279     		ldrb	r2, [r0, #5]	@ zero_extendqisi2
  731 0308 4B79     		ldrb	r3, [r1, #5]	@ zero_extendqisi2
  732 030a 9A42     		cmp	r2, r3
  733 030c 36D3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 734              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 734              		.loc 1 95 0
  735 030e 33D8     		bhi	.L96
  736              	.LVL90:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 737              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 737              		.loc 1 90 0
  738 0310 8279     		ldrb	r2, [r0, #6]	@ zero_extendqisi2
  739 0312 8B79     		ldrb	r3, [r1, #6]	@ zero_extendqisi2
  740 0314 9A42     		cmp	r2, r3
  741 0316 31D3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 742              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 742              		.loc 1 95 0
  743 0318 2ED8     		bhi	.L96
  744              	.LVL91:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 745              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 745              		.loc 1 90 0
  746 031a C279     		ldrb	r2, [r0, #7]	@ zero_extendqisi2
  747 031c CB79     		ldrb	r3, [r1, #7]	@ zero_extendqisi2
  748 031e 9A42     		cmp	r2, r3
  749 0320 2CD3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 750              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 750              		.loc 1 95 0
  751 0322 29D8     		bhi	.L96
  752              	.LVL92:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 753              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 753              		.loc 1 90 0
  754 0324 027A     		ldrb	r2, [r0, #8]	@ zero_extendqisi2
  755 0326 0B7A     		ldrb	r3, [r1, #8]	@ zero_extendqisi2
  756 0328 9A42     		cmp	r2, r3
  757 032a 27D3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 758              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 758              		.loc 1 95 0
  759 032c 24D8     		bhi	.L96
  760              	.LVL93:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 761              		.loc 1 89 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 20
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 20
 
 
+ 761              		.loc 1 90 0
  762 032e 427A     		ldrb	r2, [r0, #9]	@ zero_extendqisi2
  763 0330 4B7A     		ldrb	r3, [r1, #9]	@ zero_extendqisi2
  764 0332 9A42     		cmp	r2, r3
  765 0334 22D3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 766              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 766              		.loc 1 95 0
  767 0336 1FD8     		bhi	.L96
  768              	.LVL94:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 769              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 769              		.loc 1 90 0
  770 0338 827A     		ldrb	r2, [r0, #10]	@ zero_extendqisi2
  771 033a 8B7A     		ldrb	r3, [r1, #10]	@ zero_extendqisi2
  772 033c 9A42     		cmp	r2, r3
  773 033e 1DD3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 774              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 774              		.loc 1 95 0
  775 0340 1AD8     		bhi	.L96
  776              	.LVL95:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 777              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 777              		.loc 1 90 0
  778 0342 C27A     		ldrb	r2, [r0, #11]	@ zero_extendqisi2
  779 0344 CB7A     		ldrb	r3, [r1, #11]	@ zero_extendqisi2
  780 0346 9A42     		cmp	r2, r3
  781 0348 18D3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 782              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 782              		.loc 1 95 0
  783 034a 15D8     		bhi	.L96
  784              	.LVL96:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 785              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 785              		.loc 1 90 0
  786 034c 027B     		ldrb	r2, [r0, #12]	@ zero_extendqisi2
  787 034e 0B7B     		ldrb	r3, [r1, #12]	@ zero_extendqisi2
  788 0350 9A42     		cmp	r2, r3
  789 0352 13D3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 790              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 790              		.loc 1 95 0
  791 0354 10D8     		bhi	.L96
  792              	.LVL97:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 793              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 793              		.loc 1 90 0
  794 0356 427B     		ldrb	r2, [r0, #13]	@ zero_extendqisi2
  795 0358 4B7B     		ldrb	r3, [r1, #13]	@ zero_extendqisi2
  796 035a 9A42     		cmp	r2, r3
  797 035c 0ED3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 798              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 798              		.loc 1 95 0
  799 035e 0BD8     		bhi	.L96
  800              	.LVL98:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 801              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 801              		.loc 1 90 0
  802 0360 827B     		ldrb	r2, [r0, #14]	@ zero_extendqisi2
  803 0362 8B7B     		ldrb	r3, [r1, #14]	@ zero_extendqisi2
  804 0364 9A42     		cmp	r2, r3
  805 0366 09D3     		bcc	.L95
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 806              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 806              		.loc 1 95 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 21
+
+
  807 0368 06D8     		bhi	.L96
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 21
-
-
  808              	.LVL99:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 809              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 809              		.loc 1 90 0
  810 036a C07B     		ldrb	r0, [r0, #15]	@ zero_extendqisi2
  811              	.LVL100:
  812 036c CB7B     		ldrb	r3, [r1, #15]	@ zero_extendqisi2
-  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
- 813              		.loc 1 91 0
+  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 813              		.loc 1 92 0
  814 036e 9842     		cmp	r0, r3
  815 0370 2CBF     		ite	cs
  816 0372 0020     		movcs	r0, #0
@@ -1216,17 +1217,17 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  818 0376 7047     		bx	lr
  819              	.LVL101:
  820              	.L96:
-  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
- 821              		.loc 1 96 0
+  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 821              		.loc 1 97 0
  822 0378 0020     		movs	r0, #0
  823              	.LVL102:
- 105:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
- 824              		.loc 1 105 0
+ 106:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
+ 824              		.loc 1 106 0
  825 037a 7047     		bx	lr
  826              	.LVL103:
  827              	.L95:
-  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
- 828              		.loc 1 91 0
+  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 828              		.loc 1 92 0
  829 037c 0120     		movs	r0, #1
  830              	.LVL104:
  831 037e 7047     		bx	lr
@@ -1241,31 +1242,31 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  841              		.fpu softvfp
  843              	IsLessOrEqual:
  844              	.LFB6:
- 107:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsLess(Operand1,Operand2) || IsEqual(Operand1,Operand2);
- 845              		.loc 1 107 0
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsLess(Operand1,Operand2) || IsEqual(Operand1,Operand2);
+ 845              		.loc 1 108 0
  846              		.cfi_startproc
  847              		@ args = 0, pretend = 0, frame = 0
  848              		@ frame_needed = 0, uses_anonymous_args = 0
  849              	.LVL105:
  850              	.LBB18:
  851              	.LBB19:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 852              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 852              		.loc 1 90 0
  853 0380 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
  854 0382 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  855 0384 9A42     		cmp	r2, r3
  856 0386 C0F0AE80 		bcc	.L100
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 857              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 857              		.loc 1 95 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 22
+
+
  858 038a 00F2AE80 		bhi	.L101
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 22
-
-
  859              	.LVL106:
  860              	.LBE19:
  861              	.LBE18:
- 107:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsLess(Operand1,Operand2) || IsEqual(Operand1,Operand2);
- 862              		.loc 1 107 0
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsLess(Operand1,Operand2) || IsEqual(Operand1,Operand2);
+ 862              		.loc 1 108 0
  863 038e F0B5     		push	{r4, r5, r6, r7, lr}
  864              		.cfi_def_cfa_offset 20
  865              		.cfi_offset 4, -20
@@ -1275,154 +1276,154 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  869              		.cfi_offset 14, -4
  870              	.LBB23:
  871              	.LBB20:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 872              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 872              		.loc 1 90 0
  873 0390 4D78     		ldrb	r5, [r1, #1]	@ zero_extendqisi2
  874 0392 4478     		ldrb	r4, [r0, #1]	@ zero_extendqisi2
  875 0394 AC42     		cmp	r4, r5
  876 0396 C0F0A480 		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 877              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 877              		.loc 1 95 0
  878 039a 00F2A080 		bhi	.L132
  879              	.LVL107:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 880              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 880              		.loc 1 90 0
  881 039e 8778     		ldrb	r7, [r0, #2]	@ zero_extendqisi2
  882 03a0 8E78     		ldrb	r6, [r1, #2]	@ zero_extendqisi2
  883 03a2 B742     		cmp	r7, r6
  884 03a4 C0F09D80 		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 885              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 885              		.loc 1 95 0
  886 03a8 5CD8     		bhi	.L99
  887              	.LVL108:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 888              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 888              		.loc 1 90 0
  889 03aa 90F803E0 		ldrb	lr, [r0, #3]	@ zero_extendqisi2
  890 03ae 91F803C0 		ldrb	ip, [r1, #3]	@ zero_extendqisi2
  891 03b2 E645     		cmp	lr, ip
  892 03b4 C0F09580 		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 893              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 893              		.loc 1 95 0
  894 03b8 54D8     		bhi	.L99
  895              	.LVL109:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 896              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 896              		.loc 1 90 0
  897 03ba 90F804E0 		ldrb	lr, [r0, #4]	@ zero_extendqisi2
  898 03be 91F804C0 		ldrb	ip, [r1, #4]	@ zero_extendqisi2
  899 03c2 E645     		cmp	lr, ip
  900 03c4 C0F08D80 		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 901              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 901              		.loc 1 95 0
  902 03c8 4CD8     		bhi	.L99
  903              	.LVL110:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 904              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 904              		.loc 1 90 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 23
+
+
  905 03ca 90F805E0 		ldrb	lr, [r0, #5]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 23
-
-
  906 03ce 91F805C0 		ldrb	ip, [r1, #5]	@ zero_extendqisi2
  907 03d2 E645     		cmp	lr, ip
  908 03d4 C0F08580 		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 909              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 909              		.loc 1 95 0
  910 03d8 44D8     		bhi	.L99
  911              	.LVL111:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 912              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 912              		.loc 1 90 0
  913 03da 90F806E0 		ldrb	lr, [r0, #6]	@ zero_extendqisi2
  914 03de 91F806C0 		ldrb	ip, [r1, #6]	@ zero_extendqisi2
  915 03e2 E645     		cmp	lr, ip
  916 03e4 7DD3     		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 917              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 917              		.loc 1 95 0
  918 03e6 3DD8     		bhi	.L99
  919              	.LVL112:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 920              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 920              		.loc 1 90 0
  921 03e8 90F807E0 		ldrb	lr, [r0, #7]	@ zero_extendqisi2
  922 03ec 91F807C0 		ldrb	ip, [r1, #7]	@ zero_extendqisi2
  923 03f0 E645     		cmp	lr, ip
  924 03f2 76D3     		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 925              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 925              		.loc 1 95 0
  926 03f4 36D8     		bhi	.L99
  927              	.LVL113:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 928              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 928              		.loc 1 90 0
  929 03f6 90F808E0 		ldrb	lr, [r0, #8]	@ zero_extendqisi2
  930 03fa 91F808C0 		ldrb	ip, [r1, #8]	@ zero_extendqisi2
  931 03fe E645     		cmp	lr, ip
  932 0400 6FD3     		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 933              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 933              		.loc 1 95 0
  934 0402 2FD8     		bhi	.L99
  935              	.LVL114:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 936              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 936              		.loc 1 90 0
  937 0404 90F809E0 		ldrb	lr, [r0, #9]	@ zero_extendqisi2
  938 0408 91F809C0 		ldrb	ip, [r1, #9]	@ zero_extendqisi2
  939 040c E645     		cmp	lr, ip
  940 040e 68D3     		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 941              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 941              		.loc 1 95 0
  942 0410 28D8     		bhi	.L99
  943              	.LVL115:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 944              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 944              		.loc 1 90 0
  945 0412 90F80AE0 		ldrb	lr, [r0, #10]	@ zero_extendqisi2
  946 0416 91F80AC0 		ldrb	ip, [r1, #10]	@ zero_extendqisi2
  947 041a E645     		cmp	lr, ip
  948 041c 61D3     		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 949              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 949              		.loc 1 95 0
  950 041e 21D8     		bhi	.L99
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 24
+
+
  951              	.LVL116:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 24
-
-
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 952              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 952              		.loc 1 90 0
  953 0420 90F80BE0 		ldrb	lr, [r0, #11]	@ zero_extendqisi2
  954 0424 91F80BC0 		ldrb	ip, [r1, #11]	@ zero_extendqisi2
  955 0428 E645     		cmp	lr, ip
  956 042a 5AD3     		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 957              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 957              		.loc 1 95 0
  958 042c 1AD8     		bhi	.L99
  959              	.LVL117:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 960              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 960              		.loc 1 90 0
  961 042e 90F80CE0 		ldrb	lr, [r0, #12]	@ zero_extendqisi2
  962 0432 91F80CC0 		ldrb	ip, [r1, #12]	@ zero_extendqisi2
  963 0436 E645     		cmp	lr, ip
  964 0438 53D3     		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 965              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 965              		.loc 1 95 0
  966 043a 13D8     		bhi	.L99
  967              	.LVL118:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 968              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 968              		.loc 1 90 0
  969 043c 90F80DE0 		ldrb	lr, [r0, #13]	@ zero_extendqisi2
  970 0440 91F80DC0 		ldrb	ip, [r1, #13]	@ zero_extendqisi2
  971 0444 E645     		cmp	lr, ip
  972 0446 4CD3     		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 973              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 973              		.loc 1 95 0
  974 0448 0CD8     		bhi	.L99
  975              	.LVL119:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 976              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 976              		.loc 1 90 0
  977 044a 90F80EE0 		ldrb	lr, [r0, #14]	@ zero_extendqisi2
  978 044e 91F80EC0 		ldrb	ip, [r1, #14]	@ zero_extendqisi2
  979 0452 E645     		cmp	lr, ip
  980 0454 45D3     		bcc	.L117
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 981              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 981              		.loc 1 95 0
  982 0456 05D8     		bhi	.L99
  983              	.LVL120:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 984              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 984              		.loc 1 90 0
  985 0458 90F80FE0 		ldrb	lr, [r0, #15]	@ zero_extendqisi2
  986 045c 91F80FC0 		ldrb	ip, [r1, #15]	@ zero_extendqisi2
  987 0460 E645     		cmp	lr, ip
@@ -1433,14 +1434,14 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  992              	.LBE23:
  993              	.LBB24:
  994              	.LBB25:
- 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 995              		.loc 1 116 0
+ 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 995              		.loc 1 117 0
  996 0464 9A42     		cmp	r2, r3
  997 0466 3AD1     		bne	.L132
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 25
+
+
  998              	.LVL122:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 25
-
-
  999 0468 A542     		cmp	r5, r4
  1000 046a 38D1     		bne	.L132
  1001              	.LVL123:
@@ -1497,10 +1498,10 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1052 04bc 9A42     		cmp	r2, r3
  1053 04be 0ED1     		bne	.L132
  1054              	.LVL134:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 26
+
+
  1055 04c0 427B     		ldrb	r2, [r0, #13]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 26
-
-
  1056 04c2 4B7B     		ldrb	r3, [r1, #13]	@ zero_extendqisi2
  1057 04c4 9A42     		cmp	r2, r3
  1058 04c6 0AD1     		bne	.L132
@@ -1518,34 +1519,34 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1070 04da 4009     		lsrs	r0, r0, #5
  1071              	.LBE25:
  1072              	.LBE24:
- 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
- 1073              		.loc 1 109 0
+ 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+ 1073              		.loc 1 110 0
  1074 04dc F0BD     		pop	{r4, r5, r6, r7, pc}
  1075              	.LVL138:
  1076              	.L132:
  1077              	.LBB27:
  1078              	.LBB26:
- 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1079              		.loc 1 116 0
+ 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1079              		.loc 1 117 0
  1080 04de 0020     		movs	r0, #0
  1081              	.LVL139:
  1082              	.LBE26:
  1083              	.LBE27:
- 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
- 1084              		.loc 1 109 0
+ 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+ 1084              		.loc 1 110 0
  1085 04e0 F0BD     		pop	{r4, r5, r6, r7, pc}
  1086              	.LVL140:
  1087              	.L117:
  1088              	.LBB28:
  1089              	.LBB21:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1090              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1090              		.loc 1 90 0
  1091 04e2 0120     		movs	r0, #1
  1092              	.LVL141:
  1093              	.LBE21:
  1094              	.LBE28:
- 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
- 1095              		.loc 1 109 0
+ 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+ 1095              		.loc 1 110 0
  1096 04e4 F0BD     		pop	{r4, r5, r6, r7, pc}
  1097              	.LVL142:
  1098              	.L100:
@@ -1557,24 +1558,24 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1104              		.cfi_restore 14
  1105              	.LBB29:
  1106              	.LBB22:
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 27
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 27
 
 
- 1107              		.loc 1 89 0
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1107              		.loc 1 90 0
  1108 04e6 0120     		movs	r0, #1
  1109              	.LVL143:
  1110 04e8 7047     		bx	lr
  1111              	.LVL144:
  1112              	.L101:
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1113              		.loc 1 94 0
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1113              		.loc 1 95 0
  1114 04ea 0020     		movs	r0, #0
  1115              	.LVL145:
  1116              	.LBE22:
  1117              	.LBE29:
- 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
- 1118              		.loc 1 109 0
+ 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+ 1118              		.loc 1 110 0
  1119 04ec 7047     		bx	lr
  1120              		.cfi_endproc
  1121              	.LFE6:
@@ -1587,15 +1588,15 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1129              		.fpu softvfp
  1131              	IsEqual:
  1132              	.LFB7:
- 111:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 1133              		.loc 1 111 0
+ 112:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 1133              		.loc 1 112 0
  1134              		.cfi_startproc
  1135              		@ args = 0, pretend = 0, frame = 0
  1136              		@ frame_needed = 0, uses_anonymous_args = 0
  1137              		@ link register save eliminated.
  1138              	.LVL146:
- 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1139              		.loc 1 116 0
+ 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1139              		.loc 1 117 0
  1140 04f0 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
  1141 04f2 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  1142 04f4 9A42     		cmp	r2, r3
@@ -1617,10 +1618,10 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1158 050e 32D1     		bne	.L153
  1159              	.LVL150:
  1160 0510 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 28
+
+
  1161 0512 0B79     		ldrb	r3, [r1, #4]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 28
-
-
  1162 0514 9A42     		cmp	r2, r3
  1163 0516 2ED1     		bne	.L153
  1164              	.LVL151:
@@ -1677,11 +1678,11 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1215 0568 C07B     		ldrb	r0, [r0, #15]	@ zero_extendqisi2
  1216              	.LVL162:
  1217 056a CB7B     		ldrb	r3, [r1, #15]	@ zero_extendqisi2
- 118:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 29
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 29
 
 
- 1218              		.loc 1 118 0
+ 119:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 1218              		.loc 1 119 0
  1219 056c C01A     		subs	r0, r0, r3
  1220 056e B0FA80F0 		clz	r0, r0
  1221 0572 4009     		lsrs	r0, r0, #5
@@ -1690,8 +1691,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1224              	.L153:
  1225 0576 0020     		movs	r0, #0
  1226              	.LVL164:
- 127:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
- 1227              		.loc 1 127 0
+ 128:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
+ 1227              		.loc 1 128 0
  1228 0578 7047     		bx	lr
  1229              		.cfi_endproc
  1230              	.LFE7:
@@ -1704,180 +1705,180 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1238              		.fpu softvfp
  1240              	IsGreater:
  1241              	.LFB8:
- 129:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 1242              		.loc 1 129 0
+ 130:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 1242              		.loc 1 130 0
  1243              		.cfi_startproc
  1244              		@ args = 0, pretend = 0, frame = 0
  1245              		@ frame_needed = 0, uses_anonymous_args = 0
  1246              		@ link register save eliminated.
  1247              	.LVL165:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1248              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1248              		.loc 1 135 0
  1249 057c 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
  1250 057e 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  1251 0580 9A42     		cmp	r2, r3
  1252 0582 50D3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1253              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1253              		.loc 1 140 0
  1254 0584 4DD8     		bhi	.L185
  1255              	.LVL166:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1256              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1256              		.loc 1 135 0
  1257 0586 4278     		ldrb	r2, [r0, #1]	@ zero_extendqisi2
  1258 0588 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
  1259 058a 9A42     		cmp	r2, r3
  1260 058c 4BD3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1261              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1261              		.loc 1 140 0
  1262 058e 48D8     		bhi	.L185
  1263              	.LVL167:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1264              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1264              		.loc 1 135 0
  1265 0590 8278     		ldrb	r2, [r0, #2]	@ zero_extendqisi2
  1266 0592 8B78     		ldrb	r3, [r1, #2]	@ zero_extendqisi2
  1267 0594 9A42     		cmp	r2, r3
  1268 0596 46D3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 30
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 30
 
 
- 1269              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1269              		.loc 1 140 0
  1270 0598 43D8     		bhi	.L185
  1271              	.LVL168:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1272              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1272              		.loc 1 135 0
  1273 059a C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
  1274 059c CB78     		ldrb	r3, [r1, #3]	@ zero_extendqisi2
  1275 059e 9A42     		cmp	r2, r3
  1276 05a0 41D3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1277              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1277              		.loc 1 140 0
  1278 05a2 3ED8     		bhi	.L185
  1279              	.LVL169:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1280              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1280              		.loc 1 135 0
  1281 05a4 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
  1282 05a6 0B79     		ldrb	r3, [r1, #4]	@ zero_extendqisi2
  1283 05a8 9A42     		cmp	r2, r3
  1284 05aa 3CD3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1285              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1285              		.loc 1 140 0
  1286 05ac 39D8     		bhi	.L185
  1287              	.LVL170:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1288              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1288              		.loc 1 135 0
  1289 05ae 4279     		ldrb	r2, [r0, #5]	@ zero_extendqisi2
  1290 05b0 4B79     		ldrb	r3, [r1, #5]	@ zero_extendqisi2
  1291 05b2 9A42     		cmp	r2, r3
  1292 05b4 37D3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1293              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1293              		.loc 1 140 0
  1294 05b6 34D8     		bhi	.L185
  1295              	.LVL171:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1296              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1296              		.loc 1 135 0
  1297 05b8 8279     		ldrb	r2, [r0, #6]	@ zero_extendqisi2
  1298 05ba 8B79     		ldrb	r3, [r1, #6]	@ zero_extendqisi2
  1299 05bc 9A42     		cmp	r2, r3
  1300 05be 32D3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1301              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1301              		.loc 1 140 0
  1302 05c0 2FD8     		bhi	.L185
  1303              	.LVL172:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1304              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1304              		.loc 1 135 0
  1305 05c2 C279     		ldrb	r2, [r0, #7]	@ zero_extendqisi2
  1306 05c4 CB79     		ldrb	r3, [r1, #7]	@ zero_extendqisi2
  1307 05c6 9A42     		cmp	r2, r3
  1308 05c8 2DD3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1309              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1309              		.loc 1 140 0
  1310 05ca 2AD8     		bhi	.L185
  1311              	.LVL173:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1312              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1312              		.loc 1 135 0
  1313 05cc 027A     		ldrb	r2, [r0, #8]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 31
+
+
  1314 05ce 0B7A     		ldrb	r3, [r1, #8]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 31
-
-
  1315 05d0 9A42     		cmp	r2, r3
  1316 05d2 28D3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1317              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1317              		.loc 1 140 0
  1318 05d4 25D8     		bhi	.L185
  1319              	.LVL174:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1320              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1320              		.loc 1 135 0
  1321 05d6 427A     		ldrb	r2, [r0, #9]	@ zero_extendqisi2
  1322 05d8 4B7A     		ldrb	r3, [r1, #9]	@ zero_extendqisi2
  1323 05da 9A42     		cmp	r2, r3
  1324 05dc 23D3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1325              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1325              		.loc 1 140 0
  1326 05de 20D8     		bhi	.L185
  1327              	.LVL175:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1328              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1328              		.loc 1 135 0
  1329 05e0 827A     		ldrb	r2, [r0, #10]	@ zero_extendqisi2
  1330 05e2 8B7A     		ldrb	r3, [r1, #10]	@ zero_extendqisi2
  1331 05e4 9A42     		cmp	r2, r3
  1332 05e6 1ED3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1333              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1333              		.loc 1 140 0
  1334 05e8 1BD8     		bhi	.L185
  1335              	.LVL176:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1336              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1336              		.loc 1 135 0
  1337 05ea C27A     		ldrb	r2, [r0, #11]	@ zero_extendqisi2
  1338 05ec CB7A     		ldrb	r3, [r1, #11]	@ zero_extendqisi2
  1339 05ee 9A42     		cmp	r2, r3
  1340 05f0 19D3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1341              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1341              		.loc 1 140 0
  1342 05f2 16D8     		bhi	.L185
  1343              	.LVL177:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1344              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1344              		.loc 1 135 0
  1345 05f4 027B     		ldrb	r2, [r0, #12]	@ zero_extendqisi2
  1346 05f6 0B7B     		ldrb	r3, [r1, #12]	@ zero_extendqisi2
  1347 05f8 9A42     		cmp	r2, r3
  1348 05fa 14D3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1349              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1349              		.loc 1 140 0
  1350 05fc 11D8     		bhi	.L185
  1351              	.LVL178:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1352              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1352              		.loc 1 135 0
  1353 05fe 427B     		ldrb	r2, [r0, #13]	@ zero_extendqisi2
  1354 0600 4B7B     		ldrb	r3, [r1, #13]	@ zero_extendqisi2
  1355 0602 9A42     		cmp	r2, r3
  1356 0604 0FD3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1357              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1357              		.loc 1 140 0
  1358 0606 0CD8     		bhi	.L185
  1359              	.LVL179:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 32
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 32
 
 
- 1360              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1360              		.loc 1 135 0
  1361 0608 827B     		ldrb	r2, [r0, #14]	@ zero_extendqisi2
  1362 060a 8B7B     		ldrb	r3, [r1, #14]	@ zero_extendqisi2
  1363 060c 9A42     		cmp	r2, r3
  1364 060e 0AD3     		bcc	.L186
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1365              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1365              		.loc 1 140 0
  1366 0610 07D8     		bhi	.L185
  1367              	.LVL180:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1368              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1368              		.loc 1 135 0
  1369 0612 C27B     		ldrb	r2, [r0, #15]	@ zero_extendqisi2
  1370 0614 CB7B     		ldrb	r3, [r1, #15]	@ zero_extendqisi2
  1371 0616 9A42     		cmp	r2, r3
  1372 0618 05D3     		bcc	.L186
- 136:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
- 1373              		.loc 1 136 0
+ 137:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 1373              		.loc 1 137 0
  1374 061a 8CBF     		ite	hi
  1375 061c 0120     		movhi	r0, #1
  1376              	.LVL181:
@@ -1885,19 +1886,19 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1378 0620 7047     		bx	lr
  1379              	.LVL182:
  1380              	.L185:
- 141:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
- 1381              		.loc 1 141 0
+ 142:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 1381              		.loc 1 142 0
  1382 0622 0120     		movs	r0, #1
  1383              	.LVL183:
  1384 0624 7047     		bx	lr
  1385              	.LVL184:
  1386              	.L186:
- 136:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
- 1387              		.loc 1 136 0
+ 137:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****          break;
+ 1387              		.loc 1 137 0
  1388 0626 0020     		movs	r0, #0
  1389              	.LVL185:
- 150:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
- 1390              		.loc 1 150 0
+ 151:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
+ 1390              		.loc 1 151 0
  1391 0628 7047     		bx	lr
  1392              		.cfi_endproc
  1393              	.LFE8:
@@ -1910,31 +1911,31 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1401              		.fpu softvfp
  1403              	IsGreaterOrEqual:
  1404              	.LFB9:
- 152:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsGreater(Operand1,Operand2) || IsEqual(Operand1,Operand2);
- 1405              		.loc 1 152 0
+ 153:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsGreater(Operand1,Operand2) || IsEqual(Operand1,Operand2);
+ 1405              		.loc 1 153 0
  1406              		.cfi_startproc
  1407              		@ args = 0, pretend = 0, frame = 0
  1408              		@ frame_needed = 0, uses_anonymous_args = 0
  1409              	.LVL186:
  1410              	.LBB30:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 33
+
+
  1411              	.LBB31:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 33
-
-
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1412              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1412              		.loc 1 135 0
  1413 062c 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
  1414 062e 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  1415 0630 9A42     		cmp	r2, r3
  1416 0632 C0F0AF80 		bcc	.L190
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1417              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1417              		.loc 1 140 0
  1418 0636 00F2AF80 		bhi	.L191
  1419              	.LVL187:
  1420              	.LBE31:
  1421              	.LBE30:
- 152:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsGreater(Operand1,Operand2) || IsEqual(Operand1,Operand2);
- 1422              		.loc 1 152 0
+ 153:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    return IsGreater(Operand1,Operand2) || IsEqual(Operand1,Operand2);
+ 1422              		.loc 1 153 0
  1423 063a F0B5     		push	{r4, r5, r6, r7, lr}
  1424              		.cfi_def_cfa_offset 20
  1425              		.cfi_offset 4, -20
@@ -1944,163 +1945,163 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1429              		.cfi_offset 14, -4
  1430              	.LBB35:
  1431              	.LBB32:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1432              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1432              		.loc 1 135 0
  1433 063c 4D78     		ldrb	r5, [r1, #1]	@ zero_extendqisi2
  1434 063e 4478     		ldrb	r4, [r0, #1]	@ zero_extendqisi2
  1435 0640 AC42     		cmp	r4, r5
  1436 0642 C0F0A380 		bcc	.L222
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1437              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1437              		.loc 1 140 0
  1438 0646 00F2A380 		bhi	.L207
  1439              	.LVL188:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1440              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1440              		.loc 1 135 0
  1441 064a 8778     		ldrb	r7, [r0, #2]	@ zero_extendqisi2
  1442 064c 8E78     		ldrb	r6, [r1, #2]	@ zero_extendqisi2
  1443 064e B742     		cmp	r7, r6
  1444 0650 5FD3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1445              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1445              		.loc 1 140 0
  1446 0652 00F29D80 		bhi	.L207
  1447              	.LVL189:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1448              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1448              		.loc 1 135 0
  1449 0656 90F803E0 		ldrb	lr, [r0, #3]	@ zero_extendqisi2
  1450 065a 91F803C0 		ldrb	ip, [r1, #3]	@ zero_extendqisi2
  1451 065e E645     		cmp	lr, ip
  1452 0660 57D3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1453              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1453              		.loc 1 140 0
  1454 0662 00F29580 		bhi	.L207
  1455              	.LVL190:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1456              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1456              		.loc 1 135 0
  1457 0666 90F804E0 		ldrb	lr, [r0, #4]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 34
+
+
  1458 066a 91F804C0 		ldrb	ip, [r1, #4]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 34
-
-
  1459 066e E645     		cmp	lr, ip
  1460 0670 4FD3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1461              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1461              		.loc 1 140 0
  1462 0672 00F28D80 		bhi	.L207
  1463              	.LVL191:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1464              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1464              		.loc 1 135 0
  1465 0676 90F805E0 		ldrb	lr, [r0, #5]	@ zero_extendqisi2
  1466 067a 91F805C0 		ldrb	ip, [r1, #5]	@ zero_extendqisi2
  1467 067e E645     		cmp	lr, ip
  1468 0680 47D3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1469              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1469              		.loc 1 140 0
  1470 0682 00F28580 		bhi	.L207
  1471              	.LVL192:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1472              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1472              		.loc 1 135 0
  1473 0686 90F806E0 		ldrb	lr, [r0, #6]	@ zero_extendqisi2
  1474 068a 91F806C0 		ldrb	ip, [r1, #6]	@ zero_extendqisi2
  1475 068e E645     		cmp	lr, ip
  1476 0690 3FD3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1477              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1477              		.loc 1 140 0
  1478 0692 7DD8     		bhi	.L207
  1479              	.LVL193:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1480              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1480              		.loc 1 135 0
  1481 0694 90F807E0 		ldrb	lr, [r0, #7]	@ zero_extendqisi2
  1482 0698 91F807C0 		ldrb	ip, [r1, #7]	@ zero_extendqisi2
  1483 069c E645     		cmp	lr, ip
  1484 069e 38D3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1485              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1485              		.loc 1 140 0
  1486 06a0 76D8     		bhi	.L207
  1487              	.LVL194:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1488              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1488              		.loc 1 135 0
  1489 06a2 90F808E0 		ldrb	lr, [r0, #8]	@ zero_extendqisi2
  1490 06a6 91F808C0 		ldrb	ip, [r1, #8]	@ zero_extendqisi2
  1491 06aa E645     		cmp	lr, ip
  1492 06ac 31D3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1493              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1493              		.loc 1 140 0
  1494 06ae 6FD8     		bhi	.L207
  1495              	.LVL195:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1496              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1496              		.loc 1 135 0
  1497 06b0 90F809E0 		ldrb	lr, [r0, #9]	@ zero_extendqisi2
  1498 06b4 91F809C0 		ldrb	ip, [r1, #9]	@ zero_extendqisi2
  1499 06b8 E645     		cmp	lr, ip
  1500 06ba 2AD3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1501              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1501              		.loc 1 140 0
  1502 06bc 68D8     		bhi	.L207
  1503              	.LVL196:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 35
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 35
 
 
- 1504              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1504              		.loc 1 135 0
  1505 06be 90F80AE0 		ldrb	lr, [r0, #10]	@ zero_extendqisi2
  1506 06c2 91F80AC0 		ldrb	ip, [r1, #10]	@ zero_extendqisi2
  1507 06c6 E645     		cmp	lr, ip
  1508 06c8 23D3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1509              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1509              		.loc 1 140 0
  1510 06ca 61D8     		bhi	.L207
  1511              	.LVL197:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1512              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1512              		.loc 1 135 0
  1513 06cc 90F80BE0 		ldrb	lr, [r0, #11]	@ zero_extendqisi2
  1514 06d0 91F80BC0 		ldrb	ip, [r1, #11]	@ zero_extendqisi2
  1515 06d4 E645     		cmp	lr, ip
  1516 06d6 1CD3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1517              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1517              		.loc 1 140 0
  1518 06d8 5AD8     		bhi	.L207
  1519              	.LVL198:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1520              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1520              		.loc 1 135 0
  1521 06da 90F80CE0 		ldrb	lr, [r0, #12]	@ zero_extendqisi2
  1522 06de 91F80CC0 		ldrb	ip, [r1, #12]	@ zero_extendqisi2
  1523 06e2 E645     		cmp	lr, ip
  1524 06e4 15D3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1525              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1525              		.loc 1 140 0
  1526 06e6 53D8     		bhi	.L207
  1527              	.LVL199:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1528              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1528              		.loc 1 135 0
  1529 06e8 90F80DE0 		ldrb	lr, [r0, #13]	@ zero_extendqisi2
  1530 06ec 91F80DC0 		ldrb	ip, [r1, #13]	@ zero_extendqisi2
  1531 06f0 E645     		cmp	lr, ip
  1532 06f2 0ED3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1533              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1533              		.loc 1 140 0
  1534 06f4 4CD8     		bhi	.L207
  1535              	.LVL200:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1536              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1536              		.loc 1 135 0
  1537 06f6 90F80EE0 		ldrb	lr, [r0, #14]	@ zero_extendqisi2
  1538 06fa 91F80EC0 		ldrb	ip, [r1, #14]	@ zero_extendqisi2
  1539 06fe E645     		cmp	lr, ip
  1540 0700 07D3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1541              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1541              		.loc 1 140 0
  1542 0702 45D8     		bhi	.L207
  1543              	.LVL201:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1544              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1544              		.loc 1 135 0
  1545 0704 90F80FE0 		ldrb	lr, [r0, #15]	@ zero_extendqisi2
  1546 0708 91F80FC0 		ldrb	ip, [r1, #15]	@ zero_extendqisi2
  1547 070c E645     		cmp	lr, ip
  1548 070e 00D3     		bcc	.L189
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1549              		.loc 1 139 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 36
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 36
 
 
+ 1549              		.loc 1 140 0
  1550 0710 3ED8     		bhi	.L207
  1551              	.LVL202:
  1552              	.L189:
@@ -2108,8 +2109,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1554              	.LBE35:
  1555              	.LBB36:
  1556              	.LBB37:
- 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1557              		.loc 1 116 0
+ 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1557              		.loc 1 117 0
  1558 0712 9A42     		cmp	r2, r3
  1559 0714 3AD1     		bne	.L222
  1560              	.LVL203:
@@ -2157,10 +2158,10 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1602 0756 827A     		ldrb	r2, [r0, #10]	@ zero_extendqisi2
  1603 0758 8B7A     		ldrb	r3, [r1, #10]	@ zero_extendqisi2
  1604 075a 9A42     		cmp	r2, r3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 37
+
+
  1605 075c 16D1     		bne	.L222
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 37
-
-
  1606              	.LVL213:
  1607 075e C27A     		ldrb	r2, [r0, #11]	@ zero_extendqisi2
  1608 0760 CB7A     		ldrb	r3, [r1, #11]	@ zero_extendqisi2
@@ -2190,37 +2191,37 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1632 0788 4009     		lsrs	r0, r0, #5
  1633              	.LBE37:
  1634              	.LBE36:
- 154:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
- 1635              		.loc 1 154 0
+ 155:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
+ 1635              		.loc 1 155 0
  1636 078a F0BD     		pop	{r4, r5, r6, r7, pc}
  1637              	.LVL219:
  1638              	.L222:
  1639              	.LBB39:
  1640              	.LBB38:
- 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1641              		.loc 1 116 0
+ 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1641              		.loc 1 117 0
  1642 078c 0020     		movs	r0, #0
  1643              	.LVL220:
  1644              	.LBE38:
  1645              	.LBE39:
- 154:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
- 1646              		.loc 1 154 0
+ 155:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
+ 1646              		.loc 1 155 0
  1647 078e F0BD     		pop	{r4, r5, r6, r7, pc}
  1648              	.LVL221:
  1649              	.L207:
  1650              	.LBB40:
  1651              	.LBB33:
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1652              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1652              		.loc 1 140 0
  1653 0790 0120     		movs	r0, #1
  1654              	.LVL222:
  1655              	.LBE33:
  1656              	.LBE40:
- 154:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
- 1657              		.loc 1 154 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 38
+ 155:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 38
 
 
+ 1657              		.loc 1 155 0
  1658 0792 F0BD     		pop	{r4, r5, r6, r7, pc}
  1659              	.LVL223:
  1660              	.L190:
@@ -2232,21 +2233,21 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1666              		.cfi_restore 14
  1667              	.LBB41:
  1668              	.LBB34:
- 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1669              		.loc 1 134 0
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1669              		.loc 1 135 0
  1670 0794 0020     		movs	r0, #0
  1671              	.LVL224:
  1672 0796 7047     		bx	lr
  1673              	.LVL225:
  1674              	.L191:
- 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
- 1675              		.loc 1 139 0
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****       {
+ 1675              		.loc 1 140 0
  1676 0798 0120     		movs	r0, #1
  1677              	.LVL226:
  1678              	.LBE34:
  1679              	.LBE41:
- 154:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
- 1680              		.loc 1 154 0
+ 155:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void Assign(BigInt* leftOperand, BigInt* rightOperand)
+ 1680              		.loc 1 155 0
  1681 079a 7047     		bx	lr
  1682              		.cfi_endproc
  1683              	.LFE9:
@@ -2259,8 +2260,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1691              		.fpu softvfp
  1693              	Assign:
  1694              	.LFB10:
- 156:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 1695              		.loc 1 156 0
+ 157:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 1695              		.loc 1 157 0
  1696              		.cfi_startproc
  1697              		@ args = 0, pretend = 0, frame = 0
  1698              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2277,16 +2278,16 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1709 07aa 13F00303 		ands	r3, r3, #3
  1710 07ae F0B4     		push	{r4, r5, r6, r7}
  1711              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 39
+
+
  1712              		.cfi_offset 4, -16
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 39
-
-
  1713              		.cfi_offset 5, -12
  1714              		.cfi_offset 6, -8
  1715              		.cfi_offset 7, -4
  1716 07b0 5BD0     		beq	.L230
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 1717              		.loc 1 160 0
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 1717              		.loc 1 161 0
  1718 07b2 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
  1719 07b4 0270     		strb	r2, [r0]
  1720              	.LVL228:
@@ -2301,13 +2302,13 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1729 07c4 8270     		strb	r2, [r0, #2]
  1730              	.LVL230:
  1731 07c6 0D27     		movs	r7, #13
- 158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 1732              		.loc 1 158 0
+ 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 1732              		.loc 1 159 0
  1733 07c8 1E46     		mov	r6, r3
  1734              	.LVL231:
  1735              	.L231:
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 1736              		.loc 1 160 0
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 1736              		.loc 1 161 0
  1737 07ca CA58     		ldr	r2, [r1, r3]
  1738 07cc C250     		str	r2, [r0, r3]	@ unaligned
  1739 07ce CD18     		adds	r5, r1, r3
@@ -2324,8 +2325,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1750 07e6 5FFA8CFC 		uxtb	ip, ip
  1751 07ea 4ED1     		bne	.L252
  1752              	.L235:
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 1753              		.loc 1 160 0 is_stmt 0 discriminator 3
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 1753              		.loc 1 161 0 is_stmt 0 discriminator 3
  1754 07ec AB68     		ldr	r3, [r5, #8]
  1755 07ee A360     		str	r3, [r4, #8]	@ unaligned
  1756 07f0 A7F11002 		sub	r2, r7, #16
@@ -2335,39 +2336,39 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1760 07fe 0ED0     		beq	.L227
  1761              	.L236:
  1762              	.LVL232:
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 1763              		.loc 1 160 0
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 1763              		.loc 1 161 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 40
+
+
  1764 0800 CC5C     		ldrb	r4, [r1, r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 40
-
-
  1765 0802 C454     		strb	r4, [r0, r3]
- 158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 1766              		.loc 1 158 0 is_stmt 1
+ 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 1766              		.loc 1 159 0 is_stmt 1
  1767 0804 012A     		cmp	r2, #1
  1768 0806 03F10104 		add	r4, r3, #1
  1769 080a E4B2     		uxtb	r4, r4
  1770              	.LVL233:
  1771 080c 07D0     		beq	.L227
  1772 080e 0233     		adds	r3, r3, #2
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 1773              		.loc 1 160 0
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 1773              		.loc 1 161 0
  1774 0810 0D5D     		ldrb	r5, [r1, r4]	@ zero_extendqisi2
  1775 0812 0555     		strb	r5, [r0, r4]
- 158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 1776              		.loc 1 158 0
+ 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 1776              		.loc 1 159 0
  1777 0814 022A     		cmp	r2, #2
  1778 0816 DBB2     		uxtb	r3, r3
  1779              	.LVL234:
  1780 0818 01D0     		beq	.L227
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 1781              		.loc 1 160 0
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 1781              		.loc 1 161 0
  1782 081a CA5C     		ldrb	r2, [r1, r3]	@ zero_extendqisi2
  1783 081c C254     		strb	r2, [r0, r3]
  1784              	.LVL235:
  1785              	.L227:
- 162:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void AssignNull(BigInt* leftOperand)
- 1786              		.loc 1 162 0
+ 163:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** void AssignNull(BigInt* leftOperand)
+ 1786              		.loc 1 163 0
  1787 081e F0BC     		pop	{r4, r5, r6, r7}
  1788              		.cfi_restore 7
  1789              		.cfi_restore 6
@@ -2377,8 +2378,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1793 0820 7047     		bx	lr
  1794              	.LVL236:
  1795              	.L228:
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 1796              		.loc 1 160 0
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 1796              		.loc 1 161 0
  1797 0822 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  1798 0824 0370     		strb	r3, [r0]
  1799              	.LVL237:
@@ -2397,10 +2398,10 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1812 0836 4B79     		ldrb	r3, [r1, #5]	@ zero_extendqisi2
  1813 0838 4371     		strb	r3, [r0, #5]
  1814              	.LVL242:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 41
+
+
  1815 083a 8B79     		ldrb	r3, [r1, #6]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 41
-
-
  1816 083c 8371     		strb	r3, [r0, #6]
  1817              	.LVL243:
  1818 083e CB79     		ldrb	r3, [r1, #7]	@ zero_extendqisi2
@@ -2439,28 +2440,28 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1851              		.cfi_offset 6, -8
  1852              		.cfi_offset 7, -4
  1853 0864 0F27     		movs	r7, #15
- 158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 1854              		.loc 1 158 0
+ 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 1854              		.loc 1 159 0
  1855 0866 1E46     		mov	r6, r3
  1856 0868 AFE7     		b	.L231
  1857              	.LVL254:
  1858              	.L230:
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 1859              		.loc 1 160 0
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 1859              		.loc 1 161 0
  1860 086a 0D46     		mov	r5, r1
- 158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 1861              		.loc 1 158 0
+ 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 1861              		.loc 1 159 0
  1862 086c 1E46     		mov	r6, r3
- 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 1863              		.loc 1 160 0
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 1863              		.loc 1 161 0
  1864 086e 55F8044B 		ldr	r4, [r5], #4
  1865 0872 0460     		str	r4, [r0]	@ unaligned
  1866 0874 1446     		mov	r4, r2
  1867 0876 2B68     		ldr	r3, [r5]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 42
+
+
  1868 0878 2360     		str	r3, [r4]	@ unaligned
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 42
-
-
  1869 087a 0422     		movs	r2, #4
  1870 087c 4FF0100C 		mov	ip, #16
  1871 0880 6B68     		ldr	r3, [r5, #4]
@@ -2476,8 +2477,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1881              	.LVL255:
  1882              	.L238:
  1883 0896 0E27     		movs	r7, #14
- 158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
- 1884              		.loc 1 158 0
+ 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    {
+ 1884              		.loc 1 159 0
  1885 0898 0226     		movs	r6, #2
  1886 089a 96E7     		b	.L231
  1887              		.cfi_endproc
@@ -2491,8 +2492,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1896              		.fpu softvfp
  1898              	AssignNull:
  1899              	.LFB11:
- 164:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
- 1900              		.loc 1 164 0
+ 165:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 1900              		.loc 1 165 0
  1901              		.cfi_startproc
  1902              		@ args = 0, pretend = 0, frame = 0
  1903              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2503,8 +2504,8 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1908 08a0 4360     		str	r3, [r0, #4]	@ unaligned
  1909 08a2 8360     		str	r3, [r0, #8]	@ unaligned
  1910 08a4 C360     		str	r3, [r0, #12]	@ unaligned
- 170:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
- 1911              		.loc 1 170 0
+ 171:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** 
+ 1911              		.loc 1 171 0
  1912 08a6 7047     		bx	lr
  1913              		.cfi_endproc
  1914              	.LFE11:
@@ -2517,11 +2518,11 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1922              		.fpu softvfp
  1924              	AssignUint32:
  1925              	.LFB12:
- 173:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 43
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 43
 
 
- 1926              		.loc 1 173 0
+ 174:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    uint8 pos;
+ 1926              		.loc 1 174 0
  1927              		.cfi_startproc
  1928              		@ args = 0, pretend = 0, frame = 0
  1929              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2532,7 +2533,7 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1934              		.cfi_offset 4, -8
  1935              		.cfi_offset 5, -4
  1936 08aa 0023     		movs	r3, #0
- 1937              		.loc 1 182 0
+ 1937              		.loc 1 183 0
  1938 08ac 4D08     		lsrs	r5, r1, #1
  1939 08ae 8C08     		lsrs	r4, r1, #2
  1940 08b0 CA08     		lsrs	r2, r1, #3
@@ -2544,9 +2545,9 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1946 08bc 4360     		str	r3, [r0, #4]	@ unaligned
  1947 08be 8360     		str	r3, [r0, #8]	@ unaligned
  1948              	.LVL258:
- 183:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
- 184:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }...
- 1949              		.loc 1 184 0
+ 184:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c ****    }
+ 185:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c **** }
+ 1949              		.loc 1 185 0
  1950 08c0 30BC     		pop	{r4, r5}
  1951              		.cfi_restore 5
  1952              		.cfi_restore 4
@@ -2561,34 +2562,34 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 1
  1962              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
  1963              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
  1964              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s 			page 44
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s 			page 44
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_common.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:23     .text:00000000 OS_SetSwBug
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:40     .text:00000008 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:44     .text:0000000c $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:52     .text:0000000c OS_GetCurrentTime
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:94     .text:0000002c $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:98     .text:00000030 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:106    .text:00000030 OS_ResetCurrentTime
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:152    .text:00000058 $d
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:160    .text:0000006c $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:168    .text:0000006c IntAdd
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:404    .text:00000168 IntSub
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:681    .text:000002d4 IsLess
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:843    .text:00000380 IsLessOrEqual
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:1131   .text:000004f0 IsEqual
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:1240   .text:0000057c IsGreater
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:1403   .text:0000062c IsGreaterOrEqual
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:1693   .text:0000079c Assign
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:1898   .text:0000089c AssignNull
-C:\Users\PRESID~1\AppData\Local\Temp\ccN6vwVv.s:1924   .text:000008a8 AssignUint32
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:23     .text:00000000 OS_SetSwBug
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:40     .text:00000008 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:44     .text:0000000c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:52     .text:0000000c OS_GetCurrentTime
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:94     .text:0000002c $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:98     .text:00000030 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:106    .text:00000030 OS_ResetCurrentTime
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:152    .text:00000058 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:160    .text:0000006c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:168    .text:0000006c IntAdd
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:404    .text:00000168 IntSub
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:681    .text:000002d4 IsLess
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:843    .text:00000380 IsLessOrEqual
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:1131   .text:000004f0 IsEqual
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:1240   .text:0000057c IsGreater
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:1403   .text:0000062c IsGreaterOrEqual
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:1693   .text:0000079c Assign
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:1898   .text:0000089c AssignNull
+C:\Users\PRESID~1\AppData\Local\Temp\ccU1rF3g.s:1924   .text:000008a8 AssignUint32
                            .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
                            .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
-                           .group:00000000 wm4.os_common.h.2.7d3083dfb0b17ee9cbe20f6fe4481cd9
+                           .group:00000000 wm4.os_common.h.2.7e9aadbd6cc66ffeb9ea2492a31fabc8
                            .group:00000000 wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898
                            .group:00000000 wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1
                            .group:00000000 wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4

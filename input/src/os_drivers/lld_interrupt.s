@@ -36,4 +36,5 @@ LLF_DISABLE_INTERRUPTS_ALL_CORES:
         
 LLF_WAIT_FOR_INTERRUPT:
         WFI
+        MOV R15,R14
         

@@ -118,7 +118,7 @@ Letext0:
 	.file 4 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/OS_shutdown.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x4fe
+	.long	0x52c
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -164,7 +164,7 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x2
 	.byte	0x2b
-	.long	0x244
+	.long	0x260
 	.uleb128 0x5
 	.ascii "os_bug_no_bug\0"
 	.sleb128 0
@@ -195,13 +195,16 @@ Ldebug_info0:
 	.uleb128 0x5
 	.ascii "os_bug_critical_stack_usage\0"
 	.sleb128 9
+	.uleb128 0x5
+	.ascii "os_bug_svc_number_missing\0"
+	.sleb128 10
 	.byte	0
 	.uleb128 0x4
 	.ascii "os_sw_bugs_function_e\0"
 	.byte	0x4
 	.byte	0x2
-	.byte	0x3a
-	.long	0x3e9
+	.byte	0x3b
+	.long	0x417
 	.uleb128 0x5
 	.ascii "Func_NoFunction\0"
 	.sleb128 0
@@ -256,15 +259,18 @@ Ldebug_info0:
 	.uleb128 0x5
 	.ascii "Func_StackCheck\0"
 	.sleb128 17
+	.uleb128 0x5
+	.ascii "Func_IsrHandler\0"
+	.sleb128 18
 	.byte	0
 	.uleb128 0x3
 	.ascii "func_ptr_t\0"
 	.byte	0x2
-	.byte	0x55
-	.long	0x3fb
+	.byte	0x57
+	.long	0x429
 	.uleb128 0x6
 	.byte	0x4
-	.long	0x401
+	.long	0x42f
 	.uleb128 0x7
 	.uleb128 0x2
 	.byte	0x4
@@ -279,7 +285,7 @@ Ldebug_info0:
 	.byte	0x4
 	.byte	0x4
 	.byte	0x3
-	.long	0x471
+	.long	0x49f
 	.uleb128 0x5
 	.ascii "os_reset_hardreset\0"
 	.sleb128 0
@@ -294,7 +300,7 @@ Ldebug_info0:
 	.ascii "os_reset_type_t\0"
 	.byte	0x4
 	.byte	0x8
-	.long	0x41e
+	.long	0x44c
 	.uleb128 0x8
 	.ascii "OS_DeinitHw\0"
 	.byte	0x1
@@ -331,7 +337,7 @@ Ldebug_info0:
 	.ascii "reset_typ\0"
 	.byte	0x1
 	.byte	0x19
-	.long	0x471
+	.long	0x49f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -1333,7 +1339,7 @@ Ldebug_macro0:
 	.uleb128 0x22
 	.ascii "HaltMcu() \0"
 	.byte	0x1
-	.uleb128 0x58
+	.uleb128 0x5a
 	.ascii "BigIntSize 16\0"
 	.byte	0x4
 	.file 6 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
