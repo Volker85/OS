@@ -4,7 +4,6 @@
 #include "os_shutdown.h"
 
 #define SVC_00 0x00
-#define SVC_01 0x01
 
 void OS_ISRHANDLERC0(uint32 svc_number)
 {    
@@ -12,12 +11,8 @@ void OS_ISRHANDLERC0(uint32 svc_number)
     {        
     case SVC_00:            /* Handle SVC 00 */    
     {
-       /*TODO*/
-       break;
-    }
-    case SVC_01:            /* Handle SVC 01 */            
-    {
-       /*TODO*/
+       /* svc_00 implemented as reference only */
+       ReferenceUnusedParameter(svc_number);
        break;
     }
     default:                /* Unknown SVC */            

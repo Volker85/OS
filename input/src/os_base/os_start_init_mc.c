@@ -9,8 +9,7 @@ void OS_InitMc(void)
    /*TODO*/
    /* 2. all MCU IO*/
    /* configure GPIO (SPI, UART, CAN, etc) */
-   /* not needed for OS */
-   /*TODO*/
+   /* no external parts connected to SPI, UART, CAN, ... -> no init needed */
    /* initialize the external parts...  */
    /* no relevant external parts */
    OS_MmuSetup();
