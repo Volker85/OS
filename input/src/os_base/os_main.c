@@ -117,6 +117,12 @@ void OS_StateHandler(void)
    }
    case os_running:
    {
+      /*
+      TODO: OS_DetermineNextTaskActivation und OS_TaskDispatcher müssen m.E. öfters laufen wie der Rest der SW. 
+      Es macht keinen Sinn, immer den State Handler anzufragen, nur um das Task Handling zu triggern....
+      - Der Dispatcher müsste per Interrupt die laufende Task unterbrechen um dann (nach PreemptTask oder TerminateTask) die nächste Task zu starten.
+      - Der OS_DetermineNextTaskActivation müsste vor jedem Aufruf on OS_TaskDispatcher laufen       
+      */
       if(call_nr % 5 == 0)
       {
          OS_DetermineNextTaskActivation();
