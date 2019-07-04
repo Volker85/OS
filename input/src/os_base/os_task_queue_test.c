@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "sput.h"
+#include "..\os_base\os_sput.h"
 
 
 /*

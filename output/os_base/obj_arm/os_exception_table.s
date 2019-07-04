@@ -884,12 +884,12 @@ isr_vec_table:
 	.uleb128 0x13
 	.4byte	.LASF581
 	.byte	0x4
-	.byte	0x5d
+	.byte	0x5b
 	.4byte	0x41e
 	.uleb128 0x2
 	.4byte	.LASF580
 	.byte	0x4
-	.byte	0x5f
+	.byte	0x5d
 	.4byte	0x1d9
 	.uleb128 0xb
 	.4byte	0x21
@@ -3084,15 +3084,15 @@ isr_vec_table:
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x5f
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x62
+	.uleb128 0x60
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4,comdat

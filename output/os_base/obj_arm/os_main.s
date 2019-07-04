@@ -107,25 +107,25 @@ OS_StateHandler:
 	bcc	.L4	@,
 	cmp	r3, #2	@ OS_STATE.0_1,
 	bne	.L2	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:136:       LLF_INT_DISABLE();
-	.loc 1 136 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:142:       LLF_INT_DISABLE();
+	.loc 1 142 0
 	bl	LLF_INT_DISABLE	@
 .LVL0:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:137:       switch(sys_req_reset_state)
-	.loc 1 137 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:143:       switch(sys_req_reset_state)
+	.loc 1 143 0
 	ldr	r3, .L22+4	@ tmp169,
 	ldrb	r0, [r3, #8]	@ zero_extendqisi2	@ sys_req_reset_state, sys_req_reset_state
 	cmp	r0, #0	@ sys_req_reset_state
 	beq	.L14	@
 	cmp	r0, #2	@ sys_req_reset_state,
 	bne	.L20	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:151:          OS_Shutdown(os_reset_exit);
-	.loc 1 151 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:157:          OS_Shutdown(os_reset_exit);
+	.loc 1 157 0
 	bl	OS_Shutdown	@
 .LVL1:
 .L2:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:168:    OS_StackCheck();
-	.loc 1 168 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:174:    OS_StackCheck();
+	.loc 1 174 0
 	bl	OS_StackCheck	@
 .LVL2:
 .L16:
@@ -171,8 +171,8 @@ OS_StateHandler:
 	.loc 1 116 0
 	b	.L2	@
 .L3:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:120:       if(call_nr % 5 == 0)
-	.loc 1 120 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:126:       if(call_nr % 5 == 0)
+	.loc 1 126 0
 	ldr	r4, .L22+4	@ tmp172,
 	ldr	r2, [r4]	@ call_nr, call_nr
 	movs	r3, #5	@ tmp133,
@@ -181,49 +181,49 @@ OS_StateHandler:
 	cmp	r2, r3	@ call_nr, tmp136
 	beq	.L21	@,
 .L6:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:124:       call_nr++;
-	.loc 1 124 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:130:       call_nr++;
+	.loc 1 130 0
 	ldr	r3, [r4]	@ call_nr, call_nr
 	adds	r3, r3, #1	@ tmp159, call_nr,
 	str	r3, [r4]	@ tmp159, call_nr
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:126:       OS_TaskDispatcher();
-	.loc 1 126 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:132:       OS_TaskDispatcher();
+	.loc 1 132 0
 	bl	OS_TaskDispatcher	@
 .LVL11:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:127:       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
-	.loc 1 127 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:133:       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
+	.loc 1 133 0
 	ldr	r3, .L22+12	@ tmp161,
 	ldrb	r3, [r3]	@ zero_extendqisi2	@ SYSTEM_STATE_ACCEPTED, SYSTEM_STATE_ACCEPTED
 	uxtb	r3, r3	@ SYSTEM_STATE_ACCEPTED.3_7, SYSTEM_STATE_ACCEPTED
 	cmp	r3, #2	@ SYSTEM_STATE_ACCEPTED.3_7,
 	bne	.L2	@,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:130:          sys_req_reset_state = Reset_restart;
-	.loc 1 130 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:136:          sys_req_reset_state = Reset_restart;
+	.loc 1 136 0
 	movs	r2, #1	@ tmp167,
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:129:          OS_STATE = os_shutdown;
-	.loc 1 129 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:135:          OS_STATE = os_shutdown;
+	.loc 1 135 0
 	str	r3, [r5]	@ SYSTEM_STATE_ACCEPTED.3_7, OS_STATE
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:130:          sys_req_reset_state = Reset_restart;
-	.loc 1 130 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:136:          sys_req_reset_state = Reset_restart;
+	.loc 1 136 0
 	strb	r2, [r4, #8]	@ tmp167, sys_req_reset_state
 	b	.L2	@
 .L20:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:146:          OS_Shutdown(os_reset_hardreset);
-	.loc 1 146 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:152:          OS_Shutdown(os_reset_hardreset);
+	.loc 1 152 0
 	movs	r0, #0	@,
 	bl	OS_Shutdown	@
 .LVL12:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:147:          break;
-	.loc 1 147 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:153:          break;
+	.loc 1 153 0
 	b	.L2	@
 .L14:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:141:          OS_Shutdown(os_reset_powerdown);
-	.loc 1 141 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:147:          OS_Shutdown(os_reset_powerdown);
+	.loc 1 147 0
 	movs	r0, #1	@,
 	bl	OS_Shutdown	@
 .LVL13:
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:142:          break;
-	.loc 1 142 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:148:          break;
+	.loc 1 148 0
 	b	.L2	@
 .L21:
 .LBB4:
@@ -306,17 +306,17 @@ OS_StateHandler:
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0
-	.type	call_nr.4131, %object
-	.size	call_nr.4131, 4
-call_nr.4131:
+	.type	call_nr.4122, %object
+	.size	call_nr.4122, 4
+call_nr.4122:
 	.space	4
-	.type	call_nr.4119, %object
-	.size	call_nr.4119, 4
-call_nr.4119:
+	.type	call_nr.4110, %object
+	.size	call_nr.4110, 4
+call_nr.4110:
 	.space	4
-	.type	sys_req_reset_state.4130, %object
-	.size	sys_req_reset_state.4130, 1
-sys_req_reset_state.4130:
+	.type	sys_req_reset_state.4121, %object
+	.size	sys_req_reset_state.4121, 1
+sys_req_reset_state.4121:
 	.space	1
 	.text
 .Letext0:
@@ -866,12 +866,12 @@ sys_req_reset_state.4130:
 	.uleb128 0x12
 	.4byte	.LASF593
 	.byte	0x5
-	.byte	0x5d
+	.byte	0x5b
 	.4byte	0x414
 	.uleb128 0x2
 	.4byte	.LASF592
 	.byte	0x5
-	.byte	0x5f
+	.byte	0x5d
 	.4byte	0x1cf
 	.uleb128 0x9
 	.4byte	0x29
@@ -1229,7 +1229,7 @@ sys_req_reset_state.4130:
 	.4byte	0x718
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	sys_req_reset_state.4130
+	.4byte	sys_req_reset_state.4121
 	.uleb128 0x16
 	.4byte	.LASF651
 	.byte	0x1
@@ -1237,13 +1237,13 @@ sys_req_reset_state.4130:
 	.4byte	0x79
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4131
+	.4byte	call_nr.4122
 	.uleb128 0x17
 	.4byte	0x82c
 	.4byte	.LBB4
 	.4byte	.LBE4-.LBB4
 	.byte	0x1
-	.byte	0x7a
+	.byte	0x80
 	.4byte	0x793
 	.uleb128 0x18
 	.4byte	.LBB5
@@ -1335,7 +1335,7 @@ sys_req_reset_state.4130:
 	.4byte	0x79
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	call_nr.4119
+	.4byte	call_nr.4110
 	.byte	0
 	.uleb128 0x1e
 	.4byte	.LASF652
@@ -1386,7 +1386,7 @@ sys_req_reset_state.4130:
 	.4byte	.LASF661
 	.4byte	.LASF661
 	.byte	0x9
-	.byte	0x22
+	.byte	0x21
 	.uleb128 0x1e
 	.4byte	.LASF662
 	.4byte	.LASF662
@@ -1396,7 +1396,7 @@ sys_req_reset_state.4130:
 	.4byte	.LASF663
 	.4byte	.LASF663
 	.byte	0x9
-	.byte	0x24
+	.byte	0x23
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -3431,15 +3431,15 @@ sys_req_reset_state.4130:
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x5f
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x62
+	.uleb128 0x60
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4,comdat
