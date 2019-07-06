@@ -47,7 +47,7 @@ mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_b
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap_test.c -o %OUTPUT_DIR%\os_base\ppc_x86_test\os_heap_test.ppc >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_init_task_system_test.c -o %OUTPUT_DIR%\os_base\ppc_x86_test\os_init_task_system_test.ppc >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_main_test.c -o %OUTPUT_DIR%\os_base\ppc_x86_test\os_main_test.ppc >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_setup_test.c -o %OUTPUT_DIR%\os_base\ppc_x86_test\os_memory_mmu_setup_test.ppc >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_test.c -o %OUTPUT_DIR%\os_base\ppc_x86_test\os_memory_mmu_test.ppc >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_shared_test.c -o %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_shared_test.ppc >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_stack_test.c -o %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_stack_test.ppc >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_test.c -o %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_test.ppc >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
@@ -79,7 +79,7 @@ mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_heap_test.lst 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_init_task_system_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_init_task_system_test.lst 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_main_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_main_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_setup_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_memory_mmu_setup_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_memory_mmu_test.lst 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_shared_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_shared_test.lst 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_stack_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_stack_test.lst 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_test.lst 2>&1
@@ -111,7 +111,7 @@ mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_heap_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_init_task_system_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_init_task_system_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_main_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_main_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_setup_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_memory_mmu_setup_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_memory_mmu_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_shared_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_ram_shared_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_stack_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_ram_stack_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_ram_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
@@ -143,7 +143,7 @@ mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -peda
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_heap_test.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_init_task_system_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_init_task_system_test.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_main_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_main_test.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_setup_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_memory_mmu_setup_test.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_memory_mmu_test.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_shared_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_ram_shared_test.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_stack_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_ram_stack_test.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_ram_test.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
@@ -175,7 +175,7 @@ mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\o
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\os_heap_test.map -O0  %OUTPUT_DIR%\os_base\obj_x86_test\os_heap_test.o -o %OUTPUT_DIR%\VERSION_X86\os_heap_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_heap_test.log 2>&1	
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\os_init_task_system_test.map -O0  %OUTPUT_DIR%\os_base\obj_x86_test\os_init_task_system_test.o -o %OUTPUT_DIR%\VERSION_X86\os_init_task_system_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_init_task_system_test.log 2>&1	
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\os_main_test.map -O0  %OUTPUT_DIR%\os_base\obj_x86_test\os_main_test.o -o %OUTPUT_DIR%\VERSION_X86\os_main_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_main_test.log 2>&1	
-mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\os_memory_mmu_setup_test.map -O0  %OUTPUT_DIR%\os_base\obj_x86_test\os_memory_mmu_setup_test.o -o %OUTPUT_DIR%\VERSION_X86\os_memory_mmu_setup_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_memory_mmu_setup_test.log 2>&1	
+mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\os_memory_mmu_test.map -O0  %OUTPUT_DIR%\os_base\obj_x86_test\os_memory_mmu_test.o -o %OUTPUT_DIR%\VERSION_X86\os_memory_mmu_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_memory_mmu_test.log 2>&1	
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\os_ram_shared_test.map -O0  %OUTPUT_DIR%\os_base\obj_x86_test\os_ram_shared_test.o -o %OUTPUT_DIR%\VERSION_X86\os_ram_shared_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_ram_shared_test.log 2>&1	
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\os_ram_stack_test.map -O0  %OUTPUT_DIR%\os_base\obj_x86_test\os_ram_stack_test.o -o %OUTPUT_DIR%\VERSION_X86\os_ram_stack_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_ram_stack_test.log 2>&1	
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\os_ram_test.map -O0  %OUTPUT_DIR%\os_base\obj_x86_test\os_ram_test.o -o %OUTPUT_DIR%\VERSION_X86\os_ram_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_ram_test.log 2>&1	
@@ -197,5 +197,39 @@ mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\l
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\lld_timer_test.map -O0  %OUTPUT_DIR%\os_sim\obj_x86_test\lld_timer_test.o -o %OUTPUT_DIR%\VERSION_X86\lld_timer_test.exe  >> %OUTPUT_DIR%\VERSION_X86\lld_timer_test.log 2>&1	
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\os_sim_main_test.map -O0  %OUTPUT_DIR%\os_sim\obj_x86_test\os_sim_main_test.o -o %OUTPUT_DIR%\VERSION_X86\os_sim_main_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_sim_main_test.log 2>&1	
 mingw32-g++.exe -march=i386 -g3 -static -Xlinker -Map=%OUTPUT_DIR%\VERSION_X86\led_test.map -O0  %OUTPUT_DIR%\os_user_code\obj_x86_test\led_test.o -o %OUTPUT_DIR%\VERSION_X86\led_test.exe  >> %OUTPUT_DIR%\VERSION_X86\led_test.log 2>&1	
+REM
+REM 
+REM Start the component tests
+REM
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_common_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_common_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_const_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_const_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_exception_isr_handler_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_exception_isr_handler_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_exception_table_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_exception_table_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_exception_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_exception_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_heap_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_heap_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_init_task_system_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_init_task_system_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_main_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_main_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_memory_mmu_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_memory_mmu_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_ram_shared_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_ram_shared_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_ram_stack_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_ram_stack_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_ram_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_ram_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_shutdown_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_shutdown_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_stack_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_stack_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_start_ext_prg_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_start_ext_prg_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_start_init_hw_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_start_init_hw_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_start_init_mc_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_start_init_mc_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_start_init_sw_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_start_init_sw_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_start_os_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_start_os_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_task_common_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_task_common_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_task_queue_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_task_queue_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_task_scheduler_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_task_scheduler_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\lld_global_test.exe  >> %OUTPUT_DIR%\VERSION_X86\lld_global_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\lld_interrupt_test.exe  >> %OUTPUT_DIR%\VERSION_X86\lld_interrupt_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\lld_mmu_test.exe  >> %OUTPUT_DIR%\VERSION_X86\lld_mmu_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\lld_power_test.exe  >> %OUTPUT_DIR%\VERSION_X86\lld_power_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\lld_ram_test.exe  >> %OUTPUT_DIR%\VERSION_X86\lld_ram_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\lld_timer_test.exe  >> %OUTPUT_DIR%\VERSION_X86\lld_timer_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\os_sim_main_test.exe  >> %OUTPUT_DIR%\VERSION_X86\os_sim_main_test.log 2>&1	
+start /NORMAL /B %OUTPUT_DIR%\VERSION_X86\led_test.exe  >> %OUTPUT_DIR%\VERSION_X86\led_test.log 2>&1	
 @ENDLOCAL
 pause

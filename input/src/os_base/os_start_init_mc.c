@@ -1,6 +1,6 @@
 #include "os_firstinc.h"
 #include "os_start_init_mc.h"
-#include "os_memory_mmu_setup.h"
+#include "os_memory_mmu.h"
 
 void OS_InitMc(void)
 {

@@ -104,7 +104,7 @@ OS_InitMc:
 	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-	.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.h"
+	.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
 	.4byte	0x6f7
@@ -3249,8 +3249,6 @@ OS_InitMc:
 	.ascii	"__FLT32_DECIMAL_DIG__ 9\000"
 .LASF254:
 	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
-.LASF507:
-	.ascii	"_os_memory_mmu_setup_h_ \000"
 .LASF428:
 	.ascii	"__ARM_EABI__ 1\000"
 .LASF116:
@@ -3544,6 +3542,8 @@ OS_InitMc:
 	.ascii	"__FLT64_HAS_QUIET_NAN__ 1\000"
 .LASF271:
 	.ascii	"__LFRACT_FBIT__ 31\000"
+.LASF507:
+	.ascii	"_os_memory_mmu_h_ \000"
 .LASF160:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF377:
