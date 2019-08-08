@@ -10,38 +10,54 @@ void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 
 #define DWT_LAR     ((volatile uint32*)0xE0001FB0)
 #define SCB_DEMCR   ((volatile uint32*)0xE000EDFC)
-static timebig_t GLOBAL_TIMER1;
+static timebig_t LOCAL_SYSTEM_TIME;
 
 void OS_GetCurrentTime(timebig_t* time)
+{
+   /* update the current time info */
+   OS_UpdateCurrentTime();
+   /* output the time to the caller */
+   Assign(time, &LOCAL_SYSTEM_TIME);
+   
+}
+void OS_UpdateCurrentTime(void)
 {
    /* the only free running counter on STM32F4 is the DWT counter DWT_CYCCNT
    The counter will overflow every 25sec -> provide function OS_ClearCurrentTime to reset the value to 0, and !!! do not use the absolute value for calculations but use the difference between start and stop of timer
    */
-
-   #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-   AssignUint32(time, *DWT_CYCCNT);
-   #else
-   Assign(time, &GLOBAL_TIMER1);
-   #endif
-   /*TODO handling von overflow für DWT_CYCCNT existiert nicht!! fehler!!*/
+   timebig_t tmp_time;
+   OS_ReadAndResetCurrentTime(&tmp_time);
+   
+   /* increment the global time value by the new increment received by the hardware register */
+   IntAdd(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);  
 }
 
-void OS_ResetCurrentTime(void)
+void OS_ReadAndResetCurrentTime(timebig_t* timebig)
 {
+   #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+   volatile uint32 time = 0u;
+   
    /* unlock the CoreSight (CM4) */
    *DWT_LAR = 0xC5ACCE55;
 
    /* enable trace/debug block TRCENA */
    *SCB_DEMCR |= 0x01000000;
-
+   
+   /* save the current delta time */
+   time = *DWT_CYCCNT;
+   
    /* reset the counter to 0 cycle */
    *DWT_CYCCNT = 0;
 
    /* enable the counter */
    *DWT_CTRL |= 1;
-
-   /* clear the global time variable */
-   AssignNull(&GLOBAL_TIMER1);
+    
+   /* store the read time at the pointer pointer buffer */
+   AssignUint32(timebig, time);
+   #else
+   timebig_t local_time;
+   AssignUint32(timebig, 5u);/* assume a fixed step .... */
+   #endif   
 }
 
 

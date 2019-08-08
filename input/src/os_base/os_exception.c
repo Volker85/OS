@@ -152,6 +152,8 @@ void OS_Exception_PendSV(void)
 /* 0x0000003C OS_Exception_Systick */
 void OS_Exception_Systick(void)
 {
+   OS_UpdateCurrentTime();
+   
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    task_t* task;
    scheduling_t* scheduling_task_ptr;
