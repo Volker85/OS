@@ -56,7 +56,15 @@ void OS_ReadAndResetCurrentTime(timebig_t* timebig)
    #endif   
 }
 
+void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
+{
+   /*TODO*/   
+}
 
+void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
+{
+   /*TODO*/
+}
 
 void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
 {
@@ -194,4 +202,29 @@ void AssignUint32(BigInt* leftOperand, uint32 rightOperand)
    {
       leftOperand->Number[pos] = (rightOperand>>i)&0xFFu;
    }
+}
+
+uint32 GetUint32Of4Uint8(uint8* ptr)
+{
+   uint32 ret_val = 0;
+
+   ret_val += ((uint32) *ptr)<< 24;
+   ptr++;
+   ret_val += ((uint32) *ptr)<< 16;
+   ptr++;
+   ret_val += ((uint32) *ptr)<< 8;
+   ptr++;
+   ret_val += ((uint32) *ptr)<< 0;
+
+   return ret_val;
+}
+void Set4Uint8ToUint32(uint8* ptr, uint32 value)
+{
+   *ptr = (value >>24)&0xFF;
+   ptr++;
+   *ptr = (value >>16)&0xFF;
+   ptr++;
+   *ptr = (value >>8)&0xFF;
+   ptr++;
+   *ptr = (value >>0)&0xFF;
 }

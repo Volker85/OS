@@ -1,6 +1,7 @@
 #ifndef _os_firstinc_h_
 #define _os_firstinc_h_
 
+#include "..\os_config.h"
 #include "..\os_base\os_base_types.h"
 #include "..\os_base\os_common.h"
 

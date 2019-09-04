@@ -13,20 +13,14 @@
 #define Local_inline static __inline__
 #define Global_inline __inline__
 #define ReferenceUnusedParameter(x) ((x) = (x))
-#define DynamicMemoryUsed False
 
 /* MCU abstraction */
 #define cMCU_X86        3
 #define cMCU_CORTEX_M4  4
 
-/*only 1 core is currently supported!!*/
-#define NR_OF_CORES 1
-
-#define MCU_CLOCK_IN_HZ ((uint32)168000000u)
-#define LOOPTIME_IN_USEC ((uint32)10000u)
+/* MCU timer abstraction */
 #define DWT_CTRL   ((volatile uint32*)0xE0001000)
 #define DWT_CYCCNT ((volatile uint32*)0xE0001004)
-
 #define DWT_LAR     ((volatile uint32*)0xE0001FB0)
 #define SCB_DEMCR   ((volatile uint32*)0xE000EDFC)
 
@@ -92,7 +86,7 @@ extern void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 typedef void (*func_ptr_t)(void);
 
 
-#define BigIntSize 16
+
 typedef struct BigInt_s
 {
   /*
@@ -112,10 +106,10 @@ extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2);
 extern boolean_t IsLess(BigInt* Operand1, BigInt* Operand2);
-#if(0)
 extern void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor);
 extern void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2);
-#endif
 extern void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend);
 extern void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand);
+extern uint32 GetUint32Of4Uint8(uint8* ptr);
+extern void Set4Uint8ToUint32(uint8* ptr, uint32 value);
 #endif /* _os_common_h_ */

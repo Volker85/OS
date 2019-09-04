@@ -1,7 +1,7 @@
 #ifndef  _os_exception_isr_handler_h_
 #define  _os_exception_isr_handler_h_
 
-#define SVC_00 0x00
+#define SVC_00 0x00   /* TODO: Define real SVC numbers*/
 
 extern void OS_Exception_RESET(void);
 extern void OS_Exception_NMI(void);

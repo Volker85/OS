@@ -7,9 +7,9 @@
 #include "stdio.h"
 #include "time.h"
 
+#if(CFG_PROCESSOR == cMCU_X86)
 int main(int argc, char* argv[])
 {
-#if(CFG_PROCESSOR == cMCU_X86)
    unsigned int i = 0;
    time_t t = time(0);
 
@@ -28,6 +28,7 @@ int main(int argc, char* argv[])
    getchar();
    ReferenceUnusedParameter(argc);
    ReferenceUnusedParameter(*argv);
-#endif
+
    return 0;
 }
+#endif

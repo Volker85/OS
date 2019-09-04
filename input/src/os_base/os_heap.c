@@ -132,28 +132,4 @@ void OS_Free(void* ptr)
       }
    }
 }
-Local uint32 GetUint32Of4Uint8(uint8* ptr)
-{
-   uint32 ret_val = 0;
-
-   ret_val += ((uint32) *ptr)<< 24;
-   ptr++;
-   ret_val += ((uint32) *ptr)<< 16;
-   ptr++;
-   ret_val += ((uint32) *ptr)<< 8;
-   ptr++;
-   ret_val += ((uint32) *ptr)<< 0;
-
-   return ret_val;
-}
-Local void Set4Uint8ToUint32(uint8* ptr, uint32 value)
-{
-   *ptr = (value >>24)&0xFF;
-   ptr++;
-   *ptr = (value >>16)&0xFF;
-   ptr++;
-   *ptr = (value >>8)&0xFF;
-   ptr++;
-   *ptr = (value >>0)&0xFF;
-}
 #endif

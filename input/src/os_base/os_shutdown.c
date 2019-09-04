@@ -44,7 +44,7 @@ void OS_Shutdown(os_reset_type_t reset_typ)
       OS_DeinitHw();
       OS_DeinitSw();
       OS_DeinitMc();
-      OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);
+      OS_StartExtPrg((func_ptr_t) 0, (uint32)0, (uint32)0);/* TODO: line is unclear, why is the call done, why to address 0 ??*/
    }
    else
    {

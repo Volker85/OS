@@ -39,6 +39,7 @@ void OS_StackCheck(void)
    }
 }
 #if(CFG_PROCESSOR == cMCU_X86)
+/* this is done for CortexM4 in function INIT_OS_STACK() on assembler level, because no stack is allowed to be used during init, otherwise the SW will crash... */
 void OS_StackChkPatternInit(void)
 {
    uint32 stack_pos = 0;

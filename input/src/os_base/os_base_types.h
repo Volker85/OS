@@ -1,19 +1,7 @@
-#ifndef _BASE_TYPES_H_
-#define _BASE_TYPES_H_
+#ifndef _OS_BASE_TYPES_H_
+#define _OS_BASE_TYPES_H_
 
-#define INTEGER_LLP64_IL32P64 1
-#define INTEGER_LP64_I32LP64  2
-#define INTEGER_ILP64         3
-#define INTEGER_SILP64        4
 
-#define CPP_VERSION_NONE 0
-#define CPP_VERSION_1998 1
-#define CPP_VERSION_2003 2
-#define CPP_VERSION_2007 3
-#define CPP_VERSION_2011 4
-#define ISO_CPP_VERSION CPP_VERSION_1998
-
-#define INTEGER_MODEL INTEGER_LLP64_IL32P64
 /*
 64-bit data models (see Wikipedia)
 Data model
@@ -97,4 +85,4 @@ typedef   signed long long  sint64;
 #error "invalid INTEGER_MODEL"
 #endif
 
-#endif
+#endif /* _OS_BASE_TYPES_H_ */
