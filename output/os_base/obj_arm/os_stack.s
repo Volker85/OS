@@ -140,13 +140,13 @@ OS_StackCheck:
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0
-	.type	stack_pos.4040, %object
-	.size	stack_pos.4040, 4
-stack_pos.4040:
+	.type	stack_pos.4033, %object
+	.size	stack_pos.4033, 4
+stack_pos.4033:
 	.space	4
-	.type	stack_used.4041, %object
-	.size	stack_used.4041, 4
-stack_used.4041:
+	.type	stack_used.4034, %object
+	.size	stack_used.4034, 4
+stack_used.4034:
 	.space	4
 	.text
 .Letext0:
@@ -754,12 +754,12 @@ stack_used.4041:
 	.uleb128 0x12
 	.4byte	.LASF599
 	.byte	0x5
-	.byte	0x5d
+	.byte	0x5b
 	.4byte	0x498
 	.uleb128 0x2
 	.4byte	.LASF598
 	.byte	0x5
-	.byte	0x5f
+	.byte	0x5d
 	.4byte	0x253
 	.uleb128 0x9
 	.4byte	0x29
@@ -1076,7 +1076,7 @@ stack_used.4041:
 	.4byte	0x84
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	stack_pos.4040
+	.4byte	stack_pos.4033
 	.uleb128 0x16
 	.4byte	.LASF648
 	.byte	0x1
@@ -1084,7 +1084,7 @@ stack_used.4041:
 	.4byte	0x84
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	stack_used.4041
+	.4byte	stack_used.4034
 	.uleb128 0x17
 	.4byte	.LVL0
 	.4byte	0x7a0
@@ -3033,15 +3033,15 @@ stack_used.4041:
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x5f
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x62
+	.uleb128 0x60
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4,comdat

@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 1
 
 
    1              		.file	"os_main.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
   49:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** typedef enum os_reset_req_state_e
   50:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** {
   51:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    Reset_powerdown = 0,
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 2
 
 
   52:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    Reset_restart,
@@ -78,7 +78,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
   58:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****     Local uint32 call_nr = 0;
   59:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****     switch(call_nr)
   16              		.loc 1 59 0
-  17 0006 A1000000 		movl	_call_nr.1403, %eax
+  17 0006 A1000000 		movl	_call_nr.1396, %eax
   17      00
   18 000b 83F804   		cmpl	$4, %eax
   19 000e 776D     		ja	L10
@@ -105,10 +105,10 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
   34      00
   63:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         call_nr++;
   35              		.loc 1 63 0
-  36 0025 A1000000 		movl	_call_nr.1403, %eax
+  36 0025 A1000000 		movl	_call_nr.1396, %eax
   36      00
   37 002a 40       		incl	%eax
-  38 002b A3000000 		movl	%eax, _call_nr.1403
+  38 002b A3000000 		movl	%eax, _call_nr.1396
   38      00
   64:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         break;
   39              		.loc 1 64 0
@@ -118,13 +118,13 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
   66:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** 
   67:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         call_nr++;
   42              		.loc 1 67 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 3
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 3
 
 
-  43 0032 A1000000 		movl	_call_nr.1403, %eax
+  43 0032 A1000000 		movl	_call_nr.1396, %eax
   43      00
   44 0037 40       		incl	%eax
-  45 0038 A3000000 		movl	%eax, _call_nr.1403
+  45 0038 A3000000 		movl	%eax, _call_nr.1396
   45      00
   68:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         break;
   46              		.loc 1 68 0
@@ -139,10 +139,10 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
   51      00
   71:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         call_nr++;
   52              		.loc 1 71 0
-  53 004b A1000000 		movl	_call_nr.1403, %eax
+  53 004b A1000000 		movl	_call_nr.1396, %eax
   53      00
   54 0050 40       		incl	%eax
-  55 0051 A3000000 		movl	%eax, _call_nr.1403
+  55 0051 A3000000 		movl	%eax, _call_nr.1396
   55      00
   72:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         break;
   56              		.loc 1 72 0
@@ -152,10 +152,10 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
   74:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** 
   75:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         call_nr++;
   59              		.loc 1 75 0
-  60 0058 A1000000 		movl	_call_nr.1403, %eax
+  60 0058 A1000000 		movl	_call_nr.1396, %eax
   60      00
   61 005d 40       		incl	%eax
-  62 005e A3000000 		movl	%eax, _call_nr.1403
+  62 005e A3000000 		movl	%eax, _call_nr.1396
   62      00
   76:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         break;
   63              		.loc 1 76 0
@@ -170,7 +170,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
   68      00
   79:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         call_nr = 0;
   69              		.loc 1 79 0
-  70 0071 C7050000 		movl	$0, _call_nr.1403
+  70 0071 C7050000 		movl	$0, _call_nr.1396
   70      00000000 
   70      0000
   80:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         break;
@@ -178,7 +178,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
   72 007b EB01     		jmp	L1
   73              	L10:
   81:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****     default:
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 4
 
 
   82:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****         break;
@@ -238,7 +238,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  105:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** 
  106:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       /* trigger dispatcher */
  107:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       /* activate the dispatcher, configure TCMP interrupts for tasks */
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 5
 
 
  108:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       /* activate & start the Idle task */
@@ -253,55 +253,61 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  117:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
  118:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    case os_running:
  119:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    {
- 120:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       if(call_nr % 5 == 0)
- 121:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 122:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_DetermineNextTaskActivation();
- 123:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 124:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       call_nr++;
- 125:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       /* run the task function */
- 126:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       OS_TaskDispatcher();
- 127:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: current
- 128:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 129:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_STATE = os_shutdown;
- 130:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          sys_req_reset_state = Reset_restart;
- 131:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 132:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       break;
- 133:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
- 134:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    case os_shutdown:
- 135:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    {
- 136:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       LLF_INT_DISABLE();
- 137:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       switch(sys_req_reset_state)
- 138:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 139:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       case Reset_powerdown:
- 140:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 141:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_Shutdown(os_reset_powerdown);
- 142:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
- 143:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 144:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       case Reset_restart:
- 145:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 146:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_Shutdown(os_reset_hardreset);
- 147:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
- 148:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 149:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       case Reset_exit:
- 150:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 151:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_Shutdown(os_reset_exit);
- 152:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
- 153:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 154:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       default:
- 155:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 156:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_Shutdown(os_reset_hardreset);
- 157:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
- 158:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 120:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       /*
+ 121:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       TODO: OS_DetermineNextTaskActivation und OS_TaskDispatcher müssen m.E. öfters laufen wie der 
+ 122:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       Es macht keinen Sinn, immer den State Handler anzufragen, nur um das Task Handling zu trigger
+ 123:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       - Der Dispatcher müsste per Interrupt die laufende Task unterbrechen um dann (nach PreemptTas
+ 124:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       - Der OS_DetermineNextTaskActivation müsste vor jedem Aufruf on OS_TaskDispatcher laufen     
+ 125:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       */
+ 126:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       if(call_nr % 5 == 0)
+ 127:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 128:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_DetermineNextTaskActivation();
+ 129:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 130:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       call_nr++;
+ 131:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       /* run the task function */
+ 132:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       OS_TaskDispatcher();
+ 133:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: current
+ 134:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 135:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_STATE = os_shutdown;
+ 136:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          sys_req_reset_state = Reset_restart;
+ 137:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 138:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       break;
+ 139:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
+ 140:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    case os_shutdown:
+ 141:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    {
+ 142:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       LLF_INT_DISABLE();
+ 143:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       switch(sys_req_reset_state)
+ 144:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 145:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       case Reset_powerdown:
+ 146:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 147:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_Shutdown(os_reset_powerdown);
+ 148:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
+ 149:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 150:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       case Reset_restart:
+ 151:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 152:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_Shutdown(os_reset_hardreset);
+ 153:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
+ 154:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 155:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       case Reset_exit:
+ 156:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 157:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_Shutdown(os_reset_exit);
+ 158:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
  159:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 160:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       break;
- 161:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
- 162:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    default:
- 163:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    {
- 164:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       break;
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 6
+ 160:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       default:
+ 161:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 162:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          OS_Shutdown(os_reset_hardreset);
+ 163:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
+ 164:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 6
 
 
- 104              		.loc 1 164 0
+ 165:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 166:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       break;
+ 167:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
+ 168:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    default:
+ 169:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    {
+ 170:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       break;
+ 104              		.loc 1 170 0
  105 009e E9E90000 		jmp	L16
  105      00
  106              	L14:
@@ -350,149 +356,149 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  128 00e7 E9A00000 		jmp	L16
  128      00
  129              	L13:
- 120:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 130              		.loc 1 120 0
- 131 00ec A1040000 		movl	_call_nr.1415, %eax
+ 126:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 130              		.loc 1 126 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 7
+
+
+ 131 00ec A1040000 		movl	_call_nr.1408, %eax
  131      00
  132 00f1 B9050000 		movl	$5, %ecx
  132      00
  133 00f6 BA000000 		movl	$0, %edx
  133      00
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 7
-
-
  134 00fb F7F1     		divl	%ecx
  135 00fd 89D0     		movl	%edx, %eax
  136 00ff 85C0     		testl	%eax, %eax
  137 0101 7505     		jne	L17
- 122:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 138              		.loc 1 122 0
+ 128:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 138              		.loc 1 128 0
  139 0103 E8F8FEFF 		call	_OS_DetermineNextTaskActivation
  139      FF
  140              	L17:
- 124:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       /* run the task function */
- 141              		.loc 1 124 0
- 142 0108 A1040000 		movl	_call_nr.1415, %eax
+ 130:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       /* run the task function */
+ 141              		.loc 1 130 0
+ 142 0108 A1040000 		movl	_call_nr.1408, %eax
  142      00
  143 010d 40       		incl	%eax
- 144 010e A3040000 		movl	%eax, _call_nr.1415
+ 144 010e A3040000 		movl	%eax, _call_nr.1408
  144      00
- 126:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: current
- 145              		.loc 1 126 0
+ 132:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: current
+ 145              		.loc 1 132 0
  146 0113 E8000000 		call	_OS_TaskDispatcher
  146      00
- 127:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 147              		.loc 1 127 0
+ 133:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 147              		.loc 1 133 0
  148 0118 A0000000 		movb	_SYSTEM_STATE_ACCEPTED, %al
  148      00
  149 011d 3C02     		cmpb	$2, %al
  150 011f 7516     		jne	L18
- 129:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          sys_req_reset_state = Reset_restart;
- 151              		.loc 1 129 0
+ 135:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          sys_req_reset_state = Reset_restart;
+ 151              		.loc 1 135 0
  152 0121 C7050000 		movl	$2, _OS_STATE
  152      00000200 
  152      0000
- 130:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 153              		.loc 1 130 0
- 154 012b C7050800 		movl	$1, _sys_req_reset_state.1414
+ 136:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 153              		.loc 1 136 0
+ 154 012b C7050800 		movl	$1, _sys_req_reset_state.1407
  154      00000100 
  154      0000
- 132:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
- 155              		.loc 1 132 0
+ 138:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
+ 155              		.loc 1 138 0
  156 0135 EB55     		jmp	L16
  157              	L18:
  158 0137 EB53     		jmp	L16
  159              	L15:
- 136:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       switch(sys_req_reset_state)
- 160              		.loc 1 136 0
+ 142:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       switch(sys_req_reset_state)
+ 160              		.loc 1 142 0
  161 0139 E8000000 		call	_LLF_INT_DISABLE
  161      00
- 137:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
- 162              		.loc 1 137 0
- 163 013e A1080000 		movl	_sys_req_reset_state.1414, %eax
+ 143:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       {
+ 162              		.loc 1 143 0
+ 163 013e A1080000 		movl	_sys_req_reset_state.1407, %eax
  163      00
  164 0143 83F801   		cmpl	$1, %eax
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 8
+
+
  165 0146 741A     		je	L20
  166 0148 83F801   		cmpl	$1, %eax
  167 014b 7207     		jb	L21
  168 014d 83F802   		cmpl	$2, %eax
  169 0150 741E     		je	L22
  170 0152 EB2A     		jmp	L24
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 8
-
-
  171              	L21:
- 141:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
- 172              		.loc 1 141 0
+ 147:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
+ 172              		.loc 1 147 0
  173 0154 C7042401 		movl	$1, (%esp)
  173      000000
  174 015b E8000000 		call	_OS_Shutdown
  174      00
- 142:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 175              		.loc 1 142 0
+ 148:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 175              		.loc 1 148 0
  176 0160 EB29     		jmp	L23
  177              	L20:
- 146:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
- 178              		.loc 1 146 0
+ 152:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
+ 178              		.loc 1 152 0
  179 0162 C7042400 		movl	$0, (%esp)
  179      000000
  180 0169 E8000000 		call	_OS_Shutdown
  180      00
- 147:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 181              		.loc 1 147 0
+ 153:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 181              		.loc 1 153 0
  182 016e EB1B     		jmp	L23
  183              	L22:
- 151:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
- 184              		.loc 1 151 0
+ 157:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
+ 184              		.loc 1 157 0
  185 0170 C7042402 		movl	$2, (%esp)
  185      000000
  186 0177 E8000000 		call	_OS_Shutdown
  186      00
- 152:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 187              		.loc 1 152 0
+ 158:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 187              		.loc 1 158 0
  188 017c EB0D     		jmp	L23
  189              	L24:
- 156:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
- 190              		.loc 1 156 0
+ 162:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****          break;
+ 190              		.loc 1 162 0
  191 017e C7042400 		movl	$0, (%esp)
  191      000000
  192 0185 E8000000 		call	_OS_Shutdown
  192      00
- 157:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
- 193              		.loc 1 157 0
+ 163:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****       }
+ 193              		.loc 1 163 0
  194 018a 90       		nop
  195              	L23:
- 160:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
- 196              		.loc 1 160 0
+ 166:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
+ 196              		.loc 1 166 0
  197 018b 90       		nop
  198              	L16:
- 165:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
- 166:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
- 167:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    /*check the complete stack apart from the first 64 bytes to detect critical stack usage */
- 168:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    OS_StackCheck();
- 199              		.loc 1 168 0
+ 171:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
+ 172:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
+ 173:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    /*check the complete stack apart from the first 64 bytes to detect critical stack usage */
+ 174:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    OS_StackCheck();
+ 199              		.loc 1 174 0
  200 018c E8000000 		call	_OS_StackCheck
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 9
+
+
  200      00
- 169:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** #if(CFG_PROCESSOR != cMCU_X86)
- 170:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    /* wait until timer task, else the program would return to the next instruction after the reset 
- 171:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    while(1)
- 172:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    {
- 173:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 9
-
-
- 174:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** #endif
- 175:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** }
- 201              		.loc 1 175 0
+ 175:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** #if(CFG_PROCESSOR != cMCU_X86)
+ 176:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    /* wait until timer task, else the program would return to the next instruction after the reset 
+ 177:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    while(1)
+ 178:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    {
+ 179:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c ****    }
+ 180:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** #endif
+ 181:E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base\os_main.c **** }
+ 201              		.loc 1 181 0
  202 0191 C9       		leave
  203              		.cfi_restore 5
  204              		.cfi_def_cfa 4, 4
  205 0192 C3       		ret
  206              		.cfi_endproc
  207              	LFE1:
- 208              	.lcomm _call_nr.1403,4,4
- 209              	.lcomm _call_nr.1415,4,4
- 210              	.lcomm _sys_req_reset_state.1414,4,4
+ 208              	.lcomm _call_nr.1396,4,4
+ 209              	.lcomm _call_nr.1408,4,4
+ 210              	.lcomm _sys_req_reset_state.1407,4,4
  211              	Letext0:
  212              		.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
  213              		.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -532,15 +538,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  236 009e A2000000 		.long	0xa2
  237 00a2 03       		.uleb128 0x3
  238 00a3 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 10
+
+
  239 00a4 08       		.byte	0x8
  240 00a5 756E7369 		.ascii "unsigned char\0"
  240      676E6564 
  240      20636861 
  240      7200
  241 00b3 03       		.uleb128 0x3
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 10
-
-
  242 00b4 01       		.byte	0x1
  243 00b5 06       		.byte	0x6
  244 00b6 7369676E 		.ascii "signed char\0"
@@ -592,15 +598,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  271 012b 02       		.uleb128 0x2
  272 012c 75696E74 		.ascii "uint32\0"
  272      333200
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 11
+
+
  273 0133 02       		.byte	0x2
  274 0134 29       		.byte	0x29
  275 0135 0A010000 		.long	0x10a
  276 0139 04       		.uleb128 0x4
  277 013a 42696749 		.ascii "BigInt_s\0"
  277      6E745F73 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 11
-
-
  277      00
  278 0143 10       		.byte	0x10
  279 0144 03       		.byte	0x3
@@ -652,15 +658,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  313 01c6 00       		.sleb128 0
  314 01c7 09       		.uleb128 0x9
  315 01c8 65507269 		.ascii "ePriviligeMode_priviliged_thread_mode\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 12
+
+
  315      76696C69 
  315      67654D6F 
  315      64655F70 
  315      72697669 
  316 01ee 01       		.sleb128 1
  317 01ef 09       		.uleb128 0x9
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 12
-
-
  318 01f0 65507269 		.ascii "ePriviligeMode_priviliged_handler_mode\0"
  318      76696C69 
  318      67654D6F 
@@ -712,15 +718,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  343 0285 03       		.sleb128 3
  344 0286 00       		.byte	0
  345 0287 02       		.uleb128 0x2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 13
+
+
  346 0288 7461736B 		.ascii "task_state_t\0"
  346      5F737461 
  346      74655F74 
  346      00
  347 0295 05       		.byte	0x5
  348 0296 0E       		.byte	0xe
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 13
-
-
  349 0297 31020000 		.long	0x231
  350 029b 02       		.uleb128 0x2
  351 029c 66756E63 		.ascii "func_p_t\0"
@@ -772,15 +778,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  387      75705F73 
  387      00
  388 0314 20       		.byte	0x20
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 14
+
+
  389 0315 05       		.byte	0x5
  390 0316 18       		.byte	0x18
  391 0317 3E030000 		.long	0x33e
  392 031b 0F       		.uleb128 0xf
  393 031c 00000000 		.secrel32	LASF0
  394 0320 05       		.byte	0x5
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 14
-
-
  395 0321 1A       		.byte	0x1a
  396 0322 F5020000 		.long	0x2f5
  397 0326 00       		.byte	0
@@ -832,15 +838,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  433 0389 00       		.byte	0
  434 038a 10       		.uleb128 0x10
  435 038b 49646C65 		.ascii "IdleTask\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 15
+
+
  435      5461736B 
  435      00
  436 0394 05       		.byte	0x5
  437 0395 23       		.byte	0x23
  438 0396 C6050000 		.long	0x5c6
  439 039a 04       		.byte	0x4
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 15
-
-
  440 039b 01       		.byte	0x1
  441 039c 1D       		.byte	0x1d
  442 039d 00       		.byte	0
@@ -892,15 +898,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  475 0404 16       		.byte	0x16
  476 0405 05       		.uleb128 0x5
  477 0406 54696D65 		.ascii "TimeToPrioInc\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 16
+
+
  477      546F5072 
  477      696F496E 
  477      6300
  478 0414 05       		.byte	0x5
  479 0415 29       		.byte	0x29
  480 0416 F5020000 		.long	0x2f5
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 16
-
-
  481 041a 26       		.byte	0x26
  482 041b 05       		.uleb128 0x5
  483 041c 6F766572 		.ascii "overwaittime_per_prio_inc_step\0"
@@ -952,15 +958,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  513      00
  514 04a2 05       		.byte	0x5
  515 04a3 2F       		.byte	0x2f
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 17
+
+
  516 04a4 8B000000 		.long	0x8b
  517 04a8 6D       		.byte	0x6d
  518 04a9 05       		.uleb128 0x5
  519 04aa 7461736B 		.ascii "task_number\0"
  519      5F6E756D 
  519      62657200 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 17
-
-
  520 04b6 05       		.byte	0x5
  521 04b7 30       		.byte	0x30
  522 04b8 F2000000 		.long	0xf2
@@ -1012,15 +1018,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  561 051d 45435800 		.ascii "ECX\0"
  562 0521 05       		.byte	0x5
  563 0522 38       		.byte	0x38
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 18
+
+
  564 0523 F2000000 		.long	0xf2
  565 0527 8C       		.byte	0x8c
  566 0528 05       		.uleb128 0x5
  567 0529 45445800 		.ascii "EDX\0"
  568 052d 05       		.byte	0x5
  569 052e 39       		.byte	0x39
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 18
-
-
  570 052f F2000000 		.long	0xf2
  571 0533 90       		.byte	0x90
  572 0534 05       		.uleb128 0x5
@@ -1072,15 +1078,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  601 05ad A4       		.byte	0xa4
  602 05ae 05       		.uleb128 0x5
  603 05af 70726976 		.ascii "privilige_mode\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 19
+
+
  603      696C6967 
  603      655F6D6F 
  603      646500
  604 05be 05       		.byte	0x5
  605 05bf 4E       		.byte	0x4e
  606 05c0 19020000 		.long	0x219
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 19
-
-
  607 05c4 A8       		.byte	0xa8
  608 05c5 00       		.byte	0
  609 05c6 03       		.uleb128 0x3
@@ -1132,15 +1138,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  637      7400
  638 0641 02       		.sleb128 2
  639 0642 00       		.byte	0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 20
+
+
  640 0643 08       		.uleb128 0x8
  641 0644 6F735F72 		.ascii "os_reset_req_state_e\0"
  641      65736574 
  641      5F726571 
  641      5F737461 
  641      74655F65 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 20
-
-
  642 0659 04       		.byte	0x4
  643 065a 01       		.byte	0x1
  644 065b 31       		.byte	0x31
@@ -1192,15 +1198,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  673 06e6 3A       		.byte	0x3a
  674 06e7 2B010000 		.long	0x12b
  675 06eb 05       		.uleb128 0x5
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 21
+
+
  676 06ec 03       		.byte	0x3
- 677 06ed 00000000 		.long	_call_nr.1403
+ 677 06ed 00000000 		.long	_call_nr.1396
  678 06f1 00       		.byte	0
  679 06f2 13       		.uleb128 0x13
  680 06f3 4F535F53 		.ascii "OS_StateHandler\0"
  680      74617465 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 21
-
-
  680      48616E64 
  680      6C657200 
  681 0703 01       		.byte	0x1
@@ -1221,7 +1227,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  692 072a 90060000 		.long	0x690
  693 072e 05       		.uleb128 0x5
  694 072f 03       		.byte	0x3
- 695 0730 08000000 		.long	_sys_req_reset_state.1414
+ 695 0730 08000000 		.long	_sys_req_reset_state.1407
  696 0734 12       		.uleb128 0x12
  697 0735 63616C6C 		.ascii "call_nr\0"
  697      5F6E7200 
@@ -1230,7 +1236,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  700 073f 2B010000 		.long	0x12b
  701 0743 05       		.uleb128 0x5
  702 0744 03       		.byte	0x3
- 703 0745 04000000 		.long	_call_nr.1415
+ 703 0745 04000000 		.long	_call_nr.1408
  704 0749 00       		.byte	0
  705 074a 14       		.uleb128 0x14
  706 074b 4F535F53 		.ascii "OS_STATE\0"
@@ -1252,15 +1258,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  718 0772 5441534B 		.ascii "TASK_1_VAR\0"
  718      5F315F56 
  718      415200
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 22
+
+
  719 077d 07       		.byte	0x7
  720 077e 2E       		.byte	0x2e
  721 077f E2050000 		.long	0x5e2
  722 0783 14       		.uleb128 0x14
  723 0784 5441534B 		.ascii "TASK_2_VAR\0"
  723      5F325F56 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 22
-
-
  723      415200
  724 078f 07       		.byte	0x7
  725 0790 2E       		.byte	0x2e
@@ -1312,15 +1318,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  765 0018 08       		.uleb128 0x8
  766 0019 3A       		.uleb128 0x3a
  767 001a 0B       		.uleb128 0xb
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 23
+
+
  768 001b 3B       		.uleb128 0x3b
  769 001c 0B       		.uleb128 0xb
  770 001d 49       		.uleb128 0x49
  771 001e 13       		.uleb128 0x13
  772 001f 00       		.byte	0
  773 0020 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 23
-
-
  774 0021 03       		.uleb128 0x3
  775 0022 24       		.uleb128 0x24
  776 0023 00       		.byte	0
@@ -1372,15 +1378,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  822 0051 00       		.byte	0
  823 0052 00       		.byte	0
  824 0053 07       		.uleb128 0x7
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 24
+
+
  825 0054 21       		.uleb128 0x21
  826 0055 00       		.byte	0
  827 0056 49       		.uleb128 0x49
  828 0057 13       		.uleb128 0x13
  829 0058 2F       		.uleb128 0x2f
  830 0059 0B       		.uleb128 0xb
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 24
-
-
  831 005a 00       		.byte	0
  832 005b 00       		.byte	0
  833 005c 08       		.uleb128 0x8
@@ -1432,15 +1438,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  879 008a 13       		.uleb128 0x13
  880 008b 00       		.byte	0
  881 008c 00       		.byte	0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 25
+
+
  882 008d 0D       		.uleb128 0xd
  883 008e 0F       		.uleb128 0xf
  884 008f 00       		.byte	0
  885 0090 0B       		.uleb128 0xb
  886 0091 0B       		.uleb128 0xb
  887 0092 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 25
-
-
  888 0093 00       		.byte	0
  889 0094 0E       		.uleb128 0xe
  890 0095 15       		.uleb128 0x15
@@ -1492,15 +1498,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  936 00c3 11       		.uleb128 0x11
  937 00c4 2E       		.uleb128 0x2e
  938 00c5 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 26
+
+
  939 00c6 03       		.uleb128 0x3
  940 00c7 08       		.uleb128 0x8
  941 00c8 3A       		.uleb128 0x3a
  942 00c9 0B       		.uleb128 0xb
  943 00ca 3B       		.uleb128 0x3b
  944 00cb 0B       		.uleb128 0xb
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 26
-
-
  945 00cc 27       		.uleb128 0x27
  946 00cd 19       		.uleb128 0x19
  947 00ce 11       		.uleb128 0x11
@@ -1552,15 +1558,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  993 00fd 9642     		.uleb128 0x2116
  994 00ff 19       		.uleb128 0x19
  995 0100 01       		.uleb128 0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 27
+
+
  996 0101 13       		.uleb128 0x13
  997 0102 00       		.byte	0
  998 0103 00       		.byte	0
  999 0104 14       		.uleb128 0x14
  1000 0105 34       		.uleb128 0x34
  1001 0106 00       		.byte	0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 27
-
-
  1002 0107 03       		.uleb128 0x3
  1003 0108 08       		.uleb128 0x8
  1004 0109 3A       		.uleb128 0x3a
@@ -1612,15 +1618,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1046      4F535445 
  1046      445F5F20 
  1046      3100
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 28
+
+
  1047 0028 01       		.byte	0x1
  1048 0029 00       		.uleb128 0
  1049 002a 5F5F474E 		.ascii "__GNUC__ 4\0"
  1049      55435F5F 
  1049      203400
  1050 0035 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 28
-
-
  1051 0036 00       		.uleb128 0
  1052 0037 5F5F474E 		.ascii "__GNUC_MINOR__ 9\0"
  1052      55435F4D 
@@ -1672,15 +1678,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1071 00ca 01       		.byte	0x1
  1072 00cb 00       		.uleb128 0
  1073 00cc 5F5F4154 		.ascii "__ATOMIC_ACQ_REL 4\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 29
+
+
  1073      4F4D4943 
  1073      5F414351 
  1073      5F52454C 
  1073      203400
  1074 00df 01       		.byte	0x1
  1075 00e0 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 29
-
-
  1076 00e1 5F5F4154 		.ascii "__ATOMIC_CONSUME 1\0"
  1076      4F4D4943 
  1076      5F434F4E 
@@ -1732,15 +1738,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1096 0178 00       		.uleb128 0
  1097 0179 5F5F5349 		.ascii "__SIZEOF_DOUBLE__ 8\0"
  1097      5A454F46 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 30
+
+
  1097      5F444F55 
  1097      424C455F 
  1097      5F203800 
  1098 018d 01       		.byte	0x1
  1099 018e 00       		.uleb128 0
  1100 018f 5F5F5349 		.ascii "__SIZEOF_LONG_DOUBLE__ 12\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 30
-
-
  1100      5A454F46 
  1100      5F4C4F4E 
  1100      475F444F 
@@ -1792,15 +1798,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1121      54455F4F 
  1121      52444552 
  1121      5F5F205F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 31
+
+
  1121      5F4F5244 
  1122 026b 01       		.byte	0x1
  1123 026c 00       		.uleb128 0
  1124 026d 5F5F464C 		.ascii "__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
  1124      4F41545F 
  1124      574F5244 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 31
-
-
  1124      5F4F5244 
  1124      45525F5F 
  1125 029a 01       		.byte	0x1
@@ -1852,15 +1858,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1145      585F5459 
  1145      50455F5F 
  1145      206C6F6E 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 32
+
+
  1146 0376 01       		.byte	0x1
  1147 0377 00       		.uleb128 0
  1148 0378 5F5F4348 		.ascii "__CHAR16_TYPE__ short unsigned int\0"
  1148      41523136 
  1148      5F545950 
  1148      455F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 32
-
-
  1148      73686F72 
  1149 039b 01       		.byte	0x1
  1150 039c 00       		.uleb128 0
@@ -1912,15 +1918,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1169      5F5F2075 
  1169      6E736967 
  1170 045e 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 33
+
+
  1171 045f 00       		.uleb128 0
  1172 0460 5F5F5549 		.ascii "__UINT16_TYPE__ short unsigned int\0"
  1172      4E543136 
  1172      5F545950 
  1172      455F5F20 
  1172      73686F72 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 33
-
-
  1173 0483 01       		.byte	0x1
  1174 0484 00       		.uleb128 0
  1175 0485 5F5F5549 		.ascii "__UINT32_TYPE__ unsigned int\0"
@@ -1972,15 +1978,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1193      50455F5F 
  1194 0573 01       		.byte	0x1
  1195 0574 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 34
+
+
  1196 0575 5F5F5549 		.ascii "__UINT_LEAST16_TYPE__ short unsigned int\0"
  1196      4E545F4C 
  1196      45415354 
  1196      31365F54 
  1196      5950455F 
  1197 059e 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 34
-
-
  1198 059f 00       		.uleb128 0
  1199 05a0 5F5F5549 		.ascii "__UINT_LEAST32_TYPE__ unsigned int\0"
  1199      4E545F4C 
@@ -2032,15 +2038,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1218 0695 01       		.byte	0x1
  1219 0696 00       		.uleb128 0
  1220 0697 5F5F5549 		.ascii "__UINT_FAST16_TYPE__ short unsigned int\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 35
+
+
  1220      4E545F46 
  1220      41535431 
  1220      365F5459 
  1220      50455F5F 
  1221 06bf 01       		.byte	0x1
  1222 06c0 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 35
-
-
  1223 06c1 5F5F5549 		.ascii "__UINT_FAST32_TYPE__ unsigned int\0"
  1223      4E545F46 
  1223      41535433 
@@ -2092,15 +2098,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1243 07bf 00       		.uleb128 0
  1244 07c0 5F5F5343 		.ascii "__SCHAR_MAX__ 127\0"
  1244      4841525F 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 36
+
+
  1244      4D41585F 
  1244      5F203132 
  1244      3700
  1245 07d2 01       		.byte	0x1
  1246 07d3 00       		.uleb128 0
  1247 07d4 5F5F5348 		.ascii "__SHRT_MAX__ 32767\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 36
-
-
  1247      52545F4D 
  1247      41585F5F 
  1247      20333237 
@@ -2152,15 +2158,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1268      4E545F4D 
  1268      494E5F5F 
  1268      203000
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 37
+
+
  1269 0893 01       		.byte	0x1
  1270 0894 00       		.uleb128 0
  1271 0895 5F5F5054 		.ascii "__PTRDIFF_MAX__ 2147483647\0"
  1271      52444946 
  1271      465F4D41 
  1271      585F5F20 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 37
-
-
  1271      32313437 
  1272 08b0 01       		.byte	0x1
  1273 08b1 00       		.uleb128 0
@@ -2212,15 +2218,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1292      5F4D494E 
  1292      5F5F2028 
  1293 099d 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 38
+
+
  1294 099e 00       		.uleb128 0
  1295 099f 5F5F494E 		.ascii "__INT8_MAX__ 127\0"
  1295      54385F4D 
  1295      41585F5F 
  1295      20313237 
  1295      00
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 38
-
-
  1296 09b0 01       		.byte	0x1
  1297 09b1 00       		.uleb128 0
  1298 09b2 5F5F494E 		.ascii "__INT16_MAX__ 32767\0"
@@ -2272,15 +2278,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1316      38343436 
  1317 0a78 01       		.byte	0x1
  1318 0a79 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 39
+
+
  1319 0a7a 5F5F494E 		.ascii "__INT_LEAST8_MAX__ 127\0"
  1319      545F4C45 
  1319      41535438 
  1319      5F4D4158 
  1319      5F5F2031 
  1320 0a91 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 39
-
-
  1321 0a92 00       		.uleb128 0
  1322 0a93 5F5F494E 		.ascii "__INT8_C(c) c\0"
  1322      54385F43 
@@ -2332,15 +2338,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1343      4E545F4C 
  1343      45415354 
  1343      385F4D41 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 40
+
+
  1343      585F5F20 
  1344 0b5d 01       		.byte	0x1
  1345 0b5e 00       		.uleb128 0
  1346 0b5f 5F5F5549 		.ascii "__UINT8_C(c) c\0"
  1346      4E54385F 
  1346      43286329 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 40
-
-
  1346      206300
  1347 0b6e 01       		.byte	0x1
  1348 0b6f 00       		.uleb128 0
@@ -2392,15 +2398,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1367      5F203132 
  1368 0c37 01       		.byte	0x1
  1369 0c38 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 41
+
+
  1370 0c39 5F5F494E 		.ascii "__INT_FAST16_MAX__ 32767\0"
  1370      545F4641 
  1370      53543136 
  1370      5F4D4158 
  1370      5F5F2033 
  1371 0c52 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 41
-
-
  1372 0c53 00       		.uleb128 0
  1373 0c54 5F5F494E 		.ascii "__INT_FAST32_MAX__ 2147483647\0"
  1373      545F4641 
@@ -2452,15 +2458,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1392 0d3e 01       		.byte	0x1
  1393 0d3f 00       		.uleb128 0
  1394 0d40 5F5F5549 		.ascii "__UINTPTR_MAX__ 4294967295U\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 42
+
+
  1394      4E545054 
  1394      525F4D41 
  1394      585F5F20 
  1394      34323934 
  1395 0d5c 01       		.byte	0x1
  1396 0d5d 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 42
-
-
  1397 0d5e 5F5F4743 		.ascii "__GCC_IEC_559 2\0"
  1397      435F4945 
  1397      435F3535 
@@ -2512,15 +2518,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1418      4E5F4558 
  1418      505F5F20 
  1418      282D3132 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 43
+
+
  1419 0e09 01       		.byte	0x1
  1420 0e0a 00       		.uleb128 0
  1421 0e0b 5F5F464C 		.ascii "__FLT_MIN_10_EXP__ (-37)\0"
  1421      545F4D49 
  1421      4E5F3130 
  1421      5F455850 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 43
-
-
  1421      5F5F2028 
  1422 0e24 01       		.byte	0x1
  1423 0e25 00       		.uleb128 0
@@ -2572,15 +2578,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1442      5F4D494E 
  1442      5F5F2031 
  1443 0f1c 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 44
+
+
  1444 0f1d 00       		.uleb128 0
  1445 0f1e 5F5F464C 		.ascii "__FLT_HAS_DENORM__ 1\0"
  1445      545F4841 
  1445      535F4445 
  1445      4E4F524D 
  1445      5F5F2031 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 44
-
-
  1446 0f33 01       		.byte	0x1
  1447 0f34 00       		.uleb128 0
  1448 0f35 5F5F464C 		.ascii "__FLT_HAS_INFINITY__ 1\0"
@@ -2632,15 +2638,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1467 0fda 01       		.byte	0x1
  1468 0fdb 00       		.uleb128 0
  1469 0fdc 5F5F4442 		.ascii "__DBL_MAX_10_EXP__ 308\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 45
+
+
  1469      4C5F4D41 
  1469      585F3130 
  1469      5F455850 
  1469      5F5F2033 
  1470 0ff3 01       		.byte	0x1
  1471 0ff4 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 45
-
-
  1472 0ff5 5F5F4442 		.ascii "__DBL_DECIMAL_DIG__ 17\0"
  1472      4C5F4445 
  1472      43494D41 
@@ -2692,15 +2698,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1492 111b 00       		.uleb128 0
  1493 111c 5F5F4442 		.ascii "__DBL_HAS_QUIET_NAN__ 1\0"
  1493      4C5F4841 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 46
+
+
  1493      535F5155 
  1493      4945545F 
  1493      4E414E5F 
  1494 1134 01       		.byte	0x1
  1495 1135 00       		.uleb128 0
  1496 1136 5F5F4C44 		.ascii "__LDBL_MANT_DIG__ 64\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 46
-
-
  1496      424C5F4D 
  1496      414E545F 
  1496      4449475F 
@@ -2752,15 +2758,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1517      424C5F4D 
  1517      41585F5F 
  1517      20312E31 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 47
+
+
  1517      38393733 
  1518 120d 01       		.byte	0x1
  1519 120e 00       		.uleb128 0
  1520 120f 5F5F4C44 		.ascii "__LDBL_MIN__ 3.36210314311209350626e-4932L\0"
  1520      424C5F4D 
  1520      494E5F5F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 47
-
-
  1520      20332E33 
  1520      36323130 
  1521 123a 01       		.byte	0x1
@@ -2812,15 +2818,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1541      4D494E5F 
  1541      4558505F 
  1541      5F20282D 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 48
+
+
  1542 131b 01       		.byte	0x1
  1543 131c 00       		.uleb128 0
  1544 131d 5F5F4445 		.ascii "__DEC32_MAX_EXP__ 97\0"
  1544      4333325F 
  1544      4D41585F 
  1544      4558505F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 48
-
-
  1544      5F203937 
  1545 1332 01       		.byte	0x1
  1546 1333 00       		.uleb128 0
@@ -2872,15 +2878,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1565      4558505F 
  1565      5F203338 
  1566 13f7 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 49
+
+
  1567 13f8 00       		.uleb128 0
  1568 13f9 5F5F4445 		.ascii "__DEC64_MIN__ 1E-383DD\0"
  1568      4336345F 
  1568      4D494E5F 
  1568      5F203145 
  1568      2D333833 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 49
-
-
  1569 1410 01       		.byte	0x1
  1570 1411 00       		.uleb128 0
  1571 1412 5F5F4445 		.ascii "__DEC64_MAX__ 9.999999999999999E384DD\0"
@@ -2932,15 +2938,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1589      452D3631 
  1590 14f2 01       		.byte	0x1
  1591 14f3 00       		.uleb128 0
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 50
+
+
  1592 14f4 5F5F4445 		.ascii "__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL\0"
  1592      43313238 
  1592      5F4D4158 
  1592      5F5F2039 
  1592      2E393939 
  1593 152e 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 50
-
-
  1594 152f 00       		.uleb128 0
  1595 1530 5F5F4445 		.ascii "__DEC128_EPSILON__ 1E-33DL\0"
  1595      43313238 
@@ -2992,15 +2998,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1615 1602 00       		.uleb128 0
  1616 1603 5F5F4743 		.ascii "__GCC_ATOMIC_BOOL_LOCK_FREE 1\0"
  1616      435F4154 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 51
+
+
  1616      4F4D4943 
  1616      5F424F4F 
  1616      4C5F4C4F 
  1617 1621 01       		.byte	0x1
  1618 1622 00       		.uleb128 0
  1619 1623 5F5F4743 		.ascii "__GCC_ATOMIC_CHAR_LOCK_FREE 1\0"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 51
-
-
  1619      435F4154 
  1619      4F4D4943 
  1619      5F434841 
@@ -3052,15 +3058,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1640 170e 5F5F4743 		.ascii "__GCC_ATOMIC_LLONG_LOCK_FREE 1\0"
  1640      435F4154 
  1640      4F4D4943 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 52
+
+
  1640      5F4C4C4F 
  1640      4E475F4C 
  1641 172d 01       		.byte	0x1
  1642 172e 00       		.uleb128 0
  1643 172f 5F5F4743 		.ascii "__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\0"
  1643      435F4154 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 52
-
-
  1643      4F4D4943 
  1643      5F544553 
  1643      545F414E 
@@ -3112,15 +3118,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1664      38362031 
  1664      00
  1665 1803 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 53
+
+
  1666 1804 00       		.uleb128 0
  1667 1805 5F5F6933 		.ascii "__i386__ 1\0"
  1667      38365F5F 
  1667      203100
  1668 1810 01       		.byte	0x1
  1669 1811 00       		.uleb128 0
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 53
-
-
  1670 1812 5F5F4154 		.ascii "__ATOMIC_HLE_ACQUIRE 65536\0"
  1670      4F4D4943 
  1670      5F484C45 
@@ -3172,15 +3178,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1691      5F617474 
  1691      72696275 
  1692 18fc 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 54
+
+
  1693 18fd 00       		.uleb128 0
  1694 18fe 5F5F6364 		.ascii "__cdecl __attribute__((__cdecl__))\0"
  1694      65636C20 
  1694      5F5F6174 
  1694      74726962 
  1694      7574655F 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 54
-
-
  1695 1921 01       		.byte	0x1
  1696 1922 00       		.uleb128 0
  1697 1923 5F5F4758 		.ascii "__GXX_MERGED_TYPEINFO_NAMES 0\0"
@@ -3232,15 +3238,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1721 19b6 5F5F5749 		.ascii "__WINNT__ 1\0"
  1721      4E4E545F 
  1721      5F203100 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 55
+
+
  1722 19c2 01       		.byte	0x1
  1723 19c3 00       		.uleb128 0
  1724 19c4 5F494E54 		.ascii "_INTEGRAL_MAX_BITS 64\0"
  1724      45475241 
  1724      4C5F4D41 
  1724      585F4249 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 55
-
-
  1724      54532036 
  1725 19da 01       		.byte	0x1
  1726 19db 00       		.uleb128 0
@@ -3292,15 +3298,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1752      4C4C5036 
  1752      345F494C 
  1752      33325036 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 56
+
+
  1753 1a72 01       		.byte	0x1
  1754 1a73 05       		.uleb128 0x5
  1755 1a74 494E5445 		.ascii "INTEGER_LP64_I32LP64 2\0"
  1755      4745525F 
  1755      4C503634 
  1755      5F493332 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 56
-
-
  1755      4C503634 
  1756 1a8b 01       		.byte	0x1
  1757 1a8c 06       		.uleb128 0x6
@@ -3352,15 +3358,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1776      203400
  1777 1b19 01       		.byte	0x1
  1778 1b1a 0E       		.uleb128 0xe
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 57
+
+
  1779 1b1b 49534F5F 		.ascii "ISO_CPP_VERSION CPP_VERSION_1998\0"
  1779      4350505F 
  1779      56455253 
  1779      494F4E20 
  1779      4350505F 
  1780 1b3c 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 57
-
-
  1781 1b3d 10       		.uleb128 0x10
  1782 1b3e 494E5445 		.ascii "INTEGER_MODEL INTEGER_LLP64_IL32P64\0"
  1782      4745525F 
@@ -3412,15 +3418,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1810      61746963 
  1810      00
  1811 1bcd 01       		.byte	0x1
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 58
+
+
  1812 1bce 0D       		.uleb128 0xd
  1813 1bcf 4C6F6361 		.ascii "Local_inline static __inline__\0"
  1813      6C5F696E 
  1813      6C696E65 
  1813      20737461 
  1813      74696320 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 58
-
-
  1814 1bee 01       		.byte	0x1
  1815 1bef 0E       		.uleb128 0xe
  1816 1bf0 476C6F62 		.ascii "Global_inline __inline__\0"
@@ -3472,15 +3478,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1837 1ca6 44697361 		.ascii "DisableInterrupts() \0"
  1837      626C6549 
  1837      6E746572 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 59
+
+
  1837      72757074 
  1837      73282920 
  1838 1cbb 01       		.byte	0x1
  1839 1cbc 1E       		.uleb128 0x1e
  1840 1cbd 456E6162 		.ascii "EnableInterrupts() \0"
  1840      6C65496E 
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 59
-
-
  1840      74657272 
  1840      75707473 
  1840      28292000 
@@ -3532,15 +3538,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1866 1d72 04       		.uleb128 0x4
  1867 1d73 01       		.byte	0x1
  1868 1d74 02       		.uleb128 0x2
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 60
+
+
  1869 1d75 5F6C6C64 		.ascii "_lld_core_h_ \0"
  1869      5F636F72 
  1869      655F685F 
  1869      2000
  1870              		.file 10 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_first
  1871 1d83 03       		.byte	0x3
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 60
-
-
  1872 1d84 03       		.uleb128 0x3
  1873 1d85 0A       		.uleb128 0xa
  1874 1d86 04       		.byte	0x4
@@ -3592,15 +3598,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1897      5F737769 
  1897      5F352061 
  1898 1e4a 04       		.byte	0x4
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 61
+
+
  1899              		.file 12 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_mmu.h"
  1900 1e4b 03       		.byte	0x3
  1901 1e4c 06       		.uleb128 0x6
  1902 1e4d 0C       		.uleb128 0xc
  1903 1e4e 01       		.byte	0x1
  1904 1e4f 02       		.uleb128 0x2
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 61
-
-
  1905 1e50 5F6C6C64 		.ascii "_lld_mmu_h_ \0"
  1905      5F6D6D75 
  1905      5F685F20 
@@ -3652,15 +3658,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1937 1eb4 03       		.byte	0x3
  1938 1eb5 03       		.uleb128 0x3
  1939 1eb6 0A       		.uleb128 0xa
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 62
+
+
  1940 1eb7 04       		.byte	0x4
  1941              		.file 16 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_task_
  1942 1eb8 03       		.byte	0x3
  1943 1eb9 04       		.uleb128 0x4
  1944 1eba 10       		.uleb128 0x10
  1945 1ebb 01       		.byte	0x1
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 62
-
-
  1946 1ebc 02       		.uleb128 0x2
  1947 1ebd 5F6F735F 		.ascii "_os_task_config_h_ \0"
  1947      7461736B 
@@ -3712,15 +3718,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1966 1f9b 01       		.byte	0x1
  1967 1f9c 0B       		.uleb128 0xb
  1968 1f9d 4D41585F 		.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 63
+
+
  1968      52554E5F 
  1968      50515545 
  1968      55455F53 
  1968      495A4520 
  1969 1fc4 01       		.byte	0x1
  1970 1fc5 0D       		.uleb128 0xd
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 63
-
-
  1971 1fc6 5441534B 		.ascii "TASK_STACK_SIZE 2000\0"
  1971      5F535441 
  1971      434B5F53 
@@ -3754,14 +3760,14 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1985      7374656D 
  1986 202e 04       		.byte	0x4
  1987 202f 01       		.byte	0x1
- 1988 2030 61       		.uleb128 0x61
+ 1988 2030 5F       		.uleb128 0x5f
  1989 2031 6F735F53 		.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
  1989      61766554 
  1989      61736B50 
  1989      74722874 
  1989      61736B5F 
  1990 2079 01       		.byte	0x1
- 1991 207a 62       		.uleb128 0x62
+ 1991 207a 60       		.uleb128 0x60
  1992 207b 6F735F47 		.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
  1992      65745461 
  1992      736B5074 
@@ -3772,15 +3778,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  1995              		.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_user_code/led.h"
  1996 20b8 03       		.byte	0x3
  1997 20b9 0C       		.uleb128 0xc
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 64
+
+
  1998 20ba 12       		.uleb128 0x12
  1999 20bb 01       		.byte	0x1
  2000 20bc 02       		.uleb128 0x2
  2001 20bd 5F4C4544 		.ascii "_LED_H_ \0"
  2001      5F485F20 
  2001      00
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 64
-
-
  2002 20c6 04       		.byte	0x4
  2003 20c7 03       		.byte	0x3
  2004 20c8 0E       		.uleb128 0xe
@@ -3832,15 +3838,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  2035 212b 01       		.byte	0x1
  2036 212c 06       		.uleb128 0x6
  2037 212d 4D494E5F 		.ascii "MIN_BLOCK_SIZE_HEAP 8\0"
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 65
+
+
  2037      424C4F43 
  2037      4B5F5349 
  2037      5A455F48 
  2037      45415020 
  2038 2143 01       		.byte	0x1
  2039 2144 09       		.uleb128 0x9
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 65
-
-
  2040 2145 48454150 		.ascii "HEAP_OFFSET_FOR_SIZE 0\0"
  2040      5F4F4646 
  2040      5345545F 
@@ -3892,15 +3898,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  2065              		.file 23 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_task_config.h"
  2066 21d3 03       		.byte	0x3
  2067 21d4 08       		.uleb128 0x8
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 66
+
+
  2068 21d5 17       		.uleb128 0x17
  2069 21d6 04       		.byte	0x4
  2070              		.file 24 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_task_common.h"
  2071 21d7 03       		.byte	0x3
  2072 21d8 09       		.uleb128 0x9
  2073 21d9 18       		.uleb128 0x18
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 66
-
-
  2074 21da 04       		.byte	0x4
  2075 21db 04       		.byte	0x4
  2076              		.file 25 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
@@ -3952,15 +3958,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  2105      00
  2106 2242 01       		.byte	0x1
  2107 2243 0A       		.uleb128 0xa
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 67
+
+
  2108 2244 5461736B 		.ascii "Task_3_ptr 3\0"
  2108      5F335F70 
  2108      74722033 
  2108      00
  2109 2251 01       		.byte	0x1
  2110 2252 0C       		.uleb128 0xc
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 67
-
-
  2111 2253 4F535F53 		.ascii "OS_SaveTaskPtr(task_ptr,Task_n_ptr) \0"
  2111      61766554 
  2111      61736B50 
@@ -4012,15 +4018,15 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  2142      73746172 
  2142      745F696E 
  2142      69745F73 
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 68
+
+
  2142      775F685F 
  2143 22e3 04       		.byte	0x4
  2144              		.file 31 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_task_queue.h"
  2145 22e4 03       		.byte	0x3
  2146 22e5 09       		.uleb128 0x9
  2147 22e6 1F       		.uleb128 0x1f
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 68
-
-
  2148 22e7 01       		.byte	0x1
  2149 22e8 02       		.uleb128 0x2
  2150 22e9 5F6F735F 		.ascii "_os_task_queue_h_ \0"
@@ -4053,7 +4059,7 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  2162 2385 00       		.byte	0
  2163              		.section	.debug_line,"dr"
  2164              	Ldebug_line0:
- 2165 0000 D8030000 		.section	.debug_str,"dr"
+ 2165 0000 DB030000 		.section	.debug_str,"dr"
  2165      02008803 
  2165      00000101 
  2165      FB0E0D00 
@@ -4063,16 +4069,16 @@ GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 1
  2167      74696D65 
  2167      00
  2168              		.ident	"GCC: (GNU) 4.9.3"
-GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s 			page 69
+GAS LISTING C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s 			page 69
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_main.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s:5      .text:00000000 _OS_DetermineNextTaskActivation
-C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s:208    .bss:00000000 _call_nr.1403
-C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s:86     .text:00000080 _OS_StateHandler
-C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s:209    .bss:00000004 _call_nr.1415
-C:\Users\PRESID~1\AppData\Local\Temp\ccVmK9qU.s:210    .bss:00000008 _sys_req_reset_state.1414
+C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s:5      .text:00000000 _OS_DetermineNextTaskActivation
+C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s:208    .bss:00000000 _call_nr.1396
+C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s:86     .text:00000080 _OS_StateHandler
+C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s:209    .bss:00000004 _call_nr.1408
+C:\Users\PRESID~1\AppData\Local\Temp\ccW03Jdh.s:210    .bss:00000008 _sys_req_reset_state.1407
 
 UNDEFINED SYMBOLS
 _TASK_1_VAR

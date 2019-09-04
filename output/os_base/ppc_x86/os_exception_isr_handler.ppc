@@ -546,8 +546,6 @@ struct task_s
 };
 typedef struct task_s task_t;
 typedef task_t* scheduling_t;
-extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
-extern void Inc_current_time(void);
 extern void OS_ResetCurrentTime(void);
 extern void OS_GetCurrentTime(timebig_t* time);
 
@@ -732,7 +730,6 @@ extern void OS_InitTask(
    CoreID_t core,
    unsigned_char_t default_prio
 );
-extern void ISR_TASK_DISPATCH(void);
 extern void OS_InitTasks(void);
 extern unsigned_char_t task_state_request(void* task, task_state_t requested_state);
 extern void OS_ActivateDispatcher(void);
@@ -753,7 +750,6 @@ extern void OS_Shutdown(os_reset_type_t reset_typ);
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_isr_handler.c" 2
 
 #define SVC_00 0x00
-#define SVC_01 0x01
 
 void OS_ISRHANDLERC0(uint32 svc_number)
 {
@@ -762,11 +758,7 @@ void OS_ISRHANDLERC0(uint32 svc_number)
     case 0x00:
     {
 
-       break;
-    }
-    case 0x01:
-    {
-
+       ((svc_number) = (svc_number));
        break;
     }
     default:

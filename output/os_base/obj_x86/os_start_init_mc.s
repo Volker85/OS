@@ -14,9 +14,9 @@ LFB0:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 16 0
+	.loc 1 15 0
 	call	_OS_MmuSetup
-	.loc 1 17 0
+	.loc 1 16 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -1103,10 +1103,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x5f
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x62
+	.uleb128 0x60
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4
@@ -1209,13 +1209,13 @@ Ldebug_macro0:
 	.uleb128 0x2
 	.ascii "_os_start_init_mc_h_ \0"
 	.byte	0x4
-	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu_setup.h"
+	.file 26 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_memory_mmu.h"
 	.byte	0x3
 	.uleb128 0x3
 	.uleb128 0x1a
 	.byte	0x1
 	.uleb128 0x2
-	.ascii "_os_memory_mmu_setup_h_ \0"
+	.ascii "_os_memory_mmu_h_ \0"
 	.byte	0x4
 	.byte	0x4
 	.byte	0

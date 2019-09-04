@@ -2085,10 +2085,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x5f
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x62
+	.uleb128 0x60
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4

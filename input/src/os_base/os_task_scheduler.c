@@ -4,6 +4,7 @@
 #include "os_task_scheduler.h"
 #include "os_task_queue.h"
 #include "os_stack.h"
+#inlcude "os_exception.h"
 
 /*
 1. running     --(terminate)--> suspend : delete scheduling element
@@ -27,12 +28,6 @@ void OS_ActivateDispatcher(void)
    Dispatcher function for Core 0:
    Write Adresse into the config register (interrupts are requested by SWI/SVC???)
    */
-   #define SYSTICK_CTRL_STAT_REG ((uint32*)0xE000E010)
-   #define SYSTICK_RLD_VAL_REG   ((uint32*)0xE000E014)
-   #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
-   #define SYSTICK_STAT_REG_TICKINT ((uint32)0x00000002)
-   #define SYSTICK_STAT_REG_ENABLE  ((uint32)0x00000001)
-   #define LOOPTIME_IN_USEC ((uint32)10000u)
    /*
    CLOCK = HCLK / 8
    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz

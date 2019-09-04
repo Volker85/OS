@@ -90,8 +90,8 @@ OS_InitHw:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_hw.c:7: }
-	.loc 1 7 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_hw.c:6: }
+	.loc 1 6 0
 	bx	lr	@
 	.cfi_endproc
 .LFE0:
@@ -635,12 +635,12 @@ OS_InitHw:
 	.uleb128 0x12
 	.4byte	.LASF579
 	.byte	0x5
-	.byte	0x5d
+	.byte	0x5b
 	.4byte	0x414
 	.uleb128 0x2
 	.4byte	.LASF578
 	.byte	0x5
-	.byte	0x5f
+	.byte	0x5d
 	.4byte	0x1cf
 	.uleb128 0x9
 	.4byte	0x29
@@ -2825,15 +2825,15 @@ OS_InitHw:
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x5f
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x62
+	.uleb128 0x60
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4,comdat

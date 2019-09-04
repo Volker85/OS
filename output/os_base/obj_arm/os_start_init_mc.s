@@ -90,8 +90,8 @@ OS_InitMc:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:16:    OS_MmuSetup();
-	.loc 1 16 0
+@ E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c:15:    OS_MmuSetup();
+	.loc 1 15 0
 	b	OS_MmuSetup	@
 .LVL0:
 	.cfi_endproc
@@ -104,7 +104,7 @@ OS_InitMc:
 	.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
 	.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
 	.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-	.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu_setup.h"
+	.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
 	.4byte	0x6f7
@@ -637,12 +637,12 @@ OS_InitMc:
 	.uleb128 0x12
 	.4byte	.LASF581
 	.byte	0x5
-	.byte	0x5d
+	.byte	0x5b
 	.4byte	0x414
 	.uleb128 0x2
 	.4byte	.LASF580
 	.byte	0x5
-	.byte	0x5f
+	.byte	0x5d
 	.4byte	0x1cf
 	.uleb128 0x9
 	.4byte	0x29
@@ -2882,15 +2882,15 @@ OS_InitMc:
 	.uleb128 0x11
 	.4byte	.LASF487
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.97.d031f1e6a25f19c1fb076c4a4d7927a1,comdat
+	.section	.debug_macro,"G",%progbits,wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960,comdat
 .Ldebug_macro5:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x5f
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x62
+	.uleb128 0x60
 	.4byte	.LASF490
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4,comdat
@@ -3249,8 +3249,6 @@ OS_InitMc:
 	.ascii	"__FLT32_DECIMAL_DIG__ 9\000"
 .LASF254:
 	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
-.LASF507:
-	.ascii	"_os_memory_mmu_setup_h_ \000"
 .LASF428:
 	.ascii	"__ARM_EABI__ 1\000"
 .LASF116:
@@ -3544,6 +3542,8 @@ OS_InitMc:
 	.ascii	"__FLT64_HAS_QUIET_NAN__ 1\000"
 .LASF271:
 	.ascii	"__LFRACT_FBIT__ 31\000"
+.LASF507:
+	.ascii	"_os_memory_mmu_h_ \000"
 .LASF160:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF377:

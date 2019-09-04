@@ -6,7 +6,7 @@ Ltext0:
 _OS_ISRHANDLERC0:
 LFB0:
 	.file 1 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_exception_isr_handler.c"
-	.loc 1 10 0
+	.loc 1 9 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -14,31 +14,25 @@ LFB0:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
-	.loc 1 11 0
+	.loc 1 10 0
 	movl	8(%ebp), %eax
 	testl	%eax, %eax
-	je	L6
-	cmpl	$1, %eax
-	je	L7
-	.loc 1 25 0
+	je	L5
+	.loc 1 20 0
 	movl	$18, 4(%esp)
 	movl	$10, (%esp)
 	call	_OS_SetSwBug
-	.loc 1 26 0
+	.loc 1 21 0
 	movl	$0, (%esp)
 	call	_OS_Shutdown
-	.loc 1 27 0
+	.loc 1 22 0
 	nop
 	jmp	L1
-L6:
+L5:
 	.loc 1 16 0
 	nop
-	jmp	L1
-L7:
-	.loc 1 21 0
-	nop
 L1:
-	.loc 1 30 0
+	.loc 1 25 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -223,7 +217,7 @@ Ldebug_info0:
 	.uleb128 0x6
 	.ascii "OS_ISRHANDLERC0\0"
 	.byte	0x1
-	.byte	0x9
+	.byte	0x8
 	.long	LFB0
 	.long	LFE0-LFB0
 	.uleb128 0x1
@@ -231,7 +225,7 @@ Ldebug_info0:
 	.uleb128 0x7
 	.ascii "svc_number\0"
 	.byte	0x1
-	.byte	0x9
+	.byte	0x8
 	.long	0x100
 	.uleb128 0x2
 	.byte	0x91
@@ -1312,10 +1306,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x5f
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x62
+	.uleb128 0x60
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4
@@ -1448,9 +1442,6 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0x6
 	.ascii "SVC_00 0x00\0"
-	.byte	0x1
-	.uleb128 0x7
-	.ascii "SVC_01 0x01\0"
 	.byte	0x4
 	.byte	0
 	.section	.debug_line,"dr"

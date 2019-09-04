@@ -741,8 +741,6 @@ struct task_s
 };
 typedef struct task_s task_t;
 typedef task_t* scheduling_t;
-extern void SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_nr);
-extern void Inc_current_time(void);
 extern void OS_ResetCurrentTime(void);
 extern void OS_GetCurrentTime(timebig_t* time);
 
@@ -775,7 +773,6 @@ extern void LLF_RESTORE_REGISTERS(task_t* task);
 extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
-extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 # 11 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h" 1
@@ -926,7 +923,6 @@ extern void OS_InitTask(
    CoreID_t core,
    unsigned_char_t default_prio
 );
-extern void ISR_TASK_DISPATCH(void);
 extern void OS_InitTasks(void);
 extern unsigned_char_t task_state_request(void* task, task_state_t requested_state);
 extern void OS_ActivateDispatcher(void);

@@ -1,5 +1,6 @@
 #include "os_firstinc.h"
 #include "os_exception_isr_handler.h"
+#include "os_exception.h"
 #include "os_shutdown.h"
 #include "os_start_os.h"
 #include "..\os_base\os_task_queue.h"
@@ -13,13 +14,6 @@
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
 Local __inline__ void OS_Exception_Read_Status_Registers(void)
 {
-   #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
-   #define MEM_MANAG_FAULT_STATUS_REG     ((volatile uint8*)0xE000ED28u)
-   #define BUS_FAULT_STATUS_REG     ((volatile uint8*)0xE000ED29u)
-   #define USAGE_FAULT_STATUS_REG     ((volatile uint16*)0xE000ED2Au)
-   #define MEM_FAULT_ADDR_REG   ((volatile uint32*)0xE000ED34u)
-   #define BUS_FAULT_ADDR_REG   ((volatile uint32*)0xE000ED38u)
-   #define AUX_FAULT_STATUS_REG ((volatile uint32*)0xE000ED3Cu)
    VAR_HARDFAULT_STATUS_REG = *HARDFAULT_STATUS_REG;
    VAR_MEM_MANAG_FAULT_STATUS_REG     = *MEM_MANAG_FAULT_STATUS_REG;
    VAR_BUS_FAULT_STATUS_REG   = *BUS_FAULT_STATUS_REG;
@@ -152,6 +146,8 @@ void OS_Exception_PendSV(void)
 /* 0x0000003C OS_Exception_Systick */
 void OS_Exception_Systick(void)
 {
+   OS_UpdateCurrentTime();
+   
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    task_t* task;
    scheduling_t* scheduling_task_ptr;
@@ -173,15 +169,7 @@ void OS_Exception_Systick(void)
    Dispatcher function for Core 0:
     Write Adresse into the config register (interrupts are requested by SWI/SVC???)
    */
-   #define SYSTICK_CTRL_STAT_REG ((uint32*)0xE000E010)
-   #define SYSTICK_RLD_VAL_REG   ((uint32*)0xE000E014)
-   #define SYSTICK_CURRENT_VAL_REG ((uint32*)0xE000E018)
-   #define SYSTICK_CALIB_VAL_REG ((uint32*)0xE000E01C)
-   #define SYSTICK_STAT_REG_CLKSRC_AHB ((uint32)0x00000004)
-   #define SYSTICK_STAT_REG_CLKSRC_AHB_8 ((uint32)0x00000000)
-   #define SYSTICK_STAT_REG_TICKINT ((uint32)0x00000002)
-   #define SYSTICK_STAT_REG_ENABLE  ((uint32)0x00000001)
-   #define LOOPTIME_IN_USEC ((uint32)10000u)
+
    /*
    CLOCK = HCLK / 8
    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz

@@ -14,7 +14,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 59 0
-	movl	_call_nr.1403, %eax
+	movl	_call_nr.1396, %eax
 	cmpl	$4, %eax
 	ja	L10
 	movl	L4(,%eax,4), %eax
@@ -33,16 +33,16 @@ L3:
 	movl	$_TASK_1_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 63 0
-	movl	_call_nr.1403, %eax
+	movl	_call_nr.1396, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1403
+	movl	%eax, _call_nr.1396
 	.loc 1 64 0
 	jmp	L1
 L5:
 	.loc 1 67 0
-	movl	_call_nr.1403, %eax
+	movl	_call_nr.1396, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1403
+	movl	%eax, _call_nr.1396
 	.loc 1 68 0
 	jmp	L1
 L6:
@@ -50,16 +50,16 @@ L6:
 	movl	$_TASK_2_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 71 0
-	movl	_call_nr.1403, %eax
+	movl	_call_nr.1396, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1403
+	movl	%eax, _call_nr.1396
 	.loc 1 72 0
 	jmp	L1
 L7:
 	.loc 1 75 0
-	movl	_call_nr.1403, %eax
+	movl	_call_nr.1396, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1403
+	movl	%eax, _call_nr.1396
 	.loc 1 76 0
 	jmp	L1
 L8:
@@ -67,7 +67,7 @@ L8:
 	movl	$_TASK_3_VAR, (%esp)
 	call	_OS_ActivateTask
 	.loc 1 79 0
-	movl	$0, _call_nr.1403
+	movl	$0, _call_nr.1396
 	.loc 1 80 0
 	jmp	L1
 L10:
@@ -101,7 +101,7 @@ LFB1:
 	jb	L14
 	cmpl	$2, %eax
 	je	L15
-	.loc 1 164 0
+	.loc 1 170 0
 	jmp	L16
 L14:
 	.loc 1 100 0
@@ -127,40 +127,40 @@ L14:
 	.loc 1 116 0
 	jmp	L16
 L13:
-	.loc 1 120 0
-	movl	_call_nr.1415, %eax
+	.loc 1 126 0
+	movl	_call_nr.1408, %eax
 	movl	$5, %ecx
 	movl	$0, %edx
 	divl	%ecx
 	movl	%edx, %eax
 	testl	%eax, %eax
 	jne	L17
-	.loc 1 122 0
+	.loc 1 128 0
 	call	_OS_DetermineNextTaskActivation
 L17:
-	.loc 1 124 0
-	movl	_call_nr.1415, %eax
+	.loc 1 130 0
+	movl	_call_nr.1408, %eax
 	incl	%eax
-	movl	%eax, _call_nr.1415
-	.loc 1 126 0
+	movl	%eax, _call_nr.1408
+	.loc 1 132 0
 	call	_OS_TaskDispatcher
-	.loc 1 127 0
+	.loc 1 133 0
 	movb	_SYSTEM_STATE_ACCEPTED, %al
 	cmpb	$2, %al
 	jne	L18
-	.loc 1 129 0
+	.loc 1 135 0
 	movl	$2, _OS_STATE
-	.loc 1 130 0
-	movl	$1, _sys_req_reset_state.1414
-	.loc 1 132 0
+	.loc 1 136 0
+	movl	$1, _sys_req_reset_state.1407
+	.loc 1 138 0
 	jmp	L16
 L18:
 	jmp	L16
 L15:
-	.loc 1 136 0
+	.loc 1 142 0
 	call	_LLF_INT_DISABLE
-	.loc 1 137 0
-	movl	_sys_req_reset_state.1414, %eax
+	.loc 1 143 0
+	movl	_sys_req_reset_state.1407, %eax
 	cmpl	$1, %eax
 	je	L20
 	cmpl	$1, %eax
@@ -169,45 +169,45 @@ L15:
 	je	L22
 	jmp	L24
 L21:
-	.loc 1 141 0
+	.loc 1 147 0
 	movl	$1, (%esp)
 	call	_OS_Shutdown
-	.loc 1 142 0
+	.loc 1 148 0
 	jmp	L23
 L20:
-	.loc 1 146 0
+	.loc 1 152 0
 	movl	$0, (%esp)
 	call	_OS_Shutdown
-	.loc 1 147 0
+	.loc 1 153 0
 	jmp	L23
 L22:
-	.loc 1 151 0
+	.loc 1 157 0
 	movl	$2, (%esp)
 	call	_OS_Shutdown
-	.loc 1 152 0
+	.loc 1 158 0
 	jmp	L23
 L24:
-	.loc 1 156 0
+	.loc 1 162 0
 	movl	$0, (%esp)
 	call	_OS_Shutdown
-	.loc 1 157 0
+	.loc 1 163 0
 	nop
 L23:
-	.loc 1 160 0
+	.loc 1 166 0
 	nop
 L16:
-	.loc 1 168 0
+	.loc 1 174 0
 	call	_OS_StackCheck
-	.loc 1 175 0
+	.loc 1 181 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _call_nr.1403,4,4
-.lcomm _call_nr.1415,4,4
-.lcomm _sys_req_reset_state.1414,4,4
+.lcomm _call_nr.1396,4,4
+.lcomm _call_nr.1408,4,4
+.lcomm _sys_req_reset_state.1407,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -674,7 +674,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1403
+	.long	_call_nr.1396
 	.byte	0
 	.uleb128 0x13
 	.ascii "OS_StateHandler\0"
@@ -692,7 +692,7 @@ Ldebug_info0:
 	.long	0x690
 	.uleb128 0x5
 	.byte	0x3
-	.long	_sys_req_reset_state.1414
+	.long	_sys_req_reset_state.1407
 	.uleb128 0x12
 	.ascii "call_nr\0"
 	.byte	0x1
@@ -700,7 +700,7 @@ Ldebug_info0:
 	.long	0x12b
 	.uleb128 0x5
 	.byte	0x3
-	.long	_call_nr.1415
+	.long	_call_nr.1408
 	.byte	0
 	.uleb128 0x14
 	.ascii "OS_STATE\0"
@@ -1985,10 +1985,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x5f
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x62
+	.uleb128 0x60
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4

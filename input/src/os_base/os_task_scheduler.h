@@ -28,7 +28,6 @@ extern void OS_InitTask(
    CoreID_t         core,
    unsigned_char_t  default_prio
 );
-extern void ISR_TASK_DISPATCH(void);
 extern void OS_InitTasks(void);
 extern unsigned_char_t task_state_request(void* task, task_state_t requested_state);
 extern void OS_ActivateDispatcher(void);

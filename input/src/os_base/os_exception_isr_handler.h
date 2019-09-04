@@ -1,5 +1,8 @@
 #ifndef  _os_exception_isr_handler_h_
 #define  _os_exception_isr_handler_h_
+
+#define SVC_00 0x00
+
 extern void OS_Exception_RESET(void);
 extern void OS_Exception_NMI(void);
 extern void OS_Exception_HARDFAULT(void);

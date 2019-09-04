@@ -21,36 +21,36 @@ LFB0:
 	.loc 1 14 0
 	movl	$0, _STACK_USAGE_PERCENT
 	.loc 1 16 0
-	movl	$0, _stack_pos.1324
+	movl	$0, _stack_pos.1319
 	jmp	L2
 L4:
 	.loc 1 18 0
-	movl	_stack_pos.1324, %eax
+	movl	_stack_pos.1319, %eax
 	movb	_OS_MAIN_STACK(%eax), %al
 	cmpb	$-86, %al
 	je	L3
 	.loc 1 20 0
-	movl	$1, _stack_used.1325
+	movl	$1, _stack_used.1320
 	.loc 1 21 0
-	movl	_stack_pos.1324, %edx
+	movl	_stack_pos.1319, %edx
 	movl	_STACK_POS, %eax
 	cmpl	%eax, %edx
 	jnb	L3
 	.loc 1 23 0
-	movl	_stack_pos.1324, %eax
+	movl	_stack_pos.1319, %eax
 	movl	%eax, _STACK_POS
 	.loc 1 24 0
-	movl	_stack_pos.1324, %eax
+	movl	_stack_pos.1319, %eax
 	addl	$_OS_MAIN_STACK, %eax
 	movl	%eax, _STACK_ADDR
 L3:
 	.loc 1 16 0 discriminator 2
-	movl	_stack_pos.1324, %eax
+	movl	_stack_pos.1319, %eax
 	incl	%eax
-	movl	%eax, _stack_pos.1324
+	movl	%eax, _stack_pos.1319
 L2:
 	.loc 1 16 0 is_stmt 0 discriminator 1
-	movl	_stack_pos.1324, %eax
+	movl	_stack_pos.1319, %eax
 	cmpl	$511, %eax
 	jbe	L4
 	.loc 1 28 0 is_stmt 1
@@ -66,7 +66,7 @@ L2:
 	shrl	$9, %eax
 	movl	%eax, _STACK_USAGE_PERCENT
 	.loc 1 30 0
-	movl	_stack_used.1325, %eax
+	movl	_stack_used.1320, %eax
 	cmpl	$1, %eax
 	jne	L1
 	.loc 1 30 0 is_stmt 0 discriminator 1
@@ -129,8 +129,8 @@ L8:
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _stack_pos.1324,4,4
-.lcomm _stack_used.1325,4,4
+.lcomm _stack_pos.1319,4,4
+.lcomm _stack_used.1320,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -312,7 +312,7 @@ Ldebug_info0:
 	.long	0x490
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_pos.1324
+	.long	_stack_pos.1319
 	.uleb128 0x8
 	.ascii "stack_used\0"
 	.byte	0x1
@@ -320,7 +320,7 @@ Ldebug_info0:
 	.long	0x490
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_used.1325
+	.long	_stack_used.1320
 	.byte	0
 	.uleb128 0x9
 	.long	0x107
@@ -1540,10 +1540,10 @@ Ldebug_macro0:
 	.ascii "_os_init_task_system_h_ \0"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x5f
 	.ascii "os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))\0"
 	.byte	0x1
-	.uleb128 0x62
+	.uleb128 0x60
 	.ascii "os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])\0"
 	.byte	0x4
 	.byte	0x4

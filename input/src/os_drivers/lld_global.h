@@ -20,5 +20,4 @@ extern void LLF_RESTORE_REGISTERS(task_t* task);
 extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
-extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 #endif /* _lld_global_h_ */
