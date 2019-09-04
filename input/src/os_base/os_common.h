@@ -23,7 +23,12 @@
 #define NR_OF_CORES 1
 
 #define MCU_CLOCK_IN_HZ ((uint32)168000000u)
+#define LOOPTIME_IN_USEC ((uint32)10000u)
+#define DWT_CTRL   ((volatile uint32*)0xE0001000)
+#define DWT_CYCCNT ((volatile uint32*)0xE0001004)
 
+#define DWT_LAR     ((volatile uint32*)0xE0001FB0)
+#define SCB_DEMCR   ((volatile uint32*)0xE000EDFC)
 
 #if (CFG_PROCESSOR == cMCU_X86)
 #define DisableInterrupts()

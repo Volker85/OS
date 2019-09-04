@@ -3,7 +3,7 @@
 #include "os_task_scheduler.h"
 #include "os_shutdown.h"
 
-#define SVC_00 0x00
+
 
 void OS_ISRHANDLERC0(uint32 svc_number)
 {    

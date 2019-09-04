@@ -5,11 +5,7 @@ void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 {
    OS_SW_BUG[task_func_nr] = bug_nr;
 }
-#define DWT_CTRL   ((volatile uint32*)0xE0001000)
-#define DWT_CYCCNT ((volatile uint32*)0xE0001004)
 
-#define DWT_LAR     ((volatile uint32*)0xE0001FB0)
-#define SCB_DEMCR   ((volatile uint32*)0xE000EDFC)
 static timebig_t LOCAL_SYSTEM_TIME;
 
 void OS_GetCurrentTime(timebig_t* time)
