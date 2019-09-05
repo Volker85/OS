@@ -6,7 +6,7 @@ void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
    OS_SW_BUG[task_func_nr] = bug_nr;
 }
 
-static timebig_t LOCAL_SYSTEM_TIME;
+
 
 void OS_GET_CURRENT_TIME(timebig_t* time)
 {

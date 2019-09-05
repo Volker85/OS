@@ -19,7 +19,7 @@ LOCAL void task_0(void* task_ptr);
 LOCAL void task_1(void* task_ptr);
 LOCAL void task_2(void* task_ptr);
 LOCAL task_t** os_task_scheduler(void);
-LOCAL void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task);
+LOCAL void os_preempt_task(task_t* task, scheduling_t* scheduling_task);
 void OS_ACTIVATE_DISPATCHER(void)
 {
 
@@ -46,7 +46,7 @@ void OS_SLEEP_TASK(task_t* task, timebig_t usec, scheduling_t* scheduling_task_p
    OS_GET_CURRENT_TIME(&time);
    /* sleep Task shall do a preempt task with a defined minimum wait time, the actual wait time is not guaranteed... */
    INT_ADD(&task->wait_act_until, &time, &usec);
-   OS_PreemptTask(task,scheduling_task_ptr);
+   os_preempt_task(task,scheduling_task_ptr);
 }
 
 unsigned_char_t OS_TASK_STATE_REQUEST(void* temp_task, task_state_t requested_state)
@@ -193,7 +193,7 @@ void OS_CREATE_TASK(task_t* task)
       OS_SET_SW_BUG(os_bug_null_pointer, Func_CreateTask);
    }
 }
-void OS_PreemptTask(task_t* task, scheduling_t* scheduling_task)
+void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
 {
    /*2. running     --(preempt  )--> ready*/
    /* Preempt task

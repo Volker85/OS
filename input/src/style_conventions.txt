@@ -55,23 +55,12 @@ d) local functions (static):
  f) macro:
       macro -> capital letter
  
- g) every tocken should be prefixed with 
-      e_     -> enum 
-      gvar_u32_ -> global uint32 Variable 
-      lvar_u32_ -> local  uint32 Variable 
-      gfun_u32_  -> global function returning uint32 
-      lfun_u32_  -> local function returning uint32       
-      lfun_e_    -> local function returning enum
-      gfun_e_    -> global function returning enum      
-      lfun_v_    -> local function returning void
-      gfun_v_    -> global function returning void            
- 
- h) member of structures 
+ g) member of structures 
       as done for local functions / variables
  
- i) Variable names
+ h) Variable names
       variable / function names consisting of multiple names e.g. numbers_per_second are seperated via '_'
  
- j) name of types
+ i) name of types
       lower case
       
