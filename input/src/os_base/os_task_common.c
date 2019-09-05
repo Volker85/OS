@@ -21,11 +21,11 @@ void OS_TaskSaveTaskEnvironment(task_t* task)
       x86: mov ... esp
       */
       LLF_SAVE_TASK_STACK(task->pStackPointer);
-   #if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == cMCU_X86)
       LLF_SAVE_REGISTERS(task->EAX,task->EBX,task->ECX,task->EDX);
-   #else
+#else
       LLF_SAVE_REGISTERS(task->r0,task->r1,task->r2,task->r3);
-   #endif
+#endif
    }
    else
    {
@@ -61,12 +61,12 @@ void OS_Task_InitTaskEnvironment(task_t* task)
       /* general*/
       task->active                = False;
       /* general purpose registers */
-   #if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == cMCU_X86)
       task->EAX                             = (unsigned_int32_t)       0;
       task->EBX                             = (unsigned_int32_t)       0;
       task->ECX                             = (unsigned_int32_t)       0;
       task->EDX                             = (unsigned_int32_t)       0;
-   #else
+#else
       task->r0                             = (unsigned_int32_t)       0;
       task->r1                             = (unsigned_int32_t)       0;
       task->r2                             = (unsigned_int32_t)       0;
@@ -80,7 +80,7 @@ void OS_Task_InitTaskEnvironment(task_t* task)
       task->r10                             = (unsigned_int32_t)       0;
       task->r11                             = (unsigned_int32_t)       0;
       task->r12                             = (unsigned_int32_t)       0;
-   #endif
+#endif
       /* task scheduling */
       AssignNull(&task->WaitActUntil);
       AssignNull(&task->wait_time);

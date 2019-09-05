@@ -75,7 +75,7 @@ enum os_sw_bugs_function_e
    Func_CreateTask,
    Func_Shutdown,
    Func_StackCheck,
-   Func_IsrHandler   
+   Func_IsrHandler
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -89,15 +89,15 @@ typedef void (*func_ptr_t)(void);
 
 typedef struct BigInt_s
 {
-  /*
-  number 0x4000 is stored as {0x00,0x00,0x00,0x00,
-                              0x00,0x00,0x00,0x00,
-                              0x00,0x00,0x00,0x00,
-                              0x00,0x00,0x40,0x00}
-                              Big endian 
-  */ 
-  uint8  Number[BigIntSize]; 
-}BigInt;
+   /*
+   number 0x4000 is stored as {0x00,0x00,0x00,0x00,
+                               0x00,0x00,0x00,0x00,
+                               0x00,0x00,0x00,0x00,
+                               0x00,0x00,0x40,0x00}
+                               Big endian
+   */
+   uint8  Number[BigIntSize];
+} BigInt;
 extern void AssignNull(BigInt* leftOperand);
 extern void Assign(BigInt* leftOperand, BigInt* rightOperand);
 extern void AssignUint32(BigInt* leftOperand, uint32 rightOperand);

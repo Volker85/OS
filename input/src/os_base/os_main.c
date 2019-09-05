@@ -55,34 +55,34 @@ typedef enum os_reset_req_state_e
 
 Local void OS_DetermineNextTaskActivation(void)
 {
-    Local uint32 call_nr = 0;
-    switch(call_nr)
-    {
-    case 0:
-        OS_ActivateTask(&TASK_1_VAR);
-        call_nr++;
-        break;
-    case 1:
+   Local uint32 call_nr = 0;
+   switch(call_nr)
+   {
+   case 0:
+      OS_ActivateTask(&TASK_1_VAR);
+      call_nr++;
+      break;
+   case 1:
 
-        call_nr++;
-        break;
-    case 2:
-        OS_ActivateTask(&TASK_2_VAR);
-        call_nr++;
-        break;
-    case 3:
+      call_nr++;
+      break;
+   case 2:
+      OS_ActivateTask(&TASK_2_VAR);
+      call_nr++;
+      break;
+   case 3:
 
-        call_nr++;
-        break;
-    case 4:
-        OS_ActivateTask(&TASK_3_VAR);
-        call_nr = 0;
-        break;
-    default:
-        break;
+      call_nr++;
+      break;
+   case 4:
+      OS_ActivateTask(&TASK_3_VAR);
+      call_nr = 0;
+      break;
+   default:
+      break;
 
-    }
-    /*TODO: mehrere unterschiedliche Tasks mit Ansteuerung der LEDs bauen, sodass die korrekte zeitliche Abfolge ausprobiert werden kann*/
+   }
+   /*TODO: mehrere unterschiedliche Tasks mit Ansteuerung der LEDs bauen, sodass die korrekte zeitliche Abfolge ausprobiert werden kann*/
 
 }
 
@@ -118,10 +118,10 @@ void OS_StateHandler(void)
    case os_running:
    {
       /*
-      TODO: OS_DetermineNextTaskActivation und OS_TaskDispatcher müssen m.E. öfters laufen wie der Rest der SW. 
+      TODO: OS_DetermineNextTaskActivation und OS_TaskDispatcher müssen m.E. öfters laufen wie der Rest der SW.
       Es macht keinen Sinn, immer den State Handler anzufragen, nur um das Task Handling zu triggern....
       - Der Dispatcher müsste per Interrupt die laufende Task unterbrechen um dann (nach PreemptTask oder TerminateTask) die nächste Task zu starten.
-      - Der OS_DetermineNextTaskActivation müsste vor jedem Aufruf on OS_TaskDispatcher laufen       
+      - Der OS_DetermineNextTaskActivation müsste vor jedem Aufruf on OS_TaskDispatcher laufen
       */
       if(call_nr % 5 == 0)
       {

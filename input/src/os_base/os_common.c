@@ -14,7 +14,7 @@ void OS_GetCurrentTime(timebig_t* time)
    OS_UpdateCurrentTime();
    /* output the time to the caller */
    Assign(time, &LOCAL_SYSTEM_TIME);
-   
+
 }
 void OS_UpdateCurrentTime(void)
 {
@@ -23,42 +23,41 @@ void OS_UpdateCurrentTime(void)
    */
    timebig_t tmp_time;
    OS_ReadAndResetCurrentTime(&tmp_time);
-   
+
    /* increment the global time value by the new increment received by the hardware register */
-   IntAdd(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);  
+   IntAdd(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);
 }
 
 void OS_ReadAndResetCurrentTime(timebig_t* timebig)
 {
-   #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    volatile uint32 time = 0u;
-   
+
    /* unlock the CoreSight (CM4) */
    *DWT_LAR = 0xC5ACCE55;
 
    /* enable trace/debug block TRCENA */
    *SCB_DEMCR |= 0x01000000;
-   
+
    /* save the current delta time */
    time = *DWT_CYCCNT;
-   
+
    /* reset the counter to 0 cycle */
    *DWT_CYCCNT = 0;
 
    /* enable the counter */
    *DWT_CTRL |= 1;
-    
+
    /* store the read time at the pointer pointer buffer */
    AssignUint32(timebig, time);
-   #else
-   timebig_t local_time;
+#else
    AssignUint32(timebig, 5u);/* assume a fixed step .... */
-   #endif   
+#endif
 }
 
 void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
 {
-   /*TODO*/   
+   /*TODO*/
 }
 
 void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)

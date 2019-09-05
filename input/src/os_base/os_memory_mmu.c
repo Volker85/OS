@@ -9,7 +9,7 @@ for documentation of the MPU please read:
 */
 void OS_MmuSetup(void)
 {
-   #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    /* assign every task a mmu region + the scheduler an own region */
    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might run with different MMU rights
       hardware register access shall be only possible in supervisor / kernel mode via system call.... based on a security descriptor as done in windows */
@@ -47,7 +47,7 @@ void OS_MmuSetup(void)
    /* region 5 */
    /* region 6 */
    /* region 7 */
-   #endif
+#endif
    /* now activate the MPU */
    LLF_MPU_ENABLE();
 }

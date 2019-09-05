@@ -50,12 +50,12 @@ struct task_s
    func_p_state_change_t state_request;
    task_state_t task_state;
    task_group_t* task_group;
-   #if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == cMCU_X86)
    unsigned_int32_t EAX;
    unsigned_int32_t EBX;
    unsigned_int32_t ECX;
    unsigned_int32_t EDX;
-   #else
+#else
    unsigned_int32_t r0;
    unsigned_int32_t r1;
    unsigned_int32_t r2;
@@ -69,7 +69,7 @@ struct task_s
    unsigned_int32_t r10;
    unsigned_int32_t r11;
    unsigned_int32_t r12;
-   #endif
+#endif
    unsigned_char_t* pStackPointer;
    unsigned_char_t* pStackPointerByMalloc;
    unsigned_char_t* pStackPointerStart;

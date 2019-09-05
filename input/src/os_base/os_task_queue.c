@@ -41,25 +41,25 @@ void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task)
       (&RUNNING_TASK[0])->FREE                            = task->FREE;
       (&RUNNING_TASK[0])->NrOfInsAllowed                  = task->NrOfInsAllowed;
       (&RUNNING_TASK[0])->NrOfInsActivated                = task->NrOfInsActivated;
-      Assign(&(&RUNNING_TASK[0])->WaitActUntil          , &task->WaitActUntil);
-      Assign(&(&RUNNING_TASK[0])->wait_time             , &task->wait_time);
-      Assign(&(&RUNNING_TASK[0])->TimeToPrioInc         , &task->TimeToPrioInc);
+      Assign(&(&RUNNING_TASK[0])->WaitActUntil, &task->WaitActUntil);
+      Assign(&(&RUNNING_TASK[0])->wait_time, &task->wait_time);
+      Assign(&(&RUNNING_TASK[0])->TimeToPrioInc, &task->TimeToPrioInc);
       (&RUNNING_TASK[0])->overwaittime_per_prio_inc_step  = task->overwaittime_per_prio_inc_step;
-      Assign(&(&RUNNING_TASK[0])->max_allowed_wait_time , &task->max_allowed_wait_time);
-      Assign(&(&RUNNING_TASK[0])->exe_time              , &task->exe_time  );
-      Assign(&(&RUNNING_TASK[0])->start_time            , &task->start_time);
+      Assign(&(&RUNNING_TASK[0])->max_allowed_wait_time, &task->max_allowed_wait_time);
+      Assign(&(&RUNNING_TASK[0])->exe_time, &task->exe_time  );
+      Assign(&(&RUNNING_TASK[0])->start_time, &task->start_time);
       (&RUNNING_TASK[0])->current_prio                    = task->current_prio;
       (&RUNNING_TASK[0])->default_prio                    = task->default_prio;
       (&RUNNING_TASK[0])->fp                              = task->fp;
       (&RUNNING_TASK[0])->state_request                   = task->state_request;
       (&RUNNING_TASK[0])->task_state                      = task->task_state;
       (&RUNNING_TASK[0])->task_group                      = task->task_group;
-   #if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == cMCU_X86)
       (&RUNNING_TASK[0])->EAX                             = task->EAX;
       (&RUNNING_TASK[0])->EBX                             = task->EBX;
       (&RUNNING_TASK[0])->ECX                             = task->ECX;
       (&RUNNING_TASK[0])->EDX                             = task->EDX;
-   #else
+#else
       (&RUNNING_TASK[0])->r0                             = task->r0;
       (&RUNNING_TASK[0])->r1                             = task->r1;
       (&RUNNING_TASK[0])->r2                             = task->r2;
@@ -73,7 +73,7 @@ void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task)
       (&RUNNING_TASK[0])->r10                            = task->r10;
       (&RUNNING_TASK[0])->r11                            = task->r11;
       (&RUNNING_TASK[0])->r12                            = task->r12;
-   #endif
+#endif
 
       (&RUNNING_TASK[0])->pStackPointer                   = task->pStackPointer;
       (&RUNNING_TASK[0])->pStackPointerByMalloc           = task->pStackPointerByMalloc;
@@ -102,7 +102,7 @@ task_t* AddToTaskQueue(task_t* task)
 {
    unsigned_char_t element_nr = 0;
    task_t* ret_task = 0;
-   
+
    while( (element_nr < MAX_RUN_QUEUE_SIZE)
           &&((&TASK_RUN_QUEUE[element_nr])->task_queued == True)
         )
@@ -118,25 +118,25 @@ task_t* AddToTaskQueue(task_t* task)
       (&TASK_RUN_QUEUE[element_nr])->FREE                            = task->FREE;
       (&TASK_RUN_QUEUE[element_nr])->NrOfInsAllowed                  = task->NrOfInsAllowed;
       (&TASK_RUN_QUEUE[element_nr])->NrOfInsActivated                = task->NrOfInsActivated;
-      Assign(&(&TASK_RUN_QUEUE[element_nr])->WaitActUntil                  , &task->WaitActUntil);
-      Assign(&(&TASK_RUN_QUEUE[element_nr])->wait_time                     , &task->wait_time);
-      Assign(&(&TASK_RUN_QUEUE[element_nr])->TimeToPrioInc                 , &task->TimeToPrioInc);
+      Assign(&(&TASK_RUN_QUEUE[element_nr])->WaitActUntil, &task->WaitActUntil);
+      Assign(&(&TASK_RUN_QUEUE[element_nr])->wait_time, &task->wait_time);
+      Assign(&(&TASK_RUN_QUEUE[element_nr])->TimeToPrioInc, &task->TimeToPrioInc);
       (&TASK_RUN_QUEUE[element_nr])->overwaittime_per_prio_inc_step  = task->overwaittime_per_prio_inc_step;
-      Assign(&(&TASK_RUN_QUEUE[element_nr])->max_allowed_wait_time         , &task->max_allowed_wait_time);
-      Assign(&(&TASK_RUN_QUEUE[element_nr])->exe_time                      , &task->exe_time   );
-      Assign(&(&TASK_RUN_QUEUE[element_nr])->start_time                    , &task->start_time );
+      Assign(&(&TASK_RUN_QUEUE[element_nr])->max_allowed_wait_time, &task->max_allowed_wait_time);
+      Assign(&(&TASK_RUN_QUEUE[element_nr])->exe_time, &task->exe_time   );
+      Assign(&(&TASK_RUN_QUEUE[element_nr])->start_time, &task->start_time );
       (&TASK_RUN_QUEUE[element_nr])->current_prio                    = task->current_prio;
       (&TASK_RUN_QUEUE[element_nr])->default_prio                    = task->default_prio;
       (&TASK_RUN_QUEUE[element_nr])->fp                              = task->fp;
       (&TASK_RUN_QUEUE[element_nr])->state_request                   = task->state_request;
       (&TASK_RUN_QUEUE[element_nr])->task_state                      = task->task_state;
       (&TASK_RUN_QUEUE[element_nr])->task_group                      = task->task_group;
-   #if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == cMCU_X86)
       (&TASK_RUN_QUEUE[element_nr])->EAX                             = task->EAX;
       (&TASK_RUN_QUEUE[element_nr])->EBX                             = task->EBX;
       (&TASK_RUN_QUEUE[element_nr])->ECX                             = task->ECX;
       (&TASK_RUN_QUEUE[element_nr])->EDX                             = task->EDX;
-   #else
+#else
       (&TASK_RUN_QUEUE[element_nr])->r0                             = task->r0;
       (&TASK_RUN_QUEUE[element_nr])->r1                             = task->r1;
       (&TASK_RUN_QUEUE[element_nr])->r2                             = task->r2;
@@ -150,7 +150,7 @@ task_t* AddToTaskQueue(task_t* task)
       (&TASK_RUN_QUEUE[element_nr])->r10                            = task->r10;
       (&TASK_RUN_QUEUE[element_nr])->r11                            = task->r11;
       (&TASK_RUN_QUEUE[element_nr])->r12                            = task->r12;
-   #endif
+#endif
       (&TASK_RUN_QUEUE[element_nr])->pStackPointer                   = task->pStackPointer;
       (&TASK_RUN_QUEUE[element_nr])->pStackPointerByMalloc           = task->pStackPointerByMalloc;
       (&TASK_RUN_QUEUE[element_nr])->pStackPointerStart              = task->pStackPointerStart;
@@ -181,12 +181,12 @@ void DeleteFromTaskQueue(task_t* task)
    task->state_request                         =   &task_state_request       ;
    task->task_state                            =   Task_unspecified;
    task->task_group                            =   0       ;
-   #if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == cMCU_X86)
    task->EAX                                   =   0              ;
    task->EBX                                   =   0             ;
    task->ECX                                   =   0              ;
    task->EDX                                   =   0              ;
-   #elif(CFG_PROCESSOR == cMCU_CORTEX_M4)
+#elif(CFG_PROCESSOR == cMCU_CORTEX_M4)
    task->r0                                   =   0              ;
    task->r1                                   =   0              ;
    task->r2                                   =   0              ;
@@ -200,9 +200,9 @@ void DeleteFromTaskQueue(task_t* task)
    task->r10                                  =   0             ;
    task->r11                                  =   0             ;
    task->r12                                  =   0             ;
-   #else
-   #error "os_task_queue.c"
-   #endif
+#else
+#error "os_task_queue.c"
+#endif
    task->pStackPointer                         =   0       ;
    task->pStackPointerByMalloc                 =   0       ;
    task->pStackPointerStart                    =   0       ;
@@ -290,24 +290,24 @@ void AddToIdleTaskQueue(task_t* task)
       (&TASK_IDLE_QUEUE[0])->FREE                                  =   task->FREE             ;
       (&TASK_IDLE_QUEUE[0])->NrOfInsAllowed                        =   task->NrOfInsAllowed   ;
       (&TASK_IDLE_QUEUE[0])->NrOfInsActivated                      =   task->NrOfInsActivated ;
-      Assign(&(&TASK_IDLE_QUEUE[0])->WaitActUntil                   , &task->WaitActUntil);
-      Assign(&(&TASK_IDLE_QUEUE[0])->wait_time                      , &task->wait_time);
-      Assign(&(&TASK_IDLE_QUEUE[0])->TimeToPrioInc                  , &task->TimeToPrioInc);
+      Assign(&(&TASK_IDLE_QUEUE[0])->WaitActUntil, &task->WaitActUntil);
+      Assign(&(&TASK_IDLE_QUEUE[0])->wait_time, &task->wait_time);
+      Assign(&(&TASK_IDLE_QUEUE[0])->TimeToPrioInc, &task->TimeToPrioInc);
       (&TASK_IDLE_QUEUE[0])->overwaittime_per_prio_inc_step       =    task->overwaittime_per_prio_inc_step;
-      Assign(&(&TASK_IDLE_QUEUE[0])->max_allowed_wait_time          , &task->max_allowed_wait_time);
-      Assign(&(&TASK_IDLE_QUEUE[0])->exe_time                       , &task->exe_time);
+      Assign(&(&TASK_IDLE_QUEUE[0])->max_allowed_wait_time, &task->max_allowed_wait_time);
+      Assign(&(&TASK_IDLE_QUEUE[0])->exe_time, &task->exe_time);
       (&TASK_IDLE_QUEUE[0])->current_prio                          =   task->current_prio     ;
       (&TASK_IDLE_QUEUE[0])->default_prio                          =   task->default_prio     ;
       (&TASK_IDLE_QUEUE[0])->fp                                    =   task->fp               ;
       (&TASK_IDLE_QUEUE[0])->state_request                         =   task->state_request    ;
       (&TASK_IDLE_QUEUE[0])->task_state                            =   Task_ready             ;
       (&TASK_IDLE_QUEUE[0])->task_group                            =   task->task_group       ;
-      #if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == cMCU_X86)
       (&TASK_IDLE_QUEUE[0])->EAX                                   =   task->EAX              ;
       (&TASK_IDLE_QUEUE[0])->EBX                                   =   task->EBX              ;
       (&TASK_IDLE_QUEUE[0])->ECX                                   =   task->ECX              ;
       (&TASK_IDLE_QUEUE[0])->EDX                                   =   task->EDX              ;
-      #elif(CFG_PROCESSOR == cMCU_CORTEX_M4)
+#elif(CFG_PROCESSOR == cMCU_CORTEX_M4)
       (&TASK_IDLE_QUEUE[0])->r0                                   =   task->r0              ;
       (&TASK_IDLE_QUEUE[0])->r1                                   =   task->r1              ;
       (&TASK_IDLE_QUEUE[0])->r2                                   =   task->r2              ;
@@ -321,9 +321,9 @@ void AddToIdleTaskQueue(task_t* task)
       (&TASK_IDLE_QUEUE[0])->r10                                  =   task->r10             ;
       (&TASK_IDLE_QUEUE[0])->r11                                  =   task->r11             ;
       (&TASK_IDLE_QUEUE[0])->r12                                  =   task->r12             ;
-      #else
-      #error "os_task_queue.c"
-      #endif
+#else
+#error "os_task_queue.c"
+#endif
       (&TASK_IDLE_QUEUE[0])->pStackPointer                         =   task->pStackPointer    ;
       (&TASK_IDLE_QUEUE[0])->pStackPointerByMalloc                 =   task->pStackPointerByMalloc;
       (&TASK_IDLE_QUEUE[0])->pStackPointerStart                    =   task->pStackPointerStart;
@@ -337,7 +337,7 @@ task_t* GetRunningTask(void)
 }
 scheduling_t* GetRunningSchedulingQueueElementPtr(void)
 {
-    return RUNNING_SCHEDULING_QUEUE_ENTRY;
+   return RUNNING_SCHEDULING_QUEUE_ENTRY;
 }
 void OS_InitTask(
    task_t*          task,

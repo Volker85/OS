@@ -31,15 +31,15 @@ void OS_Exception_NMI(void)
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    __asm__ __volatile__ ("LDR r0,%0;\
                           STR r14,[r0];"
-                        :"=m"(LINK_REGISTER_HANDLER)
-                        :
-                        :"r0"
+                         :"=m"(LINK_REGISTER_HANDLER)
+                         :
+                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-  
+
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
-   
+
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -49,15 +49,15 @@ void OS_Exception_HARDFAULT(void)
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    __asm__ __volatile__ ("LDR r0,%0;\
                           STR r14,[r0];"
-                        :"=m"(LINK_REGISTER_HANDLER)
-                        :
-                        :"r0"
+                         :"=m"(LINK_REGISTER_HANDLER)
+                         :
+                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
- 
+
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
-   
+
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -67,15 +67,15 @@ void OS_Exception_MEM_MANAG_FAULT(void)
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    __asm__ __volatile__ ("LDR r0,%0;\
                           STR r14,[r0];"
-                        :"=m"(LINK_REGISTER_HANDLER)
-                        :
-                        :"r0"
+                         :"=m"(LINK_REGISTER_HANDLER)
+                         :
+                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   
+
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
-   
+
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -85,15 +85,15 @@ void OS_Exception_BUS_FAULT(void)
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    __asm__ __volatile__ ("LDR r0,%0;\
                           STR r14,[r0];"
-                        :"=m"(LINK_REGISTER_HANDLER)
-                        :
-                        :"r0"
+                         :"=m"(LINK_REGISTER_HANDLER)
+                         :
+                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   
+
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
-   
+
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -103,15 +103,15 @@ void OS_Exception_USAGE_FAULT(void)
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    __asm__ __volatile__ ("LDR r0,%0;\
                           STR r14,[r0];"
-                        :"=m"(LINK_REGISTER_HANDLER)
-                        :
-                        :"r0"
+                         :"=m"(LINK_REGISTER_HANDLER)
+                         :
+                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   
+
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
-   
+
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -125,10 +125,10 @@ void OS_Exception_DEBUG(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    OS_Exception_Read_Status_Registers();
-   
+
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
-   
+
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -137,9 +137,9 @@ void OS_Exception_DEBUG(void)
 void OS_Exception_PendSV(void)
 {
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
-/* run all exceptions in handler mode */
+   /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
-   
+
    OS_Shutdown(os_reset_hardreset);
 #endif
 }
@@ -147,13 +147,13 @@ void OS_Exception_PendSV(void)
 void OS_Exception_Systick(void)
 {
    OS_UpdateCurrentTime();
-   
+
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    task_t* task;
    scheduling_t* scheduling_task_ptr;
    BigInt Diff;
    timebig_t time;
-   
+
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
@@ -185,40 +185,40 @@ void OS_Exception_Systick(void)
    /*
    4.4.1. SysTick Control and Status Register
 
-The SysTick SYST_CSR register enables the SysTick features. The register resets to 0x00000000, or to 0x00000004 if your device does not implement a reference clock. See the register summary in Table 4.32 for its attributes. The bit assignments are:
+   The SysTick SYST_CSR register enables the SysTick features. The register resets to 0x00000000, or to 0x00000004 if your device does not implement a reference clock. See the register summary in Table 4.32 for its attributes. The bit assignments are:
 
-Table 4.33. SysTick SYST_CSR register bit assignments
-Bits	Name	Function
-[31:17]	-	Reserved.
-[16]	COUNTFLAG
+   Table 4.33. SysTick SYST_CSR register bit assignments
+   Bits	Name	Function
+   [31:17]	-	Reserved.
+   [16]	COUNTFLAG
 
-Returns 1 if timer counted to 0 since last time this was read.
-[15:3]	-	Reserved.
-[2]	CLKSOURCE
+   Returns 1 if timer counted to 0 since last time this was read.
+   [15:3]	-	Reserved.
+   [2]	CLKSOURCE
 
-Indicates the clock source:
+   Indicates the clock source:
 
-0 = external clock
+   0 = external clock
 
-1 = processor clock.
-[1]	TICKINT
+   1 = processor clock.
+   [1]	TICKINT
 
-Enables SysTick exception request:
+   Enables SysTick exception request:
 
-0 = counting down to zero does not assert the SysTick exception request
+   0 = counting down to zero does not assert the SysTick exception request
 
-1 = counting down to zero asserts the SysTick exception request.
+   1 = counting down to zero asserts the SysTick exception request.
 
-Software can use COUNTFLAG to determine if SysTick has ever counted to zero.
-[0]	ENABLE
+   Software can use COUNTFLAG to determine if SysTick has ever counted to zero.
+   [0]	ENABLE
 
-Enables the counter:
+   Enables the counter:
 
-0 = counter disabled
+   0 = counter disabled
 
-1 = counter enabled.
+   1 = counter enabled.
 
-When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR register and then counts down. On reaching 0, it sets the COUNTFLAG to 1 and optionally asserts the SysTick depending on the value of TICKINT. It then loads the RELOAD value again, and begins counting.
+   When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR register and then counts down. On reaching 0, it sets the COUNTFLAG to 1 and optionally asserts the SysTick depending on the value of TICKINT. It then loads the RELOAD value again, and begins counting.
    */
    /* disable running task */
    task = GetRunningTask();
@@ -247,15 +247,15 @@ void OS_Exception_IRQ(void)
 #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    __asm__ __volatile__ ("LDR r0,%0;\
                           STR r14,[r0];"
-                        :"=m"(LINK_REGISTER_HANDLER)
-                        :
-                        :"r0"
+                         :"=m"(LINK_REGISTER_HANDLER)
+                         :
+                         :"r0"
                         );
    OS_Exception_Read_Status_Registers();
-   
+
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
-   
+
    OS_Shutdown(os_reset_hardreset);
-#endif   
+#endif
 }

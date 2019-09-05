@@ -49,9 +49,9 @@ extern "C" {
 #include <time.h>
 
 
-    /* ===================================================================
-     *                             definitions
-     * =================================================================== */
+/* ===================================================================
+ *                             definitions
+ * =================================================================== */
 
 #define SPUT_VERSION_MAJOR      1
 #define SPUT_VERSION_MINOR      4
@@ -64,57 +64,57 @@ extern "C" {
 #define SPUT_INITIALIZED        0x06 /* ACK */
 
 
-    /* ===================================================================
-     *                        sput global variable
-     * =================================================================== */
+/* ===================================================================
+ *                        sput global variable
+ * =================================================================== */
 
-    static struct sput
-    {
-        FILE *out;
-        char  initialized;
+static struct sput
+{
+   FILE *out;
+   char  initialized;
 
-        struct sput_overall
-        {
-            unsigned long checks;
-            unsigned long suites;
-            unsigned long ok;
-            unsigned long nok;
-        } overall;
+   struct sput_overall
+   {
+      unsigned long checks;
+      unsigned long suites;
+      unsigned long ok;
+      unsigned long nok;
+   } overall;
 
-        struct sput_suite
-        {
-            const char   *name;
-            unsigned long nr;
-            unsigned long checks;
-            unsigned long ok;
-            unsigned long nok;
-        } suite;
+   struct sput_suite
+   {
+      const char   *name;
+      unsigned long nr;
+      unsigned long checks;
+      unsigned long ok;
+      unsigned long nok;
+   } suite;
 
-        struct sput_test
-        {
-            const char   *name;
-            unsigned long nr;
-        } test;
+   struct sput_test
+   {
+      const char   *name;
+      unsigned long nr;
+   } test;
 
-        struct sput_check
-        {
-            const char   *name;
-            const char   *cond;
-            const char   *type;
-            unsigned long line;
-        } check;
+   struct sput_check
+   {
+      const char   *name;
+      const char   *cond;
+      const char   *type;
+      unsigned long line;
+   } check;
 
-        struct sput_time
-        {
-            time_t start;
-            time_t end;
-        } time;
-    } __sput;
+   struct sput_time
+   {
+      time_t start;
+      time_t end;
+   } time;
+} __sput;
 
 
-    /* ==================================================================
-     *                        sput internal macros
-     * ================================================================== */
+/* ==================================================================
+ *                        sput internal macros
+ * ================================================================== */
 
 #define _sput_die_unless_initialized()                                     \
     if (__sput.initialized != SPUT_INITIALIZED)                            \
@@ -170,9 +170,9 @@ extern "C" {
     }
 
 
-    /* ==================================================================
-     *                            user macros
-     * ================================================================== */
+/* ==================================================================
+ *                            user macros
+ * ================================================================== */
 
 #define sput_start_testing()                                               \
     do {                                                                   \

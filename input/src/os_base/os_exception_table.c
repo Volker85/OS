@@ -24,8 +24,8 @@ The processor uses a full descending stack.
 
 /* TODO: what is the meaning of "the processor implements two stacks.....", how does it affect the code?? */
 
-/* Hint: no stack switch is needed because shared stack is used. 
-This is not ideal for safety reasons 
+/* Hint: no stack switch is needed because shared stack is used.
+This is not ideal for safety reasons
 (MPU can not protect the data stored in stack from access by other task).
 But to make life in embedded more easy, it was choosen this way. */
 

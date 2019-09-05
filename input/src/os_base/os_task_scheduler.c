@@ -32,18 +32,18 @@ void OS_ActivateDispatcher(void)
    CLOCK = HCLK / 8
    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz
    */
-   #if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
    *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000 )| (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000))* LOOPTIME_IN_USEC) ;
    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_ENABLE;
-   #endif
+#endif
 }
 
 
 void OS_SleepTask(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr)
 {
    timebig_t time;
-   OS_GetCurrentTime(&time);   
+   OS_GetCurrentTime(&time);
    /* sleep Task shall do a preempt task with a defined minimum wait time, the actual wait time is not guaranteed... */
    IntAdd(&task->WaitActUntil, &time, &usec);
    OS_PreemptTask(task,scheduling_task_ptr);
@@ -140,9 +140,9 @@ unsigned_char_t task_state_request(void* temp_task, task_state_t requested_state
       }
       case Task_unspecified:
       {
-          task->task_state = Task_ready;
-          RequestState = Accepted;
-          break;
+         task->task_state = Task_ready;
+         RequestState = Accepted;
+         break;
       }
       default:
       {
@@ -296,7 +296,7 @@ void OS_StartTask(task_t* task, scheduling_t* scheduling_task)
    - Start Task
     */
    timebig_t time;
-   
+
    if( (task != 0) && (scheduling_task != 0)&& ((task->task_queued != False)||(task->IdleTask != False)))
    {
       if(task->state_request !=0)
@@ -412,7 +412,7 @@ void OS_TaskDispatcher(void)
    }
    if(task != 0 && scheduling_task_ptr != 0)
    {
-       OS_StartTask(task, scheduling_task_ptr);
+      OS_StartTask(task, scheduling_task_ptr);
    }
 }
 Local void TASK_0(void* task_ptr)
@@ -470,72 +470,72 @@ void OS_InitTasks(void)
    ReferenceUnusedParameter (TASK_GROUP_4);
    ReferenceUnusedParameter (TASK_GROUP_5);
 
-    /*
+   /*
    set task_state for all tasks to Task_unspecified
-    */
+   */
    OS_InitTaskQueue();
 
    /* setup idle task */
    task_ptr = &TASK_0_VAR;
    OS_InitTask(task_ptr,                          /* task */
-                &TASK_0,                           /* Task Function*/
-                1,                                 /* Nr of allowed instances*/
-                True,                              /* Idle Task */
-                &TASK_GROUP_1,                     /* Task Group */
-                (unsigned_char_t*)&TASK_STACK[0],  /* Task_stack */
-                200,                                /* Stack Size */
-                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                Core0,                            /* Cortex M4 has only 1 core */
-                0                                   /* default prio */
-               );
+               &TASK_0,                           /* Task Function*/
+               1,                                 /* Nr of allowed instances*/
+               True,                              /* Idle Task */
+               &TASK_GROUP_1,                     /* Task Group */
+               (unsigned_char_t*)&TASK_STACK[0],  /* Task_stack */
+               200,                                /* Stack Size */
+               ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+               Core0,                            /* Cortex M4 has only 1 core */
+               0                                   /* default prio */
+              );
    AddToSchedulingQueue(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
 
    /* setup worker task */
    task_ptr = &TASK_1_VAR;
    OS_InitTask(task_ptr,      /* task */
-                &TASK_1,       /* Task Function*/
-                1,             /* Nr of allowed instances*/
-                False,          /* Idle Task */
-                &TASK_GROUP_1, /* Task Group */
-                (unsigned_char_t*)&TASK_STACK[1],/* Task_stack */
-                200,            /* Stack Size */
-                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                Core0,
-                1                                   /* default prio */
-               );
+               &TASK_1,       /* Task Function*/
+               1,             /* Nr of allowed instances*/
+               False,          /* Idle Task */
+               &TASK_GROUP_1, /* Task Group */
+               (unsigned_char_t*)&TASK_STACK[1],/* Task_stack */
+               200,            /* Stack Size */
+               ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+               Core0,
+               1                                   /* default prio */
+              );
    AddToSchedulingQueue(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_1_ptr);
 
    /* setup worker task */
    task_ptr = &TASK_2_VAR;
    OS_InitTask(task_ptr,      /* task */
-                &TASK_2,       /* Task Function*/
-                1,             /* Nr of allowed instances*/
-                False,          /* Idle Task */
-                &TASK_GROUP_2, /* Task Group */
-                (unsigned_char_t*)&TASK_STACK[2],/* Task_stack */
-                200,            /* Stack Size */
-                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                Core0,
-                2                                   /* default prio */
-               );
+               &TASK_2,       /* Task Function*/
+               1,             /* Nr of allowed instances*/
+               False,          /* Idle Task */
+               &TASK_GROUP_2, /* Task Group */
+               (unsigned_char_t*)&TASK_STACK[2],/* Task_stack */
+               200,            /* Stack Size */
+               ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+               Core0,
+               2                                   /* default prio */
+              );
    AddToSchedulingQueue(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
 
    /* setup worker task */
    task_ptr = &TASK_3_VAR;
    OS_InitTask(task_ptr,      /* task */
-                &TASK_3,       /* Task Function*/
-                1,             /* Nr of allowed instances*/
-                False,          /* Idle Task */
-                &TASK_GROUP_3, /* Task Group */
-                (unsigned_char_t*)&TASK_STACK[3],/* Task_stack */
-                200,           /* Stack Size */
-                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                Core0,
-                3                                   /* default prio */
-               );
+               &TASK_3,       /* Task Function*/
+               1,             /* Nr of allowed instances*/
+               False,          /* Idle Task */
+               &TASK_GROUP_3, /* Task Group */
+               (unsigned_char_t*)&TASK_STACK[3],/* Task_stack */
+               200,           /* Stack Size */
+               ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+               Core0,
+               3                                   /* default prio */
+              );
    AddToSchedulingQueue(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_3_ptr);
 }
@@ -552,13 +552,13 @@ Local scheduling_t* OS_TaskScheduler(void)
    task_t*         Winner_task = 0;
    scheduling_t*   Winner_scheduling_queue_member = 0;
    timebig_t       delta_time;
-   
+
    timebig_t time;
-   
+
    OS_GetCurrentTime(&time);
 
    IntSub(&delta_time, &time, &LAST_CURRENT_TIME);
-   
+
    Assign(&LAST_CURRENT_TIME,&time);
 
    ReferenceUnusedParameter(Winner_task);
