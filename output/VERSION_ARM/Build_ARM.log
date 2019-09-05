@@ -1,7 +1,1047 @@
 "Target_ARM" 
-06.07.2019 14:55:03,91 
+05.09.2019 23:42:06,53 
 "preprocess it" 
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:7:0:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:2:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
 "create assembly listings" 
 "compile it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_GET_CURRENT_TIME':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:14:4: warning: implicit declaration of function 'OS_UpdateCurrentTime' [-Wimplicit-function-declaration]
+    OS_UpdateCurrentTime();
+    ^~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: At top level:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:19:6: warning: conflicting types for 'OS_UpdateCurrentTime'
+ void OS_UpdateCurrentTime(void)
+      ^~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:14:4: note: previous implicit declaration of 'OS_UpdateCurrentTime' was here
+    OS_UpdateCurrentTime();
+    ^~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_UpdateCurrentTime':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:25:4: warning: implicit declaration of function 'OS_ReadAndResetCurrentTime'; did you mean 'OS_UpdateCurrentTime'? [-Wimplicit-function-declaration]
+    OS_ReadAndResetCurrentTime(&tmp_time);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+    OS_UpdateCurrentTime
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:28:12: error: incompatible type for argument 1 of 'INT_ADD'
+    INT_ADD(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);
+            ^~~~~~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_common.h:110:13: note: expected 'big_int * {aka struct big_int_s *}' but argument is of type 'timebig_t {aka struct big_int_s}'
+ extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
+             ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:28:31: error: incompatible type for argument 2 of 'INT_ADD'
+    INT_ADD(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);
+                               ^~~~~~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_common.h:110:13: note: expected 'big_int * {aka struct big_int_s *}' but argument is of type 'timebig_t {aka struct big_int_s}'
+ extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
+             ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: At top level:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:31:6: warning: conflicting types for 'OS_ReadAndResetCurrentTime'
+ void OS_ReadAndResetCurrentTime(timebig_t* timebig)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:25:4: note: previous implicit declaration of 'OS_ReadAndResetCurrentTime' was here
+    OS_ReadAndResetCurrentTime(&tmp_time);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'INT_DIV':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:23: warning: unused parameter 'Quotient' [-Wunused-parameter]
+ void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
+                       ^~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:42: warning: unused parameter 'Dividend' [-Wunused-parameter]
+ void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
+                                          ^~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:61: warning: unused parameter 'Divisor' [-Wunused-parameter]
+ void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
+                                                             ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'INT_MUL':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:23: warning: unused parameter 'Produkt' [-Wunused-parameter]
+ void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
+                       ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:41: warning: unused parameter 'Faktor1' [-Wunused-parameter]
+ void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
+                                         ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:59: warning: unused parameter 'Faktor2' [-Wunused-parameter]
+ void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
+                                                           ^~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:7:0:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_EXCEPTION_SYSTICK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:149:4: warning: implicit declaration of function 'OS_UpdateCurrentTime' [-Wimplicit-function-declaration]
+    OS_UpdateCurrentTime();
+    ^~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:152:4: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+    task_t* task;
+    ^~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c: In function 'OS_ISRHANDLERC0':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:12:9: error: 'SVC_00' undeclared (first use in this function)
+    case SVC_00:            /* Handle SVC 00 */
+         ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:12:9: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:20:21: error: 'os_bug_svc_number_missing' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_svc_number_missing, Func_IsrHandler);
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:20:48: error: 'Func_IsrHandler' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_svc_number_missing, Func_IsrHandler);
+                                                ^~~~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:2:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c: In function 'OS_INIT_TASK_SYSTEM':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:7:4: warning: implicit declaration of function 'OS_INIT_TASKs'; did you mean 'OS_INIT_TASKS'? [-Wimplicit-function-declaration]
+    OS_INIT_TASKs();
+    ^~~~~~~~~~~~~
+    OS_INIT_TASKS
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c: In function 'OS_STATE_HANDLER':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:92:53: error: 'Reset_powerdown' undeclared (first use in this function)
+    LOCAL os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
+                                                     ^~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:92:53: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:97:9: error: 'os_init' undeclared (first use in this function)
+    case os_init:
+         ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:113:18: error: 'os_running' undeclared (first use in this function); did you mean 'os_init'?
+       OS_STATE = os_running;
+                  ^~~~~~~~~~
+                  os_init
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:133:35: error: 'os_shutdown' undeclared (first use in this function)
+       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
+                                   ^~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:136:32: error: 'Reset_restart' undeclared (first use in this function)
+          sys_req_reset_state = Reset_restart;
+                                ^~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:147:22: error: 'os_reset_powerdown' undeclared (first use in this function); did you mean 'Reset_powerdown'?
+          OS_SHUTDOWN(os_reset_powerdown,0u);
+                      ^~~~~~~~~~~~~~~~~~
+                      Reset_powerdown
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:155:12: error: 'Reset_exit' undeclared (first use in this function); did you mean 'Reset_restart'?
+       case Reset_exit:
+            ^~~~~~~~~~
+            Reset_restart
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:157:22: error: 'os_reset_exit' undeclared (first use in this function); did you mean 'Reset_exit'?
+          OS_SHUTDOWN(os_reset_exit,0u);
+                      ^~~~~~~~~~~~~
+                      Reset_exit
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c: In function 'OS_SHUTDOWN':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:34:20: error: 'os_reset_powerdown' undeclared (first use in this function); did you mean 'os_reset_type_t'?
+    if(reset_typ == os_reset_powerdown)
+                    ^~~~~~~~~~~~~~~~~~
+                    os_reset_type_t
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:34:20: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:42:26: error: 'os_reset_exit' undeclared (first use in this function); did you mean 'os_reset_type_t'?
+    else if (reset_typ == os_reset_exit)
+                          ^~~~~~~~~~~~~
+                          os_reset_type_t
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:53:18: error: 'os_bug_reset_exit_or_shutdown_failed' undeclared (first use in this function)
+    OS_SET_SW_BUG(os_bug_reset_exit_or_shutdown_failed, Func_Shutdown);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:53:56: error: 'Func_Shutdown' undeclared (first use in this function)
+    OS_SET_SW_BUG(os_bug_reset_exit_or_shutdown_failed, Func_Shutdown);
+                                                        ^~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c: In function 'OS_INIT_SW':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:11:22: error: 'os_bug_no_bug' undeclared (first use in this function)
+       OS_SW_BUG[i] = os_bug_no_bug;
+                      ^~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:11:22: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c: In function 'OS_START_OS':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:20:4: error: 'SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP' undeclared (first use in this function)
+    SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP;
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:20:4: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:23:15: error: 'os_init' undeclared (first use in this function)
+    OS_STATE = os_init;
+               ^~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c: In function 'OS_TASK_SAVE_TASK_ENVIRONMENT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:32:21: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_SaveTaskEnvironment);
+                     ^~~~~~~~~~~~~~~~~~~
+                     __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:32:21: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:32:41: error: 'Func_SaveTaskEnvironment' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_SaveTaskEnvironment);
+                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c: In function 'OS_TASK_RESTORETASK_ENVIRONMENT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:46:21: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_RestoreTaskEnvironment);
+                     ^~~~~~~~~~~~~~~~~~~
+                     __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:46:41: error: 'Func_RestoreTaskEnvironment' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_RestoreTaskEnvironment);
+                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c: In function 'OS_TASK_INIT_TASK_ENVIRONMENT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:96:74: error: 'Task_unspecified' undeclared (first use in this function)
+       task->task_state                       =                           Task_unspecified;
+                                                                          ^~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:106:21: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_InitTaskEnvironment);
+                     ^~~~~~~~~~~~~~~~~~~
+                     __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:106:41: error: 'Func_InitTaskEnvironment' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_InitTaskEnvironment);
+                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'SET_RUNNING_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:81:28: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&RUNNING_TASK[0u])->stack_size                       = task->stack_size;
+                            ^~~~~~~~~~
+                            StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:81:69: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&RUNNING_TASK[0u])->stack_size                       = task->stack_size;
+                                                                     ^~~~~~~~~~
+                                                                     StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'ADD_TO_TASK_QUEUE':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:157:38: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&TASK_RUN_QUEUE[element_nr])->stack_size                       = task->stack_size;
+                                      ^~~~~~~~~~
+                                      StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:157:79: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&TASK_RUN_QUEUE[element_nr])->stack_size                       = task->stack_size;
+                                                                               ^~~~~~~~~~
+                                                                               StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'DELETE_FROM_TASK_QUEUE':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:182:52: error: 'Task_unspecified' undeclared (first use in this function)
+    task->task_state                            =   Task_unspecified;
+                                                    ^~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:182:52: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:209:10: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+    task->stack_size                             =   0u       ;
+          ^~~~~~~~~~
+          StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'ADD_TO_IDLE_TASK_QUEUE':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:303:73: error: 'Task_ready' undeclared (first use in this function)
+       (&TASK_IDLE_QUEUE[0u])->task_state                            =   Task_ready             ;
+                                                                         ^~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:330:31: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&TASK_IDLE_QUEUE[0u])->stack_size                             =   task->stack_size        ;
+                               ^~~~~~~~~~
+                               StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:330:80: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&TASK_IDLE_QUEUE[0u])->stack_size                             =   task->stack_size        ;
+                                                                                ^~~~~~~~~~
+                                                                                StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:372:35: error: 'Task_unspecified' undeclared (first use in this function); did you mean 'TaskFunction'?
+       OS_TASK_STATE_REQUEST(task, Task_unspecified);
+                                   ^~~~~~~~~~~~~~~~
+                                   TaskFunction
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:383:13: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       task->stack_size             = uStackSize;
+             ^~~~~~~~~~
+             StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:389:21: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+       OS_SET_SW_BUG(os_bug_null_pointer, Func_InitTask);
+                     ^~~~~~~~~~~~~~~~~~~
+                     __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:389:42: error: 'Func_InitTask' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_null_pointer, Func_InitTask);
+                                          ^~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TASK_STATE_REQUEST':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:60:9: error: 'Task_unspecified' undeclared (first use in this function)
+    case Task_unspecified:/* 1. create new task */
+         ^~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:60:9: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:64:12: error: 'Task_ready' undeclared (first use in this function)
+       case Task_ready:
+            ^~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:65:12: error: 'Task_running' undeclared (first use in this function); did you mean 'Task_ready'?
+       case Task_running:
+            ^~~~~~~~~~~~
+            Task_ready
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:66:12: error: 'Task_suspended' undeclared (first use in this function); did you mean 'Task_unspecified'?
+       case Task_suspended:
+            ^~~~~~~~~~~~~~
+            Task_unspecified
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:100:24: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+          OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TaskStateRequest);
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:100:57: error: 'Func_TaskStateRequest' undeclared (first use in this function)
+          OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TaskStateRequest);
+                                                         ^~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_CREATE_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:177:39: error: 'Task_suspended' undeclared (first use in this function); did you mean 'task_state_e'?
+          if(task->state_request(task, Task_suspended)== ACCEPTED)
+                                       ^~~~~~~~~~~~~~
+                                       task_state_e
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:183:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_CreateTask);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:183:60: error: 'Func_CreateTask' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_CreateTask);
+                                                            ^~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:188:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+          OS_SET_SW_BUG(os_bug_null_pointer, Func_CreateTask);
+                        ^~~~~~~~~~~~~~~~~~~
+                        __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'os_preempt_task':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:210:39: error: 'Task_ready' undeclared (first use in this function)
+          if(task->state_request(task, Task_ready)== ACCEPTED)
+                                       ^~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:223:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_Preempt_Task);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:223:60: error: 'Func_Preempt_Task' undeclared (first use in this function); did you mean 'os_preempt_task'?
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_Preempt_Task);
+                                                            ^~~~~~~~~~~~~~~~~
+                                                            os_preempt_task
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:228:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+          OS_SET_SW_BUG(os_bug_null_pointer, Func_Preempt_Task);
+                        ^~~~~~~~~~~~~~~~~~~
+                        __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_ACTIVATE_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:249:36: error: 'Task_ready' undeclared (first use in this function)
+       if(task->state_request(task, Task_ready)==ACCEPTED)
+                                    ^~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:268:33: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+                   OS_SET_SW_BUG(os_bug_null_pointer,Func_ActivateTask);
+                                 ^~~~~~~~~~~~~~~~~~~
+                                 __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:268:53: error: 'Func_ActivateTask' undeclared (first use in this function)
+                   OS_SET_SW_BUG(os_bug_null_pointer,Func_ActivateTask);
+                                                     ^~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:274:30: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+                OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_ActivateTask);
+                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_START_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:304:39: error: 'Task_running' undeclared (first use in this function)
+          if(task->state_request(task, Task_running)== ACCEPTED)
+                                       ^~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:319:40: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
+             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:329:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_StartTask);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:329:60: error: 'Func_StartTask' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_StartTask);
+                                                            ^~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:334:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+          OS_SET_SW_BUG(os_bug_null_pointer, Func_StartTask);
+                        ^~~~~~~~~~~~~~~~~~~
+                        __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TERMINATE_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:357:39: error: 'Task_suspended' undeclared (first use in this function); did you mean 'task_state_e'?
+          if(task->state_request(task, Task_suspended)== ACCEPTED)
+                                       ^~~~~~~~~~~~~~
+                                       task_state_e
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:372:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TerminateTask);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:372:60: error: 'Func_TerminateTask' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TerminateTask);
+                                                            ^~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:377:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+          OS_SET_SW_BUG(os_bug_null_pointer, Func_TerminateTask);
+                        ^~~~~~~~~~~~~~~~~~~
+                        __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKs':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:481:17: error: 'TASK_0' undeclared (first use in this function); did you mean 'TASK_PTR'?
+                &TASK_0,                           /* Task Function*/
+                 ^~~~~~
+                 TASK_PTR
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:487:16: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
+                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:488:16: error: 'Core0' undeclared (first use in this function)
+                Core0,                            /* Cortex M4 has only 1 core */
+                ^~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:492:4: warning: implicit declaration of function 'OS_SaveTaskPtr' [-Wimplicit-function-declaration]
+    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
+    ^~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:492:29: error: 'Task_0_ptr' undeclared (first use in this function); did you mean 'task_ptr'?
+    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
+                             ^~~~~~~~~~
+                             task_ptr
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:497:17: error: 'TASK_1' undeclared (first use in this function); did you mean 'TASK_0'?
+                &TASK_1,       /* Task Function*/
+                 ^~~~~~
+                 TASK_0
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:508:29: error: 'Task_1_ptr' undeclared (first use in this function); did you mean 'Task_0_ptr'?
+    OS_SaveTaskPtr(task_ptr, Task_1_ptr);
+                             ^~~~~~~~~~
+                             Task_0_ptr
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:513:17: error: 'TASK_2' undeclared (first use in this function); did you mean 'TASK_1'?
+                &TASK_2,       /* Task Function*/
+                 ^~~~~~
+                 TASK_1
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:524:29: error: 'Task_2_ptr' undeclared (first use in this function); did you mean 'Task_1_ptr'?
+    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
+                             ^~~~~~~~~~
+                             Task_1_ptr
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:529:17: error: 'TASK_3' undeclared (first use in this function); did you mean 'TASK_2'?
+                &TASK_3,       /* Task Function*/
+                 ^~~~~~
+                 TASK_2
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:540:29: error: 'Task_3_ptr' undeclared (first use in this function); did you mean 'Task_2_ptr'?
+    OS_SaveTaskPtr(task_ptr, Task_3_ptr);
+                             ^~~~~~~~~~
+                             Task_2_ptr
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'os_task_scheduler':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:598:27: error: 'os_bug_task_max_wait_time_reached' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:598:62: error: 'Func_TaskScheduler' undeclared (first use in this function); did you mean 'os_task_scheduler'?
+             OS_SET_SW_BUG(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
+                                                              ^~~~~~~~~~~~~~~~~~
+                                                              os_task_scheduler
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:616:27: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+             OS_SET_SW_BUG(os_bug_null_pointer, Func_TaskScheduler);
+                           ^~~~~~~~~~~~~~~~~~~
+                           __builtin_eh_pointer
+At top level:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:449:12: warning: 'task_3' defined but not used [-Wunused-function]
+ LOCAL void task_3(void* task_ptr)
+            ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:436:12: warning: 'task_2' defined but not used [-Wunused-function]
+ LOCAL void task_2(void* task_ptr)
+            ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:423:12: warning: 'task_1' defined but not used [-Wunused-function]
+ LOCAL void task_1(void* task_ptr)
+            ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:418:12: warning: 'task_0' defined but not used [-Wunused-function]
+ LOCAL void task_0(void* task_ptr)
+            ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_STACK_CHECK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:32:21: error: 'os_bug_critical_stack_usage' undeclared (first use in this function); did you mean '__builtin_stack_save'?
+       OS_SET_SW_BUG(os_bug_critical_stack_usage,Func_StackCheck);
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                     __builtin_stack_save
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:32:21: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:32:49: error: 'Func_StackCheck' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_critical_stack_usage,Func_StackCheck);
+                                                 ^~~~~~~~~~~~~~~
 "assemble it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_GET_CURRENT_TIME':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:14:4: warning: implicit declaration of function 'OS_UpdateCurrentTime' [-Wimplicit-function-declaration]
+    OS_UpdateCurrentTime();
+    ^~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: At top level:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:19:6: warning: conflicting types for 'OS_UpdateCurrentTime'
+ void OS_UpdateCurrentTime(void)
+      ^~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:14:4: note: previous implicit declaration of 'OS_UpdateCurrentTime' was here
+    OS_UpdateCurrentTime();
+    ^~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'OS_UpdateCurrentTime':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:25:4: warning: implicit declaration of function 'OS_ReadAndResetCurrentTime'; did you mean 'OS_UpdateCurrentTime'? [-Wimplicit-function-declaration]
+    OS_ReadAndResetCurrentTime(&tmp_time);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+    OS_UpdateCurrentTime
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:28:12: error: incompatible type for argument 1 of 'INT_ADD'
+    INT_ADD(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);
+            ^~~~~~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_common.h:110:13: note: expected 'big_int * {aka struct big_int_s *}' but argument is of type 'timebig_t {aka struct big_int_s}'
+ extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
+             ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:28:31: error: incompatible type for argument 2 of 'INT_ADD'
+    INT_ADD(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);
+                               ^~~~~~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_common.h:110:13: note: expected 'big_int * {aka struct big_int_s *}' but argument is of type 'timebig_t {aka struct big_int_s}'
+ extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
+             ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: At top level:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:31:6: warning: conflicting types for 'OS_ReadAndResetCurrentTime'
+ void OS_ReadAndResetCurrentTime(timebig_t* timebig)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:25:4: note: previous implicit declaration of 'OS_ReadAndResetCurrentTime' was here
+    OS_ReadAndResetCurrentTime(&tmp_time);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'INT_DIV':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:23: warning: unused parameter 'Quotient' [-Wunused-parameter]
+ void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
+                       ^~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:42: warning: unused parameter 'Dividend' [-Wunused-parameter]
+ void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
+                                          ^~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:61: warning: unused parameter 'Divisor' [-Wunused-parameter]
+ void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
+                                                             ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'INT_MUL':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:23: warning: unused parameter 'Produkt' [-Wunused-parameter]
+ void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
+                       ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:41: warning: unused parameter 'Faktor1' [-Wunused-parameter]
+ void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
+                                         ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:59: warning: unused parameter 'Faktor2' [-Wunused-parameter]
+ void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
+                                                           ^~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:7:0:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c: In function 'OS_EXCEPTION_SYSTICK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:149:4: warning: implicit declaration of function 'OS_UpdateCurrentTime' [-Wimplicit-function-declaration]
+    OS_UpdateCurrentTime();
+    ^~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception.c:152:4: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+    task_t* task;
+    ^~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c: In function 'OS_ISRHANDLERC0':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:12:9: error: 'SVC_00' undeclared (first use in this function)
+    case SVC_00:            /* Handle SVC 00 */
+         ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:12:9: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:20:21: error: 'os_bug_svc_number_missing' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_svc_number_missing, Func_IsrHandler);
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:20:48: error: 'Func_IsrHandler' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_svc_number_missing, Func_IsrHandler);
+                                                ^~~~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:2:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c: In function 'OS_INIT_TASK_SYSTEM':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_init_task_system.c:7:4: warning: implicit declaration of function 'OS_INIT_TASKs'; did you mean 'OS_INIT_TASKS'? [-Wimplicit-function-declaration]
+    OS_INIT_TASKs();
+    ^~~~~~~~~~~~~
+    OS_INIT_TASKS
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c: In function 'OS_STATE_HANDLER':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:92:53: error: 'Reset_powerdown' undeclared (first use in this function)
+    LOCAL os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
+                                                     ^~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:92:53: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:97:9: error: 'os_init' undeclared (first use in this function)
+    case os_init:
+         ^~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:113:18: error: 'os_running' undeclared (first use in this function); did you mean 'os_init'?
+       OS_STATE = os_running;
+                  ^~~~~~~~~~
+                  os_init
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:133:35: error: 'os_shutdown' undeclared (first use in this function)
+       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
+                                   ^~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:136:32: error: 'Reset_restart' undeclared (first use in this function)
+          sys_req_reset_state = Reset_restart;
+                                ^~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:147:22: error: 'os_reset_powerdown' undeclared (first use in this function); did you mean 'Reset_powerdown'?
+          OS_SHUTDOWN(os_reset_powerdown,0u);
+                      ^~~~~~~~~~~~~~~~~~
+                      Reset_powerdown
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:155:12: error: 'Reset_exit' undeclared (first use in this function); did you mean 'Reset_restart'?
+       case Reset_exit:
+            ^~~~~~~~~~
+            Reset_restart
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_main.c:157:22: error: 'os_reset_exit' undeclared (first use in this function); did you mean 'Reset_exit'?
+          OS_SHUTDOWN(os_reset_exit,0u);
+                      ^~~~~~~~~~~~~
+                      Reset_exit
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c: In function 'OS_SHUTDOWN':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:34:20: error: 'os_reset_powerdown' undeclared (first use in this function); did you mean 'os_reset_type_t'?
+    if(reset_typ == os_reset_powerdown)
+                    ^~~~~~~~~~~~~~~~~~
+                    os_reset_type_t
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:34:20: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:42:26: error: 'os_reset_exit' undeclared (first use in this function); did you mean 'os_reset_type_t'?
+    else if (reset_typ == os_reset_exit)
+                          ^~~~~~~~~~~~~
+                          os_reset_type_t
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:53:18: error: 'os_bug_reset_exit_or_shutdown_failed' undeclared (first use in this function)
+    OS_SET_SW_BUG(os_bug_reset_exit_or_shutdown_failed, Func_Shutdown);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_shutdown.c:53:56: error: 'Func_Shutdown' undeclared (first use in this function)
+    OS_SET_SW_BUG(os_bug_reset_exit_or_shutdown_failed, Func_Shutdown);
+                                                        ^~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c: In function 'OS_INIT_SW':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:11:22: error: 'os_bug_no_bug' undeclared (first use in this function)
+       OS_SW_BUG[i] = os_bug_no_bug;
+                      ^~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_sw.c:11:22: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c: In function 'OS_START_OS':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:20:4: error: 'SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP' undeclared (first use in this function)
+    SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP;
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:20:4: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_os.c:23:15: error: 'os_init' undeclared (first use in this function)
+    OS_STATE = os_init;
+               ^~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c: In function 'OS_TASK_SAVE_TASK_ENVIRONMENT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:32:21: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_SaveTaskEnvironment);
+                     ^~~~~~~~~~~~~~~~~~~
+                     __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:32:21: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:32:41: error: 'Func_SaveTaskEnvironment' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_SaveTaskEnvironment);
+                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c: In function 'OS_TASK_RESTORETASK_ENVIRONMENT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:46:21: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_RestoreTaskEnvironment);
+                     ^~~~~~~~~~~~~~~~~~~
+                     __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:46:41: error: 'Func_RestoreTaskEnvironment' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_RestoreTaskEnvironment);
+                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c: In function 'OS_TASK_INIT_TASK_ENVIRONMENT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:96:74: error: 'Task_unspecified' undeclared (first use in this function)
+       task->task_state                       =                           Task_unspecified;
+                                                                          ^~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:106:21: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_InitTaskEnvironment);
+                     ^~~~~~~~~~~~~~~~~~~
+                     __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c:106:41: error: 'Func_InitTaskEnvironment' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_null_pointer,Func_InitTaskEnvironment);
+                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'SET_RUNNING_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:81:28: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&RUNNING_TASK[0u])->stack_size                       = task->stack_size;
+                            ^~~~~~~~~~
+                            StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:81:69: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&RUNNING_TASK[0u])->stack_size                       = task->stack_size;
+                                                                     ^~~~~~~~~~
+                                                                     StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'ADD_TO_TASK_QUEUE':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:157:38: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&TASK_RUN_QUEUE[element_nr])->stack_size                       = task->stack_size;
+                                      ^~~~~~~~~~
+                                      StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:157:79: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&TASK_RUN_QUEUE[element_nr])->stack_size                       = task->stack_size;
+                                                                               ^~~~~~~~~~
+                                                                               StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'DELETE_FROM_TASK_QUEUE':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:182:52: error: 'Task_unspecified' undeclared (first use in this function)
+    task->task_state                            =   Task_unspecified;
+                                                    ^~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:182:52: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:209:10: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+    task->stack_size                             =   0u       ;
+          ^~~~~~~~~~
+          StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'ADD_TO_IDLE_TASK_QUEUE':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:303:73: error: 'Task_ready' undeclared (first use in this function)
+       (&TASK_IDLE_QUEUE[0u])->task_state                            =   Task_ready             ;
+                                                                         ^~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:330:31: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&TASK_IDLE_QUEUE[0u])->stack_size                             =   task->stack_size        ;
+                               ^~~~~~~~~~
+                               StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:330:80: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       (&TASK_IDLE_QUEUE[0u])->stack_size                             =   task->stack_size        ;
+                                                                                ^~~~~~~~~~
+                                                                                StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c: In function 'OS_INIT_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:372:35: error: 'Task_unspecified' undeclared (first use in this function); did you mean 'TaskFunction'?
+       OS_TASK_STATE_REQUEST(task, Task_unspecified);
+                                   ^~~~~~~~~~~~~~~~
+                                   TaskFunction
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:383:13: error: 'task_t {aka struct task_s}' has no member named 'stack_size'; did you mean 'StackSize'?
+       task->stack_size             = uStackSize;
+             ^~~~~~~~~~
+             StackSize
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:389:21: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+       OS_SET_SW_BUG(os_bug_null_pointer, Func_InitTask);
+                     ^~~~~~~~~~~~~~~~~~~
+                     __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_queue.c:389:42: error: 'Func_InitTask' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_null_pointer, Func_InitTask);
+                                          ^~~~~~~~~~~~~
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TASK_STATE_REQUEST':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:60:9: error: 'Task_unspecified' undeclared (first use in this function)
+    case Task_unspecified:/* 1. create new task */
+         ^~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:60:9: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:64:12: error: 'Task_ready' undeclared (first use in this function)
+       case Task_ready:
+            ^~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:65:12: error: 'Task_running' undeclared (first use in this function); did you mean 'Task_ready'?
+       case Task_running:
+            ^~~~~~~~~~~~
+            Task_ready
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:66:12: error: 'Task_suspended' undeclared (first use in this function); did you mean 'Task_unspecified'?
+       case Task_suspended:
+            ^~~~~~~~~~~~~~
+            Task_unspecified
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:100:24: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+          OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TaskStateRequest);
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:100:57: error: 'Func_TaskStateRequest' undeclared (first use in this function)
+          OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TaskStateRequest);
+                                                         ^~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_CREATE_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:177:39: error: 'Task_suspended' undeclared (first use in this function); did you mean 'task_state_e'?
+          if(task->state_request(task, Task_suspended)== ACCEPTED)
+                                       ^~~~~~~~~~~~~~
+                                       task_state_e
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:183:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_CreateTask);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:183:60: error: 'Func_CreateTask' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_CreateTask);
+                                                            ^~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:188:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+          OS_SET_SW_BUG(os_bug_null_pointer, Func_CreateTask);
+                        ^~~~~~~~~~~~~~~~~~~
+                        __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'os_preempt_task':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:210:39: error: 'Task_ready' undeclared (first use in this function)
+          if(task->state_request(task, Task_ready)== ACCEPTED)
+                                       ^~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:223:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_Preempt_Task);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:223:60: error: 'Func_Preempt_Task' undeclared (first use in this function); did you mean 'os_preempt_task'?
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_Preempt_Task);
+                                                            ^~~~~~~~~~~~~~~~~
+                                                            os_preempt_task
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:228:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+          OS_SET_SW_BUG(os_bug_null_pointer, Func_Preempt_Task);
+                        ^~~~~~~~~~~~~~~~~~~
+                        __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_ACTIVATE_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:249:36: error: 'Task_ready' undeclared (first use in this function)
+       if(task->state_request(task, Task_ready)==ACCEPTED)
+                                    ^~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:268:33: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+                   OS_SET_SW_BUG(os_bug_null_pointer,Func_ActivateTask);
+                                 ^~~~~~~~~~~~~~~~~~~
+                                 __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:268:53: error: 'Func_ActivateTask' undeclared (first use in this function)
+                   OS_SET_SW_BUG(os_bug_null_pointer,Func_ActivateTask);
+                                                     ^~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:274:30: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+                OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_ActivateTask);
+                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_START_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:304:39: error: 'Task_running' undeclared (first use in this function)
+          if(task->state_request(task, Task_running)== ACCEPTED)
+                                       ^~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:319:40: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
+             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:329:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_StartTask);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:329:60: error: 'Func_StartTask' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_StartTask);
+                                                            ^~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:334:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+          OS_SET_SW_BUG(os_bug_null_pointer, Func_StartTask);
+                        ^~~~~~~~~~~~~~~~~~~
+                        __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TERMINATE_TASK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:357:39: error: 'Task_suspended' undeclared (first use in this function); did you mean 'task_state_e'?
+          if(task->state_request(task, Task_suspended)== ACCEPTED)
+                                       ^~~~~~~~~~~~~~
+                                       task_state_e
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:372:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TerminateTask);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:372:60: error: 'Func_TerminateTask' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TerminateTask);
+                                                            ^~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:377:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+          OS_SET_SW_BUG(os_bug_null_pointer, Func_TerminateTask);
+                        ^~~~~~~~~~~~~~~~~~~
+                        __builtin_eh_pointer
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKs':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:481:17: error: 'TASK_0' undeclared (first use in this function); did you mean 'TASK_PTR'?
+                &TASK_0,                           /* Task Function*/
+                 ^~~~~~
+                 TASK_PTR
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:487:16: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
+                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:488:16: error: 'Core0' undeclared (first use in this function)
+                Core0,                            /* Cortex M4 has only 1 core */
+                ^~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:492:4: warning: implicit declaration of function 'OS_SaveTaskPtr' [-Wimplicit-function-declaration]
+    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
+    ^~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:492:29: error: 'Task_0_ptr' undeclared (first use in this function); did you mean 'task_ptr'?
+    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
+                             ^~~~~~~~~~
+                             task_ptr
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:497:17: error: 'TASK_1' undeclared (first use in this function); did you mean 'TASK_0'?
+                &TASK_1,       /* Task Function*/
+                 ^~~~~~
+                 TASK_0
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:508:29: error: 'Task_1_ptr' undeclared (first use in this function); did you mean 'Task_0_ptr'?
+    OS_SaveTaskPtr(task_ptr, Task_1_ptr);
+                             ^~~~~~~~~~
+                             Task_0_ptr
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:513:17: error: 'TASK_2' undeclared (first use in this function); did you mean 'TASK_1'?
+                &TASK_2,       /* Task Function*/
+                 ^~~~~~
+                 TASK_1
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:524:29: error: 'Task_2_ptr' undeclared (first use in this function); did you mean 'Task_1_ptr'?
+    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
+                             ^~~~~~~~~~
+                             Task_1_ptr
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:529:17: error: 'TASK_3' undeclared (first use in this function); did you mean 'TASK_2'?
+                &TASK_3,       /* Task Function*/
+                 ^~~~~~
+                 TASK_2
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:540:29: error: 'Task_3_ptr' undeclared (first use in this function); did you mean 'Task_2_ptr'?
+    OS_SaveTaskPtr(task_ptr, Task_3_ptr);
+                             ^~~~~~~~~~
+                             Task_2_ptr
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'os_task_scheduler':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:598:27: error: 'os_bug_task_max_wait_time_reached' undeclared (first use in this function)
+             OS_SET_SW_BUG(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:598:62: error: 'Func_TaskScheduler' undeclared (first use in this function); did you mean 'os_task_scheduler'?
+             OS_SET_SW_BUG(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
+                                                              ^~~~~~~~~~~~~~~~~~
+                                                              os_task_scheduler
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:616:27: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
+             OS_SET_SW_BUG(os_bug_null_pointer, Func_TaskScheduler);
+                           ^~~~~~~~~~~~~~~~~~~
+                           __builtin_eh_pointer
+At top level:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:449:12: warning: 'task_3' defined but not used [-Wunused-function]
+ LOCAL void task_3(void* task_ptr)
+            ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:436:12: warning: 'task_2' defined but not used [-Wunused-function]
+ LOCAL void task_2(void* task_ptr)
+            ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:423:12: warning: 'task_1' defined but not used [-Wunused-function]
+ LOCAL void task_1(void* task_ptr)
+            ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:418:12: warning: 'task_0' defined but not used [-Wunused-function]
+ LOCAL void task_0(void* task_ptr)
+            ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c: In function 'OS_STACK_CHECK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:32:21: error: 'os_bug_critical_stack_usage' undeclared (first use in this function); did you mean '__builtin_stack_save'?
+       OS_SET_SW_BUG(os_bug_critical_stack_usage,Func_StackCheck);
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                     __builtin_stack_save
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:32:21: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c:32:49: error: 'Func_StackCheck' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_critical_stack_usage,Func_StackCheck);
+                                                 ^~~~~~~~~~~~~~~
 "link it" 
+E:\NeuOrga\Programmieren\c_cpp\github_os\output\os_drivers\obj_arm\os_exception_reset.o: In function `Loop_end':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception_reset.s:128: undefined reference to `OS_START_OS'
+os_exception.o: In function `OS_EXCEPTION_SYSTICK':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:149: undefined reference to `OS_UpdateCurrentTime'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:224: undefined reference to `GET_RUNNING_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:225: undefined reference to `GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:228: undefined reference to `OS_TASK_SAVE_TASK_ENVIRONMENT'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:232: undefined reference to `OS_GET_CURRENT_TIME'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:233: undefined reference to `INT_SUB'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:234: undefined reference to `INT_ADD'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:236: undefined reference to `INT_ADD'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:238: undefined reference to `OS_TERMINATE_TASK'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:241: undefined reference to `OS_STATE_HANDLER'
+os_exception.o: In function `OS_EXCEPTION_NMI':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:43: undefined reference to `OS_SHUTDOWN'
+os_exception.o: In function `OS_EXCEPTION_HARDFAULT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:43: undefined reference to `OS_SHUTDOWN'
+os_exception.o: In function `OS_EXCEPTION_MEM_MANAG_FAULT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:43: undefined reference to `OS_SHUTDOWN'
+os_exception.o: In function `OS_EXCEPTION_BUS_FAULT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:43: undefined reference to `OS_SHUTDOWN'
+os_exception.o: In function `OS_EXCEPTION_USAGE_FAULT':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:43: undefined reference to `OS_SHUTDOWN'
+os_exception.o:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_exception.c:132: more undefined references to `OS_SHUTDOWN' follow
+os_init_task_system.o: In function `OS_INIT_TASK_SYSTEM':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_init_task_system.c:7: undefined reference to `OS_INIT_TASKs'
+os_main.o: In function `OS_StateHandler':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_main.c:100: undefined reference to `OS_InitMc'
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_main.c:103: undefined reference to `OS_InitHw'
+os_shutdown.o: In function `OS_Shutdown':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_shutdown.c:47: undefined reference to `OS_StartExtPrg'
+os_start_init_sw.o: In function `OS_InitSw':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base/os_start_init_sw.c:14: undefined reference to `OS_InitTaskSystem'
+collect2.exe: error: ld returned 1 exit status

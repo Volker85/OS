@@ -2,7 +2,7 @@
 void LLF_MCU_SWITCH_OFF_POWER(void)
 {
    /* OS_SIM: no power off available */
-   while(0)
+   while(0u)
    {
 
    }
@@ -10,7 +10,7 @@ void LLF_MCU_SWITCH_OFF_POWER(void)
 void LLF_MCU_RESET_POWER(void)
 {
    /* OS_SIM no reset available */
-   while(0)
+   while(0u)
    {
 
    }

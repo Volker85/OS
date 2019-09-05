@@ -4,10 +4,10 @@
 #include "os_firstinc.h"
 #include "os_task_common.h"
 
-#define TASK_0_PTR 0
-#define TASK_1_PTR 1
-#define TASK_2_PTR 2
-#define TASK_3_PTR 3
+#define TASK_0_PTR 0u
+#define TASK_1_PTR 1u
+#define TASK_2_PTR 2u
+#define TASK_3_PTR 3u
 
 #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
 
@@ -25,7 +25,7 @@ extern void OS_INIT_TASK(
    unsigned_char_t* pStackAddr,
    unsigned_int32_t uStackSize,
    privilige_mode_t privilige_mode,
-   CoreID_t         core,
+   coreid_t         core,
    unsigned_char_t  default_prio
 );
 extern void OS_INIT_TASKS(void);

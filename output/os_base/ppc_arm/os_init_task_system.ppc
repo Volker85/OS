@@ -456,26 +456,54 @@
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.c"
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
 
-#define _os_firstinc_h_ 
+#define _OS_FIRSTINC_H_ 
 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h" 1
+# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_config.h" 1
 
-#define _BASE_TYPES_H_ 
+#define _OS_CONFIG_H_ 
 
-#define INTEGER_LLP64_IL32P64 1
-#define INTEGER_LP64_I32LP64 2
-#define INTEGER_ILP64 3
-#define INTEGER_SILP64 4
 
-#define CPP_VERSION_NONE 0
-#define CPP_VERSION_1998 1
-#define CPP_VERSION_2003 2
-#define CPP_VERSION_2007 3
-#define CPP_VERSION_2011 4
+#define INTEGER_LLP64_IL32P64 1u
+#define INTEGER_LP64_I32LP64 2u
+#define INTEGER_ILP64 3u
+#define INTEGER_SILP64 4u
+#define INTEGER_MODEL INTEGER_LLP64_IL32P64
+
+
+#define CPP_VERSION_NONE 0u
+#define CPP_VERSION_1998 1u
+#define CPP_VERSION_2003 2u
+#define CPP_VERSION_2007 3u
+#define CPP_VERSION_2011 4u
 #define ISO_CPP_VERSION CPP_VERSION_1998
 
-#define INTEGER_MODEL INTEGER_LLP64_IL32P64
-# 29 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+
+#define BIG_INT_SIZE 16u
+
+
+#define NR_OF_CORES 1u
+
+
+
+#define MCU_CLOCK_IN_HZ ((uint32)168000000u)
+
+#define DYNAMIC_MEMORY_USED FALSE
+#define LOOPTIME_IN_USEC ((uint32)10000u)
+
+
+#define HEAP_SIZE 10000u
+#define MIN_BLOCK_SIZE_HEAP 8u
+#define HEAP_OFFSET_FOR_SIZE 0u
+#define HEAP_OFFSET_FOR_USED_SIZE 4u
+#define HEAP_OFFSET_FOR_CHUNK 8u
+
+
+#define OS_STACK_SIZE 0x200u
+# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h" 1
+
+#define _OS_BASE_TYPES_H_ 
+# 17 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
 typedef unsigned char unsigned_char_t;
 typedef signed char signed_char_t;
 typedef unsigned char unsigned_int8_t;
@@ -490,90 +518,88 @@ typedef unsigned long unsigned_int32_t;
 typedef signed long signed_int32_t;
 typedef unsigned long uint32;
 typedef signed long sint32;
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h" 1
 
-#define _os_common_h_ 
+#define _OS_COMMON_H_ 
 
 
 
-#define False 0
-#define True 1
-#define FALSE False
-#define TRUE True
-#define Accepted 1
-#define Rejected 0
-#define Local static
-#define Local_inline static __inline__
-#define Global_inline __inline__
-#define ReferenceUnusedParameter(x) ((x) = (x))
-#define DynamicMemoryUsed False
+#define FALSE 0u
+#define TRUE 1u
+#define ACCEPTED 1u
+#define REJECTED 0u
+#define LOCAL static
+#define LOCAL_INLINE static __inline__
+#define GLOBAL_INLINE __inline__
+#define REFERENCE_UNUSED_PARAMETER(x) ((x) = (x))
 
 
-#define cMCU_X86 3
-#define cMCU_CORTEX_M4 4
+#define MCU_X86 3
+#define MCU_CORTEX_M4 4
 
 
-#define NR_OF_CORES 1
-
-#define MCU_CLOCK_IN_HZ ((uint32)168000000u)
-# 36 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-#define DisableInterrupts() LLF_INT_DISABLE()
-#define EnableInterrupts() LLF_INT_ENABLE()
-#define Privilige_level_save_current() ;
-#define Privilige_level_enter_kernel_mode() ;
-#define Privilige_level_restore_saved() ;
-#define HaltMcu() LLF_WAIT_FOR_INTERRUPT()
+#define DWT_CTRL ((volatile uint32*)0xE0001000u)
+#define DWT_CYCCNT ((volatile uint32*)0xE0001004u)
+#define DWT_LAR ((volatile uint32*)0xE0001FB0u)
+#define SCB_DEMCR ((volatile uint32*)0xE000EDFCu)
+# 33 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+#define DISABLE_INTERRUPTS() LLF_INT_DISABLE()
+#define ENABLE_INTERRUPTS() LLF_INT_ENABLE()
+#define PRIVILIGE_LEVEL_SAVE_CURRENT() ;
+#define PRIVILIGE_LEVEL_ENTER_KERNEL_MODE() ;
+#define PRIVILIGE_LEVEL_RESTORE_SAVED() ;
+#define HALT_MCU() LLF_WAIT_FOR_INTERRUPT()
 
 enum os_sw_bugs_e
 {
-   os_bug_no_bug = 0,
-   os_bug_taskstate_request_denied,
-   os_bug_null_pointer,
-   os_bug_task_max_wait_time_reached,
-   os_bug_Task_unspecified,
-   os_bug_exception_UndefInstruction,
-   os_bug_exception_AbortPrefetch,
-   os_bug_exception_AbortData,
-   os_bug_reset_exit_or_shutdown_failed,
-   os_bug_critical_stack_usage,
-   os_bug_svc_number_missing
+   E_OS_BUG_NO_BUG = 0,
+   E_OS_BUG_TASKSTATE_REQUEST_DENIED,
+   E_OS_BUG_NULL_POINTER,
+   E_OS_BUG_TASK_MAX_WAIT_TIME_REACHED,
+   E_OS_BUG_TASK_UNSPECIFIED,
+   E_OS_BUG_EXCEPTION_UNDEFINSTRUCTION,
+   E_OS_BUG_EXCEPTION_ABORTPREFETCH,
+   E_OS_BUG_EXCEPTION_ABORTDATA,
+   E_OS_BUG_RESET_EXIT_OR_SHUTDOWN_FAILED,
+   E_OS_BUG_CRITICAL_STACK_USAGE,
+   E_OS_BUG_SVC_NUMBER_MISSING
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 typedef uint8 boolean_t;
 enum os_sw_bugs_function_e
 {
-   Func_NoFunction = 0,
-   Func_SaveTaskEnvironment,
-   Func_RestoreTaskEnvironment,
-   Func_CreateTaskEnvironment,
-   Func_DeleteTaskEnvironment,
-   Func_InitTaskEnvironment,
-   Func_StartTask,
-   Func_PreemptTask,
-   Func_TerminateTask,
-   Func_TaskScheduler,
-   Func_InitTask,
-   Func_ActivateTask,
-   Func_TaskStateRequest,
-   Func_Preempt_Task,
-   Func_os_exception,
-   Func_CreateTask,
-   Func_Shutdown,
-   Func_StackCheck,
-   Func_IsrHandler
+   E_FUNC_NOFUNCTION = 0,
+   E_FUNC_SAVETASKENVIRONMENT,
+   E_FUNC_RESTORETASKENVIRONMENT,
+   E_FUNC_CREATETASKENVIRONMENT,
+   E_FUNC_DELETETASKENVIRONMENT,
+   E_FUNC_INITTASKENVIRONMENT,
+   E_FUNC_STARTTASK,
+   E_FUNC_PREEMPTTASK,
+   E_FUNC_TERMINATETASK,
+   E_FUNC_TASKSCHEDULER,
+   E_FUNC_INITTASK,
+   E_FUNC_ACTIVATETASK,
+   E_FUNC_TASKSTATEREQUEST,
+   E_FUNC_PREEMPT_TASK,
+   E_FUNC_OS_EXCEPTION,
+   E_FUNC_CREATETASK,
+   E_FUNC_SHUTDOWN,
+   E_FUNC_STACKCHECK,
+   E_FUNC_ISRHANDLER
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
 
 
-extern void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
+extern void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
 
 typedef void (*func_ptr_t)(void);
 
 
-#define BigIntSize 16
-typedef struct BigInt_s
+
+typedef struct big_int_s
 {
 
 
@@ -582,47 +608,47 @@ typedef struct BigInt_s
 
 
 
-  uint8 Number[16];
-}BigInt;
-extern void AssignNull(BigInt* leftOperand);
-extern void Assign(BigInt* leftOperand, BigInt* rightOperand);
-extern void AssignUint32(BigInt* leftOperand, uint32 rightOperand);
-extern boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2);
-extern boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2);
-extern boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2);
-extern boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2);
-extern boolean_t IsLess(BigInt* Operand1, BigInt* Operand2);
-
-
-
-
-extern void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend);
-extern void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand);
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+   uint8 number[16u];
+} big_int;
+extern void ASSIGN_NULL(big_int* leftOperand);
+extern void ASSIGN(big_int* leftOperand, big_int* rightOperand);
+extern void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand);
+extern boolean_t IS_GREATER_OR_EQUAL(big_int* Operand1, big_int* Operand2);
+extern boolean_t IS_GREATER(big_int* Operand1, big_int* Operand2);
+extern boolean_t IS_EQUAL(big_int* Operand1, big_int* Operand2);
+extern boolean_t IS_LESS_OR_EQUAL(big_int* Operand1, big_int* Operand2);
+extern boolean_t IS_LESS(big_int* Operand1, big_int* Operand2);
+extern void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor);
+extern void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2);
+extern void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend);
+extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
+extern uint32 get_uint32_of_4_uint8(uint8* ptr);
+extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
+# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 
 
 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 1
 
-#define _lld_global_h_ 
+#define _LLD_GLOBAL_H_ 
 
 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 1
 
-#define _lld_core_h_ 
+#define _LLD_CORE_H_ 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
 # 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 2
-enum CoreID_e
+enum coreid_e
 {
-   Core0 = 0,
-   Core1,
-   Core2,
-   Core3
+   E_CORE0 = 0,
+   E_CORE1,
+   E_CORE2,
+   E_CORE3
 };
-typedef enum CoreID_e CoreID_t;
+typedef enum coreid_e coreid_t;
 
-extern CoreID_t OS_GetCoreId(void);
+extern coreid_t OS_GET_CORE_ID(void);
 extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 extern void LLF_EXCEPTION_TO_HANDLER_MODE(void);
 extern void LLF_EXCEPTION_TO_THREAD_MODE_PRIV(void);
@@ -630,48 +656,45 @@ extern void LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV(void);
 
 enum privilige_mode_e
 {
-   ePriviligeMode_unpriviliged_thread_mode = 0,
-   ePriviligeMode_priviliged_thread_mode,
-   ePriviligeMode_priviliged_handler_mode
+   E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE = 0,
+   E_PRIVILIGEMODE_PRIVILIGED_THREAD_MODE,
+   E_PRIVILIGEMODE_PRIVILIGED_HANDLER_MODE
 };
 typedef enum privilige_mode_e privilige_mode_t;
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
 
-#define _os_task_common_h_ 
+#define _OS_TASK_COMMON_H_ 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
 # 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_config.h" 1
 
-#define _os_task_config_h_ 
+#define _OS_TASK_CONFIG_H_ 
 
 
-#define SchedulerFrequency (1.0e3)
-#define MinTimeSlice_s (1.0/SchedulerFrequency)
-#define MinTimeSlice_us ((1.0/SchedulerFrequency)*1e6)
-#define Task_min_time (1e0)
-#define NUMBER_OF_TASKS 10
+#define TASK_MIN_TIME (1e0)
+#define NUMBER_OF_TASKS 10u
 #define MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)
 #define MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE
 
-#define TASK_STACK_SIZE 2000
+#define TASK_STACK_SIZE 2000u
 
 
-#define MS_PER_SEC (1000)
-#define USE_STATIC_CREATED_TASKS True
+#define MS_PER_SEC 1000u
+#define USE_STATIC_CREATED_TASKS TRUE
 # 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.h" 1
 
-#define _os_init_task_system_h_ 
-extern void OS_InitTaskSystem(void);
+#define _OS_INIT_TASK_SYSTEM_H_ 
+extern void OS_INIT_TASK_SYSTEM(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 2
 
 enum task_state_e
 {
-   Task_unspecified = 0,
-   Task_suspended,
-   Task_ready,
-   Task_running
+   E_TASK_UNSPECIFIED = 0,
+   E_TASK_SUSPENDED,
+   E_TASK_READY,
+   E_TASK_RUNNING
 };
 typedef enum task_state_e task_state_t;
 
@@ -681,7 +704,7 @@ typedef void (*func_p_void_void_t) (void);
 typedef void (*func_p_t) (void* task);
 typedef unsigned_char_t (*func_p_u8_t) (void* task);
 typedef unsigned_char_t (*func_p_state_change_t)(void* task, task_state_t requested_task_state);
-typedef BigInt timebig_t;
+typedef big_int timebig_t;
 
 struct task_group_s
 {
@@ -694,13 +717,13 @@ struct task_s
 {
    unsigned active :1;
    unsigned task_queued :1;
-   unsigned IdleTask :1;
-   unsigned FREE :29;
-   unsigned_char_t NrOfInsAllowed;
-   unsigned_char_t NrOfInsActivated;
-   timebig_t WaitActUntil;
+   unsigned idle_task :1;
+   unsigned free :29;
+   unsigned_char_t nr_of_ins_allowed;
+   unsigned_char_t nr_of_ins_activated;
+   timebig_t wait_act_until;
    timebig_t wait_time;
-   timebig_t TimeToPrioInc;
+   timebig_t time_to_prio_inc;
    uint32 overwaittime_per_prio_inc_step;
    timebig_t max_allowed_wait_time;
    timebig_t exe_time;
@@ -732,30 +755,30 @@ struct task_s
    unsigned_int32_t r11;
    unsigned_int32_t r12;
 
-   unsigned_char_t* pStackPointer;
-   unsigned_char_t* pStackPointerByMalloc;
-   unsigned_char_t* pStackPointerStart;
+   unsigned_char_t* p_stack_pointer;
+   unsigned_char_t* p_stack_pointer_by_malloc;
+   unsigned_char_t* p_stack_pointer_start;
    unsigned_int32_t StackSize;
-   unsigned_char_t* pStackPointerEnd;
+   unsigned_char_t* p_stack_pointer_end;
    privilige_mode_t privilige_mode;
 };
 typedef struct task_s task_t;
 typedef task_t* scheduling_t;
-extern void OS_ResetCurrentTime(void);
-extern void OS_GetCurrentTime(timebig_t* time);
+extern void OS_RESET_CURRENT_TIME(void);
+extern void OS_GET_CURRENT_TIME(timebig_t* time);
 
-extern void OS_TaskSaveTaskEnvironment(task_t* task);
+extern void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task);
 extern void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
 extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
-extern void OS_Task_InitTaskEnvironment(task_t* task);
-extern void OS_Task_DeleteTaskEnvironment(task_t* task);
-extern task_t* TASK_PTR[(10)];
+extern void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task);
+extern void OS_TASK_DELETE_TASK_ENVIRONMENT(task_t* task);
+extern task_t* TASK_PTR[(10u)];
 
 typedef timebig_t scheduler_time_t;
 
-#define os_SaveTaskPtr(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))
-#define os_GetTaskPtr(task_name) ((task_t*) TASK_PTR[(task_name)])
+#define OS_SAVE_TASK_PTR(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))
+#define OS_GET_TASK_PTR(task_name) ((task_t*) TASK_PTR[(task_name)])
 # 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
 extern void LLF_INT_ENABLE(void);
 extern void LLF_INT_DISABLE(void);
@@ -773,7 +796,7 @@ extern void LLF_RESTORE_REGISTERS(task_t* task);
 extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
-# 11 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+# 12 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h" 1
 
@@ -781,17 +804,17 @@ extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
 # 40 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h"
 typedef enum
 {
-  LED1 = 0,
-  LED2 = 1,
-  LED3 = 2,
-  LED4 = 3
+   E_LED1 = 0,
+   E_LED2 = 1,
+   E_LED3 = 2,
+   E_LED4 = 3
 } led_t;
 
 extern void USER_LED_INIT(led_t Led);
 extern void USER_LED_ON(led_t Led);
 extern void USER_LED_OFF(led_t Led);
 extern void USER_LED_TOGGLE(led_t Led);
-# 13 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+# 14 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 1
 
@@ -800,45 +823,30 @@ extern void USER_LED_TOGGLE(led_t Led);
 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.h" 1
 
-#define _os_stack_h_ 
-
-#define OS_STACK_SIZE 0x200u
-extern void OS_StackChkPatternInit(void);
-extern void OS_StackCheck(void);
+#define _OS_STACK_H_ 
+extern void OS_STACK_CHK_PATTERN_INIT(void);
+extern void OS_STACK_CHECK(void);
 # 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
 
-#define _os_heap_h_ 
+#define _OS_HEAP_H_ 
 
-
-#define HEAP_SIZE 10000
-#define MIN_BLOCK_SIZE_HEAP 8
-
-
-#define HEAP_OFFSET_FOR_SIZE 0
-#define HEAP_OFFSET_FOR_USED_SIZE 4
-#define HEAP_OFFSET_FOR_CHUNK 8
-
-
-
-extern void* OS_Calloc(uint32 num, uint32 size);
-extern void* OS_Realloc(void* ptr_old, uint32 size_new);
-extern void* OS_Malloc(uint32 size);
-extern void OS_Free(void* ptr);
+extern void* OS_CALLOC(uint32 num, uint32 size);
+extern void* OS_REALLOC(void* ptr_old, uint32 size_new);
+extern void* OS_MALLOC(uint32 size);
+extern void OS_free(void* ptr);
 # 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h" 1
 
-#define _os_main_h_ 
-#define os_init 0
-#define os_running 1
-#define os_shutdown 2
-extern void OS_StateHandler(void);
+#define _OS_MAIN_H_ 
+
+extern void OS_STATE_HANDLER(void);
 # 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
 # 10 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
 
-extern unsigned_char_t HEAP[10000];
+extern unsigned_char_t HEAP[10000u];
 
 
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
@@ -865,11 +873,11 @@ extern volatile uint32 TASK4_CALL_NR;
 extern volatile uint32* STACK_ADDR;
 extern volatile uint32 STACK_POS;
 extern volatile uint32 STACK_USAGE_PERCENT;
-extern unsigned_char_t TASK_STACK[(10)][2000];
+extern unsigned_char_t TASK_STACK[(10u)][2000u];
 extern scheduler_time_t LAST_CURRENT_TIME;
-extern scheduling_t TASK_SCHEDULING_QUEUE[(10)];
+extern scheduling_t TASK_SCHEDULING_QUEUE[(10u)];
 extern scheduling_t* RUNNING_SCHEDULING_QUEUE_ENTRY;
-extern task_t TASK_RUN_QUEUE[(10)];
+extern task_t TASK_RUN_QUEUE[(10u)];
 extern task_t RUNNING_TASK[1];
 extern task_t TASK_IDLE_QUEUE[1];
 extern unsigned_char_t bTASK_QUEUE_INITIALIZED;
@@ -880,56 +888,57 @@ extern task_state_t TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t TASK_TRANSITION_CURRENT_STATE;
 extern volatile void* SAVED_STACK_POINTER;
 extern volatile uint8 SYSTEM_STATE_ACCEPTED;
-# 15 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+extern timebig_t LOCAL_SYSTEM_TIME;
+# 16 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h" 1
 
 #define _OS_RAM_STACK_H_ 
 # 12 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
 extern unsigned_char_t OS_MAIN_STACK[0x200u];
-# 16 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+# 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h" 1
 
-#define _os_task_scheduler_h_ 
+#define _OS_TASK_SCHEDULER_H_ 
 
 
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
 # 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h" 2
 
-#define Task_0_ptr 0
-#define Task_1_ptr 1
-#define Task_2_ptr 2
-#define Task_3_ptr 3
+#define TASK_0_PTR 0u
+#define TASK_1_PTR 1u
+#define TASK_2_PTR 2u
+#define TASK_3_PTR 3u
 
-#define OS_SaveTaskPtr(task_ptr,Task_n_ptr) 
+#define OS_SAVE_TASK_PTR(task_ptr,Task_n_ptr) 
 
 
 
-extern void OS_StartTask(task_t* task, scheduling_t* scheduling_task);
-extern void OS_ActivateTask(task_t* task);
-extern void OS_SleepTask(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr);
-extern void OS_InitTask(
+extern void OS_START_TASK(task_t* task, scheduling_t* scheduling_task);
+extern void OS_ACTIVATE_TASK(task_t* task);
+extern void OS_SLEEP_TASK(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr);
+extern void OS_INIT_TASK(
    task_t* task,
    func_p_t TaskFunction,
    unsigned_char_t AllowedInstances,
-   unsigned_char_t IdleTask,
+   unsigned_char_t idle_task,
    task_group_t* p_task_group,
    unsigned_char_t* pStackAddr,
    unsigned_int32_t uStackSize,
    privilige_mode_t privilige_mode,
-   CoreID_t core,
+   coreid_t core,
    unsigned_char_t default_prio
 );
-extern void OS_InitTasks(void);
-extern unsigned_char_t task_state_request(void* task, task_state_t requested_state);
-extern void OS_ActivateDispatcher(void);
-extern void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task);
-extern void OS_TaskDispatcher(void);
-extern void OS_CreateTask(task_t* task);
+extern void OS_INIT_TASKS(void);
+extern unsigned_char_t OS_TASK_STATE_REQUEST(void* task, task_state_t requested_state);
+extern void OS_ACTIVATE_DISPATCHER(void);
+extern void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task);
+extern void OS_TASK_DISPATCHER(void);
+extern void OS_CREATE_TASK(task_t* task);
 # 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.c" 2
 
-void OS_InitTaskSystem(void)
+void OS_INIT_TASK_SYSTEM(void)
 {
 
-   OS_InitTasks();
+   OS_INIT_TASKs();
 }

@@ -1,5 +1,5 @@
 #include "..\os_base\os_firstinc.h"
-CoreID_t OS_GET_CORE_ID(void)
+coreid_t OS_GET_CORE_ID(void)
 {
    /* the Coretex M4 process has just one core-> use static assignement of core id */
    /*
@@ -17,7 +17,7 @@ CoreID_t OS_GET_CORE_ID(void)
    MIPDR_EL3 contains the unchangeable ID of each physical core. No two cores share the same MPIDR_EL3 value.
    */
    /* Cortex M7 seems to be always single core */
-   CoreID_t ret_val = 0;
+   coreid_t ret_val = 0u;
    return (ret_val);
 }
 void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer)

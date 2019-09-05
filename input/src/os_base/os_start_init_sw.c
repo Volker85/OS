@@ -6,14 +6,14 @@ void OS_INIT_SW(void)
    unsigned_char_t i;
    bTASK_QUEUE_INITIALIZED = FALSE;
 
-   for(i = 0; i < 15; i++)
+   for(i = 0u; i < 15u; i++)
    {
       OS_SW_BUG[i] = os_bug_no_bug;
    }
 
    OS_INIT_TASK_SYSTEM();
-   TASK1_CALL_NR = 0;
-   TASK2_CALL_NR = 0;
-   TASK3_CALL_NR = 0;
-   TASK4_CALL_NR = 0;
+   TASK1_CALL_NR = 0u;
+   TASK2_CALL_NR = 0u;
+   TASK3_CALL_NR = 0u;
+   TASK4_CALL_NR = 0u;
 }

@@ -19,7 +19,7 @@ typedef void            (*func_p_void_void_t)   (void);
 typedef void            (*func_p_t)             (void* task);
 typedef unsigned_char_t (*func_p_u8_t)          (void* task);
 typedef unsigned_char_t (*func_p_state_change_t)(void* task, task_state_t requested_task_state);
-typedef bigint timebig_t;
+typedef big_int timebig_t;
 
 struct task_group_s
 {

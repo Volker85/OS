@@ -1,117 +1,21 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccplUQBg.s 			page 1
-
-
-   1              		.cpu cortex-m4
-   2              		.eabi_attribute 20, 1
-   3              		.eabi_attribute 21, 1
-   4              		.eabi_attribute 23, 3
-   5              		.eabi_attribute 24, 1
-   6              		.eabi_attribute 25, 1
-   7              		.eabi_attribute 26, 1
-   8              		.eabi_attribute 30, 2
-   9              		.eabi_attribute 34, 1
-  10              		.eabi_attribute 18, 4
-  11              		.file	"os_exception_isr_handler.c"
-  12              		.text
-  13              	.Ltext0:
-  14              		.cfi_sections	.debug_frame
-  15              		.align	1
-  16              		.p2align 2,,3
-  17              		.global	OS_ISRHANDLERC0
-  18              		.syntax unified
-  19              		.thumb
-  20              		.thumb_func
-  21              		.fpu softvfp
-  23              	OS_ISRHANDLERC0:
-  24              	.LFB0:
-  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_exception_isr_handl
-   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #include "os_firstinc.h"
-   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #include "os_task_common.h"
-   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #include "os_task_scheduler.h"
-   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #include "os_shutdown.h"
-   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** 
-   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** #define SVC_00 0x00
-   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** 
-   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** void OS_ISRHANDLERC0(uint32 svc_number)
-   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** {    
-  26              		.loc 1 9 0
-  27              		.cfi_startproc
-  28              		@ args = 0, pretend = 0, frame = 0
-  29              		@ frame_needed = 0, uses_anonymous_args = 0
-  30              	.LVL0:
-  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     switch(svc_number)
-  31              		.loc 1 10 0
-  32 0000 00B9     		cbnz	r0, .L8
-  33 0002 7047     		bx	lr
-  34              	.L8:
-   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     switch(svc_number)
-  35              		.loc 1 9 0
-  36 0004 08B5     		push	{r3, lr}
-  37              		.cfi_def_cfa_offset 8
-  38              		.cfi_offset 3, -8
-  39              		.cfi_offset 14, -4
-  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     {        
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     case SVC_00:            /* Handle SVC 00 */    
-  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     {
-  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        /* svc_00 implemented as reference only */
-  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        ReferenceUnusedParameter(svc_number);
-  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        break;
-  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     }
-  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     default:                /* Unknown SVC */            
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccplUQBg.s 			page 2
-
-
-  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     {
-  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        OS_SetSwBug(os_bug_svc_number_missing, Func_IsrHandler);
-  40              		.loc 1 20 0
-  41 0006 0A20     		movs	r0, #10
-  42              	.LVL1:
-  43 0008 1221     		movs	r1, #18
-  44 000a FFF7FEFF 		bl	OS_SetSwBug
-  45              	.LVL2:
-  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        OS_Shutdown(os_reset_hardreset);
-  46              		.loc 1 21 0
-  47 000e 0020     		movs	r0, #0
-  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        break;
-  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     }
-  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****     }   
-  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c **** }...
-  48              		.loc 1 25 0
-  49 0010 BDE80840 		pop	{r3, lr}
-  50              		.cfi_restore 14
-  51              		.cfi_restore 3
-  52              		.cfi_def_cfa_offset 0
-  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c ****        OS_Shutdown(os_reset_hardreset);
-  53              		.loc 1 21 0
-  54 0014 FFF7FEBF 		b	OS_Shutdown
-  55              	.LVL3:
-  56              		.cfi_endproc
-  57              	.LFE0:
-  59              	.Letext0:
-  60              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  61              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-  62              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  63              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  64              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  65              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-  66              		.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_shutdown.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccplUQBg.s 			page 3
-
-
-DEFINED SYMBOLS
-                            *ABS*:00000000 os_exception_isr_handler.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccplUQBg.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccplUQBg.s:23     .text:00000000 OS_ISRHANDLERC0
-                           .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
-                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
-                           .group:00000000 wm4.os_common.h.2.7e9aadbd6cc66ffeb9ea2492a31fabc8
-                           .group:00000000 wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898
-                           .group:00000000 wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960
-                           .group:00000000 wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4
-                           .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
-                           .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
-                           .group:00000000 wm4.os_task_scheduler.h.2.125feba674fa85672711aed1ca8ea199
-
-UNDEFINED SYMBOLS
-OS_SetSwBug
-OS_Shutdown
+In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:3:0:
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
+ #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
+ 
+In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
+                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:1:
+e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
+ #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
+ 
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c: In function 'OS_ISRHANDLERC0':
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:12:9: error: 'SVC_00' undeclared (first use in this function)
+    case SVC_00:            /* Handle SVC 00 */
+         ^~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:12:9: note: each undeclared identifier is reported only once for each function it appears in
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:20:21: error: 'os_bug_svc_number_missing' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_svc_number_missing, Func_IsrHandler);
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_exception_isr_handler.c:20:48: error: 'Func_IsrHandler' undeclared (first use in this function)
+       OS_SET_SW_BUG(os_bug_svc_number_missing, Func_IsrHandler);
+                                                ^~~~~~~~~~~~~~~

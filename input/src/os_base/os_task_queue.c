@@ -33,53 +33,53 @@
 void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task)
 {
    RUNNING_SCHEDULING_QUEUE_ENTRY = scheduling_task;
-   if(task != 0)
+   if(task != 0u)
    {
-      (&RUNNING_TASK[0])->active                          = task->active;
-      (&RUNNING_TASK[0])->task_queued                     = task->task_queued;
-      (&RUNNING_TASK[0])->idle_task                        = task->idle_task;
-      (&RUNNING_TASK[0])->free                            = task->free;
-      (&RUNNING_TASK[0])->nr_of_ins_allowed                  = task->nr_of_ins_allowed;
-      (&RUNNING_TASK[0])->nr_of_ins_activated                = task->nr_of_ins_activated;
-      ASSIGN(&(&RUNNING_TASK[0])->wait_act_until, &task->wait_act_until);
-      ASSIGN(&(&RUNNING_TASK[0])->wait_time, &task->wait_time);
-      ASSIGN(&(&RUNNING_TASK[0])->time_to_prio_inc, &task->time_to_prio_inc);
-      (&RUNNING_TASK[0])->overwaittime_per_prio_inc_step  = task->overwaittime_per_prio_inc_step;
-      ASSIGN(&(&RUNNING_TASK[0])->max_allowed_wait_time, &task->max_allowed_wait_time);
-      ASSIGN(&(&RUNNING_TASK[0])->exe_time, &task->exe_time  );
-      ASSIGN(&(&RUNNING_TASK[0])->start_time, &task->start_time);
-      (&RUNNING_TASK[0])->current_prio                    = task->current_prio;
-      (&RUNNING_TASK[0])->default_prio                    = task->default_prio;
-      (&RUNNING_TASK[0])->fp                              = task->fp;
-      (&RUNNING_TASK[0])->state_request                   = task->state_request;
-      (&RUNNING_TASK[0])->task_state                      = task->task_state;
-      (&RUNNING_TASK[0])->task_group                      = task->task_group;
+      (&RUNNING_TASK[0u])->active                             = task->active;
+      (&RUNNING_TASK[0u])->task_queued                        = task->task_queued;
+      (&RUNNING_TASK[0u])->idle_task                          = task->idle_task;
+      (&RUNNING_TASK[0u])->free                               = task->free;
+      (&RUNNING_TASK[0u])->nr_of_ins_allowed                  = task->nr_of_ins_allowed;
+      (&RUNNING_TASK[0u])->nr_of_ins_activated                = task->nr_of_ins_activated;
+      ASSIGN(&(&RUNNING_TASK[0u])->wait_act_until, &task->wait_act_until);
+      ASSIGN(&(&RUNNING_TASK[0u])->wait_time, &task->wait_time);
+      ASSIGN(&(&RUNNING_TASK[0u])->time_to_prio_inc, &task->time_to_prio_inc);
+      (&RUNNING_TASK[0u])->overwaittime_per_prio_inc_step  = task->overwaittime_per_prio_inc_step;
+      ASSIGN(&(&RUNNING_TASK[0u])->max_allowed_wait_time, &task->max_allowed_wait_time);
+      ASSIGN(&(&RUNNING_TASK[0u])->exe_time, &task->exe_time  );
+      ASSIGN(&(&RUNNING_TASK[0u])->start_time, &task->start_time);
+      (&RUNNING_TASK[0u])->current_prio                    = task->current_prio;
+      (&RUNNING_TASK[0u])->default_prio                    = task->default_prio;
+      (&RUNNING_TASK[0u])->fp                              = task->fp;
+      (&RUNNING_TASK[0u])->state_request                   = task->state_request;
+      (&RUNNING_TASK[0u])->task_state                      = task->task_state;
+      (&RUNNING_TASK[0u])->task_group                      = task->task_group;
 #if(CFG_PROCESSOR == MCU_X86)
-      (&RUNNING_TASK[0])->eax                             = task->eax;
-      (&RUNNING_TASK[0])->ebx                             = task->ebx;
-      (&RUNNING_TASK[0])->ecx                             = task->ecx;
-      (&RUNNING_TASK[0])->edx                             = task->edx;
+      (&RUNNING_TASK[0u])->eax                             = task->eax;
+      (&RUNNING_TASK[0u])->ebx                             = task->ebx;
+      (&RUNNING_TASK[0u])->ecx                             = task->ecx;
+      (&RUNNING_TASK[0u])->edx                             = task->edx;
 #else
-      (&RUNNING_TASK[0])->r0                             = task->r0;
-      (&RUNNING_TASK[0])->r1                             = task->r1;
-      (&RUNNING_TASK[0])->r2                             = task->r2;
-      (&RUNNING_TASK[0])->r3                             = task->r3;
-      (&RUNNING_TASK[0])->r4                             = task->r4;
-      (&RUNNING_TASK[0])->r5                             = task->r5;
-      (&RUNNING_TASK[0])->r6                             = task->r6;
-      (&RUNNING_TASK[0])->r7                             = task->r7;
-      (&RUNNING_TASK[0])->r8                             = task->r8;
-      (&RUNNING_TASK[0])->r9                             = task->r9;
-      (&RUNNING_TASK[0])->r10                            = task->r10;
-      (&RUNNING_TASK[0])->r11                            = task->r11;
-      (&RUNNING_TASK[0])->r12                            = task->r12;
+      (&RUNNING_TASK[0u])->r0                             = task->r0;
+      (&RUNNING_TASK[0u])->r1                             = task->r1;
+      (&RUNNING_TASK[0u])->r2                             = task->r2;
+      (&RUNNING_TASK[0u])->r3                             = task->r3;
+      (&RUNNING_TASK[0u])->r4                             = task->r4;
+      (&RUNNING_TASK[0u])->r5                             = task->r5;
+      (&RUNNING_TASK[0u])->r6                             = task->r6;
+      (&RUNNING_TASK[0u])->r7                             = task->r7;
+      (&RUNNING_TASK[0u])->r8                             = task->r8;
+      (&RUNNING_TASK[0u])->r9                             = task->r9;
+      (&RUNNING_TASK[0u])->r10                            = task->r10;
+      (&RUNNING_TASK[0u])->r11                            = task->r11;
+      (&RUNNING_TASK[0u])->r12                            = task->r12;
 #endif
 
-      (&RUNNING_TASK[0])->p_stack_pointer                   = task->p_stack_pointer;
-      (&RUNNING_TASK[0])->p_stack_pointer_by_malloc           = task->p_stack_pointer_by_malloc;
-      (&RUNNING_TASK[0])->p_stack_pointer_start              = task->p_stack_pointer_start;
-      (&RUNNING_TASK[0])->stack_size                       = task->stack_size;
-      (&RUNNING_TASK[0])->p_stack_pointer_end                = task->p_stack_pointer_end;
+      (&RUNNING_TASK[0u])->p_stack_pointer                   = task->p_stack_pointer;
+      (&RUNNING_TASK[0u])->p_stack_pointer_by_malloc           = task->p_stack_pointer_by_malloc;
+      (&RUNNING_TASK[0u])->p_stack_pointer_start              = task->p_stack_pointer_start;
+      (&RUNNING_TASK[0u])->stack_size                       = task->stack_size;
+      (&RUNNING_TASK[0u])->p_stack_pointer_end                = task->p_stack_pointer_end;
    }
 }
 
@@ -91,7 +91,7 @@ void OS_INIT_TASK_QUEUE(void)
       unsigned_char_t element_nr = 0;
       while(element_nr < MAX_RUN_QUEUE_SIZE)
       {
-         TASK_SCHEDULING_QUEUE[element_nr] = (scheduling_t)0;
+         TASK_SCHEDULING_QUEUE[element_nr] = (scheduling_t)0u;
          OS_TASK_INIT_TASK_ENVIRONMENT(&TASK_RUN_QUEUE[element_nr]);
          element_nr++;
       }
@@ -100,8 +100,8 @@ void OS_INIT_TASK_QUEUE(void)
 }
 task_t* ADD_TO_TASK_QUEUE(task_t* task)
 {
-   unsigned_char_t element_nr = 0;
-   task_t* ret_task = 0;
+   unsigned_char_t element_nr = 0u;
+   task_t* ret_task = 0u;
 
    while( (element_nr < MAX_RUN_QUEUE_SIZE)
           &&((&TASK_RUN_QUEUE[element_nr])->task_queued == TRUE)
@@ -165,49 +165,49 @@ void DELETE_FROM_TASK_QUEUE(task_t* task)
    task->active                                =   FALSE   ;
    task->task_queued                           =   FALSE   ;
    task->idle_task                              =   FALSE   ;
-   task->free                                  =   0       ;
-   task->nr_of_ins_allowed                        =   0       ;
-   task->nr_of_ins_activated                      =   0       ;
+   task->free                                  =   0u       ;
+   task->nr_of_ins_allowed                        =   0u       ;
+   task->nr_of_ins_activated                      =   0u       ;
    ASSIGN_NULL(&task->wait_act_until);
    ASSIGN_NULL(&task->wait_time);
    ASSIGN_NULL(&task->time_to_prio_inc);
-   task->overwaittime_per_prio_inc_step        =   0       ;
+   task->overwaittime_per_prio_inc_step        =   0u       ;
    ASSIGN_NULL(&task->max_allowed_wait_time);
    ASSIGN_NULL(&task->exe_time);
    ASSIGN_NULL(&task->start_time);
-   task->current_prio                          =   0       ;
-   task->default_prio                          =   0       ;
-   task->fp                                    =   0       ;
+   task->current_prio                          =   0u       ;
+   task->default_prio                          =   0u      ;
+   task->fp                                    =   0u       ;
    task->state_request                         =   &OS_TASK_STATE_REQUEST       ;
    task->task_state                            =   Task_unspecified;
-   task->task_group                            =   0       ;
+   task->task_group                            =   0u       ;
 #if(CFG_PROCESSOR == MCU_X86)
-   task->eax                                   =   0              ;
-   task->ebx                                   =   0             ;
-   task->ecx                                   =   0              ;
-   task->edx                                   =   0              ;
+   task->eax                                   =   0u              ;
+   task->ebx                                   =   0u             ;
+   task->ecx                                   =   0u              ;
+   task->edx                                   =   0u              ;
 #elif(CFG_PROCESSOR == MCU_CORTEX_M4)
-   task->r0                                   =   0              ;
-   task->r1                                   =   0              ;
-   task->r2                                   =   0              ;
-   task->r3                                   =   0              ;
-   task->r4                                   =   0              ;
-   task->r5                                   =   0              ;
-   task->r6                                   =   0              ;
-   task->r7                                   =   0              ;
-   task->r8                                   =   0              ;
-   task->r9                                   =   0              ;
-   task->r10                                  =   0             ;
-   task->r11                                  =   0             ;
-   task->r12                                  =   0             ;
+   task->r0                                   =   0u              ;
+   task->r1                                   =   0u              ;
+   task->r2                                   =   0u              ;
+   task->r3                                   =   0u              ;
+   task->r4                                   =   0u              ;
+   task->r5                                   =   0u              ;
+   task->r6                                   =   0u              ;
+   task->r7                                   =   0u              ;
+   task->r8                                   =   0u              ;
+   task->r9                                   =   0u              ;
+   task->r10                                  =   0u             ;
+   task->r11                                  =   0u             ;
+   task->r12                                  =   0u             ;
 #else
 #error "os_task_queue.c"
 #endif
-   task->p_stack_pointer                         =   0       ;
-   task->p_stack_pointer_by_malloc                 =   0       ;
-   task->p_stack_pointer_start                    =   0       ;
-   task->stack_size                             =   0       ;
-   task->p_stack_pointer_end                      =   0       ;
+   task->p_stack_pointer                         =   0u       ;
+   task->p_stack_pointer_by_malloc                 =   0u       ;
+   task->p_stack_pointer_start                    =   0u       ;
+   task->stack_size                             =   0u       ;
+   task->p_stack_pointer_end                      =   0u       ;
 }
 task_t* GET_FROM_TASK_QUEUE(scheduling_t* scheduling_queue_element)
 {
@@ -220,7 +220,7 @@ scheduling_t* GET_FROM_SCHEDULING_QUEUE(unsigned_char_t element_nr)
 /* Pointer Queue Handling*/
 void DELETE_FROM_SCHEDULING_QUEUE(scheduling_t* scheduling_queue_element)
 {
-   *scheduling_queue_element = 0;
+   *scheduling_queue_element = 0u;
 }
 void ADD_TO_SCHEDULING_QUEUE(task_t* task)
 {
@@ -232,12 +232,12 @@ void ADD_TO_SCHEDULING_QUEUE(task_t* task)
    out:
    */
    unsigned_char_t Add_successful = FALSE;
-   unsigned_char_t index = 0;
+   unsigned_char_t index = 0u;
 
    while(  (index < MAX_RUN_QUEUE_SIZE)
            &&(Add_successful == FALSE))
    {
-      if(TASK_SCHEDULING_QUEUE[index] == 0)
+      if(TASK_SCHEDULING_QUEUE[index] == 0u)
       {
          TASK_SCHEDULING_QUEUE[index] = task;
          Add_successful         = TRUE;
@@ -250,23 +250,23 @@ void ADD_TO_SCHEDULING_QUEUE(task_t* task)
 void UpdateSchedulingQueue(void)
 {
    /* eliminate emptry link list entries (should be colleted at the high numbers) */
-   unsigned_char_t dest = 0, src = 0;
+   unsigned_char_t dest = 0u, src = 0u;
 
    while (dest < MAX_RUN_PQUEUE_SIZE)
    {
-      if(TASK_SCHEDULING_QUEUE[dest] == 0)
+      if(TASK_SCHEDULING_QUEUE[dest] == 0u)
       {
          /* found empty entry ->shift following elements left in array */
 
          src = dest; /* start from empty entry point */
-         while((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]==0))
+         while((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]==0u))
          {
             src++;
          }
          if((src < MAX_RUN_PQUEUE_SIZE)&&(TASK_SCHEDULING_QUEUE[src]!=0))
          {
             TASK_SCHEDULING_QUEUE[dest] = TASK_SCHEDULING_QUEUE[src];
-            TASK_SCHEDULING_QUEUE[src]  = 0;
+            TASK_SCHEDULING_QUEUE[src]  = 0u;
          }
       }
       dest++;
@@ -277,63 +277,63 @@ void UpdateSchedulingQueue(void)
 /* Idle task queue handling */
 task_t* GET_IDLE_TASK(void)
 {
-   return (&TASK_IDLE_QUEUE[0]);
+   return (&TASK_IDLE_QUEUE[0u]);
 }
 void ADD_TO_IDLE_TASK_QUEUE(task_t* task)
 {
    /* only 1 element for TASK_IDLE_QUEUE allowed */
-   if((&TASK_IDLE_QUEUE[0])->idle_task == FALSE)
+   if((&TASK_IDLE_QUEUE[0u])->idle_task == FALSE)
    {
-      (&TASK_IDLE_QUEUE[0])->active                                =   task->active           ;
-      (&TASK_IDLE_QUEUE[0])->task_queued                           =   task->task_queued      ;
-      (&TASK_IDLE_QUEUE[0])->idle_task                              =   task->idle_task         ;
-      (&TASK_IDLE_QUEUE[0])->free                                  =   task->free             ;
-      (&TASK_IDLE_QUEUE[0])->nr_of_ins_allowed                        =   task->nr_of_ins_allowed   ;
-      (&TASK_IDLE_QUEUE[0])->nr_of_ins_activated                      =   task->nr_of_ins_activated ;
-      ASSIGN(&(&TASK_IDLE_QUEUE[0])->wait_act_until, &task->wait_act_until);
-      ASSIGN(&(&TASK_IDLE_QUEUE[0])->wait_time, &task->wait_time);
-      ASSIGN(&(&TASK_IDLE_QUEUE[0])->time_to_prio_inc, &task->time_to_prio_inc);
-      (&TASK_IDLE_QUEUE[0])->overwaittime_per_prio_inc_step       =    task->overwaittime_per_prio_inc_step;
-      ASSIGN(&(&TASK_IDLE_QUEUE[0])->max_allowed_wait_time, &task->max_allowed_wait_time);
-      ASSIGN(&(&TASK_IDLE_QUEUE[0])->exe_time, &task->exe_time);
-      (&TASK_IDLE_QUEUE[0])->current_prio                          =   task->current_prio     ;
-      (&TASK_IDLE_QUEUE[0])->default_prio                          =   task->default_prio     ;
-      (&TASK_IDLE_QUEUE[0])->fp                                    =   task->fp               ;
-      (&TASK_IDLE_QUEUE[0])->state_request                         =   task->state_request    ;
-      (&TASK_IDLE_QUEUE[0])->task_state                            =   Task_ready             ;
-      (&TASK_IDLE_QUEUE[0])->task_group                            =   task->task_group       ;
+      (&TASK_IDLE_QUEUE[0u])->active                                =   task->active           ;
+      (&TASK_IDLE_QUEUE[0u])->task_queued                           =   task->task_queued      ;
+      (&TASK_IDLE_QUEUE[0u])->idle_task                              =   task->idle_task         ;
+      (&TASK_IDLE_QUEUE[0u])->free                                  =   task->free             ;
+      (&TASK_IDLE_QUEUE[0u])->nr_of_ins_allowed                        =   task->nr_of_ins_allowed   ;
+      (&TASK_IDLE_QUEUE[0u])->nr_of_ins_activated                      =   task->nr_of_ins_activated ;
+      ASSIGN(&(&TASK_IDLE_QUEUE[0u])->wait_act_until, &task->wait_act_until);
+      ASSIGN(&(&TASK_IDLE_QUEUE[0u])->wait_time, &task->wait_time);
+      ASSIGN(&(&TASK_IDLE_QUEUE[0u])->time_to_prio_inc, &task->time_to_prio_inc);
+      (&TASK_IDLE_QUEUE[0u])->overwaittime_per_prio_inc_step       =    task->overwaittime_per_prio_inc_step;
+      ASSIGN(&(&TASK_IDLE_QUEUE[0u])->max_allowed_wait_time, &task->max_allowed_wait_time);
+      ASSIGN(&(&TASK_IDLE_QUEUE[0u])->exe_time, &task->exe_time);
+      (&TASK_IDLE_QUEUE[0u])->current_prio                          =   task->current_prio     ;
+      (&TASK_IDLE_QUEUE[0u])->default_prio                          =   task->default_prio     ;
+      (&TASK_IDLE_QUEUE[0u])->fp                                    =   task->fp               ;
+      (&TASK_IDLE_QUEUE[0u])->state_request                         =   task->state_request    ;
+      (&TASK_IDLE_QUEUE[0u])->task_state                            =   Task_ready             ;
+      (&TASK_IDLE_QUEUE[0u])->task_group                            =   task->task_group       ;
 #if(CFG_PROCESSOR == MCU_X86)
-      (&TASK_IDLE_QUEUE[0])->eax                                   =   task->eax              ;
-      (&TASK_IDLE_QUEUE[0])->ebx                                   =   task->ebx              ;
-      (&TASK_IDLE_QUEUE[0])->ecx                                   =   task->ecx              ;
-      (&TASK_IDLE_QUEUE[0])->edx                                   =   task->edx              ;
+      (&TASK_IDLE_QUEUE[0u])->eax                                   =   task->eax              ;
+      (&TASK_IDLE_QUEUE[0u])->ebx                                   =   task->ebx              ;
+      (&TASK_IDLE_QUEUE[0u])->ecx                                   =   task->ecx              ;
+      (&TASK_IDLE_QUEUE[0u])->edx                                   =   task->edx              ;
 #elif(CFG_PROCESSOR == MCU_CORTEX_M4)
-      (&TASK_IDLE_QUEUE[0])->r0                                   =   task->r0              ;
-      (&TASK_IDLE_QUEUE[0])->r1                                   =   task->r1              ;
-      (&TASK_IDLE_QUEUE[0])->r2                                   =   task->r2              ;
-      (&TASK_IDLE_QUEUE[0])->r3                                   =   task->r3              ;
-      (&TASK_IDLE_QUEUE[0])->r4                                   =   task->r4              ;
-      (&TASK_IDLE_QUEUE[0])->r5                                   =   task->r5              ;
-      (&TASK_IDLE_QUEUE[0])->r6                                   =   task->r6              ;
-      (&TASK_IDLE_QUEUE[0])->r7                                   =   task->r7              ;
-      (&TASK_IDLE_QUEUE[0])->r8                                   =   task->r8              ;
-      (&TASK_IDLE_QUEUE[0])->r9                                   =   task->r9              ;
-      (&TASK_IDLE_QUEUE[0])->r10                                  =   task->r10             ;
-      (&TASK_IDLE_QUEUE[0])->r11                                  =   task->r11             ;
-      (&TASK_IDLE_QUEUE[0])->r12                                  =   task->r12             ;
+      (&TASK_IDLE_QUEUE[0u])->r0                                   =   task->r0              ;
+      (&TASK_IDLE_QUEUE[0u])->r1                                   =   task->r1              ;
+      (&TASK_IDLE_QUEUE[0u])->r2                                   =   task->r2              ;
+      (&TASK_IDLE_QUEUE[0u])->r3                                   =   task->r3              ;
+      (&TASK_IDLE_QUEUE[0u])->r4                                   =   task->r4              ;
+      (&TASK_IDLE_QUEUE[0u])->r5                                   =   task->r5              ;
+      (&TASK_IDLE_QUEUE[0u])->r6                                   =   task->r6              ;
+      (&TASK_IDLE_QUEUE[0u])->r7                                   =   task->r7              ;
+      (&TASK_IDLE_QUEUE[0u])->r8                                   =   task->r8              ;
+      (&TASK_IDLE_QUEUE[0u])->r9                                   =   task->r9              ;
+      (&TASK_IDLE_QUEUE[0u])->r10                                  =   task->r10             ;
+      (&TASK_IDLE_QUEUE[0u])->r11                                  =   task->r11             ;
+      (&TASK_IDLE_QUEUE[0u])->r12                                  =   task->r12             ;
 #else
 #error "os_task_queue.c"
 #endif
-      (&TASK_IDLE_QUEUE[0])->p_stack_pointer                         =   task->p_stack_pointer    ;
-      (&TASK_IDLE_QUEUE[0])->p_stack_pointer_by_malloc                 =   task->p_stack_pointer_by_malloc;
-      (&TASK_IDLE_QUEUE[0])->p_stack_pointer_start                    =   task->p_stack_pointer_start;
-      (&TASK_IDLE_QUEUE[0])->stack_size                             =   task->stack_size        ;
-      (&TASK_IDLE_QUEUE[0])->p_stack_pointer_end                      =   task->p_stack_pointer_end ;
+      (&TASK_IDLE_QUEUE[0u])->p_stack_pointer                         =   task->p_stack_pointer    ;
+      (&TASK_IDLE_QUEUE[0u])->p_stack_pointer_by_malloc                 =   task->p_stack_pointer_by_malloc;
+      (&TASK_IDLE_QUEUE[0u])->p_stack_pointer_start                    =   task->p_stack_pointer_start;
+      (&TASK_IDLE_QUEUE[0u])->stack_size                             =   task->stack_size        ;
+      (&TASK_IDLE_QUEUE[0u])->p_stack_pointer_end                      =   task->p_stack_pointer_end ;
    }
 }
 task_t* GET_RUNNING_TASK(void)
 {
-   return (&RUNNING_TASK[0]);
+   return (&RUNNING_TASK[0u]);
 }
 scheduling_t* GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR(void)
 {
@@ -348,18 +348,18 @@ void OS_INIT_TASK(
    unsigned_char_t* pStackAddr,
    unsigned_int32_t uStackSize,
    privilige_mode_t privilige_mode,
-   CoreID_t         core,
+   coreid_t         core,
    unsigned_char_t  default_prio
 )
 {
    REFERENCE_UNUSED_PARAMETER(core);
-   if(task!=0)
+   if(task!=0u)
    {
       task->active           = FALSE;
       task->fp               = TaskFunction;
       task->nr_of_ins_allowed   = AllowedInstances;
       task->task_group       = p_task_group;
-      task->nr_of_ins_activated = 0;
+      task->nr_of_ins_activated = 0u;
       ASSIGN_NULL(&task->wait_act_until);
       task->privilige_mode   = privilige_mode;
       task->default_prio     = default_prio;

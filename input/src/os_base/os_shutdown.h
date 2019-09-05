@@ -6,5 +6,5 @@ typedef enum os_reset_type_s
    E_OS_RESET_POWERDOWN = 1,
    E_OS_RESET_EXIT
 } os_reset_type_t;
-extern void OS_SHUTDOWN(os_reset_type_t reset_typ);
+extern void OS_SHUTDOWN(os_reset_type_t reset_typ, func_ptr_t addr);
 #endif /*_OS_SHUTDOWN_H_*/

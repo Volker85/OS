@@ -35,11 +35,11 @@ OS_State: OS_Running (User Mode)
 
 (OS_State: OS_Exception (Supervisor Mode))
 - Link-Register Adresse im Eeprom abspeichern, an der die Exceptioin erzeugt wurde -> NA (no EEPROM exists on eval board, enter endless loop instead)
-- OS_SHUTDOWN mit Reset -> Done in handler functions via call of "OS_SHUTDOWN(os_reset_hardreset)"
+- OS_SHUTDOWN mit Reset -> Done in handler functions via call of "OS_SHUTDOWN(E_OS_RESET_HARDRESET)"
 
 OS_State: OS_SHUTDOWN (nur erlaubt im Supervisor Mode)
 - Interrupts deaktivieren -> Done
-- Tasks beenden (Timer Interrupts löschen) -> Done OS_SHUTDOWN(os_reset_hardreset
+- Tasks beenden (Timer Interrupts löschen) -> Done OS_SHUTDOWN(E_OS_RESET_HARDRESET
 - FMON / Watchdog deinitialisieren -> NA
 - MMU deaktivieren / deintialisieren -> NA
 - HW Reset auslösen -> Done
@@ -55,28 +55,28 @@ typedef enum os_reset_req_state_e
 
 LOCAL void os_determine_next_task_activation(void)
 {
-   LOCAL uint32 call_nr = 0;
+   LOCAL uint32 call_nr = 0u;
    switch(call_nr)
    {
-   case 0:
+   case 0u:
       OS_ACTIVATE_TASK(&TASK_1_VAR);
       call_nr++;
       break;
-   case 1:
+   case 1u:
 
       call_nr++;
       break;
-   case 2:
+   case 2u:
       OS_ACTIVATE_TASK(&TASK_2_VAR);
       call_nr++;
       break;
-   case 3:
+   case 3u:
 
       call_nr++;
       break;
-   case 4:
+   case 4u:
       OS_ACTIVATE_TASK(&TASK_3_VAR);
-      call_nr = 0;
+      call_nr = 0u;
       break;
    default:
       break;
@@ -90,7 +90,7 @@ void OS_STATE_HANDLER(void)
 {
    /* the following code runs in priviliged mode!! */
    LOCAL os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
-   LOCAL uint32 call_nr = 0;
+   LOCAL uint32 call_nr = 0u;
 
    switch(OS_STATE)
    {
@@ -107,7 +107,7 @@ void OS_STATE_HANDLER(void)
       /* activate the dispatcher, configure TCMP interrupts for tasks */
       /* activate & start the Idle task */
       OS_ACTIVATE_TASK(&TASK_0_VAR);
-      OS_START_TASK(GET_IDLE_TASK(),0);
+      OS_START_TASK(GET_IDLE_TASK(),0u);
       OS_ACTIVATE_DISPATCHER();
 
       OS_STATE = os_running;
@@ -123,7 +123,7 @@ void OS_STATE_HANDLER(void)
       - Der Dispatcher müsste per Interrupt die laufende Task unterbrechen um dann (nach PreemptTask oder TerminateTask) die nächste Task zu starten.
       - Der os_determine_next_task_activation müsste vor jedem Aufruf on OS_TASK_DISPATCHER laufen
       */
-      if(call_nr % 5 == 0)
+      if(call_nr % 5u == 0u)
       {
          os_determine_next_task_activation();
       }
@@ -149,7 +149,7 @@ void OS_STATE_HANDLER(void)
       }
       case Reset_restart:
       {
-         OS_SHUTDOWN(os_reset_hardreset,0u);
+         OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
          break;
       }
       case Reset_exit:
@@ -159,7 +159,7 @@ void OS_STATE_HANDLER(void)
       }
       default:
       {
-         OS_SHUTDOWN(os_reset_hardreset,0u);
+         OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
          break;
       }
       }
@@ -174,7 +174,7 @@ void OS_STATE_HANDLER(void)
    OS_STACK_CHECK();
 #if(CFG_PROCESSOR != MCU_X86)
    /* wait until timer task, else the program would return to the next instruction after the reset vector, which is not allowed */
-   while(1)
+   while(1u)
    {
    }
 #endif

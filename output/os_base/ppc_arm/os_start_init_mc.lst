@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvEaLa1.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4IczEf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -17,19 +17,19 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvEaLa1.s 			page 1
   14              		.cfi_sections	.debug_frame
   15              		.align	1
   16              		.p2align 2,,3
-  17              		.global	OS_InitMc
+  17              		.global	OS_INIT_MC
   18              		.syntax unified
   19              		.thumb
   20              		.thumb_func
   21              		.fpu softvfp
-  23              	OS_InitMc:
+  23              	OS_INIT_MC:
   24              	.LFB0:
   25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_init_mc.c"
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** #include "os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** #include "os_start_init_mc.h"
    3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** #include "os_memory_mmu.h"
    4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** 
-   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** void OS_InitMc(void)
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** void OS_INIT_MC(void)
    6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c **** {
   26              		.loc 1 6 0
   27              		.cfi_startproc
@@ -44,9 +44,9 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvEaLa1.s 			page 1
   12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* no external parts connected to SPI, UART, CAN, ... -> no init needed */
   13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* initialize the external parts...  */
   14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    /* no relevant external parts */
-  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    OS_MmuSetup();
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_init_mc.c ****    OS_MMU_SETUP();
   31              		.loc 1 15 0
-  32 0000 FFF7FEBF 		b	OS_MmuSetup
+  32 0000 FFF7FEBF 		b	OS_MMU_SETUP
   33              	.LVL0:
   34              		.cfi_endproc
   35              	.LFE0:
@@ -58,24 +58,22 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvEaLa1.s 			page 1
   42              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
   43              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
   44              		.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_memory_mmu.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvEaLa1.s 			page 2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4IczEf.s 			page 2
 
 
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccvEaLa1.s 			page 3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc4IczEf.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_init_mc.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccvEaLa1.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccvEaLa1.s:23     .text:00000000 OS_InitMc
+C:\Users\PRESID~1\AppData\Local\Temp\cc4IczEf.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cc4IczEf.s:23     .text:00000000 OS_INIT_MC
                            .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
-                           .group:00000000 wm4.os_base_types.h.2.f3c0267f175f5cbacca6b71710665a02
-                           .group:00000000 wm4.os_common.h.2.7e9aadbd6cc66ffeb9ea2492a31fabc8
-                           .group:00000000 wm4.os_task_config.h.2.a73335dbec9f276504b3b94e79d1d898
-                           .group:00000000 wm4.os_task_common.h.95.eb4fc951d6d8ca08a3f35501d742a960
-                           .group:00000000 wm4.os_stack.h.2.0b496ee49cecbb9eb97fc92684c656a4
-                           .group:00000000 wm4.os_heap.h.2.89074aae455d2462b5952479e3530dd1
-                           .group:00000000 wm4.os_main.h.2.1f66ae3841c27bd36097fa1d2e1fe6a7
+                           .group:00000000 wm4.os_config.h.2.ac4658f92c1259d8f1114145439d5f31
+                           .group:00000000 wm4.os_common.h.2.63eb68e412d9b6f465f2fde7f2fcb855
+                           .group:00000000 wm4.os_task_config.h.2.89b082d5aa4d7b2eff2ad4d1eb9bfd97
+                           .group:00000000 wm4.os_task_common.h.95.8d8bf4690dc541f58a865736bc15fd8a
+                           .group:00000000 wm4.os_memory_mmu.h.2.8d0406fd9d8f7481a3c9e8450f5cd9e7
 
 UNDEFINED SYMBOLS
-OS_MmuSetup
+OS_MMU_SETUP

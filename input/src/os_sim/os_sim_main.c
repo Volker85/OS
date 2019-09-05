@@ -10,8 +10,8 @@
 #if(CFG_PROCESSOR == MCU_X86)
 int main(int argc, char* argv[])
 {
-   unsigned int i = 0;
-   time_t t = time(0);
+   unsigned int i = 0u;
+   time_t t = time(0u);
 
    OS_STACK_CHK_PATTERN_INIT();
    OS_START_OS();
@@ -22,13 +22,13 @@ int main(int argc, char* argv[])
       i++;
    }
 
-   t = time(0) - t;
+   t = time(0u) - t;
    printf("Zeit: %d",t);
    getchar();
    getchar();
    REFERENCE_UNUSED_PARAMETER(argc);
    REFERENCE_UNUSED_PARAMETER(*argv);
 
-   return 0;
+   return 0u;
 }
 #endif

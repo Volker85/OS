@@ -4,7 +4,7 @@
 #include "os_task_scheduler.h"
 #include "os_task_queue.h"
 #include "os_stack.h"
-#inlcude "os_exception.h"
+#include "os_exception.h"
 
 /*
 1. running     --(terminate)--> suspend : delete scheduling element
@@ -33,8 +33,8 @@ void OS_ACTIVATE_DISPATCHER(void)
    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz
    */
 #if(CFG_PROCESSOR == MCU_CORTEX_M4)
-   *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000 )| (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000))* LOOPTIME_IN_USEC) ;
-   *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
+   *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000u )| (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000u))* LOOPTIME_IN_USEC) ;
+   *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000u);
    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_ENABLE;
 #endif
 }
@@ -170,9 +170,9 @@ unsigned_char_t OS_TASK_STATE_REQUEST(void* temp_task, task_state_t requested_st
 void OS_CREATE_TASK(task_t* task)
 {
    /*5. unspecified --(create   )--> suspend*/
-   if(task != 0)
+   if(task != 0u)
    {
-      if(task->state_request != 0)
+      if(task->state_request != 0u)
       {
          if(task->state_request(task, Task_suspended)== ACCEPTED)
          {
@@ -203,9 +203,9 @@ void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
    - delete active flag
    - enable Interrupts
    */
-   if(task != 0 && scheduling_task != 0)
+   if(task != 0u && scheduling_task != 0u)
    {
-      if(task->state_request != 0)
+      if(task->state_request != 0u)
       {
          if(task->state_request(task, Task_ready)== ACCEPTED)
          {
@@ -244,7 +244,7 @@ void OS_ACTIVATE_TASK(task_t* task)
 
    in case of valid request, the content, where the "task_t* task" is point to is stored in TASK_RUN_QUEUE
    */
-   if(task != 0)
+   if(task != 0u)
    {
       if(task->state_request(task, Task_ready)==ACCEPTED)
       {
@@ -259,7 +259,7 @@ void OS_ACTIVATE_TASK(task_t* task)
                /* only activate if allowed by rule */
                task = ADD_TO_TASK_QUEUE(task);
                ADD_TO_SCHEDULING_QUEUE(task);
-               if(task != 0)
+               if(task != 0u)
                {
                   task->nr_of_ins_activated++;
                }
@@ -297,9 +297,9 @@ void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
     */
    timebig_t time;
 
-   if( (task != 0) && (scheduling_task != 0)&& ((task->task_queued != FALSE)||(task->idle_task != FALSE)))
+   if( (task != 0u) && (scheduling_task != 0u)&& ((task->task_queued != FALSE)||(task->idle_task != FALSE)))
    {
-      if(task->state_request !=0)
+      if(task->state_request !=0u)
       {
          if(task->state_request(task, Task_running)== ACCEPTED)
          {
@@ -350,9 +350,9 @@ void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
    - delete active flag
    - enable Interrupts
    */
-   if(task != 0 && scheduling_task != 0)
+   if(task != 0u && scheduling_task != 0u)
    {
-      if(task->state_request != 0)
+      if(task->state_request != 0u)
       {
          if(task->state_request(task, Task_suspended)== ACCEPTED)
          {
@@ -395,22 +395,22 @@ void OS_TASK_DISPATCHER(void)
    5. unspecified --(create   )--> suspend
    */
    scheduling_t* scheduling_task_ptr;
-   task_t* task = 0;
+   task_t* task = 0u;
    /* get running task */
    task         = GET_RUNNING_TASK();
    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
    /* Preempt Task */
-   if(task!=0 && scheduling_task_ptr != 0)
+   if(task!=0u && scheduling_task_ptr != 0u)
    {
       OS_TERMINATE_TASK(task, scheduling_task_ptr);
    }
    /* ask for the next task to be activated... */
    scheduling_task_ptr = os_task_scheduler();
-   if(scheduling_task_ptr != 0)
+   if(scheduling_task_ptr != 0u)
    {
       task = GET_FROM_TASK_QUEUE(scheduling_task_ptr);
    }
-   if(task != 0 && scheduling_task_ptr != 0)
+   if(task != 0u && scheduling_task_ptr != 0u)
    {
       OS_START_TASK(task, scheduling_task_ptr);
    }
@@ -422,7 +422,7 @@ LOCAL void task_0(void* task_ptr)
 }
 LOCAL void task_1(void* task_ptr)
 {
-   scheduling_t* scheduling_task_ptr = 0;
+   scheduling_t* scheduling_task_ptr = 0u;
    REFERENCE_UNUSED_PARAMETER(task_ptr);
    /* worker task */
    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
@@ -435,7 +435,7 @@ LOCAL void task_1(void* task_ptr)
 }
 LOCAL void task_2(void* task_ptr)
 {
-   scheduling_t* scheduling_task_ptr = 0;
+   scheduling_t* scheduling_task_ptr = 0u;
    REFERENCE_UNUSED_PARAMETER(task_ptr);
    /* worker task */
    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
@@ -448,7 +448,7 @@ LOCAL void task_2(void* task_ptr)
 }
 LOCAL void task_3(void* task_ptr)
 {
-   scheduling_t* scheduling_task_ptr = 0;
+   scheduling_t* scheduling_task_ptr = 0u;
    REFERENCE_UNUSED_PARAMETER(task_ptr);
    /* worker task */
    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
@@ -461,7 +461,7 @@ LOCAL void task_3(void* task_ptr)
 }
 void OS_INIT_TASKs(void)
 {
-   task_t* task_ptr = 0;
+   task_t* task_ptr = 0u;
    OS_GET_CURRENT_TIME(&LAST_CURRENT_TIME);
 
    REFERENCE_UNUSED_PARAMETER (TASK_GROUP_1);
@@ -479,14 +479,14 @@ void OS_INIT_TASKs(void)
    task_ptr = &TASK_0_VAR;
    OS_INIT_TASK(task_ptr,                          /* task */
                &TASK_0,                           /* Task Function*/
-               1,                                 /* Nr of allowed instances*/
+               1u,                                 /* Nr of allowed instances*/
                TRUE,                              /* Idle Task */
                &TASK_GROUP_1,                     /* Task Group */
-               (unsigned_char_t*)&TASK_STACK[0],  /* Task_stack */
-               200,                                /* Stack Size */
+               (unsigned_char_t*)&TASK_STACK[0u],  /* Task_stack */
+               200u,                                /* Stack Size */
                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
                Core0,                            /* Cortex M4 has only 1 core */
-               0                                   /* default prio */
+               0u                                   /* default prio */
               );
    ADD_TO_SCHEDULING_QUEUE(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
@@ -495,14 +495,14 @@ void OS_INIT_TASKs(void)
    task_ptr = &TASK_1_VAR;
    OS_INIT_TASK(task_ptr,      /* task */
                &TASK_1,       /* Task Function*/
-               1,             /* Nr of allowed instances*/
+               1u,             /* Nr of allowed instances*/
                FALSE,          /* Idle Task */
                &TASK_GROUP_1, /* Task Group */
-               (unsigned_char_t*)&TASK_STACK[1],/* Task_stack */
-               200,            /* Stack Size */
+               (unsigned_char_t*)&TASK_STACK[1u],/* Task_stack */
+               200u,            /* Stack Size */
                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
                Core0,
-               1                                   /* default prio */
+               1u                                   /* default prio */
               );
    ADD_TO_SCHEDULING_QUEUE(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_1_ptr);
@@ -511,14 +511,14 @@ void OS_INIT_TASKs(void)
    task_ptr = &TASK_2_VAR;
    OS_INIT_TASK(task_ptr,      /* task */
                &TASK_2,       /* Task Function*/
-               1,             /* Nr of allowed instances*/
+               1u,             /* Nr of allowed instances*/
                FALSE,          /* Idle Task */
                &TASK_GROUP_2, /* Task Group */
-               (unsigned_char_t*)&TASK_STACK[2],/* Task_stack */
-               200,            /* Stack Size */
+               (unsigned_char_t*)&TASK_STACK[2u],/* Task_stack */
+               200u,            /* Stack Size */
                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
                Core0,
-               2                                   /* default prio */
+               2u                                   /* default prio */
               );
    ADD_TO_SCHEDULING_QUEUE(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
@@ -527,14 +527,14 @@ void OS_INIT_TASKs(void)
    task_ptr = &TASK_3_VAR;
    OS_INIT_TASK(task_ptr,      /* task */
                &TASK_3,       /* Task Function*/
-               1,             /* Nr of allowed instances*/
+               1u,             /* Nr of allowed instances*/
                FALSE,          /* Idle Task */
                &TASK_GROUP_3, /* Task Group */
-               (unsigned_char_t*)&TASK_STACK[3],/* Task_stack */
-               200,           /* Stack Size */
+               (unsigned_char_t*)&TASK_STACK[3u],/* Task_stack */
+               200u,           /* Stack Size */
                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
                Core0,
-               3                                   /* default prio */
+               3u                                   /* default prio */
               );
    ADD_TO_SCHEDULING_QUEUE(task_ptr);
    OS_SaveTaskPtr(task_ptr, Task_3_ptr);
@@ -547,10 +547,10 @@ LOCAL scheduling_t* os_task_scheduler(void)
    scheduling_t*    scheduling_queue_member;
    unsigned_char_t element_nr;
 
-   unsigned_char_t Winner_prio = 0;
-   task_t*         task = 0;
-   task_t*         Winner_task = 0;
-   scheduling_t*   Winner_scheduling_queue_member = 0;
+   unsigned_char_t Winner_prio = 0u;
+   task_t*         task = 0u;
+   task_t*         Winner_task = 0u;
+   scheduling_t*   Winner_scheduling_queue_member = 0u;
    timebig_t       delta_time;
 
    timebig_t time;
@@ -575,13 +575,13 @@ LOCAL scheduling_t* os_task_scheduler(void)
    x const for single task: task->wait_act_until
    (task_group is designed to allow proccessor access control between e.g. Customer Software Task and ASIL D Brake Task
    */
-   For_all_tasks_in_queue(element_nr)
+   FOR_ALL_TASKS_IN_QUEUE(element_nr)
    {
       scheduling_queue_member = GET_FROM_SCHEDULING_QUEUE(element_nr);
       /*task will have a pointer on the task_obj, and might be equal to "(task_t*) 0" */
       task             = GET_FROM_TASK_QUEUE(scheduling_queue_member);
       /* increase prio: high numbers->high prio */
-      if((task != 0)&&(task->task_queued != FALSE))
+      if((task != 0u)&&(task->task_queued != FALSE))
       {
          if(IS_GREATER_OR_EQUAL(&task->wait_time, &task->time_to_prio_inc))
          {
@@ -590,7 +590,7 @@ LOCAL scheduling_t* os_task_scheduler(void)
          /* in case wait condition not yet fulfilled, set prio to 0 */
          if(IS_GREATER(&task->wait_act_until, &time))
          {
-            task->current_prio = 0;
+            task->current_prio = 0u;
          }
          if(IS_GREATER(&task->wait_time,&task->max_allowed_wait_time))
          {
@@ -604,10 +604,10 @@ LOCAL scheduling_t* os_task_scheduler(void)
             if(IS_GREATER(&task->task_group->exe_time, &task->task_group->fair_exe_time) != FALSE)
             {
                timebig_t tTime;
-               ASSIGN_UINT32(&tTime, Task_min_time);
+               ASSIGN_UINT32(&tTime, TASK_MIN_TIME);
                if(IS_GREATER_OR_EQUAL(&task->exe_time, &tTime))/* guarantee min time */
                {
-                  task->current_prio = 0;
+                  task->current_prio = 0u;
                }
             }
          }
@@ -623,11 +623,11 @@ LOCAL scheduling_t* os_task_scheduler(void)
       }
       */
    }
-   For_all_tasks_in_queue(element_nr)
+   FOR_ALL_TASKS_IN_QUEUE(element_nr)
    {
       scheduling_queue_member = GET_FROM_SCHEDULING_QUEUE(element_nr);
       task             = GET_FROM_TASK_QUEUE(scheduling_queue_member);
-      if(task != 0)
+      if(task != 0u)
       {
          /*update wait time */
          if(task->idle_task != TRUE)

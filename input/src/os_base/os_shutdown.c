@@ -35,7 +35,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ, func_ptr_t addr)
    {
       LLF_MCU_SWITCH_OFF_POWER();
    }
-   else if(reset_typ == os_reset_hardreset) /* os_reset_hardreset */
+   else if(reset_typ == E_OS_RESET_HARDRESET) /* E_OS_RESET_HARDRESET */
    {
       LLF_MCU_RESET_POWER();
    }
@@ -44,7 +44,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ, func_ptr_t addr)
       os_deinit_hw();
       os_deinit_sw();
       os_deinit_mc();
-      OS_START_EXT_PRG((func_ptr_t)addr, (uint32)0, (uint32)0);
+      OS_START_EXT_PRG((func_ptr_t)addr, (uint32)0u, (uint32)0u);
    }
    else
    {

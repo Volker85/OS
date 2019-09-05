@@ -3,10 +3,10 @@
 
 
 /* common HAL defines */
-#define FALSE 0
-#define TRUE 1
-#define ACCEPTED 1
-#define REJECTED 0
+#define FALSE 0u
+#define TRUE 1u
+#define ACCEPTED 1u
+#define REJECTED 0u
 #define LOCAL static
 #define LOCAL_INLINE static __inline__
 #define GLOBAL_INLINE __inline__
@@ -17,10 +17,10 @@
 #define MCU_CORTEX_M4  4
 
 /* MCU timer abstraction */
-#define DWT_CTRL   ((volatile uint32*)0xE0001000)
-#define DWT_CYCCNT ((volatile uint32*)0xE0001004)
-#define DWT_LAR     ((volatile uint32*)0xE0001FB0)
-#define SCB_DEMCR   ((volatile uint32*)0xE000EDFC)
+#define DWT_CTRL   ((volatile uint32*)0xE0001000u)
+#define DWT_CYCCNT ((volatile uint32*)0xE0001004u)
+#define DWT_LAR    ((volatile uint32*)0xE0001FB0u)
+#define SCB_DEMCR  ((volatile uint32*)0xE000EDFCu)
 
 #if (CFG_PROCESSOR == MCU_X86)
 #define DISABLE_INTERRUPTS()

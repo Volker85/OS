@@ -40,7 +40,7 @@ void OS_EXCEPTION_NMI(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset,0u);
+   OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
 #endif
 }
 /* 0x0000000C OS_EXCEPTION_HARDFAULT */
@@ -58,7 +58,7 @@ void OS_EXCEPTION_HARDFAULT(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset,0u);
+   OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
 #endif
 }
 /* 0x00000010 OS_EXCEPTION_MEM_MANAG_FAULT */
@@ -76,7 +76,7 @@ void OS_EXCEPTION_MEM_MANAG_FAULT(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset,0u);
+   OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
 #endif
 }
 /* 0x00000014 OS_EXCEPTION_BUS_FAULT */
@@ -94,7 +94,7 @@ void OS_EXCEPTION_BUS_FAULT(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset,0u);
+   OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
 #endif
 }
 /* 0x00000018 OS_EXCEPTION_BUS_FAULT */
@@ -112,7 +112,7 @@ void OS_EXCEPTION_USAGE_FAULT(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset,0u);
+   OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
 #endif
 }
 /* 0x0000001C reserved */
@@ -129,7 +129,7 @@ void OS_EXCEPTION_DEBUG(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset,0u);
+   OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
 #endif
 }
 /* 0x00000034 reserved */
@@ -140,7 +140,7 @@ void OS_EXCEPTION_PEND_SV(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset,0u);
+   OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
 #endif
 }
 /* 0x0000003C OS_EXCEPTION_SYSTICK */
@@ -157,10 +157,10 @@ void OS_EXCEPTION_SYSTICK(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   DBG_RLD_VALUE = 0xFFFFFFFF;
-   DBG_CURR_VAL = 0xFFFFFFFF;
-   DBG_CTRL_VALUE = 0xFFFFFFFF;
-   DBG_CALIB_VALUE = 0xFFFFFFFF;
+   DBG_RLD_VALUE   = 0xFFFFFFFFu;
+   DBG_CURR_VAL    = 0xFFFFFFFFu;
+   DBG_CTRL_VALUE  = 0xFFFFFFFFu;
+   DBG_CALIB_VALUE = 0xFFFFFFFFu;
    /* the systick timer is stopped during debug... see CorteM4 manual */
 
    task = 0u;
@@ -174,8 +174,8 @@ void OS_EXCEPTION_SYSTICK(void)
    CLOCK = HCLK / 8
    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz
    */
-   *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000 )| (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000))* LOOPTIME_IN_USEC) ;
-   *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000);
+   *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000u)| (((uint32)MCU_CLOCK_IN_HZ / ((uint32)1000000u))* LOOPTIME_IN_USEC) ;
+   *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000u);
    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_ENABLE;
 
    DBG_RLD_VALUE  = *SYSTICK_RLD_VAL_REG;
@@ -210,7 +210,7 @@ void OS_EXCEPTION_SYSTICK(void)
    1 = counting down to zero asserts the SysTick exception request.
 
    Software can use COUNTFLAG to determine if SysTick has ever counted to zero.
-   [0]	ENABLE
+   [0u]	ENABLE
 
    Enables the counter:
 
@@ -234,7 +234,7 @@ void OS_EXCEPTION_SYSTICK(void)
       INT_ADD(&task->exe_time, &task->exe_time, &Diff);
       /*task->task_group->exe_time += (OS_GET_CURRENT_TIME() - task->start_time);*/
       INT_ADD(&task->task_group->exe_time, &task->task_group->exe_time, &Diff);
-      SET_RUNNING_TASK(0,0);
+      SET_RUNNING_TASK(0u,0u);
       OS_TERMINATE_TASK(task,scheduling_task_ptr);
    }
    /* call OS_STATE_HANDLER to determine what steps needs to be performed next */
@@ -256,6 +256,6 @@ void OS_EXCEPTION_IRQ(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset,0u);
+   OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
 #endif
 }

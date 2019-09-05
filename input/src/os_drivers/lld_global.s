@@ -48,7 +48,7 @@ OS_GET_CORE_ID:
         # Cortex M7 seems to be always single core
         #
         #r0 is assumed to be used by the calling convention as the first MOV R15, R14urn value
-   #   CoreID_t ret_val = 0;
+   #   coreid_t ret_val = 0;
    #   return (ret_val);
    MOV r0,#0
    MOV R15,R14
@@ -69,27 +69,27 @@ LLF_SAVE_REGISTERS:
    # R0 is needed for writing all the others....
    PUSH {R0} 
    LDR R0,=REGISTER_R1 
-   STR R1,[R0]
+   STR R1,[r0]
    LDR R0,=REGISTER_R2 
-   STR R2,[R0]
+   STR R2,[r0]
    LDR R0,=REGISTER_R3 
-   STR R3,[R0]
+   STR R3,[r0]
    LDR R0,=REGISTER_R4 
-   STR R4,[R0]
+   STR R4,[r0]
    LDR R0,=REGISTER_R5 
-   STR R5,[R0]
+   STR R5,[r0]
    LDR R0,=REGISTER_R6 
-   STR R6,[R0]
+   STR R6,[r0]
    LDR R0,=REGISTER_R7 
-   STR R7,[R0]
+   STR R7,[r0]
    LDR R0,=REGISTER_R8 
-   STR R8,[R0]
+   STR R8,[r0]
    LDR R0,=REGISTER_R9 
-   STR R9,[R0]
+   STR R9,[r0]
    LDR R0,=REGISTER_R10 
-   STR R10,[R0]
+   STR R10,[r0]
    LDR R0,=REGISTER_R11 
-   STR R11,[R0]   
+   STR R11,[r0]   
    POP {R0}
    MOV R15,R14
    

@@ -23,26 +23,26 @@ void OS_MMU_SETUP(void)
 
    /* interrupts are still disabled at this point of startup, no 2nd disable required... */
    /* region 0 FLASH */
-   *MPU_RNR  = 0;
-   *MPU_RBAR = 0x08000000;/* FLASH Start */
+   *MPU_RNR  = 0u;
+   *MPU_RBAR = 0x08000000u;/* FLASH Start */
    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RO_UNPRIV_RO | MPU_ASR_REGION_SIZE_FLASH | MPU_ASR_REGION_ENABLE;
 
    /* region 1 RAM */
-   *MPU_RNR  = 1;
-   *MPU_RBAR = 0x20000000;/* RAM Start */
+   *MPU_RNR  = 1u;
+   *MPU_RBAR = 0x20000000u;/* RAM Start */
    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_RAM | MPU_ASR_REGION_ENABLE;
 
    /* region 2 Peripherie */
-   *MPU_RNR  = 2;
-   *MPU_RBAR = 0x40000000;/* Peripherie Start */
+   *MPU_RNR  = 2u;
+   *MPU_RBAR = 0x40000000u;/* Peripherie Start */
    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
    /* region 3 Peripherie 2 */
-   *MPU_RNR  = 3;
-   *MPU_RBAR = 0xE0000000;/* Peripherie Start */
+   *MPU_RNR  = 3u;
+   *MPU_RBAR = 0xE0000000u;/* Peripherie Start */
    *MPU_RASR = MPU_ASR_STRONGLY_ORDERED | MPU_ASR_ACCESS_PRIV_RW_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_PERIPHERIE | MPU_ASR_REGION_ENABLE;
    /* region 4 StackCookie */
-   *MPU_RNR  = 4;
-   *MPU_RBAR = 0x20000000;/* Cookie Start */
+   *MPU_RNR  = 4u;
+   *MPU_RBAR = 0x20000000u;/* Cookie Start */
    *MPU_RASR = MPU_ASR_NON_CACHABLE | MPU_ASR_ACCESS_PRIV_NOACCESS_UNPRIV_NOACCESS | MPU_ASR_REGION_SIZE_STACK_COOKIE | MPU_ASR_REGION_ENABLE;
    /* region 5 */
    /* region 6 */

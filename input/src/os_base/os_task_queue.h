@@ -3,8 +3,8 @@
 #include "os_task_common.h"
 
 /* last possible task */
-#define FIRST_TASK   (0)
-#define LAST_TASK    (MAX_RUN_QUEUE_SIZE-1)
+#define FIRST_TASK   (0u)
+#define LAST_TASK    (MAX_RUN_QUEUE_SIZE-1u)
 
 #define FOR_ALL_TASKS_IN_QUEUE(var) for((var) = FIRST_TASK; (var) <= LAST_TASK; (var)++)
 

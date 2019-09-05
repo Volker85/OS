@@ -66,9 +66,9 @@ void* OS_REALLOC(void* ptr_old, uint32 size_new)
 void* OS_MALLOC(uint32 size)
 {
    /*uint32    used_size = 0;*/
-   uint8*    chunk_ptr = 0;
-   uint8*    heap_ptr  = 0; /* current byte of the heap to be accessed */
-   uint32    chunk_uint32o_allocate = 0;
+   uint8*    chunk_ptr = 0u;
+   uint8*    heap_ptr  = 0u; /* current byte of the heap to be accessed */
+   uint32    chunk_uint32o_allocate = 0u;
 
    /* search through the heap for free chunk ....
    e.g. for memory layout
@@ -111,10 +111,10 @@ void* OS_MALLOC(uint32 size)
 }
 void OS_free(void* ptr)
 {
-   uint32  size = 0;
+   uint32  size = 0u;
    /*uint32  used_size = 0;*/
-   uint8* chunk_ptr = 0;
-   uint8* heap_ptr  = 0;
+   uint8* chunk_ptr = 0u;
+   uint8* heap_ptr  = 0u;
    /* clear used size info in list */
    for( heap_ptr = (uint8*)&HEAP;/* init on the start of the heap */
          (heap_ptr + (uint32)HEAP_OFFSET_FOR_CHUNK  <= ((uint8*)&HEAP + (uint32)sizeof(HEAP)));/* at least the size and used_size info is available!! */
@@ -128,7 +128,7 @@ void OS_free(void* ptr)
 
       if(chunk_ptr == ptr) /*block found which shall be cleared... */
       {
-         set_4_uint8_to_uint32((uint8*)heap_ptr + (uint32)HEAP_OFFSET_FOR_USED_SIZE, 0);/* set the used_size info the 0*/
+         set_4_uint8_to_uint32((uint8*)heap_ptr + (uint32)HEAP_OFFSET_FOR_USED_SIZE, 0u);/* set the used_size info the 0*/
       }
    }
 }

@@ -50,4 +50,5 @@ extern task_state_t      TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t      TASK_TRANSITION_CURRENT_STATE;
 extern volatile void* SAVED_STACK_POINTER;
 extern volatile uint8 SYSTEM_STATE_ACCEPTED;
+extern timebig_t LOCAL_SYSTEM_TIME;
 #endif
