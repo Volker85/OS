@@ -22,7 +22,7 @@ void os_deinit_mc(void)
    /*QAC*/
 }
 
-void OS_SHUTDOWN(os_reset_type_t reset_typ)
+void OS_SHUTDOWN(os_reset_type_t reset_typ, func_ptr_t addr)
 {
    /* disable interrupts for all cores -> prevents task activation, etc*/
    LLF_DISABLE_INTERRUPTS_ALL_CORES();
@@ -44,7 +44,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ)
       os_deinit_hw();
       os_deinit_sw();
       os_deinit_mc();
-      OS_START_EXT_PRG((func_ptr_t) 0, (uint32)0, (uint32)0);/* TODO: line is unclear, why is the call done, why to address 0 ??*/
+      OS_START_EXT_PRG((func_ptr_t)addr, (uint32)0, (uint32)0);
    }
    else
    {

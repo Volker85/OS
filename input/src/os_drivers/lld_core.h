@@ -8,7 +8,7 @@ enum coreid_e
    E_CORE2,
    E_CORE3
 };
-typedef  enum coreid_e coreid_t;//TODO naming convention
+typedef  enum coreid_e coreid_t;
 
 extern coreid_t OS_GET_CORE_ID(void);
 extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);

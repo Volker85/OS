@@ -144,22 +144,22 @@ void OS_STATE_HANDLER(void)
       {
       case Reset_powerdown:
       {
-         OS_SHUTDOWN(os_reset_powerdown);
+         OS_SHUTDOWN(os_reset_powerdown,0u);
          break;
       }
       case Reset_restart:
       {
-         OS_SHUTDOWN(os_reset_hardreset);
+         OS_SHUTDOWN(os_reset_hardreset,0u);
          break;
       }
       case Reset_exit:
       {
-         OS_SHUTDOWN(os_reset_exit);
+         OS_SHUTDOWN(os_reset_exit,0u);
          break;
       }
       default:
       {
-         OS_SHUTDOWN(os_reset_hardreset);
+         OS_SHUTDOWN(os_reset_hardreset,0u);
          break;
       }
       }

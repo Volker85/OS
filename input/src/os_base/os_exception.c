@@ -40,7 +40,7 @@ void OS_EXCEPTION_NMI(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_SHUTDOWN(os_reset_hardreset,0u);
 #endif
 }
 /* 0x0000000C OS_EXCEPTION_HARDFAULT */
@@ -58,7 +58,7 @@ void OS_EXCEPTION_HARDFAULT(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_SHUTDOWN(os_reset_hardreset,0u);
 #endif
 }
 /* 0x00000010 OS_EXCEPTION_MEM_MANAG_FAULT */
@@ -76,7 +76,7 @@ void OS_EXCEPTION_MEM_MANAG_FAULT(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_SHUTDOWN(os_reset_hardreset,0u);
 #endif
 }
 /* 0x00000014 OS_EXCEPTION_BUS_FAULT */
@@ -94,7 +94,7 @@ void OS_EXCEPTION_BUS_FAULT(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_SHUTDOWN(os_reset_hardreset,0u);
 #endif
 }
 /* 0x00000018 OS_EXCEPTION_BUS_FAULT */
@@ -112,7 +112,7 @@ void OS_EXCEPTION_USAGE_FAULT(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_SHUTDOWN(os_reset_hardreset,0u);
 #endif
 }
 /* 0x0000001C reserved */
@@ -129,7 +129,7 @@ void OS_EXCEPTION_DEBUG(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_SHUTDOWN(os_reset_hardreset,0u);
 #endif
 }
 /* 0x00000034 reserved */
@@ -140,7 +140,7 @@ void OS_EXCEPTION_PEND_SV(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_SHUTDOWN(os_reset_hardreset,0u);
 #endif
 }
 /* 0x0000003C OS_EXCEPTION_SYSTICK */
@@ -256,6 +256,6 @@ void OS_EXCEPTION_IRQ(void)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 
-   OS_SHUTDOWN(os_reset_hardreset);
+   OS_SHUTDOWN(os_reset_hardreset,0u);
 #endif
 }

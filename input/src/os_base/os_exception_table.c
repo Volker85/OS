@@ -22,7 +22,7 @@ The processor uses a full descending stack.
  see Stack Pointer.
 */
 
-/* TODO: what is the meaning of "the processor implements two stacks.....", how does it affect the code?? */
+/* TODO: currently on MSP (Main Stack) is supported, also add support for PSP stack (process stack) */
 
 /* Hint: no stack switch is needed because shared stack is used.
 This is not ideal for safety reasons

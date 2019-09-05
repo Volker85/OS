@@ -18,7 +18,7 @@ void OS_ISRHANDLERC0(uint32 svc_number)
    default:                /* Unknown SVC */
    {
       OS_SET_SW_BUG(os_bug_svc_number_missing, Func_IsrHandler);
-      OS_SHUTDOWN(os_reset_hardreset);
+      OS_SHUTDOWN(os_reset_hardreset,0u);
       break;
    }
    }
