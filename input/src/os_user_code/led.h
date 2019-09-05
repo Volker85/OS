@@ -39,10 +39,10 @@ typedef struct
 
 typedef enum
 {
-   LED1 = 0,
-   LED2 = 1,
-   LED3 = 2,
-   LED4 = 3
+   E_LED1 = 0,
+   E_LED2 = 1,
+   E_LED3 = 2,
+   E_LED4 = 3
 } led_t;
 
 extern void USER_LED_INIT(led_t Led);

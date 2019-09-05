@@ -1,5 +1,5 @@
-#ifndef _lld_global_h_
-#define _lld_global_h_
+#ifndef _LLD_GLOBAL_H_
+#define _LLD_GLOBAL_H_
 
 
 #include "lld_core.h"
@@ -20,4 +20,4 @@ extern void LLF_RESTORE_REGISTERS(task_t* task);
 extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
-#endif /* _lld_global_h_ */
+#endif /* _LLD_GLOBAL_H_ */

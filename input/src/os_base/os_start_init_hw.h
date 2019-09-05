@@ -1,6 +1,6 @@
-#ifndef _os_start_init_hw_h_
-#define _os_start_init_hw_h_
+#ifndef _OS_START_INIT_HW_H_
+#define _OS_START_INIT_HW_H_
 
 #include "os_firstinc.h"
-extern void OS_InitHw(void);
-#endif /*_os_start_init_hw_h_*/
+extern void OS_INIT_HW(void);
+#endif /*_OS_START_INIT_HW_H_*/

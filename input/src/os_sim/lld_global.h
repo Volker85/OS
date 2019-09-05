@@ -1,5 +1,5 @@
-#ifndef _lld_global_h_
-#define _lld_global_h_
+#ifndef _LLD_GLOBAL_H_
+#define _LLD_GLOBAL_H_
 
 #include "lld_core.h"
 #include "lld_interrupt.h"
@@ -24,4 +24,4 @@ extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_CLEAR_ALL_GP_REGISTERS(void);
 
 extern void LLF_PERFORM_RAM_CHECK(void);
-#endif /* _lld_global_h_ */
+#endif /* _LLD_GLOBAL_H_ */

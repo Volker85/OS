@@ -7,18 +7,18 @@
 #include "stdio.h"
 #include "time.h"
 
-#if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == MCU_X86)
 int main(int argc, char* argv[])
 {
    unsigned int i = 0;
    time_t t = time(0);
 
-   OS_StackChkPatternInit();
-   OS_StartOs();
+   OS_STACK_CHK_PATTERN_INIT();
+   OS_START_OS();
    while(i < 1e8)
    {
       /* emulate the interrupts */
-      OS_StateHandler();
+      OS_STATE_HANDLER();
       i++;
    }
 
@@ -26,8 +26,8 @@ int main(int argc, char* argv[])
    printf("Zeit: %d",t);
    getchar();
    getchar();
-   ReferenceUnusedParameter(argc);
-   ReferenceUnusedParameter(*argv);
+   REFERENCE_UNUSED_PARAMETER(argc);
+   REFERENCE_UNUSED_PARAMETER(*argv);
 
    return 0;
 }

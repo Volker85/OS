@@ -1,0 +1,77 @@
+1. Indentation Style:
+---------------------
+Allman / BSD
+
+Example: GNU-Example in Allman-style
+
+ int f(int x, int y, int z)
+ {
+     if (x < foo(y, z))
+     {
+         qux = bar[4] + 5;
+         return qux;
+     }
+     else
+     {
+         while (z)
+         {
+             qux += foo(z, z);
+             z--;
+         }
+         return ++x + bar();
+     }
+ }
+
+
+2. Naming Convention:
+---------------------
+a) global variables:
+      capital letters
+
+      Example:
+      uint32 MY_GLOBAL_VARIABLE;
+
+b) local variables: 
+      lower case
+
+      Example:
+      uint32 my_local_variable;
+
+c) global functions (extern):
+      upper case
+      
+      Example:
+      void FUNC1(uint32 parameter);
+      
+d) local functions (static):
+      lower case  
+      
+      Example:
+      void func1(uint32 parameter);
+ 
+ e) enum:
+      enum member -> capital letters
+ 
+ f) macro:
+      macro -> capital letter
+ 
+ g) every tocken should be prefixed with 
+      e_     -> enum 
+      gvar_u32_ -> global uint32 Variable 
+      lvar_u32_ -> local  uint32 Variable 
+      gfun_u32_  -> global function returning uint32 
+      lfun_u32_  -> local function returning uint32       
+      lfun_e_    -> local function returning enum
+      gfun_e_    -> global function returning enum      
+      lfun_v_    -> local function returning void
+      gfun_v_    -> global function returning void            
+ 
+ h) member of structures 
+      as done for local functions / variables
+ 
+ i) Variable names
+      variable / function names consisting of multiple names e.g. numbers_per_second are seperated via '_'
+ 
+ j) name of types
+      lower case
+      

@@ -13,5 +13,5 @@ void LLF_MPU_ENABLE(void)
 uint32 LLF_GET_MPU_PRESENT(void)
 {
    /* OS_SIM: no MMU implemented, always assume switched off MMU */
-   return False;
+   return FALSE;
 }

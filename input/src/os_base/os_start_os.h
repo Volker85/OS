@@ -1,4 +1,4 @@
-#ifndef _os_startos_h_
-#define _os_startos_h_
-extern void OS_StartOs(void);
-#endif /* _os_startos_h_ */
+#ifndef _OS_STARTOS_H_
+#define _OS_STARTOS_H_
+extern void OS_START_OS(void);
+#endif /* _OS_STARTOS_H_ */

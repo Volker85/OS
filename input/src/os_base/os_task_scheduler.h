@@ -1,26 +1,26 @@
-#ifndef _os_task_scheduler_h_
-#define _os_task_scheduler_h_
+#ifndef _OS_TASK_SCHEDULER_H_
+#define _OS_TASK_SCHEDULER_H_
 
 #include "os_firstinc.h"
 #include "os_task_common.h"
 
-#define Task_0_ptr 0
-#define Task_1_ptr 1
-#define Task_2_ptr 2
-#define Task_3_ptr 3
+#define TASK_0_PTR 0
+#define TASK_1_PTR 1
+#define TASK_2_PTR 2
+#define TASK_3_PTR 3
 
-#define OS_SaveTaskPtr(task_ptr, Task_n_ptr)
+#define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
 
 
 
-extern void OS_StartTask(task_t* task, scheduling_t* scheduling_task);
-extern void OS_ActivateTask(task_t* task);
-extern void OS_SleepTask(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr);
-extern void OS_InitTask(
+extern void OS_START_TASK(task_t* task, scheduling_t* scheduling_task);
+extern void OS_ACTIVATE_TASK(task_t* task);
+extern void OS_SLEEP_TASK(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr);
+extern void OS_INIT_TASK(
    task_t*          task,
    func_p_t         TaskFunction,
    unsigned_char_t  AllowedInstances,
-   unsigned_char_t  IdleTask,
+   unsigned_char_t  idle_task,
    task_group_t*    p_task_group,
    unsigned_char_t* pStackAddr,
    unsigned_int32_t uStackSize,
@@ -28,11 +28,11 @@ extern void OS_InitTask(
    CoreID_t         core,
    unsigned_char_t  default_prio
 );
-extern void OS_InitTasks(void);
-extern unsigned_char_t task_state_request(void* task, task_state_t requested_state);
-extern void OS_ActivateDispatcher(void);
-extern void OS_TerminateTask(task_t* task, scheduling_t* scheduling_task);
-extern void OS_TaskDispatcher(void);
-extern void OS_CreateTask(task_t* task);
-#endif /* _os_task_scheduler_h_  */
+extern void OS_INIT_TASKS(void);
+extern unsigned_char_t OS_TASK_STATE_REQUEST(void* task, task_state_t requested_state);
+extern void OS_ACTIVATE_DISPATCHER(void);
+extern void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task);
+extern void OS_TASK_DISPATCHER(void);
+extern void OS_CREATE_TASK(task_t* task);
+#endif /* _OS_TASK_SCHEDULER_H_  */
 

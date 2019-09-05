@@ -12,13 +12,13 @@
 OS_State: OS_INIT (Start im Supervisor Mode)
 - Exception Handler aufsetzen  -> Done
 - HW Internal Peripherie, RAM, etc -> Done
-- Tasks konfigurieren -> Done via OS_InitTaskSystem()
---> Stack -> assigned in function OS_InitTasks / OS_InitTaskSystem -> Done
+- Tasks konfigurieren -> Done via OS_INIT_TASK_SYSTEM()
+--> Stack -> assigned in function OS_INIT_TASKs / OS_INIT_TASK_SYSTEM -> Done
 --> MMU_REGION ->NA
 --> CoreId -> Done
---> Task-Function -> assigned in function OS_InitTask / OS_InitTaskSystem -> Done
+--> Task-Function -> assigned in function OS_INIT_TASK / OS_INIT_TASK_SYSTEM -> Done
 --> TaskPrio -> Done
---> MultipleActChk -> Done in OS_ActivateTask()
+--> MultipleActChk -> Done in OS_ACTIVATE_TASK()
 --> Privilige Level (Handler mode (priviliged): System Mode, Abort, Undefined, FiQ, IRQ; Thread mode: unpriviliged / priviliged) -> Done
 - TCMP Interrupts für Tasks konfigurieren, Starten vom Dispatcher -> Done
 - MMU konfigurieren -> NA
@@ -35,11 +35,11 @@ OS_State: OS_Running (User Mode)
 
 (OS_State: OS_Exception (Supervisor Mode))
 - Link-Register Adresse im Eeprom abspeichern, an der die Exceptioin erzeugt wurde -> NA (no EEPROM exists on eval board, enter endless loop instead)
-- OS_Shutdown mit Reset -> Done in handler functions via call of "OS_Shutdown(os_reset_hardreset)"
+- OS_SHUTDOWN mit Reset -> Done in handler functions via call of "OS_SHUTDOWN(os_reset_hardreset)"
 
-OS_State: OS_Shutdown (nur erlaubt im Supervisor Mode)
+OS_State: OS_SHUTDOWN (nur erlaubt im Supervisor Mode)
 - Interrupts deaktivieren -> Done
-- Tasks beenden (Timer Interrupts löschen) -> Done OS_Shutdown(os_reset_hardreset
+- Tasks beenden (Timer Interrupts löschen) -> Done OS_SHUTDOWN(os_reset_hardreset
 - FMON / Watchdog deinitialisieren -> NA
 - MMU deaktivieren / deintialisieren -> NA
 - HW Reset auslösen -> Done
@@ -48,18 +48,18 @@ OS_State: OS_Shutdown (nur erlaubt im Supervisor Mode)
 
 typedef enum os_reset_req_state_e
 {
-   Reset_powerdown = 0,
-   Reset_restart,
-   Reset_exit
+   E_RESET_POWERDOWN = 0,
+   E_RESET_RESTART,
+   E_RESET_EXIT
 } os_reset_req_state_t;
 
-Local void OS_DetermineNextTaskActivation(void)
+LOCAL void os_determine_next_task_activation(void)
 {
-   Local uint32 call_nr = 0;
+   LOCAL uint32 call_nr = 0;
    switch(call_nr)
    {
    case 0:
-      OS_ActivateTask(&TASK_1_VAR);
+      OS_ACTIVATE_TASK(&TASK_1_VAR);
       call_nr++;
       break;
    case 1:
@@ -67,7 +67,7 @@ Local void OS_DetermineNextTaskActivation(void)
       call_nr++;
       break;
    case 2:
-      OS_ActivateTask(&TASK_2_VAR);
+      OS_ACTIVATE_TASK(&TASK_2_VAR);
       call_nr++;
       break;
    case 3:
@@ -75,7 +75,7 @@ Local void OS_DetermineNextTaskActivation(void)
       call_nr++;
       break;
    case 4:
-      OS_ActivateTask(&TASK_3_VAR);
+      OS_ACTIVATE_TASK(&TASK_3_VAR);
       call_nr = 0;
       break;
    default:
@@ -86,29 +86,29 @@ Local void OS_DetermineNextTaskActivation(void)
 
 }
 
-void OS_StateHandler(void)
+void OS_STATE_HANDLER(void)
 {
    /* the following code runs in priviliged mode!! */
-   Local os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
-   Local uint32 call_nr = 0;
+   LOCAL os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
+   LOCAL uint32 call_nr = 0;
 
    switch(OS_STATE)
    {
    case os_init:
    {
       /*init the MCU including MMU, RAM, Registers */
-      OS_InitMc();
+      OS_INIT_MC();
       /* start the task system */
       /* initialisation of SW, HW will be done in the tasks, after starting the task system.... */
-      OS_InitHw();
-      OS_InitSw();
+      OS_INIT_HW();
+      OS_INIT_SW();
 
       /* trigger dispatcher */
       /* activate the dispatcher, configure TCMP interrupts for tasks */
       /* activate & start the Idle task */
-      OS_ActivateTask(&TASK_0_VAR);
-      OS_StartTask(GetIdleTask(),0);
-      OS_ActivateDispatcher();
+      OS_ACTIVATE_TASK(&TASK_0_VAR);
+      OS_START_TASK(GET_IDLE_TASK(),0);
+      OS_ACTIVATE_DISPATCHER();
 
       OS_STATE = os_running;
       /* activate the interrupts, tasks will be executed from now on ... */
@@ -118,18 +118,18 @@ void OS_StateHandler(void)
    case os_running:
    {
       /*
-      TODO: OS_DetermineNextTaskActivation und OS_TaskDispatcher müssen m.E. öfters laufen wie der Rest der SW.
+      TODO: os_determine_next_task_activation und OS_TASK_DISPATCHER müssen m.E. öfters laufen wie der Rest der SW.
       Es macht keinen Sinn, immer den State Handler anzufragen, nur um das Task Handling zu triggern....
       - Der Dispatcher müsste per Interrupt die laufende Task unterbrechen um dann (nach PreemptTask oder TerminateTask) die nächste Task zu starten.
-      - Der OS_DetermineNextTaskActivation müsste vor jedem Aufruf on OS_TaskDispatcher laufen
+      - Der os_determine_next_task_activation müsste vor jedem Aufruf on OS_TASK_DISPATCHER laufen
       */
       if(call_nr % 5 == 0)
       {
-         OS_DetermineNextTaskActivation();
+         os_determine_next_task_activation();
       }
       call_nr++;
       /* run the task function */
-      OS_TaskDispatcher();
+      OS_TASK_DISPATCHER();
       if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
       {
          OS_STATE = os_shutdown;
@@ -144,22 +144,22 @@ void OS_StateHandler(void)
       {
       case Reset_powerdown:
       {
-         OS_Shutdown(os_reset_powerdown);
+         OS_SHUTDOWN(os_reset_powerdown);
          break;
       }
       case Reset_restart:
       {
-         OS_Shutdown(os_reset_hardreset);
+         OS_SHUTDOWN(os_reset_hardreset);
          break;
       }
       case Reset_exit:
       {
-         OS_Shutdown(os_reset_exit);
+         OS_SHUTDOWN(os_reset_exit);
          break;
       }
       default:
       {
-         OS_Shutdown(os_reset_hardreset);
+         OS_SHUTDOWN(os_reset_hardreset);
          break;
       }
       }
@@ -171,8 +171,8 @@ void OS_StateHandler(void)
    }
    }
    /*check the complete stack apart from the first 64 bytes to detect critical stack usage */
-   OS_StackCheck();
-#if(CFG_PROCESSOR != cMCU_X86)
+   OS_STACK_CHECK();
+#if(CFG_PROCESSOR != MCU_X86)
    /* wait until timer task, else the program would return to the next instruction after the reset vector, which is not allowed */
    while(1)
    {

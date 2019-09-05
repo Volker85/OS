@@ -13,7 +13,7 @@ From the AAPCS, §5.1.1:
         .thumb
         .syntax unified
         .text
-        .global OS_GetCoreId
+        .global OS_GET_CORE_ID
         .global LLF_SAVE_TASK_STACK
         .global LLF_SAVE_REGISTERS
         .global LLF_RESTORE_TASK_STACK
@@ -27,9 +27,9 @@ From the AAPCS, §5.1.1:
         .global LLF_EXCEPTION_TO_HANDLER_MODE
         .global LLF_EXCEPTION_TO_THREAD_MODE_PRIV
         .global LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV     
-        .global OS_Exception_SVC
+        .global OS_EXCEPTION_SVC
 
-OS_GetCoreId:
+OS_GET_CORE_ID:
         # the Cortex M4 process has just one core-> use static assignement of core id
         #
         # 14.1.1. Determining which core the code is running on
@@ -153,7 +153,7 @@ LLF_PERFORM_RAM_CHECK:
 #volatile uint8* curr_pos_ptr = (volatile*) _ram_start_addr_;
 #volatile uint8* ram_end_ptr =  (volatile*) _ram_end_addr_;
 #uint8 res1, res2;
-#uint8 ram_check_failed = False;
+#uint8 ram_check_failed = FALSE;
 #
 #LLF_INT_DISABLE();
 #while(curr_pos_ptr < ram_end_ptr)
@@ -165,7 +165,7 @@ LLF_PERFORM_RAM_CHECK:
 #   if(res1!=0x00 || res2 != 0xFF)
 #   {
 #      failed_pos_ptr = curr_pos_ptr;
-#      ram_check_failed = True;
+#      ram_check_failed = TRUE;
 #   }
 #   curr_pos_ptr++;
 #}
@@ -187,7 +187,7 @@ LLF_PERFORM_RAM_CHECK:
         MOV r2, #0x00
         #uint8 test_pattern2 = 0xFF;
         MOV r3, #0xFF
-        #uint8 ram_check_failed = False;
+        #uint8 ram_check_failed = FALSE;
         MOV r6, #0
         #LLF_INT_DISABLE();
         # BL only in Thumb 2
@@ -213,7 +213,7 @@ loop_start:
         # continue the loop in case no violation found
         B loop_start
 ram_check_failed:
-        #      ram_check_failed = True;
+        #      ram_check_failed = TRUE;
         MOV r6,#1   
         #      failed_pos_ptr = curr_pos_ptr;
         MOV r7,r0      
@@ -258,7 +258,7 @@ LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV:
    MOV R0, #0xFFFFFFFD
    MOV R15, R14
 
-OS_Exception_SVC:
+OS_EXCEPTION_SVC:
    # The handler must first load the SWI instruction that caused the exception into a register. At this point, lr_SVC holds the address of the instruction that follows the SWI instruction, so the SWI is loaded into the register (in this case r0) using:
    # lines taken from infocenter.arm.com
    LDR R0,[LR,#-4]

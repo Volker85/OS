@@ -1,17 +1,17 @@
 #include "os_firstinc.h"
 #include "..\os_base\os_heap.h"
 
-#if(DynamicMemoryUsed != False)
-Local uint32 GetUint32Of4Uint8(uint8* ptr);
-Local void Set4Uint8ToUint32(uint8* ptr, uint32 value);
+#if(DynamicMemoryUsed != FALSE)
+LOCAL uint32 get_uint32_of_4_uint8(uint8* ptr);
+LOCAL void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
 
 /* Allocate and zero-initialize array
 --------------------------------------------------------------------
 Allocates a block of memory for an array of num elements,
 each of them size bytes long, and initializes all its bits to zero. */
-void* OS_Calloc(uint32 num, uint32 size)
+void* OS_CALLOC(uint32 num, uint32 size)
 {
-   uint8* ptr = (uint8*) OS_Malloc(num*size);
+   uint8* ptr = (uint8*) OS_MALLOC(num*size);
    /* zero initialize the RAM*/
    uint32 i;
    for(i = 0u; i < (size*num); i++)
@@ -32,17 +32,17 @@ The function may move the memory block to a new location
 In case that ptr is a null pointer, the function behaves like malloc,
 assigning a new block of size bytes and returning a pointer to its beginning.
 */
-void* OS_Realloc(void* ptr_old, uint32 size_new)
+void* OS_REALLOC(void* ptr_old, uint32 size_new)
 {
    uint32 i;
    void* ptr_new = 0u;
    if(ptr_old == 0u)/* just allocate the new RAM */
    {
-      ptr_new = (void*) OS_Malloc(size_new);
+      ptr_new = (void*) OS_MALLOC(size_new);
    }
    else if(size_new != 0u)/*reallocate*/
    {
-      void* ptr_new = (void*) OS_Malloc(size_new);
+      void* ptr_new = (void*) OS_MALLOC(size_new);
       if(ptr_new != 0u)/* memory to store the data ok? */
       {
          for(i = 0u; i < size_new; i++)
@@ -55,7 +55,7 @@ void* OS_Realloc(void* ptr_old, uint32 size_new)
    {
       if(ptr_old != 0u)
       {
-         OS_Free(ptr_old);
+         OS_free(ptr_old);
       }
       ptr_new = 0u;
    }
@@ -63,7 +63,7 @@ void* OS_Realloc(void* ptr_old, uint32 size_new)
 }
 
 /* malloc and free shall be the ONLY!!! functions accessing the data structures of the heap directly */
-void* OS_Malloc(uint32 size)
+void* OS_MALLOC(uint32 size)
 {
    /*uint32    used_size = 0;*/
    uint8*    chunk_ptr = 0;
@@ -102,14 +102,14 @@ void* OS_Malloc(uint32 size)
          heap_ptr = heap_ptr + (uint32)HEAP_OFFSET_FOR_CHUNK + size/* set the heap_ptr to the next element in this list */
       )
    {
-      size      = GetUint32Of4Uint8(heap_ptr + HEAP_OFFSET_FOR_SIZE);
-      /*used_size = GetUint32Of4Uint8(heap_ptr + HEAP_OFFSET_FOR_USED_SIZE);*/
+      size      = get_uint32_of_4_uint8(heap_ptr + HEAP_OFFSET_FOR_SIZE);
+      /*used_size = get_uint32_of_4_uint8(heap_ptr + HEAP_OFFSET_FOR_USED_SIZE);*/
 
       chunk_ptr     = (heap_ptr + HEAP_OFFSET_FOR_CHUNK);
    }
    return (void*)chunk_ptr;
 }
-void OS_Free(void* ptr)
+void OS_free(void* ptr)
 {
    uint32  size = 0;
    /*uint32  used_size = 0;*/
@@ -121,14 +121,14 @@ void OS_Free(void* ptr)
          heap_ptr = heap_ptr + HEAP_OFFSET_FOR_CHUNK + size/* set the heap_ptr to the next element in this list */
       )
    {
-      size      = GetUint32Of4Uint8(heap_ptr + HEAP_OFFSET_FOR_SIZE);
-      /*used_size = GetUint32Of4Uint8(heap_ptr + HEAP_OFFSET_FOR_USED_SIZE);*/
+      size      = get_uint32_of_4_uint8(heap_ptr + HEAP_OFFSET_FOR_SIZE);
+      /*used_size = get_uint32_of_4_uint8(heap_ptr + HEAP_OFFSET_FOR_USED_SIZE);*/
 
       chunk_ptr     = (void*) ((uint8*)heap_ptr + (uint32)HEAP_OFFSET_FOR_CHUNK);
 
       if(chunk_ptr == ptr) /*block found which shall be cleared... */
       {
-         Set4Uint8ToUint32((uint8*)heap_ptr + (uint32)HEAP_OFFSET_FOR_USED_SIZE, 0);/* set the used_size info the 0*/
+         set_4_uint8_to_uint32((uint8*)heap_ptr + (uint32)HEAP_OFFSET_FOR_USED_SIZE, 0);/* set the used_size info the 0*/
       }
    }
 }

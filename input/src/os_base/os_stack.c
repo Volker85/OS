@@ -1,6 +1,6 @@
 #include "os_firstinc.h"
 
-void OS_StackCheck(void)
+void OS_STACK_CHECK(void)
 {
    /* the last 64 bytes are reserved for stack check for every stack
    unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];
@@ -8,7 +8,7 @@ void OS_StackCheck(void)
    the stack is starting at the highest address and growing to lower addresses -> pattern start on OS_MAIN_STACK[0] for 64 bytes
 
    */
-   static volatile uint32 stack_pos = 0, stack_used = False;
+   static volatile uint32 stack_pos = 0, stack_used = FALSE;
    STACK_ADDR = (volatile uint32*)-1;
    STACK_POS =  (volatile uint32) -1;
    STACK_USAGE_PERCENT = 0u;
@@ -17,7 +17,7 @@ void OS_StackCheck(void)
    {
       if(OS_MAIN_STACK[stack_pos] != 0xAA)
       {
-         stack_used = True;
+         stack_used = TRUE;
          if(stack_pos < STACK_POS)
          {
             STACK_POS  = (volatile uint32 )stack_pos;
@@ -27,20 +27,20 @@ void OS_StackCheck(void)
    }
    STACK_USAGE_PERCENT = (OS_STACK_SIZE - STACK_POS) * 100u / OS_STACK_SIZE;
 
-   if((stack_used == True) && (STACK_USAGE_PERCENT > 80u))
+   if((stack_used == TRUE) && (STACK_USAGE_PERCENT > 80u))
    {
-      OS_SetSwBug(os_bug_critical_stack_usage,Func_StackCheck);
-      ReferenceUnusedParameter(STACK_POS);
-      ReferenceUnusedParameter(STACK_ADDR);
+      OS_SET_SW_BUG(os_bug_critical_stack_usage,Func_StackCheck);
+      REFERENCE_UNUSED_PARAMETER(STACK_POS);
+      REFERENCE_UNUSED_PARAMETER(STACK_ADDR);
       while(1)
       {
          /* allow easy debugging */
       }
    }
 }
-#if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == MCU_X86)
 /* this is done for CortexM4 in function INIT_OS_STACK() on assembler level, because no stack is allowed to be used during init, otherwise the SW will crash... */
-void OS_StackChkPatternInit(void)
+void OS_STACK_CHK_PATTERN_INIT(void)
 {
    uint32 stack_pos = 0;
    /* init the stack with 0xAA (only the highest 64 bytes leave out, because they might be already in use by SW) */

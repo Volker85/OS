@@ -1,20 +1,20 @@
-#ifndef  _os_exception_isr_handler_h_
-#define  _os_exception_isr_handler_h_
+#ifndef  _OS_EXCEPTION_ISR_HANDLER_H_
+#define  _OS_EXCEPTION_ISR_HANDLER_H_
 
 #define SVC_00 0x00   /* TODO: Define real SVC numbers*/
 
-extern void OS_Exception_RESET(void);
-extern void OS_Exception_NMI(void);
-extern void OS_Exception_HARDFAULT(void);
-extern void OS_Exception_MEM_MANAG_FAULT(void);
-extern void OS_Exception_BUS_FAULT(void);
-extern void OS_Exception_USAGE_FAULT(void);
+extern void OS_EXCEPTION_RESET(void);
+extern void OS_EXCEPTION_NMI(void);
+extern void OS_EXCEPTION_HARDFAULT(void);
+extern void OS_EXCEPTION_MEM_MANAG_FAULT(void);
+extern void OS_EXCEPTION_BUS_FAULT(void);
+extern void OS_EXCEPTION_USAGE_FAULT(void);
 
-extern void OS_Exception_SVC(void);
-extern void OS_Exception_DEBUG(void);
+extern void OS_EXCEPTION_SVC(void);
+extern void OS_EXCEPTION_DEBUG(void);
 
-extern void OS_Exception_PendSV(void);
-extern void OS_Exception_Systick(void);
-extern void OS_Exception_IRQ(void);
+extern void OS_EXCEPTION_PEND_SV(void);
+extern void OS_EXCEPTION_SYSTICK(void);
+extern void OS_EXCEPTION_IRQ(void);
 extern void OS_ISRHANDLERC0(uint32 svc_number);
-#endif /* _os_exception_isr_handler_h_ */
+#endif /* _OS_EXCEPTION_ISR_HANDLER_H_ */

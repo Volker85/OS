@@ -1,4 +1,4 @@
-#ifndef _lld_timer_h_
-#define _lld_timer_h_
+#ifndef _LLD_TIMER_H_
+#define _LLD_TIMER_H_
 #include "..\os_base\os_firstinc.h"
-#endif /* _lld_timer_h_ */
+#endif /* _LLD_TIMER_H_ */

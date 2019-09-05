@@ -7,9 +7,9 @@ for documentation of the MPU please read:
    Application note
    Managing memory protection unit (MPU) in STM32 MCUs
 */
-void OS_MmuSetup(void)
+void OS_MMU_SETUP(void)
 {
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+#if(CFG_PROCESSOR == MCU_CORTEX_M4)
    /* assign every task a mmu region + the scheduler an own region */
    /* the mmu needs to be reconfigured before and after every task switch, because the tasks might run with different MMU rights
       hardware register access shall be only possible in supervisor / kernel mode via system call.... based on a security descriptor as done in windows */

@@ -1,5 +1,5 @@
-#ifndef  _os_exception_h_
-#define  _os_exception_h_
+#ifndef  _OS_EXCEPTION_H_
+#define  _OS_EXCEPTION_H_
 
 /* define the Cortex M4 Exception regiters */
 #define HARDFAULT_STATUS_REG ((volatile uint32*)0xE000ED2Cu)
@@ -27,4 +27,4 @@
 #define SYS_HANDLER_CTRL_STATE_BIT_MASK_MEMFAULTENA ((uint32)0x00010000)
 #define SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP (*SYS_HANDLER_CTRL_STATE_REG = *SYS_HANDLER_CTRL_STATE_REG | SYS_HANDLER_CTRL_STATE_BIT_MASK_USGFAULTENA | SYS_HANDLER_CTRL_STATE_BIT_MASK_BUSFAULTENA | SYS_HANDLER_CTRL_STATE_BIT_MASK_MEMFAULTENA)
 
-#endif /* _os_exception_h_ */
+#endif /* _OS_EXCEPTION_H_ */

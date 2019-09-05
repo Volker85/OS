@@ -3,7 +3,7 @@
 #include "os_heap.h"
 
 /* heap related RAM */
-#if(DynamicMemoryUsed != False)
+#if(DynamicMemoryUsed != FALSE)
 unsigned_char_t      HEAP[HEAP_SIZE];
 #endif
 #if(OS_STACK_SIZE <= 64)

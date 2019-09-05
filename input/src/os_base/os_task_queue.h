@@ -1,24 +1,24 @@
-#ifndef _os_task_queue_h_
-#define _os_task_queue_h_
+#ifndef _OS_TASK_QUEUE_H_
+#define _OS_TASK_QUEUE_H_
 #include "os_task_common.h"
 
 /* last possible task */
-#define First_task   (0)
-#define Last_task    (MAX_RUN_QUEUE_SIZE-1)
+#define FIRST_TASK   (0)
+#define LAST_TASK    (MAX_RUN_QUEUE_SIZE-1)
 
-#define For_all_tasks_in_queue(var) for((var) = First_task; (var) <= Last_task; (var)++)
+#define FOR_ALL_TASKS_IN_QUEUE(var) for((var) = FIRST_TASK; (var) <= LAST_TASK; (var)++)
 
-extern task_t* GetRunningTask(void);
-extern task_t** GetRunningSchedulingQueueElementPtr(void);
+extern task_t* GET_RUNNING_TASK(void);
+extern task_t** GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR(void);
 
-extern task_t* AddToTaskQueue(task_t* task);
-extern void AddToIdleTaskQueue(task_t* task);
-extern void DeleteFromTaskQueue(task_t* task);
-extern task_t* GetFromTaskQueue(scheduling_t* scheduling_task_ptr);
-extern task_t* GetIdleTask(void);
-extern scheduling_t* GetFromSchedulingQueue(unsigned_char_t element_nr);
-extern void DeleteFromSchedulingQueue(scheduling_t* scheduling_queue_element);
-extern void AddToSchedulingQueue(task_t* task);
+extern task_t* ADD_TO_TASK_QUEUE(task_t* task);
+extern void ADD_TO_IDLE_TASK_QUEUE(task_t* task);
+extern void DELETE_FROM_TASK_QUEUE(task_t* task);
+extern task_t* GET_FROM_TASK_QUEUE(scheduling_t* scheduling_task_ptr);
+extern task_t* GET_IDLE_TASK(void);
+extern scheduling_t* GET_FROM_SCHEDULING_QUEUE(unsigned_char_t element_nr);
+extern void DELETE_FROM_SCHEDULING_QUEUE(scheduling_t* scheduling_queue_element);
+extern void ADD_TO_SCHEDULING_QUEUE(task_t* task);
 extern void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task);
-extern void OS_InitTaskQueue(void);
-#endif /* _os_task_queue_h_ */
+extern void OS_INIT_TASK_QUEUE(void);
+#endif /* _OS_TASK_QUEUE_H_ */

@@ -3,7 +3,7 @@
 #include "os_start_os.h"
 
 
-void OS_StartOs(void)
+void OS_START_OS(void)
 {
    VAR_HARDFAULT_STATUS_REG       = 0u;
    VAR_MEM_MANAG_FAULT_STATUS_REG = 0u;
@@ -16,10 +16,10 @@ void OS_StartOs(void)
    LINK_REGISTER_HANDLER          = 0u;
    BACKUP_SYSTICK_CURRENT_VAL_REG = 0u;
    /* activate all exception to improve the debug capabilities */
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+#if(CFG_PROCESSOR == MCU_CORTEX_M4)
    SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP;
 #endif
    /* triggers hw & sw init (OS parts), interrupt system init (including MMU) */
    OS_STATE = os_init;
-   OS_StateHandler();
+   OS_STATE_HANDLER();
 }

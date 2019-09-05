@@ -2,7 +2,7 @@
 
 void LLF_INT_DISABLE(void)
 {
-#if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == MCU_X86)
 #else
    /* enable interrupts via setting i bit */
    __asm__ __volatile__ ("cpsid i");
@@ -10,7 +10,7 @@ void LLF_INT_DISABLE(void)
 }
 void LLF_INT_ENABLE(void)
 {
-#if(CFG_PROCESSOR == cMCU_X86)
+#if(CFG_PROCESSOR == MCU_X86)
 #else
    /* enable interrupts via clearing i bit */
    __asm__ __volatile__ ("cpsie i");

@@ -1,23 +1,23 @@
-#ifndef _lld_core_h_
-#define _lld_core_h_
+#ifndef _LLD_CORE_H_
+#define _LLD_CORE_H_
 #include "..\os_base\os_firstinc.h"
-enum CoreID_e
+enum coreid_e
 {
-   Core0 = 0,
-   Core1,
-   Core2,
-   Core3
+   E_CORE0 = 0,
+   E_CORE1,
+   E_CORE2,
+   E_CORE3
 };
-typedef  enum CoreID_e CoreID_t;
+typedef  enum coreid_e coreid_t;
 
-extern CoreID_t OS_GetCoreId(void);
+extern coreid_t OS_GET_CORE_ID(void);
 extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 
 enum privilige_mode_e
 {
-   ePriviligeMode_unpriviliged_thread_mode = 0,
-   ePriviligeMode_priviliged_thread_mode,
-   ePriviligeMode_priviliged_handler_mode
+   E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE = 0,
+   E_PRIVILIGEMODE_PRIVILIGED_THREAD_MODE,
+   E_PRIVILIGEMODE_PRIVILIGED_HANDLER_MODE
 };
 typedef  enum privilige_mode_e privilige_mode_t;
-#endif /* _lld_core_h_ */
+#endif /* _LLD_CORE_H_ */

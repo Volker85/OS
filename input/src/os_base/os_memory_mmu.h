@@ -1,5 +1,5 @@
-#ifndef  _os_memory_mmu_h_
-#define  _os_memory_mmu_h_
+#ifndef  _OS_MEMORY_MMU_H_
+#define  _OS_MEMORY_MMU_H_
 
 
 #define MPU_RNR  ((volatile uint32*)0xE000ED98)
@@ -21,5 +21,5 @@
 #define MPU_ASR_REGION_ENABLE            0x00000001
 
 
-extern void OS_MmuSetup(void);
-#endif /* _os_memory_mmu_h_ */
+extern void OS_MMU_SETUP(void);
+#endif /* _OS_MEMORY_MMU_H_ */

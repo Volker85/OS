@@ -14,13 +14,12 @@
         .syntax unified
         .text
 
-        .global OS_Exception_RESET
-        .global OS_GetCoreId
+        .global OS_EXCEPTION_RESET
+        .global OS_GET_CORE_ID
         .extern LLF_CLEAR_ALL_RAM
-        .extern OS_StartOs
+        .extern OS_START_OS
         .extern INIT_OS_STACK
         .global LLF_PERFORM_RAM_CHECK
-        .global START_OS
         .extern _ram_start
         .extern _ram_end
         .extern RAM_CHECK_FAILURE_DETECTED
@@ -29,7 +28,7 @@
         .equ OS_STACK_SIZE, 0x200
         
 
-OS_Exception_RESET:
+OS_EXCEPTION_RESET:
         MOV r0, #0/*Step 1:  init general purpose registers: r0...r12: general purpose */
         MOV r1, #0
         MOV r2, #0
@@ -125,5 +124,5 @@ Loop_end:
          #/* done in OS_INIT_MC()                      */
          #
          #/* 4 -> executing main program */
-         # OS_StartOs(void)
-         B OS_StartOs
+         # OS_START_OS(void)
+         B OS_START_OS

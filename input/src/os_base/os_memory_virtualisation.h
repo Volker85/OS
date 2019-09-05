@@ -1,7 +1,7 @@
-#ifndef  _os_memory_virtualisation_h_
-#define  _os_memory_virtualisation_h_
+#ifndef  _OS_MEMORY_VIRTUALISATION_H_
+#define  _OS_MEMORY_VIRTUALISATION_H_
 #include "os_common.h"
 
 /* memory virtualisation is not supported in CortexM family -> do not implement sw for it here */
 
-#endif /* _os_memory_virtualisation_h_ */
+#endif /* _OS_MEMORY_VIRTUALISATION_H_ */

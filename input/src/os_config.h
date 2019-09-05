@@ -1,5 +1,5 @@
-#ifndef _os_config_h_
-#define _os_config_h_
+#ifndef _OS_CONFIG_H_
+#define _OS_CONFIG_H_
 
 /* integer model */
 #define INTEGER_LLP64_IL32P64 1
@@ -16,8 +16,8 @@
 #define CPP_VERSION_2011 4
 #define ISO_CPP_VERSION CPP_VERSION_1998
 
-/* BigInt */
-#define BigIntSize 16
+/* big_int */
+#define BIG_INT_SIZE 16
 
 /*only 1 core is currently supported!!*/
 #define NR_OF_CORES 1
@@ -26,7 +26,7 @@
 /* frequency */
 #define MCU_CLOCK_IN_HZ ((uint32)168000000u)
 
-#define DynamicMemoryUsed False
+#define DYNAMIC_MEMORY_USED FALSE
 #define LOOPTIME_IN_USEC ((uint32)10000u)
 
 /* heap */

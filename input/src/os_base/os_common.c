@@ -1,19 +1,19 @@
 #include "os_firstinc.h"
 #include "os_task_common.h"
 
-void OS_SetSwBug(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
+void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 {
    OS_SW_BUG[task_func_nr] = bug_nr;
 }
 
 static timebig_t LOCAL_SYSTEM_TIME;
 
-void OS_GetCurrentTime(timebig_t* time)
+void OS_GET_CURRENT_TIME(timebig_t* time)
 {
    /* update the current time info */
    OS_UpdateCurrentTime();
    /* output the time to the caller */
-   Assign(time, &LOCAL_SYSTEM_TIME);
+   ASSIGN(time, &LOCAL_SYSTEM_TIME);
 
 }
 void OS_UpdateCurrentTime(void)
@@ -25,12 +25,12 @@ void OS_UpdateCurrentTime(void)
    OS_ReadAndResetCurrentTime(&tmp_time);
 
    /* increment the global time value by the new increment received by the hardware register */
-   IntAdd(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);
+   INT_ADD(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);
 }
 
 void OS_ReadAndResetCurrentTime(timebig_t* timebig)
 {
-#if(CFG_PROCESSOR == cMCU_CORTEX_M4)
+#if(CFG_PROCESSOR == MCU_CORTEX_M4)
    volatile uint32 time = 0u;
 
    /* unlock the CoreSight (CM4) */
@@ -49,71 +49,71 @@ void OS_ReadAndResetCurrentTime(timebig_t* timebig)
    *DWT_CTRL |= 1;
 
    /* store the read time at the pointer pointer buffer */
-   AssignUint32(timebig, time);
+   ASSIGN_UINT32(timebig, time);
 #else
-   AssignUint32(timebig, 5u);/* assume a fixed step .... */
+   ASSIGN_UINT32(timebig, 5u);/* assume a fixed step .... */
 #endif
 }
 
-void IntDiv(BigInt* Quotient, BigInt* Dividend, BigInt* Divisor)
+void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
 {
    /*TODO*/
 }
 
-void IntMul(BigInt* Produkt, BigInt* Faktor1, BigInt* Faktor2)
+void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
 {
    /*TODO*/
 }
 
-void IntAdd(BigInt* Summe, BigInt* ErsterSummand, BigInt* ZweiterSummand)
+void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand)
 {
    sint8 pos;
    uint16 carry  = 0;
 
-   for(pos = BigIntSize-1; pos >= 0; pos--)
+   for(pos = big_intSize-1; pos >= 0; pos--)
    {
-      uint16 tmpSum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
-      Summe->Number[pos] = tmpSum & 0xFFu;
-      carry = tmpSum & 0xFF00u;
+      uint16 tmp_sum = (uint16)ErsterSummand->Number[pos] +(uint16)ZweiterSummand->Number[pos] + carry;
+      Summe->Number[pos] = tmp_sum & 0xFFu;
+      carry = tmp_sum & 0xFF00u;
    }
 }
-void IntSub(BigInt* Differenz, BigInt* Minuend, BigInt* Subtrahend)
+void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend)
 {
    sint8 pos;
    uint16 carry  = 0;
 
-   for(pos = BigIntSize-1; pos >= 0; pos--)
+   for(pos = big_intSize-1; pos >= 0; pos--)
    {
-      uint16 tmpDiff = 0u;
+      uint16 tmp_diff = 0u;
       if(Minuend->Number[pos]  >= (Subtrahend->Number[pos] + carry))
       {
-         tmpDiff = (uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - carry;
+         tmp_diff = (uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - carry;
       }
       else if((Minuend->Number[pos]+0x100)  >= (Subtrahend->Number[pos] + carry))
       {
-         tmpDiff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
+         tmp_diff = 0x100+(uint16)Minuend->Number[pos] - (uint16)Subtrahend->Number[pos] - (uint16)carry;
       }
       else
       {
          /* not possible */
       }
-      Differenz->Number[pos] = tmpDiff;
+      Differenz->Number[pos] = tmp_diff;
    }
 }
-boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
+boolean_t IS_LESS(big_int* Operand1, big_int* Operand2)
 {
    uint8 pos;
-   boolean_t IsLess = False;/* in case no if was entered, the numbers are equal -> return False */
-   for(pos = 0; pos < BigIntSize; pos++)
+   boolean_t is_less = FALSE;/* in case no if was entered, the numbers are equal -> return FALSE */
+   for(pos = 0; pos < big_intSize; pos++)
    {
       if(Operand1->Number[pos] < Operand2->Number[pos])
       {
-         IsLess = True;
+         is_less = TRUE;
          break;
       }
       else if (Operand1->Number[pos] > Operand2->Number[pos])
       {
-         IsLess = False;
+         is_less = FALSE;
          break;
       }
       else
@@ -121,21 +121,21 @@ boolean_t IsLess(BigInt* Operand1, BigInt* Operand2)
          /* don't break, but continue with next position */
       }
    }
-   return IsLess;
+   return is_less;
 }
-boolean_t IsLessOrEqual(BigInt* Operand1, BigInt* Operand2)
+boolean_t IS_LESS_OR_EQUAL(big_int* Operand1, big_int* Operand2)
 {
-   return IsLess(Operand1,Operand2) || IsEqual(Operand1,Operand2);
+   return IS_LESS(Operand1,Operand2) || IS_EQUAL(Operand1,Operand2);
 }
-boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
+boolean_t IS_EQUAL(big_int* Operand1, big_int* Operand2)
 {
    uint8 pos;
-   boolean_t IsEqual = True;/* in case no if/elseif) was entered, the numbers are equal -> return True */
-   for(pos = 0; pos < BigIntSize; pos++)
+   boolean_t is_equal = TRUE;/* in case no if/elseif) was entered, the numbers are equal -> return TRUE */
+   for(pos = 0; pos < big_intSize; pos++)
    {
       if(Operand1->Number[pos] != Operand2->Number[pos])
       {
-         IsEqual = False;
+         is_equal = FALSE;
          break;
       }
       else
@@ -143,22 +143,22 @@ boolean_t IsEqual(BigInt* Operand1, BigInt* Operand2)
          /* don't break, but continue with next position */
       }
    }
-   return IsEqual;
+   return is_equal;
 }
-boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
+boolean_t IS_GREATER(big_int* Operand1, big_int* Operand2)
 {
    uint8 pos;
-   boolean_t IsGreater = False;/* in case no if was entered, the numbers are equal -> return False */
-   for(pos = 0; pos < BigIntSize; pos++)
+   boolean_t is_greater = FALSE;/* in case no if was entered, the numbers are equal -> return FALSE */
+   for(pos = 0; pos < big_intSize; pos++)
    {
       if(Operand1->Number[pos] < Operand2->Number[pos])
       {
-         IsGreater = False;
+         is_greater = FALSE;
          break;
       }
       else if (Operand1->Number[pos] > Operand2->Number[pos])
       {
-         IsGreater = True;
+         is_greater = TRUE;
          break;
       }
       else
@@ -166,44 +166,44 @@ boolean_t IsGreater(BigInt* Operand1, BigInt* Operand2)
          /* don't break, but continue with next position */
       }
    }
-   return IsGreater;
+   return is_greater;
 }
-boolean_t IsGreaterOrEqual(BigInt* Operand1, BigInt* Operand2)
+boolean_t IS_GREATER_OR_EQUAL(big_int* Operand1, big_int* Operand2)
 {
-   return IsGreater(Operand1,Operand2) || IsEqual(Operand1,Operand2);
+   return IS_GREATER(Operand1,Operand2) || IS_EQUAL(Operand1,Operand2);
 }
-void Assign(BigInt* leftOperand, BigInt* rightOperand)
+void ASSIGN(big_int* leftOperand, big_int* rightOperand)
 {
    uint8 pos;
-   for (pos = 0; pos < BigIntSize; pos++)
+   for (pos = 0; pos < big_intSize; pos++)
    {
       leftOperand->Number[pos] = rightOperand->Number[pos];
    }
 }
-void AssignNull(BigInt* leftOperand)
+void ASSIGN_NULL(big_int* leftOperand)
 {
    uint8 pos;
-   for (pos = 0; pos < BigIntSize; pos++)
+   for (pos = 0; pos < big_intSize; pos++)
    {
       leftOperand->Number[pos] = 0x00;
    }
 }
 
-void AssignUint32(BigInt* leftOperand, uint32 rightOperand)
+void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand)
 {
    uint8 pos;
    uint8 i;
-   for (pos = 0; pos < BigIntSize; pos++)
+   for (pos = 0; pos < big_intSize; pos++)
    {
       leftOperand->Number[pos] = 0x00;
    }
-   for (pos = BigIntSize-1, i = 0; pos >= (BigIntSize-sizeof(uint32)); pos--, i++)
+   for (pos = big_intSize-1, i = 0; pos >= (big_intSize-sizeof(uint32)); pos--, i++)
    {
       leftOperand->Number[pos] = (rightOperand>>i)&0xFFu;
    }
 }
 
-uint32 GetUint32Of4Uint8(uint8* ptr)
+uint32 get_uint32_of_4_uint8(uint8* ptr)
 {
    uint32 ret_val = 0;
 
@@ -217,7 +217,7 @@ uint32 GetUint32Of4Uint8(uint8* ptr)
 
    return ret_val;
 }
-void Set4Uint8ToUint32(uint8* ptr, uint32 value)
+void set_4_uint8_to_uint32(uint8* ptr, uint32 value)
 {
    *ptr = (value >>24)&0xFF;
    ptr++;

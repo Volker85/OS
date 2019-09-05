@@ -16,7 +16,7 @@ From the AAPCS, §5.1.1:
         .global LLF_GET_MPU_PRESENT
         .global LLF_MPU_DISABLE
         .global LLF_MPU_ENABLE
-        //.extern OS_StartOs
+        //.extern OS_START_OS
         
       
 LLF_MPU_DISABLE:
@@ -72,23 +72,23 @@ LLF_MPU_ENABLE:
 LLF_GET_MPU_PRESENT:
         #if(0)
         #  unsigned_char_t MOV R15, R14_val;
-        #    #if(CFG_PROCESSOR == cMCU_X86)
-        #       ret_val = False;
+        #    #if(CFG_PROCESSOR == MCU_X86)
+        #       ret_val = FALSE;
         #   #else
         #    #define MPU_TYPE ((unsigned_char_t*)0xE000ED90)
         #       if( *MPU_TYPE != 0)
         #       {
-        #          ret_val = True;
+        #          ret_val = TRUE;
         #       }
         #       else
         #       {
-        #          ret_val = False;
+        #          ret_val = FALSE;
         #       }
         #    #endif
         #       return ret_val;
         #endif
         # 
-        #return (False = 0)
+        #return (FALSE = 0)
         #;  read the MPU_TYPE addr 0xE000ED90
         MOV  r4, #0xE0
         MOV  r5, #0x00

@@ -2,7 +2,7 @@
 /*
    os_StartExtPrg: to be called with supervisor rights!!
 */
-Local unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize);
+LOCAL unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize);
 
 unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
 {
@@ -11,15 +11,15 @@ unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, u
    2. Sym Hash + Asym Signature lack of official embedded implementation free to use
    3. Signature not in the scope of the project
    */
-   ReferenceUnusedParameter(LoadProgAddr);
-   ReferenceUnusedParameter(PrgSignatur);
-   ReferenceUnusedParameter(PrgSize);
-   return True;
+   REFERENCE_UNUSED_PARAMETER(LoadProgAddr);
+   REFERENCE_UNUSED_PARAMETER(PrgSignatur);
+   REFERENCE_UNUSED_PARAMETER(PrgSize);
+   return TRUE;
 }
-void OS_StartExtPrg(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
+void OS_START_EXT_PRG(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
 {
    /* 1. Check Program Signatur and size -> is it a signed Programm? (Chain of Trust) */
-   if(os_signatur_valid(LoadProgAddr, PrgSignatur, PrgSize) == False)
+   if(os_signatur_valid(LoadProgAddr, PrgSignatur, PrgSize) == FALSE)
    {
       return;
    }

@@ -1,4 +1,4 @@
-#ifndef _os_init_task_system_h_
-#define _os_init_task_system_h_
-extern void OS_InitTaskSystem(void);
-#endif /* _os_init_task_system_h_ */
+#ifndef _OS_INIT_TASK_SYSTEM_H_
+#define _OS_INIT_TASK_SYSTEM_H_
+extern void OS_INIT_TASK_SYSTEM(void);
+#endif /* _OS_INIT_TASK_SYSTEM_H_ */

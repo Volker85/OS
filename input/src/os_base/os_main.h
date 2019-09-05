@@ -1,9 +1,9 @@
-#ifndef _os_main_h_
-#define _os_main_h_
+#ifndef _OS_MAIN_H_
+#define _OS_MAIN_H_
 
-#define os_init     0
-#define os_running  1
-#define os_shutdown 2
-extern void OS_StateHandler(void);
+#define OS_INIT     0
+#define OS_RUNNING  1
+#define OS_SHUTDOWN 2
+extern void OS_STATE_HANDLER(void);
 
-#endif /* _os_main_h_ */
+#endif /* _OS_MAIN_H_ */

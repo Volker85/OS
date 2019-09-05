@@ -1,10 +1,10 @@
-#ifndef _os_shutdown_h_
-#define _os_shutdown_h_
+#ifndef _OS_SHUTDOWN_H_
+#define _OS_SHUTDOWN_H_
 typedef enum os_reset_type_s
 {
-   os_reset_hardreset = 0,
-   os_reset_powerdown = 1,
-   os_reset_exit
+   E_OS_RESET_HARDRESET = 0,
+   E_OS_RESET_POWERDOWN = 1,
+   E_OS_RESET_EXIT
 } os_reset_type_t;
-extern void OS_Shutdown(os_reset_type_t reset_typ);
-#endif /*_os_shutdown_h_*/
+extern void OS_SHUTDOWN(os_reset_type_t reset_typ);
+#endif /*_OS_SHUTDOWN_H_*/
