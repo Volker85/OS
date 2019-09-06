@@ -179,7 +179,7 @@ void DELETE_FROM_TASK_QUEUE(task_t* task)
    task->default_prio                          =   0u      ;
    task->fp                                    =   0u       ;
    task->state_request                         =   &OS_TASK_STATE_REQUEST       ;
-   task->task_state                            =   Task_unspecified;
+   task->task_state                            =   E_TASK_UNSPECIFIED;
    task->task_group                            =   0u       ;
 #if(CFG_PROCESSOR == MCU_X86)
    task->eax                                   =   0u              ;
@@ -300,7 +300,7 @@ void ADD_TO_IDLE_TASK_QUEUE(task_t* task)
       (&TASK_IDLE_QUEUE[0u])->default_prio                          =   task->default_prio     ;
       (&TASK_IDLE_QUEUE[0u])->fp                                    =   task->fp               ;
       (&TASK_IDLE_QUEUE[0u])->state_request                         =   task->state_request    ;
-      (&TASK_IDLE_QUEUE[0u])->task_state                            =   Task_ready             ;
+      (&TASK_IDLE_QUEUE[0u])->task_state                            =   E_TASK_READY             ;
       (&TASK_IDLE_QUEUE[0u])->task_group                            =   task->task_group       ;
 #if(CFG_PROCESSOR == MCU_X86)
       (&TASK_IDLE_QUEUE[0u])->eax                                   =   task->eax              ;
@@ -369,7 +369,7 @@ void OS_INIT_TASK(
 
       task->idle_task      = idle_task;
       task->state_request = &OS_TASK_STATE_REQUEST;
-      OS_TASK_STATE_REQUEST(task, Task_unspecified);
+      OS_TASK_STATE_REQUEST(task, E_TASK_UNSPECIFIED);
       OS_CREATE_TASK(task);
       if(uStackSize > TASK_STACK_SIZE)
       {
@@ -386,6 +386,6 @@ void OS_INIT_TASK(
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer, Func_InitTask);
+      OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_INITTASK);
    }
 }

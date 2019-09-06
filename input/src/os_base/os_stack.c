@@ -29,7 +29,7 @@ void OS_STACK_CHECK(void)
 
    if((stack_used == TRUE) && (STACK_USAGE_PERCENT > 80u))
    {
-      OS_SET_SW_BUG(os_bug_critical_stack_usage,Func_StackCheck);
+      OS_SET_SW_BUG(E_OS_BUG_CRITICAL_STACK_USAGE,E_FUNC_STACKCHECK);
       REFERENCE_UNUSED_PARAMETER(STACK_POS);
       REFERENCE_UNUSED_PARAMETER(STACK_ADDR);
       while(1)

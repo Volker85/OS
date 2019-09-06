@@ -49,7 +49,8 @@ enum os_sw_bugs_e
    E_OS_BUG_EXCEPTION_ABORTDATA,
    E_OS_BUG_RESET_EXIT_OR_SHUTDOWN_FAILED,
    E_OS_BUG_CRITICAL_STACK_USAGE,
-   E_OS_BUG_SVC_NUMBER_MISSING
+   E_OS_BUG_SVC_NUMBER_MISSING,
+   E_OS_BUG_MAX_WAIT_TIME_REACHED
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 typedef uint8 boolean_t;
@@ -73,17 +74,15 @@ enum os_sw_bugs_function_e
    E_FUNC_CREATETASK,
    E_FUNC_SHUTDOWN,
    E_FUNC_STACKCHECK,
-   E_FUNC_ISRHANDLER
+   E_FUNC_ISRHANDLER,
+   E_FUNC_STATE_HANDLER
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
 
 
 extern void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
-
 typedef void (*func_ptr_t)(void);
-
-
 
 typedef struct big_int_s
 {
@@ -96,6 +95,10 @@ typedef struct big_int_s
    */
    uint8 number[BIG_INT_SIZE];
 } big_int;
+
+typedef big_int timebig_t;
+extern void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig);
+
 extern void ASSIGN_NULL(big_int* leftOperand);
 extern void ASSIGN(big_int* leftOperand, big_int* rightOperand);
 extern void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand);
@@ -110,4 +113,5 @@ extern void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend);
 extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
 extern uint32 get_uint32_of_4_uint8(uint8* ptr);
 extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
+extern void OS_UpdateCurrentTime(void);
 #endif /* _OS_COMMON_H_ */

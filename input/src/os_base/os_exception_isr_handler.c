@@ -2,6 +2,7 @@
 #include "os_task_common.h"
 #include "os_task_scheduler.h"
 #include "os_shutdown.h"
+#include "os_exception_isr_handler.h"
 
 
 

@@ -146,14 +146,16 @@ void OS_EXCEPTION_PEND_SV(void)
 /* 0x0000003C OS_EXCEPTION_SYSTICK */
 void OS_EXCEPTION_SYSTICK(void)
 {
-   OS_UpdateCurrentTime();
-
 #if(CFG_PROCESSOR == MCU_CORTEX_M4)
    task_t* task;
    scheduling_t* scheduling_task_ptr;
    big_int Diff;
    timebig_t time;
+#endif 
 
+   OS_UpdateCurrentTime();
+
+#if(CFG_PROCESSOR == MCU_CORTEX_M4)
    /* run all exceptions in handler mode */
    LLF_EXCEPTION_TO_HANDLER_MODE();
 

@@ -1,6 +1,7 @@
 #include "os_firstinc.h"
 #include "os_main.h"
 #include "os_start_os.h"
+#include "os_exception.h"
 
 
 void OS_START_OS(void)
@@ -20,6 +21,6 @@ void OS_START_OS(void)
    SYS_HANDLER_CTRL_STATE_ENA_ALL_EXCEP;
 #endif
    /* triggers hw & sw init (OS parts), interrupt system init (including MMU) */
-   OS_STATE = os_init;
+   OS_STATE = OS_STATE_INIT;
    OS_STATE_HANDLER();
 }

@@ -29,7 +29,7 @@ void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task)
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer,Func_SaveTaskEnvironment);
+      OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_SAVETASKENVIRONMENT);
    }
    return;
 }
@@ -43,7 +43,7 @@ void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task)
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer,Func_RestoreTaskEnvironment);
+      OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_RESTORETASKENVIRONMENT);
    }
 }
 void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
@@ -93,7 +93,7 @@ void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task)
 
       /* task management */
       task->state_request                    =                           &OS_TASK_STATE_REQUEST;
-      task->task_state                       =                           Task_unspecified;
+      task->task_state                       =                           E_TASK_UNSPECIFIED;
       task->task_queued                      =                           FALSE;
       task->free                             =                           0u;
       task->nr_of_ins_allowed                   = (unsigned_char_t)         0u;
@@ -103,7 +103,7 @@ void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task)
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer,Func_InitTaskEnvironment);
+      OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_INITTASKENVIRONMENT);
    }
 }
 #if(USE_STATIC_CREATED_TASKS != FALSE && DynamicMemoryUsed != FALSE)
@@ -115,7 +115,7 @@ void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task)
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer,Func_DeleteTaskEnvironment);
+      OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_DELETETASKENVIRONMENT);
    }
 
 }
@@ -125,7 +125,7 @@ task_t* OS_Task_CreateTaskEnvironment(void)
    task = (task_t*) OS_MALLOC(sizeof(task_t));/* only possible in case of heap used */
    if(task == 0u)
    {
-      OS_SET_SW_BUG(os_bug_null_pointer,Func_CreateTaskEnvironment);
+      OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_CREATETASKENVIRONMENT);
    }
    return task;
 }

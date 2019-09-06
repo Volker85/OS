@@ -31,7 +31,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ, func_ptr_t addr)
    LLF_MPU_DISABLE();
 
    /* power done/reset system */
-   if(reset_typ == os_reset_powerdown)
+   if(reset_typ == E_OS_RESET_POWERDOWN)
    {
       LLF_MCU_SWITCH_OFF_POWER();
    }
@@ -39,7 +39,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ, func_ptr_t addr)
    {
       LLF_MCU_RESET_POWER();
    }
-   else if (reset_typ == os_reset_exit)
+   else if (reset_typ == E_OS_RESET_EXIT)
    {
       os_deinit_hw();
       os_deinit_sw();
@@ -50,7 +50,7 @@ void OS_SHUTDOWN(os_reset_type_t reset_typ, func_ptr_t addr)
    {
       ;
    }
-   OS_SET_SW_BUG(os_bug_reset_exit_or_shutdown_failed, Func_Shutdown);
+   OS_SET_SW_BUG(E_OS_BUG_RESET_EXIT_OR_SHUTDOWN_FAILED, E_FUNC_SHUTDOWN);
    while(1)
    {
       /* if you enter here, the reset has failed to be executed.... */

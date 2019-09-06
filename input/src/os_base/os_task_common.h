@@ -19,7 +19,7 @@ typedef void            (*func_p_void_void_t)   (void);
 typedef void            (*func_p_t)             (void* task);
 typedef unsigned_char_t (*func_p_u8_t)          (void* task);
 typedef unsigned_char_t (*func_p_state_change_t)(void* task, task_state_t requested_task_state);
-typedef big_int timebig_t;
+
 
 struct task_group_s
 {
@@ -73,7 +73,7 @@ struct task_s
    unsigned_char_t* p_stack_pointer;
    unsigned_char_t* p_stack_pointer_by_malloc;
    unsigned_char_t* p_stack_pointer_start;
-   unsigned_int32_t  StackSize;
+   unsigned_int32_t  stack_size;
    unsigned_char_t* p_stack_pointer_end;
    privilige_mode_t privilige_mode;
 };

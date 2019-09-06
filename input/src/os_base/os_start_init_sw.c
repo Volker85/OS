@@ -8,7 +8,7 @@ void OS_INIT_SW(void)
 
    for(i = 0u; i < 15u; i++)
    {
-      OS_SW_BUG[i] = os_bug_no_bug;
+      OS_SW_BUG[i] = E_OS_BUG_NO_BUG;
    }
 
    OS_INIT_TASK_SYSTEM();

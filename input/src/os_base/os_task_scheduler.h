@@ -9,7 +9,6 @@
 #define TASK_2_PTR 2u
 #define TASK_3_PTR 3u
 
-#define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
 
 
 

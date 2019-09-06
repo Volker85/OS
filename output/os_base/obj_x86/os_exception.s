@@ -140,9 +140,9 @@ LFB7:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
-	.loc 1 149 0
+	.loc 1 156 0
 	call	_OS_UpdateCurrentTime
-	.loc 1 243 0
+	.loc 1 245 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -153,14 +153,14 @@ LFE7:
 	.def	_OS_EXCEPTION_IRQ;	.scl	2;	.type	32;	.endef
 _OS_EXCEPTION_IRQ:
 LFB8:
-	.loc 1 246 0
+	.loc 1 248 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	.loc 1 261 0
+	.loc 1 263 0
 	popl	%ebp
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -170,7 +170,7 @@ LFE8:
 Letext0:
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x26f
+	.long	0x245
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -278,23 +278,10 @@ Ldebug_info0:
 	.long	LFE7-LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x24d
-	.uleb128 0x5
-	.ascii "OS_UpdateCurrentTime\0"
-	.byte	0x1
-	.byte	0x95
-	.long	0x24d
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
 	.uleb128 0x3
 	.ascii "OS_EXCEPTION_IRQ\0"
 	.byte	0x1
-	.byte	0xf5
+	.byte	0xf7
 	.long	LFB8
 	.long	LFE8-LFB8
 	.uleb128 0x1
@@ -357,7 +344,7 @@ Ldebug_abbrev0:
 	.byte	0
 	.uleb128 0x4
 	.uleb128 0x2e
-	.byte	0x1
+	.byte	0
 	.uleb128 0x3f
 	.uleb128 0x19
 	.uleb128 0x3
@@ -376,30 +363,6 @@ Ldebug_abbrev0:
 	.uleb128 0x18
 	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x5
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x6
-	.uleb128 0x18
-	.byte	0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1477,7 +1440,7 @@ Ldebug_macro0:
 	.ascii "_OS_EXCEPTION_ISR_HANDLER_H_ \0"
 	.byte	0x1
 	.uleb128 0x4
-	.ascii "SVC_00 0x00u\0"
+	.ascii "SVC_00 0x00\0"
 	.byte	0x4
 	.file 27 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/os_exception.h"
 	.byte	0x3
@@ -1599,9 +1562,6 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "TASK_3_PTR 3u\0"
-	.byte	0x1
-	.uleb128 0xc
-	.ascii "OS_SAVE_TASK_PTR(task_ptr,Task_n_ptr) \0"
 	.byte	0x4
 	.byte	0x4
 	.byte	0

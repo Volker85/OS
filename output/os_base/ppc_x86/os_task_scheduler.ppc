@@ -344,7 +344,8 @@ enum os_sw_bugs_e
    E_OS_BUG_EXCEPTION_ABORTDATA,
    E_OS_BUG_RESET_EXIT_OR_SHUTDOWN_FAILED,
    E_OS_BUG_CRITICAL_STACK_USAGE,
-   E_OS_BUG_SVC_NUMBER_MISSING
+   E_OS_BUG_SVC_NUMBER_MISSING,
+   E_OS_BUG_MAX_WAIT_TIME_REACHED
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 typedef uint8 boolean_t;
@@ -368,17 +369,15 @@ enum os_sw_bugs_function_e
    E_FUNC_CREATETASK,
    E_FUNC_SHUTDOWN,
    E_FUNC_STACKCHECK,
-   E_FUNC_ISRHANDLER
+   E_FUNC_ISRHANDLER,
+   E_FUNC_STATE_HANDLER
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
 
 
 extern void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
-
 typedef void (*func_ptr_t)(void);
-
-
 
 typedef struct big_int_s
 {
@@ -391,6 +390,10 @@ typedef struct big_int_s
 
    uint8 number[16u];
 } big_int;
+
+typedef big_int timebig_t;
+extern void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig);
+
 extern void ASSIGN_NULL(big_int* leftOperand);
 extern void ASSIGN(big_int* leftOperand, big_int* rightOperand);
 extern void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand);
@@ -405,6 +408,7 @@ extern void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend);
 extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
 extern uint32 get_uint32_of_4_uint8(uint8* ptr);
 extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
+extern void OS_UpdateCurrentTime(void);
 # 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 
 
@@ -522,7 +526,7 @@ typedef void (*func_p_void_void_t) (void);
 typedef void (*func_p_t) (void* task);
 typedef unsigned_char_t (*func_p_u8_t) (void* task);
 typedef unsigned_char_t (*func_p_state_change_t)(void* task, task_state_t requested_task_state);
-typedef big_int timebig_t;
+
 
 struct task_group_s
 {
@@ -562,7 +566,7 @@ struct task_s
    unsigned_char_t* p_stack_pointer;
    unsigned_char_t* p_stack_pointer_by_malloc;
    unsigned_char_t* p_stack_pointer_start;
-   unsigned_int32_t StackSize;
+   unsigned_int32_t stack_size;
    unsigned_char_t* p_stack_pointer_end;
    privilige_mode_t privilige_mode;
 };
@@ -647,6 +651,13 @@ extern void OS_free(void* ptr);
 
 #define _OS_MAIN_H_ 
 
+enum os_state_e
+{
+   OS_STATE_INIT = 0,
+   OS_STATE_RUNNING,
+   OS_STATE_SHUTDOWN
+};
+typedef enum os_state_e os_state_t;
 extern void OS_STATE_HANDLER(void);
 # 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_task_config.h" 1
@@ -658,7 +669,7 @@ extern unsigned_char_t HEAP[10000u];
 
 
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
-extern volatile uint32 OS_STATE;
+extern volatile os_state_t OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
 extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG ;
 extern volatile uint32 VAR_USAGE_FAULT_STATUS_REG ;
@@ -695,7 +706,7 @@ extern task_t* TASK_TRANSITION_REJECTED_TASK_ADDR;
 extern task_state_t TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t TASK_TRANSITION_CURRENT_STATE;
 extern volatile void* SAVED_STACK_POINTER;
-extern volatile uint8 SYSTEM_STATE_ACCEPTED;
+extern volatile os_state_t SYSTEM_STATE_ACCEPTED;
 extern timebig_t LOCAL_SYSTEM_TIME;
 # 16 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\..\\os_base\\os_ram_stack.h" 1
@@ -721,7 +732,6 @@ extern unsigned_char_t OS_MAIN_STACK[0x200u];
 #define TASK_2_PTR 2u
 #define TASK_3_PTR 3u
 
-#define OS_SAVE_TASK_PTR(task_ptr,Task_n_ptr) 
 
 
 
@@ -833,59 +843,59 @@ unsigned_char_t OS_TASK_STATE_REQUEST(void* temp_task, task_state_t requested_st
 
    switch(requested_state)
    {
-   case Task_unspecified:
+   case E_TASK_UNSPECIFIED:
    {
       switch(task->task_state)
       {
-      case Task_ready:
-      case Task_running:
-      case Task_suspended:
+      case E_TASK_READY:
+      case E_TASK_RUNNING:
+      case E_TASK_SUSPENDED:
       {
          RequestState = 0u;
          break;
       }
       default:
       {
-         task->task_state = Task_unspecified;
+         task->task_state = E_TASK_UNSPECIFIED;
          RequestState = 1u;
          break;
       }
       }
       break;
    }
-   case Task_suspended:
+   case E_TASK_SUSPENDED:
    {
       switch(task->task_state)
       {
-      case Task_unspecified:
+      case E_TASK_UNSPECIFIED:
       {
 
-         task->task_state = Task_suspended;
+         task->task_state = E_TASK_SUSPENDED;
          RequestState = 1u;
          break;
       }
-      case Task_running:
+      case E_TASK_RUNNING:
       {
-         task->task_state = Task_suspended;
+         task->task_state = E_TASK_SUSPENDED;
          RequestState = 1u;
          break;
       }
       default:
       {
 
-         OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TaskStateRequest);
+         OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_TASKSTATEREQUEST);
          break;
       }
       }
       break;
    }
-   case Task_running:
+   case E_TASK_RUNNING:
    {
       switch(task->task_state)
       {
-      case Task_ready:
+      case E_TASK_READY:
       {
-         task->task_state = Task_running;
+         task->task_state = E_TASK_RUNNING;
          RequestState = 1u;
          break;
       }
@@ -898,25 +908,25 @@ unsigned_char_t OS_TASK_STATE_REQUEST(void* temp_task, task_state_t requested_st
       break;
 
    }
-   case Task_ready:
+   case E_TASK_READY:
    {
       switch(task->task_state)
       {
-      case Task_suspended:
+      case E_TASK_SUSPENDED:
       {
-         task->task_state = Task_ready;
+         task->task_state = E_TASK_READY;
          RequestState = 1u;
          break;
       }
-      case Task_running:
+      case E_TASK_RUNNING:
       {
-         task->task_state = Task_ready;
+         task->task_state = E_TASK_READY;
          RequestState = 1u;
          break;
       }
-      case Task_unspecified:
+      case E_TASK_UNSPECIFIED:
       {
-         task->task_state = Task_ready;
+         task->task_state = E_TASK_READY;
          RequestState = 1u;
          break;
       }
@@ -938,7 +948,7 @@ unsigned_char_t OS_TASK_STATE_REQUEST(void* temp_task, task_state_t requested_st
       TASK_TRANSITION_REJECTED_TASK_ADDR = task;
       TASK_TRANSITION_REJECTED_STATE = requested_state;
       TASK_TRANSITION_CURRENT_STATE = task->task_state;
-      OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TaskStateRequest);
+      OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_TASKSTATEREQUEST);
    }
    return RequestState;
 }
@@ -950,23 +960,23 @@ void OS_CREATE_TASK(task_t* task)
    {
       if(task->state_request != 0u)
       {
-         if(task->state_request(task, Task_suspended)== 1u)
+         if(task->state_request(task, E_TASK_SUSPENDED)== 1u)
          {
 
          }
          else
          {
-            OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_CreateTask);
+            OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_CREATETASK);
          }
       }
       else
       {
-         OS_SET_SW_BUG(os_bug_null_pointer, Func_CreateTask);
+         OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_CREATETASK);
       }
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer, Func_CreateTask);
+      OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_CREATETASK);
    }
 }
 void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
@@ -976,7 +986,7 @@ void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
    {
       if(task->state_request != 0u)
       {
-         if(task->state_request(task, Task_ready)== 1u)
+         if(task->state_request(task, E_TASK_READY)== 1u)
          {
             ;
             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
@@ -989,17 +999,17 @@ void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
          }
          else
          {
-            OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_Preempt_Task);
+            OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_PREEMPT_TASK);
          }
       }
       else
       {
-         OS_SET_SW_BUG(os_bug_null_pointer, Func_Preempt_Task);
+         OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_PREEMPT_TASK);
       }
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer, Func_Preempt_Task);
+      OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_PREEMPT_TASK);
    }
 }
 
@@ -1008,7 +1018,7 @@ void OS_ACTIVATE_TASK(task_t* task)
 # 247 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
    if(task != 0u)
    {
-      if(task->state_request(task, Task_ready)==1u)
+      if(task->state_request(task, E_TASK_READY)==1u)
       {
          ;
 
@@ -1027,13 +1037,13 @@ void OS_ACTIVATE_TASK(task_t* task)
                }
                else
                {
-                  OS_SET_SW_BUG(os_bug_null_pointer,Func_ActivateTask);
+                  OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_ACTIVATETASK);
                }
             }
             else
             {
 
-               OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_ActivateTask);
+               OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_ACTIVATETASK);
             }
          }
          else
@@ -1044,7 +1054,7 @@ void OS_ACTIVATE_TASK(task_t* task)
       }
       else
       {
-         OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_ActivateTask);
+         OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_ACTIVATETASK);
       }
    }
 }
@@ -1063,7 +1073,7 @@ void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
    {
       if(task->state_request !=0u)
       {
-         if(task->state_request(task, Task_running)== 1u)
+         if(task->state_request(task, E_TASK_RUNNING)== 1u)
          {
             ;
             task->active = 1u;
@@ -1078,7 +1088,7 @@ void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
 
             SET_RUNNING_TASK(task, scheduling_task);
 
-            if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
+            if(task->privilige_mode == E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE)
             {
                LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE();
             }
@@ -1088,12 +1098,12 @@ void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
          }
          else
          {
-            OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_StartTask);
+            OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_STARTTASK);
          }
       }
       else
       {
-         OS_SET_SW_BUG(os_bug_null_pointer, Func_StartTask);
+         OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_STARTTASK);
       }
    }
 
@@ -1116,7 +1126,7 @@ void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
    {
       if(task->state_request != 0u)
       {
-         if(task->state_request(task, Task_suspended)== 1u)
+         if(task->state_request(task, E_TASK_SUSPENDED)== 1u)
          {
             ;
             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
@@ -1131,17 +1141,17 @@ void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
          }
          else
          {
-            OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TerminateTask);
+            OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_TERMINATETASK);
          }
       }
       else
       {
-         OS_SET_SW_BUG(os_bug_null_pointer, Func_TerminateTask);
+         OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_TERMINATETASK);
       }
    }
    else
    {
-      OS_SET_SW_BUG(os_bug_null_pointer, Func_TerminateTask);
+      OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_TERMINATETASK);
    }
 }
 void OS_TASK_DISPATCHER(void)
@@ -1212,7 +1222,7 @@ static void task_3(void* task_ptr)
 
    OS_TERMINATE_TASK(task_ptr,scheduling_task_ptr);
 }
-void OS_INIT_TASKs(void)
+void OS_INIT_TASKS(void)
 {
    task_t* task_ptr = 0u;
    OS_GET_CURRENT_TIME(&LAST_CURRENT_TIME);
@@ -1231,66 +1241,66 @@ void OS_INIT_TASKs(void)
 
    task_ptr = &TASK_0_VAR;
    OS_INIT_TASK(task_ptr,
-               &TASK_0,
+               &task_0,
                1u,
                1u,
                &TASK_GROUP_1,
                (unsigned_char_t*)&TASK_STACK[0u],
                200u,
-               ePriviligeMode_unpriviliged_thread_mode,
-               Core0,
+               E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE,
+               E_CORE0,
                0u
               );
    ADD_TO_SCHEDULING_QUEUE(task_ptr);
-   OS_SaveTaskPtr(task_ptr, Task_0_ptr);
+   (TASK_PTR[(0u)] = (task_ptr));
 
 
    task_ptr = &TASK_1_VAR;
    OS_INIT_TASK(task_ptr,
-               &TASK_1,
+               &task_1,
                1u,
                0u,
                &TASK_GROUP_1,
                (unsigned_char_t*)&TASK_STACK[1u],
                200u,
-               ePriviligeMode_unpriviliged_thread_mode,
-               Core0,
+               E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE,
+               E_CORE0,
                1u
               );
    ADD_TO_SCHEDULING_QUEUE(task_ptr);
-   OS_SaveTaskPtr(task_ptr, Task_1_ptr);
+   (TASK_PTR[(1u)] = (task_ptr));
 
 
    task_ptr = &TASK_2_VAR;
    OS_INIT_TASK(task_ptr,
-               &TASK_2,
+               &task_2,
                1u,
                0u,
                &TASK_GROUP_2,
                (unsigned_char_t*)&TASK_STACK[2u],
                200u,
-               ePriviligeMode_unpriviliged_thread_mode,
-               Core0,
+               E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE,
+               E_CORE0,
                2u
               );
    ADD_TO_SCHEDULING_QUEUE(task_ptr);
-   OS_SaveTaskPtr(task_ptr, Task_2_ptr);
+   (TASK_PTR[(2u)] = (task_ptr));
 
 
    task_ptr = &TASK_3_VAR;
    OS_INIT_TASK(task_ptr,
-               &TASK_3,
+               &task_3,
                1u,
                0u,
                &TASK_GROUP_3,
                (unsigned_char_t*)&TASK_STACK[3u],
                200u,
-               ePriviligeMode_unpriviliged_thread_mode,
-               Core0,
+               E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE,
+               E_CORE0,
                3u
               );
    ADD_TO_SCHEDULING_QUEUE(task_ptr);
-   OS_SaveTaskPtr(task_ptr, Task_3_ptr);
+   (TASK_PTR[(3u)] = (task_ptr));
 }
 
 
@@ -1336,7 +1346,7 @@ static scheduling_t* os_task_scheduler(void)
          if(IS_GREATER(&task->wait_time,&task->max_allowed_wait_time))
          {
 
-            OS_SET_SW_BUG(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
+            OS_SET_SW_BUG(E_OS_BUG_MAX_WAIT_TIME_REACHED, E_FUNC_TASKSCHEDULER);
          }
 
          if(task->task_group!=0u)
@@ -1354,7 +1364,7 @@ static scheduling_t* os_task_scheduler(void)
          }
          else
          {
-            OS_SET_SW_BUG(os_bug_null_pointer, Func_TaskScheduler);
+            OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_TASKSCHEDULER);
          }
       }
 

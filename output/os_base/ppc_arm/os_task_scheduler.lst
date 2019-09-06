@@ -1,159 +1,2782 @@
-In file included from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:4:0:
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.h:12:0: warning: "OS_SAVE_TASK_PTR" redefined
- #define OS_SAVE_TASK_PTR(task_ptr, Task_n_ptr)
- 
-In file included from e:\neuorga\programmieren\c_cpp\github_os\input\src\os_drivers\lld_global.h:6:0,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_firstinc.h:11,
-                 from E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:1:
-e:\neuorga\programmieren\c_cpp\github_os\input\src\os_base\os_task_common.h:95:0: note: this is the location of the previous definition
- #define OS_SAVE_TASK_PTR(task_ptr, task_name) (TASK_PTR[(task_name)] = (task_ptr))
- 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TASK_STATE_REQUEST':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:60:9: error: 'Task_unspecified' undeclared (first use in this function)
-    case Task_unspecified:/* 1. create new task */
-         ^~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:60:9: note: each undeclared identifier is reported only once for each function it appears in
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:64:12: error: 'Task_ready' undeclared (first use in this function)
-       case Task_ready:
-            ^~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:65:12: error: 'Task_running' undeclared (first use in this function); did you mean 'Task_ready'?
-       case Task_running:
-            ^~~~~~~~~~~~
-            Task_ready
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:66:12: error: 'Task_suspended' undeclared (first use in this function); did you mean 'Task_unspecified'?
-       case Task_suspended:
-            ^~~~~~~~~~~~~~
-            Task_unspecified
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:100:24: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
-          OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TaskStateRequest);
-                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:100:57: error: 'Func_TaskStateRequest' undeclared (first use in this function)
-          OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TaskStateRequest);
-                                                         ^~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_CREATE_TASK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:177:39: error: 'Task_suspended' undeclared (first use in this function); did you mean 'task_state_e'?
-          if(task->state_request(task, Task_suspended)== ACCEPTED)
-                                       ^~~~~~~~~~~~~~
-                                       task_state_e
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:183:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
-             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_CreateTask);
-                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:183:60: error: 'Func_CreateTask' undeclared (first use in this function)
-             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_CreateTask);
-                                                            ^~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:188:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
-          OS_SET_SW_BUG(os_bug_null_pointer, Func_CreateTask);
-                        ^~~~~~~~~~~~~~~~~~~
-                        __builtin_eh_pointer
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'os_preempt_task':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:210:39: error: 'Task_ready' undeclared (first use in this function)
-          if(task->state_request(task, Task_ready)== ACCEPTED)
-                                       ^~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:223:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
-             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_Preempt_Task);
-                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:223:60: error: 'Func_Preempt_Task' undeclared (first use in this function); did you mean 'os_preempt_task'?
-             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_Preempt_Task);
-                                                            ^~~~~~~~~~~~~~~~~
-                                                            os_preempt_task
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:228:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
-          OS_SET_SW_BUG(os_bug_null_pointer, Func_Preempt_Task);
-                        ^~~~~~~~~~~~~~~~~~~
-                        __builtin_eh_pointer
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_ACTIVATE_TASK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:249:36: error: 'Task_ready' undeclared (first use in this function)
-       if(task->state_request(task, Task_ready)==ACCEPTED)
-                                    ^~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:268:33: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
-                   OS_SET_SW_BUG(os_bug_null_pointer,Func_ActivateTask);
-                                 ^~~~~~~~~~~~~~~~~~~
-                                 __builtin_eh_pointer
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:268:53: error: 'Func_ActivateTask' undeclared (first use in this function)
-                   OS_SET_SW_BUG(os_bug_null_pointer,Func_ActivateTask);
-                                                     ^~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:274:30: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
-                OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_ActivateTask);
-                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_START_TASK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:304:39: error: 'Task_running' undeclared (first use in this function)
-          if(task->state_request(task, Task_running)== ACCEPTED)
-                                       ^~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:319:40: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-             if(task->privilige_mode == ePriviligeMode_unpriviliged_thread_mode)
-                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:329:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
-             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_StartTask);
-                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:329:60: error: 'Func_StartTask' undeclared (first use in this function)
-             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_StartTask);
-                                                            ^~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:334:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
-          OS_SET_SW_BUG(os_bug_null_pointer, Func_StartTask);
-                        ^~~~~~~~~~~~~~~~~~~
-                        __builtin_eh_pointer
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_TERMINATE_TASK':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:357:39: error: 'Task_suspended' undeclared (first use in this function); did you mean 'task_state_e'?
-          if(task->state_request(task, Task_suspended)== ACCEPTED)
-                                       ^~~~~~~~~~~~~~
-                                       task_state_e
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:372:27: error: 'os_bug_taskstate_request_denied' undeclared (first use in this function)
-             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TerminateTask);
-                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:372:60: error: 'Func_TerminateTask' undeclared (first use in this function)
-             OS_SET_SW_BUG(os_bug_taskstate_request_denied, Func_TerminateTask);
-                                                            ^~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:377:24: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
-          OS_SET_SW_BUG(os_bug_null_pointer, Func_TerminateTask);
-                        ^~~~~~~~~~~~~~~~~~~
-                        __builtin_eh_pointer
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'OS_INIT_TASKs':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:481:17: error: 'TASK_0' undeclared (first use in this function); did you mean 'TASK_PTR'?
-                &TASK_0,                           /* Task Function*/
-                 ^~~~~~
-                 TASK_PTR
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:487:16: error: 'ePriviligeMode_unpriviliged_thread_mode' undeclared (first use in this function)
-                ePriviligeMode_unpriviliged_thread_mode, /* Unpriviliged Thread Mode */
-                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:488:16: error: 'Core0' undeclared (first use in this function)
-                Core0,                            /* Cortex M4 has only 1 core */
-                ^~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:492:29: error: 'Task_0_ptr' undeclared (first use in this function); did you mean 'task_ptr'?
-    OS_SaveTaskPtr(task_ptr, Task_0_ptr);
-                             ^~~~~~~~~~
-                             task_ptr
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:497:17: error: 'TASK_1' undeclared (first use in this function); did you mean 'TASK_0'?
-                &TASK_1,       /* Task Function*/
-                 ^~~~~~
-                 TASK_0
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:508:29: error: 'Task_1_ptr' undeclared (first use in this function); did you mean 'Task_0_ptr'?
-    OS_SaveTaskPtr(task_ptr, Task_1_ptr);
-                             ^~~~~~~~~~
-                             Task_0_ptr
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:513:17: error: 'TASK_2' undeclared (first use in this function); did you mean 'TASK_1'?
-                &TASK_2,       /* Task Function*/
-                 ^~~~~~
-                 TASK_1
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:524:29: error: 'Task_2_ptr' undeclared (first use in this function); did you mean 'Task_1_ptr'?
-    OS_SaveTaskPtr(task_ptr, Task_2_ptr);
-                             ^~~~~~~~~~
-                             Task_1_ptr
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:529:17: error: 'TASK_3' undeclared (first use in this function); did you mean 'TASK_2'?
-                &TASK_3,       /* Task Function*/
-                 ^~~~~~
-                 TASK_2
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:540:29: error: 'Task_3_ptr' undeclared (first use in this function); did you mean 'Task_2_ptr'?
-    OS_SaveTaskPtr(task_ptr, Task_3_ptr);
-                             ^~~~~~~~~~
-                             Task_2_ptr
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c: In function 'os_task_scheduler':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:598:27: error: 'os_bug_task_max_wait_time_reached' undeclared (first use in this function)
-             OS_SET_SW_BUG(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
-                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:598:62: error: 'Func_TaskScheduler' undeclared (first use in this function); did you mean 'os_task_scheduler'?
-             OS_SET_SW_BUG(os_bug_task_max_wait_time_reached, Func_TaskScheduler);
-                                                              ^~~~~~~~~~~~~~~~~~
-                                                              os_task_scheduler
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c:616:27: error: 'os_bug_null_pointer' undeclared (first use in this function); did you mean '__builtin_eh_pointer'?
-             OS_SET_SW_BUG(os_bug_null_pointer, Func_TaskScheduler);
-                           ^~~~~~~~~~~~~~~~~~~
-                           __builtin_eh_pointer
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 2
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"os_task_scheduler.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  20              		.fpu softvfp
+  22              	task_0:
+  23              	.LFB9:
+  24              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.c"
+   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #include "os_firstinc.h"
+   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #include "os_common.h"
+   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #include "os_task_common.h"
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #include "os_task_scheduler.h"
+   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #include "os_task_queue.h"
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #include "os_stack.h"
+   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #include "os_exception.h"
+   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** /*
+  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 1. running     --(terminate)--> suspend : delete scheduling element
+  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 2. running     --(preempt  )--> ready
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 3. suspend     --(activate )--> ready   : create scheduling element
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 4. ready       --(start    )--> running : use scheduling element
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 5. unspecified --(create   )--> suspend
+  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** */
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL void task_0(void* task_ptr);
+  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL void task_1(void* task_ptr);
+  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL void task_2(void* task_ptr);
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL task_t** os_task_scheduler(void);
+  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL void os_preempt_task(task_t* task, scheduling_t* scheduling_task);
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_ACTIVATE_DISPATCHER(void)
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* configure the TCMP */
+  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    Dispatcher function for Core 0:
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    Write Adresse into the config register (interrupts are requested by SWI/SVC???)
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
+  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    CLOCK = HCLK / 8
+  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    vermutlich: CLOCK = 150Mhz / 8 = 18,75 Mhz
+  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 2
+
+
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #if(CFG_PROCESSOR == MCU_CORTEX_M4)
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_RLD_VAL_REG = (*SYSTICK_RLD_VAL_REG & 0xFF000000u )| (((uint32)MCU_CLOCK_IN_HZ / ((uint
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000u);
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_EN
+  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #endif
+  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_SLEEP_TASK(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr)
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    timebig_t time;
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_GET_CURRENT_TIME(&time);
+  47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* sleep Task shall do a preempt task with a defined minimum wait time, the actual wait time is 
+  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    INT_ADD(&task->wait_act_until, &time, &usec);
+  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    os_preempt_task(task,scheduling_task_ptr);
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** unsigned_char_t OS_TASK_STATE_REQUEST(void* temp_task, task_state_t requested_state)
+  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    unsigned_char_t RequestState = REJECTED;
+  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_t* task = (task_t*) temp_task;
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    switch(requested_state)
+  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    case E_TASK_UNSPECIFIED:/* 1. create new task */
+  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       switch(task->task_state)
+  63:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case E_TASK_READY:
+  65:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case E_TASK_RUNNING:
+  66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case E_TASK_SUSPENDED:
+  67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState = REJECTED;
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       default:
+  72:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          task->task_state = E_TASK_UNSPECIFIED;
+  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState = ACCEPTED;
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+  76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+  78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       break;
+  79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    case E_TASK_SUSPENDED:
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       switch(task->task_state)
+  83:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+  84:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case E_TASK_UNSPECIFIED: /* 2. create task transition */
+  85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+  86:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* no checks */
+  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          task->task_state = E_TASK_SUSPENDED;
+  88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState = ACCEPTED;
+  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case E_TASK_RUNNING: /* 3. terminate task */
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 3
+
+
+  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+  93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          task->task_state = E_TASK_SUSPENDED;
+  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState = ACCEPTED;
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       default:
+  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+  99:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* no change in states allowed */
+ 100:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_TASKSTATEREQUEST);
+ 101:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 102:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 103:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 104:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       break;
+ 105:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 106:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    case E_TASK_RUNNING:
+ 107:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       switch(task->task_state)
+ 109:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 110:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case E_TASK_READY: /* 4. start task transition */
+ 111:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 112:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          task->task_state = E_TASK_RUNNING;
+ 113:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState   = ACCEPTED;
+ 114:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 115:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 116:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       default:
+ 117:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 118:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* no change in states allowed */
+ 119:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 120:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 121:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 122:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       break;
+ 123:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 124:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 125:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    case E_TASK_READY:
+ 126:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 127:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       switch(task->task_state)
+ 128:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 129:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case E_TASK_SUSPENDED: /* activate task transition */
+ 130:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 131:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          task->task_state = E_TASK_READY;
+ 132:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState   = ACCEPTED;
+ 133:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 134:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 135:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case E_TASK_RUNNING: /* preempt task transition */
+ 136:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 137:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          task->task_state = E_TASK_READY;
+ 138:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState   = ACCEPTED;
+ 139:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 140:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 141:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       case E_TASK_UNSPECIFIED:
+ 142:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 143:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          task->task_state = E_TASK_READY;
+ 144:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState = ACCEPTED;
+ 145:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 146:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 147:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       default:
+ 148:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 4
+
+
+ 149:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* no change in states allowed */
+ 150:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 151:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 152:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 153:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       break;
+ 154:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 155:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    default:
+ 156:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 157:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       break;
+ 158:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 159:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 160:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if(RequestState == REJECTED)
+ 161:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 162:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       TASK_TRANSITION_REJECTED_TASK_ADDR  = task;
+ 163:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       TASK_TRANSITION_REJECTED_STATE      = requested_state;
+ 164:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       TASK_TRANSITION_CURRENT_STATE       = task->task_state;
+ 165:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_TASKSTATEREQUEST);
+ 166:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 167:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    return RequestState;
+ 168:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 169:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 170:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_CREATE_TASK(task_t* task)
+ 171:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 172:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*5. unspecified --(create   )--> suspend*/
+ 173:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if(task != 0u)
+ 174:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 175:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       if(task->state_request != 0u)
+ 176:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 177:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->state_request(task, E_TASK_SUSPENDED)== ACCEPTED)
+ 178:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 179:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /*QAC*/
+ 180:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 181:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          else
+ 182:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 183:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_CREATETASK);
+ 184:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 185:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 186:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       else
+ 187:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 188:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_CREATETASK);
+ 189:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 190:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 191:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    else
+ 192:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 193:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_CREATETASK);
+ 194:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 195:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 196:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
+ 197:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 198:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*2. running     --(preempt  )--> ready*/
+ 199:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* Preempt task
+ 200:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - Disable Interrupts
+ 201:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - OS_TASK_SAVE_TASK_ENVIRONMENT
+ 202:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - add to Schedule Queue / delete from RunQueue
+ 203:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - delete active flag
+ 204:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - enable Interrupts
+ 205:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 5
+
+
+ 206:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if(task != 0u && scheduling_task != 0u)
+ 207:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 208:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       if(task->state_request != 0u)
+ 209:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 210:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->state_request(task, E_TASK_READY)== ACCEPTED)
+ 211:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 212:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DISABLE_INTERRUPTS();
+ 213:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
+ 214:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+ 215:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 216:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->active = FALSE;
+ 217:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 218:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->current_prio = task->default_prio;
+ 219:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ENABLE_INTERRUPTS();
+ 220:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 221:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          else
+ 222:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 223:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_PREEMPT_TASK);
+ 224:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 225:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 226:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       else
+ 227:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 228:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_PREEMPT_TASK);
+ 229:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 230:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 231:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    else
+ 232:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 233:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_PREEMPT_TASK);
+ 234:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 235:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 236:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 237:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_ACTIVATE_TASK(task_t* task)
+ 238:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 239:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*
+ 240:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    Activate Task:
+ 241:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - Disable Interrupts
+ 242:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - Add to schedule Queue
+ 243:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - Enable Interrupts
+ 244:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 245:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    in case of valid request, the content, where the "task_t* task" is point to is stored in TASK_RU
+ 246:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
+ 247:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if(task != 0u)
+ 248:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 249:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       if(task->state_request(task, E_TASK_READY)==ACCEPTED)
+ 250:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 251:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          DISABLE_INTERRUPTS();
+ 252:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* 3. suspended to ready (add to runqueue) */
+ 253:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->idle_task == FALSE)
+ 254:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 255:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             if( (task->active == FALSE)
+ 256:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                   || ( (task->active == TRUE) && (task->nr_of_ins_allowed > task->nr_of_ins_activat
+ 257:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****               )
+ 258:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             {
+ 259:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                /* only activate if allowed by rule */
+ 260:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                task = ADD_TO_TASK_QUEUE(task);
+ 261:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                ADD_TO_SCHEDULING_QUEUE(task);
+ 262:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                if(task != 0u)
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 6
+
+
+ 263:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                {
+ 264:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                   task->nr_of_ins_activated++;
+ 265:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                }
+ 266:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                else
+ 267:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                {
+ 268:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                   OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_ACTIVATETASK);
+ 269:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                }
+ 270:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             }
+ 271:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             else
+ 272:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             {
+ 273:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                /* multiple activation bug occured */
+ 274:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_ACTIVATETASK);
+ 275:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             }
+ 276:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 277:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          else
+ 278:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 279:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ADD_TO_IDLE_TASK_QUEUE(task);
+ 280:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 281:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          ENABLE_INTERRUPTS();
+ 282:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 283:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       else
+ 284:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 285:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_ACTIVATETASK);
+ 286:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 287:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 288:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 289:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
+ 290:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 291:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* OS_START_TASK
+ 292:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - Disable interrupts
+ 293:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - restore Environment
+ 294:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - enable interrupts
+ 295:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 296:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - Start Task
+ 297:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****     */
+ 298:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    timebig_t time;
+ 299:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 300:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if( (task != 0u) && (scheduling_task != 0u)&& ((task->task_queued != FALSE)||(task->idle_task !=
+ 301:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 302:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       if(task->state_request !=0u)
+ 303:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 304:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->state_request(task, E_TASK_RUNNING)== ACCEPTED)
+ 305:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 306:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DISABLE_INTERRUPTS();
+ 307:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->active =  TRUE;
+ 308:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ASSIGN_NULL(&task->wait_time);
+ 309:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->current_prio = task->default_prio;
+ 310:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_SAVE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+ 311:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_RESTORETASK_ENVIRONMENT(task);
+ 312:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_GET_CURRENT_TIME(&time);
+ 313:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ASSIGN(&task->start_time, &time);
+ 314:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ENABLE_INTERRUPTS();
+ 315:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 316:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* task execution shall not happen with disabled interrupts */
+ 317:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             SET_RUNNING_TASK(task, scheduling_task);
+ 318:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* change to user mode... */
+ 319:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             if(task->privilige_mode == E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE)
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 7
+
+
+ 320:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             {
+ 321:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE();
+ 322:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             }
+ 323:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 324:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* call the task entry function */
+ 325:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->fp(task);
+ 326:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 327:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          else
+ 328:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 329:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_STARTTASK);
+ 330:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 331:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 332:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       else
+ 333:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 334:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_STARTTASK);
+ 335:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 336:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 337:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* allowed in case of empty QUEUE elements (queue elements which have no activate_task yet recei
+ 338:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    else
+ 339:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 340:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****        OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_STARTTASK);
+ 341:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 342:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
+ 343:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 344:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
+ 345:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 346:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* Preempt task
+ 347:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - Disable Interrupts
+ 348:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - OS_TASK_SAVE_TASK_ENVIRONMENT
+ 349:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - add to Schedule Queue / delete from RunQueue
+ 350:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - delete active flag
+ 351:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    - enable Interrupts
+ 352:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
+ 353:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if(task != 0u && scheduling_task != 0u)
+ 354:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 355:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       if(task->state_request != 0u)
+ 356:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 357:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->state_request(task, E_TASK_SUSPENDED)== ACCEPTED)
+ 358:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 359:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DISABLE_INTERRUPTS();
+ 360:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
+ 361:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+ 362:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DELETE_FROM_TASK_QUEUE(task);
+ 363:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DELETE_FROM_SCHEDULING_QUEUE(scheduling_task);
+ 364:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 365:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->active = FALSE;
+ 366:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 367:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->current_prio = task->default_prio;
+ 368:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ENABLE_INTERRUPTS();
+ 369:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 370:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          else
+ 371:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 372:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_TERMINATETASK);
+ 373:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 374:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 375:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       else
+ 376:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 8
+
+
+ 377:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_TERMINATETASK);
+ 378:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 379:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 380:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    else
+ 381:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 382:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_TERMINATETASK);
+ 383:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 384:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 385:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_TASK_DISPATCHER(void)
+ 386:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 387:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* called in an certain core context (Core_0/1/2/3)*/
+ 388:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 389:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 390:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*
+ 391:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    1. running     --(terminate)--> suspend
+ 392:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    2. running     --(preempt  )--> ready
+ 393:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    3. suspend     --(activate )--> ready
+ 394:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    4. ready       --(start    )--> running
+ 395:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    5. unspecified --(create   )--> suspend
+ 396:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
+ 397:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_t* scheduling_task_ptr;
+ 398:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_t* task = 0u;
+ 399:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* get running task */
+ 400:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task         = GET_RUNNING_TASK();
+ 401:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
+ 402:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* Preempt Task */
+ 403:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if(task!=0u && scheduling_task_ptr != 0u)
+ 404:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 405:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       OS_TERMINATE_TASK(task, scheduling_task_ptr);
+ 406:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 407:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* ask for the next task to be activated... */
+ 408:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_task_ptr = os_task_scheduler();
+ 409:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if(scheduling_task_ptr != 0u)
+ 410:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 411:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       task = GET_FROM_TASK_QUEUE(scheduling_task_ptr);
+ 412:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 413:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    if(task != 0u && scheduling_task_ptr != 0u)
+ 414:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 415:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       OS_START_TASK(task, scheduling_task_ptr);
+ 416:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 417:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 418:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL void task_0(void* task_ptr)
+ 419:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+  25              		.loc 1 419 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 0
+  28              		@ frame_needed = 0, uses_anonymous_args = 0
+  29              		@ link register save eliminated.
+  30              	.LVL0:
+ 420:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER(task_ptr);
+ 421:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    HALT_MCU();/* HLT will be ended by timer interrupt, what shall be done with the rest of the func
+  31              		.loc 1 421 0
+  32 0000 FFF7FEBF 		b	LLF_WAIT_FOR_INTERRUPT
+  33              	.LVL1:
+  34              		.cfi_endproc
+  35              	.LFE9:
+  37              		.align	1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 9
+
+
+  38              		.p2align 2,,3
+  39              		.syntax unified
+  40              		.thumb
+  41              		.thumb_func
+  42              		.fpu softvfp
+  44              	task_2:
+  45              	.LFB18:
+  46              		.cfi_startproc
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49 0004 38B5     		push	{r3, r4, r5, lr}
+  50              		.cfi_def_cfa_offset 16
+  51              		.cfi_offset 3, -16
+  52              		.cfi_offset 4, -12
+  53              		.cfi_offset 5, -8
+  54              		.cfi_offset 14, -4
+  55 0006 0446     		mov	r4, r0
+  56 0008 FFF7FEFF 		bl	GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR
+  57 000c 194A     		ldr	r2, .L17
+  58 000e 1368     		ldr	r3, [r2]
+  59 0010 0133     		adds	r3, r3, #1
+  60 0012 1360     		str	r3, [r2]
+  61 0014 74B1     		cbz	r4, .L4
+  62 0016 0546     		mov	r5, r0
+  63 0018 60B1     		cbz	r0, .L4
+  64 001a A36F     		ldr	r3, [r4, #120]
+  65 001c 53B1     		cbz	r3, .L4
+  66 001e 0121     		movs	r1, #1
+  67 0020 2046     		mov	r0, r4
+  68 0022 9847     		blx	r3
+  69 0024 0128     		cmp	r0, #1
+  70 0026 0BD0     		beq	.L16
+  71 0028 0821     		movs	r1, #8
+  72 002a 0120     		movs	r0, #1
+  73 002c BDE83840 		pop	{r3, r4, r5, lr}
+  74              		.cfi_remember_state
+  75              		.cfi_restore 14
+  76              		.cfi_restore 5
+  77              		.cfi_restore 4
+  78              		.cfi_restore 3
+  79              		.cfi_def_cfa_offset 0
+  80 0030 FFF7FEBF 		b	OS_SET_SW_BUG
+  81              	.L4:
+  82              		.cfi_restore_state
+  83 0034 0821     		movs	r1, #8
+  84 0036 0220     		movs	r0, #2
+  85 0038 BDE83840 		pop	{r3, r4, r5, lr}
+  86              		.cfi_remember_state
+  87              		.cfi_restore 14
+  88              		.cfi_restore 5
+  89              		.cfi_restore 4
+  90              		.cfi_restore 3
+  91              		.cfi_def_cfa_offset 0
+  92 003c FFF7FEBF 		b	OS_SET_SW_BUG
+  93              	.L16:
+  94              		.cfi_restore_state
+  95 0040 FFF7FEFF 		bl	LLF_INT_DISABLE
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 10
+
+
+  96 0044 2046     		mov	r0, r4
+  97 0046 FFF7FEFF 		bl	OS_TASK_SAVE_TASK_ENVIRONMENT
+  98 004a 0B48     		ldr	r0, .L17+4
+  99 004c FFF7FEFF 		bl	OS_TASK_RESTORE_SYSTEM_STACK
+ 100 0050 2046     		mov	r0, r4
+ 101 0052 FFF7FEFF 		bl	DELETE_FROM_TASK_QUEUE
+ 102 0056 2846     		mov	r0, r5
+ 103 0058 FFF7FEFF 		bl	DELETE_FROM_SCHEDULING_QUEUE
+ 104 005c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 105 005e 94F86D20 		ldrb	r2, [r4, #109]	@ zero_extendqisi2
+ 106 0062 84F86C20 		strb	r2, [r4, #108]
+ 107 0066 6FF30003 		bfc	r3, #0, #1
+ 108 006a 2370     		strb	r3, [r4]
+ 109 006c BDE83840 		pop	{r3, r4, r5, lr}
+ 110              		.cfi_restore 14
+ 111              		.cfi_restore 5
+ 112              		.cfi_restore 4
+ 113              		.cfi_restore 3
+ 114              		.cfi_def_cfa_offset 0
+ 115 0070 FFF7FEBF 		b	LLF_INT_ENABLE
+ 116              	.L18:
+ 117              		.align	2
+ 118              	.L17:
+ 119 0074 00000000 		.word	TASK1_CALL_NR
+ 120 0078 00000000 		.word	OS_MAIN_STACK
+ 121              		.cfi_endproc
+ 122              	.LFE18:
+ 124              		.align	1
+ 125              		.p2align 2,,3
+ 126              		.syntax unified
+ 127              		.thumb
+ 128              		.thumb_func
+ 129              		.fpu softvfp
+ 131              	task_3:
+ 132              	.LFB20:
+ 133              		.cfi_startproc
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136 007c 38B5     		push	{r3, r4, r5, lr}
+ 137              		.cfi_def_cfa_offset 16
+ 138              		.cfi_offset 3, -16
+ 139              		.cfi_offset 4, -12
+ 140              		.cfi_offset 5, -8
+ 141              		.cfi_offset 14, -4
+ 142 007e 0446     		mov	r4, r0
+ 143 0080 FFF7FEFF 		bl	GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR
+ 144 0084 194A     		ldr	r2, .L33
+ 145 0086 1368     		ldr	r3, [r2]
+ 146 0088 0133     		adds	r3, r3, #1
+ 147 008a 1360     		str	r3, [r2]
+ 148 008c 74B1     		cbz	r4, .L20
+ 149 008e 0546     		mov	r5, r0
+ 150 0090 60B1     		cbz	r0, .L20
+ 151 0092 A36F     		ldr	r3, [r4, #120]
+ 152 0094 53B1     		cbz	r3, .L20
+ 153 0096 0121     		movs	r1, #1
+ 154 0098 2046     		mov	r0, r4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 11
+
+
+ 155 009a 9847     		blx	r3
+ 156 009c 0128     		cmp	r0, #1
+ 157 009e 0BD0     		beq	.L32
+ 158 00a0 0821     		movs	r1, #8
+ 159 00a2 0120     		movs	r0, #1
+ 160 00a4 BDE83840 		pop	{r3, r4, r5, lr}
+ 161              		.cfi_remember_state
+ 162              		.cfi_restore 14
+ 163              		.cfi_restore 5
+ 164              		.cfi_restore 4
+ 165              		.cfi_restore 3
+ 166              		.cfi_def_cfa_offset 0
+ 167 00a8 FFF7FEBF 		b	OS_SET_SW_BUG
+ 168              	.L20:
+ 169              		.cfi_restore_state
+ 170 00ac 0821     		movs	r1, #8
+ 171 00ae 0220     		movs	r0, #2
+ 172 00b0 BDE83840 		pop	{r3, r4, r5, lr}
+ 173              		.cfi_remember_state
+ 174              		.cfi_restore 14
+ 175              		.cfi_restore 5
+ 176              		.cfi_restore 4
+ 177              		.cfi_restore 3
+ 178              		.cfi_def_cfa_offset 0
+ 179 00b4 FFF7FEBF 		b	OS_SET_SW_BUG
+ 180              	.L32:
+ 181              		.cfi_restore_state
+ 182 00b8 FFF7FEFF 		bl	LLF_INT_DISABLE
+ 183 00bc 2046     		mov	r0, r4
+ 184 00be FFF7FEFF 		bl	OS_TASK_SAVE_TASK_ENVIRONMENT
+ 185 00c2 0B48     		ldr	r0, .L33+4
+ 186 00c4 FFF7FEFF 		bl	OS_TASK_RESTORE_SYSTEM_STACK
+ 187 00c8 2046     		mov	r0, r4
+ 188 00ca FFF7FEFF 		bl	DELETE_FROM_TASK_QUEUE
+ 189 00ce 2846     		mov	r0, r5
+ 190 00d0 FFF7FEFF 		bl	DELETE_FROM_SCHEDULING_QUEUE
+ 191 00d4 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 192 00d6 94F86D20 		ldrb	r2, [r4, #109]	@ zero_extendqisi2
+ 193 00da 84F86C20 		strb	r2, [r4, #108]
+ 194 00de 6FF30003 		bfc	r3, #0, #1
+ 195 00e2 2370     		strb	r3, [r4]
+ 196 00e4 BDE83840 		pop	{r3, r4, r5, lr}
+ 197              		.cfi_restore 14
+ 198              		.cfi_restore 5
+ 199              		.cfi_restore 4
+ 200              		.cfi_restore 3
+ 201              		.cfi_def_cfa_offset 0
+ 202 00e8 FFF7FEBF 		b	LLF_INT_ENABLE
+ 203              	.L34:
+ 204              		.align	2
+ 205              	.L33:
+ 206 00ec 00000000 		.word	TASK1_CALL_NR
+ 207 00f0 00000000 		.word	OS_MAIN_STACK
+ 208              		.cfi_endproc
+ 209              	.LFE20:
+ 211              		.align	1
+ 212              		.p2align 2,,3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 12
+
+
+ 213              		.syntax unified
+ 214              		.thumb
+ 215              		.thumb_func
+ 216              		.fpu softvfp
+ 218              	task_1:
+ 219              	.LFB10:
+ 422:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 423:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL void task_1(void* task_ptr)
+ 424:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 220              		.loc 1 424 0
+ 221              		.cfi_startproc
+ 222              		@ args = 0, pretend = 0, frame = 0
+ 223              		@ frame_needed = 0, uses_anonymous_args = 0
+ 224              	.LVL2:
+ 225              		.loc 1 424 0
+ 226 00f4 38B5     		push	{r3, r4, r5, lr}
+ 227              		.cfi_def_cfa_offset 16
+ 228              		.cfi_offset 3, -16
+ 229              		.cfi_offset 4, -12
+ 230              		.cfi_offset 5, -8
+ 231              		.cfi_offset 14, -4
+ 232              		.loc 1 424 0
+ 233 00f6 0446     		mov	r4, r0
+ 425:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_t* scheduling_task_ptr = 0u;
+ 426:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER(task_ptr);
+ 427:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* worker task */
+ 428:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
+ 234              		.loc 1 428 0
+ 235 00f8 FFF7FEFF 		bl	GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR
+ 236              	.LVL3:
+ 429:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* do some things */
+ 430:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    TASK1_CALL_NR++;
+ 237              		.loc 1 430 0
+ 238 00fc 194A     		ldr	r2, .L49
+ 239 00fe 1368     		ldr	r3, [r2]
+ 240 0100 0133     		adds	r3, r3, #1
+ 241 0102 1360     		str	r3, [r2]
+ 242              	.LVL4:
+ 243              	.LBB6:
+ 244              	.LBB7:
+ 353:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 245              		.loc 1 353 0
+ 246 0104 74B1     		cbz	r4, .L36
+ 247 0106 0546     		mov	r5, r0
+ 248 0108 60B1     		cbz	r0, .L36
+ 355:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 249              		.loc 1 355 0
+ 250 010a A36F     		ldr	r3, [r4, #120]
+ 251 010c 53B1     		cbz	r3, .L36
+ 357:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 252              		.loc 1 357 0
+ 253 010e 0121     		movs	r1, #1
+ 254 0110 2046     		mov	r0, r4
+ 255              	.LVL5:
+ 256 0112 9847     		blx	r3
+ 257              	.LVL6:
+ 258 0114 0128     		cmp	r0, #1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 13
+
+
+ 259 0116 0BD0     		beq	.L48
+ 372:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 260              		.loc 1 372 0
+ 261 0118 0821     		movs	r1, #8
+ 262 011a 0120     		movs	r0, #1
+ 263              	.LBE7:
+ 264              	.LBE6:
+ 431:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 432:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 433:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* end */
+ 434:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_TERMINATE_TASK(task_ptr,scheduling_task_ptr);
+ 435:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 265              		.loc 1 435 0
+ 266 011c BDE83840 		pop	{r3, r4, r5, lr}
+ 267              		.cfi_remember_state
+ 268              		.cfi_restore 14
+ 269              		.cfi_restore 5
+ 270              		.cfi_restore 4
+ 271              		.cfi_restore 3
+ 272              		.cfi_def_cfa_offset 0
+ 273              	.LVL7:
+ 274              	.LBB15:
+ 275              	.LBB12:
+ 372:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 276              		.loc 1 372 0
+ 277 0120 FFF7FEBF 		b	OS_SET_SW_BUG
+ 278              	.LVL8:
+ 279              	.L36:
+ 280              		.cfi_restore_state
+ 281              	.LBB8:
+ 282              	.LBB9:
+ 377:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 283              		.loc 1 377 0
+ 284 0124 0821     		movs	r1, #8
+ 285 0126 0220     		movs	r0, #2
+ 286              	.LVL9:
+ 287              	.LBE9:
+ 288              	.LBE8:
+ 289              	.LBE12:
+ 290              	.LBE15:
+ 291              		.loc 1 435 0
+ 292 0128 BDE83840 		pop	{r3, r4, r5, lr}
+ 293              		.cfi_remember_state
+ 294              		.cfi_restore 14
+ 295              		.cfi_restore 5
+ 296              		.cfi_restore 4
+ 297              		.cfi_restore 3
+ 298              		.cfi_def_cfa_offset 0
+ 299              	.LVL10:
+ 300              	.LBB16:
+ 301              	.LBB13:
+ 302              	.LBB11:
+ 303              	.LBB10:
+ 377:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 304              		.loc 1 377 0
+ 305 012c FFF7FEBF 		b	OS_SET_SW_BUG
+ 306              	.LVL11:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 14
+
+
+ 307              	.L48:
+ 308              		.cfi_restore_state
+ 309              	.LBE10:
+ 310              	.LBE11:
+ 359:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
+ 311              		.loc 1 359 0
+ 312 0130 FFF7FEFF 		bl	LLF_INT_DISABLE
+ 313              	.LVL12:
+ 360:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+ 314              		.loc 1 360 0
+ 315 0134 2046     		mov	r0, r4
+ 316 0136 FFF7FEFF 		bl	OS_TASK_SAVE_TASK_ENVIRONMENT
+ 317              	.LVL13:
+ 361:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DELETE_FROM_TASK_QUEUE(task);
+ 318              		.loc 1 361 0
+ 319 013a 0B48     		ldr	r0, .L49+4
+ 320 013c FFF7FEFF 		bl	OS_TASK_RESTORE_SYSTEM_STACK
+ 321              	.LVL14:
+ 362:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DELETE_FROM_SCHEDULING_QUEUE(scheduling_task);
+ 322              		.loc 1 362 0
+ 323 0140 2046     		mov	r0, r4
+ 324 0142 FFF7FEFF 		bl	DELETE_FROM_TASK_QUEUE
+ 325              	.LVL15:
+ 363:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 326              		.loc 1 363 0
+ 327 0146 2846     		mov	r0, r5
+ 328 0148 FFF7FEFF 		bl	DELETE_FROM_SCHEDULING_QUEUE
+ 329              	.LVL16:
+ 365:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 330              		.loc 1 365 0
+ 331 014c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 367:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ENABLE_INTERRUPTS();
+ 332              		.loc 1 367 0
+ 333 014e 94F86D20 		ldrb	r2, [r4, #109]	@ zero_extendqisi2
+ 334 0152 84F86C20 		strb	r2, [r4, #108]
+ 365:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 335              		.loc 1 365 0
+ 336 0156 6FF30003 		bfc	r3, #0, #1
+ 337 015a 2370     		strb	r3, [r4]
+ 338              	.LBE13:
+ 339              	.LBE16:
+ 340              		.loc 1 435 0
+ 341 015c BDE83840 		pop	{r3, r4, r5, lr}
+ 342              		.cfi_restore 14
+ 343              		.cfi_restore 5
+ 344              		.cfi_restore 4
+ 345              		.cfi_restore 3
+ 346              		.cfi_def_cfa_offset 0
+ 347              	.LVL17:
+ 348              	.LBB17:
+ 349              	.LBB14:
+ 368:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 350              		.loc 1 368 0
+ 351 0160 FFF7FEBF 		b	LLF_INT_ENABLE
+ 352              	.LVL18:
+ 353              	.L50:
+ 354              		.align	2
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 15
+
+
+ 355              	.L49:
+ 356 0164 00000000 		.word	TASK1_CALL_NR
+ 357 0168 00000000 		.word	OS_MAIN_STACK
+ 358              	.LBE14:
+ 359              	.LBE17:
+ 360              		.cfi_endproc
+ 361              	.LFE10:
+ 363              		.align	1
+ 364              		.p2align 2,,3
+ 365              		.global	OS_ACTIVATE_DISPATCHER
+ 366              		.syntax unified
+ 367              		.thumb
+ 368              		.thumb_func
+ 369              		.fpu softvfp
+ 371              	OS_ACTIVATE_DISPATCHER:
+ 372              	.LFB0:
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 373              		.loc 1 24 0
+ 374              		.cfi_startproc
+ 375              		@ args = 0, pretend = 0, frame = 0
+ 376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377              		@ link register save eliminated.
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000u);
+ 378              		.loc 1 36 0
+ 379 016c 0948     		ldr	r0, .L53
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #endif
+ 380              		.loc 1 38 0
+ 381 016e 0A49     		ldr	r1, .L53+4
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000u);
+ 382              		.loc 1 36 0
+ 383 0170 0368     		ldr	r3, [r0]
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #endif
+ 384              		.loc 1 38 0
+ 385 0172 0A68     		ldr	r2, [r1]
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 386              		.loc 1 24 0
+ 387 0174 30B4     		push	{r4, r5}
+ 388              		.cfi_def_cfa_offset 8
+ 389              		.cfi_offset 4, -8
+ 390              		.cfi_offset 5, -4
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000u);
+ 391              		.loc 1 36 0
+ 392 0176 03F07F43 		and	r3, r3, #-16777216
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_EN
+ 393              		.loc 1 37 0
+ 394 017a 084C     		ldr	r4, .L53+8
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000u);
+ 395              		.loc 1 36 0
+ 396 017c 43F4CD13 		orr	r3, r3, #1679360
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_EN
+ 397              		.loc 1 37 0
+ 398 0180 0025     		movs	r5, #0
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000u);
+ 399              		.loc 1 36 0
+ 400 0182 43F42073 		orr	r3, r3, #640
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #endif
+ 401              		.loc 1 38 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 16
+
+
+ 402 0186 42F00302 		orr	r2, r2, #3
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CURRENT_VAL_REG = ((uint32)0x00000000u);
+ 403              		.loc 1 36 0
+ 404 018a 0360     		str	r3, [r0]
+  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** #endif
+ 405              		.loc 1 38 0
+ 406 018c 0A60     		str	r2, [r1]
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    *SYSTICK_CTRL_STAT_REG = *SYSTICK_CTRL_STAT_REG | SYSTICK_STAT_REG_TICKINT | SYSTICK_STAT_REG_EN
+ 407              		.loc 1 37 0
+ 408 018e 2560     		str	r5, [r4]
+  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 409              		.loc 1 40 0
+ 410 0190 30BC     		pop	{r4, r5}
+ 411              		.cfi_restore 5
+ 412              		.cfi_restore 4
+ 413              		.cfi_def_cfa_offset 0
+ 414 0192 7047     		bx	lr
+ 415              	.L54:
+ 416              		.align	2
+ 417              	.L53:
+ 418 0194 14E000E0 		.word	-536813548
+ 419 0198 10E000E0 		.word	-536813552
+ 420 019c 18E000E0 		.word	-536813544
+ 421              		.cfi_endproc
+ 422              	.LFE0:
+ 424              		.align	1
+ 425              		.p2align 2,,3
+ 426              		.global	OS_SLEEP_TASK
+ 427              		.syntax unified
+ 428              		.thumb
+ 429              		.thumb_func
+ 430              		.fpu softvfp
+ 432              	OS_SLEEP_TASK:
+ 433              	.LFB1:
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    timebig_t time;
+ 434              		.loc 1 44 0
+ 435              		.cfi_startproc
+ 436              		@ args = 24, pretend = 16, frame = 16
+ 437              		@ frame_needed = 0, uses_anonymous_args = 0
+ 438              	.LVL19:
+ 439 01a0 84B0     		sub	sp, sp, #16
+ 440              		.cfi_def_cfa_offset 16
+ 441 01a2 30B5     		push	{r4, r5, lr}
+ 442              		.cfi_def_cfa_offset 28
+ 443              		.cfi_offset 4, -28
+ 444              		.cfi_offset 5, -24
+ 445              		.cfi_offset 14, -20
+ 446 01a4 85B0     		sub	sp, sp, #20
+ 447              		.cfi_def_cfa_offset 48
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    timebig_t time;
+ 448              		.loc 1 44 0
+ 449 01a6 0446     		mov	r4, r0
+ 450 01a8 09AD     		add	r5, sp, #36
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* sleep Task shall do a preempt task with a defined minimum wait time, the actual wait time is 
+ 451              		.loc 1 46 0
+ 452 01aa 6846     		mov	r0, sp
+ 453              	.LVL20:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 17
+
+
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    timebig_t time;
+ 454              		.loc 1 44 0
+ 455 01ac 85E80E00 		stm	r5, {r1, r2, r3}
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* sleep Task shall do a preempt task with a defined minimum wait time, the actual wait time is 
+ 456              		.loc 1 46 0
+ 457 01b0 FFF7FEFF 		bl	OS_GET_CURRENT_TIME
+ 458              	.LVL21:
+  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    os_preempt_task(task,scheduling_task_ptr);
+ 459              		.loc 1 48 0
+ 460 01b4 2A46     		mov	r2, r5
+ 461 01b6 6946     		mov	r1, sp
+ 462 01b8 A01D     		adds	r0, r4, #6
+ 463 01ba FFF7FEFF 		bl	INT_ADD
+ 464              	.LVL22:
+ 465              	.LBB20:
+ 466              	.LBB21:
+ 206:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 467              		.loc 1 206 0
+ 468 01be 8CB1     		cbz	r4, .L56
+ 469 01c0 0D9B     		ldr	r3, [sp, #52]
+ 470 01c2 7BB1     		cbz	r3, .L56
+ 208:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 471              		.loc 1 208 0
+ 472 01c4 A36F     		ldr	r3, [r4, #120]
+ 473 01c6 6BB1     		cbz	r3, .L56
+ 210:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 474              		.loc 1 210 0
+ 475 01c8 0221     		movs	r1, #2
+ 476 01ca 2046     		mov	r0, r4
+ 477 01cc 9847     		blx	r3
+ 478              	.LVL23:
+ 479 01ce 0128     		cmp	r0, #1
+ 480 01d0 11D0     		beq	.L69
+ 223:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 481              		.loc 1 223 0
+ 482 01d2 0D21     		movs	r1, #13
+ 483 01d4 0120     		movs	r0, #1
+ 484 01d6 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 485              	.LVL24:
+ 486              	.LBE21:
+ 487              	.LBE20:
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 488              		.loc 1 50 0
+ 489 01da 05B0     		add	sp, sp, #20
+ 490              		.cfi_remember_state
+ 491              		.cfi_def_cfa_offset 28
+ 492              		@ sp needed
+ 493 01dc BDE83040 		pop	{r4, r5, lr}
+ 494              		.cfi_restore 14
+ 495              		.cfi_restore 5
+ 496              		.cfi_restore 4
+ 497              		.cfi_def_cfa_offset 16
+ 498              	.LVL25:
+ 499 01e0 04B0     		add	sp, sp, #16
+ 500              		.cfi_def_cfa_offset 0
+ 501 01e2 7047     		bx	lr
+ 502              	.LVL26:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 18
+
+
+ 503              	.L56:
+ 504              		.cfi_restore_state
+ 505              	.LBB24:
+ 506              	.LBB22:
+ 228:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 507              		.loc 1 228 0
+ 508 01e4 0D21     		movs	r1, #13
+ 509 01e6 0220     		movs	r0, #2
+ 510 01e8 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 511              	.LVL27:
+ 512              	.LBE22:
+ 513              	.LBE24:
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 514              		.loc 1 50 0
+ 515 01ec 05B0     		add	sp, sp, #20
+ 516              		.cfi_remember_state
+ 517              		.cfi_def_cfa_offset 28
+ 518              		@ sp needed
+ 519 01ee BDE83040 		pop	{r4, r5, lr}
+ 520              		.cfi_restore 14
+ 521              		.cfi_restore 5
+ 522              		.cfi_restore 4
+ 523              		.cfi_def_cfa_offset 16
+ 524              	.LVL28:
+ 525 01f2 04B0     		add	sp, sp, #16
+ 526              		.cfi_def_cfa_offset 0
+ 527 01f4 7047     		bx	lr
+ 528              	.LVL29:
+ 529              	.L69:
+ 530              		.cfi_restore_state
+ 531              	.LBB25:
+ 532              	.LBB23:
+ 212:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
+ 533              		.loc 1 212 0
+ 534 01f6 FFF7FEFF 		bl	LLF_INT_DISABLE
+ 535              	.LVL30:
+ 213:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+ 536              		.loc 1 213 0
+ 537 01fa 2046     		mov	r0, r4
+ 538 01fc FFF7FEFF 		bl	OS_TASK_SAVE_TASK_ENVIRONMENT
+ 539              	.LVL31:
+ 214:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 540              		.loc 1 214 0
+ 541 0200 0848     		ldr	r0, .L70
+ 542 0202 FFF7FEFF 		bl	OS_TASK_RESTORE_SYSTEM_STACK
+ 543              	.LVL32:
+ 216:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 544              		.loc 1 216 0
+ 545 0206 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 218:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ENABLE_INTERRUPTS();
+ 546              		.loc 1 218 0
+ 547 0208 94F86D20 		ldrb	r2, [r4, #109]	@ zero_extendqisi2
+ 548 020c 84F86C20 		strb	r2, [r4, #108]
+ 216:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 549              		.loc 1 216 0
+ 550 0210 6FF30003 		bfc	r3, #0, #1
+ 551 0214 2370     		strb	r3, [r4]
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 19
+
+
+ 219:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 552              		.loc 1 219 0
+ 553 0216 FFF7FEFF 		bl	LLF_INT_ENABLE
+ 554              	.LVL33:
+ 555              	.LBE23:
+ 556              	.LBE25:
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 557              		.loc 1 50 0
+ 558 021a 05B0     		add	sp, sp, #20
+ 559              		.cfi_def_cfa_offset 28
+ 560              		@ sp needed
+ 561 021c BDE83040 		pop	{r4, r5, lr}
+ 562              		.cfi_restore 14
+ 563              		.cfi_restore 5
+ 564              		.cfi_restore 4
+ 565              		.cfi_def_cfa_offset 16
+ 566              	.LVL34:
+ 567 0220 04B0     		add	sp, sp, #16
+ 568              		.cfi_def_cfa_offset 0
+ 569 0222 7047     		bx	lr
+ 570              	.L71:
+ 571              		.align	2
+ 572              	.L70:
+ 573 0224 00000000 		.word	OS_MAIN_STACK
+ 574              		.cfi_endproc
+ 575              	.LFE1:
+ 577              		.align	1
+ 578              		.p2align 2,,3
+ 579              		.global	OS_TASK_STATE_REQUEST
+ 580              		.syntax unified
+ 581              		.thumb
+ 582              		.thumb_func
+ 583              		.fpu softvfp
+ 585              	OS_TASK_STATE_REQUEST:
+ 586              	.LFB2:
+  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    unsigned_char_t RequestState = REJECTED;
+ 587              		.loc 1 53 0
+ 588              		.cfi_startproc
+ 589              		@ args = 0, pretend = 0, frame = 0
+ 590              		@ frame_needed = 0, uses_anonymous_args = 0
+ 591              	.LVL35:
+ 592 0228 70B5     		push	{r4, r5, r6, lr}
+ 593              		.cfi_def_cfa_offset 16
+ 594              		.cfi_offset 4, -16
+ 595              		.cfi_offset 5, -12
+ 596              		.cfi_offset 6, -8
+ 597              		.cfi_offset 14, -4
+ 598 022a 90F87C30 		ldrb	r3, [r0, #124]	@ zero_extendqisi2
+  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    unsigned_char_t RequestState = REJECTED;
+ 599              		.loc 1 53 0
+ 600 022e 0546     		mov	r5, r0
+ 601              	.LVL36:
+ 602 0230 0C46     		mov	r4, r1
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 603              		.loc 1 58 0
+ 604 0232 0329     		cmp	r1, #3
+ 605 0234 0CD8     		bhi	.L73
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 20
+
+
+ 606 0236 DFE801F0 		tbb	[pc, r1]
+ 607              	.L75:
+ 608 023a 27       		.byte	(.L74-.L75)/2
+ 609 023b 02       		.byte	(.L76-.L75)/2
+ 610 023c 1E       		.byte	(.L77-.L75)/2
+ 611 023d 17       		.byte	(.L78-.L75)/2
+ 612              		.p2align 1
+ 613              	.L76:
+  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 614              		.loc 1 82 0
+ 615 023e 5BB3     		cbz	r3, .L82
+ 616 0240 032B     		cmp	r3, #3
+ 617 0242 29D0     		beq	.L82
+ 100:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 618              		.loc 1 100 0
+ 619 0244 0C21     		movs	r1, #12
+ 620              	.LVL37:
+ 621 0246 0120     		movs	r0, #1
+ 622              	.LVL38:
+ 623 0248 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 624              	.LVL39:
+ 625 024c 95F87C30 		ldrb	r3, [r5, #124]	@ zero_extendqisi2
+ 626              	.L73:
+ 162:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       TASK_TRANSITION_REJECTED_STATE      = requested_state;
+ 627              		.loc 1 162 0
+ 628 0250 1349     		ldr	r1, .L96
+ 164:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_TASKSTATEREQUEST);
+ 629              		.loc 1 164 0
+ 630 0252 144A     		ldr	r2, .L96+4
+ 163:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       TASK_TRANSITION_CURRENT_STATE       = task->task_state;
+ 631              		.loc 1 163 0
+ 632 0254 144E     		ldr	r6, .L96+8
+ 162:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       TASK_TRANSITION_REJECTED_STATE      = requested_state;
+ 633              		.loc 1 162 0
+ 634 0256 0D60     		str	r5, [r1]
+ 165:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 635              		.loc 1 165 0
+ 636 0258 0120     		movs	r0, #1
+ 637 025a 0C21     		movs	r1, #12
+ 163:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       TASK_TRANSITION_CURRENT_STATE       = task->task_state;
+ 638              		.loc 1 163 0
+ 639 025c 3470     		strb	r4, [r6]
+ 164:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       OS_SET_SW_BUG(E_OS_BUG_TASKSTATE_REQUEST_DENIED, E_FUNC_TASKSTATEREQUEST);
+ 640              		.loc 1 164 0
+ 641 025e 1370     		strb	r3, [r2]
+ 165:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 642              		.loc 1 165 0
+ 643 0260 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 644              	.LVL40:
+ 645 0264 0020     		movs	r0, #0
+ 168:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 646              		.loc 1 168 0
+ 647 0266 70BD     		pop	{r4, r5, r6, pc}
+ 648              	.LVL41:
+ 649              	.L78:
+ 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 650              		.loc 1 108 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 21
+
+
+ 651 0268 022B     		cmp	r3, #2
+ 652 026a F1D1     		bne	.L73
+ 112:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState   = ACCEPTED;
+ 653              		.loc 1 112 0
+ 654 026c 0323     		movs	r3, #3
+ 655 026e 80F87C30 		strb	r3, [r0, #124]
+ 656              	.LVL42:
+ 113:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 657              		.loc 1 113 0
+ 658 0272 0120     		movs	r0, #1
+ 659              	.LVL43:
+ 168:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 660              		.loc 1 168 0
+ 661 0274 70BD     		pop	{r4, r5, r6, pc}
+ 662              	.LVL44:
+ 663              	.L77:
+ 127:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 664              		.loc 1 127 0
+ 665 0276 012B     		cmp	r3, #1
+ 666 0278 01D9     		bls	.L84
+ 667 027a 032B     		cmp	r3, #3
+ 668 027c E8D1     		bne	.L73
+ 669              	.L84:
+ 131:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState   = ACCEPTED;
+ 670              		.loc 1 131 0
+ 671 027e 0223     		movs	r3, #2
+ 672 0280 85F87C30 		strb	r3, [r5, #124]
+ 673              	.LVL45:
+ 132:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 674              		.loc 1 132 0
+ 675 0284 0120     		movs	r0, #1
+ 676              	.LVL46:
+ 168:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 677              		.loc 1 168 0
+ 678 0286 70BD     		pop	{r4, r5, r6, pc}
+ 679              	.LVL47:
+ 680              	.L74:
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 681              		.loc 1 62 0
+ 682 0288 5A1E     		subs	r2, r3, #1
+ 683 028a 022A     		cmp	r2, #2
+ 684 028c E0D9     		bls	.L73
+  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState = ACCEPTED;
+ 685              		.loc 1 73 0
+ 686 028e 0023     		movs	r3, #0
+ 687 0290 80F87C30 		strb	r3, [r0, #124]
+ 688              	.LVL48:
+  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          break;
+ 689              		.loc 1 74 0
+ 690 0294 0120     		movs	r0, #1
+ 691              	.LVL49:
+ 168:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 692              		.loc 1 168 0
+ 693 0296 70BD     		pop	{r4, r5, r6, pc}
+ 694              	.LVL50:
+ 695              	.L82:
+  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          RequestState = ACCEPTED;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 22
+
+
+ 696              		.loc 1 87 0
+ 697 0298 0120     		movs	r0, #1
+ 698              	.LVL51:
+ 699 029a 85F87C00 		strb	r0, [r5, #124]
+ 700              	.LVL52:
+ 168:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 701              		.loc 1 168 0
+ 702 029e 70BD     		pop	{r4, r5, r6, pc}
+ 703              	.LVL53:
+ 704              	.L97:
+ 705              		.align	2
+ 706              	.L96:
+ 707 02a0 00000000 		.word	TASK_TRANSITION_REJECTED_TASK_ADDR
+ 708 02a4 00000000 		.word	TASK_TRANSITION_CURRENT_STATE
+ 709 02a8 00000000 		.word	TASK_TRANSITION_REJECTED_STATE
+ 710              		.cfi_endproc
+ 711              	.LFE2:
+ 713              		.align	1
+ 714              		.p2align 2,,3
+ 715              		.global	OS_CREATE_TASK
+ 716              		.syntax unified
+ 717              		.thumb
+ 718              		.thumb_func
+ 719              		.fpu softvfp
+ 721              	OS_CREATE_TASK:
+ 722              	.LFB3:
+ 171:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*5. unspecified --(create   )--> suspend*/
+ 723              		.loc 1 171 0
+ 724              		.cfi_startproc
+ 725              		@ args = 0, pretend = 0, frame = 0
+ 726              		@ frame_needed = 0, uses_anonymous_args = 0
+ 727              	.LVL54:
+ 173:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 728              		.loc 1 173 0
+ 729 02ac 98B1     		cbz	r0, .L108
+ 171:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*5. unspecified --(create   )--> suspend*/
+ 730              		.loc 1 171 0
+ 731 02ae 08B5     		push	{r3, lr}
+ 732              		.cfi_def_cfa_offset 8
+ 733              		.cfi_offset 3, -8
+ 734              		.cfi_offset 14, -4
+ 175:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 735              		.loc 1 175 0
+ 736 02b0 836F     		ldr	r3, [r0, #120]
+ 737 02b2 53B1     		cbz	r3, .L99
+ 177:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 738              		.loc 1 177 0
+ 739 02b4 0121     		movs	r1, #1
+ 740 02b6 9847     		blx	r3
+ 741              	.LVL55:
+ 742 02b8 0128     		cmp	r0, #1
+ 743 02ba 00D1     		bne	.L111
+ 195:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
+ 744              		.loc 1 195 0
+ 745 02bc 08BD     		pop	{r3, pc}
+ 746              	.L111:
+ 183:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 23
+
+
+ 747              		.loc 1 183 0
+ 748 02be 0F21     		movs	r1, #15
+ 749 02c0 0120     		movs	r0, #1
+ 195:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
+ 750              		.loc 1 195 0
+ 751 02c2 BDE80840 		pop	{r3, lr}
+ 752              		.cfi_remember_state
+ 753              		.cfi_restore 14
+ 754              		.cfi_restore 3
+ 755              		.cfi_def_cfa_offset 0
+ 183:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 756              		.loc 1 183 0
+ 757 02c6 FFF7FEBF 		b	OS_SET_SW_BUG
+ 758              	.LVL56:
+ 759              	.L99:
+ 760              		.cfi_restore_state
+ 188:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 761              		.loc 1 188 0
+ 762 02ca 0F21     		movs	r1, #15
+ 763 02cc 0220     		movs	r0, #2
+ 764              	.LVL57:
+ 195:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
+ 765              		.loc 1 195 0
+ 766 02ce BDE80840 		pop	{r3, lr}
+ 767              		.cfi_restore 14
+ 768              		.cfi_restore 3
+ 769              		.cfi_def_cfa_offset 0
+ 188:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 770              		.loc 1 188 0
+ 771 02d2 FFF7FEBF 		b	OS_SET_SW_BUG
+ 772              	.LVL58:
+ 773              	.L108:
+ 774 02d6 0F21     		movs	r1, #15
+ 775 02d8 0220     		movs	r0, #2
+ 776              	.LVL59:
+ 777 02da FFF7FEBF 		b	OS_SET_SW_BUG
+ 778              	.LVL60:
+ 779              		.cfi_endproc
+ 780              	.LFE3:
+ 782              		.align	1
+ 783 02de 00BF     		.p2align 2,,3
+ 784              		.global	OS_ACTIVATE_TASK
+ 785              		.syntax unified
+ 786              		.thumb
+ 787              		.thumb_func
+ 788              		.fpu softvfp
+ 790              	OS_ACTIVATE_TASK:
+ 791              	.LFB5:
+ 238:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*
+ 792              		.loc 1 238 0
+ 793              		.cfi_startproc
+ 794              		@ args = 0, pretend = 0, frame = 0
+ 795              		@ frame_needed = 0, uses_anonymous_args = 0
+ 796              	.LVL61:
+ 247:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 797              		.loc 1 247 0
+ 798 02e0 68B3     		cbz	r0, .L112
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 24
+
+
+ 238:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*
+ 799              		.loc 1 238 0
+ 800 02e2 38B5     		push	{r3, r4, r5, lr}
+ 801              		.cfi_def_cfa_offset 16
+ 802              		.cfi_offset 3, -16
+ 803              		.cfi_offset 4, -12
+ 804              		.cfi_offset 5, -8
+ 805              		.cfi_offset 14, -4
+ 249:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 806              		.loc 1 249 0
+ 807 02e4 0221     		movs	r1, #2
+ 808 02e6 836F     		ldr	r3, [r0, #120]
+ 809 02e8 0446     		mov	r4, r0
+ 810 02ea 9847     		blx	r3
+ 811              	.LVL62:
+ 812 02ec 0128     		cmp	r0, #1
+ 813 02ee 0546     		mov	r5, r0
+ 814 02f0 05D0     		beq	.L126
+ 285:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 815              		.loc 1 285 0
+ 816 02f2 0B21     		movs	r1, #11
+ 817 02f4 0120     		movs	r0, #1
+ 288:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
+ 818              		.loc 1 288 0
+ 819 02f6 BDE83840 		pop	{r3, r4, r5, lr}
+ 820              		.cfi_remember_state
+ 821              		.cfi_restore 14
+ 822              		.cfi_restore 5
+ 823              		.cfi_restore 4
+ 824              		.cfi_restore 3
+ 825              		.cfi_def_cfa_offset 0
+ 826              	.LVL63:
+ 285:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 827              		.loc 1 285 0
+ 828 02fa FFF7FEBF 		b	OS_SET_SW_BUG
+ 829              	.LVL64:
+ 830              	.L126:
+ 831              		.cfi_restore_state
+ 251:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* 3. suspended to ready (add to runqueue) */
+ 832              		.loc 1 251 0
+ 833 02fe FFF7FEFF 		bl	LLF_INT_DISABLE
+ 834              	.LVL65:
+ 253:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 835              		.loc 1 253 0
+ 836 0302 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 837 0304 5A07     		lsls	r2, r3, #29
+ 838 0306 13D4     		bmi	.L115
+ 255:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                   || ( (task->active == TRUE) && (task->nr_of_ins_allowed > task->nr_of_ins_activat
+ 839              		.loc 1 255 0
+ 840 0308 DB07     		lsls	r3, r3, #31
+ 841 030a 03D5     		bpl	.L116
+ 256:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****               )
+ 842              		.loc 1 256 0
+ 843 030c 2279     		ldrb	r2, [r4, #4]	@ zero_extendqisi2
+ 844 030e 6379     		ldrb	r3, [r4, #5]	@ zero_extendqisi2
+ 845 0310 9A42     		cmp	r2, r3
+ 846 0312 15D9     		bls	.L117
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 25
+
+
+ 847              	.L116:
+ 260:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                ADD_TO_SCHEDULING_QUEUE(task);
+ 848              		.loc 1 260 0
+ 849 0314 2046     		mov	r0, r4
+ 850 0316 FFF7FEFF 		bl	ADD_TO_TASK_QUEUE
+ 851              	.LVL66:
+ 852 031a 0446     		mov	r4, r0
+ 853              	.LVL67:
+ 261:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                if(task != 0u)
+ 854              		.loc 1 261 0
+ 855 031c FFF7FEFF 		bl	ADD_TO_SCHEDULING_QUEUE
+ 856              	.LVL68:
+ 262:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                {
+ 857              		.loc 1 262 0
+ 858 0320 9CB1     		cbz	r4, .L118
+ 264:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                }
+ 859              		.loc 1 264 0
+ 860 0322 6379     		ldrb	r3, [r4, #5]	@ zero_extendqisi2
+ 861 0324 0133     		adds	r3, r3, #1
+ 862 0326 6371     		strb	r3, [r4, #5]
+ 863              	.L119:
+ 288:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
+ 864              		.loc 1 288 0
+ 865 0328 BDE83840 		pop	{r3, r4, r5, lr}
+ 866              		.cfi_remember_state
+ 867              		.cfi_restore 14
+ 868              		.cfi_restore 5
+ 869              		.cfi_restore 4
+ 870              		.cfi_restore 3
+ 871              		.cfi_def_cfa_offset 0
+ 872              	.LVL69:
+ 281:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 873              		.loc 1 281 0
+ 874 032c FFF7FEBF 		b	LLF_INT_ENABLE
+ 875              	.LVL70:
+ 876              	.L115:
+ 877              		.cfi_restore_state
+ 279:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 878              		.loc 1 279 0
+ 879 0330 2046     		mov	r0, r4
+ 880 0332 FFF7FEFF 		bl	ADD_TO_IDLE_TASK_QUEUE
+ 881              	.LVL71:
+ 288:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
+ 882              		.loc 1 288 0
+ 883 0336 BDE83840 		pop	{r3, r4, r5, lr}
+ 884              		.cfi_restore 14
+ 885              		.cfi_restore 5
+ 886              		.cfi_restore 4
+ 887              		.cfi_restore 3
+ 888              		.cfi_def_cfa_offset 0
+ 889              	.LVL72:
+ 281:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 890              		.loc 1 281 0
+ 891 033a FFF7FEBF 		b	LLF_INT_ENABLE
+ 892              	.LVL73:
+ 893              	.L112:
+ 894 033e 7047     		bx	lr
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 26
+
+
+ 895              	.LVL74:
+ 896              	.L117:
+ 897              		.cfi_def_cfa_offset 16
+ 898              		.cfi_offset 3, -16
+ 899              		.cfi_offset 4, -12
+ 900              		.cfi_offset 5, -8
+ 901              		.cfi_offset 14, -4
+ 274:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             }
+ 902              		.loc 1 274 0
+ 903 0340 2846     		mov	r0, r5
+ 904 0342 0B21     		movs	r1, #11
+ 905 0344 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 906              	.LVL75:
+ 907 0348 EEE7     		b	.L119
+ 908              	.L118:
+ 268:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                }
+ 909              		.loc 1 268 0
+ 910 034a 0B21     		movs	r1, #11
+ 911 034c 0220     		movs	r0, #2
+ 912 034e FFF7FEFF 		bl	OS_SET_SW_BUG
+ 913              	.LVL76:
+ 914 0352 E9E7     		b	.L119
+ 915              		.cfi_endproc
+ 916              	.LFE5:
+ 918              		.align	1
+ 919              		.p2align 2,,3
+ 920              		.global	OS_START_TASK
+ 921              		.syntax unified
+ 922              		.thumb
+ 923              		.thumb_func
+ 924              		.fpu softvfp
+ 926              	OS_START_TASK:
+ 927              	.LFB6:
+ 290:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* OS_START_TASK
+ 928              		.loc 1 290 0
+ 929              		.cfi_startproc
+ 930              		@ args = 0, pretend = 0, frame = 16
+ 931              		@ frame_needed = 0, uses_anonymous_args = 0
+ 932              	.LVL77:
+ 300:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 933              		.loc 1 300 0
+ 934 0354 A0B1     		cbz	r0, .L142
+ 300:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 935              		.loc 1 300 0 is_stmt 0 discriminator 1
+ 936 0356 99B1     		cbz	r1, .L142
+ 290:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* OS_START_TASK
+ 937              		.loc 1 290 0 is_stmt 1 discriminator 2
+ 938 0358 30B5     		push	{r4, r5, lr}
+ 939              		.cfi_def_cfa_offset 12
+ 940              		.cfi_offset 4, -12
+ 941              		.cfi_offset 5, -8
+ 942              		.cfi_offset 14, -4
+ 300:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 943              		.loc 1 300 0 discriminator 2
+ 944 035a 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
+ 945 035c 12F0060F 		tst	r2, #6
+ 290:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* OS_START_TASK
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 27
+
+
+ 946              		.loc 1 290 0 discriminator 2
+ 947 0360 85B0     		sub	sp, sp, #20
+ 948              		.cfi_def_cfa_offset 32
+ 949 0362 0546     		mov	r5, r0
+ 300:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 950              		.loc 1 300 0 discriminator 2
+ 951 0364 0AD0     		beq	.L127
+ 302:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 952              		.loc 1 302 0
+ 953 0366 836F     		ldr	r3, [r0, #120]
+ 954 0368 0C46     		mov	r4, r1
+ 955 036a B3B3     		cbz	r3, .L129
+ 304:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 956              		.loc 1 304 0
+ 957 036c 0321     		movs	r1, #3
+ 958              	.LVL78:
+ 959 036e 9847     		blx	r3
+ 960              	.LVL79:
+ 961 0370 0128     		cmp	r0, #1
+ 962 0372 06D0     		beq	.L145
+ 329:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 963              		.loc 1 329 0
+ 964 0374 0621     		movs	r1, #6
+ 965 0376 0120     		movs	r0, #1
+ 966 0378 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 967              	.LVL80:
+ 968              	.L127:
+ 343:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
+ 969              		.loc 1 343 0
+ 970 037c 05B0     		add	sp, sp, #20
+ 971              		.cfi_def_cfa_offset 12
+ 972              		@ sp needed
+ 973 037e 30BD     		pop	{r4, r5, pc}
+ 974              	.LVL81:
+ 975              	.L142:
+ 976              		.cfi_def_cfa_offset 0
+ 977              		.cfi_restore 4
+ 978              		.cfi_restore 5
+ 979              		.cfi_restore 14
+ 980 0380 7047     		bx	lr
+ 981              	.LVL82:
+ 982              	.L145:
+ 983              		.cfi_def_cfa_offset 32
+ 984              		.cfi_offset 4, -12
+ 985              		.cfi_offset 5, -8
+ 986              		.cfi_offset 14, -4
+ 987              	.LBB28:
+ 988              	.LBB29:
+ 306:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->active =  TRUE;
+ 989              		.loc 1 306 0
+ 990 0382 FFF7FEFF 		bl	LLF_INT_DISABLE
+ 991              	.LVL83:
+ 307:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ASSIGN_NULL(&task->wait_time);
+ 992              		.loc 1 307 0
+ 993 0386 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 994 0388 2846     		mov	r0, r5
+ 995 038a 43F00103 		orr	r3, r3, #1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 28
+
+
+ 996 038e 00F8163B 		strb	r3, [r0], #22
+ 308:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->current_prio = task->default_prio;
+ 997              		.loc 1 308 0
+ 998 0392 FFF7FEFF 		bl	ASSIGN_NULL
+ 999              	.LVL84:
+ 309:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_SAVE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+ 1000              		.loc 1 309 0
+ 1001 0396 95F86D30 		ldrb	r3, [r5, #109]	@ zero_extendqisi2
+ 1002 039a 85F86C30 		strb	r3, [r5, #108]
+ 310:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_RESTORETASK_ENVIRONMENT(task);
+ 1003              		.loc 1 310 0
+ 1004 039e 1148     		ldr	r0, .L146
+ 1005 03a0 FFF7FEFF 		bl	OS_TASK_SAVE_SYSTEM_STACK
+ 1006              	.LVL85:
+ 311:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_GET_CURRENT_TIME(&time);
+ 1007              		.loc 1 311 0
+ 1008 03a4 2846     		mov	r0, r5
+ 1009 03a6 FFF7FEFF 		bl	OS_TASK_RESTORETASK_ENVIRONMENT
+ 1010              	.LVL86:
+ 312:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ASSIGN(&task->start_time, &time);
+ 1011              		.loc 1 312 0
+ 1012 03aa 6846     		mov	r0, sp
+ 1013 03ac FFF7FEFF 		bl	OS_GET_CURRENT_TIME
+ 1014              	.LVL87:
+ 313:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ENABLE_INTERRUPTS();
+ 1015              		.loc 1 313 0
+ 1016 03b0 6946     		mov	r1, sp
+ 1017 03b2 05F15C00 		add	r0, r5, #92
+ 1018 03b6 FFF7FEFF 		bl	ASSIGN
+ 1019              	.LVL88:
+ 314:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1020              		.loc 1 314 0
+ 1021 03ba FFF7FEFF 		bl	LLF_INT_ENABLE
+ 1022              	.LVL89:
+ 317:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* change to user mode... */
+ 1023              		.loc 1 317 0
+ 1024 03be 2146     		mov	r1, r4
+ 1025 03c0 2846     		mov	r0, r5
+ 1026 03c2 FFF7FEFF 		bl	SET_RUNNING_TASK
+ 1027              	.LVL90:
+ 319:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             {
+ 1028              		.loc 1 319 0
+ 1029 03c6 95F8CC30 		ldrb	r3, [r5, #204]	@ zero_extendqisi2
+ 1030 03ca 0BB9     		cbnz	r3, .L131
+ 321:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             }
+ 1031              		.loc 1 321 0
+ 1032 03cc FFF7FEFF 		bl	LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
+ 1033              	.LVL91:
+ 1034              	.L131:
+ 325:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 1035              		.loc 1 325 0
+ 1036 03d0 6B6F     		ldr	r3, [r5, #116]
+ 1037 03d2 2846     		mov	r0, r5
+ 1038 03d4 9847     		blx	r3
+ 1039              	.LVL92:
+ 1040              	.LBE29:
+ 1041              	.LBE28:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 29
+
+
+ 343:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
+ 1042              		.loc 1 343 0
+ 1043 03d6 05B0     		add	sp, sp, #20
+ 1044              		.cfi_remember_state
+ 1045              		.cfi_def_cfa_offset 12
+ 1046              		@ sp needed
+ 1047 03d8 30BD     		pop	{r4, r5, pc}
+ 1048              	.LVL93:
+ 1049              	.L129:
+ 1050              		.cfi_restore_state
+ 334:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 1051              		.loc 1 334 0
+ 1052 03da 0621     		movs	r1, #6
+ 1053              	.LVL94:
+ 1054 03dc 0220     		movs	r0, #2
+ 1055              	.LVL95:
+ 1056 03de FFF7FEFF 		bl	OS_SET_SW_BUG
+ 1057              	.LVL96:
+ 343:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
+ 1058              		.loc 1 343 0
+ 1059 03e2 CBE7     		b	.L127
+ 1060              	.L147:
+ 1061              		.align	2
+ 1062              	.L146:
+ 1063 03e4 00000000 		.word	OS_MAIN_STACK
+ 1064              		.cfi_endproc
+ 1065              	.LFE6:
+ 1067              		.align	1
+ 1068              		.p2align 2,,3
+ 1069              		.global	OS_TERMINATE_TASK
+ 1070              		.syntax unified
+ 1071              		.thumb
+ 1072              		.thumb_func
+ 1073              		.fpu softvfp
+ 1075              	OS_TERMINATE_TASK:
+ 1076              	.LFB7:
+ 345:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* Preempt task
+ 1077              		.loc 1 345 0
+ 1078              		.cfi_startproc
+ 1079              		@ args = 0, pretend = 0, frame = 0
+ 1080              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1081              	.LVL97:
+ 353:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 1082              		.loc 1 353 0
+ 1083 03e8 78B3     		cbz	r0, .L161
+ 353:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 1084              		.loc 1 353 0 is_stmt 0 discriminator 1
+ 1085 03ea 71B3     		cbz	r1, .L161
+ 355:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 1086              		.loc 1 355 0 is_stmt 1
+ 1087 03ec 826F     		ldr	r2, [r0, #120]
+ 345:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* Preempt task
+ 1088              		.loc 1 345 0
+ 1089 03ee 38B5     		push	{r3, r4, r5, lr}
+ 1090              		.cfi_def_cfa_offset 16
+ 1091              		.cfi_offset 3, -16
+ 1092              		.cfi_offset 4, -12
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 30
+
+
+ 1093              		.cfi_offset 5, -8
+ 1094              		.cfi_offset 14, -4
+ 1095 03f0 0446     		mov	r4, r0
+ 355:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 1096              		.loc 1 355 0
+ 1097 03f2 52B1     		cbz	r2, .L149
+ 1098 03f4 0D46     		mov	r5, r1
+ 357:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 1099              		.loc 1 357 0
+ 1100 03f6 0121     		movs	r1, #1
+ 1101              	.LVL98:
+ 1102 03f8 9047     		blx	r2
+ 1103              	.LVL99:
+ 1104 03fa 0128     		cmp	r0, #1
+ 1105 03fc 0BD0     		beq	.L164
+ 372:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 1106              		.loc 1 372 0
+ 1107 03fe 0821     		movs	r1, #8
+ 1108 0400 0120     		movs	r0, #1
+ 384:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_TASK_DISPATCHER(void)
+ 1109              		.loc 1 384 0
+ 1110 0402 BDE83840 		pop	{r3, r4, r5, lr}
+ 1111              		.cfi_remember_state
+ 1112              		.cfi_restore 14
+ 1113              		.cfi_restore 5
+ 1114              		.cfi_restore 4
+ 1115              		.cfi_restore 3
+ 1116              		.cfi_def_cfa_offset 0
+ 1117              	.LVL100:
+ 372:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 1118              		.loc 1 372 0
+ 1119 0406 FFF7FEBF 		b	OS_SET_SW_BUG
+ 1120              	.LVL101:
+ 1121              	.L149:
+ 1122              		.cfi_restore_state
+ 1123              	.LBB32:
+ 1124              	.LBB33:
+ 377:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 1125              		.loc 1 377 0
+ 1126 040a 0821     		movs	r1, #8
+ 1127              	.LVL102:
+ 1128 040c 0220     		movs	r0, #2
+ 1129              	.LVL103:
+ 1130              	.LBE33:
+ 1131              	.LBE32:
+ 384:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_TASK_DISPATCHER(void)
+ 1132              		.loc 1 384 0
+ 1133 040e BDE83840 		pop	{r3, r4, r5, lr}
+ 1134              		.cfi_remember_state
+ 1135              		.cfi_restore 14
+ 1136              		.cfi_restore 5
+ 1137              		.cfi_restore 4
+ 1138              		.cfi_restore 3
+ 1139              		.cfi_def_cfa_offset 0
+ 1140              	.LVL104:
+ 1141              	.LBB36:
+ 1142              	.LBB34:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 31
+
+
+ 377:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 1143              		.loc 1 377 0
+ 1144 0412 FFF7FEBF 		b	OS_SET_SW_BUG
+ 1145              	.LVL105:
+ 1146              	.L164:
+ 1147              		.cfi_restore_state
+ 1148              	.LBE34:
+ 1149              	.LBE36:
+ 359:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
+ 1150              		.loc 1 359 0
+ 1151 0416 FFF7FEFF 		bl	LLF_INT_DISABLE
+ 1152              	.LVL106:
+ 360:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+ 1153              		.loc 1 360 0
+ 1154 041a 2046     		mov	r0, r4
+ 1155 041c FFF7FEFF 		bl	OS_TASK_SAVE_TASK_ENVIRONMENT
+ 1156              	.LVL107:
+ 361:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DELETE_FROM_TASK_QUEUE(task);
+ 1157              		.loc 1 361 0
+ 1158 0420 0C48     		ldr	r0, .L165
+ 1159 0422 FFF7FEFF 		bl	OS_TASK_RESTORE_SYSTEM_STACK
+ 1160              	.LVL108:
+ 362:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DELETE_FROM_SCHEDULING_QUEUE(scheduling_task);
+ 1161              		.loc 1 362 0
+ 1162 0426 2046     		mov	r0, r4
+ 1163 0428 FFF7FEFF 		bl	DELETE_FROM_TASK_QUEUE
+ 1164              	.LVL109:
+ 363:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1165              		.loc 1 363 0
+ 1166 042c 2846     		mov	r0, r5
+ 1167 042e FFF7FEFF 		bl	DELETE_FROM_SCHEDULING_QUEUE
+ 1168              	.LVL110:
+ 365:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 1169              		.loc 1 365 0
+ 1170 0432 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 367:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ENABLE_INTERRUPTS();
+ 1171              		.loc 1 367 0
+ 1172 0434 94F86D20 		ldrb	r2, [r4, #109]	@ zero_extendqisi2
+ 1173 0438 84F86C20 		strb	r2, [r4, #108]
+ 365:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 1174              		.loc 1 365 0
+ 1175 043c 6FF30003 		bfc	r3, #0, #1
+ 1176 0440 2370     		strb	r3, [r4]
+ 384:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_TASK_DISPATCHER(void)
+ 1177              		.loc 1 384 0
+ 1178 0442 BDE83840 		pop	{r3, r4, r5, lr}
+ 1179              		.cfi_restore 14
+ 1180              		.cfi_restore 5
+ 1181              		.cfi_restore 4
+ 1182              		.cfi_restore 3
+ 1183              		.cfi_def_cfa_offset 0
+ 1184              	.LVL111:
+ 368:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 1185              		.loc 1 368 0
+ 1186 0446 FFF7FEBF 		b	LLF_INT_ENABLE
+ 1187              	.LVL112:
+ 1188              	.L161:
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 32
+
+
+ 1189              	.LBB37:
+ 1190              	.LBB35:
+ 377:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 1191              		.loc 1 377 0
+ 1192 044a 0821     		movs	r1, #8
+ 1193              	.LVL113:
+ 1194 044c 0220     		movs	r0, #2
+ 1195              	.LVL114:
+ 1196 044e FFF7FEBF 		b	OS_SET_SW_BUG
+ 1197              	.LVL115:
+ 1198              	.L166:
+ 1199 0452 00BF     		.align	2
+ 1200              	.L165:
+ 1201 0454 00000000 		.word	OS_MAIN_STACK
+ 1202              	.LBE35:
+ 1203              	.LBE37:
+ 1204              		.cfi_endproc
+ 1205              	.LFE7:
+ 1207              		.align	1
+ 1208              		.p2align 2,,3
+ 1209              		.global	OS_TASK_DISPATCHER
+ 1210              		.syntax unified
+ 1211              		.thumb
+ 1212              		.thumb_func
+ 1213              		.fpu softvfp
+ 1215              	OS_TASK_DISPATCHER:
+ 1216              	.LFB8:
+ 386:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* called in an certain core context (Core_0/1/2/3)*/
+ 1217              		.loc 1 386 0
+ 1218              		.cfi_startproc
+ 1219              		@ args = 0, pretend = 0, frame = 48
+ 1220              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1221              	.LVL116:
+ 1222 0458 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 1223              		.cfi_def_cfa_offset 24
+ 1224              		.cfi_offset 4, -24
+ 1225              		.cfi_offset 5, -20
+ 1226              		.cfi_offset 6, -16
+ 1227              		.cfi_offset 7, -12
+ 1228              		.cfi_offset 8, -8
+ 1229              		.cfi_offset 14, -4
+ 1230 045c 8CB0     		sub	sp, sp, #48
+ 1231              		.cfi_def_cfa_offset 72
+ 400:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
+ 1232              		.loc 1 400 0
+ 1233 045e FFF7FEFF 		bl	GET_RUNNING_TASK
+ 1234              	.LVL117:
+ 1235 0462 0446     		mov	r4, r0
+ 1236              	.LVL118:
+ 401:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* Preempt Task */
+ 1237              		.loc 1 401 0
+ 1238 0464 FFF7FEFF 		bl	GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR
+ 1239              	.LVL119:
+ 403:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 1240              		.loc 1 403 0
+ 1241 0468 7CB1     		cbz	r4, .L168
+ 1242 046a 0546     		mov	r5, r0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 33
+
+
+ 403:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 1243              		.loc 1 403 0 is_stmt 0 discriminator 1
+ 1244 046c 68B1     		cbz	r0, .L168
+ 1245              	.LVL120:
+ 1246              	.LBB45:
+ 1247              	.LBB46:
+ 355:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 1248              		.loc 1 355 0 is_stmt 1
+ 1249 046e A36F     		ldr	r3, [r4, #120]
+ 1250 0470 002B     		cmp	r3, #0
+ 1251 0472 00F0B180 		beq	.L169
+ 357:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 1252              		.loc 1 357 0
+ 1253 0476 0121     		movs	r1, #1
+ 1254 0478 2046     		mov	r0, r4
+ 1255              	.LVL121:
+ 1256 047a 9847     		blx	r3
+ 1257              	.LVL122:
+ 1258 047c 0128     		cmp	r0, #1
+ 1259 047e 00F09280 		beq	.L220
+ 372:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 1260              		.loc 1 372 0
+ 1261 0482 0821     		movs	r1, #8
+ 1262 0484 0120     		movs	r0, #1
+ 1263 0486 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 1264              	.LVL123:
+ 1265              	.L168:
+ 1266              	.LBE46:
+ 1267              	.LBE45:
+ 1268              	.LBB50:
+ 1269              	.LBB51:
+ 436:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL void task_2(void* task_ptr)
+ 437:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 438:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_t* scheduling_task_ptr = 0u;
+ 439:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER(task_ptr);
+ 440:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* worker task */
+ 441:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
+ 442:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* do some things */
+ 443:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    TASK1_CALL_NR++;
+ 444:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 445:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 446:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* end */
+ 447:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_TERMINATE_TASK(task_ptr,scheduling_task_ptr);
+ 448:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 449:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL void task_3(void* task_ptr)
+ 450:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 451:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_t* scheduling_task_ptr = 0u;
+ 452:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER(task_ptr);
+ 453:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* worker task */
+ 454:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
+ 455:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* do some things */
+ 456:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    TASK1_CALL_NR++;
+ 457:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 458:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 459:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* end */
+ 460:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_TERMINATE_TASK(task_ptr,scheduling_task_ptr);
+ 461:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 34
+
+
+ 462:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** void OS_INIT_TASKS(void)
+ 463:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 464:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_t* task_ptr = 0u;
+ 465:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_GET_CURRENT_TIME(&LAST_CURRENT_TIME);
+ 466:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 467:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER (TASK_GROUP_1);
+ 468:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER (TASK_GROUP_2);
+ 469:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER (TASK_GROUP_3);
+ 470:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER (TASK_GROUP_4);
+ 471:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER (TASK_GROUP_5);
+ 472:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 473:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*
+ 474:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    set task_state for all tasks to E_TASK_UNSPECIFIED
+ 475:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
+ 476:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_INIT_TASK_QUEUE();
+ 477:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 478:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* setup idle task */
+ 479:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_ptr = &TASK_0_VAR;
+ 480:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_INIT_TASK(task_ptr,                          /* task */
+ 481:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_0,                           /* Task Function*/
+ 482:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                1u,                                 /* Nr of allowed instances*/
+ 483:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                TRUE,                              /* Idle Task */
+ 484:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &TASK_GROUP_1,                     /* Task Group */
+ 485:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                (unsigned_char_t*)&TASK_STACK[0u],  /* Task_stack */
+ 486:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                200u,                                /* Stack Size */
+ 487:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE, /* Unpriviliged Thread Mode */
+ 488:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                E_CORE0,                            /* Cortex M4 has only 1 core */
+ 489:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                0u                                   /* default prio */
+ 490:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****               );
+ 491:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    ADD_TO_SCHEDULING_QUEUE(task_ptr);
+ 492:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_SAVE_TASK_PTR(task_ptr, TASK_0_PTR);
+ 493:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 494:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* setup worker task */
+ 495:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_ptr = &TASK_1_VAR;
+ 496:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_INIT_TASK(task_ptr,      /* task */
+ 497:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_1,       /* Task Function*/
+ 498:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                1u,             /* Nr of allowed instances*/
+ 499:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                FALSE,          /* Idle Task */
+ 500:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &TASK_GROUP_1, /* Task Group */
+ 501:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                (unsigned_char_t*)&TASK_STACK[1u],/* Task_stack */
+ 502:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                200u,            /* Stack Size */
+ 503:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE, /* Unpriviliged Thread Mode */
+ 504:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                E_CORE0,
+ 505:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                1u                                   /* default prio */
+ 506:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****               );
+ 507:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    ADD_TO_SCHEDULING_QUEUE(task_ptr);
+ 508:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_SAVE_TASK_PTR(task_ptr, TASK_1_PTR);
+ 509:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 510:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* setup worker task */
+ 511:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_ptr = &TASK_2_VAR;
+ 512:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_INIT_TASK(task_ptr,      /* task */
+ 513:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_2,       /* Task Function*/
+ 514:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                1u,             /* Nr of allowed instances*/
+ 515:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                FALSE,          /* Idle Task */
+ 516:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &TASK_GROUP_2, /* Task Group */
+ 517:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                (unsigned_char_t*)&TASK_STACK[2u],/* Task_stack */
+ 518:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                200u,            /* Stack Size */
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 35
+
+
+ 519:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE, /* Unpriviliged Thread Mode */
+ 520:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                E_CORE0,
+ 521:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                2u                                   /* default prio */
+ 522:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****               );
+ 523:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    ADD_TO_SCHEDULING_QUEUE(task_ptr);
+ 524:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_SAVE_TASK_PTR(task_ptr, TASK_2_PTR);
+ 525:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 526:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /* setup worker task */
+ 527:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_ptr = &TASK_3_VAR;
+ 528:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_INIT_TASK(task_ptr,      /* task */
+ 529:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_3,       /* Task Function*/
+ 530:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                1u,             /* Nr of allowed instances*/
+ 531:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                FALSE,          /* Idle Task */
+ 532:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &TASK_GROUP_3, /* Task Group */
+ 533:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                (unsigned_char_t*)&TASK_STACK[3u],/* Task_stack */
+ 534:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                200u,           /* Stack Size */
+ 535:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE, /* Unpriviliged Thread Mode */
+ 536:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                E_CORE0,
+ 537:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                3u                                   /* default prio */
+ 538:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****               );
+ 539:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    ADD_TO_SCHEDULING_QUEUE(task_ptr);
+ 540:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_SAVE_TASK_PTR(task_ptr, TASK_3_PTR);
+ 541:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 542:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 543:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 544:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL scheduling_t* os_task_scheduler(void)
+ 545:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** {
+ 546:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 547:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_t*    scheduling_queue_member;
+ 548:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    unsigned_char_t element_nr;
+ 549:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 550:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    unsigned_char_t Winner_prio = 0u;
+ 551:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_t*         task = 0u;
+ 552:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_t*         Winner_task = 0u;
+ 553:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    scheduling_t*   Winner_scheduling_queue_member = 0u;
+ 554:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    timebig_t       delta_time;
+ 555:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 556:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    timebig_t time;
+ 557:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 558:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_GET_CURRENT_TIME(&time);
+ 1270              		.loc 1 558 0
+ 1271 048a 04A8     		add	r0, sp, #16
+ 1272 048c FFF7FEFF 		bl	OS_GET_CURRENT_TIME
+ 1273              	.LVL124:
+ 559:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 560:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    INT_SUB(&delta_time, &time, &LAST_CURRENT_TIME);
+ 1274              		.loc 1 560 0
+ 1275 0490 04A9     		add	r1, sp, #16
+ 1276 0492 6846     		mov	r0, sp
+ 1277 0494 534A     		ldr	r2, .L225
+ 1278 0496 FFF7FEFF 		bl	INT_SUB
+ 1279              	.LVL125:
+ 561:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 562:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    ASSIGN(&LAST_CURRENT_TIME,&time);
+ 1280              		.loc 1 562 0
+ 1281 049a 04A9     		add	r1, sp, #16
+ 1282 049c 5148     		ldr	r0, .L225
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 36
+
+
+ 1283 049e FFF7FEFF 		bl	ASSIGN
+ 1284              	.LVL126:
+ 1285 04a2 0025     		movs	r5, #0
+ 1286 04a4 02E0     		b	.L179
+ 1287              	.LVL127:
+ 1288              	.L172:
+ 1289 04a6 0135     		adds	r5, r5, #1
+ 1290              	.LVL128:
+ 563:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 564:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    REFERENCE_UNUSED_PARAMETER(Winner_task);
+ 565:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    /*
+ 566:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x const for single task: task->default_prio // low = 0,.....high=100
+ 567:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x var   for single task: task->current_prio // see prio_std
+ 568:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x var   for single task: task->wait_time    //
+ 569:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x var   for single task: task->exe_time
+ 570:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x const for single task: task->time_to_prio_inc
+ 571:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x const for single task: task->max_allowed_wait_time
+ 572:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x const for single task: task->min_allowed_wait_time
+ 573:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x const for single task: task->overwaittime_per_prio_inc_step //e.g. 100*MinTimeSlice_us
+ 574:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x const for single task: task->task_group  //to allow processor access control by groups (e.g. u
+ 575:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    x const for single task: task->wait_act_until
+ 576:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    (task_group is designed to allow proccessor access control between e.g. Customer Software Task a
+ 577:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    */
+ 578:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    FOR_ALL_TASKS_IN_QUEUE(element_nr)
+ 1291              		.loc 1 578 0
+ 1292 04a8 0A2D     		cmp	r5, #10
+ 1293 04aa 42D0     		beq	.L221
+ 1294              	.LVL129:
+ 1295              	.L179:
+ 579:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 580:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       scheduling_queue_member = GET_FROM_SCHEDULING_QUEUE(element_nr);
+ 1296              		.loc 1 580 0
+ 1297 04ac E8B2     		uxtb	r0, r5
+ 1298 04ae FFF7FEFF 		bl	GET_FROM_SCHEDULING_QUEUE
+ 1299              	.LVL130:
+ 581:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       /*task will have a pointer on the task_obj, and might be equal to "(task_t*) 0" */
+ 582:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       task             = GET_FROM_TASK_QUEUE(scheduling_queue_member);
+ 1300              		.loc 1 582 0
+ 1301 04b2 FFF7FEFF 		bl	GET_FROM_TASK_QUEUE
+ 1302              	.LVL131:
+ 583:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       /* increase prio: high numbers->high prio */
+ 584:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       if((task != 0u)&&(task->task_queued != FALSE))
+ 1303              		.loc 1 584 0
+ 1304 04b6 0446     		mov	r4, r0
+ 1305 04b8 0028     		cmp	r0, #0
+ 1306 04ba F4D0     		beq	.L172
+ 1307 04bc 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 1308 04be 9A07     		lsls	r2, r3, #30
+ 1309 04c0 F1D5     		bpl	.L172
+ 585:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 586:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(IS_GREATER_OR_EQUAL(&task->wait_time, &task->time_to_prio_inc))
+ 1310              		.loc 1 586 0
+ 1311 04c2 00F11606 		add	r6, r0, #22
+ 1312 04c6 3046     		mov	r0, r6
+ 1313              	.LVL132:
+ 1314 04c8 04F12601 		add	r1, r4, #38
+ 1315 04cc FFF7FEFF 		bl	IS_GREATER_OR_EQUAL
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 37
+
+
+ 1316              	.LVL133:
+ 1317 04d0 28B1     		cbz	r0, .L174
+ 587:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 588:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->current_prio = task->current_prio + task->overwaittime_per_prio_inc_step;
+ 1318              		.loc 1 588 0
+ 1319 04d2 94F86C30 		ldrb	r3, [r4, #108]	@ zero_extendqisi2
+ 1320 04d6 A26B     		ldr	r2, [r4, #56]
+ 1321 04d8 1344     		add	r3, r3, r2
+ 1322 04da 84F86C30 		strb	r3, [r4, #108]
+ 1323              	.L174:
+ 589:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 590:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* in case wait condition not yet fulfilled, set prio to 0 */
+ 591:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(IS_GREATER(&task->wait_act_until, &time))
+ 1324              		.loc 1 591 0
+ 1325 04de 04A9     		add	r1, sp, #16
+ 1326 04e0 A01D     		adds	r0, r4, #6
+ 1327 04e2 FFF7FEFF 		bl	IS_GREATER
+ 1328              	.LVL134:
+ 1329 04e6 10B1     		cbz	r0, .L175
+ 592:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 593:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             task->current_prio = 0u;
+ 1330              		.loc 1 593 0
+ 1331 04e8 0023     		movs	r3, #0
+ 1332 04ea 84F86C30 		strb	r3, [r4, #108]
+ 1333              	.L175:
+ 594:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 595:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(IS_GREATER(&task->wait_time,&task->max_allowed_wait_time))
+ 1334              		.loc 1 595 0
+ 1335 04ee 3046     		mov	r0, r6
+ 1336 04f0 04F13C01 		add	r1, r4, #60
+ 1337 04f4 FFF7FEFF 		bl	IS_GREATER
+ 1338              	.LVL135:
+ 1339 04f8 0028     		cmp	r0, #0
+ 1340 04fa 47D1     		bne	.L222
+ 596:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 597:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* set bug */
+ 598:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_SET_SW_BUG(E_OS_BUG_MAX_WAIT_TIME_REACHED, E_FUNC_TASKSCHEDULER);
+ 599:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 600:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* not active TASK_RUN_QUEUE elements have no valid task_group!!*/
+ 601:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->task_group!=0u)
+ 1341              		.loc 1 601 0
+ 1342 04fc D4F88000 		ldr	r0, [r4, #128]
+ 1343 0500 0028     		cmp	r0, #0
+ 1344 0502 4BD0     		beq	.L177
+ 1345              	.L224:
+ 602:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 603:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* usage the exe time for scheduling strategy */
+ 604:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             if(IS_GREATER(&task->task_group->exe_time, &task->task_group->fair_exe_time) != FALSE)
+ 1346              		.loc 1 604 0
+ 1347 0504 00F11001 		add	r1, r0, #16
+ 1348 0508 FFF7FEFF 		bl	IS_GREATER
+ 1349              	.LVL136:
+ 1350 050c 0028     		cmp	r0, #0
+ 1351 050e CAD0     		beq	.L172
+ 1352              	.LBB52:
+ 605:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             {
+ 606:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                timebig_t tTime;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 38
+
+
+ 607:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                ASSIGN_UINT32(&tTime, TASK_MIN_TIME);
+ 1353              		.loc 1 607 0
+ 1354 0510 0121     		movs	r1, #1
+ 1355 0512 08A8     		add	r0, sp, #32
+ 1356 0514 FFF7FEFF 		bl	ASSIGN_UINT32
+ 1357              	.LVL137:
+ 608:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                if(IS_GREATER_OR_EQUAL(&task->exe_time, &tTime))/* guarantee min time */
+ 1358              		.loc 1 608 0
+ 1359 0518 08A9     		add	r1, sp, #32
+ 1360 051a 04F14C00 		add	r0, r4, #76
+ 1361 051e FFF7FEFF 		bl	IS_GREATER_OR_EQUAL
+ 1362              	.LVL138:
+ 1363 0522 0028     		cmp	r0, #0
+ 1364 0524 BFD0     		beq	.L172
+ 1365 0526 0135     		adds	r5, r5, #1
+ 1366              	.LVL139:
+ 609:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                {
+ 610:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                   task->current_prio = 0u;
+ 1367              		.loc 1 610 0
+ 1368 0528 0023     		movs	r3, #0
+ 1369              	.LBE52:
+ 578:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 1370              		.loc 1 578 0
+ 1371 052a 0A2D     		cmp	r5, #10
+ 1372              	.LBB53:
+ 1373              		.loc 1 610 0
+ 1374 052c 84F86C30 		strb	r3, [r4, #108]
+ 1375              	.LBE53:
+ 578:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 1376              		.loc 1 578 0
+ 1377 0530 BCD1     		bne	.L179
+ 1378              	.L221:
+ 1379 0532 0024     		movs	r4, #0
+ 1380              	.LVL140:
+ 553:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    timebig_t       delta_time;
+ 1381              		.loc 1 553 0
+ 1382 0534 A046     		mov	r8, r4
+ 550:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_t*         task = 0u;
+ 1383              		.loc 1 550 0
+ 1384 0536 2746     		mov	r7, r4
+ 1385 0538 07E0     		b	.L182
+ 1386              	.LVL141:
+ 1387              	.L181:
+ 611:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                }
+ 612:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             }
+ 613:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 614:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          else
+ 615:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 616:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_TASKSCHEDULER);
+ 617:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 618:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 619:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       /* do not set bug, because task =0 is used for empty queue elements
+ 620:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       else
+ 621:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 622:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****           OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER, E_FUNC_TASKSCHEDULER);
+ 623:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ 624:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       */
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 39
+
+
+ 625:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 626:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    FOR_ALL_TASKS_IN_QUEUE(element_nr)
+ 627:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 628:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       scheduling_queue_member = GET_FROM_SCHEDULING_QUEUE(element_nr);
+ 629:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       task             = GET_FROM_TASK_QUEUE(scheduling_queue_member);
+ 630:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       if(task != 0u)
+ 631:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 632:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /*update wait time */
+ 633:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->idle_task != TRUE)
+ 634:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 635:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             INT_ADD(&task->wait_time, &task->wait_time, &delta_time);
+ 636:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 637:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          /* search for task with highest prio and assign it to Winner_task */
+ 638:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          if(task->current_prio > Winner_prio)
+ 1388              		.loc 1 638 0
+ 1389 053a 95F86C30 		ldrb	r3, [r5, #108]	@ zero_extendqisi2
+ 1390 053e BB42     		cmp	r3, r7
+ 639:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 640:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             Winner_prio = task->current_prio;
+ 641:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             Winner_task = task;
+ 642:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             Winner_scheduling_queue_member = scheduling_queue_member;
+ 1391              		.loc 1 642 0
+ 1392 0540 84BF     		itt	hi
+ 1393 0542 B046     		movhi	r8, r6
+ 638:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 1394              		.loc 1 638 0
+ 1395 0544 1F46     		movhi	r7, r3
+ 1396              	.LVL142:
+ 1397              	.L180:
+ 626:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 1398              		.loc 1 626 0
+ 1399 0546 0A2C     		cmp	r4, #10
+ 1400 0548 13D0     		beq	.L223
+ 1401              	.LVL143:
+ 1402              	.L182:
+ 628:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       task             = GET_FROM_TASK_QUEUE(scheduling_queue_member);
+ 1403              		.loc 1 628 0
+ 1404 054a E0B2     		uxtb	r0, r4
+ 1405 054c FFF7FEFF 		bl	GET_FROM_SCHEDULING_QUEUE
+ 1406              	.LVL144:
+ 1407 0550 0646     		mov	r6, r0
+ 1408              	.LVL145:
+ 629:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       if(task != 0u)
+ 1409              		.loc 1 629 0
+ 1410 0552 FFF7FEFF 		bl	GET_FROM_TASK_QUEUE
+ 1411              	.LVL146:
+ 1412 0556 0134     		adds	r4, r4, #1
+ 1413              	.LVL147:
+ 630:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       {
+ 1414              		.loc 1 630 0
+ 1415 0558 0546     		mov	r5, r0
+ 1416 055a 0028     		cmp	r0, #0
+ 1417 055c F3D0     		beq	.L180
+ 633:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 1418              		.loc 1 633 0
+ 1419 055e 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 1420 0560 5B07     		lsls	r3, r3, #29
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 40
+
+
+ 1421 0562 EAD4     		bmi	.L181
+ 635:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 1422              		.loc 1 635 0
+ 1423 0564 00F11601 		add	r1, r0, #22
+ 1424 0568 0846     		mov	r0, r1
+ 1425              	.LVL148:
+ 1426 056a 6A46     		mov	r2, sp
+ 1427 056c FFF7FEFF 		bl	INT_ADD
+ 1428              	.LVL149:
+ 1429 0570 E3E7     		b	.L181
+ 1430              	.L223:
+ 1431              	.LVL150:
+ 1432              	.LBE51:
+ 1433              	.LBE50:
+ 409:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 1434              		.loc 1 409 0
+ 1435 0572 B8F1000F 		cmp	r8, #0
+ 1436 0576 06D0     		beq	.L167
+ 411:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 1437              		.loc 1 411 0
+ 1438 0578 4046     		mov	r0, r8
+ 1439 057a FFF7FEFF 		bl	GET_FROM_TASK_QUEUE
+ 1440              	.LVL151:
+ 413:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    {
+ 1441              		.loc 1 413 0
+ 1442 057e 10B1     		cbz	r0, .L167
+ 415:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    }
+ 1443              		.loc 1 415 0
+ 1444 0580 4146     		mov	r1, r8
+ 1445 0582 FFF7FEFF 		bl	OS_START_TASK
+ 1446              	.LVL152:
+ 1447              	.L167:
+ 417:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** LOCAL void task_0(void* task_ptr)
+ 1448              		.loc 1 417 0
+ 1449 0586 0CB0     		add	sp, sp, #48
+ 1450              		.cfi_remember_state
+ 1451              		.cfi_def_cfa_offset 24
+ 1452              		@ sp needed
+ 1453 0588 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1454              	.LVL153:
+ 1455              	.L222:
+ 1456              		.cfi_restore_state
+ 1457              	.LBB55:
+ 1458              	.LBB54:
+ 598:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 1459              		.loc 1 598 0
+ 1460 058c 0B20     		movs	r0, #11
+ 1461 058e 0921     		movs	r1, #9
+ 1462 0590 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 1463              	.LVL154:
+ 601:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          {
+ 1464              		.loc 1 601 0
+ 1465 0594 D4F88000 		ldr	r0, [r4, #128]
+ 1466 0598 0028     		cmp	r0, #0
+ 1467 059a B3D1     		bne	.L224
+ 1468              	.L177:
+ 616:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 41
+
+
+ 1469              		.loc 1 616 0
+ 1470 059c 0921     		movs	r1, #9
+ 1471 059e 0220     		movs	r0, #2
+ 1472 05a0 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 1473              	.LVL155:
+ 1474 05a4 7FE7     		b	.L172
+ 1475              	.LVL156:
+ 1476              	.L220:
+ 1477              	.LBE54:
+ 1478              	.LBE55:
+ 1479              	.LBB56:
+ 1480              	.LBB49:
+ 359:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
+ 1481              		.loc 1 359 0
+ 1482 05a6 FFF7FEFF 		bl	LLF_INT_DISABLE
+ 1483              	.LVL157:
+ 360:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+ 1484              		.loc 1 360 0
+ 1485 05aa 2046     		mov	r0, r4
+ 1486 05ac FFF7FEFF 		bl	OS_TASK_SAVE_TASK_ENVIRONMENT
+ 1487              	.LVL158:
+ 361:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DELETE_FROM_TASK_QUEUE(task);
+ 1488              		.loc 1 361 0
+ 1489 05b0 0D48     		ldr	r0, .L225+4
+ 1490 05b2 FFF7FEFF 		bl	OS_TASK_RESTORE_SYSTEM_STACK
+ 1491              	.LVL159:
+ 362:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             DELETE_FROM_SCHEDULING_QUEUE(scheduling_task);
+ 1492              		.loc 1 362 0
+ 1493 05b6 2046     		mov	r0, r4
+ 1494 05b8 FFF7FEFF 		bl	DELETE_FROM_TASK_QUEUE
+ 1495              	.LVL160:
+ 363:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1496              		.loc 1 363 0
+ 1497 05bc 2846     		mov	r0, r5
+ 1498 05be FFF7FEFF 		bl	DELETE_FROM_SCHEDULING_QUEUE
+ 1499              	.LVL161:
+ 365:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 1500              		.loc 1 365 0
+ 1501 05c2 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 367:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             ENABLE_INTERRUPTS();
+ 1502              		.loc 1 367 0
+ 1503 05c4 94F86D20 		ldrb	r2, [r4, #109]	@ zero_extendqisi2
+ 1504 05c8 84F86C20 		strb	r2, [r4, #108]
+ 365:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****             /* reset the prio increase for waiting */
+ 1505              		.loc 1 365 0
+ 1506 05cc 6FF30003 		bfc	r3, #0, #1
+ 1507 05d0 2370     		strb	r3, [r4]
+ 368:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****          }
+ 1508              		.loc 1 368 0
+ 1509 05d2 FFF7FEFF 		bl	LLF_INT_ENABLE
+ 1510              	.LVL162:
+ 1511 05d6 58E7     		b	.L168
+ 1512              	.LVL163:
+ 1513              	.L169:
+ 1514              	.LBB47:
+ 1515              	.LBB48:
+ 377:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****       }
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 42
+
+
+ 1516              		.loc 1 377 0
+ 1517 05d8 0821     		movs	r1, #8
+ 1518 05da 0220     		movs	r0, #2
+ 1519              	.LVL164:
+ 1520 05dc FFF7FEFF 		bl	OS_SET_SW_BUG
+ 1521              	.LVL165:
+ 1522 05e0 53E7     		b	.L168
+ 1523              	.L226:
+ 1524 05e2 00BF     		.align	2
+ 1525              	.L225:
+ 1526 05e4 00000000 		.word	LAST_CURRENT_TIME
+ 1527 05e8 00000000 		.word	OS_MAIN_STACK
+ 1528              	.LBE48:
+ 1529              	.LBE47:
+ 1530              	.LBE49:
+ 1531              	.LBE56:
+ 1532              		.cfi_endproc
+ 1533              	.LFE8:
+ 1535              		.align	1
+ 1536              		.p2align 2,,3
+ 1537              		.global	OS_INIT_TASKS
+ 1538              		.syntax unified
+ 1539              		.thumb
+ 1540              		.thumb_func
+ 1541              		.fpu softvfp
+ 1543              	OS_INIT_TASKS:
+ 1544              	.LFB13:
+ 463:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_t* task_ptr = 0u;
+ 1545              		.loc 1 463 0
+ 1546              		.cfi_startproc
+ 1547              		@ args = 0, pretend = 0, frame = 0
+ 1548              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1549              	.LVL166:
+ 1550 05ec 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 1551              		.cfi_def_cfa_offset 36
+ 1552              		.cfi_offset 4, -36
+ 1553              		.cfi_offset 5, -32
+ 1554              		.cfi_offset 6, -28
+ 1555              		.cfi_offset 7, -24
+ 1556              		.cfi_offset 8, -20
+ 1557              		.cfi_offset 9, -16
+ 1558              		.cfi_offset 10, -12
+ 1559              		.cfi_offset 11, -8
+ 1560              		.cfi_offset 14, -4
+ 465:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1561              		.loc 1 465 0
+ 1562 05f0 3548     		ldr	r0, .L229
+ 480:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_0,                           /* Task Function*/
+ 1563              		.loc 1 480 0
+ 1564 05f2 DFF8F890 		ldr	r9, .L229+36
+ 1565 05f6 354D     		ldr	r5, .L229+4
+ 1566 05f8 DFF8F4A0 		ldr	r10, .L229+40
+ 496:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_1,       /* Task Function*/
+ 1567              		.loc 1 496 0
+ 1568 05fc DFF8F4B0 		ldr	fp, .L229+44
+ 492:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1569              		.loc 1 492 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 43
+
+
+ 1570 0600 334E     		ldr	r6, .L229+8
+ 463:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    task_t* task_ptr = 0u;
+ 1571              		.loc 1 463 0
+ 1572 0602 87B0     		sub	sp, sp, #28
+ 1573              		.cfi_def_cfa_offset 64
+ 480:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_0,                           /* Task Function*/
+ 1574              		.loc 1 480 0
+ 1575 0604 0024     		movs	r4, #0
+ 465:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1576              		.loc 1 465 0
+ 1577 0606 FFF7FEFF 		bl	OS_GET_CURRENT_TIME
+ 1578              	.LVL167:
+ 480:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_0,                           /* Task Function*/
+ 1579              		.loc 1 480 0
+ 1580 060a 4FF0C808 		mov	r8, #200
+ 476:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1581              		.loc 1 476 0
+ 1582 060e FFF7FEFF 		bl	OS_INIT_TASK_QUEUE
+ 1583              	.LVL168:
+ 480:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_0,                           /* Task Function*/
+ 1584              		.loc 1 480 0
+ 1585 0612 0123     		movs	r3, #1
+ 1586 0614 CDE900A5 		strd	r10, r5, [sp]
+ 1587 0618 1A46     		mov	r2, r3
+ 1588 061a 4846     		mov	r0, r9
+ 1589 061c 2D49     		ldr	r1, .L229+12
+ 1590 061e CDE90444 		strd	r4, r4, [sp, #16]
+ 1591 0622 CDE90284 		strd	r8, r4, [sp, #8]
+ 1592 0626 FFF7FEFF 		bl	OS_INIT_TASK
+ 1593              	.LVL169:
+ 491:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_SAVE_TASK_PTR(task_ptr, TASK_0_PTR);
+ 1594              		.loc 1 491 0
+ 1595 062a 4846     		mov	r0, r9
+ 1596 062c FFF7FEFF 		bl	ADD_TO_SCHEDULING_QUEUE
+ 1597              	.LVL170:
+ 496:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_1,       /* Task Function*/
+ 1598              		.loc 1 496 0
+ 1599 0630 0127     		movs	r7, #1
+ 1600 0632 05F5FA63 		add	r3, r5, #2000
+ 1601 0636 3A46     		mov	r2, r7
+ 1602 0638 CDF800A0 		str	r10, [sp]
+ 1603 063c CDE90138 		strd	r3, r8, [sp, #4]
+ 1604 0640 5846     		mov	r0, fp
+ 1605 0642 2346     		mov	r3, r4
+ 1606 0644 2449     		ldr	r1, .L229+16
+ 1607 0646 0597     		str	r7, [sp, #20]
+ 1608 0648 CDE90344 		strd	r4, r4, [sp, #12]
+ 512:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_2,       /* Task Function*/
+ 1609              		.loc 1 512 0
+ 1610 064c DFF8A8A0 		ldr	r10, .L229+48
+ 492:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1611              		.loc 1 492 0
+ 1612 0650 C6F80090 		str	r9, [r6]
+ 1613              	.LVL171:
+ 496:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_1,       /* Task Function*/
+ 1614              		.loc 1 496 0
+ 1615 0654 FFF7FEFF 		bl	OS_INIT_TASK
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 44
+
+
+ 1616              	.LVL172:
+ 507:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_SAVE_TASK_PTR(task_ptr, TASK_1_PTR);
+ 1617              		.loc 1 507 0
+ 1618 0658 5846     		mov	r0, fp
+ 1619 065a FFF7FEFF 		bl	ADD_TO_SCHEDULING_QUEUE
+ 1620              	.LVL173:
+ 512:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_2,       /* Task Function*/
+ 1621              		.loc 1 512 0
+ 1622 065e 05F57A65 		add	r5, r5, #4000
+ 1623 0662 0220     		movs	r0, #2
+ 1624 0664 1D49     		ldr	r1, .L229+20
+ 1625 0666 0195     		str	r5, [sp, #4]
+ 1626 0668 2346     		mov	r3, r4
+ 1627 066a 3A46     		mov	r2, r7
+ 1628 066c 0590     		str	r0, [sp, #20]
+ 1629 066e 0091     		str	r1, [sp]
+ 1630 0670 5046     		mov	r0, r10
+ 1631 0672 1B49     		ldr	r1, .L229+24
+ 1632 0674 CDF80880 		str	r8, [sp, #8]
+ 1633 0678 CDE90344 		strd	r4, r4, [sp, #12]
+ 508:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1634              		.loc 1 508 0
+ 1635 067c C6F804B0 		str	fp, [r6, #4]
+ 1636              	.LVL174:
+ 512:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_2,       /* Task Function*/
+ 1637              		.loc 1 512 0
+ 1638 0680 FFF7FEFF 		bl	OS_INIT_TASK
+ 1639              	.LVL175:
+ 523:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_SAVE_TASK_PTR(task_ptr, TASK_2_PTR);
+ 1640              		.loc 1 523 0
+ 1641 0684 5046     		mov	r0, r10
+ 1642 0686 FFF7FEFF 		bl	ADD_TO_SCHEDULING_QUEUE
+ 1643              	.LVL176:
+ 528:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_3,       /* Task Function*/
+ 1644              		.loc 1 528 0
+ 1645 068a DFF87090 		ldr	r9, .L229+52
+ 1646 068e 1549     		ldr	r1, .L229+28
+ 1647 0690 CDF80880 		str	r8, [sp, #8]
+ 1648 0694 4FF0030C 		mov	ip, #3
+ 1649 0698 05F5FA65 		add	r5, r5, #2000
+ 1650 069c 2346     		mov	r3, r4
+ 1651 069e 3A46     		mov	r2, r7
+ 1652 06a0 4846     		mov	r0, r9
+ 1653 06a2 CDF814C0 		str	ip, [sp, #20]
+ 1654 06a6 CDE90015 		strd	r1, r5, [sp]
+ 1655 06aa CDE90344 		strd	r4, r4, [sp, #12]
+ 1656 06ae 0E49     		ldr	r1, .L229+32
+ 524:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1657              		.loc 1 524 0
+ 1658 06b0 C6F808A0 		str	r10, [r6, #8]
+ 1659              	.LVL177:
+ 528:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****                &task_3,       /* Task Function*/
+ 1660              		.loc 1 528 0
+ 1661 06b4 FFF7FEFF 		bl	OS_INIT_TASK
+ 1662              	.LVL178:
+ 539:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c ****    OS_SAVE_TASK_PTR(task_ptr, TASK_3_PTR);
+ 1663              		.loc 1 539 0
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 45
+
+
+ 1664 06b8 4846     		mov	r0, r9
+ 1665 06ba FFF7FEFF 		bl	ADD_TO_SCHEDULING_QUEUE
+ 1666              	.LVL179:
+ 540:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** }
+ 1667              		.loc 1 540 0
+ 1668 06be C6F80C90 		str	r9, [r6, #12]
+ 541:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_scheduler.c **** 
+ 1669              		.loc 1 541 0
+ 1670 06c2 07B0     		add	sp, sp, #28
+ 1671              		.cfi_def_cfa_offset 36
+ 1672              		@ sp needed
+ 1673 06c4 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 1674              	.L230:
+ 1675              		.align	2
+ 1676              	.L229:
+ 1677 06c8 00000000 		.word	LAST_CURRENT_TIME
+ 1678 06cc 00000000 		.word	TASK_STACK
+ 1679 06d0 00000000 		.word	TASK_PTR
+ 1680 06d4 00000000 		.word	task_0
+ 1681 06d8 00000000 		.word	task_1
+ 1682 06dc 00000000 		.word	TASK_GROUP_2
+ 1683 06e0 00000000 		.word	task_2
+ 1684 06e4 00000000 		.word	TASK_GROUP_3
+ 1685 06e8 00000000 		.word	task_3
+ 1686 06ec 00000000 		.word	TASK_0_VAR
+ 1687 06f0 00000000 		.word	TASK_GROUP_1
+ 1688 06f4 00000000 		.word	TASK_1_VAR
+ 1689 06f8 00000000 		.word	TASK_2_VAR
+ 1690 06fc 00000000 		.word	TASK_3_VAR
+ 1691              		.cfi_endproc
+ 1692              	.LFE13:
+ 1694              	.Letext0:
+ 1695              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 1696              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ 1697              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+ 1698              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ 1699              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
+ 1700              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 1701              		.file 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
+ 1702              		.file 9 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_queue.h"
+ 1703              		.file 10 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h"
+ 1704              		.file 11 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 46
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 os_task_scheduler.c
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:22     .text:00000000 task_0
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:44     .text:00000004 task_2
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:119    .text:00000074 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:124    .text:0000007c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:131    .text:0000007c task_3
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:206    .text:000000ec $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:211    .text:000000f4 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:218    .text:000000f4 task_1
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:356    .text:00000164 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:363    .text:0000016c $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:371    .text:0000016c OS_ACTIVATE_DISPATCHER
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:418    .text:00000194 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:424    .text:000001a0 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:432    .text:000001a0 OS_SLEEP_TASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:573    .text:00000224 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:577    .text:00000228 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:585    .text:00000228 OS_TASK_STATE_REQUEST
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:608    .text:0000023a $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:612    .text:0000023e $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:707    .text:000002a0 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:713    .text:000002ac $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:721    .text:000002ac OS_CREATE_TASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:790    .text:000002e0 OS_ACTIVATE_TASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:926    .text:00000354 OS_START_TASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1063   .text:000003e4 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1067   .text:000003e8 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1075   .text:000003e8 OS_TERMINATE_TASK
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1201   .text:00000454 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1207   .text:00000458 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1215   .text:00000458 OS_TASK_DISPATCHER
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1526   .text:000005e4 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1535   .text:000005ec $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1543   .text:000005ec OS_INIT_TASKS
+C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s:1677   .text:000006c8 $d
+                           .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
+                           .group:00000000 wm4.os_config.h.2.ac4658f92c1259d8f1114145439d5f31
+                           .group:00000000 wm4.os_common.h.2.63eb68e412d9b6f465f2fde7f2fcb855
+                           .group:00000000 wm4.os_task_config.h.2.89b082d5aa4d7b2eff2ad4d1eb9bfd97
+                           .group:00000000 wm4.os_task_common.h.95.8d8bf4690dc541f58a865736bc15fd8a
+                           .group:00000000 wm4.os_task_scheduler.h.2.15617e18d7400fa01024e50e30c98462
+                           .group:00000000 wm4.os_task_queue.h.2.322205b6bc95ffadb60992ab4fdadeef
+                           .group:00000000 wm4.os_exception.h.2.021e31434e3fc31b542c5d8c3891b28a
+
+UNDEFINED SYMBOLS
+LLF_WAIT_FOR_INTERRUPT
+GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR
+OS_SET_SW_BUG
+LLF_INT_DISABLE
+OS_TASK_SAVE_TASK_ENVIRONMENT
+OS_TASK_RESTORE_SYSTEM_STACK
+DELETE_FROM_TASK_QUEUE
+DELETE_FROM_SCHEDULING_QUEUE
+LLF_INT_ENABLE
+TASK1_CALL_NR
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccweAY4g.s 			page 47
+
+
+OS_MAIN_STACK
+OS_GET_CURRENT_TIME
+INT_ADD
+TASK_TRANSITION_REJECTED_TASK_ADDR
+TASK_TRANSITION_CURRENT_STATE
+TASK_TRANSITION_REJECTED_STATE
+ADD_TO_TASK_QUEUE
+ADD_TO_SCHEDULING_QUEUE
+ADD_TO_IDLE_TASK_QUEUE
+ASSIGN_NULL
+OS_TASK_SAVE_SYSTEM_STACK
+OS_TASK_RESTORETASK_ENVIRONMENT
+ASSIGN
+SET_RUNNING_TASK
+LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE
+GET_RUNNING_TASK
+INT_SUB
+GET_FROM_SCHEDULING_QUEUE
+GET_FROM_TASK_QUEUE
+IS_GREATER_OR_EQUAL
+IS_GREATER
+ASSIGN_UINT32
+LAST_CURRENT_TIME
+OS_INIT_TASK_QUEUE
+OS_INIT_TASK
+TASK_STACK
+TASK_PTR
+TASK_GROUP_2
+TASK_GROUP_3
+TASK_0_VAR
+TASK_GROUP_1
+TASK_1_VAR
+TASK_2_VAR
+TASK_3_VAR

@@ -7,6 +7,7 @@
 #include "os_start_init_sw.h"
 #include "os_task_scheduler.h"
 #include "os_task_queue.h"
+#include "os_main.h"
 
 /*
 OS_State: OS_INIT (Start im Supervisor Mode)
@@ -46,13 +47,6 @@ OS_State: OS_SHUTDOWN (nur erlaubt im Supervisor Mode)
 
 */
 
-typedef enum os_reset_req_state_e
-{
-   E_RESET_POWERDOWN = 0,
-   E_RESET_RESTART,
-   E_RESET_EXIT
-} os_reset_req_state_t;
-
 LOCAL void os_determine_next_task_activation(void)
 {
    LOCAL uint32 call_nr = 0u;
@@ -89,12 +83,12 @@ LOCAL void os_determine_next_task_activation(void)
 void OS_STATE_HANDLER(void)
 {
    /* the following code runs in priviliged mode!! */
-   LOCAL os_reset_req_state_t sys_req_reset_state = Reset_powerdown;
+   LOCAL os_reset_type_t sys_req_reset_state = E_OS_RESET_POWERDOWN;
    LOCAL uint32 call_nr = 0u;
 
    switch(OS_STATE)
    {
-   case os_init:
+   case OS_STATE_INIT:
    {
       /*init the MCU including MMU, RAM, Registers */
       OS_INIT_MC();
@@ -110,12 +104,12 @@ void OS_STATE_HANDLER(void)
       OS_START_TASK(GET_IDLE_TASK(),0u);
       OS_ACTIVATE_DISPATCHER();
 
-      OS_STATE = os_running;
+      OS_STATE = OS_STATE_RUNNING;
       /* activate the interrupts, tasks will be executed from now on ... */
       LLF_INT_ENABLE();
       break;
    }
-   case os_running:
+   case OS_STATE_RUNNING:
    {
       /*
       TODO: os_determine_next_task_activation und OS_TASK_DISPATCHER müssen m.E. öfters laufen wie der Rest der SW.
@@ -130,36 +124,37 @@ void OS_STATE_HANDLER(void)
       call_nr++;
       /* run the task function */
       OS_TASK_DISPATCHER();
-      if(SYSTEM_STATE_ACCEPTED == os_shutdown) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
+      if(SYSTEM_STATE_ACCEPTED == OS_STATE_SHUTDOWN) /* check for shutdown/reset/exit conditions: currently shutdown is not planned to be supported... */
       {
-         OS_STATE = os_shutdown;
-         sys_req_reset_state = Reset_restart;
+         OS_STATE = OS_STATE_SHUTDOWN;
+         sys_req_reset_state = E_OS_RESET_HARDRESET;
       }
       break;
    }
-   case os_shutdown:
+   case OS_STATE_SHUTDOWN:
    {
       LLF_INT_DISABLE();
       switch(sys_req_reset_state)
       {
-      case Reset_powerdown:
+      case E_OS_RESET_POWERDOWN:
       {
-         OS_SHUTDOWN(os_reset_powerdown,0u);
+         OS_SHUTDOWN(E_OS_RESET_POWERDOWN,0u);
          break;
       }
-      case Reset_restart:
+      case E_OS_RESET_HARDRESET:
       {
          OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
          break;
       }
-      case Reset_exit:
+      case E_OS_RESET_EXIT:
       {
-         OS_SHUTDOWN(os_reset_exit,0u);
+         OS_SHUTDOWN(E_OS_RESET_EXIT,0u);
          break;
       }
       default:
       {
          OS_SHUTDOWN(E_OS_RESET_HARDRESET,0u);
+         OS_SET_SW_BUG(E_OS_BUG_RESET_EXIT_OR_SHUTDOWN_FAILED,E_FUNC_STATE_HANDLER);
          break;
       }
       }

@@ -1,6 +1,7 @@
 #include "os_firstinc.h"
 #include "os_stack.h"
 #include "os_heap.h"
+#include "os_main.h"
 
 /* heap related RAM */
 #if(DynamicMemoryUsed != FALSE)
@@ -15,8 +16,8 @@ volatile uint32* STACK_ADDR;
 volatile uint32  STACK_POS;
 volatile uint32  STACK_USAGE_PERCENT;
 volatile os_sw_bugs_t OS_SW_BUG[15];
-volatile uint32 OS_STATE;
-volatile uint8 SYSTEM_STATE_ACCEPTED;
+volatile os_state_t OS_STATE;
+volatile os_state_t SYSTEM_STATE_ACCEPTED;
 volatile uint32 VAR_HARDFAULT_STATUS_REG;
 volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG    ;
 volatile uint32 VAR_USAGE_FAULT_STATUS_REG    ;

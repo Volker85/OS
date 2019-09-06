@@ -4,5 +4,5 @@
 void OS_INIT_TASK_SYSTEM(void)
 {
    /* Stack, Task-Function, TaskPrio, Interruptable, CoreId */
-   OS_INIT_TASKs();
+   OS_INIT_TASKS();
 }

@@ -22,13 +22,13 @@ void OS_UpdateCurrentTime(void)
    The counter will overflow every 25sec -> provide function OS_ClearCurrentTime to reset the value to 0, and !!! do not use the absolute value for calculations but use the difference between start and stop of timer
    */
    timebig_t tmp_time;
-   OS_ReadAndResetCurrentTime(&tmp_time);
+   OS_READ_AND_RESET_CURRENT_TIME(&tmp_time);
 
    /* increment the global time value by the new increment received by the hardware register */
-   INT_ADD(LOCAL_SYSTEM_TIME, LOCAL_SYSTEM_TIME, &tmp_time);
+   INT_ADD(&LOCAL_SYSTEM_TIME, &LOCAL_SYSTEM_TIME, &tmp_time);
 }
 
-void OS_ReadAndResetCurrentTime(timebig_t* timebig)
+void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig)
 {
 #if(CFG_PROCESSOR == MCU_CORTEX_M4)
    volatile uint32 time = 0u;

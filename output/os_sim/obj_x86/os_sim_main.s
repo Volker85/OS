@@ -1675,9 +1675,6 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "TASK_3_PTR 3u\0"
-	.byte	0x1
-	.uleb128 0xc
-	.ascii "OS_SAVE_TASK_PTR(task_ptr,Task_n_ptr) \0"
 	.byte	0x4
 	.file 31 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_exception_isr_handler.h"
 	.byte	0x3
@@ -1688,7 +1685,7 @@ Ldebug_macro0:
 	.ascii "_OS_EXCEPTION_ISR_HANDLER_H_ \0"
 	.byte	0x1
 	.uleb128 0x4
-	.ascii "SVC_00 0x00u\0"
+	.ascii "SVC_00 0x00\0"
 	.byte	0x4
 	.file 32 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_sim/../os_base/os_start_os.h"
 	.byte	0x3

@@ -111,7 +111,7 @@ Ldebug_info0:
 	.uleb128 0x2
 	.ascii "func_ptr_t\0"
 	.byte	0x3
-	.byte	0x54
+	.byte	0x55
 	.long	0x12f
 	.uleb128 0x4
 	.byte	0x4

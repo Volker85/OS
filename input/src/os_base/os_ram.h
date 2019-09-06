@@ -12,7 +12,7 @@ extern unsigned_char_t HEAP[HEAP_SIZE];
 
 /* stack related RAM  */
 extern volatile os_sw_bugs_t OS_SW_BUG[15];
-extern volatile uint32 OS_STATE;
+extern volatile os_state_t OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
 extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG    ;
 extern volatile uint32 VAR_USAGE_FAULT_STATUS_REG    ;
@@ -49,6 +49,6 @@ extern task_t*           TASK_TRANSITION_REJECTED_TASK_ADDR;
 extern task_state_t      TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t      TASK_TRANSITION_CURRENT_STATE;
 extern volatile void* SAVED_STACK_POINTER;
-extern volatile uint8 SYSTEM_STATE_ACCEPTED;
+extern volatile os_state_t SYSTEM_STATE_ACCEPTED;
 extern timebig_t LOCAL_SYSTEM_TIME;
 #endif

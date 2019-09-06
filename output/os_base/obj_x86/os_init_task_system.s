@@ -15,7 +15,7 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$8, %esp
 	.loc 1 7 0
-	call	_OS_INIT_TASKs
+	call	_OS_INIT_TASKS
 	.loc 1 8 0
 	leave
 	.cfi_restore 5
@@ -26,7 +26,7 @@ LFE0:
 Letext0:
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x158
+	.long	0x135
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -78,19 +78,6 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x154
-	.uleb128 0x4
-	.ascii "OS_INIT_TASKs\0"
-	.byte	0x1
-	.byte	0x7
-	.long	0x154
-	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -126,7 +113,7 @@ Ldebug_abbrev0:
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x2e
-	.byte	0x1
+	.byte	0
 	.uleb128 0x3f
 	.uleb128 0x19
 	.uleb128 0x3
@@ -145,30 +132,6 @@ Ldebug_abbrev0:
 	.uleb128 0x18
 	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x4
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x5
-	.uleb128 0x18
-	.byte	0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1261,9 +1224,6 @@ Ldebug_macro0:
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "TASK_3_PTR 3u\0"
-	.byte	0x1
-	.uleb128 0xc
-	.ascii "OS_SAVE_TASK_PTR(task_ptr,Task_n_ptr) \0"
 	.byte	0x4
 	.byte	0x4
 	.byte	0
@@ -1271,4 +1231,4 @@ Ldebug_macro0:
 Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.3"
-	.def	_OS_INIT_TASKs;	.scl	2;	.type	32;	.endef
+	.def	_OS_INIT_TASKS;	.scl	2;	.type	32;	.endef
