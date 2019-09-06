@@ -1,7 +1,7 @@
 #ifndef  _OS_EXCEPTION_ISR_HANDLER_H_
 #define  _OS_EXCEPTION_ISR_HANDLER_H_
 
-#define SVC_00 0x00   /* TODO: Define real SVC numbers*/
+#define SVC_00 0x00   /* Tag: SVC */
 
 extern void OS_EXCEPTION_RESET(void);
 extern void OS_EXCEPTION_NMI(void);

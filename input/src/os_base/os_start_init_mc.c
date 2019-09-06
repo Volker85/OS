@@ -6,7 +6,7 @@ void OS_INIT_MC(void)
 {
    /* 1. configure PLL */
    /* keep the default MCU frequency */
-   /*TODO*/
+   /*Tag: PLL*/
    /* 2. all MCU IO*/
    /* configure GPIO (SPI, UART, CAN, etc) */
    /* no external parts connected to SPI, UART, CAN, ... -> no init needed */

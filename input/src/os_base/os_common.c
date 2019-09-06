@@ -57,12 +57,12 @@ void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig)
 
 void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
 {
-   /*TODO*/
+   /*Tag: Big Int*/
 }
 
 void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
 {
-   /*TODO*/
+   /*Tag: Big Int*/
 }
 
 void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand)

@@ -57,27 +57,27 @@ LOCAL void os_determine_next_task_activation(void)
       call_nr++;
       break;
    case 1u:
-
-      call_nr++;
-      break;
-   case 2u:
       OS_ACTIVATE_TASK(&TASK_2_VAR);
       call_nr++;
       break;
+   case 2u:
+      OS_ACTIVATE_TASK(&TASK_3_VAR);
+      call_nr++;
+      break;
    case 3u:
-
       call_nr++;
       break;
    case 4u:
-      OS_ACTIVATE_TASK(&TASK_3_VAR);
-      call_nr = 0u;
+      /* wait for all tasks finished, and the idle task to be executed once... */
+      if(GET_RUNNING_TASK()->idle_task != False)
+      {
+         call_nr = 0;
+      }   
       break;
    default:
       break;
 
    }
-   /*TODO: mehrere unterschiedliche Tasks mit Ansteuerung der LEDs bauen, sodass die korrekte zeitliche Abfolge ausprobiert werden kann*/
-
 }
 
 void OS_STATE_HANDLER(void)
@@ -112,8 +112,7 @@ void OS_STATE_HANDLER(void)
    case OS_STATE_RUNNING:
    {
       /*
-      TODO: os_determine_next_task_activation und OS_TASK_DISPATCHER müssen m.E. öfters laufen wie der Rest der SW.
-      Es macht keinen Sinn, immer den State Handler anzufragen, nur um das Task Handling zu triggern....
+      os_determine_next_task_activation und OS_TASK_DISPATCHER müssen m.E. öfters laufen wie der Rest der SW (wird erreicht, weil im state OS_STATE_RUNNING der OS_TASK_DISPATCHER der einzige ist, der direkt aus dem SysTick über den OS_STATE_HANDLER umweg aufgerufen wird)
       - Der Dispatcher müsste per Interrupt die laufende Task unterbrechen um dann (nach PreemptTask oder TerminateTask) die nächste Task zu starten.
       - Der os_determine_next_task_activation müsste vor jedem Aufruf on OS_TASK_DISPATCHER laufen
       */

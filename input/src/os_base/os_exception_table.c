@@ -22,7 +22,7 @@ The processor uses a full descending stack.
  see Stack Pointer.
 */
 
-/* TODO: currently on MSP (Main Stack) is supported, also add support for PSP stack (process stack) */
+/* currently on MSP (Main Stack) is supported, also add support for PSP stack (process stack) *//* Tag: MSP_PSP */
 
 /* Hint: no stack switch is needed because shared stack is used.
 This is not ideal for safety reasons
