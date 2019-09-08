@@ -58,6 +58,42 @@ void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig)
 void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
 {
    /*Tag: Big Int*/
+   /*
+   example: 
+   Dividend 0x0456
+   Divisor  0x32
+   Quotient 0x0456 / 0x32
+   
+   0x0456 : 0x32 = 0x16 R 0x9
+  -0x032|
+   -----|
+    0x136
+   -0x12C
+    -----|
+        9
+   */
+   uint32 nibble_shift_left_amount = 0u;
+   big_int local_zero;
+   
+   ASSIGN_NULL(&local_zero);
+   
+   /* Case 1: Divisor == 0 */
+   if(IS_EQUAL(Divisor,local_zero);
+   {
+      // Error "N.a.N."      
+      OS_SET_SW_BUG(E_OS_BUG_DIVISION_BY_ZERO, E_FUNC_INTDIV);
+      return;      
+   }      
+   /* 
+   Step 1: Divisor um so viele nibble shiften nach links bis der Divisor größer wie der Dividend ist
+   Step 2: Die Zahl aus Step 1 um 1 verringern = nibble_shift_left_amount
+   Step 3: Dividend - n*(Divisor << nibble_shift_left_amount ) = Rest (e.g. 0x136)
+           Dabei n solange vergrößern bis "Rest" kleiner wie Divisor ist  
+   Step 4: Teilergebnis = n*(1<<nibble_shift_left_amount)           
+   Step 5: Teilergebnisse addieren.
+   */
+   
+   
 }
 
 void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)

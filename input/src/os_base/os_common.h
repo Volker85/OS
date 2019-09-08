@@ -50,7 +50,8 @@ enum os_sw_bugs_e
    E_OS_BUG_RESET_EXIT_OR_SHUTDOWN_FAILED,
    E_OS_BUG_CRITICAL_STACK_USAGE,
    E_OS_BUG_SVC_NUMBER_MISSING,
-   E_OS_BUG_MAX_WAIT_TIME_REACHED
+   E_OS_BUG_MAX_WAIT_TIME_REACHED,
+   E_OS_BUG_DIVISION_BY_ZERO
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 typedef uint8 boolean_t;
@@ -75,7 +76,8 @@ enum os_sw_bugs_function_e
    E_FUNC_SHUTDOWN,
    E_FUNC_STACKCHECK,
    E_FUNC_ISRHANDLER,
-   E_FUNC_STATE_HANDLER
+   E_FUNC_STATE_HANDLER,
+   E_FUNC_INTDIV
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
