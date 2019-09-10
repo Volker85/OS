@@ -55,7 +55,7 @@ void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig)
 #endif
 }
 
-void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
+void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor)
 {
    /*Tag: Big Int*/
    /*
@@ -74,31 +74,88 @@ void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
    */
    uint32 nibble_shift_left_amount = 0u;
    big_int local_zero;
+   big_int tmp_Dividend, tmp_Divisor;
+   big_int rest;
+   uint32  local_cnt = 0;
    
    ASSIGN_NULL(&local_zero);
+   ASSIGN(&tmp_Dividend, Dividend);
+   ASSIGN(&tmp_Divisor, Divisor);
    
    /* Case 1: Divisor == 0 */
-   if(IS_EQUAL(Divisor,local_zero);
+   if(IS_EQUAL(tmp_Divisor,local_zero);
    {
       // Error "N.a.N."      
       OS_SET_SW_BUG(E_OS_BUG_DIVISION_BY_ZERO, E_FUNC_INTDIV);
       return;      
    }      
-   /* 
-   Step 1: Divisor um so viele nibble shiften nach links bis der Divisor größer wie der Dividend ist
-   Step 2: Die Zahl aus Step 1 um 1 verringern = nibble_shift_left_amount
-   Step 3: Dividend - n*(Divisor << nibble_shift_left_amount ) = Rest (e.g. 0x136)
-           Dabei n solange vergrößern bis "Rest" kleiner wie Divisor ist  
-   Step 4: Teilergebnis = n*(1<<nibble_shift_left_amount)           
-   Step 5: Teilergebnisse addieren.
-   */
-   
-   
+   while(IS_GREATER_OR_EQUAL(dividend_rest, tmp_Dividend))
+   {
+      /* 
+      Step 1: Divisor um so viele nibble shiften nach links bis der Divisor größer wie der Dividend ist
+      Step 2: Die Zahl aus Step 1 um 1 verringern = nibble_shift_left_amount
+      Step 3: Dividend - n*(Divisor << nibble_shift_left_amount ) = Rest (e.g. 0x136)
+              Dabei n solange vergrößern bis "Rest" kleiner wie Divisor ist  
+      Step 4: Teilergebnis = n*(1<<nibble_shift_left_amount)           
+      Step 5: Teilergebnisse addieren.
+      */
+      /* Step 1: Divisor um so viele nibble shiften nach links bis der Divisor größer wie der Dividend ist */
+      while(IS_LESS_OR_EQUAL(tmp_Divisor, tmp_Dividend))
+      {      
+         SHIFT_LEFT(tmp_Divisor, 4u);
+         nibble_shift_left_amount++;
+      }
+      /* Divisor is already shifted at this point by nibble_shift_left_amount */
+      /* Step 3: Dabei n = local_cnt solange vergrößern bis "Rest" kleiner wie Divisor ist */
+      
+      local_cnt = 0u;
+      while(IS_LESS_OR_EQUAL(&rest, tmp_Divisor))
+      {
+         INT_SUB(&rest,&tmp_Dividend,&tmp_Divisor);
+         local_cnt++;      
+      }
+      /* Step 4: Teilergebnis = n*(1<<nibble_shift_left_amount)           */
+      big_int tmp;
+      uint32 1_shifted_nibble = 1u<<nibble_shift_left_amount;
+      uint32 u32_teilergebnis = local_cnt * 1_shifted_nibble;
+      big_int teilergebnis;
+      ASSIGN_UINT32(&teilergebnis,u32_teilergebnis);
+      
+      /* Step 5: Teilergebnisse addieren.*/
+      INT_ADD(&teilergebnis, &teilergebnis, &rest);         
+   }   
 }
 
-void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
+void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2)
 {
    /*Tag: Big Int*/
+   /*
+   example: 
+   Faktor1 0x0456
+   Faktor2 0x0321
+   Produkt 0x0456 * 0x0321
+   
+   
+   */
+   big_int local_zero;
+   
+   ASSIGN_NULL(&local_zero);
+   
+   /* 
+   0x0456 * 0x0321
+   => 0x0400 * 0x0300 = 0x04 * 0x03 * 0x100*0x100     = 0xC0000
+    + 0x0400 * 0x0021 = 0x04 * 0x21 * 0x100*0x1       = 0x8400 
+    + 0x0056 * 0x0300 = 0x56 * 0x03 * 0x1  *0x100*0x1 = 0x10200
+    + 0x0056 * 0x0021 = 0x56 * 0x21 * 0x1  *0x1  *0x1 = 0xB16
+    ----------------------
+    => Summe = 0xD9116
+   
+   Step 1: 
+   Step 2: 
+   Step 3: 
+   Step 4: 
+   Step 5: 
+   */  
 }
 
 void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand)
