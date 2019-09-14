@@ -137,9 +137,10 @@ void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2)
    
    
    */
-   big_int local_zero;
+   big_int result, local_tmp_bigInt;
    
-   ASSIGN_NULL(&local_zero);
+   ASSIGN_NULL(&local_tmp_bigInt);
+   ASSIGN_NULL(&result);
    
    /* 
    0x0456 * 0x0321
@@ -155,7 +156,20 @@ void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2)
    Step 3: 
    Step 4: 
    Step 5: 
-   */  
+   */
+   for(pos1 = BIG_INT_SIZE-1; pos1 >= 0; pos1--)
+   {
+      for(pos2 = BIG_INT_SIZE-1; pos2 >= 0; pos2--)
+      {
+         local_tmp16 = ((uint16) *(Faktor1+pos1)) * ((uint16) *(Faktor2+pos2));
+         
+         ASSIGN_UINT32(&local_tmp_bigInt, (uint32) local_tmp16);
+         
+         SHIFT_LEFT(&local_tmp_bigInt, pos1+pos2);
+         
+         INT_ADD(&result, &result, &local_tmp_bigInt);
+      }
+   }  
 }
 
 void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand)
