@@ -1,7 +1,7 @@
 #include "os_firstinc.h"
 #include "..\os_base\os_heap.h"
 
-#if(DynamicMemoryUsed != FALSE)
+#if(DYNAMIC_MEMORY_USED != FALSE)
 LOCAL uint32 get_uint32_of_4_uint8(uint8* ptr);
 LOCAL void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
 

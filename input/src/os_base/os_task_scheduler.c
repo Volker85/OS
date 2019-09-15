@@ -211,7 +211,7 @@ void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
          {
             DISABLE_INTERRUPTS();
             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
-            OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+            OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);//Tag: MSP_PSP
 
             task->active = FALSE;
             /* reset the prio increase for waiting */
@@ -307,7 +307,7 @@ void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
             task->active =  TRUE;
             ASSIGN_NULL(&task->wait_time);
             task->current_prio = task->default_prio;
-            OS_TASK_SAVE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+            OS_TASK_SAVE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);//Tag: MSP_PSP
             OS_TASK_RESTORETASK_ENVIRONMENT(task);
             OS_GET_CURRENT_TIME(&time);
             ASSIGN(&task->start_time, &time);
@@ -358,7 +358,7 @@ void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
          {
             DISABLE_INTERRUPTS();
             OS_TASK_SAVE_TASK_ENVIRONMENT(task);
-            OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+            OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);//Tag: MSP_PSP
             DELETE_FROM_TASK_QUEUE(task);
             DELETE_FROM_SCHEDULING_QUEUE(scheduling_task);
 
@@ -482,7 +482,7 @@ void OS_INIT_TASKS(void)
                1u,                                 /* Nr of allowed instances*/
                TRUE,                              /* Idle Task */
                &TASK_GROUP_1,                     /* Task Group */
-               (unsigned_char_t*)&TASK_STACK[0u],  /* Task_stack */
+               (unsigned_char_t*)&TASK_STACK[0u],  /* Task_stack *///Tag: MSP_PSP
                200u,                                /* Stack Size */
                E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE, /* Unpriviliged Thread Mode */
                E_CORE0,                            /* Cortex M4 has only 1 core */
@@ -497,8 +497,8 @@ void OS_INIT_TASKS(void)
                &task_1,       /* Task Function*/
                1u,             /* Nr of allowed instances*/
                FALSE,          /* Idle Task */
-               &TASK_GROUP_1, /* Task Group */
-               (unsigned_char_t*)&TASK_STACK[1u],/* Task_stack */
+               &TASK_GROUP_1, /* Task Group *///Tag: MSP_PSP
+               (unsigned_char_t*)&TASK_STACK[1u],/* Task_stack *///Tag: MSP_PSP
                200u,            /* Stack Size */
                E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE, /* Unpriviliged Thread Mode */
                E_CORE0,
@@ -514,7 +514,7 @@ void OS_INIT_TASKS(void)
                1u,             /* Nr of allowed instances*/
                FALSE,          /* Idle Task */
                &TASK_GROUP_2, /* Task Group */
-               (unsigned_char_t*)&TASK_STACK[2u],/* Task_stack */
+               (unsigned_char_t*)&TASK_STACK[2u],/* Task_stack *///Tag: MSP_PSP
                200u,            /* Stack Size */
                E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE, /* Unpriviliged Thread Mode */
                E_CORE0,
@@ -530,7 +530,7 @@ void OS_INIT_TASKS(void)
                1u,             /* Nr of allowed instances*/
                FALSE,          /* Idle Task */
                &TASK_GROUP_3, /* Task Group */
-               (unsigned_char_t*)&TASK_STACK[3u],/* Task_stack */
+               (unsigned_char_t*)&TASK_STACK[3u],/* Task_stack *///Tag: MSP_PSP
                200u,           /* Stack Size */
                E_PRIVILIGEMODE_UNPRIVILIGED_THREAD_MODE, /* Unpriviliged Thread Mode */
                E_CORE0,

@@ -32,10 +32,10 @@ extern volatile uint32 TASK2_CALL_NR;
 extern volatile uint32 TASK3_CALL_NR;
 extern volatile uint32 TASK4_CALL_NR;
 
-extern volatile uint32* STACK_ADDR;
-extern volatile uint32  STACK_POS;
-extern volatile uint32  STACK_USAGE_PERCENT;
-extern unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];
+extern volatile uint32* STACK_ADDR;//Tag: MSP_PSP
+extern volatile uint32  STACK_POS;//Tag: MSP_PSP
+extern volatile uint32  STACK_USAGE_PERCENT;//Tag: MSP_PSP
+extern unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];//Tag: MSP_PSP
 extern scheduler_time_t  LAST_CURRENT_TIME;
 extern scheduling_t      TASK_SCHEDULING_QUEUE[MAX_RUN_PQUEUE_SIZE];
 extern scheduling_t*     RUNNING_SCHEDULING_QUEUE_ENTRY;
@@ -48,7 +48,7 @@ extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK
 extern task_t*           TASK_TRANSITION_REJECTED_TASK_ADDR;
 extern task_state_t      TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t      TASK_TRANSITION_CURRENT_STATE;
-extern volatile void* SAVED_STACK_POINTER;
+extern volatile void* SAVED_STACK_POINTER;//Tag: MSP_PSP
 extern volatile os_state_t SYSTEM_STATE_ACCEPTED;
 extern timebig_t LOCAL_SYSTEM_TIME;
 #endif

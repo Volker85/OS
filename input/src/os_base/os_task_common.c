@@ -106,7 +106,7 @@ void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task)
       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_INITTASKENVIRONMENT);
    }
 }
-#if(USE_STATIC_CREATED_TASKS != FALSE && DynamicMemoryUsed != FALSE)
+#if(USE_STATIC_CREATED_TASKS != FALSE && DYNAMIC_MEMORY_USED != FALSE)
 void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task)
 {
    if(task!=0 && task->p_stack_pointer_by_malloc!=0u)

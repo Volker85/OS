@@ -23,7 +23,7 @@ LOCAL __inline__ void os_exception_read_status_registers(void)
    VAR_AUX_FAULT_STATUS_REG = *AUX_FAULT_STATUS_REG;
 }
 #endif
-/* 0x00000000 Stack -> not implemented via function, see stack.c        */
+/* 0x00000000 OS_MAIN_STACK -> not implemented via function, see stack.c        */
 /* 0x00000004 OS_EXCEPTION_RESET -> implemented in os_exception_reset.s */
 /* 0x00000008 OS_EXCEPTION_NMI */
 void OS_EXCEPTION_NMI(void)
@@ -228,7 +228,7 @@ void OS_EXCEPTION_SYSTICK(void)
    if(task != 0u)
    {
       OS_TASK_SAVE_TASK_ENVIRONMENT(task);
-      OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
+      OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);//Tag: MSP_PSP
       task->active = FALSE;
       /*task->exe_time += (OS_GET_CURRENT_TIME() - task->start_time);*/
       OS_GET_CURRENT_TIME(&time);

@@ -9,5 +9,5 @@
 #include "os_task_common.h"
 
 /* stack related RAM  */
-extern unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];
+extern unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];//Tag: MSP_PSP
 #endif

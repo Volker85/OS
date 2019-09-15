@@ -36,7 +36,7 @@
 #define HEAP_OFFSET_FOR_USED_SIZE  4u
 #define HEAP_OFFSET_FOR_CHUNK      8u
 
-/* value for OS_STACK_SIZE needs to be equal to be value defined in os_exception_reset.s */
-#define OS_STACK_SIZE 0x200u
+/* value for OS_STACK_SIZE needs to be equal to be value defined in os_exception_reset.s *///Tag: MSP_PSP
+#define OS_STACK_SIZE 0x200u//Tag: MSP_PSP
 
 #endif /* _os_config_h_ */

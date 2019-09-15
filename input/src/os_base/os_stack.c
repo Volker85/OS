@@ -13,19 +13,19 @@ void OS_STACK_CHECK(void)
    STACK_POS =  (volatile uint32) -1u;
    STACK_USAGE_PERCENT = 0u;
 
-   for(stack_pos = 0; stack_pos < OS_STACK_SIZE; stack_pos++)
+   for(stack_pos = 0; stack_pos < OS_STACK_SIZE; stack_pos++)//Tag: MSP_PSP
    {
-      if(OS_MAIN_STACK[stack_pos] != 0xAA)
+      if(OS_MAIN_STACK[stack_pos] != 0xAA)//Tag: MSP_PSP
       {
          stack_used = TRUE;
          if(stack_pos < STACK_POS)
          {
             STACK_POS  = (volatile uint32 )stack_pos;
-            STACK_ADDR = (volatile uint32*)&OS_MAIN_STACK[stack_pos];
+            STACK_ADDR = (volatile uint32*)&OS_MAIN_STACK[stack_pos];//Tag: MSP_PSP
          }
       }
    }
-   STACK_USAGE_PERCENT = (OS_STACK_SIZE - STACK_POS) * 100u / OS_STACK_SIZE;
+   STACK_USAGE_PERCENT = (OS_STACK_SIZE - STACK_POS) * 100u / OS_STACK_SIZE;//Tag: MSP_PSP
 
    if((stack_used == TRUE) && (STACK_USAGE_PERCENT > 80u))
    {
@@ -44,9 +44,9 @@ void OS_STACK_CHK_PATTERN_INIT(void)
 {
    uint32 stack_pos = 0u;
    /* init the stack with 0xAA (only the highest 64 bytes leave out, because they might be already in use by SW) */
-   for(stack_pos = 0u; stack_pos < (OS_STACK_SIZE-64u); stack_pos++)
+   for(stack_pos = 0u; stack_pos < (OS_STACK_SIZE-64u); stack_pos++)//Tag: MSP_PSP
    {
-      OS_MAIN_STACK[stack_pos] = 0xAAu;
+      OS_MAIN_STACK[stack_pos] = 0xAAu;//Tag: MSP_PSP
    }
 }
 #endif

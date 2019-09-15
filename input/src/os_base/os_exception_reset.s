@@ -18,14 +18,14 @@
         .global OS_GET_CORE_ID
         .extern LLF_CLEAR_ALL_RAM
         .extern OS_START_OS
-        .extern INIT_OS_STACK
+        .extern INIT_OS_STACK //Tag: MSP_PSP
         .global LLF_PERFORM_RAM_CHECK
         .extern _ram_start
         .extern _ram_end
         .extern RAM_CHECK_FAILURE_DETECTED
         .extern RAM_CHECK_FAILURE_ADDR
         #value for OS_STACK_SIZE needs to be equal to be value defined in os_stack.h
-        .equ OS_STACK_SIZE, 0x200
+        .equ OS_STACK_SIZE, 0x200 //Tag: MSP_PSP
         
 
 OS_EXCEPTION_RESET:
@@ -113,7 +113,7 @@ Loop_start:
         #
         B  Loop_start
 Loop_end:
-         B INIT_OS_STACK       
+         B INIT_OS_STACK     //Tag: MSP_PSP  
          #/* 3a -> page tables                         */
          #/* not existing in STM32F407VGT6             */
          #/* 3b -> enable caches                       */
