@@ -7,15 +7,30 @@
 #if(DYNAMIC_MEMORY_USED != FALSE)
 unsigned_char_t      HEAP[HEAP_SIZE];
 #endif
-#if(OS_STACK_SIZE <= 64)
+#if(OS_MAIN_STACK_SIZE <= 64)
 #error "stack of 64 bytes minimum is needed for stack check pattern"
 #endif
 
 /* stack related RAM  */
-volatile uint32* STACK_ADDR;//Tag: MSP_PSP
-volatile uint32  STACK_POS;//Tag: MSP_PSP
-volatile uint32  STACK_USAGE_PERCENT;//Tag: MSP_PSP
-volatile os_sw_bugs_t OS_SW_BUG[15];
+volatile uint32* OS_MAIN_STACK_ADDR;
+volatile uint32  OS_MAIN_STACK_POS;
+volatile uint32  OS_MAIN_STACK_USAGE_PERCENT;
+volatile uint32* TASK0_STACK_ADDR;
+volatile uint32  TASK0_STACK_POS;
+volatile uint32  TASK0_STACK_USAGE_PERCENT;
+volatile uint32* TASK1_STACK_ADDR;
+volatile uint32  TASK1_STACK_POS;
+volatile uint32  TASK1_STACK_USAGE_PERCENT;
+volatile uint32* TASK2_STACK_ADDR;
+volatile uint32  TASK2_STACK_POS;
+volatile uint32  TASK2_STACK_USAGE_PERCENT;
+volatile uint32* TASK3_STACK_ADDR;
+volatile uint32  TASK3_STACK_POS;
+volatile uint32  TASK3_STACK_USAGE_PERCENT;
+volatile uint32* TASK4_STACK_ADDR;
+volatile uint32  TASK4_STACK_POS;
+volatile uint32  TASK4_STACK_USAGE_PERCENT;
+volatile os_sw_bugs_t OS_SW_BUG[AMOUNT_SW_BUG_FUNCTIONS];
 volatile os_state_t OS_STATE;
 volatile os_state_t SYSTEM_STATE_ACCEPTED;
 volatile uint32 VAR_HARDFAULT_STATUS_REG;
@@ -53,9 +68,12 @@ void* REGISTER_R8;
 void* REGISTER_R9;
 void* REGISTER_R10;
 void* REGISTER_R11;
-volatile void* SAVED_STACK_POINTER;//Tag: MSP_PSP
 
-unsigned_char_t   TASK_STACK[MAX_RUN_QUEUE_SIZE][TASK_STACK_SIZE];//Tag: MSP_PSP
+unsigned_char_t   TASK0_STACK[TASK0_STACK_SIZE];
+unsigned_char_t   TASK1_STACK[TASK1_STACK_SIZE];
+unsigned_char_t   TASK2_STACK[TASK2_STACK_SIZE];
+unsigned_char_t   TASK3_STACK[TASK3_STACK_SIZE];
+unsigned_char_t   TASK4_STACK[TASK4_STACK_SIZE];
 scheduler_time_t  LAST_CURRENT_TIME;
 scheduling_t      TASK_SCHEDULING_QUEUE[MAX_RUN_PQUEUE_SIZE];
 scheduling_t*     RUNNING_SCHEDULING_QUEUE_ENTRY;

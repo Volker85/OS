@@ -5,6 +5,8 @@
 /* common HAL defines */
 #define FALSE 0u
 #define TRUE 1u
+#define False FALSE
+#define True TRUE
 #define ACCEPTED 1u
 #define REJECTED 0u
 #define LOCAL static
@@ -37,6 +39,9 @@
 #define PRIVILIGE_LEVEL_RESTORE_SAVED()     ;
 #define HALT_MCU()                           LLF_WAIT_FOR_INTERRUPT()
 #endif
+
+
+
 enum os_sw_bugs_e
 {
    E_OS_BUG_NO_BUG = 0,
@@ -51,10 +56,13 @@ enum os_sw_bugs_e
    E_OS_BUG_CRITICAL_STACK_USAGE,
    E_OS_BUG_SVC_NUMBER_MISSING,
    E_OS_BUG_MAX_WAIT_TIME_REACHED,
-   E_OS_BUG_DIVISION_BY_ZERO
+   E_OS_BUG_DIVISION_BY_ZERO,
+   E_OS_BUG_BIT_SHIFT_OUT_OF_RANGE
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 typedef uint8 boolean_t;
+
+#define AMOUNT_SW_BUG_FUNCTIONS 22
 enum os_sw_bugs_function_e
 {
    E_FUNC_NOFUNCTION = 0,
@@ -77,7 +85,8 @@ enum os_sw_bugs_function_e
    E_FUNC_STACKCHECK,
    E_FUNC_ISRHANDLER,
    E_FUNC_STATE_HANDLER,
-   E_FUNC_INTDIV
+   E_FUNC_INTDIV,
+   E_FUNC_SHIFT_LEFT
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -102,17 +111,18 @@ typedef big_int timebig_t;
 extern void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig);
 
 extern void ASSIGN_NULL(big_int* leftOperand);
-extern void ASSIGN(big_int* leftOperand, big_int* rightOperand);
-extern void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand);
-extern boolean_t IS_GREATER_OR_EQUAL(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_GREATER(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_EQUAL(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_LESS_OR_EQUAL(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_LESS(big_int* Operand1, big_int* Operand2);
-extern void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor);
-extern void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2);
-extern void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend);
-extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
+extern void ASSIGN(big_int* leftOperand, const big_int* rightOperand);
+extern void ASSIGN_UINT32(big_int* leftOperand, const uint32 rightOperand);
+extern boolean_t IS_GREATER_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_GREATER(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_LESS_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_LESS(const big_int* Operand1, const big_int* Operand2);
+extern void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor);
+extern void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2);
+extern void INT_SUB(big_int* Differenz, const big_int* Minuend, const big_int* Subtrahend);
+extern void INT_ADD(big_int* Summe, const big_int* ErsterSummand, const big_int* ZweiterSummand);
+extern void SHIFT_LEFT(big_int* number, uint32 amount);
 extern uint32 get_uint32_of_4_uint8(uint8* ptr);
 extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
 extern void OS_UpdateCurrentTime(void);

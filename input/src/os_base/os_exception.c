@@ -228,7 +228,7 @@ void OS_EXCEPTION_SYSTICK(void)
    if(task != 0u)
    {
       OS_TASK_SAVE_TASK_ENVIRONMENT(task);
-      OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);//Tag: MSP_PSP
+      OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);
       task->active = FALSE;
       /*task->exe_time += (OS_GET_CURRENT_TIME() - task->start_time);*/
       OS_GET_CURRENT_TIME(&time);

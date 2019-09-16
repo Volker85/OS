@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccQQIQar.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccBo9m2f.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -35,59 +35,77 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccQQIQar.s 			page 1
   32              		.comm	RUNNING_SCHEDULING_QUEUE_ENTRY,4,4
   33              		.comm	TASK_SCHEDULING_QUEUE,40,4
   34              		.comm	LAST_CURRENT_TIME,16,4
-  35              		.comm	TASK_STACK,20000,4
-  36              		.comm	SAVED_STACK_POINTER,4,4
-  37              		.comm	REGISTER_R11,4,4
-  38              		.comm	REGISTER_R10,4,4
-  39              		.comm	REGISTER_R9,4,4
-  40              		.comm	REGISTER_R8,4,4
-  41              		.comm	REGISTER_R7,4,4
-  42              		.comm	REGISTER_R6,4,4
-  43              		.comm	REGISTER_R5,4,4
-  44              		.comm	REGISTER_R4,4,4
-  45              		.comm	REGISTER_R3,4,4
-  46              		.comm	REGISTER_R2,4,4
-  47              		.comm	REGISTER_R1,4,4
-  48              		.comm	REGISTER_R0,4,4
-  49              		.comm	TASK4_CALL_NR,4,4
-  50              		.comm	TASK3_CALL_NR,4,4
-  51              		.comm	TASK2_CALL_NR,4,4
-  52              		.comm	TASK1_CALL_NR,4,4
-  53              		.comm	DBG_CALIB_VALUE,4,4
-  54              		.comm	DBG_CTRL_VALUE,4,4
-  55              		.comm	DBG_CURR_VAL,4,4
-  56              		.comm	DBG_RLD_VALUE,4,4
-  57              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccQQIQar.s 			page 2
+  35              		.comm	TASK4_STACK,2000,4
+  36              		.comm	TASK3_STACK,2000,4
+  37              		.comm	TASK2_STACK,2000,4
+  38              		.comm	TASK1_STACK,2000,4
+  39              		.comm	TASK0_STACK,2000,4
+  40              		.comm	REGISTER_R11,4,4
+  41              		.comm	REGISTER_R10,4,4
+  42              		.comm	REGISTER_R9,4,4
+  43              		.comm	REGISTER_R8,4,4
+  44              		.comm	REGISTER_R7,4,4
+  45              		.comm	REGISTER_R6,4,4
+  46              		.comm	REGISTER_R5,4,4
+  47              		.comm	REGISTER_R4,4,4
+  48              		.comm	REGISTER_R3,4,4
+  49              		.comm	REGISTER_R2,4,4
+  50              		.comm	REGISTER_R1,4,4
+  51              		.comm	REGISTER_R0,4,4
+  52              		.comm	TASK4_CALL_NR,4,4
+  53              		.comm	TASK3_CALL_NR,4,4
+  54              		.comm	TASK2_CALL_NR,4,4
+  55              		.comm	TASK1_CALL_NR,4,4
+  56              		.comm	DBG_CALIB_VALUE,4,4
+  57              		.comm	DBG_CTRL_VALUE,4,4
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccBo9m2f.s 			page 2
 
 
-  58              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
-  59              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
-  60              		.comm	LINK_REGISTER_HANDLER,4,4
-  61              		.comm	VAR_BUS_FAULT_STATUS_REG,4,4
-  62              		.comm	VAR_AUX_FAULT_STATUS_REG,4,4
-  63              		.comm	VAR_BUS_FAULT_ADDR_REG,4,4
-  64              		.comm	VAR_MEM_FAULT_ADDR_REG,4,4
-  65              		.comm	VAR_FAULT_STATUS_REG,4,4
-  66              		.comm	VAR_USAGE_FAULT_STATUS_REG,4,4
-  67              		.comm	VAR_MEM_MANAG_FAULT_STATUS_REG,4,4
-  68              		.comm	VAR_HARDFAULT_STATUS_REG,4,4
-  69              		.comm	SYSTEM_STATE_ACCEPTED,1,1
-  70              		.comm	OS_STATE,1,1
-  71              		.comm	OS_SW_BUG,15,4
-  72              		.comm	STACK_USAGE_PERCENT,4,4
-  73              		.comm	STACK_POS,4,4
-  74              		.comm	STACK_ADDR,4,4
-  75              	.Letext0:
-  76              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  77              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-  78              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  79              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  80              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
-  81              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  82              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-  83              		.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccQQIQar.s 			page 3
+  58              		.comm	DBG_CURR_VAL,4,4
+  59              		.comm	DBG_RLD_VALUE,4,4
+  60              		.comm	RAM_CHECK_FAILURE_ADDR,4,4
+  61              		.comm	RAM_CHECK_FAILURE_DETECTED,4,4
+  62              		.comm	BACKUP_SYSTICK_CURRENT_VAL_REG,4,4
+  63              		.comm	LINK_REGISTER_HANDLER,4,4
+  64              		.comm	VAR_BUS_FAULT_STATUS_REG,4,4
+  65              		.comm	VAR_AUX_FAULT_STATUS_REG,4,4
+  66              		.comm	VAR_BUS_FAULT_ADDR_REG,4,4
+  67              		.comm	VAR_MEM_FAULT_ADDR_REG,4,4
+  68              		.comm	VAR_FAULT_STATUS_REG,4,4
+  69              		.comm	VAR_USAGE_FAULT_STATUS_REG,4,4
+  70              		.comm	VAR_MEM_MANAG_FAULT_STATUS_REG,4,4
+  71              		.comm	VAR_HARDFAULT_STATUS_REG,4,4
+  72              		.comm	SYSTEM_STATE_ACCEPTED,1,1
+  73              		.comm	OS_STATE,1,1
+  74              		.comm	OS_SW_BUG,22,4
+  75              		.comm	TASK4_STACK_USAGE_PERCENT,4,4
+  76              		.comm	TASK4_STACK_POS,4,4
+  77              		.comm	TASK4_STACK_ADDR,4,4
+  78              		.comm	TASK3_STACK_USAGE_PERCENT,4,4
+  79              		.comm	TASK3_STACK_POS,4,4
+  80              		.comm	TASK3_STACK_ADDR,4,4
+  81              		.comm	TASK2_STACK_USAGE_PERCENT,4,4
+  82              		.comm	TASK2_STACK_POS,4,4
+  83              		.comm	TASK2_STACK_ADDR,4,4
+  84              		.comm	TASK1_STACK_USAGE_PERCENT,4,4
+  85              		.comm	TASK1_STACK_POS,4,4
+  86              		.comm	TASK1_STACK_ADDR,4,4
+  87              		.comm	TASK0_STACK_USAGE_PERCENT,4,4
+  88              		.comm	TASK0_STACK_POS,4,4
+  89              		.comm	TASK0_STACK_ADDR,4,4
+  90              		.comm	OS_MAIN_STACK_USAGE_PERCENT,4,4
+  91              		.comm	OS_MAIN_STACK_POS,4,4
+  92              		.comm	OS_MAIN_STACK_ADDR,4,4
+  93              	.Letext0:
+  94              		.file 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+  95              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+  96              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+  97              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+  98              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
+  99              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 100              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
+ 101              		.file 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.c"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccBo9m2f.s 			page 3
 
 
 DEFINED SYMBOLS
@@ -112,8 +130,11 @@ DEFINED SYMBOLS
                             *COM*:00000004 RUNNING_SCHEDULING_QUEUE_ENTRY
                             *COM*:00000028 TASK_SCHEDULING_QUEUE
                             *COM*:00000010 LAST_CURRENT_TIME
-                            *COM*:00004e20 TASK_STACK
-                            *COM*:00000004 SAVED_STACK_POINTER
+                            *COM*:000007d0 TASK4_STACK
+                            *COM*:000007d0 TASK3_STACK
+                            *COM*:000007d0 TASK2_STACK
+                            *COM*:000007d0 TASK1_STACK
+                            *COM*:000007d0 TASK0_STACK
                             *COM*:00000004 REGISTER_R11
                             *COM*:00000004 REGISTER_R10
                             *COM*:00000004 REGISTER_R9
@@ -144,21 +165,36 @@ DEFINED SYMBOLS
                             *COM*:00000004 VAR_MEM_FAULT_ADDR_REG
                             *COM*:00000004 VAR_FAULT_STATUS_REG
                             *COM*:00000004 VAR_USAGE_FAULT_STATUS_REG
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccBo9m2f.s 			page 4
+
+
                             *COM*:00000004 VAR_MEM_MANAG_FAULT_STATUS_REG
                             *COM*:00000004 VAR_HARDFAULT_STATUS_REG
                             *COM*:00000001 SYSTEM_STATE_ACCEPTED
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccQQIQar.s 			page 4
-
-
                             *COM*:00000001 OS_STATE
-                            *COM*:0000000f OS_SW_BUG
-                            *COM*:00000004 STACK_USAGE_PERCENT
-                            *COM*:00000004 STACK_POS
-                            *COM*:00000004 STACK_ADDR
+                            *COM*:00000016 OS_SW_BUG
+                            *COM*:00000004 TASK4_STACK_USAGE_PERCENT
+                            *COM*:00000004 TASK4_STACK_POS
+                            *COM*:00000004 TASK4_STACK_ADDR
+                            *COM*:00000004 TASK3_STACK_USAGE_PERCENT
+                            *COM*:00000004 TASK3_STACK_POS
+                            *COM*:00000004 TASK3_STACK_ADDR
+                            *COM*:00000004 TASK2_STACK_USAGE_PERCENT
+                            *COM*:00000004 TASK2_STACK_POS
+                            *COM*:00000004 TASK2_STACK_ADDR
+                            *COM*:00000004 TASK1_STACK_USAGE_PERCENT
+                            *COM*:00000004 TASK1_STACK_POS
+                            *COM*:00000004 TASK1_STACK_ADDR
+                            *COM*:00000004 TASK0_STACK_USAGE_PERCENT
+                            *COM*:00000004 TASK0_STACK_POS
+                            *COM*:00000004 TASK0_STACK_ADDR
+                            *COM*:00000004 OS_MAIN_STACK_USAGE_PERCENT
+                            *COM*:00000004 OS_MAIN_STACK_POS
+                            *COM*:00000004 OS_MAIN_STACK_ADDR
                            .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
-                           .group:00000000 wm4.os_config.h.2.ac4658f92c1259d8f1114145439d5f31
-                           .group:00000000 wm4.os_common.h.2.63eb68e412d9b6f465f2fde7f2fcb855
-                           .group:00000000 wm4.os_task_config.h.2.89b082d5aa4d7b2eff2ad4d1eb9bfd97
+                           .group:00000000 wm4.os_config.h.2.f6eac9d90a921b6f21f0ccaa4f0194d3
+                           .group:00000000 wm4.os_common.h.2.e5c031aba705597809847d8f8f7643a5
+                           .group:00000000 wm4.os_task_config.h.2.6666b50e8a518cf90a10402c04d546aa
                            .group:00000000 wm4.os_task_common.h.95.8d8bf4690dc541f58a865736bc15fd8a
 
 NO UNDEFINED SYMBOLS

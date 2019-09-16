@@ -14,14 +14,15 @@
         .syntax unified
         .text
         .global LLF_CLEAR_ALL_RAM
-        .global INIT_OS_STACK
+        .global INIT_OS_MAIN_STACK
         .extern OS_MAIN_STACK
         
-INIT_OS_STACK:
+INIT_OS_MAIN_STACK:
          # r0 = stack variable start addr
          LDR r0, =OS_MAIN_STACK
          # r2 = Stack size
-         MOV r2, #0x200
+         # OS_MAIN_STACK_SIZE
+         MOV r2, #0x400
          #
          # r1 = OS_MAIN_STACK +STACK_SIZE-1
          #

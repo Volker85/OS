@@ -1,47 +1,7 @@
 "Target_ARM" 
-06.09.2019 10:54:47,73 
+16.09.2019 20:23:00,02 
 "preprocess it" 
 "create assembly listings" 
 "compile it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'INT_DIV':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:23: warning: unused parameter 'Quotient' [-Wunused-parameter]
- void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
-                       ^~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:42: warning: unused parameter 'Dividend' [-Wunused-parameter]
- void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
-                                          ^~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:61: warning: unused parameter 'Divisor' [-Wunused-parameter]
- void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
-                                                             ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'INT_MUL':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:23: warning: unused parameter 'Produkt' [-Wunused-parameter]
- void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
-                       ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:41: warning: unused parameter 'Faktor1' [-Wunused-parameter]
- void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
-                                         ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:59: warning: unused parameter 'Faktor2' [-Wunused-parameter]
- void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
-                                                           ^~~~~~~
 "assemble it" 
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'INT_DIV':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:23: warning: unused parameter 'Quotient' [-Wunused-parameter]
- void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
-                       ^~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:42: warning: unused parameter 'Dividend' [-Wunused-parameter]
- void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
-                                          ^~~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:58:61: warning: unused parameter 'Divisor' [-Wunused-parameter]
- void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
-                                                             ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c: In function 'INT_MUL':
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:23: warning: unused parameter 'Produkt' [-Wunused-parameter]
- void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
-                       ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:41: warning: unused parameter 'Faktor1' [-Wunused-parameter]
- void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
-                                         ^~~~~~~
-E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_common.c:63:59: warning: unused parameter 'Faktor2' [-Wunused-parameter]
- void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
-                                                           ^~~~~~~
 "link it" 

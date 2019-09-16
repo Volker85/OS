@@ -7,7 +7,12 @@
 #define MAX_RUN_QUEUE_SIZE  (NUMBER_OF_TASKS)
 #define MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE
 /* Stack Configuration: Maximum Stack Size per Task */
-#define TASK_STACK_SIZE 2000u //Tag: MSP_PSP
+#define TASK0_STACK_SIZE 2000u
+#define TASK1_STACK_SIZE 2000u
+#define TASK2_STACK_SIZE 2000u
+#define TASK3_STACK_SIZE 2000u
+#define TASK4_STACK_SIZE 2000u
+
 
 /* general */
 #define MS_PER_SEC 1000u

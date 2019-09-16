@@ -77,19 +77,23 @@ void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor)
    big_int tmp_Dividend, tmp_Divisor;
    big_int rest;
    uint32  local_cnt = 0;
+   uint32 one_shifted_nibble; 
+   uint32 u32_teilergebnis;
+   big_int teilergebnis;
    
    ASSIGN_NULL(&local_zero);
    ASSIGN(&tmp_Dividend, Dividend);
    ASSIGN(&tmp_Divisor, Divisor);
+   ASSIGN(&rest, Dividend);
    
    /* Case 1: Divisor == 0 */
-   if(IS_EQUAL(tmp_Divisor,local_zero);
+   if(IS_EQUAL(&tmp_Divisor,&local_zero))
    {
-      // Error "N.a.N."      
+      /* Error "N.a.N." */     
       OS_SET_SW_BUG(E_OS_BUG_DIVISION_BY_ZERO, E_FUNC_INTDIV);
       return;      
    }      
-   while(IS_GREATER_OR_EQUAL(dividend_rest, tmp_Dividend))
+   while(IS_GREATER_OR_EQUAL(&rest, &tmp_Dividend))
    {
       /* 
       Step 1: Divisor um so viele nibble shiften nach links bis der Divisor größer wie der Dividend ist
@@ -100,30 +104,32 @@ void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor)
       Step 5: Teilergebnisse addieren.
       */
       /* Step 1: Divisor um so viele nibble shiften nach links bis der Divisor größer wie der Dividend ist */
-      while(IS_LESS_OR_EQUAL(tmp_Divisor, tmp_Dividend))
+      while(IS_LESS_OR_EQUAL(&tmp_Divisor, &tmp_Dividend))
       {      
-         SHIFT_LEFT(tmp_Divisor, 4u);
+         SHIFT_LEFT(&tmp_Divisor, 4u);
          nibble_shift_left_amount++;
       }
       /* Divisor is already shifted at this point by nibble_shift_left_amount */
       /* Step 3: Dabei n = local_cnt solange vergrößern bis "Rest" kleiner wie Divisor ist */
       
       local_cnt = 0u;
-      while(IS_LESS_OR_EQUAL(&rest, tmp_Divisor))
+      while(IS_LESS_OR_EQUAL(&rest, &tmp_Divisor))
       {
          INT_SUB(&rest,&tmp_Dividend,&tmp_Divisor);
          local_cnt++;      
       }
       /* Step 4: Teilergebnis = n*(1<<nibble_shift_left_amount)           */
-      big_int tmp;
-      uint32 1_shifted_nibble = 1u<<nibble_shift_left_amount;
-      uint32 u32_teilergebnis = local_cnt * 1_shifted_nibble;
-      big_int teilergebnis;
+      one_shifted_nibble = 1u<<nibble_shift_left_amount;
+      u32_teilergebnis = local_cnt * one_shifted_nibble;
+
       ASSIGN_UINT32(&teilergebnis,u32_teilergebnis);
       
       /* Step 5: Teilergebnisse addieren.*/
-      INT_ADD(&teilergebnis, &teilergebnis, &rest);         
+      INT_ADD(&teilergebnis, &teilergebnis, &rest);
+      
+            
    }   
+   ASSIGN(Quotient, &teilergebnis);
 }
 
 void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2)
@@ -138,6 +144,8 @@ void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2)
    
    */
    big_int result, local_tmp_bigInt;
+   sint32 pos1, pos2;
+   uint16 local_tmp16;
    
    ASSIGN_NULL(&local_tmp_bigInt);
    ASSIGN_NULL(&result);
@@ -161,7 +169,7 @@ void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2)
    {
       for(pos2 = BIG_INT_SIZE-1; pos2 >= 0; pos2--)
       {
-         local_tmp16 = ((uint16) *(Faktor1+pos1)) * ((uint16) *(Faktor2+pos2));
+         local_tmp16 = ((uint16) *((uint8*)Faktor1+(uint32)pos1)) * ((uint16) *((uint8*)Faktor2+(uint32)pos2));
          
          ASSIGN_UINT32(&local_tmp_bigInt, (uint32) local_tmp16);
          
@@ -170,9 +178,10 @@ void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2)
          INT_ADD(&result, &result, &local_tmp_bigInt);
       }
    }  
+   ASSIGN(Produkt, &result);
 }
 
-void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand)
+void INT_ADD(big_int* Summe, const big_int* ErsterSummand, const big_int* ZweiterSummand)
 {
    sint8 pos;
    uint16 carry  = 0u;
@@ -184,7 +193,7 @@ void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand)
       carry = tmp_sum & 0xFF00u;
    }
 }
-void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend)
+void INT_SUB(big_int* Differenz, const big_int* Minuend, const big_int* Subtrahend)
 {
    sint8 pos;
    uint16 carry  = 0;
@@ -207,7 +216,7 @@ void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend)
       Differenz->number[pos] = tmp_diff;
    }
 }
-boolean_t IS_LESS(big_int* Operand1, big_int* Operand2)
+boolean_t IS_LESS(const big_int* Operand1, const big_int* Operand2)
 {
    uint8 pos;
    boolean_t is_less = FALSE;/* in case no if was entered, the numbers are equal -> return FALSE */
@@ -230,11 +239,11 @@ boolean_t IS_LESS(big_int* Operand1, big_int* Operand2)
    }
    return is_less;
 }
-boolean_t IS_LESS_OR_EQUAL(big_int* Operand1, big_int* Operand2)
+boolean_t IS_LESS_OR_EQUAL(const big_int* Operand1, const big_int* Operand2)
 {
    return IS_LESS(Operand1,Operand2) || IS_EQUAL(Operand1,Operand2);
 }
-boolean_t IS_EQUAL(big_int* Operand1, big_int* Operand2)
+boolean_t IS_EQUAL(const big_int* Operand1, const big_int* Operand2)
 {
    uint8 pos;
    boolean_t is_equal = TRUE;/* in case no if/elseif) was entered, the numbers are equal -> return TRUE */
@@ -252,7 +261,7 @@ boolean_t IS_EQUAL(big_int* Operand1, big_int* Operand2)
    }
    return is_equal;
 }
-boolean_t IS_GREATER(big_int* Operand1, big_int* Operand2)
+boolean_t IS_GREATER(const big_int* Operand1, const big_int* Operand2)
 {
    uint8 pos;
    boolean_t is_greater = FALSE;/* in case no if was entered, the numbers are equal -> return FALSE */
@@ -275,11 +284,11 @@ boolean_t IS_GREATER(big_int* Operand1, big_int* Operand2)
    }
    return is_greater;
 }
-boolean_t IS_GREATER_OR_EQUAL(big_int* Operand1, big_int* Operand2)
+boolean_t IS_GREATER_OR_EQUAL(const big_int* Operand1, const big_int* Operand2)
 {
    return IS_GREATER(Operand1,Operand2) || IS_EQUAL(Operand1,Operand2);
 }
-void ASSIGN(big_int* leftOperand, big_int* rightOperand)
+void ASSIGN(big_int* leftOperand, const big_int* rightOperand)
 {
    uint8 pos;
    for (pos = 0u; pos < BIG_INT_SIZE; pos++)
@@ -296,7 +305,7 @@ void ASSIGN_NULL(big_int* leftOperand)
    }
 }
 
-void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand)
+void ASSIGN_UINT32(big_int* leftOperand, const uint32 rightOperand)
 {
    uint8 pos;
    uint8 i;
@@ -304,10 +313,38 @@ void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand)
    {
       leftOperand->number[pos] = 0x00u;
    }
+
    for (pos = BIG_INT_SIZE-1u, i = 0u; pos >= (BIG_INT_SIZE-sizeof(uint32)); pos--, i++)
    {
       leftOperand->number[pos] = (rightOperand>>i)&0xFFu;
    }
+}
+void SHIFT_LEFT(big_int* number, uint32 amount_bits_shift)
+{
+   big_int tmpBigInt, result;
+   uint32  tmp32;
+   sint32  pos;
+   /* init the variable */
+   ASSIGN_NULL(&tmpBigInt);
+   ASSIGN_NULL(&result);
+   
+   /* due to the underlying 32 bit integer type only 24 bits can be shifted (32bit variable -8bit access of data structure = 24 bit) */
+   if(amount_bits_shift > 24u)
+   {
+      OS_SET_SW_BUG(E_OS_BUG_BIT_SHIFT_OUT_OF_RANGE, E_FUNC_SHIFT_LEFT);
+      return;
+   }         
+   for (pos = BIG_INT_SIZE-1u; pos >= 0; pos--)
+   {
+      ASSIGN_NULL(&tmpBigInt);
+      tmp32 = ((uint32)number->number[(uint32)pos]) << amount_bits_shift;
+      tmpBigInt.number[(uint32)pos]      = (tmp32 >> 0u) & 0xFF;
+      tmpBigInt.number[(uint32)pos+1u]   = (tmp32 >> 8u) & 0xFF;
+      tmpBigInt.number[(uint32)pos+2u]   = (tmp32 >>16u) & 0xFF;
+      tmpBigInt.number[(uint32)pos+3u]   = (tmp32 >>24u) & 0xFF;
+      INT_ADD(&result, &result, &tmpBigInt);
+   }    
+   ASSIGN(number, &result);
 }
 
 uint32 get_uint32_of_4_uint8(uint8* ptr)

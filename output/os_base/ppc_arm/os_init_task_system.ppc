@@ -498,7 +498,11 @@
 #define HEAP_OFFSET_FOR_CHUNK 8u
 
 
-#define OS_STACK_SIZE 0x200u
+#define OS_MAIN_STACK_SIZE 0x400u
+#define OS_PROCESS_STACK_TASK1_SIZE 0x200u
+#define OS_PROCESS_STACK_TASK2_SIZE 0x200u
+#define OS_PROCESS_STACK_TASK3_SIZE 0x200u
+#define OS_PROCESS_STACK_TASK4_SIZE 0x200u
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h" 1
 
@@ -527,6 +531,8 @@ typedef signed long sint32;
 
 #define FALSE 0u
 #define TRUE 1u
+#define False FALSE
+#define True TRUE
 #define ACCEPTED 1u
 #define REJECTED 0u
 #define LOCAL static
@@ -543,13 +549,16 @@ typedef signed long sint32;
 #define DWT_CYCCNT ((volatile uint32*)0xE0001004u)
 #define DWT_LAR ((volatile uint32*)0xE0001FB0u)
 #define SCB_DEMCR ((volatile uint32*)0xE000EDFCu)
-# 33 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+# 35 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 #define DISABLE_INTERRUPTS() LLF_INT_DISABLE()
 #define ENABLE_INTERRUPTS() LLF_INT_ENABLE()
 #define PRIVILIGE_LEVEL_SAVE_CURRENT() ;
 #define PRIVILIGE_LEVEL_ENTER_KERNEL_MODE() ;
 #define PRIVILIGE_LEVEL_RESTORE_SAVED() ;
 #define HALT_MCU() LLF_WAIT_FOR_INTERRUPT()
+
+
+
 
 enum os_sw_bugs_e
 {
@@ -564,10 +573,14 @@ enum os_sw_bugs_e
    E_OS_BUG_RESET_EXIT_OR_SHUTDOWN_FAILED,
    E_OS_BUG_CRITICAL_STACK_USAGE,
    E_OS_BUG_SVC_NUMBER_MISSING,
-   E_OS_BUG_MAX_WAIT_TIME_REACHED
+   E_OS_BUG_MAX_WAIT_TIME_REACHED,
+   E_OS_BUG_DIVISION_BY_ZERO,
+   E_OS_BUG_BIT_SHIFT_OUT_OF_RANGE
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 typedef uint8 boolean_t;
+
+#define AMOUNT_SW_BUG_FUNCTIONS 22
 enum os_sw_bugs_function_e
 {
    E_FUNC_NOFUNCTION = 0,
@@ -589,7 +602,9 @@ enum os_sw_bugs_function_e
    E_FUNC_SHUTDOWN,
    E_FUNC_STACKCHECK,
    E_FUNC_ISRHANDLER,
-   E_FUNC_STATE_HANDLER
+   E_FUNC_STATE_HANDLER,
+   E_FUNC_INTDIV,
+   E_FUNC_SHIFT_LEFT
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -614,17 +629,18 @@ typedef big_int timebig_t;
 extern void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig);
 
 extern void ASSIGN_NULL(big_int* leftOperand);
-extern void ASSIGN(big_int* leftOperand, big_int* rightOperand);
-extern void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand);
-extern boolean_t IS_GREATER_OR_EQUAL(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_GREATER(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_EQUAL(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_LESS_OR_EQUAL(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_LESS(big_int* Operand1, big_int* Operand2);
-extern void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor);
-extern void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2);
-extern void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend);
-extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
+extern void ASSIGN(big_int* leftOperand, const big_int* rightOperand);
+extern void ASSIGN_UINT32(big_int* leftOperand, const uint32 rightOperand);
+extern boolean_t IS_GREATER_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_GREATER(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_LESS_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_LESS(const big_int* Operand1, const big_int* Operand2);
+extern void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor);
+extern void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2);
+extern void INT_SUB(big_int* Differenz, const big_int* Minuend, const big_int* Subtrahend);
+extern void INT_ADD(big_int* Summe, const big_int* ErsterSummand, const big_int* ZweiterSummand);
+extern void SHIFT_LEFT(big_int* number, uint32 amount);
 extern uint32 get_uint32_of_4_uint8(uint8* ptr);
 extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
 extern void OS_UpdateCurrentTime(void);
@@ -681,7 +697,12 @@ typedef enum privilige_mode_e privilige_mode_t;
 #define MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)
 #define MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE
 
-#define TASK_STACK_SIZE 2000u
+#define TASK0_STACK_SIZE 2000u
+#define TASK1_STACK_SIZE 2000u
+#define TASK2_STACK_SIZE 2000u
+#define TASK3_STACK_SIZE 2000u
+#define TASK4_STACK_SIZE 2000u
+
 
 
 #define MS_PER_SEC 1000u
@@ -860,7 +881,7 @@ extern void OS_STATE_HANDLER(void);
 extern unsigned_char_t HEAP[10000u];
 
 
-extern volatile os_sw_bugs_t OS_SW_BUG[15];
+extern volatile os_sw_bugs_t OS_SW_BUG[22];
 extern volatile os_state_t OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
 extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG ;
@@ -881,10 +902,29 @@ extern volatile uint32 TASK2_CALL_NR;
 extern volatile uint32 TASK3_CALL_NR;
 extern volatile uint32 TASK4_CALL_NR;
 
-extern volatile uint32* STACK_ADDR;
-extern volatile uint32 STACK_POS;
-extern volatile uint32 STACK_USAGE_PERCENT;
-extern unsigned_char_t TASK_STACK[(10u)][2000u];
+extern volatile uint32* OS_MAIN_STACK_ADDR;
+extern volatile uint32 OS_MAIN_STACK_POS;
+extern volatile uint32 OS_MAIN_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK0_STACK_ADDR;
+extern volatile uint32 TASK0_STACK_POS;
+extern volatile uint32 TASK0_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK1_STACK_ADDR;
+extern volatile uint32 TASK1_STACK_POS;
+extern volatile uint32 TASK1_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK2_STACK_ADDR;
+extern volatile uint32 TASK2_STACK_POS;
+extern volatile uint32 TASK2_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK3_STACK_ADDR;
+extern volatile uint32 TASK3_STACK_POS;
+extern volatile uint32 TASK3_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK4_STACK_ADDR;
+extern volatile uint32 TASK4_STACK_POS;
+extern volatile uint32 TASK4_STACK_USAGE_PERCENT;
+extern unsigned_char_t TASK0_STACK[2000u];
+extern unsigned_char_t TASK1_STACK[2000u];
+extern unsigned_char_t TASK2_STACK[2000u];
+extern unsigned_char_t TASK3_STACK[2000u];
+extern unsigned_char_t TASK4_STACK[2000u];
 extern scheduler_time_t LAST_CURRENT_TIME;
 extern scheduling_t TASK_SCHEDULING_QUEUE[(10u)];
 extern scheduling_t* RUNNING_SCHEDULING_QUEUE_ENTRY;
@@ -897,7 +937,6 @@ extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK
 extern task_t* TASK_TRANSITION_REJECTED_TASK_ADDR;
 extern task_state_t TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t TASK_TRANSITION_CURRENT_STATE;
-extern volatile void* SAVED_STACK_POINTER;
 extern volatile os_state_t SYSTEM_STATE_ACCEPTED;
 extern timebig_t LOCAL_SYSTEM_TIME;
 # 16 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
@@ -905,7 +944,7 @@ extern timebig_t LOCAL_SYSTEM_TIME;
 
 #define _OS_RAM_STACK_H_ 
 # 12 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-extern unsigned_char_t OS_MAIN_STACK[0x200u];
+extern unsigned_char_t OS_MAIN_STACK[0x400u];
 # 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_scheduler.h" 1

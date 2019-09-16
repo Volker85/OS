@@ -22,18 +22,11 @@ The processor uses a full descending stack.
  see Stack Pointer.
 */
 
-/* currently on MSP (Main Stack) is supported, also add support for PSP stack (process stack) *//* Tag: MSP_PSP */
-
-/* Hint: no stack switch is needed because shared stack is used.
-This is not ideal for safety reasons
-(MPU can not protect the data stored in stack from access by other task).
-But to make life in embedded more easy, it was choosen this way. */
-
 /* the amount of IRQn entries is implementation specific for STM32F4 = 240 */
 
 func_ptr_t isr_vec_table[] =
 {
-   (func_ptr_t)((uint8*)&OS_MAIN_STACK+OS_STACK_SIZE-1u),   /* 0x0000 initial StackPointer value */
+   (func_ptr_t)((uint8*)&OS_MAIN_STACK+OS_MAIN_STACK_SIZE-1u),   /* 0x0000 initial StackPointer value */
    &OS_EXCEPTION_RESET+1u,			   /* 0x0004 Reset                      */
    &OS_EXCEPTION_NMI+1u,		      /* 0x0008 Non Maskable Interrupt     */
    &OS_EXCEPTION_HARDFAULT+1u,      /* 0x000C Hardfault                  */

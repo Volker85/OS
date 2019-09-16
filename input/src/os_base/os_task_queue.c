@@ -371,10 +371,6 @@ void OS_INIT_TASK(
       task->state_request = &OS_TASK_STATE_REQUEST;
       OS_TASK_STATE_REQUEST(task, E_TASK_UNSPECIFIED);
       OS_CREATE_TASK(task);
-      if(uStackSize > TASK_STACK_SIZE)
-      {
-         uStackSize = TASK_STACK_SIZE;
-      }
 
       /* just create stack */
       task->p_stack_pointer_by_malloc = pStackAddr;

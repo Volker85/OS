@@ -498,7 +498,11 @@
 #define HEAP_OFFSET_FOR_CHUNK 8u
 
 
-#define OS_STACK_SIZE 0x200u
+#define OS_MAIN_STACK_SIZE 0x400u
+#define OS_PROCESS_STACK_TASK1_SIZE 0x200u
+#define OS_PROCESS_STACK_TASK2_SIZE 0x200u
+#define OS_PROCESS_STACK_TASK3_SIZE 0x200u
+#define OS_PROCESS_STACK_TASK4_SIZE 0x200u
 # 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h" 1
 
@@ -527,6 +531,8 @@ typedef signed long sint32;
 
 #define FALSE 0u
 #define TRUE 1u
+#define False FALSE
+#define True TRUE
 #define ACCEPTED 1u
 #define REJECTED 0u
 #define LOCAL static
@@ -543,13 +549,16 @@ typedef signed long sint32;
 #define DWT_CYCCNT ((volatile uint32*)0xE0001004u)
 #define DWT_LAR ((volatile uint32*)0xE0001FB0u)
 #define SCB_DEMCR ((volatile uint32*)0xE000EDFCu)
-# 33 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+# 35 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
 #define DISABLE_INTERRUPTS() LLF_INT_DISABLE()
 #define ENABLE_INTERRUPTS() LLF_INT_ENABLE()
 #define PRIVILIGE_LEVEL_SAVE_CURRENT() ;
 #define PRIVILIGE_LEVEL_ENTER_KERNEL_MODE() ;
 #define PRIVILIGE_LEVEL_RESTORE_SAVED() ;
 #define HALT_MCU() LLF_WAIT_FOR_INTERRUPT()
+
+
+
 
 enum os_sw_bugs_e
 {
@@ -564,10 +573,14 @@ enum os_sw_bugs_e
    E_OS_BUG_RESET_EXIT_OR_SHUTDOWN_FAILED,
    E_OS_BUG_CRITICAL_STACK_USAGE,
    E_OS_BUG_SVC_NUMBER_MISSING,
-   E_OS_BUG_MAX_WAIT_TIME_REACHED
+   E_OS_BUG_MAX_WAIT_TIME_REACHED,
+   E_OS_BUG_DIVISION_BY_ZERO,
+   E_OS_BUG_BIT_SHIFT_OUT_OF_RANGE
 };
 typedef enum os_sw_bugs_e os_sw_bugs_t;
 typedef uint8 boolean_t;
+
+#define AMOUNT_SW_BUG_FUNCTIONS 22
 enum os_sw_bugs_function_e
 {
    E_FUNC_NOFUNCTION = 0,
@@ -589,7 +602,9 @@ enum os_sw_bugs_function_e
    E_FUNC_SHUTDOWN,
    E_FUNC_STACKCHECK,
    E_FUNC_ISRHANDLER,
-   E_FUNC_STATE_HANDLER
+   E_FUNC_STATE_HANDLER,
+   E_FUNC_INTDIV,
+   E_FUNC_SHIFT_LEFT
 };
 typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
 
@@ -614,17 +629,18 @@ typedef big_int timebig_t;
 extern void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig);
 
 extern void ASSIGN_NULL(big_int* leftOperand);
-extern void ASSIGN(big_int* leftOperand, big_int* rightOperand);
-extern void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand);
-extern boolean_t IS_GREATER_OR_EQUAL(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_GREATER(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_EQUAL(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_LESS_OR_EQUAL(big_int* Operand1, big_int* Operand2);
-extern boolean_t IS_LESS(big_int* Operand1, big_int* Operand2);
-extern void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor);
-extern void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2);
-extern void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend);
-extern void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand);
+extern void ASSIGN(big_int* leftOperand, const big_int* rightOperand);
+extern void ASSIGN_UINT32(big_int* leftOperand, const uint32 rightOperand);
+extern boolean_t IS_GREATER_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_GREATER(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_LESS_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_LESS(const big_int* Operand1, const big_int* Operand2);
+extern void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor);
+extern void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2);
+extern void INT_SUB(big_int* Differenz, const big_int* Minuend, const big_int* Subtrahend);
+extern void INT_ADD(big_int* Summe, const big_int* ErsterSummand, const big_int* ZweiterSummand);
+extern void SHIFT_LEFT(big_int* number, uint32 amount);
 extern uint32 get_uint32_of_4_uint8(uint8* ptr);
 extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
 extern void OS_UpdateCurrentTime(void);
@@ -681,7 +697,12 @@ typedef enum privilige_mode_e privilige_mode_t;
 #define MAX_RUN_QUEUE_SIZE (NUMBER_OF_TASKS)
 #define MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE
 
-#define TASK_STACK_SIZE 2000u
+#define TASK0_STACK_SIZE 2000u
+#define TASK1_STACK_SIZE 2000u
+#define TASK2_STACK_SIZE 2000u
+#define TASK3_STACK_SIZE 2000u
+#define TASK4_STACK_SIZE 2000u
+
 
 
 #define MS_PER_SEC 1000u
@@ -860,7 +881,7 @@ extern void OS_STATE_HANDLER(void);
 extern unsigned_char_t HEAP[10000u];
 
 
-extern volatile os_sw_bugs_t OS_SW_BUG[15];
+extern volatile os_sw_bugs_t OS_SW_BUG[22];
 extern volatile os_state_t OS_STATE;
 extern volatile uint32 VAR_HARDFAULT_STATUS_REG;
 extern volatile uint32 VAR_MEM_MANAG_FAULT_STATUS_REG ;
@@ -881,10 +902,29 @@ extern volatile uint32 TASK2_CALL_NR;
 extern volatile uint32 TASK3_CALL_NR;
 extern volatile uint32 TASK4_CALL_NR;
 
-extern volatile uint32* STACK_ADDR;
-extern volatile uint32 STACK_POS;
-extern volatile uint32 STACK_USAGE_PERCENT;
-extern unsigned_char_t TASK_STACK[(10u)][2000u];
+extern volatile uint32* OS_MAIN_STACK_ADDR;
+extern volatile uint32 OS_MAIN_STACK_POS;
+extern volatile uint32 OS_MAIN_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK0_STACK_ADDR;
+extern volatile uint32 TASK0_STACK_POS;
+extern volatile uint32 TASK0_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK1_STACK_ADDR;
+extern volatile uint32 TASK1_STACK_POS;
+extern volatile uint32 TASK1_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK2_STACK_ADDR;
+extern volatile uint32 TASK2_STACK_POS;
+extern volatile uint32 TASK2_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK3_STACK_ADDR;
+extern volatile uint32 TASK3_STACK_POS;
+extern volatile uint32 TASK3_STACK_USAGE_PERCENT;
+extern volatile uint32* TASK4_STACK_ADDR;
+extern volatile uint32 TASK4_STACK_POS;
+extern volatile uint32 TASK4_STACK_USAGE_PERCENT;
+extern unsigned_char_t TASK0_STACK[2000u];
+extern unsigned_char_t TASK1_STACK[2000u];
+extern unsigned_char_t TASK2_STACK[2000u];
+extern unsigned_char_t TASK3_STACK[2000u];
+extern unsigned_char_t TASK4_STACK[2000u];
 extern scheduler_time_t LAST_CURRENT_TIME;
 extern scheduling_t TASK_SCHEDULING_QUEUE[(10u)];
 extern scheduling_t* RUNNING_SCHEDULING_QUEUE_ENTRY;
@@ -897,7 +937,6 @@ extern task_group_t TASK_GROUP_1, TASK_GROUP_2, TASK_GROUP_3, TASK_GROUP_4, TASK
 extern task_t* TASK_TRANSITION_REJECTED_TASK_ADDR;
 extern task_state_t TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t TASK_TRANSITION_CURRENT_STATE;
-extern volatile void* SAVED_STACK_POINTER;
 extern volatile os_state_t SYSTEM_STATE_ACCEPTED;
 extern timebig_t LOCAL_SYSTEM_TIME;
 # 16 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
@@ -905,7 +944,7 @@ extern timebig_t LOCAL_SYSTEM_TIME;
 
 #define _OS_RAM_STACK_H_ 
 # 12 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-extern unsigned_char_t OS_MAIN_STACK[0x200u];
+extern unsigned_char_t OS_MAIN_STACK[0x400u];
 # 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
 # 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c" 2
 # 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
@@ -965,17 +1004,88 @@ void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig)
 
 }
 
-void INT_DIV(big_int* Quotient, big_int* Dividend, big_int* Divisor)
+void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor)
 {
+# 75 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
+   uint32 nibble_shift_left_amount = 0u;
+   big_int local_zero;
+   big_int tmp_Dividend, tmp_Divisor;
+   big_int rest;
+   uint32 local_cnt = 0;
+   uint32 one_shifted_nibble;
+   uint32 u32_teilergebnis;
+   big_int teilergebnis;
 
+   ASSIGN_NULL(&local_zero);
+   ASSIGN(&tmp_Dividend, Dividend);
+   ASSIGN(&tmp_Divisor, Divisor);
+   ASSIGN(&rest, Dividend);
+
+
+   if(IS_EQUAL(&tmp_Divisor,&local_zero))
+   {
+
+      OS_SET_SW_BUG(E_OS_BUG_DIVISION_BY_ZERO, E_FUNC_INTDIV);
+      return;
+   }
+   while(IS_GREATER_OR_EQUAL(&rest, &tmp_Dividend))
+   {
+# 107 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
+      while(IS_LESS_OR_EQUAL(&tmp_Divisor, &tmp_Dividend))
+      {
+         SHIFT_LEFT(&tmp_Divisor, 4u);
+         nibble_shift_left_amount++;
+      }
+
+
+
+      local_cnt = 0u;
+      while(IS_LESS_OR_EQUAL(&rest, &tmp_Divisor))
+      {
+         INT_SUB(&rest,&tmp_Dividend,&tmp_Divisor);
+         local_cnt++;
+      }
+
+      one_shifted_nibble = 1u<<nibble_shift_left_amount;
+      u32_teilergebnis = local_cnt * one_shifted_nibble;
+
+      ASSIGN_UINT32(&teilergebnis,u32_teilergebnis);
+
+
+      INT_ADD(&teilergebnis, &teilergebnis, &rest);
+
+
+   }
+   ASSIGN(Quotient, &teilergebnis);
 }
 
-void INT_MUL(big_int* Produkt, big_int* Faktor1, big_int* Faktor2)
+void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2)
 {
+# 146 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
+   big_int result, local_tmp_bigInt;
+   sint32 pos1, pos2;
+   uint16 local_tmp16;
 
+   ASSIGN_NULL(&local_tmp_bigInt);
+   ASSIGN_NULL(&result);
+# 168 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.c"
+   for(pos1 = 16u -1; pos1 >= 0; pos1--)
+   {
+      for(pos2 = 16u -1; pos2 >= 0; pos2--)
+      {
+         local_tmp16 = ((uint16) *((uint8*)Faktor1+(uint32)pos1)) * ((uint16) *((uint8*)Faktor2+(uint32)pos2));
+
+         ASSIGN_UINT32(&local_tmp_bigInt, (uint32) local_tmp16);
+
+         SHIFT_LEFT(&local_tmp_bigInt, pos1+pos2);
+
+         INT_ADD(&result, &result, &local_tmp_bigInt);
+      }
+   }
+   ASSIGN(Produkt, &result);
 }
 
-void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand)
+void INT_ADD(big_int* Summe, const big_int* ErsterSummand, const big_int* ZweiterSummand)
 {
    sint8 pos;
    uint16 carry = 0u;
@@ -987,7 +1097,7 @@ void INT_ADD(big_int* Summe, big_int* ErsterSummand, big_int* ZweiterSummand)
       carry = tmp_sum & 0xFF00u;
    }
 }
-void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend)
+void INT_SUB(big_int* Differenz, const big_int* Minuend, const big_int* Subtrahend)
 {
    sint8 pos;
    uint16 carry = 0;
@@ -1010,7 +1120,7 @@ void INT_SUB(big_int* Differenz, big_int* Minuend, big_int* Subtrahend)
       Differenz->number[pos] = tmp_diff;
    }
 }
-boolean_t IS_LESS(big_int* Operand1, big_int* Operand2)
+boolean_t IS_LESS(const big_int* Operand1, const big_int* Operand2)
 {
    uint8 pos;
    boolean_t is_less = 0u;
@@ -1033,11 +1143,11 @@ boolean_t IS_LESS(big_int* Operand1, big_int* Operand2)
    }
    return is_less;
 }
-boolean_t IS_LESS_OR_EQUAL(big_int* Operand1, big_int* Operand2)
+boolean_t IS_LESS_OR_EQUAL(const big_int* Operand1, const big_int* Operand2)
 {
    return IS_LESS(Operand1,Operand2) || IS_EQUAL(Operand1,Operand2);
 }
-boolean_t IS_EQUAL(big_int* Operand1, big_int* Operand2)
+boolean_t IS_EQUAL(const big_int* Operand1, const big_int* Operand2)
 {
    uint8 pos;
    boolean_t is_equal = 1u;
@@ -1055,7 +1165,7 @@ boolean_t IS_EQUAL(big_int* Operand1, big_int* Operand2)
    }
    return is_equal;
 }
-boolean_t IS_GREATER(big_int* Operand1, big_int* Operand2)
+boolean_t IS_GREATER(const big_int* Operand1, const big_int* Operand2)
 {
    uint8 pos;
    boolean_t is_greater = 0u;
@@ -1078,11 +1188,11 @@ boolean_t IS_GREATER(big_int* Operand1, big_int* Operand2)
    }
    return is_greater;
 }
-boolean_t IS_GREATER_OR_EQUAL(big_int* Operand1, big_int* Operand2)
+boolean_t IS_GREATER_OR_EQUAL(const big_int* Operand1, const big_int* Operand2)
 {
    return IS_GREATER(Operand1,Operand2) || IS_EQUAL(Operand1,Operand2);
 }
-void ASSIGN(big_int* leftOperand, big_int* rightOperand)
+void ASSIGN(big_int* leftOperand, const big_int* rightOperand)
 {
    uint8 pos;
    for (pos = 0u; pos < 16u; pos++)
@@ -1099,7 +1209,7 @@ void ASSIGN_NULL(big_int* leftOperand)
    }
 }
 
-void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand)
+void ASSIGN_UINT32(big_int* leftOperand, const uint32 rightOperand)
 {
    uint8 pos;
    uint8 i;
@@ -1107,10 +1217,38 @@ void ASSIGN_UINT32(big_int* leftOperand, uint32 rightOperand)
    {
       leftOperand->number[pos] = 0x00u;
    }
+
    for (pos = 16u -1u, i = 0u; pos >= (16u -sizeof(uint32)); pos--, i++)
    {
       leftOperand->number[pos] = (rightOperand>>i)&0xFFu;
    }
+}
+void SHIFT_LEFT(big_int* number, uint32 amount_bits_shift)
+{
+   big_int tmpBigInt, result;
+   uint32 tmp32;
+   sint32 pos;
+
+   ASSIGN_NULL(&tmpBigInt);
+   ASSIGN_NULL(&result);
+
+
+   if(amount_bits_shift > 24u)
+   {
+      OS_SET_SW_BUG(E_OS_BUG_BIT_SHIFT_OUT_OF_RANGE, E_FUNC_SHIFT_LEFT);
+      return;
+   }
+   for (pos = 16u -1u; pos >= 0; pos--)
+   {
+      ASSIGN_NULL(&tmpBigInt);
+      tmp32 = ((uint32)number->number[(uint32)pos]) << amount_bits_shift;
+      tmpBigInt.number[(uint32)pos] = (tmp32 >> 0u) & 0xFF;
+      tmpBigInt.number[(uint32)pos+1u] = (tmp32 >> 8u) & 0xFF;
+      tmpBigInt.number[(uint32)pos+2u] = (tmp32 >>16u) & 0xFF;
+      tmpBigInt.number[(uint32)pos+3u] = (tmp32 >>24u) & 0xFF;
+      INT_ADD(&result, &result, &tmpBigInt);
+   }
+   ASSIGN(number, &result);
 }
 
 uint32 get_uint32_of_4_uint8(uint8* ptr)

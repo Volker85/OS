@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -28,213 +28,702 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s 			page 1
    1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** #include "os_firstinc.h"
    2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
    3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** void OS_STACK_CHECK(void)
-   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** {
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** { 
   26              		.loc 1 4 0
   27              		.cfi_startproc
-  28              		@ args = 0, pretend = 0, frame = 0
+  28              		@ args = 0, pretend = 0, frame = 8
   29              		@ frame_needed = 0, uses_anonymous_args = 0
-  30 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
-  31              		.cfi_def_cfa_offset 24
-  32              		.cfi_offset 3, -24
-  33              		.cfi_offset 4, -20
-  34              		.cfi_offset 5, -16
-  35              		.cfi_offset 6, -12
-  36              		.cfi_offset 7, -8
-  37              		.cfi_offset 14, -4
+  30 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  31              		.cfi_def_cfa_offset 36
+  32              		.cfi_offset 4, -36
+  33              		.cfi_offset 5, -32
+  34              		.cfi_offset 6, -28
+  35              		.cfi_offset 7, -24
+  36              		.cfi_offset 8, -20
+  37              		.cfi_offset 9, -16
+  38              		.cfi_offset 10, -12
+  39              		.cfi_offset 11, -8
+  40              		.cfi_offset 14, -4
    5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    /* the last 64 bytes are reserved for stack check for every stack
-   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    unsigned_char_t OS_MAIN_STACK[OS_STACK_SIZE];
+   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    unsigned_char_t OS_MAIN_STACK[OS_MAIN_STACK_SIZE];
    7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
    8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    the stack is starting at the highest address and growing to lower addresses -> pattern start on 
    9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
   10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    */
   11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    static volatile uint32 stack_pos = 0u, stack_used = FALSE;
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    STACK_ADDR = (volatile uint32*)-1u;
-  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    STACK_POS =  (volatile uint32) -1u;
-  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    STACK_USAGE_PERCENT = 0u;
-  38              		.loc 1 14 0
-  39 0002 2248     		ldr	r0, .L20
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    OS_MAIN_STACK_ADDR = (volatile uint32*)-1u;
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    OS_MAIN_STACK_POS =  (volatile uint32) -1u;
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    OS_MAIN_STACK_USAGE_PERCENT = 0u;
   15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
-  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < OS_STACK_SIZE; stack_pos++)
-  40              		.loc 1 16 0
-  41 0004 224B     		ldr	r3, .L20+4
-  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    STACK_USAGE_PERCENT = 0u;
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s 			page 2
+  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < OS_MAIN_STACK_SIZE; stack_pos++)
+  41              		.loc 1 16 0
+  42 0004 BE4B     		ldr	r3, .L91
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 2
 
 
-  42              		.loc 1 13 0
-  43 0006 234C     		ldr	r4, .L20+8
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    STACK_POS =  (volatile uint32) -1u;
-  44              		.loc 1 12 0
-  45 0008 234F     		ldr	r7, .L20+12
-  46 000a 4FF0FF32 		mov	r2, #-1
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    OS_MAIN_STACK_USAGE_PERCENT = 0u;
+  43              		.loc 1 13 0
+  44 0006 BF4F     		ldr	r7, .L91+4
   14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
-  47              		.loc 1 14 0
-  48 000e 0021     		movs	r1, #0
-  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    STACK_USAGE_PERCENT = 0u;
-  49              		.loc 1 13 0
-  50 0010 2260     		str	r2, [r4]
+  45              		.loc 1 14 0
+  46 0008 DFF838E3 		ldr	lr, .L91+68
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    OS_MAIN_STACK_POS =  (volatile uint32) -1u;
+  47              		.loc 1 12 0
+  48 000c BE4C     		ldr	r4, .L91+8
+  49 000e 4FF0FF32 		mov	r2, #-1
   14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
-  51              		.loc 1 14 0
-  52 0012 0160     		str	r1, [r0]
-  53              		.loc 1 16 0
-  54 0014 1960     		str	r1, [r3]
-  55 0016 1D68     		ldr	r5, [r3]
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    STACK_POS =  (volatile uint32) -1u;
-  56              		.loc 1 12 0
-  57 0018 3A60     		str	r2, [r7]
-  58              		.loc 1 16 0
-  59 001a B5F5007F 		cmp	r5, #512
-  60 001e 1CD2     		bcs	.L3
-  61 0020 1E4E     		ldr	r6, .L20+16
-  62 0022 0D46     		mov	r5, r1
+  50              		.loc 1 14 0
+  51 0012 0021     		movs	r1, #0
+  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    OS_MAIN_STACK_USAGE_PERCENT = 0u;
+  52              		.loc 1 13 0
+  53 0014 3A60     		str	r2, [r7]
+  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
+  54              		.loc 1 14 0
+  55 0016 CEF80010 		str	r1, [lr]
+  56              		.loc 1 16 0
+  57 001a 1960     		str	r1, [r3]
+  58 001c 1868     		ldr	r0, [r3]
+  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    OS_MAIN_STACK_POS =  (volatile uint32) -1u;
+  59              		.loc 1 12 0
+  60 001e 2260     		str	r2, [r4]
+  61              		.loc 1 16 0
+  62 0020 B0F5806F 		cmp	r0, #1024
+   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    /* the last 64 bytes are reserved for stack check for every stack
+  63              		.loc 1 4 0
+  64 0024 83B0     		sub	sp, sp, #12
+  65              		.cfi_def_cfa_offset 48
+  66              		.loc 1 16 0
+  67 0026 1AD2     		bcs	.L3
+  68 0028 B84D     		ldr	r5, .L91+12
   17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
   18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       if(OS_MAIN_STACK[stack_pos] != 0xAA)
   19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
   20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          stack_used = TRUE;
-  63              		.loc 1 20 0
-  64 0024 4FF0010C 		mov	ip, #1
-  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
-  65              		.loc 1 16 0
-  66 0028 1146     		mov	r1, r2
-  67              	.L2:
+  69              		.loc 1 20 0
+  70 002a 0126     		movs	r6, #1
+  71              	.L2:
   18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
-  68              		.loc 1 18 0
-  69 002a 1A68     		ldr	r2, [r3]
-  70 002c B25C     		ldrb	r2, [r6, r2]	@ zero_extendqisi2
-  71 002e AA2A     		cmp	r2, #170
-  72 0030 0BD0     		beq	.L4
-  73              		.loc 1 20 0
-  74 0032 C3F804C0 		str	ip, [r3, #4]
-  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          if(stack_pos < STACK_POS)
-  75              		.loc 1 21 0
-  76 0036 D3F800E0 		ldr	lr, [r3]
-  77 003a 2268     		ldr	r2, [r4]
-  78 003c 9645     		cmp	lr, r2
-  79 003e 04D2     		bcs	.L4
+  72              		.loc 1 18 0
+  73 002c 1868     		ldr	r0, [r3]
+  74 002e 285C     		ldrb	r0, [r5, r0]	@ zero_extendqisi2
+  75 0030 AA28     		cmp	r0, #170
+  76 0032 0AD0     		beq	.L4
+  77              		.loc 1 20 0
+  78 0034 5E60     		str	r6, [r3, #4]
+  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          if(stack_pos < OS_MAIN_STACK_POS)
+  79              		.loc 1 21 0
+  80 0036 D3F800C0 		ldr	ip, [r3]
+  81 003a 3868     		ldr	r0, [r7]
+  82 003c 8445     		cmp	ip, r0
+  83 003e 04D2     		bcs	.L4
   22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          {
-  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             STACK_POS  = (volatile uint32 )stack_pos;
-  80              		.loc 1 23 0
-  81 0040 1A68     		ldr	r2, [r3]
-  82 0042 2260     		str	r2, [r4]
-  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             STACK_ADDR = (volatile uint32*)&OS_MAIN_STACK[stack_pos];
-  83              		.loc 1 24 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s 			page 3
+  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             OS_MAIN_STACK_POS  = (volatile uint32 )stack_pos;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 3
 
 
-  84 0044 1968     		ldr	r1, [r3]
-  85 0046 0125     		movs	r5, #1
-  86 0048 3144     		add	r1, r1, r6
-  87              	.L4:
+  84              		.loc 1 23 0
+  85 0040 1A68     		ldr	r2, [r3]
+  86 0042 3A60     		str	r2, [r7]
+  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             OS_MAIN_STACK_ADDR = (volatile uint32*)&OS_MAIN_STACK[stack_pos];
+  87              		.loc 1 24 0
+  88 0044 1A68     		ldr	r2, [r3]
+  89 0046 0121     		movs	r1, #1
+  90 0048 2A44     		add	r2, r2, r5
+  91              	.L4:
   16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
-  88              		.loc 1 16 0 discriminator 2
-  89 004a 1A68     		ldr	r2, [r3]
-  90 004c 0132     		adds	r2, r2, #1
-  91 004e 1A60     		str	r2, [r3]
-  92 0050 1A68     		ldr	r2, [r3]
-  93 0052 B2F5007F 		cmp	r2, #512
-  94 0056 E8D3     		bcc	.L2
-  95 0058 B5B9     		cbnz	r5, .L18
-  96              	.L3:
+  92              		.loc 1 16 0 discriminator 2
+  93 004a 1868     		ldr	r0, [r3]
+  94 004c 0130     		adds	r0, r0, #1
+  95 004e 1860     		str	r0, [r3]
+  96 0050 1868     		ldr	r0, [r3]
+  97 0052 B0F5806F 		cmp	r0, #1024
+  98 0056 E9D3     		bcc	.L2
+  99 0058 0029     		cmp	r1, #0
+ 100 005a 40F04F81 		bne	.L79
+ 101              	.L3:
   25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          }
   26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }
   27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }
-  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    STACK_USAGE_PERCENT = (OS_STACK_SIZE - STACK_POS) * 100u / OS_STACK_SIZE;
-  97              		.loc 1 28 0
-  98 005a 2168     		ldr	r1, [r4]
-  99 005c 6FF06302 		mvn	r2, #99
- 100 0060 02FB01F2 		mul	r2, r2, r1
- 101 0064 02F54842 		add	r2, r2, #51200
- 102 0068 520A     		lsrs	r2, r2, #9
- 103 006a 0260     		str	r2, [r0]
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
-  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    if((stack_used == TRUE) && (STACK_USAGE_PERCENT > 80u))
- 104              		.loc 1 30 0
- 105 006c 5B68     		ldr	r3, [r3, #4]
- 106 006e 012B     		cmp	r3, #1
- 107 0070 00D0     		beq	.L19
- 108              	.L1:
-  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
-  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       OS_SET_SW_BUG(E_OS_BUG_CRITICAL_STACK_USAGE,E_FUNC_STACKCHECK);
-  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       REFERENCE_UNUSED_PARAMETER(STACK_POS);
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       REFERENCE_UNUSED_PARAMETER(STACK_ADDR);
-  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       while(1)
-  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
-  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          /* allow easy debugging */
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < TASK0_STACK_SIZE; stack_pos++)
+ 102              		.loc 1 28 0
+ 103 005e 0022     		movs	r2, #0
+ 104 0060 1A60     		str	r2, [r3]
+ 105 0062 1968     		ldr	r1, [r3]
+ 106 0064 B1F5FA6F 		cmp	r1, #2000
+ 107 0068 80F09381 		bcs	.L80
+ 108 006c A84C     		ldr	r4, .L91+16
+ 109 006e A94D     		ldr	r5, .L91+20
+ 110 0070 2168     		ldr	r1, [r4]
+ 111 0072 A94E     		ldr	r6, .L91+24
+  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       if(TASK0_STACK[stack_pos] != 0xAA)
+  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          stack_used = TRUE;
+ 112              		.loc 1 32 0
+ 113 0074 4FF0010C 		mov	ip, #1
+ 114              	.L9:
+  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 115              		.loc 1 30 0
+ 116 0078 1868     		ldr	r0, [r3]
+ 117 007a 285C     		ldrb	r0, [r5, r0]	@ zero_extendqisi2
+ 118 007c AA28     		cmp	r0, #170
+ 119 007e 0BD0     		beq	.L8
+ 120              		.loc 1 32 0
+ 121 0080 C3F804C0 		str	ip, [r3, #4]
+  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          if(stack_pos < TASK0_STACK_POS)
+ 122              		.loc 1 33 0
+ 123 0084 D3F80080 		ldr	r8, [r3]
+ 124 0088 3068     		ldr	r0, [r6]
+ 125 008a 8045     		cmp	r8, r0
+ 126 008c 04D2     		bcs	.L8
+  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          {
+  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK0_STACK_POS  = (volatile uint32 )stack_pos;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 4
+
+
+ 127              		.loc 1 35 0
+ 128 008e 1A68     		ldr	r2, [r3]
+ 129 0090 3260     		str	r2, [r6]
+  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK0_STACK_ADDR = (volatile uint32*)&TASK0_STACK[stack_pos];
+ 130              		.loc 1 36 0
+ 131 0092 1968     		ldr	r1, [r3]
+ 132 0094 0122     		movs	r2, #1
+ 133 0096 2944     		add	r1, r1, r5
+ 134              	.L8:
+  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 135              		.loc 1 28 0 discriminator 2
+ 136 0098 1868     		ldr	r0, [r3]
+ 137 009a 0130     		adds	r0, r0, #1
+ 138 009c 1860     		str	r0, [r3]
+ 139 009e 1868     		ldr	r0, [r3]
+ 140 00a0 B0F5FA6F 		cmp	r0, #2000
+ 141 00a4 E8D3     		bcc	.L9
+ 142 00a6 002A     		cmp	r2, #0
+ 143 00a8 40F07181 		bne	.L81
+ 144              	.L7:
+  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          }
   38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }
   39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }
-  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** }
- 109              		.loc 1 40 0
- 110 0072 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 111              	.L19:
-  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
- 112              		.loc 1 30 0 discriminator 1
- 113 0074 0368     		ldr	r3, [r0]
- 114 0076 502B     		cmp	r3, #80
- 115 0078 FBD9     		bls	.L1
-  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       REFERENCE_UNUSED_PARAMETER(STACK_POS);
- 116              		.loc 1 32 0
- 117 007a 1121     		movs	r1, #17
- 118 007c 0920     		movs	r0, #9
- 119 007e FFF7FEFF 		bl	OS_SET_SW_BUG
- 120              	.LVL0:
-  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       REFERENCE_UNUSED_PARAMETER(STACK_ADDR);
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s 			page 4
+  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < TASK1_STACK_SIZE; stack_pos++)
+ 145              		.loc 1 40 0
+ 146 00ac 0022     		movs	r2, #0
+ 147 00ae 1A60     		str	r2, [r3]
+ 148 00b0 1968     		ldr	r1, [r3]
+ 149 00b2 B1F5FA6F 		cmp	r1, #2000
+ 150 00b6 80F06881 		bcs	.L82
+ 151 00ba 984C     		ldr	r4, .L91+28
+ 152 00bc DFF888C2 		ldr	ip, .L91+72
+ 153 00c0 2068     		ldr	r0, [r4]
+ 154 00c2 974D     		ldr	r5, .L91+32
+  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       if(TASK1_STACK[stack_pos] != 0xAA)
+  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          stack_used = TRUE;
+ 155              		.loc 1 44 0
+ 156 00c4 4FF00108 		mov	r8, #1
+ 157              	.L14:
+  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 158              		.loc 1 42 0
+ 159 00c8 1968     		ldr	r1, [r3]
+ 160 00ca 1CF80110 		ldrb	r1, [ip, r1]	@ zero_extendqisi2
+ 161 00ce AA29     		cmp	r1, #170
+ 162 00d0 0BD0     		beq	.L13
+ 163              		.loc 1 44 0
+ 164 00d2 C3F80480 		str	r8, [r3, #4]
+  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          if(stack_pos < TASK1_STACK_POS)
+ 165              		.loc 1 45 0
+ 166 00d6 D3F80090 		ldr	r9, [r3]
+ 167 00da 2968     		ldr	r1, [r5]
+ 168 00dc 8945     		cmp	r9, r1
+ 169 00de 04D2     		bcs	.L13
+  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          {
+  47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK1_STACK_POS  = (volatile uint32 )stack_pos;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 5
 
 
- 121              		.loc 1 33 0
- 122 0082 2368     		ldr	r3, [r4]
- 123 0084 2360     		str	r3, [r4]
- 124              	.L7:
- 125 0086 FEE7     		b	.L7
- 126              	.L18:
- 127 0088 3960     		str	r1, [r7]
- 128 008a E6E7     		b	.L3
- 129              	.L21:
- 130              		.align	2
- 131              	.L20:
- 132 008c 00000000 		.word	STACK_USAGE_PERCENT
- 133 0090 00000000 		.word	.LANCHOR0
- 134 0094 00000000 		.word	STACK_POS
- 135 0098 00000000 		.word	STACK_ADDR
- 136 009c 00000000 		.word	OS_MAIN_STACK
- 137              		.cfi_endproc
- 138              	.LFE0:
- 140              		.bss
- 141              		.align	2
- 142              		.set	.LANCHOR0,. + 0
- 145              	stack_pos.4058:
- 146 0000 00000000 		.space	4
- 149              	stack_used.4059:
- 150 0004 00000000 		.space	4
- 151              		.text
- 152              	.Letext0:
- 153              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
- 154              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
- 155              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
- 156              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
- 157              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
- 158              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
- 159              		.file 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s 			page 5
+ 170              		.loc 1 47 0
+ 171 00e0 1A68     		ldr	r2, [r3]
+ 172 00e2 2A60     		str	r2, [r5]
+  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK1_STACK_ADDR = (volatile uint32*)&TASK1_STACK[stack_pos];
+ 173              		.loc 1 48 0
+ 174 00e4 1868     		ldr	r0, [r3]
+ 175 00e6 0122     		movs	r2, #1
+ 176 00e8 6044     		add	r0, r0, ip
+ 177              	.L13:
+  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 178              		.loc 1 40 0 discriminator 2
+ 179 00ea 1968     		ldr	r1, [r3]
+ 180 00ec 0131     		adds	r1, r1, #1
+ 181 00ee 1960     		str	r1, [r3]
+ 182 00f0 1968     		ldr	r1, [r3]
+ 183 00f2 B1F5FA6F 		cmp	r1, #2000
+ 184 00f6 E7D3     		bcc	.L14
+ 185 00f8 002A     		cmp	r2, #0
+ 186 00fa 40F04481 		bne	.L83
+ 187              	.L12:
+  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          }
+  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }
+  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }
+  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < TASK2_STACK_SIZE; stack_pos++)
+ 188              		.loc 1 52 0
+ 189 00fe 0022     		movs	r2, #0
+ 190 0100 1A60     		str	r2, [r3]
+ 191 0102 1968     		ldr	r1, [r3]
+ 192 0104 B1F5FA6F 		cmp	r1, #2000
+ 193 0108 80F03B81 		bcs	.L84
+ 194 010c DFF83CC2 		ldr	ip, .L91+76
+ 195 0110 DFF83C82 		ldr	r8, .L91+80
+ 196 0114 DCF80000 		ldr	r0, [ip]
+ 197 0118 824C     		ldr	r4, .L91+36
+  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       if(TASK2_STACK[stack_pos] != 0xAA)
+  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          stack_used = TRUE;
+ 198              		.loc 1 56 0
+ 199 011a 4FF00109 		mov	r9, #1
+ 200              	.L19:
+  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 201              		.loc 1 54 0
+ 202 011e 1968     		ldr	r1, [r3]
+ 203 0120 18F80110 		ldrb	r1, [r8, r1]	@ zero_extendqisi2
+ 204 0124 AA29     		cmp	r1, #170
+ 205 0126 0BD0     		beq	.L18
+ 206              		.loc 1 56 0
+ 207 0128 C3F80490 		str	r9, [r3, #4]
+  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          if(stack_pos < TASK2_STACK_POS)
+ 208              		.loc 1 57 0
+ 209 012c D3F800A0 		ldr	r10, [r3]
+ 210 0130 2168     		ldr	r1, [r4]
+ 211 0132 8A45     		cmp	r10, r1
+ 212 0134 04D2     		bcs	.L18
+  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          {
+  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK2_STACK_POS  = (volatile uint32 )stack_pos;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 6
+
+
+ 213              		.loc 1 59 0
+ 214 0136 1A68     		ldr	r2, [r3]
+ 215 0138 2260     		str	r2, [r4]
+  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK2_STACK_ADDR = (volatile uint32*)&TASK2_STACK[stack_pos];
+ 216              		.loc 1 60 0
+ 217 013a 1868     		ldr	r0, [r3]
+ 218 013c 0122     		movs	r2, #1
+ 219 013e 4044     		add	r0, r0, r8
+ 220              	.L18:
+  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 221              		.loc 1 52 0 discriminator 2
+ 222 0140 1968     		ldr	r1, [r3]
+ 223 0142 0131     		adds	r1, r1, #1
+ 224 0144 1960     		str	r1, [r3]
+ 225 0146 1968     		ldr	r1, [r3]
+ 226 0148 B1F5FA6F 		cmp	r1, #2000
+ 227 014c E7D3     		bcc	.L19
+ 228 014e 002A     		cmp	r2, #0
+ 229 0150 40F01481 		bne	.L85
+ 230              	.L17:
+  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          }
+  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }
+  63:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }
+  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < TASK3_STACK_SIZE; stack_pos++)
+ 231              		.loc 1 64 0
+ 232 0154 0022     		movs	r2, #0
+ 233 0156 1A60     		str	r2, [r3]
+ 234 0158 1968     		ldr	r1, [r3]
+ 235 015a B1F5FA6F 		cmp	r1, #2000
+ 236 015e 80F00B81 		bcs	.L86
+ 237 0162 DFF8F081 		ldr	r8, .L91+84
+ 238 0166 DFF8F091 		ldr	r9, .L91+88
+ 239 016a D8F800C0 		ldr	ip, [r8]
+ 240 016e 6E48     		ldr	r0, .L91+40
+  65:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       if(TASK3_STACK[stack_pos] != 0xAA)
+  67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          stack_used = TRUE;
+ 241              		.loc 1 68 0
+ 242 0170 4FF0010A 		mov	r10, #1
+ 243              	.L24:
+  66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 244              		.loc 1 66 0
+ 245 0174 1968     		ldr	r1, [r3]
+ 246 0176 19F80110 		ldrb	r1, [r9, r1]	@ zero_extendqisi2
+ 247 017a AA29     		cmp	r1, #170
+ 248 017c 0CD0     		beq	.L23
+ 249              		.loc 1 68 0
+ 250 017e C3F804A0 		str	r10, [r3, #4]
+  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          if(stack_pos < TASK3_STACK_POS)
+ 251              		.loc 1 69 0
+ 252 0182 D3F800B0 		ldr	fp, [r3]
+ 253 0186 0168     		ldr	r1, [r0]
+ 254 0188 8B45     		cmp	fp, r1
+ 255 018a 05D2     		bcs	.L23
+  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          {
+  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK3_STACK_POS  = (volatile uint32 )stack_pos;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 7
+
+
+ 256              		.loc 1 71 0
+ 257 018c 1A68     		ldr	r2, [r3]
+ 258 018e 0260     		str	r2, [r0]
+  72:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK3_STACK_ADDR = (volatile uint32*)&TASK3_STACK[stack_pos];
+ 259              		.loc 1 72 0
+ 260 0190 1968     		ldr	r1, [r3]
+ 261 0192 0122     		movs	r2, #1
+ 262 0194 09EB010C 		add	ip, r9, r1
+ 263              	.L23:
+  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 264              		.loc 1 64 0 discriminator 2
+ 265 0198 1968     		ldr	r1, [r3]
+ 266 019a 0131     		adds	r1, r1, #1
+ 267 019c 1960     		str	r1, [r3]
+ 268 019e 1968     		ldr	r1, [r3]
+ 269 01a0 B1F5FA6F 		cmp	r1, #2000
+ 270 01a4 E6D3     		bcc	.L24
+ 271 01a6 002A     		cmp	r2, #0
+ 272 01a8 40F0E380 		bne	.L87
+ 273              	.L22:
+  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          }
+  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }
+  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }
+  76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    for(stack_pos = 0; stack_pos < TASK4_STACK_SIZE; stack_pos++)
+ 274              		.loc 1 76 0
+ 275 01ac 0022     		movs	r2, #0
+ 276 01ae 1A60     		str	r2, [r3]
+ 277 01b0 1968     		ldr	r1, [r3]
+ 278 01b2 B1F5FA6F 		cmp	r1, #2000
+ 279 01b6 80F0DA80 		bcs	.L88
+ 280 01ba DFF8A081 		ldr	r8, .L91+92
+ 281 01be DFF8A091 		ldr	r9, .L91+96
+ 282 01c2 D8F800C0 		ldr	ip, [r8]
+ 283 01c6 5949     		ldr	r1, .L91+44
+  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       if(TASK4_STACK[stack_pos] != 0xAA)
+  79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          stack_used = TRUE;
+ 284              		.loc 1 80 0
+ 285 01c8 0190     		str	r0, [sp, #4]
+ 286              	.L29:
+  78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 287              		.loc 1 78 0
+ 288 01ca D3F800A0 		ldr	r10, [r3]
+ 289 01ce 19F80AA0 		ldrb	r10, [r9, r10]	@ zero_extendqisi2
+ 290 01d2 BAF1AA0F 		cmp	r10, #170
+ 291 01d6 0DD0     		beq	.L28
+ 292              		.loc 1 80 0
+ 293 01d8 0120     		movs	r0, #1
+ 294 01da 5860     		str	r0, [r3, #4]
+  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          if(stack_pos < TASK4_STACK_POS)
+ 295              		.loc 1 81 0
+ 296 01dc D3F800B0 		ldr	fp, [r3]
+ 297 01e0 D1F800A0 		ldr	r10, [r1]
+ 298 01e4 D345     		cmp	fp, r10
+ 299 01e6 05D2     		bcs	.L28
+  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          {
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 8
+
+
+  83:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK4_STACK_POS  = (volatile uint32 )stack_pos;
+ 300              		.loc 1 83 0
+ 301 01e8 1A68     		ldr	r2, [r3]
+ 302 01ea 0A60     		str	r2, [r1]
+  84:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****             TASK4_STACK_ADDR = (volatile uint32*)&TASK4_STACK[stack_pos];
+ 303              		.loc 1 84 0
+ 304 01ec D3F800C0 		ldr	ip, [r3]
+ 305 01f0 0246     		mov	r2, r0
+ 306 01f2 CC44     		add	ip, ip, r9
+ 307              	.L28:
+  76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 308              		.loc 1 76 0 discriminator 2
+ 309 01f4 D3F800A0 		ldr	r10, [r3]
+ 310 01f8 0AF1010A 		add	r10, r10, #1
+ 311 01fc C3F800A0 		str	r10, [r3]
+ 312 0200 D3F800A0 		ldr	r10, [r3]
+ 313 0204 BAF5FA6F 		cmp	r10, #2000
+ 314 0208 DFD3     		bcc	.L29
+ 315 020a 0198     		ldr	r0, [sp, #4]
+ 316 020c 002A     		cmp	r2, #0
+ 317 020e 40F0AB80 		bne	.L89
+ 318              	.L27:
+  85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          }
+  86:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }
+  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }   
+  88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    OS_MAIN_STACK_USAGE_PERCENT = (OS_MAIN_STACK_SIZE - OS_MAIN_STACK_POS) * 100u / OS_MAIN_STACK_SI
+ 319              		.loc 1 88 0
+ 320 0212 D7F80080 		ldr	r8, [r7]
+  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK0_STACK_USAGE_PERCENT   = (TASK0_STACK_SIZE - TASK0_STACK_POS) * 100u / TASK0_STACK_SIZE;
+ 321              		.loc 1 89 0
+ 322 0216 464F     		ldr	r7, .L91+48
+ 323 0218 DFF848C1 		ldr	ip, .L91+100
+  88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK0_STACK_USAGE_PERCENT   = (TASK0_STACK_SIZE - TASK0_STACK_POS) * 100u / TASK0_STACK_SIZE;
+ 324              		.loc 1 88 0
+ 325 021c 6FF06302 		mvn	r2, #99
+ 326 0220 02FB08F8 		mul	r8, r2, r8
+ 327 0224 08F5C838 		add	r8, r8, #102400
+ 328 0228 4FEA9828 		lsr	r8, r8, #10
+ 329 022c CEF80080 		str	r8, [lr]
+ 330              		.loc 1 89 0
+ 331 0230 D6F80080 		ldr	r8, [r6]
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK1_STACK_USAGE_PERCENT   = (TASK1_STACK_SIZE - TASK1_STACK_POS) * 100u / TASK1_STACK_SIZE;
+ 332              		.loc 1 90 0
+ 333 0234 3F4E     		ldr	r6, .L91+52
+  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK0_STACK_USAGE_PERCENT   = (TASK0_STACK_SIZE - TASK0_STACK_POS) * 100u / TASK0_STACK_SIZE;
+ 334              		.loc 1 89 0
+ 335 0236 02FB08F8 		mul	r8, r2, r8
+ 336 023a 08F54338 		add	r8, r8, #199680
+ 337 023e 08F5A078 		add	r8, r8, #320
+ 338 0242 A7FB0898 		umull	r9, r8, r7, r8
+ 339 0246 4FEAD818 		lsr	r8, r8, #7
+ 340 024a CCF80080 		str	r8, [ip]
+ 341              		.loc 1 90 0
+ 342 024e D5F80080 		ldr	r8, [r5]
+  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK2_STACK_USAGE_PERCENT   = (TASK2_STACK_SIZE - TASK2_STACK_POS) * 100u / TASK2_STACK_SIZE;
+ 343              		.loc 1 91 0
+ 344 0252 394D     		ldr	r5, .L91+56
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 9
+
+
+  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK1_STACK_USAGE_PERCENT   = (TASK1_STACK_SIZE - TASK1_STACK_POS) * 100u / TASK1_STACK_SIZE;
+ 345              		.loc 1 90 0
+ 346 0254 02FB08F8 		mul	r8, r2, r8
+ 347 0258 08F54338 		add	r8, r8, #199680
+ 348 025c 08F5A078 		add	r8, r8, #320
+ 349 0260 A7FB0898 		umull	r9, r8, r7, r8
+ 350 0264 4FEAD818 		lsr	r8, r8, #7
+ 351 0268 C6F80080 		str	r8, [r6]
+ 352              		.loc 1 91 0
+ 353 026c D4F80080 		ldr	r8, [r4]
+  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK3_STACK_USAGE_PERCENT   = (TASK3_STACK_SIZE - TASK3_STACK_POS) * 100u / TASK3_STACK_SIZE;
+ 354              		.loc 1 92 0
+ 355 0270 324C     		ldr	r4, .L91+60
+  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK2_STACK_USAGE_PERCENT   = (TASK2_STACK_SIZE - TASK2_STACK_POS) * 100u / TASK2_STACK_SIZE;
+ 356              		.loc 1 91 0
+ 357 0272 02FB08F8 		mul	r8, r2, r8
+ 358 0276 08F54338 		add	r8, r8, #199680
+ 359 027a 08F5A078 		add	r8, r8, #320
+ 360 027e A7FB0898 		umull	r9, r8, r7, r8
+ 361 0282 4FEAD818 		lsr	r8, r8, #7
+ 362 0286 C5F80080 		str	r8, [r5]
+ 363              		.loc 1 92 0
+ 364 028a D0F80080 		ldr	r8, [r0]
+  93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK4_STACK_USAGE_PERCENT   = (TASK4_STACK_SIZE - TASK4_STACK_POS) * 100u / TASK4_STACK_SIZE;
+ 365              		.loc 1 93 0
+ 366 028e 2C48     		ldr	r0, .L91+64
+  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    TASK3_STACK_USAGE_PERCENT   = (TASK3_STACK_SIZE - TASK3_STACK_POS) * 100u / TASK3_STACK_SIZE;
+ 367              		.loc 1 92 0
+ 368 0290 02FB08F8 		mul	r8, r2, r8
+ 369 0294 08F54338 		add	r8, r8, #199680
+ 370 0298 08F5A078 		add	r8, r8, #320
+ 371 029c A7FB0898 		umull	r9, r8, r7, r8
+ 372 02a0 4FEAD818 		lsr	r8, r8, #7
+ 373 02a4 C4F80080 		str	r8, [r4]
+ 374              		.loc 1 93 0
+ 375 02a8 0968     		ldr	r1, [r1]
+ 376 02aa 02FB01F2 		mul	r2, r2, r1
+ 377 02ae 02F54332 		add	r2, r2, #199680
+ 378 02b2 02F5A072 		add	r2, r2, #320
+ 379 02b6 A7FB0212 		umull	r1, r2, r7, r2
+ 380 02ba D209     		lsrs	r2, r2, #7
+ 381 02bc 0260     		str	r2, [r0]
+  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** 
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    if((stack_used == TRUE) && ((OS_MAIN_STACK_USAGE_PERCENT > 80u) || (TASK0_STACK_USAGE_PERCENT > 
+ 382              		.loc 1 95 0
+ 383 02be 5B68     		ldr	r3, [r3, #4]
+ 384 02c0 012B     		cmp	r3, #1
+ 385 02c2 02D0     		beq	.L90
+ 386              	.L1:
+  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       OS_SET_SW_BUG(E_OS_BUG_CRITICAL_STACK_USAGE,E_FUNC_STACKCHECK);
+  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       while(1)
+  99:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       {
+ 100:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****          /* allow easy debugging */
+ 101:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       }
+ 102:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    }
+ 103:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c **** }
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 10
+
+
+ 387              		.loc 1 103 0
+ 388 02c4 03B0     		add	sp, sp, #12
+ 389              		.cfi_remember_state
+ 390              		.cfi_def_cfa_offset 36
+ 391              		@ sp needed
+ 392 02c6 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 393              	.L90:
+ 394              		.cfi_restore_state
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 395              		.loc 1 95 0 discriminator 1
+ 396 02ca DEF80030 		ldr	r3, [lr]
+ 397 02ce 502B     		cmp	r3, #80
+ 398 02d0 0FD8     		bhi	.L32
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 399              		.loc 1 95 0 is_stmt 0 discriminator 2
+ 400 02d2 DCF80030 		ldr	r3, [ip]
+ 401 02d6 502B     		cmp	r3, #80
+ 402 02d8 0BD8     		bhi	.L32
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 403              		.loc 1 95 0 discriminator 3
+ 404 02da 3368     		ldr	r3, [r6]
+ 405 02dc 502B     		cmp	r3, #80
+ 406 02de 08D8     		bhi	.L32
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 407              		.loc 1 95 0 discriminator 4
+ 408 02e0 2B68     		ldr	r3, [r5]
+ 409 02e2 502B     		cmp	r3, #80
+ 410 02e4 05D8     		bhi	.L32
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 411              		.loc 1 95 0 discriminator 5
+ 412 02e6 2368     		ldr	r3, [r4]
+ 413 02e8 502B     		cmp	r3, #80
+ 414 02ea 02D8     		bhi	.L32
+  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****    {
+ 415              		.loc 1 95 0 discriminator 6
+ 416 02ec 0368     		ldr	r3, [r0]
+ 417 02ee 502B     		cmp	r3, #80
+ 418 02f0 E8D9     		bls	.L1
+ 419              	.L32:
+  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_stack.c ****       while(1)
+ 420              		.loc 1 97 0 is_stmt 1
+ 421 02f2 1121     		movs	r1, #17
+ 422 02f4 0920     		movs	r0, #9
+ 423 02f6 FFF7FEFF 		bl	OS_SET_SW_BUG
+ 424              	.LVL0:
+ 425              	.L33:
+ 426 02fa FEE7     		b	.L33
+ 427              	.L79:
+ 428 02fc 2260     		str	r2, [r4]
+ 429 02fe AEE6     		b	.L3
+ 430              	.L92:
+ 431              		.align	2
+ 432              	.L91:
+ 433 0300 00000000 		.word	.LANCHOR0
+ 434 0304 00000000 		.word	OS_MAIN_STACK_POS
+ 435 0308 00000000 		.word	OS_MAIN_STACK_ADDR
+ 436 030c 00000000 		.word	OS_MAIN_STACK
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 11
+
+
+ 437 0310 00000000 		.word	TASK0_STACK_ADDR
+ 438 0314 00000000 		.word	TASK0_STACK
+ 439 0318 00000000 		.word	TASK0_STACK_POS
+ 440 031c 00000000 		.word	TASK1_STACK_ADDR
+ 441 0320 00000000 		.word	TASK1_STACK_POS
+ 442 0324 00000000 		.word	TASK2_STACK_POS
+ 443 0328 00000000 		.word	TASK3_STACK_POS
+ 444 032c 00000000 		.word	TASK4_STACK_POS
+ 445 0330 D34D6210 		.word	274877907
+ 446 0334 00000000 		.word	TASK1_STACK_USAGE_PERCENT
+ 447 0338 00000000 		.word	TASK2_STACK_USAGE_PERCENT
+ 448 033c 00000000 		.word	TASK3_STACK_USAGE_PERCENT
+ 449 0340 00000000 		.word	TASK4_STACK_USAGE_PERCENT
+ 450 0344 00000000 		.word	OS_MAIN_STACK_USAGE_PERCENT
+ 451 0348 00000000 		.word	TASK1_STACK
+ 452 034c 00000000 		.word	TASK2_STACK_ADDR
+ 453 0350 00000000 		.word	TASK2_STACK
+ 454 0354 00000000 		.word	TASK3_STACK_ADDR
+ 455 0358 00000000 		.word	TASK3_STACK
+ 456 035c 00000000 		.word	TASK4_STACK_ADDR
+ 457 0360 00000000 		.word	TASK4_STACK
+ 458 0364 00000000 		.word	TASK0_STACK_USAGE_PERCENT
+ 459              	.L89:
+ 460 0368 C8F800C0 		str	ip, [r8]
+ 461 036c 51E7     		b	.L27
+ 462              	.L88:
+ 463 036e 0A49     		ldr	r1, .L93
+ 464 0370 4FE7     		b	.L27
+ 465              	.L87:
+ 466 0372 C8F800C0 		str	ip, [r8]
+ 467 0376 19E7     		b	.L22
+ 468              	.L86:
+ 469 0378 0848     		ldr	r0, .L93+4
+ 470 037a 17E7     		b	.L22
+ 471              	.L85:
+ 472 037c CCF80000 		str	r0, [ip]
+ 473 0380 E8E6     		b	.L17
+ 474              	.L84:
+ 475 0382 074C     		ldr	r4, .L93+8
+ 476 0384 E6E6     		b	.L17
+ 477              	.L83:
+ 478 0386 2060     		str	r0, [r4]
+ 479 0388 B9E6     		b	.L12
+ 480              	.L82:
+ 481 038a 064D     		ldr	r5, .L93+12
+ 482 038c B7E6     		b	.L12
+ 483              	.L81:
+ 484 038e 2160     		str	r1, [r4]
+ 485 0390 8CE6     		b	.L7
+ 486              	.L80:
+ 487 0392 054E     		ldr	r6, .L93+16
+ 488 0394 8AE6     		b	.L7
+ 489              	.L94:
+ 490 0396 00BF     		.align	2
+ 491              	.L93:
+ 492 0398 00000000 		.word	TASK4_STACK_POS
+ 493 039c 00000000 		.word	TASK3_STACK_POS
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 12
+
+
+ 494 03a0 00000000 		.word	TASK2_STACK_POS
+ 495 03a4 00000000 		.word	TASK1_STACK_POS
+ 496 03a8 00000000 		.word	TASK0_STACK_POS
+ 497              		.cfi_endproc
+ 498              	.LFE0:
+ 500              		.bss
+ 501              		.align	2
+ 502              		.set	.LANCHOR0,. + 0
+ 505              	stack_pos.4083:
+ 506 0000 00000000 		.space	4
+ 509              	stack_used.4084:
+ 510 0004 00000000 		.space	4
+ 511              		.text
+ 512              	.Letext0:
+ 513              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+ 514              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+ 515              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
+ 516              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
+ 517              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
+ 518              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
+ 519              		.file 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_stack.c
-C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s:23     .text:00000000 OS_STACK_CHECK
-C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s:132    .text:0000008c $d
-C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s:141    .bss:00000000 $d
-C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s:145    .bss:00000000 stack_pos.4058
-C:\Users\PRESID~1\AppData\Local\Temp\cckibNLL.s:149    .bss:00000004 stack_used.4059
+C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s:23     .text:00000000 OS_STACK_CHECK
+C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s:433    .text:00000300 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s:460    .text:00000368 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s:492    .text:00000398 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s:501    .bss:00000000 $d
+C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s:505    .bss:00000000 stack_pos.4083
+C:\Users\PRESID~1\AppData\Local\Temp\ccrzbhwB.s:509    .bss:00000004 stack_used.4084
                            .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
-                           .group:00000000 wm4.os_config.h.2.ac4658f92c1259d8f1114145439d5f31
-                           .group:00000000 wm4.os_common.h.2.63eb68e412d9b6f465f2fde7f2fcb855
-                           .group:00000000 wm4.os_task_config.h.2.89b082d5aa4d7b2eff2ad4d1eb9bfd97
+                           .group:00000000 wm4.os_config.h.2.f6eac9d90a921b6f21f0ccaa4f0194d3
+                           .group:00000000 wm4.os_common.h.2.e5c031aba705597809847d8f8f7643a5
+                           .group:00000000 wm4.os_task_config.h.2.6666b50e8a518cf90a10402c04d546aa
                            .group:00000000 wm4.os_task_common.h.95.8d8bf4690dc541f58a865736bc15fd8a
 
 UNDEFINED SYMBOLS
 OS_SET_SW_BUG
-STACK_USAGE_PERCENT
-STACK_POS
-STACK_ADDR
+OS_MAIN_STACK_POS
+OS_MAIN_STACK_ADDR
 OS_MAIN_STACK
+TASK0_STACK_ADDR
+TASK0_STACK
+TASK0_STACK_POS
+TASK1_STACK_ADDR
+TASK1_STACK_POS
+TASK2_STACK_POS
+TASK3_STACK_POS
+TASK4_STACK_POS
+TASK1_STACK_USAGE_PERCENT
+TASK2_STACK_USAGE_PERCENT
+TASK3_STACK_USAGE_PERCENT
+TASK4_STACK_USAGE_PERCENT
+OS_MAIN_STACK_USAGE_PERCENT
+TASK1_STACK
+TASK2_STACK_ADDR
+TASK2_STACK
+TASK3_STACK_ADDR
+TASK3_STACK
+TASK4_STACK_ADDR
+TASK4_STACK
+TASK0_STACK_USAGE_PERCENT

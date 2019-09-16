@@ -15,46 +15,211 @@ LFB0:
 	.cfi_def_cfa_register 5
 	subl	$24, %esp
 	.loc 1 12 0
-	movl	$-1, _STACK_ADDR
+	movl	$-1, _OS_MAIN_STACK_ADDR
 	.loc 1 13 0
-	movl	$-1, _STACK_POS
+	movl	$-1, _OS_MAIN_STACK_POS
 	.loc 1 14 0
-	movl	$0, _STACK_USAGE_PERCENT
+	movl	$0, _OS_MAIN_STACK_USAGE_PERCENT
 	.loc 1 16 0
-	movl	$0, _stack_pos.1344
+	movl	$0, _stack_pos.1369
 	jmp	L2
 L4:
 	.loc 1 18 0
-	movl	_stack_pos.1344, %eax
+	movl	_stack_pos.1369, %eax
 	movb	_OS_MAIN_STACK(%eax), %al
 	cmpb	$-86, %al
 	je	L3
 	.loc 1 20 0
-	movl	$1, _stack_used.1345
+	movl	$1, _stack_used.1370
 	.loc 1 21 0
-	movl	_stack_pos.1344, %edx
-	movl	_STACK_POS, %eax
+	movl	_stack_pos.1369, %edx
+	movl	_OS_MAIN_STACK_POS, %eax
 	cmpl	%eax, %edx
 	jnb	L3
 	.loc 1 23 0
-	movl	_stack_pos.1344, %eax
-	movl	%eax, _STACK_POS
+	movl	_stack_pos.1369, %eax
+	movl	%eax, _OS_MAIN_STACK_POS
 	.loc 1 24 0
-	movl	_stack_pos.1344, %eax
+	movl	_stack_pos.1369, %eax
 	addl	$_OS_MAIN_STACK, %eax
-	movl	%eax, _STACK_ADDR
+	movl	%eax, _OS_MAIN_STACK_ADDR
 L3:
 	.loc 1 16 0 discriminator 2
-	movl	_stack_pos.1344, %eax
+	movl	_stack_pos.1369, %eax
 	incl	%eax
-	movl	%eax, _stack_pos.1344
+	movl	%eax, _stack_pos.1369
 L2:
 	.loc 1 16 0 is_stmt 0 discriminator 1
-	movl	_stack_pos.1344, %eax
-	cmpl	$511, %eax
+	movl	_stack_pos.1369, %eax
+	cmpl	$1023, %eax
 	jbe	L4
 	.loc 1 28 0 is_stmt 1
-	movl	_STACK_POS, %edx
+	movl	$0, _stack_pos.1369
+	jmp	L5
+L7:
+	.loc 1 30 0
+	movl	_stack_pos.1369, %eax
+	movb	_TASK0_STACK(%eax), %al
+	cmpb	$-86, %al
+	je	L6
+	.loc 1 32 0
+	movl	$1, _stack_used.1370
+	.loc 1 33 0
+	movl	_stack_pos.1369, %edx
+	movl	_TASK0_STACK_POS, %eax
+	cmpl	%eax, %edx
+	jnb	L6
+	.loc 1 35 0
+	movl	_stack_pos.1369, %eax
+	movl	%eax, _TASK0_STACK_POS
+	.loc 1 36 0
+	movl	_stack_pos.1369, %eax
+	addl	$_TASK0_STACK, %eax
+	movl	%eax, _TASK0_STACK_ADDR
+L6:
+	.loc 1 28 0 discriminator 2
+	movl	_stack_pos.1369, %eax
+	incl	%eax
+	movl	%eax, _stack_pos.1369
+L5:
+	.loc 1 28 0 is_stmt 0 discriminator 1
+	movl	_stack_pos.1369, %eax
+	cmpl	$1999, %eax
+	jbe	L7
+	.loc 1 40 0 is_stmt 1
+	movl	$0, _stack_pos.1369
+	jmp	L8
+L10:
+	.loc 1 42 0
+	movl	_stack_pos.1369, %eax
+	movb	_TASK1_STACK(%eax), %al
+	cmpb	$-86, %al
+	je	L9
+	.loc 1 44 0
+	movl	$1, _stack_used.1370
+	.loc 1 45 0
+	movl	_stack_pos.1369, %edx
+	movl	_TASK1_STACK_POS, %eax
+	cmpl	%eax, %edx
+	jnb	L9
+	.loc 1 47 0
+	movl	_stack_pos.1369, %eax
+	movl	%eax, _TASK1_STACK_POS
+	.loc 1 48 0
+	movl	_stack_pos.1369, %eax
+	addl	$_TASK1_STACK, %eax
+	movl	%eax, _TASK1_STACK_ADDR
+L9:
+	.loc 1 40 0 discriminator 2
+	movl	_stack_pos.1369, %eax
+	incl	%eax
+	movl	%eax, _stack_pos.1369
+L8:
+	.loc 1 40 0 is_stmt 0 discriminator 1
+	movl	_stack_pos.1369, %eax
+	cmpl	$1999, %eax
+	jbe	L10
+	.loc 1 52 0 is_stmt 1
+	movl	$0, _stack_pos.1369
+	jmp	L11
+L13:
+	.loc 1 54 0
+	movl	_stack_pos.1369, %eax
+	movb	_TASK2_STACK(%eax), %al
+	cmpb	$-86, %al
+	je	L12
+	.loc 1 56 0
+	movl	$1, _stack_used.1370
+	.loc 1 57 0
+	movl	_stack_pos.1369, %edx
+	movl	_TASK2_STACK_POS, %eax
+	cmpl	%eax, %edx
+	jnb	L12
+	.loc 1 59 0
+	movl	_stack_pos.1369, %eax
+	movl	%eax, _TASK2_STACK_POS
+	.loc 1 60 0
+	movl	_stack_pos.1369, %eax
+	addl	$_TASK2_STACK, %eax
+	movl	%eax, _TASK2_STACK_ADDR
+L12:
+	.loc 1 52 0 discriminator 2
+	movl	_stack_pos.1369, %eax
+	incl	%eax
+	movl	%eax, _stack_pos.1369
+L11:
+	.loc 1 52 0 is_stmt 0 discriminator 1
+	movl	_stack_pos.1369, %eax
+	cmpl	$1999, %eax
+	jbe	L13
+	.loc 1 64 0 is_stmt 1
+	movl	$0, _stack_pos.1369
+	jmp	L14
+L16:
+	.loc 1 66 0
+	movl	_stack_pos.1369, %eax
+	movb	_TASK3_STACK(%eax), %al
+	cmpb	$-86, %al
+	je	L15
+	.loc 1 68 0
+	movl	$1, _stack_used.1370
+	.loc 1 69 0
+	movl	_stack_pos.1369, %edx
+	movl	_TASK3_STACK_POS, %eax
+	cmpl	%eax, %edx
+	jnb	L15
+	.loc 1 71 0
+	movl	_stack_pos.1369, %eax
+	movl	%eax, _TASK3_STACK_POS
+	.loc 1 72 0
+	movl	_stack_pos.1369, %eax
+	addl	$_TASK3_STACK, %eax
+	movl	%eax, _TASK3_STACK_ADDR
+L15:
+	.loc 1 64 0 discriminator 2
+	movl	_stack_pos.1369, %eax
+	incl	%eax
+	movl	%eax, _stack_pos.1369
+L14:
+	.loc 1 64 0 is_stmt 0 discriminator 1
+	movl	_stack_pos.1369, %eax
+	cmpl	$1999, %eax
+	jbe	L16
+	.loc 1 76 0 is_stmt 1
+	movl	$0, _stack_pos.1369
+	jmp	L17
+L19:
+	.loc 1 78 0
+	movl	_stack_pos.1369, %eax
+	movb	_TASK4_STACK(%eax), %al
+	cmpb	$-86, %al
+	je	L18
+	.loc 1 80 0
+	movl	$1, _stack_used.1370
+	.loc 1 81 0
+	movl	_stack_pos.1369, %edx
+	movl	_TASK4_STACK_POS, %eax
+	cmpl	%eax, %edx
+	jnb	L18
+	.loc 1 83 0
+	movl	_stack_pos.1369, %eax
+	movl	%eax, _TASK4_STACK_POS
+	.loc 1 84 0
+	movl	_stack_pos.1369, %eax
+	addl	$_TASK4_STACK, %eax
+	movl	%eax, _TASK4_STACK_ADDR
+L18:
+	.loc 1 76 0 discriminator 2
+	movl	_stack_pos.1369, %eax
+	incl	%eax
+	movl	%eax, _stack_pos.1369
+L17:
+	.loc 1 76 0 is_stmt 0 discriminator 1
+	movl	_stack_pos.1369, %eax
+	cmpl	$1999, %eax
+	jbe	L19
+	.loc 1 88 0 is_stmt 1
+	movl	_OS_MAIN_STACK_POS, %edx
 	movl	%edx, %eax
 	sall	$2, %eax
 	addl	%edx, %eax
@@ -62,32 +227,122 @@ L2:
 	addl	%edx, %eax
 	sall	$2, %eax
 	negl	%eax
-	addl	$51200, %eax
-	shrl	$9, %eax
-	movl	%eax, _STACK_USAGE_PERCENT
-	.loc 1 30 0
-	movl	_stack_used.1345, %eax
+	addl	$102400, %eax
+	shrl	$10, %eax
+	movl	%eax, _OS_MAIN_STACK_USAGE_PERCENT
+	.loc 1 89 0
+	movl	_TASK0_STACK_POS, %edx
+	movl	%edx, %eax
+	sall	$2, %eax
+	addl	%edx, %eax
+	leal	0(,%eax,4), %edx
+	addl	%edx, %eax
+	sall	$2, %eax
+	negl	%eax
+	leal	200000(%eax), %edx
+	movl	$274877907, %eax
+	mull	%edx
+	movl	%edx, %eax
+	shrl	$7, %eax
+	movl	%eax, _TASK0_STACK_USAGE_PERCENT
+	.loc 1 90 0
+	movl	_TASK1_STACK_POS, %edx
+	movl	%edx, %eax
+	sall	$2, %eax
+	addl	%edx, %eax
+	leal	0(,%eax,4), %edx
+	addl	%edx, %eax
+	sall	$2, %eax
+	negl	%eax
+	leal	200000(%eax), %edx
+	movl	$274877907, %eax
+	mull	%edx
+	movl	%edx, %eax
+	shrl	$7, %eax
+	movl	%eax, _TASK1_STACK_USAGE_PERCENT
+	.loc 1 91 0
+	movl	_TASK2_STACK_POS, %edx
+	movl	%edx, %eax
+	sall	$2, %eax
+	addl	%edx, %eax
+	leal	0(,%eax,4), %edx
+	addl	%edx, %eax
+	sall	$2, %eax
+	negl	%eax
+	leal	200000(%eax), %edx
+	movl	$274877907, %eax
+	mull	%edx
+	movl	%edx, %eax
+	shrl	$7, %eax
+	movl	%eax, _TASK2_STACK_USAGE_PERCENT
+	.loc 1 92 0
+	movl	_TASK3_STACK_POS, %edx
+	movl	%edx, %eax
+	sall	$2, %eax
+	addl	%edx, %eax
+	leal	0(,%eax,4), %edx
+	addl	%edx, %eax
+	sall	$2, %eax
+	negl	%eax
+	leal	200000(%eax), %edx
+	movl	$274877907, %eax
+	mull	%edx
+	movl	%edx, %eax
+	shrl	$7, %eax
+	movl	%eax, _TASK3_STACK_USAGE_PERCENT
+	.loc 1 93 0
+	movl	_TASK4_STACK_POS, %edx
+	movl	%edx, %eax
+	sall	$2, %eax
+	addl	%edx, %eax
+	leal	0(,%eax,4), %edx
+	addl	%edx, %eax
+	sall	$2, %eax
+	negl	%eax
+	leal	200000(%eax), %edx
+	movl	$274877907, %eax
+	mull	%edx
+	movl	%edx, %eax
+	shrl	$7, %eax
+	movl	%eax, _TASK4_STACK_USAGE_PERCENT
+	.loc 1 95 0
+	movl	_stack_used.1370, %eax
 	cmpl	$1, %eax
 	jne	L1
-	.loc 1 30 0 is_stmt 0 discriminator 1
-	movl	_STACK_USAGE_PERCENT, %eax
+	.loc 1 95 0 is_stmt 0 discriminator 1
+	movl	_OS_MAIN_STACK_USAGE_PERCENT, %eax
+	cmpl	$80, %eax
+	ja	L21
+	.loc 1 95 0 discriminator 2
+	movl	_TASK0_STACK_USAGE_PERCENT, %eax
+	cmpl	$80, %eax
+	ja	L21
+	.loc 1 95 0 discriminator 3
+	movl	_TASK1_STACK_USAGE_PERCENT, %eax
+	cmpl	$80, %eax
+	ja	L21
+	.loc 1 95 0 discriminator 4
+	movl	_TASK2_STACK_USAGE_PERCENT, %eax
+	cmpl	$80, %eax
+	ja	L21
+	.loc 1 95 0 discriminator 5
+	movl	_TASK3_STACK_USAGE_PERCENT, %eax
+	cmpl	$80, %eax
+	ja	L21
+	.loc 1 95 0 discriminator 6
+	movl	_TASK4_STACK_USAGE_PERCENT, %eax
 	cmpl	$80, %eax
 	jbe	L1
-	.loc 1 32 0 is_stmt 1
+L21:
+	.loc 1 97 0 is_stmt 1
 	movl	$17, 4(%esp)
 	movl	$9, (%esp)
 	call	_OS_SET_SW_BUG
-	.loc 1 33 0
-	movl	_STACK_POS, %eax
-	movl	%eax, _STACK_POS
-	.loc 1 34 0
-	movl	_STACK_ADDR, %eax
-	movl	%eax, _STACK_ADDR
-L6:
-	.loc 1 38 0 discriminator 1
-	jmp	L6
+L22:
+	.loc 1 101 0 discriminator 1
+	jmp	L22
 L1:
-	.loc 1 40 0
+	.loc 1 103 0
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
@@ -98,7 +353,7 @@ LFE0:
 	.def	_OS_STACK_CHK_PATTERN_INIT;	.scl	2;	.type	32;	.endef
 _OS_STACK_CHK_PATTERN_INIT:
 LFB1:
-	.loc 1 44 0
+	.loc 1 107 0
 	.cfi_startproc
 	pushl	%ebp
 	.cfi_def_cfa_offset 8
@@ -106,31 +361,101 @@ LFB1:
 	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
 	subl	$16, %esp
-	.loc 1 45 0
+	.loc 1 108 0
 	movl	$0, -4(%ebp)
-	.loc 1 47 0
+	.loc 1 110 0
 	movl	$0, -4(%ebp)
-	jmp	L8
-L9:
-	.loc 1 49 0 discriminator 3
+	jmp	L24
+L25:
+	.loc 1 112 0 discriminator 3
 	movl	-4(%ebp), %eax
 	addl	$_OS_MAIN_STACK, %eax
 	movb	$-86, (%eax)
-	.loc 1 47 0 discriminator 3
+	.loc 1 110 0 discriminator 3
 	incl	-4(%ebp)
-L8:
-	.loc 1 47 0 is_stmt 0 discriminator 1
-	cmpl	$447, -4(%ebp)
-	jbe	L9
-	.loc 1 51 0 is_stmt 1
+L24:
+	.loc 1 110 0 is_stmt 0 discriminator 1
+	cmpl	$959, -4(%ebp)
+	jbe	L25
+	.loc 1 114 0 is_stmt 1
+	movl	$0, -4(%ebp)
+	jmp	L26
+L27:
+	.loc 1 116 0 discriminator 3
+	movl	-4(%ebp), %eax
+	addl	$_TASK0_STACK, %eax
+	movb	$-86, (%eax)
+	.loc 1 114 0 discriminator 3
+	incl	-4(%ebp)
+L26:
+	.loc 1 114 0 is_stmt 0 discriminator 1
+	cmpl	$1935, -4(%ebp)
+	jbe	L27
+	.loc 1 118 0 is_stmt 1
+	movl	$0, -4(%ebp)
+	jmp	L28
+L29:
+	.loc 1 120 0 discriminator 3
+	movl	-4(%ebp), %eax
+	addl	$_TASK1_STACK, %eax
+	movb	$-86, (%eax)
+	.loc 1 118 0 discriminator 3
+	incl	-4(%ebp)
+L28:
+	.loc 1 118 0 is_stmt 0 discriminator 1
+	cmpl	$1935, -4(%ebp)
+	jbe	L29
+	.loc 1 122 0 is_stmt 1
+	movl	$0, -4(%ebp)
+	jmp	L30
+L31:
+	.loc 1 124 0 discriminator 3
+	movl	-4(%ebp), %eax
+	addl	$_TASK2_STACK, %eax
+	movb	$-86, (%eax)
+	.loc 1 122 0 discriminator 3
+	incl	-4(%ebp)
+L30:
+	.loc 1 122 0 is_stmt 0 discriminator 1
+	cmpl	$1935, -4(%ebp)
+	jbe	L31
+	.loc 1 126 0 is_stmt 1
+	movl	$0, -4(%ebp)
+	jmp	L32
+L33:
+	.loc 1 128 0 discriminator 3
+	movl	-4(%ebp), %eax
+	addl	$_TASK3_STACK, %eax
+	movb	$-86, (%eax)
+	.loc 1 126 0 discriminator 3
+	incl	-4(%ebp)
+L32:
+	.loc 1 126 0 is_stmt 0 discriminator 1
+	cmpl	$1935, -4(%ebp)
+	jbe	L33
+	.loc 1 130 0 is_stmt 1
+	movl	$0, -4(%ebp)
+	jmp	L34
+L35:
+	.loc 1 132 0 discriminator 3
+	movl	-4(%ebp), %eax
+	addl	$_TASK4_STACK, %eax
+	movb	$-86, (%eax)
+	.loc 1 130 0 discriminator 3
+	incl	-4(%ebp)
+L34:
+	.loc 1 130 0 is_stmt 0 discriminator 1
+	cmpl	$1935, -4(%ebp)
+	jbe	L35
+	.loc 1 134 0 is_stmt 1
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
 LFE1:
-.lcomm _stack_pos.1344,4,4
-.lcomm _stack_used.1345,4,4
+.lcomm _stack_pos.1369,4,4
+.lcomm _stack_used.1370,4,4
 Letext0:
 	.file 2 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_base_types.h"
 	.file 3 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_common.h"
@@ -138,7 +463,7 @@ Letext0:
 	.file 5 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_base/os_ram_stack.h"
 	.section	.debug_info,"dr"
 Ldebug_info0:
-	.long	0x5ab
+	.long	0x825
 	.word	0x4
 	.secrel32	Ldebug_abbrev0
 	.byte	0x4
@@ -188,8 +513,8 @@ Ldebug_info0:
 	.ascii "os_sw_bugs_e\0"
 	.byte	0x4
 	.byte	0x3
-	.byte	0x28
-	.long	0x2ab
+	.byte	0x2d
+	.long	0x2e9
 	.uleb128 0x5
 	.ascii "E_OS_BUG_NO_BUG\0"
 	.sleb128 0
@@ -226,13 +551,19 @@ Ldebug_info0:
 	.uleb128 0x5
 	.ascii "E_OS_BUG_MAX_WAIT_TIME_REACHED\0"
 	.sleb128 11
+	.uleb128 0x5
+	.ascii "E_OS_BUG_DIVISION_BY_ZERO\0"
+	.sleb128 12
+	.uleb128 0x5
+	.ascii "E_OS_BUG_BIT_SHIFT_OUT_OF_RANGE\0"
+	.sleb128 13
 	.byte	0
 	.uleb128 0x4
 	.ascii "os_sw_bugs_function_e\0"
 	.byte	0x4
 	.byte	0x3
-	.byte	0x39
-	.long	0x49f
+	.byte	0x42
+	.long	0x501
 	.uleb128 0x5
 	.ascii "E_FUNC_NOFUNCTION\0"
 	.sleb128 0
@@ -293,6 +624,12 @@ Ldebug_info0:
 	.uleb128 0x5
 	.ascii "E_FUNC_STATE_HANDLER\0"
 	.sleb128 19
+	.uleb128 0x5
+	.ascii "E_FUNC_INTDIV\0"
+	.sleb128 20
+	.uleb128 0x5
+	.ascii "E_FUNC_SHIFT_LEFT\0"
+	.sleb128 21
 	.byte	0
 	.uleb128 0x3
 	.byte	0x4
@@ -310,74 +647,181 @@ Ldebug_info0:
 	.long	LFE0-LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x505
+	.long	0x567
 	.uleb128 0x7
 	.secrel32	LASF0
 	.byte	0x1
 	.byte	0xb
-	.long	0x505
+	.long	0x567
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_pos.1344
+	.long	_stack_pos.1369
 	.uleb128 0x8
 	.ascii "stack_used\0"
 	.byte	0x1
 	.byte	0xb
-	.long	0x505
+	.long	0x567
 	.uleb128 0x5
 	.byte	0x3
-	.long	_stack_used.1345
+	.long	_stack_used.1370
 	.byte	0
 	.uleb128 0x9
 	.long	0x107
 	.uleb128 0xa
 	.ascii "OS_STACK_CHK_PATTERN_INIT\0"
 	.byte	0x1
-	.byte	0x2b
+	.byte	0x6a
 	.long	LFB1
 	.long	LFE1-LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x544
+	.long	0x5a6
 	.uleb128 0x7
 	.secrel32	LASF0
 	.byte	0x1
-	.byte	0x2d
+	.byte	0x6c
 	.long	0x107
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
 	.uleb128 0xb
-	.ascii "STACK_ADDR\0"
+	.ascii "OS_MAIN_STACK_ADDR\0"
 	.byte	0x4
 	.byte	0x23
-	.long	0x556
+	.long	0x5c0
 	.uleb128 0xc
 	.byte	0x4
-	.long	0x505
+	.long	0x567
 	.uleb128 0xb
-	.ascii "STACK_POS\0"
+	.ascii "OS_MAIN_STACK_POS\0"
 	.byte	0x4
 	.byte	0x24
-	.long	0x505
+	.long	0x567
 	.uleb128 0xb
-	.ascii "STACK_USAGE_PERCENT\0"
+	.ascii "OS_MAIN_STACK_USAGE_PERCENT\0"
 	.byte	0x4
 	.byte	0x25
-	.long	0x505
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK0_STACK_ADDR\0"
+	.byte	0x4
+	.byte	0x26
+	.long	0x5c0
+	.uleb128 0xb
+	.ascii "TASK0_STACK_POS\0"
+	.byte	0x4
+	.byte	0x27
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK0_STACK_USAGE_PERCENT\0"
+	.byte	0x4
+	.byte	0x28
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK1_STACK_ADDR\0"
+	.byte	0x4
+	.byte	0x29
+	.long	0x5c0
+	.uleb128 0xb
+	.ascii "TASK1_STACK_POS\0"
+	.byte	0x4
+	.byte	0x2a
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK1_STACK_USAGE_PERCENT\0"
+	.byte	0x4
+	.byte	0x2b
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK2_STACK_ADDR\0"
+	.byte	0x4
+	.byte	0x2c
+	.long	0x5c0
+	.uleb128 0xb
+	.ascii "TASK2_STACK_POS\0"
+	.byte	0x4
+	.byte	0x2d
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK2_STACK_USAGE_PERCENT\0"
+	.byte	0x4
+	.byte	0x2e
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK3_STACK_ADDR\0"
+	.byte	0x4
+	.byte	0x2f
+	.long	0x5c0
+	.uleb128 0xb
+	.ascii "TASK3_STACK_POS\0"
+	.byte	0x4
+	.byte	0x30
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK3_STACK_USAGE_PERCENT\0"
+	.byte	0x4
+	.byte	0x31
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK4_STACK_ADDR\0"
+	.byte	0x4
+	.byte	0x32
+	.long	0x5c0
+	.uleb128 0xb
+	.ascii "TASK4_STACK_POS\0"
+	.byte	0x4
+	.byte	0x33
+	.long	0x567
+	.uleb128 0xb
+	.ascii "TASK4_STACK_USAGE_PERCENT\0"
+	.byte	0x4
+	.byte	0x34
+	.long	0x567
 	.uleb128 0xd
 	.long	0x8c
-	.long	0x599
+	.long	0x7a3
 	.uleb128 0xe
-	.long	0x49f
-	.word	0x1ff
+	.long	0x501
+	.word	0x7cf
+	.byte	0
+	.uleb128 0xb
+	.ascii "TASK0_STACK\0"
+	.byte	0x4
+	.byte	0x35
+	.long	0x792
+	.uleb128 0xb
+	.ascii "TASK1_STACK\0"
+	.byte	0x4
+	.byte	0x36
+	.long	0x792
+	.uleb128 0xb
+	.ascii "TASK2_STACK\0"
+	.byte	0x4
+	.byte	0x37
+	.long	0x792
+	.uleb128 0xb
+	.ascii "TASK3_STACK\0"
+	.byte	0x4
+	.byte	0x38
+	.long	0x792
+	.uleb128 0xb
+	.ascii "TASK4_STACK\0"
+	.byte	0x4
+	.byte	0x39
+	.long	0x792
+	.uleb128 0xd
+	.long	0x8c
+	.long	0x813
+	.uleb128 0xe
+	.long	0x501
+	.word	0x3ff
 	.byte	0
 	.uleb128 0xb
 	.ascii "OS_MAIN_STACK\0"
 	.byte	0x5
 	.byte	0xc
-	.long	0x588
+	.long	0x802
 	.byte	0
 	.section	.debug_abbrev,"dr"
 Ldebug_abbrev0:
@@ -1372,7 +1816,19 @@ Ldebug_macro0:
 	.ascii "HEAP_OFFSET_FOR_CHUNK 8u\0"
 	.byte	0x1
 	.uleb128 0x28
-	.ascii "OS_STACK_SIZE 0x200u\0"
+	.ascii "OS_MAIN_STACK_SIZE 0x400u\0"
+	.byte	0x1
+	.uleb128 0x29
+	.ascii "OS_PROCESS_STACK_TASK1_SIZE 0x200u\0"
+	.byte	0x1
+	.uleb128 0x2a
+	.ascii "OS_PROCESS_STACK_TASK2_SIZE 0x200u\0"
+	.byte	0x1
+	.uleb128 0x2b
+	.ascii "OS_PROCESS_STACK_TASK3_SIZE 0x200u\0"
+	.byte	0x1
+	.uleb128 0x2c
+	.ascii "OS_PROCESS_STACK_TASK4_SIZE 0x200u\0"
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x5
@@ -1395,58 +1851,67 @@ Ldebug_macro0:
 	.ascii "TRUE 1u\0"
 	.byte	0x1
 	.uleb128 0x8
-	.ascii "ACCEPTED 1u\0"
+	.ascii "False FALSE\0"
 	.byte	0x1
 	.uleb128 0x9
-	.ascii "REJECTED 0u\0"
+	.ascii "True TRUE\0"
 	.byte	0x1
 	.uleb128 0xa
-	.ascii "LOCAL static\0"
+	.ascii "ACCEPTED 1u\0"
 	.byte	0x1
 	.uleb128 0xb
-	.ascii "LOCAL_INLINE static __inline__\0"
+	.ascii "REJECTED 0u\0"
 	.byte	0x1
 	.uleb128 0xc
-	.ascii "GLOBAL_INLINE __inline__\0"
+	.ascii "LOCAL static\0"
 	.byte	0x1
 	.uleb128 0xd
+	.ascii "LOCAL_INLINE static __inline__\0"
+	.byte	0x1
+	.uleb128 0xe
+	.ascii "GLOBAL_INLINE __inline__\0"
+	.byte	0x1
+	.uleb128 0xf
 	.ascii "REFERENCE_UNUSED_PARAMETER(x) ((x) = (x))\0"
 	.byte	0x1
-	.uleb128 0x10
+	.uleb128 0x12
 	.ascii "MCU_X86 3\0"
 	.byte	0x1
-	.uleb128 0x11
+	.uleb128 0x13
 	.ascii "MCU_CORTEX_M4 4\0"
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x16
 	.ascii "DWT_CTRL ((volatile uint32*)0xE0001000u)\0"
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x17
 	.ascii "DWT_CYCCNT ((volatile uint32*)0xE0001004u)\0"
 	.byte	0x1
-	.uleb128 0x16
+	.uleb128 0x18
 	.ascii "DWT_LAR ((volatile uint32*)0xE0001FB0u)\0"
 	.byte	0x1
-	.uleb128 0x17
+	.uleb128 0x19
 	.ascii "SCB_DEMCR ((volatile uint32*)0xE000EDFCu)\0"
 	.byte	0x1
-	.uleb128 0x1a
+	.uleb128 0x1c
 	.ascii "DISABLE_INTERRUPTS() \0"
 	.byte	0x1
-	.uleb128 0x1b
+	.uleb128 0x1d
 	.ascii "ENABLE_INTERRUPTS() \0"
 	.byte	0x1
-	.uleb128 0x1c
+	.uleb128 0x1e
 	.ascii "PRIVILIGE_LEVEL_SAVE_CURRENT() \0"
 	.byte	0x1
-	.uleb128 0x1d
+	.uleb128 0x1f
 	.ascii "PRIVILIGE_LEVEL_ENTER_KERNEL_MODE() \0"
 	.byte	0x1
-	.uleb128 0x1e
+	.uleb128 0x20
 	.ascii "PRIVILIGE_LEVEL_RESTORE_SAVED() \0"
 	.byte	0x1
-	.uleb128 0x1f
+	.uleb128 0x21
 	.ascii "HALT_MCU() \0"
+	.byte	0x1
+	.uleb128 0x41
+	.ascii "AMOUNT_SW_BUG_FUNCTIONS 22\0"
 	.byte	0x4
 	.file 8 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/lld_global.h"
 	.byte	0x3
@@ -1555,12 +2020,24 @@ Ldebug_macro0:
 	.ascii "MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE\0"
 	.byte	0x1
 	.uleb128 0xa
-	.ascii "TASK_STACK_SIZE 2000u\0"
+	.ascii "TASK0_STACK_SIZE 2000u\0"
+	.byte	0x1
+	.uleb128 0xb
+	.ascii "TASK1_STACK_SIZE 2000u\0"
+	.byte	0x1
+	.uleb128 0xc
+	.ascii "TASK2_STACK_SIZE 2000u\0"
 	.byte	0x1
 	.uleb128 0xd
-	.ascii "MS_PER_SEC 1000u\0"
+	.ascii "TASK3_STACK_SIZE 2000u\0"
 	.byte	0x1
 	.uleb128 0xe
+	.ascii "TASK4_STACK_SIZE 2000u\0"
+	.byte	0x1
+	.uleb128 0x12
+	.ascii "MS_PER_SEC 1000u\0"
+	.byte	0x1
+	.uleb128 0x13
 	.ascii "USE_STATIC_CREATED_TASKS TRUE\0"
 	.byte	0x4
 	.file 18 "E:/NeuOrga/Programmieren/c_cpp/github_os/input/src/os_base/../os_sim/../os_base/os_init_task_system.h"
