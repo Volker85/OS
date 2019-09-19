@@ -1,12 +1,12 @@
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\os_sim_main.c"
-# 1 "D:\\Programm\\MinGW\\bin//"
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c"
+# 1 "C:\\Program\\MinGW\\bin//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_HOSTED__ 1
-#define __GNUC__ 4
-#define __GNUC_MINOR__ 9
-#define __GNUC_PATCHLEVEL__ 3
-#define __VERSION__ "4.9.3"
+#define __GNUC__ 8
+#define __GNUC_MINOR__ 2
+#define __GNUC_PATCHLEVEL__ 0
+#define __VERSION__ "8.2.0"
 #define __ATOMIC_RELAXED 0
 #define __ATOMIC_SEQ_CST 5
 #define __ATOMIC_ACQUIRE 2
@@ -67,61 +67,82 @@
 #define __UINTPTR_TYPE__ unsigned int
 #define __has_include(STR) __has_include__(STR)
 #define __has_include_next(STR) __has_include_next__(STR)
-#define __GXX_ABI_VERSION 1002
-#define __SCHAR_MAX__ 127
-#define __SHRT_MAX__ 32767
-#define __INT_MAX__ 2147483647
-#define __LONG_MAX__ 2147483647L
-#define __LONG_LONG_MAX__ 9223372036854775807LL
-#define __WCHAR_MAX__ 65535
+#define __GXX_ABI_VERSION 1013
+#define __SCHAR_MAX__ 0x7f
+#define __SHRT_MAX__ 0x7fff
+#define __INT_MAX__ 0x7fffffff
+#define __LONG_MAX__ 0x7fffffffL
+#define __LONG_LONG_MAX__ 0x7fffffffffffffffLL
+#define __WCHAR_MAX__ 0xffff
 #define __WCHAR_MIN__ 0
-#define __WINT_MAX__ 65535
+#define __WINT_MAX__ 0xffff
 #define __WINT_MIN__ 0
-#define __PTRDIFF_MAX__ 2147483647
-#define __SIZE_MAX__ 4294967295U
-#define __INTMAX_MAX__ 9223372036854775807LL
+#define __PTRDIFF_MAX__ 0x7fffffff
+#define __SIZE_MAX__ 0xffffffffU
+#define __SCHAR_WIDTH__ 8
+#define __SHRT_WIDTH__ 16
+#define __INT_WIDTH__ 32
+#define __LONG_WIDTH__ 32
+#define __LONG_LONG_WIDTH__ 64
+#define __WCHAR_WIDTH__ 16
+#define __WINT_WIDTH__ 16
+#define __PTRDIFF_WIDTH__ 32
+#define __SIZE_WIDTH__ 32
+#define __INTMAX_MAX__ 0x7fffffffffffffffLL
 #define __INTMAX_C(c) c ## LL
-#define __UINTMAX_MAX__ 18446744073709551615ULL
+#define __UINTMAX_MAX__ 0xffffffffffffffffULL
 #define __UINTMAX_C(c) c ## ULL
-#define __SIG_ATOMIC_MAX__ 2147483647
+#define __INTMAX_WIDTH__ 64
+#define __SIG_ATOMIC_MAX__ 0x7fffffff
 #define __SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)
-#define __INT8_MAX__ 127
-#define __INT16_MAX__ 32767
-#define __INT32_MAX__ 2147483647
-#define __INT64_MAX__ 9223372036854775807LL
-#define __UINT8_MAX__ 255
-#define __UINT16_MAX__ 65535
-#define __UINT32_MAX__ 4294967295U
-#define __UINT64_MAX__ 18446744073709551615ULL
-#define __INT_LEAST8_MAX__ 127
+#define __SIG_ATOMIC_WIDTH__ 32
+#define __INT8_MAX__ 0x7f
+#define __INT16_MAX__ 0x7fff
+#define __INT32_MAX__ 0x7fffffff
+#define __INT64_MAX__ 0x7fffffffffffffffLL
+#define __UINT8_MAX__ 0xff
+#define __UINT16_MAX__ 0xffff
+#define __UINT32_MAX__ 0xffffffffU
+#define __UINT64_MAX__ 0xffffffffffffffffULL
+#define __INT_LEAST8_MAX__ 0x7f
 #define __INT8_C(c) c
-#define __INT_LEAST16_MAX__ 32767
+#define __INT_LEAST8_WIDTH__ 8
+#define __INT_LEAST16_MAX__ 0x7fff
 #define __INT16_C(c) c
-#define __INT_LEAST32_MAX__ 2147483647
+#define __INT_LEAST16_WIDTH__ 16
+#define __INT_LEAST32_MAX__ 0x7fffffff
 #define __INT32_C(c) c
-#define __INT_LEAST64_MAX__ 9223372036854775807LL
+#define __INT_LEAST32_WIDTH__ 32
+#define __INT_LEAST64_MAX__ 0x7fffffffffffffffLL
 #define __INT64_C(c) c ## LL
-#define __UINT_LEAST8_MAX__ 255
+#define __INT_LEAST64_WIDTH__ 64
+#define __UINT_LEAST8_MAX__ 0xff
 #define __UINT8_C(c) c
-#define __UINT_LEAST16_MAX__ 65535
+#define __UINT_LEAST16_MAX__ 0xffff
 #define __UINT16_C(c) c
-#define __UINT_LEAST32_MAX__ 4294967295U
+#define __UINT_LEAST32_MAX__ 0xffffffffU
 #define __UINT32_C(c) c ## U
-#define __UINT_LEAST64_MAX__ 18446744073709551615ULL
+#define __UINT_LEAST64_MAX__ 0xffffffffffffffffULL
 #define __UINT64_C(c) c ## ULL
-#define __INT_FAST8_MAX__ 127
-#define __INT_FAST16_MAX__ 32767
-#define __INT_FAST32_MAX__ 2147483647
-#define __INT_FAST64_MAX__ 9223372036854775807LL
-#define __UINT_FAST8_MAX__ 255
-#define __UINT_FAST16_MAX__ 65535
-#define __UINT_FAST32_MAX__ 4294967295U
-#define __UINT_FAST64_MAX__ 18446744073709551615ULL
-#define __INTPTR_MAX__ 2147483647
-#define __UINTPTR_MAX__ 4294967295U
+#define __INT_FAST8_MAX__ 0x7f
+#define __INT_FAST8_WIDTH__ 8
+#define __INT_FAST16_MAX__ 0x7fff
+#define __INT_FAST16_WIDTH__ 16
+#define __INT_FAST32_MAX__ 0x7fffffff
+#define __INT_FAST32_WIDTH__ 32
+#define __INT_FAST64_MAX__ 0x7fffffffffffffffLL
+#define __INT_FAST64_WIDTH__ 64
+#define __UINT_FAST8_MAX__ 0xff
+#define __UINT_FAST16_MAX__ 0xffff
+#define __UINT_FAST32_MAX__ 0xffffffffU
+#define __UINT_FAST64_MAX__ 0xffffffffffffffffULL
+#define __INTPTR_MAX__ 0x7fffffff
+#define __INTPTR_WIDTH__ 32
+#define __UINTPTR_MAX__ 0xffffffffU
 #define __GCC_IEC_559 2
 #define __GCC_IEC_559_COMPLEX 2
 #define __FLT_EVAL_METHOD__ 2
+#define __FLT_EVAL_METHOD_TS_18661_3__ 2
 #define __DEC_EVAL_METHOD__ 2
 #define __FLT_RADIX__ 2
 #define __FLT_MANT_DIG__ 24
@@ -131,10 +152,10 @@
 #define __FLT_MAX_EXP__ 128
 #define __FLT_MAX_10_EXP__ 38
 #define __FLT_DECIMAL_DIG__ 9
-#define __FLT_MAX__ 3.40282346638528859812e+38F
-#define __FLT_MIN__ 1.17549435082228750797e-38F
-#define __FLT_EPSILON__ 1.19209289550781250000e-7F
-#define __FLT_DENORM_MIN__ 1.40129846432481707092e-45F
+#define __FLT_MAX__ 3.40282346638528859811704183484516925e+38F
+#define __FLT_MIN__ 1.17549435082228750796873653722224568e-38F
+#define __FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F
+#define __FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F
 #define __FLT_HAS_DENORM__ 1
 #define __FLT_HAS_INFINITY__ 1
 #define __FLT_HAS_QUIET_NAN__ 1
@@ -145,10 +166,10 @@
 #define __DBL_MAX_EXP__ 1024
 #define __DBL_MAX_10_EXP__ 308
 #define __DBL_DECIMAL_DIG__ 17
-#define __DBL_MAX__ ((double)1.79769313486231570815e+308L)
-#define __DBL_MIN__ ((double)2.22507385850720138309e-308L)
-#define __DBL_EPSILON__ ((double)2.22044604925031308085e-16L)
-#define __DBL_DENORM_MIN__ ((double)4.94065645841246544177e-324L)
+#define __DBL_MAX__ ((double)1.79769313486231570814527423731704357e+308L)
+#define __DBL_MIN__ ((double)2.22507385850720138309023271733240406e-308L)
+#define __DBL_EPSILON__ ((double)2.22044604925031308084726333618164062e-16L)
+#define __DBL_DENORM_MIN__ ((double)4.94065645841246544176568792868221372e-324L)
 #define __DBL_HAS_DENORM__ 1
 #define __DBL_HAS_INFINITY__ 1
 #define __DBL_HAS_QUIET_NAN__ 1
@@ -159,13 +180,84 @@
 #define __LDBL_MAX_EXP__ 16384
 #define __LDBL_MAX_10_EXP__ 4932
 #define __DECIMAL_DIG__ 21
-#define __LDBL_MAX__ 1.18973149535723176502e+4932L
-#define __LDBL_MIN__ 3.36210314311209350626e-4932L
-#define __LDBL_EPSILON__ 1.08420217248550443401e-19L
-#define __LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L
+#define __LDBL_DECIMAL_DIG__ 21
+#define __LDBL_MAX__ 1.18973149535723176502126385303097021e+4932L
+#define __LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L
+#define __LDBL_EPSILON__ 1.08420217248550443400745280086994171e-19L
+#define __LDBL_DENORM_MIN__ 3.64519953188247460252840593361941982e-4951L
 #define __LDBL_HAS_DENORM__ 1
 #define __LDBL_HAS_INFINITY__ 1
 #define __LDBL_HAS_QUIET_NAN__ 1
+#define __FLT32_MANT_DIG__ 24
+#define __FLT32_DIG__ 6
+#define __FLT32_MIN_EXP__ (-125)
+#define __FLT32_MIN_10_EXP__ (-37)
+#define __FLT32_MAX_EXP__ 128
+#define __FLT32_MAX_10_EXP__ 38
+#define __FLT32_DECIMAL_DIG__ 9
+#define __FLT32_MAX__ 3.40282346638528859811704183484516925e+38F32
+#define __FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32
+#define __FLT32_EPSILON__ 1.19209289550781250000000000000000000e-7F32
+#define __FLT32_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F32
+#define __FLT32_HAS_DENORM__ 1
+#define __FLT32_HAS_INFINITY__ 1
+#define __FLT32_HAS_QUIET_NAN__ 1
+#define __FLT64_MANT_DIG__ 53
+#define __FLT64_DIG__ 15
+#define __FLT64_MIN_EXP__ (-1021)
+#define __FLT64_MIN_10_EXP__ (-307)
+#define __FLT64_MAX_EXP__ 1024
+#define __FLT64_MAX_10_EXP__ 308
+#define __FLT64_DECIMAL_DIG__ 17
+#define __FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64
+#define __FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64
+#define __FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64
+#define __FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64
+#define __FLT64_HAS_DENORM__ 1
+#define __FLT64_HAS_INFINITY__ 1
+#define __FLT64_HAS_QUIET_NAN__ 1
+#define __FLT128_MANT_DIG__ 113
+#define __FLT128_DIG__ 33
+#define __FLT128_MIN_EXP__ (-16381)
+#define __FLT128_MIN_10_EXP__ (-4931)
+#define __FLT128_MAX_EXP__ 16384
+#define __FLT128_MAX_10_EXP__ 4932
+#define __FLT128_DECIMAL_DIG__ 36
+#define __FLT128_MAX__ 1.18973149535723176508575932662800702e+4932F128
+#define __FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128
+#define __FLT128_EPSILON__ 1.92592994438723585305597794258492732e-34F128
+#define __FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128
+#define __FLT128_HAS_DENORM__ 1
+#define __FLT128_HAS_INFINITY__ 1
+#define __FLT128_HAS_QUIET_NAN__ 1
+#define __FLT32X_MANT_DIG__ 53
+#define __FLT32X_DIG__ 15
+#define __FLT32X_MIN_EXP__ (-1021)
+#define __FLT32X_MIN_10_EXP__ (-307)
+#define __FLT32X_MAX_EXP__ 1024
+#define __FLT32X_MAX_10_EXP__ 308
+#define __FLT32X_DECIMAL_DIG__ 17
+#define __FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x
+#define __FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x
+#define __FLT32X_EPSILON__ 2.22044604925031308084726333618164062e-16F32x
+#define __FLT32X_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F32x
+#define __FLT32X_HAS_DENORM__ 1
+#define __FLT32X_HAS_INFINITY__ 1
+#define __FLT32X_HAS_QUIET_NAN__ 1
+#define __FLT64X_MANT_DIG__ 64
+#define __FLT64X_DIG__ 18
+#define __FLT64X_MIN_EXP__ (-16381)
+#define __FLT64X_MIN_10_EXP__ (-4931)
+#define __FLT64X_MAX_EXP__ 16384
+#define __FLT64X_MAX_10_EXP__ 4932
+#define __FLT64X_DECIMAL_DIG__ 21
+#define __FLT64X_MAX__ 1.18973149535723176502126385303097021e+4932F64x
+#define __FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x
+#define __FLT64X_EPSILON__ 1.08420217248550443400745280086994171e-19F64x
+#define __FLT64X_DENORM_MIN__ 3.64519953188247460252840593361941982e-4951F64x
+#define __FLT64X_HAS_DENORM__ 1
+#define __FLT64X_HAS_INFINITY__ 1
+#define __FLT64X_HAS_QUIET_NAN__ 1
 #define __DEC32_MANT_DIG__ 7
 #define __DEC32_MIN_EXP__ (-94)
 #define __DEC32_MAX_EXP__ 97
@@ -210,10 +302,15 @@
 #define __SIZEOF_PTRDIFF_T__ 4
 #define __i386 1
 #define __i386__ 1
+#define __SIZEOF_FLOAT80__ 12
+#define __SIZEOF_FLOAT128__ 16
 #define __ATOMIC_HLE_ACQUIRE 65536
 #define __ATOMIC_HLE_RELEASE 131072
+#define __GCC_ASM_FLAG_OUTPUTS__ 1
 #define __tune_i386__ 1
 #define __code_model_32__ 1
+#define __SEG_FS 1
+#define __SEG_GS 1
 #define _X86_ 1
 #define __stdcall __attribute__((__stdcall__))
 #define __fastcall __attribute__((__fastcall__))
@@ -233,12 +330,12 @@
 #define __DECIMAL_BID_FORMAT__ 1
 # 1 "<command-line>"
 #define CFG_PROCESSOR 3
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\os_sim_main.c"
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 1
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c"
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 1
 
 #define _OS_FIRSTINC_H_ 
 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_config.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_config.h" 1
 
 #define _OS_CONFIG_H_ 
 
@@ -283,11 +380,11 @@
 #define OS_PROCESS_STACK_TASK2_SIZE 0x200u
 #define OS_PROCESS_STACK_TASK3_SIZE 0x200u
 #define OS_PROCESS_STACK_TASK4_SIZE 0x200u
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_base_types.h" 1
+# 5 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_base_types.h" 1
 
 #define _OS_BASE_TYPES_H_ 
-# 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_base_types.h"
+# 17 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_base_types.h"
 typedef unsigned char unsigned_char_t;
 typedef signed char signed_char_t;
 typedef unsigned char unsigned_int8_t;
@@ -302,8 +399,8 @@ typedef unsigned long unsigned_int32_t;
 typedef signed long signed_int32_t;
 typedef unsigned long uint32;
 typedef signed long sint32;
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_common.h" 1
+# 6 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_common.h" 1
 
 #define _OS_COMMON_H_ 
 
@@ -319,6 +416,7 @@ typedef signed long sint32;
 #define LOCAL_INLINE static __inline__
 #define GLOBAL_INLINE __inline__
 #define REFERENCE_UNUSED_PARAMETER(x) ((x) = (x))
+#define NULL ((void*)0)
 
 
 #define MCU_X86 3
@@ -337,7 +435,7 @@ typedef signed long sint32;
 #define PRIVILIGE_LEVEL_ENTER_KERNEL_MODE() 
 #define PRIVILIGE_LEVEL_RESTORE_SAVED() 
 #define HALT_MCU() 
-# 45 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_common.h"
+# 46 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_common.h"
 enum os_sw_bugs_e
 {
    E_OS_BUG_NO_BUG = 0,
@@ -422,18 +520,18 @@ extern void SHIFT_LEFT(big_int* number, uint32 amount);
 extern uint32 get_uint32_of_4_uint8(uint8* ptr);
 extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
 extern void OS_UpdateCurrentTime(void);
-# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
+# 7 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
 
 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_global.h" 1
 
 #define _LLD_GLOBAL_H_ 
 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_core.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_core.h" 1
 
 #define _LLD_CORE_H_ 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_firstinc.h" 1
-# 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_core.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 1
+# 4 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_core.h" 2
 enum coreid_e
 {
    E_CORE0 = 0,
@@ -453,8 +551,8 @@ enum privilige_mode_e
    E_PRIVILIGEMODE_PRIVILIGED_HANDLER_MODE
 };
 typedef enum privilige_mode_e privilige_mode_t;
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_interrupt.h" 1
+# 5 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_global.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_interrupt.h" 1
 
 #define _LLD_INTERRUPT_H_ 
 
@@ -469,8 +567,8 @@ extern void LLF_INT_DISABLE(void);
 extern void LLF_INT_ENABLE(void);
 extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
 extern void LLF_WAIT_FOR_INTERRUPT(void);
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_mmu.h" 1
+# 6 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_global.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_mmu.h" 1
 
 #define _LLD_MMU_H_ 
 
@@ -479,30 +577,30 @@ extern void LLF_MPU_DISABLE(void);
 extern void LLF_MPU_ENABLE(void);
 extern uint32 LLF_GET_MPU_PRESENT(void);
 extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
-# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_timer.h" 1
+# 7 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_global.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_timer.h" 1
 
 #define _LLD_TIMER_H_ 
-# 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_power.h" 1
+# 8 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_global.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_power.h" 1
 
 #define _LLD_POWER_H_ 
 
 extern void LLF_MCU_SWITCH_OFF_POWER(void);
 extern void LLF_MCU_RESET_POWER(void);
-# 9 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_ram.h" 1
+# 9 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_global.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_ram.h" 1
 
 #define _LLD_RAM_H_ 
 
 extern void LLF_CLEAR_ALL_RAM(void);
-# 10 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h" 1
+# 10 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_global.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 1
 
 #define _OS_TASK_COMMON_H_ 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_firstinc.h" 1
-# 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_task_config.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 1
+# 4 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_config.h" 1
 
 #define _OS_TASK_CONFIG_H_ 
 
@@ -522,12 +620,12 @@ extern void LLF_CLEAR_ALL_RAM(void);
 
 #define MS_PER_SEC 1000u
 #define USE_STATIC_CREATED_TASKS TRUE
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_init_task_system.h" 1
+# 5 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_init_task_system.h" 1
 
 #define _OS_INIT_TASK_SYSTEM_H_ 
 extern void OS_INIT_TASK_SYSTEM(void);
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h" 2
+# 6 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 2
 
 enum task_state_e
 {
@@ -580,7 +678,7 @@ struct task_s
    unsigned_int32_t ebx;
    unsigned_int32_t ecx;
    unsigned_int32_t edx;
-# 73 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\..\\os_base\\os_task_common.h"
+# 73 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h"
    unsigned_char_t* p_stack_pointer;
    unsigned_char_t* p_stack_pointer_by_malloc;
    unsigned_char_t* p_stack_pointer_start;
@@ -605,7 +703,7 @@ typedef timebig_t scheduler_time_t;
 
 #define OS_SAVE_TASK_PTR(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))
 #define OS_GET_TASK_PTR(task_name) ((task_t*) TASK_PTR[(task_name)])
-# 11 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_sim\\lld_global.h" 2
+# 11 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_sim\\lld_global.h" 2
 
 extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
 
@@ -622,14 +720,14 @@ extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_CLEAR_ALL_GP_REGISTERS(void);
 
 extern void LLF_PERFORM_RAM_CHECK(void);
-# 10 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
+# 10 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
 
 
 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_user_code\\led.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_user_code\\led.h" 1
 
 #define _LED_H_ 
-# 40 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_user_code\\led.h"
+# 40 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_user_code\\led.h"
 typedef enum
 {
    E_LED1 = 0,
@@ -642,21 +740,20 @@ extern void USER_LED_INIT(led_t Led);
 extern void USER_LED_ON(led_t Led);
 extern void USER_LED_OFF(led_t Led);
 extern void USER_LED_TOGGLE(led_t Led);
-# 14 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
+# 14 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 1
 
 #define _OS_RAM_H_ 
 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_firstinc.h" 1
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_stack.h" 1
+
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_stack.h" 1
 
 #define _OS_STACK_H_ 
 extern void OS_STACK_CHK_PATTERN_INIT(void);
 extern void OS_STACK_CHECK(void);
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_heap.h" 1
+# 6 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_heap.h" 1
 
 #define _OS_HEAP_H_ 
 
@@ -664,8 +761,8 @@ extern void* OS_CALLOC(uint32 num, uint32 size);
 extern void* OS_REALLOC(void* ptr_old, uint32 size_new);
 extern void* OS_MALLOC(uint32 size);
 extern void OS_free(void* ptr);
-# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_main.h" 1
+# 7 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_main.h" 1
 
 #define _OS_MAIN_H_ 
 
@@ -677,11 +774,10 @@ enum os_state_e
 };
 typedef enum os_state_e os_state_t;
 extern void OS_STATE_HANDLER(void);
-# 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_task_config.h" 1
-# 9 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_task_common.h" 1
-# 10 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram.h" 2
+# 8 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 2
+
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 1
+# 10 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 2
 
 extern unsigned_char_t HEAP[10000u];
 
@@ -744,24 +840,22 @@ extern task_state_t TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t TASK_TRANSITION_CURRENT_STATE;
 extern volatile os_state_t SYSTEM_STATE_ACCEPTED;
 extern timebig_t LOCAL_SYSTEM_TIME;
-# 16 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram_stack.h" 1
+# 16 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram_stack.h" 1
 
 #define _OS_RAM_STACK_H_ 
-# 12 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\..\\os_base\\os_ram_stack.h"
+# 12 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram_stack.h"
 extern unsigned_char_t OS_MAIN_STACK[0x400u];
-# 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 2
-# 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\os_sim_main.c" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_main.h" 1
-# 3 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\os_sim_main.c" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_task_scheduler.h" 1
+# 17 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
+# 2 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_main.h" 1
+# 3 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_scheduler.h" 1
 
 #define _OS_TASK_SCHEDULER_H_ 
 
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_firstinc.h" 1
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_task_scheduler.h" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_task_common.h" 1
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_task_scheduler.h" 2
+
+
 
 #define TASK_0_PTR 0u
 #define TASK_1_PTR 1u
@@ -792,8 +886,8 @@ extern void OS_ACTIVATE_DISPATCHER(void);
 extern void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task);
 extern void OS_TASK_DISPATCHER(void);
 extern void OS_CREATE_TASK(task_t* task);
-# 4 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\os_sim_main.c" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_exception_isr_handler.h" 1
+# 4 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_exception_isr_handler.h" 1
 
 #define _OS_EXCEPTION_ISR_HANDLER_H_ 
 
@@ -813,45 +907,300 @@ extern void OS_EXCEPTION_PEND_SV(void);
 extern void OS_EXCEPTION_SYSTICK(void);
 extern void OS_EXCEPTION_IRQ(void);
 extern void OS_ISRHANDLERC0(uint32 svc_number);
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\os_sim_main.c" 2
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\..\\os_base\\os_start_os.h" 1
+# 5 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_start_os.h" 1
 
 #define _OS_STARTOS_H_ 
 extern void OS_START_OS(void);
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\os_sim_main.c" 2
+# 6 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c" 2
 
-# 1 "d:\\programm\\mingw\\include\\stdio.h" 1 3
-# 16 "d:\\programm\\mingw\\include\\stdio.h" 3
-#define _STDIO_H_ 
+# 1 "c:\\program\\mingw\\include\\stdio.h" 1 3
+# 38 "c:\\program\\mingw\\include\\stdio.h" 3
+       
+# 39 "c:\\program\\mingw\\include\\stdio.h" 3
+# 50 "c:\\program\\mingw\\include\\stdio.h" 3
+#define _STDIO_H 
 
 
-# 1 "d:\\programm\\mingw\\include\\_mingw.h" 1 3
-# 23 "d:\\programm\\mingw\\include\\_mingw.h" 3
+
+
+# 1 "c:\\program\\mingw\\include\\_mingw.h" 1 3
+# 34 "c:\\program\\mingw\\include\\_mingw.h" 3
 #define __MINGW_H 
-# 34 "d:\\programm\\mingw\\include\\_mingw.h" 3
-#define __MINGW32_VERSION 3021001L
-#define __MINGW32_MAJOR_VERSION 3
-#define __MINGW32_MINOR_VERSION 21
-#define __MINGW32_PATCHLEVEL 1
-
+# 49 "c:\\program\\mingw\\include\\_mingw.h" 3
+#define __MINGW32_VERSION 5002002L
+#define __MINGW32_MAJOR_VERSION 5
+#define __MINGW32_MINOR_VERSION 2
+#define __MINGW32_PATCHLEVEL 2
 
 
        
-# 42 "d:\\programm\\mingw\\include\\_mingw.h" 3
-# 82 "d:\\programm\\mingw\\include\\_mingw.h" 3
+# 56 "c:\\program\\mingw\\include\\_mingw.h" 3
+# 66 "c:\\program\\mingw\\include\\_mingw.h" 3
+# 1 "c:\\program\\mingw\\include\\msvcrtver.h" 1 3
+# 34 "c:\\program\\mingw\\include\\msvcrtver.h" 3
+#define _MSVCRTVER_H 
+       
+# 36 "c:\\program\\mingw\\include\\msvcrtver.h" 3
+
+
+
+
+
+
+#define __MSVCR60_DLL 0x0600
+#define __MSVCR61_DLL 0x0601
+#define __MSVCR70_DLL 0x0700
+#define __MSVCR71_DLL 0x0701
+#define __MSVCR80_DLL 0x0800
+#define __MSVCR90_DLL 0x0900
+#define __MSVCR100_DLL 0x1000
+#define __MSVCR110_DLL 0x1100
+#define __MSVCR120_DLL 0x1200
+# 68 "c:\\program\\mingw\\include\\msvcrtver.h" 3
+#define __MSVCRT_VERSION__ __MSVCR60_DLL
+# 67 "c:\\program\\mingw\\include\\_mingw.h" 2 3
+
+
+
+
+
+
+# 1 "c:\\program\\mingw\\include\\w32api.h" 1 3
+# 34 "c:\\program\\mingw\\include\\w32api.h" 3
+#define _W32API_H 
+       
+# 36 "c:\\program\\mingw\\include\\w32api.h" 3
+# 51 "c:\\program\\mingw\\include\\w32api.h" 3
+#define __W32API_VERSION 5002002L
+#define __W32API_MAJOR_VERSION 5
+#define __W32API_MINOR_VERSION 2
+#define __W32API_PATCHLEVEL 2
+
+
+
+
+# 1 "c:\\program\\mingw\\include\\sdkddkver.h" 1 3
+# 34 "c:\\program\\mingw\\include\\sdkddkver.h" 3
+#define _SDKDDKVER_H 
+       
+# 36 "c:\\program\\mingw\\include\\sdkddkver.h" 3
+
+
+
+
+
+#define OSVERSION_MASK 0xFFFF0000
+#define SPVERSION_MASK 0x0000FF00
+#define SUBVERSION_MASK 0x000000FF
+
+
+
+
+#define OSVER(ver) ((ver) & OSVERSION_MASK)
+#define SPVER(ver) (((ver) & SPVERSION_MASK) >> 8)
+#define SUBVER(ver) ((ver) & SUBVERSION_MASK)
+#define WINNTVER(ver) ((ver) >> 16)
+
+
+
+#define NTDDI_VERSION_FROM_WIN32_WINNT(ver) _NTDDI_VERSION_FROM_WIN32_WINNT(ver)
+#define _NTDDI_VERSION_FROM_WIN32_WINNT(ver) ver ##0000
+
+
+
+
+
+#define _WIN32_WINNT_NT4 0x0400
+#define _WIN32_WINNT_NT4E 0x0401
+#define _WIN32_WINNT_NT4SP3 0x0403
+#define _WIN32_WINDOWS_95 0x0400
+#define _WIN32_WINDOWS_98 0x0410
+#define _WIN32_WINDOWS_ME 0x0490
+#define _WIN32_WINNT_WIN2K 0x0500
+#define _WIN32_WINNT_WINXP 0x0501
+#define _WIN32_WINNT_WS03 0x0502
+#define _WIN32_WINNT_WIN6 0x0600
+#define _WIN32_WINNT_VISTA 0x0600
+#define _WIN32_WINNT_WS08 0x0600
+#define _WIN32_WINNT_LONGHORN 0x0600
+#define _WIN32_WINNT_WIN7 0x0601
+#define _WIN32_WINNT_WIN8 0x0602
+#define _WIN32_WINNT_WINBLUE 0x0603
+
+
+
+
+#define _WIN32_IE_IE50 0x0500
+#define _WIN32_IE_IE501 0x0501
+#define _WIN32_IE_IE55 0x0550
+#define _WIN32_IE_IE56 0x0560
+#define _WIN32_IE_IE60 0x0600
+#define _WIN32_IE_IE60SP1 0x0601
+#define _WIN32_IE_IE60SP2 0x0603
+#define _WIN32_IE_IE70 0x0700
+#define _WIN32_IE_IE80 0x0800
+
+#define _WIN32_IE_IE30 0x0300
+#define _WIN32_IE_IE301 0x0301
+#define _WIN32_IE_IE302 0x0302
+#define _WIN32_IE_IE40 0x0400
+#define _WIN32_IE_IE401 0x0401
+
+
+
+
+#define __NTDDI_WIN5 0x05000000
+#define __NTDDI_WIN51 0x05010000
+#define __NTDDI_WIN52 0x05020000
+#define __NTDDI_WIN6 0x06000000
+#define __NTDDI_WIN61 0x06010000
+#define __NTDDI_WIN62 0x06020000
+#define __NTDDI_WIN63 0x06030000
+#define __NTDDI_SP0 0x00000000
+#define __NTDDI_SP1 0x00000100
+#define __NTDDI_SP2 0x00000200
+#define __NTDDI_SP3 0x00000300
+#define __NTDDI_SP4 0x00000400
+
+#define NTDDI_WIN2K __NTDDI_WIN5 + __NTDDI_SP0
+#define NTDDI_WIN2KSP1 __NTDDI_WIN5 + __NTDDI_SP1
+#define NTDDI_WIN2KSP2 __NTDDI_WIN5 + __NTDDI_SP2
+#define NTDDI_WIN2KSP3 __NTDDI_WIN5 + __NTDDI_SP3
+#define NTDDI_WIN2KSP4 __NTDDI_WIN5 + __NTDDI_SP4
+
+#define NTDDI_WINXP __NTDDI_WIN51 + __NTDDI_SP0
+#define NTDDI_WINXPSP1 __NTDDI_WIN51 + __NTDDI_SP1
+#define NTDDI_WINXPSP2 __NTDDI_WIN51 + __NTDDI_SP2
+#define NTDDI_WINXPSP3 __NTDDI_WIN51 + __NTDDI_SP3
+
+#define NTDDI_WS03 __NTDDI_WIN52 + __NTDDI_SP0
+#define NTDDI_WS03SP1 __NTDDI_WIN52 + __NTDDI_SP1
+#define NTDDI_WS03SP2 __NTDDI_WIN52 + __NTDDI_SP2
+
+#define NTDDI_VISTA __NTDDI_WIN6 + __NTDDI_SP0
+#define NTDDI_VISTASP1 __NTDDI_WIN6 + __NTDDI_SP1
+#define NTDDI_VISTASP2 __NTDDI_WIN6 + __NTDDI_SP2
+
+#define NTDDI_LONGHORN NTDDI_VISTA
+
+#define NTDDI_WIN6 NTDDI_VISTA
+#define NTDDI_WIN6SP1 NTDDI_VISTASP1
+#define NTDDI_WIN6SP2 NTDDI_VISTASP2
+
+#define NTDDI_WS08 __NTDDI_WIN6 + __NTDDI_SP1
+
+#define NTDDI_WIN7 __NTDDI_WIN61 + __NTDDI_SP0
+
+#define NTDDI_WIN8 __NTDDI_WIN62 + __NTDDI_SP0
+
+#define NTDDI_WINBLUE __NTDDI_WIN63 + __NTDDI_SP0
+# 185 "c:\\program\\mingw\\include\\sdkddkver.h" 3
+#define _WIN32_WINNT _WIN32_WINNT_WIN2K
+
+
+
+
+#define WINVER _WIN32_WINNT
+# 201 "c:\\program\\mingw\\include\\sdkddkver.h" 3
+#define NTDDI_VERSION NTDDI_VERSION_FROM_WIN32_WINNT(_WIN32_WINNT)
+# 212 "c:\\program\\mingw\\include\\sdkddkver.h" 3
+#define _WIN32_IE _WIN32_IE_IE50
+# 237 "c:\\program\\mingw\\include\\sdkddkver.h" 3
+#define _M_IX86 300
+# 273 "c:\\program\\mingw\\include\\sdkddkver.h" 3
+#define _M_IX86_FP 0
+# 60 "c:\\program\\mingw\\include\\w32api.h" 2 3
+# 79 "c:\\program\\mingw\\include\\w32api.h" 3
+#define Windows95 _WIN32_WINDOWS_95
+#define Windows98 _WIN32_WINDOWS_98
+#define WindowsME _WIN32_WINDOWS_ME
+
+
+
+
+
+
+
+#define WindowsNT4 _WIN32_WINNT_NT4
+#define Windows2000 _WIN32_WINNT_WIN2K
+#define WindowsXP _WIN32_WINNT_WINXP
+#define Windows2003 _WIN32_WINNT_WS03
+#define WindowsVista _WIN32_WINNT_VISTA
+
+
+
+
+
+
+
+#define IE3 _WIN32_IE_IE30
+#define IE301 _WIN32_IE_IE301
+#define IE302 _WIN32_IE_IE302
+#define IE4 _WIN32_IE_IE40
+#define IE401 _WIN32_IE_IE401
+#define IE5 _WIN32_IE_IE50
+#define IE5a _WIN32_IE_IE50
+#define IE5b _WIN32_IE_IE50
+#define IE501 _WIN32_IE_IE501
+#define IE55 _WIN32_IE_IE55
+#define IE56 _WIN32_IE_IE56
+#define IE6 _WIN32_IE_IE60
+#define IE601 _WIN32_IE_IE60SP1
+#define IE602 _WIN32_IE_IE60SP2
+#define IE7 _WIN32_IE_IE70
+# 154 "c:\\program\\mingw\\include\\w32api.h" 3
+#define __AW_SUFFIXED__(__NAME__) __NAME__ ##A
+
+
+
+
+
+#define __AW_EXTENDED__(__NAME__) __AW_SUFFIXED__(__NAME__ ##_)
+# 169 "c:\\program\\mingw\\include\\w32api.h" 3
+#define __AW_STRING_A__(__TEXT__) __TEXT__
+#define __AW__WCHAR_T__(__TEXT__) __AW_STRING_A__(L ##__TEXT__)
+#define __AW_STRING_W__(__TEXT__) __AW__WCHAR_T__(__TEXT__)
+
+
+
+
+
+
+#define __AW_ALIAS__(__NAME__) __AW_SUFFIXED__(__NAME__) __NAME__
+#define __AW_ALIAS_EX__(__NAME__) __AW_EXTENDED__(__NAME__) __NAME__
+# 193 "c:\\program\\mingw\\include\\w32api.h" 3
+#define _EXTERN_C extern
+#define _BEGIN_C_DECLS 
+#define _END_C_DECLS 
+# 74 "c:\\program\\mingw\\include\\_mingw.h" 2 3
+# 109 "c:\\program\\mingw\\include\\_mingw.h" 3
 #define __CRT_GLOB_USE_MSVCRT__ 0x0001
 
 
 
 
 #define __CRT_GLOB_USE_MINGW__ 0x0002
-# 117 "d:\\programm\\mingw\\include\\_mingw.h" 3
+# 151 "c:\\program\\mingw\\include\\_mingw.h" 3
 #define __CRT_GLOB_USE_SINGLE_QUOTE__ 0x0010
 #define __CRT_GLOB_BRACKET_GROUPS__ 0x0020
-#define __CRT_GLOB_CASE_SENSITIVE__ 0x0040
-# 128 "d:\\programm\\mingw\\include\\_mingw.h" 3
+# 161 "c:\\program\\mingw\\include\\_mingw.h" 3
 #define __CRT_GLOB_ESCAPE_CHAR__ (char)(127)
+# 174 "c:\\program\\mingw\\include\\_mingw.h" 3
+# 1 "c:\\program\\mingw\\include\\features.h" 1 3
+# 39 "c:\\program\\mingw\\include\\features.h" 3
+       
+# 40 "c:\\program\\mingw\\include\\features.h" 3
+# 61 "c:\\program\\mingw\\include\\features.h" 3
+#define __MINGW_FEATURES__ (__MINGW_FEATURES_BEGIN__) __MINGW_FEATURE_IGNORE__ (__MINGW_ANSI_STDIO__) __MINGW_FEATURE_IGNORE__ (__MINGW_LC_MESSAGES__) __MINGW_FEATURE_IGNORE__ (__MINGW_LC_ENVVARS__) __MINGW_FEATURES_END__
+# 175 "c:\\program\\mingw\\include\\_mingw.h" 2 3
+# 187 "c:\\program\\mingw\\include\\_mingw.h" 3
+#define __MINGW_FEATURE_ENABLE__(__FEATURE__) | (__FEATURE__)
+#define __MINGW_FEATURE_IGNORE__(__FEATURE__) 
 
+#define __MINGW_FEATURES_BEGIN__ 0x0000000000000000ULL
+#define __MINGW_FEATURES_UNSET__ 0x0000000000000000ULL
+#define __MINGW_FEATURES_END__ 
 
 
 
@@ -869,8 +1218,8 @@ extern void OS_START_OS(void);
 
 
 #undef __attribute__
-# 192 "d:\\programm\\mingw\\include\\_mingw.h" 3
-#define __MINGW_IMPORT extern __attribute__ ((__dllimport__))
+# 255 "c:\\program\\mingw\\include\\_mingw.h" 3
+#define __MINGW_IMPORT extern __attribute__((__dllimport__))
 
 
 
@@ -880,7 +1229,7 @@ extern void OS_START_OS(void);
 
 
 #define __DECLSPEC_SUPPORTED 
-# 221 "d:\\programm\\mingw\\include\\_mingw.h" 3
+# 284 "c:\\program\\mingw\\include\\_mingw.h" 3
 #define __int64 long long
 
 
@@ -897,21 +1246,14 @@ extern void OS_START_OS(void);
 
 
 #define __hyper long long
-# 250 "d:\\programm\\mingw\\include\\_mingw.h" 3
+# 313 "c:\\program\\mingw\\include\\_mingw.h" 3
 #define __MINGW_GNUC_PREREQ(major,minor) (__GNUC__ > (major) || (__GNUC__ == (major) && __GNUC_MINOR__ >= (minor)))
-# 265 "d:\\programm\\mingw\\include\\_mingw.h" 3
-#define _EXTERN_C extern
-#define _BEGIN_C_DECLS 
-#define _END_C_DECLS 
-
-
-
-
+# 326 "c:\\program\\mingw\\include\\_mingw.h" 3
 #define __CRT_INLINE extern __inline__
-# 282 "d:\\programm\\mingw\\include\\_mingw.h" 3
+# 336 "c:\\program\\mingw\\include\\_mingw.h" 3
 #define _CRTALIAS __CRT_INLINE __attribute__((__always_inline__))
 #define __CRT_ALIAS __CRT_INLINE __attribute__((__always_inline__))
-# 297 "d:\\programm\\mingw\\include\\_mingw.h" 3
+# 351 "c:\\program\\mingw\\include\\_mingw.h" 3
 #define __JMPSTUB__(__BUILD_HINT__) 
 #define __LIBIMPL__(__BUILD_HINT__) 
 
@@ -919,50 +1261,56 @@ extern void OS_START_OS(void);
 
 
 
-#define __UNUSED_PARAM(x) x __attribute__ ((__unused__))
+#define __UNUSED_PARAM(x) x __attribute__((__unused__))
 
 
 
 
 
 
-#define __MINGW_ATTRIB_NORETURN __attribute__ ((__noreturn__))
-#define __MINGW_ATTRIB_CONST __attribute__ ((__const__))
+#define __MINGW_ATTRIB_NORETURN __attribute__((__noreturn__))
+#define __MINGW_ATTRIB_CONST __attribute__((__const__))
 
 
 
 
 
 
-#define __MINGW_ATTRIB_MALLOC __attribute__ ((__malloc__))
-#define __MINGW_ATTRIB_PURE __attribute__ ((__pure__))
-# 330 "d:\\programm\\mingw\\include\\_mingw.h" 3
-#define __MINGW_ATTRIB_NONNULL(arg) __attribute__ ((__nonnull__ (arg)))
+#define __MINGW_ATTRIB_MALLOC __attribute__((__malloc__))
+#define __MINGW_ATTRIB_PURE __attribute__((__pure__))
+# 384 "c:\\program\\mingw\\include\\_mingw.h" 3
+#define __MINGW_ATTRIB_NONNULL(arg) __attribute__((__nonnull__(arg)))
 
 
 
 
 
-#define __MINGW_ATTRIB_DEPRECATED __attribute__ ((__deprecated__))
+#define __MINGW_ATTRIB_DEPRECATED __attribute__((__deprecated__))
 
 
 
 
 
-#define __MINGW_NOTHROW __attribute__ ((__nothrow__))
-# 353 "d:\\programm\\mingw\\include\\_mingw.h" 3
-#define __MSVCRT_VERSION__ 0x0600
-# 373 "d:\\programm\\mingw\\include\\_mingw.h" 3
-#define __USE_MINGW_ANSI_STDIO 1
-# 20 "d:\\programm\\mingw\\include\\stdio.h" 2 3
-
-
-#define __need_size_t 
+#define __MINGW_NOTHROW __attribute__((__nothrow__))
+# 430 "c:\\program\\mingw\\include\\_mingw.h" 3
+#define __USE_MINGW_ANSI_STDIO __MINGW_ANSI_STDIO__
+# 445 "c:\\program\\mingw\\include\\_mingw.h" 3
+#define __paste(prefix,suffix) prefix ## suffix
+#define __valueless(token) ((token - 0) == 0) && (__paste(token,10) == 10)
+# 526 "c:\\program\\mingw\\include\\_mingw.h" 3
+#define __POSIX_1996_DEPRECATED 
+# 540 "c:\\program\\mingw\\include\\_mingw.h" 3
+#define __POSIX_2001_DEPRECATED 
+# 554 "c:\\program\\mingw\\include\\_mingw.h" 3
+#define __POSIX_2008_DEPRECATED 
+# 56 "c:\\program\\mingw\\include\\stdio.h" 2 3
+# 64 "c:\\program\\mingw\\include\\stdio.h" 3
 #define __need_NULL 
+#define __need_size_t 
 #define __need_wchar_t 
 #define __need_wint_t 
-# 1 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 1 3 4
-# 184 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 1 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 1 3 4
+# 187 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 #define __size_t__ 
 #define __SIZE_T__ 
 #define _SIZE_T 
@@ -985,16 +1333,19 @@ extern void OS_START_OS(void);
 
 
 
+
 #define __size_t 
 
 
 
 
 
+
+# 216 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 typedef unsigned int size_t;
-# 234 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 238 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 #undef __need_size_t
-# 263 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 267 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 #define __wchar_t__ 
 #define __WCHAR_T__ 
 #define _WCHAR_T 
@@ -1010,11 +1361,11 @@ typedef unsigned int size_t;
 #define __INT_WCHAR_T_H 
 #define _GCC_WCHAR_T 
 #define _WCHAR_T_DECLARED 
-# 290 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 294 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 #undef _BSD_WCHAR_T_
-# 324 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 328 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 typedef short unsigned int wchar_t;
-# 343 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 347 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 #undef __need_wchar_t
 
 
@@ -1028,7 +1379,7 @@ typedef short unsigned int wchar_t;
 typedef short unsigned int wint_t;
 
 #undef __need_wint_t
-# 397 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 401 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 #undef NULL
 
 
@@ -1041,10 +1392,38 @@ typedef short unsigned int wint_t;
 
 
 #undef __need_NULL
-# 27 "d:\\programm\\mingw\\include\\stdio.h" 2 3
+# 69 "c:\\program\\mingw\\include\\stdio.h" 2 3
+# 85 "c:\\program\\mingw\\include\\stdio.h" 3
+#define __need___off64_t 
+# 95 "c:\\program\\mingw\\include\\stdio.h" 3
+# 1 "c:\\program\\mingw\\include\\sys/types.h" 1 3
+# 34 "c:\\program\\mingw\\include\\sys/types.h" 3
+       
+# 35 "c:\\program\\mingw\\include\\sys/types.h" 3
+# 84 "c:\\program\\mingw\\include\\sys/types.h" 3
+#undef __need_off_t
+
+
+
+
+
+
+  typedef long long __off64_t;
+# 108 "c:\\program\\mingw\\include\\sys/types.h" 3
+#undef __need___off64_t
+# 132 "c:\\program\\mingw\\include\\sys/types.h" 3
+#undef __need_ssize_t
+# 163 "c:\\program\\mingw\\include\\sys/types.h" 3
+#undef __need_time_t
+# 96 "c:\\program\\mingw\\include\\stdio.h" 2 3
+
+
+
+
+
 #define __need___va_list 
-# 1 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stdarg.h" 1 3 4
-# 34 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stdarg.h" 3 4
+# 1 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stdarg.h" 1 3 4
+# 34 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stdarg.h" 3 4
 #undef __need___va_list
 
 
@@ -1052,16 +1431,12 @@ typedef short unsigned int wint_t;
 
 #define __GNUC_VA_LIST 
 typedef __builtin_va_list __gnuc_va_list;
-# 29 "d:\\programm\\mingw\\include\\stdio.h" 2 3
-
-
-
-
+# 103 "c:\\program\\mingw\\include\\stdio.h" 2 3
+#define __VALIST __builtin_va_list
+# 113 "c:\\program\\mingw\\include\\stdio.h" 3
 #define _IOREAD 1
 #define _IOWRT 2
 #define _IORW 0x0080
-
-
 
 
 
@@ -1071,22 +1446,17 @@ typedef __builtin_va_list __gnuc_va_list;
 #define STDERR_FILENO 2
 
 
+
 #define EOF (-1)
-
-
-
-
-
-
-
+# 141 "c:\\program\\mingw\\include\\stdio.h" 3
 #define FILENAME_MAX (260)
 
 
 
 
 
-
 #define FOPEN_MAX (20)
+
 
 
 #define TMP_MAX 32767
@@ -1101,7 +1471,6 @@ typedef __builtin_va_list __gnuc_va_list;
 
 
 #define _wP_tmpdir L"\\"
-
 
 
 
@@ -1134,27 +1503,20 @@ typedef __builtin_va_list __gnuc_va_list;
 #define SEEK_SET 0
 #define SEEK_CUR 1
 #define SEEK_END 2
-
-
-
-
-
-#define __VALIST __gnuc_va_list
-# 129 "d:\\programm\\mingw\\include\\stdio.h" 3
-#define _FILE_DEFINED 
+# 210 "c:\\program\\mingw\\include\\stdio.h" 3
 typedef struct _iobuf
 {
- char* _ptr;
- int _cnt;
- char* _base;
- int _flag;
- int _file;
- int _charbuf;
- int _bufsiz;
- char* _tmpfname;
+  char *_ptr;
+  int _cnt;
+  char *_base;
+  int _flag;
+  int _file;
+  int _charbuf;
+  int _bufsiz;
+  char *_tmpfname;
 } FILE;
-# 155 "d:\\programm\\mingw\\include\\stdio.h" 3
-extern __attribute__ ((__dllimport__)) FILE _iob[];
+# 239 "c:\\program\\mingw\\include\\stdio.h" 3
+extern __attribute__((__dllimport__)) FILE _iob[];
 
 
 
@@ -1167,19 +1529,6 @@ extern __attribute__ ((__dllimport__)) FILE _iob[];
 
 
 
- FILE* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fopen (const char*, const char*);
- FILE* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) freopen (const char*, const char*, FILE*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fflush (FILE*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fclose (FILE*);
-
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) remove (const char*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) rename (const char*, const char*);
- FILE* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) tmpfile (void);
- char* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) tmpnam (char*);
-# 190 "d:\\programm\\mingw\\include\\stdio.h" 3
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) setvbuf (FILE*, char*, int, size_t);
-
- void __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) setbuf (FILE*, char*);
 
 
 
@@ -1187,27 +1536,81 @@ extern __attribute__ ((__dllimport__)) FILE _iob[];
 
 
 
-#undef __mingw_stdio_redirect__
-#define __mingw_stdio_redirect__(F) __cdecl __MINGW_NOTHROW __mingw_ ##F
 
-extern int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __mingw_fprintf(FILE*, const char*, ...);
-extern int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __mingw_printf(const char*, ...);
-extern int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __mingw_sprintf(char*, const char*, ...);
-extern int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __mingw_snprintf(char*, size_t, const char*, ...);
-extern int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __mingw_vfprintf(FILE*, const char*, __gnuc_va_list);
-extern int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __mingw_vprintf(const char*, __gnuc_va_list);
-extern int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __mingw_vsprintf(char*, const char*, __gnuc_va_list);
-extern int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __mingw_vsnprintf(char*, size_t, const char*, __gnuc_va_list);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) FILE * fopen (const char *, const char *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) FILE * freopen (const char *, const char *, FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fflush (FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fclose (FILE *);
+
+
+
+
+
+
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int remove (const char *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int rename (const char *, const char *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) FILE * tmpfile (void);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) char * tmpnam (char *);
+# 295 "c:\\program\\mingw\\include\\stdio.h" 3
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int setvbuf (FILE *, char *, int, size_t);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) void setbuf (FILE *, char *);
+
 
 
 
 
 
 #undef __mingw_stdio_redirect__
-# 231 "d:\\programm\\mingw\\include\\stdio.h" 3
+#define __mingw_stdio_redirect__(F) __cdecl __MINGW_NOTHROW __Wformat(F)
+#define __Wformat_mingw_printf(F,A) __attribute__((__format__(__mingw_printf__,F,A)))
+
+
+
+
+
+#define __Wformat(F) __Wformat_ ##F __mingw_ ##F
+# 329 "c:\\program\\mingw\\include\\stdio.h" 3
+#define __Wformat_printf __Wformat_mingw_printf(1,2)
+#define __Wformat_fprintf __Wformat_mingw_printf(2,3)
+#define __Wformat_sprintf __Wformat_mingw_printf(2,3)
+#define __Wformat_vprintf __Wformat_mingw_printf(1,0)
+#define __Wformat_vfprintf __Wformat_mingw_printf(2,0)
+#define __Wformat_vsprintf __Wformat_mingw_printf(2,0)
+
+
+
+
+#define __Wformat_snprintf __Wformat_mingw_printf(3,4)
+#define __Wformat_vsnprintf __Wformat_mingw_printf(3,0)
+
+extern int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__mingw_printf__,2,3))) __mingw_fprintf(FILE*, const char*, ...);
+extern int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__mingw_printf__,1,2))) __mingw_printf(const char*, ...);
+extern int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__mingw_printf__,2,3))) __mingw_sprintf(char*, const char*, ...);
+extern int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__mingw_printf__,3,4))) __mingw_snprintf(char*, size_t, const char*, ...);
+extern int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__mingw_printf__,2,0))) __mingw_vfprintf(FILE*, const char*, __builtin_va_list);
+extern int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__mingw_printf__,1,0))) __mingw_vprintf(const char*, __builtin_va_list);
+extern int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__mingw_printf__,2,0))) __mingw_vsprintf(char*, const char*, __builtin_va_list);
+extern int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__mingw_printf__,3,0))) __mingw_vsnprintf(char*, size_t, const char*, __builtin_va_list);
+
+
+
+
+
+#define _MSVC_PRINTF_QUIRKS 0x0100U
+#define _QUERY_MSVC_PRINTF_QUIRKS ~0U, 0U
+#define _DISABLE_MSVC_PRINTF_QUIRKS ~_MSVC_PRINTF_QUIRKS, 0U
+#define _ENABLE_MSVC_PRINTF_QUIRKS ~0U, _MSVC_PRINTF_QUIRKS
+# 376 "c:\\program\\mingw\\include\\stdio.h" 3
+extern unsigned int _mingw_output_format_control( unsigned int, unsigned int );
+
+
+
+
+#undef __mingw_stdio_redirect__
+# 394 "c:\\program\\mingw\\include\\stdio.h" 3
 #define __mingw_stdio_redirect__ static __inline__ __cdecl __MINGW_NOTHROW
-# 240 "d:\\programm\\mingw\\include\\stdio.h" 3
-static __inline__ __attribute__((__cdecl__)) __attribute__ ((__nothrow__))
+# 410 "c:\\program\\mingw\\include\\stdio.h" 3
+static __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__))
 int fprintf (FILE *__stream, const char *__format, ...)
 {
   register int __retval;
@@ -1217,7 +1620,7 @@ int fprintf (FILE *__stream, const char *__format, ...)
   return __retval;
 }
 
-static __inline__ __attribute__((__cdecl__)) __attribute__ ((__nothrow__))
+static __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__))
 int printf (const char *__format, ...)
 {
   register int __retval;
@@ -1227,7 +1630,7 @@ int printf (const char *__format, ...)
   return __retval;
 }
 
-static __inline__ __attribute__((__cdecl__)) __attribute__ ((__nothrow__))
+static __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__))
 int sprintf (char *__stream, const char *__format, ...)
 {
   register int __retval;
@@ -1237,137 +1640,135 @@ int sprintf (char *__stream, const char *__format, ...)
   return __retval;
 }
 
-static __inline__ __attribute__((__cdecl__)) __attribute__ ((__nothrow__))
-int vfprintf (FILE *__stream, const char *__format, __gnuc_va_list __local_argv)
+static __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__))
+int vfprintf (FILE *__stream, const char *__format, __builtin_va_list __local_argv)
 {
   return __mingw_vfprintf( __stream, __format, __local_argv );
 }
 
-static __inline__ __attribute__((__cdecl__)) __attribute__ ((__nothrow__))
-int vprintf (const char *__format, __gnuc_va_list __local_argv)
+static __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__))
+int vprintf (const char *__format, __builtin_va_list __local_argv)
 {
   return __mingw_vprintf( __format, __local_argv );
 }
 
-static __inline__ __attribute__((__cdecl__)) __attribute__ ((__nothrow__))
-int vsprintf (char *__stream, const char *__format, __gnuc_va_list __local_argv)
+static __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__))
+int vsprintf (char *__stream, const char *__format, __builtin_va_list __local_argv)
 {
   return __mingw_vsprintf( __stream, __format, __local_argv );
 }
-# 304 "d:\\programm\\mingw\\include\\stdio.h" 3
+# 500 "c:\\program\\mingw\\include\\stdio.h" 3
+#undef __Wformat
 #undef __mingw_stdio_redirect__
-#define __mingw_stdio_redirect__(F) __cdecl __MINGW_NOTHROW __msvcrt_ ##F
+#define __mingw_stdio_redirect__(F) __cdecl __MINGW_NOTHROW __Wformat(F)
+#define __Wformat_msvcrt_printf(F,A) __attribute__((__format__(__ms_printf__,F,A)))
+#define __Wformat(F) __Wformat_ms_ ##F __msvcrt_ ##F
 
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __msvcrt_fprintf(FILE*, const char*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __msvcrt_printf(const char*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __msvcrt_sprintf(char*, const char*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __msvcrt_vfprintf(FILE*, const char*, __gnuc_va_list);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __msvcrt_vprintf(const char*, __gnuc_va_list);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) __msvcrt_vsprintf(char*, const char*, __gnuc_va_list);
+#define __Wformat_ms_printf __Wformat_msvcrt_printf(1,2)
+#define __Wformat_ms_fprintf __Wformat_msvcrt_printf(2,3)
+#define __Wformat_ms_sprintf __Wformat_msvcrt_printf(2,3)
+#define __Wformat_ms_vprintf __Wformat_msvcrt_printf(1,0)
+#define __Wformat_ms_vfprintf __Wformat_msvcrt_printf(2,0)
+#define __Wformat_ms_vsprintf __Wformat_msvcrt_printf(2,0)
+
+ int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__ms_printf__,2,3))) __msvcrt_fprintf(FILE *, const char *, ...);
+ int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__ms_printf__,1,2))) __msvcrt_printf(const char *, ...);
+ int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__ms_printf__,2,3))) __msvcrt_sprintf(char *, const char *, ...);
+ int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__ms_printf__,2,0))) __msvcrt_vfprintf(FILE *, const char *, __builtin_va_list);
+ int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__ms_printf__,1,0))) __msvcrt_vprintf(const char *, __builtin_va_list);
+ int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __attribute__((__format__(__ms_printf__,2,0))) __msvcrt_vsprintf(char *, const char *, __builtin_va_list);
 
 #undef __mingw_stdio_redirect__
+#undef __Wformat
 
 
 
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _snprintf (char*, size_t, const char*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _vsnprintf (char*, size_t, const char*, __gnuc_va_list);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _vscprintf (const char*, __gnuc_va_list);
-# 330 "d:\\programm\\mingw\\include\\stdio.h" 3
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) snprintf (char *, size_t, const char *, ...);
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vsnprintf (char *, size_t, const char *, __gnuc_va_list);
-
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vscanf (const char * __restrict__, __gnuc_va_list);
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vfscanf (FILE * __restrict__, const char * __restrict__,
-       __gnuc_va_list);
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vsscanf (const char * __restrict__,
-       const char * __restrict__, __gnuc_va_list);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int _snprintf (char *, size_t, const char *, ...);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int _vsnprintf (char *, size_t, const char *, __builtin_va_list);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int _vscprintf (const char *, __builtin_va_list);
+# 699 "c:\\program\\mingw\\include\\stdio.h" 3
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fscanf (FILE *, const char *, ...);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int scanf (const char *, ...);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int sscanf (const char *, const char *, ...);
 
 
 
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fgetc (FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) char * fgets (char *, int, FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fputc (int, FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fputs (const char *, FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) char * gets (char *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int puts (const char *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int ungetc (int, FILE *);
+# 720 "c:\\program\\mingw\\include\\stdio.h" 3
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int _filbuf (FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int _flsbuf (int, FILE *);
 
 
 
-
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fscanf (FILE*, const char*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) scanf (const char*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) sscanf (const char*, const char*, ...);
-
-
-
-
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fgetc (FILE*);
- char* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fgets (char*, int, FILE*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fputc (int, FILE*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fputs (const char*, FILE*);
- char* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) gets (char*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) puts (const char*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) ungetc (int, FILE*);
-
-
-
-
-
-
-
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _filbuf (FILE*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _flsbuf (int, FILE*);
-
-
-
-extern __inline__ int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) getc (FILE* __F)
+extern __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int getc (FILE *);
+extern __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int getc (FILE * __F)
 {
   return (--__F->_cnt >= 0)
     ? (int) (unsigned char) *__F->_ptr++
     : _filbuf (__F);
 }
 
-extern __inline__ int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) putc (int __c, FILE* __F)
+extern __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int putc (int, FILE *);
+extern __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int putc (int __c, FILE * __F)
 {
   return (--__F->_cnt >= 0)
     ? (int) (unsigned char) (*__F->_ptr++ = (char)__c)
     : _flsbuf (__c, __F);
 }
 
-extern __inline__ int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) getchar (void)
+extern __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int getchar (void);
+extern __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int getchar (void)
 {
   return (--(&_iob[0])->_cnt >= 0)
     ? (int) (unsigned char) *(&_iob[0])->_ptr++
     : _filbuf ((&_iob[0]));
 }
 
-extern __inline__ int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) putchar(int __c)
+extern __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int putchar(int);
+extern __inline__ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int putchar(int __c)
 {
   return (--(&_iob[1])->_cnt >= 0)
     ? (int) (unsigned char) (*(&_iob[1])->_ptr++ = (char)__c)
     : _flsbuf (__c, (&_iob[1]));}
-# 411 "d:\\programm\\mingw\\include\\stdio.h" 3
- size_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fread (void*, size_t, size_t, FILE*);
- size_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fwrite (const void*, size_t, size_t, FILE*);
+# 767 "c:\\program\\mingw\\include\\stdio.h" 3
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) size_t fread (void *, size_t, size_t, FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) size_t fwrite (const void *, size_t, size_t, FILE *);
+
+
+
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fseek (FILE *, long, int);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) long ftell (FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) void rewind (FILE *);
+# 821 "c:\\program\\mingw\\include\\stdio.h" 3
+typedef union { long long __value; __off64_t __offset; } fpos_t;
+
+
+
+
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fgetpos (FILE *, fpos_t *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fsetpos (FILE *, const fpos_t *);
+# 862 "c:\\program\\mingw\\include\\stdio.h" 3
+int __attribute__((__cdecl__)) __attribute__((__nothrow__)) __mingw_fseeki64 (FILE *, long long, int);
+extern __inline__ __attribute__((__always_inline__)) __attribute__((__cdecl__)) __attribute__((__nothrow__)) int _fseeki64 (FILE *__f, long long __o, int __w)
+{ return __mingw_fseeki64 (__f, __o, __w); }
+
+
+long long __attribute__((__cdecl__)) __attribute__((__nothrow__)) __mingw_ftelli64 (FILE *);
+extern __inline__ __attribute__((__always_inline__)) __attribute__((__cdecl__)) long long __attribute__((__nothrow__)) _ftelli64 (FILE *__file )
+{ return __mingw_ftelli64 (__file); }
 
 
 
 
 
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fseek (FILE*, long, int);
- long __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) ftell (FILE*);
- void __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) rewind (FILE*);
-# 454 "d:\\programm\\mingw\\include\\stdio.h" 3
-typedef long long fpos_t;
-
-
-
-
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fgetpos (FILE*, fpos_t*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fsetpos (FILE*, const fpos_t*);
-
-
-
-
-
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) feof (FILE*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) ferror (FILE*);
-
-
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int feof (FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int ferror (FILE *);
 
 
 
@@ -1377,117 +1778,106 @@ typedef long long fpos_t;
 #define ferror(__F) ((__F)->_flag & _IOERR)
 
 
- void __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) clearerr (FILE*);
- void __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) perror (const char*);
-# 628 "d:\\programm\\mingw\\include\\stdio.h" 3
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fwprintf (FILE*, const wchar_t*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) wprintf (const wchar_t*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _snwprintf (wchar_t*, size_t, const wchar_t*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vfwprintf (FILE*, const wchar_t*, __gnuc_va_list);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vwprintf (const wchar_t*, __gnuc_va_list);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _vsnwprintf (wchar_t*, size_t, const wchar_t*, __gnuc_va_list);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _vscwprintf (const wchar_t*, __gnuc_va_list);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fwscanf (FILE*, const wchar_t*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) wscanf (const wchar_t*, ...);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) swscanf (const wchar_t*, const wchar_t*, ...);
- wint_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fgetwc (FILE*);
- wint_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fputwc (wchar_t, FILE*);
- wint_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) ungetwc (wchar_t, FILE*);
-# 649 "d:\\programm\\mingw\\include\\stdio.h" 3
- wchar_t* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fgetws (wchar_t*, int, FILE*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) fputws (const wchar_t*, FILE*);
- wint_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) getwc (FILE*);
- wint_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) getwchar (void);
- wchar_t* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _getws (wchar_t*);
- wint_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) putwc (wint_t, FILE*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _putws (const wchar_t*);
- wint_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) putwchar (wint_t);
- FILE* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wfdopen(int, const wchar_t *);
- FILE* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wfopen (const wchar_t*, const wchar_t*);
- FILE* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wfreopen (const wchar_t*, const wchar_t*, FILE*);
- FILE* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wfsopen (const wchar_t*, const wchar_t*, int);
- wchar_t* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wtmpnam (wchar_t*);
- wchar_t* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wtempnam (const wchar_t*, const wchar_t*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wrename (const wchar_t*, const wchar_t*);
- int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wremove (const wchar_t*);
- void __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wperror (const wchar_t*);
- FILE* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) _wpopen (const wchar_t*, const wchar_t*);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) void clearerr (FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) void perror (const char *);
+# 1041 "c:\\program\\mingw\\include\\stdio.h" 3
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fwprintf (FILE *, const wchar_t *, ...);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int wprintf (const wchar_t *, ...);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int vfwprintf (FILE *, const wchar_t *, __builtin_va_list);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int vwprintf (const wchar_t *, __builtin_va_list);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int _snwprintf (wchar_t *, size_t, const wchar_t *, ...);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int _vscwprintf (const wchar_t *, __builtin_va_list);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int _vsnwprintf (wchar_t *, size_t, const wchar_t *, __builtin_va_list);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fwscanf (FILE *, const wchar_t *, ...);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int wscanf (const wchar_t *, ...);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int swscanf (const wchar_t *, const wchar_t *, ...);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) wint_t fgetwc (FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) wint_t fputwc (wchar_t, FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) wint_t ungetwc (wchar_t, FILE *);
+# 1063 "c:\\program\\mingw\\include\\stdio.h" 3
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) wchar_t * fgetws (wchar_t *, int, FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) int fputws (const wchar_t *, FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) wint_t getwc (FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) wint_t getwchar (void);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) wint_t putwc (wint_t, FILE *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) wint_t putwchar (wint_t);
+# 1131 "c:\\program\\mingw\\include\\stdio.h" 3
+
+# 8 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c" 2
+# 1 "c:\\program\\mingw\\include\\time.h" 1 3
+# 33 "c:\\program\\mingw\\include\\time.h" 3
+       
+# 34 "c:\\program\\mingw\\include\\time.h" 3
+# 43 "c:\\program\\mingw\\include\\time.h" 3
+#undef __need_time_h
+#define __need_time_t 1
+# 1 "c:\\program\\mingw\\include\\sys\\types.h" 1 3
+# 34 "c:\\program\\mingw\\include\\sys\\types.h" 3
+       
+# 35 "c:\\program\\mingw\\include\\sys\\types.h" 3
+# 84 "c:\\program\\mingw\\include\\sys\\types.h" 3
+#undef __need_off_t
+# 108 "c:\\program\\mingw\\include\\sys\\types.h" 3
+#undef __need___off64_t
+# 132 "c:\\program\\mingw\\include\\sys\\types.h" 3
+#undef __need_ssize_t
 
 
 
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) snwprintf (wchar_t* s, size_t n, const wchar_t* format, ...);
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vsnwprintf (wchar_t* s, size_t n, const wchar_t* format, __gnuc_va_list arg);
+
+
+
+  typedef long __time32_t;
+  typedef long long __time64_t;
+# 149 "c:\\program\\mingw\\include\\sys\\types.h" 3
+   typedef __time32_t time_t;
+# 160 "c:\\program\\mingw\\include\\sys\\types.h" 3
+#define __have_typedef_time_t 1
+
+
+#undef __need_time_t
+# 46 "c:\\program\\mingw\\include\\time.h" 2 3
 
 
 
 
 
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vwscanf (const wchar_t * __restrict__, __gnuc_va_list);
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vfwscanf (FILE * __restrict__,
-         const wchar_t * __restrict__, __gnuc_va_list);
-int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) vswscanf (const wchar_t * __restrict__,
-         const wchar_t * __restrict__, __gnuc_va_list);
 
-
-#define _WSTDIO_DEFINED 
-# 711 "d:\\programm\\mingw\\include\\stdio.h" 3
-
-# 8 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\os_sim_main.c" 2
-# 1 "d:\\programm\\mingw\\include\\time.h" 1 3
-# 33 "d:\\programm\\mingw\\include\\time.h" 3
+#undef __need_struct_timespec
+#undef __need_wchar_decls
+# 83 "c:\\program\\mingw\\include\\time.h" 3
 #define _TIME_H 
-
-
-
-
-
-
-
+# 94 "c:\\program\\mingw\\include\\time.h" 3
 #define CLOCKS_PER_SEC ((clock_t)(1000))
 #define CLK_TCK CLOCKS_PER_SEC
-# 51 "d:\\programm\\mingw\\include\\time.h" 3
-#define __need_time_t 
-#define __need_struct_timespec 
-# 1 "d:\\programm\\mingw\\include\\parts\\time.h" 1 3
-# 64 "d:\\programm\\mingw\\include\\parts\\time.h" 3
-   typedef long __time32_t;
-   typedef long long __time64_t;
-# 74 "d:\\programm\\mingw\\include\\parts\\time.h" 3
-    typedef __time32_t time_t;
-# 87 "d:\\programm\\mingw\\include\\parts\\time.h" 3
-#define __have_typedef_time_t 1
-# 105 "d:\\programm\\mingw\\include\\parts\\time.h" 3
+
+#define __need_struct_timespec 1
+#define __need_wchar_decls 1
+# 115 "c:\\program\\mingw\\include\\time.h" 3
 struct timespec
 {
 
 
 
-  union
-  {
 
 
 
-    time_t tv_sec;
-    __time32_t __tv32_sec;
-    __time64_t __tv64_sec;
-  };
+
+  __time64_t tv_sec;
   long tv_nsec;
 };
+# 149 "c:\\program\\mingw\\include\\time.h" 3
 #define __struct_timespec_defined 1
-# 54 "d:\\programm\\mingw\\include\\time.h" 2 3
-
-
-
-
+# 175 "c:\\program\\mingw\\include\\time.h" 3
 #define __need_NULL 
 #define __need_wchar_t 
 #define __need_size_t 
-# 1 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 1 3 4
-# 234 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 1 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 1 3 4
+# 238 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 #undef __need_size_t
-# 343 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 347 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 #undef __need_wchar_t
-# 397 "d:\\programm\\mingw\\lib\\gcc\\mingw32\\4.9.3\\include\\stddef.h" 3 4
+# 401 "c:\\program\\mingw\\lib\\gcc\\mingw32\\8.2.0\\include\\stddef.h" 3 4
 #undef NULL
 
 
@@ -1500,63 +1890,77 @@ struct timespec
 
 
 #undef __need_NULL
-# 62 "d:\\programm\\mingw\\include\\time.h" 2 3
+# 179 "c:\\program\\mingw\\include\\time.h" 2 3
 
 
 
 
 typedef long clock_t;
 
-
-
-
-
-
 struct tm
 {
- int tm_sec;
- int tm_min;
- int tm_hour;
- int tm_mday;
- int tm_mon;
- int tm_year;
- int tm_wday;
- int tm_yday;
- int tm_isdst;
 
+
+
+
+  int tm_sec;
+  int tm_min;
+  int tm_hour;
+  int tm_mday;
+  int tm_mon;
+  int tm_year;
+  int tm_wday;
+  int tm_yday;
+  int tm_isdst;
 };
-#define _TM_DEFINED 
+
+
+
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) clock_t clock (void);
+# 214 "c:\\program\\mingw\\include\\time.h" 3
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) time_t time (time_t *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) double difftime (time_t, time_t);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) time_t mktime (struct tm *);
+# 228 "c:\\program\\mingw\\include\\time.h" 3
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) char *asctime (const struct tm *);
 
 
 
 
- clock_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) clock (void);
 
- time_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) time (time_t*);
- double __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) difftime (time_t, time_t);
- time_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) mktime (struct tm*);
-# 108 "d:\\programm\\mingw\\include\\time.h" 3
- char* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) asctime (const struct tm*);
-
- char* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) ctime (const time_t*);
- struct tm* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) gmtime (const time_t*);
- struct tm* __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) localtime (const time_t*);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) char *ctime (const time_t *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) struct tm *gmtime (const time_t *);
+ __attribute__((__cdecl__)) __attribute__((__nothrow__)) struct tm *localtime (const time_t *);
 
 
- size_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) strftime (char*, size_t, const char*, const struct tm*);
-# 213 "d:\\programm\\mingw\\include\\time.h" 3
-extern __attribute__ ((__dllimport__)) int daylight;
-extern __attribute__ ((__dllimport__)) long timezone;
-extern __attribute__ ((__dllimport__)) char *tzname[2];
-# 257 "d:\\programm\\mingw\\include\\time.h" 3
- size_t __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) wcsftime (wchar_t*, size_t, const wchar_t*, const struct tm*);
-#define _WTIME_DEFINED 
+ __attribute__((__cdecl__)) __attribute__((__nothrow__))
+size_t strftime (char *, size_t, const char *, const struct tm *);
+# 381 "c:\\program\\mingw\\include\\time.h" 3
+extern __attribute__((__dllimport__)) int daylight;
+extern __attribute__((__dllimport__)) long timezone;
+extern __attribute__((__dllimport__)) char *tzname[2];
+# 470 "c:\\program\\mingw\\include\\time.h" 3
+
+# 482 "c:\\program\\mingw\\include\\time.h" 3
+
+# 537 "c:\\program\\mingw\\include\\time.h" 3
+ __attribute__((__cdecl__)) __attribute__((__nothrow__))
+size_t wcsftime (wchar_t *, size_t, const wchar_t *, const struct tm *);
 
 
 
-# 9 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_sim\\os_sim_main.c" 2
 
 
+
+
+#undef __need_time_t
+#undef __need_struct_timespec
+#undef __need_wchar_decls
+# 9 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c" 2
+
+
+
+# 11 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_sim\\os_sim_main.c"
 int main(int argc, char* argv[])
 {
    unsigned int i = 0u;

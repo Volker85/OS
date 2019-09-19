@@ -170,9 +170,9 @@ unsigned_char_t OS_TASK_STATE_REQUEST(void* temp_task, task_state_t requested_st
 void OS_CREATE_TASK(task_t* task)
 {
    /*5. unspecified --(create   )--> suspend*/
-   if(task != 0u)
+   if(task != NULL)
    {
-      if(task->state_request != 0u)
+      if(task->state_request != NULL)
       {
          if(task->state_request(task, E_TASK_SUSPENDED)== ACCEPTED)
          {
@@ -203,9 +203,9 @@ void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
    - delete active flag
    - enable Interrupts
    */
-   if(task != 0u && scheduling_task != 0u)
+   if(task != NULL && scheduling_task != NULL)
    {
-      if(task->state_request != 0u)
+      if(task->state_request != NULL)
       {
          if(task->state_request(task, E_TASK_READY)== ACCEPTED)
          {
@@ -244,7 +244,7 @@ void OS_ACTIVATE_TASK(task_t* task)
 
    in case of valid request, the content, where the "task_t* task" is point to is stored in TASK_RUN_QUEUE
    */
-   if(task != 0u)
+   if(task != NULL)
    {
       if(task->state_request(task, E_TASK_READY)==ACCEPTED)
       {
@@ -259,7 +259,7 @@ void OS_ACTIVATE_TASK(task_t* task)
                /* only activate if allowed by rule */
                task = ADD_TO_TASK_QUEUE(task);
                ADD_TO_SCHEDULING_QUEUE(task);
-               if(task != 0u)
+               if(task != NULL)
                {
                   task->nr_of_ins_activated++;
                }
@@ -297,9 +297,9 @@ void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
     */
    timebig_t time;
 
-   if( (task != 0u) && (scheduling_task != 0u)&& ((task->task_queued != FALSE)||(task->idle_task != FALSE)))
+   if( (task != NULL) && (scheduling_task != NULL)&& ((task->task_queued != FALSE)||(task->idle_task != FALSE)))
    {
-      if(task->state_request !=0u)
+      if(task->state_request != NULL)
       {
          if(task->state_request(task, E_TASK_RUNNING)== ACCEPTED)
          {
@@ -350,9 +350,9 @@ void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
    - delete active flag
    - enable Interrupts
    */
-   if(task != 0u && scheduling_task != 0u)
+   if(task != NULL && scheduling_task != NULL)
    {
-      if(task->state_request != 0u)
+      if(task->state_request != NULL)
       {
          if(task->state_request(task, E_TASK_SUSPENDED)== ACCEPTED)
          {
@@ -400,17 +400,17 @@ void OS_TASK_DISPATCHER(void)
    task         = GET_RUNNING_TASK();
    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
    /* Preempt Task */
-   if(task!=0u && scheduling_task_ptr != 0u)
+   if(task != NULL && scheduling_task_ptr != NULL)
    {
       OS_TERMINATE_TASK(task, scheduling_task_ptr);
    }
    /* ask for the next task to be activated... */
    scheduling_task_ptr = os_task_scheduler();
-   if(scheduling_task_ptr != 0u)
+   if(scheduling_task_ptr != NULL)
    {
       task = GET_FROM_TASK_QUEUE(scheduling_task_ptr);
    }
-   if(task != 0u && scheduling_task_ptr != 0u)
+   if(task != NULL && scheduling_task_ptr != NULL)
    {
       OS_START_TASK(task, scheduling_task_ptr);
    }
@@ -581,7 +581,7 @@ LOCAL scheduling_t* os_task_scheduler(void)
       /*task will have a pointer on the task_obj, and might be equal to "(task_t*) 0" */
       task             = GET_FROM_TASK_QUEUE(scheduling_queue_member);
       /* increase prio: high numbers->high prio */
-      if((task != 0u)&&(task->task_queued != FALSE))
+      if((task != NULL)&&(task->task_queued != FALSE))
       {
          if(IS_GREATER_OR_EQUAL(&task->wait_time, &task->time_to_prio_inc))
          {
@@ -598,7 +598,7 @@ LOCAL scheduling_t* os_task_scheduler(void)
             OS_SET_SW_BUG(E_OS_BUG_MAX_WAIT_TIME_REACHED, E_FUNC_TASKSCHEDULER);
          }
          /* not active TASK_RUN_QUEUE elements have no valid task_group!!*/
-         if(task->task_group!=0u)
+         if(task->task_group != NULL)
          {
             /* usage the exe time for scheduling strategy */
             if(IS_GREATER(&task->task_group->exe_time, &task->task_group->fair_exe_time) != FALSE)
@@ -627,7 +627,7 @@ LOCAL scheduling_t* os_task_scheduler(void)
    {
       scheduling_queue_member = GET_FROM_SCHEDULING_QUEUE(element_nr);
       task             = GET_FROM_TASK_QUEUE(scheduling_queue_member);
-      if(task != 0u)
+      if(task != NULL)
       {
          /*update wait time */
          if(task->idle_task != TRUE)

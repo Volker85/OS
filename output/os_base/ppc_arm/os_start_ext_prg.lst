@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccuTtTOs.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccByQ81l.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -18,81 +18,92 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccuTtTOs.s 			page 1
   15              		.align	1
   16              		.p2align 2,,3
   17              		.global	OS_START_EXT_PRG
-  18              		.syntax unified
-  19              		.thumb
-  20              		.thumb_func
-  21              		.fpu softvfp
-  23              	OS_START_EXT_PRG:
-  24              	.LFB1:
-  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_start_ext_prg.c"
-   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** #include "os_firstinc.h"
-   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** /*
-   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    os_StartExtPrg: to be called with supervisor rights!!
-   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** */
-   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** LOCAL unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize
-   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** 
-   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
-   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** {
-   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /* no signature check currently wanted, because
-  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    1. Asymetric Signature calculation takes lots of time
-  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    2. Sym Hash + Asym Signature lack of official embedded implementation free to use
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    3. Signature not in the scope of the project
-  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    */
-  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    REFERENCE_UNUSED_PARAMETER(LoadProgAddr);
-  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    REFERENCE_UNUSED_PARAMETER(PrgSignatur);
-  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    REFERENCE_UNUSED_PARAMETER(PrgSize);
-  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    return TRUE;
-  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** }
-  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** void OS_START_EXT_PRG(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
-  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** {
-  26              		.loc 1 20 0
-  27              		.cfi_startproc
-  28              		@ args = 0, pretend = 0, frame = 0
-  29              		@ frame_needed = 0, uses_anonymous_args = 0
-  30              		@ link register save eliminated.
-  31              	.LVL0:
-  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /* 1. Check Program Signatur and size -> is it a signed Programm? (Chain of Trust) */
-  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    if(os_signatur_valid(LoadProgAddr, PrgSignatur, PrgSize) == FALSE)
-  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    {
-  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****       return;
-  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    }
-  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** 
-  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /* 2. Switch off MMU (system mpu and core mpu, perhaps more mpu parts need to be switched off...
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccuTtTOs.s 			page 2
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	OS_START_EXT_PRG:
+  25              	.LVL0:
+  26              	.LFB1:
+  27              		.file 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_start_ext_prg.c"
+   1:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** #include "os_firstinc.h"
+   2:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** /*
+   3:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    os_StartExtPrg: to be called with supervisor rights!!
+   4:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** */
+   5:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** LOCAL unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize
+   6:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** 
+   7:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
+   8:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** {
+   9:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    /* no signature check currently wanted, because
+  10:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    1. Asymetric Signature calculation takes lots of time
+  11:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    2. Sym Hash + Asym Signature lack of official embedded implementation free to use
+  12:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    3. Signature not in the scope of the project
+  13:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    */
+  14:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    REFERENCE_UNUSED_PARAMETER(LoadProgAddr);
+  15:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    REFERENCE_UNUSED_PARAMETER(PrgSignatur);
+  16:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    REFERENCE_UNUSED_PARAMETER(PrgSize);
+  17:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    return TRUE;
+  18:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** }
+  19:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** void OS_START_EXT_PRG(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
+  20:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** {
+  28              		.loc 1 20 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  21:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    /* 1. Check Program Signatur and size -> is it a signed Programm? (Chain of Trust) */
+  22:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    if(os_signatur_valid(LoadProgAddr, PrgSignatur, PrgSize) == FALSE)
+  33              		.loc 1 22 4 view .LVU1
+  14:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    REFERENCE_UNUSED_PARAMETER(PrgSignatur);
+  34              		.loc 1 14 4 view .LVU2
+  15:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    REFERENCE_UNUSED_PARAMETER(PrgSize);
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccByQ81l.s 			page 2
 
 
-  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /*LLF_MPU_DISABLE(); -> already done in os_deinit_mc(); */
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c **** 
-  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /* 3. Start ExtPrg */
-  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    /*
-  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    call function:
-  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    different processors have different alignment requirements... be aware!!
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    Might cause non alignment failures, in case the code in not aligned correctly
-  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    */
-  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_start_ext_prg.c ****    LoadProgAddr();
-  32              		.loc 1 36 0
-  33 0000 0047     		bx	r0	@ indirect register sibling call
-  34              	.LVL1:
-  35              		.cfi_endproc
-  36              	.LFE1:
-  38              	.Letext0:
-  39              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
-  40              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
-  41              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
-  42              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
-  43              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
-  44              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
-  45              		.file 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccuTtTOs.s 			page 3
+  35              		.loc 1 15 4 view .LVU3
+  16:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    return TRUE;
+  36              		.loc 1 16 4 view .LVU4
+  17:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** }
+  37              		.loc 1 17 4 view .LVU5
+  23:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    {
+  24:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****       return;
+  25:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    }
+  26:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** 
+  27:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    /* 2. Switch off MMU (system mpu and core mpu, perhaps more mpu parts need to be switched off...
+  28:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    /*LLF_MPU_DISABLE(); -> already done in os_deinit_mc(); */
+  29:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c **** 
+  30:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    /* 3. Start ExtPrg */
+  31:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    /*
+  32:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    call function:
+  33:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    different processors have different alignment requirements... be aware!!
+  34:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    Might cause non alignment failures, in case the code in not aligned correctly
+  35:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    */
+  36:C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c ****    LoadProgAddr();
+  38              		.loc 1 36 4 view .LVU6
+  39 0000 0047     		bx	r0	@ indirect register sibling call
+  40              	.LVL1:
+  41              		.loc 1 36 4 is_stmt 0 view .LVU7
+  42              		.cfi_endproc
+  43              	.LFE1:
+  45              	.Letext0:
+  46              		.file 2 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_base_types.h"
+  47              		.file 3 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_common.h"
+  48              		.file 4 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_drivers\\lld_core.h"
+  49              		.file 5 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h"
+  50              		.file 6 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_main.h"
+  51              		.file 7 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h"
+  52              		.file 8 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram_stack.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccByQ81l.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_start_ext_prg.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccuTtTOs.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccuTtTOs.s:23     .text:00000000 OS_START_EXT_PRG
-                           .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
+C:\Users\PRESID~1\AppData\Local\Temp\ccByQ81l.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\ccByQ81l.s:24     .text:00000000 OS_START_EXT_PRG
+                           .group:00000000 wm4.0.e31f5ef4b602e0fe12ffa66337bb63a5
                            .group:00000000 wm4.os_config.h.2.f6eac9d90a921b6f21f0ccaa4f0194d3
-                           .group:00000000 wm4.os_common.h.2.e5c031aba705597809847d8f8f7643a5
+                           .group:00000000 wm4.os_common.h.2.552e5427eb955534308d342b866fde4e
                            .group:00000000 wm4.os_task_config.h.2.6666b50e8a518cf90a10402c04d546aa
                            .group:00000000 wm4.os_task_common.h.95.8d8bf4690dc541f58a865736bc15fd8a
 

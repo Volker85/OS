@@ -6,13 +6,13 @@ REM change the working dir
 SET WRK_DIR=D:\Programm\MinGW\bin
 cd /D %WRK_DIR%
 REM
-set PATH=%PATH%;D:\Programm\MinGW\bin
-SET BASE_DIR=E:\NeuOrga\Programmieren\c_cpp\github_os
+set PATH=%PATH%;C:\Program\MinGW\bin
+SET BASE_DIR=C:\Users\president\Desktop\sbx
 SET INPUT_DIR=%BASE_DIR%\input
 SET OUTPUT_DIR=%BASE_DIR%\output
 SET SRC_DIR=%INPUT_DIR%\src
 SET TOOLS_DIR=%INPUT_DIR%\tools
-SET LIB_DIR=D:\Programm\MinGW\lib
+SET LIB_DIR=C:\Program\MinGW\lib
 REM
 echo "clear existing log x86"
 IF EXIST %OUTPUT_DIR% (
@@ -71,36 +71,37 @@ mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_s
 mingw32-gcc -D CFG_PROCESSOR=3 -E -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led_test.c -o %OUTPUT_DIR%\os_user_code\ppc_x86_test\led_test.ppc >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 REM
 echo "create assembly listings" >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_common_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_common_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_const_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_const_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception_isr_handler_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_exception_isr_handler_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception_table_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_exception_table_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_exception_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_heap_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_init_task_system_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_init_task_system_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_main_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_main_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_memory_mmu_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_shared_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_shared_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_stack_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_stack_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_shutdown_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_shutdown_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_stack_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_stack_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_ext_prg_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_ext_prg_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_init_hw_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_init_hw_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_init_mc_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_init_mc_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_init_sw_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_init_sw_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_os_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_os_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_task_common_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_task_common_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_task_queue_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_task_queue_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_task_scheduler_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_task_scheduler_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_global_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_global_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_interrupt_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_interrupt_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_mmu_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_mmu_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_power_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_power_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_ram_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_ram_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_timer_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_timer_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\os_sim_main_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\os_sim_main_test.lst 2>&1
-mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-adhls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led_test.c >> %OUTPUT_DIR%\os_user_code\ppc_x86_test\led_test.lst 2>&1
+REM TODO following lines DO NOT specify the output -o option -> leads to o-files in the current working directory!!!
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_common_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_common_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_const_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_const_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception_isr_handler_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_exception_isr_handler_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception_table_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_exception_table_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_exception_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_exception_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_heap_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_heap_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_init_task_system_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_init_task_system_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_main_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_main_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_memory_mmu_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_memory_mmu_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_shared_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_shared_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_stack_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_stack_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_ram_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_ram_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_shutdown_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_shutdown_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_stack_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_stack_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_ext_prg_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_ext_prg_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_init_hw_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_init_hw_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_init_mc_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_init_mc_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_init_sw_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_init_sw_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_start_os_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_start_os_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_task_common_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_task_common_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_task_queue_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_task_queue_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_base\os_task_scheduler_test.c >> %OUTPUT_DIR%\os_base\ppc_x86_test\os_task_scheduler_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_global_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_global_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_interrupt_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_interrupt_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_mmu_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_mmu_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_power_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_power_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_ram_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_ram_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_timer_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\lld_timer_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_sim\os_sim_main_test.c >> %OUTPUT_DIR%\os_sim\ppc_x86_test\os_sim_main_test.lst 2>&1
+mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahls  -march=i386 -g3 -O0 -std=c90 -c %SRC_DIR%\os_user_code\led_test.c >> %OUTPUT_DIR%\os_user_code\ppc_x86_test\led_test.lst 2>&1
 REM
 echo "compile it" >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_common_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_common_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
@@ -133,6 +134,7 @@ mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\lld_timer_test.c -o %OUTPUT_DIR%\os_sim\obj_x86_test\lld_timer_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_sim\os_sim_main_test.c -o %OUTPUT_DIR%\os_sim\obj_x86_test\os_sim_main_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
 mingw32-gcc -D CFG_PROCESSOR=3 -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_user_code\led_test.c -o %OUTPUT_DIR%\os_user_code\obj_x86_test\led_test.o>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1
+pause
 REM
 echo "assemble it" >> %OUTPUT_DIR%\VERSION_X86\Build_x86_test.log
 mingw32-gcc -D CFG_PROCESSOR=3 -Wa,-ahlms -S -march=i386 -g3 -Wall -Wextra -pedantic -O0 -std=c90 -c %SRC_DIR%\os_base\os_common_test.c -o %OUTPUT_DIR%\os_base\obj_x86_test\os_common_test.s>>%OUTPUT_DIR%\VERSION_X86\Build_x86_test.log 2>&1

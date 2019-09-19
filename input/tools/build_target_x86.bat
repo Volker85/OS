@@ -3,16 +3,16 @@ REM 1. compile all c files in folder
 REM 2. execute linker file 
 REM
 REM change the working dir
-SET WRK_DIR=D:\Programm\MinGW\bin
+SET WRK_DIR=C:\Program\MinGW\bin
 cd /D %WRK_DIR%
 REM
-set PATH=%PATH%;D:\Programm\MinGW\bin
-SET BASE_DIR=E:\NeuOrga\Programmieren\c_cpp\github_os
+set PATH=%PATH%;C:\Program\MinGW\bin
+SET BASE_DIR=C:\Users\president\Desktop\sbx
 SET INPUT_DIR=%BASE_DIR%\input
 SET OUTPUT_DIR=%BASE_DIR%\output
 SET SRC_DIR=%INPUT_DIR%\src
 SET TOOLS_DIR=%INPUT_DIR%\tools
-SET LIB_DIR=D:\Programm\MinGW\lib
+SET LIB_DIR=C:\Program\MinGW\lib
 REM
 echo "clear existing log x86"
 IF EXIST %OUTPUT_DIR% (

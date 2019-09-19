@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 1
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -18,434 +18,472 @@ ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 1
   15              		.align	1
   16              		.p2align 2,,3
   17              		.global	OS_TASK_SAVE_TASK_ENVIRONMENT
-  18              		.syntax unified
-  19              		.thumb
-  20              		.thumb_func
-  21              		.fpu softvfp
-  23              	OS_TASK_SAVE_TASK_ENVIRONMENT:
-  24              	.LFB0:
-  25              		.file 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.c"
-   1:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #include "os_firstinc.h"
-   2:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #include "os_task_common.h"
-   3:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #include "os_task_scheduler.h"
-   4:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #include "os_heap.h"
-   5:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
-   6:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** /* Create and delete the task environment is not supported,
-   7:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    because we do not allow dynamic RAM allocation for task environment.
-   8:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
-   9:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
-  10:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** */
-  11:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
-  12:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
-  13:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
-  14:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
-  15:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task)
-  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
-  26              		.loc 1 16 0
-  27              		.cfi_startproc
-  28              		@ args = 0, pretend = 0, frame = 0
-  29              		@ frame_needed = 0, uses_anonymous_args = 0
-  30              	.LVL0:
-  17:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task != 0u)
-  31              		.loc 1 17 0
-  32 0000 68B1     		cbz	r0, .L2
-  16:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task != 0u)
-  33              		.loc 1 16 0
-  34 0002 10B5     		push	{r4, lr}
-  35              		.cfi_def_cfa_offset 8
-  36              		.cfi_offset 4, -8
-  37              		.cfi_offset 14, -4
-  38 0004 0446     		mov	r4, r0
-  18:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
-  19:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /*
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 2
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	OS_TASK_SAVE_TASK_ENVIRONMENT:
+  25              	.LVL0:
+  26              	.LFB0:
+  27              		.file 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_task_common.c"
+   1:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #include "os_firstinc.h"
+   2:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #include "os_task_common.h"
+   3:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #include "os_task_scheduler.h"
+   4:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #include "os_heap.h"
+   5:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** 
+   6:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** /* Create and delete the task environment is not supported,
+   7:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    because we do not allow dynamic RAM allocation for task environment.
+   8:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** 
+   9:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** 
+  10:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** */
+  11:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** 
+  12:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** 
+  13:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
+  14:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** 
+  15:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task)
+  16:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** {
+  28              		.loc 1 16 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  17:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    if(task != NULL)
+  32              		.loc 1 17 4 view .LVU1
+  33              		.loc 1 17 6 is_stmt 0 view .LVU2
+  34 0000 68B1     		cbz	r0, .L2
+  18:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    {
+  19:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       /*
+  20:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html#s2
+  21:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       x86: mov ... esp
+  22:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       */
+  23:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       LLF_SAVE_TASK_STACK(task->p_stack_pointer);
+  35              		.loc 1 23 7 is_stmt 1 view .LVU3
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s 			page 2
 
 
-  20:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html#s2
-  21:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       x86: mov ... esp
-  22:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       */
-  23:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_SAVE_TASK_STACK(task->p_stack_pointer);
-  39              		.loc 1 23 0
-  40 0006 D0F8B800 		ldr	r0, [r0, #184]
-  41              	.LVL1:
-  42 000a FFF7FEFF 		bl	LLF_SAVE_TASK_STACK
-  43              	.LVL2:
-  24:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #if(CFG_PROCESSOR == MCU_X86)
-  25:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_SAVE_REGISTERS(task->eax,task->ebx,task->ecx,task->edx);
-  26:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #else
-  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_SAVE_REGISTERS(task->r0,task->r1,task->r2,task->r3);
-  44              		.loc 1 27 0
-  45 000e D4E92323 		ldrd	r2, r3, [r4, #140]
-  46 0012 D4E92101 		ldrd	r0, r1, [r4, #132]
-  28:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #endif
-  29:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
-  30:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    else
-  31:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
-  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_SAVETASKENVIRONMENT);
-  33:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
-  34:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    return;
-  35:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
-  47              		.loc 1 35 0
-  48 0016 BDE81040 		pop	{r4, lr}
-  49              		.cfi_restore 14
-  50              		.cfi_restore 4
-  51              		.cfi_def_cfa_offset 0
-  52              	.LVL3:
-  27:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #endif
-  53              		.loc 1 27 0
-  54 001a FFF7FEBF 		b	LLF_SAVE_REGISTERS
-  55              	.LVL4:
-  56              	.L2:
-  32:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
-  57              		.loc 1 32 0
-  58 001e 0121     		movs	r1, #1
-  59 0020 0220     		movs	r0, #2
-  60              	.LVL5:
-  61 0022 FFF7FEBF 		b	OS_SET_SW_BUG
-  62              	.LVL6:
-  63              		.cfi_endproc
-  64              	.LFE0:
-  66              		.align	1
-  67 0026 00BF     		.p2align 2,,3
-  68              		.global	OS_TASK_RESTORETASK_ENVIRONMENT
-  69              		.syntax unified
-  70              		.thumb
-  71              		.thumb_func
-  72              		.fpu softvfp
-  74              	OS_TASK_RESTORETASK_ENVIRONMENT:
-  75              	.LFB1:
-  36:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
-  37:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task)
-  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
-  76              		.loc 1 38 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 3
+  16:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    if(task != NULL)
+  36              		.loc 1 16 1 is_stmt 0 view .LVU4
+  37 0002 10B5     		push	{r4, lr}
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 4, -8
+  40              		.cfi_offset 14, -4
+  41 0004 0446     		mov	r4, r0
+  42              		.loc 1 23 7 view .LVU5
+  43 0006 D0F8B800 		ldr	r0, [r0, #184]
+  44              	.LVL1:
+  45              		.loc 1 23 7 view .LVU6
+  46 000a FFF7FEFF 		bl	LLF_SAVE_TASK_STACK
+  47              	.LVL2:
+  24:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #if(CFG_PROCESSOR == MCU_X86)
+  25:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       LLF_SAVE_REGISTERS(task->eax,task->ebx,task->ecx,task->edx);
+  26:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #else
+  27:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       LLF_SAVE_REGISTERS(task->r0,task->r1,task->r2,task->r3);
+  48              		.loc 1 27 7 is_stmt 1 view .LVU7
+  49 000e D4E92323 		ldrd	r2, r3, [r4, #140]
+  50 0012 D4E92101 		ldrd	r0, r1, [r4, #132]
+  28:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #endif
+  29:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+  30:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    else
+  31:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    {
+  32:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_SAVETASKENVIRONMENT);
+  33:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+  34:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    return;
+  35:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** }
+  51              		.loc 1 35 1 is_stmt 0 view .LVU8
+  52 0016 BDE81040 		pop	{r4, lr}
+  53              		.cfi_restore 14
+  54              		.cfi_restore 4
+  55              		.cfi_def_cfa_offset 0
+  56              	.LVL3:
+  27:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #endif
+  57              		.loc 1 27 7 view .LVU9
+  58 001a FFF7FEBF 		b	LLF_SAVE_REGISTERS
+  59              	.LVL4:
+  60              	.L2:
+  32:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+  61              		.loc 1 32 7 is_stmt 1 view .LVU10
+  62 001e 0121     		movs	r1, #1
+  63 0020 0220     		movs	r0, #2
+  64              	.LVL5:
+  32:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+  65              		.loc 1 32 7 is_stmt 0 view .LVU11
+  66 0022 FFF7FEBF 		b	OS_SET_SW_BUG
+  67              	.LVL6:
+  68              		.cfi_endproc
+  69              	.LFE0:
+  71              		.align	1
+  72 0026 00BF     		.p2align 2,,3
+  73              		.global	OS_TASK_RESTORETASK_ENVIRONMENT
+  74              		.syntax unified
+  75              		.thumb
+  76              		.thumb_func
+  77              		.fpu softvfp
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s 			page 3
 
 
-  77              		.cfi_startproc
-  78              		@ args = 0, pretend = 0, frame = 0
-  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              	OS_TASK_RESTORETASK_ENVIRONMENT:
   80              	.LVL7:
-  39:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task!=0u)
-  81              		.loc 1 39 0
-  82 0028 50B1     		cbz	r0, .L8
-  38:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task!=0u)
-  83              		.loc 1 38 0
-  84 002a 10B5     		push	{r4, lr}
-  85              		.cfi_def_cfa_offset 8
-  86              		.cfi_offset 4, -8
-  87              		.cfi_offset 14, -4
-  88 002c 0446     		mov	r4, r0
-  40:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
-  41:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_RESTORE_TASK_STACK(task->p_stack_pointer);
-  89              		.loc 1 41 0
-  90 002e D0F8B800 		ldr	r0, [r0, #184]
-  91              	.LVL8:
-  92 0032 FFF7FEFF 		bl	LLF_RESTORE_TASK_STACK
-  93              	.LVL9:
-  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_RESTORE_REGISTERS(task);
-  94              		.loc 1 42 0
-  95 0036 2046     		mov	r0, r4
-  43:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
-  44:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    else
-  45:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
-  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_RESTORETASKENVIRONMENT);
-  47:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
-  48:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
-  96              		.loc 1 48 0
-  97 0038 BDE81040 		pop	{r4, lr}
-  98              		.cfi_restore 14
-  99              		.cfi_restore 4
- 100              		.cfi_def_cfa_offset 0
- 101              	.LVL10:
-  42:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       LLF_RESTORE_REGISTERS(task);
- 102              		.loc 1 42 0
- 103 003c FFF7FEBF 		b	LLF_RESTORE_REGISTERS
- 104              	.LVL11:
- 105              	.L8:
-  46:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
- 106              		.loc 1 46 0
- 107 0040 0221     		movs	r1, #2
- 108 0042 0846     		mov	r0, r1
- 109              	.LVL12:
- 110 0044 FFF7FEBF 		b	OS_SET_SW_BUG
- 111              	.LVL13:
- 112              		.cfi_endproc
- 113              	.LFE1:
- 115              		.align	1
- 116              		.p2align 2,,3
- 117              		.global	OS_TASK_RESTORE_SYSTEM_STACK
- 118              		.syntax unified
- 119              		.thumb
- 120              		.thumb_func
- 121              		.fpu softvfp
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 4
+  81              	.LFB1:
+  36:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** 
+  37:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task)
+  38:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** {
+  82              		.loc 1 38 1 is_stmt 1 view -0
+  83              		.cfi_startproc
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  39:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    if(task != NULL)
+  86              		.loc 1 39 4 view .LVU13
+  87              		.loc 1 39 6 is_stmt 0 view .LVU14
+  88 0028 50B1     		cbz	r0, .L8
+  40:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    {
+  41:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       LLF_RESTORE_TASK_STACK(task->p_stack_pointer);
+  89              		.loc 1 41 7 is_stmt 1 view .LVU15
+  38:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    if(task != NULL)
+  90              		.loc 1 38 1 is_stmt 0 view .LVU16
+  91 002a 10B5     		push	{r4, lr}
+  92              		.cfi_def_cfa_offset 8
+  93              		.cfi_offset 4, -8
+  94              		.cfi_offset 14, -4
+  95 002c 0446     		mov	r4, r0
+  96              		.loc 1 41 7 view .LVU17
+  97 002e D0F8B800 		ldr	r0, [r0, #184]
+  98              	.LVL8:
+  99              		.loc 1 41 7 view .LVU18
+ 100 0032 FFF7FEFF 		bl	LLF_RESTORE_TASK_STACK
+ 101              	.LVL9:
+  42:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       LLF_RESTORE_REGISTERS(task);
+ 102              		.loc 1 42 7 is_stmt 1 view .LVU19
+ 103 0036 2046     		mov	r0, r4
+  43:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+  44:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    else
+  45:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    {
+  46:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_RESTORETASKENVIRONMENT);
+  47:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+  48:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** }
+ 104              		.loc 1 48 1 is_stmt 0 view .LVU20
+ 105 0038 BDE81040 		pop	{r4, lr}
+ 106              		.cfi_restore 14
+ 107              		.cfi_restore 4
+ 108              		.cfi_def_cfa_offset 0
+ 109              	.LVL10:
+  42:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       LLF_RESTORE_REGISTERS(task);
+ 110              		.loc 1 42 7 view .LVU21
+ 111 003c FFF7FEBF 		b	LLF_RESTORE_REGISTERS
+ 112              	.LVL11:
+ 113              	.L8:
+  46:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+ 114              		.loc 1 46 7 is_stmt 1 view .LVU22
+ 115 0040 0221     		movs	r1, #2
+ 116 0042 0846     		mov	r0, r1
+ 117              	.LVL12:
+  46:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+ 118              		.loc 1 46 7 is_stmt 0 view .LVU23
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s 			page 4
 
 
- 123              	OS_TASK_RESTORE_SYSTEM_STACK:
- 124              	.LFB2:
-  49:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
-  50:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
- 125              		.loc 1 50 0
- 126              		.cfi_startproc
- 127              		@ args = 0, pretend = 0, frame = 0
- 128              		@ frame_needed = 0, uses_anonymous_args = 0
- 129              		@ link register save eliminated.
- 130              	.LVL14:
-  51:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    LLF_RESTORE_SYSTEM_STACK(system_stack_ptr);
- 131              		.loc 1 51 0
- 132 0048 FFF7FEBF 		b	LLF_RESTORE_SYSTEM_STACK
- 133              	.LVL15:
- 134              		.cfi_endproc
- 135              	.LFE2:
- 137              		.align	1
- 138              		.p2align 2,,3
- 139              		.global	OS_TASK_SAVE_SYSTEM_STACK
- 140              		.syntax unified
- 141              		.thumb
- 142              		.thumb_func
- 143              		.fpu softvfp
- 145              	OS_TASK_SAVE_SYSTEM_STACK:
- 146              	.LFB3:
-  52:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
-  53:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
-  54:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
- 147              		.loc 1 54 0
- 148              		.cfi_startproc
- 149              		@ args = 0, pretend = 0, frame = 0
- 150              		@ frame_needed = 0, uses_anonymous_args = 0
- 151              		@ link register save eliminated.
- 152              	.LVL16:
-  55:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    LLF_SAVE_SYSTEM_STACK(system_stack_ptr);
- 153              		.loc 1 55 0
- 154 004c FFF7FEBF 		b	LLF_SAVE_SYSTEM_STACK
- 155              	.LVL17:
- 156              		.cfi_endproc
- 157              	.LFE3:
- 159              		.align	1
- 160              		.p2align 2,,3
- 161              		.global	OS_TASK_INIT_TASK_ENVIRONMENT
- 162              		.syntax unified
- 163              		.thumb
- 164              		.thumb_func
- 165              		.fpu softvfp
- 167              	OS_TASK_INIT_TASK_ENVIRONMENT:
- 168              	.LFB4:
-  56:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
-  57:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task)
-  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** {
- 169              		.loc 1 58 0
- 170              		.cfi_startproc
- 171              		@ args = 0, pretend = 0, frame = 0
- 172              		@ frame_needed = 0, uses_anonymous_args = 0
- 173              	.LVL18:
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 5
+ 119 0044 FFF7FEBF 		b	OS_SET_SW_BUG
+ 120              	.LVL13:
+ 121              		.cfi_endproc
+ 122              	.LFE1:
+ 124              		.align	1
+ 125              		.p2align 2,,3
+ 126              		.global	OS_TASK_RESTORE_SYSTEM_STACK
+ 127              		.syntax unified
+ 128              		.thumb
+ 129              		.thumb_func
+ 130              		.fpu softvfp
+ 132              	OS_TASK_RESTORE_SYSTEM_STACK:
+ 133              	.LVL14:
+ 134              	.LFB2:
+  49:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr)
+  50:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** {
+ 135              		.loc 1 50 1 is_stmt 1 view -0
+ 136              		.cfi_startproc
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 0, uses_anonymous_args = 0
+ 139              		@ link register save eliminated.
+  51:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    LLF_RESTORE_SYSTEM_STACK(system_stack_ptr);
+ 140              		.loc 1 51 4 view .LVU25
+ 141 0048 FFF7FEBF 		b	LLF_RESTORE_SYSTEM_STACK
+ 142              	.LVL15:
+ 143              		.loc 1 51 4 is_stmt 0 view .LVU26
+ 144              		.cfi_endproc
+ 145              	.LFE2:
+ 147              		.align	1
+ 148              		.p2align 2,,3
+ 149              		.global	OS_TASK_SAVE_SYSTEM_STACK
+ 150              		.syntax unified
+ 151              		.thumb
+ 152              		.thumb_func
+ 153              		.fpu softvfp
+ 155              	OS_TASK_SAVE_SYSTEM_STACK:
+ 156              	.LVL16:
+ 157              	.LFB3:
+  52:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** }
+  53:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
+  54:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** {
+ 158              		.loc 1 54 1 is_stmt 1 view -0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162              		@ link register save eliminated.
+  55:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    LLF_SAVE_SYSTEM_STACK(system_stack_ptr);
+ 163              		.loc 1 55 4 view .LVU28
+ 164 004c FFF7FEBF 		b	LLF_SAVE_SYSTEM_STACK
+ 165              	.LVL17:
+ 166              		.loc 1 55 4 is_stmt 0 view .LVU29
+ 167              		.cfi_endproc
+ 168              	.LFE3:
+ 170              		.align	1
+ 171              		.p2align 2,,3
+ 172              		.global	OS_TASK_INIT_TASK_ENVIRONMENT
+ 173              		.syntax unified
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s 			page 5
 
 
-  59:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task != 0u)
- 174              		.loc 1 59 0
- 175 0050 0028     		cmp	r0, #0
- 176 0052 3DD0     		beq	.L15
-  58:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    if(task != 0u)
- 177              		.loc 1 58 0
- 178 0054 38B5     		push	{r3, r4, r5, lr}
- 179              		.cfi_def_cfa_offset 16
- 180              		.cfi_offset 3, -16
- 181              		.cfi_offset 4, -12
- 182              		.cfi_offset 5, -8
- 183              		.cfi_offset 14, -4
-  60:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
-  61:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /* general*/
-  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->active                = FALSE;
- 184              		.loc 1 62 0
- 185 0056 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
-  63:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /* general purpose registers */
-  64:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #if(CFG_PROCESSOR == MCU_X86)
-  65:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->eax                             = (unsigned_int32_t)       0u;
-  66:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->ebx                             = (unsigned_int32_t)       0u;
-  67:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->ecx                             = (unsigned_int32_t)       0u;
-  68:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->edx                             = (unsigned_int32_t)       0u;
-  69:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #else
-  70:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r0                             = (unsigned_int32_t)       0u;
- 186              		.loc 1 70 0
- 187 0058 0025     		movs	r5, #0
-  62:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /* general purpose registers */
- 188              		.loc 1 62 0
- 189 005a 6FF30003 		bfc	r3, #0, #1
- 190 005e 0446     		mov	r4, r0
- 191 0060 0370     		strb	r3, [r0]
-  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r1                             = (unsigned_int32_t)       0u;
-  72:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r2                             = (unsigned_int32_t)       0u;
-  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r3                             = (unsigned_int32_t)       0u;
-  74:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r4                             = (unsigned_int32_t)       0u;
-  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r5                             = (unsigned_int32_t)       0u;
-  76:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r6                             = (unsigned_int32_t)       0u;
-  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r7                             = (unsigned_int32_t)       0u;
-  78:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r8                             = (unsigned_int32_t)       0u;
-  79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r9                             = (unsigned_int32_t)       0u;
-  80:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r10                             = (unsigned_int32_t)       0u;
-  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r11                             = (unsigned_int32_t)       0u;
-  82:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r12                             = (unsigned_int32_t)       0u;
- 192              		.loc 1 82 0
- 193 0062 C0F8B450 		str	r5, [r0, #180]
-  71:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r1                             = (unsigned_int32_t)       0u;
- 194              		.loc 1 71 0
- 195 0066 C0E92155 		strd	r5, r5, [r0, #132]
-  73:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r4                             = (unsigned_int32_t)       0u;
- 196              		.loc 1 73 0
- 197 006a C0E92355 		strd	r5, r5, [r0, #140]
-  75:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r6                             = (unsigned_int32_t)       0u;
- 198              		.loc 1 75 0
- 199 006e C0E92555 		strd	r5, r5, [r0, #148]
-  77:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r8                             = (unsigned_int32_t)       0u;
- 200              		.loc 1 77 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 6
+ 174              		.thumb
+ 175              		.thumb_func
+ 176              		.fpu softvfp
+ 178              	OS_TASK_INIT_TASK_ENVIRONMENT:
+ 179              	.LVL18:
+ 180              	.LFB4:
+  56:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** }
+  57:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task)
+  58:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** {
+ 181              		.loc 1 58 1 is_stmt 1 view -0
+ 182              		.cfi_startproc
+ 183              		@ args = 0, pretend = 0, frame = 0
+ 184              		@ frame_needed = 0, uses_anonymous_args = 0
+  59:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    if(task != NULL)
+ 185              		.loc 1 59 4 view .LVU31
+ 186              		.loc 1 59 6 is_stmt 0 view .LVU32
+ 187 0050 0028     		cmp	r0, #0
+ 188 0052 38D0     		beq	.L15
+  60:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    {
+  61:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       /* general*/
+  62:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->active                = FALSE;
+ 189              		.loc 1 62 7 is_stmt 1 view .LVU33
+  58:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    if(task != NULL)
+ 190              		.loc 1 58 1 is_stmt 0 view .LVU34
+ 191 0054 38B5     		push	{r3, r4, r5, lr}
+ 192              		.cfi_def_cfa_offset 16
+ 193              		.cfi_offset 3, -16
+ 194              		.cfi_offset 4, -12
+ 195              		.cfi_offset 5, -8
+ 196              		.cfi_offset 14, -4
+ 197              		.loc 1 62 35 view .LVU35
+ 198 0056 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+  63:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       /* general purpose registers */
+  64:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #if(CFG_PROCESSOR == MCU_X86)
+  65:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->eax                             = (unsigned_int32_t)       0u;
+  66:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->ebx                             = (unsigned_int32_t)       0u;
+  67:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->ecx                             = (unsigned_int32_t)       0u;
+  68:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->edx                             = (unsigned_int32_t)       0u;
+  69:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #else
+  70:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r0                             = (unsigned_int32_t)       0u;
+ 199              		.loc 1 70 44 view .LVU36
+ 200 0058 0025     		movs	r5, #0
+  62:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       /* general purpose registers */
+ 201              		.loc 1 62 35 view .LVU37
+ 202 005a 6FF30003 		bfc	r3, #0, #1
+ 203 005e 0446     		mov	r4, r0
+ 204 0060 0370     		strb	r3, [r0]
+ 205              		.loc 1 70 7 is_stmt 1 view .LVU38
+  71:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r1                             = (unsigned_int32_t)       0u;
+  72:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r2                             = (unsigned_int32_t)       0u;
+  73:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r3                             = (unsigned_int32_t)       0u;
+  74:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r4                             = (unsigned_int32_t)       0u;
+  75:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r5                             = (unsigned_int32_t)       0u;
+  76:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r6                             = (unsigned_int32_t)       0u;
+  77:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r7                             = (unsigned_int32_t)       0u;
+  78:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r8                             = (unsigned_int32_t)       0u;
+  79:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r9                             = (unsigned_int32_t)       0u;
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s 			page 6
 
 
- 201 0072 C0E92755 		strd	r5, r5, [r0, #156]
-  79:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r10                             = (unsigned_int32_t)       0u;
- 202              		.loc 1 79 0
- 203 0076 C0E92955 		strd	r5, r5, [r0, #164]
-  81:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->r12                             = (unsigned_int32_t)       0u;
- 204              		.loc 1 81 0
- 205 007a C0E92B55 		strd	r5, r5, [r0, #172]
-  83:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** #endif
-  84:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /* task scheduling */
-  85:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       ASSIGN_NULL(&task->wait_act_until);
- 206              		.loc 1 85 0
- 207 007e 0630     		adds	r0, r0, #6
- 208              	.LVL19:
- 209 0080 FFF7FEFF 		bl	ASSIGN_NULL
- 210              	.LVL20:
-  86:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       ASSIGN_NULL(&task->wait_time);
- 211              		.loc 1 86 0
- 212 0084 04F11600 		add	r0, r4, #22
- 213 0088 FFF7FEFF 		bl	ASSIGN_NULL
- 214              	.LVL21:
-  87:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       ASSIGN_UINT32(&task->time_to_prio_inc, 5u);
- 215              		.loc 1 87 0
- 216 008c 0521     		movs	r1, #5
- 217 008e 04F12600 		add	r0, r4, #38
- 218 0092 FFF7FEFF 		bl	ASSIGN_UINT32
- 219              	.LVL22:
-  88:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->overwaittime_per_prio_inc_step   = (unsigned_int32_t)        1u;/* has to be >=1 */
- 220              		.loc 1 88 0
- 221 0096 0123     		movs	r3, #1
- 222 0098 A363     		str	r3, [r4, #56]
-  89:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       ASSIGN_UINT32(&task->max_allowed_wait_time,         100000u);
- 223              		.loc 1 89 0
- 224 009a 0F49     		ldr	r1, .L21
- 225 009c 04F13C00 		add	r0, r4, #60
- 226 00a0 FFF7FEFF 		bl	ASSIGN_UINT32
- 227              	.LVL23:
-  90:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       ASSIGN_NULL(&task->exe_time);
- 228              		.loc 1 90 0
- 229 00a4 04F14C00 		add	r0, r4, #76
- 230 00a8 FFF7FEFF 		bl	ASSIGN_NULL
- 231              	.LVL24:
-  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->current_prio                     = (unsigned_char_t)         0u;
-  92:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->default_prio                     = (unsigned_char_t)         0u;/* the default prio for
-  93:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
-  94:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       /* task management */
-  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->state_request                    =                           &OS_TASK_STATE_REQUEST;
-  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->task_state                       =                           E_TASK_UNSPECIFIED;
-  97:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->task_queued                      =                           FALSE;
- 232              		.loc 1 97 0
- 233 00ac 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
-  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->task_state                       =                           E_TASK_UNSPECIFIED;
- 234              		.loc 1 95 0
- 235 00ae 0B4A     		ldr	r2, .L21+4
-  91:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->current_prio                     = (unsigned_char_t)         0u;
- 236              		.loc 1 91 0
- 237 00b0 A4F86C50 		strh	r5, [r4, #108]	@ movhi
- 238              		.loc 1 97 0
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 7
+  80:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r10                             = (unsigned_int32_t)       0u;
+  81:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r11                             = (unsigned_int32_t)       0u;
+  82:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r12                             = (unsigned_int32_t)       0u;
+ 206              		.loc 1 82 45 is_stmt 0 view .LVU39
+ 207 0062 C0F8B450 		str	r5, [r0, #180]
+  71:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r1                             = (unsigned_int32_t)       0u;
+ 208              		.loc 1 71 44 view .LVU40
+ 209 0066 C0E92155 		strd	r5, r5, [r0, #132]
+  72:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r3                             = (unsigned_int32_t)       0u;
+ 210              		.loc 1 72 7 is_stmt 1 view .LVU41
+  73:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r4                             = (unsigned_int32_t)       0u;
+ 211              		.loc 1 73 44 is_stmt 0 view .LVU42
+ 212 006a C0E92355 		strd	r5, r5, [r0, #140]
+  74:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r5                             = (unsigned_int32_t)       0u;
+ 213              		.loc 1 74 7 is_stmt 1 view .LVU43
+  75:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r6                             = (unsigned_int32_t)       0u;
+ 214              		.loc 1 75 44 is_stmt 0 view .LVU44
+ 215 006e C0E92555 		strd	r5, r5, [r0, #148]
+  76:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r7                             = (unsigned_int32_t)       0u;
+ 216              		.loc 1 76 7 is_stmt 1 view .LVU45
+  77:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r8                             = (unsigned_int32_t)       0u;
+ 217              		.loc 1 77 44 is_stmt 0 view .LVU46
+ 218 0072 C0E92755 		strd	r5, r5, [r0, #156]
+  78:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r9                             = (unsigned_int32_t)       0u;
+ 219              		.loc 1 78 7 is_stmt 1 view .LVU47
+  79:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r10                             = (unsigned_int32_t)       0u;
+ 220              		.loc 1 79 44 is_stmt 0 view .LVU48
+ 221 0076 C0E92955 		strd	r5, r5, [r0, #164]
+  80:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r11                             = (unsigned_int32_t)       0u;
+ 222              		.loc 1 80 7 is_stmt 1 view .LVU49
+  81:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->r12                             = (unsigned_int32_t)       0u;
+ 223              		.loc 1 81 45 is_stmt 0 view .LVU50
+ 224 007a C0E92B55 		strd	r5, r5, [r0, #172]
+ 225              		.loc 1 82 7 is_stmt 1 view .LVU51
+  83:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** #endif
+  84:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       /* task scheduling */
+  85:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       ASSIGN_NULL(&task->wait_act_until);
+ 226              		.loc 1 85 7 view .LVU52
+ 227 007e 0630     		adds	r0, r0, #6
+ 228              	.LVL19:
+ 229              		.loc 1 85 7 is_stmt 0 view .LVU53
+ 230 0080 FFF7FEFF 		bl	ASSIGN_NULL
+ 231              	.LVL20:
+  86:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       ASSIGN_NULL(&task->wait_time);
+ 232              		.loc 1 86 7 is_stmt 1 view .LVU54
+ 233 0084 04F11600 		add	r0, r4, #22
+ 234 0088 FFF7FEFF 		bl	ASSIGN_NULL
+ 235              	.LVL21:
+  87:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       ASSIGN_UINT32(&task->time_to_prio_inc, 5u);
+ 236              		.loc 1 87 7 view .LVU55
+ 237 008c 0521     		movs	r1, #5
+ 238 008e 04F12600 		add	r0, r4, #38
+ 239 0092 FFF7FEFF 		bl	ASSIGN_UINT32
+ 240              	.LVL22:
+  88:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->overwaittime_per_prio_inc_step   = (unsigned_int32_t)        1u;/* has to be >=1 */
+ 241              		.loc 1 88 7 view .LVU56
+ 242              		.loc 1 88 46 is_stmt 0 view .LVU57
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s 			page 7
 
 
- 239 00b4 65F34103 		bfi	r3, r5, #1, #1
- 240 00b8 2370     		strb	r3, [r4]
-  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->free                             =                           0u;
- 241              		.loc 1 98 0
- 242 00ba 2368     		ldr	r3, [r4]
-  99:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->nr_of_ins_allowed                   = (unsigned_char_t)         0u;
- 243              		.loc 1 99 0
- 244 00bc 2571     		strb	r5, [r4, #4]
-  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->free                             =                           0u;
- 245              		.loc 1 98 0
- 246 00be 65F3DF03 		bfi	r3, r5, #3, #29
- 100:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->nr_of_ins_activated                 = (unsigned_char_t)         0u;
- 247              		.loc 1 100 0
- 248 00c2 6571     		strb	r5, [r4, #5]
-  96:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->task_queued                      =                           FALSE;
- 249              		.loc 1 96 0
- 250 00c4 84F87C50 		strb	r5, [r4, #124]
- 101:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->fp                               = (func_p_t)                0u;
- 251              		.loc 1 101 0
- 252 00c8 6567     		str	r5, [r4, #116]
-  98:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->nr_of_ins_allowed                   = (unsigned_char_t)         0u;
- 253              		.loc 1 98 0
- 254 00ca 2360     		str	r3, [r4]
-  95:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       task->task_state                       =                           E_TASK_UNSPECIFIED;
- 255              		.loc 1 95 0
- 256 00cc A267     		str	r2, [r4, #120]
- 102:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** 
- 103:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
- 104:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    else
- 105:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    {
- 106:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_INITTASKENVIRONMENT);
- 107:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
- 108:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c **** }
- 257              		.loc 1 108 0
- 258 00ce 38BD     		pop	{r3, r4, r5, pc}
- 259              	.LVL25:
- 260              	.L15:
- 261              		.cfi_def_cfa_offset 0
- 262              		.cfi_restore 3
- 263              		.cfi_restore 4
- 264              		.cfi_restore 5
- 265              		.cfi_restore 14
- 106:E:\NeuOrga\Programmieren\c_cpp\github_os\input\src\os_base\os_task_common.c ****    }
- 266              		.loc 1 106 0
- 267 00d0 0521     		movs	r1, #5
- 268 00d2 0220     		movs	r0, #2
- 269              	.LVL26:
- 270 00d4 FFF7FEBF 		b	OS_SET_SW_BUG
- 271              	.LVL27:
- 272              	.L22:
- 273              		.align	2
- 274              	.L21:
- 275 00d8 A0860100 		.word	100000
- 276 00dc 00000000 		.word	OS_TASK_STATE_REQUEST
- 277              		.cfi_endproc
- 278              	.LFE4:
- 280              		.comm	TASK_PTR,40,4
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 8
+ 243 0096 0123     		movs	r3, #1
+ 244 0098 A363     		str	r3, [r4, #56]
+  89:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       ASSIGN_UINT32(&task->max_allowed_wait_time,         100000u);
+ 245              		.loc 1 89 7 is_stmt 1 view .LVU58
+ 246 009a 0D49     		ldr	r1, .L21
+ 247 009c 04F13C00 		add	r0, r4, #60
+ 248 00a0 FFF7FEFF 		bl	ASSIGN_UINT32
+ 249              	.LVL23:
+  90:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       ASSIGN_NULL(&task->exe_time);
+ 250              		.loc 1 90 7 view .LVU59
+ 251 00a4 04F14C00 		add	r0, r4, #76
+ 252 00a8 FFF7FEFF 		bl	ASSIGN_NULL
+ 253              	.LVL24:
+  91:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->current_prio                     = (unsigned_char_t)         0u;
+ 254              		.loc 1 91 7 view .LVU60
+  92:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->default_prio                     = (unsigned_char_t)         0u;/* the default prio for
+ 255              		.loc 1 92 7 view .LVU61
+  93:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** 
+  94:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       /* task management */
+  95:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->state_request                    =                           &OS_TASK_STATE_REQUEST;
+  96:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->task_state                       =                           E_TASK_UNSPECIFIED;
+  97:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->task_queued                      =                           FALSE;
+ 256              		.loc 1 97 46 is_stmt 0 view .LVU62
+ 257 00ac 2368     		ldr	r3, [r4]
+  95:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->task_state                       =                           E_TASK_UNSPECIFIED;
+ 258              		.loc 1 95 46 view .LVU63
+ 259 00ae 094A     		ldr	r2, .L21+4
+  91:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->default_prio                     = (unsigned_char_t)         0u;/* the default prio for
+ 260              		.loc 1 91 46 view .LVU64
+ 261 00b0 A4F86C50 		strh	r5, [r4, #108]	@ movhi
+  95:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->task_state                       =                           E_TASK_UNSPECIFIED;
+ 262              		.loc 1 95 7 is_stmt 1 view .LVU65
+ 263              		.loc 1 97 46 is_stmt 0 view .LVU66
+ 264 00b4 03F00503 		and	r3, r3, #5
+  98:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->free                             =                           0u;
+  99:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->nr_of_ins_allowed                   = (unsigned_char_t)         0u;
+ 265              		.loc 1 99 49 view .LVU67
+ 266 00b8 A580     		strh	r5, [r4, #4]	@ movhi
+  96:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->task_queued                      =                           FALSE;
+ 267              		.loc 1 96 46 view .LVU68
+ 268 00ba 84F87C50 		strb	r5, [r4, #124]
+ 100:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->nr_of_ins_activated                 = (unsigned_char_t)         0u;
+ 101:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->fp                               = (func_p_t)                0u;
+ 269              		.loc 1 101 46 view .LVU69
+ 270 00be 6567     		str	r5, [r4, #116]
+  97:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->free                             =                           0u;
+ 271              		.loc 1 97 46 view .LVU70
+ 272 00c0 2360     		str	r3, [r4]
+  95:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->task_state                       =                           E_TASK_UNSPECIFIED;
+ 273              		.loc 1 95 46 view .LVU71
+ 274 00c2 A267     		str	r2, [r4, #120]
+  96:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->task_queued                      =                           FALSE;
+ 275              		.loc 1 96 7 is_stmt 1 view .LVU72
+  97:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->free                             =                           0u;
+ 276              		.loc 1 97 7 view .LVU73
+  98:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->nr_of_ins_allowed                   = (unsigned_char_t)         0u;
+ 277              		.loc 1 98 7 view .LVU74
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s 			page 8
 
 
- 281              	.Letext0:
- 282              		.file 2 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
- 283              		.file 3 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
- 284              		.file 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h"
- 285              		.file 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h"
- 286              		.file 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h"
- 287              		.file 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h"
- 288              		.file 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
- 289              		.file 9 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h"
-ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s 			page 9
+  99:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->nr_of_ins_activated                 = (unsigned_char_t)         0u;
+ 278              		.loc 1 99 7 view .LVU75
+ 100:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       task->fp                               = (func_p_t)                0u;
+ 279              		.loc 1 100 7 view .LVU76
+ 280              		.loc 1 101 7 view .LVU77
+ 102:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** 
+ 103:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+ 104:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    else
+ 105:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    {
+ 106:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****       OS_SET_SW_BUG(E_OS_BUG_NULL_POINTER,E_FUNC_INITTASKENVIRONMENT);
+ 107:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+ 108:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c **** }
+ 281              		.loc 1 108 1 is_stmt 0 view .LVU78
+ 282 00c4 38BD     		pop	{r3, r4, r5, pc}
+ 283              	.LVL25:
+ 284              	.L15:
+ 285              		.cfi_def_cfa_offset 0
+ 286              		.cfi_restore 3
+ 287              		.cfi_restore 4
+ 288              		.cfi_restore 5
+ 289              		.cfi_restore 14
+ 106:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+ 290              		.loc 1 106 7 is_stmt 1 view .LVU79
+ 291 00c6 0521     		movs	r1, #5
+ 292 00c8 0220     		movs	r0, #2
+ 293              	.LVL26:
+ 106:C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common.c ****    }
+ 294              		.loc 1 106 7 is_stmt 0 view .LVU80
+ 295 00ca FFF7FEBF 		b	OS_SET_SW_BUG
+ 296              	.LVL27:
+ 297              	.L22:
+ 298 00ce 00BF     		.align	2
+ 299              	.L21:
+ 300 00d0 A0860100 		.word	100000
+ 301 00d4 00000000 		.word	OS_TASK_STATE_REQUEST
+ 302              		.cfi_endproc
+ 303              	.LFE4:
+ 305              		.comm	TASK_PTR,40,4
+ 306              	.Letext0:
+ 307              		.file 2 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_base_types.h"
+ 308              		.file 3 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_common.h"
+ 309              		.file 4 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_drivers\\lld_core.h"
+ 310              		.file 5 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h"
+ 311              		.file 6 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_main.h"
+ 312              		.file 7 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h"
+ 313              		.file 8 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram_stack.h"
+ 314              		.file 9 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_drivers\\lld_global.h"
+ARM GAS  C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 os_task_common.c
-C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s:15     .text:00000000 $t
-C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s:23     .text:00000000 OS_TASK_SAVE_TASK_ENVIRONMENT
-C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s:74     .text:00000028 OS_TASK_RESTORETASK_ENVIRONMENT
-C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s:123    .text:00000048 OS_TASK_RESTORE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s:145    .text:0000004c OS_TASK_SAVE_SYSTEM_STACK
-C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s:167    .text:00000050 OS_TASK_INIT_TASK_ENVIRONMENT
-C:\Users\PRESID~1\AppData\Local\Temp\ccWn017T.s:275    .text:000000d8 $d
+C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s:15     .text:00000000 $t
+C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s:24     .text:00000000 OS_TASK_SAVE_TASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s:79     .text:00000028 OS_TASK_RESTORETASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s:132    .text:00000048 OS_TASK_RESTORE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s:155    .text:0000004c OS_TASK_SAVE_SYSTEM_STACK
+C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s:178    .text:00000050 OS_TASK_INIT_TASK_ENVIRONMENT
+C:\Users\PRESID~1\AppData\Local\Temp\cc5Rq7of.s:300    .text:000000d0 $d
                             *COM*:00000028 TASK_PTR
-                           .group:00000000 wm4.0.d67ddeb5d3f434a0386bf4e126239e16
+                           .group:00000000 wm4.0.e31f5ef4b602e0fe12ffa66337bb63a5
                            .group:00000000 wm4.os_config.h.2.f6eac9d90a921b6f21f0ccaa4f0194d3
-                           .group:00000000 wm4.os_common.h.2.e5c031aba705597809847d8f8f7643a5
+                           .group:00000000 wm4.os_common.h.2.552e5427eb955534308d342b866fde4e
                            .group:00000000 wm4.os_task_config.h.2.6666b50e8a518cf90a10402c04d546aa
                            .group:00000000 wm4.os_task_common.h.95.8d8bf4690dc541f58a865736bc15fd8a
                            .group:00000000 wm4.os_task_scheduler.h.2.15617e18d7400fa01024e50e30c98462

@@ -1,0 +1,1298 @@
+"CppCheck" 
+19.09.2019 11:40:01,12 
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common.c:342:23: error: Array 'tmpBigInt.number[16]' accessed at index 16, which is out of bounds. [arrayIndexOutOfBounds]
+      tmpBigInt.number[(uint32)pos+1u]   = (tmp32 >> 8u) & 0xFF;
+                      ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common.c:343:23: error: Array 'tmpBigInt.number[16]' accessed at index 17, which is out of bounds. [arrayIndexOutOfBounds]
+      tmpBigInt.number[(uint32)pos+2u]   = (tmp32 >>16u) & 0xFF;
+                      ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common.c:344:23: error: Array 'tmpBigInt.number[16]' accessed at index 18, which is out of bounds. [arrayIndexOutOfBounds]
+      tmpBigInt.number[(uint32)pos+3u]   = (tmp32 >>24u) & 0xFF;
+                      ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common.c:79:12: style: The scope of the variable 'local_cnt' can be reduced. [variableScope]
+   uint32  local_cnt = 0;
+           ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common.c:80:11: style: The scope of the variable 'one_shifted_nibble' can be reduced. [variableScope]
+   uint32 one_shifted_nibble;
+          ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common.c:81:11: style: The scope of the variable 'u32_teilergebnis' can be reduced. [variableScope]
+   uint32 u32_teilergebnis;
+          ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common.c:325:12: style: The scope of the variable 'tmp32' can be reduced. [variableScope]
+   uint32  tmp32;
+           ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common.c:79:22: style: Variable 'local_cnt' is assigned a value that is never used. [unreadVariable]
+   uint32  local_cnt = 0;
+                     ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_common_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_const_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler.c:16:7: style: Assignment of function parameter has no effect outside the function. [uselessAssignmentArg]
+      REFERENCE_UNUSED_PARAMETER(svc_number);
+      ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler.c:16:7: warning: Redundant assignment of 'svc_number' to itself. [selfAssignment]
+      REFERENCE_UNUSED_PARAMETER(svc_number);
+      ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_isr_handler_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_table_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_exception_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_heap_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_init_task_system_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main.c:87:17: style: The scope of the variable 'call_nr' can be reduced. [variableScope]
+   LOCAL uint32 call_nr = 0u;
+                ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_main_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_memory_mmu_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_shared_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_stack_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_ram_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_shutdown_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack.c:88:32: style: Variable 'OS_MAIN_STACK_USAGE_PERCENT' is reassigned a value before the old one has been used. [redundantAssignment]
+   OS_MAIN_STACK_USAGE_PERCENT = (OS_MAIN_STACK_SIZE - OS_MAIN_STACK_POS) * 100u / OS_MAIN_STACK_SIZE;
+                               ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack.c:14:32: note: Variable 'OS_MAIN_STACK_USAGE_PERCENT' is reassigned a value before the old one has been used.
+   OS_MAIN_STACK_USAGE_PERCENT = 0u;
+                               ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack.c:88:32: note: Variable 'OS_MAIN_STACK_USAGE_PERCENT' is reassigned a value before the old one has been used.
+   OS_MAIN_STACK_USAGE_PERCENT = (OS_MAIN_STACK_SIZE - OS_MAIN_STACK_POS) * 100u / OS_MAIN_STACK_SIZE;
+                               ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_stack_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c:14:4: warning: Assignment of function parameter has no effect outside the function. Did you forget dereferencing it? [uselessAssignmentPtrArg]
+   REFERENCE_UNUSED_PARAMETER(LoadProgAddr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c:14:4: warning: Redundant assignment of 'LoadProgAddr' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(LoadProgAddr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c:15:4: warning: Redundant assignment of 'PrgSignatur' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(PrgSignatur);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c:16:4: warning: Redundant assignment of 'PrgSize' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(PrgSize);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c:14:4: style: Variable 'LoadProgAddr' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(LoadProgAddr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c:15:4: style: Variable 'PrgSignatur' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(PrgSignatur);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg.c:16:4: style: Variable 'PrgSize' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(PrgSize);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_ext_prg_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_hw_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_mc_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_init_sw_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_start_os_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_common_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_queue_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:420:4: warning: Assignment of function parameter has no effect outside the function. Did you forget dereferencing it? [uselessAssignmentPtrArg]
+   REFERENCE_UNUSED_PARAMETER(task_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:420:4: warning: Redundant assignment of 'task_ptr' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(task_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:426:4: warning: Redundant assignment of 'task_ptr' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(task_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:439:4: warning: Redundant assignment of 'task_ptr' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(task_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:452:4: warning: Redundant assignment of 'task_ptr' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(task_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:467:4: warning: Redundant assignment of 'TASK_GROUP_1' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER (TASK_GROUP_1);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:468:4: warning: Redundant assignment of 'TASK_GROUP_2' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER (TASK_GROUP_2);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:469:4: warning: Redundant assignment of 'TASK_GROUP_3' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER (TASK_GROUP_3);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:470:4: warning: Redundant assignment of 'TASK_GROUP_4' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER (TASK_GROUP_4);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:471:4: warning: Redundant assignment of 'TASK_GROUP_5' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER (TASK_GROUP_5);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:564:4: warning: Redundant assignment of 'Winner_task' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(Winner_task);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:420:4: style: Variable 'task_ptr' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(task_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:551:25: style: Variable 'task' is assigned a value that is never used. [unreadVariable]
+   task_t*         task = 0u;
+                        ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:564:4: style: Variable 'Winner_task' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(Winner_task);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler.c:641:25: style: Variable 'Winner_task' is assigned a value that is never used. [unreadVariable]
+            Winner_task = task;
+                        ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_base\os_task_scheduler_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:29:4: warning: Assignment of function parameter has no effect outside the function. Did you forget dereferencing it? [uselessAssignmentPtrArg]
+   REFERENCE_UNUSED_PARAMETER(StackPointer);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:34:4: style: Assignment of function parameter has no effect outside the function. [uselessAssignmentArg]
+   REFERENCE_UNUSED_PARAMETER(r0);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:42:4: warning: Assignment of function parameter has no effect outside the function. Did you forget dereferencing it? [uselessAssignmentPtrArg]
+   REFERENCE_UNUSED_PARAMETER(StackPointer);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:47:4: warning: Assignment of function parameter has no effect outside the function. Did you forget dereferencing it? [uselessAssignmentPtrArg]
+   REFERENCE_UNUSED_PARAMETER(task);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:52:4: warning: Assignment of function parameter has no effect outside the function. Did you forget dereferencing it? [uselessAssignmentPtrArg]
+   REFERENCE_UNUSED_PARAMETER(system_stack_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:57:4: warning: Assignment of function parameter has no effect outside the function. Did you forget dereferencing it? [uselessAssignmentPtrArg]
+   REFERENCE_UNUSED_PARAMETER(system_stack_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:29:4: warning: Redundant assignment of 'StackPointer' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(StackPointer);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:34:4: warning: Redundant assignment of 'r0' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(r0);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:35:4: warning: Redundant assignment of 'r1' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(r1);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:36:4: warning: Redundant assignment of 'r2' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(r2);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:37:4: warning: Redundant assignment of 'r3' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(r3);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:42:4: warning: Redundant assignment of 'StackPointer' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(StackPointer);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:47:4: warning: Redundant assignment of 'task' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(task);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:52:4: warning: Redundant assignment of 'system_stack_ptr' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(system_stack_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:57:4: warning: Redundant assignment of 'system_stack_ptr' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(system_stack_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:29:4: style: Variable 'StackPointer' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(StackPointer);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:34:4: style: Variable 'r0' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(r0);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:35:4: style: Variable 'r1' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(r1);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:36:4: style: Variable 'r2' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(r2);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:37:4: style: Variable 'r3' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(r3);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:42:4: style: Variable 'StackPointer' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(StackPointer);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:47:4: style: Variable 'task' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(task);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:52:4: style: Variable 'system_stack_ptr' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(system_stack_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global.c:57:4: style: Variable 'system_stack_ptr' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(system_stack_ptr);
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_global_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_interrupt_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_mmu_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_power_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_ram_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\lld_timer_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_sim\os_sim_main_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:6:4: style: Assignment of function parameter has no effect outside the function. [uselessAssignmentArg]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:11:4: style: Assignment of function parameter has no effect outside the function. [uselessAssignmentArg]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:16:4: style: Assignment of function parameter has no effect outside the function. [uselessAssignmentArg]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:21:4: style: Assignment of function parameter has no effect outside the function. [uselessAssignmentArg]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:6:4: warning: Redundant assignment of 'Led' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:11:4: warning: Redundant assignment of 'Led' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:16:4: warning: Redundant assignment of 'Led' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:21:4: warning: Redundant assignment of 'Led' to itself. [selfAssignment]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:6:4: style: Variable 'Led' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:11:4: style: Variable 'Led' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:16:4: style: Variable 'Led' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led.c:21:4: style: Variable 'Led' is assigned a value that is never used. [unreadVariable]
+   REFERENCE_UNUSED_PARAMETER(Led);/* Tag: LED */
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:35:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:36:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:37:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:38:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:39:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:45:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:46:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:47:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:48:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:49:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:57:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): Vowels Present");
+   ^
+C:\Users\president\Desktop\sbx\input\src\os_user_code\led_test.c:60:4: warning: String literal compared with variable 'NULL'. Did you intend to use strcmp() instead? [literalWithCharPtrCompare]
+   sput_enter_suite("count_vowels(): No Vowels Present");
+   ^

@@ -1,12 +1,12 @@
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.c"
-# 1 "D:\\Programm\\GNU Tools ARM Embedded\\7 2018-q2-update\\bin//"
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_stack.c"
+# 1 "C:\\Program Files (x86)\\GNU Tools ARM Embedded\\8 2019-q3-update\\bin//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_HOSTED__ 1
-#define __GNUC__ 7
+#define __GNUC__ 8
 #define __GNUC_MINOR__ 3
 #define __GNUC_PATCHLEVEL__ 1
-#define __VERSION__ "7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
+#define __VERSION__ "8.3.1 20190703 (release) [gcc-8-branch revision 273027]"
 #define __ATOMIC_RELAXED 0
 #define __ATOMIC_SEQ_CST 5
 #define __ATOMIC_ACQUIRE 2
@@ -68,7 +68,7 @@
 #define __UINTPTR_TYPE__ unsigned int
 #define __has_include(STR) __has_include__(STR)
 #define __has_include_next(STR) __has_include_next__(STR)
-#define __GXX_ABI_VERSION 1011
+#define __GXX_ABI_VERSION 1013
 #define __SCHAR_MAX__ 0x7f
 #define __SHRT_MAX__ 0x7fff
 #define __INT_MAX__ 0x7fffffff
@@ -400,7 +400,15 @@
 #define __ARM_FEATURE_UNALIGNED 1
 #undef __ARM_FEATURE_QRDMX
 # 1 "<built-in>"
+#undef __ARM_FEATURE_CRC32
+# 1 "<built-in>"
+#undef __ARM_FEATURE_DOTPROD
+# 1 "<built-in>"
 #define __ARM_32BIT_STATE 1
+#undef __ARM_FEATURE_CMSE
+# 1 "<built-in>"
+#undef __ARM_FEATURE_LDREX
+# 1 "<built-in>"
 #define __ARM_FEATURE_LDREX 7
 #define __ARM_FEATURE_CLZ 1
 #undef __ARM_FEATURE_NUMERIC_MAXMIN
@@ -408,13 +416,19 @@
 #define __ARM_FEATURE_SIMD32 1
 #define __ARM_SIZEOF_MINIMAL_ENUM 1
 #define __ARM_SIZEOF_WCHAR_T 4
+#undef __ARM_ARCH_PROFILE
+# 1 "<built-in>"
 #define __ARM_ARCH_PROFILE 77
 #define __arm__ 1
+#undef __ARM_ARCH
+# 1 "<built-in>"
 #define __ARM_ARCH 7
 #define __APCS_32__ 1
 #define __thumb__ 1
 #define __thumb2__ 1
 #define __THUMBEL__ 1
+#undef __ARM_ARCH_ISA_THUMB
+# 1 "<built-in>"
 #define __ARM_ARCH_ISA_THUMB 2
 #define __ARMEL__ 1
 #define __SOFTFP__ 1
@@ -431,8 +445,9 @@
 # 1 "<built-in>"
 #undef __ARM_FEATURE_FP16_VECTOR_ARITHMETIC
 # 1 "<built-in>"
-#undef __ARM_FEATURE_FMA
+#undef __ARM_FEATURE_FP16_FML
 # 1 "<built-in>"
+#define __ARM_FEATURE_FMA 1
 #undef __ARM_NEON__
 # 1 "<built-in>"
 #undef __ARM_NEON
@@ -446,6 +461,8 @@
 #define __ARM_ARCH_EXT_IDIV__ 1
 #define __ARM_FEATURE_IDIV 1
 #define __ARM_ASM_SYNTAX_UNIFIED__ 1
+#undef __ARM_FEATURE_COPROC
+# 1 "<built-in>"
 #define __ARM_FEATURE_COPROC 15
 #define __GXX_TYPEINFO_EQUALITY_INLINE 0
 #define __ELF__ 1
@@ -453,12 +470,12 @@
 #define __USES_INITFINI__ 1
 #define CFG_PROCESSOR 4
 #define STM32F407VG 1
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.c"
-# 1 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_stack.c"
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 1
 
 #define _OS_FIRSTINC_H_ 
 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_config.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_config.h" 1
 
 #define _OS_CONFIG_H_ 
 
@@ -503,11 +520,11 @@
 #define OS_PROCESS_STACK_TASK2_SIZE 0x200u
 #define OS_PROCESS_STACK_TASK3_SIZE 0x200u
 #define OS_PROCESS_STACK_TASK4_SIZE 0x200u
-# 5 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h" 1
+# 5 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_base_types.h" 1
 
 #define _OS_BASE_TYPES_H_ 
-# 17 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_base_types.h"
+# 17 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_base_types.h"
 typedef unsigned char unsigned_char_t;
 typedef signed char signed_char_t;
 typedef unsigned char unsigned_int8_t;
@@ -522,8 +539,8 @@ typedef unsigned long unsigned_int32_t;
 typedef signed long signed_int32_t;
 typedef unsigned long uint32;
 typedef signed long sint32;
-# 6 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h" 1
+# 6 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_common.h" 1
 
 #define _OS_COMMON_H_ 
 
@@ -539,6 +556,7 @@ typedef signed long sint32;
 #define LOCAL_INLINE static __inline__
 #define GLOBAL_INLINE __inline__
 #define REFERENCE_UNUSED_PARAMETER(x) ((x) = (x))
+#define NULL ((void*)0)
 
 
 #define MCU_X86 3
@@ -549,7 +567,7 @@ typedef signed long sint32;
 #define DWT_CYCCNT ((volatile uint32*)0xE0001004u)
 #define DWT_LAR ((volatile uint32*)0xE0001FB0u)
 #define SCB_DEMCR ((volatile uint32*)0xE000EDFCu)
-# 35 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_common.h"
+# 36 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_common.h"
 #define DISABLE_INTERRUPTS() LLF_INT_DISABLE()
 #define ENABLE_INTERRUPTS() LLF_INT_ENABLE()
 #define PRIVILIGE_LEVEL_SAVE_CURRENT() ;
@@ -644,21 +662,21 @@ extern void SHIFT_LEFT(big_int* number, uint32 amount);
 extern uint32 get_uint32_of_4_uint8(uint8* ptr);
 extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
 extern void OS_UpdateCurrentTime(void);
-# 7 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+# 7 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
 
 
 
 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_drivers\\lld_global.h" 1
 
 #define _LLD_GLOBAL_H_ 
 
 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_drivers\\lld_core.h" 1
 
 #define _LLD_CORE_H_ 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
-# 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_core.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 1
+# 4 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_drivers\\lld_core.h" 2
 enum coreid_e
 {
    E_CORE0 = 0,
@@ -681,13 +699,13 @@ enum privilige_mode_e
    E_PRIVILIGEMODE_PRIVILIGED_HANDLER_MODE
 };
 typedef enum privilige_mode_e privilige_mode_t;
-# 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
+# 6 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_drivers\\lld_global.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 1
 
 #define _OS_TASK_COMMON_H_ 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 1
-# 4 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_config.h" 1
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 1
+# 4 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 2
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_task_config.h" 1
 
 #define _OS_TASK_CONFIG_H_ 
 
@@ -707,12 +725,12 @@ typedef enum privilige_mode_e privilige_mode_t;
 
 #define MS_PER_SEC 1000u
 #define USE_STATIC_CREATED_TASKS TRUE
-# 5 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_init_task_system.h" 1
+# 5 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 2
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_init_task_system.h" 1
 
 #define _OS_INIT_TASK_SYSTEM_H_ 
 extern void OS_INIT_TASK_SYSTEM(void);
-# 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 2
+# 6 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 2
 
 enum task_state_e
 {
@@ -804,7 +822,7 @@ typedef timebig_t scheduler_time_t;
 
 #define OS_SAVE_TASK_PTR(task_ptr,task_name) (TASK_PTR[(task_name)] = (task_ptr))
 #define OS_GET_TASK_PTR(task_name) ((task_t*) TASK_PTR[(task_name)])
-# 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_drivers\\lld_global.h" 2
+# 7 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_drivers\\lld_global.h" 2
 extern void LLF_INT_ENABLE(void);
 extern void LLF_INT_DISABLE(void);
 extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
@@ -821,12 +839,12 @@ extern void LLF_RESTORE_REGISTERS(task_t* task);
 extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
-# 12 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+# 12 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_user_code\\led.h" 1
 
 #define _LED_H_ 
-# 40 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_user_code\\led.h"
+# 40 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_user_code\\led.h"
 typedef enum
 {
    E_LED1 = 0,
@@ -839,20 +857,20 @@ extern void USER_LED_INIT(led_t Led);
 extern void USER_LED_ON(led_t Led);
 extern void USER_LED_OFF(led_t Led);
 extern void USER_LED_TOGGLE(led_t Led);
-# 14 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
+# 14 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 1
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 1
 
 #define _OS_RAM_H_ 
 
 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.h" 1
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_stack.h" 1
 
 #define _OS_STACK_H_ 
 extern void OS_STACK_CHK_PATTERN_INIT(void);
 extern void OS_STACK_CHECK(void);
-# 6 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_heap.h" 1
+# 6 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 2
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_heap.h" 1
 
 #define _OS_HEAP_H_ 
 
@@ -860,8 +878,8 @@ extern void* OS_CALLOC(uint32 num, uint32 size);
 extern void* OS_REALLOC(void* ptr_old, uint32 size_new);
 extern void* OS_MALLOC(uint32 size);
 extern void OS_free(void* ptr);
-# 7 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_main.h" 1
+# 7 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 2
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_main.h" 1
 
 #define _OS_MAIN_H_ 
 
@@ -873,10 +891,10 @@ enum os_state_e
 };
 typedef enum os_state_e os_state_t;
 extern void OS_STATE_HANDLER(void);
-# 8 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
+# 8 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 2
 
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_task_common.h" 1
-# 10 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram.h" 2
+# 1 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_task_common.h" 1
+# 10 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram.h" 2
 
 extern unsigned_char_t HEAP[10000u];
 
@@ -939,14 +957,14 @@ extern task_state_t TASK_TRANSITION_REJECTED_STATE;
 extern task_state_t TASK_TRANSITION_CURRENT_STATE;
 extern volatile os_state_t SYSTEM_STATE_ACCEPTED;
 extern timebig_t LOCAL_SYSTEM_TIME;
-# 16 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
-# 1 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h" 1
+# 16 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
+# 1 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram_stack.h" 1
 
 #define _OS_RAM_STACK_H_ 
-# 12 "e:\\neuorga\\programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_ram_stack.h"
+# 12 "c:\\users\\president\\desktop\\sbx\\input\\src\\os_base\\os_ram_stack.h"
 extern unsigned_char_t OS_MAIN_STACK[0x400u];
-# 17 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_firstinc.h" 2
-# 2 "E:\\NeuOrga\\Programmieren\\c_cpp\\github_os\\input\\src\\os_base\\os_stack.c" 2
+# 17 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_firstinc.h" 2
+# 2 "C:\\Users\\president\\Desktop\\sbx\\input\\src\\os_base\\os_stack.c" 2
 
 void OS_STACK_CHECK(void)
 {

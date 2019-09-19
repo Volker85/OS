@@ -225,7 +225,7 @@ void OS_EXCEPTION_SYSTICK(void)
    /* disable running task */
    task = GET_RUNNING_TASK();
    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();
-   if(task != 0u)
+   if(task != NULL)
    {
       OS_TASK_SAVE_TASK_ENVIRONMENT(task);
       OS_TASK_RESTORE_SYSTEM_STACK((uint8*)&OS_MAIN_STACK);

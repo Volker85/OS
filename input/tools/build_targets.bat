@@ -1,6 +1,6 @@
 REM wechseln ist das Zielverzeichnis
 REM
-SET BATDIR="E:\NeuOrga\Programmieren\c_cpp\github_os\input"
+SET BATDIR="C:\Users\president\Desktop\sbx\input"
 time /t
 cd /D %BATDIR%\tools
 ECHO "build target x86"
@@ -15,6 +15,11 @@ time /t
 cd /D %BATDIR%\tools
 ECHO "build target x86 sput"
 call "build_target_x86_sput.bat"
+REM
+time /t
+cd /D %BATDIR%\tools
+ECHO "build target x86 static code analysis"
+call "build_target_x86_static_code_analysis.bat"
 REM
 time /t
 pause

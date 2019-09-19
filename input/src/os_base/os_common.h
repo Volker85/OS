@@ -13,6 +13,7 @@
 #define LOCAL_INLINE static __inline__
 #define GLOBAL_INLINE __inline__
 #define REFERENCE_UNUSED_PARAMETER(x) ((x) = (x))
+#define NULL ((void*)0)
 
 /* MCU abstraction */
 #define MCU_X86        3

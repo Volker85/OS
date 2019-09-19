@@ -33,7 +33,7 @@
 void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task)
 {
    RUNNING_SCHEDULING_QUEUE_ENTRY = scheduling_task;
-   if(task != 0u)
+   if(task != NULL)
    {
       (&RUNNING_TASK[0u])->active                             = task->active;
       (&RUNNING_TASK[0u])->task_queued                        = task->task_queued;
@@ -237,7 +237,7 @@ void ADD_TO_SCHEDULING_QUEUE(task_t* task)
    while(  (index < MAX_RUN_QUEUE_SIZE)
            &&(Add_successful == FALSE))
    {
-      if(TASK_SCHEDULING_QUEUE[index] == 0u)
+      if(TASK_SCHEDULING_QUEUE[index] == NULL)
       {
          TASK_SCHEDULING_QUEUE[index] = task;
          Add_successful         = TRUE;
@@ -353,7 +353,7 @@ void OS_INIT_TASK(
 )
 {
    REFERENCE_UNUSED_PARAMETER(core);
-   if(task!=0u)
+   if(task != NULL)
    {
       task->active           = FALSE;
       task->fp               = TaskFunction;

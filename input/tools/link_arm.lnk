@@ -75,7 +75,7 @@ SECTIONS{
    {      
       _ram_start = .;
       os_ram.o
-      os_shared_ram.o      
+      os_ram_shared.o      
       _ram_end = .;
       PROVIDE(ram_start = .);
       PROVIDE(ram_end = .);

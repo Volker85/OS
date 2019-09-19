@@ -14,7 +14,7 @@ task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
 
 void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task)
 {
-   if(task != 0u)
+   if(task != NULL)
    {
       /*
       http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html#s2
@@ -36,7 +36,7 @@ void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task)
 
 void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task)
 {
-   if(task!=0u)
+   if(task != NULL)
    {
       LLF_RESTORE_TASK_STACK(task->p_stack_pointer);
       LLF_RESTORE_REGISTERS(task);
@@ -56,7 +56,7 @@ void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr)
 }
 void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task)
 {
-   if(task != 0u)
+   if(task != NULL)
    {
       /* general*/
       task->active                = FALSE;
