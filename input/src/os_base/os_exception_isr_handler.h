@@ -3,18 +3,150 @@
 
 #define SVC_00 0x00   /* Tag: SVC */
 
-extern void OS_EXCEPTION_RESET(void);
-extern void OS_EXCEPTION_NMI(void);
-extern void OS_EXCEPTION_HARDFAULT(void);
-extern void OS_EXCEPTION_MEM_MANAG_FAULT(void);
-extern void OS_EXCEPTION_BUS_FAULT(void);
-extern void OS_EXCEPTION_USAGE_FAULT(void);
 
-extern void OS_EXCEPTION_SVC(void);
-extern void OS_EXCEPTION_DEBUG(void);
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_RESET(void);
 
-extern void OS_EXCEPTION_PEND_SV(void);
-extern void OS_EXCEPTION_SYSTICK(void);
-extern void OS_EXCEPTION_IRQ(void);
-extern void OS_ISRHANDLERC0(uint32 svc_number);
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_NMI(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_HARDFAULT(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_MEM_MANAG_FAULT(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_BUS_FAULT(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_USAGE_FAULT(void);
+
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_SVC(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_DEBUG(void);
+
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_PEND_SV(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_SYSTICK(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_EXCEPTION_IRQ(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_ISRHANDLERC0(uint32 svc_number);
 #endif /* _OS_EXCEPTION_ISR_HANDLER_H_ */

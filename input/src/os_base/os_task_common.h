@@ -79,16 +79,115 @@ struct task_s
 };
 typedef struct task_s task_t;
 typedef task_t* scheduling_t;
-extern void OS_RESET_CURRENT_TIME(void);
-extern void OS_GET_CURRENT_TIME(timebig_t* time);
 
-extern void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task);
-extern void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
-extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
-extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
-extern void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task);
-extern void OS_TASK_DELETE_TASK_ENVIRONMENT(task_t* task);
-extern task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_RESET_CURRENT_TIME(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_GET_CURRENT_TIME(timebig_t* time);
+
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_TASK_DELETE_TASK_ENVIRONMENT(task_t* task);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
 
 typedef timebig_t scheduler_time_t;
 

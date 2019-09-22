@@ -8,6 +8,17 @@ enum os_state_e
    OS_STATE_SHUTDOWN
 };
 typedef enum os_state_e os_state_t;
-extern void OS_STATE_HANDLER(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_STATE_HANDLER(void);
 
 #endif /* _OS_MAIN_H_ */

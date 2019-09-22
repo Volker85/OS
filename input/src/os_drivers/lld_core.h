@@ -10,11 +10,66 @@ enum coreid_e
 };
 typedef  enum coreid_e coreid_t;
 
-extern coreid_t OS_GET_CORE_ID(void);
-extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
-extern void LLF_EXCEPTION_TO_HANDLER_MODE(void);
-extern void LLF_EXCEPTION_TO_THREAD_MODE_PRIV(void);
-extern void LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  coreid_t OS_GET_CORE_ID(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void LLF_EXCEPTION_TO_HANDLER_MODE(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void LLF_EXCEPTION_TO_THREAD_MODE_PRIV(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV(void);
 
 enum privilige_mode_e
 {

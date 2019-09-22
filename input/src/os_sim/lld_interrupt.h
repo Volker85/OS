@@ -8,8 +8,52 @@
 #define OS_INTERRUPT_SWI_4 asm("swi 4")
 #define OS_INTERRUPT_SWI_5 asm("swi 5")
 
-extern void LLF_INT_DISABLE(void);
-extern void LLF_INT_ENABLE(void);
-extern void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
-extern void LLF_WAIT_FOR_INTERRUPT(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void LLF_INT_DISABLE(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void LLF_INT_ENABLE(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void LLF_DISABLE_INTERRUPTS_ALL_CORES(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void LLF_WAIT_FOR_INTERRUPT(void);
 #endif /* _LLD_INTERRUPT_H_ */

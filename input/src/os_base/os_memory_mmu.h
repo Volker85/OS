@@ -21,5 +21,16 @@
 #define MPU_ASR_REGION_ENABLE            0x00000001u
 
 
-extern void OS_MMU_SETUP(void);
+
+/**
+ * \brief Exemplarische Funktion TODO
+ *
+ *     Diese Funktion gibt den übergebenen Parameter
+ *     auf der Konsole aus. TODO
+ *
+ * \param	parameter  Auszugebender Parameter TODO
+ * \return	      Status-Code TODO
+ *
+ */
+extern  void OS_MMU_SETUP(void);
 #endif /* _OS_MEMORY_MMU_H_ */
