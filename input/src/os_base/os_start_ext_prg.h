@@ -13,6 +13,6 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_START_EXT_PRG(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize);
+extern void OS_START_EXT_PRG(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize);
 #endif /* _OS_START_EXT_PRG_H_  */
 

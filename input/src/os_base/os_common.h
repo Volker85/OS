@@ -103,7 +103,7 @@ typedef enum os_sw_bugs_function_e os_sw_bugs_function_t;
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
+extern void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr);
 typedef void (*func_ptr_t)(void);
 
 typedef struct big_int_s
@@ -130,7 +130,7 @@ typedef big_int timebig_t;
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig);
+extern void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig);
 
 
 /**
@@ -143,7 +143,7 @@ extern  void OS_READ_AND_RESET_CURRENT_TIME(timebig_t* timebig);
  * \return	      Status-Code TODO
  *
  */
-extern  void ASSIGN_NULL(big_int* leftOperand);
+extern void ASSIGN_NULL(big_int* leftOperand);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -155,7 +155,7 @@ extern  void ASSIGN_NULL(big_int* leftOperand);
  * \return	      Status-Code TODO
  *
  */
-extern  void ASSIGN(big_int* leftOperand, const big_int* rightOperand);
+extern void ASSIGN(big_int* leftOperand, const big_int* rightOperand);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -167,7 +167,7 @@ extern  void ASSIGN(big_int* leftOperand, const big_int* rightOperand);
  * \return	      Status-Code TODO
  *
  */
-extern  void ASSIGN_UINT32(big_int* leftOperand, const uint32 rightOperand);
+extern void ASSIGN_UINT32(big_int* leftOperand, const uint32 rightOperand);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -179,7 +179,7 @@ extern  void ASSIGN_UINT32(big_int* leftOperand, const uint32 rightOperand);
  * \return	      Status-Code TODO
  *
  */
-extern  boolean_t IS_GREATER_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_GREATER_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -191,7 +191,7 @@ extern  boolean_t IS_GREATER_OR_EQUAL(const big_int* Operand1, const big_int* Op
  * \return	      Status-Code TODO
  *
  */
-extern  boolean_t IS_GREATER(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_GREATER(const big_int* Operand1, const big_int* Operand2);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -203,7 +203,7 @@ extern  boolean_t IS_GREATER(const big_int* Operand1, const big_int* Operand2);
  * \return	      Status-Code TODO
  *
  */
-extern  boolean_t IS_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_EQUAL(const big_int* Operand1, const big_int* Operand2);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -215,7 +215,7 @@ extern  boolean_t IS_EQUAL(const big_int* Operand1, const big_int* Operand2);
  * \return	      Status-Code TODO
  *
  */
-extern  boolean_t IS_LESS_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_LESS_OR_EQUAL(const big_int* Operand1, const big_int* Operand2);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -227,7 +227,7 @@ extern  boolean_t IS_LESS_OR_EQUAL(const big_int* Operand1, const big_int* Opera
  * \return	      Status-Code TODO
  *
  */
-extern  boolean_t IS_LESS(const big_int* Operand1, const big_int* Operand2);
+extern boolean_t IS_LESS(const big_int* Operand1, const big_int* Operand2);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -239,7 +239,7 @@ extern  boolean_t IS_LESS(const big_int* Operand1, const big_int* Operand2);
  * \return	      Status-Code TODO
  *
  */
-extern  void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor);
+extern void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -251,7 +251,7 @@ extern  void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* 
  * \return	      Status-Code TODO
  *
  */
-extern  void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2);
+extern void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Faktor2);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -263,7 +263,7 @@ extern  void INT_MUL(big_int* Produkt, const big_int* Faktor1, const big_int* Fa
  * \return	      Status-Code TODO
  *
  */
-extern  void INT_SUB(big_int* Differenz, const big_int* Minuend, const big_int* Subtrahend);
+extern void INT_SUB(big_int* Differenz, const big_int* Minuend, const big_int* Subtrahend);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -275,7 +275,7 @@ extern  void INT_SUB(big_int* Differenz, const big_int* Minuend, const big_int* 
  * \return	      Status-Code TODO
  *
  */
-extern  void INT_ADD(big_int* Summe, const big_int* ErsterSummand, const big_int* ZweiterSummand);
+extern void INT_ADD(big_int* Summe, const big_int* ErsterSummand, const big_int* ZweiterSummand);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -287,7 +287,7 @@ extern  void INT_ADD(big_int* Summe, const big_int* ErsterSummand, const big_int
  * \return	      Status-Code TODO
  *
  */
-extern  void SHIFT_LEFT(big_int* number, uint32 amount);
+extern void SHIFT_LEFT(big_int* number, uint32 amount);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -299,7 +299,7 @@ extern  void SHIFT_LEFT(big_int* number, uint32 amount);
  * \return	      Status-Code TODO
  *
  */
-extern  uint32 get_uint32_of_4_uint8(uint8* ptr);
+extern uint32 get_uint32_of_4_uint8(uint8* ptr);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -311,7 +311,7 @@ extern  uint32 get_uint32_of_4_uint8(uint8* ptr);
  * \return	      Status-Code TODO
  *
  */
-extern  void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
+extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -323,5 +323,5 @@ extern  void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_UpdateCurrentTime(void);
+extern void OS_UpdateCurrentTime(void);
 #endif /* _OS_COMMON_H_ */

@@ -200,18 +200,7 @@ void OS_EXCEPTION_SYSTICK(void)
 
    Indicates the clock source:
 
-   0 = 
-/**
- * \brief Exemplarische Funktion TODO
- *
- *     Diese Funktion gibt den übergebenen Parameter
- *     auf der Konsole aus. TODO
- *
- * \param	parameter  Auszugebender Parameter TODO
- * \return	      Status-Code TODO
- *
- */
-extern al clock
+   0 = external clock
 
    1 = processor clock.
    [1]	TICKINT
@@ -233,6 +222,7 @@ extern al clock
 
    When ENABLE is set to 1, the counter loads the RELOAD value from the SYST_RVR register and then counts down. On reaching 0, it sets the COUNTFLAG to 1 and optionally asserts the SysTick depending on the value of TICKINT. It then loads the RELOAD value again, and begins counting.
    */
+
    /* disable running task */
    task = GET_RUNNING_TASK();
    scheduling_task_ptr = GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR();

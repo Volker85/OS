@@ -90,7 +90,7 @@ typedef task_t* scheduling_t;
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_RESET_CURRENT_TIME(void);
+extern void OS_RESET_CURRENT_TIME(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -102,7 +102,7 @@ extern  void OS_RESET_CURRENT_TIME(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_GET_CURRENT_TIME(timebig_t* time);
+extern void OS_GET_CURRENT_TIME(timebig_t* time);
 
 
 /**
@@ -115,7 +115,7 @@ extern  void OS_GET_CURRENT_TIME(timebig_t* time);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task);
+extern void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -127,7 +127,7 @@ extern  void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
+extern void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -139,7 +139,7 @@ extern  void OS_TASK_RESTORETASK_ENVIRONMENT(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
+extern void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -151,7 +151,7 @@ extern  void OS_TASK_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
+extern void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -163,7 +163,7 @@ extern  void OS_TASK_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task);
+extern void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -175,7 +175,7 @@ extern  void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_TASK_DELETE_TASK_ENVIRONMENT(task_t* task);
+extern void OS_TASK_DELETE_TASK_ENVIRONMENT(task_t* task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -187,7 +187,7 @@ extern  void OS_TASK_DELETE_TASK_ENVIRONMENT(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
+extern task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
 
 typedef timebig_t scheduler_time_t;
 

@@ -12,5 +12,5 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_INIT_MC(void);
+extern void OS_INIT_MC(void);
 #endif /* _OS_START_INIT_MC_H_ */

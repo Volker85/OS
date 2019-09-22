@@ -12,5 +12,5 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_CLEAR_ALL_RAM(void);
+extern void LLF_CLEAR_ALL_RAM(void);
 #endif /* _lld_ram_h_ */

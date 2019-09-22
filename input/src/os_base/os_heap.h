@@ -12,7 +12,7 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void* OS_CALLOC(uint32 num, uint32 size);
+extern void* OS_CALLOC(uint32 num, uint32 size);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -24,7 +24,7 @@ extern  void* OS_CALLOC(uint32 num, uint32 size);
  * \return	      Status-Code TODO
  *
  */
-extern  void* OS_REALLOC(void* ptr_old, uint32 size_new);
+extern void* OS_REALLOC(void* ptr_old, uint32 size_new);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -36,7 +36,7 @@ extern  void* OS_REALLOC(void* ptr_old, uint32 size_new);
  * \return	      Status-Code TODO
  *
  */
-extern  void* OS_MALLOC(uint32 size);
+extern void* OS_MALLOC(uint32 size);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -48,5 +48,5 @@ extern  void* OS_MALLOC(uint32 size);
  * \return	      Status-Code TODO
  *
  */
-extern  void  OS_free(void* ptr);
+extern void  OS_free(void* ptr);
 #endif /* _OS_HEAP_H_ */

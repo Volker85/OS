@@ -21,7 +21,7 @@ typedef  enum coreid_e coreid_t;
  * \return	      Status-Code TODO
  *
  */
-extern  coreid_t OS_GET_CORE_ID(void);
+extern coreid_t OS_GET_CORE_ID(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -33,7 +33,7 @@ extern  coreid_t OS_GET_CORE_ID(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
+extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -45,7 +45,7 @@ extern  void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_EXCEPTION_TO_HANDLER_MODE(void);
+extern void LLF_EXCEPTION_TO_HANDLER_MODE(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -57,7 +57,7 @@ extern  void LLF_EXCEPTION_TO_HANDLER_MODE(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_EXCEPTION_TO_THREAD_MODE_PRIV(void);
+extern void LLF_EXCEPTION_TO_THREAD_MODE_PRIV(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -69,7 +69,7 @@ extern  void LLF_EXCEPTION_TO_THREAD_MODE_PRIV(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV(void);
+extern void LLF_EXCEPTION_TO_THREAD_MODE_UNPRIV(void);
 
 enum privilige_mode_e
 {

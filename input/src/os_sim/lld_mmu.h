@@ -13,7 +13,7 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_MPU_DISABLE(void);
+extern void LLF_MPU_DISABLE(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -25,7 +25,7 @@ extern  void LLF_MPU_DISABLE(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_MPU_ENABLE(void);
+extern void LLF_MPU_ENABLE(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -37,7 +37,7 @@ extern  void LLF_MPU_ENABLE(void);
  * \return	      Status-Code TODO
  *
  */
-extern  uint32 LLF_GET_MPU_PRESENT(void);
+extern uint32 LLF_GET_MPU_PRESENT(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -49,5 +49,5 @@ extern  uint32 LLF_GET_MPU_PRESENT(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
+extern void LLF_MMU_SET_REGION(void* startAddr, void* endAddr);
 #endif /* _LLD_MMU_H_ */

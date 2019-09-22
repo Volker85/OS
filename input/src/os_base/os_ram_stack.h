@@ -20,5 +20,5 @@
  * \return	      Status-Code TODO
  *
  */
-extern  unsigned_char_t OS_MAIN_STACK[OS_MAIN_STACK_SIZE];
+extern unsigned_char_t OS_MAIN_STACK[OS_MAIN_STACK_SIZE];
 #endif

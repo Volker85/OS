@@ -10,41 +10,8 @@ void OS_INIT_MC(void)
    
    /* 2. all MCU IO*/
    /* configure GPIO (SPI, UART, CAN, etc) */
-   /* no 
-/**
- * \brief Exemplarische Funktion TODO
- *
- *     Diese Funktion gibt den übergebenen Parameter
- *     auf der Konsole aus. TODO
- *
- * \param	parameter  Auszugebender Parameter TODO
- * \return	      Status-Code TODO
- *
- */
-extern al parts connected to SPI, UART, CAN, ... -> no init needed */
-   /* initialize the 
-/**
- * \brief Exemplarische Funktion TODO
- *
- *     Diese Funktion gibt den übergebenen Parameter
- *     auf der Konsole aus. TODO
- *
- * \param	parameter  Auszugebender Parameter TODO
- * \return	      Status-Code TODO
- *
- */
-extern al parts...  */
-   /* no relevant 
-/**
- * \brief Exemplarische Funktion TODO
- *
- *     Diese Funktion gibt den übergebenen Parameter
- *     auf der Konsole aus. TODO
- *
- * \param	parameter  Auszugebender Parameter TODO
- * \return	      Status-Code TODO
- *
- */
-extern al parts */
+   /* no external parts connected to SPI, UART, CAN, ... -> no init needed */
+   /* initialize the external parts...  */
+   /* no relevant external parts */
    OS_MMU_SETUP();
 }

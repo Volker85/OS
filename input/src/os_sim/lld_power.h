@@ -12,7 +12,7 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_MCU_SWITCH_OFF_POWER(void);
+extern void LLF_MCU_SWITCH_OFF_POWER(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -24,5 +24,5 @@ extern  void LLF_MCU_SWITCH_OFF_POWER(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_MCU_RESET_POWER(void);
+extern void LLF_MCU_RESET_POWER(void);
 #endif

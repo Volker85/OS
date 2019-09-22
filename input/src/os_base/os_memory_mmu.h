@@ -32,5 +32,5 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_MMU_SETUP(void);
+extern void OS_MMU_SETUP(void);
 #endif /* _OS_MEMORY_MMU_H_ */

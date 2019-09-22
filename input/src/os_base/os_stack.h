@@ -11,7 +11,7 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_STACK_CHK_PATTERN_INIT(void);
+extern void OS_STACK_CHK_PATTERN_INIT(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -23,7 +23,7 @@ extern  void OS_STACK_CHK_PATTERN_INIT(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_STACK_CHECK(void);
+extern void OS_STACK_CHECK(void);
 #endif /* _OS_STACK_H_  */
 
 

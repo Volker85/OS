@@ -19,6 +19,6 @@ typedef enum os_state_e os_state_t;
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_STATE_HANDLER(void);
+extern void OS_STATE_HANDLER(void);
 
 #endif /* _OS_MAIN_H_ */

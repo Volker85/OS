@@ -20,7 +20,7 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
+extern void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
 
 
 /**
@@ -33,7 +33,7 @@ extern  void LLF_SAVE_TASK_STACK(unsigned_char_t* StackPointer);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3);
+extern void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3);
 
 
 /**
@@ -46,7 +46,7 @@ extern  void LLF_SAVE_REGISTERS(uint32 r0, uint32 r1, uint32 r2, uint32 r3);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_RESTORE_TASK_STACK(unsigned_char_t* StackPointer);
+extern void LLF_RESTORE_TASK_STACK(unsigned_char_t* StackPointer);
 
 
 /**
@@ -59,7 +59,7 @@ extern  void LLF_RESTORE_TASK_STACK(unsigned_char_t* StackPointer);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_RESTORE_REGISTERS(task_t* task);
+extern void LLF_RESTORE_REGISTERS(task_t* task);
 
 
 /**
@@ -72,7 +72,7 @@ extern  void LLF_RESTORE_REGISTERS(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
+extern void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
 
 
 /**
@@ -85,7 +85,7 @@ extern  void LLF_RESTORE_SYSTEM_STACK(uint8* system_stack_ptr);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
+extern void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
 
 
 /**
@@ -98,7 +98,7 @@ extern  void LLF_SAVE_SYSTEM_STACK(uint8* system_stack_ptr);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_CLEAR_ALL_GP_REGISTERS(void);
+extern void LLF_CLEAR_ALL_GP_REGISTERS(void);
 
 
 /**
@@ -111,5 +111,5 @@ extern  void LLF_CLEAR_ALL_GP_REGISTERS(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_PERFORM_RAM_CHECK(void);
+extern void LLF_PERFORM_RAM_CHECK(void);
 #endif /* _LLD_GLOBAL_H_ */

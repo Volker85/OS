@@ -21,7 +21,7 @@ typedef  enum coreid_e coreid_t;
  * \return	      Status-Code TODO
  *
  */
-extern  coreid_t OS_GET_CORE_ID(void);
+extern coreid_t OS_GET_CORE_ID(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -33,7 +33,7 @@ extern  coreid_t OS_GET_CORE_ID(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
+extern void LLF_CHANGE_TO_UNPRIVILIGED_THREAD_MODE(void);
 
 enum privilige_mode_e
 {

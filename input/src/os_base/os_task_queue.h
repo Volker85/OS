@@ -19,7 +19,7 @@
  * \return	      Status-Code TODO
  *
  */
-extern  task_t* GET_RUNNING_TASK(void);
+extern task_t* GET_RUNNING_TASK(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -31,7 +31,7 @@ extern  task_t* GET_RUNNING_TASK(void);
  * \return	      Status-Code TODO
  *
  */
-extern  task_t** GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR(void);
+extern task_t** GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR(void);
 
 
 /**
@@ -44,7 +44,7 @@ extern  task_t** GET_RUNNING_SCHEDULING_QUEUE_ELEMENT_PTR(void);
  * \return	      Status-Code TODO
  *
  */
-extern  task_t* ADD_TO_TASK_QUEUE(task_t* task);
+extern task_t* ADD_TO_TASK_QUEUE(task_t* task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -56,7 +56,7 @@ extern  task_t* ADD_TO_TASK_QUEUE(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  void ADD_TO_IDLE_TASK_QUEUE(task_t* task);
+extern void ADD_TO_IDLE_TASK_QUEUE(task_t* task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -68,7 +68,7 @@ extern  void ADD_TO_IDLE_TASK_QUEUE(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  void DELETE_FROM_TASK_QUEUE(task_t* task);
+extern void DELETE_FROM_TASK_QUEUE(task_t* task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -80,7 +80,7 @@ extern  void DELETE_FROM_TASK_QUEUE(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  task_t* GET_FROM_TASK_QUEUE(scheduling_t* scheduling_task_ptr);
+extern task_t* GET_FROM_TASK_QUEUE(scheduling_t* scheduling_task_ptr);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -92,7 +92,7 @@ extern  task_t* GET_FROM_TASK_QUEUE(scheduling_t* scheduling_task_ptr);
  * \return	      Status-Code TODO
  *
  */
-extern  task_t* GET_IDLE_TASK(void);
+extern task_t* GET_IDLE_TASK(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -104,7 +104,7 @@ extern  task_t* GET_IDLE_TASK(void);
  * \return	      Status-Code TODO
  *
  */
-extern  scheduling_t* GET_FROM_SCHEDULING_QUEUE(unsigned_char_t element_nr);
+extern scheduling_t* GET_FROM_SCHEDULING_QUEUE(unsigned_char_t element_nr);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -116,7 +116,7 @@ extern  scheduling_t* GET_FROM_SCHEDULING_QUEUE(unsigned_char_t element_nr);
  * \return	      Status-Code TODO
  *
  */
-extern  void DELETE_FROM_SCHEDULING_QUEUE(scheduling_t* scheduling_queue_element);
+extern void DELETE_FROM_SCHEDULING_QUEUE(scheduling_t* scheduling_queue_element);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -128,7 +128,7 @@ extern  void DELETE_FROM_SCHEDULING_QUEUE(scheduling_t* scheduling_queue_element
  * \return	      Status-Code TODO
  *
  */
-extern  void ADD_TO_SCHEDULING_QUEUE(task_t* task);
+extern void ADD_TO_SCHEDULING_QUEUE(task_t* task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -140,7 +140,7 @@ extern  void ADD_TO_SCHEDULING_QUEUE(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task);
+extern void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -152,5 +152,5 @@ extern  void SET_RUNNING_TASK(task_t* task, scheduling_t* scheduling_task);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_INIT_TASK_QUEUE(void);
+extern void OS_INIT_TASK_QUEUE(void);
 #endif /* _OS_TASK_QUEUE_H_ */

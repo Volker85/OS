@@ -11,5 +11,5 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_START_OS(void);
+extern void OS_START_OS(void);
 #endif /* _OS_STARTOS_H_ */

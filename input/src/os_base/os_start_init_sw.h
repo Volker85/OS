@@ -12,5 +12,5 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_INIT_SW(void);
+extern void OS_INIT_SW(void);
 #endif /* _OS_START_INIT_SW_H_ */

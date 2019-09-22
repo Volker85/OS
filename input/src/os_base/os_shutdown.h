@@ -17,5 +17,5 @@ typedef enum os_reset_type_s
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_SHUTDOWN(os_reset_type_t reset_typ, func_ptr_t addr);
+extern void OS_SHUTDOWN(os_reset_type_t reset_typ, func_ptr_t addr);
 #endif /*_OS_SHUTDOWN_H_*/

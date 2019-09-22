@@ -23,7 +23,7 @@
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_START_TASK(task_t* task, scheduling_t* scheduling_task);
+extern void OS_START_TASK(task_t* task, scheduling_t* scheduling_task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -35,7 +35,7 @@ extern  void OS_START_TASK(task_t* task, scheduling_t* scheduling_task);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_ACTIVATE_TASK(task_t* task);
+extern void OS_ACTIVATE_TASK(task_t* task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -47,7 +47,7 @@ extern  void OS_ACTIVATE_TASK(task_t* task);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_SLEEP_TASK(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr);
+extern void OS_SLEEP_TASK(task_t* task, timebig_t usec, scheduling_t* scheduling_task_ptr);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -59,7 +59,7 @@ extern  void OS_SLEEP_TASK(task_t* task, timebig_t usec, scheduling_t* schedulin
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_INIT_TASK(
+extern void OS_INIT_TASK(
    task_t*          task,
    func_p_t         TaskFunction,
    unsigned_char_t  AllowedInstances,
@@ -82,7 +82,7 @@ extern  void OS_INIT_TASK(
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_INIT_TASKS(void);
+extern void OS_INIT_TASKS(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -94,7 +94,7 @@ extern  void OS_INIT_TASKS(void);
  * \return	      Status-Code TODO
  *
  */
-extern  unsigned_char_t OS_TASK_STATE_REQUEST(void* task, task_state_t requested_state);
+extern unsigned_char_t OS_TASK_STATE_REQUEST(void* task, task_state_t requested_state);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -106,7 +106,7 @@ extern  unsigned_char_t OS_TASK_STATE_REQUEST(void* task, task_state_t requested
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_ACTIVATE_DISPATCHER(void);
+extern void OS_ACTIVATE_DISPATCHER(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -118,7 +118,7 @@ extern  void OS_ACTIVATE_DISPATCHER(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task);
+extern void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -130,7 +130,7 @@ extern  void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_TASK_DISPATCHER(void);
+extern void OS_TASK_DISPATCHER(void);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -142,6 +142,6 @@ extern  void OS_TASK_DISPATCHER(void);
  * \return	      Status-Code TODO
  *
  */
-extern  void OS_CREATE_TASK(task_t* task);
+extern void OS_CREATE_TASK(task_t* task);
 #endif /* _OS_TASK_SCHEDULER_H_  */
 

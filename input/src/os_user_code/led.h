@@ -56,7 +56,7 @@ typedef enum
  * \return	      Status-Code TODO
  *
  */
-extern  void USER_LED_INIT(led_t Led);
+extern void USER_LED_INIT(led_t Led);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -68,7 +68,7 @@ extern  void USER_LED_INIT(led_t Led);
  * \return	      Status-Code TODO
  *
  */
-extern  void USER_LED_ON(led_t Led);
+extern void USER_LED_ON(led_t Led);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -80,7 +80,7 @@ extern  void USER_LED_ON(led_t Led);
  * \return	      Status-Code TODO
  *
  */
-extern  void USER_LED_OFF(led_t Led);
+extern void USER_LED_OFF(led_t Led);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -92,5 +92,5 @@ extern  void USER_LED_OFF(led_t Led);
  * \return	      Status-Code TODO
  *
  */
-extern  void USER_LED_TOGGLE(led_t Led);
+extern void USER_LED_TOGGLE(led_t Led);
 #endif /* _LED_H_*/
