@@ -49,7 +49,7 @@ OS_State: OS_SHUTDOWN (nur erlaubt im Supervisor Mode)
 
 LOCAL void os_determine_next_task_activation(void)
 {
-   LOCAL uint32 call_nr = 0u;
+   LOCAL uint32 call_nr = 0u;//TODO: do not use static variables!!!
    switch(call_nr)
    {
    case 0u:
@@ -83,8 +83,8 @@ LOCAL void os_determine_next_task_activation(void)
 void OS_STATE_HANDLER(void)
 {
    /* the following code runs in priviliged mode!! */
-   LOCAL os_reset_type_t sys_req_reset_state = E_OS_RESET_POWERDOWN;
-   LOCAL uint32 call_nr = 0u;
+   LOCAL os_reset_type_t sys_req_reset_state = E_OS_RESET_POWERDOWN;//TODO: do not use static variables!!!
+   LOCAL uint32 call_nr = 0u;//TODO: do not use static variables!!!
 
    switch(OS_STATE)
    {
