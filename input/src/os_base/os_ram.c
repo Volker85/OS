@@ -11,6 +11,7 @@ unsigned_char_t      HEAP[HEAP_SIZE];
 #error "stack of 64 bytes minimum is needed for stack check pattern"
 #endif
 
+//TODO: assign the RAM to the correct linker section (task, ....), no RAM should go to default section
 /* stack related RAM  */
 volatile uint32* OS_MAIN_STACK_ADDR;
 volatile uint32  OS_MAIN_STACK_POS;

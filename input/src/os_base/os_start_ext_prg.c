@@ -6,6 +6,7 @@ LOCAL unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSigna
 
 unsigned_char_t os_signatur_valid(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSize)
 {
+   //TODO: create a SHA1+RSA2048 based signature to prevent misusage of load function
    /* no signature check currently wanted, because
    1. Asymetric Signature calculation takes lots of time
    2. Sym Hash + Asym Signature lack of official embedded implementation free to use
@@ -33,5 +34,6 @@ void OS_START_EXT_PRG(func_ptr_t LoadProgAddr, uint32 PrgSignatur, uint32 PrgSiz
    different processors have different alignment requirements... be aware!!
    Might cause non alignment failures, in case the code in not aligned correctly
    */
+   //TODO: perform an alignment check and raise an sw_bug in case it is not aligned and the processer can not handle not aligned access....
    LoadProgAddr();
 }

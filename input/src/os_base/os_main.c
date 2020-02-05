@@ -8,7 +8,7 @@
 #include "os_task_scheduler.h"
 #include "os_task_queue.h"
 #include "os_main.h"
-
+//TODO: all parts implemented as described in the text below??ß
 /*
 OS_State: OS_INIT (Start im Supervisor Mode)
 - Exception Handler aufsetzen  -> Done

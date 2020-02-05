@@ -37,3 +37,4 @@ Circular Wait ausschließen
     Betriebsmittel werden linear geordnet und in aufsteigender Reihenfolge vergeben.
 End: Copyright: https://de.wikipedia.org/wiki/Deadlock_(Informatik)
 */
+//TODO: implement inter task communication (pipe, lock)

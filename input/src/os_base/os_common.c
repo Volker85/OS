@@ -76,9 +76,6 @@ void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor)
    big_int local_zero;
    big_int tmp_Dividend, tmp_Divisor;
    big_int rest;
-   uint32  local_cnt = 0;
-   uint32 one_shifted_nibble; 
-   uint32 u32_teilergebnis;
    big_int teilergebnis;
    
    ASSIGN_NULL(&local_zero);
@@ -95,6 +92,9 @@ void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor)
    }      
    while(IS_GREATER_OR_EQUAL(&rest, &tmp_Dividend))
    {
+      uint32 local_cnt = 0u;      
+      uint32 one_shifted_nibble; 
+      uint32 u32_teilergebnis;      
       /* 
       Step 1: Divisor um so viele nibble shiften nach links bis der Divisor größer wie der Dividend ist
       Step 2: Die Zahl aus Step 1 um 1 verringern = nibble_shift_left_amount
@@ -111,8 +111,6 @@ void INT_DIV(big_int* Quotient, const big_int* Dividend, const big_int* Divisor)
       }
       /* Divisor is already shifted at this point by nibble_shift_left_amount */
       /* Step 3: Dabei n = local_cnt solange vergrößern bis "Rest" kleiner wie Divisor ist */
-      
-      local_cnt = 0u;
       while(IS_LESS_OR_EQUAL(&rest, &tmp_Divisor))
       {
          INT_SUB(&rest,&tmp_Dividend,&tmp_Divisor);
@@ -324,19 +322,27 @@ void SHIFT_LEFT(big_int* number, uint32 amount_bits_shift)
    big_int tmpBigInt, result;
    uint32  tmp32;
    sint32  pos;
-   /* init the variable */
+   /* init the helper variable */
    ASSIGN_NULL(&tmpBigInt);
    ASSIGN_NULL(&result);
    
-   /* due to the underlying 32 bit integer type only 24 bits can be shifted (32bit variable -8bit access of data structure = 24 bit) */
-   if(amount_bits_shift > 24u)
-   {
-      OS_SET_SW_BUG(E_OS_BUG_BIT_SHIFT_OUT_OF_RANGE, E_FUNC_SHIFT_LEFT);
-      return;
-   }         
-   for (pos = BIG_INT_SIZE-1u; pos >= 0; pos--)
+   /* now iterate over the complete big_int array */
+   for (pos = 0u; pos <= BIG_INT_SIZE-1u; pos++)
    {
       ASSIGN_NULL(&tmpBigInt);
+      /* example:
+      0x11223344556677889900AABBCCDDEEFF
+       to shift by 13 bits left
+      
+      */
+      /* split the shift into a multi byte and multi bit shift... */
+      #define BITS_IN_BYTE 8u
+      uint32 shift_by_bits  = amount_bits_shift % BITS_IN_BYTE;/* 13%8=5 */
+      uint32 shift_by_bytes = (amount_bits_shift - shift_by_bits) / BITS_IN_BYTE; /* (13-5)/8=1 */
+      
+      /* now shift by the calculated amount */
+      //TODO
+      
       tmp32 = ((uint32)number->number[(uint32)pos]) << amount_bits_shift;
       tmpBigInt.number[(uint32)pos]      = (tmp32 >> 0u) & 0xFF;
       tmpBigInt.number[(uint32)pos+1u]   = (tmp32 >> 8u) & 0xFF;

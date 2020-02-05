@@ -13,7 +13,7 @@ void OS_STACK_CHECK(void)
    OS_MAIN_STACK_POS =  (volatile uint32) -1u;
    OS_MAIN_STACK_USAGE_PERCENT = 0u;
 
-   for(stack_pos = 0; stack_pos < OS_MAIN_STACK_SIZE; stack_pos++)
+   for(stack_pos = 0; stack_pos < OS_MAIN_STACK_SIZE; stack_pos++)//TODO: redundant source structure follows.... 
    {
       if(OS_MAIN_STACK[stack_pos] != 0xAA)
       {

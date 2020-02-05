@@ -1,5 +1,5 @@
-SET BASE_DIR=C:\Users\president\Desktop\sbx\input\src
-SET OUTPUT_DIR=C:\Users\president\Desktop\sbx\output\code_analysis
+SET BASE_DIR=E:\NeuOrga\Programmieren\c_cpp\github_os\input\src
+SET OUTPUT_DIR=E:\NeuOrga\Programmieren\c_cpp\github_os\output\code_analysis
 SET CHECKER_DIR="C:\Program Files\Cppcheck"
 REM
 ECHO ON
