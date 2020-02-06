@@ -1,7 +1,7 @@
 #ifndef  _OS_EXCEPTION_ISR_HANDLER_H_
 #define  _OS_EXCEPTION_ISR_HANDLER_H_
 
-#define SVC_00 0x00   /* Tag: SVC */
+#define SVC_00 0x00   
 
 
 /**

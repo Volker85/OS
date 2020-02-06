@@ -5,8 +5,8 @@
 void OS_INIT_MC(void)
 {
    /* 1. configure PLL */
-   /* keep the default MCU frequency */
-   /* the mcu CortexM4 / STM32F407... wakes up using HSI as system clock with 16 MHz frequency, this is ok for now */
+   //TODO: configure to use maximum frequency of the chip
+   /* the mcu CortexM4 / STM32F407... wakes up using HSI as system clock with 16 MHz frequency */
    
    /* 2. all MCU IO*/
    /* configure GPIO (SPI, UART, CAN, etc) */

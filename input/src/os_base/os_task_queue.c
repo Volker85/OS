@@ -8,6 +8,7 @@
 
 
 /* index 0: current task, 1,2,3,4: next tasks to be executed */
+//TODO: check and test that the described processed is fullfilled..
 /*
 1. after execution of task finished(OS_TERMINATE_TASK):
  - delete run_queue_element         (DELETE_FROM_TASK_QUEUE)

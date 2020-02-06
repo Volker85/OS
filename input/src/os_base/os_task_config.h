@@ -3,6 +3,7 @@
 
 /* Scheduler Configuration: */
 #define TASK_MIN_TIME       (1e0) /* minimum task time for each task, overrules the fairness.... */
+#define TASK_MAX_TIME       (0xFFFFFFFF) //TODO: not used / supported yet
 #define NUMBER_OF_TASKS     10u
 #define MAX_RUN_QUEUE_SIZE  (NUMBER_OF_TASKS)
 #define MAX_RUN_PQUEUE_SIZE MAX_RUN_QUEUE_SIZE

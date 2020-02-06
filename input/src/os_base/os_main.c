@@ -8,7 +8,7 @@
 #include "os_task_scheduler.h"
 #include "os_task_queue.h"
 #include "os_main.h"
-//TODO: all parts implemented as described in the text below??ß
+//TODO: all parts implemented as described in the text below???
 /*
 OS_State: OS_INIT (Start im Supervisor Mode)
 - Exception Handler aufsetzen  -> Done
@@ -23,7 +23,7 @@ OS_State: OS_INIT (Start im Supervisor Mode)
 --> Privilige Level (Handler mode (priviliged): System Mode, Abort, Undefined, FiQ, IRQ; Thread mode: unpriviliged / priviliged) -> Done
 - TCMP Interrupts für Tasks konfigurieren, Starten vom Dispatcher -> Done
 - MMU konfigurieren -> NA
-- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler) -> Not needed for CortexM4
+- TaskScheduler für Core 0...n starten (jeder Core hat eigenen Scheduler) -> Not needed for CortexM4, but should be supported anyway //TODO
 - SW mit erhöhtem Rechtebedarf wird mittels Interrupt gestartet (Dispatcher, WD, FMON, Shutdown) -> Done
 - FMON / Watchdog aktivieren -> NA
 - Interrupts aktivieren -> Done

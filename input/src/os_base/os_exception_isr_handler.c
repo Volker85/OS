@@ -8,7 +8,7 @@
 
 void OS_ISRHANDLERC0(uint32 svc_number)
 {
-   switch(svc_number)/* Implement needed SVC numbers (need for example for user code to access priviliged parts....) *//* Tag: SVC */
+   switch(svc_number)/* Implement needed SVC numbers (need for example for user code to access priviliged parts....) */
    {
    case SVC_00:            /* Handle SVC 00 */
    {

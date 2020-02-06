@@ -9,7 +9,7 @@
 
 */
 
-
+//TODO: global / static RAM allocation only via OS_RAM.c!!!
 task_t* TASK_PTR[MAX_RUN_QUEUE_SIZE];
 
 void OS_TASK_SAVE_TASK_ENVIRONMENT(task_t* task)

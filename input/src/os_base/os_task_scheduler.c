@@ -203,6 +203,7 @@ void os_preempt_task(task_t* task, scheduling_t* scheduling_task)
    - delete active flag
    - enable Interrupts
    */
+   //TODO introduce a runtime measurement for tasks
    if(task != NULL && scheduling_task != NULL)
    {
       if(task->state_request != NULL)
@@ -295,6 +296,7 @@ void OS_START_TASK(task_t* task, scheduling_t* scheduling_task)
 
    - Start Task
     */
+    //TODO introduce a runtime measurement for tasks (OS_START_TASK, OS_TERMINATE_TASK)
    timebig_t time;
 
    if( (task != NULL) && (scheduling_task != NULL)&& ((task->task_queued != FALSE)||(task->idle_task != FALSE)))
@@ -350,6 +352,7 @@ void OS_TERMINATE_TASK(task_t* task, scheduling_t* scheduling_task)
    - delete active flag
    - enable Interrupts
    */
+   //TODO introduce a runtime measurement for tasks
    if(task != NULL && scheduling_task != NULL)
    {
       if(task->state_request != NULL)
