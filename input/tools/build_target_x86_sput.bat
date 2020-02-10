@@ -6,8 +6,8 @@ REM change the working dir
 SET WRK_DIR=D:\Programm\MinGW\bin
 cd /D %WRK_DIR%
 REM
-set PATH=%PATH%;C:\Program\MinGW\bin
-SET BASE_DIR=C:\Users\president\Desktop\sbx
+set PATH=%PATH%;D:\Programm\MinGW\bin
+SET BASE_DIR=E:\NeuOrga\Programmieren\c_cpp\github_os
 SET INPUT_DIR=%BASE_DIR%\input
 SET OUTPUT_DIR=%BASE_DIR%\output
 SET SRC_DIR=%INPUT_DIR%\src
