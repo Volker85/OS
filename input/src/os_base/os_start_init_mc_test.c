@@ -2,64 +2,70 @@
 
 #include "..\os_base\os_sput.h"
 
-//TODO: create unit test
-/*
- * count_vowels() counts the vowels present in a given string.
- *
- * While the function basically works as expected, it recognizes
- * [aeiou] as vowels only and erroneously does not take uppercase
- * vowels into account.
- */
-static int count_vowels(const char *s)
+static void test_os_exception_read_status_registers(void)
 {
-   const char *cp    = s;
-   int         count = 0;
-
-   while (*cp)
-   {
-      if (*cp == 'a' || *cp == 'e' || *cp == 'i' ||
-            *cp == 'o' || *cp == 'u')
-      {
-         count++;
-      }
-
-      cp++;
-   }
-
-   return count;
+   //TODO
 }
 
-
-static void test_vowels_present()
+static void test_os_exception_nmi(void)
 {
-   sput_fail_unless(count_vowels("book")  == 2, "book == 2v");
-   sput_fail_unless(count_vowels("hand")  == 1, "hand == 1v");
-   sput_fail_unless(count_vowels("test")  == 1, "test == 1v");
-   sput_fail_unless(count_vowels("Peter") == 2, "Peter == 2v");
-   sput_fail_unless(count_vowels("Apu")   == 2, "Apu == 2v");
+   //TODO
 }
 
-
-static void test_no_vowels_present()
+static void test_os_exception_hardfault(void)
 {
-   sput_fail_unless(count_vowels("GCC") == 0, "GCC == 0v");
-   sput_fail_unless(count_vowels("BBC") == 0, "BBC == 0v");
-   sput_fail_unless(count_vowels("CNN") == 0, "CNN == 0v");
-   sput_fail_unless(count_vowels("GPS") == 0, "GPS == 0v");
-   sput_fail_unless(count_vowels("Ltd") == 0, "Ltd == 0v");
+   //TODO
 }
 
+static void test_os_exception_mem_manag_fault(void)
+{
+   //TODO
+}
+
+static void test_os_exception_bus_fault(void)
+{
+   //TODO
+}
+
+static void test_os_exception_usage_fault(void)
+{
+   //TODO
+}
+
+static void test_os_exception_debug(void)
+{
+   //TODO
+}
+
+static void test_os_exception_pend_sv(void)
+{
+   //TODO
+}
+
+static void test_os_exception_systick(void)
+{
+   //TODO
+}
+
+static void test_os_exception_irq(void)
+{
+   //TODO
+}
 
 int main(int argc, char *argv[])
 {
    sput_start_testing();
-
-   sput_enter_suite("count_vowels(): Vowels Present");
-   sput_run_test(test_vowels_present);
-
-   sput_enter_suite("count_vowels(): No Vowels Present");
-   sput_run_test(test_no_vowels_present);
-
+   sput_enter_suite("os exception test");
+   sput_run_test(test_os_exception_read_status_registers);
+   sput_run_test(test_os_exception_nmi);
+   sput_run_test(test_os_exception_hardfault);
+   sput_run_test(test_os_exception_mem_manag_fault);
+   sput_run_test(test_os_exception_bus_fault);
+   sput_run_test(os_exception_usage_fault);
+   sput_run_test(test_os_exception_debug);
+   sput_run_test(test_os_exception_pend_sv);
+   sput_run_test(test_os_exception_systick);
+   sput_run_test(test_os_exception_irq);
    sput_finish_testing();
 
    return sput_get_return_value();
