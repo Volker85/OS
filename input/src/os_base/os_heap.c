@@ -2,9 +2,6 @@
 #include "..\os_base\os_heap.h"
 
 #if(DYNAMIC_MEMORY_USED != FALSE)
-LOCAL uint32 get_uint32_of_4_uint8(uint8* ptr);
-LOCAL void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
-
 /* Allocate and zero-initialize array
 --------------------------------------------------------------------
 Allocates a block of memory for an array of num elements,
@@ -55,7 +52,7 @@ void* OS_REALLOC(void* ptr_old, uint32 size_new)
    {
       if(ptr_old != 0u)
       {
-         OS_free(ptr_old);
+         OS_FREE(ptr_old);
       }
       ptr_new = 0u;
    }
@@ -102,14 +99,14 @@ void* OS_MALLOC(uint32 size)
          heap_ptr = heap_ptr + (uint32)HEAP_OFFSET_FOR_CHUNK + size/* set the heap_ptr to the next element in this list */
       )
    {
-      size      = get_uint32_of_4_uint8(heap_ptr + HEAP_OFFSET_FOR_SIZE);
-      /*used_size = get_uint32_of_4_uint8(heap_ptr + HEAP_OFFSET_FOR_USED_SIZE);*/
+      size      = GET_UINT32_OF_4_UINT8(heap_ptr + HEAP_OFFSET_FOR_SIZE);
+      /*used_size = GET_UINT32_OF_4_UINT8(heap_ptr + HEAP_OFFSET_FOR_USED_SIZE);*/
 
       chunk_ptr     = (heap_ptr + HEAP_OFFSET_FOR_CHUNK);
    }
    return (void*)chunk_ptr;
 }
-void OS_free(void* ptr)
+void OS_FREE(void* ptr)
 {
    uint32  size = 0u;
    /*uint32  used_size = 0;*/
@@ -121,8 +118,8 @@ void OS_free(void* ptr)
          heap_ptr = heap_ptr + HEAP_OFFSET_FOR_CHUNK + size/* set the heap_ptr to the next element in this list */
       )
    {
-      size      = get_uint32_of_4_uint8(heap_ptr + HEAP_OFFSET_FOR_SIZE);
-      /*used_size = get_uint32_of_4_uint8(heap_ptr + HEAP_OFFSET_FOR_USED_SIZE);*/
+      size      = GET_UINT32_OF_4_UINT8(heap_ptr + HEAP_OFFSET_FOR_SIZE);
+      /*used_size = GET_UINT32_OF_4_UINT8(heap_ptr + HEAP_OFFSET_FOR_USED_SIZE);*/
 
       chunk_ptr     = (void*) ((uint8*)heap_ptr + (uint32)HEAP_OFFSET_FOR_CHUNK);
 

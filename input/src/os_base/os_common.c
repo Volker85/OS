@@ -11,12 +11,12 @@ void OS_SET_SW_BUG(os_sw_bugs_t bug_nr, os_sw_bugs_function_t task_func_nr)
 void OS_GET_CURRENT_TIME(timebig_t* time)
 {
    /* update the current time info */
-   OS_UpdateCurrentTime();
+   OS_UPDATE_CURRENT_TIME();
    /* output the time to the caller */
    ASSIGN(time, &LOCAL_SYSTEM_TIME);
 
 }
-void OS_UpdateCurrentTime(void)
+void OS_UPDATE_CURRENT_TIME(void)
 {
    /* the only free running counter on STM32F4 is the DWT counter DWT_CYCCNT
    The counter will overflow every 25sec -> provide function OS_ClearCurrentTime to reset the value to 0, and !!! do not use the absolute value for calculations but use the difference between start and stop of timer
@@ -353,7 +353,7 @@ void SHIFT_LEFT(big_int* number, uint32 amount_bits_shift)
    ASSIGN(number, &result);
 }
 
-uint32 get_uint32_of_4_uint8(uint8* ptr)
+uint32 GET_UINT32_OF_4_UINT8(uint8* ptr)
 {
    uint32 ret_val = 0u;
 
@@ -367,7 +367,7 @@ uint32 get_uint32_of_4_uint8(uint8* ptr)
 
    return ret_val;
 }
-void set_4_uint8_to_uint32(uint8* ptr, uint32 value)
+void SET_4_UINT8_TO_UINT32(uint8* ptr, uint32 value)
 {
    *ptr = (value >>24u)&0xFFu;
    ptr++;

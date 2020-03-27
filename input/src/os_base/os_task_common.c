@@ -111,7 +111,7 @@ void OS_TASK_INIT_TASK_ENVIRONMENT(task_t* task)
 {
    if(task!=0 && task->p_stack_pointer_by_malloc!=0u)
    {
-      OS_free(task->p_stack_pointer_by_malloc);/* only possible in case of heap used */
+      OS_FREE(task->p_stack_pointer_by_malloc);/* only possible in case of heap used */
    }
    else
    {

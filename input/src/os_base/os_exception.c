@@ -153,7 +153,7 @@ void OS_EXCEPTION_SYSTICK(void)
    timebig_t time;
 #endif 
 
-   OS_UpdateCurrentTime();
+   OS_UPDATE_CURRENT_TIME();
 
 #if(CFG_PROCESSOR == MCU_CORTEX_M4)
    /* run all exceptions in handler mode */

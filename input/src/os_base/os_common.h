@@ -5,8 +5,6 @@
 /* common HAL defines */
 #define FALSE 0u
 #define TRUE 1u
-#define False FALSE
-#define True TRUE
 #define ACCEPTED 1u
 #define REJECTED 0u
 #define LOCAL static
@@ -299,7 +297,7 @@ extern void SHIFT_LEFT(big_int* number, uint32 amount);
  * \return	      Status-Code TODO
  *
  */
-extern uint32 get_uint32_of_4_uint8(uint8* ptr);
+extern uint32 GET_UINT32_OF_4_UINT8(uint8* ptr);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -311,7 +309,7 @@ extern uint32 get_uint32_of_4_uint8(uint8* ptr);
  * \return	      Status-Code TODO
  *
  */
-extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
+extern void SET_4_UINT8_TO_UINT32(uint8* ptr, uint32 value);
 
 /**
  * \brief Exemplarische Funktion TODO
@@ -323,5 +321,5 @@ extern void set_4_uint8_to_uint32(uint8* ptr, uint32 value);
  * \return	      Status-Code TODO
  *
  */
-extern void OS_UpdateCurrentTime(void);
+extern void OS_UPDATE_CURRENT_TIME(void);
 #endif /* _OS_COMMON_H_ */

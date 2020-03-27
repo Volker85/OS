@@ -17,7 +17,7 @@ static void test_os_malloc(void)
    //TODO
 }
 
-static void test_os_free(void)
+static void test_OS_FREE(void)
 {
    //TODO
 }
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
    sput_run_test(test_os_calloc);
    sput_run_test(test_os_realloc);
    sput_run_test(test_os_malloc);
-   sput_run_test(test_os_free);
+   sput_run_test(test_OS_FREE);
    sput_finish_testing();
 
    return sput_get_return_value();

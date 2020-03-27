@@ -69,7 +69,7 @@ LOCAL void os_determine_next_task_activation(void)
       break;
    case 4u:
       /* wait for all tasks finished, and the idle task to be executed once... */
-      if(GET_RUNNING_TASK()->idle_task != False)
+      if(GET_RUNNING_TASK()->idle_task != FALSE)
       {
          call_nr = 0;
       }   

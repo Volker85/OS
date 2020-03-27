@@ -12,7 +12,7 @@ static void test_os_get_current_time(void)
    /* TODO */
 }
 
-static void test_os_updatecurrenttime(void)
+static void test_OS_UPDATE_CURRENT_TIME(void)
 {
    /* TODO */
 }
@@ -87,12 +87,12 @@ static void test_shift_left(void)
    /* TODO */
 }
 
-static void test_get_uint32_of_4_uint8(void)
+static void test_GET_UINT32_OF_4_UINT8(void)
 {
    /* TODO */
 }
 
-static void test_set_4_uint8_to_uint32(void)
+static void test_SET_4_UINT8_TO_UINT32(void)
 {
    /* TODO */
 }
@@ -104,7 +104,7 @@ int main(int argc, char *argv[])
    sput_enter_suite("os common test");
    sput_run_test(test_os_set_sw_bug);
    sput_run_test(test_os_get_current_time);
-   sput_run_test(test_os_updatecurrenttime);
+   sput_run_test(test_OS_UPDATE_CURRENT_TIME);
    sput_run_test(test_os_read_and_reset_current_time);
    sput_run_test(test_int_div);
    sput_run_test(test_int_mul);
@@ -119,8 +119,8 @@ int main(int argc, char *argv[])
    sput_run_test(test_assign_null);
    sput_run_test(test_assign_uint32);
    sput_run_test(test_shift_left);
-   sput_run_test(test_get_uint32_of_4_uint8);
-   sput_run_test(test_set_4_uint8_to_uint32);
+   sput_run_test(test_GET_UINT32_OF_4_UINT8);
+   sput_run_test(test_SET_4_UINT8_TO_UINT32);
    sput_finish_testing();
 
    return sput_get_return_value();
